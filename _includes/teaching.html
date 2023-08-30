@@ -1,0 +1,25 @@
+<h2>Teaching</h2>
+<div class="teaching-wrapper">
+    {% assign sorted_teaching = site.data.teaching | sort: 'start-date' | reverse %}
+    {% for item in sorted_teaching %}
+    <div class="teaching-row">
+        {% assign start_date = item.start-date | date: "%b %Y" %}
+        {% assign end_date = item.end-date | date: "%b %Y" %}
+        {% if start_date == end_date %}
+        <p class="course-date">{{item.start-date | date: "%b %Y"}}</p>
+        {% else %}
+        <p class="course-date">{{item.start-date | date: "%b %Y"}} - {{item.end-date | date: "%b %Y"}}</p>
+        {% endif %}
+
+        <p><span class="course-position">{{ item.position }}</span> for <span class="course-name">{{ item.course_name
+                }}</span> at <span class="course-school">{{ item.school }}</span></p>
+        {% if item.key-contributions %}
+        <ul>
+            {% for contribution in item.key-contributions %}
+            <li>{{ contribution }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>

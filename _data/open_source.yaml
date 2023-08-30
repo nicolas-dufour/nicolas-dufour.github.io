@@ -1,0 +1,16 @@
+- repo_name: rl
+  repo_owner: pytorch
+  type: contribution
+
+- repo_name: metrics
+  repo_owner: Lightning-AI
+  type: contribution
+
+- repo_name: diffusers
+  repo_owner: huggingface
+  type: contribution
+
+- repo_name: SCAM
+  repo_owner: nicolas-dufour
+  type: own
+  

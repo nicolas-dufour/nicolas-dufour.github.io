@@ -1,0 +1,34 @@
+- title: SCAM! Transferring humans between images with Semantic Cross Attention Modulation
+  authors: Nicolas Dufour, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://davidpicard.github.io/">David Picard</a>
+  date: 2022-10-10
+  year: 2022
+  journal: ECCV 2022
+  pdf: https://arxiv.org/abs/2210.04883
+  github: https://github.com/nicolas-dufour/SCAM
+  website: https://imagine.enpc.fr/~dufourn/publications/scam.html
+  thumbnail: /assets/publications/scam/thumbnail.png
+  abstract: A large body of recent work targets semantically conditioned image generation. Most such methods focus on the narrower task of pose transfer and ignore the more challenging task of subject transfer that consists in not only transferring the pose but also the appearance and background. In this work, we introduce SCAM (Semantic Cross Attention Modulation), a system that encodes rich and diverse information in each semantic region of the image (including foreground and background), thus achieving precise generation with emphasis on fine details. This is enabled by the Semantic Attention Transformer Encoder that extracts multiple latent vectors for each semantic region, and the corresponding generator that exploits these multiple latents by using semantic cross attention modulation. It is trained only using a reconstruction setup, while subject transfer is performed at test time. Our analysis shows that our proposed architecture is successful at encoding the diversity of appearance in each semantic region. Extensive experiments on the iDesigner and CelebAMask-HD datasets show that SCAM outperforms SEAN and SPADE; moreover, it sets the new state of the art on subject transfer.
+  bibtex: "@inproceedings{dufour2022scam, \n
+   &nbsp;&nbsp; title={Scam! transferring humans between images with semantic cross attention modulation}, \n
+   &nbsp;&nbsp; author={Dufour, Nicolas and Picard, David and Kalogeiton, Vicky}, \n
+   &nbsp;&nbsp; booktitle={European Conference on Computer Vision}, \n
+   &nbsp;&nbsp; pages={713--729}, \n
+   &nbsp;&nbsp; year={2022}, \n
+   &nbsp;&nbsp; organization={Springer} \n
+   }"
+- title: "Machine Learning for Brain Disorders: Transformers and Visual Transformers"
+  authors: <a href="https://robincourant.github.io/info">Robin Courant</a>, Maika Edberg, Nicolas Dufour, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
+  date: 2023-03-21
+  year: 2023
+  journal: Springer, Machine Learning for Brain Disorders
+  pdf: https://arxiv.org/abs/2303.12068
+  thumbnail: /assets/publications/transformers_mlbd/thumbnail.png
+  abstract: Transformers were initially introduced for natural language processing (NLP) tasks, but fast they were adopted by most deep learning fields, including computer vision. They measure the relationships between pairs of input tokens (words in the case of text strings, parts of images for visual Transformers), termed attention. The cost is exponential with the number of tokens. For image classification, the most common Transformer Architecture uses only the Transformer Encoder in order to transform the various input tokens. However, there are also numerous other applications in which the decoder part of the traditional Transformer Architecture is also used. Here, we first introduce the Attention mechanism (Section 1), and then the Basic Transformer Block including the Vision Transformer (Section 2). Next, we discuss some improvements of visual Transformers to account for small datasets or less computation(Section 3). Finally, we introduce Visual Transformers applied to tasks other than image classification, such as detection, segmentation, generation and training without labels (Section 4) and other domains, such as video or multimodality using text or audio data (Section 5).
+  bibtex: "@incollection{courant2012transformers, \n
+    &nbsp;&nbsp; title={Transformers and Visual Transformers}, \n
+    &nbsp;&nbsp; author={Courant, Robin and Edberg, Maika and Dufour, Nicolas and Kalogeiton, Vicky}, \n
+    &nbsp;&nbsp; booktitle={Machine Learning for Brain Disorders}, \n
+    &nbsp;&nbsp; pages={193--229}, \n
+    &nbsp;&nbsp; year={2012}, \n
+    &nbsp;&nbsp; publisher={Springer} \n
+  }"

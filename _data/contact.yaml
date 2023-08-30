@@ -1,0 +1,23 @@
+- url: mailto:nicolas.dufour@enpc.fr
+  icon: /assets/icons/mail.png
+  name: E-Mail
+
+- url: https://www.linkedin.com/in/nicolas-dufour/
+  icon: /assets/icons/linkedin.png
+  name: LinkedIn
+
+- url: /assets/about/cv.pdf
+  icon: /assets/icons/cv.png
+  name: CV
+
+- url: https://twitter.com/nico_dufour
+  icon: /assets/icons/twitter.png
+  name: Twitter
+
+- url: https://scholar.google.com/citations?user=g_eDdc4AAAAJ&hl=en
+  icon: /assets/icons/scholar.png
+  name: Google Scholar
+
+- url: https://github.com/nicolas-dufour
+  icon: /assets/icons/github.png
+  name: Github

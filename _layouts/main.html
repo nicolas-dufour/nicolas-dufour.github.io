@@ -1,0 +1,68 @@
+<!-- FILEPATH: /Users/nicolasdufour/Documents/nicolas-dufour-personal-website/_layouts/home.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ page.title }}</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <!-- <link rel="icon" type="image/png" href="/images/favicon.png"> -->
+        <meta name="description" content={{ page.description }}>
+        <meta name="keywords" content="{{ page.keywords | join: ', ' }}">
+        <script async="" src="{{ page.analytics}}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-V8HK2ZSXGW');
+        </script>
+    </head>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#about-me">About</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#publications">Publications</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="intro">
+            {% include intro.html %}
+        </div>
+        <div id="about-me" class="section">
+            {% include about_me.html %}
+        </div>
+        <div id="news" class="section">
+            {% include news.html %}
+        </div>
+        <div id="publications" class="section">
+            {% include publications.html %}
+        </div>
+        <div id="teaching" class="section">
+            {% include teaching.html %}
+        </div>
+        <div id="open-source" class="section">
+            {% include open_source.html %}
+        </div>
+        <div id="misc" class="section">
+            {% include misc.html %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; {{ page.author }} <span id="currentYear"></span>. Website template made by <a
+                href="https://nicolas-dufour.github.io/">Nicolas Dufour</a>.</p>
+    </footer>
+    <script>
+        document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+    </script>
+</body>

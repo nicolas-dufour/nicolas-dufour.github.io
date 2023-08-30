@@ -1,0 +1,38 @@
+<h2>News</h2>
+<div class="news-wrapper">
+    {% assign sorted_news = site.data.news | sort: 'date' | reverse %}
+    {% for item in sorted_news limit:4 %}
+    <div class="news-row">
+        <div class="date-pill">{{ item.date | date: "%b, %Y" }}</div>
+        <div class="news-content">{{ item.content | markdownify }}</div>
+    </div>
+    {% endfor %}
+    {% for item in sorted_news offset:4 %}
+    <div class="news-row extra-news" style="display:none">
+        <div class="date-pill">{{ item.date | date: "%b, %Y" }}</div>
+        <div class="news-content">{{ item.content | markdownify }}</div>
+    </div>
+    {% endfor %}
+</div>
+<button id="show-more-btn">Show More</button>
+<script>
+    const showMoreBtn = document.getElementById('show-more-btn');
+    const extraNews = document.querySelectorAll('.extra-news');
+    let isExpanded = false;
+    showMoreBtn.addEventListener('click', () => {
+        if (isExpanded) {
+            extraNews.forEach(news => {
+                news.classList.remove('show');
+                setTimeout(() => news.style.display = 'none', 0);
+            });
+            showMoreBtn.textContent = 'Show More';
+        } else {
+            extraNews.forEach(news => {
+                news.style.display = 'flex';
+                setTimeout(() => news.classList.add('show'), 0);
+            });
+            showMoreBtn.textContent = 'Show Less';
+        }
+        isExpanded = !isExpanded;
+    });
+</script>

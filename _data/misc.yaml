@@ -1,0 +1,31 @@
+talks:
+  - name: "IMAGINE Seminar: SCAM! Transferring humans between images with Semantic Cross Attention Modulation"
+    date: 2021-10-06
+
+  - name: "GeoVic Seminar: SCAM! Transferring humans between images with Semantic Cross Attention Modulation"
+    date: 2022-02-10
+
+  - name: "IMAGINE Seminar: Tutorial on GANs"
+    date: 2022-01-05
+
+  - name: "IMAGINE Seminar: Presentation of the Perceiver papers"
+    date: 2022-04-20
+
+  - name: "IMAGINE Seminar: Recent advances in diffusion models"
+    date: 2023-04-12
+reviewer:
+  - name: <a href="https://accv2022.org/">ACCV 2022</a>
+    date: 2022-12-04
+
+  - name: <a href="https://iccv2023.thecvf.com//">ICCV 2023</a>
+    date: 2023-10-04
+awards:
+  - name: <a href=https://www.accv2022.org/en/OUTSTANDING-REVIEWERS.html> Outstanding reviewer award </a> at <a href="https://accv2022.org/">(ACCV 2022)</a>
+    date: 2022-12-04
+     
+others:
+  - name: I'm co-organizing the IMAGINE reading group for 2023-2024
+    date: 2023-06-01
+  
+  - name: I have co-organized the first edition of IMAGINE Hackaton. The topic was geolocation
+    date: 2023-07-26

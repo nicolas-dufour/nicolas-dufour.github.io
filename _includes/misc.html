@@ -1,0 +1,63 @@
+<h2>Miscellaneous</h2>
+<div class="talks-section">
+    <h3>Talks</h3>
+    {% assign talks = site.data.misc.talks %}
+    {% if talks %}
+    {% assign talks = talks | sort: 'date' | reversed %}
+    {% assign current_year = '' %}
+    {% for talk in talks %}
+    {% assign talk_year = talk.date | date: '%Y' %}
+    {% if talk_year != current_year %}
+    {% assign current_year = talk_year %}
+    <h4>{{ current_year }}</h4>
+    {% endif %}
+    <ul>
+        <li>{{ talk.name }} ({{ talk.date | date: '%B %d, %Y' }})</li>
+    </ul>
+    {% endfor %}
+    {% else %}
+    <p>No talks found.</p>
+    {% endif %}
+</div>
+<div class="reviewer-section">
+    <h3>Reviewer</h3>
+    {% assign reviewer = site.data.misc.reviewer %}
+    {% if reviewer %}
+    {% assign reviewer = reviewer | sort: 'date' %}
+    <ul>
+        {% for review in reviewer %}
+        <li>{{ review.name }} ({{ review.date | date: '%B, %Y' }})</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No reviews found.</p>
+    {% endif %}
+</div>
+<div class="awards-section">
+    <h3>Awards</h3>
+    {% assign awards = site.data.misc.awards %}
+    {% if awards %}
+    {% assign awards = awards | sort: 'date' %}
+    <ul>
+        {% for award in awards %}
+        <li>{{ award.name }} ({{ award.date | date: '%B %d, %Y' }})</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No awards found.</p>
+    {% endif %}
+</div>
+<div class="others-section">
+    <h3>Others</h3>
+    {% assign others = site.data.misc.others %}
+    {% if others %}
+    {% assign others = others | sort: 'date' %}
+    <ul>
+        {% for other in others %}
+        <li>{{ other.name }} ({{ other.date | date: '%B %d, %Y' }})</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No other items found.</p> {% endif %}
+
+</div>
