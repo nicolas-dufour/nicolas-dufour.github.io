@@ -5,6 +5,7 @@ body {
 
 html {
     scroll-behavior: smooth;
+    margin: 0px;
 }
 
 nav {
@@ -428,7 +429,7 @@ main {
 
 .repo-star {
     margin-right: 0px;
-    width: 150px;
+    height: 30px;
 }
 
 #open-source h3 {
@@ -476,7 +477,7 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 7px;
+    padding: 7px 0px;
 }
 
 footer p {

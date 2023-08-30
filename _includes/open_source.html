@@ -5,9 +5,10 @@
     {% for item in filtered_contributions %}
     <div class="repo-row">
         <div class="repo-title">{{ item.repo_owner }} / {{ item.repo_name }}</div>
-        <iframe
-            src="https://ghbtns.com/github-btn.html?user={{ item.repo_owner }}&repo={{ item.repo_name }}&type=star&count=true&size=large"
-            class="repo-star" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+        <a href="https://github.com/{{ item.repo_owner }}/{{ item.repo_name }}">
+            <img alt="GitHub Repo stars" class="repo-star"
+                src="https://img.shields.io/github/stars/{{ item.repo_owner }}/{{ item.repo_name }}">
+        </a>
     </div>
     {% endfor %}
 </div>
@@ -17,9 +18,10 @@
     {% for item in filtered_projects %}
     <div class="repo-row">
         <div class="repo-title">{{ item.repo_owner }} / {{ item.repo_name }}</div>
-        <iframe
-            src="https://ghbtns.com/github-btn.html?user={{ item.repo_owner }}&repo={{ item.repo_name }}&type=star&count=true&size=large"
-            class="repo-star" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+        <a href="https://github.com/{{ item.repo_owner }}/{{ item.repo_name }}">
+            <img alt="GitHub Repo stars" class="repo-star"
+                src="https://img.shields.io/github/stars/{{ item.repo_owner }}/{{ item.repo_name }}">
+        </a>
     </div>
     {% endfor %}
 </div>
