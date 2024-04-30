@@ -14,6 +14,14 @@ talks:
   - name: "IMAGINE Seminar: Recent advances in diffusion models"
     date: 2023-04-12
 reviewer:
+  - name: <a href="https://cvpr.thecvf.com/Conferences/2023">CVPR 2024</a>
+    date: 2024-12-04
+  - name:  <a href="https://wacv2024.thecvf.com/">WACV 2024</a>
+    date: 2024-01-04
+
+  - name: <a href="https://iccv2023.thecvf.com/">ICCV 2023</a>
+    date: 2023-10-02
+
   - name: <a href="https://accv2022.org/">ACCV 2022</a>
     date: 2022-12-04
 

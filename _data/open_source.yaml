@@ -13,4 +13,8 @@
 - repo_name: SCAM
   repo_owner: nicolas-dufour
   type: own
+
+- repo_name: osv5m
+  repo_owner: gastruc
+  type: own
   

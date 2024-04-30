@@ -1,5 +1,5 @@
 - title: SCAM! Transferring humans between images with Semantic Cross Attention Modulation
-  authors: Nicolas Dufour, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://davidpicard.github.io/">David Picard</a>
+  authors: <u>Nicolas Dufour</u>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://davidpicard.github.io/">David Picard</a>
   date: 2022-10-10
   year: 2022
   journal: ECCV 2022
@@ -17,7 +17,7 @@
    &nbsp;&nbsp; organization={Springer} \n
    }"
 - title: "Machine Learning for Brain Disorders: Transformers and Visual Transformers"
-  authors: <a href="https://robincourant.github.io/info">Robin Courant</a>, Maika Edberg, Nicolas Dufour, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
+  authors: <a href="https://robincourant.github.io/info">Robin Courant</a>, Maika Edberg, <u>Nicolas Dufour</u>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
   date: 2023-03-21
   year: 2023
   journal: Springer, Machine Learning for Brain Disorders
@@ -32,3 +32,46 @@
     &nbsp;&nbsp; year={2012}, \n
     &nbsp;&nbsp; publisher={Springer} \n
   }"
+- title: Analysis of Classifier-Free Guidance Weight Schedulers
+  authors: <a href="https://triocrossing.github.io/">Xi Wang</a>, <u>Nicolas Dufour</u>, <a href="https://nefeliandreou.github.io/">Nefeli Andreou</a>, <a href="https://vabrevaya.github.io/">Victoria Fernandez Abrevaya</a>, <a href="https://www.lix.polytechnique.fr/vista/vista-member/marie-paule_cani/">Marie-Paule Cani</a>, <a href="https://davidpicard.github.io/">David Picard*</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton*</a>
+  date: 2024-04-19
+  year: 2024
+  journal: Arxiv
+  pdf: https://arxiv.org/abs/2404.13040
+  thumbnail: /assets/publications/guidance_schedulers/thumbnail.png
+  abstract: Classifier-Free Guidance (CFG) enhances the quality and condition adherence of text-to-image diffusion models. It operates by combining the conditional and unconditional predictions using a fixed weight. However, recent works vary the weights throughout the diffusion process, reporting superior results but without providing any rationale or analysis. By conducting comprehensive experiments, this paper provides insights into CFG weight schedulers. Our findings suggest that simple, monotonically increasing weight schedulers consistently lead to improved performances, requiring merely a single line of code. In addition, more complex parametrized schedulers can be optimized for further improvement, but do not generalize across different models and tasks.
+  bibtex: "@article{wang2024analysis, \n
+    &nbsp;&nbsp; title={Analysis of Classifier-Free Guidance Weight Schedulers}, \n
+    &nbsp;&nbsp; author={Xi Wang and Nicolas Dufour and Nefeli Andreou and Marie-Paule Cani\n
+    &nbsp;&nbsp; and Victoria Fernandez Abrevaya and David Picard and Vicky Kalogeiton}, \n
+    &nbsp;&nbsp; journal={Arxiv preprint}, \n
+    &nbsp;&nbsp; year={2024} \n
+  }"
+- title: "OpenStreetView-5M: The Many Roads to Global Visual Geolocation"
+  authors: <a href="https://gastruc.github.io/">Guillaume Astruc</a>*, <u>Nicolas Dufour</u>*, <a href="https://imagine.enpc.fr/~siglidii/">Ioannis Siglidis</a>*, Constantin Aronssohn, Nacim Bouia, <a href="https://stephanie-fu.github.io/">Stephanie Fu</a>, <a href="https://romainloiseau.fr/">Romain Loiseau</a>, <a href="https://nv-nguyen.github.io/">Van Nguyen Nguyen</a>, <a href="https://imagine.enpc.fr/~raudec/">Charles Raude</a>, <a href="https://imagine.enpc.fr/~vincente/">Elliot Vincent</a>, Lintao XU, Hongyu Zhou, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
+  date: 2024-06-17
+  year: 2024
+  journal: CVPR 2024
+  pdf: https://arxiv.org/abs/2404.18873
+  github: https://github.com/gastruc/osv5m
+  website: https://imagine.enpc.fr/~ioannis.siglidis/osv5m/
+  thumbnail: /assets/publications/osv5m/thumbnail.png
+  abstract: Determining the location of an image anywhere on Earth is a complex visual task, which makes it particularly relevant for evaluating computer vision algorithms. Yet, the absence of standard, large-scale, open-access datasets with reliably localizable images has limited its potential. To address this issue, we introduce OpenStreetView-5M, a large-scale, open-access dataset comprising over 5.1 million geo-referenced street view images, covering 225 countries and territories. In contrast to existing benchmarks, we enforce a strict train/test separation, allowing us to evaluate the relevance of learned geographical features beyond mere memorization. To demonstrate the utility of our dataset, we conduct an extensive benchmark of various state-of-the-art image encoders, spatial representations, and training strategies. 
+  bibtex: "@article{astruc2024openstreetview5m, \n
+    &nbsp;&nbsp; title={OpenStreetView-5M: The Many Roads to Global Visual Geolocation}, \n
+    &nbsp;&nbsp; author={Guillaume Astruc and Nicolas Dufour and Ioannis Siglidis \n
+    &nbsp;&nbsp; and Constantin Aronssohn and Nacim Bouia and Stephanie Fu and Romain Loiseau \n
+    &nbsp;&nbsp; and Van Nguyen Nguyen and Charles Raude and Elliot Vincent and Lintao XU \n
+    &nbsp;&nbsp; and Hongyu Zhou and Loic Landrieu}, \n
+    &nbsp;&nbsp; journal={CVPR}, \n
+    &nbsp;&nbsp; year={2024} \n
+  }"
+  websites:
+    - href: https://gastruc.github.io/
+    - href: https://imagine.enpc.fr/~siglidii/
+    - href: https://stephanie-fu.github.io/
+    - href: https://romainloiseau.fr/
+    - href: https://nv-nguyen.github.io/
+    - href: https://imagine.enpc.fr/~raudec/
+    - href: https://imagine.enpc.fr/~vincente/
+    - href: https://loiclandrieu.com/
