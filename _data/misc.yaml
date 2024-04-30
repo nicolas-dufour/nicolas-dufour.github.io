@@ -13,6 +13,9 @@ talks:
 
   - name: "IMAGINE Seminar: Recent advances in diffusion models"
     date: 2023-04-12
+
+  - name: "IMAGINE Seminar: LLM advances in 2023"
+    date: 2023-04-12
 reviewer:
   - name: <a href="https://cvpr.thecvf.com/Conferences/2023">CVPR 2024</a>
     date: 2024-12-04

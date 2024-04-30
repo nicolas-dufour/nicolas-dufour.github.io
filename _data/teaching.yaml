@@ -15,4 +15,13 @@
    - "Built a new practical session on Transformers."
    - "Created a Kaggle competition for the students end of the course project. The goal was to classify synthetic images in a weakly supervised setting."
   school: Ecole Polytechnique
+
+- course_name: INF473V - Modal d'informatique - Deep Learning in Computer Vision 
+  start-date: 2024-04-15
+  end-date: 2024-06-01
+  position: Teaching Assistant
+  key-contributions: 
+   - "Helped supervise the practical sessions of the course."
+   - "Created a Kaggle competition for the students end of the course project. The goal was to create a classifier but we only provided them with the val and test data. They needed to create their own training data with pretrained diffusion models. The goal was to classify among 37 different cheeses."
+  school: Ecole Polytechnique
   

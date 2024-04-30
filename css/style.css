@@ -171,6 +171,8 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: 45px;
+    /* Adjust the height value as desired */
 }
 
 .news-content {
@@ -248,7 +250,7 @@ main {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    width: 70%;
+    width: 90%;
 }
 
 .publication-thumbnail {
@@ -298,12 +300,14 @@ main {
 
 .publication-buttons {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .publication-buttons a {
     display: inline-block;
     padding: 5px 10px;
     margin-right: 10px;
+    margin-bottom: 10px;
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
