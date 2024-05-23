@@ -120,9 +120,16 @@ nav a:hover {
 /* Adjustments for screens smaller than 768px */
 @media (max-width: 767px) {
     .paper_buttons {
-        flex-direction: column;
-        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
+
+    .paper_button {
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+    }
+
 }
 
 .paper_button {
@@ -159,6 +166,18 @@ nav a:hover {
     color: #3596fe;
     font-size: 2em;
     margin: 0.67em 0;
+
+}
+
+@media (max-width: 767px) {
+    .section h2 {
+        font-size: 1.8em;
+    }
+
+    #main {
+        padding: 0.8rem 0.8rem;
+        font-size: 0.9rem;
+    }
 
 }
 
