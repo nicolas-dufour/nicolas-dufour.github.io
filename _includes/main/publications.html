@@ -1,5 +1,5 @@
 <h2>Publications</h2>
-{% assign sorted_publications = site.data.publications | sort: 'date' | reverse %}
+{% assign sorted_publications = site.data.main.publications | sort: 'date' | reverse %}
 {% assign prev_year = '' %}
 {% for publication in sorted_publications %}
 {% if publication.year != prev_year %}
@@ -17,14 +17,19 @@
         <div class="publication-content">
             <div class="publication-title">{{ publication.title }}</div>
             <div class="publication-authors">{{ publication.authors }}</div>
-            <div class="publication-journal">{{ publication.journal }}</div>
+            <div class="publication-journal">
+                {{ publication.journal }}
+                {% if publication.award %}
+                <span class="publication-award">{{ publication.award }}</span>
+                {% endif %}
+            </div>
             <div class="publication-buttons">
+                {% if publication.website %}
+                <a href="{{ publication.website }}">Website</a>
+                {% endif %}
                 <a href="{{ publication.pdf }}">Paper</a>
                 {% if publication.github %}
                 <a href="{{ publication.github }}">Code</a>
-                {% endif %}
-                {% if publication.website %}
-                <a href="{{ publication.website }}">Website</a>
                 {% endif %}
                 {% if publication.abstract %}
                 <a class="publication-abstract-toggle" id="abstract-toggle-{{ forloop.index }}">Abstract</a>

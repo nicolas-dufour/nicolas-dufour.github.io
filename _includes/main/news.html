@@ -1,6 +1,6 @@
 <h2>News</h2>
 <div class="news-wrapper">
-    {% assign sorted_news = site.data.news | sort: 'date' | reverse %}
+    {% assign sorted_news = site.data.main.news | sort: 'date' | reverse %}
     {% for item in sorted_news limit:4 %}
     <div class="news-row">
         <div class="date-pill">{{ item.date | date: "%b, %Y" }}</div>

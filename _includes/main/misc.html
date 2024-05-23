@@ -1,7 +1,7 @@
 <h2>Miscellaneous</h2>
 <div class="talks-section">
     <h3>Talks</h3>
-    {% assign talks = site.data.misc.talks %}
+    {% assign talks = site.data.main.misc.talks %}
     {% if talks %}
     {% assign talks = talks | sort: 'date' | reverse %}
     {% assign current_year = '' %}
@@ -21,7 +21,7 @@
 </div>
 <div class="reviewer-section">
     <h3>Reviewer</h3>
-    {% assign reviewer = site.data.misc.reviewer %}
+    {% assign reviewer = site.data.main.misc.reviewer %}
     {% if reviewer %}
     {% assign reviewer = reviewer | sort: 'date' | reverse %}
     <ul>
@@ -35,7 +35,7 @@
 </div>
 <div class="awards-section">
     <h3>Awards</h3>
-    {% assign awards = site.data.misc.awards %}
+    {% assign awards = site.data.main.misc.awards %}
     {% if awards %}
     {% assign awards = awards | sort: 'date' | reverse%}
     <ul>
@@ -49,7 +49,7 @@
 </div>
 <div class="others-section">
     <h3>Others</h3>
-    {% assign others = site.data.misc.others %}
+    {% assign others = site.data.main.misc.others %}
     {% if others %}
     {% assign others = others | sort: 'date'| reverse%}
     <ul>

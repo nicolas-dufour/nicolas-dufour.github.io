@@ -1,0 +1,27 @@
+.project-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)),
+        url("/assets/publications/cad_cvpr/background_banner.jpg") repeat-x;
+    background-size: cover;
+    margin-top: 50px;
+    background-position: -100px 0px;
+    animation: slide 60s linear infinite;
+
+}
+
+@keyframes slide {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: -100% 0px;
+        /* The image width */
+    }
+}
+
+@media (max-width: 767px) {
+    .project-header {
+        width: 100%;
+    }
+}

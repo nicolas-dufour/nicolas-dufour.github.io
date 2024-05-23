@@ -1,0 +1,13 @@
+<img class="pp" src="{{ site.data.main.about_me.pp_path }}"
+    alt="{{site.data.main.about_me.name}} {{site.data.main.about_me.surname}} profile picture">
+<h1>{{ site.data.main.about_me.name }} {{ site.data.main.about_me.surname }}</h1>
+<h3>{{ site.data.main.about_me.short_description }}</h3>
+<div class="contact_wrapper">
+    {% for contact in site.data.main.contact %}
+    <a href="{{ contact.url }}" target="_blank">
+        <button>
+            <img src="{{ contact.icon }}" alt="{{ contact.name }} icon" zz>
+        </button>
+    </a>
+    {% endfor %}
+</div>

@@ -1,6 +1,6 @@
 <h2>Teaching</h2>
 <div class="teaching-wrapper">
-    {% assign sorted_teaching = site.data.teaching | sort: 'start-date' | reverse %}
+    {% assign sorted_teaching = site.data.main.teaching | sort: 'start-date' | reverse %}
     {% for item in sorted_teaching %}
     <div class="teaching-row">
         {% assign start_date = item.start-date | date: "%b %Y" %}

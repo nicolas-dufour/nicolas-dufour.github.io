@@ -298,6 +298,11 @@ main {
     margin-bottom: 10px;
 }
 
+.publication-award {
+    font-weight: bold;
+    color: #f27933;
+}
+
 .publication-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -503,8 +508,28 @@ footer a {
         margin-bottom: 10px;
     }
 
-    #news table td {
-        padding-right: 10px;
+    .news-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        width: 100%;
+    }
+
+    .news-row {
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+        /* Adjust the height value as desired */
+    }
+
+    .news-content {
+        font-size: 18px;
+        margin-left: 20px;
+        text-align: center;
+        word-wrap: break-word;
     }
 
     #news p {

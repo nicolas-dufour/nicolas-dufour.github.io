@@ -1,0 +1,131 @@
+<!-- FILEPATH: /Users/nicolasdufour/Documents/nicolas-dufour-personal-website/_layouts/home.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ page.title }}</title>
+        <link rel="stylesheet" href="/css/style_projects.css">
+        {% if page.css %}
+        <link rel="stylesheet" href="{{ page.css }}">
+        {% endif %}
+        <!-- <link rel="icon" type="image/png" href="/images/favicon.png"> -->
+        <meta name="description" content="{{ page.description }}">
+        <meta name="keywords" content="{{ page.keywords | join: ', ' }}">
+        <script async="" src="{{ page.analytics}}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-V8HK2ZSXGW');
+        </script>
+        <script src="/scripts/projects.js"></script>
+    </head>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Nicolas Dufour</a></li>
+                <li><a href="#">{{page.short_name}}</a></li>
+                {% if page.abstract %}
+                <li><a href="#abstract">Abstract</a></li>
+                {% endif %}
+                {% if page.demo %}
+                <li><a href="#demo">Demo</a></li>
+                {% endif %}
+                <li><a href="#approach">Approach</a></li>
+                {% if page.poster %}
+                <li><a href="#poster">Poster</a></li>
+                {% endif %}
+                {% if page.video %}
+                <li><a href="#video">Video</a></li>
+                {% endif %}
+                {% if page.bibtex %}
+                <li><a href="#bibtex">Bibtex</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="project-header">
+            <h1 class="paper_title">{{ page.title }}</h1>
+            <p class="authors">{{ page.paper_authors }}</p>
+            <p class="journal">{{ page.journal }}
+                {% if page.award %}
+                <span class="award">
+                    ({{ page.award }})
+                </span>
+                {% endif %}
+            </p>
+            {% if page.buttons %}
+            <div class="paper_buttons">
+                {% for button in page.buttons %}
+                <a href="{{ button.url }}" class="paper_button">
+                    <img height="50" src="/assets/icons/{{ button.type }}.png" alt="{{ button.text }}">
+                    <span>{{ button.text }}</span>
+                </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div id="main">
+            {% if page.abstract %}
+            <div class="section" id="abstract">
+                <h2>Abstract</h2>
+                <p>{{ page.abstract }}</p>
+            </div>
+            {% endif %}
+            <div id="approach">
+                {{ page.content }}
+            </div>
+            {% if page.poster %}
+            <div class="section" id="poster">
+                <h2>Poster</h2>
+                <figure style="width:100%; margin:auto; display: block;">
+                    <embed src="{{ page.poster.url }}" width="100%" height="890" type="application/pdf">
+                </figure>
+            </div>
+            {% endif %}
+            {% if page.video %}
+            <div class="section" id="video">
+                <h2>Video</h2>
+                <figure style="width:80%; margin:auto; display: block;">
+                    <iframe width="100%" height="500" src="{{ page.video.url }}" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </figure>
+            </div>
+            {% endif %}
+            {% if page.bibtex %}
+            <div class="section" id="bibtex">
+                <h2>Bibtex</h2>
+                <pre style="width:80%; margin:auto; display: block;"><code>{{ page.bibtex }}</code></pre>
+            </div>
+            {% endif %}
+            {% if page.acknowledgements %}
+            <div class="section" id="acknowledgements">
+                <h2>Acknowledgements</h2>
+                <figure style="width:80%; margin:auto; display: block;">
+                    <p>{{ page.acknowledgements }}</p>
+                </figure>
+                {% endif %}
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <p>&copy; {{ page.author }} <span id="currentYear"></span>. Website template made by <a
+                href="https://nicolas-dufour.github.io/">Nicolas Dufour</a>.</p>
+    </footer>
+    <script>
+        document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+    </script>
+</body>

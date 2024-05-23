@@ -11,7 +11,7 @@
         <title>{{ page.title }}</title>
         <link rel="stylesheet" href="/css/style.css">
         <!-- <link rel="icon" type="image/png" href="/images/favicon.png"> -->
-        <meta name="description" content={{ page.description }}>
+        <meta name="description" content="{{ page.description }}">
         <meta name="keywords" content="{{ page.keywords | join: ', ' }}">
         <script async="" src="{{ page.analytics}}"></script>
         <script>
@@ -40,25 +40,25 @@
     </header>
     <main>
         <div id="intro">
-            {% include intro.html %}
+            {% include main/intro.html %}
         </div>
         <div id="about-me" class="section">
-            {% include about_me.html %}
+            {% include main/about_me.html %}
         </div>
         <div id="news" class="section">
-            {% include news.html %}
+            {% include main/news.html %}
         </div>
         <div id="publications" class="section">
-            {% include publications.html %}
+            {% include main/publications.html %}
         </div>
         <div id="teaching" class="section">
-            {% include teaching.html %}
+            {% include main/teaching.html %}
         </div>
         <div id="open-source" class="section">
-            {% include open_source.html %}
+            {% include main/open_source.html %}
         </div>
         <div id="misc" class="section">
-            {% include misc.html %}
+            {% include main/misc.html %}
         </div>
     </main>
     <footer>
