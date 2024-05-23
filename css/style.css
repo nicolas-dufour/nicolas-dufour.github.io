@@ -60,6 +60,47 @@ nav a:hover {
     /* Changed hover text color to light gray */
 }
 
+.dropdown-btn {
+    display: none;
+    background-color: #007bff;
+    /* padding: 10px 20px; */
+    /* margin: 10px 0; */
+    border: none;
+    position: relative;
+    left: -40%;
+}
+
+.dropdown-btn img {
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        width: 100vw;
+        padding: auto;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .dropdown-btn {
+        display: block;
+    }
+}
+
 main {
     margin-top: 10px;
 }
