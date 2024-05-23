@@ -50,7 +50,7 @@ bibtex: "@article{dufour2024cad, \n
 acknowledgements: This work was supported by ANR project TOSAI ANR-20-IADJ-0009, and was granted access to the HPC resources of IDRIS under the allocation 2023-AD011014246 made by GENCI. We would like to thank Vincent Lepetit, Romain Loiseau, Robin Courant, Mathis Petrovich, Teodor Poncu and the anonymous reviewers for their insightful comments and suggestion.
 ---
 
-<div class="section" style="width:80%; margin:auto; padding-top:50px">
+<div class="section" style="width:min(512px, 80vw); margin:auto; padding-top:50px">
     <div class="slideshow-container">
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
@@ -115,9 +115,12 @@ acknowledgements: This work was supported by ANR project TOSAI ANR-20-IADJ-0009,
         <span class="dot" onclick="currentSlide(8)"></span>
         <span class="dot" onclick="currentSlide(9)"></span>
     </div>
+    <div style="padding-top:30px">
+    Samples from our 150M parameters TextRIN at resolution 512 leveraging Coherence-Aware Diffusion training.
+    </div>
 </div>
 <script>
-    let slideIndex = 1;
+    let slideIndex = 3;
     showSlides(slideIndex);
     // Next/previous controls
     function plusSlides(n) {
