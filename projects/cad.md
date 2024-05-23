@@ -150,7 +150,7 @@ acknowledgements: This work was supported by ANR project TOSAI ANR-20-IADJ-0009,
 <div class="section">
     <h2>Varying the coherence</h2>
     <div style="width:80%; margin:auto">
-        <img src="/assets/publications/cad_cvpr/varying_coherence.png">
+        <img src="/assets/publications/cad_cvpr/varying_coherence.png", style="width:100%; margin:auto">
         <p> Examples of images generated with the input coherence score between the prompt and the target image. The score varies from 0 (no coherence) to 1 (maximum coherence). Higher coherence scores tend to generate images that adhere more effectively to the prompt. <br>
         Top prompt: “a raccoon wearing an astronaut suit. The racoon is looking out of the window at a starry night; unreal engine, detailed, digital painting,cinematic,character design by pixar and hayao miyazaki unreal 5, daz, hyperrealistic, octane render”. <br>
         Bottom prompt: “An armchair in the shape of an avocado”.
@@ -161,7 +161,7 @@ acknowledgements: This work was supported by ANR project TOSAI ANR-20-IADJ-0009,
 <div class="section">
     <h2>Convergence towards the unconditional distribution</h2>
     <div style="width:80%; margin:auto">
-        <div style="display: flex; justify-content: space-around; flex-direction: row;">
+        <div style="display: flex; justify-content: space-around; flex-direction: row; width:100%; margin:auto">
         <img src="/assets/publications/cad_cvpr/tsne_mixer.png", style="width:45%; margin:auto">
         <img src="/assets/publications/cad_cvpr/confidence_images.png", style="width:45%; margin:auto">
         </div>
