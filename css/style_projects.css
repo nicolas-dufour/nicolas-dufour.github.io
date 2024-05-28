@@ -72,7 +72,7 @@ nav a:hover {
 
 .project-header {
     background: linear-gradient(to bottom, #1e3c72, #307afa);
-    padding: 20px;
+    padding: 3% 20%;
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
@@ -154,7 +154,7 @@ nav a:hover {
 }
 
 #main {
-    padding: 2rem 2rem;
+    padding: 2rem 10rem;
     margin: 0 auto;
     font-size: 1rem;
     margin-bottom: 5rem;
