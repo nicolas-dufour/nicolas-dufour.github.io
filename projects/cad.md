@@ -20,7 +20,7 @@ buttons:
     url: https://github.com/nicolas-dufour/CAD
   - type: arxiv
     text: Paper
-    url: placeholder.html
+    url: https://arxiv.org/abs/2405.20324
   - type: gradio
     text: "Demo <br> (soon)"
     url: "#"
