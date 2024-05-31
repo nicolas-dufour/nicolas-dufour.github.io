@@ -77,7 +77,7 @@
   github: https://github.com/nicolas-dufour/CAD
   website: cad.html
   abstract: Conditional diffusion models are powerful generative models that can leverage various types of conditional information, such as class labels, segmentation masks, or text captions. However, in many real-world scenarios, conditional information may be noisy or unreliable due to human annotation errors or weak alignment. In this paper, we propose the Coherence-Aware Diffusion (CAD), a novel method that integrates coherence in conditional information into diffusion models, allowing them to learn from noisy annotations without discarding data. We assume that each data point has an associated coherence score that reflects the quality of the conditional information. We then condition the diffusion model on both the conditional information and the coherence score. In this way, the model learns to ignore or discount the conditioning when the coherence is low. We show that CAD is theoretically sound and empirically effective on various conditional generation tasks. Moreover, we show that leveraging coherence generates realistic and diverse samples that respect conditional information better than models trained on cleaned datasets where samples with low coherence have been discarded.
-  bibtex: "@article{dufour2024cad, \n
+  bibtex: "@article{dufour2024dont, \n
    &nbsp;&nbsp; title={Don’t drop your samples! Coherence-aware training benefits Conditional diffusion}, \n
    &nbsp;&nbsp; author={Dufour, Nicolas and Besnier, Victor and Kalogeiton, Vicky and Picard, David}, \n
    &nbsp;&nbsp; booktitle={CVPR}, \n

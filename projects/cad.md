@@ -39,7 +39,7 @@ abstract:  Conditional diffusion models are powerful generative models that can 
 #     url: /assets/publications/scam/poster.pdf
 # video: 
 #     url: https://www.youtube.com/embed/YzROtpjuSaQ
-bibtex: "@article{dufour2024cad, \n
+bibtex: "@article{dufour2024dont, \n
    &nbsp;&nbsp; title={Don’t drop your samples! Coherence-aware training \n
    &nbsp;&nbsp; benefits Conditional diffusion}, \n
    &nbsp;&nbsp; author={Dufour, Nicolas and Besnier, Victor and Kalogeiton, Vicky and \n
