@@ -27,18 +27,18 @@ buttons:
   - type: hugging_face
     text: "Models <br> (soon)"
     url: "#"
-#   - type: pdf
-#     text: Poster
-#     url: /assets/publications/scam/poster.pdf
-#   - type: video
-#     text: Video
-#     url: https://www.youtube.com/watch?v=YzROtpjuSaQ
+  - type: pdf
+    text: Poster
+    url: /assets/publications/cad_cvpr/poster.pdf
+  - type: video
+    text: Video
+    url: https://youtu.be/4Tu-x2-Zcxs?si=17Ho_9xjTlFqy7pm
 
 abstract:  Conditional diffusion models are powerful generative models that can leverage various types of conditional information, such as class labels, segmentation masks, or text captions. However, in many real-world scenarios, conditional information may be noisy or unreliable due to human annotation errors or weak alignment. In this paper, we propose the Coherence-Aware Diffusion (CAD), a novel method that integrates coherence in conditional information into diffusion models, allowing them to learn from noisy annotations without discarding data. We assume that each data point has an associated coherence score that reflects the quality of the conditional information. We then condition the diffusion model on both the conditional information and the coherence score. In this way, the model learns to ignore or discount the conditioning when the coherence is low. We show that CAD is theoretically sound and empirically effective on various conditional generation tasks. Moreover, we show that leveraging coherence generates realistic and diverse samples that respect conditional information better than models trained on cleaned datasets where samples with low coherence have been discarded.
-# poster: 
-#     url: /assets/publications/scam/poster.pdf
-# video: 
-#     url: https://www.youtube.com/embed/YzROtpjuSaQ
+poster: 
+    url: /assets/publications/cad_cvpr/poster.pdf
+video: 
+    url: https://www.youtube.com/embed/4Tu-x2-Zcxs?si=17Ho_9xjTlFqy7pm
 bibtex: "@article{dufour2024dont, \n
    &nbsp;&nbsp; title={Don’t drop your samples! Coherence-aware training \n
    &nbsp;&nbsp; benefits Conditional diffusion}, \n
