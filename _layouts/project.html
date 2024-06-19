@@ -85,6 +85,15 @@
             <div id="approach">
                 {{ page.content }}
             </div>
+            {% if page.demo %}
+            <div class="section" id="demo">
+                <h2>Demo</h2>
+                <iframe src="{{ page.demo.url }}" title="Demo" frameborder="0"
+                    style="height: 2000px;width:100%;border:none;overflow:hidden;"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            {% endif %}
             {% if page.poster %}
             <div class="section" id="poster">
                 <h2>Poster</h2>
