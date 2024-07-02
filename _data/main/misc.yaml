@@ -17,8 +17,10 @@ talks:
   - name: "IMAGINE Seminar: LLM advances in 2023"
     date: 2023-04-12
 reviewer:
-  - name: <a href="https://cvpr.thecvf.com/Conferences/2023">CVPR 2024</a>
-    date: 2024-12-04
+  - name: <a href="https://eccv.ecva.net/">ECCV 2024</a>
+    date: 2024-10-04
+  - name: <a href="https://cvpr.thecvf.com/Conferences/2024">CVPR 2024</a>
+    date: 2024-06-15
   - name:  <a href="https://wacv2024.thecvf.com/">WACV 2024</a>
     date: 2024-01-04
 

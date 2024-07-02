@@ -83,3 +83,19 @@
    &nbsp;&nbsp; booktitle={CVPR}, \n
    &nbsp;&nbsp; year={2024}, \n
    }"
+- title: "E.T. the Exceptional Trajectories: Text-to-Camera-Trajectory Generation with Character Awareness."
+  authors: <a href="https://robincourant.github.io/info">Robin Courant</a>, <u>Nicolas Dufour</u>, <a href="https://triocrossing.github.io/">Xi Wang</a>,  <a href="https://people.irisa.fr/Marc.Christie/">Marc Christie</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
+  date: 2024-07-01
+  year: 2024
+  journal: ECCV 2024
+  thumbnail: /assets/publications/et/thumbnail.png
+  pdf:  https://arxiv.org/abs/2407.01516
+  github: https://github.com/robincourant/DIRECTOR
+  website: https://www.lix.polytechnique.fr/vista/projects/2024_et_courant/
+  abstract: Stories and emotions in movies emerge through the effect of well-thought-out directing decisions, in particular camera placement and movement over time. Crafting compelling camera motion trajectories remains a complex iterative process, even for skilful artists. To tackle this, in this paper, we propose a dataset called the Exceptional Trajectories (E.T.) with camera trajectories along with character information and textual captions encompassing description of both camera and character. To our knowledge, this is the first dataset of its kind. To show the potentialities of the E.T. dataset, we propose a diffusion-based approach, named DIRECTOR, which generates complex camera trajectories from textual captions that describe the relation and synchronisation between the camera and characters. Finally, to ensure a robust and accurate evaluation, we train CLaTr on the E.T. dataset, a language-trajectory feature representation used for metric calculation. Our work represents a significant advancement in democratizing the art of cinematography for common users.
+  bibtex: "@article{courant2024et,\n
+      &nbsp;&nbsp; author    = {Robin Courant and Nicolas Dufour and Xi Wang and Marc Christie and Vicky Kalogeiton},\n
+      &nbsp;&nbsp; title     = {E.T. the Exceptional Trajectories: Text-to-camera-trajectory generation with character awareness},\n
+      &nbsp;&nbsp; journal   = {arXiv},\n
+      &nbsp;&nbsp; year      = {2024},\n
+    }"

@@ -17,4 +17,11 @@
 - repo_name: osv5m
   repo_owner: gastruc
   type: own
-  
+
+- repo_name: cad
+  repo_owner: nicolas-dufour
+  type: own
+
+- repo_name: DIRECTOR
+  repo_owner: robincourant
+  type: own
