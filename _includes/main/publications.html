@@ -12,7 +12,19 @@
     {% endif %}
     <div class="publication">
         {% if publication.thumbnail %}
+        {% if publication.website %}
+        <a href="{{ publication.website }}" class="publication-thumbnail-link">
+            <img class="publication-thumbnail" src="{{ publication.thumbnail }}"
+                alt="{{ publication.title }} thumbnail">
+        </a>
+        {% elsif publication.pdf %}
+        <a href="{{ publication.pdf }}" class="publication-thumbnail-link">
+            <img class="publication-thumbnail" src="{{ publication.thumbnail }}"
+                alt="{{ publication.title }} thumbnail">
+        </a>
+        {% else %}
         <img class="publication-thumbnail" src="{{ publication.thumbnail }}" alt="{{ publication.title }} thumbnail">
+        {% endif %}
         {% endif %}
         <div class="publication-content">
             <div class="publication-title">{{ publication.title }}</div>

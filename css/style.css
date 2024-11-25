@@ -1371,3 +1371,38 @@ footer a:hover {
     background-color: #63b3ed;
     /* Lighter blue for dark theme */
 }
+
+.publication-thumbnail-link {
+    display: block;
+    width: 200px;
+    min-width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    align-self: center;
+    position: sticky;
+    top: 15px;
+}
+
+.publication-thumbnail-link:hover {
+    transform: scale(1.15);
+}
+
+.publication-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Update mobile styles */
+@media (max-width: 768px) {
+    .publication-thumbnail-link {
+        position: static;
+        width: 100%;
+        height: auto;
+        min-width: unset;
+        aspect-ratio: 1;
+    }
+}
