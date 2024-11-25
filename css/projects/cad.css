@@ -1,19 +1,47 @@
 .project-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.6),
-            rgba(0, 0, 0, 0.6)),
+    background: linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
         url("/assets/publications/cad_cvpr/background_banner.jpg") repeat-x;
     background-size: cover;
     margin-top: 50px;
     animation: slide 8000s linear infinite;
     position: relative;
+    padding: 5% 20%;
 }
 
-.dark-theme .project-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)),
-        url("/assets/publications/cad_cvpr/background_banner.jpg") repeat-x;
-    background-size: cover;
-    animation: slide 8000s linear infinite;
+.section {
+    margin: 60px auto;
+    max-width: 1000px;
+    padding: 30px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(53, 150, 254, 0.1);
+}
+
+.section img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.section img:hover {
+    transform: scale(1.02);
+}
+
+.section p {
+    margin-top: 20px;
+    line-height: 1.7;
+    color: #666;
+}
+
+.dark-theme .section {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(53, 150, 254, 0.2);
+}
+
+.dark-theme .section p {
+    color: #999;
 }
 
 @keyframes slide {
@@ -26,8 +54,137 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .project-header {
+        padding: 5% 10%;
+    }
+
+    .section {
+        margin: 30px 0;
+        padding: 15px;
+    }
+}
+
+.varying-coherence-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin: 20px auto;
+    max-width: 1400px;
+}
+
+.varying-coherence-main {
+    flex: 0 0 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.varying-coherence-legend {
+    margin: 0;
+    line-height: 1.7;
+    color: #666;
+}
+
+.prompts-container {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.prompt-box {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.prompt-box h4 {
+    margin: 0 0 8px 0;
+    color: #3596fe;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.prompt-box p {
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #555;
+}
+
+.dark-theme .varying-coherence-legend {
+    color: #999;
+}
+
+.dark-theme .prompt-box {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .prompt-box p {
+    color: #bbb;
+}
+
+@media (max-width: 1024px) {
+    .varying-coherence-container {
+        flex-direction: column;
+    }
+
+    .varying-coherence-main,
+    .prompts-container {
+        flex: none;
         width: 100%;
+    }
+}
+
+.abstract-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.abstract-content {
+    flex: 0 0 35%;
+    min-width: 300px;
+}
+
+.samples-content {
+    flex: 0 0 60%;
+    min-width: 300px;
+    max-width: none;
+}
+
+@media (max-width: 1024px) {
+    .abstract-container {
+        flex-direction: column;
+    }
+
+    .abstract-content,
+    .samples-content {
+        flex: none;
+        width: 100%;
+    }
+
+    .samples-content {
+        order: 2;
+    }
+
+    .abstract-content {
+        order: 1;
     }
 }

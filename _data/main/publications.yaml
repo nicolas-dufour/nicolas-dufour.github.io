@@ -36,7 +36,7 @@
   authors: <a href="https://triocrossing.github.io/">Xi Wang</a>, <u>Nicolas Dufour</u>, <a href="https://nefeliandreou.github.io/">Nefeli Andreou</a>, <a href="https://vabrevaya.github.io/">Victoria Fernandez Abrevaya</a>, <a href="https://www.lix.polytechnique.fr/vista/vista-member/marie-paule_cani/">Marie-Paule Cani</a>, <a href="https://davidpicard.github.io/">David Picard*</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton*</a>
   date: 2024-04-19
   year: 2024
-  journal: Arxiv preprint
+  journal: TMLR
   pdf: https://arxiv.org/abs/2404.13040
   thumbnail: /assets/publications/guidance_schedulers/thumbnail.png
   abstract: Classifier-Free Guidance (CFG) enhances the quality and condition adherence of text-to-image diffusion models. It operates by combining the conditional and unconditional predictions using a fixed weight. However, recent works vary the weights throughout the diffusion process, reporting superior results but without providing any rationale or analysis. By conducting comprehensive experiments, this paper provides insights into CFG weight schedulers. Our findings suggest that simple, monotonically increasing weight schedulers consistently lead to improved performances, requiring merely a single line of code. In addition, more complex parametrized schedulers can be optimized for further improvement, but do not generalize across different models and tasks.
@@ -44,7 +44,7 @@
     &nbsp;&nbsp; title={Analysis of Classifier-Free Guidance Weight Schedulers}, \n
     &nbsp;&nbsp; author={Xi Wang and Nicolas Dufour and Nefeli Andreou and Marie-Paule Cani\n
     &nbsp;&nbsp; and Victoria Fernandez Abrevaya and David Picard and Vicky Kalogeiton}, \n
-    &nbsp;&nbsp; journal={Arxiv preprint}, \n
+    &nbsp;&nbsp; journal={TMLR}, \n
     &nbsp;&nbsp; year={2024} \n
   }"
 - title: "OpenStreetView-5M: The Many Roads to Global Visual Geolocation"

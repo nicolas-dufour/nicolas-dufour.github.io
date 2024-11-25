@@ -102,9 +102,18 @@
         </div>
         <div id="main">
             {% if page.abstract %}
-            <div class="section" id="abstract">
-                <h2>Abstract</h2>
-                <p>{{ page.abstract }}</p>
+            <div class="section abstract-section" id="abstract">
+                <div class="abstract-container">
+                    <div class="abstract-content">
+                        <h2>Abstract</h2>
+                        <p>{{ page.abstract }}</p>
+                    </div>
+                    {% if page.has_samples %}
+                    <div class="samples-content">
+                        {{ page.samples_section }}
+                    </div>
+                    {% endif %}
+                </div>
             </div>
             {% endif %}
             <div id="approach">
@@ -141,7 +150,17 @@
             {% if page.bibtex %}
             <div class="section" id="bibtex">
                 <h2>Bibtex</h2>
-                <pre style="width:80%; margin:auto; display: block;"><code>{{ page.bibtex }}</code></pre>
+                <div class="publication-bibtex-container">
+                    <pre class="publication-bibtex"><code>{{ page.bibtex }}</code>
+                        <button class="bibtex-copy-btn" onclick="copyBibtex(this)" aria-label="Copy bibtex">
+                            <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span>Copy</span>
+                        </button>
+                    </pre>
+                </div>
             </div>
             {% endif %}
             {% if page.acknowledgements %}
@@ -222,5 +241,21 @@
             setTheme(newTheme);
             localStorage.setItem('theme', newTheme);
         });
+    </script>
+    <script>
+        function copyBibtex(button) {
+            const bibtexText = button.parentElement.querySelector('code').innerText;
+            navigator.clipboard.writeText(bibtexText).then(() => {
+                const span = button.querySelector('span');
+                const originalText = span.textContent;
+                button.classList.add('copied');
+                span.textContent = 'Copied!';
+
+                setTimeout(() => {
+                    button.classList.remove('copied');
+                    span.textContent = originalText;
+                }, 2000);
+            });
+        }
     </script>
 </body>

@@ -50,9 +50,9 @@ bibtex: "@article{dufour2024dont, \n
 acknowledgements: This work was supported by ANR project TOSAI ANR-20-IADJ-0009, and was granted access to the HPC resources of IDRIS under the allocation 2023-AD011014246 made by GENCI. We would like to thank Vincent Lepetit, Romain Loiseau, Robin Courant, Mathis Petrovich, Teodor Poncu and the anonymous reviewers for their insightful comments and suggestion.
 demo:
     url: https://2f3b5fd3a588d0dd11.gradio.live/
----
-
-<div class="section" style="width:min(512px, 80vw); margin:auto; padding-top:50px">
+has_samples: true
+samples_section: >
+    <h2 style="text-align:center; margin-bottom:30px;">Generated Samples</h2>
     <div class="slideshow-container">
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
@@ -117,10 +117,10 @@ demo:
         <span class="dot" onclick="currentSlide(8)"></span>
         <span class="dot" onclick="currentSlide(9)"></span>
     </div>
-    <div style="padding-top:30px">
-    Samples from our 150M parameters TextRIN at resolution 512 leveraging Coherence-Aware Diffusion training.
+    <div style="padding-top:30px; text-align:center; font-style:italic;">
+        Samples from our 150M parameters TextRIN at resolution 512 leveraging Coherence-Aware Diffusion training.
     </div>
-</div>
+---
 <script>
     let slideIndex = 3;
     showSlides(slideIndex);
@@ -150,13 +150,24 @@ demo:
 </script>
 
 <div class="section">
-    <h2>Varying the coherence</h2>
-    <div style="width:80%; margin:auto">
-        <img src="/assets/publications/cad_cvpr/varying_coherence.png", style="width:100%; margin:auto">
-        <p> Examples of images generated with the input coherence score between the prompt and the target image. The score varies from 0 (no coherence) to 1 (maximum coherence). Higher coherence scores tend to generate images that adhere more effectively to the prompt. <br>
-        Top prompt: “a raccoon wearing an astronaut suit. The racoon is looking out of the window at a starry night; unreal engine, detailed, digital painting,cinematic,character design by pixar and hayao miyazaki unreal 5, daz, hyperrealistic, octane render”. <br>
-        Bottom prompt: “An armchair in the shape of an avocado”.
-        </p>
+    <h2>Varying the Coherence</h2>
+    <div class="varying-coherence-container">
+        <div class="varying-coherence-main">
+            <div class="image-container">
+                <img src="/assets/publications/cad_cvpr/varying_coherence.png">
+            </div>
+            <p class="varying-coherence-legend">Examples of images generated with the input coherence score between the prompt and the target image. The score varies from 0 (no coherence) to 1 (maximum coherence). Higher coherence scores tend to generate images that adhere more effectively to the prompt.</p>
+        </div>
+        <div class="prompts-container">
+            <div class="prompt-box">
+                <h4>Top prompt:</h4>
+                <p>"a raccoon wearing an astronaut suit. The racoon is looking out of the window at a starry night; unreal engine, detailed, digital painting, cinematic, character design by pixar and hayao miyazaki unreal 5, daz, hyperrealistic, octane render"</p>
+            </div>
+            <div class="prompt-box">
+                <h4>Bottom prompt:</h4>
+                <p>"An armchair in the shape of an avocado"</p>
+            </div>
+        </div>
     </div>
 </div>
 
