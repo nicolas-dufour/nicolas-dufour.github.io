@@ -13,14 +13,16 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #007bff;
-    /* Changed background color to blue */
-    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9999;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 10px 25px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 nav ul {
@@ -33,7 +35,7 @@ nav ul {
 }
 
 nav li {
-    margin-left: 20px;
+    margin-left: 15px;
     float: left;
 }
 
@@ -48,23 +50,32 @@ nav li:last-child {
 
 nav a {
     text-decoration: none;
-    color: #fff;
-    /* Changed text color to white */
-    font-weight: bold;
+    color: #2d3748;
+    font-weight: 500;
     font-size: 16px;
     transition: all 0.2s ease-in-out;
+    position: relative;
+    padding: 5px 0;
 }
 
-nav a:hover {
-    color: #ccc;
-    /* Changed hover text color to light gray */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4299e1;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 .dropdown-btn {
     display: none;
-    background-color: #007bff;
-    /* padding: 10px 20px; */
-    /* margin: 10px 0; */
+    background: none;
     border: none;
     position: relative;
     left: -40%;
@@ -73,31 +84,119 @@ nav a:hover {
 .dropdown-btn img {
     width: 40px;
     height: 40px;
+    filter: invert(0.4);
 }
 
 @media (max-width: 600px) {
     nav {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 15px;
+        height: 60px;
     }
 
     nav ul {
-        display: none;
-        flex-direction: column;
-    }
-
-    nav ul li {
-        width: 100vw;
-        padding: auto;
-    }
-
-    nav ul li {
         display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        z-index: 1000;
+
+        /* Initial hidden state */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.3s ease-in-out;
+        pointer-events: none;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 12px 20px;
         text-align: center;
-        margin: 10px 0;
+        font-size: 16px;
+        border-left: 3px solid transparent;
+        transition: all 0.2s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(66, 153, 225, 0.1);
+        border-left: none;
+        border-bottom: 3px solid #4299e1;
     }
 
     .dropdown-btn {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        padding: 8px;
+        margin: 0;
+        cursor: pointer;
+        position: relative;
+        left: 0;
+    }
+
+    .dropdown-btn img {
+        width: 28px;
+        height: 28px;
+        transition: transform 0.3s ease;
+    }
+
+    .dark-theme nav ul {
+        background-color: rgba(26, 32, 44, 0.95);
+    }
+
+    .dark-theme nav ul li a:hover {
+        background-color: rgba(99, 179, 237, 0.1);
+        border-left: none;
+        border-bottom: 3px solid #63b3ed;
+    }
+
+    #theme-toggle {
+        position: relative;
+        right: 0;
+        top: 0;
+        margin: 0 0 0 10px;
+    }
+
+    .nav-buttons {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    nav ul.show {
+        /* Visible state */
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul.show {
+        display: block !important;
+        /* Slide in from top */
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 }
 
@@ -110,17 +209,23 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to top, #004d99, #007bff);
-    padding: 30px;
-    padding-top: 50px;
+    background: linear-gradient(135deg, #2b6cb0, #4299e1);
+    min-height: 90vh;
+    padding: 80px 30px 40px;
 }
 
 .pp {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.pp:hover {
+    transform: scale(1.05);
 }
 
 #intro h1 {
@@ -143,45 +248,83 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: 40px;
+    gap: 20px;
 }
 
 .contact_wrapper button {
-    margin: 0 10px;
-    border: 1px solid #ccc;
-    background-color: transparent;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    padding: 5px 10px;
+    padding: 12px;
     border-radius: 12px;
-    /* Added border-radius property */
 }
 
 .contact_wrapper button:hover {
-    background-color: #ccc;
-    color: #fff;
-    border-color: #ccc;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
 .contact_wrapper img {
-    width: 70px;
-    height: 70px;
-    margin: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);
+}
+
+@media (max-width: 768px) {
+    .contact_wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 20px;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .contact_wrapper a {
+        width: 100%;
+    }
+
+    .contact_wrapper button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Center a single button in the last row */
+    .contact_wrapper a:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: 50%;
+        margin: 0 auto;
+    }
 }
 
 .section {
     width: 70%;
-    padding: 0 20px;
-    margin-top: 50px;
-    margin: auto;
+    max-width: 1000px;
+    padding: 30px 20px;
+    margin: 0 auto;
 }
 
 .section h2 {
     font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    color: #2d3748;
+    position: relative;
+    margin-bottom: 25px;
+    padding-bottom: 8px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #4299e1;
 }
 
 #about-me p {
@@ -205,35 +348,45 @@ main {
     justify-content: center;
     align-items: left;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .news-row {
-    text-align: left;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    min-height: 40px;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    height: 45px;
-    /* Adjust the height value as desired */
+    background: transparent;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.news-row:hover {
+    transform: translateX(5px);
 }
 
 .news-content {
-    font-size: 18px;
-    margin-left: 20px;
-    text-align: center;
+    font-size: 16px;
+    margin-left: 15px;
+    text-align: left;
     word-wrap: break-word;
+    line-height: 1.4;
 }
 
 .date-pill {
+    background-color: #4299e1;
+    font-weight: 600;
     display: inline-block;
-    padding: 0px 15px;
+    padding: 4px 16px;
     text-align: center;
     border-radius: 20px;
-    background-color: #39bdbd;
     color: white;
     white-space: nowrap;
-    height: 34px;
-    width: 75px;
-    line-height: 34px;
+    min-width: 80px;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
 }
 
 #news a {
@@ -244,13 +397,13 @@ main {
 #show-more-btn {
     display: block;
     margin: auto;
-    margin-top: 25px;
+    margin-top: 15px;
     background-color: #0077cc;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
@@ -274,14 +427,14 @@ main {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #555;
+    color: #4299e1;
 }
 
 
 .publications-yealy-wrapper {
-    margin-top: 20px;
+    margin-top: 15px;
     border-top: 1px solid #ccc;
-    padding-top: 20px;
+    padding-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -289,17 +442,32 @@ main {
 
 .publication {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 20px;
-    width: 90%;
+    gap: 20px;
+    width: 100%;
+}
+
+.publication:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .publication-thumbnail {
     width: 200px;
-    margin-right: 20px;
-    max-height: 200px;
+    min-width: 200px;
+    height: 200px;
     object-fit: cover;
+    border-radius: 8px;
     transition: transform 0.2s ease-in-out;
+    align-self: center;
+    position: sticky;
+    top: 15px;
 }
 
 .publication-thumbnail:hover {
@@ -308,19 +476,23 @@ main {
 
 .publication-content {
     flex: 1;
+    min-width: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .publication-title {
     color: #007bff;
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .publication-authors {
     color: #6c757d;
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .publication-authors a {
@@ -336,12 +508,15 @@ main {
 .publication-journal {
     color: #39bdbd;
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .publication-award {
     font-weight: bold;
     color: #f27933;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
 }
 
 .publication-buttons {
@@ -354,43 +529,92 @@ main {
     padding: 5px 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-    background-color: #007bff;
+    background-color: #4299e1;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-size: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .publication-buttons a:hover {
-    background-color: #0069d9;
+    background-color: #2b6cb0;
+    transform: translateY(-2px);
 }
 
 .publication-abstract {
     font-size: 14px;
-    line-height: 1.5;
-    margin-top: 20px;
+    line-height: 1.6;
+    margin-top: 15px;
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .publication-bibtex {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-top: 15px;
     background-color: #f8f9fa;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 0px 12px;
+    border-radius: 8px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    white-space: pre;
+    border: 1px solid #e9ecef;
+    position: relative;
+    overflow-x: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.publication-bibtex::before {
+    content: 'BibTeX';
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    background-color: #f8f9fa;
+    padding: 0 6px;
+    font-size: 11px;
+    color: #6c757d;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    z-index: 1;
+    height: 16px;
+    line-height: 16px;
+    border-radius: 3px;
+    border: 1px solid #e9ecef;
+    border-bottom: 1px solid #f8f9fa;
 }
 
 .publication-abstract,
 .publication-bibtex {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-out;
+    transition: max-height 0.3s ease-out;
+    width: 100%;
 }
 
 .publication-abstract.show,
 .publication-bibtex.show {
-    max-height: 1000px;
+    max-height: 2000px;
     transition: max-height 0.5s ease-in;
+    overflow-x: auto;
+    overflow-y: visible;
+    width: 100%;
+    align-self: stretch;
+}
+
+.publication-abstract p {
+    margin: 0 0 10px 0;
+}
+
+.publication-abstract p:last-child {
+    margin-bottom: 0;
 }
 
 .teaching-wrapper {
@@ -401,10 +625,17 @@ main {
 }
 
 .teaching-row {
-    width: 100%;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
+    background: white;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.teaching-row:hover {
+    transform: translateY(-3px);
 }
 
 .course-date {
@@ -434,8 +665,8 @@ main {
 }
 
 .teaching-row ul {
-    margin-top: 10px;
-    margin-left: 20px;
+    margin-top: 8px;
+    margin-left: 15px;
     font-size: 18px;
     line-height: 1.5;
     color: #6c757d;
@@ -446,40 +677,52 @@ main {
 }
 
 .repo-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: left;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .repo-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 20px;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.repo-row:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .repo-row:not(:last-child) {
-    border-right: 1px solid #ccc;
-    padding-right: 10px;
-    padding-left: 10px;
+    border-right: none;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .repo-row:last-child {
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .repo-title {
-    font-size: 18px;
-    font-weight: bold;
+    color: #2b6cb0;
+    font-size: 16px;
+    font-weight: 600;
     margin-right: 10px;
-
 }
 
 .repo-star {
-    margin-right: 0px;
-    height: 30px;
+    height: 25px;
+    transition: transform 0.2s ease;
+}
+
+.repo-star:hover {
+    transform: scale(1.1);
 }
 
 #open-source h3 {
@@ -501,45 +744,112 @@ main {
     font-style: italic;
 }
 
+#misc .talks-section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+#misc h3 {
+    color: #2d3748;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #4299e1;
+}
+
 #misc .talks-section ul {
-    list-style-type: '➤  ';
-    list-style-position: inside;
-    margin: 0;
+    list-style-type: none;
     padding: 0;
 }
 
 #misc .talks-section li {
-    margin-bottom: 10px;
-    margin-left: 20px;
-    font-size: 16px;
-    font-style: italic;
-    color: #6c757d;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    margin-left: 0;
+    font-size: 15px;
+    color: #4a5568;
+    transition: transform 0.2s ease;
+}
+
+#misc .talks-section li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #4299e1;
+    font-weight: bold;
+}
+
+#misc .talks-section li:hover {
+    transform: translateX(5px);
 }
 
 #misc a {
-    color: #0077cc;
+    color: #4299e1;
     text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#misc a:hover {
+    color: #2b6cb0;
 }
 
 footer {
-    bottom: 0;
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 7px 0px;
+    background-color: #1a202c;
+    padding: 25px 0;
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #4299e1, #63b3ed, #4299e1);
 }
 
 footer p {
+    color: #e2e8f0;
+    font-size: 0.95rem;
     margin: 0;
+    text-align: center;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
 }
 
 footer a {
-    color: #39bdbd;
+    color: #63b3ed;
     text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 2px 4px;
+    border-radius: 4px;
 }
 
-/* Adjustments for screens smaller than 768px */
+footer a:hover {
+    color: #90cdf4;
+    background-color: rgba(99, 179, 237, 0.1);
+}
+
+@media (max-width: 767px) {
+    footer {
+        padding: 20px 15px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive adjustments */
 @media (max-width: 767px) {
     .contact_wrapper {
         flex-direction: column;
@@ -591,8 +901,8 @@ footer a {
 
     .publication-thumbnail {
         width: 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
+        height: auto;
+        margin-bottom: 15px;
     }
 
     .publication-content {
@@ -611,4 +921,464 @@ footer a {
         font-size: 16px;
     }
 
+    .repo-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .repo-row {
+        margin-bottom: 15px;
+    }
+
+    #misc .talks-section {
+        padding: 15px;
+    }
+}
+
+/* Theme toggle button styles */
+#theme-toggle {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2d3748;
+    margin-left: 20px;
+    margin-right: 25px;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.moon-icon {
+    display: none;
+}
+
+.dark-theme .sun-icon {
+    display: none;
+}
+
+.dark-theme .moon-icon {
+    display: block;
+}
+
+/* Dark theme styles */
+.dark-theme {
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+
+.dark-theme nav {
+    background-color: rgba(26, 32, 44, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.dark-theme nav a {
+    color: #e2e8f0;
+}
+
+.dark-theme #theme-toggle {
+    color: #e2e8f0;
+}
+
+.dark-theme .section h2 {
+    color: #e2e8f0;
+}
+
+.dark-theme .publication,
+.dark-theme .news-row,
+.dark-theme .teaching-row,
+.dark-theme .repo-row,
+.dark-theme #misc .talks-section {
+    background-color: #2d3748;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .publication-title {
+    color: #63b3ed;
+}
+
+.dark-theme .publication-authors,
+.dark-theme .publication-authors a {
+    color: #a0aec0;
+}
+
+.dark-theme .publication-journal {
+    color: #4fd1c5;
+}
+
+.dark-theme .publication-buttons a {
+    background-color: #4299e1;
+}
+
+.dark-theme .publication-buttons a:hover {
+    background-color: #2b6cb0;
+}
+
+.dark-theme .date-pill {
+    background-color: #63b3ed;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .course-name {
+    color: #4fd1c5;
+}
+
+.dark-theme .course-school {
+    color: #63b3ed;
+}
+
+.dark-theme .teaching-row ul {
+    color: #a0aec0;
+}
+
+.dark-theme .repo-title {
+    color: #63b3ed;
+}
+
+.dark-theme #misc .talks-section li {
+    color: #a0aec0;
+}
+
+.dark-theme #misc .talks-section li::before {
+    color: #63b3ed;
+}
+
+.dark-theme #misc a {
+    color: #63b3ed;
+}
+
+.dark-theme #misc a:hover {
+    color: #90cdf4;
+}
+
+.dark-theme .publication-bibtex {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+.dark-theme .publication-bibtex::before {
+    background-color: #2d3748;
+    color: #a0aec0;
+}
+
+.dark-theme footer {
+    background-color: #171923;
+}
+
+/* Adjust link colors in dark mode */
+.dark-theme a {
+    color: #63b3ed;
+}
+
+.dark-theme a:hover {
+    color: #90cdf4;
+}
+
+/* Update headings and awards for both light and dark modes */
+.publications-year {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #4299e1;
+}
+
+.publication-award {
+    font-weight: bold;
+    color: #f27933;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Dark mode specific styles */
+.dark-theme .publications-year {
+    color: #90cdf4;
+    /* Lighter blue for better visibility */
+}
+
+.dark-theme .publication-award {
+    color: #fbd38d;
+    /* Lighter orange for better visibility */
+    background-color: rgba(251, 211, 141, 0.1);
+    /* Subtle background */
+}
+
+.dark-theme #misc h3,
+.dark-theme #open-source h3 {
+    color: #90cdf4;
+    /* Lighter blue for better visibility */
+    border-bottom-color: #63b3ed;
+}
+
+.bibtex-copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #6c757d;
+    background-color: transparent;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.bibtex-copy-btn:hover {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.bibtex-copy-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+.bibtex-copy-btn.copied {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+/* Dark theme adjustments */
+.dark-theme .bibtex-copy-btn {
+    color: #a0aec0;
+    border-color: #4a5568;
+}
+
+.dark-theme .bibtex-copy-btn:hover {
+    background-color: #4a5568;
+    color: #e2e8f0;
+}
+
+.dark-theme .bibtex-copy-btn.copied {
+    background-color: #2f855a;
+    color: #e2e8f0;
+    border-color: #2f855a;
+}
+
+/* Dark theme adjustments for abstract */
+.dark-theme .publication-abstract {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+.dark-theme .publication-abstract::before {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    border-bottom-color: #2d3748;
+    color: #a0aec0;
+}
+
+/* Publication buttons (pills) - Light theme */
+.publication-buttons a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #4299e1;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.publication-buttons a:hover {
+    background-color: #2b6cb0;
+    transform: translateY(-2px);
+}
+
+/* Dark theme adjustments for publication buttons */
+.dark-theme .publication-buttons a {
+    background-color: #2d3748;
+    color: #63b3ed;
+    border-color: #4a5568;
+}
+
+.dark-theme .publication-buttons a:hover {
+    background-color: #4a5568;
+    color: #90cdf4;
+    border-color: #63b3ed;
+    transform: translateY(-2px);
+}
+
+/* Special styling for active buttons (Abstract/Bibtex) when expanded */
+.publication-buttons a.publication-abstract-toggle.active,
+.publication-buttons a.publication-bibtex-toggle.active {
+    background-color: #4299e1;
+    color: white;
+}
+
+.dark-theme .publication-buttons a.publication-abstract-toggle.active,
+.dark-theme .publication-buttons a.publication-bibtex-toggle.active {
+    background-color: #63b3ed;
+    color: #1a202c;
+    border-color: #90cdf4;
+}
+
+/* Adjust mobile styles */
+@media (max-width: 600px) {
+    #theme-toggle {
+        position: absolute;
+        right: 25px;
+        top: 15px;
+    }
+}
+
+/* Update the contact icon styles */
+.contact_wrapper .contact-icon {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.contact_wrapper button:hover .contact-icon {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #intro h1 {
+        font-size: 2.8rem;
+    }
+
+    #intro h3 {
+        font-size: 1.3rem;
+        padding: 0 20px;
+    }
+
+    .pp {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    #intro h1 {
+        font-size: 2.2rem;
+    }
+
+    #intro h3 {
+        font-size: 1.1rem;
+    }
+
+    .pp {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border: 3px solid #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Dark theme scrollbar */
+.dark-theme ::-webkit-scrollbar-track {
+    background: #1a202c;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border: 3px solid #1a202c;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+    background: #606f7b;
+}
+
+/* Update the publication thumbnail styles */
+.publication-thumbnail {
+    width: 200px;
+    min-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+    align-self: center;
+    position: sticky;
+    top: 15px;
+}
+
+/* Remove sticky positioning on mobile */
+@media (max-width: 768px) {
+    .publication-thumbnail {
+        position: static;
+        width: 100%;
+        height: auto;
+        min-width: unset;
+        aspect-ratio: auto;
+        margin-bottom: 15px;
+    }
+
+    .publication-thumbnail:hover {
+        transform: none;
+    }
+
+    .publication {
+        flex-direction: column;
+        height: auto;
+        padding: 12px;
+    }
+
+    .publication-content {
+        width: 100%;
+    }
+}
+
+/* Dark mode adjustment */
+.dark-theme .dropdown-btn img {
+    filter: none;
+}
+
+/* Add dark theme styles for nav items */
+.dark-theme nav a {
+    color: #e2e8f0;
+    /* Light gray color for dark theme */
+}
+
+.dark-theme nav ul li a:hover {
+    background-color: rgba(99, 179, 237, 0.1);
+    border-bottom: 3px solid #63b3ed;
+}
+
+/* Update the hover underline color in dark mode */
+.dark-theme nav a::after {
+    background-color: #63b3ed;
+    /* Lighter blue for dark theme */
 }

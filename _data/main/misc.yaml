@@ -16,6 +16,8 @@ talks:
 
   - name: "IMAGINE Seminar: LLM advances in 2023"
     date: 2023-04-12
+  - name: "Talk at TUM: Conditional Generative Models"
+    date: 2024-09-19
 reviewer:
   - name: <a href="https://eccv.ecva.net/">ECCV 2024</a>
     date: 2024-10-04

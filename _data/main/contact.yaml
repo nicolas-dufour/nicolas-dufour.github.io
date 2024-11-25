@@ -13,6 +13,10 @@
 - url: https://twitter.com/nico_dufour
   icon: /assets/icons/twitter.png
   name: Twitter
+  
+- url: https://bsky.app/profile/nicolasdufour.bsky.social
+  icon: /assets/icons/bluesky.png
+  name: Bluesky
 
 - url: https://scholar.google.com/citations?user=g_eDdc4AAAAJ&hl=en
   icon: /assets/icons/scholar.png

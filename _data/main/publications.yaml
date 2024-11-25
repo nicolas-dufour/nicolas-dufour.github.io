@@ -99,3 +99,19 @@
       &nbsp;&nbsp; journal   = {arXiv},\n
       &nbsp;&nbsp; year      = {2024},\n
     }"
+
+- title: "PoM: Efficient Image and Video Generation with the Polynomial Mixer"
+  authors: <a href="https://davidpicard.github.io/">David Picard</a>, <u>Nicolas Dufour</u>
+  date: 2024-07-01
+  year: 2024
+  journal: Arxiv Preprint
+  thumbnail: /assets/publications/pom/thumbnail.png
+  pdf:  https://arxiv.org/abs/2411.12663
+  github: https://github.com/davidpicard/Homm
+  abstract: Diffusion models based on Multi-Head Attention (MHA) have become ubiquitous to generate high quality images and videos. However, encoding an image or a video as a sequence of patches results in costly attention patterns, as the requirements both in terms of memory and compute grow quadratically. To alleviate this problem, we propose a drop-in replacement for MHA called the Polynomial Mixer (PoM) that has the benefit of encoding the entire sequence into an explicit state. PoM has a linear complexity with respect to the number of tokens. This explicit state also allows us to generate frames in a sequential fashion, minimizing memory and compute requirement, while still being able to train in parallel. We show the Polynomial Mixer is a universal sequence-to-sequence approximator, just like regular MHA. We adapt several Diffusion Transformers (DiT) for generating images and videos with PoM replacing MHA, and we obtain high quality samples while using less computational resources
+  bibtex: "@article{picard2024pom,\n
+      &nbsp;&nbsp; author    = {David Picard and Nicolas Dufour},\n
+      &nbsp;&nbsp; title     = {PoM: Efficient Image and Video Generation with the Polynomial Mixer},\n
+      &nbsp;&nbsp; journal   = {arXiv},\n
+      &nbsp;&nbsp; year      = {2024},\n
+    }"
