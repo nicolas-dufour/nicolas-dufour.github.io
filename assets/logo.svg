@@ -1,0 +1,18 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .logo-letters {
+      fill: #307afa;
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+    }
+    .logo-d {
+      fill: #1e3c72;
+    }
+  </style>
+  
+  <!-- N letter -->
+  <path class="logo-letters" d="M25 70V30h10l20 30V30h10v40H55L35 40v30H25z"/>
+  
+  <!-- D letter -->
+  <path class="logo-d" d="M45 30h15c11 0 20 9 20 20s-9 20-20 20H45V30zm10 30h5c5.5 0 10-4.5 10-10s-4.5-10-10-10h-5v30z"/>
+</svg> 

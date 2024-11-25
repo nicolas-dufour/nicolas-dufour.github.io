@@ -10,6 +10,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ page.title }}</title>
         <link rel="stylesheet" href="/css/style_projects.css">
+        <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+        <link rel="alternate icon" type="image/png" href="/assets/favicon.png">
         {% if page.css %}
         <link rel="stylesheet" href="{{ page.css }}">
         {% endif %}
@@ -31,6 +33,9 @@
 <body>
     <header>
         <nav>
+            <button class="dropdown-btn">
+                <img src="/assets/icons/dropdown.svg" alt="Dropdown">
+            </button>
             <ul>
                 <li><a href="/">Nicolas Dufour</a></li>
                 <li><a href="#">{{page.short_name}}</a></li>
@@ -51,6 +56,26 @@
                 <li><a href="#bibtex">Bibtex</a></li>
                 {% endif %}
             </ul>
+            <div class="nav-buttons">
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
         </nav>
     </header>
     <main>
@@ -136,5 +161,66 @@
     </footer>
     <script>
         document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+    </script>
+    <script>
+        document.querySelector('.dropdown-btn').addEventListener('click', function () {
+            var nav = document.querySelector('nav ul');
+            nav.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking on link only on mobile
+        var links = document.querySelectorAll('nav ul li a');
+        links.forEach(function (link) {
+            link.addEventListener('click', function () {
+                if (window.innerWidth <= 600) { // Only hide on mobile
+                    var nav = document.querySelector('nav ul');
+                    nav.classList.remove('show');
+                }
+            });
+        });
+
+        // Reset nav display on window resize
+        window.addEventListener('resize', function () {
+            var nav = document.querySelector('nav ul');
+            if (window.innerWidth > 600) {
+                nav.classList.remove('show');
+                nav.style.display = 'flex';
+            }
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+        // Function to set theme
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-theme');
+            } else {
+                document.body.classList.remove('dark-theme');
+            }
+        }
+
+        // Check for saved theme preference, otherwise use system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            setTheme(prefersDarkScheme.matches ? 'dark' : 'light');
+        }
+
+        // Listen for system theme changes when no manual preference is set
+        prefersDarkScheme.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        // Handle manual theme toggles
+        themeToggle.addEventListener('click', () => {
+            const newTheme = document.body.classList.contains('dark-theme') ? 'light' : 'dark';
+            setTheme(newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
     </script>
 </body>

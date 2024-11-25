@@ -18,15 +18,17 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #007bff;
-    /* Changed background color to blue */
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    padding: 10px;
-    height: 50px;
+    padding: 10px 25px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: auto;
 }
 
 nav ul {
@@ -54,16 +56,31 @@ nav li:last-child {
 
 nav a {
     text-decoration: none;
-    color: #fff;
-    /* Changed text color to white */
-    font-weight: bold;
+    color: #2d3748;
+    font-weight: 500;
     font-size: 16px;
     transition: all 0.2s ease-in-out;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4299e1;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 nav a:hover {
-    color: #ccc;
-    /* Changed hover text color to light gray */
+    color: #4299e1;
 }
 
 #main img {
@@ -71,13 +88,12 @@ nav a:hover {
 }
 
 .project-header {
-    background: linear-gradient(to bottom, #1e3c72, #307afa);
     padding: 3% 20%;
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     text-align: center;
-
+    background: linear-gradient(to bottom, #1e3c72, #307afa);
 }
 
 .project-header .paper_title {
@@ -325,5 +341,124 @@ footer a {
 
     to {
         opacity: 1
+    }
+}
+
+/* Add dropdown button styles */
+.dropdown-btn {
+    display: none;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdown-btn img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+
+/* Add theme toggle styles */
+#theme-toggle {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2d3748;
+    margin-left: 20px;
+    margin-right: 25px;
+    transition: all 0.3s ease;
+}
+
+.moon-icon {
+    display: none;
+}
+
+/* Dark theme styles */
+.dark-theme {
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+
+.dark-theme nav {
+    background-color: rgba(26, 32, 44, 0.95);
+}
+
+.dark-theme nav a {
+    color: #e2e8f0;
+}
+
+.dark-theme nav a:hover {
+    color: #63b3ed;
+}
+
+.dark-theme nav a::after {
+    background-color: #63b3ed;
+}
+
+.dark-theme .section h2 {
+    color: #90cdf4;
+}
+
+.dark-theme #main {
+    color: #e2e8f0;
+}
+
+.dark-theme .publication-abstract,
+.dark-theme .publication-bibtex {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 600px) {
+    nav {
+        grid-template-columns: auto 1fr;
+    }
+
+    .dropdown-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    nav ul.show {
+        display: block;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 0;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 12px 20px;
+        text-align: center;
+    }
+
+    .dark-theme nav ul {
+        background-color: rgba(26, 32, 44, 0.95);
     }
 }

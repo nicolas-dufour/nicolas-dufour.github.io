@@ -5,7 +5,15 @@
     background-size: cover;
     margin-top: 50px;
     animation: slide 8000s linear infinite;
+    position: relative;
+}
 
+.dark-theme .project-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+        url("/assets/publications/cad_cvpr/background_banner.jpg") repeat-x;
+    background-size: cover;
+    animation: slide 8000s linear infinite;
 }
 
 @keyframes slide {
