@@ -34,7 +34,7 @@
   }"
 - title: Analysis of Classifier-Free Guidance Weight Schedulers
   authors: <a href="https://triocrossing.github.io/">Xi Wang</a>, <u>Nicolas Dufour</u>, <a href="https://nefeliandreou.github.io/">Nefeli Andreou</a>, <a href="https://vabrevaya.github.io/">Victoria Fernandez Abrevaya</a>, <a href="https://www.lix.polytechnique.fr/vista/vista-member/marie-paule_cani/">Marie-Paule Cani</a>, <a href="https://davidpicard.github.io/">David Picard*</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton*</a>
-  date: 2024-04-19
+  date: 2024-11-24
   year: 2024
   journal: TMLR
   pdf: https://arxiv.org/abs/2404.13040
