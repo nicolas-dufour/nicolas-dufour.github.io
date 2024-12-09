@@ -1,0 +1,142 @@
+/* Override slideshow container to accommodate side-by-side layout */
+.slideshow-container {
+    max-width: 1200px;
+    /* Increased to accommodate side-by-side layout */
+    position: relative;
+}
+
+/* Style the slide number */
+.numbertext {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 12px;
+    border-radius: 4px;
+    position: absolute;
+    top: 30px;
+    /* Adjust from top of container */
+    left: 30px;
+    /* Adjust from left of container */
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+}
+
+/* Create a flex container for the image and map */
+.slide-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Style the image container */
+.slide-image {
+    flex: 1;
+    position: relative;
+}
+
+.slide-image img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Style the map container */
+.slide-map {
+    flex: 1;
+    position: relative;
+}
+
+.slide-map img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    object-fit: contain;
+    max-height: 100%;
+}
+
+/* Adjust caption position */
+.carousel_caption {
+    position: relative;
+    background-color: transparent;
+    color: #333;
+    padding: 15px 0;
+    text-align: center;
+    clear: both;
+}
+
+/* Dark mode adjustments */
+.dark-theme .carousel_caption {
+    color: #e2e8f0;
+    /* Light gray color for dark mode */
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .slide-content {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .slide-image,
+    .slide-map {
+        width: 100%;
+    }
+}
+
+.section {
+    margin: 60px auto;
+    max-width: 1000px;
+    padding: 30px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(53, 150, 254, 0.1);
+}
+
+.section>div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+}
+
+.section img:hover {
+    transform: scale(1.02);
+}
+
+.section p {
+    margin: 0;
+    line-height: 1.7;
+    color: #666;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+.dark-theme .section {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(53, 150, 254, 0.2);
+}
+
+.dark-theme .section p {
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .section {
+        margin: 30px 15px;
+        padding: 15px;
+    }
+
+    .section p {
+        padding: 0 10px;
+    }
+}
