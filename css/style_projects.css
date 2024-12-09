@@ -746,3 +746,36 @@ footer a {
 .dark-theme #theme-toggle:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
+.samples-content {
+    flex: 0 0 60%;
+    min-width: 300px;
+    max-width: none;
+}
+
+.teaser-section {
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.teaser-section img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.teaser-caption {
+    padding: 15px;
+    margin: 0;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.dark-theme .teaser-caption {
+    color: #999;
+}

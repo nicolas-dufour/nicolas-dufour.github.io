@@ -110,6 +110,12 @@
                     </div>
                     {% if page.has_samples %}
                     <div class="samples-content">
+                        {% if page.teaser %}
+                        <div class="teaser-section">
+                            <img src="{{ page.teaser.url }}" alt="Method teaser">
+                            <p class="teaser-caption">{{ page.teaser.caption }}</p>
+                        </div>
+                        {% endif %}
                         {{ page.samples_section }}
                     </div>
                     {% endif %}
