@@ -36,7 +36,13 @@ buttons:
 #     text: Video
 #     url: 
 
-abstract: "Global visual geolocation consists in predicting where an image was captured anywhere on Earth. Since not all images can be localized with the same precision, this task inherently involves a degree of ambiguity. However, existing approaches are deterministic and overlook this aspect. In this paper, we propose the first generative approach for visual geolocation based on diffusion and flow matching, and an extension to Riemannian flow matching, where the denoising process operates directly on the Earth's surface. Our model achieves state-of-the-art performance on three visual geolocation benchmarks: OpenStreetView-5M, YFCC-100M, and iNat21. In addition, we introduce the task of probabilistic visual geolocation, where the model predicts a probability distribution over all possible locations instead of a single point. We implement new metrics and baselines for this task, demonstrating the advantages of our generative approach."
+abstract: "<p>Introducing the first generative geolocation method based on diffusion and flow matching! We learn the relationship between visual content and location by denoising random locations conditionally to images.</p>
+
+<p>➜ New SOTA for visual geolocation on OpenStreetView-5M, YFCC-100M, and iNat-21</p>
+
+<p>➜ Generate global probability density maps and quantify localizability</p>
+
+<p>➜ Introduce the problem of probabilistic visual geolocation</p>"
 # poster: 
 #     url: /assets/publications/cad_cvpr/poster.pdf
 # video: 
@@ -188,8 +194,15 @@ samples_section: >
     <h2>Pipeline</h2>
     <div style="width:80%; margin:auto">
         <img src="/assets/publications/plonk/pipeline.png">
-        <p>Our model operates in three main steps: (1) A vision encoder φ extracts features from the input image, (2) A conditional flow matching model Ψ progressively denoises coordinates on the Earth's surface by predicting velocity fields at each timestep, and (3) An ODE solver integrates these velocity fields to obtain the final location distribution. The denoising process operates directly on the Earth's surface using Riemannian flow matching, which ensures that all intermediate points remain valid geographical coordinates.<br>
-        The model can handle location ambiguity through its probabilistic predictions - when an image could have been taken in multiple locations (like a football field), the model outputs a multi-modal distribution covering all plausible locations.</p>
+        <p>Our model operates in three main steps:</p>
+        <ol>
+            <li>A vision encoder Φ extracts features from the input image</li>
+            <li>A conditional flow matching model Ψ progressively denoises coordinates on the Earth's surface by predicting velocity fields at each timestep</li>
+            <li>An ODE solver integrates these velocity fields to obtain the final location distribution</li>
+        </ol>
+        <p>The denoising process operates directly on the Earth's surface using Riemannian flow matching, which ensures that all intermediate points remain valid geographical coordinates.</p>
+        <p>The model can handle location ambiguity through its probabilistic predictions - when an image could have been taken in multiple locations (like a football field), the model outputs a multi-modal distribution covering all plausible locations.</p>
+
     </div>
 </div>
 <script>

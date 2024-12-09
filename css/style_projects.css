@@ -785,3 +785,86 @@ footer a {
 .dark-theme .teaser-caption {
     color: #999;
 }
+
+/* Add these styles for better list formatting */
+
+#main ol,
+#main ul {
+    padding-left: 2rem;
+    margin: 1rem 0;
+    color: #606c71;
+}
+
+#main li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    position: relative;
+    color: #606c71;
+}
+
+#main ol {
+    counter-reset: list-counter;
+    list-style: none;
+}
+
+#main ol li {
+    counter-increment: list-counter;
+    padding-left: 0.5rem;
+}
+
+#main ol li::before {
+    content: counter(list-counter) ".";
+    color: #3596fe;
+    font-weight: 500;
+    position: absolute;
+    left: -2rem;
+    width: 1.5rem;
+    text-align: right;
+}
+
+#main ul {
+    list-style: none;
+}
+
+#main ul li::before {
+    content: "•";
+    color: #3596fe;
+    font-weight: bold;
+    position: absolute;
+    left: -1.5rem;
+}
+
+/* Dark theme adjustments */
+.dark-theme #main ol li::before,
+.dark-theme #main ul li::before {
+    color: #90cdf4;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 767px) {
+
+    #main ol,
+    #main ul {
+        padding-left: 1.5rem;
+    }
+
+    #main ol li::before {
+        left: -1.5rem;
+    }
+
+    #main ul li::before {
+        left: -1.2rem;
+    }
+}
+
+/* Dark theme adjustments */
+.dark-theme #main ol,
+.dark-theme #main ul,
+.dark-theme #main li {
+    color: #999;
+}
+
+.dark-theme #main ol li::before,
+.dark-theme #main ul li::before {
+    color: #90cdf4;
+}
