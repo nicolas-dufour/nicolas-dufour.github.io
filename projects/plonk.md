@@ -185,7 +185,7 @@ samples_section: >
     </div>
 ---
 <div class="section">
-    <h2>PLONK: A Generative Pipeline for Visual Geolocation</h2>
+    <h2>Pipeline</h2>
     <div style="width:80%; margin:auto">
         <img src="/assets/publications/plonk/pipeline.png">
         <p>Our model operates in three main steps: (1) A vision encoder φ extracts features from the input image, (2) A conditional flow matching model Ψ progressively denoises coordinates on the Earth's surface by predicting velocity fields at each timestep, and (3) An ODE solver integrates these velocity fields to obtain the final location distribution. The denoising process operates directly on the Earth's surface using Riemannian flow matching, which ensures that all intermediate points remain valid geographical coordinates.<br>
