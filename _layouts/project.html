@@ -80,6 +80,13 @@
     </header>
     <main>
         <div class="project-header">
+            {% if page.video_background %}
+            <div class="video-background">
+                <video autoplay loop muted playsinline>
+                    <source src="{{ page.video_background }}" type="video/mp4">
+                </video>
+            </div>
+            {% endif %}
             <h1 class="paper_title">{{ page.title }}</h1>
             <p class="authors">{{ page.paper_authors }}</p>
             <p class="journal">{{ page.journal }}
@@ -103,6 +110,12 @@
         <div id="main">
             {% if page.abstract %}
             <div class="section abstract-section" id="abstract">
+                {% if page.teaser %}
+                <div class="teaser-section">
+                    <img src="{{ page.teaser.url }}" alt="Method teaser">
+                    <p class="teaser-caption">{{ page.teaser.caption }}</p>
+                </div>
+                {% endif %}
                 <div class="abstract-container">
                     <div class="abstract-content">
                         <h2>Abstract</h2>
@@ -110,12 +123,6 @@
                     </div>
                     {% if page.has_samples %}
                     <div class="samples-content">
-                        {% if page.teaser %}
-                        <div class="teaser-section">
-                            <img src="{{ page.teaser.url }}" alt="Method teaser">
-                            <p class="teaser-caption">{{ page.teaser.caption }}</p>
-                        </div>
-                        {% endif %}
                         {{ page.samples_section }}
                     </div>
                     {% endif %}

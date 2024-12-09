@@ -140,3 +140,77 @@
         padding: 0 10px;
     }
 }
+
+/* Style the project header to accommodate video background */
+.project-header {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Video background container */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Style the video element */
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Update the overlay gradient to match dark mode */
+.video-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(40, 40, 40, 0.45),
+            rgba(20, 20, 20, 0.45));
+}
+
+/* Ensure content remains visible over video */
+.project-header .paper_title,
+.project-header .authors,
+.project-header .journal,
+.project-header .paper_buttons {
+    position: relative;
+    z-index: 2;
+}
+
+/* Update text colors for better contrast against dark background */
+.project-header .paper_title {
+    color: #fff;
+}
+
+.project-header .authors,
+.project-header .authors a {
+    color: #ddd;
+}
+
+.project-header .journal {
+    color: #bbb;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .video-background video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% top;
+    }
+}

@@ -753,11 +753,17 @@ footer a {
     max-width: none;
 }
 
+.abstract-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 .teaser-section {
-    margin-bottom: 30px;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 12px;
     overflow: hidden;
+    width: 100%;
 }
 
 .teaser-section img {

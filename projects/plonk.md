@@ -1,10 +1,10 @@
 ---
 layout: project
 permalink: /plonk
-title: "Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation"
+title: "Around the World in 80 Timesteps: <br> A Generative Approach to Global Visual Geolocation"
 short_name: PLONK
 css: css/projects/plonk.css
-background: /assets/publications/cad_cvpr/background_banner.jpg
+video_background: /assets/publications/plonk/animation.mp4
 author: Nicolas Dufour
 description: We propose the first generative approach for global visual geolocation that predicts where an image was captured on Earth. Our model achieves state-of-the-art performance on major benchmarks while handling location ambiguity through probabilistic predictions. The denoising process operates directly on the Earth's surface using Riemannian flow matching.
 keywords: diffusion models, flow matching, Riemannian flow matching, visual geolocation, global visual geolocation, generative models, PLONK
@@ -14,7 +14,7 @@ teaser:
     caption: "Our model predicts location distributions for images from three major visual geolocation datasets: iNat-21 (wildlife), YFCC-100M (natural images), and OSV-5M (street-view). The model can handle varying levels of location ambiguity by outputting appropriate probability distributions."
 
 paper_title: "Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation"
-paper_authors: <a href="/">Nicolas Dufour</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://davidpicard.github.io/">David Picard</a>, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
+paper_authors: <a href="/">Nicolas Dufour</a>, <a href="https://davidpicard.github.io/">David Picard</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
 journal:
 buttons:
   - type: github
