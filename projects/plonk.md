@@ -27,8 +27,8 @@ buttons:
     text: "Demo"
     url: "#demo"
   - type: hugging_face
-    text: "Models <br> (soon)"
-    url: "#"
+    text: "Models"
+    url: https://huggingface.co/nicolas-dufour/PLONK_YFCC
 #   - type: pdf
 #     text: Poster
     # url: /assets/publications/cad_cvpr/poster.pdf
@@ -55,7 +55,7 @@ bibtex: "@article{dufour2024around, \n
    }"
 acknowledgements: This work was supported by ANR project TOSAI ANR-20-IADJ-0009, and was granted access to the HPC resources of IDRIS under the allocation 2024-AD011015664 made by GENCI. We would like to thank Julie Mordacq, Elliot Vincent, and Yohann Perron for their helpful feedback.
 demo:
-    url: https://2f3b5fd3a588d0dd11.gradio.live/
+    url: https://nicolas-dufour-plonk.hf.space
 has_samples: true
 samples_section: >
     <h2 style="text-align:center; margin-bottom:30px;">Sample Predictions</h2>
