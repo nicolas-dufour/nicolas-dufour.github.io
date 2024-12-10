@@ -22,7 +22,7 @@ buttons:
     url: https://github.com/nicolas-dufour/plonk
   - type: arxiv
     text: Paper
-    url: "#"
+    url: https://arxiv.org/abs/2412.06781
   - type: gradio
     text: "Demo"
     url: "#demo"
