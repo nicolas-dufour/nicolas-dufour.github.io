@@ -47,12 +47,13 @@ abstract: "<p>Introducing the first generative geolocation method based on diffu
 #     url: /assets/publications/cad_cvpr/poster.pdf
 # video: 
 #     url: https://www.youtube.com/embed/4Tu-x2-Zcxs?si=17Ho_9xjTlFqy7pm
-bibtex: "@article{dufour2024around, \n
-   &nbsp;&nbsp; title={Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation}, \n
-   &nbsp;&nbsp; author={Nicolas Dufour and Vicky Kalogeiton and David Picard and Loic Landrieu}, \n
-   &nbsp;&nbsp; journal={Arxiv}, \n
-   &nbsp;&nbsp; year={2024}, \n
-   }"
+bibtex: "@article{dufour2024world80timestepsgenerative, \n
+      &nbsp;&nbsp;  title           ={Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation}, \n
+      &nbsp;&nbsp;  author          ={Nicolas Dufour and David Picard and Vicky Kalogeiton and Loic Landrieu}, \n
+      &nbsp;&nbsp;  year            ={2024}, \n
+      &nbsp;&nbsp;  eprint          ={2412.06781}, \n
+      &nbsp;&nbsp;  archivePrefix   ={arXiv}, \n
+}"
 acknowledgements: This work was supported by ANR project TOSAI ANR-20-IADJ-0009, and was granted access to the HPC resources of IDRIS under the allocation 2024-AD011015664 made by GENCI. We would like to thank Julie Mordacq, Elliot Vincent, and Yohann Perron for their helpful feedback.
 demo:
     url: https://nicolas-dufour-plonk.hf.space

@@ -102,7 +102,7 @@
 
 - title: "PoM: Efficient Image and Video Generation with the Polynomial Mixer"
   authors: <a href="https://davidpicard.github.io/">David Picard</a>, <u>Nicolas Dufour</u>
-  date: 2024-07-01
+  date: 2024-12-01
   year: 2024
   journal: Arxiv Preprint
   thumbnail: /assets/publications/pom/thumbnail.png
@@ -115,3 +115,22 @@
       &nbsp;&nbsp; journal   = {arXiv},\n
       &nbsp;&nbsp; year      = {2024},\n
     }"
+
+- title: "Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation"
+  authors: <u>Nicolas Dufour</u>, <a href="https://davidpicard.github.io/">David Picard</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
+  date: 2024-12-10
+  year: 2024
+  journal: Arxiv Preprint
+  thumbnail: /assets/publications/plonk/thumbnail.png
+  pdf:  https://arxiv.org/abs/2412.06781
+  github: https://github.com/nicolas-dufour/plonk
+  website: plonk.html
+  abstract: "Global visual geolocation predicts where an image was captured on Earth. Since images vary in how precisely they can be localized, this task inherently involves a significant degree of ambiguity. However, existing approaches are deterministic and overlook this aspect. In this paper, we aim to close the gap between traditional geolocalization and modern generative methods. We propose the first generative geolocation approach based on diffusion and Riemannian flow matching, where the denoising process operates directly on the Earth's surface. Our model achieves state-of-the-art performance on three visual geolocation benchmarks: OpenStreetView-5M, YFCC-100M, and iNat21. In addition, we introduce the task of probabilistic visual geolocation, where the model predicts a probability distribution over all possible locations instead of a single point. We introduce new metrics and baselines for this task, demonstrating the advantages of our diffusion-based approach."
+  bibtex: "@article{dufour2024world80timestepsgenerative, \n
+      &nbsp;&nbsp;  title           ={Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation}, \n
+      &nbsp;&nbsp;  author          ={Nicolas Dufour and David Picard and Vicky Kalogeiton and Loic Landrieu}, \n
+      &nbsp;&nbsp;  year            ={2024}, \n
+      &nbsp;&nbsp;  eprint          ={2412.06781}, \n
+      &nbsp;&nbsp;  archivePrefix   ={arXiv}, \n
+      }"
+
