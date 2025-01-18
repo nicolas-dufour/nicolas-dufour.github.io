@@ -26,7 +26,7 @@ buttons:
     url: "#demo"
   - type: hugging_face
     text: "Models"
-    url: "https://huggingface.co/nicolas-dufour/CAD_512"
+    url: https://huggingface.co/nicolas-dufour/CAD_512
   - type: pdf
     text: Poster
     url: /assets/publications/cad_cvpr/poster.pdf
