@@ -49,7 +49,7 @@ bibtex: "@article{dufour2024dont, \n
    }"
 acknowledgements: This work was supported by ANR project TOSAI ANR-20-IADJ-0009, and was granted access to the HPC resources of IDRIS under the allocation 2023-AD011014246 made by GENCI. We would like to thank Vincent Lepetit, Romain Loiseau, Robin Courant, Mathis Petrovich, Teodor Poncu and the anonymous reviewers for their insightful comments and suggestion.
 demo:
-    url: https://2f3b5fd3a588d0dd11.gradio.live/
+    url: https://121715ee14695509c5.gradio.live/
 has_samples: true
 samples_section: >
     <h2 style="text-align:center; margin-bottom:30px;">Generated Samples</h2>
