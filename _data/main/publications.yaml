@@ -1,5 +1,5 @@
 - title: SCAM! Transferring humans between images with Semantic Cross Attention Modulation
-  authors: <u>Nicolas Dufour</u>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://davidpicard.github.io/">David Picard</a>
+  authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://davidpicard.github.io/">David Picard</a>
   date: 2022-10-10
   year: 2022
   journal: ECCV 2022
@@ -17,7 +17,7 @@
    &nbsp;&nbsp; organization={Springer} \n
    }"
 - title: "Machine Learning for Brain Disorders: Transformers and Visual Transformers"
-  authors: <a href="https://robincourant.github.io/info">Robin Courant</a>, Maika Edberg, <u>Nicolas Dufour</u>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
+  authors: <a href="https://robincourant.github.io/info">Robin Courant</a>, Maika Edberg, <u><a href="#">Nicolas Dufour</a></u>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
   date: 2023-03-21
   year: 2023
   journal: Springer, Machine Learning for Brain Disorders
@@ -33,7 +33,7 @@
     &nbsp;&nbsp; publisher={Springer} \n
   }"
 - title: Analysis of Classifier-Free Guidance Weight Schedulers
-  authors: <a href="https://triocrossing.github.io/">Xi Wang</a>, <u>Nicolas Dufour</u>, <a href="https://nefeliandreou.github.io/">Nefeli Andreou</a>, <a href="https://vabrevaya.github.io/">Victoria Fernandez Abrevaya</a>, <a href="https://www.lix.polytechnique.fr/vista/vista-member/marie-paule_cani/">Marie-Paule Cani</a>, <a href="https://davidpicard.github.io/">David Picard*</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton*</a>
+  authors: <a href="https://triocrossing.github.io/">Xi Wang</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://nefeliandreou.github.io/">Nefeli Andreou</a>, <a href="https://vabrevaya.github.io/">Victoria Fernandez Abrevaya</a>, <a href="https://www.lix.polytechnique.fr/vista/vista-member/marie-paule_cani/">Marie-Paule Cani</a>, <a href="https://davidpicard.github.io/">David Picard*</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton*</a>
   date: 2024-11-24
   year: 2024
   journal: TMLR
@@ -48,7 +48,7 @@
     &nbsp;&nbsp; year={2024} \n
   }"
 - title: "OpenStreetView-5M: The Many Roads to Global Visual Geolocation"
-  authors: <a href="https://gastruc.github.io/">Guillaume Astruc</a>*, <u>Nicolas Dufour</u>*, <a href="https://imagine.enpc.fr/~siglidii/">Ioannis Siglidis</a>*, Constantin Aronssohn, Nacim Bouia, <a href="https://stephanie-fu.github.io/">Stephanie Fu</a>, <a href="https://romainloiseau.fr/">Romain Loiseau</a>, <a href="https://nv-nguyen.github.io/">Van Nguyen Nguyen</a>, <a href="https://imagine.enpc.fr/~raudec/">Charles Raude</a>, <a href="https://imagine.enpc.fr/~vincente/">Elliot Vincent</a>, Lintao XU, Hongyu Zhou, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
+  authors: <a href="https://gastruc.github.io/">Guillaume Astruc</a>*, <u><a href="#">Nicolas Dufour</a></u>*, <a href="https://imagine.enpc.fr/~siglidii/">Ioannis Siglidis</a>*, Constantin Aronssohn, Nacim Bouia, <a href="https://stephanie-fu.github.io/">Stephanie Fu</a>, <a href="https://romainloiseau.fr/">Romain Loiseau</a>, <a href="https://nv-nguyen.github.io/">Van Nguyen Nguyen</a>, <a href="https://imagine.enpc.fr/~raudec/">Charles Raude</a>, <a href="https://imagine.enpc.fr/~vincente/">Elliot Vincent</a>, Lintao XU, Hongyu Zhou, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
   date: 2024-06-17
   year: 2024
   journal: CVPR 2024
@@ -66,8 +66,8 @@
     &nbsp;&nbsp; journal={CVPR}, \n
     &nbsp;&nbsp; year={2024} \n
   }"
-- title: "Don’t drop your samples! Coherence-aware training benefits Conditional diffusion"
-  authors: <u>Nicolas Dufour</u>, <a href="https://scholar.google.com/citations?user=n_C2h-QAAAAJ&hl=fr">Victor Besnier</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://davidpicard.github.io/">David Picard</a>
+- title: "Don't drop your samples! Coherence-aware training benefits Conditional diffusion"
+  authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="https://scholar.google.com/citations?user=n_C2h-QAAAAJ&hl=fr">Victor Besnier</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://davidpicard.github.io/">David Picard</a>
   date: 2024-06-17
   year: 2024
   journal: CVPR 2024
@@ -78,13 +78,13 @@
   website: cad.html
   abstract: Conditional diffusion models are powerful generative models that can leverage various types of conditional information, such as class labels, segmentation masks, or text captions. However, in many real-world scenarios, conditional information may be noisy or unreliable due to human annotation errors or weak alignment. In this paper, we propose the Coherence-Aware Diffusion (CAD), a novel method that integrates coherence in conditional information into diffusion models, allowing them to learn from noisy annotations without discarding data. We assume that each data point has an associated coherence score that reflects the quality of the conditional information. We then condition the diffusion model on both the conditional information and the coherence score. In this way, the model learns to ignore or discount the conditioning when the coherence is low. We show that CAD is theoretically sound and empirically effective on various conditional generation tasks. Moreover, we show that leveraging coherence generates realistic and diverse samples that respect conditional information better than models trained on cleaned datasets where samples with low coherence have been discarded.
   bibtex: "@article{dufour2024dont, \n
-   &nbsp;&nbsp; title={Don’t drop your samples! Coherence-aware training benefits Conditional diffusion}, \n
+   &nbsp;&nbsp; title={Don't drop your samples! Coherence-aware training benefits Conditional diffusion}, \n
    &nbsp;&nbsp; author={Dufour, Nicolas and Besnier, Victor and Kalogeiton, Vicky and Picard, David}, \n
    &nbsp;&nbsp; booktitle={CVPR}, \n
    &nbsp;&nbsp; year={2024}, \n
    }"
 - title: "E.T. the Exceptional Trajectories: Text-to-Camera-Trajectory Generation with Character Awareness."
-  authors: <a href="https://robincourant.github.io/info">Robin Courant</a>, <u>Nicolas Dufour</u>, <a href="https://triocrossing.github.io/">Xi Wang</a>,  <a href="https://people.irisa.fr/Marc.Christie/">Marc Christie</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
+  authors: <a href="https://robincourant.github.io/info">Robin Courant</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://triocrossing.github.io/">Xi Wang</a>,  <a href="https://people.irisa.fr/Marc.Christie/">Marc Christie</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
   date: 2024-07-01
   year: 2024
   journal: ECCV 2024
@@ -101,7 +101,7 @@
     }"
 
 - title: "PoM: Efficient Image and Video Generation with the Polynomial Mixer"
-  authors: <a href="https://davidpicard.github.io/">David Picard</a>, <u>Nicolas Dufour</u>
+  authors: <a href="https://davidpicard.github.io/">David Picard</a>, <u><a href="#">Nicolas Dufour</a></u>
   date: 2024-12-01
   year: 2024
   journal: Arxiv Preprint
@@ -117,10 +117,10 @@
     }"
 
 - title: "Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation"
-  authors: <u>Nicolas Dufour</u>, <a href="https://davidpicard.github.io/">David Picard</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
-  date: 2024-12-10
-  year: 2024
-  journal: Arxiv Preprint
+  authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="https://davidpicard.github.io/">David Picard</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
+  date: 2025-06-10
+  year: 2025
+  journal: CVPR 2025
   thumbnail: /assets/publications/plonk/thumbnail.png
   pdf:  https://arxiv.org/abs/2412.06781
   github: https://github.com/nicolas-dufour/plonk
@@ -129,8 +129,23 @@
   bibtex: "@article{dufour2024world80timestepsgenerative, \n
       &nbsp;&nbsp;  title           ={Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation}, \n
       &nbsp;&nbsp;  author          ={Nicolas Dufour and David Picard and Vicky Kalogeiton and Loic Landrieu}, \n
-      &nbsp;&nbsp;  year            ={2024}, \n
-      &nbsp;&nbsp;  eprint          ={2412.06781}, \n
-      &nbsp;&nbsp;  archivePrefix   ={arXiv}, \n
+      &nbsp;&nbsp;  year            ={2025}, \n
+      &nbsp;&nbsp;  journal         ={CVPR}, \n
       }"
 
+- title: "How far can we go with ImageNet for Text-to-Image generation?"
+  authors: <a href="https://lucasdegeorge.github.io/">Lucas Degeorges</a>*, <a href="">Arijit Ghosh </a>*, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://davidpicard.github.io/">David Picard</a><sup>†</sup>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a><sup>†</sup>
+  date: 2025-07-01
+  year: 2025
+  journal: Arxiv Preprint
+  thumbnail: /assets/publications/t2i_imagenet/thumbnail.png
+  pdf:  https://arxiv.org/abs/2502.21318
+  github: https://github.com/lucasdegeorge/T2I-ImageNet
+  website: https://lucasdegeorge.github.io/projects/t2i_imagenet/
+  abstract: "Recent text-to-image (T2I) generation models have achieved remarkable results by training on billion-scale datasets, following a `bigger is better' paradigm that prioritizes data quantity over quality. We challenge this established paradigm by demonstrating that strategic data augmentation of small, well-curated datasets can match or outperform models trained on massive web-scraped collections. Using only ImageNet enhanced with well-designed text and image augmentations, we achieve a +2 overall score over SD-XL on GenEval and +5 on DPGBench while using just 1/10th the parameters and 1/1000th the training images. Our results suggest that strategic data augmentation, rather than massive datasets, could offer a more sustainable path forward for T2I generation."
+  bibtex: "@article{dufour2024world80timestepsgenerative, \n
+      &nbsp;&nbsp;  title           ={How far can we go with ImageNet for Text-to-Image generation?}, \n
+      &nbsp;&nbsp;  author          ={Lucas Degeorges and Arijit Ghosh and Nicolas Dufour and David Picard and Vicky Kalogeiton}, \n
+      &nbsp;&nbsp;  year            ={2025}, \n
+      &nbsp;&nbsp;  journal         ={arXiv}, \n
+      }"

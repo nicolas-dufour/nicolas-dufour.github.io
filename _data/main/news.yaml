@@ -14,7 +14,7 @@
   content: Organized the first edition of the [IMAGINE](https://imagine-lab.enpc.fr/) Hackaton.
 
 - date: 2024-04-01
-  content: Our work [CAD](/cad.html) got an Highlight (top 11%) at [CVPR 2024](http://cvpr2024.thecvf.com/)!
+  content: Our work [CAD](/cad.html) got an Highlight (top 11%) at [CVPR 2024](https://cvpr.thecvf.com/Conferences/2024)!
 
 - date: 2024-06-15
   content: Attended CVPR 2024 to present our work [CAD](/cad.html) and [OSV-5M](https://imagine.enpc.fr/~ioannis.siglidis/osv5m/).
@@ -24,3 +24,6 @@
 
 - date: 2024-09-28
   content: Attended [ECCV 2024](https://eccv2024.ecva.net/) to present our work [E.T.](https://www.lix.polytechnique.fr/vista/projects/2024_et_courant/)
+
+- date: 2025-03-01
+  content: Our work [Around the World in 80 Timesteps](/plonk.html) got accepted at [CVPR 2025](https://cvpr.thecvf.com/Conferences/2025).
