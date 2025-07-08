@@ -18,6 +18,8 @@ talks:
     date: 2023-04-12
   - name: "Talk at TUM: Conditional Generative Models"
     date: 2024-09-19
+  - name: "Podcast Underscore_: Around the World in 80 Timesteps"
+    date: 2025-06-25
 reviewer:
   - name: <a href="https://eccv.ecva.net/">ECCV 2024</a>
     date: 2024-10-04
