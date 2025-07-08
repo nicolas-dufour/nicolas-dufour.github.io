@@ -8,7 +8,7 @@ background: /assets/publications/cad_cvpr/background_banner.jpg
 author: Nicolas Dufour
 description: This paper proposes Coherence-Aware Diffusion (CAD), a novel method that integrates noise handling into generative diffusion models. By conditioning the model on both the input data and its associated coherence score, CAD learns to ignore noisy or unreliable annotations. This approach allows for more robust training and generation of realistic samples that respect conditional information.
 keywords: image generation, diffusion models, noise handling, coherence, conditional information, generative models, CAD
-analytics: https://www.googletagmanager.com/gtag/js?id=G-V8HK2ZSXGW
+analytics: https://www.googletagmanager.com/gtag/js?id=ANALYTICS_TAG_PLACEHOLDER
 
 paper_title: Don’t drop your samples! Coherence-aware training benefits Conditional diffusion
 paper_authors: <a href="/">Nicolas Dufour</a>, <a href="https://scholar.google.com/citations?user=n_C2h-QAAAAJ&hl=fr">Victor Besnier</a>,  <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://davidpicard.github.io/">David Picard</a>

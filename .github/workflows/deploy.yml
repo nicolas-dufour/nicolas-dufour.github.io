@@ -37,6 +37,10 @@ jobs:
           # Replace the analytics variable in all files
           sed -i "s/ANALYTICS_TAG_PLACEHOLDER/${{ vars.ANALYTICS_TAG }}/g" index.markdown
           sed -i "s/ANALYTICS_TAG_PLACEHOLDER/${{ vars.ANALYTICS_TAG }}/g" _layouts/main.html
+          sed -i "s/ANALYTICS_TAG_PLACEHOLDER/${{ vars.ANALYTICS_TAG }}/g" _layouts/project.html
+          sed -i "s/ANALYTICS_TAG_PLACEHOLDER/${{ vars.ANALYTICS_TAG }}/g" projects/cad.md
+          sed -i "s/ANALYTICS_TAG_PLACEHOLDER/${{ vars.ANALYTICS_TAG }}/g" projects/plonk.md
+          sed -i "s/ANALYTICS_TAG_PLACEHOLDER/${{ vars.ANALYTICS_TAG }}/g" projects/scam.md
           
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"

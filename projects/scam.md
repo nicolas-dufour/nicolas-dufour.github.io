@@ -6,7 +6,7 @@ short_name: SCAM
 author: Nicolas Dufour
 description: This work introduces SCAM, a system for semantically conditioned image generation that targets both pose and subject transfer. Unlike existing methods, SCAM encodes rich information in each semantic region, including foreground and background, enabling precise generation with fine details. This is achieved through a Semantic Attention Transformer Encoder that extracts multiple latent vectors per region, and a generator that leverages these latents via cross-attention modulation. Our approach outperforms SEAN and SPADE on the iDesigner and CelebAMask-HD datasets, setting a new state-of-the-art for subject transfer.
 keywords: image generation, semantic image synthesis, subject transfer, attention, transformer, GAN, SCAM, SEAN, SPADE
-analytics: https://www.googletagmanager.com/gtag/js?id=G-V8HK2ZSXGW
+analytics: https://www.googletagmanager.com/gtag/js?id=ANALYTICS_TAG_PLACEHOLDER
 
 paper_title: SCAM! Transferring humans between images with Semantic Cross Attention Modulation
 paper_authors: <a href="/">Nicolas Dufour</a>, <a href="https://davidpicard.github.io/">David Picard</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>

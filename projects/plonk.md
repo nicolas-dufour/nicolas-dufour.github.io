@@ -8,7 +8,7 @@ video_background: /assets/publications/plonk/animation.mp4
 author: Nicolas Dufour
 description: We propose the first generative approach for global visual geolocation that predicts where an image was captured on Earth. Our model achieves state-of-the-art performance on major benchmarks while handling location ambiguity through probabilistic predictions. The denoising process operates directly on the Earth's surface using Riemannian flow matching.
 keywords: diffusion models, flow matching, Riemannian flow matching, visual geolocation, global visual geolocation, generative models, PLONK
-analytics: https://www.googletagmanager.com/gtag/js?id=G-V8HK2ZSXGW
+analytics: https://www.googletagmanager.com/gtag/js?id=ANALYTICS_TAG_PLACEHOLDER
 teaser:
     url: /assets/publications/plonk/teaser.png
     caption: "Our model predicts location distributions for images from three major visual geolocation datasets: iNat-21 (wildlife), YFCC-100M (natural images), and OSV-5M (street-view). The model can handle varying levels of location ambiguity by outputting appropriate probability distributions."
