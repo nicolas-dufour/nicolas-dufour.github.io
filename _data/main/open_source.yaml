@@ -25,3 +25,7 @@
 - repo_name: DIRECTOR
   repo_owner: robincourant
   type: own
+
+- repo_name: plonk
+  repo_owner: nicolas-dufour
+  type: own
