@@ -13,17 +13,19 @@
     <div class="publication">
         {% if publication.thumbnail %}
         {% if publication.website %}
-        <a href="{{ publication.website }}" class="publication-thumbnail-link">
-            <img class="publication-thumbnail" src="{{ publication.thumbnail }}"
-                alt="{{ publication.title }} thumbnail">
+        <a href="{{ publication.website }}" class="publication-thumbnail-link" target="_blank"
+            rel="noopener noreferrer">
+            <img class="publication-thumbnail" src="{{ publication.thumbnail }}" alt="{{ publication.title }} thumbnail"
+                loading="lazy" decoding="async">
         </a>
         {% elsif publication.pdf %}
-        <a href="{{ publication.pdf }}" class="publication-thumbnail-link">
-            <img class="publication-thumbnail" src="{{ publication.thumbnail }}"
-                alt="{{ publication.title }} thumbnail">
+        <a href="{{ publication.pdf }}" class="publication-thumbnail-link" target="_blank" rel="noopener noreferrer">
+            <img class="publication-thumbnail" src="{{ publication.thumbnail }}" alt="{{ publication.title }} thumbnail"
+                loading="lazy" decoding="async">
         </a>
         {% else %}
-        <img class="publication-thumbnail" src="{{ publication.thumbnail }}" alt="{{ publication.title }} thumbnail">
+        <img class="publication-thumbnail" src="{{ publication.thumbnail }}" alt="{{ publication.title }} thumbnail"
+            loading="lazy" decoding="async">
         {% endif %}
         {% endif %}
         <div class="publication-content">
@@ -37,11 +39,11 @@
             </div>
             <div class="publication-buttons">
                 {% if publication.website %}
-                <a href="{{ publication.website }}">Website</a>
+                <a href="{{ publication.website }}" target="_blank" rel="noopener noreferrer">Website</a>
                 {% endif %}
-                <a href="{{ publication.pdf }}">Paper</a>
+                <a href="{{ publication.pdf }}" target="_blank" rel="noopener noreferrer">Paper</a>
                 {% if publication.github %}
-                <a href="{{ publication.github }}">Code</a>
+                <a href="{{ publication.github }}" target="_blank" rel="noopener noreferrer">Code</a>
                 {% endif %}
                 {% if publication.abstract %}
                 <a class="publication-abstract-toggle" id="abstract-toggle-{{ forloop.index }}">Abstract</a>

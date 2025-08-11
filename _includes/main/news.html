@@ -14,7 +14,7 @@
     </div>
     {% endfor %}
 </div>
-<button id="show-more-btn">Show More</button>
+<button id="show-more-btn" type="button" aria-expanded="false" aria-controls="extra-news-list">Show More</button>
 <script>
     const showMoreBtn = document.getElementById('show-more-btn');
     const extraNews = document.querySelectorAll('.extra-news');
@@ -26,12 +26,14 @@
                 setTimeout(() => news.style.display = 'none', 0);
             });
             showMoreBtn.textContent = 'Show More';
+            showMoreBtn.setAttribute('aria-expanded', 'false');
         } else {
             extraNews.forEach(news => {
                 news.style.display = 'flex';
                 setTimeout(() => news.classList.add('show'), 0);
             });
             showMoreBtn.textContent = 'Show Less';
+            showMoreBtn.setAttribute('aria-expanded', 'true');
         }
         isExpanded = !isExpanded;
     });

@@ -1,0 +1,4 @@
+---
+BUNDLE_PATH: "vendor/bundle"
+BUNDLE_RETRY: "2"
+BUNDLE_JOBS: "4"
