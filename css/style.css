@@ -262,6 +262,26 @@ main {
     padding: 60px 30px 30px;
 }
 
+/* Three.js background container inside #intro */
+#intro-three-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#intro {
+    position: relative;
+    overflow: hidden;
+}
+
+#intro>*:not(#intro-three-container) {
+    position: relative;
+    z-index: 1;
+}
+
 .pp {
     width: 180px;
     height: 180px;
