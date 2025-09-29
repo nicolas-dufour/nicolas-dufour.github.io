@@ -21,10 +21,21 @@ talks:
   - name: "Podcast <a href='https://www.youtube.com/watch?v=s5oHvfFUsbE&t=139s'>Underscore_</a>: Around the World in 80 Timesteps"
     date: 2025-06-25
 reviewer:
+  - name: <a href="https://neurips.cc/Conferences/2025">NeurIPS 2025</a>
+    date: 2025-12-08
+    
+  - name: <a href="https://iccv.thecvf.com/">ICCV 2025</a>
+    date: 2025-08-24
+
+  - name: <a href="https://cvpr.thecvf.com/Conferences/2025">CVPR 2025</a>
+    date: 2025-06-10
+
   - name: <a href="https://eccv.ecva.net/">ECCV 2024</a>
     date: 2024-10-04
+
   - name: <a href="https://cvpr.thecvf.com/Conferences/2024">CVPR 2024</a>
     date: 2024-06-15
+
   - name:  <a href="https://wacv2024.thecvf.com/">WACV 2024</a>
     date: 2024-01-04
 

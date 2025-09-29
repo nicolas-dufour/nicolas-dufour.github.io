@@ -100,22 +100,6 @@
       &nbsp;&nbsp; year      = {2024},\n
     }"
 
-- title: "PoM: Efficient Image and Video Generation with the Polynomial Mixer"
-  authors: <a href="https://davidpicard.github.io/">David Picard</a>, <u><a href="#">Nicolas Dufour</a></u>
-  date: 2024-12-01
-  year: 2024
-  journal: Arxiv Preprint
-  thumbnail: /assets/publications/pom/thumbnail.png
-  pdf:  https://arxiv.org/abs/2411.12663
-  github: https://github.com/davidpicard/Homm
-  abstract: Diffusion models based on Multi-Head Attention (MHA) have become ubiquitous to generate high quality images and videos. However, encoding an image or a video as a sequence of patches results in costly attention patterns, as the requirements both in terms of memory and compute grow quadratically. To alleviate this problem, we propose a drop-in replacement for MHA called the Polynomial Mixer (PoM) that has the benefit of encoding the entire sequence into an explicit state. PoM has a linear complexity with respect to the number of tokens. This explicit state also allows us to generate frames in a sequential fashion, minimizing memory and compute requirement, while still being able to train in parallel. We show the Polynomial Mixer is a universal sequence-to-sequence approximator, just like regular MHA. We adapt several Diffusion Transformers (DiT) for generating images and videos with PoM replacing MHA, and we obtain high quality samples while using less computational resources
-  bibtex: "@article{picard2024pom,\n
-      &nbsp;&nbsp; author    = {David Picard and Nicolas Dufour},\n
-      &nbsp;&nbsp; title     = {PoM: Efficient Image and Video Generation with the Polynomial Mixer},\n
-      &nbsp;&nbsp; journal   = {arXiv},\n
-      &nbsp;&nbsp; year      = {2024},\n
-    }"
-
 - title: "Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation"
   authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="https://davidpicard.github.io/">David Picard</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
   date: 2025-06-10
@@ -149,3 +133,36 @@
       &nbsp;&nbsp;  year            ={2025}, \n
       &nbsp;&nbsp;  journal         ={arXiv}, \n
       }"
+- title: "PoM: Efficient Image and Video Generation with the Polynomial Mixer"
+  authors: <a href="https://davidpicard.github.io/">David Picard</a>, <u><a href="#">Nicolas Dufour</a></u>
+  date: 2025-09-09
+  year: 2025
+  journal: Arxiv Preprint
+  thumbnail: /assets/publications/pom/thumbnail.png
+  pdf:  https://arxiv.org/abs/2411.12663
+  github: https://github.com/davidpicard/Homm
+  abstract: Diffusion models based on Multi-Head Attention (MHA) have become ubiquitous to generate high quality images and videos. However, encoding an image or a video as a sequence of patches results in costly attention patterns, as the requirements both in terms of memory and compute grow quadratically. To alleviate this problem, we propose a drop-in replacement for MHA called the Polynomial Mixer (PoM) that has the benefit of encoding the entire sequence into an explicit state. PoM has a linear complexity with respect to the number of tokens. This explicit state also allows us to generate frames in a sequential fashion, minimizing memory and compute requirement, while still being able to train in parallel. We show the Polynomial Mixer is a universal sequence-to-sequence approximator, just like regular MHA. We adapt several Diffusion Transformers (DiT) for generating images and videos with PoM replacing MHA, and we obtain high quality samples while using less computational resources
+  bibtex: "@article{picard2024pom,\n
+      &nbsp;&nbsp; author    = {David Picard and Nicolas Dufour},\n
+      &nbsp;&nbsp; title     = {PoM: Efficient Image and Video Generation with the Polynomial Mixer},\n
+      &nbsp;&nbsp; journal   = {arXiv},\n
+      &nbsp;&nbsp; year      = {2024},\n
+    }"
+
+- title: "DIPSY: Training-Free Synthetic Data Generation with Dual IP-Adapter Guidance"
+  authors: Luc Boudier, Loris Manganelli, <a href="https://eleftsonis.github.io/">Eleftherios Tsonis</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
+  date: 2025-11-28
+  year: 2025
+  journal: BMVC 2025
+  thumbnail: /assets/publications/dipsy/thumbnail.png
+  pdf:  https://arxiv.org/abs/2509.22635
+  github: https://github.com/eleftsonis/DIPSY
+  website: https://www.lix.polytechnique.fr/vista/projects/2025_bmvc_dipsy/ 
+  abstract: "Few-shot image classification remains challenging due to the limited availability of labeled examples. Recent approaches have explored generating synthetic training data using text-to-image diffusion models, but often require extensive model fine-tuning or external information sources. We present a novel training-free approach, called DIPSY, that leverages IP-Adapter for image-to-image translation to generate highly discriminative synthetic images using only the available few-shot examples. \n DIPSY introduces three key innovations: (1) an extended classifier-free guidance scheme that enables independent control over positive and negative image conditioning; (2) a class similarity-based sampling strategy that identifies effective contrastive examples; and (3) a simple yet effective pipeline that requires no model fine-tuning or external captioning and filtering. Experiments across ten benchmark datasets demonstrate that our approach achieves state-of-the-art or comparable performance, while eliminating the need for generative model adaptation or reliance on external tools for caption generation and image filtering. \n Our results highlight the effectiveness of leveraging dual image prompting with positive-negative guidance for generating class-discriminative features, particularly for fine-grained classification tasks. "
+  bibtex: "@inproceedings{boudier2025dipsy,\n
+      &nbsp;&nbsp; author    = {Luc Boudier and Loris Manganelli and Eleftherios Tsonis and Nicolas Dufour and Vicky Kalogeiton},\n
+      &nbsp;&nbsp; title     = {DIPSY: Training-Free Synthetic Data Generation with Dual IP-Adapter Guidance},\n
+      &nbsp;&nbsp; booktitle = {BMVC},\n
+      &nbsp;&nbsp; year      = {2025},\n
+    }"
+
