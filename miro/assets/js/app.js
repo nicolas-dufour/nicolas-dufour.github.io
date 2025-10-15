@@ -3361,7 +3361,10 @@
   // Custom smooth scroll with easing
   function smoothScrollTo(targetElement, duration = 1000) {
     const startPosition = window.pageYOffset;
-    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 80; // 80px offset for header
+    // Calculate offset based on whether mobile navbar is visible
+    const mobileNavbar = document.querySelector('.mobile-navbar');
+    const offset = mobileNavbar && window.getComputedStyle(mobileNavbar).display !== 'none' ? 60 : 80;
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
     const distance = targetPosition - startPosition;
     let startTime = null;
 
@@ -3451,8 +3454,81 @@
       });
     });
 
-    // Build sidebar TOC after main TOC is built
+    // Build sidebar TOC and mobile TOC after main TOC is built
     buildSidebarTOC(sections);
+    buildMobileTOC(sections);
+  }
+
+  function buildMobileTOC(sections) {
+    const mobileToc = document.getElementById('mobileTocList');
+    if (!mobileToc) return;
+
+    // Clear existing items
+    mobileToc.innerHTML = '';
+
+    sections.forEach((s, idx) => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = `#${s.id}`;
+
+      // Add section number and title
+      const number = document.createElement('span');
+      number.className = 'toc-number';
+      number.textContent = `${idx + 1}`;
+      a.appendChild(number);
+
+      const title = document.createElement('span');
+      title.className = 'toc-title';
+      const h2 = s.querySelector('h2');
+      title.textContent = h2 ? h2.textContent : '';
+      a.appendChild(title);
+
+      // Add click handler with smooth scroll animation
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = e.currentTarget.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+          // Custom smooth scroll with easing
+          smoothScrollTo(targetSection, 800);
+        }
+
+        // Close dropdown after initiating scroll
+        const dropdown = document.getElementById('tocDropdown');
+        if (dropdown) {
+          dropdown.classList.remove('open');
+        }
+      });
+
+      li.appendChild(a);
+      mobileToc.appendChild(li);
+    });
+  }
+
+  function setupMobileNav() {
+    const tocDropdownBtn = document.getElementById('tocDropdownBtn');
+    const tocDropdown = document.getElementById('tocDropdown');
+
+    if (tocDropdownBtn && tocDropdown) {
+      tocDropdownBtn.addEventListener('click', () => {
+        tocDropdown.classList.toggle('open');
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!tocDropdownBtn.contains(e.target) && !tocDropdown.contains(e.target)) {
+          tocDropdown.classList.remove('open');
+        }
+      });
+
+      // Close dropdown on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && tocDropdown.classList.contains('open')) {
+          tocDropdown.classList.remove('open');
+        }
+      });
+    }
   }
 
   function buildSidebarTOC(sections) {
@@ -3563,50 +3639,74 @@
     // Load saved theme preference
     const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
+
+    // Update desktop theme toggle
     const btn = document.getElementById('themeToggle');
     const themeIcon = btn ? btn.querySelector('.theme-icon') : null;
     if (themeIcon) {
       themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
     }
+
+    // Update mobile theme toggle
+    const mobileBtn = document.getElementById('mobileThemeToggle');
+    const mobileThemeIcon = mobileBtn ? mobileBtn.querySelector('.theme-icon') : null;
+    if (mobileThemeIcon) {
+      mobileThemeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+    }
   }
 
   function enhanceInteractivity() {
-    const btn = document.getElementById('themeToggle');
-    const themeIcon = btn ? btn.querySelector('.theme-icon') : null;
+    // Theme toggle handler function
+    const toggleTheme = () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-    if (btn) {
-      btn.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
 
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
+      // Update both theme toggle buttons
+      const desktopIcon = document.querySelector('#themeToggle .theme-icon');
+      const mobileIcon = document.querySelector('#mobileThemeToggle .theme-icon');
 
-        if (themeIcon) {
-          themeIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
-        }
+      if (desktopIcon) {
+        desktopIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+      }
+      if (mobileIcon) {
+        mobileIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+      }
 
-        // Redraw D3 plots after theme change
+      // Redraw D3 plots after theme change
+      setTimeout(() => {
+        plotTraining();
+        plotTTS();
+        plotRadars();
+        plotSynthetic();
+        plotSOTAComparison();
+        plotWeights();
+
+        // Re-trigger radar animations after theme change
         setTimeout(() => {
-          plotTraining();
-          plotTTS();
-          plotRadars();
-          plotSynthetic();
-          plotSOTAComparison();
-          plotWeights();
-
-          // Re-trigger radar animations after theme change
-          setTimeout(() => {
-            const radarPlots = ['radar_specialists', 'radar_geneval', 'synthetic_geneval', 'synthetic_aesthetic'];
-            radarPlots.forEach((id) => {
-              const container = document.getElementById(id);
-              if (container && container._animateRadar) {
-                container._animateRadar();
-              }
-            });
-          }, 50);
+          const radarPlots = ['radar_specialists', 'radar_geneval', 'synthetic_geneval', 'synthetic_aesthetic'];
+          radarPlots.forEach((id) => {
+            const container = document.getElementById(id);
+            if (container && container._animateRadar) {
+              container._animateRadar();
+            }
+          });
         }, 50);
-      });
+      }, 50);
+    };
+
+    // Desktop theme toggle
+    const btn = document.getElementById('themeToggle');
+    if (btn) {
+      btn.addEventListener('click', toggleTheme);
+    }
+
+    // Mobile theme toggle
+    const mobileBtn = document.getElementById('mobileThemeToggle');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', toggleTheme);
     }
 
     const modelSel = document.getElementById('radarModel');
@@ -3921,6 +4021,7 @@
   function init() {
     loadTheme();
     buildTOC();
+    setupMobileNav();
     plotTraining();
     plotTTS();
     plotRadars();

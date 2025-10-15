@@ -16,12 +16,38 @@
 </head>
 
 <body>
-  <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode">
+  <!-- Desktop theme toggle button -->
+  <button id="themeToggle" class="theme-toggle-btn desktop-only" aria-label="Toggle dark/light mode">
     <span class="theme-icon">🌙</span>
   </button>
 
+  <!-- Mobile navigation bar -->
+  <nav class="mobile-navbar">
+    <div class="mobile-navbar-content">
+      <div class="mobile-navbar-left">
+        <button id="tocDropdownBtn" class="mobile-nav-btn" aria-label="Table of contents">
+          <span class="mobile-nav-icon">☰</span>
+          <span class="mobile-nav-text">Contents</span>
+        </button>
+      </div>
+      <div class="mobile-navbar-right">
+        <button id="mobileThemeToggle" class="mobile-nav-btn" aria-label="Toggle dark/light mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+    <!-- Dropdown menu for TOC -->
+    <div id="tocDropdown" class="toc-dropdown">
+      <div class="toc-dropdown-content">
+        <ul id="mobileTocList"></ul>
+      </div>
+    </div>
+  </nav>
+
   <header class="hero">
-    <h1>MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency</h1>
+    <h1><span class="miro-highlight">MIRO</span>: <span class="miro-M">M</span>ult<span class="miro-I">I</span>-<span
+        class="miro-R">R</span>eward c<span class="miro-O">O</span>nditioned pretraining improves T2I quality and
+      efficiency</h1>
     <div class="authors">
       <p>
         <a href="https://nicolas-dufour.github.io/" target="_blank" rel="noopener">Nicolas Dufour</a><sup>1,2</sup>,
@@ -38,8 +64,11 @@
         <span class="affiliation-item"><sup>3</sup>AMIAD</span>
       </p>
     </div>
-    <p class="tldr">Train once, align many rewards. Faster convergence, controllable trade-offs, and strong performance.
-    </p>
+    <div class="tldr-container">
+      <div class="tldr-badge">TL;DR</div>
+      <p class="tldr">Train once, align many rewards. Faster convergence, controllable trade-offs, and strong
+        performance.</p>
+    </div>
     <nav class="topnav">
       <a href="../iclr2026_conference.pdf" target="_blank" rel="noopener">📄 Paper</a>
       <a href="#" target="_blank" rel="noopener">💻 Code</a>
@@ -54,31 +83,31 @@
       <div class="kpis">
         <div class="kpi card">
           <div class="kpi-num">19×</div>
-          <div class="kpi-label">Faster on Aesthetic</div>
+          <div class="kpi-label">Training speedup for Aesthetic</div>
         </div>
         <div class="kpi card">
           <div class="kpi-num">6.3×</div>
-          <div class="kpi-label">Faster on HPSv2</div>
+          <div class="kpi-label">Training speedup for HPSv2</div>
         </div>
         <div class="kpi card">
           <div class="kpi-num">3.5×</div>
-          <div class="kpi-label">Faster on PickAScore</div>
+          <div class="kpi-label">Training speedup for PickAScore</div>
         </div>
         <div class="kpi card">
           <div class="kpi-num">3.7×</div>
-          <div class="kpi-label">Faster ImageReward</div>
+          <div class="kpi-label">Training speedup for ImageReward</div>
         </div>
         <div class="kpi card">
           <div class="kpi-num">75</div>
-          <div class="kpi-label">Overall GenEval</div>
+          <div class="kpi-label">Overall GenEval Score</div>
         </div>
         <div class="kpi card">
           <div class="kpi-num">370×</div>
-          <div class="kpi-label">Less compute vs FLUX-dev</div>
+          <div class="kpi-label">Cheaper inference cost than FLUX</div>
         </div>
         <div class="kpi card">
-          <div class="kpi-num">350M</div>
-          <div class="kpi-label">Parameters flow model</div>
+          <div class="kpi-num">34x</div>
+          <div class="kpi-label">Less parameters than FLUX</div>
         </div>
       </div>
     </section>
@@ -355,23 +384,54 @@
       <div class="intro-subsection">
         <h3 class="intro-subtitle">Reward-Guided Inference</h3>
         <p>At inference time, MIRO provides unprecedented control over the generation process through explicit reward
-          conditioning. We detail the various sampling strategies enabled by our approach below.</p>
+          conditioning. We offer three complementary sampling strategies:</p>
 
-        <p><strong>High-Quality Generation.</strong> For generating high-quality samples, we condition the model on
-          maximum reward values across all \(N\) dimensions: \(\hat{\mathbf{s}}_{\mathrm{max}} = [B-1,
-          B-1, \ldots,
-          B-1]\). This instructs the model to generate samples that maximize all reward objectives simultaneously.</p>
+        <div class="benefits-grid" style="grid-template-columns: repeat(3, 1fr); margin: 2rem 0;">
+          <div class="benefit-card">
+            <div class="benefit-icon">🎯</div>
+            <div class="benefit-content">
+              <strong>High-Quality Mode</strong>
+              <p>Maximize all rewards simultaneously for best overall quality</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🚀</div>
+            <div class="benefit-content">
+              <strong>Classifier-Free Guidance</strong>
+              <p>Amplify quality through positive/negative reward contrasts</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🎛️</div>
+            <div class="benefit-content">
+              <strong>Custom Trade-offs</strong>
+              <p>Fine-tune individual reward dimensions on demand</p>
+            </div>
+          </div>
+        </div>
 
-        <p><strong>Multi-Reward Classifier-Free Guidance.</strong> We extend classifier-free guidance to the
-          multi-reward setting by leveraging the reward conditioning mechanism. Following the Coherence-Aware CFG
-          approach<sup><a href="#ref-dufour2024">[6]</a></sup>, we introduce a <em>positive</em> and a
-          <em>negative</em> reward target, denoted \(\hat{\mathbf{s}}^{+}\) and
-          \(\hat{\mathbf{s}}^{-}\), which can be
-          chosen by the user for controllability. By default, we use
-          \(\hat{\mathbf{s}}^{+}=\hat{\mathbf{s}}_{\mathrm{max}}=[B-1,\ldots,B-1]\) and
-          \(\hat{\mathbf{s}}^{-}=\hat{\mathbf{s}}_{\mathrm{min}}=[0,\ldots,0]\), and
-          \(\omega\) is the guidance scale:
+        <!-- High-Quality Generation -->
+        <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--accent);">1. High-Quality Generation</h4>
+        <p>For generating high-quality samples, we condition the model on maximum reward values across all \(N\)
+          dimensions: \(\hat{\mathbf{s}}_{\mathrm{max}} = [B-1, B-1, \ldots, B-1]\). This instructs the model to
+          generate samples that maximize all reward objectives simultaneously.</p>
+
+        <!-- Multi-Reward CFG -->
+        <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--accent);">2. Multi-Reward Classifier-Free
+          Guidance</h4>
+        <p>We extend classifier-free guidance to the multi-reward setting by leveraging the reward conditioning
+          mechanism.
+          Following the Coherence-Aware CFG approach<sup><a href="#ref-dufour2024">[6]</a></sup>, we introduce a
+          <em>positive</em> and a <em>negative</em> reward target, denoted \(\hat{\mathbf{s}}^{+}\) and
+          \(\hat{\mathbf{s}}^{-}\), which can be chosen by the user for controllability.
         </p>
+
+        <div class="callout info" style="margin: 1.5rem 0;">
+          <strong>Default Configuration:</strong> We use
+          \(\hat{\mathbf{s}}^{+}=\hat{\mathbf{s}}_{\mathrm{max}}=[B-1,\ldots,B-1]\) (all rewards high) and
+          \(\hat{\mathbf{s}}^{-}=\hat{\mathbf{s}}_{\mathrm{min}}=[0,\ldots,0]\) (all rewards low), with
+          \(\omega\) as the guidance scale.
+        </div>
 
         <div class="equations">
           <div>\[ \hat{\epsilon}_\theta(x_t, c) = \epsilon_\theta(x_t, c,
@@ -393,26 +453,38 @@
           </details>
         </div>
 
-        <p><strong>Theoretical Interpretation.</strong> This guidance formulation can be interpreted as approximating
-          the gradient of an implicit joint reward function. The guidance direction \(\epsilon_\theta(x_t,
-          c,
-          \hat{\mathbf{s}}_{\mathrm{max}}) - \epsilon_\theta(x_t, c,
-          \hat{\mathbf{s}}_{\mathrm{min}})\) points toward
-          regions of the latent space where all rewards are simultaneously high, effectively steering generation away
-          from low-quality outputs and toward samples that satisfy multiple quality criteria jointly. By amplifying this
-          direction with the guidance scale \(\omega\), we push the generated samples toward parts of
-          the distribution
-          characterized by superior aesthetic quality, text alignment, and other desired attributes. Similar to the weak
-          guidance framework<sup><a href="#ref-karras2024">[13]</a></sup>, where a bad version of the model is used to
-          guide the good version, here the guidance is provided by the contrast between high-reward and low-reward
+        <div class="callout question" style="margin: 1.5rem 0;">
+          <strong>Theoretical Interpretation:</strong> This guidance formulation approximates the gradient of an
+          implicit
+          joint reward function. The guidance direction
+          \(\epsilon_\theta(x_t, c, \hat{\mathbf{s}}_{\mathrm{max}}) - \epsilon_\theta(x_t, c,
+          \hat{\mathbf{s}}_{\mathrm{min}})\)
+          points toward regions where all rewards are simultaneously high, steering generation away from low-quality
+          outputs.
+        </div>
+
+        <p>By amplifying this direction with the guidance scale \(\omega\), we push generated samples toward parts of
+          the distribution characterized by superior aesthetic quality, text alignment, and other desired attributes.
+          Similar to the weak guidance framework<sup><a href="#ref-karras2024">[13]</a></sup>, where a bad version of
+          the model guides the good version, here guidance is provided by the contrast between high-reward and
+          low-reward
           conditioning.</p>
 
-        <p><strong>Flexible Reward Trade-offs.</strong> A key advantage of MIRO is the ability to specify custom reward
-          targets at inference time. Users can set \(\hat{\mathbf{s}}_{\mathrm{custom}} = [\hat{s}_1,
-          \hat{s}_2,
-          \ldots, \hat{s}_N]\) where each component represents the desired level for that reward dimension. This enables
-          precise control over trade-offs between different quality aspects—for instance, dialing up aesthetics without
-          collapsing alignment, or weighting alignment higher for compositional prompts.</p>
+        <!-- Flexible Trade-offs -->
+        <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--accent);">3. Flexible Reward Trade-offs</h4>
+        <p>A key advantage of MIRO is the ability to specify custom reward targets at inference time. Users can set
+          \(\hat{\mathbf{s}}_{\mathrm{custom}} = [\hat{s}_1, \hat{s}_2, \ldots, \hat{s}_N]\) where each component
+          represents the desired level for that reward dimension.</p>
+
+        <div style="margin: 1.5rem 0;">
+          <p><strong>Example use cases:</strong></p>
+          <ul style="margin-top: 0.5rem;">
+            <li>Dial up aesthetics without collapsing text alignment</li>
+            <li>Prioritize compositional correctness for complex prompts</li>
+            <li>Balance multiple objectives according to application needs</li>
+            <li>Explore the quality-alignment frontier interactively</li>
+          </ul>
+        </div>
       </div>
 
     </section>

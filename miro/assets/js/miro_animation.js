@@ -1,6 +1,6 @@
 (function () {
     const sketch = (p) => {
-        let img, t0 = 0, playing = true;
+        let img, t0 = 0, playing = false;
         const timeline = [
             ['intro', 2000],
             ['move_to_rewards', 1400],
@@ -27,16 +27,25 @@
             const parent = p.select('#miroAnimation');
             const parentW = parent.elt.clientWidth || 960;
 
-            // Calculate required width for animation content
-            // Layout: margin + img + gap + MIRO + gap + output + margin
-            const M = 20;
-            const imgW = Math.min(parentW * 0.22, 240);
-            const modelW = Math.max(200, parentW * 0.19);
-            const contentWidth = M + imgW + 60 + modelW + 60 + imgW + M;
+            // Detect if mobile layout is needed
+            const isMobile = parentW < 700;
 
-            // Use content width, but cap at parent width
-            const w = Math.min(contentWidth, parentW);
-            const h = Math.max(400, Math.round(w * 0.45));
+            // Calculate required width for animation content
+            const M = 20;
+            const imgW = isMobile ? Math.min(parentW * 0.6, 200) : Math.min(parentW * 0.22, 240);
+            const modelW = isMobile ? Math.min(parentW * 0.7, 220) : Math.max(200, parentW * 0.19);
+
+            let w, h;
+            if (isMobile) {
+                // Mobile: vertical layout, use full width
+                w = parentW;
+                h = Math.max(650, parentW * 1.8); // Compact vertical flow
+            } else {
+                // Desktop: horizontal layout
+                const contentWidth = M + imgW + 60 + modelW + 60 + imgW + M;
+                w = Math.min(contentWidth, parentW);
+                h = Math.max(400, Math.round(w * 0.45));
+            }
 
             const canvas = p.createCanvas(w, h);
             canvas.style('display', 'block');
@@ -44,7 +53,25 @@
             // Insert canvas at the beginning of the parent container
             parent.elt.insertBefore(canvas.elt, parent.elt.firstChild);
             p.pixelDensity(1);
-            t0 = p.millis();
+
+            // Set up Intersection Observer to restart animation when canvas is fully visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 1.0) {
+                        // Canvas is fully visible - restart animation from beginning
+                        t0 = p.millis();
+                        playing = true;
+                    } else {
+                        // Canvas is not fully visible - pause animation
+                        playing = false;
+                    }
+                });
+            }, {
+                threshold: 1.0 // Trigger when 100% of the canvas is visible
+            });
+
+            // Observe the canvas element
+            observer.observe(canvas.elt);
 
             // Click to toggle play/pause
             parent.elt.addEventListener('click', () => {
@@ -59,15 +86,25 @@
             const parent = p.select('#miroAnimation');
             const parentW = parent.elt.clientWidth || 960;
 
+            // Detect if mobile layout is needed
+            const isMobile = parentW < 700;
+
             // Calculate required width for animation content
             const M = 20;
-            const imgW = Math.min(parentW * 0.22, 240);
-            const modelW = Math.max(200, parentW * 0.19);
-            const contentWidth = M + imgW + 60 + modelW + 60 + imgW + M;
+            const imgW = isMobile ? Math.min(parentW * 0.6, 200) : Math.min(parentW * 0.22, 240);
+            const modelW = isMobile ? Math.min(parentW * 0.7, 220) : Math.max(200, parentW * 0.19);
 
-            // Use content width, but cap at parent width
-            const w = Math.min(contentWidth, parentW);
-            const h = Math.max(400, Math.round(w * 0.45));
+            let w, h;
+            if (isMobile) {
+                // Mobile: vertical layout, use full width
+                w = parentW;
+                h = Math.max(650, parentW * 1.8); // Compact vertical flow
+            } else {
+                // Desktop: horizontal layout
+                const contentWidth = M + imgW + 60 + modelW + 60 + imgW + M;
+                w = Math.min(contentWidth, parentW);
+                h = Math.max(400, Math.round(w * 0.45));
+            }
 
             p.resizeCanvas(w, h);
         };
@@ -218,30 +255,78 @@
             const W = p.width;
             const H = p.height;
             const M = 20;
+            const isMobile = W < 700;
 
-            // Layout - larger elements to better use canvas space
-            const imgW = Math.min(W * 0.22, 240);
-            const imgH = imgW * 0.66;
-            const imgX = M;
-            const imgY = H * 0.38; // Moved down to make room for scores
-            const capW = imgW;
-            const capH = 45; // Increased height for better two-line layout
-            const capX = M;
-            const capY = imgY + imgH + 12;
-            const rewardsX = imgX + imgW + 100;
-            const rewardsY = imgY - 12;
-            const rewardsW = Math.max(160, W * 0.16);
-            const rewardsH = imgH + capH + 35;
-            const vecX = rewardsX + rewardsW + 50;
-            const vecY = rewardsY;
-            const vecW = Math.max(120, W * 0.12);
-            const vecH = rewardsH;
-            const modelX = imgX + imgW + 60; // Positioned closer to the left, aligned with inputs
-            const modelY = rewardsY;
-            const modelW = Math.max(200, W * 0.19); // Slightly wider
-            const modelH = rewardsH;
-            const outX = modelX + modelW + 60;
-            const outY = modelY + modelH / 2 - (imgW * 0.66) / 2; // Centered with denoiser
+            // Layout - different for mobile vs desktop
+            let imgW, imgH, imgX, imgY, capW, capH, capX, capY;
+            let rewardsX, rewardsY, rewardsW, rewardsH;
+            let vecX, vecY, vecW, vecH;
+            let modelX, modelY, modelW, modelH;
+            let outX, outY;
+
+            if (isMobile) {
+                // Mobile: vertical layout (compact)
+                imgW = Math.min(W * 0.55, 180);
+                imgH = imgW * 0.66;
+                imgX = W / 2 - imgW / 2; // Center
+                imgY = M + 20;
+
+                capW = imgW;
+                capH = 40;
+                capX = imgX;
+                capY = imgY + imgH + 8;
+
+                // Rewards below caption
+                rewardsW = Math.min(W * 0.7, 200);
+                rewardsH = 100;
+                rewardsX = W / 2 - rewardsW / 2;
+                rewardsY = capY + capH + 25;
+
+                // Score vector below rewards
+                vecW = Math.min(W * 0.65, 170);
+                vecH = 60;
+                vecX = W / 2 - vecW / 2;
+                vecY = rewardsY + rewardsH + 20;
+
+                // MIRO denoiser below scores
+                modelW = Math.min(W * 0.7, 200);
+                modelH = 85;
+                modelX = W / 2 - modelW / 2;
+                modelY = vecY + vecH + 25;
+
+                // Output below denoiser
+                outX = W / 2 - imgW / 2;
+                outY = modelY + modelH + 25;
+            } else {
+                // Desktop: horizontal layout
+                imgW = Math.min(W * 0.22, 240);
+                imgH = imgW * 0.66;
+                imgX = M;
+                imgY = H * 0.38;
+
+                capW = imgW;
+                capH = 45;
+                capX = M;
+                capY = imgY + imgH + 12;
+
+                rewardsX = imgX + imgW + 100;
+                rewardsY = imgY - 12;
+                rewardsW = Math.max(160, W * 0.16);
+                rewardsH = imgH + capH + 35;
+
+                vecX = rewardsX + rewardsW + 50;
+                vecY = rewardsY;
+                vecW = Math.max(120, W * 0.12);
+                vecH = rewardsH;
+
+                modelX = imgX + imgW + 60;
+                modelY = rewardsY;
+                modelW = Math.max(200, W * 0.19);
+                modelH = rewardsH;
+
+                outX = modelX + modelW + 60;
+                outY = modelY + modelH / 2 - (imgW * 0.66) / 2;
+            }
 
             const stage = getStageAndProgress();
             const st = stage.name;
@@ -259,10 +344,11 @@
             const capInRewardsX = rewardsCenterX;
             const capInRewardsY = rewardsCenterY + imgInRewardsH + 6;
 
-            // Position of "scores back" vector above the left image
-            const leftVecW = imgW * 0.85, leftVecH = 65;
-            const leftVecX = imgX; // top-left lane, aligned with image left edge
-            const leftVecY = Math.max(M + 10, imgY - leftVecH - 50);
+            // Position of "scores back" vector - above image on desktop, uses vecX/vecY on mobile
+            const leftVecW = isMobile ? vecW : imgW * 0.85;
+            const leftVecH = isMobile ? vecH : 65;
+            const leftVecX = isMobile ? vecX : imgX;
+            const leftVecY = isMobile ? vecY : Math.max(M + 10, imgY - leftVecH - 50);
 
             // Calculate visibility states first
             let rewardsAlpha = 1;
@@ -455,7 +541,8 @@
             p.textAlign(p.CENTER, p.TOP);
             p.textSize(11);
             if (st === 'clean_output' || st === 'pause') {
-                p.text('denoised image', outX + outW / 2, outY - 22);
+                const labelY = isMobile ? outY - 18 : outY - 22;
+                p.text('denoised image', outX + outW / 2, labelY);
             }
         };
     };
