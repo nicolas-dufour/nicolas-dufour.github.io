@@ -298,6 +298,19 @@
         const arrowAnimationDelay = animationDuration + 400; // Start arrow after curves are done
         const arrowAnimationDuration = 800; // Arrow grows over 800ms
 
+        // Reset to initial state
+        baselinePath.attr('stroke-dashoffset', baselineLength);
+        baselinePoints.attr('r', 0);
+        miroPath.attr('stroke-dashoffset', miroLength);
+        miroPoints.attr('r', 0);
+
+        if (arrowElements) {
+          const su = arrowElements.speedup;
+          arrowElements.line.attr('x2', xScale(su.baselineStep));
+          arrowElements.arrowhead.style('opacity', 0).attr('transform', 'scale(0.5)');
+          arrowElements.text.style('opacity', 0);
+        }
+
         // Animate baseline line
         baselinePath
           .transition()
@@ -679,6 +692,19 @@
         const animationDuration = 2000; // 2 seconds for line drawing
         const arrowAnimationDelay = animationDuration + 400; // Start arrow after curves are done
         const arrowAnimationDuration = 800; // Arrow grows over 800ms
+
+        // Reset to initial state
+        baselinePath.attr('stroke-dashoffset', baselineLength);
+        baselinePoints.forEach(point => point.attr('r', 0));
+        miroPath.attr('stroke-dashoffset', miroLength);
+        miroPoints.forEach(point => point.attr('r', 0));
+
+        if (arrowElements) {
+          const arr = arrowElements.arrow;
+          arrowElements.line.attr('x2', xScale(arr.from));
+          arrowElements.arrowhead.style('opacity', 0).attr('transform', 'scale(0.5)');
+          arrowElements.text.style('opacity', 0);
+        }
 
         // Animate baseline line
         baselinePath
@@ -1105,6 +1131,12 @@
       const animationDuration = 1800; // 1.8 seconds for expansion (slower)
       const pointDelay = 300; // delay before points appear
 
+      // Reset to initial state
+      comparePolygon.attr('transform', 'scale(0)');
+      miroPolygon.attr('transform', 'scale(0)');
+      comparePoints.forEach(point => point.attr('r', 0));
+      miroPoints.forEach(point => point.attr('r', 0));
+
       // Animate comparison polygon with elastic easing
       comparePolygon
         .transition()
@@ -1489,6 +1521,12 @@
       const animationDuration = 1800; // 1.8 seconds for expansion (slower)
       const pointDelay = 300; // delay before points appear
 
+      // Reset to initial state
+      comparePolygon.attr('transform', 'scale(0)');
+      miroPolygon.attr('transform', 'scale(0)');
+      comparePoints.forEach(point => point.attr('r', 0));
+      miroPoints.forEach(point => point.attr('r', 0));
+
       // Animate comparison polygon with elastic easing
       comparePolygon
         .transition()
@@ -1827,6 +1865,13 @@
         const pointDelay = 200; // delay before points appear
         const staggerDelay = 150; // delay between each series
 
+        // Reset to initial state
+        polygons.forEach(polygon => polygon.attr('transform', 'scale(0)'));
+        seriesOrder.forEach(name => {
+          if (!pointsByName[name]) return;
+          pointsByName[name].forEach(point => point.attr('r', 0));
+        });
+
         // Animate polygons with elastic easing (staggered by series order)
         polygons.forEach((polygon, i) => {
           polygon
@@ -2052,20 +2097,6 @@
           tooltip.style('opacity', 0);
         });
 
-      // Animate bars with elastic effect
-      bars.transition()
-        .delay((d, i) => i * 60)
-        .duration(800)
-        .ease(d3.easeBackOut.overshoot(1.2))
-        .attr('y', d => yScale(d.value))
-        .attr('height', d => innerHeight - yScale(d.value))
-        .on('end', function (d, i) {
-          // Trigger sorting animation only after the last bar finishes growing
-          if (i === labels.length - 1) {
-            setTimeout(() => sortBars(), 500);
-          }
-        });
-
       function sortBars() {
         // Create sorted indices array (sort by value, smallest to largest)
         const indices = labels.map((_, i) => i);
@@ -2097,6 +2128,46 @@
             .attr('transform', 'rotate(-45)')
             .style('text-anchor', 'end'));
       }
+
+      // Store animation function for replay capability
+      container._animateBarplot = function () {
+        // Reset x scale to original unsorted order
+        xScale.domain(labels);
+
+        // Reset bars to initial state
+        bars
+          .attr('x', d => xScale(d.label))
+          .attr('y', useLogScale ? yScale(yRange[0]) : innerHeight)
+          .attr('height', useLogScale ? innerHeight - yScale(yRange[0]) : 0);
+
+        // Reset axis to original order
+        g.select('.axis-bottom')
+          .call(d3.axisBottom(xScale))
+          .call(g => g.select('.domain').attr('stroke', axisColor))
+          .call(g => g.selectAll('.tick line').attr('stroke', axisColor))
+          .call(g => g.selectAll('.tick text')
+            .attr('fill', axisColor)
+            .attr('font-size', '10px')
+            .attr('transform', 'rotate(-45)')
+            .style('text-anchor', 'end'));
+
+        // Animate bars growing
+        bars.transition()
+          .delay((d, i) => i * 60)
+          .duration(800)
+          .ease(d3.easeBackOut.overshoot(1.2))
+          .attr('y', d => yScale(d.value))
+          .attr('height', d => innerHeight - yScale(d.value))
+          .on('end', function (d, i) {
+            // Trigger sorting animation only after the last bar finishes growing
+            if (i === labels.length - 1) {
+              setTimeout(() => sortBars(), 500);
+            }
+          });
+      };
+
+      // Trigger initial animation
+      container._animateBarplot();
     }
   }
 
@@ -3632,8 +3703,8 @@
     // Create an Intersection Observer to trigger animation on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.dataset.animated) {
-          // Mark as animated to prevent re-triggering
+        if (entry.isIntersecting && entry.target.dataset.animated !== 'true') {
+          // Mark as animated to prevent re-triggering while visible
           entry.target.dataset.animated = 'true';
 
           // Check which section we're animating
@@ -3668,7 +3739,22 @@
             if (container && container._animateRadar) {
               container._animateRadar();
             }
+          } else if (entry.target.id === 'sota-comparison') {
+            // Trigger animation for SOTA barplots
+            const barplots = ['sota_geneval', 'sota_imagereward', 'sota_params', 'sota_compute'];
+            barplots.forEach((id, index) => {
+              const container = document.getElementById(id);
+              if (container && container._animateBarplot) {
+                setTimeout(() => {
+                  container._animateBarplot();
+                }, index * 150);
+              }
+            });
           }
+        } else if (!entry.isIntersecting && entry.target.dataset.animated === 'true') {
+          // Reset animation flag when element leaves viewport
+          // This allows animations to replay when scrolling back
+          delete entry.target.dataset.animated;
         }
       });
     }, {
@@ -3678,7 +3764,7 @@
 
     // Helper function to check if element is in viewport and trigger animation
     function checkAndTriggerAnimation(element) {
-      if (!element || element.dataset.animated) return;
+      if (!element || element.dataset.animated === 'true') return;
 
       const rect = element.getBoundingClientRect();
       const windowHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -3714,6 +3800,16 @@
           if (element._animateRadar) {
             element._animateRadar();
           }
+        } else if (element.id === 'sota-comparison') {
+          const barplots = ['sota_geneval', 'sota_imagereward', 'sota_params', 'sota_compute'];
+          barplots.forEach((id, index) => {
+            const container = document.getElementById(id);
+            if (container && container._animateBarplot) {
+              setTimeout(() => {
+                container._animateBarplot();
+              }, index * 150);
+            }
+          });
         }
       }
     }
@@ -3757,6 +3853,13 @@
     if (syntheticAesthetic) {
       observer.observe(syntheticAesthetic);
       setTimeout(() => checkAndTriggerAnimation(syntheticAesthetic), 100);
+    }
+
+    // Observe the SOTA comparison section for barplots
+    const sotaSection = document.getElementById('sota-comparison');
+    if (sotaSection) {
+      observer.observe(sotaSection);
+      setTimeout(() => checkAndTriggerAnimation(sotaSection), 100);
     }
   }
 
