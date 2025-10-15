@@ -306,7 +306,7 @@
 
         if (arrowElements) {
           const su = arrowElements.speedup;
-          arrowElements.line.attr('x2', xScale(su.baselineStep));
+          arrowElements.line.attr('x2', xScale(500000)); // Reset to collapsed state at baseline end
           arrowElements.arrowhead.style('opacity', 0).attr('transform', 'scale(0.5)');
           arrowElements.text.style('opacity', 0);
         }
@@ -2975,10 +2975,13 @@
       resetAutoSlide();
     });
 
-    // Pause on hover
+    // Pause on hover (respect reduced motion)
     const container = document.querySelector('.ipr-carousel-container');
-    container.addEventListener('mouseenter', stopAutoSlide);
-    container.addEventListener('mouseleave', startAutoSlide);
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      container.addEventListener('mouseenter', stopAutoSlide);
+      container.addEventListener('mouseleave', startAutoSlide);
+    }
 
     // Touch support
     let touchStartX = 0;
@@ -3005,7 +3008,7 @@
 
     // Initialize
     updatePosition(false);
-    startAutoSlide();
+    if (!prefersReduced) startAutoSlide();
   }
 
   function loadProgression() {
@@ -3177,14 +3180,11 @@
       const containerWidth = container.offsetWidth;
       const columnsPerView = getColumnsPerView();
 
-      // Calculate the actual column width
-      // Account for container padding (60px on each side for desktop)
-      let containerPadding = 120; // 60px left + 60px right
-      if (window.innerWidth <= 700) {
-        containerPadding = 100; // 50px each side on tablet/mobile
-      }
-
-      const availableWidth = containerWidth - containerPadding;
+      // Calculate the actual column width by reading real paddings
+      const cs = getComputedStyle(container);
+      const pl = parseFloat(cs.paddingLeft) || 0;
+      const pr = parseFloat(cs.paddingRight) || 0;
+      const availableWidth = containerWidth - (pl + pr);
 
       // Column width should fit exactly columnsPerView in the available space
       const columnWidth = availableWidth / columnsPerView;
@@ -3294,10 +3294,13 @@
       resetAutoSlide();
     });
 
-    // Pause on hover
+    // Pause on hover (skip if reduced motion)
     const container = document.querySelector('.qual-carousel-container');
-    container.addEventListener('mouseenter', stopAutoSlide);
-    container.addEventListener('mouseleave', startAutoSlide);
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      container.addEventListener('mouseenter', stopAutoSlide);
+      container.addEventListener('mouseleave', startAutoSlide);
+    }
 
     // Handle window resize
     let resizeTimeout;
@@ -3341,10 +3344,10 @@
     createDots();
     updatePosition(false);
 
-    // Start auto-slide after a short delay to ensure everything is rendered
-    setTimeout(() => {
-      startAutoSlide();
-    }, 100);
+    // Start auto-slide if user doesn't prefer reduced motion
+    if (!prefersReduced) {
+      setTimeout(() => { startAutoSlide(); }, 100);
+    }
   }
 
   // Create scroll progress indicator
@@ -3801,55 +3804,23 @@
 
   function setupTrainingAnimation() {
     // Create an Intersection Observer to trigger animation on scroll
+    // Observe individual plot containers instead of entire sections for better mobile trigger
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && entry.target.dataset.animated !== 'true') {
           // Mark as animated to prevent re-triggering while visible
           entry.target.dataset.animated = 'true';
 
-          // Check which section we're animating
-          if (entry.target.id === 'training-curves') {
-            // Trigger animation for training curve containers
-            const curves = ['curve_aesthetic', 'curve_imagereward', 'curve_pick', 'curve_hpsv2'];
-            curves.forEach((id, index) => {
-              const container = document.getElementById(id);
-              if (container && container._animateTraining) {
-                // Stagger the start of each chart slightly
-                setTimeout(() => {
-                  container._animateTraining();
-                }, index * 150);
-              }
-            });
-          } else if (entry.target.id === 'test-time-scaling') {
-            // Trigger animation for test-time scaling containers
-            const ttsPlots = ['tts_aesthetic', 'tts_imagereward', 'tts_pick', 'tts_hpsv2'];
-            ttsPlots.forEach((id, index) => {
-              const container = document.getElementById(id);
-              if (container && container._animateTTS) {
-                // Stagger the start of each chart slightly
-                setTimeout(() => {
-                  container._animateTTS();
-                }, index * 150);
-              }
-            });
-          } else if (entry.target.id === 'radar_specialists' || entry.target.id === 'radar_geneval' ||
-            entry.target.id === 'synthetic_geneval' || entry.target.id === 'synthetic_aesthetic') {
-            // Trigger animation for the specific radar plot (including synthetic)
-            const container = entry.target;
-            if (container && container._animateRadar) {
-              container._animateRadar();
-            }
-          } else if (entry.target.id === 'sota-comparison') {
-            // Trigger animation for SOTA barplots
-            const barplots = ['sota_geneval', 'sota_imagereward', 'sota_params', 'sota_compute'];
-            barplots.forEach((id, index) => {
-              const container = document.getElementById(id);
-              if (container && container._animateBarplot) {
-                setTimeout(() => {
-                  container._animateBarplot();
-                }, index * 150);
-              }
-            });
+          // Trigger animation based on container type
+          const container = entry.target;
+          if (container._animateTraining) {
+            container._animateTraining();
+          } else if (container._animateTTS) {
+            container._animateTTS();
+          } else if (container._animateRadar) {
+            container._animateRadar();
+          } else if (container._animateBarplot) {
+            container._animateBarplot();
           }
         } else if (!entry.isIntersecting && entry.target.dataset.animated === 'true') {
           // Reset animation flag when element leaves viewport
@@ -3858,7 +3829,7 @@
         }
       });
     }, {
-      threshold: 0.2, // Trigger when 20% of the section is visible (lowered from 0.5)
+      threshold: 0.2, // Trigger when 20% of the plot is visible
       rootMargin: '0px'
     });
 
@@ -3875,92 +3846,57 @@
       if (isVisible) {
         element.dataset.animated = 'true';
 
-        if (element.id === 'training-curves') {
-          const curves = ['curve_aesthetic', 'curve_imagereward', 'curve_pick', 'curve_hpsv2'];
-          curves.forEach((id, index) => {
-            const container = document.getElementById(id);
-            if (container && container._animateTraining) {
-              setTimeout(() => {
-                container._animateTraining();
-              }, index * 150);
-            }
-          });
-        } else if (element.id === 'test-time-scaling') {
-          const ttsPlots = ['tts_aesthetic', 'tts_imagereward', 'tts_pick', 'tts_hpsv2'];
-          ttsPlots.forEach((id, index) => {
-            const container = document.getElementById(id);
-            if (container && container._animateTTS) {
-              setTimeout(() => {
-                container._animateTTS();
-              }, index * 150);
-            }
-          });
-        } else if (element.id === 'radar_specialists' || element.id === 'radar_geneval' ||
-          element.id === 'synthetic_geneval' || element.id === 'synthetic_aesthetic') {
-          if (element._animateRadar) {
-            element._animateRadar();
-          }
-        } else if (element.id === 'sota-comparison') {
-          const barplots = ['sota_geneval', 'sota_imagereward', 'sota_params', 'sota_compute'];
-          barplots.forEach((id, index) => {
-            const container = document.getElementById(id);
-            if (container && container._animateBarplot) {
-              setTimeout(() => {
-                container._animateBarplot();
-              }, index * 150);
-            }
-          });
+        if (element._animateTraining) {
+          element._animateTraining();
+        } else if (element._animateTTS) {
+          element._animateTTS();
+        } else if (element._animateRadar) {
+          element._animateRadar();
+        } else if (element._animateBarplot) {
+          element._animateBarplot();
         }
       }
     }
 
-    // Observe the training curves section
-    const trainingSection = document.getElementById('training-curves');
-    if (trainingSection) {
-      observer.observe(trainingSection);
-      // Check immediately if already visible
-      setTimeout(() => checkAndTriggerAnimation(trainingSection), 100);
-    }
+    // Observe individual training curve plots
+    const trainingCurves = ['curve_aesthetic', 'curve_imagereward', 'curve_pick', 'curve_hpsv2'];
+    trainingCurves.forEach((id) => {
+      const container = document.getElementById(id);
+      if (container) {
+        observer.observe(container);
+        setTimeout(() => checkAndTriggerAnimation(container), 100);
+      }
+    });
 
-    // Observe the test-time scaling section
-    const ttsSection = document.getElementById('test-time-scaling');
-    if (ttsSection) {
-      observer.observe(ttsSection);
-      setTimeout(() => checkAndTriggerAnimation(ttsSection), 100);
-    }
+    // Observe individual test-time scaling plots
+    const ttsPlots = ['tts_aesthetic', 'tts_imagereward', 'tts_pick', 'tts_hpsv2'];
+    ttsPlots.forEach((id) => {
+      const container = document.getElementById(id);
+      if (container) {
+        observer.observe(container);
+        setTimeout(() => checkAndTriggerAnimation(container), 100);
+      }
+    });
 
-    // Observe individual radar plot containers (not the section)
-    const radarSpecialists = document.getElementById('radar_specialists');
-    if (radarSpecialists) {
-      observer.observe(radarSpecialists);
-      setTimeout(() => checkAndTriggerAnimation(radarSpecialists), 100);
-    }
+    // Observe individual radar plots
+    const radarPlots = ['radar_specialists', 'radar_geneval', 'synthetic_geneval', 'synthetic_aesthetic'];
+    radarPlots.forEach((id) => {
+      const container = document.getElementById(id);
+      if (container) {
+        observer.observe(container);
+        setTimeout(() => checkAndTriggerAnimation(container), 100);
+      }
+    });
 
-    const radarGeneval = document.getElementById('radar_geneval');
-    if (radarGeneval) {
-      observer.observe(radarGeneval);
-      setTimeout(() => checkAndTriggerAnimation(radarGeneval), 100);
-    }
-
-    // Observe synthetic radar plots
-    const syntheticGeneval = document.getElementById('synthetic_geneval');
-    if (syntheticGeneval) {
-      observer.observe(syntheticGeneval);
-      setTimeout(() => checkAndTriggerAnimation(syntheticGeneval), 100);
-    }
-
-    const syntheticAesthetic = document.getElementById('synthetic_aesthetic');
-    if (syntheticAesthetic) {
-      observer.observe(syntheticAesthetic);
-      setTimeout(() => checkAndTriggerAnimation(syntheticAesthetic), 100);
-    }
-
-    // Observe the SOTA comparison section for barplots
-    const sotaSection = document.getElementById('sota-comparison');
-    if (sotaSection) {
-      observer.observe(sotaSection);
-      setTimeout(() => checkAndTriggerAnimation(sotaSection), 100);
-    }
+    // Observe individual SOTA barplots
+    const barplots = ['sota_geneval', 'sota_imagereward', 'sota_params', 'sota_compute'];
+    barplots.forEach((id) => {
+      const container = document.getElementById(id);
+      if (container) {
+        observer.observe(container);
+        setTimeout(() => checkAndTriggerAnimation(container), 100);
+      }
+    });
   }
 
   function setupCopyBibtex() {

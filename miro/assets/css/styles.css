@@ -3,7 +3,8 @@
     --fg: #e6e6e6;
     --muted: #b5b5b5;
     --card: #15171c;
-    --accent: #ff9a5c
+    --accent: #ff9a5c;
+    --page-x: clamp(16px, 4vw, 32px)
 }
 
 [data-theme="light"] {
@@ -42,7 +43,7 @@ a {
 
 .hero h1 {
     margin: 0 0 12px;
-    font-size: 28px;
+    font-size: clamp(22px, 4.5vw, 32px);
     line-height: 1.3
 }
 
@@ -128,6 +129,11 @@ a {
         flex-direction: column;
         align-items: center;
         gap: 6px
+    }
+
+    .affiliation-item {
+        white-space: normal;
+        text-wrap: balance
     }
 }
 
@@ -508,36 +514,26 @@ figcaption {
 }
 
 .progression-layout {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     margin: 0 auto;
     max-width: 100%
 }
 
-.progression-row-container {
-    width: 100%
-}
-
-.progression-row-title {
-    text-align: center;
-    margin: 0 0 12px 0;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--fg)
-}
-
-.progression-row {
+.progression-pair {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%
 }
 
 .progression-item {
     margin: 0;
     padding: 0;
     background: transparent;
-    border: none
+    border: none;
+    position: relative
 }
 
 .progression-item img {
@@ -548,21 +544,42 @@ figcaption {
     display: block
 }
 
-@media (max-width: 1000px) {
-    .progression-row {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px
+.progression-label {
+    text-align: center;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    display: none
+}
+
+/* Desktop: 2 pairs per row (4 images total per row) */
+@media (min-width: 1001px) {
+    .progression-layout {
+        grid-template-columns: repeat(2, 1fr)
     }
 }
 
+/* Tablet: 1 pair per row (2 images per row) */
+@media (max-width: 1000px) {
+    .progression-layout {
+        grid-template-columns: 1fr
+    }
+}
+
+/* Mobile: show labels and keep pairs together */
 @media (max-width: 600px) {
-    .progression-row {
+    .progression-layout {
         grid-template-columns: 1fr;
+        gap: 20px
+    }
+
+    .progression-pair {
         gap: 16px
     }
 
-    .progression-layout {
-        gap: 20px
+    .progression-label {
+        display: block
     }
 }
 
@@ -924,7 +941,7 @@ figcaption {
 }
 
 .kpi-num {
-    font-size: 28px;
+    font-size: clamp(22px, 5vw, 28px);
     font-weight: 700;
     color: var(--accent)
 }
@@ -1485,7 +1502,8 @@ sup a:hover {
 /* Introduction formatting */
 #intro {
     width: 100%;
-    padding: 0 60px
+    padding-left: var(--page-x);
+    padding-right: var(--page-x)
 }
 
 #intro>h2 {
@@ -1711,18 +1729,40 @@ sup a:hover {
     }
 
     .benefits-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem
     }
 
     .benefit-card {
         flex-direction: column;
-        text-align: center
+        text-align: left;
+        align-items: flex-start;
+        padding: 0.875rem;
+        font-size: 0.85rem;
+        gap: 0.5rem;
+        min-width: 0
     }
 
     .benefit-icon {
-        font-size: 2.5em;
-        margin: 0 auto
+        font-size: 1.75em;
+        margin: 0;
+        line-height: 1
+    }
+
+    .benefit-content {
+        min-width: 0;
+        width: 100%
+    }
+
+    .benefit-content strong {
+        font-size: 0.9em;
+        white-space: normal;
+        word-break: break-word
+    }
+
+    .benefit-content p {
+        font-size: 0.8em;
+        margin: 0.25rem 0
     }
 
     .reward-list {
@@ -1755,7 +1795,8 @@ sup a:hover {
 /* Method section formatting */
 #method {
     width: 100%;
-    padding: 0 60px
+    padding-left: var(--page-x);
+    padding-right: var(--page-x)
 }
 
 #method>h2 {
@@ -1964,7 +2005,8 @@ sup a:hover {
 /* Training curves section formatting */
 #training-curves {
     width: 100%;
-    padding: 0 60px
+    padding-left: var(--page-x);
+    padding-right: var(--page-x)
 }
 
 #training-curves>h2,
@@ -2017,7 +2059,8 @@ sup a:hover {
 /* Test-time scaling section formatting */
 #test-time-scaling {
     width: 100%;
-    padding: 0 60px
+    padding-left: var(--page-x);
+    padding-right: var(--page-x)
 }
 
 #test-time-scaling>h2 {
@@ -2062,7 +2105,8 @@ sup a:hover {
 /* Radars section formatting */
 #radars {
     width: 100%;
-    padding: 0 60px
+    padding-left: var(--page-x);
+    padding-right: var(--page-x)
 }
 
 #radars>h2,
@@ -2122,7 +2166,8 @@ sup a:hover {
 /* Weight sweeps section formatting */
 #weight-sweeps {
     width: 100%;
-    padding: 0 60px
+    padding-left: var(--page-x);
+    padding-right: var(--page-x)
 }
 
 #weight-sweeps>h2,
@@ -2186,7 +2231,8 @@ sup a:hover {
 /* Synthetic section formatting */
 #synthetic {
     width: 100%;
-    padding: 0 60px
+    padding-left: var(--page-x);
+    padding-right: var(--page-x)
 }
 
 #synthetic>h2 {
@@ -2251,7 +2297,8 @@ sup a:hover {
 /* References section formatting */
 #references {
     width: 100%;
-    padding: 0 60px
+    padding-left: var(--page-x);
+    padding-right: var(--page-x)
 }
 
 #references>h2 {
@@ -2272,7 +2319,8 @@ sup a:hover {
 /* Conclusion section formatting */
 #conclusion {
     width: 100%;
-    padding: 0 60px
+    padding-left: var(--page-x);
+    padding-right: var(--page-x)
 }
 
 #conclusion>h2 {
@@ -2614,6 +2662,28 @@ sup a:hover {
     line-height: 1
 }
 
+/* Responsive KaTeX equations: prevent horizontal overflow */
+.equations,
+.equation-inline,
+.katex-display {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.katex-display>.katex {
+    display: inline-block;
+    padding: 0 4px;
+    /* small breathing room when scrolled */
+}
+
+/* Long inline math should wrap instead of forcing page width */
+.katex {
+    max-width: 100%;
+    white-space: normal;
+}
+
 @media (max-width: 768px) {
     .bibtex-container {
         padding: 1rem
@@ -2798,27 +2868,11 @@ sup a:hover {
 
 /* Responsive adjustments for all sections */
 @media (max-width: 768px) {
-
-    #training-curves,
-    #test-time-scaling,
-    #radars,
-    #weight-sweeps,
-    #synthetic,
-    #references {
-        padding: 0 50px
-    }
+    /* unified via --page-x */
 }
 
 @media (max-width: 500px) {
-
-    #training-curves,
-    #test-time-scaling,
-    #radars,
-    #weight-sweeps,
-    #synthetic,
-    #references {
-        padding: 0 50px
-    }
+    /* unified via --page-x */
 }
 
 /* Mobile Navigation Bar */
@@ -2950,7 +3004,7 @@ sup a:hover {
 }
 
 /* Show mobile navbar when sidebar TOC is hidden */
-@media (max-width: 1600px) {
+@media (max-width: 1024px) {
     .mobile-navbar {
         display: block;
     }
@@ -2960,9 +3014,9 @@ sup a:hover {
         display: none;
     }
 
-    /* Add padding to body to account for fixed navbar */
+    /* Add padding to body to account for fixed navbar (safe areas) */
     body {
-        padding-top: 52px;
+        padding-top: calc(48px + env(safe-area-inset-top, 0px));
     }
 
     /* Adjust hero section padding */
@@ -2981,7 +3035,7 @@ sup a:hover {
     }
 
     body {
-        padding-top: 50px;
+        padding-top: calc(48px + env(safe-area-inset-top, 0px));
     }
 }
 
@@ -2990,8 +3044,47 @@ sup a:hover {
     display: flex;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1024px) {
     .desktop-only {
         display: none !important;
+    }
+}
+
+@supports (padding: max(0px)) {
+    .mobile-navbar {
+        padding-left: max(12px, env(safe-area-inset-left));
+        padding-right: max(12px, env(safe-area-inset-right));
+    }
+}
+
+/* Benefits grid helpers to replace inline styles */
+.benefits-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.benefits-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 768px) {
+
+    .benefits-2,
+    .benefits-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .benefits-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    .carousel-arrow,
+    .ipr-carousel-btn,
+    .kpi,
+    .cta-button {
+        transition: none !important;
     }
 }

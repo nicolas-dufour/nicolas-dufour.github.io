@@ -64,7 +64,7 @@
             // Set up Intersection Observer to restart animation when canvas is fully visible
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 1.0) {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
                         // Canvas is fully visible - restart animation from beginning
                         t0 = p.millis();
                         playing = true;
@@ -74,7 +74,7 @@
                     }
                 });
             }, {
-                threshold: 1.0 // Trigger when 100% of the canvas is visible
+                threshold: 0.35 // Trigger when ~35% of the canvas is visible
             });
 
             // Observe the canvas element

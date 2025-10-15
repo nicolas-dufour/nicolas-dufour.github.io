@@ -182,7 +182,7 @@
 
       <div class="intro-subsection">
         <h3 class="intro-subtitle">Key Benefits</h3>
-        <div class="benefits-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="benefits-grid benefits-2">
           <div class="benefit-card">
             <div class="benefit-icon">⚡</div>
             <div class="benefit-content">
@@ -362,7 +362,7 @@
           \(\epsilon \sim \mathcal{N}(0, I)\) and time \(t \sim \mathcal{U}(0, 1)\), then compute the noisy sample
           \(x_t = (1-t)x + t\epsilon\). The multi-reward flow matching loss becomes:</p>
 
-        <div class="equations">
+        <div class="equations" aria-label="Equation (scroll horizontally on small screens)">
           <div>\[ \mathcal{L} = \mathbb{E}_{(x,c,\hat{\mathbf{s}})
             \sim \tilde{\mathcal{D}}, \epsilon \sim
             \mathcal{N}(0,I), t \sim \mathcal{U}(0,1)}\left[\left\|v_\theta(x_t, c,
@@ -386,7 +386,7 @@
         <p>At inference time, MIRO provides unprecedented control over the generation process through explicit reward
           conditioning. We offer three complementary sampling strategies:</p>
 
-        <div class="benefits-grid" style="grid-template-columns: repeat(3, 1fr); margin: 2rem 0;">
+        <div class="benefits-grid benefits-3" style="margin: 2rem 0;">
           <div class="benefit-card">
             <div class="benefit-icon">🎯</div>
             <div class="benefit-content">
@@ -539,39 +539,49 @@
         demonstrating that MIRO's multi-reward conditioning doesn't just improve metrics—it enables fundamentally faster
         learning of complex compositional concepts and visual aesthetics.</p>
       <div class="progression-layout">
-        <div class="progression-row-container">
-          <h4 class="progression-row-title">Baseline</h4>
-          <div class="progression-row">
-            <figure class="progression-item">
-              <img id="prog_baseline_0" alt="Baseline progression 0" />
-            </figure>
-            <figure class="progression-item">
-              <img id="prog_baseline_1" alt="Baseline progression 1" />
-            </figure>
-            <figure class="progression-item">
-              <img id="prog_baseline_2" alt="Baseline progression 2" />
-            </figure>
-            <figure class="progression-item">
-              <img id="prog_baseline_3" alt="Baseline progression 3" />
-            </figure>
-          </div>
+        <!-- Prompt 0 pair -->
+        <div class="progression-pair">
+          <figure class="progression-item">
+            <img id="prog_baseline_0" alt="Baseline progression 0" />
+            <figcaption class="progression-label">Baseline</figcaption>
+          </figure>
+          <figure class="progression-item">
+            <img id="prog_miro_0" alt="MIRO progression 0" />
+            <figcaption class="progression-label">MIRO</figcaption>
+          </figure>
         </div>
-        <div class="progression-row-container">
-          <h4 class="progression-row-title">MIRO</h4>
-          <div class="progression-row">
-            <figure class="progression-item">
-              <img id="prog_miro_0" alt="MIRO progression 0" />
-            </figure>
-            <figure class="progression-item">
-              <img id="prog_miro_1" alt="MIRO progression 1" />
-            </figure>
-            <figure class="progression-item">
-              <img id="prog_miro_2" alt="MIRO progression 2" />
-            </figure>
-            <figure class="progression-item">
-              <img id="prog_miro_3" alt="MIRO progression 3" />
-            </figure>
-          </div>
+        <!-- Prompt 1 pair -->
+        <div class="progression-pair">
+          <figure class="progression-item">
+            <img id="prog_baseline_1" alt="Baseline progression 1" />
+            <figcaption class="progression-label">Baseline</figcaption>
+          </figure>
+          <figure class="progression-item">
+            <img id="prog_miro_1" alt="MIRO progression 1" />
+            <figcaption class="progression-label">MIRO</figcaption>
+          </figure>
+        </div>
+        <!-- Prompt 2 pair -->
+        <div class="progression-pair">
+          <figure class="progression-item">
+            <img id="prog_baseline_2" alt="Baseline progression 2" />
+            <figcaption class="progression-label">Baseline</figcaption>
+          </figure>
+          <figure class="progression-item">
+            <img id="prog_miro_2" alt="MIRO progression 2" />
+            <figcaption class="progression-label">MIRO</figcaption>
+          </figure>
+        </div>
+        <!-- Prompt 3 pair -->
+        <div class="progression-pair">
+          <figure class="progression-item">
+            <img id="prog_baseline_3" alt="Baseline progression 3" />
+            <figcaption class="progression-label">Baseline</figcaption>
+          </figure>
+          <figure class="progression-item">
+            <img id="prog_miro_3" alt="MIRO progression 3" />
+            <figcaption class="progression-label">MIRO</figcaption>
+          </figure>
         </div>
       </div>
       <div class="progression-controls">
@@ -687,7 +697,7 @@
         text-image alignment as measured by GenEval. This enhancement is particularly pronounced in challenging
         compositional reasoning tasks:</p>
 
-      <div class="benefits-grid" style="grid-template-columns: repeat(3, 1fr); margin: 2rem 0;">
+      <div class="benefits-grid benefits-3" style="margin: 2rem 0;">
         <div class="benefit-card">
           <div class="benefit-icon">🎨</div>
           <div class="benefit-content">
@@ -758,7 +768,7 @@
           of 57
           (+19%). The improvements are consistent across all compositional reasoning metrics:</p>
 
-        <div class="benefits-grid" style="grid-template-columns: repeat(3, 1fr); margin: 2rem 0;">
+        <div class="benefits-grid benefits-3" style="margin: 2rem 0;">
           <div class="benefit-card">
             <div class="benefit-icon">📍</div>
             <div class="benefit-content">
@@ -856,7 +866,7 @@
         metrics respond to the aesthetic weight adjustment.
       </div>
 
-      <div class="benefits-grid" style="grid-template-columns: repeat(3, 1fr); margin: 2rem 0;">
+      <div class="benefits-grid benefits-3" style="margin: 2rem 0;">
         <div class="benefit-card">
           <div class="benefit-icon">⚖️</div>
           <div class="benefit-content">
@@ -921,7 +931,7 @@
           strengthens
           text-image correspondence, HPSv2 influences composition, and so on.</p>
 
-        <div class="benefits-grid" style="grid-template-columns: repeat(4, 1fr); margin: 2rem 0;">
+        <div class="benefits-grid" style="margin: 2rem 0;">
           <div class="benefit-card" style="padding: 1rem;">
             <div class="benefit-content" style="text-align: center;">
               <strong>🎨 Aesthetics</strong>
@@ -995,7 +1005,7 @@
 
       <div class="intro-subsection" style="margin-top: 2rem;">
         <h3 class="intro-subtitle">Setting new benchmarks for compositional reasoning</h3>
-        <div class="benefits-grid" style="grid-template-columns: repeat(2, 1fr); margin: 1.5rem 0;">
+        <div class="benefits-grid benefits-2" style="margin: 1.5rem 0;">
           <div class="benefit-card">
             <div class="benefit-icon">📍</div>
             <div class="benefit-content">
