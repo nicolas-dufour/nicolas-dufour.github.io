@@ -235,7 +235,7 @@
         }
 
         // Compute inner row rects for reward models area
-        function getRewardRowRects(x, y, w, h, n) {
+        function getRewardRowRects(x, y, w, h, n, isMobile = false) {
             const pad = 8;
             const headerH = 16; // space under title inside box
             const innerX = x + pad;
@@ -243,13 +243,26 @@
             const innerW = w - pad * 2;
             const innerH = h - (pad * 2 + headerH);
             const gap = 6;
-            const rowH = (innerH - gap * (n - 1)) / n;
-            const rects = [];
-            for (let i = 0; i < n; i++) {
-                const ry = innerY + i * (rowH + gap);
-                rects.push({ x: innerX, y: ry, w: innerW, h: rowH });
+
+            if (isMobile) {
+                // Mobile: arrange as columns (vertical flow)
+                const colW = (innerW - gap * (n - 1)) / n;
+                const rects = [];
+                for (let i = 0; i < n; i++) {
+                    const rx = innerX + i * (colW + gap);
+                    rects.push({ x: rx, y: innerY, w: colW, h: innerH });
+                }
+                return rects;
+            } else {
+                // Desktop: arrange as rows (horizontal flow)
+                const rowH = (innerH - gap * (n - 1)) / n;
+                const rects = [];
+                for (let i = 0; i < n; i++) {
+                    const ry = innerY + i * (rowH + gap);
+                    rects.push({ x: innerX, y: ry, w: innerW, h: rowH });
+                }
+                return rects;
             }
-            return rects;
         }
 
         function subscriptFor(i) {
@@ -257,14 +270,14 @@
             return (i >= 0 && i < subs.length) ? subs[i] : String(i + 1);
         }
 
-        function drawRewardModels(x, y, w, h, n, alpha) {
+        function drawRewardModels(x, y, w, h, n, alpha, isMobile = false) {
             const pal = getPalette();
-            const rects = getRewardRowRects(x, y, w, h, n);
+            const rects = getRewardRowRects(x, y, w, h, n, isMobile);
             p.push();
             if (alpha != null && alpha < 1) p.drawingContext.globalAlpha = Math.max(0, alpha);
             for (let i = 0; i < rects.length; i++) {
                 const r = rects[i];
-                // Row container
+                // Row/Column container
                 p.noStroke();
                 p.fill('rgba(255,255,255,0.03)');
                 p.rect(r.x, r.y, r.w, r.h, 6);
@@ -276,9 +289,17 @@
                 // Label r_i
                 p.noStroke();
                 p.fill(p.color(pal.fg));
-                p.textAlign(p.LEFT, p.CENTER);
-                p.textSize(12);
-                p.text('r' + subscriptFor(i), r.x + 8, r.y + r.h / 2);
+                if (isMobile) {
+                    // Mobile: label at top center of column
+                    p.textAlign(p.CENTER, p.TOP);
+                    p.textSize(10);
+                    p.text('r' + subscriptFor(i), r.x + r.w / 2, r.y + 4);
+                } else {
+                    // Desktop: label at left center of row
+                    p.textAlign(p.LEFT, p.CENTER);
+                    p.textSize(12);
+                    p.text('r' + subscriptFor(i), r.x + 8, r.y + r.h / 2);
+                }
             }
             p.pop();
         }
@@ -616,30 +637,48 @@
                 p.push();
                 if (rewardsAlpha < 1) p.drawingContext.globalAlpha = rewardsAlpha;
                 drawBox(rewardsX, rewardsY, rewardsW, rewardsH, 'Rewards r₁,...,rₙ');
-                drawRewardModels(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS, rewardsAlpha);
+                drawRewardModels(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS, rewardsAlpha, isMobile);
                 p.pop();
             }
 
             // Mini inputs in reward rows: animate entry during move_to_rewards, then stay visible
             if ((st === 'move_to_rewards' || st === 'fanout_inputs') && rewardsAlpha > 0) {
-                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS);
+                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS, isMobile);
                 for (let i = 0; i < NUM_REWARDS; i++) {
                     const r = rects[i];
-                    const miniH = Math.min(r.h * 0.55, 20);
-                    const miniW = miniH / 0.66; // keep aspect
-                    const targetX = r.x + 10; // left inside row
-                    const targetY = r.y + r.h / 2 - miniH / 2;
+                    let miniH, miniW, targetX, targetY;
+
+                    if (isMobile) {
+                        // Mobile: vertical columns, images at top
+                        miniW = Math.min(r.w * 0.65, 24);
+                        miniH = miniW * 0.66; // keep aspect
+                        targetX = r.x + r.w / 2 - miniW / 2; // center in column
+                        targetY = r.y + 20; // near top of column
+                    } else {
+                        // Desktop: horizontal rows, images at left
+                        miniH = Math.min(r.h * 0.55, 20);
+                        miniW = miniH / 0.66; // keep aspect
+                        targetX = r.x + 10; // left inside row
+                        targetY = r.y + r.h / 2 - miniH / 2; // center vertically
+                    }
 
                     let cx = targetX;
                     let cy = targetY;
                     let a = 1;
 
                     if (st === 'move_to_rewards') {
-                        // Animate entry from left
-                        const startX = rewardsX - miniW - 12;
+                        // Animate entry
                         const delay = i * ROW_DELAY;
                         const localProg = Math.max(0, Math.min(1, (prog - delay) / (1 - delay)));
-                        cx = lerp(startX, targetX, localProg);
+                        if (isMobile) {
+                            // Mobile: animate from above
+                            const startY = rewardsY - miniH - 12;
+                            cy = lerp(startY, targetY, localProg);
+                        } else {
+                            // Desktop: animate from left
+                            const startX = rewardsX - miniW - 12;
+                            cx = lerp(startX, targetX, localProg);
+                        }
                         a = localProg;
                     }
 
@@ -647,29 +686,42 @@
                 }
             }
 
-            // During emit_scores: morph each row's mini input from image -> dot while moving left-to-right
+            // During emit_scores: morph each row's mini input from image -> dot while moving
             if (st === 'emit_scores' && rewardsAlpha > 0) {
-                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS);
+                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS, isMobile);
                 const rewardColors = getRewardColors();
                 for (let i = 0; i < NUM_REWARDS; i++) {
                     const r = rects[i];
-                    const miniH = Math.min(r.h * 0.55, 20);
-                    const miniW = miniH / 0.66;
+                    let miniH, miniW, xStartTopLeft, yStartTopLeft, xEndCenter, yEndCenter;
+
                     const rowDelay = i * ROW_DELAY;
                     const pRow = Math.max(0, Math.min(1, (prog - rowDelay) / (1 - rowDelay)));
                     const morphEnd = MORPH_END;
-                    // Start from top-left position (same as fanout_inputs)
-                    const xStartTopLeft = r.x + 10;
-                    const yStartTopLeft = r.y + r.h / 2 - miniH / 2;
-                    // End position for center point
-                    const xEndCenter = r.x + r.w - 16;
-                    const yCenter = r.y + r.h / 2;
+
+                    if (isMobile) {
+                        // Mobile: vertical columns, move top-to-bottom
+                        miniW = Math.min(r.w * 0.65, 24);
+                        miniH = miniW * 0.66;
+                        xStartTopLeft = r.x + r.w / 2 - miniW / 2;
+                        yStartTopLeft = r.y + 20;
+                        xEndCenter = r.x + r.w / 2; // center horizontally
+                        yEndCenter = r.y + r.h - 16; // bottom of column
+                    } else {
+                        // Desktop: horizontal rows, move left-to-right
+                        miniH = Math.min(r.h * 0.55, 20);
+                        miniW = miniH / 0.66;
+                        xStartTopLeft = r.x + 10;
+                        yStartTopLeft = r.y + r.h / 2 - miniH / 2;
+                        xEndCenter = r.x + r.w - 16; // right of row
+                        yEndCenter = r.y + r.h / 2; // center vertically
+                    }
 
                     const pMorph = Math.max(0, Math.min(1, pRow / morphEnd));
-                    // Animate from top-left to center-based positioning as it morphs
+                    // Animate from start to end position as it morphs
                     const xStartCenter = xStartTopLeft + miniW / 2;
+                    const yStartCenter = yStartTopLeft + miniH / 2;
                     const cxCenter = lerp(xStartCenter, xEndCenter, pMorph);
-                    const cyCenter = yCenter;
+                    const cyCenter = lerp(yStartCenter, yEndCenter, pMorph);
 
                     // Draw morph: keep image visible while shrinking; dot grows/brightens
                     const rectAlpha = 1; // never disappears during morph
@@ -737,16 +789,27 @@
 
             // During emit_scores: dots only go to numeric vector (no histogram yet)
             if (st === 'emit_scores' && rewardsAlpha > 0) {
-                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS);
+                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS, isMobile);
                 const vals = generateScores(NUM_REWARDS);
                 const rewardColors = getRewardColors();
 
-                // Numeric vector at the right of rewards block (between rewards and scores), dot morphs into value
-                const vecLabelX = rewardsX + rewardsW + 18;
-                const vecLabelY = rewardsY - 6;
+                // Numeric vector position depends on layout
+                let vecLabelX, vecLabelY, vecLabelAlign;
+                if (isMobile) {
+                    // Mobile: scores appear below rewards block
+                    vecLabelX = rewardsX + rewardsW / 2;
+                    vecLabelY = rewardsY + rewardsH + 8;
+                    vecLabelAlign = p.CENTER;
+                } else {
+                    // Desktop: scores appear to the right of rewards block
+                    vecLabelX = rewardsX + rewardsW + 18;
+                    vecLabelY = rewardsY - 6;
+                    vecLabelAlign = p.LEFT;
+                }
+
                 p.push();
                 p.fill('rgba(255,255,255,0.7)');
-                p.textAlign(p.LEFT, p.BOTTOM);
+                p.textAlign(vecLabelAlign, p.BOTTOM);
                 p.textSize(11);
                 p.text('scores vector', vecLabelX, vecLabelY);
                 p.pop();
@@ -756,25 +819,40 @@
                     const delay = i * ROW_DELAY;
                     const pRow = Math.max(0, Math.min(1, (prog - delay) / (1 - delay)));
                     const appear = Math.max(0, Math.min(1, (pRow - VEC_START) / (1 - VEC_START)));
-                    const vx = rewardsX + rewardsW + 20;
-                    const vy = r.y + r.h / 2;
                     const value = Math.round(vals[i] * 100) / 100;
+
+                    let vx, vy, startX, startY;
+                    if (isMobile) {
+                        // Mobile: vertical layout, scores below columns
+                        vx = r.x + r.w / 2;
+                        vy = rewardsY + rewardsH + 18;
+                        startX = r.x + r.w / 2;
+                        startY = r.y + r.h - 16;
+                    } else {
+                        // Desktop: horizontal layout, scores to the right
+                        vx = rewardsX + rewardsW + 20;
+                        vy = r.y + r.h / 2;
+                        startX = r.x + r.w - 16;
+                        startY = r.y + r.h / 2;
+                    }
+
                     if (appear > 0) {
-                        // Start from where the morph ends
-                        const cx = lerp(r.x + r.w - 16, vx - 10, appear);
+                        // Animate from where the morph ends to score position
+                        const cx = lerp(startX, vx - 10, appear);
+                        const cy = lerp(startY, vy, appear);
                         p.push();
                         // fading dot
                         p.noStroke();
                         p.drawingContext.globalAlpha = 1 - appear;
                         p.fill(rewardColors[i % rewardColors.length]);
-                        p.circle(cx, vy, 8);
+                        p.circle(cx, cy, 8);
                         p.pop();
                         // value fading in
                         p.push();
                         p.fill('rgba(255,255,255,0.95)');
-                        p.textAlign(p.LEFT, p.CENTER);
+                        p.textAlign(p.CENTER, p.CENTER);
                         p.drawingContext.globalAlpha = appear;
-                        p.textSize(12);
+                        p.textSize(isMobile ? 10 : 12);
                         p.text(value.toFixed(2), vx, vy);
                         p.pop();
                     }
@@ -783,20 +861,27 @@
 
             // During rewards_disappear: numeric scores transform into dots that travel to histogram
             if (st === 'rewards_disappear') {
-                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS);
+                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS, isMobile);
                 const vals = generateScores(NUM_REWARDS);
                 const hist = getHistogramGeom(vecPos.x, vecPos.y, vecPos.w, vecPos.h, NUM_REWARDS);
                 const rewardColors = getRewardColors();
 
                 for (let i = 0; i < NUM_REWARDS; i++) {
                     const r = rects[i];
-                    const vx = rewardsX + rewardsW + 20;
-                    const vy = r.y + r.h / 2;
                     const value = Math.round(vals[i] * 100) / 100;
 
                     // Start position: numeric score location
-                    const startX = vx;
-                    const startY = vy;
+                    let startX, startY;
+                    if (isMobile) {
+                        // Mobile: scores are below rewards, centered under each column
+                        startX = r.x + r.w / 2;
+                        startY = rewardsY + rewardsH + 18;
+                    } else {
+                        // Desktop: scores are to the right of rewards
+                        startX = rewardsX + rewardsW + 20;
+                        startY = r.y + r.h / 2;
+                    }
+
                     // End position: histogram bar
                     const endX = hist.slots[i].x + hist.barWidth / 2;
                     const endY = hist.by + hist.barAreaH - 6;
@@ -815,10 +900,10 @@
                     // Fade out the numeric value
                     p.push();
                     p.fill('rgba(255,255,255,0.95)');
-                    p.textAlign(p.LEFT, p.CENTER);
+                    p.textAlign(p.CENTER, p.CENTER);
                     p.drawingContext.globalAlpha = 1 - prog;
-                    p.textSize(12);
-                    p.text(value.toFixed(2), vx, vy);
+                    p.textSize(isMobile ? 10 : 12);
+                    p.text(value.toFixed(2), startX, startY);
                     p.pop();
                 }
             }
