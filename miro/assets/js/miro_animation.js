@@ -1,10 +1,17 @@
 (function () {
     const sketch = (p) => {
         let img, t0 = 0, playing = false;
+        const NUM_REWARDS = 7;
+        // Timing controls for scoring animation (slower, clearer)
+        const ROW_DELAY = 0.12; // per-row stagger as fraction of stage
+        const MORPH_END = 0.6;  // image->dot morph completes within emit_scores
+        const VEC_START = 0.8;  // dot leaves row to scores vector
+        const BAR_START = 0.9;  // histogram begins filling
         const timeline = [
             ['intro', 2000],
-            ['move_to_rewards', 1400],
-            ['emit_scores', 1200],
+            ['move_to_rewards', 1600],
+            ['fanout_inputs', 100],
+            ['emit_scores', 3200],
             ['rewards_disappear', 1000],
             ['scores_back', 1800],
             ['noise_input', 1400],
@@ -194,17 +201,123 @@
             p.pop();
         }
 
-        function drawVector(x, y, w, h, n, progress) {
+        // Draw histogram bars for scores box; if values provided, use them (0..1); otherwise use noise
+        function drawVector(x, y, w, h, n, progress, values, colors) {
             const pad = 8;
             const barWidth = (w - pad * (n + 1)) / n;
             const by = y + pad + 16;
             const barAreaH = h - (pad * 2 + 16);
+            const rewardColors = colors || getRewardColors();
             for (let i = 0; i < n; i++) {
-                const val = p.noise(i * 0.37 + progress * 2.1);
-                const barH = barAreaH * val;
-                p.fill(90, 120, 220);
+                const v = Array.isArray(values) && values.length > i
+                    ? values[i]
+                    : p.noise(i * 0.37 + progress * 2.1);
+                const eased = Math.max(0, Math.min(1, v));
+                const barH = barAreaH * eased;
+                p.fill(rewardColors[i % rewardColors.length]);
                 p.noStroke();
                 p.rect(x + pad + i * (barWidth + pad), by + (barAreaH - barH), barWidth, barH, 3);
+            }
+        }
+
+        // Geometry for histogram bars to animate inputs towards
+        function getHistogramGeom(x, y, w, h, n) {
+            const pad = 8;
+            const barWidth = (w - pad * (n + 1)) / n;
+            const by = y + pad + 16;
+            const barAreaH = h - (pad * 2 + 16);
+            const slots = [];
+            for (let i = 0; i < n; i++) {
+                const sx = x + pad + i * (barWidth + pad);
+                slots.push({ x: sx, w: barWidth });
+            }
+            return { pad, barWidth, by, barAreaH, slots };
+        }
+
+        // Compute inner row rects for reward models area
+        function getRewardRowRects(x, y, w, h, n) {
+            const pad = 8;
+            const headerH = 16; // space under title inside box
+            const innerX = x + pad;
+            const innerY = y + pad + headerH;
+            const innerW = w - pad * 2;
+            const innerH = h - (pad * 2 + headerH);
+            const gap = 6;
+            const rowH = (innerH - gap * (n - 1)) / n;
+            const rects = [];
+            for (let i = 0; i < n; i++) {
+                const ry = innerY + i * (rowH + gap);
+                rects.push({ x: innerX, y: ry, w: innerW, h: rowH });
+            }
+            return rects;
+        }
+
+        function subscriptFor(i) {
+            const subs = ['₁', '₂', '₃', '₄', '₅', '₆', '₇'];
+            return (i >= 0 && i < subs.length) ? subs[i] : String(i + 1);
+        }
+
+        function drawRewardModels(x, y, w, h, n, alpha) {
+            const pal = getPalette();
+            const rects = getRewardRowRects(x, y, w, h, n);
+            p.push();
+            if (alpha != null && alpha < 1) p.drawingContext.globalAlpha = Math.max(0, alpha);
+            for (let i = 0; i < rects.length; i++) {
+                const r = rects[i];
+                // Row container
+                p.noStroke();
+                p.fill('rgba(255,255,255,0.03)');
+                p.rect(r.x, r.y, r.w, r.h, 6);
+                // Border
+                p.noFill();
+                p.stroke('rgba(255,255,255,0.10)');
+                p.strokeWeight(1);
+                p.rect(r.x + 0.5, r.y + 0.5, r.w - 1, r.h - 1, 6);
+                // Label r_i
+                p.noStroke();
+                p.fill(p.color(pal.fg));
+                p.textAlign(p.LEFT, p.CENTER);
+                p.textSize(12);
+                p.text('r' + subscriptFor(i), r.x + 8, r.y + r.h / 2);
+            }
+            p.pop();
+        }
+
+        function getCycleIndex() {
+            return Math.floor((p.millis() - t0) / totalMs);
+        }
+
+        function generateScores(n) {
+            const cycle = getCycleIndex();
+            const arr = [];
+            for (let i = 0; i < n; i++) {
+                // stable per cycle value in [0,1]
+                arr.push(p.noise(cycle * 97.123 + i * 17.77));
+            }
+            return arr;
+        }
+
+        function drawMiniInput(x, y, w, h, alpha, showCaption = true) {
+            // Draw a tiny image and a tiny prompt label below it
+            p.push();
+            if (alpha != null && alpha < 1) p.tint(255, 255 * Math.max(0, alpha));
+            if (img) {
+                p.image(img, x, y, w, h);
+            } else {
+                p.fill(230);
+                p.noStroke();
+                p.rect(x, y, w, h, 3);
+            }
+            p.pop();
+            // Prompt text (minimal)
+            if (showCaption) {
+                p.push();
+                if (alpha != null && alpha < 1) p.drawingContext.globalAlpha = Math.max(0, alpha);
+                p.fill('rgba(255,255,255,0.6)');
+                p.textAlign(p.LEFT, p.TOP);
+                p.textSize(Math.max(8, Math.min(11, h * 0.28)));
+                p.text('prompt', x, y + h + 2);
+                p.pop();
             }
         }
 
@@ -246,6 +359,19 @@
 
         function lerp(a, b, t) { return a + (b - a) * t; }
         function easeInOut(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+
+        // Color palette matching the radar plot rewards
+        function getRewardColors() {
+            return [
+                p.color(255, 150, 220), // pastelpink - Pick
+                p.color(105, 200, 105), // pastelgreen - Aesthetic
+                p.color(100, 150, 255), // pastelblue - HPSv2
+                p.color(80, 210, 200),  // pastelteal - CLIP
+                p.color(255, 105, 120), // pastelred - Image Reward
+                p.color(200, 105, 230), // pastelpurple - SciScore
+                p.color(230, 210, 80)   // pastelyellow - VQA
+            ];
+        }
 
         p.draw = () => {
             if (!playing) return;
@@ -368,8 +494,34 @@
                 capPos.y = lerp(capY, capInRewardsY, prog);
                 capPos.w = lerp(capW, capInRewardsW, prog);
                 capPos.h = lerp(capH, capInRewardsH, prog);
+                // Fade slightly as duplicates enter rows
+                imgPos.a = 1 - 0.5 * prog;
+                capPos.a = 1 - 0.5 * prog;
+            } else if (st === 'fanout_inputs') {
+                // Keep a smaller version centered in rewards while clones fan out
+                const imgSmallScale = imgInRewardsScale * 0.6; // smaller than a row
+                const capSmallScale = imgInRewardsScale * 0.6;
+                const imgSmallW = imgW * imgSmallScale;
+                const imgSmallH = imgH * imgSmallScale;
+                const capSmallW = capW * capSmallScale;
+                const capSmallH = capH * capSmallScale;
+                imgPos.x = rewardsCenterX + (imgInRewardsW - imgSmallW) / 2;
+                imgPos.y = rewardsCenterY + (imgInRewardsH - imgSmallH) / 2;
+                imgPos.w = imgSmallW;
+                imgPos.h = imgSmallH;
+                imgPos.a = 1; // keep visible during fanout
+                // Remove caption when small for clarity
+                capPos.x = capInRewardsX + (capInRewardsW - capSmallW) / 2;
+                capPos.y = capInRewardsY + (capInRewardsH - capSmallH) / 2;
+                capPos.w = capSmallW;
+                capPos.h = capSmallH;
+                capPos.a = 0; // hide small caption
             } else if (st === 'emit_scores' || st === 'rewards_disappear') {
-                imgPos = { x: rewardsCenterX, y: rewardsCenterY, w: imgInRewardsW, h: imgInRewardsH, a: 0 };
+                // Keep the small center image visible until scoring has clearly begun
+                const imgSmallScale = imgInRewardsScale * 0.6;
+                const imgSmallW = imgW * imgSmallScale;
+                const imgSmallH = imgH * imgSmallScale;
+                imgPos = { x: rewardsCenterX + (imgInRewardsW - imgSmallW) / 2, y: rewardsCenterY + (imgInRewardsH - imgSmallH) / 2, w: imgSmallW, h: imgSmallH, a: st === 'emit_scores' ? 0.6 : 0 };
                 capPos = { x: capInRewardsX, y: capInRewardsY, w: capInRewardsW, h: capInRewardsH, a: 0 };
             } else if (st === 'scores_back') {
                 imgPos.a = Math.min(1, prog * 1.2);
@@ -459,13 +611,82 @@
 
             // === DRAW PHASE 2: Boxes (drawn on top) ===
 
-            // Rewards block
+            // Rewards block with stacked individual models r_i
             if (rewardsAlpha > 0) {
                 p.push();
                 if (rewardsAlpha < 1) p.drawingContext.globalAlpha = rewardsAlpha;
                 drawBox(rewardsX, rewardsY, rewardsW, rewardsH, 'Rewards r₁,...,rₙ');
-                drawVector(rewardsX, rewardsY, rewardsW, rewardsH, 7, p.millis() * 0.001); // Animated histogram with 7 bins
+                drawRewardModels(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS, rewardsAlpha);
                 p.pop();
+            }
+
+            // Mini inputs in reward rows: animate entry during move_to_rewards, then stay visible
+            if ((st === 'move_to_rewards' || st === 'fanout_inputs') && rewardsAlpha > 0) {
+                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS);
+                for (let i = 0; i < NUM_REWARDS; i++) {
+                    const r = rects[i];
+                    const miniH = Math.min(r.h * 0.55, 20);
+                    const miniW = miniH / 0.66; // keep aspect
+                    const targetX = r.x + 10; // left inside row
+                    const targetY = r.y + r.h / 2 - miniH / 2;
+
+                    let cx = targetX;
+                    let cy = targetY;
+                    let a = 1;
+
+                    if (st === 'move_to_rewards') {
+                        // Animate entry from left
+                        const startX = rewardsX - miniW - 12;
+                        const delay = i * ROW_DELAY;
+                        const localProg = Math.max(0, Math.min(1, (prog - delay) / (1 - delay)));
+                        cx = lerp(startX, targetX, localProg);
+                        a = localProg;
+                    }
+
+                    drawMiniInput(cx, cy, miniW, miniH, a, false);
+                }
+            }
+
+            // During emit_scores: morph each row's mini input from image -> dot while moving left-to-right
+            if (st === 'emit_scores' && rewardsAlpha > 0) {
+                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS);
+                const rewardColors = getRewardColors();
+                for (let i = 0; i < NUM_REWARDS; i++) {
+                    const r = rects[i];
+                    const miniH = Math.min(r.h * 0.55, 20);
+                    const miniW = miniH / 0.66;
+                    const rowDelay = i * ROW_DELAY;
+                    const pRow = Math.max(0, Math.min(1, (prog - rowDelay) / (1 - rowDelay)));
+                    const morphEnd = MORPH_END;
+                    // Start from top-left position (same as fanout_inputs)
+                    const xStartTopLeft = r.x + 10;
+                    const yStartTopLeft = r.y + r.h / 2 - miniH / 2;
+                    // End position for center point
+                    const xEndCenter = r.x + r.w - 16;
+                    const yCenter = r.y + r.h / 2;
+
+                    const pMorph = Math.max(0, Math.min(1, pRow / morphEnd));
+                    // Animate from top-left to center-based positioning as it morphs
+                    const xStartCenter = xStartTopLeft + miniW / 2;
+                    const cxCenter = lerp(xStartCenter, xEndCenter, pMorph);
+                    const cyCenter = yCenter;
+
+                    // Draw morph: keep image visible while shrinking; dot grows/brightens
+                    const rectAlpha = 1; // never disappears during morph
+                    const dotAlpha = pMorph;
+                    const rectW = lerp(miniW, miniW * 0.25, pMorph);
+                    const rectH = lerp(miniH, miniH * 0.25, pMorph);
+                    drawMiniInput(cxCenter - rectW / 2, cyCenter - rectH / 2, rectW, rectH, rectAlpha, false);
+                    if (dotAlpha > 0.01) {
+                        p.push();
+                        p.noStroke();
+                        p.fill(rewardColors[i % rewardColors.length]);
+                        p.drawingContext.globalAlpha = dotAlpha;
+                        const dotR = lerp(0, 8, pMorph);
+                        p.circle(cxCenter, cyCenter, Math.max(1, dotR));
+                        p.pop();
+                    }
+                }
             }
 
             // Score vector box - animates from rewards, then stays fixed
@@ -497,8 +718,109 @@
                 p.push();
                 if (vecPos.a < 1) p.drawingContext.globalAlpha = vecPos.a;
                 drawBox(vecPos.x, vecPos.y, vecPos.w, vecPos.h, 'scores ŝ');
-                drawVector(vecPos.x, vecPos.y, vecPos.w, vecPos.h, 7, 0); // Static histogram with 7 bins
+                // Bars grow only when dots arrive during rewards_disappear; after that they stay static
+                const vals = generateScores(NUM_REWARDS);
+                let valuesForDraw = new Array(NUM_REWARDS).fill(0);
+                if (st === 'rewards_disappear') {
+                    // Bars fill as dots arrive
+                    for (let i = 0; i < NUM_REWARDS; i++) {
+                        valuesForDraw[i] = vals[i] * prog;
+                    }
+                } else if (st === 'scores_back' || st === 'noise_input' || st === 'denoiser_appear' || st === 'to_denoiser' || st === 'clean_output' || st === 'pause') {
+                    // Keep bars filled after rewards_disappear
+                    valuesForDraw = vals;
+                }
+                // Otherwise (emit_scores), bars stay empty (valuesForDraw already initialized to 0s)
+                drawVector(vecPos.x, vecPos.y, vecPos.w, vecPos.h, NUM_REWARDS, 0, valuesForDraw, getRewardColors());
                 p.pop();
+            }
+
+            // During emit_scores: dots only go to numeric vector (no histogram yet)
+            if (st === 'emit_scores' && rewardsAlpha > 0) {
+                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS);
+                const vals = generateScores(NUM_REWARDS);
+                const rewardColors = getRewardColors();
+
+                // Numeric vector at the right of rewards block (between rewards and scores), dot morphs into value
+                const vecLabelX = rewardsX + rewardsW + 18;
+                const vecLabelY = rewardsY - 6;
+                p.push();
+                p.fill('rgba(255,255,255,0.7)');
+                p.textAlign(p.LEFT, p.BOTTOM);
+                p.textSize(11);
+                p.text('scores vector', vecLabelX, vecLabelY);
+                p.pop();
+
+                for (let i = 0; i < NUM_REWARDS; i++) {
+                    const r = rects[i];
+                    const delay = i * ROW_DELAY;
+                    const pRow = Math.max(0, Math.min(1, (prog - delay) / (1 - delay)));
+                    const appear = Math.max(0, Math.min(1, (pRow - VEC_START) / (1 - VEC_START)));
+                    const vx = rewardsX + rewardsW + 20;
+                    const vy = r.y + r.h / 2;
+                    const value = Math.round(vals[i] * 100) / 100;
+                    if (appear > 0) {
+                        // Start from where the morph ends
+                        const cx = lerp(r.x + r.w - 16, vx - 10, appear);
+                        p.push();
+                        // fading dot
+                        p.noStroke();
+                        p.drawingContext.globalAlpha = 1 - appear;
+                        p.fill(rewardColors[i % rewardColors.length]);
+                        p.circle(cx, vy, 8);
+                        p.pop();
+                        // value fading in
+                        p.push();
+                        p.fill('rgba(255,255,255,0.95)');
+                        p.textAlign(p.LEFT, p.CENTER);
+                        p.drawingContext.globalAlpha = appear;
+                        p.textSize(12);
+                        p.text(value.toFixed(2), vx, vy);
+                        p.pop();
+                    }
+                }
+            }
+
+            // During rewards_disappear: numeric scores transform into dots that travel to histogram
+            if (st === 'rewards_disappear') {
+                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS);
+                const vals = generateScores(NUM_REWARDS);
+                const hist = getHistogramGeom(vecPos.x, vecPos.y, vecPos.w, vecPos.h, NUM_REWARDS);
+                const rewardColors = getRewardColors();
+
+                for (let i = 0; i < NUM_REWARDS; i++) {
+                    const r = rects[i];
+                    const vx = rewardsX + rewardsW + 20;
+                    const vy = r.y + r.h / 2;
+                    const value = Math.round(vals[i] * 100) / 100;
+
+                    // Start position: numeric score location
+                    const startX = vx;
+                    const startY = vy;
+                    // End position: histogram bar
+                    const endX = hist.slots[i].x + hist.barWidth / 2;
+                    const endY = hist.by + hist.barAreaH - 6;
+
+                    // Animate from scores to histogram
+                    const cx = lerp(startX, endX, prog);
+                    const cy = lerp(startY, endY, prog);
+
+                    p.push();
+                    // Dot traveling to histogram
+                    p.noStroke();
+                    p.fill(rewardColors[i % rewardColors.length]);
+                    p.circle(cx, cy, 8);
+                    p.pop();
+
+                    // Fade out the numeric value
+                    p.push();
+                    p.fill('rgba(255,255,255,0.95)');
+                    p.textAlign(p.LEFT, p.CENTER);
+                    p.drawingContext.globalAlpha = 1 - prog;
+                    p.textSize(12);
+                    p.text(value.toFixed(2), vx, vy);
+                    p.pop();
+                }
             }
 
             // Noise buildup on input (only when input is visible)
@@ -536,6 +858,36 @@
 
             // === DRAW PHASE 3: Labels and legends ===
 
+            // Phase labels at the top
+            p.push();
+            p.textAlign(p.CENTER, p.TOP);
+            p.textStyle(p.BOLD);
+            const phaseLabelY = isMobile ? 5 : 10;
+
+            // "Scoring the dataset with all the rewards" during first phase
+            if (st === 'intro' || st === 'move_to_rewards' || st === 'fanout_inputs' || st === 'emit_scores' || st === 'rewards_disappear') {
+                let alpha = 1;
+                if (st === 'intro') alpha = Math.min(1, prog * 2);
+                if (st === 'rewards_disappear') alpha = 1 - prog;
+
+                p.drawingContext.globalAlpha = alpha;
+                p.fill(p.color(pal.fg));
+                p.textSize(isMobile ? 13 : 16);
+                p.text('Scoring the dataset with all the rewards', W / 2, phaseLabelY);
+            }
+
+            // "Flow matching training" during second phase
+            if (st === 'scores_back' || st === 'noise_input' || st === 'denoiser_appear' || st === 'to_denoiser' || st === 'clean_output' || st === 'pause') {
+                let alpha = 1;
+                if (st === 'scores_back') alpha = Math.min(1, prog * 2);
+
+                p.drawingContext.globalAlpha = alpha;
+                p.fill(p.color(pal.fg));
+                p.textSize(isMobile ? 13 : 16);
+                p.text('Flow matching training', W / 2, phaseLabelY);
+            }
+            p.pop();
+
             // Legends
             p.fill(p.color(pal.muted));
             p.textAlign(p.CENTER, p.TOP);
@@ -549,5 +901,9 @@
 
     new p5(sketch, document.getElementById('miroAnimation'));
 })();
+
+
+
+
 
 

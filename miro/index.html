@@ -365,7 +365,7 @@
         <div class="equations">
           <div>\[ \mathcal{L} = \mathbb{E}_{(x,c,\hat{\mathbf{s}})
             \sim \tilde{\mathcal{D}}, \epsilon \sim
-            \mathcal{N}(0,I), t \sim \mathcal{U}(0,1)}\left[\left\|\epsilon_\theta(x_t, c,
+            \mathcal{N}(0,I), t \sim \mathcal{U}(0,1)}\left[\left\|v_\theta(x_t, c,
             \hat{\mathbf{s}}) -
             (\epsilon-x)\right\|_2^2\right] \]</div>
         </div>
@@ -434,9 +434,9 @@
         </div>
 
         <div class="equations">
-          <div>\[ \hat{\epsilon}_\theta(x_t, c) = \epsilon_\theta(x_t, c,
+          <div>\[ \hat{\epsilon}_\theta(x_t, c) = v_\theta(x_t, c,
             \hat{\mathbf{s}}^{+}) + \omega
-            \left(\epsilon_\theta(x_t, c, \hat{\mathbf{s}}^{+}) - \epsilon_\theta(x_t,
+            \left(v_\theta(x_t, c, \hat{\mathbf{s}}^{+}) - v_\theta(x_t,
             c,
             \hat{\mathbf{s}}^{-})\right) \]</div>
           <details>
@@ -457,7 +457,7 @@
           <strong>Theoretical Interpretation:</strong> This guidance formulation approximates the gradient of an
           implicit
           joint reward function. The guidance direction
-          \(\epsilon_\theta(x_t, c, \hat{\mathbf{s}}_{\mathrm{max}}) - \epsilon_\theta(x_t, c,
+          \(v_\theta(x_t, c, \hat{\mathbf{s}}_{\mathrm{max}}) - v_\theta(x_t, c,
           \hat{\mathbf{s}}_{\mathrm{min}})\)
           points toward regions where all rewards are simultaneously high, steering generation away from low-quality
           outputs.
