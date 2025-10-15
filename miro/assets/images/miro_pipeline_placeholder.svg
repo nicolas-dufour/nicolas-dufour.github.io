@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+  <rect width="1200" height="420" fill="#0b0c10"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#e6e6e6" stroke="#e6e6e6" stroke-width="2">
+    <rect x="40" y="120" width="240" height="120" rx="10" ry="10" fill="#15171c"/>
+    <text x="160" y="170" text-anchor="middle">Web-scale data</text>
+    <text x="160" y="196" text-anchor="middle">(images, captions)</text>
+
+    <rect x="340" y="80" width="260" height="200" rx="10" ry="10" fill="#15171c"/>
+    <text x="470" y="130" text-anchor="middle">Multi-reward scoring</text>
+    <text x="470" y="156" text-anchor="middle">Aesthetic, Pick, ImageReward,</text>
+    <text x="470" y="182" text-anchor="middle">HPSv2, CLIP, VQA, SciScore</text>
+
+    <rect x="660" y="120" width="260" height="120" rx="10" ry="10" fill="#15171c"/>
+    <text x="790" y="170" text-anchor="middle">Reward-conditioned training</text>
+    <text x="790" y="196" text-anchor="middle">(Flow Matching)</text>
+
+    <rect x="960" y="100" width="200" height="160" rx="10" ry="10" fill="#15171c"/>
+    <text x="1060" y="146" text-anchor="middle">Reward-guided</text>
+    <text x="1060" y="172" text-anchor="middle">inference</text>
+    <text x="1060" y="198" text-anchor="middle">(+/- targets, MR-CFG)</text>
+
+    <line x1="280" y1="180" x2="340" y2="180" stroke="#ff9a5c" stroke-width="4"/>
+    <polygon points="340,180 330,175 330,185" fill="#ff9a5c"/>
+
+    <line x1="600" y1="180" x2="660" y2="180" stroke="#ff9a5c" stroke-width="4"/>
+    <polygon points="660,180 650,175 650,185" fill="#ff9a5c"/>
+
+    <line x1="920" y1="180" x2="960" y2="180" stroke="#ff9a5c" stroke-width="4"/>
+    <polygon points="960,180 950,175 950,185" fill="#ff9a5c"/>
+  </g>
+</svg>

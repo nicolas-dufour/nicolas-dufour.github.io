@@ -1,0 +1,1333 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MIRO: Multi-Reward Conditioning Pretraining</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="preconnect" href="https://unpkg.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+</head>
+
+<body>
+  <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode">
+    <span class="theme-icon">🌙</span>
+  </button>
+
+  <header class="hero">
+    <h1>MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency</h1>
+    <div class="authors">
+      <p>
+        <a href="https://nicolas-dufour.github.io/" target="_blank" rel="noopener">Nicolas Dufour</a><sup>1,2</sup>,
+        <a href="https://lucasdegeorge.github.io/" target="_blank" rel="noopener">Lucas Degeorge</a><sup>*,1,2,3</sup>,
+        <a href="https://arijit-hub.github.io/" target="_blank" rel="noopener">Arijit Ghosh</a><sup>*,1</sup>,
+        <a href="http://vicky.kalogeiton.info/" target="_blank" rel="noopener">Vicky Kalogeiton</a><sup>†,2</sup>,
+        <a href="https://davidpicard.github.io/" target="_blank" rel="noopener">David Picard</a><sup>†,1</sup>
+      </p>
+    </div>
+    <div class="affiliations">
+      <p class="affiliation-line">
+        <span class="affiliation-item"><sup>1</sup>LIGM, ENPC, IP Paris, CNRS, UGE</span>
+        <span class="affiliation-item"><sup>2</sup>LIX, École Polytechnique, IP Paris</span>
+        <span class="affiliation-item"><sup>3</sup>AMIAD</span>
+      </p>
+    </div>
+    <p class="tldr">Train once, align many rewards. Faster convergence, controllable trade-offs, and strong performance.
+    </p>
+    <nav class="topnav">
+      <a href="../iclr2026_conference.pdf" target="_blank" rel="noopener">📄 Paper</a>
+      <a href="#" target="_blank" rel="noopener">💻 Code</a>
+      <a href="#" target="_blank" rel="noopener">🎮 Demo</a>
+      <a href="#" target="_blank" rel="noopener">⚖️ Weights</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Results Overview -->
+    <section id="results-summary" class="section">
+      <div class="kpis">
+        <div class="kpi card">
+          <div class="kpi-num">19×</div>
+          <div class="kpi-label">Faster on Aesthetic</div>
+        </div>
+        <div class="kpi card">
+          <div class="kpi-num">6.3×</div>
+          <div class="kpi-label">Faster on HPSv2</div>
+        </div>
+        <div class="kpi card">
+          <div class="kpi-num">3.5×</div>
+          <div class="kpi-label">Faster on PickAScore</div>
+        </div>
+        <div class="kpi card">
+          <div class="kpi-num">3.7×</div>
+          <div class="kpi-label">Faster ImageReward</div>
+        </div>
+        <div class="kpi card">
+          <div class="kpi-num">75</div>
+          <div class="kpi-label">Overall GenEval</div>
+        </div>
+        <div class="kpi card">
+          <div class="kpi-num">370×</div>
+          <div class="kpi-label">Less compute vs FLUX-dev</div>
+        </div>
+        <div class="kpi card">
+          <div class="kpi-num">350M</div>
+          <div class="kpi-label">Parameters flow model</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qualitative Gallery (visual teaser) -->
+    <section id="qual" class="section">
+      <div class="qual-carousel-container">
+        <div class="qual-carousel-wrapper">
+          <div class="qual-carousel-track"></div>
+        </div>
+        <button class="carousel-arrow prev" aria-label="Previous">‹</button>
+        <button class="carousel-arrow next" aria-label="Next">›</button>
+        <div class="carousel-dots"></div>
+      </div>
+      <div class="callout info">
+        MIRO displays high aesthetic quality and better text-image alignment on diverse prompts efficiently.
+      </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section id="contents" class="section toc">
+      <h2>Contents</h2>
+      <ul id="tocList"></ul>
+    </section>
+
+    <!-- Introduction Section (merged Overview + Why MIRO) -->
+    <section id="intro" class="section">
+      <h2>Introduction</h2>
+
+      <p class="lead">
+        How do you align generative AI with human preferences? This question has driven remarkable
+        progress in both large language models and text-to-image generation. The formula is well-established:
+        train on massive web-scale data, then align the model through curated datasets and reinforcement learning
+        from human feedback (RLHF)<sup><a href="#ref-christiano2017">[1]</a>, <a href="#ref-rafailov2023">[2]</a>, <a
+            href="#ref-fan2023">[3]</a></sup>.
+        Systems like FLUX<sup><a href="#ref-flux2024">[5]</a></sup> and Stable Diffusion 3<sup><a
+            href="#ref-esser2024">[4]</a></sup>
+        follow exactly this recipe.
+      </p>
+
+      <div class="intro-subsection">
+        <h3 class="intro-subtitle">The Problem</h3>
+        <p>
+          But this paradigm has a cost. Post-hoc alignment <strong>discards informative "low-quality"
+            data</strong><sup><a href="#ref-dufour2024">[6]</a></sup>,
+          <strong>complicates training</strong> with an additional optimization stage, and often <strong>overfits to
+            a single reward</strong> — leading to mode collapse, reduced diversity, or degraded semantic fidelity.
+        </p>
+      </div>
+
+      <div class="callout question">
+        <strong>Our Question:</strong> Rather than correcting a pre-trained text-to-image model after the fact,
+        can we teach it how to trade off multiple rewards <em>from the beginning</em>?
+      </div>
+
+      <div class="intro-subsection">
+        <h3 class="intro-subtitle">Our Solution: MIRO</h3>
+        <p>
+          Our answer is <strong>MIRO (MultI-Reward cOnditioning)</strong>—a framework that integrates multiple
+          reward signals directly into the pretraining objective for text-to-image generation. Similar to previous
+          work<sup><a href="#ref-dufour2024">[6]</a></sup>, we condition the generative model on a vector of reward
+          scores per text-image pair. The rewards span <strong>aesthetics, user preference, semantic correspondence,
+            visual reasoning, and domain-specific correctness</strong>. This way, the model learns an explicit mapping
+          from desired reward levels to visual characteristics—right from the beginning.
+        </p>
+        <p>
+          This simple change has powerful consequences: it preserves the full spectrum of data quality instead of
+          filtering it out, turns alignment into a controllable variable at inference time, and by providing rich
+          supervision at scale, accelerates convergence and improves sample efficiency.
+        </p>
+      </div>
+
+      <div class="intro-subsection">
+        <h3 class="intro-subtitle">Key Benefits</h3>
+        <div class="benefits-grid" style="grid-template-columns: repeat(2, 1fr);">
+          <div class="benefit-card">
+            <div class="benefit-icon">⚡</div>
+            <div class="benefit-content">
+              <strong>Training Efficiency</strong>
+              <p>By incorporating reward alignment directly into pretraining, MIRO eliminates the need for separate
+                fine-tuning or reinforcement learning stages. Rich supervision at scale makes MIRO converge <strong>up
+                  to
+                  19× faster</strong> than regular pretraining, achieving faster convergence and higher quality samples
+                without
+                additional training phases.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">📊</div>
+            <div class="benefit-content">
+              <strong>Full-Spectrum Data Utilization</strong>
+              <p>Unlike post-hoc fine-tuning and RL pipelines that filter or discard "low-quality" data, MIRO retains
+                every
+                sample and trains across the entire reward spectrum. Each example contributes signal together with its
+                associated reward vector, reducing collapse toward narrow high-reward modes and yielding representations
+                that
+                generalize across all quality levels.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">🎛️</div>
+            <div class="benefit-content">
+              <strong>Controllable Alignment</strong>
+              <p>At inference time, users can dial individual rewards up or down to achieve precise trade-offs between
+                quality
+                aspects. Multi-reward classifier-free guidance steers toward jointly high-reward regions, enabling
+                flexible
+                control—dial up aesthetics without collapsing alignment, or prioritize compositional correctness for
+                complex
+                prompts.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">🛡️</div>
+            <div class="benefit-content">
+              <strong>Reward Hacking Prevention</strong>
+              <p>Traditional single-objective optimization often leads to reward hacking<sup><a
+                    href="#ref-luo2025">[14]</a></sup>, where models exploit specific
+                metrics at the expense of overall quality. MIRO's multi-dimensional conditioning naturally prevents this
+                by
+                requiring the model to balance multiple objectives simultaneously, ensuring robust performance across
+                all
+                quality dimensions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="intro-subsection">
+        <h3 class="intro-subtitle">Our Contributions</h3>
+        <ol class="contributions-list">
+          <li>
+            We propose <strong>MIRO</strong>: reward-conditioned pretraining that integrates multiple rewards
+            directly during training, eliminating the need for post-hoc alignment.
+          </li>
+          <li>
+            <strong>State-of-the-art performance</strong>: Our small 350M-parameter model trained on just 16M images
+            achieves top scores on GenEval<sup><a href="#ref-ghosh2024">[11]</a></sup>
+            and user-preference metrics<sup><a href="#ref-xu2023">[10]</a>, <a href="#ref-wu2023">[8]</a>, <a
+                href="#ref-kirstain2023">[9]</a></sup>,
+            outperforming much larger models like FLUX-dev<sup><a href="#ref-flux2024">[5]</a></sup> (12B parameters)
+            trained for much longer.
+          </li>
+          <li>
+            <strong>Unprecedented efficiency</strong>: MIRO converges up to 19× faster than regular training and
+            achieves comparable quality with <strong>370× less inference compute</strong> than FLUX<sup><a
+                href="#ref-flux2024">[5]</a></sup>.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Method Section (consolidated) -->
+    <section id="method" class="section">
+      <h2>Method</h2>
+
+      <div class="method-overview">
+        <p class="method-intro">Our method consists of three key components that work together to enable efficient,
+          controllable text-to-image generation:</p>
+
+        <div class="method-components">
+          <div class="method-component">
+            <div class="component-number">1</div>
+            <div class="component-content">
+              <h4>Dataset Augmentation</h4>
+              <p>Enrich the pretraining dataset with reward annotations across multiple quality dimensions</p>
+            </div>
+          </div>
+
+          <div class="method-component">
+            <div class="component-number">2</div>
+            <div class="component-content">
+              <h4>Multi-Reward Conditioned Training</h4>
+              <p>Modify the flow matching objective to incorporate reward signals directly into the generative process
+              </p>
+            </div>
+          </div>
+
+          <div class="method-component">
+            <div class="component-number">3</div>
+            <div class="component-content">
+              <h4>Reward-Guided Inference</h4>
+              <p>Enable fine-grained control over generation quality through explicit reward conditioning during
+                sampling</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="intro-subsection">
+        <h3 class="intro-subtitle">Problem Formulation</h3>
+        <p>Let \(\mathcal{D} = \{(x^{(i)}, c^{(i)})\}_{i=1}^{M}\) be a large-scale
+          pretraining dataset where
+          \(x^{(i)} \in \mathbb{R}^{H \times W \times 3}\) represents an image and
+          \(c^{(i)} \in \mathcal{T}\)
+          represents the corresponding text condition (e.g., caption, prompt). Traditional pretraining learns a
+          generative model \(p_\theta(x|c)\) that captures the joint distribution of
+          images and text without explicit
+          quality control.</p>
+
+        <p>In contrast, we consider a set of \(N\) reward models \(\mathcal{R} = \{r_1, r_2, \ldots, r_N\}\) where
+          each \(r_j: \mathbb{R}^{H \times W \times 3} \times \mathcal{T} \rightarrow \mathbb{R}\) evaluates different
+          aspects of image quality. Our goal is to learn a conditional generative model
+          \(p_\theta(x|c, \mathbf{s})\)
+          where \(\mathbf{s} = [s_1, s_2, \ldots, s_N]\) represents the desired reward levels, enabling
+          controllable
+          generation across multiple quality dimensions.</p>
+      </div>
+
+      <div class="intro-subsection">
+        <h3 class="intro-subtitle">Dataset Augmentation with Reward Scores</h3>
+        <p>The first step of MIRO involves augmenting the pretraining dataset with comprehensive reward annotations. For
+          each sample \((x^{(i)}, c^{(i)}) \in \mathcal{D}\), we compute reward scores
+          across all \(N\) reward models:
+        </p>
+        <div class="equation-inline">\[ s_j^{(i)} = r_j(x^{(i)},
+          c^{(i)}) \quad \forall j \in \{1, 2, \ldots, N\} \]
+        </div>
+        <p>This process transforms our dataset into an enriched version \(\tilde{\mathcal{D}} =
+          \{(x^{(i)}, c^{(i)},
+          \mathbf{s}^{(i)})\}_{i=1}^{M}\) where \(\mathbf{s}^{(i)} = [s_1^{(i)},
+          s_2^{(i)}, \ldots, s_N^{(i)}]\)
+          contains the multi-dimensional quality assessment for each sample.</p>
+
+        <div class="callout info">
+          <strong>Score Normalization and Binning:</strong> Raw reward scores often exhibit different scales and
+          distributions across reward models. We employ a uniform binning strategy into \(B\) bins that ensures balanced
+          representation across quality levels, allowing the model to see the full spectrum of qualities during
+          training.
+        </div>
+      </div>
+      <div id="miroAnimation" class="method-anim" aria-label="MIRO method animation">
+        <p class="animation-caption">
+          <strong>MIRO Training Pipeline:</strong> Images and captions are evaluated by multiple reward models,
+          producing
+          a score vector ŝ.
+          The noised image, caption, and scores condition the denoiser, teaching it to map reward levels to visual
+          characteristics.
+        </p>
+      </div>
+      <div class="intro-subsection">
+        <h3 class="intro-subtitle">Multi-Reward Conditioned Flow Matching</h3>
+        <p>Having augmented our dataset with reward scores, we now incorporate these signals into the generative model
+          architecture. We build upon flow matching<sup><a href="#ref-lipman2023">[12]</a></sup>, a powerful framework
+          for training continuous normalizing flows that
+          has shown excellent performance in high-resolution image generation.</p>
+
+        <p><strong>Training Objective.</strong> Following the standard flow matching formulation, we sample noise
+          \(\epsilon \sim \mathcal{N}(0, I)\) and time \(t \sim \mathcal{U}(0, 1)\), then compute the noisy sample
+          \(x_t = (1-t)x + t\epsilon\). The multi-reward flow matching loss becomes:</p>
+
+        <div class="equations">
+          <div>\[ \mathcal{L} = \mathbb{E}_{(x,c,\hat{\mathbf{s}})
+            \sim \tilde{\mathcal{D}}, \epsilon \sim
+            \mathcal{N}(0,I), t \sim \mathcal{U}(0,1)}\left[\left\|\epsilon_\theta(x_t, c,
+            \hat{\mathbf{s}}) -
+            (\epsilon-x)\right\|_2^2\right] \]</div>
+        </div>
+
+        <p>This objective trains the model to predict the difference between the noise and the clean image, conditioned
+          on both the text prompt and the desired quality levels. The model learns to associate different reward levels
+          with corresponding visual characteristics, enabling reward-aware generation.</p>
+
+        <p><strong>Training Dynamics.</strong> During training, the model observes the full spectrum of quality levels
+          for each reward dimension. This exposure allows it to learn the relationship between reward values and visual
+          features, from low-quality samples that may exhibit artifacts or poor composition to high-quality samples with
+          superior aesthetics and text alignment. The model learns the entire reward landscape rather than overfitting
+          to a single objective.</p>
+      </div>
+
+      <div class="intro-subsection">
+        <h3 class="intro-subtitle">Reward-Guided Inference</h3>
+        <p>At inference time, MIRO provides unprecedented control over the generation process through explicit reward
+          conditioning. We detail the various sampling strategies enabled by our approach below.</p>
+
+        <p><strong>High-Quality Generation.</strong> For generating high-quality samples, we condition the model on
+          maximum reward values across all \(N\) dimensions: \(\hat{\mathbf{s}}_{\mathrm{max}} = [B-1,
+          B-1, \ldots,
+          B-1]\). This instructs the model to generate samples that maximize all reward objectives simultaneously.</p>
+
+        <p><strong>Multi-Reward Classifier-Free Guidance.</strong> We extend classifier-free guidance to the
+          multi-reward setting by leveraging the reward conditioning mechanism. Following the Coherence-Aware CFG
+          approach<sup><a href="#ref-dufour2024">[6]</a></sup>, we introduce a <em>positive</em> and a
+          <em>negative</em> reward target, denoted \(\hat{\mathbf{s}}^{+}\) and
+          \(\hat{\mathbf{s}}^{-}\), which can be
+          chosen by the user for controllability. By default, we use
+          \(\hat{\mathbf{s}}^{+}=\hat{\mathbf{s}}_{\mathrm{max}}=[B-1,\ldots,B-1]\) and
+          \(\hat{\mathbf{s}}^{-}=\hat{\mathbf{s}}_{\mathrm{min}}=[0,\ldots,0]\), and
+          \(\omega\) is the guidance scale:
+        </p>
+
+        <div class="equations">
+          <div>\[ \hat{\epsilon}_\theta(x_t, c) = \epsilon_\theta(x_t, c,
+            \hat{\mathbf{s}}^{+}) + \omega
+            \left(\epsilon_\theta(x_t, c, \hat{\mathbf{s}}^{+}) - \epsilon_\theta(x_t,
+            c,
+            \hat{\mathbf{s}}^{-})\right) \]</div>
+          <details>
+            <summary>Glossary</summary>
+            <ul>
+              <li>\(x_t=(1-t)x + t\epsilon\): noised sample</li>
+              <li>\(\hat{\mathbf{s}}\): reward targets (Aesthetic, Pick, CLIP, HPSv2, ImageReward, ...)
+              </li>
+              <li>\(\omega\): guidance scale</li>
+              <li>\(\hat{\mathbf{s}}^{+}\)/\(\hat{\mathbf{s}}^{-}\): positive/negative
+                reward targets</li>
+              <li>\(B\): number of bins for reward normalization</li>
+            </ul>
+          </details>
+        </div>
+
+        <p><strong>Theoretical Interpretation.</strong> This guidance formulation can be interpreted as approximating
+          the gradient of an implicit joint reward function. The guidance direction \(\epsilon_\theta(x_t,
+          c,
+          \hat{\mathbf{s}}_{\mathrm{max}}) - \epsilon_\theta(x_t, c,
+          \hat{\mathbf{s}}_{\mathrm{min}})\) points toward
+          regions of the latent space where all rewards are simultaneously high, effectively steering generation away
+          from low-quality outputs and toward samples that satisfy multiple quality criteria jointly. By amplifying this
+          direction with the guidance scale \(\omega\), we push the generated samples toward parts of
+          the distribution
+          characterized by superior aesthetic quality, text alignment, and other desired attributes. Similar to the weak
+          guidance framework<sup><a href="#ref-karras2024">[13]</a></sup>, where a bad version of the model is used to
+          guide the good version, here the guidance is provided by the contrast between high-reward and low-reward
+          conditioning.</p>
+
+        <p><strong>Flexible Reward Trade-offs.</strong> A key advantage of MIRO is the ability to specify custom reward
+          targets at inference time. Users can set \(\hat{\mathbf{s}}_{\mathrm{custom}} = [\hat{s}_1,
+          \hat{s}_2,
+          \ldots, \hat{s}_N]\) where each component represents the desired level for that reward dimension. This enables
+          precise control over trade-offs between different quality aspects—for instance, dialing up aesthetics without
+          collapsing alignment, or weighting alignment higher for compositional prompts.</p>
+      </div>
+
+    </section>
+
+    <!-- Training Efficiency -->
+    <section id="training-curves" class="section">
+      <h2>Training efficiency</h2>
+      <div class="callout info">
+        <strong>MIRO accelerates training convergence significantly</strong>: MIRO converges substantially faster across
+        all metrics — 19× faster on AestheticScore, 6.2× faster on HPSv2, 3.5× faster on PickScore, and 3.3× faster on
+        ImageReward.
+      </div>
+      <p class="explainer">MIRO demonstrates significant training efficiency gains compared to traditional pretraining.
+        The charts below show convergence curves across different reward metrics. This dramatic acceleration stems from
+        the additional supervisory signal provided by reward conditioning—by teaching the model to associate reward
+        levels with visual characteristics from the start, we provide rich supervision at every training step.</p>
+      <ul>
+        <li><strong>Rich supervision at every step</strong>: Multi-reward conditioning adds informative gradients
+          throughout training, enabling the model to learn quality-aware generation much faster than discovering these
+          associations implicitly.</li>
+        <li><strong>Consistent acceleration</strong>: The efficiency gains are consistent across all reward dimensions,
+          demonstrating that MIRO's benefits generalize beyond any single metric.</li>
+      </ul>
+      <div class="grid grid-4">
+        <div class="plot card" id="curve_aesthetic"></div>
+        <div class="plot card" id="curve_imagereward"></div>
+        <div class="plot card" id="curve_pick"></div>
+        <div class="plot card" id="curve_hpsv2"></div>
+      </div>
+
+      <h3>Qualitative evidence of accelerated convergence</h3>
+      <div class="callout info">
+        <strong>Visual quality emerges 4× faster</strong>: MIRO establishes proper compositional layout and generates
+        visually appealing images within 50k training steps—a level of quality that requires 200k steps for the baseline
+        to achieve.
+      </div>
+      <p class="explainer">The progression visualizations below provide compelling qualitative evidence of MIRO's
+        training
+        acceleration. Use the slider to step through training checkpoints and observe how quickly MIRO learns compared
+        to
+        the baseline:</p>
+      <ul>
+        <li><strong>"Tiger in a tuxedo"</strong>: MIRO establishes proper compositional layout (tiger wearing formal
+          attire) and generates a visually appealing result within 50k training steps, while the baseline requires 200k
+          steps to reach comparable quality.</li>
+        <li><strong>"Mad scientist panda"</strong>: MIRO rapidly converges to aesthetically pleasing results with
+          recognizable characters and correct attributes. The baseline model fails to generate a recognizable panda
+          until
+          400k steps.</li>
+      </ul>
+      <p class="explainer">These qualitative improvements directly complement our quantitative findings above,
+        demonstrating that MIRO's multi-reward conditioning doesn't just improve metrics—it enables fundamentally faster
+        learning of complex compositional concepts and visual aesthetics.</p>
+      <div class="progression-layout">
+        <div class="progression-row-container">
+          <h4 class="progression-row-title">Baseline</h4>
+          <div class="progression-row">
+            <figure class="progression-item">
+              <img id="prog_baseline_0" alt="Baseline progression 0" />
+            </figure>
+            <figure class="progression-item">
+              <img id="prog_baseline_1" alt="Baseline progression 1" />
+            </figure>
+            <figure class="progression-item">
+              <img id="prog_baseline_2" alt="Baseline progression 2" />
+            </figure>
+            <figure class="progression-item">
+              <img id="prog_baseline_3" alt="Baseline progression 3" />
+            </figure>
+          </div>
+        </div>
+        <div class="progression-row-container">
+          <h4 class="progression-row-title">MIRO</h4>
+          <div class="progression-row">
+            <figure class="progression-item">
+              <img id="prog_miro_0" alt="MIRO progression 0" />
+            </figure>
+            <figure class="progression-item">
+              <img id="prog_miro_1" alt="MIRO progression 1" />
+            </figure>
+            <figure class="progression-item">
+              <img id="prog_miro_2" alt="MIRO progression 2" />
+            </figure>
+            <figure class="progression-item">
+              <img id="prog_miro_3" alt="MIRO progression 3" />
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="progression-controls">
+        <span id="stepLabel"></span>
+        <div style="display: flex; align-items: center; gap: 12px; width: 100%;">
+          <input id="stepSlider" type="range" min="0" max="5" step="1" value="0" style="flex: 1;" />
+          <button id="playPauseBtn" class="play-pause-btn" aria-label="Pause animation">
+            <span class="play-pause-icon">❚❚</span>
+          </button>
+        </div>
+        <label>Training Steps</label>
+      </div>
+    </section>
+
+    <!-- Test-Time Scaling -->
+    <section id="test-time-scaling" class="section">
+      <h2>Synergizing with test-time scaling</h2>
+      <div class="callout info">
+        <strong>MIRO demonstrates superior sample efficiency</strong>: MIRO consistently outperforms the baseline across
+        all reward metrics, often by substantial margins. Most remarkably, for Aesthetic Score and HPSv2, MIRO achieves
+        with a single sample what the baseline cannot reach even with 128 samples.
+      </div>
+      <p class="explainer">Test-time scaling—generating multiple samples and selecting the best one—has emerged as a
+        popular method to improve reward performance<sup><a href="#ref-ma2025">[15]</a></sup>. We demonstrate that MIRO
+        achieves superior sample efficiency
+        compared to baseline models when combined with this technique. The charts below show performance across varying
+        sample counts (1 to 128 samples, displayed on a log-2 scale).</p>
+      <p class="explainer"><strong>Quantifying inference-time efficiency improvements:</strong> The efficiency gains are
+        particularly striking for specific metrics. For ImageReward, MIRO with 8 samples matches the performance of the
+        baseline with 128 samples, representing a <strong>16× efficiency improvement</strong>. For PickScore, MIRO
+        achieves equivalent performance with only 4 samples compared to the baseline's 128 samples, demonstrating a
+        remarkable <strong>32× efficiency gain</strong>.</p>
+      <ul>
+        <li><strong>Single-sample dominance</strong>: For Aesthetic Score and HPSv2, MIRO's single sample surpasses what
+          the baseline achieves even with 128 samples—this dramatic efficiency gain highlights MIRO's ability to
+          generate
+          high-quality samples without requiring extensive test-time computation.</li>
+        <li><strong>Consistent advantages</strong>: MIRO consistently outperforms the baseline across all reward
+          metrics,
+          establishing it as not only a superior training approach but also a more efficient inference-time method.</li>
+      </ul>
+      <div class="grid grid-4">
+        <div class="plot card" id="tts_aesthetic"></div>
+        <div class="plot card" id="tts_imagereward"></div>
+        <div class="plot card" id="tts_pick"></div>
+        <div class="plot card" id="tts_hpsv2"></div>
+      </div>
+    </section>
+
+    <!-- Balanced Performance -->
+    <section id="radars" class="section">
+      <h2>Balanced performance across all metrics</h2>
+      <div class="callout info">
+        <strong>Multi-reward conditioning mitigates reward hacking</strong>: While single-reward models achieve high
+        scores on their target metric, they severely degrade performance on others. MIRO's comprehensive optimization
+        avoids this overfitting and delivers strong, balanced gains across all dimensions.
+      </div>
+
+      <h3 style="margin-top: 2rem;">MIRO outperforms single-reward approaches</h3>
+      <p class="explainer">We evaluate three training configurations on the CC12M+LA6 dataset: (1) a baseline model
+        trained without reward conditioning, (2) single-reward models conditioned on individual rewards (similar to
+        Coherence Aware Diffusion<sup><a href="#ref-dufour2024">[6]</a></sup> but using our reward suite instead of CLIP
+        score), and (3) MIRO
+        conditioned on all seven rewards simultaneously. The radar plots below show results across AestheticScore,
+        PickScore, ImageReward, HPSv2, and JINA CLIP score, plus OpenAI CLIP score as an out-of-distribution metric not
+        used during training.</p>
+
+      <div class="callout question" style="margin-top: 1.5rem;">
+        <strong>The reward hacking problem.</strong> Single-reward optimization leads to severe trade-offs. This is
+        particularly evident with AestheticScore—while the single-reward model achieves high aesthetic scores, it
+        severely degrades performance on other metrics. Models trained on ImageReward and HPSv2 show more balanced
+        trade-offs but still underperform MIRO's comprehensive optimization.
+      </div>
+
+      <ul style="margin-top: 1.5rem;">
+        <li><strong>Multi-objective optimization</strong>: By optimizing across multiple complementary objectives
+          simultaneously, MIRO avoids the overfitting that occurs when models focus exclusively on a single reward
+          signal.</li>
+        <li><strong>Balanced gains</strong>: MIRO consistently outperforms all baselines across aesthetic and preference
+          metrics, demonstrating the effectiveness of multi-reward conditioning.</li>
+      </ul>
+
+      <div class="controls" style="margin-top: 2rem; margin-bottom: 1rem;">
+        <label class="control-label">Compare MIRO to:</label>
+        <select id="radarModel" class="styled-select">
+          <option selected>Baseline</option>
+          <option>ImageReward</option>
+          <option>HPSv2</option>
+          <option>Aesthetic</option>
+          <option>SciScore</option>
+          <option>CLIP</option>
+          <option>VQA</option>
+          <option>Pick</option>
+        </select>
+      </div>
+      <p class="explainer" style="margin-bottom: 2rem;">Select a comparison model above to visualize how MIRO performs
+        against different baselines. Notice how single-reward models excel on their target metric but often underperform
+        on others, while MIRO maintains strong performance across all dimensions.</p>
+
+      <div class="grid grid-2" style="margin-bottom: 3rem;">
+        <div class="plot card" id="radar_specialists"></div>
+        <div class="plot card" id="radar_geneval"></div>
+      </div>
+
+      <h3 style="margin-top: 3rem;">Enhancing compositional understanding</h3>
+      <div class="callout info" style="margin-top: 1rem;">
+        <strong>GenEval improvements</strong>: MIRO achieves an overall GenEval score of <strong>57</strong>,
+        representing
+        a <strong>9.6% improvement</strong> over the baseline score of 52. The gains are particularly pronounced in
+        challenging compositional reasoning tasks.
+      </div>
+      <p class="explainer">Beyond optimizing for specific reward metrics, MIRO demonstrates significant improvements in
+        text-image alignment as measured by GenEval. This enhancement is particularly pronounced in challenging
+        compositional reasoning tasks:</p>
+
+      <div class="benefits-grid" style="grid-template-columns: repeat(3, 1fr); margin: 2rem 0;">
+        <div class="benefit-card">
+          <div class="benefit-icon">🎨</div>
+          <div class="benefit-content">
+            <strong>Color Attribution</strong>
+            <p style="font-size: 1.5rem; font-weight: 600; margin: 0.5rem 0;">29 → 38</p>
+            <p style="color: #10b981; font-weight: 500;">+31% improvement</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🔢</div>
+          <div class="benefit-content">
+            <strong>Two Objects</strong>
+            <p style="font-size: 1.5rem; font-weight: 600; margin: 0.5rem 0;">55 → 68</p>
+            <p style="color: #10b981; font-weight: 500;">+24% improvement</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🧮</div>
+          <div class="benefit-content">
+            <strong>Counting</strong>
+            <p style="font-size: 1.5rem; font-weight: 600; margin: 0.5rem 0;">49 → 55</p>
+            <p style="color: #10b981; font-weight: 500;">+12% improvement</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="explainer">These results demonstrate that MIRO's multi-reward conditioning enables better understanding
+        of
+        complex spatial relationships, object interactions, and numerical concepts—achieving balanced optimization that
+        excels across diverse evaluation criteria while maintaining strong performance on individual metrics.</p>
+    </section>
+
+    <!-- Synthetic Captions -->
+    <section id="synthetic" class="section">
+      <h2>MIRO and synthetic captions</h2>
+      <div class="callout info">
+        <strong>MIRO unlocks synthetic caption potential</strong>: Combining MIRO with synthetic captions yields the
+        strongest overall performance, achieving a remarkable GenEval score of <strong>68</strong> (+19% over synthetic
+        baseline) while maintaining aesthetic quality.
+      </div>
+
+      <p class="explainer">Synthetic captioning has emerged as the go-to method for improving text-image alignment in
+        generative models, offering the advantage of retaining all training data without filtering based on caption
+        quality. We evaluate MIRO using a mixture of 50% synthetic and 50% real captions.</p>
+
+      <!-- Subsection: MIRO outperforms synthetic alone -->
+      <div class="intro-subsection" style="margin-top: 2rem;">
+        <h3 class="intro-subtitle">MIRO outperforms synthetic captioning alone</h3>
+        <p class="explainer">Our results demonstrate that MIRO without synthetic captions achieves comparable GenEval
+          performance to baseline models trained with synthetic captions. More importantly, MIRO without synthetic
+          captions
+          significantly outperforms the synthetic caption baseline across reward metrics.</p>
+
+        <div class="callout question" style="margin-top: 1.5rem;">
+          <strong>More effective and computationally efficient.</strong> MIRO provides a more effective approach to
+          improving text-image alignment than synthetic captioning alone, while being computationally more efficient.
+          Reward
+          model scoring requires substantially less compute than recaptioning with large vision-language models.
+        </div>
+      </div>
+
+      <!-- Subsection: Combined approach -->
+      <div class="intro-subsection" style="margin-top: 3rem;">
+        <h3 class="intro-subtitle">Combining MIRO with synthetic captions</h3>
+        <p class="explainer">Combining MIRO with synthetic captions yields the strongest overall performance. While
+          maintaining equivalent aesthetic quality to MIRO without synthetic captions, this combined approach achieves a
+          remarkable GenEval score of <strong>68</strong>, substantially improving over the synthetic caption baseline
+          of 57
+          (+19%). The improvements are consistent across all compositional reasoning metrics:</p>
+
+        <div class="benefits-grid" style="grid-template-columns: repeat(3, 1fr); margin: 2rem 0;">
+          <div class="benefit-card">
+            <div class="benefit-icon">📍</div>
+            <div class="benefit-content">
+              <strong>Position</strong>
+              <p style="font-size: 1.3rem; font-weight: 600; margin: 0.5rem 0; color: #10b981;">30 → 46</p>
+              <p style="font-size: 0.95rem;">+53% improvement</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🎨</div>
+            <div class="benefit-content">
+              <strong>Color Attribution</strong>
+              <p style="font-size: 1.3rem; font-weight: 600; margin: 0.5rem 0; color: #10b981;">43 → 52</p>
+              <p style="font-size: 0.95rem;">+21% improvement</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🔢</div>
+            <div class="benefit-content">
+              <strong>Two Objects</strong>
+              <p style="font-size: 1.3rem; font-weight: 600; margin: 0.5rem 0; color: #10b981;">58 → 73</p>
+              <p style="font-size: 0.95rem;">+26% improvement</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🧮</div>
+            <div class="benefit-content">
+              <strong>Counting</strong>
+              <p style="font-size: 1.3rem; font-weight: 600; margin: 0.5rem 0; color: #10b981;">44 → 61</p>
+              <p style="font-size: 0.95rem;">+39% improvement</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🎯</div>
+            <div class="benefit-content">
+              <strong>Single Object</strong>
+              <p style="font-size: 1.3rem; font-weight: 600; margin: 0.5rem 0; color: #10b981;">93 → 97</p>
+              <p style="font-size: 0.95rem;">+4% improvement</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">✨</div>
+            <div class="benefit-content">
+              <strong>Overall GenEval</strong>
+              <p style="font-size: 1.3rem; font-weight: 600; margin: 0.5rem 0; color: #10b981;">57 → 68</p>
+              <p style="font-size: 0.95rem;">+19% improvement</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="explainer">These comprehensive gains across all compositional aspects demonstrate that MIRO
+          effectively
+          benefits from synthetic captions for text-image alignment, achieving superior compositional understanding
+          while
+          preserving aesthetic quality.</p>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <p class="explainer"><strong>Detailed comparison:</strong> The charts below show GenEval categories (left) and
+          aesthetic metrics (right) for Baseline/MIRO with real captions and Synth Baseline/Synth MIRO with 50/50
+          synthetic
+          captions.</p>
+        <div class="grid grid-2" style="margin-top: 1.5rem;">
+          <div class="plot card" id="synthetic_geneval"></div>
+          <div class="plot card" id="synthetic_aesthetic"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Controllability -->
+    <section id="weight-sweeps" class="section">
+      <h2>Flexible reward trade-offs at inference</h2>
+      <div class="callout info">
+        <strong>User-controlled rewards at inference</strong>: MIRO allows choosing reward weights at test time,
+        enabling
+        principled trade-offs across capabilities. This gives users control over generation characteristics and reduces
+        reward hacking.
+      </div>
+
+      <h3 style="margin-top: 2rem;">Reward weighting exposes controllable trade-offs</h3>
+      <p class="explainer">Our test-time scaling results show that selecting samples by Aesthetic Score can reduce
+        GenEval
+        performance, indicating a trade-off between aesthetic quality and semantic alignment. By steering the reward
+        vector
+        at inference, users can choose where to land on the aesthetics ↔ alignment frontier—a key practical advantage of
+        training on reward vectors rather than aligning after the fact.</p>
+
+      <div class="callout question" style="margin-top: 1.5rem;">
+        <strong>Sweeping the aesthetic weight identifies an optimal balance.</strong> We vary the aesthetic reward
+        weight
+        at inference and observe the highest GenEval score of <strong>75</strong> at a weight of <strong>0.625</strong>,
+        at the cost of lowering the Aesthetic Score to 5.24. Using this optimized weighting achieves the same
+        performance
+        as 128-sample test-time scaling with a single sample. The charts below visualize this trade-off: the left plot
+        shows the GenEval vs. Aesthetic Score curve, while the synchronized grid on the right shows how other reward
+        metrics respond to the aesthetic weight adjustment.
+      </div>
+
+      <div class="benefits-grid" style="grid-template-columns: repeat(3, 1fr); margin: 2rem 0;">
+        <div class="benefit-card">
+          <div class="benefit-icon">⚖️</div>
+          <div class="benefit-content">
+            <strong>Optimal weighting</strong>
+            <p style="font-size: 1.3rem; font-weight: 600; margin: 0.5rem 0; color: #10b981;">Weight 0.625 → GenEval 75
+            </p>
+            <p style="font-size: 0.95rem;">Maximizes compositional understanding.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🚀</div>
+          <div class="benefit-content">
+            <strong>Matches test-time scaling</strong>
+            <p style="font-size: 1.3rem; font-weight: 600; margin: 0.5rem 0; color: #10b981;">1 sample = 128 samples</p>
+            <p style="font-size: 0.95rem;">Single weighted sample matches best TTS results.</p>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🎛️</div>
+          <div class="benefit-content">
+            <strong>Interactive control</strong>
+            <p style="font-size: 1.3rem; font-weight: 600; margin: 0.5rem 0;">Real-time exploration</p>
+            <p style="font-size: 0.95rem;">Use the slider to see all metrics change live.</p>
+          </div>
+        </div>
+      </div>
+      <div class="controllability-layout" style="margin-top: 2rem;">
+        <div class="controllability-left">
+          <div class="plot card" id="dual_weight"></div>
+        </div>
+        <div class="controllability-right">
+          <div class="controllability-grid">
+            <div class="plot card" id="grid_imagereward"></div>
+            <div class="plot card" id="grid_hpsv2"></div>
+            <div class="plot card" id="grid_pick"></div>
+            <div class="plot card" id="grid_clip"></div>
+          </div>
+        </div>
+      </div>
+      <div class="weight-slider-container" style="margin-bottom: 3rem;">
+        <label for="weightCursor" class="weight-slider-label">Selected weight</label>
+        <input id="weightCursor" type="range" min="0" max="8" step="1" value="5" class="weight-slider" />
+        <span id="weightCursorLabel" class="weight-slider-value"></span>
+      </div>
+
+      <div id="images-per-reward"
+        style="margin-top: 4rem; padding-top: 3rem; border-top: 2px solid var(--border-color, #e5e7eb);">
+        <h3>Visualizing per-reward controllability</h3>
+        <div class="callout info" style="margin-top: 1rem;">
+          <strong>Multi-reward classifier-free guidance</strong>: We visualize MIRO's controllability using multi-reward
+          classifier-free guidance. By isolating individual rewards while keeping others anchored high, we can
+          demonstrate
+          true per-dimension control at sampling time.
+        </div>
+        <p class="explainer">The images below show how MIRO responds when we isolate each reward dimension. For each
+          column,
+          we set the positive target to maximize all rewards and the negative target to zero out one specific reward
+          while
+          keeping others high. This cancels the shared direction and isolates that reward's unique visual
+          characteristics.
+          Notice how each reward emphasizes different aspects: aesthetics affects overall visual appeal, CLIP
+          strengthens
+          text-image correspondence, HPSv2 influences composition, and so on.</p>
+
+        <div class="benefits-grid" style="grid-template-columns: repeat(4, 1fr); margin: 2rem 0;">
+          <div class="benefit-card" style="padding: 1rem;">
+            <div class="benefit-content" style="text-align: center;">
+              <strong>🎨 Aesthetics</strong>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem;">Overall visual appeal and artistic quality</p>
+            </div>
+          </div>
+          <div class="benefit-card" style="padding: 1rem;">
+            <div class="benefit-content" style="text-align: center;">
+              <strong>📝 CLIP</strong>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem;">Text-image semantic correspondence</p>
+            </div>
+          </div>
+          <div class="benefit-card" style="padding: 1rem;">
+            <div class="benefit-content" style="text-align: center;">
+              <strong>⭐ HPSv2</strong>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem;">Composition and user preference</p>
+            </div>
+          </div>
+          <div class="benefit-card" style="padding: 1rem;">
+            <div class="benefit-content" style="text-align: center;">
+              <strong>🏆 ImageReward</strong>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem;">Human preference alignment</p>
+            </div>
+          </div>
+        </div>
+        <div class="ipr-carousel-container">
+          <div class="ipr-carousel-wrapper">
+            <div class="ipr-carousel-track"></div>
+          </div>
+          <div class="ipr-carousel-controls">
+            <button class="ipr-carousel-btn prev" aria-label="Previous prompt">‹</button>
+            <span class="ipr-carousel-indicator"><span class="current">1</span> / <span class="total">2</span></span>
+            <button class="ipr-carousel-btn next" aria-label="Next prompt">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOTA Comparison -->
+    <section id="sota-comparison" class="section">
+      <h2>Comparison to State-of-the-Art Models</h2>
+      <div class="callout info">
+        <strong>MIRO sets new benchmarks for efficiency and performance</strong>: Our compact 350M-parameter model
+        achieves a GenEval score of <strong>75</strong>, outperforming FLUX-dev (12B parameters, 67) while requiring
+        <strong>370× less computation</strong> (4.16 vs 1540 TFLOPs). With test-time scaling, MIRO reaches
+        state-of-the-art ImageReward of <strong>1.61</strong> while maintaining a <strong>3× efficiency
+          advantage</strong>
+        over FLUX-dev.
+      </div>
+
+      <p class="explainer">
+        We evaluate MIRO against state-of-the-art text-to-image models including FLUX-dev, Stable Diffusion variants,
+        PixArt, Sana, and SDXL. The animated charts below visualize performance on GenEval (compositional understanding)
+        and ImageReward (user preference), with models sorted from lowest to highest scores. MIRO models are highlighted
+        in orange.
+      </p>
+
+      <div class="intro-subsection" style="margin-top: 2rem;">
+        <h3 class="intro-subtitle">GenEval: Exceptional training efficiency</h3>
+        <p>
+          MIRO achieves a GenEval score of <strong>68</strong> with synthetic captions, already outperforming FLUX-dev
+          (12B parameters) which scores 67. With optimized inference-time reward weighting, MIRO reaches
+          <strong>75</strong>—setting
+          a new state-of-the-art while requiring dramatically less computation: <strong>4.16 TFLOPs vs 1540
+            TFLOPs</strong>
+          for FLUX-dev, a remarkable <strong>370× efficiency improvement</strong>. This demonstrates that MIRO's
+          multi-reward
+          conditioning enables compact models to surpass much larger architectures.
+        </p>
+      </div>
+
+      <div class="intro-subsection" style="margin-top: 2rem;">
+        <h3 class="intro-subtitle">Setting new benchmarks for compositional reasoning</h3>
+        <div class="benefits-grid" style="grid-template-columns: repeat(2, 1fr); margin: 1.5rem 0;">
+          <div class="benefit-card">
+            <div class="benefit-icon">📍</div>
+            <div class="benefit-content">
+              <strong>Position Understanding</strong>
+              <p style="font-size: 1.3rem; font-weight: 600; margin: 0.5rem 0; color: #10b981;">Score: 46</p>
+              <p style="font-size: 0.95rem;">+35% over previous SOTA (SD3-Medium: 34)</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🎨</div>
+            <div class="benefit-content">
+              <strong>Color Attribution</strong>
+              <p style="font-size: 1.3rem; font-weight: 600; margin: 0.5rem 0; color: #10b981;">Score: 52</p>
+              <p style="font-size: 0.95rem;">+11% over previous SOTA (FLUX-dev: 47)</p>
+            </div>
+          </div>
+        </div>
+        <p>
+          Beyond overall performance, MIRO excels on challenging compositional metrics that have historically been
+          difficult for text-to-image models. On the Position metric, MIRO achieves a score of 46, improving upon
+          the previous state-of-the-art of 34 (SD3-Medium) by 35%. For Color Attribution, MIRO advances from
+          FLUX-dev's previous best of 47 to 52 (+11%). These improvements highlight MIRO's superior understanding
+          of complex spatial relationships and object attributes.
+        </p>
+      </div>
+
+      <p class="explainer" style="margin-top: 2rem;">
+        The chart below compares MIRO's GenEval performance against all SOTA baselines, with models sorted from
+        lowest to highest scores. MIRO models are highlighted in orange.
+      </p>
+
+      <div class="plot card" id="sota_geneval" style="margin-top: 1.5rem;"></div>
+
+      <div class="intro-subsection" style="margin-top: 3rem;">
+        <h3 class="intro-subtitle">User preference: Scalable efficiency with test-time optimization</h3>
+        <p>
+          On PartiPrompts, MIRO consistently outperforms larger models across multiple reward metrics. When optimizing
+          for <strong>ImageReward with 128-sample inference scaling</strong>, MIRO achieves a state-of-the-art score
+          of <strong>1.61</strong> compared to FLUX-dev's 1.19 and Sana-1.6B's 1.23.
+        </p>
+        <p>
+          Remarkably, even with this 128-sample inference scaling strategy, MIRO maintains a <strong>3× efficiency
+            advantage</strong> over FLUX-dev (<strong>532 TFLOPs vs 1540 TFLOPs</strong>) while achieving superior
+          performance across all metrics. For Aesthetic Score optimization, MIRO reaches <strong>6.81</strong>
+          compared to FLUX-dev's 6.56.
+        </p>
+      </div>
+
+      <p class="explainer" style="margin-top: 2rem;">
+        The chart below shows ImageReward scores across all models, demonstrating MIRO's superior user preference
+        alignment. Models are sorted from lowest to highest, with MIRO variants in orange.
+      </p>
+
+      <div class="plot card" id="sota_imagereward" style="margin-top: 1.5rem;"></div>
+
+      <div class="intro-subsection" style="margin-top: 3rem;">
+        <h3 class="intro-subtitle">Cross-metric generalization through multi-reward conditioning</h3>
+        <p>
+          A key advantage of MIRO is its ability to generalize across metrics without explicit optimization. For
+          instance, when optimizing for HPSv2, MIRO achieves an ImageReward score of <strong>1.35</strong>,
+          outperforming models specifically trained for that metric. This cross-metric robustness demonstrates that
+          multi-reward conditioning naturally learns generalizable quality representations rather than exploiting
+          individual metric idiosyncrasies.
+        </p>
+      </div>
+
+      <div class="intro-subsection" style="margin-top: 3rem;">
+        <h3 class="intro-subtitle">Computational efficiency comparison</h3>
+        <p>
+          The charts below visualize the dramatic difference in model size and computational requirements using
+          <strong>logarithmic scales</strong> to better show the magnitude of MIRO's efficiency gains. MIRO's
+          compact 350M-parameter architecture requires <strong>33× fewer parameters</strong> than FLUX-dev and
+          <strong>370× less compute</strong> for inference, while achieving superior performance on both metrics above.
+        </p>
+      </div>
+
+      <div class="grid grid-2" style="margin-top: 1.5rem;">
+        <div class="plot card" id="sota_params"></div>
+        <div class="plot card" id="sota_compute"></div>
+      </div>
+
+      <p class="explainer" style="margin-top: 2rem; font-style: italic; color: var(--muted, #9ca3af);">
+        <strong>Note:</strong> Efficiency charts above use green for MIRO models and slate-gray for baselines, with
+        lower values being better. Both charts use logarithmic scales to show the magnitude of differences. Bars
+        animate on load, growing and then sorting from lowest to highest values.
+      </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion" class="section conclusion-section">
+      <h2>Conclusion</h2>
+
+      <div class="conclusion-summary">
+        <p class="lead" style="text-align: center; max-width: 1000px; margin: 1.5rem auto;">
+          We presented <strong>MIRO (MultI-Reward cOnditioning)</strong>, a simple yet powerful pretraining framework
+          that integrates alignment directly into training rather than treating it as a post-hoc stage. By conditioning
+          on a vector of reward scores, MIRO learns \(p(x\mid c, \mathbf{s})\) and exposes reward targets as
+          controllable inputs, disentangling content from quality and offering precise, interpretable control at
+          inference time.
+        </p>
+      </div>
+
+      <div class="conclusion-highlights">
+        <h3 style="text-align: center; margin: 3rem 0 2rem; font-size: 1.8em; color: var(--accent);">
+          What We Achieved
+        </h3>
+
+        <div class="achievement-grid">
+          <div class="achievement-card">
+            <div class="achievement-icon">🚀</div>
+            <div class="achievement-metric">19×</div>
+            <div class="achievement-label">Faster Convergence</div>
+            <p class="achievement-desc">MIRO converges up to 19× faster than regular pretraining on aesthetic metrics,
+              accelerating development cycles dramatically.</p>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">⚡</div>
+            <div class="achievement-metric">370×</div>
+            <div class="achievement-label">Less Compute</div>
+            <p class="achievement-desc">Achieves comparable quality with 370× less inference compute than FLUX-dev,
+              making high-quality generation accessible.</p>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">🏆</div>
+            <div class="achievement-metric">75</div>
+            <div class="achievement-label">GenEval Score</div>
+            <p class="achievement-desc">Outperforms FLUX-dev (12B params) on compositional understanding with just
+              350M parameters—a new efficiency benchmark.</p>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">🎯</div>
+            <div class="achievement-metric">7</div>
+            <div class="achievement-label">Reward Dimensions</div>
+            <p class="achievement-desc">Simultaneously optimizes aesthetics, user preference, semantic alignment,
+              and more—preventing reward hacking.</p>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">🎛️</div>
+            <div class="achievement-metric">∞</div>
+            <div class="achievement-label">Controllability</div>
+            <p class="achievement-desc">Fine-grained control over quality trade-offs at inference time without
+              retraining or model collapse.</p>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">📊</div>
+            <div class="achievement-metric">100%</div>
+            <div class="achievement-label">Data Utilization</div>
+            <p class="achievement-desc">Preserves the full spectrum of training data instead of discarding
+              "low-quality" samples, maximizing learning.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="conclusion-keypoints">
+        <h3 style="text-align: center; margin: 3rem 0 2rem; font-size: 1.8em;">
+          Key Takeaways
+        </h3>
+
+        <div class="takeaway-grid">
+          <div class="takeaway-item">
+            <span class="takeaway-number">1</span>
+            <div class="takeaway-content">
+              <strong>Single-Stage Training</strong>
+              <p>MIRO eliminates the need for separate fine-tuning or RL stages, simplifying the training
+                pipeline while achieving superior results.</p>
+            </div>
+          </div>
+
+          <div class="takeaway-item">
+            <span class="takeaway-number">2</span>
+            <div class="takeaway-content">
+              <strong>Multi-Objective Balance</strong>
+              <p>By optimizing multiple rewards simultaneously, MIRO prevents reward hacking and mode collapse
+                that plague single-objective approaches.</p>
+            </div>
+          </div>
+
+          <div class="takeaway-item">
+            <span class="takeaway-number">3</span>
+            <div class="takeaway-content">
+              <strong>Exceptional Efficiency</strong>
+              <p>Despite being much smaller (350M vs 12B params), MIRO surpasses FLUX-dev on GenEval and
+                PartiPrompts at a fraction of the computational cost.</p>
+            </div>
+          </div>
+
+          <div class="takeaway-item">
+            <span class="takeaway-number">4</span>
+            <div class="takeaway-content">
+              <strong>Inference-Time Control</strong>
+              <p>Users can dial individual rewards up or down at generation time, achieving precise trade-offs
+                without expensive test-time search or retraining.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="conclusion-impact">
+        <div class="impact-card">
+          <h3 style="margin-top: 0; color: var(--accent);">Looking Forward</h3>
+          <p style="font-size: 1.05em; line-height: 1.8; margin-bottom: 1.5rem;">
+            We believe MIRO opens a new direction for leveraging reward models in generative AI. Rather than treating
+            alignment as a correction mechanism applied after the fact, integrating rewards from the beginning enables
+            models that are <strong>faster to train</strong>, <strong>more controllable</strong>, and <strong>more
+              efficient to deploy</strong>.
+          </p>
+
+          <h4 style="color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.2em;">
+            Beyond Text-to-Image Generation
+          </h4>
+          <p style="font-size: 1.05em; line-height: 1.8; margin-bottom: 1.5rem;">
+            This paradigm shift—from post-hoc alignment to reward-conditioned pretraining—could extend to other domains
+            where multiple quality dimensions matter: <strong>large language models</strong> (balancing helpfulness,
+            harmlessness, and accuracy), <strong>video generation</strong> (temporal consistency, motion quality,
+            aesthetics), <strong>3D synthesis</strong> (geometric accuracy, visual realism, physical plausibility),
+            and <strong>audio generation</strong> (fidelity, naturalness, clarity).
+          </p>
+
+          <h4 style="color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.2em;">
+            Personalized Reward Spaces
+          </h4>
+          <p style="font-size: 1.05em; line-height: 1.8; margin-bottom: 0;">
+            An exciting future direction is discovering a <strong>basis of fundamental reward dimensions</strong> that
+            could represent any user preference. Just as colors can be composed from RGB primaries, could we find a
+            minimal set of reward "basis vectors" from which any personalized reward emerges as a linear combination?
+            MIRO's multi-reward conditioning framework could then enable users to define custom quality trade-offs on
+            the fly—dialing in their unique preferences without requiring new models or expensive retraining. This would
+            transform alignment from a one-size-fits-all solution into a <strong>personalized, interpretable control
+              surface</strong> over generation quality.
+          </p>
+        </div>
+      </div>
+
+      <div class="acknowledgements">
+        <h3 class="ack-title">Acknowledgements</h3>
+        <div class="ack-content">
+          <div class="ack-section">
+            <div class="ack-icon">💰</div>
+            <p class="ack-text">
+              This work was supported by <strong>ANR project TOSAI ANR-20-IADJ-0009</strong>, and was granted access
+              to the HPC resources of <strong>IDRIS</strong> under the allocation <strong>2024-A0171014246</strong> made
+              by GENCI.
+            </p>
+          </div>
+          <div class="ack-section">
+            <div class="ack-icon">🙏</div>
+            <p class="ack-text">
+              We would like to thank <strong>Alyosha Efros</strong>, <strong>Tero Karras</strong>, and
+              <strong>Luca Eyring</strong> for their helpful comments, and <strong>Yuanzhi Zhu</strong> and
+              <strong>Xi Wang</strong> for proofreading.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="citation-section">
+        <h3 style="text-align: center; margin: 3rem 0 1.5rem;">Citation</h3>
+        <p style="text-align: center; color: var(--muted); max-width: 700px; margin: 0 auto 1.5rem;">
+          If you find MIRO useful for your research, please consider citing our paper:
+        </p>
+        <div class="bibtex-container">
+          <button class="copy-bibtex-btn" id="copyBibtexBtn" aria-label="Copy BibTeX to clipboard">
+            <span class="copy-icon">📋</span>
+            <span class="copy-text">Copy BibTeX</span>
+          </button>
+          <pre class="bibtex-code" id="bibtexCode"><code>@article{dufour2025miro,
+  title   = {MIRO: Multi-Reward Conditioned Pretraining for Text-to-Image Generation},
+  author  = {Dufour, Nicolas and Degeorge, Lucas and Ghosh, Arijit and Kalogeiton, Vicky and Picard, David},
+  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  year    = {2025}
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="cta-section">
+        <h3 style="text-align: center; margin: 3rem 0 1.5rem; font-size: 1.6em;">Get Started</h3>
+        <div class="cta-buttons">
+          <a href="../iclr2026_conference.pdf" class="cta-button primary" target="_blank" rel="noopener">
+            <span class="cta-icon">📄</span>
+            <span>Paper</span>
+          </a>
+          <a href="#" class="cta-button primary" target="_blank" rel="noopener">
+            <span class="cta-icon">💻</span>
+            <span>Code</span>
+          </a>
+          <a href="#" class="cta-button primary" target="_blank" rel="noopener">
+            <span class="cta-icon">🎮</span>
+            <span>Demo</span>
+          </a>
+          <a href="#" class="cta-button primary" target="_blank" rel="noopener">
+            <span class="cta-icon">⚖️</span>
+            <span>Weights</span>
+          </a>
+          <a href="#intro" class="cta-button secondary">
+            <span class="cta-icon">🔝</span>
+            <span>Back to Top</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- References -->
+    <section id="references" class="section">
+      <h2>References</h2>
+      <div class="references">
+        <ol>
+          <li id="ref-christiano2017">
+            Christiano, P. F., Leike, J., Brown, T., Martic, M., Legg, S., & Amodei, D. (2017).
+            <em>Deep reinforcement learning from human preferences</em>.
+            Advances in Neural Information Processing Systems, 30.
+          </li>
+          <li id="ref-rafailov2023">
+            Rafailov, R., Sharma, A., Mitchell, E., Ermon, S., Manning, C. D., & Finn, C. (2023).
+            <em>Direct Preference Optimization: Your Language Model is Secretly a Reward Model</em>.
+            NeurIPS 2023.
+          </li>
+          <li id="ref-fan2023">
+            Fan, Y., Watkins, O., Du, Y., Liu, H., Ryu, M., Boutilier, C., Abbeel, P., Ghavamzadeh, M., Lee, K., & Lee,
+            K. (2023).
+            <em>DDPOK: Reinforcement Learning for Fine-tuning Text-to-Image Diffusion Models</em>.
+            NeurIPS 2023.
+          </li>
+          <li id="ref-esser2024">
+            Esser, P., Kulal, S., Blattmann, A., Entezari, R., Müller, J., Saini, H., ... & Rombach, R. (2024).
+            <em>Scaling Rectified Flow Transformers for High-Resolution Image Synthesis</em>.
+            ICLR 2024.
+          </li>
+          <li id="ref-flux2024">
+            Black Forest Labs. (2024).
+            <em>FLUX</em>.
+            <a href="https://github.com/black-forest-labs/flux" target="_blank"
+              rel="noopener">https://github.com/black-forest-labs/flux</a>
+          </li>
+          <li id="ref-dufour2024">
+            Dufour, N., Besnier, V., Kalogeiton, V., & Picard, D. (2024).
+            <em>Don't drop your samples! Coherence-aware training benefits Conditional diffusion</em>.
+            CVPR 2024.
+          </li>
+          <li id="ref-schuhmann2022">
+            Schuhmann, C., Beaumont, R., Vencu, R., Gordon, C., Wightman, R., Cherti, M., ... & Jitsev, J. (2022).
+            <em>LAION-5B: An Open Large-scale Dataset for Training Next Generation Image-Text Models</em>.
+            NeurIPS 2022.
+          </li>
+          <li id="ref-wu2023">
+            Wu, X., Hao, Y., Sun, K., Chen, Y., Zhu, F., Zhao, R., & Li, H. (2023).
+            <em>Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image
+              Synthesis</em>.
+            arXiv preprint.
+          </li>
+          <li id="ref-kirstain2023">
+            Kirstain, Y., Polyak, A., Singer, U., Matiana, S., Penna, J., & Levy, O. (2023).
+            <em>Pick-a-Pic: An Open Dataset of User Preferences for Text-to-Image Generation</em>.
+            NeurIPS 2023.
+          </li>
+          <li id="ref-xu2023">
+            Xu, J., Liu, X., Wu, Y., Tong, Y., Li, Q., Ding, M., Tang, J., & Dong, Y. (2023).
+            <em>ImageReward: Learning and Leveraging Human Preferences for Text-to-Image Generation</em>.
+            NeurIPS 2023.
+          </li>
+          <li id="ref-ghosh2024">
+            Ghosh, D., Hajishirzi, H., & Schmidt, L. (2024).
+            <em>Geneval: An object-focused framework for evaluating text-to-image alignment</em>.
+            Advances in Neural Information Processing Systems, 36.
+          </li>
+          <li id="ref-lipman2023">
+            Lipman, Y., Chen, R. T. Q., Ben-Hamu, H., Nickel, M., & Le, M. (2023).
+            <em>Flow Matching for Generative Modeling</em>.
+            arXiv preprint.
+          </li>
+          <li id="ref-karras2024">
+            Karras, T., Aittala, M., Kynkäänniemi, T., Lehtinen, J., Aila, T., & Laine, S. (2024).
+            <em>Guiding a diffusion model with a bad version of itself</em>.
+            NeurIPS 2024.
+          </li>
+          <li id="ref-luo2025">
+            Luo, Y., Hu, T., Luo, W., Kawaguchi, K., & Tang, J. (2025).
+            <em>Reward-Instruct: A Reward-Centric Approach to Fast Photo-Realistic Image Generation</em>.
+            arXiv preprint.
+          </li>
+          <li id="ref-ma2025">
+            Ma, N., Tong, S., Jia, H., Hu, H., Su, Y., Zhang, M., Yang, X., Li, Y., Jaakkola, T., Jia, X., & Xie, S.
+            (2025).
+            <em>Inference-time scaling for diffusion models beyond scaling denoising steps</em>.
+            CVPR 2025.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Nicolas Dufour</p>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
+  <script defer src="assets/js/miro_animation.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
