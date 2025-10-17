@@ -1,13 +1,51 @@
 (function () {
-    const sketch = (p) => {
-        let img, t0 = 0, playing = false;
-        const NUM_REWARDS = 7;
-        // Timing controls for scoring animation (slower, clearer)
-        const ROW_DELAY = 0.12; // per-row stagger as fraction of stage
-        const MORPH_END = 0.6;  // image->dot morph completes within emit_scores
-        const VEC_START = 0.8;  // dot leaves row to scores vector
-        const BAR_START = 0.9;  // histogram begins filling
-        const timeline = [
+    // ============================================================================
+    // CONFIGURATION
+    // ============================================================================
+    const CONFIG = {
+        // Visual Parameters
+        visual: {
+            mobileBreakpoint: 700,
+            pixelDensity: 1,
+            borderRadius: {
+                small: 3,
+                medium: 6,
+                large: 10
+            },
+            padding: {
+                small: 6,
+                medium: 8,
+                large: 12
+            },
+            strokeWeight: {
+                thin: 1,
+                normal: 2
+            }
+        },
+
+        // Image paths
+        images: {
+            primary: 'assets/images/miro_placeholder.jpg',
+            fallback: 'assets/images/miro_pipeline_placeholder.svg'
+        },
+
+        // Text content
+        text: {
+            caption: '"a scenic volcano"',
+            modelName: 'MIRO',
+            rewardsLabel: 'Rewards r₁,...,rₙ',
+            scoresLabel: 'scores ŝ',
+            scoresVector: 'scores vector',
+            denoisedImage: 'denoised image',
+            prompt: 'prompt',
+            phaseLabels: {
+                scoring: 'Scoring the dataset with all the rewards',
+                training: 'Flow matching training'
+            }
+        },
+
+        // Timeline (stage name, duration in ms)
+        timeline: [
             ['intro', 2000],
             ['move_to_rewards', 1600],
             ['fanout_inputs', 100],
@@ -19,210 +57,300 @@
             ['to_denoiser', 1600],
             ['clean_output', 2200],
             ['pause', 1200]
+        ],
+
+        // Animation parameters
+        animation: {
+            numRewards: 7,
+            intersectionThreshold: 0.35,
+            rowDelay: 0.12,      // per-row stagger as fraction of stage
+            morphEnd: 0.6,       // image->dot morph completes within emit_scores
+            vecStart: 0.8,       // dot leaves row to scores vector
+            barStart: 0.9,       // histogram begins filling
+            noiseParams: {
+                stdDev: 80,
+                maxWeight: 0.4
+            },
+            easing: {
+                inOut: (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+            }
+        },
+
+        // Layout parameters
+        layout: {
+            mobile: {
+                margin: 20,
+                imgScale: 0.55,
+                imgAspectRatio: 0.66,
+                captionHeight: 40,
+                rewardsScale: 0.7,
+                rewardsHeight: 100,
+                vectorScale: 0.65,
+                vectorHeight: 60,
+                modelScale: 0.7,
+                modelHeight: 85,
+                spacing: {
+                    imgToCaption: 8,
+                    captionToRewards: 25,
+                    rewardsToVector: 20,
+                    vectorToModel: 25,
+                    modelToOutput: 25
+                },
+                canvas: {
+                    minHeight: 650,
+                    heightMultiplier: 1.8
+                },
+                startY: 40 // M + 20
+            },
+            desktop: {
+                margin: 20,
+                imgScale: 0.22,
+                maxImgWidth: 240,
+                imgAspectRatio: 0.66,
+                imgY: 0.38,
+                captionHeight: 45,
+                captionSpacing: 12,
+                rewardsOffsetX: 100,
+                rewardsOffsetY: -12,
+                rewardsMinWidth: 160,
+                rewardsScale: 0.16,
+                vectorOffsetX: 50,
+                vectorMinWidth: 120,
+                vectorScale: 0.12,
+                modelOffsetX: 60,
+                modelMinWidth: 200,
+                modelScale: 0.19,
+                outputOffsetX: 60,
+                canvas: {
+                    minHeight: 400,
+                    heightMultiplier: 0.45
+                }
+            }
+        },
+
+        // Sizing parameters
+        sizes: {
+            text: {
+                modelName: 22,
+                rewardLabel: 12,
+                rewardLabelMobile: 10,
+                boxLabel: 12,
+                phaseLabel: 16,
+                phaseLabelMobile: 13,
+                miniPrompt: 11,
+                scoreValue: 12,
+                scoreValueMobile: 10,
+                legend: 11,
+                captionLabel: 9,
+                captionText: 11,
+                icon: 12
+            },
+            arrow: {
+                length: 8,
+                width: 4
+            },
+            effects: {
+                shadowBlur: 12
+            },
+            rewards: {
+                headerHeight: 16,
+                gap: 6,
+                miniInputPadding: 10,
+                miniInputTop: 20,
+                miniInputScale: 0.65,
+                miniInputMaxMobile: 24,
+                miniInputMaxDesktop: 20
+            },
+            dot: {
+                radius: 8,
+                morphMinScale: 0.25
+            }
+        },
+
+        // Scaling factors for animations
+        scaling: {
+            imgInRewards: 0.55,
+            imgSmallInRewards: 0.6,  // relative to imgInRewards
+            imgInModel: 0.5,
+            miniInputInRow: 0.55,
+            leftVectorDesktop: 0.85
+        }
+    };
+
+    // ============================================================================
+    // UTILITY FUNCTIONS
+    // ============================================================================
+    const lerp = (a, b, t) => a + (b - a) * t;
+
+    function getPalette() {
+        const s = getComputedStyle(document.documentElement);
+        return {
+            bg: s.getPropertyValue('--bg').trim() || '#0b0c10',
+            fg: s.getPropertyValue('--fg').trim() || '#e6e6e6',
+            card: s.getPropertyValue('--card').trim() || '#15171c',
+            accent: s.getPropertyValue('--accent').trim() || '#ff9a5c',
+            muted: s.getPropertyValue('--muted').trim() || '#b5b5b5'
+        };
+    }
+
+    function getRewardColors(p) {
+        return [
+            p.color(255, 150, 220), // pastelpink - Pick
+            p.color(105, 200, 105), // pastelgreen - Aesthetic
+            p.color(100, 150, 255), // pastelblue - HPSv2
+            p.color(80, 210, 200),  // pastelteal - CLIP
+            p.color(255, 105, 120), // pastelred - Image Reward
+            p.color(200, 105, 230), // pastelpurple - SciScore
+            p.color(230, 210, 80)   // pastelyellow - VQA
         ];
-        const totalMs = timeline.reduce((acc, [, d]) => acc + d, 0);
+    }
 
-        p.preload = () => {
-            // Primary placeholder (easy to swap later)
-            img = p.loadImage('assets/images/miro_placeholder.jpg', undefined, () => {
-                // Optional fallback (kept simple: no error path chaining)
-                img = p.loadImage('assets/images/miro_pipeline_placeholder.svg');
-            });
-        };
+    function subscriptFor(i) {
+        const subs = ['₁', '₂', '₃', '₄', '₅', '₆', '₇'];
+        return (i >= 0 && i < subs.length) ? subs[i] : String(i + 1);
+    }
 
-        p.setup = () => {
-            const parent = p.select('#miroAnimation');
-            const parentW = parent.elt.clientWidth || 960;
+    // ============================================================================
+    // LAYOUT CALCULATOR
+    // ============================================================================
+    class LayoutCalculator {
+        constructor(width, height, isMobile) {
+            this.W = width;
+            this.H = height;
+            this.isMobile = isMobile;
+            this.config = isMobile ? CONFIG.layout.mobile : CONFIG.layout.desktop;
+        }
 
-            // Detect if mobile layout is needed
-            const isMobile = parentW < 700;
+        getImageLayout() {
+            if (this.isMobile) {
+                const imgW = Math.min(this.W * this.config.imgScale, 180);
+                const imgH = imgW * this.config.imgAspectRatio;
+                const imgX = this.W / 2 - imgW / 2;
+                const imgY = this.config.startY;
 
-            // Calculate required width for animation content
-            const M = 20;
-            const imgW = isMobile ? Math.min(parentW * 0.6, 200) : Math.min(parentW * 0.22, 240);
-            const modelW = isMobile ? Math.min(parentW * 0.7, 220) : Math.max(200, parentW * 0.19);
-
-            let w, h;
-            if (isMobile) {
-                // Mobile: vertical layout, use full width
-                w = parentW;
-                h = Math.max(650, parentW * 1.8); // Compact vertical flow
+                return { imgX, imgY, imgW, imgH };
             } else {
-                // Desktop: horizontal layout
-                const contentWidth = M + imgW + 60 + modelW + 60 + imgW + M;
-                w = Math.min(contentWidth, parentW);
-                h = Math.max(400, Math.round(w * 0.45));
+                const imgW = Math.min(this.W * this.config.imgScale, this.config.maxImgWidth);
+                const imgH = imgW * this.config.imgAspectRatio;
+                const imgX = this.config.margin;
+                const imgY = this.H * this.config.imgY;
+
+                return { imgX, imgY, imgW, imgH };
             }
+        }
 
-            const canvas = p.createCanvas(w, h);
-            canvas.style('display', 'block');
-            canvas.style('margin', '0 auto');
-            // Insert canvas at the beginning of the parent container
-            parent.elt.insertBefore(canvas.elt, parent.elt.firstChild);
-            p.pixelDensity(1);
+        getCaptionLayout(imgLayout) {
+            if (this.isMobile) {
+                const capW = imgLayout.imgW;
+                const capH = this.config.captionHeight;
+                const capX = imgLayout.imgX;
+                const capY = imgLayout.imgY + imgLayout.imgH + this.config.spacing.imgToCaption;
 
-            // Set up Intersection Observer to restart animation when canvas is fully visible
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
-                        // Canvas is fully visible - restart animation from beginning
-                        t0 = p.millis();
-                        playing = true;
-                    } else {
-                        // Canvas is not fully visible - pause animation
-                        playing = false;
-                    }
-                });
-            }, {
-                threshold: 0.35 // Trigger when ~35% of the canvas is visible
-            });
-
-            // Observe the canvas element
-            observer.observe(canvas.elt);
-
-            // Click to toggle play/pause
-            parent.elt.addEventListener('click', () => {
-                playing = !playing;
-                if (playing) {
-                    t0 = p.millis() - (p.millis() - t0) % totalMs;
-                }
-            });
-        };
-
-        p.windowResized = () => {
-            const parent = p.select('#miroAnimation');
-            const parentW = parent.elt.clientWidth || 960;
-
-            // Detect if mobile layout is needed
-            const isMobile = parentW < 700;
-
-            // Calculate required width for animation content
-            const M = 20;
-            const imgW = isMobile ? Math.min(parentW * 0.6, 200) : Math.min(parentW * 0.22, 240);
-            const modelW = isMobile ? Math.min(parentW * 0.7, 220) : Math.max(200, parentW * 0.19);
-
-            let w, h;
-            if (isMobile) {
-                // Mobile: vertical layout, use full width
-                w = parentW;
-                h = Math.max(650, parentW * 1.8); // Compact vertical flow
+                return { capX, capY, capW, capH };
             } else {
-                // Desktop: horizontal layout
-                const contentWidth = M + imgW + 60 + modelW + 60 + imgW + M;
-                w = Math.min(contentWidth, parentW);
-                h = Math.max(400, Math.round(w * 0.45));
+                const capW = imgLayout.imgW;
+                const capH = this.config.captionHeight;
+                const capX = this.config.margin;
+                const capY = imgLayout.imgY + imgLayout.imgH + this.config.captionSpacing;
+
+                return { capX, capY, capW, capH };
             }
-
-            p.resizeCanvas(w, h);
-        };
-
-        // Pull site colors from CSS variables to match light/dark themes
-        function getPalette() {
-            const s = getComputedStyle(document.documentElement);
-            return {
-                bg: s.getPropertyValue('--bg').trim() || '#0b0c10',
-                fg: s.getPropertyValue('--fg').trim() || '#e6e6e6',
-                card: s.getPropertyValue('--card').trim() || '#15171c',
-                accent: s.getPropertyValue('--accent').trim() || '#ff9a5c',
-                muted: s.getPropertyValue('--muted').trim() || '#b5b5b5'
-            };
         }
 
-        function getStageAndProgress() {
-            const t = (p.millis() - t0) % totalMs;
-            let acc = 0;
-            for (const [name, dur] of timeline) {
-                if (t < acc + dur) {
-                    const prog = (t - acc) / dur;
-                    return { name, prog };
-                }
-                acc += dur;
-            }
-            return { name: 'pause', prog: 0 };
-        }
+        getRewardsLayout(imgLayout, captionLayout) {
+            if (this.isMobile) {
+                const rewardsW = Math.min(this.W * this.config.rewardsScale, 200);
+                const rewardsH = this.config.rewardsHeight;
+                const rewardsX = this.W / 2 - rewardsW / 2;
+                const rewardsY = captionLayout.capY + captionLayout.capH + this.config.spacing.captionToRewards;
 
-        function drawArrow(x1, y1, x2, y2, opts) {
-            const pal = getPalette();
-            const color = (opts && opts.color) || pal.accent;
-            const weight = (opts && opts.weight) || 2;
-            const alpha = (opts && opts.alpha) != null ? opts.alpha : 1;
-            const dashed = (opts && opts.dashed) || false;
-            p.push();
-            p.stroke(p.color(p.red(p.color(color)), p.green(p.color(color)), p.blue(p.color(color)), 255 * alpha));
-            p.strokeWeight(weight);
-            if (dashed && p.drawingContext && p.drawingContext.setLineDash) {
-                p.drawingContext.setLineDash([6, 6]);
-            }
-            p.fill(p.color(color));
-            p.line(x1, y1, x2, y2);
-            const a = Math.atan2(y2 - y1, x2 - x1);
-            const L = 8;
-            p.translate(x2, y2);
-            p.rotate(a);
-            p.triangle(0, 0, -L, -4, -L, 4);
-            p.pop();
-        }
-
-        function drawBox(x, y, w, h, label, isMiro = false) {
-            const pal = getPalette();
-            p.push();
-            p.noStroke();
-            if (p.drawingContext) {
-                p.drawingContext.shadowColor = 'rgba(0,0,0,0.25)';
-                p.drawingContext.shadowBlur = 12;
-            }
-            p.fill(p.color(pal.card));
-            p.rect(x, y, w, h, 10);
-            p.noFill();
-            if (isMiro) {
-                // MIRO box gets accent border
-                p.stroke(p.color(pal.accent));
-                p.strokeWeight(2);
-                p.rect(x + 1, y + 1, w - 2, h - 2, 10);
+                return { rewardsX, rewardsY, rewardsW, rewardsH };
             } else {
-                p.stroke('rgba(255,255,255,0.06)');
-                p.strokeWeight(1);
-                p.rect(x + 0.5, y + 0.5, w - 1, h - 1, 10);
+                const rewardsX = imgLayout.imgX + imgLayout.imgW + this.config.rewardsOffsetX;
+                const rewardsY = imgLayout.imgY + this.config.rewardsOffsetY;
+                const rewardsW = Math.max(this.config.rewardsMinWidth, this.W * this.config.rewardsScale);
+                const rewardsH = imgLayout.imgH + captionLayout.capH + 35;
+
+                return { rewardsX, rewardsY, rewardsW, rewardsH };
             }
-            p.noStroke();
-            if (isMiro) {
-                // Special styling for MIRO label - larger, centered, with accent color
-                p.fill(p.color(pal.accent));
-                p.textSize(22);
-                p.textStyle(p.BOLD);
-                p.textAlign(p.CENTER, p.CENTER);
-                p.text(label, x + w / 2, y + h / 2);
+        }
+
+        getVectorLayout(rewardsLayout, imgLayout) {
+            if (this.isMobile) {
+                const vecW = Math.min(this.W * this.config.vectorScale, 170);
+                const vecH = this.config.vectorHeight;
+                const vecX = this.W / 2 - vecW / 2;
+                const vecY = rewardsLayout.rewardsY + rewardsLayout.rewardsH + this.config.spacing.rewardsToVector;
+
+                return { vecX, vecY, vecW, vecH };
             } else {
-                p.fill(p.color(pal.fg));
-                p.textSize(12);
-                p.textAlign(p.CENTER, p.TOP);
-                p.text(label, x + w / 2, y + 6);
-            }
-            p.pop();
-        }
+                const vecX = rewardsLayout.rewardsX + rewardsLayout.rewardsW + this.config.vectorOffsetX;
+                const vecY = rewardsLayout.rewardsY;
+                const vecW = Math.max(this.config.vectorMinWidth, this.W * this.config.vectorScale);
+                const vecH = rewardsLayout.rewardsH;
 
-        // Draw histogram bars for scores box; if values provided, use them (0..1); otherwise use noise
-        function drawVector(x, y, w, h, n, progress, values, colors) {
-            const pad = 8;
-            const barWidth = (w - pad * (n + 1)) / n;
-            const by = y + pad + 16;
-            const barAreaH = h - (pad * 2 + 16);
-            const rewardColors = colors || getRewardColors();
-            for (let i = 0; i < n; i++) {
-                const v = Array.isArray(values) && values.length > i
-                    ? values[i]
-                    : p.noise(i * 0.37 + progress * 2.1);
-                const eased = Math.max(0, Math.min(1, v));
-                const barH = barAreaH * eased;
-                p.fill(rewardColors[i % rewardColors.length]);
-                p.noStroke();
-                p.rect(x + pad + i * (barWidth + pad), by + (barAreaH - barH), barWidth, barH, 3);
+                return { vecX, vecY, vecW, vecH };
             }
         }
 
-        // Geometry for histogram bars to animate inputs towards
-        function getHistogramGeom(x, y, w, h, n) {
-            const pad = 8;
+        getModelLayout(vectorLayout, imgLayout, rewardsLayout) {
+            if (this.isMobile) {
+                const modelW = Math.min(this.W * this.config.modelScale, 200);
+                const modelH = this.config.modelHeight;
+                const modelX = this.W / 2 - modelW / 2;
+                const modelY = vectorLayout.vecY + vectorLayout.vecH + this.config.spacing.vectorToModel;
+
+                return { modelX, modelY, modelW, modelH };
+            } else {
+                const modelX = imgLayout.imgX + imgLayout.imgW + this.config.modelOffsetX;
+                const modelY = rewardsLayout.rewardsY;
+                const modelW = Math.max(this.config.modelMinWidth, this.W * this.config.modelScale);
+                const modelH = rewardsLayout.rewardsH;
+
+                return { modelX, modelY, modelW, modelH };
+            }
+        }
+
+        getOutputLayout(modelLayout, imgLayout) {
+            if (this.isMobile) {
+                const outX = this.W / 2 - imgLayout.imgW / 2;
+                const outY = modelLayout.modelY + modelLayout.modelH + this.config.spacing.modelToOutput;
+
+                return { outX, outY };
+            } else {
+                const outX = modelLayout.modelX + modelLayout.modelW + this.config.outputOffsetX;
+                const outY = modelLayout.modelY + modelLayout.modelH / 2 - (imgLayout.imgW * this.config.imgAspectRatio) / 2;
+
+                return { outX, outY };
+            }
+        }
+
+        getLeftVectorLayout(imgLayout, vectorLayout) {
+            // "scores back" vector position
+            if (this.isMobile) {
+                return {
+                    leftVecW: vectorLayout.vecW,
+                    leftVecH: vectorLayout.vecH,
+                    leftVecX: vectorLayout.vecX,
+                    leftVecY: vectorLayout.vecY
+                };
+            } else {
+                const leftVecW = imgLayout.imgW * CONFIG.scaling.leftVectorDesktop;
+                const leftVecH = 65;
+                const leftVecX = imgLayout.imgX;
+                const leftVecY = Math.max(this.config.margin + 10, imgLayout.imgY - leftVecH - 50);
+
+                return { leftVecW, leftVecH, leftVecX, leftVecY };
+            }
+        }
+    }
+
+    // ============================================================================
+    // GEOMETRY HELPERS
+    // ============================================================================
+    class GeometryHelper {
+        static getHistogramGeom(x, y, w, h, n) {
+            const pad = CONFIG.visual.padding.medium;
             const barWidth = (w - pad * (n + 1)) / n;
             const by = y + pad + 16;
             const barAreaH = h - (pad * 2 + 16);
@@ -234,15 +362,14 @@
             return { pad, barWidth, by, barAreaH, slots };
         }
 
-        // Compute inner row rects for reward models area
-        function getRewardRowRects(x, y, w, h, n, isMobile = false) {
-            const pad = 8;
-            const headerH = 16; // space under title inside box
+        static getRewardRowRects(x, y, w, h, n, isMobile) {
+            const pad = CONFIG.visual.padding.medium;
+            const headerH = CONFIG.sizes.rewards.headerHeight;
             const innerX = x + pad;
             const innerY = y + pad + headerH;
             const innerW = w - pad * 2;
             const innerH = h - (pad * 2 + headerH);
-            const gap = 6;
+            const gap = CONFIG.sizes.rewards.gap;
 
             if (isMobile) {
                 // Mobile: arrange as columns (vertical flow)
@@ -264,62 +391,135 @@
                 return rects;
             }
         }
+    }
 
-        function subscriptFor(i) {
-            const subs = ['₁', '₂', '₃', '₄', '₅', '₆', '₇'];
-            return (i >= 0 && i < subs.length) ? subs[i] : String(i + 1);
+    // ============================================================================
+    // RENDERER
+    // ============================================================================
+    class Renderer {
+        constructor(p) {
+            this.p = p;
+            this.pal = getPalette();
         }
 
-        function drawRewardModels(x, y, w, h, n, alpha, isMobile = false) {
-            const pal = getPalette();
-            const rects = getRewardRowRects(x, y, w, h, n, isMobile);
+        updatePalette() {
+            this.pal = getPalette();
+        }
+
+        drawArrow(x1, y1, x2, y2, opts = {}) {
+            const p = this.p;
+            const color = opts.color || this.pal.accent;
+            const weight = opts.weight || CONFIG.visual.strokeWeight.normal;
+            const alpha = opts.alpha != null ? opts.alpha : 1;
+            const dashed = opts.dashed || false;
+
+            p.push();
+            p.stroke(p.color(p.red(p.color(color)), p.green(p.color(color)), p.blue(p.color(color)), 255 * alpha));
+            p.strokeWeight(weight);
+            if (dashed && p.drawingContext && p.drawingContext.setLineDash) {
+                p.drawingContext.setLineDash([6, 6]);
+            }
+            p.fill(p.color(color));
+            p.line(x1, y1, x2, y2);
+            const a = Math.atan2(y2 - y1, x2 - x1);
+            const L = CONFIG.sizes.arrow.length;
+            p.translate(x2, y2);
+            p.rotate(a);
+            p.triangle(0, 0, -L, -CONFIG.sizes.arrow.width, -L, CONFIG.sizes.arrow.width);
+            p.pop();
+        }
+
+        drawBox(x, y, w, h, label, isMiro = false) {
+            const p = this.p;
+            p.push();
+            p.noStroke();
+            if (p.drawingContext) {
+                p.drawingContext.shadowColor = 'rgba(0,0,0,0.25)';
+                p.drawingContext.shadowBlur = CONFIG.sizes.effects.shadowBlur;
+            }
+            p.fill(p.color(this.pal.card));
+            p.rect(x, y, w, h, CONFIG.visual.borderRadius.large);
+            p.noFill();
+            if (isMiro) {
+                p.stroke(p.color(this.pal.accent));
+                p.strokeWeight(CONFIG.visual.strokeWeight.normal);
+                p.rect(x + 1, y + 1, w - 2, h - 2, CONFIG.visual.borderRadius.large);
+            } else {
+                p.stroke('rgba(255,255,255,0.06)');
+                p.strokeWeight(CONFIG.visual.strokeWeight.thin);
+                p.rect(x + 0.5, y + 0.5, w - 1, h - 1, CONFIG.visual.borderRadius.large);
+            }
+            p.noStroke();
+            if (isMiro) {
+                p.fill(p.color(this.pal.accent));
+                p.textSize(CONFIG.sizes.text.modelName);
+                p.textStyle(p.BOLD);
+                p.textAlign(p.CENTER, p.CENTER);
+                p.text(label, x + w / 2, y + h / 2);
+            } else {
+                p.fill(p.color(this.pal.fg));
+                p.textSize(CONFIG.sizes.text.boxLabel);
+                p.textAlign(p.CENTER, p.TOP);
+                p.text(label, x + w / 2, y + 6);
+            }
+            p.pop();
+        }
+
+        drawVector(x, y, w, h, n, progress, values, colors) {
+            const p = this.p;
+            const pad = CONFIG.visual.padding.medium;
+            const barWidth = (w - pad * (n + 1)) / n;
+            const by = y + pad + 16;
+            const barAreaH = h - (pad * 2 + 16);
+            const rewardColors = colors || getRewardColors(p);
+
+            for (let i = 0; i < n; i++) {
+                const v = Array.isArray(values) && values.length > i
+                    ? values[i]
+                    : p.noise(i * 0.37 + progress * 2.1);
+                const eased = Math.max(0, Math.min(1, v));
+                const barH = barAreaH * eased;
+                p.fill(rewardColors[i % rewardColors.length]);
+                p.noStroke();
+                p.rect(x + pad + i * (barWidth + pad), by + (barAreaH - barH), barWidth, barH, CONFIG.visual.borderRadius.small);
+            }
+        }
+
+        drawRewardModels(x, y, w, h, n, alpha, isMobile) {
+            const p = this.p;
+            const rects = GeometryHelper.getRewardRowRects(x, y, w, h, n, isMobile);
             p.push();
             if (alpha != null && alpha < 1) p.drawingContext.globalAlpha = Math.max(0, alpha);
+
             for (let i = 0; i < rects.length; i++) {
                 const r = rects[i];
                 // Row/Column container
                 p.noStroke();
                 p.fill('rgba(255,255,255,0.03)');
-                p.rect(r.x, r.y, r.w, r.h, 6);
+                p.rect(r.x, r.y, r.w, r.h, CONFIG.visual.borderRadius.medium);
                 // Border
                 p.noFill();
                 p.stroke('rgba(255,255,255,0.10)');
-                p.strokeWeight(1);
-                p.rect(r.x + 0.5, r.y + 0.5, r.w - 1, r.h - 1, 6);
+                p.strokeWeight(CONFIG.visual.strokeWeight.thin);
+                p.rect(r.x + 0.5, r.y + 0.5, r.w - 1, r.h - 1, CONFIG.visual.borderRadius.medium);
                 // Label r_i
                 p.noStroke();
-                p.fill(p.color(pal.fg));
+                p.fill(p.color(this.pal.fg));
                 if (isMobile) {
-                    // Mobile: label at top center of column
                     p.textAlign(p.CENTER, p.TOP);
-                    p.textSize(10);
+                    p.textSize(CONFIG.sizes.text.rewardLabelMobile);
                     p.text('r' + subscriptFor(i), r.x + r.w / 2, r.y + 4);
                 } else {
-                    // Desktop: label at left center of row
                     p.textAlign(p.LEFT, p.CENTER);
-                    p.textSize(12);
+                    p.textSize(CONFIG.sizes.text.rewardLabel);
                     p.text('r' + subscriptFor(i), r.x + 8, r.y + r.h / 2);
                 }
             }
             p.pop();
         }
 
-        function getCycleIndex() {
-            return Math.floor((p.millis() - t0) / totalMs);
-        }
-
-        function generateScores(n) {
-            const cycle = getCycleIndex();
-            const arr = [];
-            for (let i = 0; i < n; i++) {
-                // stable per cycle value in [0,1]
-                arr.push(p.noise(cycle * 97.123 + i * 17.77));
-            }
-            return arr;
-        }
-
-        function drawMiniInput(x, y, w, h, alpha, showCaption = true) {
-            // Draw a tiny image and a tiny prompt label below it
+        drawMiniInput(img, x, y, w, h, alpha, showCaption = true) {
+            const p = this.p;
             p.push();
             if (alpha != null && alpha < 1) p.tint(255, 255 * Math.max(0, alpha));
             if (img) {
@@ -327,49 +527,43 @@
             } else {
                 p.fill(230);
                 p.noStroke();
-                p.rect(x, y, w, h, 3);
+                p.rect(x, y, w, h, CONFIG.visual.borderRadius.small);
             }
             p.pop();
-            // Prompt text (minimal)
+
             if (showCaption) {
                 p.push();
                 if (alpha != null && alpha < 1) p.drawingContext.globalAlpha = Math.max(0, alpha);
                 p.fill('rgba(255,255,255,0.6)');
                 p.textAlign(p.LEFT, p.TOP);
-                p.textSize(Math.max(8, Math.min(11, h * 0.28)));
-                p.text('prompt', x, y + h + 2);
+                p.textSize(Math.max(8, Math.min(CONFIG.sizes.text.miniPrompt, h * 0.28)));
+                p.text(CONFIG.text.prompt, x, y + h + 2);
                 p.pop();
             }
         }
 
-        function drawNoiseOver(imgX, imgY, imgW, imgH, alpha, heavy) {
+        drawNoiseOver(img, imgX, imgY, imgW, imgH, alpha) {
+            const p = this.p;
             if (!img || alpha <= 0) return;
 
             p.push();
-            // Formula: 0.8*image + 0.2*noise (when alpha = 1)
-            const noiseWeight = 0.4 * alpha; // Noise contribution: 0.0 -> 0.2
-            const imageWeight = 1.0 - 0.4 * alpha; // Image contribution: 1.0 -> 0.8
+            const noiseWeight = CONFIG.animation.noiseParams.maxWeight * alpha;
+            const imageWeight = 1.0 - CONFIG.animation.noiseParams.maxWeight * alpha;
 
-            // Draw using pixel manipulation for Gaussian noise
             p.loadPixels();
             if (img.width > 0) {
-                // Get a temporary copy of the image region
                 const tempImg = p.get(imgX, imgY, imgW, imgH);
                 tempImg.loadPixels();
 
-                // Add Gaussian noise to each pixel in RGB space
-                const stdDev = 80; // Standard deviation for Gaussian noise
+                const stdDev = CONFIG.animation.noiseParams.stdDev;
                 for (let i = 0; i < tempImg.pixels.length; i += 4) {
-                    // Generate Gaussian noise for each RGB channel (mean=0, std=stdDev)
                     const noiseR = p.randomGaussian(0, stdDev);
                     const noiseG = p.randomGaussian(0, stdDev);
                     const noiseB = p.randomGaussian(0, stdDev);
 
-                    // Blend: imageWeight*image + noiseWeight*noise
                     tempImg.pixels[i] = p.constrain(imageWeight * tempImg.pixels[i] + noiseWeight * noiseR, 0, 255);
                     tempImg.pixels[i + 1] = p.constrain(imageWeight * tempImg.pixels[i + 1] + noiseWeight * noiseG, 0, 255);
                     tempImg.pixels[i + 2] = p.constrain(imageWeight * tempImg.pixels[i + 2] + noiseWeight * noiseB, 0, 255);
-                    // Alpha channel stays the same (i+3)
                 }
 
                 tempImg.updatePixels();
@@ -378,617 +572,821 @@
             p.pop();
         }
 
-        function lerp(a, b, t) { return a + (b - a) * t; }
-        function easeInOut(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+        drawCaptionBox(x, y, w, h, alpha) {
+            const p = this.p;
+            const scale = w / 100; // Normalize scale based on width
 
-        // Color palette matching the radar plot rewards
-        function getRewardColors() {
-            return [
-                p.color(255, 150, 220), // pastelpink - Pick
-                p.color(105, 200, 105), // pastelgreen - Aesthetic
-                p.color(100, 150, 255), // pastelblue - HPSv2
-                p.color(80, 210, 200),  // pastelteal - CLIP
-                p.color(255, 105, 120), // pastelred - Image Reward
-                p.color(200, 105, 230), // pastelpurple - SciScore
-                p.color(230, 210, 80)   // pastelyellow - VQA
-            ];
+            p.push();
+            if (alpha < 1) p.drawingContext.globalAlpha = alpha;
+
+            const padding = CONFIG.visual.padding.medium * scale;
+            const iconSize = CONFIG.sizes.text.icon * (h / 40);
+
+            // Background box
+            p.fill('rgba(255,255,255,0.03)');
+            p.noStroke();
+            p.rect(x - padding, y, w + padding * 2, h, CONFIG.visual.borderRadius.medium);
+
+            // Border
+            p.noFill();
+            p.stroke('rgba(255,255,255,0.12)');
+            p.strokeWeight(CONFIG.visual.strokeWeight.thin);
+            p.rect(x - padding, y, w + padding * 2, h, CONFIG.visual.borderRadius.medium);
+
+            // Quote icon
+            p.fill(p.color(this.pal.muted));
+            p.noStroke();
+            p.textSize(iconSize);
+            p.textAlign(p.LEFT, p.CENTER);
+            p.textStyle(p.BOLD);
+            p.text('❝', x - padding + 6, y + h / 2);
+
+            // Caption label
+            const labelSize = CONFIG.sizes.text.captionLabel * (h / 40);
+            const textSize = CONFIG.sizes.text.captionText * (h / 40);
+            const textX = x - padding + 20;
+            const verticalSpacing = 7 * (h / 40);
+
+            p.fill(p.color(this.pal.muted));
+            p.textSize(labelSize);
+            p.textStyle(p.NORMAL);
+            p.textAlign(p.LEFT, p.CENTER);
+            p.text('caption', textX, y + h / 2 - verticalSpacing);
+
+            // Caption text
+            p.fill(p.color(this.pal.fg));
+            p.textSize(textSize);
+            p.textStyle(p.ITALIC);
+            p.text(CONFIG.text.caption, textX, y + h / 2 + verticalSpacing);
+
+            p.pop();
+        }
+    }
+
+    // ============================================================================
+    // STAGE MANAGER
+    // ============================================================================
+    class StageManager {
+        constructor(p) {
+            this.p = p;
+            this.timeline = CONFIG.timeline;
+            this.totalMs = this.timeline.reduce((acc, [, d]) => acc + d, 0);
         }
 
-        p.draw = () => {
-            if (!playing) return;
-            // Transparent canvas to blend with page background
-            p.clear();
+        getStageAndProgress(elapsed) {
+            const t = elapsed % this.totalMs;
+            let acc = 0;
+            for (const [name, dur] of this.timeline) {
+                if (t < acc + dur) {
+                    const prog = (t - acc) / dur;
+                    return { name, prog };
+                }
+                acc += dur;
+            }
+            return { name: 'pause', prog: 0 };
+        }
 
-            const W = p.width;
-            const H = p.height;
-            const M = 20;
-            const isMobile = W < 700;
+        getCycleIndex(elapsed) {
+            return Math.floor(elapsed / this.totalMs);
+        }
 
-            // Layout - different for mobile vs desktop
-            let imgW, imgH, imgX, imgY, capW, capH, capX, capY;
-            let rewardsX, rewardsY, rewardsW, rewardsH;
-            let vecX, vecY, vecW, vecH;
-            let modelX, modelY, modelW, modelH;
-            let outX, outY;
+        generateScores(n, elapsed) {
+            const cycle = this.getCycleIndex(elapsed);
+            const arr = [];
+            for (let i = 0; i < n; i++) {
+                arr.push(this.p.noise(cycle * 97.123 + i * 17.77));
+            }
+            return arr;
+        }
+    }
 
-            if (isMobile) {
-                // Mobile: vertical layout (compact)
-                imgW = Math.min(W * 0.55, 180);
-                imgH = imgW * 0.66;
-                imgX = W / 2 - imgW / 2; // Center
-                imgY = M + 20;
+    // ============================================================================
+    // STAGE HANDLERS
+    // ============================================================================
 
-                capW = imgW;
-                capH = 40;
-                capX = imgX;
-                capY = imgY + imgH + 8;
+    class IntroStage {
+        render(p, layout, renderer, prog, state) {
+            const { imgLayout, capLayout } = layout;
 
-                // Rewards below caption
-                rewardsW = Math.min(W * 0.7, 200);
-                rewardsH = 100;
-                rewardsX = W / 2 - rewardsW / 2;
-                rewardsY = capY + capH + 25;
-
-                // Score vector below rewards
-                vecW = Math.min(W * 0.65, 170);
-                vecH = 60;
-                vecX = W / 2 - vecW / 2;
-                vecY = rewardsY + rewardsH + 20;
-
-                // MIRO denoiser below scores
-                modelW = Math.min(W * 0.7, 200);
-                modelH = 85;
-                modelX = W / 2 - modelW / 2;
-                modelY = vecY + vecH + 25;
-
-                // Output below denoiser
-                outX = W / 2 - imgW / 2;
-                outY = modelY + modelH + 25;
+            // Draw image
+            if (state.img) {
+                p.image(state.img, imgLayout.imgX, imgLayout.imgY, imgLayout.imgW, imgLayout.imgH);
             } else {
-                // Desktop: horizontal layout
-                imgW = Math.min(W * 0.22, 240);
-                imgH = imgW * 0.66;
-                imgX = M;
-                imgY = H * 0.38;
-
-                capW = imgW;
-                capH = 45;
-                capX = M;
-                capY = imgY + imgH + 12;
-
-                rewardsX = imgX + imgW + 100;
-                rewardsY = imgY - 12;
-                rewardsW = Math.max(160, W * 0.16);
-                rewardsH = imgH + capH + 35;
-
-                vecX = rewardsX + rewardsW + 50;
-                vecY = rewardsY;
-                vecW = Math.max(120, W * 0.12);
-                vecH = rewardsH;
-
-                modelX = imgX + imgW + 60;
-                modelY = rewardsY;
-                modelW = Math.max(200, W * 0.19);
-                modelH = rewardsH;
-
-                outX = modelX + modelW + 60;
-                outY = modelY + modelH / 2 - (imgW * 0.66) / 2;
+                p.fill(230);
+                p.rect(imgLayout.imgX, imgLayout.imgY, imgLayout.imgW, imgLayout.imgH, 6);
             }
 
-            const stage = getStageAndProgress();
-            const st = stage.name;
-            const prog = easeInOut(stage.prog);
-            const pal = getPalette();
+            // Draw caption
+            renderer.drawCaptionBox(capLayout.capX, capLayout.capY, capLayout.capW, capLayout.capH, 1);
+        }
+    }
 
-            // Targets for moving into rewards (with scaling)
-            const imgInRewardsScale = 0.55;
-            const imgInRewardsW = imgW * imgInRewardsScale;
-            const imgInRewardsH = imgH * imgInRewardsScale;
-            const capInRewardsW = capW * imgInRewardsScale;
-            const capInRewardsH = capH * imgInRewardsScale;
-            const rewardsCenterX = rewardsX + rewardsW / 2 - imgInRewardsW / 2;
-            const rewardsCenterY = rewardsY + 28;
-            const capInRewardsX = rewardsCenterX;
-            const capInRewardsY = rewardsCenterY + imgInRewardsH + 6;
+    class MoveToRewardsStage {
+        render(p, layout, renderer, prog, state) {
+            const { imgLayout, capLayout, rewardsLayout } = layout;
+            const imgInRewardsScale = CONFIG.scaling.imgInRewards;
+            const imgInRewardsW = imgLayout.imgW * imgInRewardsScale;
+            const imgInRewardsH = imgLayout.imgH * imgInRewardsScale;
+            const capInRewardsW = capLayout.capW * imgInRewardsScale;
+            const capInRewardsH = capLayout.capH * imgInRewardsScale;
+            const rewardsCenterX = rewardsLayout.rewardsX + rewardsLayout.rewardsW / 2 - imgInRewardsW / 2;
+            const rewardsCenterY = rewardsLayout.rewardsY + 28;
 
-            // Position of "scores back" vector - above image on desktop, uses vecX/vecY on mobile
-            const leftVecW = isMobile ? vecW : imgW * 0.85;
-            const leftVecH = isMobile ? vecH : 65;
-            const leftVecX = isMobile ? vecX : imgX;
-            const leftVecY = isMobile ? vecY : Math.max(M + 10, imgY - leftVecH - 50);
+            // Animated image position
+            const imgX = lerp(imgLayout.imgX, rewardsCenterX, prog);
+            const imgY = lerp(imgLayout.imgY, rewardsCenterY, prog);
+            const imgW = lerp(imgLayout.imgW, imgInRewardsW, prog);
+            const imgH = lerp(imgLayout.imgH, imgInRewardsH, prog);
+            const imgAlpha = 1 - 0.5 * prog;
 
-            // Calculate visibility states first
-            let rewardsAlpha = 1;
-            if (st === 'rewards_disappear') rewardsAlpha = 1 - prog;
-            if (st === 'scores_back' || st === 'noise_input' || st === 'denoiser_appear' || st === 'to_denoiser' || st === 'clean_output' || st === 'pause') rewardsAlpha = 0;
+            // Draw image
+            p.push();
+            if (imgAlpha < 1) p.tint(255, 255 * imgAlpha);
+            if (state.img) p.image(state.img, imgX, imgY, imgW, imgH);
+            else { p.fill(230); p.rect(imgX, imgY, imgW, imgH, 6); }
+            p.pop();
 
-            // Image and caption animated positions (with scaling)
-            let imgPos = { x: imgX, y: imgY, w: imgW, h: imgH, a: 1 };
-            let capPos = { x: capX, y: capY, w: capW, h: capH, a: 1 };
+            // Animated caption position
+            const capX = lerp(capLayout.capX, rewardsCenterX, prog);
+            const capY = lerp(capLayout.capY, rewardsCenterY + imgInRewardsH + 6, prog);
+            const capW = lerp(capLayout.capW, capInRewardsW, prog);
+            const capH = lerp(capLayout.capH, capInRewardsH, prog);
+            const capAlpha = 1 - 0.5 * prog;
 
-            if (st === 'move_to_rewards') {
-                imgPos.x = lerp(imgX, rewardsCenterX, prog);
-                imgPos.y = lerp(imgY, rewardsCenterY, prog);
-                imgPos.w = lerp(imgW, imgInRewardsW, prog);
-                imgPos.h = lerp(imgH, imgInRewardsH, prog);
-                capPos.x = lerp(capX, capInRewardsX, prog);
-                capPos.y = lerp(capY, capInRewardsY, prog);
-                capPos.w = lerp(capW, capInRewardsW, prog);
-                capPos.h = lerp(capH, capInRewardsH, prog);
-                // Fade slightly as duplicates enter rows
-                imgPos.a = 1 - 0.5 * prog;
-                capPos.a = 1 - 0.5 * prog;
-            } else if (st === 'fanout_inputs') {
-                // Keep a smaller version centered in rewards while clones fan out
-                const imgSmallScale = imgInRewardsScale * 0.6; // smaller than a row
-                const capSmallScale = imgInRewardsScale * 0.6;
-                const imgSmallW = imgW * imgSmallScale;
-                const imgSmallH = imgH * imgSmallScale;
-                const capSmallW = capW * capSmallScale;
-                const capSmallH = capH * capSmallScale;
-                imgPos.x = rewardsCenterX + (imgInRewardsW - imgSmallW) / 2;
-                imgPos.y = rewardsCenterY + (imgInRewardsH - imgSmallH) / 2;
-                imgPos.w = imgSmallW;
-                imgPos.h = imgSmallH;
-                imgPos.a = 1; // keep visible during fanout
-                // Remove caption when small for clarity
-                capPos.x = capInRewardsX + (capInRewardsW - capSmallW) / 2;
-                capPos.y = capInRewardsY + (capInRewardsH - capSmallH) / 2;
-                capPos.w = capSmallW;
-                capPos.h = capSmallH;
-                capPos.a = 0; // hide small caption
-            } else if (st === 'emit_scores' || st === 'rewards_disappear') {
-                // Keep the small center image visible until scoring has clearly begun
-                const imgSmallScale = imgInRewardsScale * 0.6;
-                const imgSmallW = imgW * imgSmallScale;
-                const imgSmallH = imgH * imgSmallScale;
-                imgPos = { x: rewardsCenterX + (imgInRewardsW - imgSmallW) / 2, y: rewardsCenterY + (imgInRewardsH - imgSmallH) / 2, w: imgSmallW, h: imgSmallH, a: st === 'emit_scores' ? 0.6 : 0 };
-                capPos = { x: capInRewardsX, y: capInRewardsY, w: capInRewardsW, h: capInRewardsH, a: 0 };
-            } else if (st === 'scores_back') {
-                imgPos.a = Math.min(1, prog * 1.2);
-                capPos.a = Math.min(1, prog * 1.2);
-            } else if (st === 'to_denoiser') {
-                const imgInModelScale = 0.5;
-                const imgInModelW = imgW * imgInModelScale;
-                const imgInModelH = imgH * imgInModelScale;
-                const capInModelW = capW * imgInModelScale;
-                const capInModelH = capH * imgInModelScale;
-                const targetX = modelX + modelW / 2 - imgInModelW / 2;
-                const targetY = modelY + 30;
-                imgPos.x = lerp(imgX, targetX, prog);
-                imgPos.y = lerp(imgY, targetY, prog);
-                imgPos.w = lerp(imgW, imgInModelW, prog);
-                imgPos.h = lerp(imgH, imgInModelH, prog);
-                imgPos.a = 1 - prog;
-                capPos.x = lerp(capX, targetX, prog);
-                capPos.y = lerp(capY, targetY + imgInModelH + 6, prog);
-                capPos.w = lerp(capW, capInModelW, prog);
-                capPos.h = lerp(capH, capInModelH, prog);
-                capPos.a = 1 - prog;
-            } else if (st === 'clean_output' || st === 'pause') {
-                // Keep inputs hidden after they've entered the denoiser
-                imgPos.a = 0;
-                capPos.a = 0;
-            }
+            renderer.drawCaptionBox(capX, capY, capW, capH, capAlpha);
 
-            // === DRAW PHASE 1: Elements that go under boxes ===
+            // Rewards box
+            renderer.drawBox(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.text.rewardsLabel);
+            renderer.drawRewardModels(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.animation.numRewards, 1, layout.isMobile);
 
-            // Draw image (scaled)
-            if (imgPos.a > 0) {
-                p.push();
-                if (imgPos.a < 1) p.tint(255, 255 * imgPos.a);
-                if (img) p.image(img, imgPos.x, imgPos.y, imgPos.w, imgPos.h);
-                else { p.fill(230); p.rect(imgPos.x, imgPos.y, imgPos.w, imgPos.h, 6); }
-                p.pop();
-            }
+            // Mini inputs animating into reward rows
+            this._drawMiniInputsAnimatingIn(p, layout, renderer, prog, state);
+        }
 
-            // Draw caption box (scaled, with improved styling)
-            if (capPos.a > 0) {
-                p.push();
-                if (capPos.a < 1) p.drawingContext.globalAlpha = capPos.a;
+        _drawMiniInputsAnimatingIn(p, layout, renderer, prog, state) {
+            const { rewardsLayout, imgLayout } = layout;
+            const rects = GeometryHelper.getRewardRowRects(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.animation.numRewards, layout.isMobile);
 
-                const padding = 8 * (capPos.w / capW);
-                const iconSize = 12 * (capPos.h / capH);
+            for (let i = 0; i < CONFIG.animation.numRewards; i++) {
+                const r = rects[i];
+                let miniH, miniW, targetX, targetY;
 
-                // Background box
-                p.fill('rgba(255,255,255,0.03)');
-                p.noStroke();
-                p.rect(capPos.x - padding, capPos.y, capPos.w + padding * 2, capPos.h, 6);
-
-                // Border with subtle gradient effect
-                p.noFill();
-                p.stroke('rgba(255,255,255,0.12)');
-                p.strokeWeight(1);
-                p.rect(capPos.x - padding, capPos.y, capPos.w + padding * 2, capPos.h, 6);
-
-                // Quote icon (decorative)
-                p.fill(p.color(pal.muted));
-                p.noStroke();
-                p.textSize(iconSize);
-                p.textAlign(p.LEFT, p.CENTER);
-                p.textStyle(p.BOLD);
-                p.text('❝', capPos.x - padding + 6, capPos.y + capPos.h / 2);
-
-                // Caption label
-                const labelSize = 9 * (capPos.h / capH);
-                const textSize = 11 * (capPos.h / capH);
-                const textX = capPos.x - padding + 20;
-                const verticalSpacing = 7 * (capPos.h / capH);
-
-                p.fill(p.color(pal.muted));
-                p.textSize(labelSize);
-                p.textStyle(p.NORMAL);
-                p.textAlign(p.LEFT, p.CENTER);
-                p.text('caption', textX, capPos.y + capPos.h / 2 - verticalSpacing);
-
-                // Caption text (the actual caption)
-                p.fill(p.color(pal.fg));
-                p.textSize(textSize);
-                p.textStyle(p.ITALIC);
-                p.text('"a scenic volcano"', textX, capPos.y + capPos.h / 2 + verticalSpacing);
-
-                p.pop();
-            }
-
-            // === DRAW PHASE 2: Boxes (drawn on top) ===
-
-            // Rewards block with stacked individual models r_i
-            if (rewardsAlpha > 0) {
-                p.push();
-                if (rewardsAlpha < 1) p.drawingContext.globalAlpha = rewardsAlpha;
-                drawBox(rewardsX, rewardsY, rewardsW, rewardsH, 'Rewards r₁,...,rₙ');
-                drawRewardModels(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS, rewardsAlpha, isMobile);
-                p.pop();
-            }
-
-            // Mini inputs in reward rows: animate entry during move_to_rewards, then stay visible
-            if ((st === 'move_to_rewards' || st === 'fanout_inputs') && rewardsAlpha > 0) {
-                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS, isMobile);
-                for (let i = 0; i < NUM_REWARDS; i++) {
-                    const r = rects[i];
-                    let miniH, miniW, targetX, targetY;
-
-                    if (isMobile) {
-                        // Mobile: vertical columns, images at top
-                        miniW = Math.min(r.w * 0.65, 24);
-                        miniH = miniW * 0.66; // keep aspect
-                        targetX = r.x + r.w / 2 - miniW / 2; // center in column
-                        targetY = r.y + 20; // near top of column
-                    } else {
-                        // Desktop: horizontal rows, images at left
-                        miniH = Math.min(r.h * 0.55, 20);
-                        miniW = miniH / 0.66; // keep aspect
-                        targetX = r.x + 10; // left inside row
-                        targetY = r.y + r.h / 2 - miniH / 2; // center vertically
-                    }
-
-                    let cx = targetX;
-                    let cy = targetY;
-                    let a = 1;
-
-                    if (st === 'move_to_rewards') {
-                        // Animate entry
-                        const delay = i * ROW_DELAY;
-                        const localProg = Math.max(0, Math.min(1, (prog - delay) / (1 - delay)));
-                        if (isMobile) {
-                            // Mobile: animate from above
-                            const startY = rewardsY - miniH - 12;
-                            cy = lerp(startY, targetY, localProg);
-                        } else {
-                            // Desktop: animate from left
-                            const startX = rewardsX - miniW - 12;
-                            cx = lerp(startX, targetX, localProg);
-                        }
-                        a = localProg;
-                    }
-
-                    drawMiniInput(cx, cy, miniW, miniH, a, false);
-                }
-            }
-
-            // During emit_scores: morph each row's mini input from image -> dot while moving
-            if (st === 'emit_scores' && rewardsAlpha > 0) {
-                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS, isMobile);
-                const rewardColors = getRewardColors();
-                for (let i = 0; i < NUM_REWARDS; i++) {
-                    const r = rects[i];
-                    let miniH, miniW, xStartTopLeft, yStartTopLeft, xEndCenter, yEndCenter;
-
-                    const rowDelay = i * ROW_DELAY;
-                    const pRow = Math.max(0, Math.min(1, (prog - rowDelay) / (1 - rowDelay)));
-                    const morphEnd = MORPH_END;
-
-                    if (isMobile) {
-                        // Mobile: vertical columns, move top-to-bottom
-                        miniW = Math.min(r.w * 0.65, 24);
-                        miniH = miniW * 0.66;
-                        xStartTopLeft = r.x + r.w / 2 - miniW / 2;
-                        yStartTopLeft = r.y + 20;
-                        xEndCenter = r.x + r.w / 2; // center horizontally
-                        yEndCenter = r.y + r.h - 16; // bottom of column
-                    } else {
-                        // Desktop: horizontal rows, move left-to-right
-                        miniH = Math.min(r.h * 0.55, 20);
-                        miniW = miniH / 0.66;
-                        xStartTopLeft = r.x + 10;
-                        yStartTopLeft = r.y + r.h / 2 - miniH / 2;
-                        xEndCenter = r.x + r.w - 16; // right of row
-                        yEndCenter = r.y + r.h / 2; // center vertically
-                    }
-
-                    const pMorph = Math.max(0, Math.min(1, pRow / morphEnd));
-                    // Animate from start to end position as it morphs
-                    const xStartCenter = xStartTopLeft + miniW / 2;
-                    const yStartCenter = yStartTopLeft + miniH / 2;
-                    const cxCenter = lerp(xStartCenter, xEndCenter, pMorph);
-                    const cyCenter = lerp(yStartCenter, yEndCenter, pMorph);
-
-                    // Draw morph: keep image visible while shrinking; dot grows/brightens
-                    const rectAlpha = 1; // never disappears during morph
-                    const dotAlpha = pMorph;
-                    const rectW = lerp(miniW, miniW * 0.25, pMorph);
-                    const rectH = lerp(miniH, miniH * 0.25, pMorph);
-                    drawMiniInput(cxCenter - rectW / 2, cyCenter - rectH / 2, rectW, rectH, rectAlpha, false);
-                    if (dotAlpha > 0.01) {
-                        p.push();
-                        p.noStroke();
-                        p.fill(rewardColors[i % rewardColors.length]);
-                        p.drawingContext.globalAlpha = dotAlpha;
-                        const dotR = lerp(0, 8, pMorph);
-                        p.circle(cxCenter, cyCenter, Math.max(1, dotR));
-                        p.pop();
-                    }
-                }
-            }
-
-            // Score vector box - animates from rewards, then stays fixed
-            let vecPos = { x: leftVecX, y: leftVecY, w: leftVecW, h: leftVecH, a: 0 };
-            if (st === 'emit_scores') {
-                // Animate from inside rewards to final position
-                const startX = rewardsX + rewardsW / 2 - leftVecW / 2;
-                const startY = rewardsY + rewardsH / 2 - leftVecH / 2;
-                vecPos.x = lerp(startX, leftVecX, prog);
-                vecPos.y = lerp(startY, leftVecY, prog);
-                vecPos.a = prog;
-            } else if (st === 'rewards_disappear' || st === 'scores_back' || st === 'noise_input' || st === 'denoiser_appear') {
-                // Stay fixed at final position
-                vecPos.a = 1;
-            } else if (st === 'to_denoiser') {
-                // Move into denoiser and fade out
-                const targetX = modelX + modelW / 2 - leftVecW / 2;
-                const targetY = modelY + modelH / 2 - leftVecH / 2;
-                vecPos.x = lerp(leftVecX, targetX, prog);
-                vecPos.y = lerp(leftVecY, targetY, prog);
-                vecPos.a = 1 - prog;
-            } else if (st === 'clean_output' || st === 'pause') {
-                // Keep hidden after entering denoiser
-                vecPos.a = 0;
-            }
-
-            // Score vector box
-            if (vecPos.a > 0) {
-                p.push();
-                if (vecPos.a < 1) p.drawingContext.globalAlpha = vecPos.a;
-                drawBox(vecPos.x, vecPos.y, vecPos.w, vecPos.h, 'scores ŝ');
-                // Bars grow only when dots arrive during rewards_disappear; after that they stay static
-                const vals = generateScores(NUM_REWARDS);
-                let valuesForDraw = new Array(NUM_REWARDS).fill(0);
-                if (st === 'rewards_disappear') {
-                    // Bars fill as dots arrive
-                    for (let i = 0; i < NUM_REWARDS; i++) {
-                        valuesForDraw[i] = vals[i] * prog;
-                    }
-                } else if (st === 'scores_back' || st === 'noise_input' || st === 'denoiser_appear' || st === 'to_denoiser' || st === 'clean_output' || st === 'pause') {
-                    // Keep bars filled after rewards_disappear
-                    valuesForDraw = vals;
-                }
-                // Otherwise (emit_scores), bars stay empty (valuesForDraw already initialized to 0s)
-                drawVector(vecPos.x, vecPos.y, vecPos.w, vecPos.h, NUM_REWARDS, 0, valuesForDraw, getRewardColors());
-                p.pop();
-            }
-
-            // During emit_scores: dots only go to numeric vector (no histogram yet)
-            if (st === 'emit_scores' && rewardsAlpha > 0) {
-                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS, isMobile);
-                const vals = generateScores(NUM_REWARDS);
-                const rewardColors = getRewardColors();
-
-                // Numeric vector position depends on layout
-                let vecLabelX, vecLabelY, vecLabelAlign;
-                if (isMobile) {
-                    // Mobile: scores appear below rewards block
-                    vecLabelX = rewardsX + rewardsW / 2;
-                    vecLabelY = rewardsY + rewardsH + 8;
-                    vecLabelAlign = p.CENTER;
+                if (layout.isMobile) {
+                    miniW = Math.min(r.w * CONFIG.sizes.rewards.miniInputScale, CONFIG.sizes.rewards.miniInputMaxMobile);
+                    miniH = miniW * CONFIG.layout.mobile.imgAspectRatio;
+                    targetX = r.x + r.w / 2 - miniW / 2;
+                    targetY = r.y + CONFIG.sizes.rewards.miniInputTop;
                 } else {
-                    // Desktop: scores appear to the right of rewards block
-                    vecLabelX = rewardsX + rewardsW + 18;
-                    vecLabelY = rewardsY - 6;
-                    vecLabelAlign = p.LEFT;
+                    miniH = Math.min(r.h * CONFIG.sizes.rewards.miniInputScale, CONFIG.sizes.rewards.miniInputMaxDesktop);
+                    miniW = miniH / CONFIG.layout.desktop.imgAspectRatio;
+                    targetX = r.x + CONFIG.sizes.rewards.miniInputPadding;
+                    targetY = r.y + r.h / 2 - miniH / 2;
                 }
 
-                p.push();
-                p.fill('rgba(255,255,255,0.7)');
-                p.textAlign(vecLabelAlign, p.BOTTOM);
-                p.textSize(11);
-                p.text('scores vector', vecLabelX, vecLabelY);
-                p.pop();
+                const delay = i * CONFIG.animation.rowDelay;
+                const localProg = Math.max(0, Math.min(1, (prog - delay) / (1 - delay)));
 
-                for (let i = 0; i < NUM_REWARDS; i++) {
-                    const r = rects[i];
-                    const delay = i * ROW_DELAY;
-                    const pRow = Math.max(0, Math.min(1, (prog - delay) / (1 - delay)));
-                    const appear = Math.max(0, Math.min(1, (pRow - VEC_START) / (1 - VEC_START)));
-                    const value = Math.round(vals[i] * 100) / 100;
+                let cx = targetX;
+                let cy = targetY;
 
-                    let vx, vy, startX, startY;
-                    if (isMobile) {
-                        // Mobile: vertical layout, scores below columns
-                        vx = r.x + r.w / 2;
-                        vy = rewardsY + rewardsH + 18;
-                        startX = r.x + r.w / 2;
-                        startY = r.y + r.h - 16;
-                    } else {
-                        // Desktop: horizontal layout, scores to the right
-                        vx = rewardsX + rewardsW + 20;
-                        vy = r.y + r.h / 2;
-                        startX = r.x + r.w - 16;
-                        startY = r.y + r.h / 2;
-                    }
-
-                    if (appear > 0) {
-                        // Animate from where the morph ends to score position
-                        const cx = lerp(startX, vx - 10, appear);
-                        const cy = lerp(startY, vy, appear);
-                        p.push();
-                        // fading dot
-                        p.noStroke();
-                        p.drawingContext.globalAlpha = 1 - appear;
-                        p.fill(rewardColors[i % rewardColors.length]);
-                        p.circle(cx, cy, 8);
-                        p.pop();
-                        // value fading in
-                        p.push();
-                        p.fill('rgba(255,255,255,0.95)');
-                        p.textAlign(p.CENTER, p.CENTER);
-                        p.drawingContext.globalAlpha = appear;
-                        p.textSize(isMobile ? 10 : 12);
-                        p.text(value.toFixed(2), vx, vy);
-                        p.pop();
-                    }
+                if (layout.isMobile) {
+                    const startY = rewardsLayout.rewardsY - miniH - 12;
+                    cy = lerp(startY, targetY, localProg);
+                } else {
+                    const startX = rewardsLayout.rewardsX - miniW - 12;
+                    cx = lerp(startX, targetX, localProg);
                 }
+
+                renderer.drawMiniInput(state.img, cx, cy, miniW, miniH, localProg, false);
             }
+        }
+    }
 
-            // During rewards_disappear: numeric scores transform into dots that travel to histogram
-            if (st === 'rewards_disappear') {
-                const rects = getRewardRowRects(rewardsX, rewardsY, rewardsW, rewardsH, NUM_REWARDS, isMobile);
-                const vals = generateScores(NUM_REWARDS);
-                const hist = getHistogramGeom(vecPos.x, vecPos.y, vecPos.w, vecPos.h, NUM_REWARDS);
-                const rewardColors = getRewardColors();
+    class FanoutInputsStage {
+        render(p, layout, renderer, prog, state) {
+            const { imgLayout, capLayout, rewardsLayout } = layout;
+            const imgInRewardsScale = CONFIG.scaling.imgInRewards;
+            const imgSmallScale = imgInRewardsScale * CONFIG.scaling.imgSmallInRewards;
+            const imgSmallW = imgLayout.imgW * imgSmallScale;
+            const imgSmallH = imgLayout.imgH * imgSmallScale;
+            const imgInRewardsW = imgLayout.imgW * imgInRewardsScale;
+            const imgInRewardsH = imgLayout.imgH * imgInRewardsScale;
+            const rewardsCenterX = rewardsLayout.rewardsX + rewardsLayout.rewardsW / 2 - imgInRewardsW / 2;
+            const rewardsCenterY = rewardsLayout.rewardsY + 28;
 
-                for (let i = 0; i < NUM_REWARDS; i++) {
-                    const r = rects[i];
-                    const value = Math.round(vals[i] * 100) / 100;
+            // Small center image
+            const imgX = rewardsCenterX + (imgInRewardsW - imgSmallW) / 2;
+            const imgY = rewardsCenterY + (imgInRewardsH - imgSmallH) / 2;
 
-                    // Start position: numeric score location
-                    let startX, startY;
-                    if (isMobile) {
-                        // Mobile: scores are below rewards, centered under each column
-                        startX = r.x + r.w / 2;
-                        startY = rewardsY + rewardsH + 18;
-                    } else {
-                        // Desktop: scores are to the right of rewards
-                        startX = rewardsX + rewardsW + 20;
-                        startY = r.y + r.h / 2;
-                    }
+            if (state.img) p.image(state.img, imgX, imgY, imgSmallW, imgSmallH);
+            else { p.fill(230); p.rect(imgX, imgY, imgSmallW, imgSmallH, 6); }
 
-                    // End position: histogram bar
-                    const endX = hist.slots[i].x + hist.barWidth / 2;
-                    const endY = hist.by + hist.barAreaH - 6;
+            // Rewards box
+            renderer.drawBox(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.text.rewardsLabel);
+            renderer.drawRewardModels(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.animation.numRewards, 1, layout.isMobile);
 
-                    // Animate from scores to histogram
-                    const cx = lerp(startX, endX, prog);
-                    const cy = lerp(startY, endY, prog);
+            // Mini inputs in rows (static)
+            this._drawMiniInputsStatic(p, layout, renderer, state);
+        }
 
+        _drawMiniInputsStatic(p, layout, renderer, state) {
+            const { rewardsLayout } = layout;
+            const rects = GeometryHelper.getRewardRowRects(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.animation.numRewards, layout.isMobile);
+
+            for (let i = 0; i < CONFIG.animation.numRewards; i++) {
+                const r = rects[i];
+                let miniH, miniW, x, y;
+
+                if (layout.isMobile) {
+                    miniW = Math.min(r.w * CONFIG.sizes.rewards.miniInputScale, CONFIG.sizes.rewards.miniInputMaxMobile);
+                    miniH = miniW * CONFIG.layout.mobile.imgAspectRatio;
+                    x = r.x + r.w / 2 - miniW / 2;
+                    y = r.y + CONFIG.sizes.rewards.miniInputTop;
+                } else {
+                    miniH = Math.min(r.h * CONFIG.sizes.rewards.miniInputScale, CONFIG.sizes.rewards.miniInputMaxDesktop);
+                    miniW = miniH / CONFIG.layout.desktop.imgAspectRatio;
+                    x = r.x + CONFIG.sizes.rewards.miniInputPadding;
+                    y = r.y + r.h / 2 - miniH / 2;
+                }
+
+                renderer.drawMiniInput(state.img, x, y, miniW, miniH, 1, false);
+            }
+        }
+    }
+
+    class EmitScoresStage {
+        render(p, layout, renderer, prog, state) {
+            const { imgLayout, rewardsLayout } = layout;
+
+            // Small center image (fading)
+            const imgInRewardsScale = CONFIG.scaling.imgInRewards;
+            const imgSmallScale = imgInRewardsScale * CONFIG.scaling.imgSmallInRewards;
+            const imgSmallW = imgLayout.imgW * imgSmallScale;
+            const imgSmallH = imgLayout.imgH * imgSmallScale;
+            const imgInRewardsW = imgLayout.imgW * imgInRewardsScale;
+            const imgInRewardsH = imgLayout.imgH * imgInRewardsScale;
+            const rewardsCenterX = rewardsLayout.rewardsX + rewardsLayout.rewardsW / 2 - imgInRewardsW / 2;
+            const rewardsCenterY = rewardsLayout.rewardsY + 28;
+            const imgX = rewardsCenterX + (imgInRewardsW - imgSmallW) / 2;
+            const imgY = rewardsCenterY + (imgInRewardsH - imgSmallH) / 2;
+
+            p.push();
+            p.tint(255, 255 * 0.6);
+            if (state.img) p.image(state.img, imgX, imgY, imgSmallW, imgSmallH);
+            p.pop();
+
+            // Rewards box
+            renderer.drawBox(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.text.rewardsLabel);
+            renderer.drawRewardModels(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.animation.numRewards, 1, layout.isMobile);
+
+            // Morphing mini inputs
+            this._drawMorphingInputs(p, layout, renderer, prog, state);
+
+            // Score vector box (emerging)
+            this._drawEmergingVector(p, layout, renderer, prog, state);
+
+            // Numeric scores appearing
+            this._drawNumericScores(p, layout, renderer, prog, state);
+        }
+
+        _drawMorphingInputs(p, layout, renderer, prog, state) {
+            const { rewardsLayout } = layout;
+            const rects = GeometryHelper.getRewardRowRects(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.animation.numRewards, layout.isMobile);
+            const rewardColors = getRewardColors(p);
+
+            for (let i = 0; i < CONFIG.animation.numRewards; i++) {
+                const r = rects[i];
+                const rowDelay = i * CONFIG.animation.rowDelay;
+                const pRow = Math.max(0, Math.min(1, (prog - rowDelay) / (1 - rowDelay)));
+                const pMorph = Math.max(0, Math.min(1, pRow / CONFIG.animation.morphEnd));
+
+                let miniH, miniW, xStartTopLeft, yStartTopLeft, xEndCenter, yEndCenter;
+
+                if (layout.isMobile) {
+                    miniW = Math.min(r.w * CONFIG.sizes.rewards.miniInputScale, CONFIG.sizes.rewards.miniInputMaxMobile);
+                    miniH = miniW * CONFIG.layout.mobile.imgAspectRatio;
+                    xStartTopLeft = r.x + r.w / 2 - miniW / 2;
+                    yStartTopLeft = r.y + CONFIG.sizes.rewards.miniInputTop;
+                    xEndCenter = r.x + r.w / 2;
+                    yEndCenter = r.y + r.h - 16;
+                } else {
+                    miniH = Math.min(r.h * CONFIG.sizes.rewards.miniInputScale, CONFIG.sizes.rewards.miniInputMaxDesktop);
+                    miniW = miniH / CONFIG.layout.desktop.imgAspectRatio;
+                    xStartTopLeft = r.x + CONFIG.sizes.rewards.miniInputPadding;
+                    yStartTopLeft = r.y + r.h / 2 - miniH / 2;
+                    xEndCenter = r.x + r.w - 16;
+                    yEndCenter = r.y + r.h / 2;
+                }
+
+                const xStartCenter = xStartTopLeft + miniW / 2;
+                const yStartCenter = yStartTopLeft + miniH / 2;
+                const cxCenter = lerp(xStartCenter, xEndCenter, pMorph);
+                const cyCenter = lerp(yStartCenter, yEndCenter, pMorph);
+
+                // Shrinking image
+                const rectW = lerp(miniW, miniW * CONFIG.sizes.dot.morphMinScale, pMorph);
+                const rectH = lerp(miniH, miniH * CONFIG.sizes.dot.morphMinScale, pMorph);
+                renderer.drawMiniInput(state.img, cxCenter - rectW / 2, cyCenter - rectH / 2, rectW, rectH, 1, false);
+
+                // Growing dot
+                if (pMorph > 0.01) {
                     p.push();
-                    // Dot traveling to histogram
                     p.noStroke();
                     p.fill(rewardColors[i % rewardColors.length]);
-                    p.circle(cx, cy, 8);
+                    p.drawingContext.globalAlpha = pMorph;
+                    const dotR = lerp(0, CONFIG.sizes.dot.radius, pMorph);
+                    p.circle(cxCenter, cyCenter, Math.max(1, dotR));
+                    p.pop();
+                }
+            }
+        }
+
+        _drawEmergingVector(p, layout, renderer, prog, state) {
+            const { rewardsLayout, leftVecLayout } = layout;
+            const startX = rewardsLayout.rewardsX + rewardsLayout.rewardsW / 2 - leftVecLayout.leftVecW / 2;
+            const startY = rewardsLayout.rewardsY + rewardsLayout.rewardsH / 2 - leftVecLayout.leftVecH / 2;
+            const vecX = lerp(startX, leftVecLayout.leftVecX, prog);
+            const vecY = lerp(startY, leftVecLayout.leftVecY, prog);
+
+            p.push();
+            p.drawingContext.globalAlpha = prog;
+            renderer.drawBox(vecX, vecY, leftVecLayout.leftVecW, leftVecLayout.leftVecH, CONFIG.text.scoresLabel);
+            // Bars stay empty during this stage
+            renderer.drawVector(vecX, vecY, leftVecLayout.leftVecW, leftVecLayout.leftVecH, CONFIG.animation.numRewards, 0, new Array(CONFIG.animation.numRewards).fill(0), getRewardColors(p));
+            p.pop();
+        }
+
+        _drawNumericScores(p, layout, renderer, prog, state) {
+            const { rewardsLayout } = layout;
+            const rects = GeometryHelper.getRewardRowRects(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.animation.numRewards, layout.isMobile);
+            const vals = state.scores;
+            const rewardColors = getRewardColors(p);
+
+            // Label position
+            let vecLabelX, vecLabelY, vecLabelAlign;
+            if (layout.isMobile) {
+                vecLabelX = rewardsLayout.rewardsX + rewardsLayout.rewardsW / 2;
+                vecLabelY = rewardsLayout.rewardsY + rewardsLayout.rewardsH + 8;
+                vecLabelAlign = p.CENTER;
+            } else {
+                vecLabelX = rewardsLayout.rewardsX + rewardsLayout.rewardsW + 18;
+                vecLabelY = rewardsLayout.rewardsY - 6;
+                vecLabelAlign = p.LEFT;
+            }
+
+            p.push();
+            p.fill('rgba(255,255,255,0.7)');
+            p.textAlign(vecLabelAlign, p.BOTTOM);
+            p.textSize(CONFIG.sizes.text.legend);
+            p.text(CONFIG.text.scoresVector, vecLabelX, vecLabelY);
+            p.pop();
+
+            for (let i = 0; i < CONFIG.animation.numRewards; i++) {
+                const r = rects[i];
+                const delay = i * CONFIG.animation.rowDelay;
+                const pRow = Math.max(0, Math.min(1, (prog - delay) / (1 - delay)));
+                const appear = Math.max(0, Math.min(1, (pRow - CONFIG.animation.vecStart) / (1 - CONFIG.animation.vecStart)));
+                const value = Math.round(vals[i] * 100) / 100;
+
+                let vx, vy, startX, startY;
+                if (layout.isMobile) {
+                    vx = r.x + r.w / 2;
+                    vy = rewardsLayout.rewardsY + rewardsLayout.rewardsH + 18;
+                    startX = r.x + r.w / 2;
+                    startY = r.y + r.h - 16;
+                } else {
+                    vx = rewardsLayout.rewardsX + rewardsLayout.rewardsW + 20;
+                    vy = r.y + r.h / 2;
+                    startX = r.x + r.w - 16;
+                    startY = r.y + r.h / 2;
+                }
+
+                if (appear > 0) {
+                    const cx = lerp(startX, vx - 10, appear);
+                    const cy = lerp(startY, vy, appear);
+
+                    // Fading dot
+                    p.push();
+                    p.noStroke();
+                    p.drawingContext.globalAlpha = 1 - appear;
+                    p.fill(rewardColors[i % rewardColors.length]);
+                    p.circle(cx, cy, CONFIG.sizes.dot.radius);
                     p.pop();
 
-                    // Fade out the numeric value
+                    // Value fading in
                     p.push();
                     p.fill('rgba(255,255,255,0.95)');
                     p.textAlign(p.CENTER, p.CENTER);
-                    p.drawingContext.globalAlpha = 1 - prog;
-                    p.textSize(isMobile ? 10 : 12);
-                    p.text(value.toFixed(2), startX, startY);
+                    p.drawingContext.globalAlpha = appear;
+                    p.textSize(layout.isMobile ? CONFIG.sizes.text.scoreValueMobile : CONFIG.sizes.text.scoreValue);
+                    p.text(value.toFixed(2), vx, vy);
                     p.pop();
                 }
             }
+        }
+    }
 
-            // Noise buildup on input (only when input is visible)
-            if ((st === 'noise_input' || st === 'denoiser_appear' || st === 'to_denoiser') && imgPos.a > 0) {
-                const a = st === 'noise_input' ? prog : 1;
-                drawNoiseOver(imgPos.x, imgPos.y, imgPos.w, imgPos.h, a, true);
-            }
+    class RewardsDisappearStage {
+        render(p, layout, renderer, prog, state) {
+            const { rewardsLayout, leftVecLayout } = layout;
 
-            // MIRO denoiser box
-            let modelAlpha = 0;
-            if (st === 'denoiser_appear') modelAlpha = prog;
-            if (st === 'to_denoiser' || st === 'clean_output' || st === 'pause') modelAlpha = 1;
+            // Rewards box fading
+            p.push();
+            p.drawingContext.globalAlpha = 1 - prog;
+            renderer.drawBox(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.text.rewardsLabel);
+            renderer.drawRewardModels(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.animation.numRewards, 1 - prog, layout.isMobile);
+            p.pop();
 
-            if (modelAlpha > 0) {
+            // Score vector box
+            renderer.drawBox(leftVecLayout.leftVecX, leftVecLayout.leftVecY, leftVecLayout.leftVecW, leftVecLayout.leftVecH, CONFIG.text.scoresLabel);
+
+            // Bars filling as dots arrive
+            const vals = state.scores;
+            const valuesForDraw = vals.map(v => v * prog);
+            renderer.drawVector(leftVecLayout.leftVecX, leftVecLayout.leftVecY, leftVecLayout.leftVecW, leftVecLayout.leftVecH, CONFIG.animation.numRewards, 0, valuesForDraw, getRewardColors(p));
+
+            // Dots traveling to histogram
+            this._drawDotsToHistogram(p, layout, renderer, prog, state);
+        }
+
+        _drawDotsToHistogram(p, layout, renderer, prog, state) {
+            const { rewardsLayout, leftVecLayout } = layout;
+            const rects = GeometryHelper.getRewardRowRects(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.animation.numRewards, layout.isMobile);
+            const vals = state.scores;
+            const hist = GeometryHelper.getHistogramGeom(leftVecLayout.leftVecX, leftVecLayout.leftVecY, leftVecLayout.leftVecW, leftVecLayout.leftVecH, CONFIG.animation.numRewards);
+            const rewardColors = getRewardColors(p);
+
+            for (let i = 0; i < CONFIG.animation.numRewards; i++) {
+                const r = rects[i];
+                const value = Math.round(vals[i] * 100) / 100;
+
+                let startX, startY;
+                if (layout.isMobile) {
+                    startX = r.x + r.w / 2;
+                    startY = rewardsLayout.rewardsY + rewardsLayout.rewardsH + 18;
+                } else {
+                    startX = rewardsLayout.rewardsX + rewardsLayout.rewardsW + 20;
+                    startY = r.y + r.h / 2;
+                }
+
+                const endX = hist.slots[i].x + hist.barWidth / 2;
+                const endY = hist.by + hist.barAreaH - 6;
+
+                const cx = lerp(startX, endX, prog);
+                const cy = lerp(startY, endY, prog);
+
+                // Dot
                 p.push();
-                if (modelAlpha < 1) p.drawingContext.globalAlpha = modelAlpha;
-                drawBox(modelX, modelY, modelW, modelH, 'MIRO', true);
+                p.noStroke();
+                p.fill(rewardColors[i % rewardColors.length]);
+                p.circle(cx, cy, CONFIG.sizes.dot.radius);
+                p.pop();
+
+                // Numeric value fading out
+                p.push();
+                p.fill('rgba(255,255,255,0.95)');
+                p.textAlign(p.CENTER, p.CENTER);
+                p.drawingContext.globalAlpha = 1 - prog;
+                p.textSize(layout.isMobile ? CONFIG.sizes.text.scoreValueMobile : CONFIG.sizes.text.scoreValue);
+                p.text(value.toFixed(2), startX, startY);
                 p.pop();
             }
+        }
+    }
 
-            // Output (clean) image - animates from inside denoiser to the right
-            const outW = imgW;
-            const outH = imgH;
-            if (st === 'clean_output' || st === 'pause') {
-                const a = st === 'clean_output' ? prog : 1;
-                const startX = modelX + modelW / 2 - outW / 2;
-                const startY = modelY + modelH / 2 - outH / 2;
-                const currentX = st === 'clean_output' ? lerp(startX, outX, prog) : outX;
-                const currentY = st === 'clean_output' ? lerp(startY, outY, prog) : outY;
-                p.push();
-                if (a < 1) p.tint(255, 255 * a);
-                if (img) p.image(img, currentX, currentY, outW, outH); else { p.fill(230); p.rect(currentX, currentY, outW, outH, 6); }
-                p.pop();
+    class ScoresBackStage {
+        render(p, layout, renderer, prog, state) {
+            const { imgLayout, capLayout, leftVecLayout } = layout;
+
+            // Image and caption fading in
+            const alpha = Math.min(1, prog * 1.2);
+
+            p.push();
+            if (alpha < 1) p.tint(255, 255 * alpha);
+            if (state.img) p.image(state.img, imgLayout.imgX, imgLayout.imgY, imgLayout.imgW, imgLayout.imgH);
+            else { p.fill(230); p.rect(imgLayout.imgX, imgLayout.imgY, imgLayout.imgW, imgLayout.imgH, 6); }
+            p.pop();
+
+            renderer.drawCaptionBox(capLayout.capX, capLayout.capY, capLayout.capW, capLayout.capH, alpha);
+
+            // Score vector box (static, filled)
+            renderer.drawBox(leftVecLayout.leftVecX, leftVecLayout.leftVecY, leftVecLayout.leftVecW, leftVecLayout.leftVecH, CONFIG.text.scoresLabel);
+            renderer.drawVector(leftVecLayout.leftVecX, leftVecLayout.leftVecY, leftVecLayout.leftVecW, leftVecLayout.leftVecH, CONFIG.animation.numRewards, 0, state.scores, getRewardColors(p));
+        }
+    }
+
+    class NoiseInputStage {
+        render(p, layout, renderer, prog, state) {
+            const { imgLayout, capLayout, leftVecLayout } = layout;
+
+            // Image with noise
+            if (state.img) p.image(state.img, imgLayout.imgX, imgLayout.imgY, imgLayout.imgW, imgLayout.imgH);
+            else { p.fill(230); p.rect(imgLayout.imgX, imgLayout.imgY, imgLayout.imgW, imgLayout.imgH, 6); }
+            renderer.drawNoiseOver(state.img, imgLayout.imgX, imgLayout.imgY, imgLayout.imgW, imgLayout.imgH, prog);
+
+            // Caption
+            renderer.drawCaptionBox(capLayout.capX, capLayout.capY, capLayout.capW, capLayout.capH, 1);
+
+            // Score vector
+            renderer.drawBox(leftVecLayout.leftVecX, leftVecLayout.leftVecY, leftVecLayout.leftVecW, leftVecLayout.leftVecH, CONFIG.text.scoresLabel);
+            renderer.drawVector(leftVecLayout.leftVecX, leftVecLayout.leftVecY, leftVecLayout.leftVecW, leftVecLayout.leftVecH, CONFIG.animation.numRewards, 0, state.scores, getRewardColors(p));
+        }
+    }
+
+    class DenoiserAppearStage {
+        render(p, layout, renderer, prog, state) {
+            const { imgLayout, capLayout, leftVecLayout, modelLayout } = layout;
+
+            // Image with full noise
+            if (state.img) p.image(state.img, imgLayout.imgX, imgLayout.imgY, imgLayout.imgW, imgLayout.imgH);
+            else { p.fill(230); p.rect(imgLayout.imgX, imgLayout.imgY, imgLayout.imgW, imgLayout.imgH, 6); }
+            renderer.drawNoiseOver(state.img, imgLayout.imgX, imgLayout.imgY, imgLayout.imgW, imgLayout.imgH, 1);
+
+            // Caption
+            renderer.drawCaptionBox(capLayout.capX, capLayout.capY, capLayout.capW, capLayout.capH, 1);
+
+            // Score vector
+            renderer.drawBox(leftVecLayout.leftVecX, leftVecLayout.leftVecY, leftVecLayout.leftVecW, leftVecLayout.leftVecH, CONFIG.text.scoresLabel);
+            renderer.drawVector(leftVecLayout.leftVecX, leftVecLayout.leftVecY, leftVecLayout.leftVecW, leftVecLayout.leftVecH, CONFIG.animation.numRewards, 0, state.scores, getRewardColors(p));
+
+            // Model box appearing
+            p.push();
+            p.drawingContext.globalAlpha = prog;
+            renderer.drawBox(modelLayout.modelX, modelLayout.modelY, modelLayout.modelW, modelLayout.modelH, CONFIG.text.modelName, true);
+            p.pop();
+        }
+    }
+
+    class ToDenoiserStage {
+        render(p, layout, renderer, prog, state) {
+            const { imgLayout, capLayout, leftVecLayout, modelLayout } = layout;
+
+            // Image and caption moving into model and fading
+            const imgInModelScale = CONFIG.scaling.imgInModel;
+            const imgInModelW = imgLayout.imgW * imgInModelScale;
+            const imgInModelH = imgLayout.imgH * imgInModelScale;
+            const capInModelW = capLayout.capW * imgInModelScale;
+            const capInModelH = capLayout.capH * imgInModelScale;
+            const targetX = modelLayout.modelX + modelLayout.modelW / 2 - imgInModelW / 2;
+            const targetY = modelLayout.modelY + 30;
+
+            const imgX = lerp(imgLayout.imgX, targetX, prog);
+            const imgY = lerp(imgLayout.imgY, targetY, prog);
+            const imgW = lerp(imgLayout.imgW, imgInModelW, prog);
+            const imgH = lerp(imgLayout.imgH, imgInModelH, prog);
+            const imgAlpha = 1 - prog;
+
+            p.push();
+            if (imgAlpha < 1) p.tint(255, 255 * imgAlpha);
+            if (state.img) p.image(state.img, imgX, imgY, imgW, imgH);
+            else { p.fill(230); p.rect(imgX, imgY, imgW, imgH, 6); }
+            p.pop();
+
+            renderer.drawNoiseOver(state.img, imgX, imgY, imgW, imgH, 1);
+
+            const capX = lerp(capLayout.capX, targetX, prog);
+            const capY = lerp(capLayout.capY, targetY + imgInModelH + 6, prog);
+            const capW = lerp(capLayout.capW, capInModelW, prog);
+            const capH = lerp(capLayout.capH, capInModelH, prog);
+            renderer.drawCaptionBox(capX, capY, capW, capH, imgAlpha);
+
+            // Score vector moving into model and fading
+            const targetVecX = modelLayout.modelX + modelLayout.modelW / 2 - leftVecLayout.leftVecW / 2;
+            const targetVecY = modelLayout.modelY + modelLayout.modelH / 2 - leftVecLayout.leftVecH / 2;
+            const vecX = lerp(leftVecLayout.leftVecX, targetVecX, prog);
+            const vecY = lerp(leftVecLayout.leftVecY, targetVecY, prog);
+            const vecAlpha = 1 - prog;
+
+            p.push();
+            p.drawingContext.globalAlpha = vecAlpha;
+            renderer.drawBox(vecX, vecY, leftVecLayout.leftVecW, leftVecLayout.leftVecH, CONFIG.text.scoresLabel);
+            renderer.drawVector(vecX, vecY, leftVecLayout.leftVecW, leftVecLayout.leftVecH, CONFIG.animation.numRewards, 0, state.scores, getRewardColors(p));
+            p.pop();
+
+            // Model box
+            renderer.drawBox(modelLayout.modelX, modelLayout.modelY, modelLayout.modelW, modelLayout.modelH, CONFIG.text.modelName, true);
+        }
+    }
+
+    class CleanOutputStage {
+        render(p, layout, renderer, prog, state) {
+            const { imgLayout, modelLayout, outputLayout } = layout;
+
+            // Model box
+            renderer.drawBox(modelLayout.modelX, modelLayout.modelY, modelLayout.modelW, modelLayout.modelH, CONFIG.text.modelName, true);
+
+            // Output emerging from model
+            const startX = modelLayout.modelX + modelLayout.modelW / 2 - imgLayout.imgW / 2;
+            const startY = modelLayout.modelY + modelLayout.modelH / 2 - imgLayout.imgH / 2;
+            const currentX = lerp(startX, outputLayout.outX, prog);
+            const currentY = lerp(startY, outputLayout.outY, prog);
+
+            p.push();
+            if (prog < 1) p.tint(255, 255 * prog);
+            if (state.img) p.image(state.img, currentX, currentY, imgLayout.imgW, imgLayout.imgH);
+            else { p.fill(230); p.rect(currentX, currentY, imgLayout.imgW, imgLayout.imgH, 6); }
+            p.pop();
+        }
+    }
+
+    class PauseStage {
+        render(p, layout, renderer, prog, state) {
+            const { imgLayout, modelLayout, outputLayout } = layout;
+
+            // Model box
+            renderer.drawBox(modelLayout.modelX, modelLayout.modelY, modelLayout.modelW, modelLayout.modelH, CONFIG.text.modelName, true);
+
+            // Output image (clean)
+            if (state.img) p.image(state.img, outputLayout.outX, outputLayout.outY, imgLayout.imgW, imgLayout.imgH);
+            else { p.fill(230); p.rect(outputLayout.outX, outputLayout.outY, imgLayout.imgW, imgLayout.imgH, 6); }
+
+            // Legend
+            p.fill(p.color(renderer.pal.muted));
+            p.textAlign(p.CENTER, p.TOP);
+            p.textSize(CONFIG.sizes.text.legend);
+            const labelY = layout.isMobile ? outputLayout.outY - 18 : outputLayout.outY - 22;
+            p.text(CONFIG.text.denoisedImage, outputLayout.outX + imgLayout.imgW / 2, labelY);
+        }
+    }
+
+    // ============================================================================
+    // MAIN P5 SKETCH
+    // ============================================================================
+    const sketch = (p) => {
+        let img, t0 = 0, playing = false;
+        let renderer, stageManager;
+        let stageHandlers = {};
+
+        p.preload = () => {
+            img = p.loadImage(CONFIG.images.primary, undefined, () => {
+                img = p.loadImage(CONFIG.images.fallback);
+            });
+        };
+
+        p.setup = () => {
+            const parent = p.select('#miroAnimation');
+            const parentW = parent.elt.clientWidth || 960;
+            const isMobile = parentW < CONFIG.visual.mobileBreakpoint;
+
+            let w, h;
+            if (isMobile) {
+                w = parentW;
+                h = Math.max(CONFIG.layout.mobile.canvas.minHeight, parentW * CONFIG.layout.mobile.canvas.heightMultiplier);
+            } else {
+                const M = CONFIG.layout.desktop.margin;
+                const imgW = Math.min(parentW * CONFIG.layout.desktop.imgScale, CONFIG.layout.desktop.maxImgWidth);
+                const modelW = Math.max(CONFIG.layout.desktop.modelMinWidth, parentW * CONFIG.layout.desktop.modelScale);
+                const contentWidth = M + imgW + 60 + modelW + 60 + imgW + M;
+                w = Math.min(contentWidth, parentW);
+                h = Math.max(CONFIG.layout.desktop.canvas.minHeight, Math.round(w * CONFIG.layout.desktop.canvas.heightMultiplier));
             }
 
-            // === DRAW PHASE 3: Labels and legends ===
+            const canvas = p.createCanvas(w, h);
+            canvas.style('display', 'block');
+            canvas.style('margin', '0 auto');
+            parent.elt.insertBefore(canvas.elt, parent.elt.firstChild);
+            p.pixelDensity(CONFIG.visual.pixelDensity);
 
-            // Phase labels at the top
+            // Initialize renderer and managers
+            renderer = new Renderer(p);
+            stageManager = new StageManager(p);
+
+            // Initialize stage handlers
+            stageHandlers = {
+                'intro': new IntroStage(),
+                'move_to_rewards': new MoveToRewardsStage(),
+                'fanout_inputs': new FanoutInputsStage(),
+                'emit_scores': new EmitScoresStage(),
+                'rewards_disappear': new RewardsDisappearStage(),
+                'scores_back': new ScoresBackStage(),
+                'noise_input': new NoiseInputStage(),
+                'denoiser_appear': new DenoiserAppearStage(),
+                'to_denoiser': new ToDenoiserStage(),
+                'clean_output': new CleanOutputStage(),
+                'pause': new PauseStage()
+            };
+
+            // Intersection observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= CONFIG.animation.intersectionThreshold) {
+                        t0 = p.millis();
+                        playing = true;
+                    } else {
+                        playing = false;
+                    }
+                });
+            }, { threshold: CONFIG.animation.intersectionThreshold });
+
+            observer.observe(canvas.elt);
+
+            // Click to toggle
+            parent.elt.addEventListener('click', () => {
+                playing = !playing;
+                if (playing) {
+                    t0 = p.millis() - (p.millis() - t0) % stageManager.totalMs;
+                }
+            });
+        };
+
+        p.windowResized = () => {
+            const parent = p.select('#miroAnimation');
+            const parentW = parent.elt.clientWidth || 960;
+            const isMobile = parentW < CONFIG.visual.mobileBreakpoint;
+
+            let w, h;
+            if (isMobile) {
+                w = parentW;
+                h = Math.max(CONFIG.layout.mobile.canvas.minHeight, parentW * CONFIG.layout.mobile.canvas.heightMultiplier);
+            } else {
+                const M = CONFIG.layout.desktop.margin;
+                const imgW = Math.min(parentW * CONFIG.layout.desktop.imgScale, CONFIG.layout.desktop.maxImgWidth);
+                const modelW = Math.max(CONFIG.layout.desktop.modelMinWidth, parentW * CONFIG.layout.desktop.modelScale);
+                const contentWidth = M + imgW + 60 + modelW + 60 + imgW + M;
+                w = Math.min(contentWidth, parentW);
+                h = Math.max(CONFIG.layout.desktop.canvas.minHeight, Math.round(w * CONFIG.layout.desktop.canvas.heightMultiplier));
+            }
+
+            p.resizeCanvas(w, h);
+        };
+
+        p.draw = () => {
+            if (!playing) return;
+            p.clear();
+
+            const elapsed = p.millis() - t0;
+            const { name: stageName, prog: rawProg } = stageManager.getStageAndProgress(elapsed);
+            const prog = CONFIG.animation.easing.inOut(rawProg);
+            const isMobile = p.width < CONFIG.visual.mobileBreakpoint;
+
+            // Update palette and create layout
+            renderer.updatePalette();
+            const layoutCalc = new LayoutCalculator(p.width, p.height, isMobile);
+
+            const imgLayout = layoutCalc.getImageLayout();
+            const capLayout = layoutCalc.getCaptionLayout(imgLayout);
+            const rewardsLayout = layoutCalc.getRewardsLayout(imgLayout, capLayout);
+            const vectorLayout = layoutCalc.getVectorLayout(rewardsLayout, imgLayout);
+            const modelLayout = layoutCalc.getModelLayout(vectorLayout, imgLayout, rewardsLayout);
+            const outputLayout = layoutCalc.getOutputLayout(modelLayout, imgLayout);
+            const leftVecLayout = layoutCalc.getLeftVectorLayout(imgLayout, vectorLayout);
+
+            const layout = {
+                isMobile,
+                imgLayout,
+                capLayout,
+                rewardsLayout,
+                vectorLayout,
+                modelLayout,
+                outputLayout,
+                leftVecLayout
+            };
+
+            // Prepare state
+            const scores = stageManager.generateScores(CONFIG.animation.numRewards, elapsed);
+            const state = { img, scores };
+
+            // Render current stage
+            const handler = stageHandlers[stageName];
+            if (handler) {
+                handler.render(p, layout, renderer, prog, state);
+            }
+
+            // Render phase labels
+            renderPhaseLabel(p, stageName, prog, isMobile, renderer.pal);
+        };
+
+        function renderPhaseLabel(p, stageName, prog, isMobile, pal) {
             p.push();
             p.textAlign(p.CENTER, p.TOP);
             p.textStyle(p.BOLD);
             const phaseLabelY = isMobile ? 5 : 10;
+            const textSize = isMobile ? CONFIG.sizes.text.phaseLabelMobile : CONFIG.sizes.text.phaseLabel;
 
-            // "Scoring the dataset with all the rewards" during first phase
-            if (st === 'intro' || st === 'move_to_rewards' || st === 'fanout_inputs' || st === 'emit_scores' || st === 'rewards_disappear') {
-                let alpha = 1;
-                if (st === 'intro') alpha = Math.min(1, prog * 2);
-                if (st === 'rewards_disappear') alpha = 1 - prog;
+            let alpha = 0;
+            let labelText = '';
 
-                p.drawingContext.globalAlpha = alpha;
-                p.fill(p.color(pal.fg));
-                p.textSize(isMobile ? 13 : 16);
-                p.text('Scoring the dataset with all the rewards', W / 2, phaseLabelY);
+            if (stageName === 'intro' || stageName === 'move_to_rewards' || stageName === 'fanout_inputs' || stageName === 'emit_scores' || stageName === 'rewards_disappear') {
+                labelText = CONFIG.text.phaseLabels.scoring;
+                if (stageName === 'intro') alpha = Math.min(1, prog * 2);
+                else if (stageName === 'rewards_disappear') alpha = 1 - prog;
+                else alpha = 1;
+            } else if (stageName === 'scores_back' || stageName === 'noise_input' || stageName === 'denoiser_appear' || stageName === 'to_denoiser' || stageName === 'clean_output' || stageName === 'pause') {
+                labelText = CONFIG.text.phaseLabels.training;
+                if (stageName === 'scores_back') alpha = Math.min(1, prog * 2);
+                else alpha = 1;
             }
 
-            // "Flow matching training" during second phase
-            if (st === 'scores_back' || st === 'noise_input' || st === 'denoiser_appear' || st === 'to_denoiser' || st === 'clean_output' || st === 'pause') {
-                let alpha = 1;
-                if (st === 'scores_back') alpha = Math.min(1, prog * 2);
-
+            if (alpha > 0 && labelText) {
                 p.drawingContext.globalAlpha = alpha;
                 p.fill(p.color(pal.fg));
-                p.textSize(isMobile ? 13 : 16);
-                p.text('Flow matching training', W / 2, phaseLabelY);
+                p.textSize(textSize);
+                p.text(labelText, p.width / 2, phaseLabelY);
             }
+
             p.pop();
-
-            // Legends
-            p.fill(p.color(pal.muted));
-            p.textAlign(p.CENTER, p.TOP);
-            p.textSize(11);
-            if (st === 'clean_output' || st === 'pause') {
-                const labelY = isMobile ? outY - 18 : outY - 22;
-                p.text('denoised image', outX + outW / 2, labelY);
-            }
-        };
+        }
     };
 
     new p5(sketch, document.getElementById('miroAnimation'));
 })();
-
-
-
-
-
-

@@ -69,8 +69,8 @@ window.MIRO_DATA = {
   },
   images: {
     imagesPerReward: {
-      rocket_wall: ['aesthetic.png', 'clip.png', 'hpsv2.png', 'imagereward.png', 'pickscore.png', 'sciscore.png', 'vqa.png', 'miro.png'],
-      robots_meditating: ['aesthetics.png', 'clip.png', 'hpsv2.png', 'imagereward.png', 'pickscore.png', 'sciscore.png', 'vqa.png', 'miro.png']
+      rocket_wall: ['aesthetic.jpg', 'clip.jpg', 'hpsv2.jpg', 'imagereward.jpg', 'pickscore.jpg', 'sciscore.jpg', 'vqa.jpg', 'miro.jpg'],
+      robots_meditating: ['aesthetics.jpg', 'clip.jpg', 'hpsv2.jpg', 'imagereward.jpg', 'pickscore.jpg', 'sciscore.jpg', 'vqa.jpg', 'miro.jpg']
     },
     progression: {
       steps: [25000, 50000, 75000, 100000, 200000, 400000],

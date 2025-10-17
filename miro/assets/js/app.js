@@ -2975,13 +2975,10 @@
       resetAutoSlide();
     });
 
-    // Pause on hover (respect reduced motion)
+    // Pause on hover
     const container = document.querySelector('.ipr-carousel-container');
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!prefersReduced) {
-      container.addEventListener('mouseenter', stopAutoSlide);
-      container.addEventListener('mouseleave', startAutoSlide);
-    }
+    container.addEventListener('mouseenter', stopAutoSlide);
+    container.addEventListener('mouseleave', startAutoSlide);
 
     // Touch support
     let touchStartX = 0;
@@ -3008,7 +3005,7 @@
 
     // Initialize
     updatePosition(false);
-    if (!prefersReduced) startAutoSlide();
+    startAutoSlide();
   }
 
   function loadProgression() {
@@ -3043,8 +3040,8 @@
       // Update all images
       prompts.forEach((prompt, idx) => {
         const promptId = prompt.id;
-        baselineImgs[idx].src = `assets/images/training_progression/${promptId}/${sub[0]}/img_${promptId.padStart(6, '0')}_${s}.png`;
-        miroImgs[idx].src = `assets/images/training_progression/${promptId}/${sub[1]}/img_${promptId.padStart(6, '0')}_${s}.png`;
+        baselineImgs[idx].src = `assets/images/training_progression/${promptId}/${sub[0]}/img_${promptId.padStart(6, '0')}_${s}.jpg`;
+        miroImgs[idx].src = `assets/images/training_progression/${promptId}/${sub[1]}/img_${promptId.padStart(6, '0')}_${s}.jpg`;
       });
     }
 
@@ -3294,13 +3291,10 @@
       resetAutoSlide();
     });
 
-    // Pause on hover (skip if reduced motion)
+    // Pause on hover
     const container = document.querySelector('.qual-carousel-container');
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!prefersReduced) {
-      container.addEventListener('mouseenter', stopAutoSlide);
-      container.addEventListener('mouseleave', startAutoSlide);
-    }
+    container.addEventListener('mouseenter', stopAutoSlide);
+    container.addEventListener('mouseleave', startAutoSlide);
 
     // Handle window resize
     let resizeTimeout;
@@ -3344,10 +3338,8 @@
     createDots();
     updatePosition(false);
 
-    // Start auto-slide if user doesn't prefer reduced motion
-    if (!prefersReduced) {
-      setTimeout(() => { startAutoSlide(); }, 100);
-    }
+    // Start auto-slide
+    startAutoSlide();
   }
 
   // Create scroll progress indicator

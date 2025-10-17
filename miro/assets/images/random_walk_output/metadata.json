@@ -1,0 +1,26 @@
+{
+  "prompt": "a volcano with lava pouring down its slopes, aquarelle style",
+  "seed": 2455,
+  "num_frames": 200,
+  "num_inference_steps": 50,
+  "guidance_scale": 7.0,
+  "coherence_eval": "single",
+  "coherence_keys": [
+    "clip_score_coherence",
+    "aesthetic_score_coherence",
+    "image_reward_score_coherence",
+    "pick_a_score_score_coherence",
+    "hpsv2_score_coherence",
+    "vqa_score_coherence",
+    "sciscore_score_coherence"
+  ],
+  "coherence_values": {
+    "clip_score_coherence": 1.0,
+    "aesthetic_score_coherence": 1.0,
+    "image_reward_score_coherence": 1.0,
+    "pick_a_score_score_coherence": 1.0,
+    "hpsv2_score_coherence": 1.0,
+    "vqa_score_coherence": 1.0,
+    "sciscore_score_coherence": 1.0
+  }
+}

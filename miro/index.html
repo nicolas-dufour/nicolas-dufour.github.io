@@ -434,7 +434,7 @@
         </div>
 
         <div class="equations">
-          <div>\[ \hat{\epsilon}_\theta(x_t, c) = v_\theta(x_t, c,
+          <div>\[ \hat{v}_\theta(x_t, c) = v_\theta(x_t, c,
             \hat{\mathbf{s}}^{+}) + \omega
             \left(v_\theta(x_t, c, \hat{\mathbf{s}}^{+}) - v_\theta(x_t,
             c,
@@ -451,6 +451,14 @@
               <li>\(B\): number of bins for reward normalization</li>
             </ul>
           </details>
+        </div>
+
+        <div id="miroInferenceAnimation" class="method-anim" aria-label="MIRO inference animation">
+          <p class="animation-caption">
+            <strong>MIRO Inference Pipeline:</strong> A prompt, along with positive (s+) and negative (s-) reward
+            targets, are input to the MIRO model. Starting from noise, the model iteratively denoises the image, guided
+            by the reward targets, to produce the final high-quality output.
+          </p>
         </div>
 
         <div class="callout question" style="margin: 1.5rem 0;">
@@ -475,6 +483,16 @@
         <p>A key advantage of MIRO is the ability to specify custom reward targets at inference time. Users can set
           \(\hat{\mathbf{s}}_{\mathrm{custom}} = [\hat{s}_1, \hat{s}_2, \ldots, \hat{s}_N]\) where each component
           represents the desired level for that reward dimension.</p>
+
+        <div id="rewardTradeoffAnimation" class="method-anim" aria-label="Reward trade-off animation">
+          <p class="animation-caption">
+            <strong>Interactive Reward Control:</strong> As we adjust the reward weights in real-time, the generated
+            output changes to reflect the new quality targets. The histogram on the left shows the current reward
+            configuration, while the MIRO model processes these weights to generate the corresponding output on the
+            right.
+            Notice how different reward combinations lead to distinct visual characteristics.
+          </p>
+        </div>
 
         <div style="margin: 1.5rem 0;">
           <p><strong>Example use cases:</strong></p>
@@ -1409,6 +1427,8 @@
   <script src="assets/js/data.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
   <script defer src="assets/js/miro_animation.js"></script>
+  <script defer src="assets/js/inference_animation.js"></script>
+  <script defer src="assets/js/reward_tradeoff_animation.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 
