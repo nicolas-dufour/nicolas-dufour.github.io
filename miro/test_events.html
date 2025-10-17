@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <div id="test" style="width: 500px; height: 500px; border: 2px solid red;">
+    <svg id="testSvg" width="100%" height="100%" style="background: lightblue;">
+      <circle cx="250" cy="250" r="50" fill="orange" style="cursor: pointer; pointer-events: all;" 
+        onclick="alert('Circle clicked!')"></circle>
+    </svg>
+  </div>
+  <script>
+    document.getElementById('testSvg').addEventListener('click', function(e) {
+      console.log('SVG clicked:', e.target);
+    });
+  </script>
+</body>
+</html>
