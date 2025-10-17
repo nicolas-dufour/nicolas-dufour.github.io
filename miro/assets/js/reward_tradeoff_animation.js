@@ -50,7 +50,7 @@
         animation: {
             numRewards: 7,
             intersectionThreshold: 0.35,
-            frameDuration: 150, // ms per frame
+            frameDuration: 200, // ms per frame (increased for smoother playback)
             pauseDuration: 2000, // ms pause at start/end
             easing: {
                 inOut: (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
@@ -301,11 +301,8 @@
             p.push();
             p.drawingContext.globalAlpha = alpha;
 
+            // Simplified rendering - no shadow for performance
             p.noStroke();
-            if (p.drawingContext) {
-                p.drawingContext.shadowColor = 'rgba(0,0,0,0.25)';
-                p.drawingContext.shadowBlur = CONFIG.sizes.effects.shadowBlur;
-            }
             p.fill(p.color(this.pal.card));
             p.rect(x, y, w, h, CONFIG.visual.borderRadius.large);
 
@@ -333,12 +330,8 @@
             p.push();
             p.drawingContext.globalAlpha = alpha;
 
-            // Box background
+            // Box background (simplified - no shadow for performance)
             p.noStroke();
-            if (p.drawingContext) {
-                p.drawingContext.shadowColor = 'rgba(0,0,0,0.25)';
-                p.drawingContext.shadowBlur = CONFIG.sizes.effects.shadowBlur;
-            }
             p.fill(p.color(this.pal.card));
             p.rect(x, y, w, h, CONFIG.visual.borderRadius.large);
 
@@ -347,18 +340,18 @@
             p.strokeWeight(CONFIG.visual.strokeWeight.thin);
             p.rect(x + 0.5, y + 0.5, w - 1, h - 1, CONFIG.visual.borderRadius.large);
 
-            // Draw histogram (KaTeX label will be positioned separately)
+            // Draw histogram (optimized - draw all bars at once)
             const barWidth = (w - pad * (n + 1)) / n;
             const by = y + pad + labelH;
             const barAreaH = h - (pad * 2 + labelH);
 
+            p.noStroke();
             for (let i = 0; i < n; i++) {
                 const v = values[i] || 0;
                 const barH = barAreaH * v;
                 const bx = x + pad + i * (barWidth + pad);
 
                 p.fill(colors[i % colors.length]);
-                p.noStroke();
                 p.rect(bx, by + (barAreaH - barH), barWidth, barH, CONFIG.visual.borderRadius.small);
             }
 
@@ -369,6 +362,7 @@
             const p = this.p;
             p.push();
             p.drawingContext.globalAlpha = alpha;
+            p.noSmooth(); // Disable smoothing for faster rendering
 
             if (img && img.width > 0) {
                 p.image(img, x, y, size, size);
@@ -468,7 +462,7 @@
             this.images = {};
             this.loadQueue = [];
             this.currentFrame = -1;
-            this.preloadRange = 5; // Preload +/- 5 frames
+            this.preloadRange = 5; // Preload +/- 5 frames for smooth playback
         }
 
         loadFrame(frame) {
@@ -515,11 +509,17 @@
     }
 
     // ============================================================================
+    // PRELOAD DATA (starts immediately when script loads)
+    // ============================================================================
+    const globalCSVLoader = new CSVLoader(CONFIG.images.csvPath);
+    const csvLoadPromise = globalCSVLoader.load(); // Start loading immediately
+
+    // ============================================================================
     // MAIN P5 SKETCH
     // ============================================================================
     const sketch = (p) => {
         let t0 = 0, playing = false;
-        let renderer, animManager, imageLoader, csvLoader;
+        let renderer, animManager, imageLoader;
         let initialized = false;
         let katexLabel;
 
@@ -559,35 +559,42 @@
             canvas.style('margin', '0 auto');
             parent.elt.insertBefore(canvas.elt, parent.elt.firstChild);
             p.pixelDensity(CONFIG.visual.pixelDensity);
+            p.frameRate(30); // Limit frame rate for smoother performance
 
             // Initialize components
             renderer = new Renderer(p);
-            csvLoader = new CSVLoader(CONFIG.images.csvPath);
 
-            // Load CSV data
-            const loaded = await csvLoader.load();
-            if (!loaded) {
-                console.error('Failed to load CSV data');
-                return;
-            }
+            // Wait for CSV data (already loading in background)
+            await csvLoadPromise;
 
-            animManager = new AnimationManager(csvLoader);
+            animManager = new AnimationManager(globalCSVLoader);
             imageLoader = new ImageLoader(p);
 
-            // Preload first few frames
-            imageLoader.preloadFrames(0);
+            // Aggressively preload first frames for instant start
+            for (let i = 0; i < 15; i++) {
+                imageLoader.loadFrame(i);
+            }
 
             // Create KaTeX label for reward weights
             katexLabel = createKatexLabel(CONFIG.formulas.rewardsLabel);
 
             initialized = true;
 
+            // Continue preloading more frames in background (non-blocking)
+            setTimeout(() => {
+                for (let i = 15; i < 50; i++) {
+                    imageLoader.loadFrame(i);
+                }
+            }, 100);
+
             // Intersection observer
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting && entry.intersectionRatio >= CONFIG.animation.intersectionThreshold) {
-                        t0 = p.millis();
-                        playing = true;
+                        if (!playing) {
+                            t0 = p.millis();
+                            playing = true;
+                        }
                     } else {
                         playing = false;
                     }
@@ -595,6 +602,14 @@
             }, { threshold: CONFIG.animation.intersectionThreshold });
 
             observer.observe(canvas.elt);
+
+            // Start immediately if already in viewport
+            const rect = canvas.elt.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            if (isVisible) {
+                t0 = p.millis();
+                playing = true;
+            }
 
             // Click to toggle
             parent.elt.addEventListener('click', () => {
