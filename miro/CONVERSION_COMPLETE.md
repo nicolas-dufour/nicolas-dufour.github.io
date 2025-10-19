@@ -29,7 +29,7 @@ All references to PNG files have been automatically updated in the following fil
 
 **Before:**
 ```javascript
-input: 'assets/images/inference_pipeline_animation/previous_aesthetics.png',
+input: 'assets/images/inference_pipeline_animation/previous_aesthetics.jpg',
 ```
 
 **After:**
@@ -58,7 +58,7 @@ python3 convert_png_to_jpg.py --remove-png            # Actually remove PNG file
 Or manually:
 ```bash
 cd blog
-find assets/images -name "*.png" -type f -delete
+find assets/images -name "*.jpg" -type f -delete
 ```
 
 This will free up the full 16.6 MB of space.
@@ -80,7 +80,7 @@ If you want to keep the original PNG files as a backup:
 2. **If everything works**, remove PNGs:
    ```bash
    cd blog
-   find assets/images -name "*.png" -type f -delete
+   find assets/images -name "*.jpg" -type f -delete
    ```
 
 ## Verification Checklist

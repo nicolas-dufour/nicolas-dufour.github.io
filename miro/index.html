@@ -985,6 +985,55 @@
             <button class="ipr-carousel-btn next" aria-label="Next prompt">›</button>
           </div>
         </div>
+
+        <div id="pairwise-tradeoff"
+          style="margin-top: 4rem; padding-top: 3rem; border-top: 2px solid var(--border-color, #e5e7eb);">
+          <h3>Pairwise reward exploration</h3>
+          <div class="callout info">
+            <strong>Interactive pairwise control</strong>: Select any two reward dimensions and smoothly interpolate
+            between them to see how the model responds to different reward combinations.
+          </div>
+          <p class="explainer">Use the dropdowns below to select two rewards, then adjust the slider to interpolate
+            between them. The interface displays one of 32 generated images spanning the full spectrum from reward A
+            (left, 0.0) to reward B (right, 1.0), allowing you to explore how the model navigates different quality
+            trade-offs.</p>
+
+          <div class="pairwise-dropdown-controls">
+            <div class="pairwise-dropdown-group">
+              <label for="rewardA">Reward A</label>
+              <select id="rewardA" class="styled-select"></select>
+            </div>
+            <div class="pairwise-dropdown-group">
+              <label for="rewardB">Reward B</label>
+              <select id="rewardB" class="styled-select"></select>
+            </div>
+          </div>
+
+          <div class="pairwise-content-container">
+            <div class="pairwise-image-wrapper">
+              <div class="pairwise-image-glow"></div>
+              <div class="pairwise-image-container">
+                <img id="pairwiseImage" alt="Pairwise reward tradeoff" />
+                <div class="pairwise-loading">Loading...</div>
+              </div>
+            </div>
+            <div class="pairwise-radar-container">
+              <div id="pairwiseRadar" class="pairwise-radar-plot"></div>
+            </div>
+          </div>
+
+          <div class="pairwise-slider-section">
+            <div class="pairwise-slider-container">
+              <span id="rewardALabel" class="pairwise-slider-label left">Aesthetic Score</span>
+              <input id="pairwiseSlider" type="range" min="0" max="31" step="1" value="15" class="pairwise-slider" />
+              <span id="rewardBLabel" class="pairwise-slider-label right">CLIP Score</span>
+            </div>
+
+            <div class="pairwise-value-display">
+              Interpolation: <span id="sliderValue">0.500</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1322,7 +1371,7 @@
             <span class="cta-icon">⚖️</span>
             <span>Weights</span>
           </a>
-          <a href="#intro" class="cta-button secondary">
+          <a href="#" class="cta-button secondary">
             <span class="cta-icon">🔝</span>
             <span>Back to Top</span>
           </a>
@@ -1429,7 +1478,32 @@
   <script defer src="assets/js/miro_animation.js"></script>
   <script defer src="assets/js/inference_animation.js"></script>
   <script defer src="assets/js/reward_tradeoff_animation.js"></script>
-  <script src="assets/js/app.js"></script>
+
+  <!-- Utility modules (no dependencies) -->
+  <script src="assets/js/utils/metrics.js"></script>
+  <script src="assets/js/utils/clipboard.js"></script>
+
+  <!-- Plot modules (may use utils) -->
+  <script src="assets/js/plots/training-curves.js"></script>
+  <script src="assets/js/plots/test-time-scaling.js"></script>
+  <script src="assets/js/plots/radar-plots.js"></script>
+  <script src="assets/js/plots/synthetic-plots.js"></script>
+  <script src="assets/js/plots/sota-comparison.js"></script>
+  <script src="assets/js/plots/weight-plots.js"></script>
+
+  <!-- UI modules (may use plots/utils) -->
+  <script src="assets/js/ui/navigation.js"></script>
+  <script src="assets/js/ui/table-of-contents.js"></script>
+  <script src="assets/js/ui/image-carousels.js"></script>
+  <script src="assets/js/ui/progression-viewer.js"></script>
+  <script src="assets/js/ui/pairwise-viewer.js"></script>
+  <script src="assets/js/ui/theme-manager.js"></script>
+
+  <!-- Animation triggers (depends on plots) -->
+  <script src="assets/js/utils/animation-triggers.js"></script>
+
+  <!-- Main orchestration (must be last) -->
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
