@@ -53,10 +53,7 @@
           progressIndicator.classList.remove('active');
           progressIndicator.style.transform = 'scaleX(0)';
         }, 200);
-        // Avoid browser auto-focus jumping on Firefox by blurring active element
-        if (document.activeElement && typeof document.activeElement.blur === 'function') {
-          document.activeElement.blur();
-        }
+
         // Trigger highlight animation after scroll completes
         targetElement.classList.add('toc-highlight');
         setTimeout(() => {

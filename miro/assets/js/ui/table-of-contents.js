@@ -28,7 +28,6 @@
       // Add click animation
       a.addEventListener('click', function (e) {
         e.preventDefault();
-        if (typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
         const targetId = this.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
 
@@ -79,7 +78,6 @@
       // Add click handler with smooth scroll animation
       a.addEventListener('click', (e) => {
         e.preventDefault();
-        if (typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
         const targetId = e.currentTarget.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
 
@@ -159,7 +157,6 @@
       // Add click handler with animation
       a.addEventListener('click', function (e) {
         e.preventDefault();
-        if (typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
         const targetId = this.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
 

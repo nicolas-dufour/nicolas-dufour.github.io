@@ -3056,7 +3056,7 @@ sup a:hover {
 }
 
 /* Show mobile navbar when sidebar TOC is hidden */
-@media (max-width: 1024px) {
+@media (max-width: 1600px) {
     .mobile-navbar {
         display: block;
     }
@@ -3096,7 +3096,7 @@ sup a:hover {
     display: flex;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1600px) {
     .desktop-only {
         display: none !important;
     }

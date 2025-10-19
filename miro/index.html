@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 </head>
 
-<body id="top">
+<body>
   <!-- Desktop theme toggle button -->
   <button id="themeToggle" class="theme-toggle-btn desktop-only" aria-label="Toggle dark/light mode">
     <span class="theme-icon">🌙</span>
@@ -298,15 +298,9 @@
 
         <p>In contrast, we consider a set of \(N\) reward models \(\mathcal{R} = \{r_1, r_2, \ldots, r_N\}\) where
           each \(r_j: \mathbb{R}^{H \times W \times 3} \times \mathcal{T} \rightarrow \mathbb{R}\) evaluates different
-          aspects of image quality. For each training sample \((x^{(i)}, c^{(i)})\), we compute the reward scores:</p>
-
-        <div class="equation-inline">\[ \mathbf{s}^{(i)} = [r_1(x^{(i)}, c^{(i)}), r_2(x^{(i)}, c^{(i)}), \ldots,
-          r_N(x^{(i)}, c^{(i)})] \]
-        </div>
-
-        <p>Our goal is to learn a conditional generative model
+          aspects of image quality. Our goal is to learn a conditional generative model
           \(p_\theta(x|c, \mathbf{s})\)
-          where \(\mathbf{s} = [s_1, s_2, \ldots, s_N]\) represents the reward score vector, enabling
+          where \(\mathbf{s} = [s_1, s_2, \ldots, s_N]\) represents the desired reward levels, enabling
           controllable
           generation across multiple quality dimensions.</p>
       </div>
@@ -349,19 +343,9 @@
           for training continuous normalizing flows that
           has shown excellent performance in high-resolution image generation.</p>
 
-        <p><strong>Flow Matching Background.</strong> Flow matching learns a velocity field that transforms samples from
-          a simple noise distribution \(\mathcal{N}(0, I)\) to the data distribution. We parameterize this velocity
-          field
-          as a neural network \(v_\theta\) (the denoising model) with learnable parameters \(\theta\). The network takes
-          as
-          input a noisy sample \(x_t\), text condition \(c\), and in MIRO's case, reward targets \(\hat{\mathbf{s}}\),
-          and
-          outputs the velocity (direction) needed to move toward clean, high-quality samples.</p>
-
         <p><strong>Training Objective.</strong> Following the standard flow matching formulation, we sample noise
           \(\epsilon \sim \mathcal{N}(0, I)\) and time \(t \sim \mathcal{U}(0, 1)\), then compute the noisy sample
-          \(x_t = (1-t)x + t\epsilon\) which interpolates between the clean image \(x\) (at \(t=0\)) and pure noise
-          (at \(t=1\)). The multi-reward flow matching loss becomes:</p>
+          \(x_t = (1-t)x + t\epsilon\). The multi-reward flow matching loss becomes:</p>
 
         <div class="equations" aria-label="Equation (scroll horizontally on small screens)">
           <div>\[ \mathcal{L} = \mathbb{E}_{(x,c,\hat{\mathbf{s}})
@@ -371,10 +355,8 @@
             (\epsilon-x)\right\|_2^2\right] \]</div>
         </div>
 
-        <p>This objective trains the velocity network \(v_\theta\) to predict the difference between the noise and the
-          clean image (the optimal direction to "flow" toward the data), conditioned on both the text prompt \(c\) and
-          the
-          desired quality levels \(\hat{\mathbf{s}}\). The model learns to associate different reward level combinations
+        <p>This objective trains the model to predict the difference between the noise and the clean image, conditioned
+          on both the text prompt and the desired quality levels. The model learns to associate different reward levels
           with corresponding visual characteristics, enabling reward-aware generation.</p>
 
         <p><strong>Training Dynamics.</strong> During training, the model observes the full spectrum of quality levels
@@ -1403,7 +1385,7 @@
             <span class="cta-icon">⚖️</span>
             <span>Weights</span>
           </a>
-          <a href="#top" class="cta-button secondary back-to-top">
+          <a href="#" class="cta-button secondary">
             <span class="cta-icon">🔝</span>
             <span>Back to Top</span>
           </a>

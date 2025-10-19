@@ -2,11 +2,6 @@
     'use strict';
 
     function init() {
-        // Prevent Firefox from auto-restoring scroll position which can conflict with our first click
-        if ('scrollRestoration' in history) {
-            try { history.scrollRestoration = 'manual'; } catch (_) { }
-        }
-
         // Load theme first
         if (window.MIRO.loadTheme) {
             window.MIRO.loadTheme();
@@ -67,15 +62,6 @@
         // Enable smooth scrolling (kept local for simplicity)
         enableSmoothScroll();
 
-        // After DOM ready, if there is a hash, align to it using our smooth logic once
-        if (location.hash && location.hash.length > 1) {
-            const el = document.querySelector(location.hash);
-            if (el && window.MIRO && typeof window.MIRO.smoothScrollTo === 'function') {
-                // Delay slightly to let layout settle
-                setTimeout(() => window.MIRO.smoothScrollTo(el, 0), 0);
-            }
-        }
-
         // Enhance interactivity (theme toggle, etc.)
         if (window.MIRO.enhanceInteractivity) {
             window.MIRO.enhanceInteractivity();
@@ -98,46 +84,17 @@
     }
 
     function enableSmoothScroll() {
-        // Use a single delegated, capturing listener so we also catch anchors created dynamically
-        document.addEventListener('click', (e) => {
-            const a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
-            if (!a) return;
-
-            const hash = a.getAttribute('href') || '';
-
-            // Handle placeholder links ("#"): prevent unexpected jumps to top
-            if (hash === '#') {
-                e.preventDefault();
-                const text = (a.textContent || '').trim();
-                const isBackToTop = /back to top/i.test(text) || a.classList.contains('back-to-top');
-                if (isBackToTop && typeof window.scrollTo === 'function') {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const hash = a.getAttribute('href');
+                if (hash.length > 1) {
+                    e.preventDefault();
+                    const el = document.querySelector(hash);
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    history.pushState(null, '', hash);
                 }
-                return;
-            }
-
-            // Only handle in-page anchors with an id target
-            if (hash.length > 1) {
-                // Skip TOC links which have their own custom smooth scroll handlers
-                if (a.closest('#tocList, #mobileTocList, .sidebar-toc')) return;
-
-                const target = document.querySelector(hash);
-                if (!target) return;
-
-                e.preventDefault();
-                if (typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
-
-                if (window.MIRO && typeof window.MIRO.smoothScrollTo === 'function') {
-                    window.MIRO.smoothScrollTo(target, 800);
-                } else if (typeof target.scrollIntoView === 'function') {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-
-                if (typeof history.replaceState === 'function') {
-                    history.replaceState(null, '', hash);
-                }
-            }
-        }, { capture: true, passive: false });
+            });
+        });
     }
 
     // Initialize when DOM is ready
