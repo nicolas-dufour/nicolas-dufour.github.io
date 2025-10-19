@@ -179,7 +179,6 @@
     if (!mainTOCSection) return;
 
     let ticking = false;
-<<<<<<< HEAD
     let isVisible = false;
     let currentActiveId = null;
 
@@ -237,32 +236,10 @@
       for (let i = sectionPositions.length - 1; i >= 0; i--) {
         if (sectionPositions[i].top <= scrollPosition) {
           activeId = sectionPositions[i].id;
-=======
-
-    function updateSidebarTOC() {
-      const mainTOCRect = mainTOCSection.getBoundingClientRect();
-      const shouldShow = mainTOCRect.bottom < 0;
-
-      if (shouldShow) {
-        sidebarTOC.classList.add('visible');
-      } else {
-        sidebarTOC.classList.remove('visible');
-      }
-
-      // Update active section
-      let activeSection = null;
-      const scrollPosition = window.scrollY + 150; // Offset for header
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section.offsetTop <= scrollPosition) {
-          activeSection = section;
->>>>>>> refs/remotes/origin/master
           break;
         }
       }
 
-<<<<<<< HEAD
       // Only update if active section changed
       if (activeId !== currentActiveId) {
         currentActiveId = activeId;
@@ -276,18 +253,6 @@
           }
         });
       }
-=======
-      // Update active state in sidebar
-      const links = sidebarTOC.querySelectorAll('a');
-      links.forEach(link => {
-        const sectionId = link.getAttribute('data-section-id');
-        if (activeSection && sectionId === activeSection.id) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
->>>>>>> refs/remotes/origin/master
 
       ticking = false;
     }
@@ -297,11 +262,7 @@
         window.requestAnimationFrame(updateSidebarTOC);
         ticking = true;
       }
-<<<<<<< HEAD
     }, { passive: true });
-=======
-    });
->>>>>>> refs/remotes/origin/master
 
     // Initial update
     updateSidebarTOC();

@@ -4,7 +4,6 @@
   function setupTrainingAnimation() {
     // Create an Intersection Observer to trigger animation on scroll
     // Observe individual plot containers instead of entire sections for better mobile trigger
-<<<<<<< HEAD
 
     // Track which elements have been animated to prevent constant re-animation
     const animatedElements = new Set();
@@ -19,12 +18,6 @@
         if (entry.isIntersecting && !animatedElements.has(entry.target)) {
           // Mark as animated to prevent re-triggering
           animatedElements.add(entry.target);
-=======
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && entry.target.dataset.animated !== 'true') {
-          // Mark as animated to prevent re-triggering while visible
->>>>>>> refs/remotes/origin/master
           entry.target.dataset.animated = 'true';
 
           // Trigger animation based on container type
@@ -38,24 +31,12 @@
           } else if (container._animateBarplot) {
             container._animateBarplot();
           }
-<<<<<<< HEAD
         }
         // Removed the reset logic that was causing continuous DOM mutations
       });
     }, {
       threshold: [0.2], // Use array with single value to reduce callback frequency
       rootMargin: '50px' // Add margin to reduce edge-case triggers
-=======
-        } else if (!entry.isIntersecting && entry.target.dataset.animated === 'true') {
-          // Reset animation flag when element leaves viewport
-          // This allows animations to replay when scrolling back
-          delete entry.target.dataset.animated;
-        }
-      });
-    }, {
-      threshold: 0.2, // Trigger when 20% of the plot is visible
-      rootMargin: '0px'
->>>>>>> refs/remotes/origin/master
     });
 
     // Helper function to check if element is in viewport and trigger animation

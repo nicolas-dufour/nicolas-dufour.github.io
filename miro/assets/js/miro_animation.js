@@ -1272,15 +1272,10 @@
                     if (entry.isIntersecting && entry.intersectionRatio >= CONFIG.animation.intersectionThreshold) {
                         t0 = p.millis();
                         playing = true;
-<<<<<<< HEAD
                         p.loop(); // Resume draw loop
                     } else {
                         playing = false;
                         p.noLoop(); // Stop draw loop to prevent jitter
-=======
-                    } else {
-                        playing = false;
->>>>>>> refs/remotes/origin/master
                     }
                 });
             }, { threshold: CONFIG.animation.intersectionThreshold });
@@ -1292,7 +1287,6 @@
                 playing = !playing;
                 if (playing) {
                     t0 = p.millis() - (p.millis() - t0) % stageManager.totalMs;
-<<<<<<< HEAD
                     p.loop(); // Resume draw loop
                 } else {
                     p.noLoop(); // Stop draw loop to prevent jitter
@@ -1301,10 +1295,6 @@
 
             // Start with draw loop stopped
             p.noLoop();
-=======
-                }
-            });
->>>>>>> refs/remotes/origin/master
         };
 
         p.windowResized = () => {
