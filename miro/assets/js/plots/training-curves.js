@@ -246,7 +246,7 @@
             // Add speed-up arrows based on metric (initially hidden)
             const speedups = {
                 'aesthetic': { text: '19.1× faster', targetStep: 26171, baselineFinal: 5.190157, yPos: 5.8 },
-                'imagereward': { text: '3.7× faster', targetStep: 133658, baselineFinal: 0.540761, yPos: -0.1 },
+                'imagereward': { text: '3.7× faster', targetStep: 143698, baselineFinal: 0.540761, yPos: -0.1 },
                 'pick': { text: '3.5× faster', targetStep: 141439, baselineFinal: 0.211812, yPos: 0.205 },
                 'hpsv2': { text: '6.3× faster', targetStep: 79400, baselineFinal: 0.247693, yPos: 0.26 }
             };
@@ -299,6 +299,18 @@
                 const animationDuration = 2000; // 2 seconds for line drawing
                 const arrowAnimationDelay = animationDuration + 400; // Start arrow after curves are done
                 const arrowAnimationDuration = 800; // Arrow grows over 800ms
+
+                // Cancel any ongoing transitions first
+                baselinePath.interrupt();
+                baselinePoints.interrupt();
+                miroPath.interrupt();
+                miroPoints.interrupt();
+
+                if (arrowElements) {
+                    arrowElements.line.interrupt();
+                    arrowElements.arrowhead.interrupt();
+                    arrowElements.text.interrupt();
+                }
 
                 // Reset to initial state
                 baselinePath.attr('stroke-dashoffset', baselineLength);

@@ -2,6 +2,14 @@
   'use strict';
 
   function loadPairwiseTradeoff() {
+    // Prompt configuration: display names mapped to folder names
+    const prompts = [
+      { display: '⛵ Galleon in storm', folder: 'galleon_in_storm' },
+      { display: '🤖 Rusty Robot', folder: 'rusty_robot' },
+      { display: '🚀 Jungle Astronaut', folder: 'astronaut_jungle' },
+      { display: '⚔️ Old Warrior Chief', folder: 'old_warrior_chief' }
+    ];
+
     // Reward configuration: display names mapped to folder names and colors (from radar_plot.tex)
     const rewards = [
       { display: 'Aesthetic Score', folder: 'aesthetic_score', color: '#69c869', csvName: 'Aesthetic Score' },
@@ -18,6 +26,7 @@
     let dataRanges = null;
 
     // Get DOM elements
+    const promptSelect = document.getElementById('promptSelect');
     const rewardASelect = document.getElementById('rewardA');
     const rewardBSelect = document.getElementById('rewardB');
     const slider = document.getElementById('pairwiseSlider');
@@ -30,7 +39,7 @@
     const dropdownGroups = document.querySelectorAll('.pairwise-dropdown-group');
     const radarContainer = document.getElementById('pairwiseRadar');
 
-    if (!rewardASelect || !rewardBSelect || !slider || !sliderValue || !image || !rewardALabel || !rewardBLabel || !radarContainer || !imageGlow) {
+    if (!promptSelect || !rewardASelect || !rewardBSelect || !slider || !sliderValue || !image || !rewardALabel || !rewardBLabel || !radarContainer || !imageGlow) {
       return;
     }
 
@@ -40,7 +49,7 @@
     let autoPlayDirection = 1; // 1 for forward, -1 for backward
 
     // Create custom dropdown
-    function createCustomDropdown(selectElement, rewards) {
+    function createCustomDropdown(selectElement, rewards, isPromptDropdown = false) {
       const parent = selectElement.parentElement;
 
       // Remove the 'for' attribute from label to prevent default behavior
@@ -58,7 +67,7 @@
 
       // Create custom dropdown container
       const customDropdown = document.createElement('div');
-      customDropdown.className = 'custom-dropdown';
+      customDropdown.className = isPromptDropdown ? 'custom-dropdown prompt-dropdown' : 'custom-dropdown';
 
       // Create selected display
       const selectedDisplay = document.createElement('div');
@@ -177,7 +186,8 @@
       return { selectOption, customDropdown, disableOption, enableOption, enableAllOptions };
     }
 
-    // Create custom dropdowns for both selects
+    // Create custom dropdowns for prompt and both reward selects
+    const customDropdownPrompt = createCustomDropdown(promptSelect, prompts, true);
     const customDropdownA = createCustomDropdown(rewardASelect, rewards);
     const customDropdownB = createCustomDropdown(rewardBSelect, rewards);
 
@@ -214,11 +224,11 @@
         swapRewards();
       });
 
-      // Insert between the two dropdown groups
-      const firstDropdownGroup = dropdownGroups[0];
-      const secondDropdownGroup = dropdownGroups[1];
-      if (firstDropdownGroup && secondDropdownGroup && firstDropdownGroup.parentNode) {
-        firstDropdownGroup.parentNode.insertBefore(swapButton, secondDropdownGroup);
+      // Insert between Reward A (index 1) and Reward B (index 2) dropdown groups
+      const rewardADropdownGroup = dropdownGroups[1];
+      const rewardBDropdownGroup = dropdownGroups[2];
+      if (rewardADropdownGroup && rewardBDropdownGroup && rewardADropdownGroup.parentNode) {
+        rewardADropdownGroup.parentNode.insertBefore(swapButton, rewardBDropdownGroup);
       }
     }
 
@@ -302,8 +312,9 @@
       }
     }
 
-    // Set defaults: Aesthetic Score (A) and CLIP Score (B)
-    customDropdownA.selectOption('aesthetic_score', 'Aesthetic Score', '#69c869');
+    // Set defaults: Old Galleon (prompt), Aesthetic Score (A) and CLIP Score (B)
+    customDropdownPrompt.selectOption('galleon_in_storm', '⛵ Galleon in storm', null);
+    customDropdownA.selectOption('image_reward_score', 'ImageReward', '#69c869');
     customDropdownB.selectOption('clip_score', 'CLIP Score', '#50d2c8');
 
     // Create swap and autoplay buttons
@@ -412,10 +423,10 @@
       return { folder: useFolder, frame: frameIndex };
     }
 
-    // Load and parse CSV data
-    async function loadCSVData() {
+    // Load and parse CSV data for a specific prompt
+    async function loadCSVData(prompt) {
       try {
-        const response = await fetch('assets/images/pairwise_tradeoffs/all_tradeoff_scores.csv');
+        const response = await fetch(`assets/images/pairwise_tradeoffs/${prompt}/all_tradeoff_scores.csv`);
         const text = await response.text();
         const lines = text.trim().split('\n');
         const headers = lines[0].split(',').map(h => h.trim());
@@ -679,6 +690,7 @@
 
     // Update image based on current selections
     function updateImage() {
+      const prompt = promptSelect.value;
       const rewardA = rewardASelect.value;
       const rewardB = rewardBSelect.value;
       const sliderPosition = parseInt(slider.value, 10);
@@ -696,11 +708,12 @@
       rewardBLabel.style.color = colorB;
 
       // Update dropdown label and custom dropdown color indicators
-      if (dropdownGroups.length >= 2) {
-        const labelA = dropdownGroups[0].querySelector('label');
-        const labelB = dropdownGroups[1].querySelector('label');
-        const customDropA = dropdownGroups[0].querySelector('.custom-dropdown-selected');
-        const customDropB = dropdownGroups[1].querySelector('.custom-dropdown-selected');
+      // Note: dropdownGroups now includes the prompt dropdown (index 0), reward A (index 1), reward B (index 2)
+      if (dropdownGroups.length >= 3) {
+        const labelA = dropdownGroups[1].querySelector('label');
+        const labelB = dropdownGroups[2].querySelector('label');
+        const customDropA = dropdownGroups[1].querySelector('.custom-dropdown-selected');
+        const customDropB = dropdownGroups[2].querySelector('.custom-dropdown-selected');
 
         if (labelA) {
           labelA.style.setProperty('--indicator-color', colorA);
@@ -743,7 +756,7 @@
 
       // Format frame number with leading zeros (frame_0000.jpg)
       const frameStr = String(frame).padStart(4, '0');
-      const imagePath = `assets/images/pairwise_tradeoffs/${folder}/frame_${frameStr}.jpg`;
+      const imagePath = `assets/images/pairwise_tradeoffs/${prompt}/${folder}/frame_${frameStr}.jpg`;
 
       // Show loading state
       imageContainer.classList.add('loading');
@@ -768,6 +781,24 @@
     }
 
     // Event listeners
+    promptSelect.addEventListener('change', () => {
+      // Reload CSV data and update image when prompt changes
+      const prompt = promptSelect.value;
+      loadCSVData(prompt).then(() => {
+        updateImage();
+        // Restart autoplay when prompt changes
+        const autoPlayButton = document.querySelector('.pairwise-autoplay-button');
+        if (autoPlayButton) {
+          if (!isAutoPlaying) {
+            toggleAutoPlay(autoPlayButton);
+          } else {
+            // Reset to start if already playing
+            slider.value = 0;
+            autoPlayDirection = 1;
+          }
+        }
+      });
+    });
     rewardASelect.addEventListener('change', () => {
       updateDisabledOptions();
       updateImage();
@@ -813,7 +844,8 @@
     });
 
     // Initialize: load CSV data then update display
-    loadCSVData().then(() => {
+    const initialPrompt = promptSelect.value || 'old_galleon';
+    loadCSVData(initialPrompt).then(() => {
       updateImage();
       // Auto-start the animation
       const autoPlayButton = document.querySelector('.pairwise-autoplay-button');

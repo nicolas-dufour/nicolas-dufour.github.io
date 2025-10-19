@@ -318,6 +318,18 @@
                 const arrowAnimationDelay = animationDuration + 400; // Start arrow after curves are done
                 const arrowAnimationDuration = 800; // Arrow grows over 800ms
 
+                // Cancel any ongoing transitions first
+                baselinePath.interrupt();
+                baselinePoints.forEach(point => point.interrupt());
+                miroPath.interrupt();
+                miroPoints.forEach(point => point.interrupt());
+
+                if (arrowElements) {
+                    arrowElements.line.interrupt();
+                    arrowElements.arrowhead.interrupt();
+                    arrowElements.text.interrupt();
+                }
+
                 // Reset to initial state
                 baselinePath.attr('stroke-dashoffset', baselineLength);
                 baselinePoints.forEach(point => point.attr('r', 0));

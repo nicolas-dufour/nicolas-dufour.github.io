@@ -5,19 +5,12 @@
     // Create an Intersection Observer to trigger animation on scroll
     // Observe individual plot containers instead of entire sections for better mobile trigger
 
-    // Track which elements have been animated to prevent constant re-animation
-    const animatedElements = new Set();
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        // Only trigger animation once when element enters viewport
-        if (entry.isIntersecting && !animatedElements.has(entry.target)) {
-          // Mark as animated to prevent re-triggering
-          animatedElements.add(entry.target);
-          entry.target.dataset.animated = 'true';
+        const container = entry.target;
 
-          // Trigger animation based on container type
-          const container = entry.target;
+        if (entry.isIntersecting) {
+          // Trigger animation when element enters viewport
           if (container._animateTraining) {
             container._animateTraining();
           } else if (container._animateTTS) {
@@ -28,7 +21,6 @@
             container._animateBarplot();
           }
         }
-        // Don't reset animations when leaving viewport to prevent continuous DOM mutations
       });
     }, {
       threshold: 0.2, // Trigger when 20% of element is visible
@@ -37,7 +29,7 @@
 
     // Helper function to check if element is in viewport and trigger animation
     function checkAndTriggerAnimation(element) {
-      if (!element || element.dataset.animated === 'true') return;
+      if (!element) return;
 
       const rect = element.getBoundingClientRect();
       const windowHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -46,8 +38,6 @@
       const isVisible = rect.top < windowHeight * 0.8 && rect.bottom > windowHeight * 0.2;
 
       if (isVisible) {
-        element.dataset.animated = 'true';
-
         if (element._animateTraining) {
           element._animateTraining();
         } else if (element._animateTTS) {

@@ -44,14 +44,16 @@
       const svg = d3.select(container)
         .append('svg')
         .attr('width', '100%')
-        .attr('height', height);
+        .attr('height', height)
+        .style('overflow', 'visible');
 
       // Background
       svg.append('rect')
         .attr('width', '100%')
         .attr('height', '100%')
         .attr('fill', isLightMode ? '#ffffff' : '#1a1a1a')
-        .attr('opacity', isLightMode ? 1 : 0.3);
+        .attr('opacity', isLightMode ? 1 : 0.3)
+        .style('pointer-events', 'none');
 
       const g = svg.append('g')
         .attr('transform', `translate(${centerX},${centerY})`);
@@ -189,9 +191,9 @@
       }
 
       // Create tooltip
-      const tooltip = d3.select(container)
+      const tooltip = d3.select('body')
         .append('div')
-        .style('position', 'absolute')
+        .style('position', 'fixed')
         .style('background', isLightMode ? 'rgba(255, 255, 255, 0.95)' : 'rgba(0, 0, 0, 0.9)')
         .style('border', '1px solid ' + (isLightMode ? '#ccc' : '#444'))
         .style('border-radius', '6px')
@@ -201,7 +203,7 @@
         .style('font-size', '13px')
         .style('color', textColor)
         .style('box-shadow', '0 2px 8px rgba(0,0,0,0.15)')
-        .style('z-index', '1000');
+        .style('z-index', '10000');
 
       // Draw each series
       const seriesOrder = ['Baseline', 'MIRO', 'Synth Baseline', 'Synth MIRO'];
@@ -222,11 +224,12 @@
           .attr('fill-opacity', 0.2)
           .attr('stroke', color)
           .attr('stroke-width', name.includes('MIRO') && !name.includes('Synth') ? 3 : 2.5)
-          .attr('transform', 'scale(0)');
+          .attr('transform', 'scale(0)')
+          .style('pointer-events', 'none');
 
         polygons.push(polygon);
 
-        // Draw points with tooltips - initialize with r=0
+        // Draw points with tooltips - initialize with nonzero radius for immediate hover
         const points = [];
         path.forEach((point, i) => {
           const axisName = axes[i];
@@ -235,8 +238,9 @@
           const circle = g.append('circle')
             .attr('cx', point[0])
             .attr('cy', point[1])
-            .attr('r', 0) // Start hidden
+            .attr('r', name.includes('MIRO') && !name.includes('Synth') ? 4 : 3.5)
             .attr('fill', color)
+            .style('pointer-events', 'all')
             .style('cursor', 'pointer')
             .on('mouseover', function (event) {
               d3.select(this).attr('r', name.includes('MIRO') && !name.includes('Synth') ? 6 : 5.5);
@@ -252,14 +256,14 @@
 
               tooltip
                 .style('opacity', 1)
-                .style('left', (event.pageX + 15) + 'px')
-                .style('top', (event.pageY - 15) + 'px')
+                .style('left', (event.clientX + 15) + 'px')
+                .style('top', (event.clientY - 15) + 'px')
                 .html(tooltipContent);
             })
             .on('mousemove', function (event) {
               tooltip
-                .style('left', (event.pageX + 15) + 'px')
-                .style('top', (event.pageY - 15) + 'px');
+                .style('left', (event.clientX + 15) + 'px')
+                .style('top', (event.clientY - 15) + 'px');
             })
             .on('mouseout', function () {
               d3.select(this).attr('r', name.includes('MIRO') && !name.includes('Synth') ? 4 : 3.5);
@@ -303,6 +307,13 @@
         const animationDuration = 1200; // 1.2 seconds for expansion
         const pointDelay = 200; // delay before points appear
         const staggerDelay = 150; // delay between each series
+
+        // Cancel any ongoing transitions first
+        polygons.forEach(polygon => polygon.interrupt());
+        seriesOrder.forEach(name => {
+          if (!pointsByName[name]) return;
+          pointsByName[name].forEach(point => point.interrupt());
+        });
 
         // Reset to initial state
         polygons.forEach(polygon => polygon.attr('transform', 'scale(0)'));

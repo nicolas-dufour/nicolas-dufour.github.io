@@ -230,6 +230,9 @@
 
       // Store animation function for replay capability
       container._animateBarplot = function () {
+        // Cancel any ongoing transitions first
+        bars.interrupt();
+
         // Reset x scale to original unsorted order
         xScale.domain(labels);
 

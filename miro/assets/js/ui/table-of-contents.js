@@ -28,6 +28,7 @@
       // Add click animation
       a.addEventListener('click', function (e) {
         e.preventDefault();
+        if (typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
         const targetId = this.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
 
@@ -41,7 +42,7 @@
           }, 300);
 
           // Custom smooth scroll with easing
-          smoothScrollTo(targetSection, 800);
+          window.MIRO.smoothScrollTo(targetSection, 800);
         }
       });
     });
@@ -78,12 +79,13 @@
       // Add click handler with smooth scroll animation
       a.addEventListener('click', (e) => {
         e.preventDefault();
+        if (typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
         const targetId = e.currentTarget.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
 
         if (targetSection) {
           // Custom smooth scroll with easing
-          smoothScrollTo(targetSection, 800);
+          window.MIRO.smoothScrollTo(targetSection, 800);
         }
 
         // Close dropdown after initiating scroll
@@ -157,12 +159,13 @@
       // Add click handler with animation
       a.addEventListener('click', function (e) {
         e.preventDefault();
+        if (typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
         const targetId = this.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
 
         if (targetSection) {
           // Custom smooth scroll with easing
-          smoothScrollTo(targetSection, 800);
+          window.MIRO.smoothScrollTo(targetSection, 800);
         }
       });
     });

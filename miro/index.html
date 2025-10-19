@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 </head>
 
-<body>
+<body id="top">
   <!-- Desktop theme toggle button -->
   <button id="themeToggle" class="theme-toggle-btn desktop-only" aria-label="Toggle dark/light mode">
     <span class="theme-icon">🌙</span>
@@ -187,12 +187,9 @@
             <div class="benefit-icon">⚡</div>
             <div class="benefit-content">
               <strong>Training Efficiency</strong>
-              <p>By incorporating reward alignment directly into pretraining, MIRO eliminates the need for separate
-                fine-tuning or reinforcement learning stages. Rich supervision at scale makes MIRO converge <strong>up
-                  to
-                  19× faster</strong> than regular pretraining, achieving faster convergence and higher quality samples
-                without
-                additional training phases.</p>
+              <p>MIRO eliminates separate fine-tuning or RL stages by integrating reward alignment directly into
+                pretraining. Rich supervision at scale enables convergence <strong>up to 19× faster</strong> than
+                regular pretraining.</p>
             </div>
           </div>
 
@@ -200,12 +197,8 @@
             <div class="benefit-icon">📊</div>
             <div class="benefit-content">
               <strong>Full-Spectrum Data Utilization</strong>
-              <p>Unlike post-hoc fine-tuning and RL pipelines that filter or discard "low-quality" data, MIRO retains
-                every
-                sample and trains across the entire reward spectrum. Each example contributes signal together with its
-                associated reward vector, reducing collapse toward narrow high-reward modes and yielding representations
-                that
-                generalize across all quality levels.</p>
+              <p>Unlike pipelines that discard "low-quality" data, MIRO trains across the entire reward spectrum.
+                This reduces mode collapse and yields representations that generalize across all quality levels.</p>
             </div>
           </div>
 
@@ -213,13 +206,9 @@
             <div class="benefit-icon">🎛️</div>
             <div class="benefit-content">
               <strong>Controllable Alignment</strong>
-              <p>At inference time, users can dial individual rewards up or down to achieve precise trade-offs between
-                quality
-                aspects. Multi-reward classifier-free guidance steers toward jointly high-reward regions, enabling
-                flexible
-                control—dial up aesthetics without collapsing alignment, or prioritize compositional correctness for
-                complex
-                prompts.</p>
+              <p>Users can dial individual rewards up or down at inference time to achieve precise trade-offs—boost
+                aesthetics without collapsing alignment, or prioritize compositional correctness for complex prompts.
+              </p>
             </div>
           </div>
 
@@ -227,13 +216,9 @@
             <div class="benefit-icon">🛡️</div>
             <div class="benefit-content">
               <strong>Reward Hacking Prevention</strong>
-              <p>Traditional single-objective optimization often leads to reward hacking<sup><a
-                    href="#ref-luo2025">[14]</a></sup>, where models exploit specific
-                metrics at the expense of overall quality. MIRO's multi-dimensional conditioning naturally prevents this
-                by
-                requiring the model to balance multiple objectives simultaneously, ensuring robust performance across
-                all
-                quality dimensions.</p>
+              <p>Single-objective optimization often leads to reward hacking<sup><a href="#ref-luo2025">[14]</a></sup>
+                where models exploit specific metrics. MIRO's multi-dimensional
+                conditioning naturally prevents this by balancing multiple objectives simultaneously.</p>
             </div>
           </div>
         </div>
@@ -313,9 +298,15 @@
 
         <p>In contrast, we consider a set of \(N\) reward models \(\mathcal{R} = \{r_1, r_2, \ldots, r_N\}\) where
           each \(r_j: \mathbb{R}^{H \times W \times 3} \times \mathcal{T} \rightarrow \mathbb{R}\) evaluates different
-          aspects of image quality. Our goal is to learn a conditional generative model
+          aspects of image quality. For each training sample \((x^{(i)}, c^{(i)})\), we compute the reward scores:</p>
+
+        <div class="equation-inline">\[ \mathbf{s}^{(i)} = [r_1(x^{(i)}, c^{(i)}), r_2(x^{(i)}, c^{(i)}), \ldots,
+          r_N(x^{(i)}, c^{(i)})] \]
+        </div>
+
+        <p>Our goal is to learn a conditional generative model
           \(p_\theta(x|c, \mathbf{s})\)
-          where \(\mathbf{s} = [s_1, s_2, \ldots, s_N]\) represents the desired reward levels, enabling
+          where \(\mathbf{s} = [s_1, s_2, \ldots, s_N]\) represents the reward score vector, enabling
           controllable
           generation across multiple quality dimensions.</p>
       </div>
@@ -358,9 +349,19 @@
           for training continuous normalizing flows that
           has shown excellent performance in high-resolution image generation.</p>
 
+        <p><strong>Flow Matching Background.</strong> Flow matching learns a velocity field that transforms samples from
+          a simple noise distribution \(\mathcal{N}(0, I)\) to the data distribution. We parameterize this velocity
+          field
+          as a neural network \(v_\theta\) (the denoising model) with learnable parameters \(\theta\). The network takes
+          as
+          input a noisy sample \(x_t\), text condition \(c\), and in MIRO's case, reward targets \(\hat{\mathbf{s}}\),
+          and
+          outputs the velocity (direction) needed to move toward clean, high-quality samples.</p>
+
         <p><strong>Training Objective.</strong> Following the standard flow matching formulation, we sample noise
           \(\epsilon \sim \mathcal{N}(0, I)\) and time \(t \sim \mathcal{U}(0, 1)\), then compute the noisy sample
-          \(x_t = (1-t)x + t\epsilon\). The multi-reward flow matching loss becomes:</p>
+          \(x_t = (1-t)x + t\epsilon\) which interpolates between the clean image \(x\) (at \(t=0\)) and pure noise
+          (at \(t=1\)). The multi-reward flow matching loss becomes:</p>
 
         <div class="equations" aria-label="Equation (scroll horizontally on small screens)">
           <div>\[ \mathcal{L} = \mathbb{E}_{(x,c,\hat{\mathbf{s}})
@@ -370,8 +371,10 @@
             (\epsilon-x)\right\|_2^2\right] \]</div>
         </div>
 
-        <p>This objective trains the model to predict the difference between the noise and the clean image, conditioned
-          on both the text prompt and the desired quality levels. The model learns to associate different reward levels
+        <p>This objective trains the velocity network \(v_\theta\) to predict the difference between the noise and the
+          clean image (the optimal direction to "flow" toward the data), conditioned on both the text prompt \(c\) and
+          the
+          desired quality levels \(\hat{\mathbf{s}}\). The model learns to associate different reward level combinations
           with corresponding visual characteristics, enabling reward-aware generation.</p>
 
         <p><strong>Training Dynamics.</strong> During training, the model observes the full spectrum of quality levels
@@ -683,17 +686,19 @@
       </ul>
 
       <div class="controls" style="margin-top: 2rem; margin-bottom: 1rem;">
-        <label class="control-label">Compare MIRO to:</label>
-        <select id="radarModel" class="styled-select">
-          <option selected>Baseline</option>
-          <option>ImageReward</option>
-          <option>HPSv2</option>
-          <option>Aesthetic</option>
-          <option>SciScore</option>
-          <option>CLIP</option>
-          <option>VQA</option>
-          <option>Pick</option>
-        </select>
+        <div class="radar-dropdown-group">
+          <label class="control-label">Compare MIRO to:</label>
+          <select id="radarModel" class="styled-select">
+            <option selected>Baseline</option>
+            <option>ImageReward</option>
+            <option>HPSv2</option>
+            <option>Aesthetic</option>
+            <option>SciScore</option>
+            <option>CLIP</option>
+            <option>VQA</option>
+            <option>Pick</option>
+          </select>
+        </div>
       </div>
       <p class="explainer" style="margin-bottom: 2rem;">Select a comparison model above to visualize how MIRO performs
         against different baselines. Notice how single-reward models excel on their target metric but often underperform
@@ -993,12 +998,39 @@
             <strong>Interactive pairwise control</strong>: Select any two reward dimensions and smoothly interpolate
             between them to see how the model responds to different reward combinations.
           </div>
-          <p class="explainer">Use the dropdowns below to select two rewards, then adjust the slider to interpolate
-            between them. The interface displays one of 32 generated images spanning the full spectrum from reward A
-            (left, 0.0) to reward B (right, 1.0), allowing you to explore how the model navigates different quality
-            trade-offs.</p>
+          <p class="explainer">We use multi-reward classifier-free guidance to isolate the trade-off between two
+            specific rewards while keeping all others anchored at their maximum values. Given two selected rewards A and
+            B, we set the positive target to maximum for all rewards: \(\hat{\mathbf{s}}^{+} = [B-1, \ldots, B-1]\).
+            For the negative target, we also set all rewards to maximum except for the two rewards being interpolated:
+          </p>
+
+          <div class="equations">
+            <div>\[
+              \hat{\mathbf{s}}^{-} = [B-1, \ldots, B-1] \quad \text{except:}
+              \]</div>
+            <div>\[
+              \hat{s}_A^{-} = t \cdot (B-1), \quad \hat{s}_B^{-} = (1-t) \cdot (B-1)
+              \]</div>
+          </div>
+
+          <p class="explainer">where \(t \in [0,1]\) is the interpolation parameter. When \(t=0\), the guidance
+            direction
+            \(v_\theta(x_t, c, \hat{\mathbf{s}}^{+}) - v_\theta(x_t, c, \hat{\mathbf{s}}^{-})\) emphasizes reward B
+            while suppressing reward A; when \(t=1\), the opposite occurs. This formulation cancels out the shared
+            quality
+            direction (since all other rewards remain constant in both \(\hat{\mathbf{s}}^{+}\) and
+            \(\hat{\mathbf{s}}^{-}\))
+            and isolates the specific visual characteristics associated with the trade-off between rewards A and B.</p>
+
+          <p class="explainer">Use the dropdowns below to select two rewards, then adjust the slider to vary \(t\) from
+            0 to 1. The interface displays one of 32 generated images spanning this spectrum, allowing you to explore
+            how the model navigates different quality trade-offs.</p>
 
           <div class="pairwise-dropdown-controls">
+            <div class="pairwise-dropdown-group">
+              <label for="promptSelect">Prompt</label>
+              <select id="promptSelect" class="styled-select"></select>
+            </div>
             <div class="pairwise-dropdown-group">
               <label for="rewardA">Reward A</label>
               <select id="rewardA" class="styled-select"></select>
@@ -1371,7 +1403,7 @@
             <span class="cta-icon">⚖️</span>
             <span>Weights</span>
           </a>
-          <a href="#" class="cta-button secondary">
+          <a href="#top" class="cta-button secondary back-to-top">
             <span class="cta-icon">🔝</span>
             <span>Back to Top</span>
           </a>
