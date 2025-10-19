@@ -129,6 +129,7 @@
     container.addEventListener('mouseenter', stopAutoSlide);
     container.addEventListener('mouseleave', startAutoSlide);
 
+<<<<<<< HEAD
     // Pause auto-slide when carousel is not visible to prevent jittering
     const iprObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -144,6 +145,8 @@
     });
     iprObserver.observe(container);
 
+=======
+>>>>>>> refs/remotes/origin/master
     // Touch support
     let touchStartX = 0;
     let touchEndX = 0;
@@ -460,6 +463,7 @@
     container.addEventListener('mouseenter', stopAutoSlide);
     container.addEventListener('mouseleave', startAutoSlide);
 
+<<<<<<< HEAD
     // Pause auto-slide when carousel is not visible to prevent jittering
     const qualObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -475,6 +479,8 @@
     });
     qualObserver.observe(container);
 
+=======
+>>>>>>> refs/remotes/origin/master
     // Handle window resize
     let resizeTimeout;
     window.addEventListener('resize', () => {

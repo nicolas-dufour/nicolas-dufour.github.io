@@ -83,6 +83,7 @@
       setStep(parseInt(e.target.value, 10));
     });
 
+<<<<<<< HEAD
     // Pause auto-play when not visible to prevent jittering
     const progressionSection = document.querySelector('.progression-layout');
     if (progressionSection) {
@@ -101,6 +102,8 @@
       progObserver.observe(progressionSection);
     }
 
+=======
+>>>>>>> refs/remotes/origin/master
     // Start auto-play
     setStep(0);
     startAutoPlay();

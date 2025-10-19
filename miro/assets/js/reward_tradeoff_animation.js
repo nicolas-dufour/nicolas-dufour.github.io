@@ -594,6 +594,7 @@
                         if (!playing) {
                             t0 = p.millis();
                             playing = true;
+<<<<<<< HEAD
                             p.loop(); // Resume draw loop
                         }
                     } else {
@@ -601,6 +602,11 @@
                             playing = false;
                             p.noLoop(); // Stop draw loop to prevent jitter
                         }
+=======
+                        }
+                    } else {
+                        playing = false;
+>>>>>>> refs/remotes/origin/master
                     }
                 });
             }, { threshold: CONFIG.animation.intersectionThreshold });
@@ -613,7 +619,10 @@
             if (isVisible) {
                 t0 = p.millis();
                 playing = true;
+<<<<<<< HEAD
                 p.loop(); // Resume draw loop
+=======
+>>>>>>> refs/remotes/origin/master
             }
 
             // Click to toggle
@@ -621,6 +630,7 @@
                 playing = !playing;
                 if (playing) {
                     t0 = p.millis() - (p.millis() - t0) % animManager.totalCycleDuration;
+<<<<<<< HEAD
                     p.loop(); // Resume draw loop
                 } else {
                     p.noLoop(); // Stop draw loop to prevent jitter
@@ -629,6 +639,10 @@
 
             // Start with draw loop stopped
             p.noLoop();
+=======
+                }
+            });
+>>>>>>> refs/remotes/origin/master
         };
 
         p.windowResized = () => {

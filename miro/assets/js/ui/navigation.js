@@ -37,6 +37,7 @@
       const progress = Math.min(timeElapsed / duration, 1);
       const ease = easeInOutCubic(progress);
 
+<<<<<<< HEAD
       // Update scroll position - round to prevent sub-pixel jittering
       window.scrollTo(0, Math.round(startPosition + distance * ease));
 
@@ -44,6 +45,13 @@
       if (Math.floor(progress * 100) % 5 === 0 || progress === 1) {
         progressIndicator.style.transform = `scaleX(${progress})`;
       }
+=======
+      // Update scroll position
+      window.scrollTo(0, startPosition + distance * ease);
+
+      // Update progress indicator
+      progressIndicator.style.transform = `scaleX(${progress})`;
+>>>>>>> refs/remotes/origin/master
 
       if (timeElapsed < duration) {
         requestAnimationFrame(animation);
