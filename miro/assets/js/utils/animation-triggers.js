@@ -10,11 +10,7 @@
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        // Only process if intersection ratio is stable (not in micro-transition)
-        if (entry.intersectionRatio < 0.15 || entry.intersectionRatio > 0.25) {
-          return;
-        }
-
+        // Only trigger animation once when element enters viewport
         if (entry.isIntersecting && !animatedElements.has(entry.target)) {
           // Mark as animated to prevent re-triggering
           animatedElements.add(entry.target);
@@ -32,11 +28,11 @@
             container._animateBarplot();
           }
         }
-        // Removed the reset logic that was causing continuous DOM mutations
+        // Don't reset animations when leaving viewport to prevent continuous DOM mutations
       });
     }, {
-      threshold: [0.2], // Use array with single value to reduce callback frequency
-      rootMargin: '50px' // Add margin to reduce edge-case triggers
+      threshold: 0.2, // Trigger when 20% of element is visible
+      rootMargin: '0px' // No extra margin needed
     });
 
     // Helper function to check if element is in viewport and trigger animation
