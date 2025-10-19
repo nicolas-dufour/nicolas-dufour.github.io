@@ -4,7 +4,115 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MIRO: Multi-Reward Conditioning Pretraining</title>
+
+  <!-- Primary Meta Tags -->
+  <title>MIRO: Multi-Reward Conditioning for Efficient Text-to-Image Generation</title>
+  <meta name="title" content="MIRO: Multi-Reward Conditioning for Efficient Text-to-Image Generation" />
+  <meta name="description"
+    content="MIRO integrates multiple reward signals directly into text-to-image pretraining, achieving 19× faster convergence, 370× less compute than FLUX, and state-of-the-art GenEval score of 75. Train once, align many rewards with controllable trade-offs." />
+  <meta name="keywords"
+    content="MIRO, text-to-image generation, multi-reward conditioning, AI alignment, diffusion models, flow matching, GenEval, aesthetic quality, reward models, efficient AI, image synthesis, machine learning" />
+  <meta name="author" content="Nicolas Dufour" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="category" content="Machine Learning, Computer Vision, Artificial Intelligence" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://nicolas-dufour.github.io/miro/" />
+
+  <!-- Sitemap Reference -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nicolas-dufour.github.io/miro/" />
+  <meta property="og:title" content="MIRO: Multi-Reward Conditioning for Efficient Text-to-Image Generation" />
+  <meta property="og:description"
+    content="Train once, align many rewards. MIRO achieves 19× faster convergence and 370× less compute than FLUX while reaching GenEval score of 75. Controllable trade-offs at inference time." />
+  <meta property="og:image" content="https://nicolas-dufour.github.io/miro/assets/images/miro_placeholder.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name"
+    content="MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2025-10-25T00:00:00Z" />
+  <meta property="article:author" content="Nicolas Dufour" />
+  <meta property="article:section" content="Machine Learning" />
+  <meta property="article:tag" content="Text-to-Image Generation" />
+  <meta property="article:tag" content="Multi-Reward Conditioning" />
+  <meta property="article:tag" content="AI Alignment" />
+  <meta property="article:tag" content="Diffusion Models" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://nicolas-dufour.github.io/miro/" />
+  <meta name="twitter:title" content="MIRO: Multi-Reward Conditioning for Efficient Text-to-Image Generation" />
+  <meta name="twitter:description"
+    content="Train once, align many rewards. MIRO achieves 19× faster convergence and 370× less compute than FLUX while reaching GenEval score of 75." />
+  <meta name="twitter:image" content="https://nicolas-dufour.github.io/miro/assets/images/miro_placeholder.jpg" />
+  <meta name="twitter:creator" content="@nico_dufour" />
+  <meta name="twitter:site" content="@nico_dufour" />
+
+  <!-- Additional Meta Tags for SEO -->
+  <meta name="theme-color" content="#ff9a5c" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Structured Data (Schema.org for Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "MIRO: Multi-Reward Conditioning for Efficient Text-to-Image Generation",
+    "description": "MIRO integrates multiple reward signals directly into text-to-image pretraining, achieving 19× faster convergence, 370× less compute than FLUX, and state-of-the-art GenEval score of 75.",
+    "image": "https://nicolas-dufour.github.io/miro/assets/images/miro_placeholder.jpg",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Nicolas Dufour",
+        "url": "https://nicolas-dufour.github.io/",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "LIGM, ENPC, IP Paris, CNRS, UGE"
+        }
+      },
+    ],
+    "datePublished": "2025-10-19",
+    "publisher": {
+      "@type": "Organization",
+      "name": "MIRO Research Team",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nicolas-dufour.github.io/miro/assets/images/miro_placeholder.jpg"
+      }
+    },
+    "keywords": "text-to-image generation, multi-reward conditioning, AI alignment, diffusion models, flow matching, GenEval, aesthetic quality, reward models",
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Machine Learning"
+      },
+      {
+        "@type": "Thing",
+        "name": "Computer Vision"
+      },
+      {
+        "@type": "Thing",
+        "name": "Artificial Intelligence"
+      }
+    ],
+    "citation": {
+      "@type": "CreativeWork",
+      "name": "MIRO: Multi-Reward Conditioned Pretraining for Text-to-Image Generation"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://nicolas-dufour.github.io/miro/"
+    }
+  }
+  </script>
+
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
@@ -13,6 +121,8 @@
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <link rel="preconnect" href="https://unpkg.com" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="dns-prefetch" href="https://d3js.org" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 </head>
 
 <body>
@@ -545,44 +655,52 @@
         <!-- Prompt 0 pair -->
         <div class="progression-pair">
           <figure class="progression-item">
-            <img id="prog_baseline_0" alt="Baseline progression 0" />
+            <img id="prog_baseline_0"
+              alt="Baseline model training progression showing image quality evolution over training steps" />
             <figcaption class="progression-label">Baseline</figcaption>
           </figure>
           <figure class="progression-item">
-            <img id="prog_miro_0" alt="MIRO progression 0" />
+            <img id="prog_miro_0"
+              alt="MIRO model training progression demonstrating faster convergence and better image quality" />
             <figcaption class="progression-label">MIRO</figcaption>
           </figure>
         </div>
         <!-- Prompt 1 pair -->
         <div class="progression-pair">
           <figure class="progression-item">
-            <img id="prog_baseline_1" alt="Baseline progression 1" />
+            <img id="prog_baseline_1"
+              alt="Baseline model training progression showing image quality evolution over training steps" />
             <figcaption class="progression-label">Baseline</figcaption>
           </figure>
           <figure class="progression-item">
-            <img id="prog_miro_1" alt="MIRO progression 1" />
+            <img id="prog_miro_1"
+              alt="MIRO model training progression demonstrating faster convergence and better image quality" />
             <figcaption class="progression-label">MIRO</figcaption>
           </figure>
         </div>
         <!-- Prompt 2 pair -->
         <div class="progression-pair">
           <figure class="progression-item">
-            <img id="prog_baseline_2" alt="Baseline progression 2" />
+            <img id="prog_baseline_2"
+              alt="Baseline model training progression showing image quality evolution over training steps" />
             <figcaption class="progression-label">Baseline</figcaption>
           </figure>
           <figure class="progression-item">
-            <img id="prog_miro_2" alt="MIRO progression 2" />
+            <img id="prog_miro_2"
+              alt="MIRO model training progression demonstrating faster convergence and better image quality" />
             <figcaption class="progression-label">MIRO</figcaption>
           </figure>
         </div>
         <!-- Prompt 3 pair -->
         <div class="progression-pair">
           <figure class="progression-item">
-            <img id="prog_baseline_3" alt="Baseline progression 3" />
+            <img id="prog_baseline_3"
+              alt="Baseline model training progression showing image quality evolution over training steps" />
             <figcaption class="progression-label">Baseline</figcaption>
           </figure>
           <figure class="progression-item">
-            <img id="prog_miro_3" alt="MIRO progression 3" />
+            <img id="prog_miro_3"
+              alt="MIRO model training progression demonstrating faster convergence and better image quality" />
             <figcaption class="progression-label">MIRO</figcaption>
           </figure>
         </div>
@@ -1027,7 +1145,8 @@
             <div class="pairwise-image-wrapper">
               <div class="pairwise-image-glow"></div>
               <div class="pairwise-image-container">
-                <img id="pairwiseImage" alt="Pairwise reward tradeoff" />
+                <img id="pairwiseImage"
+                  alt="MIRO generated image demonstrating controllable trade-offs between different reward model objectives" />
                 <div class="pairwise-loading">Loading...</div>
               </div>
             </div>

@@ -765,6 +765,12 @@
       const newImage = new Image();
       newImage.onload = () => {
         image.src = imagePath;
+        // Update alt text with descriptive information
+        const promptDisplay = prompts.find(p => p.folder === prompt)?.display || prompt;
+        const rewardADisplay = rewards.find(r => r.folder === rewardA)?.display || rewardA;
+        const rewardBDisplay = rewards.find(r => r.folder === rewardB)?.display || rewardB;
+        const interpolation = (sliderPosition / 31).toFixed(3);
+        image.alt = `MIRO generated image for prompt "${promptDisplay}" showing reward trade-off between ${rewardADisplay} and ${rewardBDisplay} at interpolation ${interpolation}`;
         imageContainer.classList.remove('loading');
       };
       newImage.onerror = () => {

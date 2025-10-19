@@ -35,8 +35,11 @@
       // Update all images
       prompts.forEach((prompt, idx) => {
         const promptId = prompt.id;
+        const promptLabel = prompt.label || `Prompt ${idx + 1}`;
         baselineImgs[idx].src = `assets/images/training_progression/${promptId}/${sub[0]}/img_${promptId.padStart(6, '0')}_${s}.jpg`;
+        baselineImgs[idx].alt = `Baseline model training progression for ${promptLabel} at ${s.toLocaleString()} steps`;
         miroImgs[idx].src = `assets/images/training_progression/${promptId}/${sub[1]}/img_${promptId.padStart(6, '0')}_${s}.jpg`;
+        miroImgs[idx].alt = `MIRO model training progression for ${promptLabel} at ${s.toLocaleString()} steps`;
       });
     }
 

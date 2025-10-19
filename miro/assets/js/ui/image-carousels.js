@@ -48,7 +48,7 @@
         const item = document.createElement('figure');
         item.className = 'ipr-item';
         const img = document.createElement('img');
-        img.alt = dir + ' - ' + names[i];
+        img.alt = `Generated image for prompt ${prompts[dir]} optimized for ${names[i]} reward model`;
         img.src = base + '/' + dir + '/' + file;
         const caption = document.createElement('figcaption');
         caption.textContent = names[i];
@@ -281,7 +281,7 @@
         if (imgIndex < totalImages) {
           const img = document.createElement('img');
           img.src = `assets/images/qualitative_images/image_${imgIndex}.jpg`;
-          img.alt = `qualitative ${imgIndex}`;
+          img.alt = `High-quality text-to-image generation example ${imgIndex + 1} from MIRO model showing aesthetic quality and text-image alignment`;
           column.appendChild(img);
         }
       }

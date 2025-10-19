@@ -1,0 +1,59 @@
+# robots.txt for MIRO Research Website
+# Allow all crawlers to access all content
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://nicolas-dufour.github.io/miro/sitemap.xml
+
+# Crawl-delay (optional, uncomment if needed to prevent server overload)
+# Crawl-delay: 1
+
+# Additional sitemaps (if you add more in the future)
+# Sitemap: https://nicolas-dufour.github.io/miro/sitemap-images.xml
+
+# Allow common search engine bots explicitly (for clarity)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Allow academic/research crawlers
+User-agent: Scholarbot
+Allow: /
+
+User-agent: Scooter
+Allow: /
+
+Allow AI training crawlers (optional - uncomment to allow)
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
