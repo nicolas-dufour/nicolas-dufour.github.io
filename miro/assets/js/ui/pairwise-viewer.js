@@ -301,7 +301,7 @@
 
         slider.value = currentValue;
         updateImage();
-      }, 150); // Update every 150ms for smoother, slower animation
+      }, 300); // Update every 300ms for smoother, slower animation
     }
 
     // Stop autoplay
@@ -634,7 +634,7 @@
             console.log('Hover detected on point', axis.label); // Debug
             d3.select(this)
               .transition()
-              .duration(150)
+              .duration(300)
               .attr('r', 8);
 
             tooltip
@@ -656,7 +656,7 @@
             console.log('Mouse out from point', axis.label); // Debug
             d3.select(this)
               .transition()
-              .duration(150)
+              .duration(300)
               .attr('r', 5);
             tooltip.style('opacity', 0);
           });
