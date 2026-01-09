@@ -4,7 +4,7 @@
     alt="{{site.data.main.about_me.name}} {{site.data.main.about_me.surname}} profile picture" loading="lazy"
     decoding="async">
 <h1>{{ site.data.main.about_me.name }} {{ site.data.main.about_me.surname }}</h1>
-<h3>{{ site.data.main.about_me.short_description }}</h3>
+<h3>{{ site.data.main.about_me.short_description | markdownify }}</h3>
 <div class="contact_wrapper">
     {% for contact in site.data.main.contact %}
     <a href="{{ contact.url }}" target="_blank" rel="noopener noreferrer">
