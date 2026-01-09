@@ -1,12 +1,15 @@
 name: Nicolas
 surname: DUFOUR
-short_description: PhD student in Computer Vision working on conditional generative models
-content: I'm a Final year Computer Vision PhD student at [IMAGINE](https://imagine-lab.enpc.fr/) ([ENPC](https://ecoledesponts.fr/)) and [VISTA](https://www.lix.polytechnique.fr/vista/) ([Ecole Polytechnique](https://www.polytechnique.edu/en)) labs. My research is focused on efficient conditional generative models. I'm supervised by [David Picard](https://davidpicard.github.io/) and [Vicky Kalogeiton](https://vicky.kalogeiton.info/).
+short_description: PostDoc at [Kyutai](https://kyutai.org/)
+content: 
+
+  I'm currently working as a Post doc at [Kyutai](https://kyutai.org/).
+
+  I've completed my PhD at [IMAGINE](https://imagine-lab.enpc.fr/) ([ENPC](https://ecoledesponts.fr/)) and [VISTA](https://www.lix.polytechnique.fr/vista/) ([Ecole Polytechnique](https://www.polytechnique.edu/en)) labs. My research is focused on efficient conditional generative models, under the supervision of [David Picard](https://davidpicard.github.io/) and [Vicky Kalogeiton](https://vicky.kalogeiton.info/).
 
   Before my PhD, I graduated from the [MVA master](https://www.master-mva.com/) (Mathematiques, Vision et Apprentissage) at [ENS Paris Saclay](https://ens-paris-saclay.fr/) and I got my engineering degree from [Telecom SudParis](https://www.telecom-sudparis.eu/) following the [MSA specialization](https://www.telecom-sudparis.eu/formation/modelisations-statistiques-et-applications/) (Mathematics and Statistical Modeling).
 
   I've also done an internship at Meta, where i worked on Model Based Reinforcement Learning.
-
 
   During my PhD, I have worked on GANs and diffusion models. I also have a high interest in the current development of the field of generative models around Large Language Models. 
 
