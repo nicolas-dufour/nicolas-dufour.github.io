@@ -311,6 +311,16 @@ main {
     opacity: 0.8;
 }
 
+#intro h3 a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+#intro h3 a:hover {
+    opacity: 0.75;
+}
+
 .contact_wrapper {
     display: flex;
     justify-content: center;
