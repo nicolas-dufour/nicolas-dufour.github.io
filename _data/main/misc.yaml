@@ -20,16 +20,16 @@ talks:
     date: 2024-09-19
   - name: "Podcast <a href='https://www.youtube.com/watch?v=s5oHvfFUsbE&t=139s'>Underscore_</a>: Around the World in 80 Timesteps"
     date: 2025-06-25
-  - name: "Talk at ValeoAI: Controllable and Efficient Generative Models"
-    date: 2025-10-01
   - name: "Talk at Kyutai: Controllable and Efficient Generative Models"
-    date: 2025-10-15
+    date: 2025-10-23
+  - name: "Talk at ValeoAI: Controllable and Efficient Generative Models"
+    date: 2025-10-30
   - name: "Talk at BAIR in <a href='https://people.eecs.berkeley.edu/~efros/'>Alyosha Efros's group</a>: Controllable and Efficient Generative Models"
-    date: 2025-12-08
+    date: 2025-12-10
   - name: "Talk at NYU in <a href='https://www.sainingxie.com/'>Saining Xie's group</a>: Controllable and Efficient Generative Models"
-    date: 2025-12-15
-  - name: "Talk at Cornell Tech in <a href='https://andrewowens.com/'>Andrew Owens's group</a>: Controllable and Efficient Generative Models"
     date: 2025-12-16
+  - name: "Talk at Cornell Tech in <a href='https://andrewowens.com/'>Andrew Owens's group</a>: Controllable and Efficient Generative Models"
+    date: 2025-12-17
   - name: "Talk at MIT in <a href='https://web.mit.edu/phillipi/'>Philip Isola's group</a>: Controllable and Efficient Generative Models"
     date: 2025-12-18
 reviewer:
