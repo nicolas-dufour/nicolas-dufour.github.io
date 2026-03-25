@@ -135,9 +135,9 @@
       }"
 - title: "PoM: Efficient Image and Video Generation with the Polynomial Mixer"
   authors: <a href="https://davidpicard.github.io/">David Picard</a>, <u><a href="#">Nicolas Dufour</a></u>
-  date: 2025-09-09
-  year: 2025
-  journal: Arxiv Preprint
+  date: 2026-06-05
+  year: 2026
+  journal: CVPR Findings
   thumbnail: /assets/publications/pom/thumbnail.png
   pdf:  https://arxiv.org/abs/2411.12663
   github: https://github.com/davidpicard/Homm
@@ -180,5 +180,20 @@
       &nbsp;&nbsp;  title           ={MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency}, \n
       &nbsp;&nbsp;  author          ={Nicolas Dufour and Lucas Degeorge and Arijit Ghosh and David Picard and Vicky Kalogeiton}, \n
       &nbsp;&nbsp;  year            ={2025}, \n
+      &nbsp;&nbsp;  journal         ={arXiv}, \n
+      }"
+- title: "One View Is Enough! Monocular Training for In-the-Wild Novel View Generation"
+  authors: <a href="https://scholar.google.com/citations?user=XSTKbMYAAAAJ&hl=fr">Adrien Ramanana Rahary</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://ptrckprz.github.io/">Patrick Perez</a>, <a href="https://davidpicard.github.io/">David Picard</a>
+  date: 2026-03-25
+  year: 2026
+  journal: Arxiv Preprint
+  thumbnail: /assets/publications/one_view/thumbnail.png
+  pdf:  https://arxiv.org/abs/2603.23488
+  github: https://github.com/AdrienRR/ovie
+  abstract: "Monocular novel-view synthesis has long required multi-view image pairs for supervision, limiting training data scale and diversity. We argue it is not necessary: one view is enough. We present OVIE, trained entirely on unpaired internet images. We leverage a monocular depth estimator as a geometric scaffold at training time: we lift a source image into 3D, apply a sampled camera transformation, and project to obtain a pseudo-target view. To handle disocclusions, we introduce a masked training formulation that restricts geometric, perceptual, and textural losses to valid regions, enabling training on 30 million uncurated images. At inference, OVIE is geometry-free, requiring no depth estimator or 3D representation. Trained exclusively on in-the-wild images, OVIE outperforms prior methods in a zero-shot setting, while being 600x faster than the second-best baseline."
+  bibtex: "@article{rahary2026one_view, \n
+      &nbsp;&nbsp;  title           ={One View Is Enough! Monocular Training for In-the-Wild Novel View Generation}, \n
+      &nbsp;&nbsp;  author          ={Adrien Ramanana Rahary and Nicolas Dufour and Patrick Perez and David Picard}, \n
+      &nbsp;&nbsp;  year            ={2026}, \n
       &nbsp;&nbsp;  journal         ={arXiv}, \n
       }"
