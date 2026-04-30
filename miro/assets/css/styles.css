@@ -43,6 +43,20 @@ a {
     background: linear-gradient(180deg, rgba(255, 154, 92, .08), transparent)
 }
 
+.venue-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #0b0c10;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 12px rgba(255, 154, 92, .35)
+}
+
 .hero h1 {
     margin: 0 0 12px;
     font-size: clamp(22px, 4.5vw, 32px);
