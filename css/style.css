@@ -74,43 +74,54 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     z-index: 9999;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 25px;
+    padding: 14px 28px;
     box-sizing: border-box;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        0 1px 2px rgba(0, 0, 0, 0.04);
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        padding 0.25s ease;
 }
 
 .nav-scrolled {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.78);
+    border-bottom-color: rgba(0, 0, 0, 0.06);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 9px 28px;
 }
 
 nav ul {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     margin: 0;
     padding: 0;
     list-style: none;
+    gap: 4px;
 }
 
 nav li {
-    margin-left: 15px;
-    float: left;
+    margin: 0;
+    float: none;
 }
 
-nav li:first-child {
-    margin-left: 0;
-}
-
+nav li:first-child,
 nav li:last-child {
-    float: right;
+    margin: 0;
+    float: none;
 }
 
 
@@ -118,26 +129,39 @@ nav a {
     text-decoration: none;
     color: var(--color-text);
     font-weight: 500;
-    font-size: 15px;
-    transition: color var(--transition);
+    font-size: 14.5px;
+    letter-spacing: 0.005em;
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.15s ease;
     position: relative;
-    padding: 5px 0;
+    padding: 8px 14px;
+    border-radius: 999px;
+    display: inline-block;
 }
 
 nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 0;
-    height: 2.5px;
-    border-radius: 2px;
-    background-color: var(--color-primary);
-    transition: width 0.3s ease;
+    /* Old underline replaced by the pill hover/active background. */
+    display: none;
 }
 
-nav a:hover::after {
-    width: 100%;
+nav a:hover {
+    background-color: rgba(43, 108, 176, 0.10);
+    color: var(--color-primary-strong);
+}
+
+nav a:active {
+    transform: scale(0.96);
+}
+
+nav a.active {
+    background-color: rgba(43, 108, 176, 0.14);
+    color: var(--color-primary-strong);
+}
+
+nav a.active:hover {
+    background-color: rgba(43, 108, 176, 0.20);
 }
 
 .dropdown-btn {
@@ -166,21 +190,30 @@ nav a:hover::after {
     nav ul {
         display: block;
         position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 10px 0;
+        top: 64px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+        background-color: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.30);
+        border-radius: 16px;
+        box-shadow:
+            0 12px 32px rgba(0, 0, 0, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.50);
+        padding: 8px;
         z-index: 1000;
 
         /* Initial hidden state */
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-20px);
-        transition: all 0.3s ease-in-out;
+        transform: translateY(-12px) scale(0.98);
+        transform-origin: top right;
+        transition:
+            opacity 0.22s ease,
+            transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+            visibility 0s linear 0.22s;
         pointer-events: none;
     }
 
@@ -192,46 +225,88 @@ nav a:hover::after {
 
     nav ul li a {
         display: block;
-        padding: 12px 20px;
-        text-align: center;
-        font-size: 16px;
-        border-left: 3px solid transparent;
-        transition: all 0.2s ease;
+        padding: 12px 16px;
+        text-align: left;
+        font-size: 15.5px;
+        border: none;
+        border-radius: 10px;
+        transition:
+            background-color 0.18s ease,
+            color 0.18s ease,
+            transform 0.18s ease;
     }
 
-    nav ul li a:hover {
-        background-color: rgba(66, 153, 225, 0.08);
-        border-left: none;
-        border-bottom: 2.5px solid var(--color-primary);
+    nav ul li a:hover,
+    nav ul li a.active {
+        background-color: rgba(43, 108, 176, 0.10);
+        color: var(--color-primary-strong);
+        border: none;
+        transform: translateX(2px);
+    }
+
+    nav ul li a.active {
+        background-color: rgba(43, 108, 176, 0.16);
     }
 
     .dropdown-btn {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: none;
-        border: none;
-        padding: 8px;
+        background-color: rgba(0, 0, 0, 0.04);
+        border: 1px solid transparent;
+        padding: 6px;
         margin: 0;
         cursor: pointer;
         position: relative;
         left: 0;
+        border-radius: 10px;
+        transition:
+            background-color 0.2s ease,
+            border-color 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .dropdown-btn:hover {
+        background-color: rgba(43, 108, 176, 0.10);
+        border-color: rgba(43, 108, 176, 0.18);
+    }
+
+    .dropdown-btn[aria-expanded="true"] img {
+        transform: rotate(180deg);
     }
 
     .dropdown-btn img {
-        width: 28px;
-        height: 28px;
-        transition: transform 0.3s ease;
+        width: 26px;
+        height: 26px;
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     .dark-theme nav ul {
-        background-color: rgba(26, 32, 44, 0.95);
+        background-color: rgba(26, 32, 44, 0.78);
+        border-color: rgba(255, 255, 255, 0.08);
+        box-shadow:
+            0 12px 32px rgba(0, 0, 0, 0.45),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06);
     }
 
-    .dark-theme nav ul li a:hover {
-        background-color: rgba(99, 179, 237, 0.1);
-        border-left: none;
-        border-bottom: 3px solid var(--color-primary);
+    .dark-theme nav ul li a:hover,
+    .dark-theme nav ul li a.active {
+        background-color: rgba(99, 179, 237, 0.14);
+        color: var(--color-primary);
+        border: none;
+    }
+
+    .dark-theme nav ul li a.active {
+        background-color: rgba(99, 179, 237, 0.20);
+    }
+
+    .dark-theme .dropdown-btn {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .dark-theme .dropdown-btn:hover {
+        background-color: rgba(99, 179, 237, 0.14);
+        border-color: rgba(99, 179, 237, 0.20);
     }
 
     #theme-toggle {
@@ -248,22 +323,14 @@ nav a:hover::after {
     }
 
     nav ul.show {
-        /* Visible state */
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
         pointer-events: auto;
-    }
-}
-
-@media (max-width: 600px) {
-    nav ul.show {
-        display: block !important;
-        /* Slide in from top */
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
+        transition:
+            opacity 0.22s ease,
+            transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+            visibility 0s linear 0s;
     }
 }
 
@@ -1151,9 +1218,9 @@ footer a:hover {
 
 /* Theme toggle */
 #theme-toggle {
-    background: none;
-    border: none;
-    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.04);
+    border: 1px solid transparent;
+    padding: 0;
     cursor: pointer;
     height: 36px;
     width: 36px;
@@ -1162,13 +1229,31 @@ footer a:hover {
     align-items: center;
     justify-content: center;
     color: var(--color-text);
-    margin-left: 20px;
-    margin-right: 25px;
-    transition: background-color var(--transition);
+    margin-left: 16px;
+    margin-right: 0;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.18s ease;
+}
+
+#theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 #theme-toggle:hover {
-    background-color: rgba(0, 0, 0, 0.08);
+    background-color: rgba(43, 108, 176, 0.10);
+    border-color: rgba(43, 108, 176, 0.18);
+}
+
+#theme-toggle:hover svg {
+    transform: rotate(-25deg) scale(1.05);
+}
+
+#theme-toggle:active {
+    transform: scale(0.92);
 }
 
 .moon-icon {
@@ -1183,8 +1268,13 @@ footer a:hover {
     display: block;
 }
 
+.dark-theme #theme-toggle {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
 .dark-theme #theme-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(99, 179, 237, 0.14);
+    border-color: rgba(99, 179, 237, 0.20);
 }
 
 /* Dark theme overrides (most styles already use CSS variables) */
@@ -1194,8 +1284,35 @@ footer a:hover {
 }
 
 .dark-theme nav {
-    background-color: rgba(26, 32, 44, 0.92);
-    backdrop-filter: blur(12px);
+    background-color: rgba(26, 32, 44, 0.55);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.dark-theme .nav-scrolled {
+    background-color: rgba(26, 32, 44, 0.78);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 8px 24px rgba(0, 0, 0, 0.40);
+}
+
+.dark-theme nav a:hover {
+    background-color: rgba(99, 179, 237, 0.12);
+    color: var(--color-primary);
+}
+
+.dark-theme nav a.active {
+    background-color: rgba(99, 179, 237, 0.18);
+    color: var(--color-primary);
+}
+
+.dark-theme nav a.active:hover {
+    background-color: rgba(99, 179, 237, 0.24);
 }
 
 .dark-theme nav a {

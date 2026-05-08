@@ -158,6 +158,59 @@
                 dropdownBtn.setAttribute('aria-expanded', 'false');
             }
         });
+
+        // Highlight the nav link for the section currently in view
+        (function setupActiveNavHighlight() {
+            const sectionIds = ['intro', 'about-me', 'news', 'publications', 'teaching', 'open-source', 'misc'];
+            const linkMap = new Map();
+            sectionIds.forEach(function (id) {
+                const link = document.querySelector('#nav-menu a[href="#' + id + '"]');
+                if (link) linkMap.set(id, link);
+            });
+            if (linkMap.size === 0) return;
+
+            function setActive(id) {
+                linkMap.forEach(function (link) { link.classList.remove('active'); });
+                const link = linkMap.get(id);
+                if (link) link.classList.add('active');
+            }
+
+            const visible = new Map();
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        visible.set(entry.target.id, entry.intersectionRatio);
+                    } else {
+                        visible.delete(entry.target.id);
+                    }
+                });
+                let bestId = null;
+                let bestRatio = -1;
+                visible.forEach(function (ratio, id) {
+                    if (ratio > bestRatio) {
+                        bestRatio = ratio;
+                        bestId = id;
+                    }
+                });
+                if (bestId) setActive(bestId);
+            }, {
+                rootMargin: '-20% 0px -55% 0px',
+                threshold: [0, 0.15, 0.35, 0.6, 0.85]
+            });
+
+            sectionIds.forEach(function (id) {
+                const el = document.getElementById(id);
+                if (el) observer.observe(el);
+            });
+
+            // Initial: honor URL hash, otherwise pick whichever section is closest to top
+            const hash = window.location.hash.slice(1);
+            if (hash && linkMap.has(hash)) {
+                setActive(hash);
+            } else {
+                setActive('intro');
+            }
+        })();
     </script>
     <script>
         // Theme toggle functionality
