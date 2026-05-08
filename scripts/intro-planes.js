@@ -10,6 +10,12 @@
     let bgMesh, bgMaterial;
     let animationId = null;
     let sceneLights = null;
+    let currents = [];
+    let drawingCurrent = null;
+    let pointerActive = false;
+    let pointerStart = null;
+    let raycaster = null;
+    let ndcVec = null;
 
     // ── Configuration ────────────────────────────────────────────────
 
@@ -419,6 +425,10 @@
         cs.width = '100%';
         cs.height = '100%';
         cs.display = 'block';
+        // The container has `pointer-events: none` so foreground links keep working;
+        // the canvas opts back in so it can capture click-to-fire-gust interactions.
+        cs.pointerEvents = 'auto';
+        cs.cursor = 'pointer';
         container.appendChild(r.domElement);
         return r;
     }
@@ -811,6 +821,393 @@
         u.uRimIntensity.value = sceneLights.rim.intensity;
     }
 
+    // ── Drawn air currents ───────────────────────────────────────────
+    //
+    // The user clicks (and optionally drags) on the banner to draw a flowing
+    // air current. Planes within the current's influence radius are pulled
+    // toward the curve and swept along it. Currents fade in, persist briefly,
+    // then dissolve. A click without drag gets a pleasant default arc so a
+    // tap also produces a satisfying flow.
+
+    const CURRENT = {
+        lifetime:    2.4,   // total seconds (includes fade in/out)
+        fadeIn:      0.35,
+        fadeOut:     0.55,
+        ndcRadius:   0.18,  // screen-space influence radius, ~9% of half-screen
+        attractStr:  2.5,   // PD-style pull gain (1/sec)
+        flowStr:     4.5,   // along-current sweep speed (world units / sec)
+        tubeRadius:  0.34,  // visual tube radius in world units (at z=-22)
+        depth:     -22,
+    };
+
+    const currentVert = `
+        varying vec2 vUv;
+        void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+    `;
+    const currentFrag = `
+        uniform float uTime;
+        uniform float uOpacity;
+        varying vec2 vUv;
+
+        // Hash for subtle noise modulation along the tube
+        float hash(float p) { return fract(sin(p) * 43758.5453); }
+
+        void main() {
+            // Circumferential softness — bright at tube center, transparent at the silhouette.
+            float circ = 1.0 - 2.0 * abs(vUv.y - 0.5);
+            float core = pow(max(0.0, circ), 2.4);
+
+            // End taper so the tube fades cleanly at both ends
+            float ends = sin(vUv.x * 3.14159265);
+
+            // Animated bright pulses traveling along the current — readable flow direction
+            float t = vUv.x * 5.0 - uTime * 1.6;
+            float pulse = 0.5 + 0.5 * sin(t * 6.2832);
+            pulse = pow(pulse, 4.0);
+
+            // Subtle breaking up of the uniform pulse so it feels organic
+            float jitter = 0.85 + 0.15 * sin(vUv.x * 38.0 + uTime * 0.8);
+
+            // Color: warm cream core fading to soft cool-blue periphery — matches the sky
+            vec3 coreCol = vec3(1.00, 0.90, 0.66);
+            vec3 edgeCol = vec3(0.62, 0.78, 1.00);
+            vec3 col = mix(edgeCol, coreCol, core);
+            col += vec3(1.00, 0.96, 0.88) * pulse * core * 0.55;
+
+            float alpha = core * ends * jitter * uOpacity * 0.65;
+            gl_FragColor = vec4(col, alpha);
+        }
+    `;
+
+    function setupGustInteraction() {
+        if (!renderer || !renderer.domElement) return;
+        raycaster = new T.Raycaster();
+        ndcVec    = new T.Vector2();
+        const el = renderer.domElement;
+        el.addEventListener('pointerdown',  onPointerDown);
+        el.addEventListener('pointermove',  onPointerMove);
+        el.addEventListener('pointerup',    onPointerUp);
+        el.addEventListener('pointercancel',onPointerUp);
+        el.addEventListener('pointerleave', onPointerUp);
+    }
+
+    function eventToNdc(e) {
+        const rect = renderer.domElement.getBoundingClientRect();
+        return {
+            x: ((e.clientX - rect.left) / rect.width) * 2 - 1,
+            y: -((e.clientY - rect.top) / rect.height) * 2 + 1,
+        };
+    }
+
+    function ndcToScenePoint(ndcX, ndcY) {
+        ndcVec.set(ndcX, ndcY);
+        raycaster.setFromCamera(ndcVec, camera);
+        const dz = raycaster.ray.direction.z;
+        if (Math.abs(dz) < 1e-5) return null;
+        const t = (CURRENT.depth - raycaster.ray.origin.z) / dz;
+        if (t <= 0) return null;
+        return new T.Vector3()
+            .copy(raycaster.ray.origin)
+            .addScaledVector(raycaster.ray.direction, t);
+    }
+
+    function onPointerDown(e) {
+        if (!camera || !renderer) return;
+        try { renderer.domElement.setPointerCapture(e.pointerId); } catch (_) {}
+        // Safety: if a previous draw didn't clean up (rare), dispose its mesh first
+        if (drawingCurrent) disposeCurrent(drawingCurrent);
+        pointerActive = true;
+        const ndc = eventToNdc(e);
+        pointerStart = { x: e.clientX, y: e.clientY, time: performance.now(), ndc: { x: ndc.x, y: ndc.y } };
+        drawingCurrent = createCurrent();
+        addPointToCurrent(drawingCurrent, ndc.x, ndc.y);
+    }
+
+    function onPointerMove(e) {
+        if (!pointerActive || !drawingCurrent) return;
+        const ndc = eventToNdc(e);
+        const last = drawingCurrent.ndc[drawingCurrent.ndc.length - 1];
+        const ddx = ndc.x - last.x, ddy = ndc.y - last.y;
+        // ~2% NDC threshold so we don't oversample tiny mouse jitter
+        if (ddx * ddx + ddy * ddy > 0.0004) {
+            addPointToCurrent(drawingCurrent, ndc.x, ndc.y);
+            rebuildCurrentMesh(drawingCurrent);
+        }
+    }
+
+    function onPointerUp(e) {
+        if (!pointerActive) return;
+        pointerActive = false;
+        try { renderer.domElement.releasePointerCapture(e.pointerId); } catch (_) {}
+        if (!drawingCurrent) return;
+
+        const dx = e.clientX - pointerStart.x;
+        const dy = e.clientY - pointerStart.y;
+        const movedPx = Math.sqrt(dx * dx + dy * dy);
+
+        // If the user only tapped (or barely moved), generate a pleasant default S-curve so
+        // tapping still produces a meaningful current rather than just a dot.
+        if (movedPx < 8 || drawingCurrent.ndc.length < 3) {
+            const seed = pointerStart.ndc;
+            generateDefaultPath(drawingCurrent, seed);
+            rebuildCurrentMesh(drawingCurrent);
+        }
+
+        if (drawingCurrent.points.length >= 2) {
+            currents.push(drawingCurrent);
+        } else {
+            disposeCurrent(drawingCurrent);
+        }
+        drawingCurrent = null;
+    }
+
+    function createCurrent() {
+        const mat = new T.ShaderMaterial({
+            uniforms: {
+                uTime:    { value: 0 },
+                uOpacity: { value: 0 },
+            },
+            vertexShader: currentVert,
+            fragmentShader: currentFrag,
+            transparent: true,
+            blending: T.AdditiveBlending,
+            depthWrite: false,
+            depthTest:  false,
+            side: T.DoubleSide,
+        });
+        return {
+            ndc:      [],     // 2D screen-space points (x,y in NDC) — used for force lookup
+            points:   [],     // 3D scene points at CURRENT.depth — used for visualization
+            age:      0,
+            lifetime: CURRENT.lifetime,
+            mesh:     null,
+            material: mat,
+        };
+    }
+
+    function addPointToCurrent(c, ndcX, ndcY) {
+        c.ndc.push({ x: ndcX, y: ndcY });
+        const p = ndcToScenePoint(ndcX, ndcY);
+        if (p) c.points.push(p);
+    }
+
+    function generateDefaultPath(c, seed) {
+        // Replace any partial path with a short, gracefully curving arc so tapping
+        // produces an inviting flow.
+        c.ndc.length = 0;
+        c.points.length = 0;
+        const segs = 14;
+        const horizontal = Math.random() < 0.7;
+        const baseAngle = horizontal
+            ? (Math.random() < 0.5 ? 0 : Math.PI) + (Math.random() - 0.5) * 0.6
+            : Math.random() * Math.PI * 2;
+        const length = 0.55;       // NDC length
+        const curlAmt = 0.18 * (Math.random() < 0.5 ? 1 : -1);
+        const dirX = Math.cos(baseAngle), dirY = Math.sin(baseAngle);
+        const perpX = -dirY, perpY = dirX;
+
+        for (let i = 0; i <= segs; i++) {
+            const ti = i / segs;
+            const r  = (ti - 0.5) * length;
+            const lat = Math.sin(ti * Math.PI) * curlAmt;
+            const x = seed.x + dirX * r + perpX * lat;
+            const y = seed.y + dirY * r + perpY * lat;
+            addPointToCurrent(c, x, y);
+        }
+    }
+
+    function rebuildCurrentMesh(c) {
+        if (c.points.length < 2) return;
+        const oldMesh = c.mesh;
+        const curve = new T.CatmullRomCurve3(c.points, false, 'catmullrom', 0.5);
+        const tubularSegs = Math.min(160, Math.max(20, c.points.length * 8));
+        const tubeGeo = new T.TubeGeometry(curve, tubularSegs, CURRENT.tubeRadius, 14, false);
+        const mesh = new T.Mesh(tubeGeo, c.material);
+        mesh.renderOrder = 9;
+        scene.add(mesh);
+        c.mesh = mesh;
+        if (oldMesh) {
+            scene.remove(oldMesh);
+            oldMesh.geometry.dispose();
+        }
+    }
+
+    function disposeCurrent(c) {
+        if (c.mesh) {
+            scene.remove(c.mesh);
+            if (c.mesh.geometry) c.mesh.geometry.dispose();
+        }
+        if (c.material) c.material.dispose();
+    }
+
+    function envelopeForCurrent(c) {
+        // Returns a 0..1 strength based on age (fade in, hold, fade out)
+        if (c.age < CURRENT.fadeIn) {
+            return c.age / CURRENT.fadeIn;
+        }
+        const fadeStart = c.lifetime - CURRENT.fadeOut;
+        if (c.age > fadeStart) {
+            return Math.max(0, (c.lifetime - c.age) / CURRENT.fadeOut);
+        }
+        return 1;
+    }
+
+    // Reusable scratch vectors so we don't allocate per-plane per-frame
+    const _camRight = { x: 1, y: 0, z: 0 };
+    const _camUp    = { x: 0, y: 1, z: 0 };
+
+    function applyCurrentsToPlane(m, dt) {
+        if (currents.length === 0 && !drawingCurrent) return 0;
+
+        // Project plane to NDC once for screen-space distance lookup
+        const projected = m.position.clone().project(camera);
+
+        // Camera basis (refreshed each call — Three.js auto-updates matrixWorld each render
+        // and we never move the camera mid-frame)
+        const e = camera.matrixWorld.elements;
+        _camRight.x = e[0]; _camRight.y = e[1]; _camRight.z = e[2];
+        _camUp.x    = e[4]; _camUp.y    = e[5]; _camUp.z    = e[6];
+
+        // Plane depth → world units per NDC unit (so we can convert NDC offset → world offset)
+        const distToCam = m.position.distanceTo(camera.position);
+        const halfHeight = distToCam * Math.tan(camera.fov * 0.5 * Math.PI / 180);
+        const wPerNdcX = halfHeight * camera.aspect;
+        const wPerNdcY = halfHeight;
+
+        let pushX = 0, pushY = 0, pushZ = 0;
+        let strongest = 0;
+        // Track the dominant flow direction (tangent of the most-influential current segment)
+        // so we can rotate the plane to face the flow.
+        let bestIntensity = 0;
+        let bestTangentX = 0, bestTangentY = 0, bestTangentZ = 0;
+
+        function processCurrent(c, envelope) {
+            if (!c || envelope <= 0 || c.ndc.length < 2 || c.points.length < 2) return;
+
+            // Find closest segment in NDC space (screen-aware → consistent at any depth)
+            let bestDist2 = Infinity;
+            let bestT = 0;
+            let bestIdx = 0;
+            const segLimit = Math.min(c.ndc.length, c.points.length) - 1;
+            for (let j = 0; j < segLimit; j++) {
+                const p0 = c.ndc[j], p1 = c.ndc[j + 1];
+                const sx = p1.x - p0.x, sy = p1.y - p0.y;
+                const segLen2 = sx * sx + sy * sy;
+                if (segLen2 < 1e-7) continue;
+                let tt = ((projected.x - p0.x) * sx + (projected.y - p0.y) * sy) / segLen2;
+                if (tt < 0) tt = 0; else if (tt > 1) tt = 1;
+                const ddx = projected.x - (p0.x + sx * tt);
+                const ddy = projected.y - (p0.y + sy * tt);
+                const d2 = ddx * ddx + ddy * ddy;
+                if (d2 < bestDist2) {
+                    bestDist2 = d2;
+                    bestT = tt;
+                    bestIdx = j;
+                }
+            }
+
+            const dist = Math.sqrt(bestDist2);
+            if (dist >= CURRENT.ndcRadius) return;
+            // Smooth radial falloff — zero at the edge, peak around the middle, returns to 0 at center
+            // (a plane already on the current shouldn't be yanked further)
+            const t = dist / CURRENT.ndcRadius;
+            const distFactor = 1.0 - t;             // 1 at center, 0 at edge — used for the flow sweep
+            const pullFactor = (1.0 - t) * t * 4.0; // bell curve, peaks at t=0.5 (offset / 2)
+
+            // ── Pull: toward the curve in screen space, projected to 3D in the camera plane ──
+            const ndcP0 = c.ndc[bestIdx], ndcP1 = c.ndc[bestIdx + 1];
+            const closestNdcX = ndcP0.x + (ndcP1.x - ndcP0.x) * bestT;
+            const closestNdcY = ndcP0.y + (ndcP1.y - ndcP0.y) * bestT;
+            const pullX = (closestNdcX - projected.x) * wPerNdcX;
+            const pullY = (closestNdcY - projected.y) * wPerNdcY;
+            const pullGain = CURRENT.attractStr * envelope * pullFactor;
+            pushX += (pullX * _camRight.x + pullY * _camUp.x) * pullGain;
+            pushY += (pullX * _camRight.y + pullY * _camUp.y) * pullGain;
+            pushZ += (pullX * _camRight.z + pullY * _camUp.z) * pullGain;
+
+            // ── Flow: sweep along the curve's actual 3D tangent at that segment ──
+            const sp0 = c.points[bestIdx], sp1 = c.points[bestIdx + 1];
+            const segDx = sp1.x - sp0.x, segDy = sp1.y - sp0.y, segDz = sp1.z - sp0.z;
+            const segLen3 = Math.sqrt(segDx * segDx + segDy * segDy + segDz * segDz);
+            const intensity = envelope * distFactor;
+            if (segLen3 > 1e-5) {
+                const inv = 1 / segLen3;
+                const flowMag = CURRENT.flowStr * intensity;
+                const tX = segDx * inv, tY = segDy * inv, tZ = segDz * inv;
+                pushX += tX * flowMag;
+                pushY += tY * flowMag;
+                pushZ += tZ * flowMag;
+
+                if (intensity > bestIntensity) {
+                    bestIntensity = intensity;
+                    bestTangentX = tX;
+                    bestTangentY = tY;
+                    bestTangentZ = tZ;
+                }
+            }
+
+            if (intensity > strongest) strongest = intensity;
+        }
+
+        for (let i = 0; i < currents.length; i++) {
+            processCurrent(currents[i], envelopeForCurrent(currents[i]));
+        }
+        if (drawingCurrent) processCurrent(drawingCurrent, 1.0);
+
+        m.position.x += pushX * dt;
+        m.position.y += pushY * dt;
+        m.position.z += pushZ * dt;
+
+        // ── Rotate the plane to face the flow direction so it doesn't fly sideways ──
+        if (bestIntensity > 0.02) {
+            // Yaw: turn nose toward the tangent's horizontal direction
+            const targetYaw = Math.atan2(bestTangentX, bestTangentZ);
+            const yd = Math.atan2(
+                Math.sin(targetYaw - m.rotation.y),
+                Math.cos(targetYaw - m.rotation.y)
+            );
+            const yawGain = 4.0 * bestIntensity;
+            m.rotation.y += yd * yawGain * dt;
+
+            // Pitch: nose up if flow rises, down if it falls
+            const horizMag = Math.sqrt(bestTangentX * bestTangentX + bestTangentZ * bestTangentZ);
+            const targetPitch = Math.atan2(bestTangentY, Math.max(horizMag, 1e-4));
+            const pitchGain = 3.0 * bestIntensity;
+            m.rotation.x += (targetPitch - m.rotation.x) * pitchGain * dt;
+
+            // Roll: bank into the turn proportional to the yaw rate we're applying
+            const targetRoll = -yd * 0.9;
+            m.rotation.z += (targetRoll - m.rotation.z) * 4.0 * bestIntensity * dt;
+        }
+
+        return strongest;
+    }
+
+    function updateCurrents(dt) {
+        // Tick the in-progress drawing current's shader time so its flow animates while drawing
+        if (drawingCurrent && drawingCurrent.material) {
+            drawingCurrent.material.uniforms.uTime.value += dt;
+            drawingCurrent.material.uniforms.uOpacity.value = 1.0;
+        }
+
+        // Tick & dispose finalized currents
+        for (let i = currents.length - 1; i >= 0; i--) {
+            const c = currents[i];
+            c.age += dt;
+            if (c.material) {
+                c.material.uniforms.uTime.value += dt;
+                c.material.uniforms.uOpacity.value = envelopeForCurrent(c);
+            }
+            if (c.age >= c.lifetime) {
+                disposeCurrent(c);
+                currents.splice(i, 1);
+            }
+        }
+    }
+
     // ── Init ─────────────────────────────────────────────────────────
 
     function init() {
@@ -838,6 +1235,7 @@
         updateSunUv();
 
         composer = setupPostProcessing();
+        setupGustInteraction();
 
         start();
     }
@@ -857,6 +1255,13 @@
             const speedMod = 1.0 + Math.sin(t * p.speedFreq + p.speedPhase) * p.speedAmp;
             m.position.addScaledVector(fwd, p.speed * speedMod * ss * dt);
             m.position.addScaledVector(wind, dt);
+
+            // ── Drawn air currents: pull toward the curve and sweep along it ──
+            const currentImpact = applyCurrentsToPlane(m, dt);
+            if (currentImpact > 0.001) {
+                // Subtle bank toward the flow — adds character without throwing the plane around
+                m.rotation.z += (Math.random() - 0.5) * currentImpact * 0.2 * dt;
+            }
 
             // ── Steering target: slow sinusoidal yaw drift for organic S-curves ──
             const yawTarget = p.baseYaw + Math.sin(t * p.steerFreq + p.steerPhase) * p.steerAmp;
@@ -939,6 +1344,7 @@
             gradeShader.uniforms.uTime.value = t;
         }
 
+        updateCurrents(dt);
         updatePlanes(dt, t);
 
         if (composer) {
