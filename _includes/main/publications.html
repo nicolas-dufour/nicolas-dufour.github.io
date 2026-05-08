@@ -10,8 +10,32 @@
 <h3 class="publications-year">{{ publication.year }}</h3>
 <div class="publications-yealy-wrapper">
     {% endif %}
-    <div class="publication">
-        {% if publication.thumbnail %}
+    <div class="publication{% if publication.featured %} publication-featured{% endif %}">
+        {% if publication.featured %}
+        <div class="publication-featured-ribbon" aria-label="{{ publication.featured }}">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+                <path d="M12 2l2.39 6.95H22l-6.18 4.49L18.18 22 12 17.51 5.82 22l2.36-8.56L2 8.95h7.61z"/>
+            </svg>
+            <span>{{ publication.featured }}</span>
+        </div>
+        {% endif %}
+        {% if publication.thumbnail_canvas %}
+        {% if publication.website %}
+        <a href="{{ publication.website }}" class="publication-thumbnail-link" target="_blank"
+            rel="noopener noreferrer">
+            <canvas class="publication-thumbnail" id="{{ publication.thumbnail_canvas }}" width="360" height="360"
+                aria-label="{{ publication.title }} thumbnail"></canvas>
+        </a>
+        {% elsif publication.pdf %}
+        <a href="{{ publication.pdf }}" class="publication-thumbnail-link" target="_blank" rel="noopener noreferrer">
+            <canvas class="publication-thumbnail" id="{{ publication.thumbnail_canvas }}" width="360" height="360"
+                aria-label="{{ publication.title }} thumbnail"></canvas>
+        </a>
+        {% else %}
+        <canvas class="publication-thumbnail" id="{{ publication.thumbnail_canvas }}" width="360" height="360"
+            aria-label="{{ publication.title }} thumbnail"></canvas>
+        {% endif %}
+        {% elsif publication.thumbnail %}
         {% if publication.website %}
         <a href="{{ publication.website }}" class="publication-thumbnail-link" target="_blank"
             rel="noopener noreferrer">

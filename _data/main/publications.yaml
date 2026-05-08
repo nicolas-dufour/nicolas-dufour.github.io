@@ -197,3 +197,21 @@
       &nbsp;&nbsp;  year            ={2026}, \n
       &nbsp;&nbsp;  journal         ={arXiv}, \n
       }"
+
+- title: "Controllability and Efficiency in Generative Models"
+  authors: <u><a href="#">Nicolas Dufour</a></u>
+  date: 2025-11-26
+  year: 2025
+  journal: PhD Thesis, École des Ponts ParisTech
+  pdf: https://theses.hal.science/tel-05529702/document
+  website: https://theses.fr/2025ENPC0054
+  thumbnail_canvas: thesis-thumbnail
+  featured: PhD Thesis
+  abstract: "Generative models have advanced rapidly, yet their true promise lies not in producing plausible data, but in being controllable, efficient, and reliable. This thesis advances conditional generative modeling along three axes. First, we tackle conditioning adherence: new training mechanisms and dynamic sampling strategies tighten alignment between inputs (masks, poses, text) and generated outputs without sacrificing realism or diversity. Second, we improve data efficiency through coherence-aware approaches that learn from noisy or weakly aligned conditionings, showing that strong conditional models can be trained with far less data than commonly assumed — broadening access in scientific, medical, and industrial settings where curated data is unavailable. Third, we extend conditional generation to probabilistic reasoning for downstream tasks: focusing on visual geolocation, we introduce a large-scale benchmark and generative formulations that predict calibrated spatial distributions rather than single-point estimates, capturing inherent ambiguity. Together, these contributions point toward generative models as reliable, transparent, and accessible components of future AI systems."
+  bibtex: "@phdthesis{dufour2025thesis, \n
+      &nbsp;&nbsp; title  = {Controllability and Efficiency in Generative Models}, \n
+      &nbsp;&nbsp; author = {Nicolas Dufour}, \n
+      &nbsp;&nbsp; year   = {2025}, \n
+      &nbsp;&nbsp; school = {École des Ponts ParisTech}, \n
+      &nbsp;&nbsp; type   = {PhD Thesis} \n
+    }"
