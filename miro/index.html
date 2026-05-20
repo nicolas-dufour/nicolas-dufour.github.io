@@ -582,6 +582,31 @@
           low-reward
           conditioning.</p>
 
+        <!-- Theoretical intuition: log-odds landscape + gradient flow visualization -->
+        <h4 style="margin-top: 2rem; margin-bottom: 0.5rem; color: var(--accent);">Theoretical Intuition</h4>
+        <p>
+          More formally, MIRO's guidance corresponds to sampling from a
+          <strong>reward-tilted distribution</strong>
+          \(p_\omega(x|c) \propto p(x|c, \mathbf{s}^{+}) \left(
+            \tfrac{p(\mathbf{s}^{+}|x,c)}{p(\mathbf{s}^{-}|x,c)} \right)^{\omega}\),
+          where the velocity difference
+          \(v_\theta(x_t, c, \mathbf{s}^{+}) - v_\theta(x_t, c, \mathbf{s}^{-})\)
+          implicitly encodes the gradient of the log-odds ratio
+          \(\nabla_{x_t} \log\, p(\mathbf{s}^{+}|x_t,c) / p(\mathbf{s}^{-}|x_t,c)\).
+          Each denoising step thus performs implicit gradient ascent on this log-odds — concentrating samples on
+          regions where high rewards are most likely.
+        </p>
+
+        <div id="theoryAnimation" class="method-anim" aria-label="MIRO theorem visualization: log-odds landscape and gradient flow">
+          <p class="animation-caption">
+            <strong>From theorem to intuition.</strong> The heatmap shows a synthetic log-odds landscape
+            \(\log p(\mathbf{s}^{+}|x,c) / p(\mathbf{s}^{-}|x,c)\); the arrows are its gradient — the implicit
+            direction MIRO's velocity difference \(v_\theta(\mathbf{s}^{+}) - v_\theta(\mathbf{s}^{-})\) approximates.
+            Particles are initialized from \(p(x|c, \mathbf{s}^{+})\) and flow along the field as the guidance scale
+            \(\omega\) rises, visualizing the reward-tilted distribution \(p_\omega\) concentrating on the high-reward region.
+          </p>
+        </div>
+
         <!-- Flexible Trade-offs -->
         <h4 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--accent);">3. Flexible Reward Trade-offs</h4>
         <p>A key advantage of MIRO is the ability to specify custom reward targets at inference time. Users can set
@@ -1621,6 +1646,7 @@
   <script defer src="assets/js/miro_animation.js"></script>
   <script defer src="assets/js/inference_animation.js"></script>
   <script defer src="assets/js/reward_tradeoff_animation.js"></script>
+  <script defer src="assets/js/theory_animation.js"></script>
 
   <!-- Utility modules (no dependencies) -->
   <script src="assets/js/utils/metrics.js"></script>

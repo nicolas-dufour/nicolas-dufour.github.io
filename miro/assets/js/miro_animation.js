@@ -6,7 +6,8 @@
         // Visual Parameters
         visual: {
             mobileBreakpoint: 700,
-            pixelDensity: 1,
+            // Match device pixel ratio for crisp text/lines on Retina. Capped at 2.
+            pixelDensity: Math.min(2, (typeof window !== 'undefined' && window.devicePixelRatio) || 1),
             borderRadius: {
                 small: 3,
                 medium: 6,
