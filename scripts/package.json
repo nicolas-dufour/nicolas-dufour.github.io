@@ -1,0 +1,19 @@
+{
+  "name": "miro-page-scripts",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Helper scripts for the MIRO page (animation recording).",
+  "scripts": {
+    "record": "node record-miro-animations.js",
+    "record:theory": "node record-miro-animations.js theory",
+    "record:training": "node record-miro-animations.js training",
+    "record:inference": "node record-miro-animations.js inference",
+    "record:tradeoff": "node record-miro-animations.js tradeoff"
+  },
+  "dependencies": {
+    "puppeteer": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

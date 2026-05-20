@@ -4,3 +4,8 @@ _site
 .jekyll-metadata
 vendor
 .DS_Store
+
+# Animation MP4/WebM exports (see scripts/RECORDING.md)
+recordings/
+scripts/node_modules/
+scripts/package-lock.json

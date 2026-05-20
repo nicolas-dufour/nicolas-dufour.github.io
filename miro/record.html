@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>MIRO animation recorder</title>
+
+  <!-- Reuse main site palette/variables (only :root and dark theme bits matter here) -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+
+  <style>
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      overflow: hidden;
+    }
+
+    .toolbar {
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      background: rgba(21, 23, 28, 0.85);
+      border: 1px solid rgba(255, 154, 92, 0.25);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      font-size: 13px;
+    }
+
+    .toolbar.hidden { display: none; }
+
+    .toolbar label {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .toolbar select,
+    .toolbar input {
+      background: var(--bg);
+      color: var(--fg);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 6px;
+      padding: 6px 8px;
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+    }
+    .toolbar input[type="number"] { width: 64px; }
+    .toolbar select:focus,
+    .toolbar input:focus { border-color: var(--accent); }
+
+    .toolbar button {
+      background: var(--accent);
+      color: #0b0c10;
+      border: none;
+      border-radius: 8px;
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+    }
+    .toolbar button:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(255,154,92,0.35); }
+    .toolbar button:active { transform: translateY(0); }
+    .toolbar button:disabled { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none; }
+    .toolbar button.stop { background: #ff5d6c; color: #fff; }
+
+    .status {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      min-width: 84px;
+      text-align: right;
+    }
+    .status.recording { color: #ff7a85; }
+    .status.done { color: #69c869; }
+
+    .stage {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .anim-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+    }
+
+    .method-anim {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(ellipse at center, rgba(255, 154, 92, 0.04) 0%, transparent 70%);
+      border-radius: 0;
+      padding: 0;
+      margin: 0;
+    }
+    .method-anim canvas { display: block; cursor: default; }
+    .animation-caption { display: none; }
+    .katex-label {
+      position: absolute;
+      color: var(--fg);
+      font-size: 13px;
+      text-shadow: 0 1px 3px var(--bg);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .hint {
+      position: fixed;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--muted);
+      font-size: 12px;
+      background: rgba(21, 23, 28, 0.7);
+      border-radius: 8px;
+      padding: 6px 12px;
+      max-width: 800px;
+      text-align: center;
+    }
+    .hint.hidden { display: none; }
+    .hint code {
+      background: rgba(255, 154, 92, 0.12);
+      color: var(--accent);
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar" id="toolbar">
+    <label>
+      Animation
+      <select id="animSel">
+        <option value="theory">Theory (log-odds landscape)</option>
+        <option value="training">MIRO training pipeline</option>
+        <option value="inference">MIRO inference pipeline</option>
+        <option value="tradeoff">Reward trade-off</option>
+      </select>
+    </label>
+    <label>
+      Width
+      <input id="widthInp" type="number" min="320" max="3840" step="20" value="1280" />
+    </label>
+    <label>
+      Height
+      <input id="heightInp" type="number" min="320" max="3840" step="20" value="720" />
+    </label>
+    <label>
+      Duration (s)
+      <input id="durationInp" type="number" min="3" max="120" step="1" value="17" />
+    </label>
+    <label>
+      FPS
+      <input id="fpsInp" type="number" min="24" max="60" step="1" value="60" />
+    </label>
+    <button id="recordBtn">● Record</button>
+    <span class="status" id="status">ready</span>
+  </div>
+
+  <div class="stage">
+    <div class="anim-wrap" id="animWrap"></div>
+  </div>
+
+  <div class="hint" id="hint">
+    Toggle the toolbar with <code>T</code> &nbsp;·&nbsp; click <strong>Record</strong> for a WebM file &nbsp;·&nbsp;
+    convert to MP4 with <code>ffmpeg -i in.webm -c:v libx264 -pix_fmt yuv420p -crf 18 -movflags +faststart out.mp4</code>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
+
+  <script>
+    const ANIMATIONS = {
+      training:  { divId: 'miroAnimation',          script: 'assets/js/miro_animation.js',           defaultDur: 17 },
+      inference: { divId: 'miroInferenceAnimation', script: 'assets/js/inference_animation.js',      defaultDur: 23 },
+      tradeoff:  { divId: 'rewardTradeoffAnimation', script: 'assets/js/reward_tradeoff_animation.js', defaultDur: 30 },
+      theory:    { divId: 'theoryAnimation',        script: 'assets/js/theory_animation.js',         defaultDur: 17 },
+    };
+
+    const params  = new URLSearchParams(location.search);
+    const animSel = document.getElementById('animSel');
+    const widthInp = document.getElementById('widthInp');
+    const heightInp = document.getElementById('heightInp');
+    const durationInp = document.getElementById('durationInp');
+    const fpsInp = document.getElementById('fpsInp');
+    const recordBtn = document.getElementById('recordBtn');
+    const statusEl = document.getElementById('status');
+    const toolbarEl = document.getElementById('toolbar');
+    const hintEl = document.getElementById('hint');
+    const animWrap = document.getElementById('animWrap');
+
+    // Read initial state from query string
+    const initialAnim = params.get('animation') || 'theory';
+    const initialW = parseInt(params.get('w') || '1280', 10);
+    const initialH = parseInt(params.get('h') || '720', 10);
+    const initialDur = parseInt(params.get('duration') || ANIMATIONS[initialAnim]?.defaultDur || 17, 10);
+    const autoStart = params.get('auto') === '1';
+
+    if (ANIMATIONS[initialAnim]) animSel.value = initialAnim;
+    widthInp.value = initialW;
+    heightInp.value = initialH;
+    durationInp.value = initialDur;
+
+    function mountAnimation(name) {
+      const cfg = ANIMATIONS[name];
+      if (!cfg) return;
+      // Clear previous canvas + p5 instances
+      animWrap.innerHTML = '';
+      // Remove any previously loaded animation script's side effects
+      // (a hard reload is the simplest reliable approach)
+      const url = new URL(location.href);
+      url.searchParams.set('animation', name);
+      url.searchParams.set('w', widthInp.value);
+      url.searchParams.set('h', heightInp.value);
+      url.searchParams.set('duration', durationInp.value);
+      if (autoStart) url.searchParams.set('auto', '1');
+      if (url.href !== location.href) {
+        location.replace(url.href);
+        return;
+      }
+      // First-load mount
+      const w = parseInt(widthInp.value, 10);
+      const h = parseInt(heightInp.value, 10);
+      animWrap.style.width = w + 'px';
+      animWrap.style.height = h + 'px';
+
+      const div = document.createElement('div');
+      div.id = cfg.divId;
+      div.className = 'method-anim';
+      div.style.width = '100%';
+      div.style.height = '100%';
+      animWrap.appendChild(div);
+
+      const s = document.createElement('script');
+      s.src = cfg.script;
+      s.defer = true;
+      document.body.appendChild(s);
+    }
+
+    animSel.addEventListener('change', () => mountAnimation(animSel.value));
+
+    [widthInp, heightInp].forEach(inp => {
+      inp.addEventListener('change', () => {
+        // Reload so the animation re-measures its parent at the new size
+        const url = new URL(location.href);
+        url.searchParams.set('w', widthInp.value);
+        url.searchParams.set('h', heightInp.value);
+        location.replace(url.href);
+      });
+    });
+
+    // -- Recording -------------------------------------------------------------
+    function pickMimeType() {
+      const candidates = [
+        'video/mp4;codecs=avc1.42E01E',
+        'video/webm;codecs=vp9',
+        'video/webm;codecs=vp8',
+        'video/webm',
+      ];
+      for (const c of candidates) {
+        if (MediaRecorder.isTypeSupported(c)) return c;
+      }
+      return 'video/webm';
+    }
+
+    function findCanvas() {
+      return animWrap.querySelector('canvas');
+    }
+
+    function bitrateForSize(w, h, fps) {
+      // Roughly 0.10 bits/pixel/frame — high quality for screen content.
+      // Cap at 16 Mbps to avoid massive files.
+      return Math.min(16_000_000, Math.round(w * h * fps * 0.10));
+    }
+
+    let mediaRecorder = null;
+    let chunks = [];
+    let countdownTimer = null;
+
+    async function startRecording() {
+      const canvas = findCanvas();
+      if (!canvas) {
+        statusEl.textContent = 'no canvas';
+        return;
+      }
+      const fps = parseInt(fpsInp.value, 10) || 60;
+      const durationMs = (parseFloat(durationInp.value) || 17) * 1000;
+      const w = canvas.width;
+      const h = canvas.height;
+      const mimeType = pickMimeType();
+
+      // Reset the animation so the loop starts from t=0 for a clean recording.
+      // (Our sketches restart on click of their parent.)
+      try { canvas.parentElement.click(); } catch (_) {}
+      await new Promise(r => requestAnimationFrame(r));
+      await new Promise(r => setTimeout(r, 80));
+
+      const stream = canvas.captureStream(fps);
+      const options = {
+        mimeType,
+        videoBitsPerSecond: bitrateForSize(w, h, fps),
+      };
+      try {
+        mediaRecorder = new MediaRecorder(stream, options);
+      } catch (err) {
+        mediaRecorder = new MediaRecorder(stream);
+      }
+
+      chunks = [];
+      mediaRecorder.ondataavailable = (e) => {
+        if (e.data && e.data.size > 0) chunks.push(e.data);
+      };
+
+      mediaRecorder.onstop = () => {
+        clearInterval(countdownTimer);
+        const blob = new Blob(chunks, { type: mediaRecorder.mimeType });
+        const ext = mimeType.includes('mp4') ? 'mp4' : 'webm';
+        const name = `miro-${animSel.value}-${canvas.width}x${canvas.height}-${fps}fps.${ext}`;
+        downloadBlob(blob, name);
+        recordBtn.textContent = '● Record';
+        recordBtn.classList.remove('stop');
+        statusEl.textContent = 'saved';
+        statusEl.className = 'status done';
+      };
+
+      mediaRecorder.start(250);
+      recordBtn.textContent = '■ Stop';
+      recordBtn.classList.add('stop');
+      statusEl.className = 'status recording';
+
+      const t0 = performance.now();
+      countdownTimer = setInterval(() => {
+        const elapsed = performance.now() - t0;
+        const remaining = Math.max(0, durationMs - elapsed) / 1000;
+        statusEl.textContent = `rec ${remaining.toFixed(1)}s`;
+        if (elapsed >= durationMs) {
+          stopRecording();
+        }
+      }, 100);
+    }
+
+    function stopRecording() {
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+      }
+    }
+
+    function downloadBlob(blob, filename) {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
+    }
+
+    recordBtn.addEventListener('click', () => {
+      if (mediaRecorder && mediaRecorder.state === 'recording') stopRecording();
+      else startRecording();
+    });
+
+    // -- Keyboard ---------------------------------------------------------------
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 't' || e.key === 'T') {
+        toolbarEl.classList.toggle('hidden');
+        hintEl.classList.toggle('hidden');
+      } else if (e.key === 'r' || e.key === 'R') {
+        if (mediaRecorder && mediaRecorder.state === 'recording') stopRecording();
+        else startRecording();
+      }
+    });
+
+    // -- Mount ------------------------------------------------------------------
+    function init() {
+      const cfg = ANIMATIONS[initialAnim];
+      if (!cfg) return;
+      const w = parseInt(widthInp.value, 10);
+      const h = parseInt(heightInp.value, 10);
+      animWrap.style.width = w + 'px';
+      animWrap.style.height = h + 'px';
+
+      const div = document.createElement('div');
+      div.id = cfg.divId;
+      div.className = 'method-anim';
+      div.style.width = '100%';
+      div.style.height = '100%';
+      animWrap.appendChild(div);
+
+      const s = document.createElement('script');
+      s.src = cfg.script;
+      s.defer = true;
+      document.body.appendChild(s);
+
+      if (autoStart) {
+        // Give animation a moment to mount and image assets to load
+        setTimeout(startRecording, 1500);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  </script>
+</body>
+</html>
