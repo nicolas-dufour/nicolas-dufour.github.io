@@ -431,17 +431,54 @@
 
         drawBox(x, y, w, h, label, isMiro = false) {
             const p = this.p;
+            const ctx = p.drawingContext;
+            const baseAlpha = ctx.globalAlpha; // respect caller's fade-in/out
             p.push();
             p.noStroke();
-            if (p.drawingContext) {
-                p.drawingContext.shadowColor = 'rgba(0,0,0,0.25)';
-                p.drawingContext.shadowBlur = CONFIG.sizes.effects.shadowBlur;
+            if (ctx) {
+                ctx.shadowColor = 'rgba(0,0,0,0.25)';
+                ctx.shadowBlur = CONFIG.sizes.effects.shadowBlur;
             }
-            p.fill(p.color(this.pal.card));
-            p.rect(x, y, w, h, CONFIG.visual.borderRadius.large);
+
+            if (isMiro) {
+                // Pulsing outer halo (breathing glow)
+                const t = p.millis() * 0.001;
+                const pulse = 0.5 + 0.5 * Math.sin(t * 1.6);
+                const haloAlpha = (0.18 + 0.18 * pulse) * baseAlpha;
+                ctx.save();
+                ctx.shadowBlur = 0;
+                ctx.globalAlpha = haloAlpha;
+                ctx.fillStyle = this.pal.accent;
+                ctx.beginPath();
+                if (ctx.roundRect) {
+                    ctx.roundRect(x - 6, y - 6, w + 12, h + 12, CONFIG.visual.borderRadius.large + 4);
+                } else {
+                    ctx.rect(x - 6, y - 6, w + 12, h + 12);
+                }
+                ctx.filter = 'blur(10px)';
+                ctx.fill();
+                ctx.filter = 'none';
+                ctx.restore();
+
+                // Card fill with subtle gradient
+                const grad = ctx.createLinearGradient(x, y, x, y + h);
+                grad.addColorStop(0, this.pal.card);
+                grad.addColorStop(1, this._mixHex(this.pal.card, this.pal.accent, 0.10));
+                ctx.fillStyle = grad;
+                p.rect(x, y, w, h, CONFIG.visual.borderRadius.large);
+            } else {
+                p.fill(p.color(this.pal.card));
+                p.rect(x, y, w, h, CONFIG.visual.borderRadius.large);
+            }
+
             p.noFill();
             if (isMiro) {
-                p.stroke(p.color(this.pal.accent));
+                // Animated accent border
+                const t = p.millis() * 0.001;
+                const pulse = 0.5 + 0.5 * Math.sin(t * 1.6);
+                const borderAlpha = 0.55 + 0.45 * pulse;
+                const accentRGB = this._hexToRgb(this.pal.accent);
+                p.stroke(p.color(accentRGB.r, accentRGB.g, accentRGB.b, 255 * borderAlpha));
                 p.strokeWeight(CONFIG.visual.strokeWeight.normal);
                 p.rect(x + 1, y + 1, w - 2, h - 2, CONFIG.visual.borderRadius.large);
             } else {
@@ -449,13 +486,17 @@
                 p.strokeWeight(CONFIG.visual.strokeWeight.thin);
                 p.rect(x + 0.5, y + 0.5, w - 1, h - 1, CONFIG.visual.borderRadius.large);
             }
+
             p.noStroke();
             if (isMiro) {
+                // Title with subtle vertical breathing
+                const t = p.millis() * 0.001;
+                const breath = Math.sin(t * 1.6) * 0.6;
                 p.fill(p.color(this.pal.accent));
                 p.textSize(CONFIG.sizes.text.modelName);
                 p.textStyle(p.BOLD);
                 p.textAlign(p.CENTER, p.CENTER);
-                p.text(label, x + w / 2, y + h / 2);
+                p.text(label, x + w / 2, y + h / 2 + breath);
             } else {
                 p.fill(p.color(this.pal.fg));
                 p.textSize(CONFIG.sizes.text.boxLabel);
@@ -465,6 +506,27 @@
             p.pop();
         }
 
+        _hexToRgb(hex) {
+            const h = hex.replace('#', '').trim();
+            if (h.length === 6) {
+                return {
+                    r: parseInt(h.slice(0, 2), 16),
+                    g: parseInt(h.slice(2, 4), 16),
+                    b: parseInt(h.slice(4, 6), 16)
+                };
+            }
+            return { r: 255, g: 154, b: 92 };
+        }
+
+        _mixHex(a, b, t) {
+            const ca = this._hexToRgb(a);
+            const cb = this._hexToRgb(b);
+            const r = Math.round(ca.r * (1 - t) + cb.r * t);
+            const g = Math.round(ca.g * (1 - t) + cb.g * t);
+            const bl = Math.round(ca.b * (1 - t) + cb.b * t);
+            return `rgb(${r}, ${g}, ${bl})`;
+        }
+
         drawVector(x, y, w, h, n, progress, values, colors) {
             const p = this.p;
             const pad = CONFIG.visual.padding.medium;
@@ -472,6 +534,7 @@
             const by = y + pad + 16;
             const barAreaH = h - (pad * 2 + 16);
             const rewardColors = colors || getRewardColors(p);
+            const ctx = p.drawingContext;
 
             for (let i = 0; i < n; i++) {
                 const v = Array.isArray(values) && values.length > i
@@ -479,9 +542,26 @@
                     : p.noise(i * 0.37 + progress * 2.1);
                 const eased = Math.max(0, Math.min(1, v));
                 const barH = barAreaH * eased;
-                p.fill(rewardColors[i % rewardColors.length]);
-                p.noStroke();
-                p.rect(x + pad + i * (barWidth + pad), by + (barAreaH - barH), barWidth, barH, CONFIG.visual.borderRadius.small);
+                const bx = x + pad + i * (barWidth + pad);
+                const by2 = by + (barAreaH - barH);
+                const baseColor = rewardColors[i % rewardColors.length];
+
+                if (barH > 1) {
+                    // Vertical gradient: brighter at top, slightly darker at bottom
+                    const r = p.red(baseColor);
+                    const g = p.green(baseColor);
+                    const b = p.blue(baseColor);
+                    const grad = ctx.createLinearGradient(bx, by2, bx, by2 + barH);
+                    grad.addColorStop(0, `rgba(${r}, ${g}, ${b}, 1)`);
+                    grad.addColorStop(1, `rgba(${Math.round(r * 0.78)}, ${Math.round(g * 0.78)}, ${Math.round(b * 0.78)}, 1)`);
+                    ctx.fillStyle = grad;
+                    p.noStroke();
+                    p.rect(bx, by2, barWidth, barH, CONFIG.visual.borderRadius.small);
+                } else {
+                    p.fill(baseColor);
+                    p.noStroke();
+                    p.rect(bx, by2, barWidth, Math.max(0, barH), CONFIG.visual.borderRadius.small);
+                }
             }
         }
 
@@ -546,30 +626,36 @@
             const p = this.p;
             if (!img || alpha <= 0) return;
 
-            p.push();
-            const noiseWeight = CONFIG.animation.noiseParams.maxWeight * alpha;
-            const imageWeight = 1.0 - CONFIG.animation.noiseParams.maxWeight * alpha;
-
-            p.loadPixels();
-            if (img.width > 0) {
-                const tempImg = p.get(imgX, imgY, imgW, imgH);
-                tempImg.loadPixels();
-
-                const stdDev = CONFIG.animation.noiseParams.stdDev;
-                for (let i = 0; i < tempImg.pixels.length; i += 4) {
-                    const noiseR = p.randomGaussian(0, stdDev);
-                    const noiseG = p.randomGaussian(0, stdDev);
-                    const noiseB = p.randomGaussian(0, stdDev);
-
-                    tempImg.pixels[i] = p.constrain(imageWeight * tempImg.pixels[i] + noiseWeight * noiseR, 0, 255);
-                    tempImg.pixels[i + 1] = p.constrain(imageWeight * tempImg.pixels[i + 1] + noiseWeight * noiseG, 0, 255);
-                    tempImg.pixels[i + 2] = p.constrain(imageWeight * tempImg.pixels[i + 2] + noiseWeight * noiseB, 0, 255);
+            // Fixed-size noise pattern, refreshed at ~15 fps for a smoother diffusion look.
+            // p.image() stretches the cache to fit the destination — keeping cache size
+            // constant avoids costly regeneration while images zoom/lerp.
+            const CACHE_SIZE = 200;
+            const now = p.millis();
+            if (!this._noiseCache || now - (this._noiseCacheTime || 0) > 66) {
+                if (!this._noiseCache) {
+                    this._noiseCache = p.createImage(CACHE_SIZE, CACHE_SIZE);
                 }
-
-                tempImg.updatePixels();
-                p.image(tempImg, imgX, imgY, imgW, imgH);
+                this._noiseCache.loadPixels();
+                const stdDev = CONFIG.animation.noiseParams.stdDev;
+                const px = this._noiseCache.pixels;
+                for (let i = 0; i < px.length; i += 4) {
+                    px[i]     = p.constrain(128 + p.randomGaussian(0, stdDev), 0, 255);
+                    px[i + 1] = p.constrain(128 + p.randomGaussian(0, stdDev), 0, 255);
+                    px[i + 2] = p.constrain(128 + p.randomGaussian(0, stdDev), 0, 255);
+                    px[i + 3] = 255;
+                }
+                this._noiseCache.updatePixels();
+                this._noiseCacheTime = now;
             }
-            p.pop();
+
+            // Overlay-blend noise onto the underlying image (already drawn by caller).
+            const noiseWeight = CONFIG.animation.noiseParams.maxWeight * alpha;
+            const ctx = p.drawingContext;
+            ctx.save();
+            ctx.globalAlpha = Math.min(1, noiseWeight * 2.0);
+            ctx.globalCompositeOperation = 'overlay';
+            p.image(this._noiseCache, imgX, imgY, imgW, imgH);
+            ctx.restore();
         }
 
         drawCaptionBox(x, y, w, h, alpha) {
@@ -888,13 +974,24 @@
                 const rectH = lerp(miniH, miniH * CONFIG.sizes.dot.morphMinScale, pMorph);
                 renderer.drawMiniInput(state.img, cxCenter - rectW / 2, cyCenter - rectH / 2, rectW, rectH, 1, false);
 
-                // Growing dot
+                // Growing dot with glow halo
                 if (pMorph > 0.01) {
-                    p.push();
-                    p.noStroke();
-                    p.fill(rewardColors[i % rewardColors.length]);
-                    p.drawingContext.globalAlpha = pMorph;
+                    const dotColor = rewardColors[i % rewardColors.length];
                     const dotR = lerp(0, CONFIG.sizes.dot.radius, pMorph);
+                    p.push();
+                    const ctx = p.drawingContext;
+                    ctx.save();
+                    ctx.globalAlpha = pMorph * 0.55;
+                    ctx.shadowColor = dotColor.toString();
+                    ctx.shadowBlur = 12;
+                    p.noStroke();
+                    p.fill(dotColor);
+                    p.circle(cxCenter, cyCenter, Math.max(1, dotR));
+                    ctx.restore();
+
+                    p.drawingContext.globalAlpha = pMorph;
+                    p.noStroke();
+                    p.fill(dotColor);
                     p.circle(cxCenter, cyCenter, Math.max(1, dotR));
                     p.pop();
                 }
@@ -1034,11 +1131,40 @@
 
                 const cx = lerp(startX, endX, prog);
                 const cy = lerp(startY, endY, prog);
+                const dotColor = rewardColors[i % rewardColors.length];
 
-                // Dot
+                // Soft trail (last ~25% of travel)
+                p.push();
+                const trailSegments = 6;
+                for (let s = 1; s <= trailSegments; s++) {
+                    const tBack = Math.max(0, prog - s * 0.04);
+                    if (tBack <= 0) break;
+                    const tx = lerp(startX, endX, tBack);
+                    const ty = lerp(startY, endY, tBack);
+                    p.noStroke();
+                    p.drawingContext.globalAlpha = 0.35 * (1 - s / (trailSegments + 1));
+                    p.fill(dotColor);
+                    p.circle(tx, ty, CONFIG.sizes.dot.radius * (1 - s * 0.1));
+                }
+                p.pop();
+
+                // Glow halo
+                p.push();
+                const ctx = p.drawingContext;
+                ctx.save();
+                ctx.globalAlpha = 0.55;
+                ctx.shadowColor = dotColor.toString();
+                ctx.shadowBlur = 14;
+                p.noStroke();
+                p.fill(dotColor);
+                p.circle(cx, cy, CONFIG.sizes.dot.radius);
+                ctx.restore();
+                p.pop();
+
+                // Bright core
                 p.push();
                 p.noStroke();
-                p.fill(rewardColors[i % rewardColors.length]);
+                p.fill(dotColor);
                 p.circle(cx, cy, CONFIG.sizes.dot.radius);
                 p.pop();
 
@@ -1339,6 +1465,12 @@
             const outputLayout = layoutCalc.getOutputLayout(modelLayout, imgLayout);
             const leftVecLayout = layoutCalc.getLeftVectorLayout(imgLayout, vectorLayout);
 
+            // Subtle idle breathing — applied as a global Y translation
+            // Makes "static" pause moments feel alive
+            const breath = Math.sin(p.millis() * 0.0015) * 1.2;
+            p.push();
+            p.translate(0, breath);
+
             const layout = {
                 isMobile,
                 imgLayout,
@@ -1360,7 +1492,9 @@
                 handler.render(p, layout, renderer, prog, state);
             }
 
-            // Render phase labels
+            p.pop();
+
+            // Render phase labels (outside translate so they don't move)
             renderPhaseLabel(p, stageName, prog, isMobile, renderer.pal);
         };
 
@@ -1373,23 +1507,44 @@
 
             let alpha = 0;
             let labelText = '';
+            let slideIn = 1; // 1 = settled, <1 = sliding in
 
             if (stageName === 'intro' || stageName === 'move_to_rewards' || stageName === 'fanout_inputs' || stageName === 'emit_scores' || stageName === 'rewards_disappear') {
                 labelText = CONFIG.text.phaseLabels.scoring;
-                if (stageName === 'intro') alpha = Math.min(1, prog * 2);
-                else if (stageName === 'rewards_disappear') alpha = 1 - prog;
-                else alpha = 1;
+                if (stageName === 'intro') {
+                    alpha = Math.min(1, prog * 2);
+                    slideIn = Math.min(1, prog * 2);
+                } else if (stageName === 'rewards_disappear') {
+                    alpha = 1 - prog;
+                } else {
+                    alpha = 1;
+                }
             } else if (stageName === 'scores_back' || stageName === 'noise_input' || stageName === 'denoiser_appear' || stageName === 'to_denoiser' || stageName === 'clean_output' || stageName === 'pause') {
                 labelText = CONFIG.text.phaseLabels.training;
-                if (stageName === 'scores_back') alpha = Math.min(1, prog * 2);
-                else alpha = 1;
+                if (stageName === 'scores_back') {
+                    alpha = Math.min(1, prog * 2);
+                    slideIn = Math.min(1, prog * 2);
+                } else {
+                    alpha = 1;
+                }
             }
 
             if (alpha > 0 && labelText) {
+                // Smooth ease-out for slide-in (cubic)
+                const easedSlide = 1 - Math.pow(1 - slideIn, 3);
+                const yOffset = (1 - easedSlide) * -8;
                 p.drawingContext.globalAlpha = alpha;
                 p.fill(p.color(pal.fg));
                 p.textSize(textSize);
-                p.text(labelText, p.width / 2, phaseLabelY);
+                p.text(labelText, p.width / 2, phaseLabelY + yOffset);
+
+                // Subtle underline accent that draws in
+                const textW = p.textWidth(labelText);
+                const underlineW = textW * 0.45 * alpha;
+                p.noStroke();
+                p.drawingContext.globalAlpha = alpha * 0.7;
+                p.fill(p.color(pal.accent));
+                p.rect(p.width / 2 - underlineW / 2, phaseLabelY + textSize + 6 + yOffset, underlineW, 2, 1);
             }
 
             p.pop();

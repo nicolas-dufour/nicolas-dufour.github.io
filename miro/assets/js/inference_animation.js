@@ -451,15 +451,48 @@
 
         drawBox(x, y, w, h, label, isMiro = false, alpha = 1) {
             const p = this.p;
+            const ctx = p.drawingContext;
             p.push();
-            p.drawingContext.globalAlpha = alpha;
+            ctx.globalAlpha = alpha;
             p.noStroke();
-            p.fill(p.color(this.pal.card));
-            p.rect(x, y, w, h, CONFIG.visual.borderRadius.large);
+
+            if (isMiro) {
+                // Pulsing outer halo
+                const t = p.millis() * 0.001;
+                const pulse = 0.5 + 0.5 * Math.sin(t * 1.6);
+                const haloAlpha = (0.16 + 0.20 * pulse) * alpha;
+                ctx.save();
+                ctx.globalAlpha = haloAlpha;
+                ctx.fillStyle = this.pal.accent;
+                ctx.filter = 'blur(10px)';
+                ctx.beginPath();
+                if (ctx.roundRect) {
+                    ctx.roundRect(x - 6, y - 6, w + 12, h + 12, CONFIG.visual.borderRadius.large + 4);
+                } else {
+                    ctx.rect(x - 6, y - 6, w + 12, h + 12);
+                }
+                ctx.fill();
+                ctx.filter = 'none';
+                ctx.restore();
+
+                // Card fill with subtle gradient
+                const grad = ctx.createLinearGradient(x, y, x, y + h);
+                grad.addColorStop(0, this.pal.card);
+                grad.addColorStop(1, this._mixHex(this.pal.card, this.pal.accent, 0.10));
+                ctx.fillStyle = grad;
+                p.rect(x, y, w, h, CONFIG.visual.borderRadius.large);
+            } else {
+                p.fill(p.color(this.pal.card));
+                p.rect(x, y, w, h, CONFIG.visual.borderRadius.large);
+            }
 
             p.noFill();
             if (isMiro) {
-                p.stroke(p.color(this.pal.accent));
+                const t = p.millis() * 0.001;
+                const pulse = 0.5 + 0.5 * Math.sin(t * 1.6);
+                const borderA = (0.55 + 0.45 * pulse) * alpha;
+                const rgb = this._hexToRgb(this.pal.accent);
+                p.stroke(p.color(rgb.r, rgb.g, rgb.b, 255 * borderA));
                 p.strokeWeight(CONFIG.visual.strokeWeight.thick);
                 p.rect(x + 1, y + 1, w - 2, h - 2, CONFIG.visual.borderRadius.large);
             } else {
@@ -476,6 +509,27 @@
                 p.text(label, x + w / 2, y + 8);
             }
             p.pop();
+        }
+
+        _hexToRgb(hex) {
+            const h = (hex || '#ff9a5c').replace('#', '').trim();
+            if (h.length === 6) {
+                return {
+                    r: parseInt(h.slice(0, 2), 16),
+                    g: parseInt(h.slice(2, 4), 16),
+                    b: parseInt(h.slice(4, 6), 16)
+                };
+            }
+            return { r: 255, g: 154, b: 92 };
+        }
+
+        _mixHex(a, b, t) {
+            const ca = this._hexToRgb(a);
+            const cb = this._hexToRgb(b);
+            const r = Math.round(ca.r * (1 - t) + cb.r * t);
+            const g = Math.round(ca.g * (1 - t) + cb.g * t);
+            const bl = Math.round(ca.b * (1 - t) + cb.b * t);
+            return `rgb(${r}, ${g}, ${bl})`;
         }
 
         drawVector(x, y, w, h, n, values, colors, label, alpha = 1) {
@@ -513,8 +567,9 @@
 
         drawImageWithNoise(img, x, y, w, h, noiseAmount, alpha = 1) {
             const p = this.p;
+            const ctx = p.drawingContext;
             p.push();
-            p.drawingContext.globalAlpha = alpha;
+            ctx.globalAlpha = alpha;
 
             if (!img || img.width === 0 || noiseAmount <= 0) {
                 if (img && img.width > 0) p.image(img, x, y, w, h);
@@ -522,62 +577,97 @@
                 return;
             }
 
-            const noiseWeight = CONFIG.animation.noiseParams.maxWeight * noiseAmount;
-            const imageWeight = 1.0 - CONFIG.animation.noiseParams.maxWeight * noiseAmount;
-
             p.image(img, x, y, w, h);
 
-            p.loadPixels();
-            const x1 = Math.floor(x);
-            const y1 = Math.floor(y);
-            const x2 = Math.min(Math.ceil(x + w), p.width);
-            const y2 = Math.min(Math.ceil(y + h), p.height);
-
-            const stdDev = CONFIG.animation.noiseParams.stdDev;
-            for (let py = y1; py < y2; py++) {
-                for (let px = x1; px < x2; px++) {
-                    const idx = (py * p.width + px) * 4;
-
-                    const noiseR = p.randomGaussian(0, stdDev);
-                    const noiseG = p.randomGaussian(0, stdDev);
-                    const noiseB = p.randomGaussian(0, stdDev);
-
-                    p.pixels[idx] = p.constrain(imageWeight * p.pixels[idx] + noiseWeight * noiseR, 0, 255);
-                    p.pixels[idx + 1] = p.constrain(imageWeight * p.pixels[idx + 1] + noiseWeight * noiseG, 0, 255);
-                    p.pixels[idx + 2] = p.constrain(imageWeight * p.pixels[idx + 2] + noiseWeight * noiseB, 0, 255);
+            // Fixed-size cached noise pattern, refreshed at ~15fps. p.image() stretches.
+            const CACHE_SIZE = 200;
+            const now = p.millis();
+            if (!this._noiseCache || now - (this._noiseCacheTime || 0) > 66) {
+                if (!this._noiseCache) {
+                    this._noiseCache = p.createImage(CACHE_SIZE, CACHE_SIZE);
                 }
+                this._noiseCache.loadPixels();
+                const stdDev = CONFIG.animation.noiseParams.stdDev;
+                const px = this._noiseCache.pixels;
+                for (let i = 0; i < px.length; i += 4) {
+                    px[i]     = p.constrain(128 + p.randomGaussian(0, stdDev), 0, 255);
+                    px[i + 1] = p.constrain(128 + p.randomGaussian(0, stdDev), 0, 255);
+                    px[i + 2] = p.constrain(128 + p.randomGaussian(0, stdDev), 0, 255);
+                    px[i + 3] = 255;
+                }
+                this._noiseCache.updatePixels();
+                this._noiseCacheTime = now;
             }
-            p.updatePixels();
+
+            const noiseWeight = CONFIG.animation.noiseParams.maxWeight * noiseAmount;
+            ctx.save();
+            ctx.globalAlpha = Math.min(1, noiseWeight * 2.0) * alpha;
+            ctx.globalCompositeOperation = 'overlay';
+            p.image(this._noiseCache, x, y, w, h);
+            ctx.restore();
+
             p.pop();
         }
 
         drawArrow(x1, y1, x2, y2, alpha, color) {
             const p = this.p;
+            const ctx = p.drawingContext;
             color = color || this.pal.muted;
             p.push();
+
+            // Base line — soft, low-contrast underlay
             p.stroke(color);
             p.strokeWeight(CONFIG.visual.strokeWeight.normal);
-            p.drawingContext.globalAlpha = alpha;
-            p.fill(color);
+            ctx.globalAlpha = alpha * 0.45;
             p.line(x1, y1, x2, y2);
+
+            // Animated flowing dash on top
+            ctx.save();
+            ctx.globalAlpha = alpha;
+            ctx.strokeStyle = color;
+            ctx.lineWidth = CONFIG.visual.strokeWeight.normal;
+            if (ctx.setLineDash) {
+                ctx.setLineDash([8, 8]);
+                ctx.lineDashOffset = -(p.millis() * 0.06) % 16;
+            }
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+            ctx.restore();
+
+            // Arrowhead
+            ctx.globalAlpha = alpha;
+            p.fill(color);
+            p.noStroke();
             const angle = Math.atan2(y2 - y1, x2 - x1);
             p.translate(x2, y2);
             p.rotate(angle);
-            p.triangle(0, 0, -5, -2.5, -5, 2.5);
+            p.triangle(0, 0, -6, -3, -6, 3);
             p.pop();
         }
 
         drawGlowEffect(x, y, w, h, color, alpha = 1, blurAmount = null) {
             const p = this.p;
+            const ctx = p.drawingContext;
             p.push();
-            p.drawingContext.globalAlpha = alpha;
-            p.noStroke();
-            p.fill(color);
-            if (p.drawingContext.shadowBlur) {
-                p.drawingContext.shadowColor = color;
-                p.drawingContext.shadowBlur = blurAmount || CONFIG.sizes.effects.shadowBlur;
+            // Subtle breathing pulse on the glow itself
+            const t = p.millis() * 0.001;
+            const pulse = 0.5 + 0.5 * Math.sin(t * 1.4);
+            const effectiveAlpha = alpha * (0.85 + 0.15 * pulse);
+            ctx.save();
+            ctx.globalAlpha = effectiveAlpha;
+            ctx.fillStyle = color;
+            ctx.filter = `blur(${(blurAmount || CONFIG.sizes.effects.shadowBlur) * 0.8}px)`;
+            ctx.beginPath();
+            if (ctx.roundRect) {
+                ctx.roundRect(x, y, w, h, CONFIG.visual.borderRadius.medium);
+            } else {
+                ctx.rect(x, y, w, h);
             }
-            p.rect(x, y, w, h, CONFIG.visual.borderRadius.medium);
+            ctx.fill();
+            ctx.filter = 'none';
+            ctx.restore();
             p.pop();
         }
 
@@ -681,24 +771,43 @@
 
         drawProcessingEffect(x, y, prog, alpha = 1) {
             const p = this.p;
+            const ctx = p.drawingContext;
             p.push();
             p.translate(x, y);
             p.noFill();
-            p.stroke(this.pal.accent);
             p.strokeWeight(CONFIG.visual.strokeWeight.normal);
 
             const maxRadius = CONFIG.sizes.effects.processingMaxRadius;
             const startRadius = CONFIG.sizes.effects.processingStartRadius;
 
-            if (prog < 0.5) {
-                const r = lerp(startRadius, maxRadius, prog * 2);
-                p.drawingContext.globalAlpha = lerp(1, 0, prog * 2);
-                p.ellipse(0, 0, r * 2);
-            } else {
-                const r = lerp(startRadius, maxRadius, (prog - 0.5) * 2);
-                p.drawingContext.globalAlpha = lerp(1, 0, (prog - 0.5) * 2);
-                p.ellipse(0, 0, r * 2);
+            // Three overlapping rings staggered by 0.33 in phase — feels more energetic
+            for (let i = 0; i < 3; i++) {
+                const local = ((prog + i / 3) % 1);
+                const easedR = startRadius + (maxRadius - startRadius) * (1 - Math.pow(1 - local, 2));
+                const ringAlpha = Math.max(0, 1 - local) * alpha;
+                ctx.save();
+                ctx.globalAlpha = ringAlpha;
+                ctx.strokeStyle = this.pal.accent;
+                ctx.shadowColor = this.pal.accent;
+                ctx.shadowBlur = 8;
+                ctx.beginPath();
+                ctx.arc(0, 0, easedR, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.restore();
             }
+
+            // Inner core dot with breathing glow
+            const t = p.millis() * 0.005;
+            const corePulse = 0.5 + 0.5 * Math.sin(t);
+            ctx.save();
+            ctx.globalAlpha = (0.6 + 0.4 * corePulse) * alpha;
+            ctx.fillStyle = this.pal.accent;
+            ctx.shadowColor = this.pal.accent;
+            ctx.shadowBlur = 16;
+            ctx.beginPath();
+            ctx.arc(0, 0, 3 + 1.5 * corePulse, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
             p.pop();
         }
     }

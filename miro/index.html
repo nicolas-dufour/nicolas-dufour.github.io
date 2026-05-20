@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Primary Meta Tags -->
-  <title>MIRO: Multi-Reward Conditioning for Efficient Text-to-Image Generation</title>
-  <meta name="title" content="MIRO: Multi-Reward Conditioning for Efficient Text-to-Image Generation" />
+  <title>MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency</title>
+  <meta name="title" content="MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency" />
   <meta name="description"
     content="MIRO integrates multiple reward signals directly into text-to-image pretraining, achieving 19× faster convergence, 370× less compute than FLUX, and state-of-the-art GenEval score of 75. Train once, align many rewards with controllable trade-offs." />
   <meta name="keywords"
@@ -27,7 +27,7 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://nicolas-dufour.github.io/miro/" />
-  <meta property="og:title" content="MIRO: Multi-Reward Conditioning for Efficient Text-to-Image Generation" />
+  <meta property="og:title" content="MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency" />
   <meta property="og:description"
     content="Train once, align many rewards. MIRO achieves 19× faster convergence and 370× less compute than FLUX while reaching GenEval score of 75. Controllable trade-offs at inference time." />
   <meta property="og:image" content="https://nicolas-dufour.github.io/miro/assets/images/miro_placeholder.jpg" />
@@ -47,7 +47,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://nicolas-dufour.github.io/miro/" />
-  <meta name="twitter:title" content="MIRO: Multi-Reward Conditioning for Efficient Text-to-Image Generation" />
+  <meta name="twitter:title" content="MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency" />
   <meta name="twitter:description"
     content="Train once, align many rewards. MIRO achieves 19× faster convergence and 370× less compute than FLUX while reaching GenEval score of 75." />
   <meta name="twitter:image" content="https://nicolas-dufour.github.io/miro/assets/images/miro_placeholder.jpg" />
@@ -64,7 +64,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "MIRO: Multi-Reward Conditioning for Efficient Text-to-Image Generation",
+    "headline": "MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency",
     "description": "MIRO integrates multiple reward signals directly into text-to-image pretraining, achieving 19× faster convergence, 370× less compute than FLUX, and state-of-the-art GenEval score of 75.",
     "image": "https://nicolas-dufour.github.io/miro/assets/images/miro_placeholder.jpg",
     "author": [
@@ -72,11 +72,12 @@
         "@type": "Person",
         "name": "Nicolas Dufour",
         "url": "https://nicolas-dufour.github.io/",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "LIGM, ENPC, IP Paris, CNRS, UGE"
-        }
-      },
+        "affiliation": [
+          { "@type": "Organization", "name": "LIGM, ENPC, IP Paris, CNRS, UGE" },
+          { "@type": "Organization", "name": "LIX, École Polytechnique, IP Paris" },
+          { "@type": "Organization", "name": "Kyutai" }
+        ]
+      }
     ],
     "datePublished": "2025-10-19",
     "publisher": {
@@ -104,7 +105,7 @@
     ],
     "citation": {
       "@type": "CreativeWork",
-      "name": "MIRO: Multi-Reward Conditioned Pretraining for Text-to-Image Generation"
+      "name": "MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -126,6 +127,10 @@
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div id="scrollProgress" class="scroll-progress-bar" aria-hidden="true"></div>
+
   <!-- Desktop theme toggle button -->
   <button id="themeToggle" class="theme-toggle-btn desktop-only" aria-label="Toggle dark/light mode">
     <span class="theme-icon">🌙</span>
@@ -161,7 +166,7 @@
       efficiency</h1>
     <div class="authors">
       <p>
-        <a href="https://nicolas-dufour.github.io/" target="_blank" rel="noopener">Nicolas Dufour</a><sup>1,2</sup>,
+        <a href="https://nicolas-dufour.github.io/" target="_blank" rel="noopener">Nicolas Dufour</a><sup>1,2,4</sup>,
         <a href="https://lucasdegeorge.github.io/" target="_blank" rel="noopener">Lucas Degeorge</a><sup>*,1,2,3</sup>,
         <a href="https://arijit-hub.github.io/" target="_blank" rel="noopener">Arijit Ghosh</a><sup>*,1</sup>,
         <a href="http://vicky.kalogeiton.info/" target="_blank" rel="noopener">Vicky Kalogeiton</a><sup>†,2</sup>,
@@ -173,31 +178,46 @@
         <span class="affiliation-item"><sup>1</sup>LIGM, ENPC, IP Paris, CNRS, UGE</span>
         <span class="affiliation-item"><sup>2</sup>LIX, École Polytechnique, IP Paris</span>
         <span class="affiliation-item"><sup>3</sup>AMIAD</span>
+        <span class="affiliation-item"><sup>4</sup>Kyutai</span>
       </p>
+      <p class="author-note"><sup>*</sup> Co-second authors. <sup>†</sup> Co-last authors.</p>
     </div>
     <div class="tldr-container">
       <div class="tldr-badge">TL;DR</div>
-      <p class="tldr">Train once, align many rewards. Faster convergence, controllable trade-offs, and strong
-        performance.</p>
+      <p class="tldr">Train once, align many rewards — <strong>19× faster convergence</strong>, <strong>370× cheaper inference than FLUX</strong>, with reward trade-offs dialed at inference time.</p>
     </div>
     <nav class="topnav">
       <a href="https://arxiv.org/abs/2510.25897" target="_blank" rel="noopener">📄 Paper</a>
       <a href="https://github.com/nicolas-dufour/miro" target="_blank" rel="noopener">💻 Code</a>
-      <a href="#" target="_blank" rel="noopener">🎮 Demo (soon)</a>
-      <a href="#" target="_blank" rel="noopener">⚖️ Weights (soon)</a>
+      <a href="https://huggingface.co/spaces/nicolas-dufour/miro" target="_blank" rel="noopener">🎮 Demo</a>
+      <a href="https://huggingface.co/nicolas-dufour/miro" target="_blank" rel="noopener">⚖️ Weights</a>
     </nav>
   </header>
 
-  <main>
+  <main id="main">
     <!-- Results Overview -->
     <section id="results-summary" class="section">
-      <div class="kpis">
-        <div class="kpi card">
+      <div class="kpis kpis-hero">
+        <div class="kpi kpi-hero card">
           <div class="kpi-num">19×</div>
-          <div class="kpi-label">Training speedup for Aesthetic</div>
+          <div class="kpi-label">Faster training convergence</div>
+        </div>
+        <div class="kpi kpi-hero card">
+          <div class="kpi-num">370×</div>
+          <div class="kpi-label">Cheaper inference than FLUX</div>
+        </div>
+      </div>
+      <div class="kpis kpis-secondary">
+        <div class="kpi card">
+          <div class="kpi-num">75</div>
+          <div class="kpi-label">GenEval Score (with optimized weighting)</div>
         </div>
         <div class="kpi card">
-          <div class="kpi-num">6.3×</div>
+          <div class="kpi-num">34×</div>
+          <div class="kpi-label">Fewer parameters than FLUX</div>
+        </div>
+        <div class="kpi card">
+          <div class="kpi-num">6.2×</div>
           <div class="kpi-label">Training speedup for HPSv2</div>
         </div>
         <div class="kpi card">
@@ -205,20 +225,8 @@
           <div class="kpi-label">Training speedup for PickAScore</div>
         </div>
         <div class="kpi card">
-          <div class="kpi-num">3.7×</div>
+          <div class="kpi-num">3.3×</div>
           <div class="kpi-label">Training speedup for ImageReward</div>
-        </div>
-        <div class="kpi card">
-          <div class="kpi-num">75</div>
-          <div class="kpi-label">Overall GenEval Score</div>
-        </div>
-        <div class="kpi card">
-          <div class="kpi-num">370×</div>
-          <div class="kpi-label">Cheaper inference cost than FLUX</div>
-        </div>
-        <div class="kpi card">
-          <div class="kpi-num">34x</div>
-          <div class="kpi-label">Less parameters than FLUX</div>
         </div>
       </div>
     </section>
@@ -657,12 +665,12 @@
         <div class="progression-pair">
           <figure class="progression-item">
             <img id="prog_baseline_0"
-              alt="Baseline model training progression showing image quality evolution over training steps" />
+              alt="Baseline model training progression showing image quality evolution over training steps" loading="lazy" decoding="async" />
             <figcaption class="progression-label">Baseline</figcaption>
           </figure>
           <figure class="progression-item">
             <img id="prog_miro_0"
-              alt="MIRO model training progression demonstrating faster convergence and better image quality" />
+              alt="MIRO model training progression demonstrating faster convergence and better image quality" loading="lazy" decoding="async" />
             <figcaption class="progression-label">MIRO</figcaption>
           </figure>
         </div>
@@ -670,12 +678,12 @@
         <div class="progression-pair">
           <figure class="progression-item">
             <img id="prog_baseline_1"
-              alt="Baseline model training progression showing image quality evolution over training steps" />
+              alt="Baseline model training progression showing image quality evolution over training steps" loading="lazy" decoding="async" />
             <figcaption class="progression-label">Baseline</figcaption>
           </figure>
           <figure class="progression-item">
             <img id="prog_miro_1"
-              alt="MIRO model training progression demonstrating faster convergence and better image quality" />
+              alt="MIRO model training progression demonstrating faster convergence and better image quality" loading="lazy" decoding="async" />
             <figcaption class="progression-label">MIRO</figcaption>
           </figure>
         </div>
@@ -683,12 +691,12 @@
         <div class="progression-pair">
           <figure class="progression-item">
             <img id="prog_baseline_2"
-              alt="Baseline model training progression showing image quality evolution over training steps" />
+              alt="Baseline model training progression showing image quality evolution over training steps" loading="lazy" decoding="async" />
             <figcaption class="progression-label">Baseline</figcaption>
           </figure>
           <figure class="progression-item">
             <img id="prog_miro_2"
-              alt="MIRO model training progression demonstrating faster convergence and better image quality" />
+              alt="MIRO model training progression demonstrating faster convergence and better image quality" loading="lazy" decoding="async" />
             <figcaption class="progression-label">MIRO</figcaption>
           </figure>
         </div>
@@ -696,12 +704,12 @@
         <div class="progression-pair">
           <figure class="progression-item">
             <img id="prog_baseline_3"
-              alt="Baseline model training progression showing image quality evolution over training steps" />
+              alt="Baseline model training progression showing image quality evolution over training steps" loading="lazy" decoding="async" />
             <figcaption class="progression-label">Baseline</figcaption>
           </figure>
           <figure class="progression-item">
             <img id="prog_miro_3"
-              alt="MIRO model training progression demonstrating faster convergence and better image quality" />
+              alt="MIRO model training progression demonstrating faster convergence and better image quality" loading="lazy" decoding="async" />
             <figcaption class="progression-label">MIRO</figcaption>
           </figure>
         </div>
@@ -1147,7 +1155,8 @@
               <div class="pairwise-image-glow"></div>
               <div class="pairwise-image-container">
                 <img id="pairwiseImage"
-                  alt="MIRO generated image demonstrating controllable trade-offs between different reward model objectives" />
+                  alt="MIRO generated image demonstrating controllable trade-offs between different reward model objectives"
+                  loading="lazy" decoding="async" />
                 <div class="pairwise-loading">Loading...</div>
               </div>
             </div>
@@ -1173,7 +1182,7 @@
 
     <!-- SOTA Comparison -->
     <section id="sota-comparison" class="section">
-      <h2>Comparison to State-of-the-Art Models</h2>
+      <h2>Comparison to state-of-the-art models</h2>
       <div class="callout info">
         <strong>MIRO sets new benchmarks for efficiency and performance</strong>: Our compact 350M-parameter model
         achieves a GenEval score of <strong>75</strong>, outperforming FLUX-dev (12B parameters, 67) while requiring
@@ -1278,7 +1287,7 @@
         <p>
           The charts below visualize the dramatic difference in model size and computational requirements using
           <strong>logarithmic scales</strong> to better show the magnitude of MIRO's efficiency gains. MIRO's
-          compact 350M-parameter architecture requires <strong>33× fewer parameters</strong> than FLUX-dev and
+          compact 350M-parameter architecture requires <strong>34× fewer parameters</strong> than FLUX-dev and
           <strong>370× less compute</strong> for inference, while achieving superior performance on both metrics above.
         </p>
       </div>
@@ -1489,19 +1498,19 @@
       <div class="cta-section">
         <h3 style="text-align: center; margin: 3rem 0 1.5rem; font-size: 1.6em;">Get Started</h3>
         <div class="cta-buttons">
-          <a href="../iclr2026_conference.pdf" class="cta-button primary" target="_blank" rel="noopener">
+          <a href="https://arxiv.org/abs/2510.25897" class="cta-button primary" target="_blank" rel="noopener">
             <span class="cta-icon">📄</span>
             <span>Paper</span>
           </a>
-          <a href="#" class="cta-button primary" target="_blank" rel="noopener">
+          <a href="https://github.com/nicolas-dufour/miro" class="cta-button primary" target="_blank" rel="noopener">
             <span class="cta-icon">💻</span>
             <span>Code</span>
           </a>
-          <a href="#" class="cta-button primary" target="_blank" rel="noopener">
+          <a href="https://huggingface.co/spaces/nicolas-dufour/miro" class="cta-button primary" target="_blank" rel="noopener">
             <span class="cta-icon">🎮</span>
             <span>Demo</span>
           </a>
-          <a href="#" class="cta-button primary" target="_blank" rel="noopener">
+          <a href="https://huggingface.co/nicolas-dufour/miro" class="cta-button primary" target="_blank" rel="noopener">
             <span class="cta-icon">⚖️</span>
             <span>Weights</span>
           </a>
@@ -1616,6 +1625,10 @@
   <!-- Utility modules (no dependencies) -->
   <script src="assets/js/utils/metrics.js"></script>
   <script src="assets/js/utils/clipboard.js"></script>
+  <script src="assets/js/utils/kpi-countup.js"></script>
+  <script src="assets/js/utils/slider-hints.js"></script>
+  <script src="assets/js/utils/scroll-progress.js"></script>
+  <script src="assets/js/utils/reveal-on-scroll.js"></script>
 
   <!-- Plot modules (may use utils) -->
   <script src="assets/js/plots/training-curves.js"></script>

@@ -77,6 +77,11 @@
             window.MIRO.setupTrainingAnimation();
         }
 
+        // Re-scan reveal-on-scroll targets (catches TOC and other late-built DOM)
+        if (window.MIRO.setupReveal) {
+            window.MIRO.setupReveal();
+        }
+
         // Setup copy bibtex functionality
         if (window.MIRO.setupCopyBibtex) {
             window.MIRO.setupCopyBibtex();

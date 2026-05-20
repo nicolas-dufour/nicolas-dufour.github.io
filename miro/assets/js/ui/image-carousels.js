@@ -48,6 +48,8 @@
         const item = document.createElement('figure');
         item.className = 'ipr-item';
         const img = document.createElement('img');
+        img.loading = 'lazy';
+        img.decoding = 'async';
         img.alt = `Generated image for prompt ${prompts[dir]} optimized for ${names[i]} reward model`;
         img.src = base + '/' + dir + '/' + file;
         const caption = document.createElement('figcaption');
@@ -72,7 +74,7 @@
       const offset = currentIndex * 100;
 
       if (smooth) {
-        track.style.transition = 'transform 0.5s ease-in-out';
+        track.style.transition = 'transform 600ms cubic-bezier(0.25, 1, 0.5, 1)';
       } else {
         track.style.transition = 'none';
       }
@@ -280,6 +282,8 @@
         const imgIndex = col * imagesPerColumn + row;
         if (imgIndex < totalImages) {
           const img = document.createElement('img');
+          img.loading = 'lazy';
+          img.decoding = 'async';
           img.src = `assets/images/qualitative_images/image_${imgIndex}.jpg`;
           img.alt = `High-quality text-to-image generation example ${imgIndex + 1} from MIRO model showing aesthetic quality and text-image alignment`;
           column.appendChild(img);
@@ -360,7 +364,7 @@
       const offsetPx = currentIndex * columnWidth;
 
       if (smooth) {
-        track.style.transition = 'transform 0.5s ease-in-out';
+        track.style.transition = 'transform 600ms cubic-bezier(0.25, 1, 0.5, 1)';
       } else {
         track.style.transition = 'none';
       }
@@ -400,7 +404,7 @@
           updatePosition(false);
         }
         isTransitioning = false;
-      }, 550);
+      }, 650);
     }
 
     // Previous slide
@@ -418,7 +422,7 @@
           updatePosition(false);
         }
         isTransitioning = false;
-      }, 550);
+      }, 650);
     }
 
     // Auto-slide

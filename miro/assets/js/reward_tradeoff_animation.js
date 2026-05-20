@@ -298,39 +298,87 @@
 
         drawModelBox(x, y, w, h, alpha = 1) {
             const p = this.p;
+            const ctx = p.drawingContext;
             p.push();
-            p.drawingContext.globalAlpha = alpha;
+            ctx.globalAlpha = alpha;
 
-            // Simplified rendering - no shadow for performance
+            // Pulsing outer halo
+            const t = p.millis() * 0.001;
+            const pulse = 0.5 + 0.5 * Math.sin(t * 1.6);
+            ctx.save();
+            ctx.globalAlpha = (0.18 + 0.20 * pulse) * alpha;
+            ctx.fillStyle = this.pal.accent;
+            ctx.filter = 'blur(10px)';
+            ctx.beginPath();
+            if (ctx.roundRect) {
+                ctx.roundRect(x - 6, y - 6, w + 12, h + 12, CONFIG.visual.borderRadius.large + 4);
+            } else {
+                ctx.rect(x - 6, y - 6, w + 12, h + 12);
+            }
+            ctx.fill();
+            ctx.filter = 'none';
+            ctx.restore();
+
+            // Card fill with subtle gradient
+            const grad = ctx.createLinearGradient(x, y, x, y + h);
+            grad.addColorStop(0, this.pal.card);
+            grad.addColorStop(1, this._mixHex(this.pal.card, this.pal.accent, 0.10));
+            ctx.fillStyle = grad;
             p.noStroke();
-            p.fill(p.color(this.pal.card));
             p.rect(x, y, w, h, CONFIG.visual.borderRadius.large);
 
+            // Animated accent border
+            const borderA = 0.55 + 0.45 * pulse;
+            const rgb = this._hexToRgb(this.pal.accent);
             p.noFill();
-            p.stroke(p.color(this.pal.accent));
+            p.stroke(p.color(rgb.r, rgb.g, rgb.b, 255 * borderA));
             p.strokeWeight(CONFIG.visual.strokeWeight.normal);
             p.rect(x + 1, y + 1, w - 2, h - 2, CONFIG.visual.borderRadius.large);
 
+            // Label with subtle breathing motion
+            const breath = Math.sin(t * 1.6) * 0.6;
             p.noStroke();
             p.fill(p.color(this.pal.accent));
             p.textSize(CONFIG.sizes.text.modelName);
             p.textStyle(p.BOLD);
             p.textAlign(p.CENTER, p.CENTER);
-            p.text(CONFIG.text.modelName, x + w / 2, y + h / 2);
+            p.text(CONFIG.text.modelName, x + w / 2, y + h / 2 + breath);
 
             p.pop();
         }
 
+        _hexToRgb(hex) {
+            const h = (hex || '#ff9a5c').replace('#', '').trim();
+            if (h.length === 6) {
+                return {
+                    r: parseInt(h.slice(0, 2), 16),
+                    g: parseInt(h.slice(2, 4), 16),
+                    b: parseInt(h.slice(4, 6), 16)
+                };
+            }
+            return { r: 255, g: 154, b: 92 };
+        }
+
+        _mixHex(a, b, t) {
+            const ca = this._hexToRgb(a);
+            const cb = this._hexToRgb(b);
+            const r = Math.round(ca.r * (1 - t) + cb.r * t);
+            const g = Math.round(ca.g * (1 - t) + cb.g * t);
+            const bl = Math.round(ca.b * (1 - t) + cb.b * t);
+            return `rgb(${r}, ${g}, ${bl})`;
+        }
+
         drawRewardVector(x, y, w, h, values, colors, isMobile, alpha = 1) {
             const p = this.p;
+            const ctx = p.drawingContext;
             const n = values.length;
             const pad = CONFIG.visual.padding.medium;
             const labelH = 24;
 
             p.push();
-            p.drawingContext.globalAlpha = alpha;
+            ctx.globalAlpha = alpha;
 
-            // Box background (simplified - no shadow for performance)
+            // Box background
             p.noStroke();
             p.fill(p.color(this.pal.card));
             p.rect(x, y, w, h, CONFIG.visual.borderRadius.large);
@@ -340,7 +388,7 @@
             p.strokeWeight(CONFIG.visual.strokeWeight.thin);
             p.rect(x + 0.5, y + 0.5, w - 1, h - 1, CONFIG.visual.borderRadius.large);
 
-            // Draw histogram (optimized - draw all bars at once)
+            // Histogram bars with gradient + glow
             const barWidth = (w - pad * (n + 1)) / n;
             const by = y + pad + labelH;
             const barAreaH = h - (pad * 2 + labelH);
@@ -350,9 +398,29 @@
                 const v = values[i] || 0;
                 const barH = barAreaH * v;
                 const bx = x + pad + i * (barWidth + pad);
+                const by2 = by + (barAreaH - barH);
+                const baseColor = colors[i % colors.length];
 
-                p.fill(colors[i % colors.length]);
-                p.rect(bx, by + (barAreaH - barH), barWidth, barH, CONFIG.visual.borderRadius.small);
+                if (barH > 1) {
+                    const r = p.red(baseColor);
+                    const g = p.green(baseColor);
+                    const b = p.blue(baseColor);
+                    const grad = ctx.createLinearGradient(bx, by2, bx, by2 + barH);
+                    grad.addColorStop(0, `rgba(${r}, ${g}, ${b}, 1)`);
+                    grad.addColorStop(1, `rgba(${Math.round(r * 0.75)}, ${Math.round(g * 0.75)}, ${Math.round(b * 0.75)}, 1)`);
+                    ctx.fillStyle = grad;
+                    p.rect(bx, by2, barWidth, barH, CONFIG.visual.borderRadius.small);
+
+                    // Highlight strip at top of bar
+                    ctx.save();
+                    ctx.globalAlpha = alpha * 0.6;
+                    ctx.fillStyle = `rgba(255, 255, 255, 0.35)`;
+                    ctx.fillRect(bx + 1, by2 + 1, barWidth - 2, Math.min(2, barH));
+                    ctx.restore();
+                } else {
+                    p.fill(baseColor);
+                    p.rect(bx, by2, barWidth, Math.max(0, barH), CONFIG.visual.borderRadius.small);
+                }
             }
 
             p.pop();
@@ -360,9 +428,25 @@
 
         drawOutputBox(img, x, y, size, alpha = 1) {
             const p = this.p;
+            const ctx = p.drawingContext;
             p.push();
-            p.drawingContext.globalAlpha = alpha;
-            p.noSmooth(); // Disable smoothing for faster rendering
+            ctx.globalAlpha = alpha;
+            p.noSmooth(); // faster image rendering
+
+            // Soft outer glow
+            ctx.save();
+            ctx.globalAlpha = alpha * 0.22;
+            ctx.fillStyle = this.pal.accent;
+            ctx.filter = 'blur(14px)';
+            ctx.beginPath();
+            if (ctx.roundRect) {
+                ctx.roundRect(x - 8, y - 8, size + 16, size + 16, CONFIG.visual.borderRadius.medium + 4);
+            } else {
+                ctx.rect(x - 8, y - 8, size + 16, size + 16);
+            }
+            ctx.fill();
+            ctx.filter = 'none';
+            ctx.restore();
 
             if (img && img.width > 0) {
                 p.image(img, x, y, size, size);
@@ -388,17 +472,43 @@
 
         drawArrow(x1, y1, x2, y2, color, alpha = 1) {
             const p = this.p;
+            const ctx = p.drawingContext;
             p.push();
-            p.stroke(color);
-            p.strokeWeight(CONFIG.visual.strokeWeight.normal);
-            p.drawingContext.globalAlpha = alpha;
-            p.fill(color);
-            p.line(x1, y1, x2, y2);
 
+            // Soft underlay line
+            ctx.save();
+            ctx.globalAlpha = alpha * 0.4;
+            ctx.strokeStyle = (typeof color === 'string') ? color : color.toString();
+            ctx.lineWidth = CONFIG.visual.strokeWeight.normal;
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+            ctx.restore();
+
+            // Flowing dashed line on top — animated direction of flow
+            ctx.save();
+            ctx.globalAlpha = alpha;
+            ctx.strokeStyle = (typeof color === 'string') ? color : color.toString();
+            ctx.lineWidth = CONFIG.visual.strokeWeight.normal + 0.5;
+            if (ctx.setLineDash) {
+                ctx.setLineDash([10, 10]);
+                ctx.lineDashOffset = -(p.millis() * 0.06) % 20;
+            }
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+            ctx.restore();
+
+            // Arrowhead
+            ctx.globalAlpha = alpha;
+            p.noStroke();
+            p.fill(color);
             const angle = Math.atan2(y2 - y1, x2 - x1);
             p.translate(x2, y2);
             p.rotate(angle);
-            p.triangle(0, 0, -8, -4, -8, 4);
+            p.triangle(0, 0, -10, -5, -10, 5);
             p.pop();
         }
     }
