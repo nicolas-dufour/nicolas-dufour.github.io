@@ -76,7 +76,7 @@
             ['stage_8_visualize_subtraction', 2500],
             ['stage_9_apply_guidance', 3000],
             ['stage_10_final', 1500],
-            ['stage_11_pause', 5000]
+            ['stage_11_pause', 2000]
         ],
 
         // Animation parameters
@@ -458,12 +458,9 @@
             p.noStroke();
 
             if (isMiro) {
-                // Pulsing outer halo
-                const t = p.millis() * 0.001;
-                const pulse = 0.5 + 0.5 * Math.sin(t * 1.6);
-                const haloAlpha = (0.16 + 0.20 * pulse) * alpha;
+                // Static halo (single soft glow — no pulse to avoid competing rhythms).
                 ctx.save();
-                ctx.globalAlpha = haloAlpha;
+                ctx.globalAlpha = 0.22 * alpha;
                 ctx.fillStyle = this.pal.accent;
                 ctx.filter = 'blur(10px)';
                 ctx.beginPath();
@@ -489,9 +486,10 @@
 
             p.noFill();
             if (isMiro) {
+                // Gentle accent border pulse — single channel.
                 const t = p.millis() * 0.001;
-                const pulse = 0.5 + 0.5 * Math.sin(t * 1.6);
-                const borderA = (0.55 + 0.45 * pulse) * alpha;
+                const pulse = 0.5 + 0.5 * Math.sin(t * 1.1);
+                const borderA = (0.78 + 0.18 * pulse) * alpha;
                 const rgb = this._hexToRgb(this.pal.accent);
                 p.stroke(p.color(rgb.r, rgb.g, rgb.b, 255 * borderA));
                 p.strokeWeight(CONFIG.visual.strokeWeight.thick);
@@ -580,31 +578,44 @@
 
             p.image(img, x, y, w, h);
 
-            // Fixed-size cached noise pattern, refreshed at ~15fps. p.image() stretches.
+            // Cross-fade between two cached noise frames so the texture
+            // breathes smoothly instead of popping every 66 ms.
             const CACHE_SIZE = 200;
+            const PERIOD = 140;
             const now = p.millis();
-            if (!this._noiseCache || now - (this._noiseCacheTime || 0) > 66) {
-                if (!this._noiseCache) {
-                    this._noiseCache = p.createImage(CACHE_SIZE, CACHE_SIZE);
-                }
-                this._noiseCache.loadPixels();
-                const stdDev = CONFIG.animation.noiseParams.stdDev;
-                const px = this._noiseCache.pixels;
+            const stdDev = CONFIG.animation.noiseParams.stdDev;
+            const genFrame = () => {
+                const im = p.createImage(CACHE_SIZE, CACHE_SIZE);
+                im.loadPixels();
+                const px = im.pixels;
                 for (let i = 0; i < px.length; i += 4) {
                     px[i]     = p.constrain(128 + p.randomGaussian(0, stdDev), 0, 255);
                     px[i + 1] = p.constrain(128 + p.randomGaussian(0, stdDev), 0, 255);
                     px[i + 2] = p.constrain(128 + p.randomGaussian(0, stdDev), 0, 255);
                     px[i + 3] = 255;
                 }
-                this._noiseCache.updatePixels();
+                im.updatePixels();
+                return im;
+            };
+            if (!this._noisePrev) {
+                this._noisePrev = genFrame();
+                this._noiseNext = genFrame();
+                this._noiseCacheTime = now;
+            } else if (now - this._noiseCacheTime > PERIOD) {
+                this._noisePrev = this._noiseNext;
+                this._noiseNext = genFrame();
                 this._noiseCacheTime = now;
             }
+            const mix = Math.min(1, (now - this._noiseCacheTime) / PERIOD);
 
             const noiseWeight = CONFIG.animation.noiseParams.maxWeight * noiseAmount;
+            const overlayAlpha = Math.min(1, noiseWeight * 2.0) * alpha;
             ctx.save();
-            ctx.globalAlpha = Math.min(1, noiseWeight * 2.0) * alpha;
             ctx.globalCompositeOperation = 'overlay';
-            p.image(this._noiseCache, x, y, w, h);
+            ctx.globalAlpha = overlayAlpha * (1 - mix);
+            p.image(this._noisePrev, x, y, w, h);
+            ctx.globalAlpha = overlayAlpha * mix;
+            p.image(this._noiseNext, x, y, w, h);
             ctx.restore();
 
             p.pop();
@@ -849,7 +860,7 @@
             renderer.drawCaptionBox(input.inputX - input.captionW / 2, input.captionY, input.captionW, input.captionH, CONFIG.text.caption, 1);
             renderer.drawVector(sVector.sPlusX, sVector.sPlusY, sVector.sW, sVector.sH, CONFIG.animation.numRewards,
                 [1, 1, 1, 1, 1, 1, 1], rewardColors, '', 1);
-            katexLabels.s_plus.position(sVector.sPlusX + sVector.sW / 2 - 15, sVector.sPlusY - 15).style('opacity', 1);
+            katexLabels.s_plus.centerAt(sVector.sPlusX + sVector.sW / 2, sVector.sPlusY - 15, 1);
         }
     }
 
@@ -874,7 +885,7 @@
 
                 renderer.drawVector(sPlusCurrentX, sPlusCurrentY, sVector.sW, sVector.sH, CONFIG.animation.numRewards,
                     [1, 1, 1, 1, 1, 1, 1], rewardColors, '', 1);
-                katexLabels.s_plus.position(sPlusCurrentX + sVector.sW / 2 - 15, sPlusCurrentY - 15).style('opacity', 1 - prog);
+                katexLabels.s_plus.centerAt(sPlusCurrentX + sVector.sW / 2, sPlusCurrentY - 15, 1 - prog);
                 renderer.drawImageWithNoise(images.input, imgCurrentX, imgCurrentY, input.imgW, input.imgH, 0.9, 1);
                 renderer.drawCaptionBox(captionCurrentX, captionCurrentY, input.captionW, input.captionH, CONFIG.text.caption, 1 - prog);
 
@@ -912,13 +923,13 @@
 
                 const currentX = lerp(model.modelX + model.modelW / 2, output.outHighX, prog);
                 const currentY = lerp(model.modelY + model.modelH / 2, output.outHighY, prog);
-                katexLabels.high_reward_out.position(currentX + input.imgW / 2 - 50, currentY - 40).style('opacity', prog);
+                katexLabels.high_reward_out.centerAt(currentX + input.imgW / 2, currentY - 40, prog);
                 renderer.drawImageWithNoise(images.highAesthetics, currentX, currentY, input.imgW, input.imgH, 0, prog);
 
                 // Show s- vector, image, and caption fading in
                 renderer.drawVector(sVector.sMinusX, sVector.sMinusY, sVector.sW, sVector.sH, CONFIG.animation.numRewards,
                     [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1], rewardColors, '', prog);
-                katexLabels.s_minus.position(sVector.sMinusX + sVector.sW / 2 - 15, sVector.sMinusY - 15).style('opacity', prog);
+                katexLabels.s_minus.centerAt(sVector.sMinusX + sVector.sW / 2, sVector.sMinusY - 15, prog);
                 renderer.drawImageWithNoise(images.input, input.inputX - input.imgW / 2, input.imgY, input.imgW, input.imgH, 0.9, prog);
                 renderer.drawCaptionBox(input.inputX - input.captionW / 2, input.captionY, input.captionW, input.captionH, CONFIG.text.caption, prog);
             }
@@ -934,7 +945,7 @@
             const rewardColors = getRewardColors();
 
             // Always show high output
-            katexLabels.high_reward_out.position(output.outHighX + input.imgW / 2 - 50, output.outHighY - 40).style('opacity', 1);
+            katexLabels.high_reward_out.centerAt(output.outHighX + input.imgW / 2, output.outHighY - 40, 1);
             renderer.drawImageWithNoise(images.highAesthetics, output.outHighX, output.outHighY, input.imgW, input.imgH, 0, 1);
 
             if (stageName === 'stage_4_s_minus_to_model') {
@@ -950,7 +961,7 @@
 
                 renderer.drawVector(sMinusCurrentX, sMinusCurrentY, sVector.sW, sVector.sH, CONFIG.animation.numRewards,
                     [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1], rewardColors, '', 1);
-                katexLabels.s_minus.position(sMinusCurrentX + sVector.sW / 2 - 15, sMinusCurrentY - 15).style('opacity', 1 - prog);
+                katexLabels.s_minus.centerAt(sMinusCurrentX + sVector.sW / 2, sMinusCurrentY - 15, 1 - prog);
                 renderer.drawImageWithNoise(images.input, imgCurrentX, imgCurrentY, input.imgW, input.imgH, 0.9, 1);
                 renderer.drawCaptionBox(captionCurrentX, captionCurrentY, input.captionW, input.captionH, CONFIG.text.caption, 1 - prog);
 
@@ -988,7 +999,7 @@
 
                 const currentX = lerp(model.modelX + model.modelW / 2, output.outLowX, prog);
                 const currentY = lerp(model.modelY + model.modelH / 2, output.outLowY, prog);
-                katexLabels.low_reward_out.position(currentX + input.imgW / 2 - 50, currentY - 40).style('opacity', prog);
+                katexLabels.low_reward_out.centerAt(currentX + input.imgW / 2, currentY - 40, prog);
                 renderer.drawImageWithNoise(images.lowAesthetics, currentX, currentY, input.imgW, input.imgH, 0, prog);
             }
         }
@@ -1048,21 +1059,21 @@
             }
 
             // Draw v+
-            katexLabels.high_reward_out.position(vPlusX + input.imgW / 2 - 50, vPlusY - 40).style('opacity', 1);
+            katexLabels.high_reward_out.centerAt(vPlusX + input.imgW / 2, vPlusY - 40, 1);
             renderer.drawGlowEffect(vPlusX - 5, vPlusY - 45, input.imgW + 10, input.imgH + 50, renderer.pal.green, 0.3);
             renderer.drawImageWithNoise(images.highAesthetics, vPlusX, vPlusY, input.imgW, input.imgH, 0, 1);
 
             // Draw v-
-            katexLabels.low_reward_out.position(vMinusX + input.imgW / 2 - 50, vMinusY - 40).style('opacity', 1);
+            katexLabels.low_reward_out.centerAt(vMinusX + input.imgW / 2, vMinusY - 40, 1);
             renderer.drawGlowEffect(vMinusX - 5, vMinusY - 45, input.imgW + 10, input.imgH + 50, renderer.pal.red, 0.3);
             renderer.drawImageWithNoise(images.lowAesthetics, vMinusX, vMinusY, input.imgW, input.imgH, 0, 1);
 
-            // Minus sign
+            // Minus sign — placed at the midpoint of the two image centers.
             if (minusSignAlpha > 0.01) {
                 let minusX, minusY;
                 if (layout.isMobile) {
                     minusX = vPlusX + input.imgW / 2;
-                    minusY = (vPlusY + input.imgH / 2 + vMinusY) / 2 + 1;
+                    minusY = ((vPlusY + input.imgH / 2) + (vMinusY + input.imgH / 2)) / 2;
                 } else {
                     minusX = (vPlusX + input.imgW + vMinusX) / 2;
                     minusY = vPlusY + input.imgH / 2;
@@ -1073,7 +1084,7 @@
             // Guidance vector
             if (guidanceAlpha > 0.01) {
                 renderer.drawGuidanceVector(guidance.stage8.guidanceX, guidance.stage8.guidanceY, guidance.guidanceW, guidance.guidanceH, guidanceAlpha);
-                katexLabels.guidance_vec.position(guidance.stage8.guidanceX + guidance.guidanceW / 2 - 60, guidance.stage8.guidanceY - 40).style('opacity', guidanceAlpha);
+                katexLabels.guidance_vec.centerAt(guidance.stage8.guidanceX + guidance.guidanceW / 2, guidance.stage8.guidanceY - 40, guidanceAlpha);
             }
 
             // Arrow to guidance
@@ -1104,13 +1115,17 @@
                     p.pop();
                 } else {
                     const arrowY = guidance.stage8.y + input.imgH / 2;
-                    p.line(guidance.stage8.rightX + input.imgW + 10, arrowY, guidance.stage8.guidanceX - (guidance.guidanceW / 2) - 10, arrowY);
+                    // Start 10px past the right edge of the source box,
+                    // end 10px before the left edge of the guidance box.
+                    const arrowStartX = guidance.stage8.rightX + input.imgW + 10;
+                    const arrowEndX = guidance.stage8.guidanceX - 10;
+                    p.line(arrowStartX, arrowY, arrowEndX, arrowY);
 
                     if (p.drawingContext.setLineDash) {
                         p.drawingContext.setLineDash([]);
                     }
                     p.push();
-                    p.translate(guidance.stage8.guidanceX - (guidance.guidanceW / 2) - 10, arrowY);
+                    p.translate(arrowEndX, arrowY);
                     p.rotate(0);
                     p.triangle(0, 0, -10, -5, -10, 5);
                     p.pop();
@@ -1196,13 +1211,15 @@
             } else if (stageName === 'stage_11_pause') {
                 finalOutputX = guidance.stage10.finalX;
                 finalOutputY = guidance.stage10.finalY;
-                finalOutputAlpha = 1;
+                // Fade out the final result during the last 30% so the loop
+                // back to stage_0 dissolves instead of cutting.
+                finalOutputAlpha = prog < 0.7 ? 1 : Math.max(0, 1 - (prog - 0.7) / 0.3);
                 finalOutputNoise = 0;
             }
 
             // Draw v+
             if (vPlusAlpha > 0.01) {
-                katexLabels.high_reward_out.position(vPlusX + input.imgW / 2 - 50, vPlusY - 40).style('opacity', vPlusAlpha);
+                katexLabels.high_reward_out.centerAt(vPlusX + input.imgW / 2, vPlusY - 40, vPlusAlpha);
                 renderer.drawGlowEffect(vPlusX - 5, vPlusY - 45, input.imgW + 10, input.imgH + 50, renderer.pal.green, vPlusAlpha * 0.3);
                 renderer.drawImageWithNoise(images.highAesthetics, vPlusX, vPlusY, input.imgW, input.imgH, 0, vPlusAlpha);
             }
@@ -1228,7 +1245,7 @@
             if (guidanceAlpha > 0.01) {
                 renderer.drawGuidanceVector(guidanceX, guidanceY, guidance.guidanceW, guidance.guidanceH, guidanceAlpha);
                 if (stageName === 'stage_9_apply_guidance') {
-                    katexLabels.guidance_vec.position(guidanceX + guidance.guidanceW / 2 - 60, guidanceY - 40).style('opacity', guidanceAlpha);
+                    katexLabels.guidance_vec.centerAt(guidanceX + guidance.guidanceW / 2, guidanceY - 40, guidanceAlpha);
                 }
             }
 
@@ -1286,7 +1303,7 @@
                 goldGradient.addColorStop(0, 'rgba(255, 215, 0, 0.5)');
                 goldGradient.addColorStop(1, 'rgba(255, 215, 0, 0)');
                 p.drawingContext.fillStyle = goldGradient;
-                p.ellipse(finalOutputX + input.imgW / 2, glowCenterY + 15, input.imgW * 1.8, input.imgH * 2.4);
+                p.ellipse(finalOutputX + input.imgW / 2, glowCenterY, input.imgW * 1.8, input.imgH * 1.8);
                 p.pop();
 
                 // Border
@@ -1352,10 +1369,10 @@
                     p.drawingContext.globalAlpha = labelAlpha * 0.3;
                     p.noStroke();
                     p.fill(renderer.pal.green);
-                    p.rect(layout.W / 2 - formulaWidth / 2, formulaY, formulaWidth, 35, CONFIG.visual.borderRadius.medium);
+                    p.rect(layout.W / 2 - formulaWidth / 2, formulaY, formulaWidth, 50, CONFIG.visual.borderRadius.medium);
                     p.pop();
 
-                    katexLabels.guidance_formula.position(layout.W / 2 - 110, formulaY - 2).style('opacity', labelAlpha);
+                    katexLabels.guidance_formula.centerAt(layout.W / 2, formulaY + 18, labelAlpha);
                 }
             }
 
@@ -1368,10 +1385,10 @@
                 p.drawingContext.globalAlpha = formulaProg * 0.3;
                 p.noStroke();
                 p.fill(renderer.pal.green);
-                p.rect(layout.W / 2 - formulaWidth / 2, formulaY, formulaWidth, 35, CONFIG.visual.borderRadius.medium);
+                p.rect(layout.W / 2 - formulaWidth / 2, formulaY, formulaWidth, 50, CONFIG.visual.borderRadius.medium);
                 p.pop();
 
-                katexLabels.guidance_formula.position(layout.W / 2 - 110, formulaY - 2).style('opacity', formulaProg);
+                katexLabels.guidance_formula.centerAt(layout.W / 2, formulaY + 18, formulaProg);
             }
         }
     }
@@ -1397,6 +1414,13 @@
             div.parent('miroInferenceAnimation');
             div.class('katex-label');
             katex.render(latexString, div.elt, { throwOnError: false, displayMode: true });
+            // Measure once after render; widths don't change unless the formula does.
+            div._w = div.elt.offsetWidth;
+            div._h = div.elt.offsetHeight;
+            div.centerAt = (cx, y, opacity) => {
+                if (!div._w) div._w = div.elt.offsetWidth;
+                div.position(cx - div._w / 2, y).style('opacity', opacity);
+            };
             katexLabels[name] = div;
         }
 
@@ -1498,7 +1522,9 @@
             p.clear();
 
             const { name: stageName, prog: rawProg } = stageManager.getStageAndProgress(p.millis() - t0);
-            const prog = CONFIG.animation.easing.inOut(rawProg);
+            // Linear progress: handlers do sub-stage timing checks (Math.min(1, prog/X))
+            // that need linear input. Easing the global prog double-eases those checks.
+            const prog = rawProg;
             const isMobile = p.width < CONFIG.visual.mobileBreakpoint;
 
             // Update palette and create layout

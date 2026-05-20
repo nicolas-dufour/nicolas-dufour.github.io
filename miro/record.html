@@ -192,6 +192,60 @@
     convert to MP4 with <code>ffmpeg -i in.webm -c:v libx264 -pix_fmt yuv420p -crf 18 -movflags +faststart out.mp4</code>
   </div>
 
+  <script>
+    // In the recorder, the canvas is always on-screen and we always want it
+    // playing. The site's animations gate their draw loop on
+    // IntersectionObserver firing isIntersecting=true AND on internal `playing`
+    // flags that get flipped off by `p.noLoop()` at the end of setup.
+    //
+    // We do two things to guarantee the animation actually runs while we record:
+    //   1. Replace IntersectionObserver with a stub that fires isIntersecting=true.
+    //   2. Once p5 has loaded, override p5.prototype.noLoop to be a no-op so the
+    //      draw loop is never suspended.
+    (function () {
+      const RealIO = window.IntersectionObserver;
+      window.IntersectionObserver = function (cb, opts) {
+        const fakeEntry = (target) => ({
+          target,
+          isIntersecting: true,
+          intersectionRatio: 1,
+          boundingClientRect: target.getBoundingClientRect ? target.getBoundingClientRect() : {},
+          intersectionRect: target.getBoundingClientRect ? target.getBoundingClientRect() : {},
+          rootBounds: null,
+          time: performance.now(),
+        });
+        return {
+          observe(target) { setTimeout(() => cb([fakeEntry(target)], this), 0); },
+          unobserve() {},
+          disconnect() {},
+          takeRecords() { return []; },
+          root: null,
+          rootMargin: '',
+          thresholds: [0],
+        };
+      };
+      window.IntersectionObserver.__real = RealIO;
+
+      // Once p5 is on window (loaded via defer), neuter noLoop so the draw
+      // loop keeps running even after sketches call p.noLoop().
+      function patchP5() {
+        if (window.p5 && window.p5.prototype && !window.p5.prototype.__recordPatched) {
+          window.p5.prototype.__recordPatched = true;
+          const realNoLoop = window.p5.prototype.noLoop;
+          window.p5.prototype.noLoop = function () {
+            // Keep the loop running unconditionally in record mode.
+            // (Stash the real function in case anything wants it back.)
+            if (typeof this.loop === 'function') this.loop();
+          };
+          window.p5.prototype.__realNoLoop = realNoLoop;
+        } else {
+          setTimeout(patchP5, 30);
+        }
+      }
+      patchP5();
+    })();
+  </script>
+
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
 
@@ -221,6 +275,12 @@
     const initialH = parseInt(params.get('h') || '720', 10);
     const initialDur = parseInt(params.get('duration') || ANIMATIONS[initialAnim]?.defaultDur || 17, 10);
     const autoStart = params.get('auto') === '1';
+    // mode=screencast: hide UI chrome so a viewport screencast captures only
+    // the animation (no toolbar / hint overlays).
+    if (params.get('mode') === 'screencast') {
+      toolbarEl.classList.add('hidden');
+      hintEl.classList.add('hidden');
+    }
 
     if (ANIMATIONS[initialAnim]) animSel.value = initialAnim;
     widthInp.value = initialW;
@@ -315,9 +375,10 @@
       const h = canvas.height;
       const mimeType = pickMimeType();
 
-      // Reset the animation so the loop starts from t=0 for a clean recording.
-      // (Our sketches restart on click of their parent.)
-      try { canvas.parentElement.click(); } catch (_) {}
+      // Give the animation a moment to settle. We deliberately do NOT click the
+      // parent to restart, because some sketches (training, inference) toggle
+      // play/pause on click — clicking on a playing canvas would pause it and
+      // yield an empty MediaRecorder stream.
       await new Promise(r => requestAnimationFrame(r));
       await new Promise(r => setTimeout(r, 80));
 
@@ -420,9 +481,39 @@
       document.body.appendChild(s);
 
       if (autoStart) {
-        // Give animation a moment to mount and image assets to load
-        setTimeout(startRecording, 1500);
+        // Wait until the canvas exists AND has actually drawn something before
+        // recording (some sketches preload images via p.preload() which delays
+        // setup; recording too early yields an empty MediaRecorder stream).
+        waitForLiveCanvas().then(startRecording).catch(err => {
+          console.error('auto-start failed:', err);
+          statusEl.textContent = 'no canvas';
+        });
       }
+    }
+
+    async function waitForLiveCanvas() {
+      const deadline = Date.now() + 15000;
+      let last = null;
+      let stableTicks = 0;
+      while (Date.now() < deadline) {
+        await new Promise(r => setTimeout(r, 200));
+        const c = animWrap.querySelector('canvas');
+        if (!c) continue;
+        // Sample a pixel-ish snapshot of the canvas; if it changes between ticks,
+        // the animation is live.
+        try {
+          const url = c.toDataURL().slice(0, 1024);
+          if (last !== null && url !== last) {
+            stableTicks = 0;
+            // Animation has rendered at least one differing frame — start recording
+            return c;
+          }
+          last = url;
+        } catch (e) {
+          // Cross-origin or temporarily unreadable; treat as "still warming up"
+        }
+      }
+      throw new Error('canvas never rendered changing frames');
     }
 
     if (document.readyState === 'loading') {

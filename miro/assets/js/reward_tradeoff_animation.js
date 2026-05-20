@@ -303,11 +303,9 @@
             p.push();
             ctx.globalAlpha = alpha;
 
-            // Pulsing outer halo
-            const t = p.millis() * 0.001;
-            const pulse = 0.5 + 0.5 * Math.sin(t * 1.6);
+            // Static halo (no pulse to avoid competing rhythms).
             ctx.save();
-            ctx.globalAlpha = (0.18 + 0.20 * pulse) * alpha;
+            ctx.globalAlpha = 0.22 * alpha;
             ctx.fillStyle = this.pal.accent;
             ctx.filter = 'blur(10px)';
             ctx.beginPath();
@@ -328,22 +326,22 @@
             p.noStroke();
             p.rect(x, y, w, h, CONFIG.visual.borderRadius.large);
 
-            // Animated accent border
-            const borderA = 0.55 + 0.45 * pulse;
+            // Gentle accent border pulse — single channel.
+            const t = p.millis() * 0.001;
+            const pulse = 0.5 + 0.5 * Math.sin(t * 1.1);
+            const borderA = 0.78 + 0.18 * pulse;
             const rgb = this._hexToRgb(this.pal.accent);
             p.noFill();
             p.stroke(p.color(rgb.r, rgb.g, rgb.b, 255 * borderA));
             p.strokeWeight(CONFIG.visual.strokeWeight.normal);
             p.rect(x + 1, y + 1, w - 2, h - 2, CONFIG.visual.borderRadius.large);
 
-            // Label with subtle breathing motion
-            const breath = Math.sin(t * 1.6) * 0.6;
             p.noStroke();
             p.fill(p.color(this.pal.accent));
             p.textSize(CONFIG.sizes.text.modelName);
             p.textStyle(p.BOLD);
             p.textAlign(p.CENTER, p.CENTER);
-            p.text(CONFIG.text.modelName, x + w / 2, y + h / 2 + breath);
+            p.text(CONFIG.text.modelName, x + w / 2, y + h / 2);
 
             p.pop();
         }
@@ -395,22 +393,46 @@
             const barAreaH = h - (pad * 2 + labelH);
 
             p.noStroke();
+            const radius = CONFIG.visual.borderRadius.small;
+            const roundedRect = (cx, cy, cw, ch, cr) => {
+                ctx.beginPath();
+                if (ctx.roundRect) {
+                    ctx.roundRect(cx, cy, cw, ch, cr);
+                } else {
+                    // Manual rounded rect fallback.
+                    cr = Math.min(cr, cw / 2, ch / 2);
+                    ctx.moveTo(cx + cr, cy);
+                    ctx.lineTo(cx + cw - cr, cy);
+                    ctx.quadraticCurveTo(cx + cw, cy, cx + cw, cy + cr);
+                    ctx.lineTo(cx + cw, cy + ch - cr);
+                    ctx.quadraticCurveTo(cx + cw, cy + ch, cx + cw - cr, cy + ch);
+                    ctx.lineTo(cx + cr, cy + ch);
+                    ctx.quadraticCurveTo(cx, cy + ch, cx, cy + ch - cr);
+                    ctx.lineTo(cx, cy + cr);
+                    ctx.quadraticCurveTo(cx, cy, cx + cr, cy);
+                    ctx.closePath();
+                }
+            };
+
             for (let i = 0; i < n; i++) {
                 const v = values[i] || 0;
                 const barH = barAreaH * v;
                 const bx = x + pad + i * (barWidth + pad);
                 const by2 = by + (barAreaH - barH);
                 const baseColor = colors[i % colors.length];
+                const r = p.red(baseColor);
+                const g = p.green(baseColor);
+                const b = p.blue(baseColor);
 
                 if (barH > 1) {
-                    const r = p.red(baseColor);
-                    const g = p.green(baseColor);
-                    const b = p.blue(baseColor);
+                    // Draw the gradient body via ctx directly — p.rect() can clobber
+                    // ctx.fillStyle with p5's internal fill state.
                     const grad = ctx.createLinearGradient(bx, by2, bx, by2 + barH);
                     grad.addColorStop(0, `rgba(${r}, ${g}, ${b}, 1)`);
                     grad.addColorStop(1, `rgba(${Math.round(r * 0.75)}, ${Math.round(g * 0.75)}, ${Math.round(b * 0.75)}, 1)`);
                     ctx.fillStyle = grad;
-                    p.rect(bx, by2, barWidth, barH, CONFIG.visual.borderRadius.small);
+                    roundedRect(bx, by2, barWidth, barH, radius);
+                    ctx.fill();
 
                     // Highlight strip at top of bar
                     ctx.save();
@@ -418,9 +440,9 @@
                     ctx.fillStyle = `rgba(255, 255, 255, 0.35)`;
                     ctx.fillRect(bx + 1, by2 + 1, barWidth - 2, Math.min(2, barH));
                     ctx.restore();
-                } else {
-                    p.fill(baseColor);
-                    p.rect(bx, by2, barWidth, Math.max(0, barH), CONFIG.visual.borderRadius.small);
+                } else if (barH > 0) {
+                    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, 1)`;
+                    ctx.fillRect(bx, by2, barWidth, barH);
                 }
             }
 
@@ -432,7 +454,6 @@
             const ctx = p.drawingContext;
             p.push();
             ctx.globalAlpha = alpha;
-            p.noSmooth(); // faster image rendering
 
             // Soft outer glow
             ctx.save();
@@ -468,6 +489,18 @@
             p.textSize(CONFIG.sizes.text.label);
             p.text(CONFIG.text.outputLabel, x + size / 2, y - 8);
 
+            p.pop();
+        }
+
+        // Draws only the image inside the output box, no glow/border/label.
+        // Used to cross-fade between frames atop the already-drawn output box.
+        drawOutputImageOnly(img, x, y, size, alpha = 1) {
+            if (!img || img.width <= 0 || alpha <= 0) return;
+            const p = this.p;
+            const ctx = p.drawingContext;
+            p.push();
+            ctx.globalAlpha = alpha;
+            p.image(img, x, y, size, size);
             p.pop();
         }
 
@@ -533,7 +566,7 @@
 
             // Start pause
             if (t < this.pauseDuration) {
-                return { frame: 0, progress: 0, state: 'pause' };
+                return { frame: 0, nextFrame: 0, progress: 0, state: 'pause' };
             }
 
             // Animation
@@ -542,18 +575,16 @@
 
             if (animTime < animDuration) {
                 const rawFrame = animTime / this.frameDuration;
-                const frame = Math.floor(rawFrame);
+                const frame = Math.min(Math.floor(rawFrame), this.totalFrames - 1);
+                const nextFrame = Math.min(frame + 1, this.totalFrames - 1);
                 const progress = rawFrame - frame;
-                return {
-                    frame: Math.min(frame, this.totalFrames - 1),
-                    progress,
-                    state: 'animating'
-                };
+                return { frame, nextFrame, progress, state: 'animating' };
             }
 
             // End pause
             return {
                 frame: this.totalFrames - 1,
+                nextFrame: this.totalFrames - 1,
                 progress: 1,
                 state: 'pause'
             };
@@ -768,7 +799,7 @@
             p.clear();
 
             const elapsed = p.millis() - t0;
-            const { frame, progress, state } = animManager.getCurrentFrame(elapsed);
+            const { frame, nextFrame, progress, state } = animManager.getCurrentFrame(elapsed);
             const isMobile = p.width < CONFIG.visual.mobileBreakpoint;
 
             // Preload nearby frames
@@ -779,12 +810,20 @@
             const layoutCalc = new LayoutCalculator(p.width, p.height, isMobile);
             const layout = layoutCalc.getLayout();
 
-            // Get current rewards
+            // Eased mix between current and next frame so bar heights and images
+            // dissolve instead of snapping at each frame boundary.
+            const mix = state === 'animating' ? CONFIG.animation.easing.inOut(progress) : 0;
+
             const rewards = animManager.getRewards(frame);
+            const nextRewards = animManager.getRewards(nextFrame);
+            const interpolatedRewards = rewards.map((v, i) => {
+                const nv = nextRewards[i] != null ? nextRewards[i] : v;
+                return v + (nv - v) * mix;
+            });
             const rewardColors = getRewardColors(p);
 
-            // Get current image
             const currentImg = imageLoader.getFrame(frame);
+            const nextImg = imageLoader.getFrame(nextFrame);
 
             // Draw components
             renderer.drawPromptBox(
@@ -808,20 +847,23 @@
                 layout.vector.y,
                 layout.vector.w,
                 layout.vector.h,
-                rewards,
+                interpolatedRewards,
                 rewardColors,
                 isMobile,
                 1
             );
 
-            // Position KaTeX label for reward vector
+            // Position KaTeX label for reward vector — center on the box
+            // using the rendered width rather than a hardcoded offset.
             if (katexLabel) {
+                if (!katexLabel._w) katexLabel._w = katexLabel.elt.offsetWidth;
                 katexLabel.position(
-                    layout.vector.x + layout.vector.w / 2 - 25,
+                    layout.vector.x + layout.vector.w / 2 - katexLabel._w / 2,
                     layout.vector.y + 2
                 ).style('opacity', 1);
             }
 
+            // Cross-fade output image: previous frame fading out, next fading in.
             renderer.drawOutputBox(
                 currentImg,
                 layout.output.x,
@@ -829,25 +871,34 @@
                 layout.output.size,
                 1
             );
+            if (nextImg && nextFrame !== frame && mix > 0) {
+                renderer.drawOutputImageOnly(
+                    nextImg,
+                    layout.output.x,
+                    layout.output.y,
+                    layout.output.size,
+                    mix
+                );
+            }
 
             // Draw arrows
             const pal = renderer.pal;
             if (!isMobile) {
-                // Arrow from vector to model
+                // Arrow from vector to model: end at the model's left edge.
                 renderer.drawArrow(
-                    layout.vector.x + layout.vector.w,
+                    layout.vector.x + layout.vector.w + 4,
                     layout.vector.y + layout.vector.h / 2,
-                    layout.model.x - 5,
+                    layout.model.x - 4,
                     layout.model.y + layout.model.h / 2,
                     pal.muted,
                     0.6
                 );
 
-                // Arrow from model to output
+                // Arrow from model to output: end at the output's left edge.
                 renderer.drawArrow(
-                    layout.model.x + layout.model.w + 5,
+                    layout.model.x + layout.model.w + 4,
                     layout.model.y + layout.model.h / 2,
-                    layout.output.x - 5,
+                    layout.output.x - 4,
                     layout.output.y + layout.output.size / 2,
                     pal.accent,
                     0.8

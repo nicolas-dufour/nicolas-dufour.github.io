@@ -11,7 +11,7 @@
     "record:tradeoff": "node record-miro-animations.js tradeoff"
   },
   "dependencies": {
-    "puppeteer": "^22.0.0"
+    "puppeteer": "^25.0.4"
   },
   "engines": {
     "node": ">=18"

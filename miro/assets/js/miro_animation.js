@@ -442,13 +442,10 @@
             }
 
             if (isMiro) {
-                // Pulsing outer halo (breathing glow)
-                const t = p.millis() * 0.001;
-                const pulse = 0.5 + 0.5 * Math.sin(t * 1.6);
-                const haloAlpha = (0.18 + 0.18 * pulse) * baseAlpha;
+                // Static outer halo (constant, soft)
                 ctx.save();
                 ctx.shadowBlur = 0;
-                ctx.globalAlpha = haloAlpha;
+                ctx.globalAlpha = 0.22 * baseAlpha;
                 ctx.fillStyle = this.pal.accent;
                 ctx.beginPath();
                 if (ctx.roundRect) {
@@ -474,10 +471,10 @@
 
             p.noFill();
             if (isMiro) {
-                // Animated accent border
+                // Gentle accent border pulse — single pulse channel for this element.
                 const t = p.millis() * 0.001;
-                const pulse = 0.5 + 0.5 * Math.sin(t * 1.6);
-                const borderAlpha = 0.55 + 0.45 * pulse;
+                const pulse = 0.5 + 0.5 * Math.sin(t * 1.1);
+                const borderAlpha = 0.78 + 0.18 * pulse;
                 const accentRGB = this._hexToRgb(this.pal.accent);
                 p.stroke(p.color(accentRGB.r, accentRGB.g, accentRGB.b, 255 * borderAlpha));
                 p.strokeWeight(CONFIG.visual.strokeWeight.normal);
@@ -490,14 +487,11 @@
 
             p.noStroke();
             if (isMiro) {
-                // Title with subtle vertical breathing
-                const t = p.millis() * 0.001;
-                const breath = Math.sin(t * 1.6) * 0.6;
                 p.fill(p.color(this.pal.accent));
                 p.textSize(CONFIG.sizes.text.modelName);
                 p.textStyle(p.BOLD);
                 p.textAlign(p.CENTER, p.CENTER);
-                p.text(label, x + w / 2, y + h / 2 + breath);
+                p.text(label, x + w / 2, y + h / 2);
             } else {
                 p.fill(p.color(this.pal.fg));
                 p.textSize(CONFIG.sizes.text.boxLabel);
@@ -627,35 +621,45 @@
             const p = this.p;
             if (!img || alpha <= 0) return;
 
-            // Fixed-size noise pattern, refreshed at ~15 fps for a smoother diffusion look.
-            // p.image() stretches the cache to fit the destination — keeping cache size
-            // constant avoids costly regeneration while images zoom/lerp.
+            // Cross-fade between two cached noise frames so the diffusion
+            // texture breathes smoothly instead of popping each refresh.
             const CACHE_SIZE = 200;
+            const PERIOD = 140;
             const now = p.millis();
-            if (!this._noiseCache || now - (this._noiseCacheTime || 0) > 66) {
-                if (!this._noiseCache) {
-                    this._noiseCache = p.createImage(CACHE_SIZE, CACHE_SIZE);
-                }
-                this._noiseCache.loadPixels();
-                const stdDev = CONFIG.animation.noiseParams.stdDev;
-                const px = this._noiseCache.pixels;
+            const stdDev = CONFIG.animation.noiseParams.stdDev;
+            const genFrame = () => {
+                const im = p.createImage(CACHE_SIZE, CACHE_SIZE);
+                im.loadPixels();
+                const px = im.pixels;
                 for (let i = 0; i < px.length; i += 4) {
                     px[i]     = p.constrain(128 + p.randomGaussian(0, stdDev), 0, 255);
                     px[i + 1] = p.constrain(128 + p.randomGaussian(0, stdDev), 0, 255);
                     px[i + 2] = p.constrain(128 + p.randomGaussian(0, stdDev), 0, 255);
                     px[i + 3] = 255;
                 }
-                this._noiseCache.updatePixels();
+                im.updatePixels();
+                return im;
+            };
+            if (!this._noisePrev) {
+                this._noisePrev = genFrame();
+                this._noiseNext = genFrame();
+                this._noiseCacheTime = now;
+            } else if (now - this._noiseCacheTime > PERIOD) {
+                this._noisePrev = this._noiseNext;
+                this._noiseNext = genFrame();
                 this._noiseCacheTime = now;
             }
+            const mix = Math.min(1, (now - this._noiseCacheTime) / PERIOD);
 
-            // Overlay-blend noise onto the underlying image (already drawn by caller).
             const noiseWeight = CONFIG.animation.noiseParams.maxWeight * alpha;
+            const overlayAlpha = Math.min(1, noiseWeight * 2.0);
             const ctx = p.drawingContext;
             ctx.save();
-            ctx.globalAlpha = Math.min(1, noiseWeight * 2.0);
             ctx.globalCompositeOperation = 'overlay';
-            p.image(this._noiseCache, imgX, imgY, imgW, imgH);
+            ctx.globalAlpha = overlayAlpha * (1 - mix);
+            p.image(this._noisePrev, imgX, imgY, imgW, imgH);
+            ctx.globalAlpha = overlayAlpha * mix;
+            p.image(this._noiseNext, imgX, imgY, imgW, imgH);
             ctx.restore();
         }
 
@@ -754,17 +758,20 @@
     class IntroStage {
         render(p, layout, renderer, prog, state) {
             const { imgLayout, capLayout } = layout;
+            // Fade in over the first 25% of intro so the loop-back from pause dissolves.
+            const fadeIn = Math.min(1, prog / 0.25);
 
-            // Draw image
+            p.push();
+            if (fadeIn < 1) p.tint(255, 255 * fadeIn);
             if (state.img) {
                 p.image(state.img, imgLayout.imgX, imgLayout.imgY, imgLayout.imgW, imgLayout.imgH);
             } else {
                 p.fill(230);
                 p.rect(imgLayout.imgX, imgLayout.imgY, imgLayout.imgW, imgLayout.imgH, 6);
             }
+            p.pop();
 
-            // Draw caption
-            renderer.drawCaptionBox(capLayout.capX, capLayout.capY, capLayout.capW, capLayout.capH, 1);
+            renderer.drawCaptionBox(capLayout.capX, capLayout.capY, capLayout.capW, capLayout.capH, fadeIn);
         }
     }
 
@@ -784,7 +791,8 @@
             const imgY = lerp(imgLayout.imgY, rewardsCenterY, prog);
             const imgW = lerp(imgLayout.imgW, imgInRewardsW, prog);
             const imgH = lerp(imgLayout.imgH, imgInRewardsH, prog);
-            const imgAlpha = 1 - 0.5 * prog;
+            // End at 0.6 to match the alpha used by fanout/emit stages (no pop).
+            const imgAlpha = lerp(1, 0.6, prog);
 
             // Draw image
             p.push();
@@ -798,7 +806,7 @@
             const capY = lerp(capLayout.capY, rewardsCenterY + imgInRewardsH + 6, prog);
             const capW = lerp(capLayout.capW, capInRewardsW, prog);
             const capH = lerp(capLayout.capH, capInRewardsH, prog);
-            const capAlpha = 1 - 0.5 * prog;
+            const capAlpha = lerp(1, 0.6, prog);
 
             renderer.drawCaptionBox(capX, capY, capW, capH, capAlpha);
 
@@ -861,12 +869,15 @@
             const rewardsCenterX = rewardsLayout.rewardsX + rewardsLayout.rewardsW / 2 - imgInRewardsW / 2;
             const rewardsCenterY = rewardsLayout.rewardsY + 28;
 
-            // Small center image
+            // Small center image (kept at 0.6 alpha to match neighbouring stages)
             const imgX = rewardsCenterX + (imgInRewardsW - imgSmallW) / 2;
             const imgY = rewardsCenterY + (imgInRewardsH - imgSmallH) / 2;
 
+            p.push();
+            p.tint(255, 255 * 0.6);
             if (state.img) p.image(state.img, imgX, imgY, imgSmallW, imgSmallH);
             else { p.fill(230); p.rect(imgX, imgY, imgSmallW, imgSmallH, 6); }
+            p.pop();
 
             // Rewards box
             renderer.drawBox(rewardsLayout.rewardsX, rewardsLayout.rewardsY, rewardsLayout.rewardsW, rewardsLayout.rewardsH, CONFIG.text.rewardsLabel);
@@ -1319,20 +1330,28 @@
     class PauseStage {
         render(p, layout, renderer, prog, state) {
             const { imgLayout, modelLayout, outputLayout } = layout;
+            // Fade everything out during the last 30% so the loop back to intro dissolves.
+            const fadeOut = prog < 0.7 ? 1 : 1 - (prog - 0.7) / 0.3;
 
-            // Model box
+            p.push();
+            p.drawingContext.globalAlpha = fadeOut;
             renderer.drawBox(modelLayout.modelX, modelLayout.modelY, modelLayout.modelW, modelLayout.modelH, CONFIG.text.modelName, true);
+            p.pop();
 
-            // Output image (clean)
+            p.push();
+            if (fadeOut < 1) p.tint(255, 255 * fadeOut);
             if (state.img) p.image(state.img, outputLayout.outX, outputLayout.outY, imgLayout.imgW, imgLayout.imgH);
             else { p.fill(230); p.rect(outputLayout.outX, outputLayout.outY, imgLayout.imgW, imgLayout.imgH, 6); }
+            p.pop();
 
-            // Legend
+            p.push();
+            p.drawingContext.globalAlpha = fadeOut;
             p.fill(p.color(renderer.pal.muted));
             p.textAlign(p.CENTER, p.TOP);
             p.textSize(CONFIG.sizes.text.legend);
             const labelY = layout.isMobile ? outputLayout.outY - 18 : outputLayout.outY - 22;
             p.text(CONFIG.text.denoisedImage, outputLayout.outX + imgLayout.imgW / 2, labelY);
+            p.pop();
         }
     }
 
@@ -1451,7 +1470,10 @@
 
             const elapsed = p.millis() - t0;
             const { name: stageName, prog: rawProg } = stageManager.getStageAndProgress(elapsed);
-            const prog = CONFIG.animation.easing.inOut(rawProg);
+            // Linear progress: sub-stage checks (Math.min(1, prog/X)) need linear timing.
+            // Motion lerps work fine over the short distances here; easing the global
+            // prog created double-easing with sub-progress remaps and felt lurchy.
+            const prog = rawProg;
             const isMobile = p.width < CONFIG.visual.mobileBreakpoint;
 
             // Update palette and create layout
@@ -1465,12 +1487,6 @@
             const modelLayout = layoutCalc.getModelLayout(vectorLayout, imgLayout, rewardsLayout);
             const outputLayout = layoutCalc.getOutputLayout(modelLayout, imgLayout);
             const leftVecLayout = layoutCalc.getLeftVectorLayout(imgLayout, vectorLayout);
-
-            // Subtle idle breathing — applied as a global Y translation
-            // Makes "static" pause moments feel alive
-            const breath = Math.sin(p.millis() * 0.0015) * 1.2;
-            p.push();
-            p.translate(0, breath);
 
             const layout = {
                 isMobile,
@@ -1493,9 +1509,7 @@
                 handler.render(p, layout, renderer, prog, state);
             }
 
-            p.pop();
-
-            // Render phase labels (outside translate so they don't move)
+            // Render phase labels
             renderPhaseLabel(p, stageName, prog, isMobile, renderer.pal);
         };
 

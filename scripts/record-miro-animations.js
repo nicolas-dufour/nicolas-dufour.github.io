@@ -35,7 +35,10 @@ try {
 const ANIMATIONS = {
   training:  { duration: 18, width: 1280, height: 720 },
   inference: { duration: 23, width: 1280, height: 720 },
-  tradeoff:  { duration: 30, width: 1280, height: 720 },
+  // tradeoff's draw loop doesn't tick captureStream in headless mode (its
+  // async setup + closure-gated `playing` flag interact badly with MediaRecorder),
+  // so fall back to viewport screencast.
+  tradeoff:  { duration: 30, width: 1280, height: 720, useScreencast: true },
   theory:    { duration: 17, width: 1280, height: 720 },
 };
 
@@ -92,11 +95,14 @@ async function recordOne(name, opts) {
   const height   = opts.height   || cfg.height;
   const duration = opts.duration || cfg.duration;
   const fps      = opts.fps      || 60;
+  const useScreencast = opts.screencast || cfg.useScreencast;
 
-  const url = `${opts.url.replace(/\/$/, '')}/record.html?animation=${name}&w=${width}&h=${height}&duration=${duration}&auto=1`;
+  // record.html auto-starts in MediaRecorder mode unless we pass mode=screencast.
+  const modeParam = useScreencast ? '&mode=screencast' : '&auto=1';
+  const url = `${opts.url.replace(/\/$/, '')}/record.html?animation=${name}&w=${width}&h=${height}&duration=${duration}${modeParam}`;
   fs.mkdirSync(opts.outDir, { recursive: true });
 
-  console.log(`\n[${name}] ${width}×${height} @ ${fps}fps for ${duration}s`);
+  console.log(`\n[${name}] ${width}×${height} @ ${fps}fps for ${duration}s${useScreencast ? ' (screencast)' : ''}`);
   console.log(`         → ${url}`);
 
   const browser = await puppeteer.launch({
@@ -111,7 +117,47 @@ async function recordOne(name, opts) {
 
   try {
     const page = await browser.newPage();
-    await page.setViewport({ width: width + 32, height: height + 32, deviceScaleFactor: 2 });
+    // For screencast mode, viewport must match the canvas-wrap size exactly so
+    // the captured frames have no margins around the animation.
+    const vpW = useScreencast ? width : width + 32;
+    const vpH = useScreencast ? height : height + 32;
+    await page.setViewport({ width: vpW, height: vpH, deviceScaleFactor: 2 });
+
+    if (useScreencast) {
+      // Record the page viewport directly via the DevTools Protocol — works
+      // even when canvas.captureStream() doesn't capture the draw loop
+      // (e.g. some sketches with async setup gate their draw with closure flags
+      // that the IntersectionObserver stub can't reach).
+      await page.goto(url, { waitUntil: 'networkidle2' });
+      await page.waitForSelector('canvas', { timeout: 10000 });
+      // Give the animation a moment to start
+      await new Promise(r => setTimeout(r, 1500));
+
+      const webmPath = path.join(opts.outDir, `miro-${name}-screencast.webm`);
+      console.log(`         capturing viewport...`);
+      const recorder = await page.screencast({ path: webmPath });
+      await new Promise(r => setTimeout(r, duration * 1000 + 600));
+      await recorder.stop();
+
+      const mp4Path = path.join(opts.outDir, `miro-${name}.mp4`);
+      console.log(`         encoding to MP4...`);
+      await new Promise((resolve, reject) => {
+        const ff = spawn('ffmpeg', [
+          '-y',
+          '-i', webmPath,
+          '-c:v', 'libx264',
+          '-pix_fmt', 'yuv420p',
+          '-crf', '17',
+          '-preset', 'slow',
+          '-movflags', '+faststart',
+          mp4Path,
+        ], { stdio: ['ignore', 'inherit', 'inherit'] });
+        ff.on('exit', code => code === 0 ? resolve() : reject(new Error(`ffmpeg exit ${code}`)));
+      });
+      if (!opts.keepWebM) fs.unlinkSync(webmPath);
+      console.log(`         → ${mp4Path}`);
+      return mp4Path;
+    }
 
     // Capture the WebM blob that record.html offers via a download link
     const downloadDir = path.resolve(opts.outDir);
@@ -124,7 +170,7 @@ async function recordOne(name, opts) {
     // Wait for the WebM file to appear in the download dir.
     const expectedExt = ['webm', 'mp4'];
     const startTimer = Date.now();
-    const timeoutMs = (duration + 30) * 1000;
+    const timeoutMs = (duration + 90) * 1000;
 
     function findNewFile() {
       const entries = fs.readdirSync(downloadDir);
@@ -145,6 +191,23 @@ async function recordOne(name, opts) {
 
     if (!outFile) {
       throw new Error(`timed out waiting for recording (>${(timeoutMs / 1000) | 0}s)`);
+    }
+
+    // Wait for the file size to stop growing — Chrome streams the blob to disk
+    // asynchronously and we'd otherwise risk closing the browser mid-write.
+    const fullSrcStat = path.join(downloadDir, outFile);
+    let lastSize = -1;
+    let stableTicks = 0;
+    for (let i = 0; i < 60; i++) {
+      await new Promise(r => setTimeout(r, 250));
+      const sz = fs.statSync(fullSrcStat).size;
+      if (sz === lastSize && sz > 0) {
+        stableTicks += 1;
+        if (stableTicks >= 4) break; // ~1s of no change
+      } else {
+        stableTicks = 0;
+      }
+      lastSize = sz;
     }
 
     const fullSrc = path.join(downloadDir, outFile);
