@@ -32,13 +32,6 @@
     function rgba(c, a) {
         return 'rgba(' + c.r + ',' + c.g + ',' + c.b + ',' + a + ')';
     }
-    function mix(a, b, t) {
-        return {
-            r: Math.round(a.r + (b.r - a.r) * t),
-            g: Math.round(a.g + (b.g - a.g) * t),
-            b: Math.round(a.b + (b.b - a.b) * t),
-        };
-    }
     function smoothstep(x) {
         x = Math.max(0, Math.min(1, x));
         return x * x * (3 - 2 * x);
@@ -51,46 +44,47 @@
         attributeFilter: ['data-theme', 'class', 'style'],
     });
 
-    // Box-Muller: standard normal samples
-    function gaussian() {
-        let u = 0, v = 0;
-        while (u === 0) u = Math.random();
-        while (v === 0) v = Math.random();
-        return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
-    }
+    // Low-resolution field we compute the smoothed density on, then upscale.
+    // The upscale blur reinforces the kernel-smoothing look.
+    const G = 84;
+    const off = document.createElement('canvas');
+    off.width = G;
+    off.height = G;
+    const offCtx = off.getContext('2d');
+    const img = offCtx.createImageData(G, G);
+    const data = img.data;
+    const dens = new Float32Array(G * G);
+    const gcx = G / 2;
+    const gcy = G / 2;
 
-    // A smooth, divergence-light flow field (sum of a few sinusoidal modes).
-    // This is the "drift" the particles are transported along.
-    function driftField(x, y, t) {
-        // normalize to roughly [-1, 1] around the centre
-        const nx = (x - cx) / R;
-        const ny = (y - cy) / R;
-        const a1 = Math.sin(1.3 * ny + 0.7 * t) + 0.6 * Math.cos(2.1 * nx - 0.4 * t);
-        const a2 = Math.cos(1.1 * nx - 0.5 * t) - 0.6 * Math.sin(1.7 * ny + 0.3 * t);
-        return { vx: a1, vy: a2 };
-    }
-
-    // Target distribution: a logarithmic spiral, the "structured" state the
-    // drift transports the Gaussian cloud toward before dispersing again.
-    const N = 220;
-    const particles = new Array(N);
-    for (let k = 0; k < N; k++) {
-        const arm = k % 2;
-        const s = k / N;
-        const theta = s * Math.PI * 4 + arm * Math.PI;
-        const rad = R * (0.12 + 0.82 * s);
-        particles[k] = {
-            // diffuse Gaussian source position
-            sx: cx + gaussian() * R * 0.5,
-            sy: cy + gaussian() * R * 0.5,
-            // structured target position (spiral)
-            tx: cx + Math.cos(theta) * rad,
-            ty: cy + Math.sin(theta) * rad,
+    // "Data" modes: a constellation of Gaussian peaks (centre + two rings).
+    // They drift slowly, so the resolved state is alive rather than static.
+    const modes = [{ ang: 0, rad: 0, w: 1.0, dir: 0, phase: 0, wob: 0 }];
+    const ringInner = 6;
+    for (let i = 0; i < ringInner; i++) {
+        modes.push({
+            ang: (i / ringInner) * Math.PI * 2,
+            rad: G * 0.20,
+            w: 0.9,
+            dir: 1,
             phase: Math.random() * Math.PI * 2,
-            speed: 0.5 + Math.random() * 0.7,
-            seed: Math.random(),
-        };
+            wob: G * 0.018,
+        });
     }
+    const ringOuter = 5;
+    for (let i = 0; i < ringOuter; i++) {
+        modes.push({
+            ang: (i / ringOuter) * Math.PI * 2 + 0.3,
+            rad: G * 0.36,
+            w: 0.6,
+            dir: -1,
+            phase: Math.random() * Math.PI * 2,
+            wob: G * 0.025,
+        });
+    }
+
+    const SIGMA_MAX = G * 0.40;   // wide kernel — everything is one soft blob
+    const SIGMA_MIN = G * 0.045;  // narrow kernel — sharp, resolved peaks
 
     let animId = null;
     let visible = true;
@@ -99,76 +93,94 @@
     function draw(now) {
         const elapsed = (now - t0) / 1000;
 
-        // breathing cycle: disperse (cloud) -> converge (spiral) -> disperse
-        const period = 9.0;
+        // Annealing cycle: sharpen -> hold -> smooth back out -> repeat.
+        const period = 9.5;
         const cyc = (elapsed % period) / period;
-        let progress;
-        if (cyc < 0.40) progress = cyc / 0.40;          // drift inward
-        else if (cyc < 0.66) progress = 1;              // hold structure
-        else progress = 1 - (cyc - 0.66) / 0.34;        // drift outward
-        const sp = smoothstep(progress);
+        let s;
+        if (cyc < 0.45) s = cyc / 0.45;
+        else if (cyc < 0.72) s = 1;
+        else s = 1 - (cyc - 0.72) / 0.28;
+        const sp = smoothstep(s);
 
-        // gentle global rotation so the spiral feels alive
-        const rot = elapsed * 0.18;
-        const cosR = Math.cos(rot);
-        const sinR = Math.sin(rot);
+        // Exponential bandwidth annealing: sigma = max * (min/max)^sp
+        const sigma = SIGMA_MAX * Math.pow(SIGMA_MIN / SIGMA_MAX, sp);
+        const inv2s2 = 1 / (2 * sigma * sigma);
+
+        // Slow drift of the peaks about the centre.
+        const rot = elapsed * 0.16;
+
+        // Precompute current mode centres.
+        for (let m = 0; m < modes.length; m++) {
+            const md = modes[m];
+            const a = md.ang + md.dir * rot;
+            const r = md.rad + Math.sin(elapsed * 0.6 + md.phase) * md.wob;
+            md.mx = gcx + Math.cos(a) * r;
+            md.my = gcy + Math.sin(a) * r;
+        }
+
+        // Evaluate the kernel-smoothed density on the grid.
+        let maxd = 1e-6;
+        let idx = 0;
+        for (let y = 0; y < G; y++) {
+            for (let x = 0; x < G; x++) {
+                let d = 0;
+                for (let m = 0; m < modes.length; m++) {
+                    const md = modes[m];
+                    const dx = x - md.mx;
+                    const dy = y - md.my;
+                    d += md.w * Math.exp(-(dx * dx + dy * dy) * inv2s2);
+                }
+                dens[idx++] = d;
+                if (d > maxd) maxd = d;
+            }
+        }
+        const invMax = 1 / maxd;
+
+        // Contrast rises as the field resolves, so peaks read as crisp.
+        const gamma = 1.2 + 1.6 * sp;
+
+        for (let i = 0; i < G * G; i++) {
+            let t = dens[i] * invMax;
+            t = Math.pow(t, gamma);
+
+            // muted -> primary -> accent ramp by intensity
+            let cr, cg, cb;
+            if (t < 0.5) {
+                const u = t * 2;
+                cr = colorMuted.r + (colorPrimary.r - colorMuted.r) * u;
+                cg = colorMuted.g + (colorPrimary.g - colorMuted.g) * u;
+                cb = colorMuted.b + (colorPrimary.b - colorMuted.b) * u;
+            } else {
+                const u = (t - 0.5) * 2;
+                cr = colorPrimary.r + (colorAccent.r - colorPrimary.r) * u;
+                cg = colorPrimary.g + (colorAccent.g - colorPrimary.g) * u;
+                cb = colorPrimary.b + (colorAccent.b - colorPrimary.b) * u;
+            }
+
+            // keep the page background clean where density is low
+            const alpha = smoothstep((t - 0.04) / 0.55);
+
+            const o = i * 4;
+            data[o] = cr;
+            data[o + 1] = cg;
+            data[o + 2] = cb;
+            data[o + 3] = Math.round(alpha * 235);
+        }
+        offCtx.putImageData(img, 0, 0);
 
         ctx.clearRect(0, 0, W, H);
 
-        // soft glow behind the structured state
+        // soft glow that intensifies as structure emerges
         if (sp > 0.05) {
             const g = ctx.createRadialGradient(cx, cy, R * 0.1, cx, cy, R * 1.7);
-            g.addColorStop(0, rgba(colorAccent, 0.16 * sp));
+            g.addColorStop(0, rgba(colorAccent, 0.14 * sp));
             g.addColorStop(1, rgba(colorAccent, 0));
             ctx.fillStyle = g;
             ctx.fillRect(0, 0, W, H);
         }
 
-        for (let k = 0; k < N; k++) {
-            const p = particles[k];
-
-            // local drift wobble along the flow field — present at all times
-            const f = driftField(p.sx, p.sy, elapsed * 0.6 + p.phase);
-            const driftMag = 10 * (1 - 0.7 * sp);
-            const dx = f.vx * driftMag + Math.cos(elapsed * p.speed + p.phase) * 4;
-            const dy = f.vy * driftMag + Math.sin(elapsed * p.speed * 0.9 + p.phase) * 4;
-
-            const sx = p.sx + dx;
-            const sy = p.sy + dy;
-
-            // rotate the spiral target about the centre
-            const rx = p.tx - cx;
-            const ry = p.ty - cy;
-            const tx = cx + rx * cosR - ry * sinR;
-            const ty = cy + rx * sinR + ry * cosR;
-
-            // per-particle staggered arrival → particles "flow" in, not snap
-            const local = smoothstep((sp - 0.25 * p.seed) / 0.75);
-
-            const x = sx + (tx - sx) * local;
-            const y = sy + (ty - sy) * local;
-
-            // short trail in the direction of travel hints at the drift velocity
-            const trail = (1 - sp) * 0.6 + 0.15;
-            const tlx = x - dx * trail;
-            const tly = y - dy * trail;
-
-            const c = mix(colorMuted, mix(colorPrimary, colorAccent, p.seed), local);
-            const alpha = 0.28 + 0.5 * (0.4 + 0.6 * local);
-
-            ctx.strokeStyle = rgba(c, alpha * 0.5);
-            ctx.lineWidth = 1.1;
-            ctx.beginPath();
-            ctx.moveTo(tlx, tly);
-            ctx.lineTo(x, y);
-            ctx.stroke();
-
-            const radius = 1.6 + 1.8 * local;
-            ctx.beginPath();
-            ctx.fillStyle = rgba(c, alpha);
-            ctx.arc(x, y, radius, 0, Math.PI * 2);
-            ctx.fill();
-        }
+        ctx.imageSmoothingEnabled = true;
+        ctx.drawImage(off, 0, 0, G, G, 0, 0, W, H);
 
         if (visible) {
             animId = requestAnimationFrame(draw);
