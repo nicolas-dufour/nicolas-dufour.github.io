@@ -198,6 +198,20 @@
       &nbsp;&nbsp;  journal         ={arXiv}, \n
       }"
 
+- title: "Generative Drifting is Secretly Score Matching: a Spectral and Variational Perspective"
+  authors: <a href="https://scholar.google.com/citations?user=Erkan+Turan">Erkan Turan</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://www.lix.polytechnique.fr/~maks/">Maks Ovsjanikov</a>
+  date: 2026-05-29
+  year: 2026
+  journal: Arxiv Preprint
+  thumbnail_canvas: drifting-thumbnail
+  pdf:  https://arxiv.org/abs/2603.09936
+  abstract: "We establish theoretical foundations for Generative Modeling via Drifting, demonstrating that under Gaussian kernels, drift operators function as score differences on smoothed distributions. We resolve three previously open questions about the method's validity, kernel selection, and training stability. Using Fourier space analysis, we identify frequency-dependent convergence issues analogous to Landau damping, proposing an exponential bandwidth annealing schedule to improve performance from exponential to logarithmic convergence time. We formalize drifting as a Wasserstein gradient flow of smoothed KL divergence, proving the stop-gradient operator derives from the JKO discretization scheme rather than being a heuristic. Our analysis introduces a template for constructing novel drift operators, demonstrated with Sinkhorn divergence, validated on toy datasets and ImageNet."
+  bibtex: "@article{turan2026drifting, \n
+      &nbsp;&nbsp;  title           ={Generative Drifting is Secretly Score Matching: a Spectral and Variational Perspective}, \n
+      &nbsp;&nbsp;  author          ={Erkan Turan and Nicolas Dufour and Maks Ovsjanikov}, \n
+      &nbsp;&nbsp;  year            ={2026}, \n
+      &nbsp;&nbsp;  journal         ={arXiv}, \n
+      }"
 - title: "Controllability and Efficiency in Generative Models"
   authors: <u><a href="#">Nicolas Dufour</a></u>
   date: 2025-11-26
