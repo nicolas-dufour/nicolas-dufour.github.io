@@ -54,3 +54,6 @@
 
 - date: 2026-05-18
   content: Got an outstanding reviewer award at [CVPR 2026](https://cvpr.thecvf.com/Conferences/2026) and a gold reviewer award at [ICML 2026](https://icml.cc/Conferences/2026).
+
+- date: 2026-06-11
+  content: We released [Surflo](https://anttwo.github.io/surflo/), a feed-forward reconstruction model that fuses unposed views into one global state and decodes coherent surfaces at any resolution via flow matching.

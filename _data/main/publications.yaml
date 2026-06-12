@@ -137,7 +137,7 @@
   authors: <a href="https://davidpicard.github.io/">David Picard</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://lucasdegeorge.github.io/">Lucas Degeorge</a>, <a href="https://arijit-hub.github.io/">Arijit Ghosh</a>, <a href="https://davidea97.github.io/">Davide Allegro</a>, Tom Ravaud, <a href="https://yohannperron.github.io/WebPage/">Yohann Perron</a>, <a href="https://csautier.github.io/">Corentin Sautier</a>, <a href="https://imagine.enpc.fr/~sonat.baltaci/">Zeynep Sonat Baltaci</a>, <a href="https://imagine-lab.enpc.fr/staff-members/fei-meng/">Fei Meng</a>, <a href="https://imagine-lab.enpc.fr/staff-members/syrine-kalleli/">Syrine Kalleli</a>, <a href="https://imagine.enpc.fr/~marta.lopez-rauhut/">Marta López-Rauhut</a>, <a href="https://thibautloiseau.github.io/">Thibaut Loiseau</a>, <a href="https://imagine-lab.enpc.fr/staff-members/segolene-albouy/">Ségolène Albouy</a>, <a href="https://raphael-baena.github.io/">Raphael Baena</a>, <a href="https://imagine.enpc.fr/~vincente/">Elliot Vincent</a>, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
   date: 2026-06-05
   year: 2026
-  journal: CVPR Findings
+  journal: CVPR Findings 2026
   thumbnail: /assets/publications/pom/thumbnail.png
   pdf:  https://arxiv.org/abs/2604.06129
   github: https://github.com/davidpicard/pom
@@ -212,6 +212,23 @@
       &nbsp;&nbsp;  year            ={2026}, \n
       &nbsp;&nbsp;  journal         ={arXiv}, \n
       }"
+- title: "Surflo: Consistent 3D Surface Flow from a Global State"
+  authors: <a href="https://anttwo.github.io/">Antoine Guédon</a>*, <a href="https://scholar.google.com/citations?user=ma_HN-YAAAAJ&hl=ja">Shu Nakamura</a>*, <u><a href="#">Nicolas Dufour</a></u>*, <a href="https://jiahuilei.com/">Jiahui Lei</a>, <a href="https://scholar.google.com/citations?user=SXXEZhYAAAAJ">Ko Nishino</a>, <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa</a>
+  date: 2026-06-11
+  year: 2026
+  journal: Arxiv Preprint
+  thumbnail_canvas: surflo-thumbnail
+  pdf: https://arxiv.org/abs/2606.13644
+  github: https://github.com/Anttwo/Surflo
+  website: https://anttwo.github.io/surflo/
+  abstract: "Geometry is invariant to viewpoint, which makes any collection of images a redundant encoding of a single 3D state. Existing feed-forward reconstruction models fail to exploit this: per-view methods emit overlapping, unaligned pointmaps that grow linearly with input count, while global-latent methods commit to a fixed, low-resolution output. We introduce Surflo, which compresses a variable number of unposed RGB views into K latent tokens — one global state — and decodes oriented 3D surface points by independently transporting them from noise onto the surface via flow matching. This frees the output from any fixed grid or token budget: the same latent yields from a few thousand to a million points in a single forward pass. To suppress the local inconsistencies inherent to independent per-point decoding, an inference-time guidance term correlates nearby points by injecting a photometric gradient during ODE integration. Surflo matches or surpasses feed-forward baselines on surface metrics, runs an order of magnitude faster than optimization-based methods that require hundreds of views, and is the only feed-forward approach to combine a global latent with arbitrary-resolution decoding."
+  bibtex: "@article{guedon2026surflo, \n
+      &nbsp;&nbsp;  title           ={Surflo: Consistent 3D Surface Flow from a Global State}, \n
+      &nbsp;&nbsp;  author          ={Antoine Gu{\\'e}don and Shu Nakamura and Nicolas Dufour and Jiahui Lei and Ko Nishino and Angjoo Kanazawa}, \n
+      &nbsp;&nbsp;  year            ={2026}, \n
+      &nbsp;&nbsp;  journal         ={arXiv preprint}, \n
+      }"
+
 - title: "Controllability and Efficiency in Generative Models"
   authors: <u><a href="#">Nicolas Dufour</a></u>
   date: 2025-11-26
