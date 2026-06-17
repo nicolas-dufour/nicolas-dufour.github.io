@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The FID Lottery — Quantifying Hidden Randomness in Generative Model Evaluation</title>
+<meta name="description" content="An interactive companion to 'The FID Lottery'. Every reported FID is the outcome of two lotteries — we measure how much they move the number.">
+<link rel="stylesheet" href="css/casino.css">
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav" id="nav">
+  <a class="nav__brand" href="#top">The <b>FID</b> Lottery</a>
+  <div class="nav__links">
+    <a href="#two-lotteries">Two Lotteries</a>
+    <a href="#decomposition">Variance</a>
+    <a href="#race">Lucky Seeds</a>
+    <a href="#floor">Noise Floor</a>
+    <a href="#guidance">Guided FID</a>
+    <a href="#mup">HP Transfer</a>
+    <a href="#metrics">Beyond FID</a>
+    <a href="#rules">Rules</a>
+    <a href="#paper">Paper</a>
+  </div>
+</nav>
+
+<!-- ===================== HERO + SLOT ===================== -->
+<header class="hero felt" id="top">
+  <div class="hero__rays"></div>
+
+  <!-- ambient casino table: spinning roulette · tumbling 3D dice · fanned cards · poker chips -->
+  <div class="hero__scene" aria-hidden="true">
+    <!-- Roulette (top-left) — three.js WebGL -->
+    <canvas class="prop-3d" id="roulette-3d" aria-hidden="true"></canvas>
+
+    <!-- Dice (top-right) — three.js WebGL, physics roll -->
+    <canvas class="prop-3d" id="dice-3d" aria-hidden="true"></canvas>
+
+    <!-- A fanned hand (bottom-left) -->
+    <div class="card-fan">
+      <div class="card"><span class="card__ix"><b>A</b><i class="s-spade">♠</i></span><span class="card__mid s-spade">♠</span><span class="card__ix card__ix--br"><b>A</b><i class="s-spade">♠</i></span></div>
+      <div class="card"><span class="card__ix"><b>K</b><i class="s-heart">♥</i></span><span class="card__mid s-heart">♥</span><span class="card__ix card__ix--br"><b>K</b><i class="s-heart">♥</i></span></div>
+      <div class="card"><span class="card__ix"><b>Q</b><i class="s-diamond">♦</i></span><span class="card__mid s-diamond">♦</span><span class="card__ix card__ix--br"><b>Q</b><i class="s-diamond">♦</i></span></div>
+      <div class="card"><span class="card__ix"><b>J</b><i class="s-club">♣</i></span><span class="card__mid s-club">♣</span><span class="card__ix card__ix--br"><b>J</b><i class="s-club">♣</i></span></div>
+      <div class="card"><span class="card__ix"><b>10</b><i class="s-spade">♠</i></span><span class="card__mid s-spade">♠</span><span class="card__ix card__ix--br"><b>10</b><i class="s-spade">♠</i></span></div>
+    </div>
+
+    <!-- Poker chips: a stack (bottom-right) + two loose -->
+    <div class="chip-stack">
+      <span class="chip chip--black" data-v="100"></span>
+      <span class="chip chip--green" data-v="25"></span>
+      <span class="chip chip--red"   data-v="5"></span>
+      <span class="chip chip--cream" data-v="1"></span>
+    </div>
+    <span class="chip chip--red chip--loose1" data-v="5"></span>
+    <span class="chip chip--green chip--loose2" data-v="25"></span>
+  </div>
+
+  <div class="hero__plate reveal">
+    <div class="hero__est">Le Salon des Probabilités · Est. MMXXVI</div>
+    <h1>The&nbsp;FID&nbsp;Lottery
+      <span class="sub">Quantifying Hidden Randomness in Generative-Model Evaluation</span>
+    </h1>
+    <p class="hero__tag">Every reported FID is drawn from <em>two</em> lotteries. Spin the training reels to
+      draw a network, then the generation reels to score it — and watch the same recipe pay out a
+      different number.</p>
+    <div class="hero__authors">
+      <a class="author" href="https://nicolas-dufour.github.io/" target="_blank" rel="noopener">Nicolas Dufour</a><sup class="aff aff--k" title="Kyutai">♠</sup>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      <a class="author" href="https://people.eecs.berkeley.edu/~efros/" target="_blank" rel="noopener">Alexei A. Efros</a><sup class="aff aff--b" title="UC Berkeley">♦</sup>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      <a class="author" href="https://ptrckprz.github.io/" target="_blank" rel="noopener">Patrick Pérez</a><sup class="aff aff--k" title="Kyutai">♠</sup>
+      <span class="hero__aff-key"><span class="aff aff--k">♠</span>&nbsp;Kyutai &nbsp;&nbsp;&nbsp; <span class="aff aff--b">♦</span>&nbsp;UC&nbsp;Berkeley</span>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll to begin<span>❧</span></div>
+</header>
+
+<!-- ===================== INTRODUCTION — an old-book leaf with ink marginalia ===================== -->
+<section class="section section--ivory intro-book" id="intro">
+  <div class="leaf">
+    <!-- double-rule page frame; inked corner curls injected by ink.js -->
+    <div class="leaf__frame" aria-hidden="true"></div>
+
+    <!-- the wide margins: hand-inked allegories of chance, drawn on as you arrive.
+         Filled by js/ink.js (urn of lots · tree of outcomes · drifting motes). -->
+    <div class="ink-field" aria-hidden="true">
+      <div class="ink-art ink-art--urn"  data-ink="urn"></div>
+      <div class="ink-art ink-art--tree" data-ink="tree"></div>
+    </div>
+
+    <div class="leaf__col">
+      <!-- engraved chapter headpiece (banner + turning wheel-of-fortune rosette) -->
+      <div class="headpiece" data-ink="headpiece" aria-hidden="true"></div>
+
+      <span class="eyebrow reveal">Introduction</span>
+
+      <blockquote class="epigraph reveal">
+        “If the lottery is an intensification of chance, a periodic infusion of chaos into the cosmos,
+        would it not be desirable for chance to intervene at all stages of the lottery and not merely in the drawing?”
+        <cite>— Jorge Luis Borges, <em>The Lottery in Babylon</em></cite>
+      </blockquote>
+
+      <div class="prose reveal d1">
+        <p class="lead"><span class="initial">O</span><span class="incipit">pen any recent image-generation paper</span> and the central claim usually rests on a single
+        number — the Fréchet Inception Distance (FID). FID is the closest thing image generation has to an
+        arbiter: a half-unit shift reorders the leaderboard; a decade of recipes have been justified by
+        single-Inception-unit gains; and budgets in the low millions of GPU-hours hinge on which architecture
+        lands a few decimals lower. Behind every reported FID number sits a chain of pseudo-random draws
+        (parameter initialisation, minibatch order, per-step Gaussian noise injected by the training loss, and
+        the initial noise drawn at sampling time), any of which would have produced a potentially different
+        score had the seed been different. Conventional wisdom considers this variance in FID to be negligible,
+        especially for well-trained models. <span class="manicule" aria-hidden="true">&#9758;&#xFE0E;</span>In this paper we show that <span class="key">the FID reproducibility gap is real and
+        is a serious concern</span>.</p>
+
+        <p>Each time one trains a generative model and reports its FID, one is playing two lotteries. The
+        <span class="term term--train">training lottery</span> runs once during training: one draws an
+        initialisation, a data ordering, and the per-step noise that the loss injects at every gradient step,
+        and what comes out is one trained network among many that could have been produced by different seeds.
+        The <span class="term term--gen">generation lottery</span> runs on the trained network: one draws an
+        initial noise <em>x<sub>T</sub></em> ∼ 𝒩(0, I) to seed the sampler, generates a sample set, and scores
+        it. Practitioners have learned to mitigate the second lottery — redrawing the initial noise across
+        several seeds and reporting an error bar or an averaged FID score — but no amount of resampling on a
+        single trained network says anything about where a re-trained network run would have landed. <span class="key">The
+        training lottery stays hidden behind the one ticket we actually drew.</span> Diffusion makes the problem
+        worse: the flow-matching or score-matching loss redraws a fresh Gaussian <em>ε</em> ∼ 𝒩(0, I) at every
+        gradient step, so the training noise never settles — it is a permanent random injection that an
+        independent training run would resolve differently, not transient noise that longer training averages
+        out. Scale offers no automatic remedy: neural scaling laws characterise how the mean loss falls with
+        parameters and tokens, leaving the seed-induced <em>spread around</em> that mean unspecified. Zhang et
+        al. recently showed that independent diffusion runs converge to nearly the same noise-to-image map at
+        the function level. The corresponding question for the metric is open: do nearly identical maps yield
+        the same FID when scored on a common reference set?</p>
+
+        <p>Each lottery defines an axis of FID variance: a <em>training axis</em> of <em>N</em> independent
+        training runs and a <em>generation axis</em> of <em>K</em> sampling seeds per run. To measure both, we
+        score the resulting <em>N</em>×<em>K</em> panel of FID evaluations. The panel below renders a converged
+        SiT-B/2: every column is one trained network, every dot is one FID evaluation, and the column-to-column
+        spread already overshoots the within-column spread at a glance. On this panel we first decompose the
+        training lottery into its independent random sources, then sweep four practitioner-controlled axes
+        (classifier-free guidance, compute, model size, and learning rate, transferred across widths by hyperparameter transfer) to
+        test whether any of them tightens it. Across several hundred SiT networks from S through XL on ImageNet
+        256×256, <span class="manicule" aria-hidden="true">&#9758;&#xFE0E;</span><span class="key">the training axis dominates the evaluation axis at every scale we probe and none of the four
+        knobs closes the gap</span>; a single-seed Inception FID therefore sits on a noise floor that recipe-level
+        gains regularly fall below. A closer look at this floor turns up two practical handles nonetheless:
+        per-cell classifier-free-guidance tuning (GS-FID) halves the relative noise floor but reshuffles which
+        seeds win (Spearman <span class="fig">ρ = 0.73</span>), and a lucky training seed reaches the same FID with up to <span class="fig">2×</span> less
+        compute than an unlucky one.</p>
+      </div>
+
+      <!-- closing call-to-action: an admission ticket onto the lottery floor -->
+      <a class="intro-ticket reveal d1" href="#lottery">
+        <span class="intro-ticket__stub">Admit<br>One</span>
+        <span class="intro-ticket__body">
+          <span class="intro-ticket__head">Now play the two lotteries</span>
+          <span class="intro-ticket__cta">Step onto the floor <i aria-hidden="true">↓</i></span>
+          <span class="intro-ticket__barcode" aria-hidden="true"></span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- THE SLOT FLOOR — a pinned scene; scrolling through it drives the draws -->
+<section class="lottery-pin felt" id="lottery">
+  <div class="lottery-scene">
+    <div class="lottery-inner">
+  <div class="slot-stage" id="slot-stage">
+    <div class="jackpot" id="jackpot" aria-hidden="true"></div>
+
+    <div class="lottery-stage">
+      <div class="lottery-floor">
+      <!-- ① TRAINING LOTTERY -->
+      <div class="train-side">
+        <div class="side-head"><span class="step-badge">1</span>The Training Lottery</div>
+        <div class="diffusion-monitor" id="train-monitor">
+          <span class="monitor__tag">Training a diffusion model</span>
+          <div class="monitor__screen"><canvas id="train-canvas" width="200" height="150"></canvas><span class="monitor__scan"></span></div>
+        </div>
+        <div class="train-machine">
+          <button class="lever-arm lever-arm--auto" id="lever-auto" type="button" aria-label="Speed up — auto-sample all 25 networks" disabled>
+            <span class="lever-lights" aria-hidden="true"></span>
+            <span class="lever-arm__stick"></span>
+            <span class="pull-flag pull-flag--auto" aria-hidden="true">Speed&nbsp;up</span>
+          </button>
+          <div class="slot slot--train is-active" id="slot-train">
+          <div class="slot__crown" aria-hidden="true">
+            <span class="slot__bulbs"></span>
+            <span class="slot__make">Train your SiT&#8209;B/2</span>
+            <span class="slot__bulbs slot__bulbs--b"></span>
+          </div>
+          <div class="reel-window">
+            <i class="payline-hand payline-hand--l" aria-hidden="true">▸</i>
+            <i class="payline-hand payline-hand--r" aria-hidden="true">◂</i>
+          <div class="slot__reels" id="reels-train">
+            <div class="reel-col">
+              <div class="reel" data-reel="init"><div class="reel__strip"></div></div>
+              <div class="reel-cap">
+                <span class="reel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="8" cy="8" r="1.6"/><circle cx="16" cy="8" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="8" cy="16" r="1.6"/><circle cx="16" cy="16" r="1.6"/></svg></span>
+                <span class="reel-txt">Init<br><i>weights</i></span>
+              </div>
+            </div>
+            <div class="reel-col">
+              <div class="reel" data-reel="data"><div class="reel__strip"></div></div>
+              <div class="reel-cap">
+                <span class="reel-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h4c4 0 6 10 10 10h4"/><path d="M3 17h4c4 0 6-10 10-10h4"/><path d="M18 4l3 3-3 3"/><path d="M18 14l3 3-3 3"/></svg></span>
+                <span class="reel-txt">Data<br><i>order</i></span>
+              </div>
+            </div>
+            <div class="reel-col">
+              <div class="reel" data-reel="noise"><div class="reel__strip"></div></div>
+              <div class="reel-cap">
+                <span class="reel-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 19h20"/><path d="M3 19c4 0 4.5-13 9-13s5 13 9 13"/></svg></span>
+                <span class="reel-txt">Training<br><i>noise</i></span>
+              </div>
+            </div>
+          </div>
+          </div><!-- /reel-window -->
+          </div>
+          <button class="lever-arm lever-arm--train" id="lever-train" aria-label="Pull the lever to train one network">
+            <span class="lever-lights" aria-hidden="true"></span>
+            <span class="lever-arm__stick"></span>
+            <span class="pull-flag" aria-hidden="true">Pull!</span>
+          </button>
+        </div><!-- /train-machine -->
+        <div class="ticket" id="ticket" aria-hidden="true">
+          <div class="ticket__stub"><span>Admit<br>One</span></div>
+          <div class="ticket__body">
+            <div class="ticket__head">Generation Lottery</div>
+            <div class="ticket__seed" id="ticket-seed">seed —</div>
+            <div class="ticket__sub">good for 10 sampling draws</div>
+            <div class="ticket__barcode"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="floor-arrow" aria-hidden="true">→</div>
+
+      <!-- ② GENERATION LOTTERY: 5 × 5 sampling machines -->
+      <div class="sample-side">
+        <div class="side-head"><span class="step-badge">2</span>The Generation Lottery
+          <small>10 sampling seeds → 10 FID scores of <b id="sample-of">your network</b></small>
+        </div>
+        <div class="diffusion-monitor" id="sample-monitor">
+          <span class="monitor__tag">Generating 50,000 images</span>
+          <div class="monitor__screen"><canvas id="sample-canvas" width="160" height="120"></canvas><span class="monitor__scan"></span></div>
+        </div>
+        <div class="gen-machine__cab" id="slot-sample">
+          <div class="cab-crown" aria-hidden="true">
+            <span class="slot__bulbs"></span>
+            <span class="cab-crown__make">Compute your FIDs</span>
+            <span class="slot__bulbs slot__bulbs--b"></span>
+          </div>
+          <div class="sample-grid" id="sample-grid"><!-- 10 mini slot machines (one per sampling seed) injected by slot.js --></div>
+        </div>
+      </div>
+      </div><!-- /lottery-floor -->
+
+      <div class="lottery-graph">
+        <div class="graph-title">The FID Lottery</div>
+        <div class="slot__hist" id="hist-main"></div>
+      </div>
+    </div><!-- /lottery-stage -->
+
+    <div class="floor-meta">Networks drawn&nbsp; <b id="slot-count">0</b>
+      <button class="floor-reset" id="slot-reset" type="button" hidden>↻ Draw a fresh lottery</button>
+      <button class="floor-draw-all" id="auto-mobile" type="button" hidden>⚡ Draw all 25 networks</button></div>
+  </div><!-- /slot-stage -->
+    </div><!-- /lottery-inner -->
+  </div><!-- /lottery-scene -->
+</section><!-- /lottery-pin -->
+
+<!-- ===================== ACT I — TWO LOTTERIES (fits one screen) ===================== -->
+<section class="section felt act-fit" id="two-lotteries">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="act-no">Act I — The Two Lotteries</span>
+      <h2>Training Variability Dwarfs Evaluation</h2>
+      <div class="divider"><span>♦</span></div>
+      <p class="lede">Which moves your FID more: the model you happened to train, or the samples you drew
+      from it? The two are nowhere near equal, and the larger source of variance is the one error bars
+      rarely capture.</p>
+    </div>
+
+    <div class="act-row reveal d1">
+      <div class="panel-card">
+        <span class="corner tl">♠</span><span class="corner tr">♥</span><span class="corner bl">♣</span><span class="corner br">♦</span>
+        <div class="chart-title">The Two-Axis Panel · SiT-B/2, 400k steps</div>
+        <div class="chart-sub">25 networks (columns) × 10 sampling seeds (dots). The gold band is the training-lottery ±1σ envelope.</div>
+        <div class="chart-mount" id="chart-panel"></div>
+      </div>
+
+      <aside class="act-aside">
+        <div class="stat-row stat-row--rail">
+          <div class="stat"><div class="stat__num">3.2<span class="unit">×</span></div><div class="stat__label">More FID variance from training than from sampling</div></div>
+          <div class="stat"><div class="stat__num">0.44</div><div class="stat__label">FID spread across training seeds (±1σ)</div></div>
+          <div class="stat"><div class="stat__num">1.3<span class="unit">%</span></div><div class="stat__label">Between-training CoV vs. 0.4% within</div></div>
+        </div>
+        <p class="act-take">Multiply the sampling budget by ten and the within-network jitter shrinks by only
+        √10, while the wider envelope barely moves. <strong>Only re-training across seeds reaches the dominant
+        source of FID variance.</strong></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACT II — VARIANCE SOURCES (fits one screen) ===================== -->
+<section class="section section--ivory act-fit" id="decomposition">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="act-no">Act II — Three Sources</span>
+      <h2>Which Source Drives the Variance?</h2>
+      <div class="divider"><span>♣</span></div>
+      <p class="lede">A training run draws on three independent random sources: the initialisation, the data
+      order, and the per-step noise of the flow-matching loss. We freeze two of them and vary the third to see
+      how much each one moves the FID on its own.</p>
+    </div>
+
+    <div class="act-row reveal d1">
+      <div class="panel-card">
+        <span class="corner tl">♠</span><span class="corner tr">♥</span><span class="corner bl">♣</span><span class="corner br">♦</span>
+        <div class="chart-title">Between-Seed σ by Single Source</div>
+        <div class="chart-sub">How much of the full spread does each random source reproduce on its own?</div>
+        <div class="chart-mount" id="chart-decomp"></div>
+      </div>
+
+      <aside class="act-aside">
+        <div class="stat-row stat-row--rail">
+          <div class="stat"><div class="stat__num">77<span class="unit">%</span></div><div class="stat__label">Of the full spread from training noise alone</div></div>
+          <div class="stat"><div class="stat__num">67<span class="unit">%</span></div><div class="stat__label">From initialisation; data order just 51%</div></div>
+          <div class="stat"><div class="stat__num">0.44</div><div class="stat__label">Real σ, below the 0.50 of independent parts</div></div>
+        </div>
+        <p class="act-take">The biggest contributor is the fresh Gaussian the loss draws at every gradient
+        step, which never settles. Because the three sources share variance through the trained weights,
+        <strong>one-at-a-time ablations overstate what any single fix buys you.</strong></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACT III — LUCKY SEEDS (fits one screen) ===================== -->
+<section class="section felt act-fit" id="race">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="act-no">Act III — Lucky Seeds</span>
+      <h2>A Lucky Seed Is Worth Compute</h2>
+      <div class="divider"><span>♥</span></div>
+      <p class="lede">Train the same recipe many times and keep only the luckiest seed. That alone reaches a
+      target FID up to 2× sooner, with no change to the model, the data, or the code.</p>
+    </div>
+
+    <div class="act-row reveal d1">
+      <div class="panel-card">
+        <span class="corner tl">♠</span><span class="corner tr">♥</span><span class="corner bl">♣</span><span class="corner br">♦</span>
+        <div class="chart-title">Lucky vs. Unlucky Seed · FID over training</div>
+        <div class="chart-sub">Every faint line is one training seed. When does the luckiest first reach what the unluckiest only attains at 2M steps?</div>
+        <div class="chart-mount" id="chart-race"></div>
+      </div>
+
+      <aside class="act-aside">
+        <div class="toggle-row" id="race-toggle" role="tablist" aria-label="Model size"></div>
+        <div class="stat-row stat-row--rail">
+          <div class="stat"><div class="stat__num">2.0<span class="unit">×</span></div><div class="stat__label">Sooner to a target FID, luckiest SiT-XL seed</div></div>
+          <div class="stat"><div class="stat__num">1.82<span class="unit">×</span></div><div class="stat__label">On SiT-L; 1.25× on SiT-S and SiT-B</div></div>
+        </div>
+        <p class="act-take">A lucky seed reaches a given FID with far less compute than an unlucky one.
+        <strong>A single-seed claim of a ~1.3× speed-up sits inside the range seed variance already produces
+        on its own.</strong></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACT IV — NOISE FLOOR (fits one screen) ===================== -->
+<section class="section section--ivory act-fit" id="floor">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="act-no">Act IV — The Noise Floor</span>
+      <h2>The 1–2% Floor That Won’t Move</h2>
+      <div class="divider"><span>♠</span></div>
+      <p class="lede">Does more compute or a bigger model tighten the spread? Across every checkpoint and every
+      size, the relative noise floor stays inside a narrow band.</p>
+    </div>
+
+    <div class="act-row reveal d1">
+      <div class="panel-card">
+        <span class="corner tl">♠</span><span class="corner tr">♥</span><span class="corner bl">♣</span><span class="corner br">♦</span>
+        <div class="chart-title">Coefficient of Variation across Scale &amp; Compute</div>
+        <div class="chart-mount" id="chart-floor"></div>
+      </div>
+
+      <aside class="act-aside">
+        <p class="act-def"><b>CoV</b> (coefficient of variation) = seed σ ÷ mean FID, written as a percent, so spread is comparable across metrics.</p>
+        <div class="stat-row stat-row--rail">
+          <div class="stat"><div class="stat__num">1.3<span class="unit">%</span></div><div class="stat__label">Median CoV; we propose it as a calibration target</div></div>
+          <div class="stat"><div class="stat__num">≈2<span class="unit">×</span></div><div class="stat__label">Below this multiple of the CoV, a gain may be seed noise</div></div>
+        </div>
+        <p class="act-take">The floor does not fall with scale: SiT-S and SiT-B sit below the larger SiT-L and
+        SiT-XL. <strong>Treat a gain you cannot clear by twice the CoV as unconfirmed until you have run
+        several seeds.</strong></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACT V — GUIDED FID (fits one screen) ===================== -->
+<section class="section felt act-fit" id="guidance">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="act-no">Act V — Guided FID</span>
+      <h2>Guidance Halves the Floor, but Reshuffles the Winners</h2>
+      <div class="divider"><span>♦</span></div>
+      <p class="lede">Tuning classifier-free guidance per seed pair (GS-FID) cuts the relative spread in half.
+      But the seeds it favours are not the ones unguided FID picked.</p>
+    </div>
+
+    <div class="act-row reveal d1">
+      <div class="panel-card">
+        <span class="corner tl">♠</span><span class="corner tr">♥</span><span class="corner bl">♣</span><span class="corner br">♦</span>
+        <div class="chart-title">Who Wins Changes · Unguided → GS-FID seed ranking</div>
+        <div class="chart-sub">25 training seeds re-ranked. 8 of them move at least five places.</div>
+        <div class="chart-mount" id="chart-golden"></div>
+      </div>
+
+      <aside class="act-aside">
+        <div class="stat-row stat-row--rail">
+          <div class="stat"><div class="stat__num">0.67<span class="unit">%</span></div><div class="stat__label">Relative spread under GS-FID, halved from 1.26%</div></div>
+          <div class="stat"><div class="stat__num">ρ = 0.73</div><div class="stat__label">Rank agreement between guided and unguided</div></div>
+          <div class="stat"><div class="stat__num">8 / 25</div><div class="stat__label">Seeds that move at least five places</div></div>
+        </div>
+        <p class="act-take">A model chosen on unguided FID need not be best under GS-FID, so the two protocols
+        should not be compared across papers. <strong>Per-cell tuning does not remove the seed effect;
+        multi-seed reporting matters more under GS-FID, not less.</strong></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACT VI — HYPERPARAMETER TRANSFER (fits one screen) ===================== -->
+<section class="section felt act-fit" id="mup">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="act-no">Act VI — Hyperparameter Transfer</span>
+      <h2>The Optimum Is a Window, Not a Point</h2>
+      <div class="divider"><span>♣</span></div>
+      <p class="lede">Transferred across model sizes (μP), the best learning rate is a flat-bottomed valley,
+      not a point: a band of nearby rates that all reach essentially the same guided FID.</p>
+    </div>
+
+    <div class="act-row reveal d1">
+      <div class="panel-card">
+        <span class="corner tl">♠</span><span class="corner tr">♥</span><span class="corner bl">♣</span><span class="corner br">♦</span>
+        <div class="chart-title">Learning-Rate Sweep · GS-FID</div>
+        <div class="chart-sub">Mean GS-FID ± seed σ; overlapping error bars mark rates that are statistically tied (the window).</div>
+        <div class="chart-mount" id="chart-mup"></div>
+      </div>
+
+      <aside class="act-aside">
+        <div class="toggle-row" id="mup-toggle" role="tablist" aria-label="Model size"></div>
+        <div class="stat-row stat-row--rail">
+          <div class="stat"><div class="stat__num">2.2<span class="unit">×</span></div><div class="stat__label">Widest flat LR window (SiT-B); narrower at other sizes</div></div>
+          <div class="stat"><div class="stat__num">10</div><div class="stat__label">Learning rates swept, 5e-5 to 5e-4</div></div>
+        </div>
+        <p class="act-take">The best learning rate is a flat region, not a point: seed variance blurs the
+        optimum into a plateau. <strong>The transfer carries over a usable range of rates across model
+        width, not one exact value.</strong></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACT VII — BEYOND FID (fits one screen) ===================== -->
+<section class="section section--ivory act-fit" id="metrics">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="act-no">Act VII — Beyond FID</span>
+      <h2>The Lottery Is Not Just FID</h2>
+      <div class="divider"><span>♥</span></div>
+      <p class="lede">Is the seed lottery an FID quirk? We re-scored the same networks under six common
+      generative-model metrics. Every one of them moves with the training seed.</p>
+    </div>
+
+    <div class="act-row reveal d1">
+      <div class="panel-card">
+        <span class="corner tl">♠</span><span class="corner tr">♥</span><span class="corner bl">♣</span><span class="corner br">♦</span>
+        <div class="chart-title">Seed CoV across six metrics</div>
+        <div class="chart-sub">Dot = median; bar = p10–p90; thin line = min–max (76 cells each).</div>
+        <div class="chart-mount" id="chart-metrics"></div>
+      </div>
+
+      <aside class="act-aside">
+        <p class="act-def">Same 76 cells as Act IV, re-scored under each metric; bars are seed <b>CoV</b> (σ ÷ mean).</p>
+        <div class="stat-row stat-row--rail">
+          <div class="stat"><div class="stat__num">6</div><div class="stat__label">Metrics re-scored; all show a seed lottery</div></div>
+          <div class="stat"><div class="stat__num">1.25<span class="unit">%</span></div><div class="stat__label">DINOv2 FID CoV: a different backbone, the same lottery</div></div>
+          <div class="stat"><div class="stat__num">0.49<span class="unit">%</span></div><div class="stat__label">Even Precision, the tightest, never reaches zero</div></div>
+        </div>
+        <p class="act-take">Swapping the metric changes how wide the band is, never whether it exists.
+        <strong>The seed lottery is a property of stochastic evaluation, not of FID; report several seeds
+        whatever you measure.</strong></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE CASHIER — interactive FID error-bar calculator ===================== -->
+<section class="section felt act-fit" id="calculator">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="act-no">The Cashier’s Window</span>
+      <h2>Price Your Own FID</h2>
+      <div class="divider"><span>♠</span></div>
+      <p class="lede">Enter a reported FID and how many independently-trained seeds stand behind it. The house
+      returns the 95% error bar the seed lottery hides, at the paper’s ≈1.3% floor. Add seeds; watch it tighten by √N.</p>
+    </div>
+    <div class="calc reveal d1" id="fid-calc"><!-- built by js/calc.js --></div>
+  </div>
+</section>
+
+<!-- ===================== HOUSE RULES (a distinct conclusion, not a full-screen act) ===================== -->
+<section class="section section--ivory rules-section" id="rules">
+  <div class="wrap">
+    <div class="title-block reveal">
+      <span class="act-no">The House Rules</span>
+      <h2>Advice for Practitioners</h2>
+      <div class="divider"><span>♠</span></div>
+      <p class="lede">If FID is a game of chance, here is how to play it honestly.</p>
+    </div>
+    <ol class="rules-list reveal d1">
+      <li><h4>More evaluations can’t substitute for more training runs.</h4>
+        <p>Resampling a fixed network shrinks evaluation noise but leaves the dominant training variance
+        untouched; only multi-seed <em>training</em> reaches below the ≈1.3% CoV floor.</p></li>
+      <li><h4>Treat any FID gap below ≈2% as inconclusive.</h4>
+        <p>Variance stays inside a 1–2% band across SiT-S/B/L/XL from 200k to 2M steps. Gaps below the band
+        may just be seed noise; a cheap first-pass check before you commit to multiple seeds.</p></li>
+      <li><h4>Guided and unguided FID disagree on the best seeds and hyper-parameters.</h4>
+        <p>GS-FID is more reliable, but its winners differ from unguided’s (ρ ≈ 0.73). Evaluate and tune with
+        the same FID you intend to report.</p></li>
+      <li><h4>Under guided FID, the best learning rate is a flat region, not a single value.</h4>
+        <p>Transfer the learning rate across model sizes and GS-FID returns a window of adjacent rates that
+        all give similar FID; seed variance blurs the optimum into a plateau.</p></li>
+      <li><h4>Use golden-section search to pick the CFG scale.</h4>
+        <p>GS-FID finds the per-cell optimal guidance scale in a logarithmic number of evaluations and gives
+        the most reliable comparisons under CFG.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== FOOTER / PAPER ===================== -->
+<footer class="footer felt" id="paper">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="footer__title">The FID Lottery</div>
+      <div class="footer__authors"><a href="https://nicolas-dufour.github.io/" target="_blank" rel="noopener">Nicolas Dufour</a> · <a href="https://people.eecs.berkeley.edu/~efros/" target="_blank" rel="noopener">Alexei A. Efros</a> · <a href="https://ptrckprz.github.io/" target="_blank" rel="noopener">Patrick Pérez</a></div>
+      <p class="narrow" style="opacity:.85">We read these findings less as a verdict on FID than as a
+      measurement protocol: evaluate under per-cell optimal guidance, treat any gap below ≈1.3% CoV as
+      inconclusive, and retrain across several seeds whenever the budget allows.</p>
+      <a class="paper-btn" id="paper-link" href="#paper">
+        <span class="paper-btn__suit" aria-hidden="true">♠</span>
+        <span class="paper-btn__txt">Read the Paper</span>
+        <span class="paper-btn__arrow" aria-hidden="true">→</span>
+      </a>
+      <div class="footer__links">
+        <a href="#top">↑ Back to the floor</a>
+        <a href="#intro">Read the introduction</a>
+      </div>
+      <figure class="cite">
+        <figcaption class="cite__bar">
+          <span class="cite__label">Cite this paper</span>
+          <button class="cite__copy" type="button" data-copy-target="#bibtex-cite">Copy</button>
+        </figcaption>
+        <pre class="bibtex" id="bibtex-cite"><span class="tok-at">@article</span>{<span class="tok-key">dufour2026fidlottery</span>,
+  <span class="tok-field">title</span>  = {The FID Lottery: Quantifying Hidden Randomness
+            in Generative Model Evaluation},
+  <span class="tok-field">author</span> = {Dufour, Nicolas and Efros, Alexei A. and P\'erez, Patrick},
+  <span class="tok-field">year</span>   = {2026}
+}</pre>
+      </figure>
+    </div>
+  </div>
+</footer>
+
+<div class="tooltip-fl" id="fl-tooltip"></div>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script src="lib/d3.v7.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/charts/slot.js"></script>
+<script src="js/charts/panel.js"></script>
+<script src="js/charts/decomp.js"></script>
+<script src="js/charts/race.js"></script>
+<script src="js/charts/floor.js"></script>
+<script src="js/charts/golden.js"></script>
+<script src="js/charts/mup.js"></script>
+<script src="js/charts/metrics.js"></script>
+<script src="js/calc.js"></script>
+<script src="js/main.js"></script>
+<script src="js/ink.js"></script>
+<script src="js/deco.js"></script>
+<script src="lib/three.min.js"></script>
+<script src="js/hero.js"></script>
+</body>
+</html>
