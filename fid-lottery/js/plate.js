@@ -91,10 +91,8 @@
   }
   function txt(parent, x, y, str, cls, o) {
     o = o || {};
-    var a = { x: f(x), y: f(y), "text-anchor": o.anchor || "middle",
-      class: (cls || "") + " ink-fade", text: str };
-    if (o.size) a["font-size"] = o.size;     // px override (used to enlarge labels on the phone reflow)
-    var t = E("text", a, parent);
+    var t = E("text", { x: f(x), y: f(y), "text-anchor": o.anchor || "middle",
+      class: (cls || "") + " ink-fade", text: str }, parent);
     return dly(t, o.d);
   }
 
@@ -357,70 +355,61 @@
 
   // --- the SAME engraving, reflowed into a tall portrait column for phones ---
   // The wide layout is ~3.9:1, so on a phone its 10px engraved labels shrink to
-  // ~5px and read as nothing. Here the four training sources stack ONE PER ROW
-  // (a single column), the conveyor flows DOWN into the trained-network medallion,
-  // and the generation lottery sits at the foot — every block reuses the wide
-  // layout's icon/badge/die helpers (and thus the same .inked motion) at full size.
+  // ~5px and read as nothing. Here the four training sources stack into a 2×2
+  // grid, the conveyor flows DOWN into the trained-network medallion, and the
+  // generation lottery sits at the foot — every block reuses the wide layout's
+  // icon/badge/die helpers (and thus the same .inked motion) at full size.
   function buildNarrow(mount) {
     while (mount.firstChild) mount.removeChild(mount.firstChild);
-    var W = 360, H = 840, ZX = 10, ZW = 340, CX = 180;
+    var W = 360, H = 690, ZX = 10, ZW = 340;
     var svg = E("svg", { viewBox: "0 0 " + W + " " + H, role: "img",
       "aria-label": "The five sources of randomness behind a generative model" }, mount);
-    // a group scaled by k about (cx,cy) — enlarges the fixed-size number badges
-    function sg(cx, cy, k) {
-      var g = E("g", {}, svg);
-      g.setAttribute("transform", "translate(" + cx + " " + cy + ") scale(" + k + ") translate(" + (-cx) + " " + (-cy) + ")");
-      return g;
-    }
-    function drawIcon(s, icx, icy) {
-      var g = E("g", {}, svg);
-      if (s.icon === "net") netIcon(g, icx, icy, false, s.base + 0.2);
-      else if (s.icon === "data") dataOrder(g, icx, icy, s.base + 0.2);
-      else if (s.icon === "tnoise") {
-        photoMini(g, icx - 19, icy, 11, s.base + 0.2, 0);
-        txt(g, icx, icy + 4, "+", "plate-plus", { d: s.base + 0.4 });
-        noise(g, icx + 19, icy, 11, s.base + 0.3);
-      } else if (s.icon === "gpu") gpus(g, icx, icy, s.base + 0.2);
-    }
 
     // --- training zone (gold wash) + banner ---
-    tile(svg, ZX, 8, ZW, 456, 11, "plate-zone plate-zone--train", { d: 0.25, dur: 1.4, sw: 1.2 });
-    banner(svg, CX, 30, "Training lottery", "plate-band--train", 0.3, 168);
+    tile(svg, ZX, 8, ZW, 324, 11, "plate-zone plate-zone--train", { d: 0.25, dur: 1.4, sw: 1.2 });
+    banner(svg, 180, 26, "Training lottery", "plate-band--train", 0.3, 168);
 
-    // --- the four training sources, each a FULL-WIDTH card filling the column ---
-    // (icon on the left, then ② · name · die) so a row never reads as a sparse strip.
+    // --- the four training sources, in a 2×2 grid ---
+    var COLS = [96, 264], ROWS = [54, 200];
     SOURCES.forEach(function (s, idx) {
-      var rt = 50 + idx * 104, icy = rt + 45;
-      tile(svg, 24, rt, 312, 90, 8, "plate-card plate-card--bg", { d: s.base, dur: 0.6, sw: 1.1 });
-      drawIcon(s, 74, icy);
-      badge(sg(134, icy, 1.3), 134, icy, s.n, s.base + 0.55);
-      txt(svg, 156, icy + 5, s.name, "plate-name", { d: s.base - 0.05, anchor: "start", size: "16px" });
-      die3d(svg, 306, icy, 20, s.die, s.base + 0.35, s.base + 1.5, ROLLDUR[idx]);
+      var cx = COLS[idx % 2], nameY = ROWS[idx < 2 ? 0 : 1], cy = nameY + 76;
+      txt(svg, cx, nameY, s.name, "plate-name", { d: s.base - 0.05 });
+      badge(svg, cx - 31, nameY + 22, s.n, s.base + 0.55);
+      die3d(svg, cx + 31, nameY + 23, 15, s.die, s.base + 0.35, s.base + 1.5, ROLLDUR[idx]);
+      tile(svg, cx - 42, nameY + 34, 84, 84, 4, "plate-card plate-card--bg", { d: s.base, dur: 0.6, sw: 1.1 });
+      var g = E("g", {}, svg);
+      if (s.icon === "net") netIcon(g, cx, cy, false, s.base + 0.2);
+      else if (s.icon === "data") dataOrder(g, cx, cy, s.base + 0.2);
+      else if (s.icon === "tnoise") {
+        photoMini(g, cx - 19, cy, 11, s.base + 0.2, 0);
+        txt(g, cx, cy + 4, "+", "plate-plus", { d: s.base + 0.4 });
+        noise(g, cx + 19, cy, 11, s.base + 0.3);
+      } else if (s.icon === "gpu") gpus(g, cx, cy, s.base + 0.2);
     });
 
     // --- conveyor flowing down into the trained-network medallion ---
-    [480, 494, 508].forEach(function (yy, i) { chevDown(svg, CX, yy, 1.7, i * 0.14); });
-    var BCY = 566;
-    E("ellipse", { cx: CX, cy: BCY, rx: 58, ry: 50, class: "plate-glow" }, svg).style.setProperty("--d", "2.4s");
-    tile(svg, CX - 48, BCY - 48, 96, 96, 12, "plate-card plate-card--bridge", { d: 1.8, dur: 0.7, sw: 1.3 });
-    netIcon(sg(CX, BCY, 1.1), CX, BCY, true, 1.95);
-    txt(svg, CX, BCY + 70, "trained network", "plate-name plate-name--bridge", { d: 2.15, size: "14px" });
+    [346, 358, 370].forEach(function (yy, i) { chevDown(svg, 180, yy, 1.7, i * 0.14); });
+    var BCY = 408;
+    E("ellipse", { cx: 180, cy: BCY, rx: 50, ry: 44, class: "plate-glow" }, svg).style.setProperty("--d", "2.4s");
+    tile(svg, 140, BCY - 42, 80, 84, 10, "plate-card plate-card--bridge", { d: 1.8, dur: 0.7, sw: 1.3 });
+    netIcon(E("g", {}, svg), 180, BCY, true, 1.95);
+    txt(svg, 180, BCY + 58, "trained network", "plate-name plate-name--bridge", { d: 2.15 });
 
     // --- flow down into the generation lottery (blue wash) ---
-    [654, 668].forEach(function (yy, i) { chevDown(svg, CX, yy, 2.0, i * 0.14); });
-    tile(svg, ZX, 684, ZW, 152, 11, "plate-zone plate-zone--gen", { d: 0.3, dur: 1.2, sw: 1.2 });
-    banner(svg, CX, 706, "Generation lottery", "plate-band--gen", 0.35, 168);
+    [480, 492].forEach(function (yy, i) { chevDown(svg, 180, yy, 2.0, i * 0.14); });
+    tile(svg, ZX, 502, ZW, 180, 11, "plate-zone plate-zone--gen", { d: 0.3, dur: 1.2, sw: 1.2 });
+    banner(svg, 180, 520, "Generation lottery", "plate-band--gen", 0.35, 168);
 
-    // --- initial noise → sampled image (one full-width card) ---
-    var gcy = 775;
-    tile(svg, 24, 730, 312, 90, 8, "plate-card plate-card--bg", { d: 2.3, dur: 0.6, sw: 1.1 });
+    // --- initial noise → sampled image ---
+    var gx = 180, gNameY = 548, gcy = 624;
+    txt(svg, gx, gNameY, "initial noise", "plate-name", { d: 2.25 });
+    badge(svg, gx - 44, gNameY + 22, 5, 2.85);
+    die3d(svg, gx + 44, gNameY + 23, 15, [4, 5, 1], 2.6, 3.7, 2.8);
+    tile(svg, gx - 56, gNameY + 34, 112, 84, 4, "plate-card plate-card--bg", { d: 2.3, dur: 0.6, sw: 1.1 });
     var gg = E("g", {}, svg);
-    noise(gg, 52, gcy, 12, 2.45);
-    chev(svg, 78, gcy, 2.7, 0.6);
-    landscape(gg, 104, gcy, 14, 2.6);
-    badge(sg(150, gcy, 1.3), 150, gcy, 5, 2.85);
-    txt(svg, 172, gcy + 5, "initial noise", "plate-name", { d: 2.25, anchor: "start", size: "16px" });
-    die3d(svg, 306, gcy, 20, [4, 5, 1], 2.6, 3.7, 2.8);
+    noise(gg, gx - 28, gcy, 13, 2.45);
+    chev(svg, gx, gcy, 2.7, 0.6);
+    landscape(gg, gx + 28, gcy, 16, 2.6);
 
     return svg;
   }
