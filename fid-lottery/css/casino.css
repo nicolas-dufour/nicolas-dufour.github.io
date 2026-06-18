@@ -288,7 +288,10 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
   #dice-3d { top:5%; right:0; width:42vw; height:20vw; }
 }
 @media (max-width: 720px) {
-  #roulette-3d, .card-fan, .chip--loose2 { display:none; }     /* keep the title clean on phones */
+  .card-fan, .chip--loose2 { display:none; }     /* keep the title clean on phones */
+  /* keep the roulette on phones too (bleeding off the top-left), balancing the dice
+     on the top-right — both sit well above the vertically-centred title */
+  #roulette-3d { display:block; top:-4%; left:-22%; width:clamp(180px,58vw,260px); height:clamp(150px,49vw,220px); }
   #dice-3d { top:3%; right:0; width:clamp(160px,50vw,230px); height:clamp(110px,32vw,170px); }
   .chip-stack { right:7%; bottom:11%; width:62px; height:62px; }
   .chip--loose1 { left:8%; bottom:9%; }
@@ -1456,6 +1459,10 @@ section.act-fit > .wrap, .rules-section > .wrap { position: relative; z-index: 1
 /* the plate scales with the leaf; on a phone it reads as a small figure (the
    caption carries the detail), so just keep it from crowding the text */
 @media (max-width: 560px) { .leaf-plate { margin-top: 1.4rem; } }
+/* the portrait (single-column) plate is used <=820px (js/plate.js); cap its width so
+   on larger phones / portrait tablets it stays a tidy centred figure that flows with
+   the prose instead of ballooning to fill the column */
+@media (max-width: 820px) { .leaf-plate__art { max-width: 440px; margin: 0 auto; } }
 
 /* ===================================================================
    BIG SCREENS / TV  — poster-scale the whole design above ~1600px

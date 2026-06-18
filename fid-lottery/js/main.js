@@ -55,11 +55,16 @@
 
   // ---- scroll reveal + first-view chart dispatch ----
   function setupObservers() {
+    // threshold:0 (fires on first intersection) so it works regardless of element
+    // height — a ratio threshold like 0.12 can never be reached by a very tall block
+    // (e.g. the intro prose on a phone is several screens tall, so visibleRatio maxes
+    // out below 0.12) and the content would stay stuck at opacity:0. The bottom
+    // rootMargin still holds the reveal until the element has scrolled a little in.
     var revealIO = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add("revealed"); revealIO.unobserve(en.target); }
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    }, { threshold: 0, rootMargin: "0px 0px -10% 0px" });
     document.querySelectorAll(".reveal").forEach(function (el) { revealIO.observe(el); });
 
     var chartIO = new IntersectionObserver(function (entries) {

@@ -337,9 +337,13 @@
     if (!intro) return;
     if (PLAY) { intro.classList.add("inked", "ink-play"); return; }
     if (!("IntersectionObserver" in window)) { intro.classList.add("inked"); return; }
+    // threshold:0 + a bottom rootMargin fires when the section scrolls a little into
+    // view, INDEPENDENT of its height. A ratio-based threshold (was 0.16) can never be
+    // reached on a tall phone — the intro is ~4700px, so the max visible ratio is
+    // viewportH/introH (~0.14 on a small phone) and the engraving would never ink on.
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { intro.classList.add("inked"); io.disconnect(); } });
-    }, { threshold: 0.16, rootMargin: "0px 0px -8% 0px" });
+    }, { threshold: 0, rootMargin: "0px 0px -18% 0px" });
     io.observe(intro);
   }
 

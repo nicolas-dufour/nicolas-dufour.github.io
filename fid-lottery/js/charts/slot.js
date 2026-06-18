@@ -326,6 +326,14 @@
     var GRAND = typeof B.grand_mean === "number" ? B.grand_mean : 34.744;
     var JACKPOT_AT = typeof B.cell_p10 === "number" ? B.cell_p10 : 34.11;
     var N = panel.length;
+    // The jackpot ("Paper accepted at NeurIPS") is reserved for THE single best of the
+    // N networks — the one whose luckiest sample is the lowest FID of all. Lucky samples
+    // (<= JACKPOT_AT) still glow gold, but only the best network sets off the celebration.
+    var BEST_SEED = null, BEST_FID = Infinity;
+    panel.forEach(function (p) {
+      var m = (typeof p.min === "number") ? p.min : (p.fids ? Math.min.apply(null, p.fids) : Infinity);
+      if (m < BEST_FID) { BEST_FID = m; BEST_SEED = p.seed; }
+    });
     // K = sampling seeds per network in the real Act-I panel (25×K). The generation
     // lottery shows exactly K mini machines, each reading out one real sampling-seed FID.
     var K = (panel[0] && panel[0].fids && panel[0].fids.length) || 10;
@@ -552,8 +560,13 @@
     }
 
     // ---------- jackpot ----------
+    var jackpotTimer = null;
     function jackpot(fid, seed) {
       if (!jackpotEl) return;
+      // reset any in-flight celebration first, so back-to-back jackpots (e.g. during
+      // the auto speed-up) each play cleanly instead of clobbering one another.
+      if (jackpotTimer) { clearTimeout(jackpotTimer); jackpotTimer = null; }
+      while (jackpotEl.firstChild) jackpotEl.removeChild(jackpotEl.firstChild);
       var banner = document.createElement("div");
       banner.className = "jackpot-banner";
       banner.innerHTML =
@@ -580,7 +593,7 @@
         c.textContent = "★";
         jackpotEl.appendChild(c);
       }
-      setTimeout(function () { while (jackpotEl.firstChild) jackpotEl.removeChild(jackpotEl.firstChild); }, 3200);
+      jackpotTimer = setTimeout(function () { while (jackpotEl.firstChild) jackpotEl.removeChild(jackpotEl.firstChild); jackpotTimer = null; }, 3200);
     }
 
     // ---------- state ----------
@@ -684,7 +697,7 @@
       graph.markMean(net.mean, true);   // the network's gold mean dot on the diagonal
       showMainStat();
       setCaption(net, curSamples, lucky);
-      if (lucky) setTimeout(function () { jackpot(minS, net.seed); }, 140);
+      if (net.seed === BEST_SEED) setTimeout(function () { jackpot(minS, net.seed); }, 140);
       busy = false;
       if (leverTrain) leverTrain.disabled = false;
       setMiniLevers(false);
@@ -721,7 +734,7 @@
       if (captionEl) captionEl.textContent = "Re-rolling one sampling seed on seed " + current.seed + " — same network.";
       spinOneMini(current, i, 991 + Math.floor(Math.random() * 9000), false, function (v, lucky) {
         showMainStat();
-        if (lucky) setTimeout(function () { jackpot(v, current.seed); }, 120);
+        if (lucky && current.seed === BEST_SEED) setTimeout(function () { jackpot(v, current.seed); }, 120);
         busy = false;
         if (leverTrain) leverTrain.disabled = false;
         setMiniLevers(false);
@@ -751,6 +764,7 @@
       if (trainSeedEl) trainSeedEl.textContent = "seed " + net.seed;
       if (sampleOfEl) sampleOfEl.textContent = "seed " + net.seed;
       showMainStat();
+      return { seed: net.seed, fid: d3.min(samples), best: net.seed === BEST_SEED };
     }
 
     function finishAuto() {
@@ -768,6 +782,8 @@
     function onAllDrawn() { if (pinRelease) pinRelease(); showReset(); }   // free the scroll + offer a reset
     function resetLottery() {
       if (autoTimer) { clearTimeout(autoTimer); autoTimer = null; }
+      if (jackpotTimer) { clearTimeout(jackpotTimer); jackpotTimer = null; }
+      if (jackpotEl) { while (jackpotEl.firstChild) jackpotEl.removeChild(jackpotEl.firstChild); }
       graph.reset();
       pulls = 0; busy = false; current = null; bag = []; curSamples = new Array(minis.length);
       if (countEl) countEl.textContent = "0";
@@ -793,12 +809,19 @@
       pullAuto();
       sampleViz.idle(0); if (sampleCap) sampleCap.textContent = "auto-sampling networks…";
       var startAt = pulls;
+      var JACKPOT_PAUSE = 2400;   // ms — halt the speed-up while the celebration plays
       (function step() {
         if (pulls >= TOTAL_DRAWS) { finishAuto(); return; }
-        autoDraw();
+        var jp = autoDraw();
         if (trainMsgEl) trainMsgEl.innerHTML = "auto-sampling… <b>" + pulls + "</b> / " + TOTAL_DRAWS;
-        var delay = Math.max(55, Math.round(340 * Math.pow(0.84, pulls - startAt)));  // accelerate
-        autoTimer = setTimeout(step, delay);
+        if (jp && jp.best) {
+          // the best network of the 25 — stop the speed-up, play the jackpot, then resume
+          jackpot(jp.fid, jp.seed);
+          autoTimer = setTimeout(step, JACKPOT_PAUSE);
+        } else {
+          var delay = Math.max(55, Math.round(340 * Math.pow(0.84, pulls - startAt)));  // accelerate
+          autoTimer = setTimeout(step, delay);
+        }
       })();
     }
 
