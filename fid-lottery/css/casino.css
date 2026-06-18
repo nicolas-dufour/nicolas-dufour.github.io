@@ -47,7 +47,7 @@
   --sans: "Futura", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
   --mono: "Courier New", ui-monospace, monospace;
 
-  --maxw: 1080px;
+  --maxw: 67.5rem;   /* = 1080px at the 16px base; rem so it scales on big screens */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -60,7 +60,9 @@ body {
   background: var(--baize-900);
   color: var(--ivory);
   font-family: var(--serif-body);
-  font-size: 18px;
+  /* rem-relative (= 18px at the default 16px root) so body copy scales with the
+     root font-size lift applied on big screens / TVs (see BIG SCREENS block). */
+  font-size: 1.125rem;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -101,7 +103,7 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .section, .hero, .footer { scroll-margin-top: 64px; }
 .section { padding: 7rem 1.5rem; position: relative; }
 .wrap { max-width: var(--maxw); margin: 0 auto; }
-.narrow { max-width: 720px; margin: 0 auto; }
+.narrow { max-width: 45rem; margin: 0 auto; }
 
 .section--ivory {
   background: var(--ivory);
@@ -120,12 +122,12 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 /* Section title block */
 .title-block { text-align: center; margin-bottom: 3rem; }
 .title-block h2 { font-size: clamp(2rem, 5vw, 3.4rem); letter-spacing: 0.01em; }
-.title-block .lede { font-size: 1.18rem; max-width: 640px; margin: 1.4rem auto 0; opacity: 0.9; font-style: italic; }
+.title-block .lede { font-size: 1.18rem; max-width: 40rem; margin: 1.4rem auto 0; opacity: 0.9; font-style: italic; }
 .act-no { font-family: var(--serif-display); font-style: italic; color: var(--gold-500); font-size: 1.1rem; display:block; margin-bottom:.4rem; letter-spacing:.05em;}
 .section--ivory .act-no { color: var(--claret); }
 
 /* Gold hairline divider with center ornament */
-.divider { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 0 auto 2.6rem; max-width: 280px; }
+.divider { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 0 auto 2.6rem; max-width: 17.5rem; }
 .divider::before, .divider::after { content: ""; height: 1px; flex: 1; background: linear-gradient(90deg, transparent, var(--gold-500)); }
 .divider::after { background: linear-gradient(90deg, var(--gold-500), transparent); }
 .divider span { color: var(--gold-400); font-size: 1.2rem; }
@@ -174,7 +176,7 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 @keyframes rayspin { to { transform: translateX(-50%) rotate(360deg); } }
 .hero.revealed .hero__rays { opacity: 1; transition: opacity 2s ease 0.4s; }
 
-.hero__plate { position: relative; z-index: 2; max-width: 900px; }
+.hero__plate { position: relative; z-index: 2; max-width: 56.25rem; }
 .hero__est { font-family: var(--sans); letter-spacing: .5em; text-transform: uppercase; font-size: .6rem; color: var(--gold-500); margin-bottom: 1.5rem; }
 .hero h1 {
   font-size: clamp(2.8rem, 9vw, 6.6rem); color: var(--gold-200); line-height: .98;
@@ -182,7 +184,7 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
   letter-spacing: 0.005em;
 }
 .hero h1 .sub { display:block; font-style: italic; font-size: .42em; color: var(--ivory); letter-spacing:.04em; margin-top:.6rem; text-shadow:none; opacity:.92; }
-.hero__tag { font-size: 1.25rem; max-width: 600px; margin: 1.8rem auto 0; opacity: .9; }
+.hero__tag { font-size: 1.25rem; max-width: 37.5rem; margin: 1.8rem auto 0; opacity: .9; }
 .hero__authors { font-family: var(--sans); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; margin-top: 2rem; color: var(--ivory); opacity:.8;}
 .hero__authors .author { color: var(--gold-300); font-weight:600; text-decoration:none; border-bottom:1px solid transparent; transition:color .15s, border-color .15s; }
 .hero__authors .author:hover { color: var(--gold-200); border-bottom-color: currentColor; }
@@ -192,6 +194,23 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .aff--b { color: #d75a4c; }
 .hero__aff-key { display:block; margin-top:.85rem; font-size:.62rem; letter-spacing:.2em; opacity:.62; }
 .hero__aff-key .aff { vertical-align:baseline; font-size:.9em; }
+/* a "fast-pass" shortcut down to the paper link in the footer — styled as a
+   gold-outlined pill with a gentle glow so a hurried reader actually spots it */
+.hero__skip { display:inline-flex; align-items:center; gap:.55rem; margin-top:1.7rem;
+  font-family:var(--sans); font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; font-weight:600;
+  color:var(--gold-200); text-decoration:none; padding:.58rem 1.3rem; border-radius:30px;
+  border:1px solid var(--gold-500); background:rgba(224,191,106,.08);
+  transition:background .16s, color .16s, border-color .16s, box-shadow .16s, transform .16s;
+  animation:skipGlow 3.4s ease-in-out infinite; }
+.hero__skip:hover { color:#2a1208; border-color:var(--gold-300); transform:translateY(-1px); animation:none;
+  background:linear-gradient(180deg, var(--gold-200), var(--gold-400) 68%, var(--gold-500));
+  box-shadow:0 5px 16px rgba(0,0,0,.45), 0 0 26px rgba(236,209,133,.4); }
+.hero__skip i { font-style:normal; transition:transform .16s var(--ease); display:inline-block; }
+.hero__skip:hover i { transform:translate(2px,-2px); }
+@keyframes skipGlow {
+  0%, 100% { box-shadow:0 0 0 rgba(236,209,133,0); border-color:var(--gold-600); }
+  50%      { box-shadow:0 0 18px rgba(236,209,133,.28); border-color:var(--gold-400); }
+}
 .scroll-cue { position:absolute; bottom: 1.6rem; left:50%; transform:translateX(-50%); font-family:var(--sans); font-size:.62rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold-400); opacity:.7; z-index:3;}
 .scroll-cue span { display:block; font-size:1.2rem; animation: bob 2s ease-in-out infinite; }
 @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
@@ -212,12 +231,14 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 /* ---- 3D props rendered by three.js (js/hero.js); felt shows through the alpha canvas ---- */
 .prop-3d { position:absolute; display:block; pointer-events:none; }
 /* roulette runs big and bleeds further off the top-left page edge, clear of the title */
-#roulette-3d { top:-11%; left:-15%; width:clamp(300px,38vw,520px); height:clamp(270px,32vw,440px); }
-#dice-3d { top:1%; right:0; width:clamp(280px,38vw,540px); height:clamp(180px,21vw,290px); }
+/* prop sizes use rem caps (= the old px at the 16px base) so they scale with the
+   root on big screens and stay proportional to the title instead of shrinking */
+#roulette-3d { top:-11%; left:-15%; width:clamp(18.75rem,38vw,32.5rem); height:clamp(16.875rem,32vw,27.5rem); }
+#dice-3d { top:1%; right:0; width:clamp(17.5rem,38vw,33.75rem); height:clamp(11.25rem,21vw,18.125rem); }
 
 /* ---- Fanned cards ---- */
 .card-fan { position:absolute; left:5%; bottom:6%; width:0; height:0; transform-origin:bottom left; animation:fanSway 7s ease-in-out infinite; }
-.card { --cw:clamp(72px,8.6vw,112px); position:absolute; bottom:0; left:0; width:var(--cw); height:calc(var(--cw)*1.42);
+.card { --cw:clamp(4.5rem,8.6vw,7rem); position:absolute; bottom:0; left:0; width:var(--cw); height:calc(var(--cw)*1.42);
   border-radius:9px; transform-origin:bottom center; color:#16181a; font-family:var(--serif-display);
   background:linear-gradient(150deg,#fff 0%,#f6f0e0 100%);
   box-shadow:0 12px 24px rgba(0,0,0,.42), inset 0 0 0 1px rgba(0,0,0,.07), inset 0 0 0 3px rgba(255,255,255,.6); }
@@ -236,7 +257,7 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 @keyframes fanSway { 0%,100%{transform:rotate(-2.5deg)} 50%{transform:rotate(2.5deg)} }
 
 /* ---- Poker chips ---- */
-.chip-stack { position:absolute; right:6%; bottom:9%; width:clamp(56px,7vw,84px); height:clamp(56px,7vw,84px); }
+.chip-stack { position:absolute; right:6%; bottom:9%; width:clamp(3.5rem,7vw,5.25rem); height:clamp(3.5rem,7vw,5.25rem); }
 .chip { position:absolute; width:100%; height:100%; border-radius:50%;
   background:repeating-conic-gradient(var(--spot) 0 9deg, var(--rim) 9deg 18deg);
   /* stacked single-px shadows fake the chip's striped cylindrical edge */
@@ -258,8 +279,8 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .chip-stack .chip:nth-child(2){ transform:translateY(-10px); }
 .chip-stack .chip:nth-child(3){ transform:translateY(-20px); }
 .chip-stack .chip:nth-child(4){ transform:translateY(-30px); }
-.chip--loose1 { width:clamp(46px,5.4vw,66px); height:clamp(46px,5.4vw,66px); right:16%; bottom:6%; left:auto; transform:rotate(-12deg); }
-.chip--loose2 { width:clamp(40px,4.8vw,58px); height:clamp(40px,4.8vw,58px); top:auto; bottom:16%; right:26%; transform:rotate(8deg); }
+.chip--loose1 { width:clamp(2.875rem,5.4vw,4.125rem); height:clamp(2.875rem,5.4vw,4.125rem); right:16%; bottom:6%; left:auto; transform:rotate(-12deg); }
+.chip--loose2 { width:clamp(2.5rem,4.8vw,3.625rem); height:clamp(2.5rem,4.8vw,3.625rem); top:auto; bottom:16%; right:26%; transform:rotate(8deg); }
 
 @media (max-width: 980px) {
   #roulette-3d { width:48vw; height:40vw; top:-8%; left:-17%; }
@@ -276,11 +297,11 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 /* ===================================================================
    SLOT MACHINE
    =================================================================== */
-.slot-stage { display:flex; flex-direction:column; align-items:center; gap:1.4rem; margin: 2.8rem auto 0; z-index:2; position:relative;}
+.slot-stage { display:flex; flex-direction:column; align-items:center; gap:22.4px; margin: 44.8px auto 0; z-index:2; position:relative;}
 .slot {
   position: relative;
   width: min(440px, 86vw);
-  padding: 0 1.25rem 1.4rem;              /* crown bleeds full-width across the top */
+  padding: 0 20px 22.4px;              /* crown bleeds full-width across the top */
   border-radius: 22px 22px 14px 14px;
   background: linear-gradient(180deg, #1e7653 0%, #0f4d37 50%, #082a1f 100%);
   box-shadow:
@@ -295,8 +316,8 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 /* ---- the arched marquee topper (names what the machine pays out) ---- */
 .slot__crown {
   position: relative;
-  margin: 0 -1.25rem 1.05rem;             /* bleed to the cabinet edges */
-  padding: .72rem .9rem .6rem;
+  margin: 0 -20px 16.8px;             /* bleed to the cabinet edges */
+  padding: 11.52px 14.4px 9.6px;
   border-radius: 19px 19px 5px 5px;
   text-align: center;
   background: radial-gradient(125% 165% at 50% -45%, #20694e 0%, #0b3729 64%, #07271d 100%);
@@ -309,18 +330,18 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 }
 .slot__make {
   display:block; font-family: var(--serif-display); font-weight: 700;
-  font-size: 1.42rem; line-height: 1.06; letter-spacing: .02em; color: var(--gold-100);
+  font-size: 22.72px; line-height: 1.06; letter-spacing: .02em; color: var(--gold-100);
   text-shadow: 0 1px 0 var(--gold-700), 0 0 20px rgba(236,209,133,.5);
 }
 .slot__model {
-  display:block; margin-top:.26rem; font-family: var(--sans);
-  font-size:.5rem; letter-spacing:.28em; text-transform:uppercase; color: var(--gold-400);
+  display:block; margin-top:4.16px; font-family: var(--sans);
+  font-size:8px; letter-spacing:.28em; text-transform:uppercase; color: var(--gold-400);
 }
 
 .slot__reels {
   position: relative;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.55rem;
-  padding: 0.78rem 0.7rem 0.82rem; border-radius: 9px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8.8px;
+  padding: 12.48px 11.2px 13.12px; border-radius: 9px;
   /* brass bezel with a screw fastened into each corner */
   background:
     radial-gradient(circle at 11px 11px, var(--brass-hi) 0 1px, var(--gold-700) 1px 2.3px, transparent 2.7px),
@@ -338,12 +359,12 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .reel__strip { position: absolute; left: 0; right: 0; top: 0; will-change: transform; }
 .reel__cell {
   height: 44px; display: flex; align-items: center; justify-content: center;
-  font-family: var(--serif-display); font-size: 1.7rem; color: var(--ink);
+  font-family: var(--serif-display); font-size: 27.2px; color: var(--ink);
 }
 /* engraved SVG slot symbols (tinted per symbol; faint emboss on the cream reel) */
-.sym { display: block; width: 1.94rem; height: 1.94rem; color: #1a1a1a;
+.sym { display: block; width: 31.04px; height: 31.04px; color: #1a1a1a;
   filter: drop-shadow(0 1px 0 rgba(255,255,255,.55)); }
-.mini-cell .sym { width: 1.95rem; height: 1.95rem; }
+.mini-cell .sym { width: 31.2px; height: 31.2px; }
 .sym--heart, .sym--diamond, .sym--seven { color: var(--claret); }
 .sym--spade, .sym--club { color: #1a1a1a; }
 .sym--bell, .sym--horseshoe, .sym--star, .sym--crown { color: #876420; }
@@ -351,7 +372,7 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .sym--cherry { color: #9d2a22; }
 .reel__label {
   position:absolute; bottom:4px; left:0; right:0; text-align:center;
-  font-family:var(--sans); font-size:.5rem; letter-spacing:.22em; text-transform:uppercase;
+  font-family:var(--sans); font-size:8px; letter-spacing:.22em; text-transform:uppercase;
   color: var(--gold-700); opacity:.85; z-index:3; pointer-events:none;
 }
 /* curved-drum shading (top/bottom fall away) + a raked glass sheen */
@@ -364,10 +385,10 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
   z-index:3; pointer-events:none; border-top:1px solid rgba(236,209,133,.5); border-bottom:1px solid rgba(236,209,133,.5); }
 
 /* reel window holds the bezel + the two payline markers that flank the centre row */
-.reel-window { position: relative; --reel-h: 132px; --reel-pad: .78rem; }
+.reel-window { position: relative; --reel-h: 132px; --reel-pad: 12.48px; }
 .payline-hand {
   position: absolute; z-index: 5; top: calc(var(--reel-pad) + var(--reel-h) / 2);
-  transform: translateY(-50%); font-size: 1.45rem; line-height: 1; font-style: normal;
+  transform: translateY(-50%); font-size: 23.2px; line-height: 1; font-style: normal;
   color: var(--gold-100); text-shadow: 0 0 10px rgba(236,209,133,.9), 0 1px 0 var(--gold-700); pointer-events: none;
 }
 .payline-hand--l { left: -10px; }
@@ -390,24 +411,24 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 
 /* payout display */
 .slot__payout {
-  margin-top: .9rem; display:flex; align-items:center; justify-content:space-between; gap:.8rem;
-  padding: .55rem .9rem; border-radius: 7px;
+  margin-top: 14.4px; display:flex; align-items:center; justify-content:space-between; gap:12.8px;
+  padding: 8.8px 14.4px; border-radius: 7px;
   background: linear-gradient(180deg, #04110c, #08201a);
   box-shadow: inset 0 0 0 1.5px var(--gold-600), inset 0 0 0 3px #04110c,
     inset 0 2px 8px rgba(0,0,0,.8), 0 0 14px rgba(236,209,133,.08);
 }
-.payout__label { font-family:var(--sans); font-size:.56rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-400); }
-.payout__seed { font-family: var(--mono); font-size:.8rem; color: var(--ivory); opacity:.85; }
-.payout__fid { font-family: var(--serif-display); font-size: 2rem; color: var(--gold-200); text-shadow: 0 0 14px rgba(236,209,133,.4); min-width: 5ch; text-align:right;}
+.payout__label { font-family:var(--sans); font-size:8.96px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-400); }
+.payout__seed { font-family: var(--mono); font-size:12.8px; color: var(--ivory); opacity:.85; }
+.payout__fid { font-family: var(--serif-display); font-size: 32px; color: var(--gold-200); text-shadow: 0 0 14px rgba(236,209,133,.4); min-width: 5ch; text-align:right;}
 .payout__fid.flash { animation: payflash .6s ease; }
 @keyframes payflash { 0%{ color:#fff; text-shadow:0 0 26px #fff;} 100%{} }
 
 /* lever + button */
-.slot__controls { display:flex; align-items:center; justify-content:center; gap:1.4rem; margin-top:1.3rem; }
+.slot__controls { display:flex; align-items:center; justify-content:center; gap:22.4px; margin-top:20.8px; }
 .lever-btn {
-  font-family: var(--serif-display); font-size: 1.05rem; letter-spacing:.06em;
+  font-family: var(--serif-display); font-size: 16.8px; letter-spacing:.06em;
   color: #2a1208; cursor: pointer; border: none;
-  padding: .85rem 2.2rem; border-radius: 40px;
+  padding: 13.6px 35.2px; border-radius: 40px;
   background: linear-gradient(180deg, var(--gold-200), var(--gold-500) 60%, var(--gold-600));
   box-shadow: 0 5px 0 var(--gold-700), 0 10px 22px rgba(0,0,0,.5); position:relative; top:0;
   transition: top .08s, box-shadow .08s; text-transform: uppercase;
@@ -415,14 +436,14 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .lever-btn:hover { filter: brightness(1.06); }
 .lever-btn:active { top: 4px; box-shadow: 0 1px 0 var(--gold-700), 0 4px 10px rgba(0,0,0,.5); }
 .lever-btn[disabled] { opacity:.55; cursor:not-allowed; }
-.lever-btn small { display:block; font-family:var(--sans); font-size:.5rem; letter-spacing:.2em; opacity:.7; }
-.pull-count { font-family:var(--sans); font-size:.7rem; letter-spacing:.14em; color:var(--gold-300); text-transform:uppercase; }
-.pull-count b { color: var(--gold-100); font-size:1rem; }
+.lever-btn small { display:block; font-family:var(--sans); font-size:8px; letter-spacing:.2em; opacity:.7; }
+.pull-count { font-family:var(--sans); font-size:11.2px; letter-spacing:.14em; color:var(--gold-300); text-transform:uppercase; }
+.pull-count b { color: var(--gold-100); font-size:16px; }
 
 /* the live histogram beneath the slot */
-.slot__hist { width: min(560px, 92vw); margin-top: .6rem; }
+.slot__hist { width: min(560px, 92vw); margin-top: 9.6px; }
 .slot__hist svg { width: 100%; height: auto; display:block; }
-.slot__caption { font-size:.92rem; max-width: 560px; text-align:center; opacity:.85; font-style:italic; margin: .4rem auto 0; min-height: 2.4em;}
+.slot__caption { font-size:14.72px; max-width: 560px; text-align:center; opacity:.85; font-style:italic; margin: 6.4px auto 0; min-height: 2.4em;}
 
 /* ---- lottery floor: training machine → 25 sampling machines ---- */
 .slot-stage { position: relative; width: 100%; }
@@ -452,20 +473,20 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .lottery-pin.pin-active .lottery-stage,
 .lottery-pin.pin-active .lottery-floor { flex-wrap: nowrap; }
 .lottery-pin.pin-active .lottery-graph { flex: 0 0 360px; align-self: stretch; max-width: none; }
-.lottery-floor { display:flex; flex-wrap:wrap; gap:1.5rem; align-items:flex-start; justify-content:center; }
+.lottery-floor { display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; justify-content:center; }
 /* mobile: stack training / generation / plot into a single readable column (one per "screen") */
 @media (max-width: 980px) {
-  .lottery-floor { flex-direction:column; align-items:center; gap:2.4rem; }
-  .lottery-stage { gap:2.4rem; }
-  .auto-btn { margin: .2rem auto 0; }
+  .lottery-floor { flex-direction:column; align-items:center; gap:38.4px; }
+  .lottery-stage { gap:38.4px; }
+  .auto-btn { margin: 3.2px auto 0; }
 }
-.train-side { display:flex; flex-direction:column; align-items:center; gap:1rem; }
+.train-side { display:flex; flex-direction:column; align-items:center; gap:16px; }
 .train-machine { display:flex; flex-direction:row-reverse; align-items:stretch; gap:5px; }  /* lever on the LEFT */
 .train-machine .slot { width:min(312px, 86vw); display:flex; flex-direction:column; }
 .train-side .slot__controls { margin-top:auto; }
 /* status message where the button used to be */
-.slot__msg { margin-top:auto; padding-top:1rem; text-align:center; min-height:2.6em; display:flex; align-items:center; justify-content:center;
-  font-family:var(--sans); font-size:.6rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-300); line-height:1.4; }
+.slot__msg { margin-top:auto; padding-top:16px; text-align:center; min-height:2.6em; display:flex; align-items:center; justify-content:center;
+  font-family:var(--sans); font-size:9.6px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-300); line-height:1.4; }
 .slot__msg b { color:var(--gold-100); }
 .lever-arm--train, .lever-arm--auto { overflow:visible; width:40px; }
 .lever-arm--train .lever-arm__stick, .lever-arm--auto .lever-arm__stick { height:150px; width:7px; margin-left:-3.5px;
@@ -486,7 +507,7 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .lever-lights { position:absolute; left:50%; bottom:24px; transform:translateX(-50%); width:34px; height:176px; border-radius:18px; pointer-events:none; opacity:0;
   background:radial-gradient(circle at 50% 26%, rgba(236,209,133,.45), transparent 68%); }
 .pull-flag { position:absolute; left:50%; bottom:198px; transform:translateX(-50%); white-space:nowrap; pointer-events:none; z-index:3;
-  font-family:var(--serif-display); font-size:.76rem; letter-spacing:.02em; color:#2a1208; padding:.1rem .55rem .16rem; border-radius:18px;
+  font-family:var(--serif-display); font-size:12.16px; letter-spacing:.02em; color:#2a1208; padding:1.6px 8.8px 2.56px; border-radius:18px;
   background:linear-gradient(180deg,var(--gold-100),var(--gold-400)); box-shadow:0 2px 7px rgba(0,0,0,.45), 0 0 13px rgba(236,209,133,.6); }
 .pull-flag::after { content:""; position:absolute; left:50%; bottom:-4px; transform:translateX(-50%) rotate(45deg); width:9px; height:9px; background:var(--gold-400); }
 /* the auto lever's flag + aura are blue ("speed up the sampling") */
@@ -514,34 +535,34 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 @keyframes flagBob { 0%,100% { transform:translateX(-50%) translateY(0); } 50% { transform:translateX(-50%) translateY(-4px); } }
 
 /* "Sample all 25 networks" automation button */
-.auto-btn { font-family:var(--serif-display); font-size:.86rem; letter-spacing:.03em; color:#2a1208; cursor:pointer; border:none;
-  padding:.42rem 1.1rem; border-radius:30px; text-transform:uppercase; display:inline-flex; flex-direction:row; align-items:center; gap:.4rem; white-space:nowrap;
+.auto-btn { font-family:var(--serif-display); font-size:13.76px; letter-spacing:.03em; color:#2a1208; cursor:pointer; border:none;
+  padding:6.72px 17.6px; border-radius:30px; text-transform:uppercase; display:inline-flex; flex-direction:row; align-items:center; gap:6.4px; white-space:nowrap;
   background:linear-gradient(180deg, var(--gold-200), var(--gold-500) 60%, var(--gold-600));
   box-shadow:0 4px 0 var(--gold-700), 0 8px 16px rgba(0,0,0,.5); }
 .auto-btn[hidden] { display:none; }
 .auto-btn.auto-in { animation: autopop .5s var(--ease); }
 @keyframes autopop { from { opacity:0; transform:scale(.82) translateY(-8px); } to { opacity:1; transform:none; } }
-.auto-btn small { font-family:var(--sans); font-size:.5rem; letter-spacing:.18em; opacity:.72; }
+.auto-btn small { font-family:var(--sans); font-size:8px; letter-spacing:.18em; opacity:.72; }
 .auto-btn span { font-family:var(--sans); }
 .auto-btn:hover:not(:disabled) { filter:brightness(1.06); }
 .auto-btn:active:not(:disabled) { transform:translateY(3px); box-shadow:0 2px 0 var(--gold-700), 0 5px 12px rgba(0,0,0,.5); }
 .auto-btn:disabled { opacity:.62; cursor:default; }
-.floor-arrow { align-self:center; font-family:var(--serif-display); font-size:2rem; color:var(--gold-400); opacity:.8; animation: connpulse 2.2s ease-in-out infinite; }
+.floor-arrow { align-self:center; font-family:var(--serif-display); font-size:32px; color:var(--gold-400); opacity:.8; animation: connpulse 2.2s ease-in-out infinite; }
 @keyframes connpulse { 0%,100%{ opacity:.45; transform:scale(.92);} 50%{ opacity:1; transform:scale(1.06);} }
-@media (max-width: 900px) { .floor-arrow { transform:rotate(90deg); margin:.1rem 0; } }
+@media (max-width: 900px) { .floor-arrow { transform:rotate(90deg); margin:1.6px 0; } }
 
-.sample-side { display:flex; flex-direction:column; align-items:center; gap:1rem; }
+.sample-side { display:flex; flex-direction:column; align-items:center; gap:16px; }
 /* shared header so both columns line up: header → monitor → framed block */
 .side-head { min-height:86px; display:flex; flex-direction:column; justify-content:flex-end; align-items:center;
-  font-family:var(--serif-display); color:var(--gold-200); font-size:1.28rem; letter-spacing:.07em; text-transform:uppercase; text-align:center; }
-.side-head small { display:block; max-width:240px; line-height:1.35; font-family:var(--sans); font-size:.56rem; letter-spacing:.18em; color:var(--gold-400); opacity:.85; margin-top:.35rem; text-transform:none; }
+  font-family:var(--serif-display); color:var(--gold-200); font-size:20.48px; letter-spacing:.07em; text-transform:uppercase; text-align:center; }
+.side-head small { display:block; max-width:240px; line-height:1.35; font-family:var(--sans); font-size:8.96px; letter-spacing:.18em; color:var(--gold-400); opacity:.85; margin-top:5.6px; text-transform:none; }
 .side-head b { color:var(--gold-100); }
 .sample-side .side-head .step-badge { background:radial-gradient(circle at 32% 28%, #cfe6f0, var(--chip-blue)); color:#08313f; }
-.grid-legend { font-family:var(--sans); font-size:.58rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-300); opacity:.9; text-align:center; max-width:340px; line-height:1.5; }
+.grid-legend { font-family:var(--sans); font-size:9.28px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-300); opacity:.9; text-align:center; max-width:340px; line-height:1.5; }
 .grid-legend b { color:var(--gold-100); }
 
 /* reel captions: icon medallion + label BELOW each reel */
-.reel-col { display:flex; flex-direction:column; align-items:center; gap:.55rem; }
+.reel-col { display:flex; flex-direction:column; align-items:center; gap:8.8px; }
 .reel-col .reel { width:100%; }
 .reel-cap { display:flex; flex-direction:column; align-items:center; gap:3px; }
 .reel-icon {
@@ -550,12 +571,12 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
   box-shadow:0 2px 6px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.3);
 }
 .reel-icon svg { width:18px; height:18px; }
-.reel-txt { font-family:var(--sans); font-size:.52rem; letter-spacing:.13em; text-transform:uppercase; color:var(--gold-200); text-align:center; line-height:1.3; }
+.reel-txt { font-family:var(--sans); font-size:8.32px; letter-spacing:.13em; text-transform:uppercase; color:var(--gold-200); text-align:center; line-height:1.3; }
 .reel-txt i { font-style:normal; color:var(--gold-400); opacity:.85; font-size:.92em; }
 
 /* diffusion "monitor": a vintage screen showing the training / sampling process */
-.diffusion-monitor { display:flex; flex-direction:column; align-items:center; gap:.4rem; }
-.monitor__tag { font-family:var(--sans); font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-400); text-align:center; }
+.diffusion-monitor { display:flex; flex-direction:column; align-items:center; gap:6.4px; }
+.monitor__tag { font-family:var(--sans); font-size:10.88px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-400); text-align:center; }
 .monitor__screen {
   position:relative; width:min(216px, 66vw); border-radius:7px; overflow:hidden; background:#06140f;
   box-shadow:0 0 0 2px var(--gold-600), 0 0 0 5px #0a2c20, 0 0 0 6px var(--gold-700), 0 14px 30px rgba(0,0,0,.5), inset 0 0 22px rgba(0,0,0,.6);
@@ -563,27 +584,27 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .monitor__screen canvas { display:block; width:100%; height:auto; image-rendering:pixelated; image-rendering:crisp-edges; }
 #train-canvas { image-rendering:auto; }  /* the loss curve should be crisp, not pixelated */
 .monitor__scan { position:absolute; inset:0; pointer-events:none; background:repeating-linear-gradient(0deg, rgba(0,0,0,.18) 0 1px, transparent 1px 3px); mix-blend-mode:overlay; }
-.monitor__cap { font-family:var(--mono); font-size:.6rem; line-height:1.4; letter-spacing:.04em; color:var(--gold-300); opacity:.85; text-align:center; max-width:178px; min-height:2.8em; display:flex; align-items:flex-start; justify-content:center; }
+.monitor__cap { font-family:var(--mono); font-size:9.6px; line-height:1.4; letter-spacing:.04em; color:var(--gold-300); opacity:.85; text-align:center; max-width:178px; min-height:2.8em; display:flex; align-items:flex-start; justify-content:center; }
 
 /* the generation machine: a gold cabinet (ticket slot + 5×5 grid) + a side lever */
 .gen-machine { display:flex; align-items:stretch; gap:4px; }
-.gen-machine__cab { position:relative; padding:0 .7rem .8rem; border-radius:14px;
+.gen-machine__cab { position:relative; padding:0 11.2px 12.8px; border-radius:14px;
   background:linear-gradient(180deg,#1e7653,#0f4d37 52%,#082a1f);
   box-shadow:0 0 0 2px var(--gold-400), 0 0 0 5px #07241a, 0 0 0 8px var(--gold-600), 0 0 0 9px var(--brass-deep),
     0 24px 50px rgba(0,0,0,.55), inset 0 3px 0 rgba(255,255,255,.14), inset 0 -12px 26px rgba(0,0,0,.42); }
 /* slim marquee on the generation cabinet, rhyming with the training crown */
-.cab-crown { position:relative; margin:0 -.7rem .7rem; padding:.46rem .7rem .42rem; border-radius:12px 12px 5px 5px; text-align:center;
+.cab-crown { position:relative; margin:0 -11.2px 11.2px; padding:7.36px 11.2px 6.72px; border-radius:12px 12px 5px 5px; text-align:center;
   background:radial-gradient(125% 165% at 50% -45%, #20694e, #0b3729 66%, #07271d);
   box-shadow:inset 0 0 0 1px var(--gold-600), inset 0 2px 0 rgba(255,255,255,.1), inset 0 -3px 9px rgba(0,0,0,.5);
   border-bottom:2px solid var(--gold-600); }
-.cab-crown__make { font-family:var(--serif-display); font-weight:700; font-size:1.2rem; letter-spacing:.05em; text-transform:uppercase;
+.cab-crown__make { font-family:var(--serif-display); font-weight:700; font-size:19.2px; letter-spacing:.05em; text-transform:uppercase;
   color:var(--gold-100); text-shadow:0 1px 0 var(--gold-700), 0 0 14px rgba(236,209,133,.45); }
-.gen-slot { position:relative; height:11px; width:60%; margin:.25rem auto .7rem; border-radius:6px; background:#06140f;
+.gen-slot { position:relative; height:11px; width:60%; margin:4px auto 11.2px; border-radius:6px; background:#06140f;
   box-shadow:inset 0 0 0 1px var(--gold-700), inset 0 2px 5px rgba(0,0,0,.85); transition:box-shadow .25s; }
 .gen-slot span { position:absolute; top:-11px; left:50%; transform:translateX(-50%); white-space:nowrap;
-  font-family:var(--sans); font-size:.46rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-500); }
+  font-family:var(--sans); font-size:7.36px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-500); }
 .gen-slot.flash { box-shadow:inset 0 0 0 1px var(--gold-300), 0 0 16px rgba(236,209,133,.7); }
-.sample-grid { display:grid; grid-template-columns:repeat(5, 1fr); gap:1.7rem 1rem; padding:.3rem 0; }
+.sample-grid { display:grid; grid-template-columns:repeat(5, 1fr); gap:27.2px 16px; padding:4.8px 0; }
 
 /* one-armed-bandit lever on the right of the cabinet */
 .lever-arm { position:relative; width:32px; align-self:stretch; background:none; border:none; padding:0; cursor:pointer; }
@@ -623,12 +644,12 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
     linear-gradient(180deg, rgba(18,11,3,.5), transparent 36%, transparent 64%, rgba(18,11,3,.5)),
     linear-gradient(180deg, transparent calc(50% - 1px), rgba(236,209,133,.42) calc(50% - 1px), rgba(236,209,133,.42) calc(50% + 1px), transparent calc(50% + 1px)); }
 .mini-strip { position:absolute; left:0; right:0; top:0; will-change:transform; }
-.mini-cell { height:62px; display:flex; align-items:center; justify-content:center; font-family:var(--serif-display); font-size:1.85rem; color:var(--ink); }
+.mini-cell { height:62px; display:flex; align-items:center; justify-content:center; font-family:var(--serif-display); font-size:29.6px; color:var(--ink); }
 /* each FID reads out in a little dark "score" window so it's clearly a result */
-.mini-fid { font-family:var(--mono); font-size:.74rem; color:var(--gold-100); background:linear-gradient(180deg,#04110c,#07201a); border-radius:4px; padding:2px 7px; min-width:3.4em; text-align:center; letter-spacing:.02em; box-shadow:inset 0 0 0 1px var(--gold-700), inset 0 1px 3px rgba(0,0,0,.8); }
+.mini-fid { font-family:var(--mono); font-size:11.84px; color:var(--gold-100); background:linear-gradient(180deg,#04110c,#07201a); border-radius:4px; padding:2px 7px; min-width:3.4em; text-align:center; letter-spacing:.02em; box-shadow:inset 0 0 0 1px var(--gold-700), inset 0 1px 3px rgba(0,0,0,.8); }
 .mini-fid.pending { color:var(--gold-500); box-shadow:inset 0 0 0 1px rgba(236,209,133,.18), inset 0 1px 3px rgba(0,0,0,.7); }
 .mini-fid.lucky { color:#fffaf0; box-shadow:inset 0 0 0 1px rgba(236,209,133,.75); text-shadow:0 0 8px rgba(236,209,133,.9); }
-@media (max-width: 520px) { .mini-reel { width:46px; height:50px; } .mini-cell { height:50px; font-size:1.45rem; } .mini-cell .sym { width:1.5rem; height:1.5rem; } .mini-fid { font-size:.62rem; min-width:3.2em; } .mini-lever { width:11px; height:50px; } .mini-lever__stick { height:28px; } }
+@media (max-width: 520px) { .mini-reel { width:46px; height:50px; } .mini-cell { height:50px; font-size:23.2px; } .mini-cell .sym { width:24px; height:24px; } .mini-fid { font-size:9.92px; min-width:3.2em; } .mini-lever { width:11px; height:50px; } .mini-lever__stick { height:28px; } }
 
 /* small tickets that fan out from the training machine to each mini machine */
 .fly-ticket { position:fixed; z-index:60; width:26px; height:16px; border-radius:2px; pointer-events:none;
@@ -646,38 +667,53 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .ticket.show { opacity:1; transform:rotate(-3deg); }
 .ticket__stub {
   flex:0 0 40px; display:flex; align-items:center; justify-content:center; border-radius:8px 0 0 8px;
-  background:var(--claret); color:#f6efdc; padding:.4rem 0;
-  font-family:var(--sans); font-size:.58rem; letter-spacing:.32em; text-transform:uppercase; line-height:1.2;
+  background:var(--claret); color:#f6efdc; padding:6.4px 0;
+  font-family:var(--sans); font-size:9.28px; letter-spacing:.32em; text-transform:uppercase; line-height:1.2;
 }
 .ticket__stub span { writing-mode:vertical-rl; transform:rotate(180deg); }
 .ticket__body {
-  flex:1; position:relative; padding:.6rem .8rem; border-radius:0 8px 8px 0; border-left:2px dashed rgba(143,36,31,.45);
+  flex:1; position:relative; padding:9.6px 12.8px; border-radius:0 8px 8px 0; border-left:2px dashed rgba(143,36,31,.45);
   background:repeating-linear-gradient(180deg,#f8f1de,#f8f1de 7px,#f2e7c8 7px,#f2e7c8 8px);
 }
 /* notch cutouts at the perforation line (over the felt bg) */
 .ticket::before, .ticket::after { content:""; position:absolute; left:33px; width:14px; height:14px; border-radius:50%; background:#08291f; z-index:2; }
 .ticket::before { top:-7px; } .ticket::after { bottom:-7px; }
-.ticket__head { font-family:var(--sans); font-size:.52rem; letter-spacing:.22em; text-transform:uppercase; color:var(--claret); }
-.ticket__seed { font-family:var(--serif-display); font-size:1.45rem; color:var(--ink); margin:.05rem 0; }
-.ticket__sub { font-family:var(--sans); font-size:.5rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-700); }
-.ticket__barcode { height:13px; margin-top:.4rem; border-radius:1px;
+.ticket__head { font-family:var(--sans); font-size:8.32px; letter-spacing:.22em; text-transform:uppercase; color:var(--claret); }
+.ticket__seed { font-family:var(--serif-display); font-size:23.2px; color:var(--ink); margin:0.8px 0; }
+.ticket__sub { font-family:var(--sans); font-size:8px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-700); }
+.ticket__barcode { height:13px; margin-top:6.4px; border-radius:1px;
   background:repeating-linear-gradient(90deg,#1b2a20 0 2px,transparent 2px 4px,#1b2a20 4px 5px,transparent 5px 8px,#1b2a20 8px 11px,transparent 11px 13px); }
 
-.floor-meta { text-align:center; margin:1.4rem 0 .2rem; font-family:var(--sans); font-size:.9rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-300); }
+/* scene-setting header at the very top of the slot floor (moved out of the hero) */
+.floor-head { text-align: center; max-width: 880px; margin: 0 auto 14.4px; }
+/* the floor is a fixed-px design scaled uniformly by JS transform; pin the shared
+   (rem-based) divider to px here so it doesn't ALSO scale with the big-screen root
+   and double-grow inside the floor */
+.lottery-inner .divider { max-width: 280px; gap: 16px; }
+.lottery-inner .divider span { font-size: 19.2px; }
+.floor-eyebrow { display: block; font-family: var(--sans); font-size: 9.92px; letter-spacing: .3em;
+  text-transform: uppercase; color: var(--gold-400); }
+.floor-head .divider { margin: 6.4px auto 8.8px; }
+.floor-lede { margin: 0 auto; max-width: 760px; text-align: center;
+  font-family: var(--serif-body); font-size: 16.96px; line-height: 1.55; color: var(--gold-100); }
+.floor-lede em { font-style: italic; color: var(--gold-200); }
+.floor-lede strong { font-weight: 600; color: var(--gold-200); white-space: nowrap;
+  border-bottom: 1px solid rgba(224,191,106,.5); padding-bottom: 1px; }
+.floor-meta { text-align:center; margin:22.4px 0 3.2px; font-family:var(--sans); font-size:14.4px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-300); }
 /* "draw a fresh lottery" reset, shown once all 25 networks are drawn */
-.floor-reset { margin-left: 1rem; vertical-align: middle; cursor: pointer; border: none;
-  font-family: var(--sans); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: #2a1208;
-  padding: .5rem 1.15rem; border-radius: 30px;
+.floor-reset { margin-left: 16px; vertical-align: middle; cursor: pointer; border: none;
+  font-family: var(--sans); font-size: 10.56px; letter-spacing: .14em; text-transform: uppercase; color: #2a1208;
+  padding: 8px 18.4px; border-radius: 30px;
   background: linear-gradient(180deg, var(--gold-200), var(--gold-500) 60%, var(--gold-600));
   box-shadow: 0 3px 0 var(--gold-700), 0 7px 16px rgba(0,0,0,.45); transition: transform .1s, box-shadow .1s, filter .1s; }
 .floor-reset:hover { filter: brightness(1.06); }
 .floor-reset:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--gold-700), 0 3px 9px rgba(0,0,0,.45); }
 .floor-reset[hidden] { display: none; }
-.floor-meta b { color:var(--gold-100); font-size:1.35rem; }
+.floor-meta b { color:var(--gold-100); font-size:21.6px; }
 /* mobile "draw all" CTA — sits at the bottom of the floor, shown after the first draw */
-.floor-draw-all { display:block; margin:1rem auto 0; cursor:pointer; border:none;
-  font-family:var(--sans); font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:#06140f;
-  padding:.7rem 1.5rem; border-radius:30px;
+.floor-draw-all { display:block; margin:16px auto 0; cursor:pointer; border:none;
+  font-family:var(--sans); font-size:11.84px; letter-spacing:.14em; text-transform:uppercase; color:#06140f;
+  padding:11.2px 24px; border-radius:30px;
   background:linear-gradient(180deg, #bfe2f0, #6fb2cc 58%, #4b86a6);
   box-shadow:0 3px 0 #2f5c72, 0 8px 18px rgba(0,0,0,.5); transition:transform .1s, filter .1s; }
 .floor-draw-all:hover { filter:brightness(1.06); }
@@ -686,24 +722,24 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .floor-draw-all[hidden] { display:none; }
 
 /* two histograms on a shared FID axis */
-.hist-duo { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; width:min(820px,96vw); margin:.4rem auto 0; }
+.hist-duo { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; width:min(820px,96vw); margin:6.4px auto 0; }
 @media (max-width: 720px) { .hist-duo { grid-template-columns:1fr; } }
-.hist-card { background:rgba(6,20,15,.5); border:1px solid var(--rule); border-radius:8px; padding:.7rem .8rem .4rem; }
+.hist-card { background:rgba(6,20,15,.5); border:1px solid var(--rule); border-radius:8px; padding:11.2px 12.8px 6.4px; }
 .hist-card--sampling { box-shadow: inset 0 2px 0 var(--chip-blue); }
 .hist-card--training { box-shadow: inset 0 2px 0 var(--gold-500); }
-.hist-title { font-family:var(--serif-display); font-size:.95rem; color:var(--gold-200); display:flex; align-items:baseline; gap:.4rem; flex-wrap:wrap; }
-.hist-title span { font-family:var(--sans); font-size:.54rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-400); opacity:.8; }
-.hist-stat { margin-left:auto; font-family:var(--mono); font-size:.66rem; color:var(--gold-300); font-style:normal; }
+.hist-title { font-family:var(--serif-display); font-size:15.2px; color:var(--gold-200); display:flex; align-items:baseline; gap:6.4px; flex-wrap:wrap; }
+.hist-title span { font-family:var(--sans); font-size:8.64px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-400); opacity:.8; }
+.hist-stat { margin-left:auto; font-family:var(--mono); font-size:10.56px; color:var(--gold-300); font-style:normal; }
 
 /* lottery floor + single graph, side by side (graph wraps below on narrow screens) */
-.lottery-stage { display:flex; flex-wrap:wrap; gap:1.6rem; align-items:flex-start; justify-content:center; }
+.lottery-stage { display:flex; flex-wrap:wrap; gap:25.6px; align-items:flex-start; justify-content:center; }
 .lottery-graph { flex:0 1 340px; min-width:300px; align-self:stretch; display:flex; flex-direction:column;
-  background:rgba(6,20,15,.5); border:1px solid var(--rule); border-radius:8px; padding:.8rem .9rem .5rem; box-shadow:inset 0 2px 0 var(--gold-500); }
-.graph-title { font-family:var(--serif-display); font-size:1.4rem; color:var(--gold-200); text-align:center; }
-.graph-title span { display:block; font-family:var(--sans); font-size:.52rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-400); opacity:.85; margin-top:.25rem; }
-.lottery-graph .slot__hist { width:100%; margin-top:.5rem; flex:1 1 auto; min-height:420px; }
+  background:rgba(6,20,15,.5); border:1px solid var(--rule); border-radius:8px; padding:12.8px 14.4px 8px; box-shadow:inset 0 2px 0 var(--gold-500); }
+.graph-title { font-family:var(--serif-display); font-size:22.4px; color:var(--gold-200); text-align:center; }
+.graph-title span { display:block; font-family:var(--sans); font-size:8.32px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-400); opacity:.85; margin-top:4px; }
+.lottery-graph .slot__hist { width:100%; margin-top:8px; flex:1 1 auto; min-height:420px; }
 .lottery-graph .slot__hist svg { width:100%; height:auto; display:block; }
-.graph-stat { margin-top:.45rem; text-align:center; font-family:var(--mono); font-size:.62rem; line-height:1.5; color:var(--gold-300); font-style:normal; }
+.graph-stat { margin-top:7.2px; text-align:center; font-family:var(--mono); font-size:9.92px; line-height:1.5; color:var(--gold-300); font-style:normal; }
 @media (max-width: 1140px) { .lottery-graph { flex-basis:100%; max-width:560px; align-self:auto; } }
 
 .step-badge {
@@ -734,18 +770,21 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .jackpot-banner { position:absolute; top:40%; left:50%; z-index:5; transform:translate(-50%,-50%) scale(.5); text-align:center; opacity:0; }
 .jackpot-banner.show { animation: jackpop 2.8s var(--ease) forwards; }
 /* a casino "sign": dark plate + gold/claret double frame for contrast */
-.jackpot-sign { position:relative; display:inline-block; padding:.4em 1.1em .6em; border-radius:14px;
+.jackpot-sign { position:relative; display:inline-block; padding:8.8px 25.6px 12.8px; border-radius:16px;
+  max-width:min(92vw, 680px); box-sizing:border-box; text-align:center;
   background:radial-gradient(120% 150% at 50% 22%, #14402f 0%, #06140f 78%);
   box-shadow:0 0 0 3px var(--gold-500), 0 0 0 6px var(--claret), 0 0 0 8px var(--gold-400),
     0 10px 30px rgba(0,0,0,.7), 0 0 64px rgba(236,209,133,.45); }
-.jackpot-word { font-family:var(--serif-display); font-weight:700; line-height:1; letter-spacing:.05em; white-space:nowrap;
-  font-size:clamp(2.2rem, 8vw, 4.4rem); color:#f3e2a6; }
+/* longer message than "JACKPOT": forced 2-line break (<br>), nowrap per line so it
+   stays a tidy two-line marquee; clamp keeps the long line on-screen on small phones */
+.jackpot-word { font-family:var(--serif-display); font-weight:700; line-height:1.06; letter-spacing:.02em; white-space:nowrap;
+  font-size:clamp(33.6px, 7vw, 80px); color:#f3e2a6; }
 @supports ((-webkit-background-clip:text) or (background-clip:text)) {
   .jackpot-word { background:linear-gradient(180deg,#fff7df 0%,#f3e2a6 26%,#e6c878 46%,#e0654f 72%,#f6d680 100%);
     -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent;
     -webkit-text-stroke:1.2px rgba(120,36,18,.5); animation: jackGlow .8s ease-in-out infinite alternate; }
 }
-.jackpot-sub { margin-top:.5em; font-family:var(--sans); font-size:.62rem; letter-spacing:.24em; text-transform:uppercase; color:#fff7df; text-shadow:0 1px 3px rgba(0,0,0,.9); }
+.jackpot-sub { margin-top:.5em; font-family:var(--sans); font-size:9.92px; letter-spacing:.24em; text-transform:uppercase; color:#fff7df; text-shadow:0 1px 3px rgba(0,0,0,.9); }
 .jackpot-sub b { color:var(--gold-200); }
 /* chasing multicolor marquee bulbs above & below the word */
 .jackpot-lights { display:block; height:9px; margin:1px 4px;
@@ -831,7 +870,7 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .prose em { font-style: italic; }
 .prose strong { color: var(--claret); font-weight: 600; }
 .felt .prose strong { color: var(--gold-300); }   /* claret is too dark on felt — gild emphasis instead */
-.epigraph { max-width: 540px; margin: 0 auto 3.2rem; text-align: right; font-style: italic; font-size: 1.04rem; color: var(--ink-soft); border-right: 2px solid var(--gold-500); padding-right: 1.4rem; }
+.epigraph { max-width: 33.75rem; margin: 0 auto 3.2rem; text-align: right; font-style: italic; font-size: 1.04rem; color: var(--ink-soft); border-right: 2px solid var(--gold-500); padding-right: 1.4rem; }
 .epigraph cite { display:block; font-style: normal; font-size:.82rem; letter-spacing:.06em; margin-top:.6rem; color: var(--claret); }
 
 /* term highlight chips for the two lotteries */
@@ -842,7 +881,7 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 /* ===================================================================
    STAT BIG NUMBERS / callout row
    =================================================================== */
-.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.4rem; margin: 2.4rem 0; }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr)); gap: 1.4rem; margin: 2.4rem 0; }
 .stat { text-align: center; padding: 1.4rem 1rem; }
 .stat__num { font-family: var(--serif-display); font-size: clamp(2.6rem, 7vw, 4.2rem); color: var(--gold-200); line-height: 1; text-shadow: 0 0 24px rgba(236,209,133,.25); }
 .section--ivory .stat__num { color: var(--claret); text-shadow:none; }
@@ -866,7 +905,7 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 /* ===================================================================
    HOUSE RULES placard
    =================================================================== */
-.rules-list { counter-reset: rule; list-style:none; padding:0; margin: 0 auto; max-width: 980px;
+.rules-list { counter-reset: rule; list-style:none; padding:0; margin: 0 auto; max-width: 61.25rem;
   display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
 .rules-list li:first-child { grid-column: 1 / -1; }   /* the headline rule spans the top */
 .rules-list li {
@@ -904,7 +943,7 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .footer__authors a { color:var(--gold-300); text-decoration:none; border-bottom:1px solid transparent; transition:color .15s, border-color .15s; }
 .footer__authors a:hover { color:var(--gold-200); border-bottom-color:currentColor; }
 /* ---- citation card (BibTeX) ---- */
-.cite { max-width: 680px; margin: 1.5rem auto 0; text-align:left;
+.cite { max-width: 42.5rem; margin: 1.5rem auto 0; text-align:left;
   background: var(--baize-850); border:1px solid var(--rule-strong); border-radius:8px; overflow:hidden;
   box-shadow: inset 0 0 0 1px rgba(6,20,15,.6), inset 0 0 50px rgba(0,0,0,.32), 0 14px 40px rgba(0,0,0,.4); }
 .cite__bar { display:flex; align-items:center; justify-content:space-between;
@@ -948,7 +987,7 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
    FID ERROR-BAR CALCULATOR (built by js/calc.js)
    =================================================================== */
 .calc { width: 100%; }
-.calc__card { max-width: 760px; margin: 1.1rem auto 0; padding: 1.15rem 1.7rem; }
+.calc__card { max-width: 47.5rem; margin: 1.1rem auto 0; padding: 1.15rem 1.7rem; }
 .calc__controls { display: flex; gap: 1.2rem 2.4rem; flex-wrap: wrap; justify-content: center; margin-bottom: .3rem; }
 .calc__field { flex: 1 1 280px; min-width: 240px; }
 .calc__field--seeds { flex: 0 1 320px; }
@@ -982,7 +1021,7 @@ html { scroll-padding-top: 64px; } /* so #anchor jumps clear the fixed nav */
 .calc-lbl { fill: var(--gold-200); font-family: var(--mono); font-size: 12px; }
 .calc-lbl--f { fill: var(--gold-100); font-size: 13px; font-weight: 600; }
 .calc__verdict { text-align: center; font-family: var(--sans); font-size: .82rem; line-height: 1.5; color: var(--ivory);
-  opacity: .82; margin: .5rem auto 0; max-width: 520px; }
+  opacity: .82; margin: .5rem auto 0; max-width: 32.5rem; }
 .calc__verdict b { color: var(--claret-bright, #c8453c); }
 @media (max-width: 640px) { .calc__big { font-size: 2.1rem; } .calc__big .calc__pm { font-size: 1.5rem; } }
 
@@ -1043,7 +1082,7 @@ section.act-fit > .wrap, .rules-section > .wrap { position: relative; z-index: 1
   position: fixed; pointer-events:none; z-index: 200; opacity:0;
   background: #06140f; color: var(--ivory); border:1px solid var(--gold-600);
   border-radius:4px; padding:.5rem .7rem; font-size:.78rem; font-family:var(--sans);
-  box-shadow: 0 8px 24px rgba(0,0,0,.5); transition: opacity .12s; max-width: 240px; line-height:1.4;
+  box-shadow: 0 8px 24px rgba(0,0,0,.5); transition: opacity .12s; max-width: 15rem; line-height:1.4;
 }
 .tooltip-fl b { color: var(--gold-200); }
 
@@ -1094,10 +1133,10 @@ section.act-fit > .wrap, .rules-section > .wrap { position: relative; z-index: 1
 
 /* the leaf + its readable measure */
 .intro-book .leaf {
-  position: relative; z-index: 1; max-width: 1200px; margin: 0 auto;
+  position: relative; z-index: 1; max-width: 75rem; margin: 0 auto;
   padding: clamp(1.8rem,3.6vw,3.2rem) clamp(1.1rem,6.5vw,5.5rem);
 }
-.intro-book .leaf__col { position: relative; z-index: 2; max-width: 648px; margin: 0 auto; }
+.intro-book .leaf__col { position: relative; z-index: 2; max-width: 40.5rem; margin: 0 auto; }
 
 /* double-rule page frame with inked corner curls */
 .leaf__frame { position: absolute; z-index: 1; inset: clamp(8px,1.8vw,20px); pointer-events: none;
@@ -1124,8 +1163,10 @@ section.act-fit > .wrap, .rules-section > .wrap { position: relative; z-index: 1
 .tailpiece svg { width: 100%; height: auto; display: block; overflow: visible; }
 
 /* closing CTA: a clickable "Admit One" ticket that drops the reader onto the lottery floor */
+/* sits in the fluid intro; all geometry in rem (= old px at the 16px base) so the
+   whole ticket — frame, stub, notches, barcode — scales as one with the prose */
 .intro-ticket {
-  display: flex; width: min(348px, 88%); margin: clamp(1.8rem,3.4vw,2.8rem) auto 0;
+  display: flex; width: min(21.75rem, 88%); margin: clamp(1.8rem,3.4vw,2.8rem) auto 0;
   text-decoration: none; border: none; position: relative; color: var(--ink-deep);
   filter: drop-shadow(0 10px 22px rgba(80,40,20,.22));
   transition: transform .18s var(--ease), filter .18s var(--ease);
@@ -1134,14 +1175,14 @@ section.act-fit > .wrap, .rules-section > .wrap { position: relative; z-index: 1
   filter: drop-shadow(0 16px 30px rgba(80,40,20,.32)); }
 .intro-ticket:active { transform: translateY(-1px) rotate(-.3deg); }
 .intro-ticket__stub {
-  flex: 0 0 48px; display: flex; align-items: center; justify-content: center; text-align: center;
-  border-radius: 8px 0 0 8px; background: var(--claret); color: #f6efdc; padding: .5rem 0;
+  flex: 0 0 3rem; display: flex; align-items: center; justify-content: center; text-align: center;
+  border-radius: .5rem 0 0 .5rem; background: var(--claret); color: #f6efdc; padding: .5rem 0;
   font-family: var(--sans); font-size: .56rem; letter-spacing: .26em; text-transform: uppercase; line-height: 1.5;
 }
 .intro-ticket__body {
-  flex: 1; position: relative; padding: .85rem 1rem .9rem; border-radius: 0 8px 8px 0;
-  border-left: 2px dashed rgba(143,36,31,.45);
-  background: repeating-linear-gradient(180deg, #fbf5e3, #fbf5e3 7px, #f3e9cd 7px, #f3e9cd 8px);
+  flex: 1; position: relative; padding: .85rem 1rem .9rem; border-radius: 0 .5rem .5rem 0;
+  border-left: .125rem dashed rgba(143,36,31,.45);
+  background: repeating-linear-gradient(180deg, #fbf5e3, #fbf5e3 .4375rem, #f3e9cd .4375rem, #f3e9cd .5rem);
 }
 .intro-ticket__head { display: block; font-family: var(--serif-display); font-weight: 700;
   font-size: 1.16rem; line-height: 1.1; color: var(--claret); }
@@ -1149,12 +1190,12 @@ section.act-fit > .wrap, .rules-section > .wrap { position: relative; z-index: 1
   letter-spacing: .2em; text-transform: uppercase; color: var(--gold-700); }
 .intro-ticket__cta i { font-style: normal; display: inline-block; transition: transform .18s var(--ease); }
 .intro-ticket:hover .intro-ticket__cta i { transform: translateY(2px); }
-.intro-ticket__barcode { display: block; height: 12px; margin-top: .5rem; border-radius: 1px; opacity: .7;
-  background: repeating-linear-gradient(90deg, #3a2a18 0 2px, transparent 2px 4px, #3a2a18 4px 5px, transparent 5px 8px, #3a2a18 8px 11px, transparent 11px 13px); }
-/* perforation notches punched over the warm paper */
-.intro-ticket::before, .intro-ticket::after { content: ""; position: absolute; left: 41px;
-  width: 13px; height: 13px; border-radius: 50%; background: #f1e4c5; z-index: 2; }
-.intro-ticket::before { top: -6px; } .intro-ticket::after { bottom: -6px; }
+.intro-ticket__barcode { display: block; height: .75rem; margin-top: .5rem; border-radius: .0625rem; opacity: .7;
+  background: repeating-linear-gradient(90deg, #3a2a18 0 .125rem, transparent .125rem .25rem, #3a2a18 .25rem .3125rem, transparent .3125rem .5rem, #3a2a18 .5rem .6875rem, transparent .6875rem .8125rem); }
+/* perforation notches punched over the warm paper (rem so they track the stub edge) */
+.intro-ticket::before, .intro-ticket::after { content: ""; position: absolute; left: 2.5625rem;
+  width: .8125rem; height: .8125rem; border-radius: 50%; background: #f1e4c5; z-index: 2; }
+.intro-ticket::before { top: -.375rem; } .intro-ticket::after { bottom: -.375rem; }
 
 /* ---- ink primitives: engraving strokes, fills, rough-edge filter ---- */
 .ink-stroke { fill: none; stroke: var(--ink-line); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
@@ -1206,7 +1247,7 @@ section.act-fit > .wrap, .rules-section > .wrap { position: relative; z-index: 1
 .intro-book .eyebrow::before, .intro-book .eyebrow::after { color: var(--gilt); }
 
 .intro-book .epigraph {
-  max-width: 558px; margin: 1rem auto clamp(1.5rem,3vw,2.4rem); padding: 0;
+  max-width: 34.875rem; margin: 1rem auto clamp(1.5rem,3vw,2.4rem); padding: 0;
   text-align: center; border: none; font-style: italic; font-size: 1.05rem;
   line-height: 1.7; color: #4a3a23;
 }
@@ -1270,7 +1311,7 @@ section.act-fit > .wrap, .rules-section > .wrap { position: relative; z-index: 1
   .act-fit .title-block .lede { margin-top: .55rem; font-size: 1.02rem; }
   .act-row { flex-direction: row; gap: 2rem; }
   .act-row .panel-card { flex: 1 1 auto; min-width: 0; }
-  .act-aside { flex: 0 0 296px; }
+  .act-aside { flex: 0 0 18.5rem; }
 }
 
 /* illuminated, rubricated drop initial in a faint inked frame */
@@ -1298,4 +1339,149 @@ section.act-fit > .wrap, .rules-section > .wrap { position: relative; z-index: 1
   .intro-book .prose { font-size: 1.06rem; }
   .intro-book .prose .initial { font-size: 3.8rem; }
   .headpiece { width: 100%; }
+}
+
+/* ===================================================================
+   THE TWO-LOTTERIES PLATE — the five sources of randomness, a hand-tinted
+   engraving inset into the leaf between the 2nd and 3rd paragraphs.
+   Geometry is built by js/plate.js; the strokes ink themselves on with
+   the rest of the marginalia (#intro.inked) and the small components keep
+   moving (3D dice are tossed + bounce, conveyor flows, noise re-samples,
+   halo breathes).
+   =================================================================== */
+.leaf-plate { margin: clamp(1.8rem,3.6vw,2.7rem) auto clamp(1.4rem,3vw,2.2rem); }
+.leaf-plate__art { width: 100%; line-height: 0; }
+.leaf-plate__art svg { width: 100%; height: auto; display: block; overflow: visible; }
+.leaf-plate figcaption {
+  margin: .9rem auto 0; max-width: 37.5rem; text-align: center;
+  font-family: var(--serif-body); font-style: italic; font-size: .92rem;
+  line-height: 1.55; color: #4a3a23;
+}
+.leaf-plate figcaption em { font-style: italic; color: #3a2c18; }
+.leaf-plate figcaption .plate-title {
+  display: block; font-family: var(--serif-display); font-variant-caps: small-caps;
+  letter-spacing: .05em; font-size: 1.08rem; font-weight: 700; font-style: normal;
+  color: var(--ink-deep); margin-bottom: .42rem;
+}
+.leaf-plate figcaption .cnum { color: var(--rubric); font-style: normal; font-weight: 700; }
+/* keep the paragraph after the plate indented like the others */
+.intro-book .prose figure + p { text-indent: 1.6em; }
+
+/* --- zone washes: gold = training, blue = generation (= the term chips) --- */
+.leaf-plate .plate-zone { stroke-linejoin: round; }
+.leaf-plate .plate-zone--train { fill: rgba(180,146,60,.10); stroke: rgba(160,130,50,.5); }
+.leaf-plate .plate-zone--gen   { fill: rgba(75,134,166,.12); stroke: rgba(75,134,166,.5); }
+
+/* --- icon cards: a faint lighter tile lifting each engraving off the wash --- */
+.leaf-plate .plate-card { fill: none; stroke: var(--ink-line); }
+.leaf-plate .plate-card--bg { fill: rgba(255,251,240,.55); }
+.leaf-plate .plate-card--bridge { fill: rgba(255,250,235,.72); stroke: var(--gilt); }
+.leaf-plate .plate-card--photo { fill: rgba(247,239,218,.96); }
+.leaf-plate .plate-card--sky   { fill: rgba(223,231,233,.95); }   /* a cool sky for the generated image */
+.leaf-plate .plate-node { fill: rgba(255,250,235,.82); }
+.leaf-plate .plate-ncell { fill: var(--ink-sepia); }
+.leaf-plate .plate-hill { stroke: var(--ink-line); }
+.leaf-plate .plate-hill--far  { fill: rgba(150,134,104,.5); }
+.leaf-plate .plate-hill--near { fill: rgba(96,82,54,.62); }
+.leaf-plate .plate-gpu { fill: rgba(238,231,212,.96); }
+.leaf-plate .plate-pcb { fill: rgba(74,55,18,.55); stroke: var(--ink-deep); }
+
+/* --- engraved text --- */
+.leaf-plate .plate-band { font-family: var(--serif-display); font-weight: 700; font-size: 10px;
+  letter-spacing: .1em; text-transform: uppercase; }
+.leaf-plate .plate-band--train { fill: #6a4a00; }
+.leaf-plate .plate-band--gen   { fill: #134455; }
+.leaf-plate .plate-name { font-family: var(--serif-display); font-weight: 600; font-size: 11.5px;
+  font-variant-caps: small-caps; letter-spacing: .03em; fill: var(--ink-deep); }
+.leaf-plate .plate-name--bridge { fill: #5a3f12; font-size: 10.5px; }
+.leaf-plate .plate-plus { font-family: var(--serif-display); font-weight: 700; font-size: 13px; fill: var(--ink-line); }
+.leaf-plate .plate-bnum { font-family: var(--serif-display); font-weight: 700; font-size: 11px; fill: #f4e7c6; }
+.leaf-plate .plate-badge-ring { stroke: rgba(255,245,225,.7); fill: none; }
+.leaf-plate .plate-chev .ink-stroke { stroke: #9a7b46; }
+.leaf-plate .plate-glow { fill: var(--gold-500); opacity: 0; transform-box: fill-box; transform-origin: center; }
+
+/* --- 3D dice: three tonal faces + projected pips --- */
+.leaf-plate .plate-die-front { fill: rgba(252,247,233,.97); stroke: var(--ink-deep); }
+.leaf-plate .plate-die-top   { fill: rgba(213,199,170,.97); stroke: var(--ink-deep); }
+.leaf-plate .plate-die-right { fill: rgba(150,132,101,.97); stroke: var(--ink-deep); }
+.leaf-plate .plate-pip      { fill: var(--rubric); }     /* front: red on light */
+.leaf-plate .plate-pip-top  { fill: var(--ink-deep); }   /* top:   dark on medium */
+.leaf-plate .plate-pip-lite { fill: #f3e7c8; }           /* right: light on dark */
+.leaf-plate .plate-rule { stroke: var(--gilt); opacity: .75; }
+.leaf-plate .plate-ruledot { fill: var(--gilt); }
+
+/* --- continuous motion (after the strokes have inked on) --- */
+.leaf-plate .plate-die { transform-box: fill-box; transform-origin: center; }
+.inked .leaf-plate .plate-die { animation: plateRoll var(--tm,2.8s) cubic-bezier(.45,.05,.55,.95) var(--d,0s) infinite; }
+@keyframes plateRoll {
+  0%   { transform: translateY(-9px) rotate(-44deg); }
+  20%  { transform: translateY(0)    rotate(-7deg); }
+  27%  { transform: translateY(0)    rotate(-7deg) scale(1.06,.92); }   /* squash on landing */
+  37%  { transform: translateY(-5px) rotate(11deg); }                   /* small bounce */
+  56%  { transform: translateY(0)    rotate(27deg); }
+  62%  { transform: translateY(0)    rotate(27deg) scale(1.05,.94); }
+  72%  { transform: translateY(0)    rotate(23deg); }
+  86%  { transform: translateY(0)    rotate(23deg); }                   /* brief rest, face up */
+  100% { transform: translateY(-9px) rotate(-44deg); }                  /* tossed up for the next roll */
+}
+.leaf-plate .plate-chev { opacity: 1; }
+.inked .leaf-plate .plate-chev { animation: plateFlow 1.7s ease-in-out var(--d,0s) infinite; }
+@keyframes plateFlow { 0%,100% { opacity: .22; } 45% { opacity: .92; } }
+.leaf-plate .plate-noiselayer { opacity: 0; }
+.inked .leaf-plate .plate-noiselayer { animation: plateNoise 1.05s steps(1,end) var(--d,0s) infinite; }
+@keyframes plateNoise { 0%,33.3% { opacity: 1; } 33.4%,100% { opacity: 0; } }
+.inked .leaf-plate .plate-glow { animation: plateGlow 4.2s ease-in-out var(--d,2.4s) infinite; }
+@keyframes plateGlow { 0%,100% { opacity: .12; transform: scale(.94); } 50% { opacity: .4; transform: scale(1.05); } }
+
+/* ① random init — the weights shimmer, each at its own pace (no pen-draw) */
+.leaf-plate .plate-winit { opacity: 0; }
+.inked .leaf-plate .plate-winit { animation: winitFlick var(--tm,2s) ease-in-out var(--d,0s) infinite; }
+@keyframes winitFlick { 0%,100% { opacity: .1; } 50% { opacity: var(--op,.55); } }
+
+/* ② data order — the two outer tiles trade places; the shuffle glyph pulses in time */
+.inked .leaf-plate .plate-shuffle--l { animation: shuffleL var(--tm,3.2s) ease-in-out var(--d,0s) infinite; }
+.inked .leaf-plate .plate-shuffle--r { animation: shuffleR var(--tm,3.2s) ease-in-out var(--d,0s) infinite; }
+@keyframes shuffleL { 0%,32%,68%,100% { transform: translate(0,0); } 50% { transform: translate(44px,-6px); } }
+@keyframes shuffleR { 0%,32%,68%,100% { transform: translate(0,0); } 50% { transform: translate(-44px,6px); } }
+.leaf-plate .plate-shufarrows { transform-box: fill-box; transform-origin: center; }
+.inked .leaf-plate .plate-shufarrows { animation: shufPulse 3.2s ease-in-out var(--d,0s) infinite; }
+@keyframes shufPulse { 0%,100% { opacity: .5; } 50% { opacity: 1; } }
+
+/* ④ hardware — the GPU cooler fans spin (alternating direction) */
+.leaf-plate .plate-fan { transform-box: fill-box; transform-origin: center; }
+.inked .leaf-plate .plate-fan { animation: fanSpin var(--tm,3s) linear var(--d,0s) infinite; }
+.inked .leaf-plate .plate-fan--rev { animation-direction: reverse; }
+@keyframes fanSpin { to { transform: rotate(360deg); } }
+
+/* the plate scales with the leaf; on a phone it reads as a small figure (the
+   caption carries the detail), so just keep it from crowding the text */
+@media (max-width: 560px) { .leaf-plate { margin-top: 1.4rem; } }
+
+/* ===================================================================
+   BIG SCREENS / TV  — poster-scale the whole design above ~1600px
+   Below that the layout is tuned and untouched. Above it the design was
+   otherwise frozen at a 16px root with px-pinned content columns, so on
+   1440p / 4K displays it collapsed into a thin ribbon stranded in vast
+   empty margins.
+
+   The fix has two halves working together:
+     1. The reading measures (--maxw, the leaf, the hero plate, every
+        prose column) are now expressed in REM instead of px — equal to
+        their old pixel values at the 16px base, so nothing changes below,
+        but they scale with the root font-size above.
+     2. Here we lift the root font-size CONTINUOUSLY with the viewport
+        (≈1.05% of width). Because type, spacing, every clamp() ceiling
+        AND the rem-based columns all key off the root, the entire page
+        grows in proportion — text gets bigger and its column widens to
+        match, so line length stays constant and the page fills the
+        screen like a poster instead of floating in emptiness.
+
+   At 1080p ≈ 20px root, 1440p ≈ 27px, 4K ≈ 40px (capped at 42px). The
+   content measure lands around 70% of the viewport width at every size.
+   The ambient casino props are re-anchored to a centred, type-scaled
+   frame so they keep hugging the title instead of fleeing to the corners.
+   =================================================================== */
+@media (min-width: 1600px) {
+  :root { font-size: clamp(16px, 1.05vw, 42px); }
+  html { scroll-padding-top: 3.4rem; }   /* rem so the offset tracks the taller nav */
 }

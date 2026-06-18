@@ -238,9 +238,19 @@
       if (ctx.roundRect) ctx.roundRect(bx, by, bw, bh, 5); else ctx.rect(bx, by, bw, bh);
       ctx.fillStyle = "rgba(224,191,106," + (0.14 + 0.5 * p) + ")"; ctx.fill();
       ctx.strokeStyle = "#e0bf6a"; ctx.lineWidth = 1.2; ctx.stroke();
-      ctx.fillStyle = "#fdf6e3"; ctx.font = "13px ui-monospace, monospace"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-      ctx.fillText("εθ", bx + bw / 2, cyT + 1);
-      ctx.textBaseline = "alphabetic";
+      // ε_θ — render θ as a proper subscript (smaller + dropped) rather than full
+      // size beside ε, and centre the whole "ε_θ" unit in the box.
+      ctx.fillStyle = "#fdf6e3"; ctx.textAlign = "left"; ctx.textBaseline = "middle";
+      ctx.font = "13px ui-monospace, monospace";
+      var epsW = ctx.measureText("ε").width;
+      ctx.font = "9px ui-monospace, monospace";
+      var subW = ctx.measureText("θ").width;
+      var glyphX = bx + bw / 2 - (epsW + subW) / 2;
+      ctx.font = "13px ui-monospace, monospace";
+      ctx.fillText("ε", glyphX, cyT + 1);
+      ctx.font = "9px ui-monospace, monospace";
+      ctx.fillText("θ", glyphX + epsW, cyT + 4);
+      ctx.font = "13px ui-monospace, monospace"; ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
       // a pulse flowing input → network → output
       if (animated) {
         var tt = (t * 0.85) % 1, px = (lx + TILE) + (rx - (lx + TILE)) * tt;
@@ -549,7 +559,7 @@
       banner.innerHTML =
         '<div class="jackpot-sign">' +
           '<span class="jackpot-lights"></span>' +
-          '<div class="jackpot-word">JACKPOT</div>' +
+          '<div class="jackpot-word">Paper accepted<br>at NeurIPS</div>' +
           '<div class="jackpot-sub">seed <b>' + seed + '</b> · lucky FID <b>' + fid.toFixed(2) + '</b></div>' +
           '<span class="jackpot-lights jackpot-lights--b"></span>' +
         '</div>';
@@ -838,7 +848,15 @@
         // without resetting the transform — that lets the scale animate smoothly
         // and lets us re-fit whenever the floor's content height changes.
         var nw = inner.offsetWidth, nh = inner.offsetHeight;
-        var s = Math.min(1, (window.innerHeight * 0.94) / nh, (scene.clientWidth * 0.99) / nw);
+        // The floor renders at a fixed natural size, so on a normal laptop/desktop
+        // it just fits the viewport (cap = 1). On a genuinely large display (TV,
+        // 1440p+) leaving the cap at 1 strands it at natural size in a sea of empty
+        // margin, so we let it grow to fill the wide pinned scene — the real limit
+        // is the available width/height below, so the cap only stops absurd zoom on
+        // ultra-wide panels. Below ~1600px nothing changes.
+        var big = Math.min(scene.clientWidth, window.innerWidth);
+        var maxUp = big >= 1600 ? Math.min(2.8, big / 1320) : 1;
+        var s = Math.min(maxUp, (window.innerHeight * 0.92) / nh, (scene.clientWidth * 0.98) / nw);
         inner.style.transform = "scale(" + (s > 0 ? s : 1) + ")";
       }
       var lastP = 0, autoStarted = false, released = false;

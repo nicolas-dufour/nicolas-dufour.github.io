@@ -20,6 +20,7 @@
     <a href="#guidance">Guided FID</a>
     <a href="#mup">HP Transfer</a>
     <a href="#metrics">Beyond FID</a>
+    <a href="#calculator">Price Your FID</a>
     <a href="#rules">Rules</a>
     <a href="#paper">Paper</a>
   </div>
@@ -62,9 +63,6 @@
     <h1>The&nbsp;FID&nbsp;Lottery
       <span class="sub">Quantifying Hidden Randomness in Generative-Model Evaluation</span>
     </h1>
-    <p class="hero__tag">Every reported FID is drawn from <em>two</em> lotteries. Spin the training reels to
-      draw a network, then the generation reels to score it — and watch the same recipe pay out a
-      different number.</p>
     <div class="hero__authors">
       <a class="author" href="https://nicolas-dufour.github.io/" target="_blank" rel="noopener">Nicolas Dufour</a><sup class="aff aff--k" title="Kyutai">♠</sup>
       &nbsp;&nbsp;·&nbsp;&nbsp;
@@ -73,6 +71,7 @@
       <a class="author" href="https://ptrckprz.github.io/" target="_blank" rel="noopener">Patrick Pérez</a><sup class="aff aff--k" title="Kyutai">♠</sup>
       <span class="hero__aff-key"><span class="aff aff--k">♠</span>&nbsp;Kyutai &nbsp;&nbsp;&nbsp; <span class="aff aff--b">♦</span>&nbsp;UC&nbsp;Berkeley</span>
     </div>
+    <a class="hero__skip" id="hero-paper" href="#paper">Read the paper <i aria-hidden="true">↗</i></a>
   </div>
   <div class="scroll-cue">Scroll to begin<span>❧</span></div>
 </header>
@@ -107,10 +106,10 @@
         number — the Fréchet Inception Distance (FID). FID is the closest thing image generation has to an
         arbiter: a half-unit shift reorders the leaderboard; a decade of recipes have been justified by
         single-Inception-unit gains; and budgets in the low millions of GPU-hours hinge on which architecture
-        lands a few decimals lower. Behind every reported FID number sits a chain of pseudo-random draws
-        (parameter initialisation, minibatch order, per-step Gaussian noise injected by the training loss, and
-        the initial noise drawn at sampling time), any of which would have produced a potentially different
-        score had the seed been different. Conventional wisdom considers this variance in FID to be negligible,
+        lands a few decimals lower. But behind every reported FID number sits a chain of pseudo-random draws
+        (parameter initialisation, minibatch order, per-step Gaussian noise injected by the training loss,
+        hardware stochasticity, and the initial noise drawn at sampling time), any of which could have produced
+        a potentially different score had the seed been different. Conventional wisdom considers this variance in FID to be negligible,
         especially for well-trained models. <span class="manicule" aria-hidden="true">&#9758;&#xFE0E;</span>In this paper we show that <span class="key">the FID reproducibility gap is real and
         is a serious concern</span>.</p>
 
@@ -129,9 +128,26 @@
         independent training run would resolve differently, not transient noise that longer training averages
         out. Scale offers no automatic remedy: neural scaling laws characterise how the mean loss falls with
         parameters and tokens, leaving the seed-induced <em>spread around</em> that mean unspecified. Zhang et
-        al. recently showed that independent diffusion runs converge to nearly the same noise-to-image map at
-        the function level. The corresponding question for the metric is open: do nearly identical maps yield
-        the same FID when scored on a common reference set?</p>
+        al. recently showed that independently-trained diffusion networks converge to nearly the same
+        noise-to-image mapping. But does this also hold for the FID metric computed over a set of generated
+        images?</p>
+
+        <!-- Figure 1, engraved into the leaf: the five sources of randomness. The SVG is
+             built by js/plate.js into [data-plate] and inks itself on with the rest of the
+             marginalia when #intro scrolls into view (ink.js toggles .inked on the section). -->
+        <figure class="leaf-plate">
+          <div class="leaf-plate__art" data-plate aria-hidden="true"></div>
+          <figcaption>
+            <span class="plate-title">The Five Sources of Randomness</span>
+            Training then sampling a generative model is a
+            chain of pseudo-random draws. The <em>training lottery</em> fixes one network from four
+            coupled sources — <span class="cnum">①</span>&nbsp;initialisation, <span class="cnum">②</span>&nbsp;data
+            order, <span class="cnum">③</span>&nbsp;per-step noise and <span class="cnum">④</span>&nbsp;hardware
+            drift — and the <em>generation lottery</em> then redraws <span class="cnum">⑤</span>&nbsp;the
+            initial noise for every image. Common practice accounts for only <span class="cnum">⑤</span>;
+            we study all five.
+          </figcaption>
+        </figure>
 
         <p>Each lottery defines an axis of FID variance: a <em>training axis</em> of <em>N</em> independent
         training runs and a <em>generation axis</em> of <em>K</em> sampling seeds per run. To measure both, we
@@ -168,6 +184,15 @@
     <div class="lottery-inner">
   <div class="slot-stage" id="slot-stage">
     <div class="jackpot" id="jackpot" aria-hidden="true"></div>
+
+    <div class="floor-head">
+      <span class="floor-eyebrow">Step onto the floor</span>
+      <div class="divider"><span>♠</span></div>
+      <p class="floor-lede">Every reported FID is the payout of two spins: pull the
+        <span class="term term--train">training reels</span> to draw a network, then spin the
+        <span class="term term--gen">generation reels</span> to score it. Same recipe each pull.
+        <strong>A different number every time.</strong></p>
+    </div>
 
     <div class="lottery-stage">
       <div class="lottery-floor">
@@ -598,6 +623,7 @@
 <script src="js/calc.js"></script>
 <script src="js/main.js"></script>
 <script src="js/ink.js"></script>
+<script src="js/plate.js"></script>
 <script src="js/deco.js"></script>
 <script src="lib/three.min.js"></script>
 <script src="js/hero.js"></script>
