@@ -1,0 +1,82 @@
+{% assign publication = include.publication %}
+<div class="publication{% if publication.featured %} publication-featured{% endif %}">
+    {% if publication.featured %}
+    <div class="publication-featured-ribbon" aria-label="{{ publication.featured }}">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+            <path d="M12 2l2.39 6.95H22l-6.18 4.49L18.18 22 12 17.51 5.82 22l2.36-8.56L2 8.95h7.61z"/>
+        </svg>
+        <span>{{ publication.featured }}</span>
+    </div>
+    {% endif %}
+    {% if publication.thumbnail_canvas %}
+    {% if publication.website %}
+    <a href="{{ publication.website }}" class="publication-thumbnail-link" target="_blank"
+        rel="noopener noreferrer">
+        <canvas class="publication-thumbnail" id="{{ publication.thumbnail_canvas }}" width="360" height="360"
+            aria-label="{{ publication.title }} thumbnail"></canvas>
+    </a>
+    {% elsif publication.pdf %}
+    <a href="{{ publication.pdf }}" class="publication-thumbnail-link" target="_blank" rel="noopener noreferrer">
+        <canvas class="publication-thumbnail" id="{{ publication.thumbnail_canvas }}" width="360" height="360"
+            aria-label="{{ publication.title }} thumbnail"></canvas>
+    </a>
+    {% else %}
+    <canvas class="publication-thumbnail" id="{{ publication.thumbnail_canvas }}" width="360" height="360"
+        aria-label="{{ publication.title }} thumbnail"></canvas>
+    {% endif %}
+    {% elsif publication.thumbnail %}
+    {% if publication.website %}
+    <a href="{{ publication.website }}" class="publication-thumbnail-link" target="_blank"
+        rel="noopener noreferrer">
+        <img class="publication-thumbnail" src="{{ publication.thumbnail }}" alt="{{ publication.title }} thumbnail"
+            loading="lazy" decoding="async">
+    </a>
+    {% elsif publication.pdf %}
+    <a href="{{ publication.pdf }}" class="publication-thumbnail-link" target="_blank" rel="noopener noreferrer">
+        <img class="publication-thumbnail" src="{{ publication.thumbnail }}" alt="{{ publication.title }} thumbnail"
+            loading="lazy" decoding="async">
+    </a>
+    {% else %}
+    <img class="publication-thumbnail" src="{{ publication.thumbnail }}" alt="{{ publication.title }} thumbnail"
+        loading="lazy" decoding="async">
+    {% endif %}
+    {% endif %}
+    <div class="publication-content">
+        <div class="publication-title">{{ publication.title }}</div>
+        <div class="publication-authors">{{ publication.authors }}</div>
+        <div class="publication-journal">
+            {{ publication.journal }}
+            {% if publication.award %}
+            <span class="publication-award">{{ publication.award }}</span>
+            {% endif %}
+        </div>
+        <div class="publication-buttons">
+            {% if publication.website %}
+            <a href="{{ publication.website }}" target="_blank" rel="noopener noreferrer">Website</a>
+            {% endif %}
+            <a href="{{ publication.pdf }}" target="_blank" rel="noopener noreferrer">Paper</a>
+            {% if publication.github %}
+            <a href="{{ publication.github }}" target="_blank" rel="noopener noreferrer">Code</a>
+            {% endif %}
+            {% if publication.abstract %}
+            <a class="publication-abstract-toggle">Abstract</a>
+            {% endif %}
+            {% if publication.bibtex %}
+            <a class="publication-bibtex-toggle">Bibtex</a>
+            {% endif %}
+        </div>
+        <div class="publication-abstract" style="display: none;">
+            {{ publication.abstract | markdownify }}
+        </div>
+        <div class="publication-bibtex" style="display: none;">
+            <button class="bibtex-copy-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                <span>Copy</span>
+            </button>
+            <pre>{{ publication.bibtex }}</pre>
+        </div>
+    </div>
+</div>

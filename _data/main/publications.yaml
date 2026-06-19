@@ -119,7 +119,7 @@
 
 - title: "How far can we go with ImageNet for Text-to-Image generation?"
   authors: <a href="https://lucasdegeorge.github.io/">Lucas Degeorge</a>*, <a href="https://arijit-hub.github.io/">Arijit Ghosh </a>*, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://davidpicard.github.io/">David Picard</a><sup>†</sup>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a><sup>†</sup>
-  date: 2025-07-01
+  date: 2025-02-28
   year: 2025
   journal: Arxiv Preprint
   thumbnail: /assets/publications/t2i_imagenet/thumbnail.png
@@ -246,3 +246,18 @@
       &nbsp;&nbsp; school = {École des Ponts ParisTech}, \n
       &nbsp;&nbsp; type   = {PhD Thesis} \n
     }"
+- title: "The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation"
+  authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="https://people.eecs.berkeley.edu/~efros/">Alexei A. Efros</a>, <a href="https://ptrckprz.github.io/">Patrick Pérez</a>
+  date: 2026-06-18
+  year: 2026
+  journal: Arxiv Preprint
+  thumbnail_canvas: fid-lottery-thumbnail
+  pdf: https://arxiv.org/abs/2606.20536
+  website: https://kyutai.org/fid-lottery
+  abstract: "The Frechet Inception Distance (FID) is the de facto arbiter of image generation, yet most papers report just a single number from a single trained model using a single sampling seed. How reproducible is that number if we retrain the model, or merely resample from it? In this paper, we treat FID as a random variable on a two-axis panel of training and generation seeds, and measure its variance directly on several hundred SiT networks trained on class-conditional ImageNet 256x256. We report surprising findings: (a) Retraining the model using the same recipe with a different seed moves FID 3.2x more (in Inception feature space) than redrawing samples from a fixed network. (b) That gap is driven by three factors: random initialisation, data ordering, and the per-step Gaussian noise of the flow-matching loss. (c) Increasing compute or model size barely tightens the spread, holding the FID coefficient of variation (CoV) inside a 1-2% band. (d) Per-cell classifier-free-guidance tuning halves the spread but reshuffles which seeds work best, and a lucky training seed reaches the same FID with up to 2x less compute than an unlucky one. Based on these findings, we recommend a new FID evaluation protocol: evaluate under per-cell optimal guidance, treat any FID gap below the empirically measured ~1.3% CoV as inconclusive, and report an error bar over several training seeds rather than a single FID number."
+  bibtex: "@article{dufour2026fidlottery, \n
+      &nbsp;&nbsp;  title           ={The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation}, \n
+      &nbsp;&nbsp;  author          ={Nicolas Dufour and Alexei A. Efros and Patrick P{\\'e}rez}, \n
+      &nbsp;&nbsp;  year            ={2026}, \n
+      &nbsp;&nbsp;  journal         ={arXiv}, \n
+      }"

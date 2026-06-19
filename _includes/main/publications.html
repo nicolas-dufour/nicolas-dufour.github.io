@@ -1,153 +1,126 @@
 <h2>Publications</h2>
 {% assign sorted_publications = site.data.main.publications | sort: 'date' | reverse %}
-{% assign prev_year = '' %}
+
+{%- comment -%}
+A publication counts as a "recent preprint" when its journal still reads as an
+arXiv preprint AND it was posted within the last year (relative to build time).
+Change the journal to a real venue, or let it age past a year, and it drops out
+of this section and falls back into the year group for the year it was arXived.
+{%- endcomment -%}
+{% assign now_ts = site.time | date: '%s' | plus: 0 %}
+{% assign year_seconds = 31557600 %}
+{% assign cutoff_ts = now_ts | minus: year_seconds %}
+
+{% assign has_recent_preprint = false %}
 {% for publication in sorted_publications %}
-{% if publication.year != prev_year %}
-{% if forloop.index != 1 %}
+    {% assign journal_lc = publication.journal | downcase %}
+    {% assign pub_ts = publication.date | date: '%s' | plus: 0 %}
+    {% if journal_lc contains 'arxiv' or journal_lc contains 'preprint' %}
+        {% if pub_ts >= cutoff_ts %}
+            {% assign has_recent_preprint = true %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+{% if has_recent_preprint %}
+<h3 class="publications-year publications-preprints">Recent Preprints</h3>
+<div class="publications-yealy-wrapper">
+    {% for publication in sorted_publications %}
+        {% assign journal_lc = publication.journal | downcase %}
+        {% assign pub_ts = publication.date | date: '%s' | plus: 0 %}
+        {% if journal_lc contains 'arxiv' or journal_lc contains 'preprint' %}
+            {% if pub_ts >= cutoff_ts %}
+                {% include main/publication_card.html publication=publication %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
 </div>
 {% endif %}
-{% assign prev_year = publication.year %}
-<h3 class="publications-year">{{ publication.year }}</h3>
-<div class="publications-yealy-wrapper">
-    {% endif %}
-    <div class="publication{% if publication.featured %} publication-featured{% endif %}">
-        {% if publication.featured %}
-        <div class="publication-featured-ribbon" aria-label="{{ publication.featured }}">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
-                <path d="M12 2l2.39 6.95H22l-6.18 4.49L18.18 22 12 17.51 5.82 22l2.36-8.56L2 8.95h7.61z"/>
-            </svg>
-            <span>{{ publication.featured }}</span>
-        </div>
-        {% endif %}
-        {% if publication.thumbnail_canvas %}
-        {% if publication.website %}
-        <a href="{{ publication.website }}" class="publication-thumbnail-link" target="_blank"
-            rel="noopener noreferrer">
-            <canvas class="publication-thumbnail" id="{{ publication.thumbnail_canvas }}" width="360" height="360"
-                aria-label="{{ publication.title }} thumbnail"></canvas>
-        </a>
-        {% elsif publication.pdf %}
-        <a href="{{ publication.pdf }}" class="publication-thumbnail-link" target="_blank" rel="noopener noreferrer">
-            <canvas class="publication-thumbnail" id="{{ publication.thumbnail_canvas }}" width="360" height="360"
-                aria-label="{{ publication.title }} thumbnail"></canvas>
-        </a>
-        {% else %}
-        <canvas class="publication-thumbnail" id="{{ publication.thumbnail_canvas }}" width="360" height="360"
-            aria-label="{{ publication.title }} thumbnail"></canvas>
-        {% endif %}
-        {% elsif publication.thumbnail %}
-        {% if publication.website %}
-        <a href="{{ publication.website }}" class="publication-thumbnail-link" target="_blank"
-            rel="noopener noreferrer">
-            <img class="publication-thumbnail" src="{{ publication.thumbnail }}" alt="{{ publication.title }} thumbnail"
-                loading="lazy" decoding="async">
-        </a>
-        {% elsif publication.pdf %}
-        <a href="{{ publication.pdf }}" class="publication-thumbnail-link" target="_blank" rel="noopener noreferrer">
-            <img class="publication-thumbnail" src="{{ publication.thumbnail }}" alt="{{ publication.title }} thumbnail"
-                loading="lazy" decoding="async">
-        </a>
-        {% else %}
-        <img class="publication-thumbnail" src="{{ publication.thumbnail }}" alt="{{ publication.title }} thumbnail"
-            loading="lazy" decoding="async">
-        {% endif %}
-        {% endif %}
-        <div class="publication-content">
-            <div class="publication-title">{{ publication.title }}</div>
-            <div class="publication-authors">{{ publication.authors }}</div>
-            <div class="publication-journal">
-                {{ publication.journal }}
-                {% if publication.award %}
-                <span class="publication-award">{{ publication.award }}</span>
-                {% endif %}
-            </div>
-            <div class="publication-buttons">
-                {% if publication.website %}
-                <a href="{{ publication.website }}" target="_blank" rel="noopener noreferrer">Website</a>
-                {% endif %}
-                <a href="{{ publication.pdf }}" target="_blank" rel="noopener noreferrer">Paper</a>
-                {% if publication.github %}
-                <a href="{{ publication.github }}" target="_blank" rel="noopener noreferrer">Code</a>
-                {% endif %}
-                {% if publication.abstract %}
-                <a class="publication-abstract-toggle" id="abstract-toggle-{{ forloop.index }}">Abstract</a>
-                {% endif %}
-                {% if publication.bibtex %}
-                <a class="publication-bibtex-toggle" id="bibtex-toggle-{{ forloop.index }}">Bibtex</a>
-                {% endif %}
-            </div>
-            <div class="publication-abstract" id="abstract-{{ forloop.index }}" style="display: none;">
-                {{ publication.abstract | markdownify }}
-            </div>
-            <div class="publication-bibtex" id="bibtex-{{ forloop.index }}" style="display: none;">
-                <button class="bibtex-copy-btn" onclick="copyBibtex({{ forloop.index }})">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
-                    <span>Copy</span>
-                </button>
-                <pre>{{ publication.bibtex }}</pre>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-    <script>
-        const bibtexToggles = document.querySelectorAll('.publication-bibtex-toggle');
-        bibtexToggles.forEach((toggle, index) => {
-            const bibtex = document.querySelector(`#bibtex-${index + 1}`);
-            const abstract = document.querySelector(`#abstract-${index + 1}`);
-            toggle.addEventListener('click', () => {
-                if (bibtex.style.display === 'none') {
-                    bibtex.style.display = 'block';
-                    abstract.style.display = 'none';
-                    abstract.classList.remove('show');
-                    setTimeout(() => bibtex.classList.add('show'), 0);
-                } else {
-                    bibtex.style.display = 'none';
-                    bibtex.classList.remove('show');
-                }
-            });
-        });
 
-        const abstractToggles = document.querySelectorAll('.publication-abstract-toggle');
-        abstractToggles.forEach((toggle, index) => {
-            const abstract = document.querySelector(`#abstract-${index + 1}`);
-            const bibtex = document.querySelector(`#bibtex-${index + 1}`);
-            toggle.addEventListener('click', () => {
+{%- comment -%} Year-ordered publications, excluding the recent preprints above. {%- endcomment -%}
+{% assign prev_year = '' %}
+{% assign wrapper_open = false %}
+{% for publication in sorted_publications %}
+    {% assign journal_lc = publication.journal | downcase %}
+    {% assign pub_ts = publication.date | date: '%s' | plus: 0 %}
+    {% assign is_recent_preprint = false %}
+    {% if journal_lc contains 'arxiv' or journal_lc contains 'preprint' %}
+        {% if pub_ts >= cutoff_ts %}
+            {% assign is_recent_preprint = true %}
+        {% endif %}
+    {% endif %}
+    {% unless is_recent_preprint %}
+        {% if publication.year != prev_year %}
+            {% if wrapper_open %}</div>{% endif %}
+            {% assign prev_year = publication.year %}
+            <h3 class="publications-year">{{ publication.year }}</h3>
+            <div class="publications-yealy-wrapper">
+            {% assign wrapper_open = true %}
+        {% endif %}
+        {% include main/publication_card.html publication=publication %}
+    {% endunless %}
+{% endfor %}
+{% if wrapper_open %}</div>{% endif %}
+
+<script>
+    // Abstract / Bibtex toggles are scoped to each publication card so they
+    // work no matter which section (preprints or a year group) the card lives in.
+    document.querySelectorAll('#publications .publication').forEach((card) => {
+        const abstract = card.querySelector('.publication-abstract');
+        const bibtex = card.querySelector('.publication-bibtex');
+        const abstractToggle = card.querySelector('.publication-abstract-toggle');
+        const bibtexToggle = card.querySelector('.publication-bibtex-toggle');
+
+        if (abstractToggle && abstract) {
+            abstractToggle.addEventListener('click', () => {
                 if (abstract.style.display === 'none') {
                     abstract.style.display = 'block';
-                    bibtex.style.display = 'none';
-                    bibtex.classList.remove('show');
+                    if (bibtex) { bibtex.style.display = 'none'; bibtex.classList.remove('show'); }
                     setTimeout(() => abstract.classList.add('show'), 0);
                 } else {
                     abstract.style.display = 'none';
                     abstract.classList.remove('show');
                 }
             });
-        });
+        }
 
-        function copyBibtex(index) {
-            const bibtexContent = document.querySelector(`#bibtex-${index} pre`).textContent;
-            navigator.clipboard.writeText(bibtexContent).then(() => {
-                const btn = document.querySelector(`#bibtex-${index} .bibtex-copy-btn`);
-                btn.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Copied!</span>
-                `;
-                btn.classList.add('copied');
-                setTimeout(() => {
-                    btn.innerHTML = `
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                        </svg>
-                        <span>Copy</span>
-                    `;
-                    btn.classList.remove('copied');
-                }, 2000);
+        if (bibtexToggle && bibtex) {
+            bibtexToggle.addEventListener('click', () => {
+                if (bibtex.style.display === 'none') {
+                    bibtex.style.display = 'block';
+                    if (abstract) { abstract.style.display = 'none'; abstract.classList.remove('show'); }
+                    setTimeout(() => bibtex.classList.add('show'), 0);
+                } else {
+                    bibtex.style.display = 'none';
+                    bibtex.classList.remove('show');
+                }
             });
         }
-    </script>
-</div>
+
+        const copyBtn = card.querySelector('.bibtex-copy-btn');
+        if (copyBtn && bibtex) {
+            copyBtn.addEventListener('click', () => {
+                const pre = bibtex.querySelector('pre');
+                if (!pre) return;
+                navigator.clipboard.writeText(pre.textContent).then(() => {
+                    copyBtn.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Copied!</span>
+                    `;
+                    copyBtn.classList.add('copied');
+                    setTimeout(() => {
+                        copyBtn.innerHTML = `
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                            <span>Copy</span>
+                        `;
+                        copyBtn.classList.remove('copied');
+                    }, 2000);
+                });
+            });
+        }
+    });
+</script>
