@@ -1,0 +1,75 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,34.733472010251,-87.703569494319,0.0,US,True,,,,,,,,"Tuscumbia, Colbert County, Alabama, US"
+qwen/qwen3.5-397b-a17b,CoT,35.1995,-87.0265,80.571,US,True,,stop,0.0173214,665,4714,4584,99.31,"{""reasoning"": ""The image shows a US street scene with Tennessee license plates (orange/blue stripes on white) and right-side traffic. The specific location is identified by the 'First Bank' building on the left (white facade) and the historic beige building with arched windows on the right (likely the old First National Bank building), which matches the streetscape of N Main St in Pulaski, Tennessee, looking north towards the intersection with 3rd Ave N."", ""country"": ""US"", ""latitude"": 35.1995, ""longitude"": -87.0265}"
+mistralai/mistral-medium-3-5,no-CoT,34.7465,-86.6425,96.965,US,True,,stop,0.0014115,786,31,0,2.02,"{""country"": ""US"", ""latitude"": 34.7465, ""longitude"": -86.6425}"
+anthropic/claude-opus-4.8,CoT,33.6018,-86.9844,142.17,US,True,,stop,0.006995,949,90,0,9.31,"{""reasoning"": ""Small-town American Main Street with brick storefronts, overhead traffic signals, US pickup trucks, and bare winter trees suggest the southeastern US."", ""country"": ""US"", ""latitude"": 33.6018, ""longitude"": -86.9844}"
+anthropic/claude-opus-4.8,no-CoT,34.2257,-86.1647,151.933,US,True,,stop,0.004865,818,31,0,2.37,"{""country"": ""US"", ""latitude"": 34.2257, ""longitude"": -86.1647}"
+google/gemini-3.1-pro-preview,CoT,33.5206,-86.8025,158.326,US,True,,stop,0.006706,1307,341,267,27.65,"{
+  ""reasoning"": ""Suspended traffic lights and typical downtown architecture indicate the United States. The presence of a Regions Bank suggests a location in the Southern or Midwestern US."",
+  ""country"": ""US"",
+  ""latitude"": 33.5206,
+  ""longitude"": -86.8025
+}"
+google/gemma-4-31b-it,no-CoT,36.0544,-86.7834,168.908,US,True,,stop,7.096e-05,404,36,0,7.2,"```json
+{""country"": ""US"", ""latitude"": 36.0544, ""longitude"": -86.7834}
+```"
+qwen/qwen3.6-35b-a3b,CoT,36.1627,-86.7816,179.528,US,True,,stop,0.12674510225,665,131197,131070,1154.47,"```json
+{
+  ""reasoning"": ""The image shows a typical American Main Street scene with right-hand traffic, US-style license plates (likely Tennessee based on the plate shape and color), and architecture featuring brick buildings with awnings. The specific combination of the modern white building on the left and the arched brick building on the right points to a specific location in a small US town."",
+  ""country"": ""US"",
+  ""latitude"": 36.1627,
+  ""longitude"": -86.7816
+}
+```"
+x-ai/grok-4.3,no-CoT,35.047,-85.309,221.162,US,True,,stop,0.0007334,704,22,0,0.76,"{""country"": ""US"", ""latitude"": 35.047, ""longitude"": -85.309}"
+google/gemini-3.1-pro-preview,no-CoT,34.2568,-85.1645,238.643,US,True,,stop,0.002872,1226,35,0,20.43,"```json
+{""country"": ""US"", ""latitude"": 34.2568, ""longitude"": -85.1645}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),34.2269,-84.4906,299.826,US,True,,stop,0.0021525,1225,35,0,1.67,"```json
+{""country"": ""US"", ""latitude"": 34.2269, ""longitude"": -84.4906}
+```"
+xiaomi/mimo-v2.5,no-CoT,33.749,-84.388,323.816,US,True,,stop,9.65776e-05,820,29,0,2.2,"{""country"": ""US"", ""latitude"": 33.749, ""longitude"": -84.388}"
+moonshotai/kimi-k2.6,CoT,34.2,-83.9,353.679,US,True,,stop,0.012455496,834,3562,3505,98.32,"{""reasoning"":""Horizontal span-wire traffic signals and right-hand traffic confirm the USA; small-town commercial architecture with bare deciduous trees and rolling hills points to the Georgia Piedmont region."",""country"":""US"",""latitude"":34.2,""longitude"":-83.9}"
+minimax/minimax-m3,no-CoT,35.9606,-83.9207,369.2,US,True,,stop,0.00023976,904,25,0,5.86,"{""country"": ""US"", ""latitude"": 35.9606, ""longitude"": -83.9207}"
+google/gemini-3.5-flash,CoT (effort=high),33.793911,-83.712845,381.297,US,True,,stop,0.0372495,1307,3921,3839,23.51,"```json
+{""reasoning"": ""The image shows a typical downtown street in the Southeastern United States, featuring a Synovus bank branch on the left and a historic water tower in the background, characteristic of Monroe, Georgia."", ""country"": ""US"", ""latitude"": 33.793911, ""longitude"": -83.712845}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,33.0801,-83.2321,451.694,US,True,,stop,0.00374552035,583,3783,3747,16.89,"```json
+{""country"": ""US"", ""latitude"": 33.0801, ""longitude"": -83.2321}
+```"
+xiaomi/mimo-v2.5,CoT,38.05,-84.5,467.073,US,True,,stop,0.0001098888,899,382,298,49.22,"{""reasoning"": ""The right-hand traffic, English-language signage including 'MERCANTILE' and 'FURNITURE', and typical small-town US architecture with brick buildings and overhead traffic lights indicate a location in the United States, likely in the Midwest or Eastern region."", ""country"": ""US"", ""latitude"": 38.05, ""longitude"": -84.5}"
+moonshotai/kimi-k2.6,no-CoT,34.8526,-82.394,484.969,US,True,,stop,0.0003501,755,24,0,1.86,"{""country"": ""US"", ""latitude"": 34.8526, ""longitude"": -82.394}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.2157,-82.1614,511.216,US,True,,stop,0.0004626,585,31,0,5.5,"{""country"": ""US"", ""latitude"": 34.2157, ""longitude"": -82.1614}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,36.169307708740234,-81.95368957519531,544.644,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,39.0936,-84.5121,561.649,US,True,,stop,0.000182715,585,44,0,8.23,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 39.0936,
+  ""longitude"": -84.5121
+}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,36.14592742919922,-81.63131713867188,571.97,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,39.7652,-86.1555,576.008,US,True,,stop,0.000170625,786,31,0,2.06,"{""country"": ""US"", ""latitude"": 39.7652, ""longitude"": -86.1555}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,36.38461685180664,-81.64989471435547,577.44,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,CoT,39.6386,-85.4865,579.652,US,True,,stop,0.0134732,666,4079,3866,158.09,"{""reasoning"": ""The distinctive stone building with arched windows on the right is the Greensburg National Bank, and the brick building with green awnings on the left matches the architecture of Main Street in Greensburg, Indiana. The Indiana license plates and US traffic signals confirm the location."", ""country"": ""US"", ""latitude"": 39.6386, ""longitude"": -85.4865}"
+qwen/qwen3.5-9b,no-CoT,35.2221,-80.8431,627.289,US,True,,stop,6.325e-05,586,31,0,10.14,"{""country"": ""US"", ""latitude"": 35.2221, ""longitude"": -80.8431}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.2271,-80.8431,627.318,US,True,,stop,0.00011304,586,31,0,2.11,"{""country"": ""US"", ""latitude"": 35.2271, ""longitude"": -80.8431}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.2008,-80.8325,628.132,US,True,,stop,0.00021684,586,31,0,5.77,"{""country"": ""US"", ""latitude"": 35.2008, ""longitude"": -80.8325}"
+openai/gpt-5.5,no-CoT,35.4107,-80.8429,628.75,US,True,,stop,0.00411,678,24,0,8.07,"{""country"":""US"",""latitude"":35.4107,""longitude"":-80.8429}"
+openai/gpt-5.5,CoT,35.5847,-80.8102,633.633,US,True,,stop,0.018625,755,495,403,17.56,"{""reasoning"":""The scene shows right-side driving, US-style traffic signals, broad asphalt streets with brick crosswalks, black decorative downtown lamp posts, and low historic brick storefronts typical of a small southeastern US town. The leafless trees and architecture most closely fit a North Carolina piedmont downtown, plausibly Mooresville."",""country"":""US"",""latitude"":35.5847,""longitude"":-80.8102}"
+qwen/qwen3.6-27b,no-CoT,39.7392,-84.1916,637.416,US,True,,stop,0.00026002,585,31,0,18.62,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -84.1916}"
+x-ai/grok-4.3,CoT,35.408,-80.579,652.561,US,True,,stop,0.002419,788,708,627,7.64,"{""reasoning"": ""US-style right-hand traffic, hanging 3-light signals, red-brick storefronts, bare deciduous trees, and visible 'BANK' signage indicate a small-town main street in the southeastern US; overcast winter/spring light and vehicle mix narrow it to North Carolina Piedmont."", ""country"": ""US"", ""latitude"": 35.408, ""longitude"": -80.579}"
+minimax/minimax-m3,CoT,35.6715,-80.4742,664.926,US,True,,stop,0.00064986,995,344,246,32.13,"{""reasoning"": ""Right-hand driving, suspended traffic signals, brick commercial buildings with awnings, and American-style architecture strongly indicate a small downtown in the Southeastern United States, likely North Carolina. The bare trees suggest winter, and the wide main-street layout with historic brick storefronts is characteristic of towns like Salisbury, Statesville, or Shelby NC."", ""country"": ""US"", ""latitude"": 35.6715, ""longitude"": -80.4742}"
+google/gemini-3.5-flash,CoT (effort=medium),35.3501,-80.2002,686.363,US,True,,stop,0.0107985,1307,982,917,17.16,"{""reasoning"": ""The architecture, hanging span-wire traffic signals, and vehicle types are characteristic of a downtown main street in the southeastern United States, particularly North Carolina."", ""country"": ""US"", ""latitude"": 35.3501, ""longitude"": -80.2002}"
+google/gemini-3.5-flash,CoT (effort=low),35.7079,-79.8136,724.655,US,True,,stop,0.004473,1308,279,205,24.43,"{""reasoning"": ""The hanging vertical traffic lights, brick storefront architecture, and vehicle models are characteristic of a small town downtown in the eastern United States, particularly in the South/Mid-Atlantic region like North Carolina."", ""country"": ""US"", ""latitude"": 35.7079, ""longitude"": -79.8136}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.6016960144043,-86.6471939086914,769.256,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,41.77357864379883,-88.24873352050781,784.265,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,41.95985794067383,-88.38265991210938,805.709,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,34.0522,-118.2437,2792.456,,True,,stop,6.228e-05,404,50,0,9.16,"```json
+{""country"": ""US"", own"", ""latitude"": 34.0522, own-121.2550, ""longitude"": -118.2437}
+
+```"
+mistralai/mistral-small-2603,CoT,51.676,-0.612,6869.729,GB,True,,stop,0.00045084,868,682,740,13.68,"{""reasoning"": ""Left-hand traffic, UK-style license plates, 'The Olde Bell' pub sign, and typical English village architecture decisively indicate the United Kingdom."", ""country"": ""GB"", ""latitude"": 51.676, ""longitude"": -0.612}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.19,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.22,

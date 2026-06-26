@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-10.421948746147,105.68350982742,0.0,CX,True,,,,,,,,"Flying Fish Cove, None, None, CX"
+x-ai/grok-4.3,CoT,3.152,101.712,1572.09,MY,True,,stop,0.0024965,788,739,674,11.67,"{""reasoning"": ""Left-hand traffic (oncoming vehicle on right), tropical dense jungle vegetation, wet asphalt rural road with typical white rectangular signs and small reflective posts indicate Southeast Asia or similar left-driving tropical region."", ""country"": ""MY"", ""latitude"": 3.152, ""longitude"": 101.712}"
+moonshotai/kimi-k2.6,CoT,-16.17,145.43,4341.538,AU,True,,stop,0.01327262,834,3158,3753,67.74,"{""reasoning"": ""Left-hand traffic with Australian-style white guide posts and double center lines, combined with dense subtropical rainforest and red laterite soil, strongly indicates Far North Queensland."", ""country"": ""AU"", ""latitude"": -16.17, ""longitude"": 145.43}"
+xiaomi/mimo-v2.5,CoT,-16.5,145.5,4351.262,AU,True,,stop,0.0005533976,899,1621,1558,24.55,"{""reasoning"": ""Left-hand traffic and lush tropical vegetation indicate a warm, high-rainfall region like northern Australia, with road signs and markings consistent with Australian standards."", ""country"": ""AU"", ""latitude"": -16.5, ""longitude"": 145.5}"
+google/gemini-3.5-flash,CoT (effort=medium),-16.8285,145.6412,4368.758,AU,True,,stop,0.0104925,1307,948,847,14.24,"```json
+{""reasoning"": ""The image shows left-hand traffic with double white center lines and a white guide post with a red reflector on the left, characteristic of Australia. The lush, tropical wet-forest vegetation and wet road conditions strongly suggest the wet tropics of Far North Queensland, likely along the Kennedy Highway near Kuranda."", ""country"": ""AU"", ""latitude"": -16.8285, ""longitude"": 145.6412}
+```"
+xiaomi/mimo-v2.5,no-CoT,-33.75,150.3,5220.953,AU,True,,stop,9.62976e-05,820,28,0,1.3,"{""country"": ""AU"", ""latitude"": -33.75, ""longitude"": 150.30}"
+google/gemini-3.5-flash,CoT (effort=low),-26.5258,153.0911,5275.324,AU,True,,stop,0.0048495,1307,321,251,25.24,"{""reasoning"": ""The left-hand driving, double white center lines, white guidepost on the left, and lush subtropical vegetation suggest eastern Australia, likely Queensland or northern New South Wales."", ""country"": ""AU"", ""latitude"": -26.5258, ""longitude"": 153.0911}"
+google/gemini-3.5-flash,CoT (effort=high),-34.5715,150.6582,5282.204,AU,True,,stop,0.0373305,1307,3930,3838,34.02,"{""reasoning"": ""The image shows left-hand traffic with double solid white center lines and white roadside posts with red reflectors, characteristic of Australia. The lush, wet subtropical rainforest vegetation and the oncoming car's yellow license plate point to a mountain pass in New South Wales, such as Macquarie Pass."", ""country"": ""AU"", ""latitude"": -34.5715, ""longitude"": 150.6582}"
+qwen/qwen3.5-122b-a10b,no-CoT,-33.8688,151.2093,5304.755,AU,True,,stop,0.0002715,585,40,0,7.93,"{
+  ""country"": ""AU"",
+  ""latitude"": -33.8688,
+  ""longitude"": 151.2093
+}"
+minimax/minimax-m3,CoT,-30.3,153.1,5365.363,AU,True,,stop,0.00085302,997,510,538,17.05,"{""reasoning"": ""Left-hand driving with oncoming traffic on the right, Australian-style white roadside delineator posts, lush subtropical/eucalyptus vegetation, and rural highway markings consistent with the New South Wales mid-north coast."", ""country"": ""AU"", ""latitude"": -30.3, ""longitude"": 153.1}"
+google/gemini-3.1-pro-preview,CoT,-28.642,153.612,5372.067,AU,True,,stop,0.006636,1308,335,248,18.6,"{
+  ""reasoning"": ""Driving on the left, double white center lines, a white bollard with a red reflector, and a yellow license plate strongly indicate New South Wales, Australia. The lush vegetation suggests a coastal or hinterland region."",
+  ""country"": ""AU"",
+  ""latitude"": -28.642,
+  ""longitude"": 153.612
+}"
+google/gemini-3.1-pro-preview,no-CoT,-28.642,153.612,5372.067,AU,True,,stop,0.004792,1226,195,161,9.89,"```json
+{""country"": ""AU"", ""latitude"": -28.642, ""longitude"": 153.612}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-34.62284469604492,173.3953399658203,7317.96,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-35.348697662353516,173.87591552734375,7367.241,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-35.513877868652344,173.9272918701172,7373.172,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,-36.8485,174.7633,7458.554,NZ,True,,stop,0.00018625,585,32,0,1.03,"{""country"": ""NZ"", ""latitude"": -36.8485, ""longitude"": 174.7633}"
+qwen/qwen3.6-27b,no-CoT,-41.2865,174.7762,7502.887,NZ,True,,stop,0.0002299,585,32,0,7.67,"{""country"": ""NZ"", ""latitude"": -41.2865, ""longitude"": 174.7762}"
+qwen/qwen3.5-27b,no-CoT,-37.8866,175.4653,7528.677,NZ,True,,stop,0.0002365,586,45,0,3.72,"```json
+{
+  ""country"": ""NZ"",
+  ""latitude"": -37.8866,
+  ""longitude"": 175.4653
+}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-28.378542,32.412154,7830.841,ZA,True,,stop,0.00219,1226,39,0,1.24,"```json
+{""country"": ""ZA"", ""latitude"": -28.378542, ""longitude"": 32.412154}
+```"
+x-ai/grok-4.3,no-CoT,-29.85,30.3,8030.946,ZA,True,,stop,0.0007334,704,22,0,0.85,"{""country"": ""ZA"", ""latitude"": -29.85, ""longitude"": 30.3}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,34.42740249633789,-119.74630737304688,14698.779,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,-23.5505,-46.6333,15184.845,BR,True,,stop,6.348e-05,404,36,0,11.29,"```json
+{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,15184.845,BR,True,,stop,0.0014115,786,31,0,1.11,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5505,-46.6333,15184.845,BR,True,,stop,0.00043188,585,31,0,9.63,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+anthropic/claude-opus-4.8,no-CoT,-12.9714,-38.5014,15282.688,BR,True,,stop,0.00489,818,32,0,8.66,"{""country"": ""BR"", ""latitude"": -12.9714, ""longitude"": -38.5014}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,35.08812713623047,-106.63868713378906,15748.958,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-15.5,-47.8,15912.098,BR,True,,stop,0.00682,949,83,0,9.78,"{""reasoning"": ""Tropical wet vegetation, yellow center lines on rural road, right-side driving, and worn asphalt suggest interior Brazil."", ""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -47.8}"
+qwen/qwen3.5-9b,no-CoT,28.5383,-80.5571,17898.248,US,True,,stop,6.325e-05,586,31,0,14.91,"{""country"": ""US"", ""latitude"": 28.5383, ""longitude"": -80.5571}"
+openai/gpt-5.5,no-CoT,13.1596,-59.4399,18367.783,BB,True,,stop,0.00411,678,24,0,1.39,"{""country"":""BB"",""latitude"":13.1596,""longitude"":-59.4399}"
+openai/gpt-5.5,CoT,13.2547,-59.5862,18381.704,BB,True,,stop,0.017695,755,464,388,18.83,"{""reasoning"":""Left-hand traffic, English road signage, tropical vegetation, and Caribbean-style white roadside bollards point strongly to Barbados. The lush hilly road setting is most consistent with the northern/eastern interior around Farley Hill/Cherry Tree Hill."",""country"":""BB"",""latitude"":13.2547,""longitude"":-59.5862}"
+qwen/qwen3.5-35b-a3b,no-CoT,18.4655,-66.1057,18758.092,US,True,,stop,0.0001353625,585,31,0,0.8,"{""country"": ""US"", ""latitude"": 18.4655, ""longitude"": -66.1057}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,9.547537803649902,-83.17626190185547,19040.026,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,13.17,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.45,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.09,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.15,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,12.81,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.19,

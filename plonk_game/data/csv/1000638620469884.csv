@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,27.109925860866,83.281718260092,0.0,IN,True,,,,,,,,"Anandnagar, Maharajganj, Uttar Pradesh, IN"
+google/gemini-3.5-flash,CoT (effort=low),26.7606,83.3731,39.886,IN,True,,stop,0.003906,1308,216,142,8.76,"{""reasoning"": ""The image shows left-hand traffic with a typical Indian cargo truck and a tour bus on a flat, rural highway. The concrete utility poles and vegetation are highly characteristic of northern or eastern India."", ""country"": ""IN"", ""latitude"": 26.7606, ""longitude"": 83.3731}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),26.7606,83.3731,39.886,IN,True,,stop,0.0021525,1225,35,0,1.5,"```json
+{""country"": ""IN"", ""latitude"": 26.7606, ""longitude"": 83.3731}
+```"
+google/gemini-3.1-pro-preview,no-CoT,26.7605,83.3731,39.896,IN,True,,stop,0.002872,1226,35,0,9.02,"```json
+{""country"": ""IN"", ""latitude"": 26.7605, ""longitude"": 83.3731}
+```"
+anthropic/claude-opus-4.8,CoT,27.68,84.43,129.882,NP,True,,stop,0.006995,949,90,0,10.27,"{""reasoning"": ""Left-hand traffic, Tata-style truck and bus, lush green plains with dusty roadside—consistent with the Terai region of Nepal/northern India."", ""country"": ""NP"", ""latitude"": 27.68, ""longitude"": 84.43}"
+anthropic/claude-opus-4.8,no-CoT,27.6833,84.4333,130.344,NP,True,,stop,0.00489,818,32,0,9.2,"{""country"": ""NP"", ""latitude"": 27.6833, ""longitude"": 84.4333}"
+qwen/qwen3.6-35b-a3b,no-CoT,27.7172,85.324,212.596,NP,True,,stop,0.000185,585,31,0,0.67,"{""country"": ""NP"", ""latitude"": 27.7172, ""longitude"": 85.3240}"
+google/gemini-3.1-pro-preview,CoT,26.8467,80.9462,233.277,IN,True,,stop,0.005256,1308,220,144,306.72,"{
+  ""reasoning"": ""Driving on the left, vehicle styles (bus and truck), and utility poles strongly suggest India. The flat, agricultural landscape is typical of the northern plains."",
+  ""country"": ""IN"",
+  ""latitude"": 26.8467,
+  ""longitude"": 80.9462
+}"
+qwen/qwen3.5-9b,no-CoT,26.8467,80.9462,233.277,IN,True,,stop,6.325e-05,586,31,0,2.59,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+qwen/qwen3.6-27b,no-CoT,26.8467,80.9462,233.277,IN,True,,stop,0.0002279,585,31,0,24.1,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+x-ai/grok-4.3,no-CoT,26.85,80.92,235.804,IN,True,,stop,0.0007334,704,22,0,0.99,"{""country"": ""IN"", ""latitude"": 26.85, ""longitude"": 80.92}"
+qwen/qwen3.5-397b-a17b,CoT,26.8542,80.1255,314.035,IN,True,,stop,0.00768705,665,2477,1,73.81,"{
+""reasoning"": ""The image shows left-hand traffic with a commercial bus bearing a yellow license plate, which is standard for India. The bus text 'SRI BALAJI...' and the flat, green agricultural landscape with concrete utility poles are characteristic of the Indo-Gangetic plain in Northern India (likely Uttar Pradesh or Haryana)."",
+""country"": ""IN"",
+""latitude"": 26.8542,
+""longitude"": 80.1255
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,26.8467,88.37,505.035,IN,True,,stop,0.0002215625,585,31,0,7.25,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 88.3700}"
+openai/gpt-5.5,CoT,28.4675,77.5123,587.203,IN,True,,stop,0.015295,755,384,297,16.55,"{""reasoning"":""Yellow commercial license plate, left-side driving, English text on bus, and rural flat landscape with Indian-style utility poles point strongly to northern India. The green agricultural fields and peri-urban road setting fit the Delhi–Haryana/UP plains, so I estimate the outskirts of Greater Noida."",""country"":""IN"",""latitude"":28.4675,""longitude"":77.5123}"
+google/gemma-4-31b-it,no-CoT,28.6139,77.209,619.87,IN,True,,stop,6.348e-05,404,36,0,3.84,"```json
+{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}
+```"
+moonshotai/kimi-k2.6,no-CoT,28.6139,77.209,619.87,IN,True,,stop,0.000198576,754,25,0,2.5,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+qwen/qwen3.5-397b-a17b,no-CoT,28.6139,77.209,619.87,IN,True,,stop,0.00042828,585,30,0,9.19,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+mistralai/mistral-medium-3-5,no-CoT,28.7041,77.1025,632.444,IN,True,,stop,0.0014115,786,31,0,1.05,"{""country"": ""IN"", ""latitude"": 28.7041, ""longitude"": 77.1025}"
+moonshotai/kimi-k2.6,CoT,29.4,76.97,668.463,IN,True,,stop,0.010811196,834,3076,3000,82.89,"{""reasoning"": ""Yellow license plates indicate commercial vehicles common in India, the left-hand traffic flat agricultural terrain and roadside architecture match the Indo-Gangetic plain, and the white bus with red stripes resembles Haryana Roadways or private North Indian operators."", ""country"": ""IN"", ""latitude"": 29.4, ""longitude"": 76.97}"
+qwen/qwen3.5-27b,no-CoT,23.8103,90.4125,804.223,BD,True,,stop,0.0002185,586,36,0,3.38,"```json
+{""country"": ""BD"", ""latitude"": 23.8103, ""longitude"": 90.4125}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,20.457983016967773,86.5892562866211,812.501,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,31.5204,74.3587,993.925,PK,True,,stop,0.00408,678,23,0,1.29,"{""country"":""PK"",""latitude"":31.5204,""longitude"":74.3587}"
+google/gemini-3.5-flash,CoT (effort=medium),16.3012,80.4531,1236.74,IN,True,,stop,0.0058755,1307,435,354,16.83,"{""reasoning"": ""The typical Indian cargo truck, concrete utility poles, left-hand driving, and the English text on the bus ('SRI BALAJI TOURS & TRAVELS') strongly indicate a highway in southern India, likely Andhra Pradesh."", ""country"": ""IN"", ""latitude"": 16.3012, ""longitude"": 80.4531}"
+google/gemini-3.5-flash,CoT (effort=high),13.628,79.419,1551.912,IN,True,,stop,0.0123645,1307,1156,1078,8.37,"{""reasoning"": ""The bus belongs to 'Sri Balaji Tours & Travels' and the landscape with flat green fields and palmyra palms, combined with left-hand driving and Indian-style utility poles, points to Andhra Pradesh, India."", ""country"": ""IN"", ""latitude"": 13.628, ""longitude"": 79.419}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,14.576356887817383,76.2535171508789,1572.448,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,13.905882835388184,75.83372497558594,1659.362,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,13.877073287963867,75.8265151977539,1662.575,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,13.019710540771484,77.59869384765625,1674.675,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,13.018455505371094,77.59982299804688,1674.765,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,7.21,79.85,2242.222,LK,True,,stop,0.00071706,995,400,323,13.18,"{""reasoning"": ""Text on bus rear reads 'SRI LANKA TRANSPORT', left-hand traffic, tropical lowland vegetation with palms, and the characteristic wooden-framed cargo truck strongly indicate Sri Lanka's western lowlands along a highway."", ""country"": ""LK"", ""latitude"": 7.2100, ""longitude"": 79.8500}"
+qwen/qwen3.5-122b-a10b,no-CoT,13.7563,100.5018,2323.927,TH,True,,stop,0.0003364,585,32,0,2.24,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+xiaomi/mimo-v2.5,no-CoT,13.7563,100.5018,2323.927,TH,True,,stop,1.83904e-05,820,32,0,2.44,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+minimax/minimax-m3,no-CoT,21.0285,105.8542,2385.348,VN,True,,stop,0.00027324,906,24,0,2.29,"{""country"": ""VN"", ""latitude"": 21.0285, ""longitude"": 105.8542}{""country"": ""VN"", ""latitude"": 21.0285, ""longitude"": 105.8542}"
+mistralai/mistral-small-2603,no-CoT,68.4464,14.9986,6336.627,NO,True,,stop,0.0001365,786,31,0,7.73,"{""country"": ""NO"", ""latitude"": 68.4464, ""longitude"": 14.9986}"
+x-ai/grok-4.3,CoT,-26.15,28.05,8366.029,ZA,True,,stop,0.0025081,788,663,580,13.18,"{""reasoning"": ""Bus rear text 'BE ALERT DON'T BE A VICTIM OF CRIME' + 'METRO POLICE' is a standard South African metro police slogan; left-side driving, white SA-style rear plate, corrugated-roof architecture, vegetation and utility poles match Gauteng province."", ""country"": ""ZA"", ""latitude"": -26.15, ""longitude"": 28.05}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9342.897,,True,True,,,,,,19.55,
+xiaomi/mimo-v2.5,CoT,13.695,-89.214,15406.038,SV,True,,stop,0.0005732776,899,1692,1584,17.91,"{
+  ""reasoning"": ""The rear of the bus explicitly displays the text 'EL SALVADOR TRUCKING, LTD.' along with a phone number, confirming the location is in El Salvador. The tropical vegetation, mountainous terrain, and yellow license plate on the bus are consistent with major highways in the country, likely near the San Salvador metropolitan area."",
+  ""country"": ""SV"",
+  ""latitude"": 13.695,
+  ""longitude"": -89.214
+}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,12.8,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,3.25,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.73,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.2,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.17,

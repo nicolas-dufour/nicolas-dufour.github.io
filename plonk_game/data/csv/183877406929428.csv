@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,39.684576904915,2.9460914011009,0.0,ES,True,,,,,,,,"Costitx, Illes Balears, Balearic Islands, ES"
+google/gemini-3.5-flash,no-CoT (effort=minimal),39.685412,2.912451,2.88,ES,True,,stop,0.0021255,1189,38,0,8.12,"```json
+{""country"": ""ES"", ""latitude"": 39.685412, ""longitude"": 2.912451}
+```"
+google/gemini-3.5-flash,CoT (effort=high),39.6512,2.9543,3.777,ES,True,,stop,0.0072345,1271,592,523,13.69,"{""reasoning"": ""The dry stone wall, Mediterranean pine trees, flat terrain with distant mountains, and high-quality road markings are highly characteristic of the Balearic Islands, specifically Mallorca, Spain."", ""country"": ""ES"", ""latitude"": 39.6512, ""longitude"": 2.9543}"
+google/gemini-3.5-flash,CoT (effort=medium),39.6812,3.0124,5.687,ES,True,,stop,0.0054525,1271,394,321,4.16,"{""reasoning"": ""The dry stone wall (pared seca) and Aleppo pine vegetation are highly characteristic of the Balearic Islands, specifically Mallorca, Spain, with the Serra de Tramuntana mountains visible in the distance."", ""country"": ""ES"", ""latitude"": 39.6812, ""longitude"": 3.0124}"
+google/gemini-3.5-flash,CoT (effort=low),39.6455,3.0124,7.148,ES,True,,stop,0.0040935,1271,243,181,9.97,"{""reasoning"": ""The dry stone wall, Mediterranean pine trees, flat landscape with distant mountains, and Spanish road markings strongly indicate the island of Mallorca, Spain."", ""country"": ""ES"", ""latitude"": 39.6455, ""longitude"": 3.0124}"
+moonshotai/kimi-k2.6,CoT,39.72,3.02,7.449,ES,True,,stop,0.006989868,682,1972,1904,109.45,"{""reasoning"": ""The dry stone wall construction, Mediterranean scrub and pine vegetation, flat rural road with distant mountain range, and European road markings are characteristic of Mallorca in Spain's Balearic Islands."", ""country"": ""ES"", ""latitude"": 39.7200, ""longitude"": 3.0200}"
+google/gemini-3.1-pro-preview,CoT,39.65,3.05,9.689,ES,True,,stop,0.006094,1271,296,211,5.44,"{
+  ""reasoning"": ""The dry stone walls, Mediterranean pine trees, and distant mountains are highly characteristic of the island of Mallorca, Spain. The road markings and overall landscape fit the central plain of the island looking towards the Serra de Tramuntana."",
+  ""country"": ""ES"",
+  ""latitude"": 39.65,
+  ""longitude"": 3.05
+}"
+google/gemini-3.1-pro-preview,no-CoT,39.65,3.05,9.689,ES,True,,stop,0.004538,1189,180,150,10.0,"```json
+{""country"": ""ES"", ""latitude"": 39.65, ""longitude"": 3.05}
+```"
+openai/gpt-5.5,CoT,39.7935,3.0187,13.61,ES,True,,stop,0.018645,621,518,421,22.18,"{""reasoning"":""The dry Mediterranean landscape, limestone dry-stone walls, Aleppo pines, right-hand driving, and European-style road markings strongly suggest rural Mallorca in Spain, with the Serra de Tramuntana visible in the distance. This looks like a minor road on the Mallorcan plain near the foothills north of Inca/Sa Pobla."",""country"":""ES"",""latitude"":39.7935,""longitude"":3.0187}"
+anthropic/claude-opus-4.8,CoT,39.65,3.1,13.723,ES,True,,stop,0.006285,797,92,0,3.41,"{""reasoning"": ""Dry stone walls, Mediterranean pines, mountains in distance and arid scrub suggest Mallorca, Spain; right-hand driving with European road markings."", ""country"": ""ES"", ""latitude"": 39.65, ""longitude"": 3.1}"
+anthropic/claude-opus-4.8,no-CoT,39.6,3.1,16.19,ES,True,,stop,0.00408,666,30,0,2.57,"{""country"": ""ES"", ""latitude"": 39.6, ""longitude"": 3.1}"
+minimax/minimax-m3,CoT,39.55,3.02,16.248,ES,True,,stop,0.00084066,843,541,456,25.4,"{""reasoning"": ""The distinctive dry stone walls (margers) lining the road, Mediterranean scrubland with Aleppo pines, right-hand traffic with Spanish-style road markings, and flat agricultural plain with mountains in the distance are all highly characteristic of the interior of Mallorca in the Balearic Islands, Spain."", ""country"": ""ES"", ""latitude"": 39.55, ""longitude"": 3.02}"
+x-ai/grok-4.3,no-CoT,39.85,3.12,23.649,ES,True,,stop,0.0005934,592,22,0,0.76,"{""country"": ""ES"", ""latitude"": 39.85, ""longitude"": 3.12}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,39.716712951660156,2.648925542831421,25.673,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,39.45,2.95,26.086,ES,True,,stop,8.00576e-05,708,26,0,9.1,"{""country"": ""ES"", ""latitude"": 39.45, ""longitude"": 2.95}"
+qwen/qwen3.5-35b-a3b,no-CoT,39.5696,2.6502,28.384,ES,True,,stop,0.00015679,473,30,0,11.93,"{""country"": ""ES"", ""latitude"": 39.5696, ""longitude"": 2.6502}"
+mistralai/mistral-medium-3-5,no-CoT,39.5667,2.65,28.546,ES,True,,stop,0.001161,634,28,0,0.94,"{""country"": ""ES"", ""latitude"": 39.5667, ""longitude"": 2.65}"
+qwen/qwen3.6-35b-a3b,no-CoT,39.4699,2.43,50.262,ES,True,,stop,0.0001428,474,30,0,2.1,"{""country"": ""ES"", ""latitude"": 39.4699, ""longitude"": 2.4300}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.84130096435547,1.3263553380966187,168.037,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.838863372802734,1.308074951171875,169.497,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,39.648773193359375,0.7606246471405029,187.102,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,39.8742,0.5631,204.721,ES,True,,stop,0.00019251,473,30,0,10.83,"{""country"": ""ES"", ""latitude"": 39.8742, ""longitude"": 0.5631}"
+qwen/qwen3.6-27b,no-CoT,39.4699,0.3763,221.527,ES,True,,stop,0.0001923,473,30,0,8.05,"{""country"": ""ES"", ""latitude"": 39.4699, ""longitude"": 0.3763}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,40.41975402832031,0.4874338209629059,224.659,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.27138900756836,8.666993141174316,514.92,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,38.5245,-2.8567,516.947,ES,True,,stop,5.19e-05,474,30,0,3.19,"{""country"": ""ES"", ""latitude"": 38.5245, ""longitude"": -2.8567}"
+google/gemma-4-31b-it,no-CoT,43.25,16.45,1191.324,HR,True,,stop,6.558e-05,406,32,0,9.7,"```json
+{""country"": ""HR"", ""latitude"": 43.25, ""longitude"": 16.45}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,37.85,22.45,1699.805,GR,True,,stop,0.000381,473,27,0,4.49,"{""country"": ""GR"", ""latitude"": 37.85, ""longitude"": 22.45}"
+google/gemma-4-26b-a4b-it,no-CoT,38.385,23.925,1813.6,,True,,stop,5.414e-05,406,29,0,7.36,"{""country"": "" own, ""latitude"": 38.385, ""longitude"": 23.925}"
+xiaomi/mimo-v2.5,CoT,35.421,24.513,1954.174,GR,True,,stop,0.0009386776,787,3053,2944,34.92,"{""reasoning"": ""The road features double solid white center lines and solid edge lines, which are standard road markings in Greece. The landscape is characterized by Mediterranean vegetation, specifically pine trees, and rugged limestone mountains in the distance, while the dry-stone wall (xerolithia) on the right is a distinctive cultural marker of the region, strongly suggesting the island of Crete."", ""country"": ""GR"", ""latitude"": 35.421, ""longitude"": 24.513}"
+x-ai/grok-4.3,CoT,35.24,24.65,1972.916,GR,True,,stop,0.001914,676,562,494,11.3,"{
+  ""reasoning"": ""Mediterranean scrub/olive trees, dry-stone wall, arid hills and right-hand traffic road markings point to southern Europe; straight empty asphalt with distant mountains matches rural Crete."",
+  ""country"": ""GR"",
+  ""latitude"": 35.24,
+  ""longitude"": 24.65
+}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.2417,24.8093,1986.362,GR,True,,stop,0.00018772,474,31,0,13.85,"{""country"": ""GR"", ""latitude"": 35.2417, ""longitude"": 24.8093}"
+openai/gpt-5.5,no-CoT,34.8756,33.3912,2732.493,CY,True,,stop,0.00341,544,23,0,7.5,"{""country"":""CY"",""latitude"":34.8756,""longitude"":33.3912}"
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,8555.244,US,True,,stop,0.0001143,634,32,0,1.7,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.43,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.51,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.08,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.2,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.37,

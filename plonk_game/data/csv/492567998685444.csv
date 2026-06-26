@@ -1,0 +1,78 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,46.23300410758,0.95858115844169,0.0,FR,True,,,,,,,,"Bussiere-Poitevine, Departement de la Haute-Vienne, Limousin, FR"
+anthropic/claude-opus-4.8,CoT,46.5,1.5,51.061,FR,True,,stop,0.00586,797,75,0,2.87,"{""reasoning"": ""White roadside marker posts, dashed center line, deciduous winter forest and right-hand driving suggest rural France."", ""country"": ""FR"", ""latitude"": 46.5, ""longitude"": 1.5}"
+minimax/minimax-m3,CoT,45.85,1.45,57.03,FR,True,,stop,0.00072822,845,444,447,9.11,"{""reasoning"": ""The road has the distinctive solid white edge lines and white delineator posts (balises) characteristic of French rural routes départementales. The deciduous forest with abundant ivy, gentle terrain, and right-hand traffic confirm a central/western France location."", ""country"": ""FR"", ""latitude"": 45.85, ""longitude"": 1.45}{""reasoning"": ""The road has the distinctive solid white edge lines and white delineator posts (balises) characteristic of French rural routes départementales. The deciduous forest with abundant ivy, gentle terrain, and right-hand traffic confirm a central/western France location."", ""country"": ""FR"", ""latitude"": 45.85, ""longitude"": 1.45}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),45.8124,1.4231,58.938,FR,True,,stop,0.002091,1190,34,0,1.32,"```json
+{""country"": ""FR"", ""latitude"": 45.8124, ""longitude"": 1.4231}
+```"
+anthropic/claude-opus-4.8,no-CoT,45.8,1.5,63.766,FR,True,,stop,0.00408,666,30,0,2.74,"{""country"": ""FR"", ""latitude"": 45.8, ""longitude"": 1.5}"
+google/gemini-3.1-pro-preview,no-CoT,45.8,1.5,63.766,FR,True,,stop,0.004732,1190,196,168,3.32,"```json
+{""country"": ""FR"", ""latitude"": 45.8, ""longitude"": 1.5}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,45.667335510253906,1.6828644275665283,84.213,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,45.67026138305664,1.6975840330123901,84.732,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.54817581176758,1.6218010187149048,91.833,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,47.0,2.0,116.619,FR,True,,stop,0.00051219,602,23,0,2.65,"{""country"": ""FR"", ""latitude"": 47.0, ""longitude"": 2.0}"
+google/gemini-3.5-flash,CoT (effort=low),46.5,2.5,121.939,FR,True,,stop,0.0038865,1271,220,161,10.37,"{""reasoning"": ""The road markings with dashed outer lines and a solid center line, combined with the specific style of white plastic delineator posts, are characteristic of rural France."", ""country"": ""FR"", ""latitude"": 46.5, ""longitude"": 2.5}"
+google/gemini-3.1-pro-preview,CoT,45.8,2.5,128.394,FR,True,,stop,0.005196,1272,221,150,3.89,"{
+  ""reasoning"": ""The dashed white edge lines and white bollards with a red band are characteristic of French roads. The temperate deciduous forest suggests a rural area in central or northern France."",
+  ""country"": ""FR"",
+  ""latitude"": 45.8,
+  ""longitude"": 2.5
+}"
+moonshotai/kimi-k2.6,CoT,46.8,2.5,133.736,FR,True,,stop,0.012915828,682,3709,3639,91.99,"{""reasoning"": ""Short dashed shoulder markings paired with a solid center line, white roadside delineator posts, and a bare deciduous forest canopy are hallmarks of French rural routes départementales in the temperate central regions."", ""country"": ""FR"", ""latitude"": 46.8, ""longitude"": 2.5}"
+google/gemini-3.5-flash,CoT (effort=medium),47.5124,1.4567,147.214,FR,True,,stop,0.0062805,1271,486,398,14.2,"{""reasoning"": ""The road markings with dashed white edge lines and a solid white center line, combined with the white delineator posts with red bands, are highly characteristic of French departmental roads. The temperate deciduous forest and flat-to-rolling terrain suggest a location in central or western France."", ""country"": ""FR"", ""latitude"": 47.5124, ""longitude"": 1.4567}"
+minimax/minimax-m3,no-CoT,45.5,3.2,191.727,FR,True,,stop,0.00019452,754,22,0,11.28,"{""country"": ""FR"", ""latitude"": 45.5, ""longitude"": 3.2}"
+google/gemini-3.5-flash,CoT (effort=high),48.25,0.2,231.472,FR,True,,stop,0.0092415,1271,815,749,7.68,"```json
+{""reasoning"": ""The road markings with dashed outer edge lines and a solid center line, combined with the deciduous forest and white delineator posts, are highly characteristic of rural France."", ""country"": ""FR"", ""latitude"": 48.25, ""longitude"": 0.2}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,48.446590423583984,2.460631847381592,270.9,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,48.4430046081543,2.5746302604675293,274.242,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,48.5,-1.5,312.739,FR,True,,stop,0.001131,634,24,0,0.88,"{""country"": ""FR"", ""latitude"": 48.5, ""longitude"": -1.5}"
+google/gemma-4-31b-it,no-CoT,48.4284,-2.3388,348.287,FR,True,,stop,6.338e-05,406,35,0,10.35,"```json
+{""country"": ""FR"", ""latitude"": 48.4284, ""longitude"": -2.3388}
+```"
+xiaomi/mimo-v2.5,CoT,49.25,2.65,358.5,FR,True,,stop,0.0004660376,787,1365,1269,19.11,"{
+""reasoning"": ""The road features distinctive French roadside delineators (balises B19) characterized by a white body with a black base and a red reflector on the right side. The driving side is right, and the road markings and vegetation are consistent with a departmental road in a wooded area of Northern France."",
+""country"": ""FR"",
+""latitude"": 49.25,
+""longitude"": 2.65
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,49.16851043701172,3.4407410621643066,375.515,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,48.5234,-3.4587,418.798,FR,True,,stop,0.00344,544,24,0,2.14,"{""country"":""FR"",""latitude"":48.5234,""longitude"":-3.4587}"
+openai/gpt-5.5,CoT,48.3597,-3.7462,426.266,FR,True,,stop,0.016095,621,433,349,10.57,"{""reasoning"":""The road uses right-hand traffic with French-style white lane/edge markings and roadside delineator posts, in a damp temperate deciduous woodland typical of rural western France. The narrow departmental-road feel and vegetation suggest Brittany/Normandy, with a best guess in rural Brittany."",""country"":""FR"",""latitude"":48.3597,""longitude"":-3.7462}"
+qwen/qwen3.5-27b,no-CoT,51.5074,-0.1278,591.825,GB,True,,stop,0.0002139,473,30,0,1.68,"{""country"": ""GB"", ""latitude"": 51.5074, ""longitude"": -0.1278}"
+qwen/qwen3.6-27b,no-CoT,51.5074,-0.1278,591.825,GB,True,,stop,0.0001923,473,30,0,11.78,"{""country"": ""GB"", ""latitude"": 51.5074, ""longitude"": -0.1278}"
+x-ai/grok-4.3,CoT,50.85,-3.55,611.078,GB,True,,stop,0.002634,676,850,779,11.86,"{""reasoning"": ""UK/Ireland rural road with white edge-of-carriageway lines, dashed centre line, and white reflector posts on right verge; bare deciduous trees + ivy + overcast winter light indicate temperate left-hand-traffic country."", ""country"": ""GB"", ""latitude"": 50.85, ""longitude"": -3.55}"
+x-ai/grok-4.3,no-CoT,50.85,-3.95,627.507,GB,True,,stop,0.0005934,592,22,0,0.8,"{""country"": ""GB"", ""latitude"": 50.85, ""longitude"": -3.95}"
+xiaomi/mimo-v2.5,no-CoT,50.15,8.65,716.865,DE,True,,stop,8.00576e-05,708,26,0,2.56,"{""country"": ""DE"", ""latitude"": 50.15, ""longitude"": 8.65}"
+qwen/qwen3.5-397b-a17b,CoT,53.3512,-1.8945,817.4,GB,True,,stop,0.0132151,553,3726,3491,267.55,"{
+""reasoning"": ""The image shows a rural road with left-hand traffic orientation, indicated by the camera position in the left lane and the solid white center line. The white delineator posts on the roadside verge and the specific style of road markings (solid white edge and center lines) are highly characteristic of the United Kingdom, supported by the temperate deciduous woodland (leafless trees, ivy) typical of a British winter."",
+""country"": ""GB"",
+""latitude"": 53.3512,
+""longitude"": -1.8945
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,53.3498,-6.2603,944.864,IE,True,,stop,0.00010095,473,30,0,3.03,"{""country"": ""IE"", ""latitude"": 53.3498, ""longitude"": -6.2603}"
+qwen/qwen3.5-9b,no-CoT,52.1389,-8.4617,947.264,IE,True,,stop,5.19e-05,474,30,0,5.2,"{""country"": ""IE"", ""latitude"": 52.1389, ""longitude"": -8.4617}"
+qwen/qwen3.6-35b-a3b,CoT,54.5,-2.5,951.116,GB,True,,stop,0.00249795,553,2415,2164,34.06,"```json
+{
+    ""reasoning"": ""The image shows a left-hand traffic road with standard UK road markings (solid white center line, dashed white edge lines) and white delineator posts on the outside of the curve, which are characteristic of British rural roads. The vegetation, including ivy-covered trees and bare deciduous trees under an overcast sky, is typical of the British countryside."",
+    ""country"": ""GB"",
+    ""latitude"": 54.5,
+    ""longitude"": -2.5
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,53.1456,-7.8923,996.585,IE,True,,stop,0.00036108,473,30,0,9.84,"{""country"": ""IE"", ""latitude"": 53.1456, ""longitude"": -7.8923}"
+qwen/qwen3.5-35b-a3b,no-CoT,53.1234,-8.5678,1026.305,IE,True,,stop,0.00010095,473,30,0,8.67,"{""country"": ""IE"", ""latitude"": 53.1234, ""longitude"": -8.5678}"
+qwen/qwen3.5-122b-a10b,no-CoT,53.2744,-9.0543,1061.284,IE,True,,stop,0.00020202,473,38,0,8.19,"{
+  ""country"": ""IE"",
+  ""latitude"": 53.2744,
+  ""longitude"": -9.0543
+}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5141.729,,True,True,,,,,,16.29,
+mistralai/mistral-small-2603,no-CoT,37.751,-77.542,6288.419,US,True,,stop,0.0001125,634,29,0,10.58,"{""country"": ""US"", ""latitude"": 37.751, ""longitude"": -77.542}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.28,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.19,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.5,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.13,

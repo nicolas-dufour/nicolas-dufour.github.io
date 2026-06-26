@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.895636995946,58.316788236669,0.0,TM,True,,,,,,,,"Ashgabat, None, Ahal, TM"
+anthropic/claude-opus-4.8,no-CoT,37.9265,58.3261,3.528,TM,True,,stop,0.00489,818,32,0,2.23,"{""country"": ""TM"", ""latitude"": 37.9265, ""longitude"": 58.3261}"
+google/gemini-3.5-flash,CoT (effort=low),37.8885,58.3792,5.534,TM,True,,stop,0.0039495,1307,221,154,3.65,"{""reasoning"": ""The grandiose white marble architecture, turquoise-domed government buildings, and highly ornate white streetlights are characteristic of Archabil Avenue in Ashgabat, Turkmenistan."", ""country"": ""TM"", ""latitude"": 37.8885, ""longitude"": 58.3792}"
+google/gemini-3.5-flash,CoT (effort=medium),37.8862,58.3814,5.766,TM,True,,stop,0.0158385,1307,1542,1474,11.76,"{""reasoning"": ""The extremely wide avenue lined with white marble buildings, manicured lawns, and highly ornate white streetlights is characteristic of Archabil Avenue in Ashgabat, Turkmenistan."", ""country"": ""TM"", ""latitude"": 37.8862, ""longitude"": 58.3814}"
+moonshotai/kimi-k2.6,CoT,37.95,58.32,6.051,TM,True,,stop,0.006887916,834,1938,1876,55.59,"{""reasoning"": ""The ultra-wide marble boulevard, ornate white street lamps, and distinctive public buildings with multiple turquoise domes are hallmark features of Ashgabat, Turkmenistan."", ""country"": ""TM"", ""latitude"": 37.95, ""longitude"": 58.32}"
+google/gemini-3.5-flash,CoT (effort=high),37.8872,58.3875,6.276,TM,True,,stop,0.0183045,1307,1816,1719,19.12,"```json
+{""reasoning"": ""The image shows the distinctive white marble architecture, ornate streetlights, and manicured landscaping of Ashgabat, Turkmenistan. The large building with the turquoise dome on the right is the Maslahat Köşgi (Palace of Congresses) on Archabil Avenue, looking west."", ""country"": ""TM"", ""latitude"": 37.8872, ""longitude"": 58.3875}
+```"
+x-ai/grok-4.3,CoT,37.935,58.372,6.528,TM,True,,stop,0.0022415,788,637,553,5.47,"{""reasoning"": ""Distinctive skeletal white streetlights, wide empty boulevard, and white buildings with turquoise domes match Ashgabat's planned architecture and highways (e.g., near the Presidential Palace or Ruhyýet Palace). Right-hand drive, arid landscaping, and overcast steppe sky confirm Turkmenistan."", ""country"": ""TM"", ""latitude"": 37.935, ""longitude"": 58.372}"
+x-ai/grok-4.3,no-CoT,37.932,58.378,6.722,TM,True,,stop,0.0007334,704,22,0,2.14,"{""country"": ""TM"", ""latitude"": 37.932, ""longitude"": 58.378}"
+minimax/minimax-m3,CoT,37.93,58.38,6.734,TM,True,,stop,0.00097026,995,611,518,28.07,"{""reasoning"": ""The distinctive ornate starburst-shaped white street lamps, monumental white/neoclassical buildings with turquoise domes, extremely wide empty boulevard, and right-hand traffic are hallmarks of Ashgabat, Turkmenistan. The building style with green domes and the grand scale match Ashgabat's government quarter architecture along its main avenues."", ""country"": ""TM"", ""latitude"": 37.93, ""longitude"": 58.38}"
+openai/gpt-5.5,CoT,37.9268,58.3842,6.854,TM,True,,stop,0.015565,755,393,303,17.43,"{""reasoning"":""The immaculate multi-lane boulevard, ornate white streetlights, white-marble monumental buildings with turquoise domes, and arid planned-city landscaping are highly characteristic of Ashgabat, Turkmenistan. The scene most likely lies on one of the central government boulevards in the white-marble administrative district."",""country"":""TM"",""latitude"":37.9268,""longitude"":58.3842}"
+anthropic/claude-opus-4.8,CoT,37.9333,58.3833,7.182,TM,True,,stop,0.007045,949,92,0,3.41,"{""reasoning"": ""White marble buildings with turquoise domes, ornate decorative lampposts, wide empty boulevards—signature of Ashgabat, Turkmenistan."", ""country"": ""TM"", ""latitude"": 37.9333, ""longitude"": 58.3833}"
+google/gemini-3.1-pro-preview,CoT,37.9333,58.3833,7.182,TM,True,,stop,0.005794,1307,265,188,11.03,"{
+  ""reasoning"": ""The extensive use of white marble architecture, turquoise domes, and wide, empty boulevards with ornate streetlights are highly distinctive of Ashgabat, Turkmenistan."",
+  ""country"": ""TM"",
+  ""latitude"": 37.9333,
+  ""longitude"": 58.3833
+}"
+google/gemini-3.1-pro-preview,no-CoT,37.9333,58.3833,7.182,TM,True,,stop,0.005786,1225,278,243,4.97,"```json
+{""country"": ""TM"", ""latitude"": 37.9333, ""longitude"": 58.3833}
+```"
+openai/gpt-5.5,no-CoT,37.9404,58.3794,7.412,TM,True,,stop,0.00408,678,23,0,1.91,"{""country"":""TM"",""latitude"":37.9404,""longitude"":58.3794}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.931254,58.389412,7.502,TM,True,,stop,0.0021885,1225,39,0,45.37,"```json
+{""country"": ""TM"", ""latitude"": 37.931254, ""longitude"": 58.389412}
+```"
+minimax/minimax-m3,no-CoT,37.95,58.38,8.203,TM,True,,stop,0.00033042,919,94,88,6.74,"{""country"": ""TM"", ""latitude"": 37.95, ""longitude"": 58.38}"
+mistralai/mistral-medium-3-5,no-CoT,37.95,58.3833,8.401,TM,True,,stop,0.0014115,786,31,0,1.23,"{""country"": ""TM"", ""latitude"": 37.9500, ""longitude"": 58.3833}"
+xiaomi/mimo-v2.5,no-CoT,37.95,58.3833,8.401,TM,True,,stop,9.71376e-05,820,31,0,2.02,"{""country"": ""TM"", ""latitude"": 37.9500, ""longitude"": 58.3833}"
+google/gemma-4-26b-a4b-it,no-CoT,37.9585,58.382,9.032,,True,,stop,5.508e-05,404,32,0,1.42,"{""country"": ""TM"", ""latitude"": 37.9585 ownmuch, ""longitude"": 58.382}"
+xiaomi/mimo-v2.5,CoT,37.9584,58.3826,9.057,TM,True,,stop,0.0001476776,899,172,85,3.61,"{""reasoning"": ""The distinctive white marble architecture with green domes and the ornate white-and-gold street lamps are iconic features of Ashgabat, Turkmenistan. The wide, empty avenue layout is consistent with the city's planned boulevards."", ""country"": ""TM"", ""latitude"": 37.9584, ""longitude"": 58.3826}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,37.776119232177734,58.516693115234375,22.018,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,37.75902557373047,58.52392578125,23.701,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.759918212890625,58.56538009643555,26.541,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,41.3199,69.2401,1009.344,UZ,True,,stop,0.0004466,585,31,0,1.37,"{""country"": ""UZ"", ""latitude"": 41.3199, ""longitude"": 69.2401}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,24.451702117919922,54.46943283081055,1538.633,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,24.452274322509766,54.46597671508789,1538.648,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,24.48958396911621,54.286983489990234,1538.715,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,43.222,76.851,1669.621,KZ,True,,stop,0.0002475,585,30,0,3.83,"{""country"": ""KZ"", ""latitude"": 43.222, ""longitude"": 76.851}"
+qwen/qwen3.5-9b,no-CoT,43.2387,76.9591,1678.565,KZ,True,,stop,0.00010745,585,32,0,1.75,"{""country"": ""KZ"", ""latitude"": 43.2387, ""longitude"": 76.9591}"
+qwen/qwen3.5-27b,no-CoT,51.1694,71.4491,1800.207,KZ,True,,stop,0.0002365,586,45,0,2.95,"```json
+{
+  ""country"": ""KZ"",
+  ""latitude"": 51.1694,
+  ""longitude"": 71.4491
+}
+```"
+qwen/qwen3.6-27b,no-CoT,51.1694,71.4491,1800.207,KZ,True,,stop,0.0002299,585,32,0,19.23,"{""country"": ""KZ"", ""latitude"": 51.1694, ""longitude"": 71.4491}"
+qwen/qwen3.6-35b-a3b,no-CoT,51.1694,71.4491,1800.207,KZ,True,,stop,0.00011975,585,32,0,16.09,"{""country"": ""KZ"", ""latitude"": 51.1694, ""longitude"": 71.4491}"
+qwen/qwen3.5-35b-a3b,no-CoT,51.1605,71.4704,1800.405,KZ,True,,stop,0.00018625,585,32,0,0.81,"{""country"": ""KZ"", ""latitude"": 51.1605, ""longitude"": 71.4704}"
+google/gemma-4-31b-it,no-CoT,69.915,71.435,3644.484,KZ,True,,stop,0.00010835,404,33,0,8.85,"```json
+{""country"": ""KZ"", ""latitude"": 69.915, ""longitude"": 71.435}
+```"
+mistralai/mistral-small-2603,no-CoT,38.8895,-77.0352,10334.906,US,True,,stop,0.0001365,786,31,0,3.09,"{""country"": ""US"", ""latitude"": 38.8895, ""longitude"": -77.0352}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.54,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,9.32,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,3.13,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.22,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.69,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.12,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.11,

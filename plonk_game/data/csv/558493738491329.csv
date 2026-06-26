@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,65.615395758164,-37.630223213918,0.0,GL,True,,,,,,,,"Tasiilaq, None, Sermersooq, GL"
+google/gemini-3.5-flash,no-CoT (effort=minimal),65.6135,-37.6342,0.279,GL,True,,stop,0.0021,1190,35,0,7.22,"```json
+{""country"": ""GL"", ""latitude"": 65.6135, ""longitude"": -37.6342}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),65.6145,-37.6362,0.292,GL,True,,stop,0.0077385,1271,648,577,6.92,"{""reasoning"": ""The colorful wooden houses on stilts, snowy hilly terrain, and overcast sky are characteristic of Greenlandic settlements, particularly Tasiilaq, which has extensive winter Street View coverage."", ""country"": ""GL"", ""latitude"": 65.6145, ""longitude"": -37.6362}"
+google/gemini-3.5-flash,CoT (effort=high),65.6145,-37.6362,0.292,GL,True,,stop,0.0070995,1271,577,511,6.09,"{""reasoning"": ""The colorful wooden houses on stilts, steep snowy terrain, and overcast Arctic sky are highly characteristic of Greenland, specifically the town of Tasiilaq."", ""country"": ""GL"", ""latitude"": 65.6145, ""longitude"": -37.6362}"
+anthropic/claude-opus-4.8,CoT,65.6145,-37.6368,0.318,GL,True,,stop,0.00616,797,87,0,3.2,"{""reasoning"": ""Colorful wooden houses in snowy arctic village with rugged terrain and overcast sky strongly indicate a Greenlandic settlement."", ""country"": ""GL"", ""latitude"": 65.6145, ""longitude"": -37.6368}"
+google/gemini-3.5-flash,CoT (effort=low),65.6145,-37.6368,0.318,GL,True,,stop,0.003816,1272,212,148,9.2,"{""reasoning"": ""The colorful wooden houses on steep, snowy slopes and the specific style of streetlights are characteristic of Greenlandic towns, particularly Tasiilaq."", ""country"": ""GL"", ""latitude"": 65.6145, ""longitude"": -37.6368}"
+anthropic/claude-opus-4.8,no-CoT,65.6145,-37.6368,0.318,GL,True,,stop,0.00413,666,32,0,8.66,"{""country"": ""GL"", ""latitude"": 65.6145, ""longitude"": -37.6368}"
+openai/gpt-5.5,CoT,65.6126,-37.6359,0.406,GL,True,,stop,0.014865,621,392,315,10.84,"{""reasoning"":""Colorful wooden houses on stilts, treeless Arctic terrain, deep snow, and steep fjord-side settlement layout are characteristic of Greenlandic towns. The mountainous backdrop and road layout most closely match Tasiilaq on Greenland’s east coast."",""country"":""GL"",""latitude"":65.6126,""longitude"":-37.6359}"
+moonshotai/kimi-k2.6,CoT,65.6135,-37.6379,0.411,GL,True,,stop,0.007628,680,1785,2015,66.01,"{""reasoning"": ""Colorful wooden houses on stilts scattered across a snow-covered, treeless hillside are characteristic of Greenlandic settlements, with the architecture and climate matching East Coast villages like Tasiilaq."", ""country"": ""GL"", ""latitude"": 65.6135, ""longitude"": -37.6379}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,69.27995300292969,-44.577308654785156,503.163,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,61.751,-46.636,616.783,GL,True,,stop,5.175e-05,474,29,0,5.33,"{""country"": ""GL"", ""latitude"": 61.751, ""longitude"": -46.636}"
+moonshotai/kimi-k2.6,no-CoT,64.1814,-51.6941,680.734,GL,True,,stop,0.000270072,603,25,0,1.81,"{""country"": ""GL"", ""latitude"": 64.1814, ""longitude"": -51.6941}"
+qwen/qwen3.5-35b-a3b,no-CoT,64.1814,-51.6941,680.734,GL,True,,stop,0.00016956,474,31,0,2.49,"{""country"": ""GL"", ""latitude"": 64.1814, ""longitude"": -51.6941}"
+qwen/qwen3.6-27b,no-CoT,64.1814,-51.6941,680.734,GL,True,,stop,0.0001943,473,31,0,20.45,"{""country"": ""GL"", ""latitude"": 64.1814, ""longitude"": -51.6941}"
+qwen/qwen3.6-35b-a3b,CoT,64.175,-51.708,681.609,GL,True,,stop,0.00842407735,553,8635,8522,233.83,"```json
+{
+    ""reasoning"": ""The distinctive colorful wooden houses built on a hillside (red, blue, green) and the long teal building on the right (Nuuk Central School) identify this as Katersugaasivia street in Nuuk, Greenland. The overcast, snowy environment and right-hand traffic are consistent with this location."",
+    ""country"": ""GL"",
+    ""latitude"": 64.175,
+    ""longitude"": -51.708
+}
+```"
+qwen/qwen3.5-27b,no-CoT,64.1836,-51.7214,681.895,GL,True,,stop,0.00021684,474,36,0,0.92,"```json
+{""country"": ""GL"", ""latitude"": 64.1836, ""longitude"": -51.7214}
+```"
+google/gemma-4-31b-it,no-CoT,64.183,-51.722,681.945,GL,True,,stop,6.298e-05,406,34,0,5.21,"```json
+{""country"": ""GL"", ""latitude"": 64.183, ""longitude"": -51.722}
+```"
+google/gemini-3.1-pro-preview,CoT,64.1814,-51.7235,682.074,GL,True,,stop,0.006406,1271,322,235,6.23,"{
+  ""reasoning"": ""The brightly colored wooden houses on a snowy, rocky slope are highly characteristic of settlements in Greenland. The architectural style and harsh winter environment strongly point to a Greenlandic town such as Nuuk or Sisimiut."",
+  ""country"": ""GL"",
+  ""latitude"": 64.1814,
+  ""longitude"": -51.7235
+}"
+qwen/qwen3.5-397b-a17b,CoT,64.179,-51.726,682.278,GL,True,,stop,0.0137118,553,3730,3639,143.26,"{""reasoning"": ""The image displays colorful wooden houses (blue, red, green) on a steep, snowy hillside, a distinctive architectural style characteristic of Nuuk, Greenland. The unpaved snow road, street lamp style, and driving on the right side further confirm this Arctic location."", ""country"": ""GL"", ""latitude"": 64.179, ""longitude"": -51.726}"
+x-ai/grok-4.3,no-CoT,64.175,-51.733,682.748,GL,True,,stop,0.0005934,592,22,0,0.95,"{""country"": ""GL"", ""latitude"": 64.175, ""longitude"": -51.733}"
+minimax/minimax-m3,CoT,64.18,-51.74,682.878,GL,True,,stop,0.00047022,845,229,190,11.86,"{""reasoning"": ""Colorful wooden houses on stilts with bright paint (red, blue, green, yellow) on a snowy hillside are highly characteristic of Nuuk, Greenland. The Arctic snowy environment, mountainous backdrop, and traditional Greenlandic architectural style confirm the location."", ""country"": ""GL"", ""latitude"": 64.18, ""longitude"": -51.74}"
+qwen/qwen3.5-122b-a10b,no-CoT,64.175,-51.738,682.976,GL,True,,stop,0.0002002,474,37,0,7.79,"{
+  ""country"": ""GL"",
+  ""latitude"": 64.175,
+  ""longitude"": -51.738
+}"
+xiaomi/mimo-v2.5,no-CoT,60.7167,-46.0333,687.735,GL,True,,stop,8.14576e-05,708,31,0,8.11,"{""country"": ""GL"", ""latitude"": 60.7167, ""longitude"": -46.0333}"
+x-ai/grok-4.3,CoT,69.219,-51.059,697.215,GL,True,,stop,0.0022215,676,685,616,6.63,"{""reasoning"": ""Brightly painted wooden houses (red/blue/green) on steep snowy slopes with high drifts, Arctic overcast lighting and isolated settlement layout are diagnostic of Greenland; left-side driving and vehicle perspective consistent with GL roads."", ""country"": ""GL"", ""latitude"": 69.219, ""longitude"": -51.059}"
+minimax/minimax-m3,no-CoT,69.2167,-51.1,698.514,GL,True,,stop,0.00019692,754,24,0,4.19,"{""country"": ""GL"", ""latitude"": 69.2167, ""longitude"": -51.1000}"
+openai/gpt-5.5,no-CoT,69.2198,-51.0986,698.63,GL,True,,stop,0.00344,544,24,0,1.49,"{""country"":""GL"",""latitude"":69.2198,""longitude"":-51.0986}"
+qwen/qwen3.6-35b-a3b,no-CoT,69.2269,-51.0966,698.938,GL,True,,stop,0.0001444,474,31,0,2.59,"{""country"": ""GL"", ""latitude"": 69.2269, ""longitude"": -51.0966}"
+google/gemini-3.1-pro-preview,no-CoT,66.9398,-53.6732,730.442,GL,True,,stop,0.004046,1189,139,104,10.16,"```json
+{""country"": ""GL"", ""latitude"": 66.9398, ""longitude"": -53.6732}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,66.9497,-53.6742,730.566,GL,True,,stop,0.00036468,473,31,0,2.39,"{""country"": ""GL"", ""latitude"": 66.9497, ""longitude"": -53.6742}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,66.49503326416016,-54.177696228027344,750.883,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,66.42143249511719,-54.31285858154297,756.962,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,72.475,-38.5,763.517,GL,True,,stop,0.0011535,634,27,0,1.13,"{""country"": ""GL"", ""latitude"": 72.475, ""longitude"": -38.5}"
+xiaomi/mimo-v2.5,CoT,72.7882,-56.1526,1073.196,GL,True,,stop,0.0006191976,787,1912,1824,20.51,"{""reasoning"": ""The colorful wooden houses on stilts, steep snowy terrain, and Arctic architecture are characteristic of Greenlandic settlements like Upernavik. The green building with 'POST' signage is a central landmark in Upernavik, confirming the specific location."", ""country"": ""GL"", ""latitude"": 72.7882, ""longitude"": -56.1526}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,77.2848129272461,10.411947250366211,2039.148,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,77.44255065917969,10.27165412902832,2039.749,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,75.63993072509766,11.74728775024414,2043.387,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,69.6492,18.9553,2345.187,NO,True,,stop,0.0001137,634,31,0,1.78,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7885.381,,True,True,,,,,,15.84,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.18,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,

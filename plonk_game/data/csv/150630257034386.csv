@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,14.160219915612,99.498796747649,0.0,TH,True,,,,,,,,"Kanchanaburi, None, Kanchanaburi, TH"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,14.172751426696777,99.41281127929688,9.375,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,14.06492805480957,99.32581329345703,21.454,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,14.064712524414062,99.3258285522461,21.464,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,14.5,100.5,114.29,TH,True,,stop,0.00051219,602,23,0,11.26,"{""country"": ""TH"", ""latitude"": 14.5, ""longitude"": 100.5}"
+xiaomi/mimo-v2.5,no-CoT,14.5,100.5,114.29,TH,True,,stop,8.00576e-05,708,26,0,2.73,"{""country"": ""TH"", ""latitude"": 14.5, ""longitude"": 100.5}"
+mistralai/mistral-medium-3-5,no-CoT,13.7563,100.5018,117.184,TH,True,,stop,0.001191,634,32,0,7.21,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-35b-a3b,no-CoT,14.3521,100.5689,117.283,TH,True,,stop,0.00010295,473,32,0,1.87,"{""country"": ""TH"", ""latitude"": 14.3521, ""longitude"": 100.5689}"
+xiaomi/mimo-v2.5,CoT,14.72,100.55,129.18,TH,True,,stop,0.0001734376,787,320,241,63.43,"{""reasoning"": ""Vehicles drive on the left side of the road, rural tropical dry-season vegetation, and concrete utility poles are key clues that align with rural Thailand. The landscape matches the dry, open rural highway typical of central Thailand."", ""country"": ""TH"", ""latitude"": 14.72, ""longitude"": 100.55}"
+google/gemma-4-31b-it,no-CoT,14.5,101.0,166.086,TH,True,,stop,6.518e-05,406,31,0,2.66,"```json
+{""country"": ""TH"", ""latitude"": 14.5, ""longitude"": 101.0}
+```"
+openai/gpt-5.5,no-CoT,14.6021,100.9937,168.346,TH,True,,stop,0.00341,544,23,0,1.55,"{""country"":""TH"",""latitude"":14.6021,""longitude"":100.9937}"
+openai/gpt-5.5,CoT,14.8734,100.9736,177.458,TH,True,,stop,0.014265,621,372,290,9.39,"{""reasoning"":""Left-side driving is indicated by the camera position relative to the centerline and shoulder, and the tropical dry vegetation, concrete utility poles, and road markings are characteristic of rural Thailand. The flat, arid landscape suggests central Thailand rather than the humid south or mountainous north."",""country"":""TH"",""latitude"":14.8734,""longitude"":100.9736}"
+minimax/minimax-m3,CoT,14.85,101.35,213.532,TH,True,,stop,0.00082746,843,530,443,22.36,"{""reasoning"": ""Right-hand traffic with dashed yellow centerline, concrete kilometer markers, wooden utility poles with triangular crossbars, reddish lateritic soil, and dry tropical deciduous forest with bare-branched trees strongly indicate rural Thailand's Isan or central plains region during the dry season (March-May)."", ""country"": ""TH"", ""latitude"": 14.85, ""longitude"": 101.35}"
+anthropic/claude-opus-4.8,CoT,14.85,101.5,228.675,TH,True,,stop,0.00626,797,91,0,11.12,"{""reasoning"": ""Dry tropical savanna vegetation, hazy dry-season sky, concrete utility poles and left-hand traffic typical of rural Thailand during burning season."", ""country"": ""TH"", ""latitude"": 14.85, ""longitude"": 101.5}"
+moonshotai/kimi-k2.6,CoT,14.85,101.95,274.792,TH,True,,stop,0.022802328,682,6602,6531,269.03,"{""reasoning"": ""Concrete transmission and distribution poles with multiple crossarms alongside paved rural highways are characteristic of Thai infrastructure, and the dry deciduous scrub forest with leafless trees matches the Khorat Plateau during the hot season."", ""country"": ""TH"", ""latitude"": 14.85, ""longitude"": 101.95}"
+anthropic/claude-opus-4.8,no-CoT,14.9799,102.0978,294.174,TH,True,,stop,0.00413,666,32,0,9.32,"{""country"": ""TH"", ""latitude"": 14.9799, ""longitude"": 102.0978}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),15.2345,102.1234,306.521,TH,True,,stop,0.0021075,1189,36,0,2.57,"```json
+{""country"": ""TH"", ""latitude"": 15.2345, ""longitude"": 102.1234}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,16.36115264892578,101.25910186767578,309.107,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,14.85,102.55,337.296,TH,True,,stop,0.0005934,592,22,0,0.93,"{""country"": ""TH"", ""latitude"": 14.85, ""longitude"": 102.55}"
+google/gemini-3.1-pro-preview,CoT,15.5,102.5,355.329,TH,True,,stop,0.005328,1272,232,156,4.21,"{
+  ""reasoning"": ""The square utility poles with holes, dashed yellow center line, and white kilometer marker are highly characteristic of Thailand. The dry vegetation suggests the central or northeastern region during the dry season."",
+  ""country"": ""TH"",
+  ""latitude"": 15.5,
+  ""longitude"": 102.5
+}"
+google/gemini-3.5-flash,CoT (effort=medium),15.2543,102.7812,373.393,TH,True,,stop,0.0063705,1271,496,420,10.88,"{""reasoning"": ""The concrete utility poles, high-voltage transmission towers, and white curved milestone on the roadside are characteristic of Thailand. The dry, flat landscape and reddish soil suggest the Isan region in northeastern Thailand."", ""country"": ""TH"", ""latitude"": 15.2543, ""longitude"": 102.7812}"
+google/gemini-3.5-flash,CoT (effort=high),15.0254,103.1123,400.557,TH,True,,stop,0.0087285,1271,758,688,6.19,"{""reasoning"": ""The concrete utility poles, high-voltage transmission towers, and white milestone are characteristic of Thailand, while the dry, flat landscape and reddish soil suggest the Isan region."", ""country"": ""TH"", ""latitude"": 15.0254, ""longitude"": 103.1123}"
+google/gemini-3.1-pro-preview,no-CoT,16.4321,102.8234,436.974,TH,True,,stop,0.005128,1190,229,193,4.69,"```json
+{""country"": ""TH"", ""latitude"": 16.4321, ""longitude"": 102.8234}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,16.5833,103.25,484.066,TH,True,,stop,0.00036108,473,30,0,5.36,"{""country"": ""TH"", ""latitude"": 16.5833, ""longitude"": 103.25}"
+google/gemini-3.5-flash,CoT (effort=low),16.1254,103.5821,489.702,TH,True,,stop,0.003672,1272,196,108,2.48,"```json
+{""reasoning"": ""The concrete utility poles with multiple crossarms, left-hand driving road markings (yellow dashed center line, white outer line), dry deciduous vegetation, and reddish soil are highly characteristic of Northeastern Thailand (Isan) during the dry season."", ""country"": ""TH"", ""latitude"": 16.1254, ""longitude"": 103.5821}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,18.794824600219727,99.4214096069336,515.411,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,19.597667694091797,99.15399932861328,605.728,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,19.85,78.35,2333.917,IN,True,,stop,0.0026115,676,841,760,7.9,"{""reasoning"": ""Left-side driving (white edge line left, yellow center line right of frame), dry deciduous vegetation + red soil, concrete power poles, and small white roadside marker are classic rural India clues; no text or vehicles but matches NH/SH highways in central Deccan plateau."", ""country"": ""IN"", ""latitude"": 19.85, ""longitude"": 78.35}"
+qwen/qwen3.6-27b,no-CoT,26.8467,80.9462,2387.023,IN,True,,stop,0.0001943,473,31,0,7.0,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+qwen/qwen3.5-122b-a10b,no-CoT,16.8524,74.4578,2697.882,IN,True,,stop,0.00018746,473,31,0,9.35,"{""country"": ""IN"", ""latitude"": 16.8524, ""longitude"": 74.4578}"
+qwen/qwen3.6-35b-a3b,no-CoT,19.076,72.8777,2885.501,IN,True,,stop,0.000157,473,31,0,1.29,"{""country"": ""IN"", ""latitude"": 19.0760, ""longitude"": 72.8777}"
+qwen/qwen3.5-9b,no-CoT,23.0225,72.5714,2998.003,IN,True,,stop,5.205e-05,474,31,0,1.59,"{""country"": ""IN"", ""latitude"": 23.0225, ""longitude"": 72.5714}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11031.385,,True,True,,,,,,6.36,
+mistralai/mistral-small-2603,no-CoT,39.7817,-86.1458,13988.591,US,True,,stop,0.0001137,634,31,0,5.32,"{""country"": ""US"", ""latitude"": 39.7817, ""longitude"": -86.1458}"
+qwen/qwen3.5-27b,no-CoT,30.2672,-97.7431,14741.235,US,True,,stop,0.000140595,473,31,0,1.03,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,9.32,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.43,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.2,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.44,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.09,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.36,

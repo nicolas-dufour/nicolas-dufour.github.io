@@ -1,0 +1,80 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,47.908792078933,3.5108438342134,0.0,FR,True,,,,,,,,"Appoigny, Departement de l'Yonne, Bourgogne, FR"
+moonshotai/kimi-k2.6,CoT,48.3,3.1,53.131,FR,True,,stop,0.01117352,682,3162,3097,75.72,"{""reasoning"": ""Narrow rural road with continuous white edge lines, dense deciduous forest canopy on one side and open crop fields on the other matches the agricultural-forest mosaic typical of northern France."", ""country"": ""FR"", ""latitude"": 48.3, ""longitude"": 3.1}"
+moonshotai/kimi-k2.6,no-CoT,47.5,2.5,88.247,FR,True,,stop,0.00061429,603,23,0,1.86,"{""country"": ""FR"", ""latitude"": 47.5, ""longitude"": 2.5}"
+qwen/qwen3.5-397b-a17b,CoT,48.333,2.125,113.167,FR,True,,stop,0.0154534,553,4236,4149,77.34,"{
+""reasoning"": ""The concrete drainage channel (caniveau) on the right side of the road is a distinctive feature of rural French infrastructure, combined with the flat agricultural landscape (likely the Beauce region) and standard European white dashed road markings."",
+""country"": ""FR"",
+""latitude"": 48.333,
+""longitude"": 2.125
+}"
+openai/gpt-5.5,no-CoT,48.5937,2.3146,116.809,FR,True,,stop,0.00341,544,23,0,3.59,"{""country"":""FR"",""latitude"":48.5937,""longitude"":2.3146}"
+anthropic/claude-opus-4.8,no-CoT,49.0,3.2,123.483,FR,True,,stop,0.00408,666,30,0,8.26,"{""country"": ""FR"", ""latitude"": 49.0, ""longitude"": 3.2}"
+qwen/qwen3.6-35b-a3b,no-CoT,47.322,5.041,131.953,FR,True,,stop,0.00015325,473,28,0,7.2,"{""country"": ""FR"", ""latitude"": 47.322, ""longitude"": 5.041}"
+x-ai/grok-4.3,no-CoT,48.85,2.35,135.287,FR,True,,stop,0.0005934,592,22,0,7.6,"{""country"": ""FR"", ""latitude"": 48.85, ""longitude"": 2.35}"
+mistralai/mistral-medium-3-5,no-CoT,48.8566,2.3522,135.75,FR,True,,stop,0.001176,634,30,0,0.95,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+qwen/qwen3.5-9b,no-CoT,48.8566,2.3522,135.75,FR,True,,stop,8.791e-05,473,30,0,4.27,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+qwen/qwen3.6-27b,no-CoT,48.8566,2.3522,135.75,FR,True,,stop,0.0003918,473,30,0,1.83,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+xiaomi/mimo-v2.5,no-CoT,48.8566,2.3522,135.75,FR,True,,stop,8.11776e-05,708,30,0,2.43,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+x-ai/grok-4.3,CoT,48.15,1.72,135.841,FR,True,,stop,0.0021056,676,558,491,18.68,"{""reasoning"": ""Right-hand traffic, European-style asphalt road with concrete curb/edge, red-roofed farm buildings, lush deciduous woodland + open arable fields under clear sky all point to rural northern/central France."", ""country"": ""FR"", ""latitude"": 48.15, ""longitude"": 1.72}"
+anthropic/claude-opus-4.8,CoT,49.2,3.2,145.387,FR,True,,stop,0.00616,797,87,0,2.77,"{""reasoning"": ""Rural agricultural landscape with deciduous trees, dashed white center line, and gabion retaining wall typical of northern French countryside; driving on right."", ""country"": ""FR"", ""latitude"": 49.2, ""longitude"": 3.2}"
+qwen/qwen3.5-35b-a3b,no-CoT,47.2345,1.3456,178.896,FR,True,,stop,0.000160425,473,30,0,2.87,"{""country"": ""FR"", ""latitude"": 47.2345, ""longitude"": 1.3456}"
+google/gemini-3.5-flash,CoT (effort=high),48.65,5.85,191.706,FR,True,,stop,0.0079545,1271,672,611,12.42,"{""reasoning"": ""The narrow asphalt road with a concrete drainage gutter on the right, combined with the rolling agricultural landscape and deciduous forest, is highly characteristic of rural northeastern France."", ""country"": ""FR"", ""latitude"": 48.65, ""longitude"": 5.85}"
+google/gemini-3.5-flash,CoT (effort=medium),47.5214,6.1542,202.386,FR,True,,stop,0.006291,1272,487,413,3.92,"{""reasoning"": ""The road features a concrete drainage gutter on the right side, typical of French rural departmental roads, combined with rolling hills, deciduous forests, and distant red-roofed farm buildings characteristic of eastern France."", ""country"": ""FR"", ""latitude"": 47.5214, ""longitude"": 6.1542}"
+qwen/qwen3.5-27b,no-CoT,47.2184,0.6245,229.752,FR,True,,stop,0.0002043,473,30,0,13.03,"{""country"": ""FR"", ""latitude"": 47.2184, ""longitude"": 0.6245}"
+qwen/qwen3.6-35b-a3b,CoT,47.0,0.7,234.238,FR,True,,stop,0.12671353435,553,131183,131071,1099.69,"```json
+{
+""reasoning"": ""The road markings (white center line, white edge lines) and the small white rectangular sign on the right verge are characteristic of French departmental roads (Routes Départementales). The landscape, with dense deciduous trees on the left and open fields in the distance, is typical of rural France, likely in the central or western regions."",
+""country"": ""FR"",
+""latitude"": 47.0,
+""longitude"": 0.7
+}
+```"
+google/gemini-3.5-flash,CoT (effort=low),47.6125,6.8458,251.43,FR,True,,stop,0.003744,1272,204,131,8.7,"```json
+{""reasoning"": ""The road markings with a dashed white center line and concrete drainage gutter on the right, combined with the rolling agricultural landscape and deciduous forest, are highly characteristic of rural France."", ""country"": ""FR"", ""latitude"": 47.6125, ""longitude"": 6.8458}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,46.040252685546875,1.3162727355957031,266.233,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,49.7246,6.1348,278.674,LU,True,,stop,0.013245,621,338,256,9.89,"{""reasoning"":""Well-maintained narrow right-driving European rural road with white lane/edge markings, concrete drainage channel, lush deciduous woodland and rolling farmland strongly fit Luxembourg's countryside. The absence of distinctive signage leaves uncertainty, but the landscape and road engineering are most consistent with central Luxembourg."",""country"":""LU"",""latitude"":49.7246,""longitude"":6.1348}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),48.6542,7.5124,307.443,FR,True,,stop,0.002091,1190,34,0,1.23,"```json
+{""country"": ""FR"", ""latitude"": 48.6542, ""longitude"": 7.5124}
+```"
+google/gemini-3.1-pro-preview,no-CoT,48.5839,7.7455,322.381,FR,True,,stop,0.002788,1190,34,0,9.51,"```json
+{""country"": ""FR"", ""latitude"": 48.5839, ""longitude"": 7.7455}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,45.483154296875,0.4541293680667877,356.442,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,45.463226318359375,0.47806838154792786,356.964,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,47.56292724609375,8.595036506652832,382.086,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,47.563636779785156,8.623074531555176,384.161,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,47.68161392211914,8.683048248291016,387.109,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,48.7758,9.1829,430.046,DE,True,,stop,0.0002139,473,30,0,8.42,"{""country"": ""DE"", ""latitude"": 48.7758, ""longitude"": 9.1829}"
+minimax/minimax-m3,CoT,51.95,7.35,526.558,DE,True,,stop,0.00076986,843,482,387,13.43,"{""reasoning"": ""Narrow rural road with solid white edge lines typical of German Landstraße, flat agricultural landscape with lush deciduous vegetation and fern-covered embankments characteristic of northwestern Germany (Münsterland/NRW region). Clear summer sky, temperate climate, and right-hand driving on a well-maintained rural cutting road strongly suggest western Germany."", ""country"": ""DE"", ""latitude"": 51.95, ""longitude"": 7.35}"
+xiaomi/mimo-v2.5,CoT,51.95,7.6,536.09,DE,True,,stop,0.0004251576,787,1219,1139,13.98,"```json
+{""reasoning"": ""The architectural style of the distant farmhouses, specifically the red/orange tiled roofs, along with the white road markings and lush deciduous vegetation, strongly indicates a rural setting in Western or Central Europe, most likely Germany."", ""country"": ""DE"", ""latitude"": 51.95, ""longitude"": 7.6}
+```"
+qwen/qwen3.6-27b,CoT,49.55,11.05,582.001,DE,True,,stop,0.017892809,554,5594,4924,368.14,"```json
+{
+    ""reasoning"": ""The concrete drainage curb on the right side of the road, the red-tiled roofs of the distant farm buildings, and the flat agricultural landscape bordered by a dense deciduous forest edge are highly characteristic of rural Bavaria, Germany."",
+    ""country"": ""DE"",
+    ""latitude"": 49.55,
+    ""longitude"": 11.05
+}
+```"
+minimax/minimax-m3,no-CoT,48.25,11.43,589.268,DE,True,,stop,0.00022248,752,23,0,7.36,"{""country"": ""DE"", ""latitude"": 48.25, ""longitude"": 11.43}"
+google/gemma-4-31b-it,no-CoT,51.1658,10.4515,617.639,DE,True,,stop,6.718e-05,406,36,0,8.92,"```json
+{""country"": ""DE"", ""latitude"": 51.1658, ""longitude"": 10.4515}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,51.2345,10.4567,622.155,DE,True,,stop,0.00036468,473,31,0,11.06,"{""country"": ""DE"", ""latitude"": 51.2345, ""longitude"": 10.4567}"
+google/gemini-3.1-pro-preview,CoT,48.2,15.5,890.783,AT,True,,stop,0.005052,1272,209,137,10.04,"{
+  ""reasoning"": ""The road markings with a dashed center line and solid edge line, combined with the rolling green landscape and red-roofed buildings in the distance, strongly suggest Austria."",
+  ""country"": ""AT"",
+  ""latitude"": 48.2,
+  ""longitude"": 15.5
+}"
+mistralai/mistral-small-2603,CoT,56.0,-4.0,1035.156,GB,True,,stop,0.00052284,716,804,914,6.21,"{""reasoning"": ""The road style and vegetation suggest a temperate climate zone; the reddish-brown soil and mixed coniferous/deciduous trees are consistent with parts of the British Isles."", ""country"": ""GB"", ""latitude"": 56.0, ""longitude"": -4.0}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5338.007,,True,True,,,,,,19.25,
+mistralai/mistral-small-2603,no-CoT,38.9715,-77.1278,6285.948,US,True,,stop,0.0001137,634,31,0,3.26,"{""country"": ""US"", ""latitude"": 38.9715, ""longitude"": -77.1278}"
+google/gemma-4-31b-it,CoT,34.0522,-118.2437,9220.36,US,True,,stop,0.00128028,494,2200,2137,8.86,"```json
+{""reasoning"": ""No image was provided for analysis; providing a placeholder coordinate to comply with the non-refusal constraint."", ""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.24,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.22,

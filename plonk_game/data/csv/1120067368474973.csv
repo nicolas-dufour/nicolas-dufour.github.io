@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-28.000813369403,-51.453475127503,0.0,BR,True,,,,,,,,"Lagoa Vermelha, Lagoa Vermelha, Rio Grande do Sul, BR"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-28.2612,-52.4083,98.004,BR,True,,stop,0.0021,1190,35,0,1.12,"```json
+{""country"": ""BR"", ""latitude"": -28.2612, ""longitude"": -52.4083}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-28.2625,-52.4083,98.046,BR,True,,stop,0.004041,1272,237,165,2.59,"{""reasoning"": ""The rolling green hills, red soil, road markings with a yellow center line, and agricultural silos are highly characteristic of southern Brazil, particularly the states of Paraná or Rio Grande do Sul."", ""country"": ""BR"", ""latitude"": -28.2625, ""longitude"": -52.4083}"
+openai/gpt-5.5,no-CoT,-28.1797,-52.6412,118.197,BR,True,,stop,0.00347,544,25,0,1.33,"{""country"":""BR"",""latitude"":-28.1797,""longitude"":-52.6412}"
+google/gemini-3.5-flash,CoT (effort=medium),-28.2625,-52.7854,133.809,BR,True,,stop,0.0059205,1271,446,377,16.42,"{""reasoning"": ""The rolling green hills, deep red soil on the road shoulders, and large grain silos are highly characteristic of the agricultural landscape of southern Brazil, particularly Rio Grande do Sul."", ""country"": ""BR"", ""latitude"": -28.2625, ""longitude"": -52.7854}"
+google/gemini-3.1-pro-preview,CoT,-25.3541,-51.4628,294.303,BR,True,,stop,0.006708,1272,347,257,11.56,"{
+  ""reasoning"": ""The distinctive red soil, rolling green agricultural hills, and double yellow road lines strongly indicate southern Brazil. The presence of Araucaria trees in the distance on the right further narrows the location to states like Paraná or Santa Catarina."",
+  ""country"": ""BR"",
+  ""latitude"": -25.3541,
+  ""longitude"": -51.4628
+}"
+mistralai/mistral-medium-3-5,no-CoT,-29.6842,-53.8056,295.83,BR,True,,stop,0.0011835,634,31,0,7.49,"{""country"": ""BR"", ""latitude"": -29.6842, ""longitude"": -53.8056}"
+anthropic/claude-opus-4.8,CoT,-25.5,-52.5,296.854,BR,True,,stop,0.006385,797,96,0,9.27,"{""reasoning"": ""Red soil and rolling green agricultural fields with grain silos, right-side driving, typical of southern Brazil's farming highways (Paraná/Rio Grande do Sul)."", ""country"": ""BR"", ""latitude"": -25.5, ""longitude"": -52.5}"
+anthropic/claude-opus-4.8,no-CoT,-25.5,-52.5,296.854,BR,True,,stop,0.00408,666,30,0,2.19,"{""country"": ""BR"", ""latitude"": -25.5, ""longitude"": -52.5}"
+google/gemini-3.5-flash,CoT (effort=high),-25.3012,-51.4556,300.183,BR,True,,stop,0.0073605,1271,606,537,6.73,"{""reasoning"": ""The rolling green hills with deep red soil, agricultural silos, and distant Araucaria trees are highly characteristic of the southern Brazilian highlands, particularly in the state of Paraná."", ""country"": ""BR"", ""latitude"": -25.3012, ""longitude"": -51.4556}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-25.569488525390625,-52.805381774902344,301.816,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-24.8276,-50.0462,379.647,BR,True,,stop,0.013095,621,333,253,16.61,"{""reasoning"":""Right-side traffic with Brazilian-style yellow centerlines/white edge lines, red lateritic shoulders, and large grain silos amid rolling soybean/cereal fields point to southern Brazil. The green hills and agribusiness landscape are most consistent with rural Paraná."",""country"":""BR"",""latitude"":-24.8276,""longitude"":-50.0462}"
+moonshotai/kimi-k2.6,no-CoT,-24.5,-51.5,389.3,BR,True,,stop,0.000276732,603,23,0,1.58,"{""country"": ""BR"", ""latitude"": -24.5, ""longitude"": -51.5}"
+minimax/minimax-m3,CoT,-24.95,-53.45,393.133,BR,True,,stop,0.00082266,843,526,439,17.32,"{""reasoning"": ""Reddish latosol soil on embankments, lush green rolling pastures, large metallic grain elevator/silo complex with red barn structures, and right-hand driving on a well-maintained rural highway are highly characteristic of the agricultural frontier in southern Brazil, particularly western Paraná or Santa Catarina."", ""country"": ""BR"", ""latitude"": -24.95, ""longitude"": -53.45}"
+google/gemini-3.1-pro-preview,no-CoT,-24.5,-52.5,403.013,BR,True,,stop,0.004312,1190,161,132,9.64,"```json
+{""country"": ""BR"", ""latitude"": -24.5, ""longitude"": -52.5}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-24.435016632080078,-52.83985137939453,419.913,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-24.3,-52.5,424.554,BR,True,,stop,0.013983588,682,4019,3966,218.78,"{""reasoning"": ""Red laterite asphalt, rolling green agricultural hills, and grain elevator complex are characteristic of Brazilian southern Planalto highways."", ""country"": ""BR"", ""latitude"": -24.3, ""longitude"": -52.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-24.30443000793457,-53.07627487182617,441.765,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,-34.6037,-58.3816,985.485,AR,True,,stop,0.0001865625,473,31,0,2.15,"{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}"
+x-ai/grok-4.3,no-CoT,-33.05,-60.65,1043.891,AR,True,,stop,0.0005934,592,22,0,0.78,"{""country"": ""AR"", ""latitude"": -33.05, ""longitude"": -60.65}"
+google/gemma-4-31b-it,no-CoT,-18.521,-48.234,1104.048,BR,True,,stop,0.0001921,408,34,0,1.1,"```json
+{""country"": ""BR"", ""latitude"": -18.521, ""longitude"": -48.234}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6295.74,,True,True,,,,,,2.63,
+xiaomi/mimo-v2.5,CoT,41.0,-91.0,8686.765,US,True,,stop,0.0005245576,787,1574,1510,18.08,"{""reasoning"": ""Road with yellow center lines indicates driving on the right side, typical of the United States, and farm silos with green rolling hills suggest a rural Midwest location."", ""country"": ""US"", ""latitude"": 41.0, ""longitude"": -91.0}"
+x-ai/grok-4.3,CoT,38.85,-98.45,8890.142,US,True,,stop,0.0025715,676,825,762,13.13,"{""reasoning"": ""US-style two-lane asphalt road with yellow centerlines + metal guardrails, large concrete grain elevator/silo complex typical of Great Plains agriculture, open rolling green hills under temperate sky."", ""country"": ""US"", ""latitude"": 38.85, ""longitude"": -98.45}"
+minimax/minimax-m3,no-CoT,46.8,-97.0,9490.604,US,True,,stop,0.00031362,767,118,129,11.19,"{""country"": ""US"", ""latitude"": 46.8, ""longitude"": -97.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,46.8523,-100.7837,9682.605,US,True,,stop,0.0003357,473,32,0,1.54,"{""country"": ""US"", ""latitude"": 46.8523, ""longitude"": -100.7837}"
+qwen/qwen3.5-122b-a10b,no-CoT,52.1347,-8.2756,9850.962,IE,True,,stop,0.0002852,473,30,0,6.72,"{""country"": ""IE"", ""latitude"": 52.1347, ""longitude"": -8.2756}"
+mistralai/mistral-small-2603,no-CoT,51.1657,-1.7805,10054.727,GB,True,,stop,0.000141375,634,30,0,1.93,"{""country"": ""GB"", ""latitude"": 51.1657, ""longitude"": -1.7805}"
+xiaomi/mimo-v2.5,no-CoT,46.85,-117.18,10609.096,US,True,,stop,8.06176e-05,708,28,0,2.33,"{""country"": ""US"", ""latitude"": 46.85, ""longitude"": -117.18}"
+qwen/qwen3.6-35b-a3b,no-CoT,46.8721,-119.5384,10756.965,US,True,,stop,0.000146,474,32,0,3.04,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -119.5384}"
+qwen/qwen3.6-27b,no-CoT,-41.2865,174.7762,10961.553,NZ,True,,stop,0.00025805,474,32,0,1.19,"{""country"": ""NZ"", ""latitude"": -41.2865, ""longitude"": 174.7762}"
+qwen/qwen3.5-9b,no-CoT,-41.0333,174.4667,10999.776,NZ,True,,stop,5.22e-05,474,32,0,9.97,"{""country"": ""NZ"", ""latitude"": -41.0333, ""longitude"": 174.4667}"
+qwen/qwen3.5-27b,no-CoT,-39.293611,174.076944,11169.437,NZ,True,,stop,0.0002165,474,49,0,6.58,"```json
+{
+  ""country"": ""NZ"",
+  ""latitude"": -39.293611,
+  ""longitude"": 174.076944
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,19.798900604248047,-155.8134307861328,12388.367,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,20.08879280090332,-155.805419921875,12400.297,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,20.970422744750977,-157.1506805419922,12567.457,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,21.7,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.67,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,9.41,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.19,

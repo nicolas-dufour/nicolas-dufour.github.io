@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,29.063586652353,-80.944947597563,0.0,US,True,,,,,,,,"Ponce Inlet, Volusia County, Florida, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,29.255767822265625,-81.133056640625,28.112,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,29.27517318725586,-81.14307403564453,30.391,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,29.325828552246094,-81.2515640258789,41.667,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),28.6143,-80.8078,51.714,US,True,,stop,0.0020985,1189,35,0,7.73,"```json
+{""country"": ""US"", ""latitude"": 28.6143, ""longitude"": -80.8078}
+```"
+google/gemini-3.5-flash,CoT (effort=low),28.6135,-80.8078,51.8,US,True,,stop,0.0044985,1271,288,215,3.65,"{""reasoning"": ""The US Route 1 shield with a 'SOUTH' direction sign, combined with the extremely flat terrain, sandy soil, and coastal vegetation, indicates a location along US-1 in Florida."", ""country"": ""US"", ""latitude"": 28.6135, ""longitude"": -80.8078}"
+google/gemini-3.5-flash,CoT (effort=high),28.558,-80.806,57.826,US,True,,stop,0.0172515,1271,1705,1635,11.79,"{""reasoning"": ""The US Route 1 shield and 'SOUTH' sign, combined with the flat terrain, sandy soil, and coastal scrub vegetation, indicate a location along US-1 in eastern Florida."", ""country"": ""US"", ""latitude"": 28.558, ""longitude"": -80.806}"
+anthropic/claude-opus-4.8,CoT,28.5,-81.3,71.586,US,True,,stop,0.006085,797,84,0,2.79,"{""reasoning"": ""Flat terrain, sandy soil shoulders, palm-like vegetation, US-style road signage and right-hand driving point to rural Florida."", ""country"": ""US"", ""latitude"": 28.5, ""longitude"": -81.3}"
+anthropic/claude-opus-4.8,no-CoT,28.5,-81.3,71.586,US,True,,stop,0.004055,666,29,0,8.97,"{""country"": ""US"", ""latitude"": 28.5, ""longitude"": -81.3}"
+xiaomi/mimo-v2.5,CoT,28.4294,-80.7037,74.337,US,True,,stop,0.0001429176,787,211,115,5.85,"{""reasoning"": ""The image shows a divided highway with right-hand traffic, typical of the United States; the flat terrain, palm trees, and specific road signage style (like the 'Speed Limit' sign) strongly suggest Florida. The environment matches the flat, subtropical landscape found near the Space Coast region."", ""country"": ""US"", ""latitude"": 28.4294, ""longitude"": -80.7037}"
+qwen/qwen3.5-27b,no-CoT,28.4158,-80.6077,79.18,US,True,,stop,0.00021684,474,36,0,8.33,"```json
+{""country"": ""US"", ""latitude"": 28.4158, ""longitude"": -80.6077}
+```"
+x-ai/grok-4.3,no-CoT,28.35,-80.7,82.865,US,True,,stop,0.0005934,592,22,0,7.07,"{""country"": ""US"", ""latitude"": 28.35, ""longitude"": -80.7}"
+google/gemma-4-31b-it,no-CoT,28.3852,-81.5223,94.125,US,True,,stop,6.718e-05,406,36,0,2.93,"```json
+{""country"": ""US"", ""latitude"": 28.3852, ""longitude"": -81.5223}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,28.4158,-81.5833,95.194,US,True,,stop,0.0003794,473,31,0,2.15,"{""country"": ""US"", ""latitude"": 28.4158, ""longitude"": -81.5833}"
+google/gemini-3.1-pro-preview,no-CoT,28.2214,-80.7051,96.528,US,True,,stop,0.005918,1189,295,260,6.21,"```json
+{""country"": ""US"", ""latitude"": 28.2214, ""longitude"": -80.7051}
+```"
+moonshotai/kimi-k2.6,CoT,28.0833,-80.6333,113.171,US,True,,stop,0.015035508,682,4331,4245,168.7,"{""reasoning"": ""US highway shield (likely US-1) and standard American road markings/utility poles confirm the United States; the flat terrain, subtropical vegetation including distant palms, and sandy soil point to coastal Florida, specifically along US-1 in the central-east part of the state."", ""country"": ""US"", ""latitude"": 28.0833, ""longitude"": -80.6333}"
+google/gemini-3.1-pro-preview,CoT,28.0836,-80.6282,113.274,US,True,,stop,0.006408,1272,322,242,4.78,"{
+  ""reasoning"": ""The US Route 1 sign and flat, subtropical landscape with palm trees strongly indicate Florida. The wide divided highway and fencing suggest a location along the eastern coast of the state."",
+  ""country"": ""US"",
+  ""latitude"": 28.0836,
+  ""longitude"": -80.6282
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,28.025543212890625,-81.92251586914062,149.801,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,30.3322,-81.6557,156.88,US,True,,stop,8.14576e-05,708,31,0,1.5,"{""country"": ""US"", ""latitude"": 30.3322, ""longitude"": -81.6557}"
+x-ai/grok-4.3,CoT,27.498,-80.347,183.667,US,True,,stop,0.0021915,676,673,599,12.14,"{""reasoning"": ""US-style road markings, right-side driving, 'SOUTH' shield sign, chain-link fencing, subtropical flat terrain with palms/scrub, and power poles all point to Florida; image matches US-1 corridor near Fort Pierce."", ""country"": ""US"", ""latitude"": 27.498, ""longitude"": -80.347}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,28.200143814086914,-82.58853912353516,186.945,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,28.137226104736328,-82.56098175048828,188.414,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,27.9659,-82.4572,191.647,US,True,,stop,0.0011835,634,31,0,7.17,"{""country"": ""US"", ""latitude"": 27.9659, ""longitude"": -82.4572}"
+qwen/qwen3.5-122b-a10b,no-CoT,26.1224,-80.1373,336.587,US,True,,stop,0.00018772,474,31,0,6.55,"{""country"": ""US"", ""latitude"": 26.1224, ""longitude"": -80.1373}"
+qwen/qwen3.6-27b,no-CoT,26.1224,-80.1373,336.587,US,True,,stop,0.0001943,473,31,0,6.08,"{""country"": ""US"", ""latitude"": 26.1224, ""longitude"": -80.1373}"
+qwen/qwen3.5-9b,no-CoT,26.0112,-80.1797,347.692,US,True,,stop,5.205e-05,474,31,0,4.62,"{""country"": ""US"", ""latitude"": 26.0112, ""longitude"": -80.1797}"
+qwen/qwen3.5-35b-a3b,no-CoT,25.7617,-80.1918,374.6,US,True,,stop,0.0001865625,473,31,0,1.26,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+qwen/qwen3.6-35b-a3b,no-CoT,25.7617,-80.1918,374.6,US,True,,stop,0.000157,473,31,0,0.77,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+minimax/minimax-m3,CoT,30.15,-85.65,470.595,US,True,,stop,0.00068706,843,413,337,12.52,"{""reasoning"": ""Wide multi-lane divided highway with US-style dashed white lane markings, right-hand traffic, sandy soil, scrubby coastal vegetation, and flat terrain strongly indicate the Florida Gulf Coast region, likely a major highway in the panhandle area."", ""country"": ""US"", ""latitude"": 30.15, ""longitude"": -85.65}"
+google/gemini-3.5-flash,CoT (effort=medium),24.5882,-81.6751,502.882,US,True,,stop,0.0260895,1271,2687,2594,24.79,"{""reasoning"": ""The image shows US Route 1 South in a very flat, tropical environment with a divided highway, characteristic of the Florida Keys. The chain-link fence and paved path on the right match the boundary of Naval Air Station Key West on Boca Chica Key along the Florida Keys Overseas Heritage Trail."", ""country"": ""US"", ""latitude"": 24.5882, ""longitude"": -81.6751}"
+openai/gpt-5.5,no-CoT,30.3962,-86.6446,569.873,US,True,,stop,0.00344,544,24,0,1.64,"{""country"":""US"",""latitude"":30.3962,""longitude"":-86.6446}"
+openai/gpt-5.5,CoT,35.8466,14.4932,8611.771,MT,True,,stop,0.019065,621,532,449,22.74,"{""reasoning"":""Left-side driving, English/UK-style road markings and speed signage, dry Mediterranean landscape, and the distinctive limestone curbs/fencing strongly point to Malta. The wide straight road beside perimeter-style fencing is most consistent with roads around Malta International Airport near Luqa/Gudja."",""country"":""MT"",""latitude"":35.8466,""longitude"":14.4932}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9128.323,,True,True,,,,,,12.77,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.8,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.7,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,22.14,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.16,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,2.02,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,12.95,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.2,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,6.75,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.18,

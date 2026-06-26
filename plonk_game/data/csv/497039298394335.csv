@@ -1,0 +1,56 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-19.515022676112,-64.167978781391,0.0,BO,True,,,,,,,,"Padilla, None, Chuquisaca, BO"
+google/gemma-4-31b-it,no-CoT,-15.7801,-47.9292,1769.198,BR,True,,stop,6.718e-05,406,36,0,9.22,"```json
+{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7942,-47.8822,1773.604,BR,True,,stop,0.00029145,473,31,0,5.71,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}"
+x-ai/grok-4.3,no-CoT,-22.85,-43.25,2198.284,BR,True,,stop,0.0005934,592,22,0,6.9,"{""country"": ""BR"", ""latitude"": -22.85, ""longitude"": -43.25}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.7796,-78.6382,6334.611,US,True,,stop,9.736e-05,474,31,0,7.96,"{""country"": ""US"", ""latitude"": 35.7796, ""longitude"": -78.6382}"
+mistralai/mistral-small-2603,no-CoT,36.5323,-118.2921,8430.703,US,True,,stop,0.0001143,634,32,0,3.38,"{""country"": ""US"", ""latitude"": 36.5323, ""longitude"": -118.2921}"
+openai/gpt-5.5,no-CoT,1.3733,32.2903,10735.38,UG,True,,stop,0.00341,544,23,0,1.41,"{""country"":""UG"",""latitude"":1.3733,""longitude"":32.2903}"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.0236,37.9062,11271.049,KE,True,,stop,0.00010095,473,30,0,2.37,"{""country"": ""KE"", ""latitude"": -0.0236, ""longitude"": 37.9062}"
+qwen/qwen3.6-27b,no-CoT,21.1458,72.7509,15533.08,IN,True,,stop,0.0003954,473,31,0,8.89,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 72.7509}"
+x-ai/grok-4.3,CoT,10.85,76.35,15680.679,IN,True,,stop,0.0014965,676,395,349,11.33,"{""reasoning"": ""Red lateritic soil + dense tropical hillside vegetation along unpaved road; no other infrastructure visible."", ""country"": ""IN"", ""latitude"": 10.85, ""longitude"": 76.35}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,15.898683547973633,75.74408721923828,15758.962,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,26.9124,75.7873,15858.566,IN,True,,stop,0.00021018,703,25,0,7.99,"{""country"": ""IN"", ""latitude"": 26.9124, ""longitude"": 75.7873}"
+mistralai/mistral-medium-3-5,no-CoT,12.9716,77.5946,15877.519,IN,True,,stop,0.0011835,634,31,0,1.3,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,18.77265739440918,77.16493225097656,15961.111,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,26.5,80.5,16328.641,IN,True,,stop,7.97776e-05,708,25,0,7.97,"{""country"": ""IN"", ""latitude"": 26.5, ""longitude"": 80.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,22.295400619506836,80.94694519042969,16386.076,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,27.3667,88.0,17052.172,,True,,stop,5.894e-05,406,41,0,1.81,"Please own or 
+{""country"": ""IN"", ""latitude"": 27.3667, ""longitude"": 88 ownmuch 88.3333}"
+qwen/qwen3.5-27b,no-CoT,23.8103,88.4253,17147.513,IN,True,,stop,0.000140595,473,31,0,7.69,"{""country"": ""IN"", ""latitude"": 23.8103, ""longitude"": 88.4253}"
+xiaomi/mimo-v2.5,CoT,36.2048,137.9573,17169.024,JP,True,,stop,0.0001510376,787,240,123,9.98,"{""reasoning"": ""The image displays a rural, unpaved road alongside a steep, vegetated hillside with exposed reddish-brown soil and significant green foliage, suggesting a temperate or subtropical climate. The guardrail style (simple metal posts with horizontal rails) and the specific vegetation patterns are strongly indicative of rural Japan, particularly in mountainous regions like the Chubu or Tohoku areas."", ""country"": ""JP"", ""latitude"": 36.2048, ""longitude"": 137.9573}"
+google/gemini-3.1-pro-preview,no-CoT,27.4712,90.3591,17277.286,BT,True,,stop,0.002798,1189,35,0,9.01,"```json
+{""country"": ""BT"", ""latitude"": 27.4712, ""longitude"": 90.3591}
+```"
+anthropic/claude-opus-4.8,no-CoT,26.1,91.5,17420.542,IN,True,,stop,0.00408,666,30,0,9.17,"{""country"": ""IN"", ""latitude"": 26.1, ""longitude"": 91.5}"
+google/gemini-3.1-pro-preview,CoT,24.8949,91.8687,17480.466,BD,True,,stop,0.00601,1271,289,195,5.38,"{
+  ""reasoning"": ""The image shows a blurry, unpaved road edge with lush, tropical vegetation and sandy soil, characteristic of rural areas in South Asia. The lack of specific infrastructure points to a remote or less developed region, possibly in Bangladesh or northeastern India."",
+  ""country"": ""BD"",
+  ""latitude"": 24.8949,
+  ""longitude"": 91.8687
+}"
+minimax/minimax-m3,CoT,18.7883,98.9853,18244.359,TH,True,,stop,0.00053946,843,290,214,14.96,"{""reasoning"": ""Dense tropical vegetation with bamboo-like plants along a dirt road suggests a rural Southeast Asian location. The lush green growth, exposed soil embankment, and tropical netting visible behind foliage point to a rural area in northern Thailand or Laos."", ""country"": ""TH"", ""latitude"": 18.7883, ""longitude"": 98.9853}"
+qwen/qwen3.5-9b,no-CoT,13.7563,100.5018,18261.941,TH,True,,stop,5.22e-05,474,32,0,4.7,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+anthropic/claude-opus-4.8,CoT,19.88,102.13,18580.464,LA,True,,stop,0.006585,797,104,0,9.76,"{""reasoning"": ""Blurry roadside vegetation with tropical scrub, dirt/gravel road, and dense green foliage suggesting a humid subtropical or tropical mountainous region, likely Southeast Asia."", ""country"": ""LA"", ""latitude"": 19.88, ""longitude"": 102.13}"
+google/gemini-3.5-flash,CoT (effort=medium),19.8562,102.1343,18580.879,LA,True,,stop,0.0049485,1271,338,274,19.31,"{""reasoning"": ""The dense, humid subtropical vegetation combined with the unpaved, sandy-clay roadside is highly characteristic of rural Southeast Asia, particularly Laos."", ""country"": ""LA"", ""latitude"": 19.8562, ""longitude"": 102.1343}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),19.8563,102.1347,18580.921,LA,True,,stop,0.002109,1190,36,0,8.24,"```json
+{""country"": ""LA"", ""latitude"": 19.8563, ""longitude"": 102.1347}
+```"
+openai/gpt-5.5,CoT,13.5217,104.0132,18590.544,KH,True,,stop,0.017775,621,489,409,11.71,"{""reasoning"":""The unpaved pale sandy road bordered by dense humid tropical scrub with no lane markings or infrastructure is most consistent with rural mainland Southeast Asia. Cambodia commonly has this kind of sandy rural track and vegetation in lowland areas around Siem Reap/central provinces."",""country"":""KH"",""latitude"":13.5217,""longitude"":104.0132}"
+google/gemini-3.5-flash,CoT (effort=low),19.8563,102.4954,18618.641,LA,True,,stop,0.0034815,1271,175,108,4.74,"{""reasoning"": ""The extremely blurry image shows a dirt road with lush, tropical green vegetation and light-colored soil, characteristic of rural mountainous regions in Southeast Asia like Laos."", ""country"": ""LA"", ""latitude"": 19.8563, ""longitude"": 102.4954}"
+google/gemini-3.5-flash,CoT (effort=high),12.5657,104.991,18623.343,KH,True,,stop,0.0063345,1271,492,436,17.22,"{""reasoning"": ""The dense tropical vegetation, sandy soil, and humid atmosphere are characteristic of rural Southeast Asia, particularly Cambodia."", ""country"": ""KH"", ""latitude"": 12.5657, ""longitude"": 104.991}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,22.214187622070312,103.18704223632812,18667.888,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,22.19862937927246,103.23702239990234,18673.264,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,22.35,103.85,18731.831,VN,True,,stop,0.010935108,682,3133,3070,86.0,"{""reasoning"": ""Dense subtropical broadleaf forest on a steep roadside cut slope with exposed red lateritic soil and an unpaved dirt track strongly matches the mountainous rural roads of northern Vietnam."", ""country"": ""VN"", ""latitude"": 22.35, ""longitude"": 103.85}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,21.617698669433594,103.79085540771484,18740.267,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,16.8248,104.2681,18757.607,TH,True,,stop,0.0001898,474,32,0,12.09,"{""country"": ""TH"", ""latitude"": 16.8248, ""longitude"": 104.2681}"
+moonshotai/kimi-k2.6,no-CoT,28.5,117.0,19009.007,CN,True,,stop,0.000289692,603,23,0,1.43,"{""country"": ""CN"", ""latitude"": 28.5, ""longitude"": 117.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.52,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.62,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,2.47,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.25,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.22,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.36,

@@ -1,0 +1,69 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-44.262962862347,171.04994796497,0.0,NZ,True,,,,,,,,"Pleasant Point, Timaru District, Canterbury, NZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-44.119895935058594,171.11009216308594,16.615,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-44.11479949951172,171.18112182617188,19.514,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-44.11640167236328,171.18724060058594,19.632,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),-44.1254,171.2145,20.151,NZ,True,,stop,0.0063885,1307,492,412,23.11,"{""reasoning"": ""The gravel road, dry yellow grass, mixed pine and deciduous trees, and the style of the white wooden fingerboard signpost at the intersection are highly characteristic of rural New Zealand, particularly the Canterbury region of the South Island."", ""country"": ""NZ"", ""latitude"": -44.1254, ""longitude"": 171.2145}"
+moonshotai/kimi-k2.6,CoT,-43.9,171.2,42.102,NZ,True,,stop,0.012095676,834,3462,3374,81.77,"{""reasoning"": ""Unpaved rural road through dry pastoral farmland with tussock grass and exotic shelter-belt trees, consistent with Canterbury, New Zealand; the right-hand-drive perspective and vehicle hood latches match Australasia, but the absence of eucalypts and specific pasture style favor New Zealand over Australia."", ""country"": ""NZ"", ""latitude"": -43.9, ""longitude"": 171.2}"
+xiaomi/mimo-v2.5,CoT,-44.0,171.5,46.315,NZ,True,,stop,0.0008893976,899,2821,2727,30.99,"{""reasoning"": ""The combination of dry grassy verges, mixed poplar and coniferous shelterbelts, and a concrete utility pole is characteristic of rural New Zealand, particularly the Canterbury Plains. The vehicle appears to be right-hand drive based on the interior perspective, supporting a location in the Southern Hemisphere Commonwealth countries."", ""country"": ""NZ"", ""latitude"": -44.0, ""longitude"": 171.5}"
+x-ai/grok-4.3,no-CoT,-43.85,171.3,50.079,NZ,True,,stop,0.0007334,704,22,0,0.78,"{""country"": ""NZ"", ""latitude"": -43.85, ""longitude"": 171.3}"
+openai/gpt-5.5,no-CoT,-43.7186,171.2379,62.37,NZ,True,,stop,0.00411,678,24,0,2.61,"{""country"":""NZ"",""latitude"":-43.7186,""longitude"":171.2379}"
+qwen/qwen3.5-122b-a10b,no-CoT,-43.8205,170.4633,67.966,NZ,True,,stop,0.00021892,586,32,0,5.17,"{""country"": ""NZ"", ""latitude"": -43.8205, ""longitude"": 170.4633}"
+openai/gpt-5.5,CoT,-43.6335,172.0278,105.01,NZ,True,,stop,0.012415,755,288,198,7.22,"{""reasoning"":""Rural gravel road with left-side-driving context, temperate dry pasture, wire fencing, shelterbelt conifers/eucalypts, and New Zealand-style rural signposts strongly suggest Canterbury, New Zealand. The flat agricultural landscape and dry grass are most consistent with the Canterbury Plains west/southwest of Christchurch."",""country"":""NZ"",""latitude"":-43.6335,""longitude"":172.0278}"
+mistralai/mistral-medium-3-5,no-CoT,-45.0,170.0,116.7,NZ,True,,stop,0.001374,786,26,0,1.24,"{""country"": ""NZ"", ""latitude"": -45.0, ""longitude"": 170.0}"
+google/gemini-3.5-flash,CoT (effort=low),-45.1234,170.1234,120.489,NZ,True,,stop,0.004833,1308,319,240,3.27,"```json
+{""reasoning"": ""The gravel road, rolling hills with dry grass, pine plantations, and the style of the white wooden signpost at the intersection are highly characteristic of rural New Zealand, particularly the South Island."", ""country"": ""NZ"", ""latitude"": -45.1234, ""longitude"": 170.1234}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,-43.1234,171.2345,127.579,NZ,True,,stop,0.00011404,586,32,0,7.65,"{""country"": ""NZ"", ""latitude"": -43.1234, ""longitude"": 171.2345}"
+qwen/qwen3.6-35b-a3b,CoT,-43.5321,172.6362,150.855,NZ,True,,stop,0.0035748,666,2151,2021,125.46,"```json
+{
+  ""reasoning"": ""The image shows a left-hand traffic gravel road with concrete utility poles and wire fencing, characteristic of rural New Zealand. The background features a dense plantation of Radiata Pine trees and dry, golden grass, which is a signature landscape of the Canterbury region on the South Island."",
+  ""country"": ""NZ"",
+  ""latitude"": -43.5321,
+  ""longitude"": 172.6362
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,-43.521,172.636,151.52,NZ,True,,stop,0.0001232595,585,30,0,8.7,"{""country"": ""NZ"", ""latitude"": -43.521, ""longitude"": 172.636}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-45.8124,170.1235,187.034,NZ,True,,stop,0.002163,1226,36,0,7.51,"```json
+{""country"": ""NZ"", ""latitude"": -45.8124, ""longitude"": 170.1235}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-41.04011535644531,173.89596557617188,427.252,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-39.79341506958008,175.71604919433594,628.684,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-39.3961296081543,175.9283905029297,675.177,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,-39.5,176.9,717.287,NZ,True,,stop,0.00023736,904,23,0,9.93,"{""country"": ""NZ"", ""latitude"": -39.5, ""longitude"": 176.9}"
+moonshotai/kimi-k2.6,no-CoT,-38.5,176.0,762.023,NZ,True,,stop,0.00033858,755,23,0,2.64,"{""country"": ""NZ"", ""latitude"": -38.5, ""longitude"": 176.0}"
+qwen/qwen3.5-397b-a17b,CoT,-37.9234,175.4821,796.481,NZ,True,,stop,0.00669105,665,2145,1,47.76,"{
+""reasoning"": ""The image features a well-maintained gravel (shingle) road and left-hand traffic positioning, which are highly characteristic of rural New Zealand. The vegetation, consisting of green pasture, dry grass, and what appears to be a pine shelter belt in the background, further supports this location."",
+""country"": ""NZ"",
+""latitude"": -37.9234,
+""longitude"": 175.4821
+}"
+anthropic/claude-opus-4.8,CoT,-41.0,-73.0,8585.281,CL,True,,stop,0.00707,949,93,0,3.31,"{""reasoning"": ""Gravel rural road with conifer/pine plantations, pasture fences, and temperate climate suggests southern South America; vegetation and terrain match rural southern Chile."", ""country"": ""CL"", ""latitude"": -41.0, ""longitude"": -73.0}"
+anthropic/claude-opus-4.8,no-CoT,-40.5,-73.2,8615.896,CL,True,,stop,0.00484,818,30,0,2.22,"{""country"": ""CL"", ""latitude"": -40.5, ""longitude"": -73.2}"
+google/gemini-3.1-pro-preview,CoT,-40.5,-73.0,8627.057,CL,True,,stop,0.005736,1308,260,172,10.91,"{
+  ""reasoning"": ""The white car hood and the black object in the top right corner of the image are characteristic of the Google Street View car used in southern Chile. The landscape with dry grass and mixed forests is consistent with regions like Los Lagos or Araucanía."",
+  ""country"": ""CL"",
+  ""latitude"": -40.5,
+  ""longitude"": -73.0
+}"
+google/gemini-3.1-pro-preview,no-CoT,-39.81422,-73.24589,8670.593,CL,True,,stop,0.002896,1226,37,0,8.46,"```json
+{""country"": ""CL"", ""latitude"": -39.81422, ""longitude"": -73.24589}
+```"
+google/gemma-4-31b-it,no-CoT,45.523062,-122.676482,11922.871,US,True,,stop,6.548e-05,404,41,0,5.37,"```json
+{""country"": ""US"", ""latitude"": 45.523062, ""longitude"": -122.676482}
+```"
+xiaomi/mimo-v2.5,no-CoT,46.85,-117.58,12304.276,US,True,,stop,9.62976e-05,820,28,0,1.2,"{""country"": ""US"", ""latitude"": 46.85, ""longitude"": -117.58}"
+qwen/qwen3.5-27b,no-CoT,51.0447,-114.0719,12806.251,CA,True,,stop,0.00022707,585,32,0,8.68,"{""country"": ""CA"", ""latitude"": 51.0447, ""longitude"": -114.0719}"
+mistralai/mistral-small-2603,no-CoT,39.7658,-86.1543,13858.909,US,True,,stop,0.000170625,786,31,0,8.36,"{""country"": ""US"", ""latitude"": 39.7658, ""longitude"": -86.1543}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,15014.179,,True,True,,,,,,16.12,
+qwen/qwen3.5-397b-a17b,no-CoT,45.5017,-73.5673,15064.557,CA,True,,stop,0.00043188,585,31,0,2.82,"{""country"": ""CA"", ""latitude"": 45.5017, ""longitude"": -73.5673}"
+minimax/minimax-m3,CoT,60.2,14.5,17655.026,SE,True,,stop,0.00077262,997,443,470,28.14,"{""reasoning"": ""Rural gravel road with dry summer grass, scattered coniferous/deciduous trees, and characteristic white roadside reflector post typical of Scandinavian road infrastructure. The power line poles and flat-to-rolling terrain with mixed forest are consistent with central Sweden's inland countryside."", ""country"": ""SE"", ""latitude"": 60.2, ""longitude"": 14.5}{""reasoning"": ""Rural gravel road with dry summer grass, scattered coniferous/deciduous trees, and characteristic white roadside reflector post typical of Scandinavian road infrastructure. The power line poles and flat-to-rolling terrain with mixed forest are consistent with central Sweden's inland countryside."", ""country"": ""SE"", ""latitude"": 60.2, ""longitude"": 14.5}"
+qwen/qwen3.5-9b,no-CoT,64.5233,-19.0367,17676.215,IS,True,,stop,0.0001072,585,31,0,4.38,"{""country"": ""IS"", ""latitude"": 64.5233, ""longitude"": -19.0367}"
+x-ai/grok-4.3,CoT,52.15,20.35,17693.259,PL,True,,stop,0.0025465,788,759,696,13.27,"{""reasoning"": ""Gravel road with distant white wayside cross, overhead power lines on simple poles, mixed temperate farmland/woodland, and right-hand driving perspective indicate rural Central/Eastern Europe."", ""country"": ""PL"", ""latitude"": 52.15, ""longitude"": 20.35}"
+google/gemini-3.5-flash,CoT (effort=high),58.412,14.153,17789.066,SE,True,,stop,0.0138135,1307,1317,1249,14.56,"{""reasoning"": ""The well-maintained dark gravel road, mixed coniferous and deciduous forest, and the style of the white wooden signpost at the T-junction are highly characteristic of rural Sweden."", ""country"": ""SE"", ""latitude"": 58.412, ""longitude"": 14.153}"
+qwen/qwen3.6-27b,no-CoT,57.7089,12.8545,17896.522,SE,True,,stop,0.000275,586,31,0,20.38,"{""country"": ""SE"", ""latitude"": 57.7089, ""longitude"": 12.8545}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,9.38,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.32,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.2,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.37,

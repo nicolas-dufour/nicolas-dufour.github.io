@@ -1,0 +1,72 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,22.591021032984,-83.69016576456,0.0,CU,True,,,,,,,,"Vinales, None, Pinar del Rio, CU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,25.1008358001709,-81.19207763671875,377.379,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,25.144031524658203,-81.18128967285156,381.648,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,27.044782638549805,-81.46649932861328,543.675,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,27.9881,-82.4543,612.84,US,True,,stop,0.0002041,473,39,0,1.45,"{
+  ""country"": ""US"",
+  ""latitude"": 27.9881,
+  ""longitude"": -82.4543
+}"
+qwen/qwen3.5-27b,no-CoT,28.0836,-82.3955,624.435,US,True,,stop,0.0002065,474,44,0,5.32,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 28.0836,
+  ""longitude"": -82.3955
+}
+```"
+openai/gpt-5.5,CoT,24.7126,-77.9524,630.15,BS,True,,stop,0.015675,621,419,330,19.02,"{""reasoning"":""Flat white sandy track through Caribbean pine and dense subtropical scrub strongly matches the Bahamian pineyards, especially Andros/Grand Bahama rather than mainland tropical forests. The limestone sand, low relief, and pine-barren vegetation point most likely to inland Andros near Blue Holes National Park."",""country"":""BS"",""latitude"":24.7126,""longitude"":-77.9524}"
+anthropic/claude-opus-4.8,CoT,26.62,-78.35,701.387,BS,True,,stop,0.00671,797,109,0,11.12,"{""reasoning"": ""Sandy white soil track through Caribbean pine forest with palmetto undergrowth, typical of Bahamian pine yards (Grand Bahama/Abaco); Garmin GPS suggests off-road trail."", ""country"": ""BS"", ""latitude"": 26.62, ""longitude"": -78.35}"
+anthropic/claude-opus-4.8,no-CoT,26.6,-78.3,703.906,BS,True,,stop,0.00408,666,30,0,2.76,"{""country"": ""BS"", ""latitude"": 26.6, ""longitude"": -78.3}"
+xiaomi/mimo-v2.5,CoT,28.5,-81.0,710.241,US,True,,stop,0.0003481576,787,944,887,16.13,"{""reasoning"": ""The sandy dirt road and pine trees are characteristic of the southeastern United States, particularly Florida's pine flatwoods or coastal plains."", ""country"": ""US"", ""latitude"": 28.5, ""longitude"": -81.0}"
+minimax/minimax-m3,no-CoT,28.71,-81.55,713.364,US,True,,stop,0.00022488,752,25,0,5.85,"{""country"": ""US"", ""latitude"": 28.7100, ""longitude"": -81.5500}"
+google/gemini-3.5-flash,CoT (effort=medium),29.15,-81.75,754.669,US,True,,stop,0.0056325,1271,414,354,10.97,"{""reasoning"": ""The sandy trail, slash pine vegetation, and flat terrain are highly characteristic of the Florida pine flatwoods, specifically within the Ocala National Forest."", ""country"": ""US"", ""latitude"": 29.15, ""longitude"": -81.75}"
+google/gemini-3.5-flash,CoT (effort=low),29.1872,-81.8245,756.79,US,True,,stop,0.004104,1272,244,173,2.64,"{""reasoning"": ""The sandy soil, slash pine vegetation, and flat terrain are highly characteristic of the pine flatwoods in Florida, USA, likely within a state forest or national forest like Ocala."", ""country"": ""US"", ""latitude"": 29.1872, ""longitude"": -81.8245}"
+google/gemini-3.1-pro-preview,CoT,29.152,-81.643,757.702,US,True,,stop,0.005578,1271,253,186,17.9,"{
+  ""reasoning"": ""The sandy soil, pine trees, and scrub vegetation are highly characteristic of the pine scrub habitats found in Florida, USA."",
+  ""country"": ""US"",
+  ""latitude"": 29.152,
+  ""longitude"": -81.643
+}"
+moonshotai/kimi-k2.6,CoT,29.18,-81.65,760.505,US,True,,stop,0.006354,680,1643,1856,57.36,"{""reasoning"": ""The sandy track through tall pine flatwoods with subtropical understory vegetation is diagnostic of the southeastern US coastal plain, specifically Florida's Ocala National Forest region where such sugar-sand forest roads are ubiquitous."", ""country"": ""US"", ""latitude"": 29.18, ""longitude"": -81.65}"
+x-ai/grok-4.3,CoT,29.25,-81.75,765.398,US,True,,stop,0.0018365,676,531,466,13.44,"{""reasoning"": ""Sandy dirt trail through tall pines with palmetto understory and reddish soil is diagnostic of Florida pine flatwoods/scrub; handheld Garmin and overcast subtropical light further support SE US location."", ""country"": ""US"", ""latitude"": 29.25, ""longitude"": -81.75}"
+openai/gpt-5.5,no-CoT,26.6215,-77.0412,807.655,BS,True,,stop,0.00344,544,24,0,1.49,"{""country"":""BS"",""latitude"":26.6215,""longitude"":-77.0412}"
+minimax/minimax-m3,CoT,17.05,-88.92,823.753,BZ,True,,stop,0.00066666,843,396,321,9.29,"{""reasoning"": ""Caribbean pine (Pinus caribaea) forest with sandy white soil and tropical understory is characteristic of Belize's Pine Ridge region. The Garmin GPS and off-road trail suggest a popular adventure destination like Mountain Pine Ridge."", ""country"": ""BZ"", ""latitude"": 17.05, ""longitude"": -88.92}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),16.5312,-88.3654,832.87,BZ,True,,stop,0.0020985,1189,35,0,7.68,"```json
+{""country"": ""BZ"", ""latitude"": 16.5312, ""longitude"": -88.3654}
+```"
+qwen/qwen3.6-35b-a3b,CoT,30.15,-85.15,852.978,US,True,,stop,0.00327795,553,3195,2891,39.49,"```json
+{
+  ""reasoning"": ""The image features distinctive white sandy soil and a pine flatwoods ecosystem (likely Slash Pine) with scrubby understory, which is characteristic of the Florida Panhandle or Central Florida. The presence of a Garmin GPS device suggests off-road recreational activity common in these areas."",
+  ""country"": ""US"",
+  ""latitude"": 30.15,
+  ""longitude"": -85.15
+}
+```"
+x-ai/grok-4.3,no-CoT,30.35,-84.55,866.982,US,True,,stop,0.0007278,592,22,0,0.84,"{""country"": ""US"", ""latitude"": 30.35, ""longitude"": -84.55}"
+qwen/qwen3.5-397b-a17b,CoT,30.3512,-84.5983,867.602,US,True,,stop,0.00336297,553,1345,1230,27.94,"{""reasoning"": ""The image shows a sandy track through a pine flatwoods ecosystem featuring tall pine trees (likely Longleaf or Slash pine) and scrubby undergrowth, which is characteristic of the Southeastern United States. The distinct white sand road with reddish clay subsoil exposed in the ruts is a geological signature common to the Florida Panhandle, specifically within the Apalachicola National Forest."", ""country"": ""US"", ""latitude"": 30.3512, ""longitude"": -84.5983}"
+google/gemini-3.5-flash,CoT (effort=high),30.375,-84.515,869.413,US,True,,stop,0.0087195,1271,757,690,6.93,"{""reasoning"": ""The sandy trail with underlying reddish clay, combined with the characteristic longleaf/slash pine flatwoods vegetation, strongly indicates the southeastern United States, particularly the Florida Panhandle."", ""country"": ""US"", ""latitude"": 30.375, ""longitude"": -84.515}"
+qwen/qwen3.6-35b-a3b,no-CoT,30.4215,-84.2891,872.741,US,True,,stop,0.0001444,474,31,0,11.53,"{""country"": ""US"", ""latitude"": 30.4215, ""longitude"": -84.2891}"
+google/gemini-3.1-pro-preview,no-CoT,30.4383,-84.2807,874.548,US,True,,stop,0.0028,1190,35,0,3.47,"```json
+{""country"": ""US"", ""latitude"": 30.4383, ""longitude"": -84.2807}
+```"
+google/gemma-4-31b-it,no-CoT,30.4383,-84.2807,874.548,US,True,,stop,6.378e-05,406,36,0,11.42,"```json
+{""country"": ""US"", ""latitude"": 30.4383, ""longitude"": -84.2807}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,30.4512,-84.2891,876.036,US,True,,stop,0.000162225,473,31,0,2.45,"{""country"": ""US"", ""latitude"": 30.4512, ""longitude"": -84.2891}"
+qwen/qwen3.5-397b-a17b,no-CoT,30.4518,-84.2807,876.046,US,True,,stop,0.0003322,473,31,0,8.28,"{""country"": ""US"", ""latitude"": 30.4518, ""longitude"": -84.2807}"
+qwen/qwen3.5-9b,no-CoT,30.4515,-84.321,876.29,US,True,,stop,5.19e-05,474,30,0,2.15,"{""country"": ""US"", ""latitude"": 30.4515, ""longitude"": -84.321}"
+moonshotai/kimi-k2.6,no-CoT,30.5,-84.0,879.977,US,True,,stop,0.000289692,603,23,0,1.78,"{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -84.0}"
+xiaomi/mimo-v2.5,no-CoT,30.35,-81.65,886.274,US,True,,stop,8.03376e-05,708,27,0,1.6,"{""country"": ""US"", ""latitude"": 30.35, ""longitude"": -81.65}"
+mistralai/mistral-medium-3-5,no-CoT,30.5,-85.0,889.011,US,True,,stop,0.0011385,634,25,0,7.74,"{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -85.0}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,4054.716,US,True,,stop,0.000142875,634,32,0,2.79,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+qwen/qwen3.6-27b,no-CoT,-1.45,-48.5,4656.557,BR,True,,stop,0.0001923,473,30,0,9.26,"{""country"": ""BR"", ""latitude"": -1.4500, ""longitude"": -48.5000}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9359.951,,True,True,,,,,,2.59,
+mistralai/mistral-small-2603,CoT,-1.35,35.25,13021.988,KE,True,,stop,0.0006228,716,859,928,7.24,"{""reasoning"": ""Left-hand traffic rules out most of the world; flat-topped acacia trees and semi-arid savanna vegetation are iconic to the African Great Lakes region, specifically Kenya’s Maasai Mara ecosystem."", ""country"": ""KE"", ""latitude"": -1.35, ""longitude"": 35.25}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,18.264556884765625,109.51148986816406,15250.886,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,14.063207626342773,105.92770385742188,15806.82,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,14.025854110717773,105.95307159423828,15810.15,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.25,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.42,

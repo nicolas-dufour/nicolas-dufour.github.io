@@ -1,0 +1,82 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.048384387803,-107.87610282772,0.0,US,True,,,,,,,,"Durango, La Plata County, Colorado, US"
+google/gemini-3.5-flash,CoT (effort=medium),37.275,-107.88,25.201,US,True,,stop,0.0079905,1271,676,602,6.25,"{""reasoning"": ""The double yellow center lines, wooden utility poles, and distinctive highway streetlights indicate the United States, while the arid, hilly terrain and scrub vegetation point to the western US, likely Colorado or New Mexico."", ""country"": ""US"", ""latitude"": 37.275, ""longitude"": -107.88}"
+google/gemini-3.1-pro-preview,no-CoT,37.2753,-107.8801,25.234,US,True,,stop,0.002812,1190,36,0,7.94,"```json
+{""country"": ""US"", ""latitude"": 37.2753, ""longitude"": -107.8801}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.2451,-108.2912,42.802,US,True,,stop,0.0021075,1189,36,0,8.22,"```json
+{""country"": ""US"", ""latitude"": 37.2451, ""longitude"": -108.2912}
+```"
+google/gemini-3.5-flash,CoT (effort=high),37.3435,-108.2912,49.281,US,True,,stop,0.0075765,1271,630,557,13.09,"{""reasoning"": ""The double yellow center lines, dry semi-arid vegetation, and mesa-like hills in the background strongly indicate the western United States, specifically the Colorado Plateau region near Colorado or Utah."", ""country"": ""US"", ""latitude"": 37.3435, ""longitude"": -108.2912}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.219696044921875,-106.99467468261719,80.424,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.34466552734375,-106.9289779663086,166.492,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,37.30103302001953,-109.7397232055664,167.486,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.47397232055664,-106.92820739746094,179.082,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),36.3512,-105.9845,185.603,US,True,,stop,0.0037155,1271,201,135,3.91,"{""reasoning"": ""The double yellow center lines, road design, and distinct arid, hilly terrain with scrub vegetation are characteristic of the American Southwest, particularly northern New Mexico."", ""country"": ""US"", ""latitude"": 36.3512, ""longitude"": -105.9845}"
+google/gemini-3.1-pro-preview,CoT,35.5281,-108.7425,186.028,US,True,,stop,0.005556,1272,251,172,4.26,"{
+  ""reasoning"": ""Double yellow center lines and solid white edge lines indicate North America. The arid landscape with mesas and scrub vegetation strongly suggests the American Southwest, likely New Mexico or Arizona."",
+  ""country"": ""US"",
+  ""latitude"": 35.5281,
+  ""longitude"": -108.7425
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,36.38835144042969,-105.88826751708984,191.774,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,36.41022872924805,-105.85455322265625,193.625,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,38.5732,-109.5498,224.415,US,True,,stop,0.00022488,752,25,0,6.69,"{""country"": ""US"", ""latitude"": 38.5732, ""longitude"": -109.5498}"
+qwen/qwen3.6-27b,no-CoT,35.687,-105.9378,230.284,US,True,,stop,0.0002446,474,32,0,3.22,"{""country"": ""US"", ""latitude"": 35.6870, ""longitude"": -105.9378}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.687,-105.937,230.338,US,True,,stop,0.0001052051,473,30,0,3.22,"{""country"": ""US"", ""latitude"": 35.687, ""longitude"": -105.937}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.687,-105.932,230.675,US,True,,stop,0.0001158625,473,30,0,7.16,"{""country"": ""US"", ""latitude"": 35.687, ""longitude"": -105.932}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.0844,-106.6504,244.594,US,True,,stop,0.00020618,473,40,0,7.48,"{
+  ""country"": ""US"",
+  ""latitude"": 35.0844,
+  ""longitude"": -106.6504
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,39.5285,-105.9425,323.293,US,True,,stop,0.000383,473,32,0,3.41,"{""country"": ""US"", ""latitude"": 39.5285, ""longitude"": -105.9425}"
+x-ai/grok-4.3,no-CoT,38.85,-112.45,448.227,US,True,,stop,0.0005934,592,22,0,0.94,"{""country"": ""US"", ""latitude"": 38.85, ""longitude"": -112.45}"
+google/gemma-4-31b-it,no-CoT,39.5,-112.0,451.476,US,True,,stop,6.924e-05,406,31,0,1.52,"```json
+{""country"": ""US"", ""latitude"": 39.5, ""longitude"": -112.0}
+```"
+anthropic/claude-opus-4.8,no-CoT,37.1716,-113.2734,478.74,US,True,,stop,0.004105,666,31,0,4.93,"{""country"": ""US"", ""latitude"": 37.1716, ""longitude"": -113.2734}"
+anthropic/claude-opus-4.8,CoT,37.15,-113.3,481.103,US,True,,stop,0.006185,797,88,0,3.14,"{""reasoning"": ""Wide two-lane highway with yellow center lines, dry scrubland and arid hills typical of the American Southwest/Intermountain West, RHD driving."", ""country"": ""US"", ""latitude"": 37.15, ""longitude"": -113.3}"
+xiaomi/mimo-v2.5,CoT,40.65,-111.85,527.901,US,True,,stop,0.0001367576,787,189,116,4.29,"{""reasoning"": ""The double yellow center lines and wide paved shoulders indicate a North American highway, while the dry, shrubby vegetation and hilly terrain suggest the Intermountain West region of the United States."", ""country"": ""US"", ""latitude"": 40.65, ""longitude"": -111.85}"
+qwen/qwen3.5-9b,no-CoT,37.0665,-114.0534,548.063,US,True,,stop,5.22e-05,474,32,0,5.23,"{""country"": ""US"", ""latitude"": 37.0665, ""longitude"": -114.0534}"
+moonshotai/kimi-k2.6,CoT,34.2,-117.4,916.711,US,True,,stop,0.01226152,682,3482,3418,103.83,"{""reasoning"": ""Double-yellow center lines and wooden utility poles with cross arms are classic U.S. rural infrastructure; the chaparral-covered hills and semi-arid climate match inland Southern California."", ""country"": ""US"", ""latitude"": 34.2, ""longitude"": -117.4}"
+moonshotai/kimi-k2.6,no-CoT,33.28,-117.14,939.991,US,True,,stop,0.000296172,603,23,0,20.2,"{""country"": ""US"", ""latitude"": 33.28, ""longitude"": -117.14}"
+qwen/qwen3.5-27b,no-CoT,37.5483,-118.8097,968.175,US,True,,stop,0.0002085,474,45,0,6.49,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 37.5483,
+  ""longitude"": -118.8097
+}
+```"
+mistralai/mistral-medium-3-5,no-CoT,34.0522,-118.2437,994.693,US,True,,stop,0.001191,634,32,0,1.89,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+qwen/qwen3.6-35b-a3b,CoT,43.6,-116.2,1013.206,US,True,,stop,0.0062836,554,3858,3415,45.21,"```json
+{
+  ""reasoning"": ""The double yellow center lines, right-hand traffic, and wooden utility poles with cross-arms are standard for rural US highways, while the sagebrush vegetation and dark, rocky basalt hills in the background strongly suggest the high desert landscape of Idaho."",
+  ""country"": ""US"",
+  ""latitude"": 43.6,
+  ""longitude"": -116.2
+}
+```"
+minimax/minimax-m3,CoT,41.65,-118.25,1027.297,US,True,,stop,0.00082146,843,525,448,22.98,"{""reasoning"": ""Arid sagebrush-steppe landscape with rolling hills, US-style highway signage posts, right-hand traffic, and characteristic curved-arm street lamps indicate the Great Basin high desert, most likely a rural stretch of US-95 in northern Nevada."", ""country"": ""US"", ""latitude"": 41.65, ""longitude"": -118.25}"
+openai/gpt-5.5,no-CoT,34.8716,-119.2819,1053.994,US,True,,stop,0.00344,544,24,0,1.79,"{""country"":""US"",""latitude"":34.8716,""longitude"":-119.2819}"
+x-ai/grok-4.3,CoT,39.15,-119.75,1064.117,US,True,,stop,0.001959,676,580,514,5.78,"{
+  ""reasoning"": ""US double-yellow center line + white edge lines, right-hand traffic, arid scrub hills and utility poles match western US highways; faint halo suggests high-desert latitude."",
+  ""country"": ""US"",
+  ""latitude"": 39.15,
+  ""longitude"": -119.75
+}"
+xiaomi/mimo-v2.5,no-CoT,39.5,-119.8,1075.073,US,True,,stop,8.00576e-05,708,26,0,2.31,"{""country"": ""US"", ""latitude"": 39.5, ""longitude"": -119.8}"
+qwen/qwen3.5-397b-a17b,CoT,41.45,-120.55,1194.517,US,True,,stop,0.1222494,553,33866,33757,392.91,"{
+""reasoning"": ""The image shows a two-lane highway with double yellow lines and wooden utility poles, characteristic of rural North America, specifically the Western US. The arid landscape with sagebrush, low rolling hills, and overcast sky strongly suggests the high desert region of Northeastern California or Southern Oregon, likely along US-395."",
+""country"": ""US"",
+""latitude"": 41.45,
+""longitude"": -120.55
+}"
+openai/gpt-5.5,CoT,49.1206,-119.5458,1639.078,CA,True,,stop,0.020925,621,594,516,324.04,"{""reasoning"":""Right-hand traffic with North American yellow centerlines/white edge lines and broad rural shoulders points to US/Canada; the dry grass, scrubby hills, and utility/streetlight style most closely fit the Okanagan interior of British Columbia."",""country"":""CA"",""latitude"":49.1206,""longitude"":-119.5458}"
+mistralai/mistral-small-2603,no-CoT,69.6492,18.9553,7396.233,NO,True,,stop,0.0001137,634,31,0,0.91,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+mistralai/mistral-small-2603,CoT,43.2,-0.4,8478.454,FR,True,,stop,0.00076704,716,1211,1341,8.57,"{""reasoning"": ""Power line tower style and road infrastructure are characteristic of France's electrical grid and road standards, combined with Mediterranean climate vegetation and rolling hills typical of southwestern France near the Pyrenees."", ""country"": ""FR"", ""latitude"": 43.2, ""longitude"": -0.4}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11584.444,,True,True,,,,,,13.11,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.15,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.11,

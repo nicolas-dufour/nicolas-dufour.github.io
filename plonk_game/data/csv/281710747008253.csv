@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-16.000539096058,45.873227481144,0.0,MG,True,,,,,,,,"Mahajanga, None, Boeny, MG"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-16.429561614990234,45.51552963256836,61.11,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-16.584489822387695,45.797218322753906,65.437,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-16.594295501708984,45.791175842285156,66.601,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-15.3125,46.8125,126.36,MG,True,,stop,0.0372135,1283,3921,3838,24.87,"```json
+{""reasoning"": ""The image shows a red Toyota vehicle driving on a sandy dirt track through dry tropical forest vegetation, which is characteristic of the Google Street View coverage in Madagascar, specifically around the dry deciduous forests of the west or north."", ""country"": ""MG"", ""latitude"": -15.3125, ""longitude"": 46.8125}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-15.312543,47.621452,202.209,MG,True,,stop,0.0021525,1201,39,0,1.28,"```json
+{""country"": ""MG"", ""latitude"": -15.312543, ""longitude"": 47.621452}
+```"
+google/gemini-3.1-pro-preview,CoT,-19.852,44.615,448.464,MG,True,,stop,0.00571,1283,262,180,12.47,"{
+  ""reasoning"": ""The visible red hood with a Toyota ornament is a well-known Google Street View car meta for Madagascar. The sandy dirt road and dry tropical vegetation are consistent with the western regions of the country."",
+  ""country"": ""MG"",
+  ""latitude"": -19.852,
+  ""longitude"": 44.615
+}"
+google/gemini-3.5-flash,CoT (effort=low),-20.3012,44.4125,502.487,MG,True,,stop,0.004677,1282,306,237,17.79,"{""reasoning"": ""The sandy dirt track, dry tropical vegetation, and the older Toyota vehicle with a hood ornament suggest a rural area in Madagascar, likely in the western dry deciduous forest region."", ""country"": ""MG"", ""latitude"": -20.3012, ""longitude"": 44.4125}"
+google/gemini-3.1-pro-preview,no-CoT,-22.8166,44.5333,770.808,MG,True,,stop,0.002822,1201,35,0,2.27,"```json
+{""country"": ""MG"", ""latitude"": -22.8166, ""longitude"": 44.5333}
+```"
+moonshotai/kimi-k2.6,CoT,-24.4,31.1,1800.41,ZA,True,,stop,0.009509364,796,2708,2631,152.39,"{""reasoning"": ""Dry savanna woodland with sandy soil and a Mercedes-Benz hood ornament are classic indicators of the South African Bushveld. The unpaved track and dense bush suggest a rural game-reserve area in Limpopo or Mpumalanga."", ""country"": ""ZA"", ""latitude"": -24.4, ""longitude"": 31.1}"
+moonshotai/kimi-k2.6,no-CoT,-24.5,31.0,1814.614,ZA,True,,stop,0.00060966,716,23,0,17.82,"{""country"": ""ZA"", ""latitude"": -24.5, ""longitude"": 31.0}"
+x-ai/grok-4.3,CoT,-25.412,31.184,1849.435,ZA,True,,stop,0.0027015,756,837,778,15.01,"{""reasoning"": ""Red vehicle hood with central ornament, single-lane dirt road, dense broadleaf/savanna trees and dry grass under clear subtropical sky point to rural southern Africa."", ""country"": ""ZA"", ""latitude"": -25.412, ""longitude"": 31.184}"
+anthropic/claude-opus-4.8,CoT,-25.5,28.3,2107.248,ZA,True,,stop,0.006905,911,94,0,9.58,"{""reasoning"": ""Dry sandy dirt track with mixed savanna woodland and dry grasses suggests southern African bushveld; vegetation and light consistent with South African rural farmland."", ""country"": ""ZA"", ""latitude"": -25.5, ""longitude"": 28.3}"
+anthropic/claude-opus-4.8,no-CoT,-25.7479,28.2293,2126.05,ZA,True,,stop,0.004725,780,33,0,2.37,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 28.2293}"
+x-ai/grok-4.3,no-CoT,-25.748,28.189,2129.647,ZA,True,,stop,0.0006934,672,22,0,7.69,"{""country"": ""ZA"", ""latitude"": -25.748, ""longitude"": 28.189}"
+openai/gpt-5.5,CoT,-19.2215,23.4358,2403.017,BW,True,,stop,0.012585,717,300,208,10.05,"{""reasoning"":""Sandy single-track road through dry savanna/riverine bush viewed from a Toyota safari vehicle strongly suggests southern African game-reserve coverage, especially Botswana's Okavango/Moremi area. The vegetation and flat, pale Kalahari sand fit Moremi/Khwai tracks better than paved or agricultural regions."",""country"":""BW"",""latitude"":-19.2215,""longitude"":23.4358}"
+openai/gpt-5.5,no-CoT,-19.1667,23.3167,2414.956,BW,True,,stop,0.00392,640,24,0,1.76,"{""country"":""BW"",""latitude"":-19.1667,""longitude"":23.3167}"
+qwen/qwen3.5-122b-a10b,no-CoT,-33.9188,18.4233,3390.698,ZA,True,,stop,0.0002451,569,31,0,1.9,"{""country"": ""ZA"", ""latitude"": -33.9188, ""longitude"": 18.4233}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.9249,18.4241,3390.964,ZA,True,,stop,0.00012164555,569,31,0,1.6,"{""country"": ""ZA"", ""latitude"": -33.9249, ""longitude"": 18.4241}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5336.119,,True,True,,,,,,7.63,
+qwen/qwen3.5-397b-a17b,CoT,40.45,-3.9,8109.226,ES,True,,stop,0.0074982,649,1988,1886,164.62,"{
+""reasoning"": ""The vegetation consists of Mediterranean evergreen oaks (likely Holm or Cork oak) and dry, grassy underbrush, characteristic of the Iberian Peninsula's rural landscapes. The reddish-brown sandy soil of the unpaved road and the bright, harsh sunlight further support a location in central or southern Spain."",
+""country"": ""ES"",
+""latitude"": 40.45,
+""longitude"": -3.90
+}"
+mistralai/mistral-small-2603,CoT,59.33,18.07,8746.559,SE,True,,stop,0.0004239,830,499,541,4.72,"{""reasoning"": ""Yellow license plates with black text indicate Sweden, and right-hand traffic with European road markings supports this."", ""country"": ""SE"", ""latitude"": 59.33, ""longitude"": 18.07}"
+minimax/minimax-m3,CoT,-14.45,132.27,9194.409,AU,True,,stop,0.00066762,959,365,347,8.4,"{""reasoning"": ""Red sandy soil, eucalyptus (gum) trees, spinifex grass, and arid bushland are hallmark features of the Australian outback, likely Northern Territory or Kimberley region. The Toyota Land Cruiser hood ornament and lack of pavement further support remote outback Australia."", ""country"": ""AU"", ""latitude"": -14.45, ""longitude"": 132.27}"
+qwen/qwen3.5-397b-a17b,no-CoT,-34.9285,138.6007,9239.122,AU,True,,stop,0.0003837,569,32,0,14.0,"{""country"": ""AU"", ""latitude"": -34.9285, ""longitude"": 138.6007}"
+qwen/qwen3.5-9b,no-CoT,-34.9245,138.6007,9239.235,AU,True,,stop,6.18e-05,570,32,0,3.73,"{""country"": ""AU"", ""latitude"": -34.9245, ""longitude"": 138.6007}"
+qwen/qwen3.6-27b,no-CoT,-37.8136,144.9631,9695.086,AU,True,,stop,0.0002251,569,32,0,11.59,"{""country"": ""AU"", ""latitude"": -37.8136, ""longitude"": 144.9631}"
+qwen/qwen3.5-27b,no-CoT,-33.8568,151.2153,10374.952,AU,True,,stop,0.0002165,570,37,0,10.42,"```json
+{""country"": ""AU"", ""latitude"": -33.8568, ""longitude"": 151.2153}
+```"
+xiaomi/mimo-v2.5,CoT,-33.8,151.2,10375.984,AU,True,,stop,0.0008739976,883,2774,2696,33.04,"{""reasoning"": ""The unpaved track is surrounded by dry grass and large trees with rough bark and irregular branching, resembling eucalyptus or angophora species characteristic of Australian bushland, and the lighting suggests a southern hemisphere summer."", ""country"": ""AU"", ""latitude"": -33.8, ""longitude"": 151.2}"
+minimax/minimax-m3,no-CoT,-25.5,152.7,10854.117,AU,True,,stop,0.00022596,866,23,0,3.04,"{""country"": ""AU"", ""latitude"": -25.5, ""longitude"": 152.7}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-34.36387634277344,-71.28511047363281,11333.351,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,30.2672,-97.7431,15993.688,US,True,,stop,0.0013545,748,31,0,1.0,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+xiaomi/mimo-v2.5,no-CoT,30.2672,-97.7431,15993.688,US,True,,stop,9.48976e-05,804,31,0,1.11,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+qwen/qwen3.5-35b-a3b,no-CoT,36.0544,-112.1401,16900.307,US,True,,stop,0.0001118,570,32,0,2.69,"{""country"": ""US"", ""latitude"": 36.0544, ""longitude"": -112.1401}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,34.3160285949707,-115.93548583984375,17286.17,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4194,17338.299,US,True,,stop,0.00016425,748,32,0,1.95,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4194}"
+google/gemma-4-31b-it,no-CoT,34.0522,-118.2437,17455.431,US,True,,stop,0.00011012,404,36,0,5.83,"```json
+{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,34.477561950683594,-119.6310043334961,17502.331,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.29,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.24,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.14,
+google/gemini-3.5-flash,CoT (effort=medium),,,,,False,,length,0.037887,1282,3996,3836,21.56,"
+Wait, what about Peru? Peru has a red car in some areas? No, Peru has a white car, but some areas have a black car.
+What about Brazil? Brazil has a white car, but some areas have a black car.
+What about Argentina? Argentina has a white car, but some areas have a black car.
+What about Chile? Chile has a white car, but some areas have a black car.
+What about Uruguay? Uruguay has a white car, but some areas have a black car.
+What about Bolivia? Bolivia has a white car, but some areas have a black car.
+What about Ecuador? Ecuador has a white car, but some areas have a black car.
+
+Wait, is there a red car in the Dominican Republic?
+"

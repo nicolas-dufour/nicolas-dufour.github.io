@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,39.804616321853,-111.68623306402,0.0,US,True,,,,,,,,"Mona, Juab County, Utah, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,39.78609085083008,-111.67980194091797,2.132,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,39.78547286987305,-111.6806869506836,2.181,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,39.83251953125,-111.70559692382812,3.516,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),40.6075,-111.5582,89.936,US,True,,stop,0.0059835,1271,453,374,4.04,"{""reasoning"": ""The double yellow center lines and white edge lines indicate North America, while the mix of quaking aspens and conifers alongside reddish soil is highly characteristic of high-elevation roads in the Rocky Mountains, particularly in Utah."", ""country"": ""US"", ""latitude"": 40.6075, ""longitude"": -111.5582}"
+anthropic/claude-opus-4.8,no-CoT,37.6283,-112.1677,245.573,US,True,,stop,0.004105,666,31,0,17.87,"{""country"": ""US"", ""latitude"": 37.6283, ""longitude"": -112.1677}"
+google/gemini-3.1-pro-preview,no-CoT,37.6283,-112.1677,245.573,US,True,,stop,0.002812,1190,36,0,8.94,"```json
+{""country"": ""US"", ""latitude"": 37.6283, ""longitude"": -112.1677}
+```"
+google/gemini-3.5-flash,CoT (effort=low),37.6482,-112.8125,258.917,US,True,,stop,0.004266,1272,262,180,9.15,"{""reasoning"": ""The double yellow center line and white edge lines indicate North America, while the combination of high-altitude aspen and conifer trees with burnt trunks is highly characteristic of the mountain passes in southern Utah, such as near Dixie National Forest."", ""country"": ""US"", ""latitude"": 37.6482, ""longitude"": -112.8125}"
+google/gemini-3.1-pro-preview,CoT,37.632,-112.835,261.328,US,True,,stop,0.006336,1272,316,229,4.65,"{
+  ""reasoning"": ""Double yellow center lines and white edge lines indicate North America. The mix of quaking aspens, conifers, and reddish soil strongly suggests a high-elevation area in the western US, likely southern Utah or Colorado."",
+  ""country"": ""US"",
+  ""latitude"": 37.632,
+  ""longitude"": -112.835
+}"
+google/gemini-3.5-flash,CoT (effort=high),37.6285,-112.8352,261.695,US,True,,stop,0.0096735,1271,863,784,13.2,"```json
+{""reasoning"": ""The double yellow center lines and white edge lines indicate North America, while the combination of quaking aspens, conifers, and reddish soil points to the high-elevation forests of southern Utah."", ""country"": ""US"", ""latitude"": 37.6285, ""longitude"": -112.8352}
+```"
+anthropic/claude-opus-4.8,CoT,37.62,-112.84,262.73,US,True,,stop,0.00651,797,101,0,9.63,"{""reasoning"": ""Yellow center lines, aspen and conifer forest with dead beetle-kill trees at high elevation suggests the Rocky Mountains of the western US, likely Utah/Colorado highlands."", ""country"": ""US"", ""latitude"": 37.62, ""longitude"": -112.84}"
+openai/gpt-5.5,no-CoT,37.6127,-112.8371,263.387,US,True,,stop,0.00344,544,24,0,1.77,"{""country"":""US"",""latitude"":37.6127,""longitude"":-112.8371}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,38.99172592163086,-107.2196044921875,394.253,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,39.2,-106.8,424.528,US,True,,stop,0.0004640776,787,1358,1285,20.89,"{""reasoning"": ""The double yellow road lines indicate right-hand traffic common in the US, and the forest with white-barked aspens suggests a mountainous region in the western United States, likely the Rocky Mountains."", ""country"": ""US"", ""latitude"": 39.2, ""longitude"": -106.8}"
+qwen/qwen3.5-397b-a17b,no-CoT,39.1234,-106.5678,445.808,US,True,,stop,0.00025935,473,32,0,1.36,"{""country"": ""US"", ""latitude"": 39.1234, ""longitude"": -106.5678}"
+x-ai/grok-4.3,CoT,39.65,-106.35,456.608,US,True,,stop,0.0020605,676,596,529,314.52,"{""reasoning"": ""Right-side driving with double yellow center line + white edge lines; aspen/pine mix with beetle-kill snags on steep mountain slope indicates Colorado Rockies. Typical US Forest Service two-lane asphalt."", ""country"": ""US"", ""latitude"": 39.65, ""longitude"": -106.35}"
+moonshotai/kimi-k2.6,CoT,39.25,-106.35,461.737,US,True,,stop,0.009612,680,2281,2601,75.32,"{""reasoning"": ""The double-yellow centerline with white edge lines, left-hand drive perspective, and mixed quaking aspen-conifer forest at elevation are diagnostic of the Rocky Mountains in the western United States."", ""country"": ""US"", ""latitude"": 39.25, ""longitude"": -106.35}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,39.42860412597656,-106.30809783935547,462.495,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,39.47261047363281,-106.27803039550781,464.498,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,39.7392,-106.0456,482.047,US,True,,stop,0.0001184625,473,32,0,0.65,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -106.0456}"
+qwen/qwen3.5-9b,no-CoT,39.5506,-105.9378,492.682,US,True,,stop,5.22e-05,474,32,0,6.0,"{""country"": ""US"", ""latitude"": 39.5506, ""longitude"": -105.9378}"
+x-ai/grok-4.3,no-CoT,39.65,-105.9,495.048,US,True,,stop,0.0005934,592,22,0,1.97,"{""country"": ""US"", ""latitude"": 39.65, ""longitude"": -105.9}"
+openai/gpt-5.5,CoT,35.3339,-111.6946,497.122,US,True,,stop,0.016035,621,431,343,10.83,"{""reasoning"":""Right-side driving with US-style double yellow centerlines and white edge lines points to the United States. The high-elevation mix of aspens and conifers, volcanic/red roadside soil, and burn-scarred forest strongly fit the San Francisco Peaks/Arizona Snowbowl area near Flagstaff."",""country"":""US"",""latitude"":35.3339,""longitude"":-111.6946}"
+google/gemma-4-31b-it,no-CoT,39.55,-105.7833,505.882,US,True,,stop,7.164e-05,406,37,0,9.1,"```json
+{""country"": ""US"", ""latitude"": 39.5500, ""longitude"": -105.7833}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),35.2521,-111.6813,506.217,US,True,,stop,0.0021075,1189,36,0,7.45,"```json
+{""country"": ""US"", ""latitude"": 35.2521, ""longitude"": -111.6813}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,44.4197,-110.5885,521.087,US,True,,stop,0.0001898,474,32,0,16.13,"{""country"": ""US"", ""latitude"": 44.4197, ""longitude"": -110.5885}"
+qwen/qwen3.5-27b,no-CoT,44.4236,-110.5885,521.513,US,True,,stop,0.000149955,473,37,0,3.95,"```json
+{""country"": ""US"", ""latitude"": 44.4236, ""longitude"": -110.5885}
+```"
+qwen/qwen3.6-27b,no-CoT,44.428,-110.5885,521.995,US,True,,stop,0.0001963,473,32,0,14.75,"{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5885}"
+qwen/qwen3.6-35b-a3b,no-CoT,44.428,-110.588,522.002,US,True,,stop,0.0001428,474,30,0,8.86,"{""country"": ""US"", ""latitude"": 44.428, ""longitude"": -110.588}"
+xiaomi/mimo-v2.5,no-CoT,34.25,-111.5,617.866,US,True,,stop,8.03376e-05,708,27,0,1.05,"{""country"": ""US"", ""latitude"": 34.25, ""longitude"": -111.5}"
+minimax/minimax-m3,CoT,44.52,-107.42,631.109,US,True,,stop,0.00096066,843,641,566,23.0,"{""reasoning"": ""Double yellow centerline with right-hand driving indicates US road standards; dense aspen groves mixed with spruce/fir and reddish-orange subsoil on cut banks are characteristic of high-elevation Rocky Mountain terrain in Wyoming/Montana."", ""country"": ""US"", ""latitude"": 44.52, ""longitude"": -107.42}"
+mistralai/mistral-medium-3-5,no-CoT,35.5587,-105.8286,698.711,US,True,,stop,0.001191,634,32,0,2.79,"{""country"": ""US"", ""latitude"": 35.5587, ""longitude"": -105.8286}"
+mistralai/mistral-small-2603,no-CoT,66.5,25.745,7651.247,FI,True,,stop,0.0001113,634,27,0,4.58,"{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 25.745}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11841.359,,True,True,,,,,,20.22,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,15.6,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.31,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.62,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.31,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.5,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.69,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.27,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.21,

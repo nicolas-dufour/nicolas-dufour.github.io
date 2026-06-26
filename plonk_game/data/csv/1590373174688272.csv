@@ -1,0 +1,70 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,60.5693569236925,33.180535014378904,0.0,RU,True,,,,,,,,"Pasha, None, Leningrad, RU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,60.56664276123047,33.47950744628906,16.339,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,60.34919738769531,33.555816650390625,31.978,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,60.29901123046875,33.41676330566406,32.736,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,61.0,32.0,79.987,RU,True,,stop,0.021222252,948,6113,6049,199.71,"{""reasoning"": ""Blue rectangular kilometer markers and white posts with black stripes are standard on Russian federal highways. The flat asphalt road through dense mixed boreal forest indicates northwestern Russia's taiga zone."", ""country"": ""RU"", ""latitude"": 61.0, ""longitude"": 32.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),61.291432,34.254121,99.047,RU,True,,stop,0.0021225,1181,39,0,1.59,"```json
+{""country"": ""RU"", ""latitude"": 61.291432, ""longitude"": 34.254121}
+```"
+google/gemini-3.1-pro-preview,CoT,59.5,33.5,120.223,RU,True,,stop,0.00584,1264,276,218,4.4,"{
+  ""reasoning"": ""The blue square kilometer marker and the boreal forest vegetation are highly characteristic of rural highways in Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 59.5,
+  ""longitude"": 33.5
+}"
+google/gemini-3.5-flash,CoT (effort=low),61.524,31.482,140.09,RU,True,,stop,0.005253,1264,373,303,3.97,"{""reasoning"": ""The flat terrain, dense birch and pine forest, and distinctive blue kilometer marker and white roadside posts with black tops are characteristic of rural Russia, likely in the northwestern region near Karelia."", ""country"": ""RU"", ""latitude"": 61.524, ""longitude"": 31.482}"
+google/gemini-3.5-flash,CoT (effort=medium),60.15,30.55,151.976,RU,True,,stop,0.0113175,1263,1047,971,16.52,"```json
+{""reasoning"": ""The flat terrain, dense mixed birch and pine forest, and distinctive blue kilometer marker '9' alongside post-Soviet style sign backings indicate a location in northwestern Russia, likely in the Leningrad Oblast."", ""country"": ""RU"", ""latitude"": 60.15, ""longitude"": 30.55}
+```"
+google/gemini-3.1-pro-preview,no-CoT,60.1234,30.5678,152.039,RU,True,,stop,0.002784,1182,35,0,2.65,"```json
+{""country"": ""RU"", ""latitude"": 60.1234, ""longitude"": 30.5678}
+```"
+google/gemini-3.5-flash,CoT (effort=high),60.4521,30.2844,159.048,RU,True,,stop,0.0115155,1263,1069,990,8.9,"```json
+{""reasoning"": ""The flat terrain with dense birch and pine forest, combined with the blue kilometer marker and the style of the road signs, is highly characteristic of northwestern Russia, particularly the Leningrad or Karelia regions."", ""country"": ""RU"", ""latitude"": 60.4521, ""longitude"": 30.2844}
+```"
+openai/gpt-5.5,CoT,62.2416,30.4028,237.504,FI,True,,stop,0.020065,851,527,435,12.33,"{""reasoning"":""The blue national route shield with white '9', yellow/red Nordic warning signage, right-side driving, and Finnish-style white delineator posts point to Finland. The flat boreal birch/pine forest and long rural highway fit Finnish Route 9 in eastern Finland, likely near Tohmajärvi/Niirala."",""country"":""FI"",""latitude"":62.2416,""longitude"":30.4028}"
+xiaomi/mimo-v2.5,CoT,62.3014,27.128,374.815,FI,True,,stop,0.0006292776,995,1844,1773,77.82,"{""reasoning"": ""The blue road sign displaying '9' suggests Finnish Route 9, and the dense coniferous forest with overcast weather is characteristic of Finland's boreal region."", ""country"": ""FI"", ""latitude"": 62.3014, ""longitude"": 27.128}"
+anthropic/claude-opus-4.8,no-CoT,61.5,40.5,407.264,RU,True,,stop,0.00541,932,30,0,2.23,"{""country"": ""RU"", ""latitude"": 61.5, ""longitude"": 40.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,61.69633102416992,25.880229949951172,411.189,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,61.6956,25.7289,418.9,FI,True,,stop,0.00013315,681,31,0,8.02,"{""country"": ""FI"", ""latitude"": 61.6956, ""longitude"": 25.7289}"
+x-ai/grok-4.3,CoT,61.85,25.75,422.346,FI,True,,stop,0.0041365,868,1355,1282,16.51,"{""reasoning"": ""Boreal birch/pine forest, European yield + diamond warning signs, blue route marker '9', right-hand traffic, and straight asphalt road match Finnish national road 9 corridor; MPH display is consistent with UK-imported vehicle."", ""country"": ""FI"", ""latitude"": 61.85, ""longitude"": 25.75}"
+x-ai/grok-4.3,no-CoT,61.85,25.75,422.346,FI,True,,stop,0.0008334,784,22,0,0.87,"{""country"": ""FI"", ""latitude"": 61.85, ""longitude"": 25.75}"
+qwen/qwen3.5-9b,no-CoT,62.9167,25.75,469.815,FI,True,,stop,7.255e-05,682,29,0,3.5,"{""country"": ""FI"", ""latitude"": 62.9167, ""longitude"": 25.75}"
+qwen/qwen3.5-27b,no-CoT,62.9333,25.75,470.752,FI,True,,stop,0.00028652,682,42,0,3.81,"```json
+{
+  ""country"": ""FI"",
+  ""latitude"": 62.9333,
+  ""longitude"": 25.75
+}
+```"
+openai/gpt-5.5,no-CoT,64.3686,28.3087,490.778,FI,True,,stop,0.00456,774,23,0,1.73,"{""country"":""FI"",""latitude"":64.3686,""longitude"":28.3087}"
+xiaomi/mimo-v2.5,no-CoT,61.4978,23.761,517.167,FI,True,,stop,0.0001105776,916,31,0,2.09,"{""country"": ""FI"", ""latitude"": 61.4978, ""longitude"": 23.7610}"
+qwen/qwen3.6-35b-a3b,no-CoT,61.4987,23.7612,517.169,FI,True,,stop,0.000209,681,31,0,0.98,"{""country"": ""FI"", ""latitude"": 61.4987, ""longitude"": 23.7612}"
+qwen/qwen3.6-27b,no-CoT,63.982,25.748,539.577,FI,True,,stop,0.0002567,681,31,0,308.39,"{""country"": ""FI"", ""latitude"": 63.9820, ""longitude"": 25.7480}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,65.24952697753906,30.143396377563477,542.505,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,64.6866,26.4916,570.803,FI,True,,stop,0.0005042,681,31,0,1.72,"{""country"": ""FI"", ""latitude"": 64.6866, ""longitude"": 26.4916}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,65.65354919433594,29.087068557739258,601.344,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,64.7528,25.4682,608.667,FI,True,,stop,0.0015825,900,31,0,1.22,"{""country"": ""FI"", ""latitude"": 64.7528, ""longitude"": 25.4682}"
+anthropic/claude-opus-4.8,CoT,61.5,46.0,696.863,RU,True,,stop,0.00744,1063,85,0,3.68,"{""reasoning"": ""Birch-dominated boreal forest, Russian-style road signage and white delineator posts, overcast northern sky suggest northwestern Russia."", ""country"": ""RU"", ""latitude"": 61.5, ""longitude"": 46.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,62.8333,17.3167,870.739,SE,True,,stop,0.0002979,681,39,0,5.58,"{
+  ""country"": ""SE"",
+  ""latitude"": 62.8333,
+  ""longitude"": 17.3167
+}"
+minimax/minimax-m3,CoT,58.35,-3.95,2083.979,GB,True,,stop,0.00107406,1109,669,580,28.15,"{""reasoning"": ""Blue A-road primary route sign on the right, left-hand traffic, yellow warning sign, MPH speedometer, and flat boreal birch/pine forest landscape with overcast weather all point to the A9 in the Scottish Highlands, likely the northern section through the Flow Country/Caithness."", ""country"": ""GB"", ""latitude"": 58.35, ""longitude"": -3.95}"
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,2336.554,FR,True,,stop,0.000153,900,30,0,5.8,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+google/gemma-4-31b-it,no-CoT,61.215,105.312,3701.379,RU,True,,stop,6.308e-05,404,35,0,4.99,"```json
+{""country"": ""RU"", ""latitude"": 61.215, ""longitude"": 105.312}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,45.523062,-122.676482,8017.525,,True,,stop,6.028e-05,404,45,0,8.59,"Please own-brand
+{""country"": own-brand"": ""US"", ""latitude"": 45.523062, ""longitude"": -122.676482}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,16.64,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.26,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.21,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.74,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.48,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.2,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,2.2,

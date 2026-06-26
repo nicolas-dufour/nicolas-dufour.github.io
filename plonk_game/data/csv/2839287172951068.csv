@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.131720330727,-77.084965394727,0.0,CA,True,,,,,,,,"Deseronto, None, Ontario, CA"
+qwen/qwen3.6-27b,no-CoT,44.2663,-76.5973,41.656,US,True,,stop,0.0002414,474,31,0,4.87,"{""country"": ""US"", ""latitude"": 44.2663, ""longitude"": -76.5973}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,44.89617156982422,-75.86207580566406,128.945,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,44.92134475708008,-75.85224914550781,131.37,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.09519958496094,-75.84185028076172,145.461,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,45.3,-76.0,155.641,CA,True,,stop,0.006585,797,104,0,2.94,"{""reasoning"": ""Wide rural two-lane highway with yellow center line, driving on the right, mixed deciduous-conifer forest and overcast sky suggest northern North America, likely Ontario/Great Lakes region."", ""country"": ""CA"", ""latitude"": 45.3, ""longitude"": -76.0}"
+openai/gpt-5.5,CoT,45.2456,-75.4589,178.499,CA,True,,stop,0.015885,621,426,339,35.99,"{""reasoning"":""Right-hand traffic with North American yellow centerline and unmarked asphalt shoulders, plus flat mixed deciduous roadside vegetation, points most strongly to rural southern/eastern Ontario. The concrete slab roadway and overcast humid green landscape fit secondary roads around Ottawa/Ontario rather than drier western regions."",""country"":""CA"",""latitude"":45.2456,""longitude"":-75.4589}"
+anthropic/claude-opus-4.8,no-CoT,45.4215,-75.6972,180.458,CA,True,,stop,0.00413,666,32,0,9.16,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -75.6972}"
+moonshotai/kimi-k2.6,no-CoT,45.4215,-75.6972,180.458,CA,True,,stop,0.00067285,603,25,0,1.4," {""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -75.6972}"
+openai/gpt-5.5,no-CoT,45.3496,-75.5234,183.161,CA,True,,stop,0.00344,544,24,0,2.75,"{""country"":""CA"",""latitude"":45.3496,""longitude"":-75.5234}"
+qwen/qwen3.6-35b-a3b,CoT,43.6532,-79.3832,191.687,US,True,,stop,0.0033845071,553,3414,3311,112.89,"```json
+{
+  ""reasoning"": ""The yellow dashed center line and right-hand traffic strongly indicate North America (USA or Canada). The concrete road surface with asphalt shoulders and the style of the small white rectangular sign on the right shoulder are characteristic of rural US highways, particularly in the Midwest or Northeast."",
+  ""country"": ""US"",
+  ""latitude"": 43.6532,
+  ""longitude"": -79.3832
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.62821960449219,-79.48091888427734,200.019,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,46.35,-76.85,247.346,CA,True,,stop,0.00086586,843,562,475,23.3,"{""reasoning"": ""Yellow center lines with white edge lines indicate North America; concrete road with patches, dense mixed deciduous-conifer forest, overcast sky, and rural undivided highway design are highly characteristic of secondary highways in Quebec/Ontario. Right-hand driving and lack of shoulders support a remote Canadian provincial road."", ""country"": ""CA"", ""latitude"": 46.35, ""longitude"": -76.85}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.4347038269043,-80.25234985351562,254.361,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,44.578609466552734,-80.56513977050781,281.1,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,42.3314,-83.0458,522.607,US,True,,stop,0.00018746,473,31,0,8.11,"{""country"": ""US"", ""latitude"": 42.3314, ""longitude"": -83.0458}"
+google/gemini-3.1-pro-preview,CoT,44.5,-84.5,591.155,US,True,,stop,0.005602,1271,255,176,5.0,"{
+  ""reasoning"": ""The dashed yellow center line and concrete road with tar-filled cracks are typical of North America, particularly the US Midwest. The dense deciduous forest and road style strongly suggest a state like Michigan or Wisconsin."",
+  ""country"": ""US"",
+  ""latitude"": 44.5,
+  ""longitude"": -84.5
+}"
+google/gemini-3.5-flash,CoT (effort=low),44.3148,-84.5068,591.56,US,True,,stop,0.0041025,1271,244,173,9.64,"{""reasoning"": ""The concrete road surface with asphalt shoulders, yellow dashed center line, and dense deciduous forest under an overcast sky are highly characteristic of the Great Lakes region in North America, particularly Michigan."", ""country"": ""US"", ""latitude"": 44.3148, ""longitude"": -84.5068}"
+x-ai/grok-4.3,CoT,41.85,-84.15,627.872,US,True,,stop,0.0025415,676,813,741,7.92,"{""reasoning"": ""Yellow center-line markings, right-side shoulder, LHD perspective from car interior, and mixed deciduous temperate forest indicate North America; overcast rural two-lane highway with no visible signage narrows to US Midwest/Great Lakes region."", ""country"": ""US"", ""latitude"": 41.85, ""longitude"": -84.15}"
+moonshotai/kimi-k2.6,CoT,45.0,-85.0,634.154,US,True,,stop,0.009204,680,2179,2519,49.14,"{""reasoning"": ""Yellow center line and left-hand drive placement confirm North America; dense mixed forest and flat, patched rural highway are typical of the northern US Great Lakes region."", ""country"": ""US"", ""latitude"": 45.0, ""longitude"": -85.0}"
+google/gemini-3.5-flash,CoT (effort=medium),44.3148,-85.4012,662.71,US,True,,stop,0.0056055,1271,411,348,7.18,"{""reasoning"": ""The concrete road surface with asphalt shoulders, dashed yellow center line, and dense deciduous forest are highly characteristic of the US Midwest, particularly Michigan."", ""country"": ""US"", ""latitude"": 44.3148, ""longitude"": -85.4012}"
+google/gemma-4-31b-it,no-CoT,44.3148,-85.6022,678.699,US,True,,stop,7.124e-05,406,36,0,8.54,"```json
+{""country"": ""US"", ""latitude"": 44.3148, ""longitude"": -85.6022}
+```"
+qwen/qwen3.5-9b,no-CoT,42.9634,-85.6064,698.62,US,True,,stop,5.205e-05,474,31,0,3.51,"{""country"": ""US"", ""latitude"": 42.9634, ""longitude"": -85.6064}"
+google/gemini-3.5-flash,CoT (effort=high),45.9123,-86.2541,746.881,US,True,,stop,0.0079365,1271,670,596,6.03,"{""reasoning"": ""The concrete road surface with a dashed yellow center line and wide asphalt shoulders is characteristic of North American highways, while the dense deciduous forest and flat terrain suggest the Great Lakes region of the United States."", ""country"": ""US"", ""latitude"": 45.9123, ""longitude"": -86.2541}"
+x-ai/grok-4.3,no-CoT,39.5,-84.2,782.358,US,True,,stop,0.0007278,592,22,0,0.91,"{""country"": ""US"", ""latitude"": 39.5, ""longitude"": -84.2}"
+minimax/minimax-m3,no-CoT,44.5,-88.0,868.717,US,True,,stop,0.00022248,752,23,0,13.26,"{""country"": ""US"", ""latitude"": 44.5, ""longitude"": -88.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),44.5132,-88.0131,869.728,US,True,,stop,0.0020985,1189,35,0,1.61,"```json
+{""country"": ""US"", ""latitude"": 44.5132, ""longitude"": -88.0131}
+```"
+google/gemini-3.1-pro-preview,no-CoT,44.519159,-88.019826,870.249,US,True,,stop,0.002846,1189,39,0,10.59,"```json
+{""country"": ""US"", ""latitude"": 44.519159, ""longitude"": -88.019826}
+```"
+qwen/qwen3.5-397b-a17b,CoT,46.08,-90.17,1048.239,US,True,,stop,0.0110262,553,2984,2901,30.2,"{""reasoning"": ""The yellow dashed center line and right-hand traffic confirm a North American location (USA or Canada), while the concrete pavement style and dense temperate deciduous forest are highly characteristic of rural highways in the US Midwest, particularly Northern Wisconsin or Michigan."", ""country"": ""US"", ""latitude"": 46.08, ""longitude"": -90.17}"
+mistralai/mistral-medium-3-5,no-CoT,44.9778,-93.265,1283.333,US,True,,stop,0.0011835,634,31,0,0.98,"{""country"": ""US"", ""latitude"": 44.9778, ""longitude"": -93.2650}"
+qwen/qwen3.5-27b,no-CoT,44.9778,-93.265,1283.333,US,True,,stop,0.00019251,473,30,0,2.64,"{""country"": ""US"", ""latitude"": 44.9778, ""longitude"": -93.265}"
+qwen/qwen3.5-35b-a3b,no-CoT,44.9778,-93.265,1283.333,US,True,,stop,0.0001158625,473,30,0,0.63,"{""country"": ""US"", ""latitude"": 44.9778, ""longitude"": -93.265}"
+qwen/qwen3.6-35b-a3b,no-CoT,45.2,-93.5,1301.322,US,True,,stop,0.0039658827,471,4030,3998,17.12,"{""country"": ""US"", ""latitude"": 45.2, ""longitude"": -93.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,49.2827,-94.7302,1457.848,CA,True,,stop,0.00029145,473,31,0,10.67,"{""country"": ""CA"", ""latitude"": 49.2827, ""longitude"": -94.7302}"
+xiaomi/mimo-v2.5,no-CoT,30.5,-90.5,1919.466,US,True,,stop,7.97776e-05,708,25,0,4.05,"{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -90.5}"
+xiaomi/mimo-v2.5,CoT,30.9843,-91.9623,1957.657,US,True,,stop,0.0001532776,787,248,150,9.49,"{""reasoning"": ""The vehicle is driving on the right side of the road, indicated by the yellow center lines on the left and white shoulder lines on the right. The flat terrain, concrete highway with gravel shoulders, and dense, lush green deciduous vegetation suggest a humid subtropical climate typical of the southeastern United States."", ""country"": ""US"", ""latitude"": 30.9843, ""longitude"": -91.9623}"
+mistralai/mistral-small-2603,no-CoT,43.5768,3.8916,6208.893,FR,True,,stop,0.0001131,634,30,0,2.09,"{""country"": ""FR"", ""latitude"": 43.5768, ""longitude"": 3.8916}"
+mistralai/mistral-small-2603,CoT,48.3,8.0,6214.557,DE,True,,stop,0.00064344,716,1005,1162,13.61,"{""reasoning"": ""Right-hand traffic, clean European road markings, temperate deciduous forest, and modern vehicle suggest Central Europe, likely Germany."", ""country"": ""DE"", ""latitude"": 48.3, ""longitude"": 8.0}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8981.077,,True,True,,,,,,19.18,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.19,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.31,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,

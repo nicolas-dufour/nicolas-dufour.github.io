@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,36.962967975965,8.9657184645253,0.0,TN,True,,,,,,,,"Tabarka, None, Jundubah, TN"
+google/gemini-3.5-flash,no-CoT (effort=minimal),36.761234,8.684321,33.614,TN,True,,stop,0.002181,1226,38,0,7.47,"```json
+{""country"": ""TN"", ""latitude"": 36.761234, ""longitude"": 8.684321}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,39.26863098144531,8.468822479248047,260.036,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,39.34783935546875,8.456551551818848,268.895,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,39.88417053222656,4.27941370010376,521.568,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,42.15,9.08,576.855,FR,True,,stop,0.004932,1308,193,118,4.05,"{
+  ""reasoning"": ""The dashed white edge lines and plain white bollards are characteristic of rural roads in France. The dry, Mediterranean vegetation and terrain strongly suggest a southern location, likely Corsica."",
+  ""country"": ""FR"",
+  ""latitude"": 42.15,
+  ""longitude"": 9.08
+}"
+google/gemini-3.1-pro-preview,no-CoT,42.15,9.12,576.923,FR,True,,stop,0.005488,1226,253,223,17.77,"```json
+{""country"": ""FR"", ""latitude"": 42.15, ""longitude"": 9.12}
+```"
+moonshotai/kimi-k2.6,CoT,43.18,6.35,726.142,FR,True,,stop,0.012940056,834,3701,3623,151.84,"{""reasoning"": ""Dense Mediterranean evergreen oak scrub (maquis/garrigue) on dry limestone hillsides, combined with the narrow asphalt road and distinctive white French-style curve delineator posts, strongly indicates a rural road in Provence or Corsica, southern France."", ""country"": ""FR"", ""latitude"": 43.18, ""longitude"": 6.35}"
+xiaomi/mimo-v2.5,no-CoT,43.05,5.75,730.007,FR,True,,stop,9.57376e-05,820,26,0,1.19,"{""country"": ""FR"", ""latitude"": 43.05, ""longitude"": 5.75}"
+xiaomi/mimo-v2.5,CoT,43.35,6.65,736.882,FR,True,,stop,0.0001591576,899,213,136,3.37,"{""reasoning"": ""The dense Mediterranean scrub vegetation (maquis) and specific white roadside posts with red/white markers are highly characteristic of southern France. The road style, soil color, and vegetation density strongly point to the Provence region."", ""country"": ""FR"", ""latitude"": 43.35, ""longitude"": 6.65}"
+qwen/qwen3.5-122b-a10b,no-CoT,41.2156,1.8945,771.594,ES,True,,stop,0.00021476,586,30,0,7.35,"{""country"": ""ES"", ""latitude"": 41.2156, ""longitude"": 1.8945}"
+qwen/qwen3.6-27b,no-CoT,39.4699,0.3763,800.093,ES,True,,stop,0.0002259,585,30,0,13.0,"{""country"": ""ES"", ""latitude"": 39.4699, ""longitude"": 0.3763}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,43.83185577392578,4.440931797027588,854.165,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,39.4567,-0.3892,862.604,ES,True,,stop,0.0003847,585,30,0,1.92,"{""country"": ""ES"", ""latitude"": 39.4567, ""longitude"": -0.3892}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.793087005615234,4.030187606811523,866.536,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.80179977416992,3.963350772857666,870.102,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,43.25,2.65,881.026,FR,True,,stop,0.002294,788,658,591,6.31,"{""reasoning"": ""Right-hand traffic (edge line on right), white cylindrical verge markers, Mediterranean oak/maquis vegetation and dry roadside soil point to southern Europe; clear blue sky and road style exclude UK/Australia/US."", ""country"": ""FR"", ""latitude"": 43.25, ""longitude"": 2.65}"
+qwen/qwen3.5-27b,no-CoT,39.4865,-0.7573,893.936,ES,True,,stop,0.0002475,585,30,0,9.43,"{""country"": ""ES"", ""latitude"": 39.4865, ""longitude"": -0.7573}"
+minimax/minimax-m3,CoT,37.82,20.73,1042.976,GR,True,,stop,0.00080586,995,474,377,21.73,"{""reasoning"": ""Mediterranean maquis vegetation (holm oaks, pines, dry golden grass), white roadside bollards with reflectors typical of Greek rural roads, fresh asphalt with no lane markings on a narrow rural road, and the dry limestone-like terrain all strongly indicate rural Greece, likely on an Ionian island or the Peloponnese."", ""country"": ""GR"", ""latitude"": 37.82, ""longitude"": 20.73}"
+google/gemini-3.5-flash,CoT (effort=medium),37.7833,21.75,1132.49,GR,True,,stop,0.0144795,1307,1391,1308,24.47,"```json
+{""reasoning"": ""The dry Mediterranean climate, dense oak forest (likely holm or cork oak), and characteristic white-painted concrete roadside posts on the outer curve strongly point to rural Greece, specifically the mountainous regions of the Peloponnese."", ""country"": ""GR"", ""latitude"": 37.7833, ""longitude"": 21.75}
+```"
+google/gemini-3.5-flash,CoT (effort=low),37.6154,22.1425,1166.982,GR,True,,stop,0.0043995,1307,271,204,3.48,"{""reasoning"": ""The Mediterranean oak vegetation, dry soil, and simple white cylindrical roadside posts are highly characteristic of rural roads in Greece, particularly in the Peloponnese region."", ""country"": ""GR"", ""latitude"": 37.6154, ""longitude"": 22.1425}"
+google/gemini-3.5-flash,CoT (effort=high),37.6245,22.1584,1168.375,GR,True,,stop,0.0191055,1307,1905,1823,23.4,"```json
+{""reasoning"": ""The dry Mediterranean climate, dense holm oak forest, and reddish soil suggest Southern Europe. The characteristic white-painted concrete cylindrical posts along the curve of the road are highly typical of rural mountain roads in Greece."", ""country"": ""GR"", ""latitude"": 37.6245, ""longitude"": 22.1584}
+```"
+google/gemma-4-31b-it,no-CoT,37.9715,23.7267,1306.177,GR,True,,stop,6.692e-05,404,36,0,6.98,"```json
+{""country"": ""GR"", ""latitude"": 37.9715, ""longitude"": 23.7267}
+```"
+x-ai/grok-4.3,no-CoT,39.85,-6.05,1345.403,ES,True,,stop,0.0007334,704,22,0,0.79,"{""country"": ""ES"", ""latitude"": 39.85, ""longitude"": -6.05}"
+openai/gpt-5.5,CoT,37.1894,-7.9526,1499.128,PT,True,,stop,0.015775,755,400,302,10.8,"{""reasoning"":""Mediterranean dry oak/cork-oak woodland, pale gravel shoulders, and simple white roadside delineator posts on a narrow unmarked rural asphalt road strongly suggest southern Portugal, especially the Algarve/Alentejo interior. The vegetation and terrain fit the hills north of Loulé/São Brás de Alportel rather than coastal areas."",""country"":""PT"",""latitude"":37.1894,""longitude"":-7.9526}"
+openai/gpt-5.5,no-CoT,38.5268,-8.8549,1574.027,PT,True,,stop,0.00411,678,24,0,2.12,"{""country"":""PT"",""latitude"":38.5268,""longitude"":-8.8549}"
+qwen/qwen3.5-9b,no-CoT,38.7567,-9.1633,1601.318,PT,True,,stop,6.31e-05,586,30,0,3.18,"{""country"": ""PT"", ""latitude"": 38.7567, ""longitude"": -9.1633}"
+anthropic/claude-opus-4.8,CoT,37.5,30.0,1859.313,TR,True,,stop,0.00737,949,105,0,4.01,"{""reasoning"": ""Mediterranean oak scrubland, white plastic delimiter posts, dry climate and rural narrow road typical of inland Turkey/southern Europe; vegetation and post style suggest western Turkey."", ""country"": ""TR"", ""latitude"": 37.5, ""longitude"": 30.0}"
+anthropic/claude-opus-4.8,no-CoT,39.0,30.5,1896.422,TR,True,,stop,0.00484,818,30,0,9.1,"{""country"": ""TR"", ""latitude"": 39.0, ""longitude"": 30.5}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4212.446,,True,True,,,,,,13.22,
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,10326.861,US,True,,stop,0.000171375,786,32,0,1.84,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+qwen/qwen3.5-35b-a3b,no-CoT,34.0522,-118.2437,10413.291,US,True,,stop,0.00011404,586,32,0,8.8,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+qwen/qwen3.6-35b-a3b,no-CoT,34.0522,-118.2437,10413.291,US,True,,stop,0.0001684,586,32,0,8.91,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+mistralai/mistral-medium-3-5,no-CoT,-33.8688,151.2093,16598.645,AU,True,,stop,0.001419,786,32,0,2.57,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.88,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.68,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.33,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.36,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.73,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,18.48,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.28,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.24,

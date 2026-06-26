@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,47.322542301129,-122.07927305894,0.0,US,True,,,,,,,,"Lake Morton-Berrydale, King County, Washington, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,47.4836311340332,-122.03099060058594,18.277,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,47.48957443237305,-121.95578002929688,20.769,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,47.503761291503906,-121.95292663574219,22.281,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),47.5312,-122.0336,23.455,US,True,,stop,0.0021075,1189,36,0,22.19,"```json
+{""country"": ""US"", ""latitude"": 47.5312, ""longitude"": -122.0336}
+```"
+minimax/minimax-m3,no-CoT,47.5,-122.3,25.792,US,True,,stop,0.00022524,754,22,0,7.99,"{""country"": ""US"", ""latitude"": 47.5, ""longitude"": -122.3}{""country"": ""US"", ""latitude"": 47.5, ""longitude"": -122.3}"
+mistralai/mistral-medium-3-5,no-CoT,47.5584,-121.9512,27.939,US,True,,stop,0.001191,634,32,0,7.58,"{""country"": ""US"", ""latitude"": 47.5584, ""longitude"": -121.9512}"
+qwen/qwen3.5-397b-a17b,CoT,47.51,-121.82,28.549,US,True,,stop,0.0079986,553,2143,2060,24.46,"{""reasoning"": ""The double yellow road lines, wooden utility poles, and blue rural mailbox indicate the United States. The dense coniferous forest (Douglas fir) and lush, temperate vegetation strongly suggest the Pacific Northwest, specifically Washington State."", ""country"": ""US"", ""latitude"": 47.51, ""longitude"": -121.82}"
+google/gemini-3.1-pro-preview,CoT,47.615,-122.035,32.69,US,True,,stop,0.005532,1272,249,173,4.91,"{
+  ""reasoning"": ""Double yellow center lines and white edge lines indicate North America. The dense, tall coniferous trees and lush green vegetation strongly suggest the Pacific Northwest, likely Washington state."",
+  ""country"": ""US"",
+  ""latitude"": 47.615,
+  ""longitude"": -122.035
+}"
+anthropic/claude-opus-4.8,CoT,47.62,-122.05,33.149,US,True,,stop,0.006235,797,90,0,9.93,"{""reasoning"": ""Double-yellow center line, right-side driving, wooden power poles, and dense conifer forest with rhododendrons suggest the Pacific Northwest, USA."", ""country"": ""US"", ""latitude"": 47.62, ""longitude"": -122.05}"
+anthropic/claude-opus-4.8,no-CoT,47.6213,-122.0364,33.376,US,True,,stop,0.004105,666,31,0,15.96,"{""country"": ""US"", ""latitude"": 47.6213, ""longitude"": -122.0364}"
+openai/gpt-5.5,CoT,47.6196,-122.1747,33.801,US,True,,stop,0.015495,621,413,325,17.92,"{""reasoning"":""The double yellow centerline/white edge lines and right-side driving indicate North America, while the dense evergreen forest, wet pavement, wooden utility poles, and suburban roadside fencing/vegetation strongly fit the Pacific Northwest. This most resembles a forested residential road in the Seattle-area suburbs of Washington."",""country"":""US"",""latitude"":47.6196,""longitude"":-122.1747}"
+google/gemini-3.5-flash,CoT (effort=medium),47.6254,-122.1532,34.132,US,True,,stop,0.0055965,1271,410,328,4.26,"{""reasoning"": ""The double yellow center lines, white edge lines, wooden utility poles, and blue fire hydrant indicate North America, while the dense conifer forest and lush, damp vegetation are highly characteristic of the Pacific Northwest region, particularly western Washington."", ""country"": ""US"", ""latitude"": 47.6254, ""longitude"": -122.1532}"
+google/gemini-3.1-pro-preview,no-CoT,47.6062,-122.3321,36.825,US,True,,stop,0.002812,1190,36,0,2.57,"```json
+{""country"": ""US"", ""latitude"": 47.6062, ""longitude"": -122.3321}
+```"
+moonshotai/kimi-k2.6,no-CoT,47.6062,-122.3321,36.825,US,True,,stop,0.00051939,602,25,0,8.31,"{""country"": ""US"", ""latitude"": 47.6062, ""longitude"": -122.3321}"
+google/gemini-3.5-flash,CoT (effort=high),47.6582,-122.1145,37.417,US,True,,stop,0.0078555,1271,661,593,6.74,"{""reasoning"": ""The double yellow center lines, wooden utility poles, and dense coniferous forest with rhododendrons strongly indicate the Pacific Northwest region of North America, specifically western Washington."", ""country"": ""US"", ""latitude"": 47.6582, ""longitude"": -122.1145}"
+qwen/qwen3.5-35b-a3b,no-CoT,47.6205,-122.3493,38.854,US,True,,stop,0.0001184625,473,32,0,1.93,"{""country"": ""US"", ""latitude"": 47.6205, ""longitude"": -122.3493}"
+x-ai/grok-4.3,no-CoT,47.6205,-122.3493,38.854,US,True,,stop,0.0005984,592,24,0,0.92,"{""country"": ""US"", ""latitude"": 47.6205, ""longitude"": -122.3493}"
+google/gemini-3.5-flash,CoT (effort=low),47.6742,-122.1215,39.231,US,True,,stop,0.0039675,1271,229,154,9.26,"{""reasoning"": ""The double yellow center lines, white edge lines, wooden utility poles, and dense coniferous vegetation (Douglas firs) are highly characteristic of the Pacific Northwest region of North America, particularly western Washington."", ""country"": ""US"", ""latitude"": 47.6742, ""longitude"": -122.1215}"
+xiaomi/mimo-v2.5,no-CoT,47.66,-122.31,41.334,US,True,,stop,8.06176e-05,708,28,0,1.87,"{""country"": ""US"", ""latitude"": 47.66, ""longitude"": -122.31}"
+qwen/qwen3.6-35b-a3b,no-CoT,47.674,-122.419,46.676,US,True,,stop,0.0001428,474,30,0,9.6,"{""country"": ""US"", ""latitude"": 47.674, ""longitude"": -122.419}"
+qwen/qwen3.5-122b-a10b,no-CoT,47.7511,-122.1956,48.447,US,True,,stop,0.0001898,474,32,0,6.33,"{""country"": ""US"", ""latitude"": 47.7511, ""longitude"": -122.1956}"
+openai/gpt-5.5,no-CoT,47.7511,-122.2319,49.011,US,True,,stop,0.00344,544,24,0,2.57,"{""country"":""US"",""latitude"":47.7511,""longitude"":-122.2319}"
+moonshotai/kimi-k2.6,CoT,47.65,-122.9,71.617,US,True,,stop,0.010602648,682,3038,2966,202.41,"{""reasoning"": ""The dense temperate evergreen rainforest canopy combined with US-standard yellow double center lines and white fog lines is characteristic of the Pacific Northwest; the wooden utility pole, mailbox style, and rural road infrastructure point to western Washington State."", ""country"": ""US"", ""latitude"": 47.65, ""longitude"": -122.9}"
+x-ai/grok-4.3,CoT,47.52,-123.05,76.261,US,True,,stop,0.0021265,676,647,593,12.76,"{""reasoning"": ""US-style double yellow center line + right-hand traffic, dense temperate rainforest vegetation with rhododendrons and wooden fencing indicate Pacific Northwest USA."", ""country"": ""US"", ""latitude"": 47.52, ""longitude"": -123.05}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,46.123348236083984,-122.93131256103516,148.318,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,45.5231,-122.6765,205.257,US,True,,stop,0.000142155,473,32,0,19.4,"{""country"": ""US"", ""latitude"": 45.5231, ""longitude"": -122.6765}"
+qwen/qwen3.5-397b-a17b,no-CoT,45.5231,-122.6765,205.257,US,True,,stop,0.00036828,473,32,0,2.56,"{""country"": ""US"", ""latitude"": 45.5231, ""longitude"": -122.6765}"
+qwen/qwen3.5-9b,no-CoT,45.5231,-122.6765,205.257,US,True,,stop,5.22e-05,474,32,0,10.92,"{""country"": ""US"", ""latitude"": 45.5231, ""longitude"": -122.6765}"
+google/gemma-4-31b-it,no-CoT,45.523062,-122.676482,205.261,US,True,,stop,6.918e-05,406,41,0,2.83,"```json
+{""country"": ""US"", ""latitude"": 45.523062, ""longitude"": -122.676482}
+```"
+minimax/minimax-m3,CoT,45.52,-122.68,205.653,US,True,,stop,0.00075702,845,468,482,11.92,"{""reasoning"": ""Double yellow center line, right-hand driving, wooden utility poles, and lush Pacific Northwest vegetation (hydrangeas, ferns, mossy deciduous forest) under overcast skies strongly indicate a rural road in western Oregon or Washington."", ""country"": ""US"", ""latitude"": 45.52, ""longitude"": -122.68}{""reasoning"": ""Double yellow center line, right-hand driving, wooden utility poles, and lush Pacific Northwest vegetation (hydrangeas, ferns, mossy deciduous forest) under overcast skies strongly indicate a rural road in western Oregon or Washington."", ""country"": ""US"", ""latitude"": 45.52, ""longitude"": -122.68}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,45.82067108154297,-123.93811798095703,219.256,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,45.7844123840332,-123.94178009033203,222.551,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,37.9055,-122.5325,1047.779,US,True,,stop,0.0009999976,787,3272,3168,43.57,"```json
+{
+""reasoning"": ""The double yellow road markings and white edge lines are standard in the United States. The towering Coast Redwood trees, lush fern undergrowth, and manicured hydrangeas on the roadside are highly characteristic of affluent residential areas in the fog belt of Marin County, California, such as Mill Valley."",
+""country"": ""US"",
+""latitude"": 37.9055,
+""longitude"": -122.5325
+}
+```"
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4196,1064.669,US,True,,stop,0.0001143,634,32,0,3.17,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4196}"
+google/gemma-4-26b-a4b-it,no-CoT,35.55,-84.35,3366.014,US,True,,stop,5.654e-05,406,35,0,8.54,"Please own the own {""country"": ""US"", ""latitude"": 35.5500, ""longitude"": -84.3500}"
+qwen/qwen3.6-27b,no-CoT,44.267809,-72.581731,3787.516,US,True,,stop,0.0002542,474,35,0,2.31,"{""country"": ""US"", ""latitude"": 44.267809, ""longitude"": -72.581731}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,9.52,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.17,

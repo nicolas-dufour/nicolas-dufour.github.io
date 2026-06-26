@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,52.916955223612,50.3758759497,0.0,RU,True,,,,,,,,"Dubovyy Umet, None, Samara, RU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,52.81471252441406,50.41144561767578,11.617,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,52.50659942626953,50.84633255004883,55.555,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,52.50545120239258,50.8499755859375,55.801,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,54.579681396484375,46.97106170654297,290.296,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,55.5,49.2,297.215,RU,True,,stop,0.00089646,729,616,543,20.36,"{""reasoning"": ""Flat snow-covered landscape with post-Soviet style tall curved street lamps, right-hand traffic, yellow diamond priority road sign, and cleared road with piled snow are characteristic of central/southern European Russia, likely the Volga region."", ""country"": ""RU"", ""latitude"": 55.5, ""longitude"": 49.2}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,54.744930267333984,47.06069564819336,297.675,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,55.7,49.1,320.324,RU,True,,stop,0.005565,683,86,0,9.96,"{""reasoning"": ""Snowy flat landscape, Russian-style road signage and gantry, right-hand traffic with bare birch trees suggest central Russia in winter."", ""country"": ""RU"", ""latitude"": 55.7, ""longitude"": 49.1}"
+anthropic/claude-opus-4.8,no-CoT,55.7558,49.1233,325.928,RU,True,,stop,0.00356,552,32,0,2.98,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 49.1233}"
+google/gemini-3.5-flash,CoT (effort=medium),56.25,43.85,560.111,RU,True,,stop,0.007308,1296,596,537,11.79,"{""reasoning"": ""The flat, snowy landscape, concrete utility poles, curved metal streetlights, and the yellow priority sign are highly characteristic of Russia during winter."", ""country"": ""RU"", ""latitude"": 56.25, ""longitude"": 43.85}"
+google/gemini-3.5-flash,CoT (effort=low),56.1425,40.4011,735.82,RU,True,,stop,0.0047535,1297,312,242,4.27,"{""reasoning"": ""The snowy winter landscape, flat terrain, distinctive curved utility poles, and the orange markings on the car hood indicating a Yandex camera car point to a federal highway in Russia."", ""country"": ""RU"", ""latitude"": 56.1425, ""longitude"": 40.4011}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),56.1425,40.4001,735.876,RU,True,,stop,0.002136,1214,35,0,1.59,"```json
+{""country"": ""RU"", ""latitude"": 56.1425, ""longitude"": 40.4001}
+```"
+qwen/qwen3.5-9b,no-CoT,56.8456,60.6456,787.668,RU,True,,stop,4.405e-05,394,31,0,8.64,"{""country"": ""RU"", ""latitude"": 56.8456, ""longitude"": 60.6456}"
+openai/gpt-5.5,no-CoT,55.5812,37.9124,860.755,RU,True,,stop,0.002835,429,23,0,2.69,"{""country"":""RU"",""latitude"":55.5812,""longitude"":37.9124}"
+google/gemini-3.1-pro-preview,no-CoT,56.0123,38.0456,866.476,RU,True,,stop,0.00514,1214,226,191,10.5,"```json
+{""country"": ""RU"", ""latitude"": 56.0123, ""longitude"": 38.0456}
+```"
+x-ai/grok-4.3,CoT,56.12,38.05,870.043,RU,True,,stop,0.002354,580,786,719,6.54,"{""reasoning"": ""Snowy rural highway with right-side driving, yellow diamond sign, distinctive overhead gantry, utilitarian lamp posts and power infrastructure typical of post-Soviet states; flat terrain and vegetation match central Russia in winter."", ""country"": ""RU"", ""latitude"": 56.12, ""longitude"": 38.05}"
+google/gemini-3.5-flash,CoT (effort=high),56.1234,37.8567,881.506,RU,True,,stop,0.009495,1296,839,771,13.27,"{""reasoning"": ""The winter road conditions, flat terrain, concrete utility poles, and distinctive double-lamp streetlights are highly characteristic of Russian federal highways, particularly in the Moscow region."", ""country"": ""RU"", ""latitude"": 56.1234, ""longitude"": 37.8567}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,883.725,RU,True,,stop,6.228e-05,396,36,0,7.26,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,883.725,RU,True,,stop,0.00102,520,32,0,1.14,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-35b-a3b,no-CoT,55.7558,37.6173,883.725,RU,True,,stop,0.000137,393,31,0,7.3,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+x-ai/grok-4.3,no-CoT,55.7558,37.6173,883.725,RU,True,,stop,0.0004909,496,29,0,0.9,"{
+  ""country"": ""RU"",
+  ""latitude"": 55.7558,
+  ""longitude"": 37.6173
+}"
+moonshotai/kimi-k2.6,CoT,56.3269,37.5,909.703,RU,True,,stop,0.013052592,568,3762,3699,76.5,"{""reasoning"": ""Soviet-era curved-arm streetlight poles, green directional road signage, and flat snowy terrain with mixed deciduous forest are characteristic of Russia's Central Federal District."", ""country"": ""RU"", ""latitude"": 56.3269, ""longitude"": 37.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,56.209354400634766,36.74013900756836,950.251,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,57.1522,65.5333,1071.467,RU,True,,stop,0.006216,1296,302,236,11.06,"{
+  ""reasoning"": ""The curved double-arm streetlights, flat snowy landscape, and road markings are highly characteristic of Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 57.1522,
+  ""longitude"": 65.5333
+}"
+xiaomi/mimo-v2.5,no-CoT,55.0,73.0,1491.399,RU,True,,stop,6.85776e-05,628,25,0,7.38,"{""country"": ""RU"", ""latitude"": 55.0, ""longitude"": 73.0}"
+openai/gpt-5.5,CoT,54.9861,73.3679,1514.881,RU,True,,stop,0.01063,506,270,188,22.41,"{""reasoning"":""Snowy flat landscape, right-hand driving, European/Russian-style yellow priority sign and Soviet-era roadside lighting/utility infrastructure point to Russia, likely western Siberia. The broad icy arterial with sparse industrial outskirts is most consistent with the Omsk/Tyumen region."",""country"":""RU"",""latitude"":54.9861,""longitude"":73.3679}"
+xiaomi/mimo-v2.5,CoT,60.2,24.9,1743.331,FI,True,,stop,0.0001851976,707,402,328,13.52,"{""reasoning"": ""The snowy boreal landscape, right-hand traffic setup, and road infrastructure match the climate and typical road design of southern Finland; the overcast winter sky and sparse bare trees align with this region's seasonal conditions."", ""country"": ""FI"", ""latitude"": 60.2, ""longitude"": 24.9}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7492.819,unknown,True,,stop,5.044e-05,396,23,0,1.06,"{""country"": ""unknown"", ""latitude"": 0.0, ""longitude"": 0.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,53.5461,-113.4938,8083.027,CA,True,,stop,0.00018538,393,40,0,1.15,"{
+  ""country"": ""CA"",
+  ""latitude"": 53.5461,
+  ""longitude"": -113.4938
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,53.5461,-113.4938,8083.027,CA,True,,stop,0.00032028,393,32,0,11.18,"{""country"": ""CA"", ""latitude"": 53.5461, ""longitude"": -113.4938}"
+qwen/qwen3.6-27b,no-CoT,53.5461,-113.4938,8083.027,CA,True,,stop,0.0001723,393,32,0,13.76,"{""country"": ""CA"", ""latitude"": 53.5461, ""longitude"": -113.4938}"
+qwen/qwen3.6-35b-a3b,no-CoT,50.4452,-104.6189,8284.962,CA,True,,stop,0.0039645697,391,4042,3998,21.78,"```json
+{""country"": ""CA"", ""latitude"": 50.4452, ""longitude"": -104.6189}
+```"
+qwen/qwen3.5-27b,no-CoT,47.6062,-122.3321,8816.109,US,True,,stop,0.000126555,393,32,0,7.27,"{""country"": ""US"", ""latitude"": 47.6062, ""longitude"": -122.3321}"
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,9442.716,US,True,,stop,9.72e-05,520,32,0,8.55,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,13.15,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.19,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.32,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.33,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.95,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,8.02,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,9.4,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.25,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.21,

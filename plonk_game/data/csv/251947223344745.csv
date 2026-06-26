@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-14.178423477973,132.18958452892,0.0,AU,True,,,,,,,,"Katherine, Katherine, Northern Territory, AU"
+moonshotai/kimi-k2.6,CoT,-14.32,132.42,29.402,AU,True,,stop,0.006227208,682,1749,1693,115.34,"{""reasoning"": ""The combination of eucalypt woodland, red lateritic rocks, and dry tropical savanna grasses is characteristic of northern Australia's Top End."", ""country"": ""AU"", ""latitude"": -14.32, ""longitude"": 132.42}"
+x-ai/grok-4.3,no-CoT,-14.85,132.15,74.797,AU,True,,stop,0.0005934,592,22,0,0.98,"{""country"": ""AU"", ""latitude"": -14.85, ""longitude"": 132.15}"
+google/gemini-3.1-pro-preview,no-CoT,-13.3033,132.2611,97.615,AU,True,,stop,0.00281,1189,36,0,3.02,"```json
+{""country"": ""AU"", ""latitude"": -13.3033, ""longitude"": 132.2611}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-13.199048042297363,132.62892150878906,118.795,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-13.20572566986084,132.6547088623047,119.262,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-13.0885,132.2845,121.627,AU,True,,stop,0.00413,666,32,0,2.41,"{""country"": ""AU"", ""latitude"": -13.0885, ""longitude"": 132.2845}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-13.423151969909668,131.2925567626953,128.202,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-12.8624,132.8061,160.799,AU,True,,stop,0.012585,621,316,236,15.64,"{""reasoning"":""Dry eucalypt savanna woodland with lateritic stones, sandy walking track, and hot-season tourist attire strongly point to northern Australia, especially the Top End national parks. The open tropical bush setting is most consistent with a Kakadu National Park walking trail."",""country"":""AU"",""latitude"":-12.8624,""longitude"":132.8061}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-13.180343627929688,133.28268432617188,162.061,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,-12.75,132.55,163.545,AU,True,,stop,0.0018215,676,525,461,10.92,"{""reasoning"": ""Eucalyptus woodland with peeling bark, dry savanna grass, reddish sandy soil and wide-brimmed hats on hikers are diagnostic of northern Australia; no other region matches all visual elements simultaneously."", ""country"": ""AU"", ""latitude"": -12.75, ""longitude"": 132.55}"
+anthropic/claude-opus-4.8,CoT,-12.7,132.8,177.153,AU,True,,stop,0.00636,797,95,0,3.33,"{""reasoning"": ""Dry savanna woodland with eucalypts, rocky red soil, and hikers in sun hats suggests tropical northern Australia, likely Kakadu/Top End region."", ""country"": ""AU"", ""latitude"": -12.7, ""longitude"": 132.8}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-12.8428,131.1125,188.724,AU,True,,stop,0.002109,1190,36,0,1.16,"```json
+{""country"": ""AU"", ""latitude"": -12.8428, ""longitude"": 131.1125}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-13.1152,130.7831,192.546,AU,True,,stop,0.0050565,1271,350,273,16.97,"{""reasoning"": ""The dry eucalyptus savanna vegetation, light-colored sandy trail, and distinctive bush hats worn by the hikers are highly characteristic of the Top End in Australia's Northern Territory, specifically around Litchfield National Park."", ""country"": ""AU"", ""latitude"": -13.1152, ""longitude"": 130.7831}"
+google/gemini-3.5-flash,CoT (effort=low),-13.0982,130.7865,193.428,AU,True,,stop,0.0036075,1271,189,118,2.53,"{""reasoning"": ""The dry eucalyptus woodland, sandy-rocky trail, and typical outback hiking attire strongly indicate the Northern Territory of Australia, likely near Litchfield or Kakadu National Park."", ""country"": ""AU"", ""latitude"": -13.0982, ""longitude"": 130.7865}"
+google/gemini-3.5-flash,CoT (effort=high),-13.0975,130.7833,193.748,AU,True,,stop,0.0077025,1271,644,569,5.08,"{""reasoning"": ""The dry eucalyptus woodland, sandy trail, and distinctive wide-brimmed hats worn by the hikers strongly indicate the Top End of Australia's Northern Territory, likely within Litchfield National Park."", ""country"": ""AU"", ""latitude"": -13.0975, ""longitude"": 130.7833}"
+google/gemini-3.1-pro-preview,CoT,-13.05,130.78,197.355,AU,True,,stop,0.005796,1272,271,187,18.3,"{
+  ""reasoning"": ""The dry savanna vegetation, eucalyptus trees, and the hikers' Akubra-style hats strongly suggest the Australian outback. The landscape is typical of the Top End in the Northern Territory during the dry season."",
+  ""country"": ""AU"",
+  ""latitude"": -13.05,
+  ""longitude"": 130.78
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,-12.4634,130.8456,239.819,AU,True,,stop,0.0003357,473,32,0,1.83,"{""country"": ""AU"", ""latitude"": -12.4634, ""longitude"": 130.8456}"
+openai/gpt-5.5,no-CoT,-12.45,130.833,241.833,AU,True,,stop,0.00344,544,24,0,1.57,"{""country"":""AU"",""latitude"":-12.4500,""longitude"":130.8330}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-13.9205322265625,135.09744262695312,314.973,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,-23.5,133.5,1045.619,AU,True,,stop,8.00576e-05,708,26,0,0.97,"{""country"": ""AU"", ""latitude"": -23.5, ""longitude"": 133.5}"
+mistralai/mistral-medium-3-5,no-CoT,-17.6234,122.2561,1128.965,AU,True,,stop,0.001191,634,32,0,1.37,"{""country"": ""AU"", ""latitude"": -17.6234, ""longitude"": 122.2561}"
+qwen/qwen3.6-35b-a3b,no-CoT,-25.3444,131.0369,1247.42,AU,True,,stop,0.00010295,473,32,0,3.22,"{""country"": ""AU"", ""latitude"": -25.3444, ""longitude"": 131.0369}"
+google/gemma-4-31b-it,no-CoT,-18.5,145.2,1468.464,AU,True,,stop,6.758e-05,406,37,0,3.35,"```json
+{""country"": ""AU"", ""latitude"": -18.5000, ""longitude"": 145.2000}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,-16.9186,145.7781,1486.816,AU,True,,stop,0.00015999,473,32,0,15.36,"{""country"": ""AU"", ""latitude"": -16.9186, ""longitude"": 145.7781}"
+qwen/qwen3.5-122b-a10b,no-CoT,-19.2564,146.8169,1655.977,AU,True,,stop,0.0002379,473,40,0,3.75,"{
+  ""country"": ""AU"",
+  ""latitude"": -19.2564,
+  ""longitude"": 146.8169
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-21.297056198120117,148.55235290527344,1903.352,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,-27.4698,152.7874,2594.457,AU,True,,stop,8.841e-05,473,32,0,0.84,"{""country"": ""AU"", ""latitude"": -27.4698, ""longitude"": 152.7874}"
+xiaomi/mimo-v2.5,CoT,-37.34,142.42,2767.237,AU,True,,stop,0.0001871576,787,369,283,4.37,"{""reasoning"": ""The dry eucalyptus woodland, red rocky soil, and temperate bushland landscape are characteristic of southeastern Australia, specifically a region like the Grampians National Park. These distinct vegetation and terrain markers point to a southern Australian bush hiking trail."", ""country"": ""AU"", ""latitude"": -37.34, ""longitude"": 142.42}"
+qwen/qwen3.5-27b,no-CoT,-35.3633,149.165,2903.015,AU,True,,stop,0.0002091,473,32,0,29.04,"{""country"": ""AU"", ""latitude"": -35.3633, ""longitude"": 149.1650}"
+qwen/qwen3.6-27b,no-CoT,-35.3633,149.165,2903.015,AU,True,,stop,0.0001963,473,32,0,16.62,"{""country"": ""AU"", ""latitude"": -35.3633, ""longitude"": 149.1650}"
+minimax/minimax-m3,CoT,-17.85,25.85,11190.081,ZM,True,,stop,0.00075426,843,469,388,24.91,"{""reasoning"": ""Dry deciduous miombo-like woodland with reddish lateritic soil, scattered eucalyptus-barked trees, and dry grassland strongly suggest southern African savanna. The safari-style attire and trail style are typical of tourist walks near Victoria Falls or similar Zambezi-region national parks."", ""country"": ""ZM"", ""latitude"": -17.85, ""longitude"": 25.85}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,12303.7,US,True,,stop,0.000142875,634,32,0,8.06,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,14525.025,,True,,stop,5.454e-05,406,30,0,2.0,"I- own-thought
+{""country"": ""-"", ""latitude"": 0.0, ""longitude"": 0--""}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.66,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.28,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.89,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,7.56,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.16,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.27,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.41,

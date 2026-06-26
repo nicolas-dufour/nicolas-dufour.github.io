@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-15.800928023493,35.032664899343,0.0,MW,True,,,,,,,,"Makata, None, Southern Region, MW"
+google/gemini-3.1-pro-preview,CoT,-15.7861,35.0058,3.314,MW,True,,stop,0.00612,1272,298,216,5.72,"{
+  ""reasoning"": ""The hood of the vehicle clearly displays 'MALAWI RED CROSS', identifying the country. The hilly, green terrain and multi-lane road suggest a major city like Blantyre."",
+  ""country"": ""MW"",
+  ""latitude"": -15.7861,
+  ""longitude"": 35.0058
+}"
+google/gemini-3.1-pro-preview,no-CoT,-15.7861,35.0058,3.314,MW,True,,stop,0.004636,1190,188,153,4.22,"```json
+{""country"": ""MW"", ""latitude"": -15.7861, ""longitude"": 35.0058}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-13.9625,33.7833,244.569,MW,True,,stop,0.004473,1272,285,200,12.25,"{""reasoning"": ""The logo on the hood of the camera vehicle clearly reads 'MALAWI RED CROSS', indicating the country is Malawi. The left-hand traffic, road infrastructure, and lush green landscape are consistent with the main M1 highway near Lilongwe."", ""country"": ""MW"", ""latitude"": -13.9625, ""longitude"": 33.7833}"
+google/gemini-3.5-flash,CoT (effort=medium),-13.9625,33.7741,245.113,MW,True,,stop,0.0100515,1271,905,818,8.14,"```json
+{""reasoning"": ""The hood of the camera vehicle clearly displays the 'MALAWI RED CROSS' logo, and the left-hand traffic, rolling green hills, and road infrastructure are characteristic of Malawi, likely on a main route near Lilongwe."", ""country"": ""MW"", ""latitude"": -13.9625, ""longitude"": 33.7741}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-13.9625,33.7741,245.113,MW,True,,stop,0.0161355,1271,1581,1498,18.2,"{""reasoning"": ""The vehicle hood clearly displays the 'MALAWI RED CROSS' logo, and the left-hand traffic, utility poles, and black-and-white curb markings are characteristic of Malawi, specifically on a main road in Lilongwe."", ""country"": ""MW"", ""latitude"": -13.9625, ""longitude"": 33.7741}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-13.958333,33.774167,245.496,MW,True,,stop,0.002136,1190,39,0,2.12,"```json
+{""country"": ""MW"", ""latitude"": -13.958333, ""longitude"": 33.774167}
+```"
+qwen/qwen3.6-27b,no-CoT,-17.8252,31.0335,481.494,ZW,True,,stop,0.0001943,473,31,0,9.61,"{""country"": ""ZW"", ""latitude"": -17.8252, ""longitude"": 31.0335}"
+qwen/qwen3.5-27b,no-CoT,-26.1075,28.0567,1355.0,ZA,True,,stop,0.00019467,473,31,0,1.57,"{""country"": ""ZA"", ""latitude"": -26.1075, ""longitude"": 28.0567}"
+qwen/qwen3.5-397b-a17b,no-CoT,-26.185,28.056,1362.223,ZA,True,,stop,0.0003882,473,29,0,9.3,"{""country"": ""ZA"", ""latitude"": -26.185, ""longitude"": 28.056}"
+mistralai/mistral-medium-3-5,no-CoT,-29.8587,31.0218,1615.889,ZA,True,,stop,0.0011835,634,31,0,2.17,"{""country"": ""ZA"", ""latitude"": -29.8587, ""longitude"": 31.0218}"
+qwen/qwen3.6-35b-a3b,no-CoT,-1.2921,36.8219,1625.192,KE,True,,stop,0.0001428,474,30,0,2.57,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+x-ai/grok-4.3,no-CoT,-1.2921,36.8219,1625.192,KE,True,,stop,0.0005984,592,24,0,7.3,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+openai/gpt-5.5,CoT,-1.9436,30.1265,1631.954,RW,True,,stop,0.013905,621,360,283,18.04,"{""reasoning"":""Clean, hilly tropical urban road with black-and-white curb stones, right-hand traffic, and East African road/streetlight style strongly suggest Kigali, Rwanda. The vegetation and well-maintained divided roadway fit the Kigali outskirts/industrial corridors."",""country"":""RW"",""latitude"":-1.9436,""longitude"":30.1265}"
+google/gemma-4-31b-it,no-CoT,0.3476,32.5825,1815.676,UG,True,,stop,6.338e-05,406,35,0,4.16,"```json
+{""country"": ""UG"", ""latitude"": 0.3476, ""longitude"": 32.5825}
+```"
+minimax/minimax-m3,no-CoT,4.0483,9.7043,3554.926,CM,True,,stop,0.00041442,767,202,230,5.11,"{""country"": ""CM"", ""latitude"": 4.0483, ""longitude"": 9.7043}"
+anthropic/claude-opus-4.8,no-CoT,6.4541,7.5464,3909.223,NG,True,,stop,0.00413,666,32,0,8.88,"{""country"": ""NG"", ""latitude"": 6.4541, ""longitude"": 7.5464}"
+anthropic/claude-opus-4.8,CoT,6.45,7.5,3912.889,NG,True,,stop,0.006785,797,112,0,3.91,"{""reasoning"": ""Red Cross vehicle hood, tropical African roadside vegetation, divided highway, right-hand traffic suggest sub-Saharan Africa; the lush greenery and road style point to Nigeria/Cameroon region."", ""country"": ""NG"", ""latitude"": 6.45, ""longitude"": 7.5}"
+moonshotai/kimi-k2.6,CoT,9.05,7.45,4106.069,NG,True,,stop,0.016361568,682,4723,4636,342.3,"{""reasoning"": ""The prominent red-star decal on the vehicle hood matches the branding of Nigerian Star Lager Beer, a ubiquitous Nigerian Breweries product; tropical red-soil savanna, right-hand traffic, black-and-white curbstones, and West African truck styling all point to a paved highway in central Nigeria."", ""country"": ""NG"", ""latitude"": 9.05, ""longitude"": 7.45}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4226.714,,True,True,,,,,,6.5,
+qwen/qwen3.5-35b-a3b,no-CoT,6.5244,3.3792,4278.757,NG,True,,stop,0.0001145625,473,29,0,1.8,"{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+openai/gpt-5.5,no-CoT,5.5833,-0.1816,4547.344,GH,True,,stop,0.00344,544,24,0,1.57,"{""country"":""GH"",""latitude"":5.5833,""longitude"":-0.1816}"
+x-ai/grok-4.3,CoT,5.65,-0.23,4555.82,GH,True,,stop,0.002704,676,878,804,12.79,"{""reasoning"": ""Fan Milk 'BON VOYAGE' logo on hood + West African truck livery, tropical vegetation, right-hand traffic, and concrete curb/bollards identify Ghana; scene matches a typical Accra–Kumasi highway corridor."", ""country"": ""GH"", ""latitude"": 5.65, ""longitude"": -0.23}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,6.554265022277832,-9.83107852935791,5529.097,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,6.5532402992248535,-9.856268882751465,5531.521,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,7.276662826538086,-10.472125053405762,5628.804,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,3.5,101.5,7614.499,MY,True,,stop,0.0012410776,787,4133,4077,97.75,"{""reasoning"": ""Left-hand traffic and crescent-star emblem on vehicle suggest a Muslim-majority country with LHT, pointing to Malaysia."", ""country"": ""MY"", ""latitude"": 3.5, ""longitude"": 101.5}"
+xiaomi/mimo-v2.5,no-CoT,-12.97,-38.51,7886.834,BR,True,,stop,8.03376e-05,708,27,0,1.11,"{""country"": ""BR"", ""latitude"": -12.97, ""longitude"": -38.51}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,8485.417,BR,True,,stop,0.00018772,474,31,0,11.97,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-9b,no-CoT,-23.5505,-46.6333,8485.417,BR,True,,stop,5.205e-05,474,31,0,15.04,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-2.520578384399414,-55.25505065917969,9962.003,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-3.4653,-60.0222,10442.17,BR,True,,stop,0.00122706,843,863,781,35.74,"{""reasoning"": ""Right-hand traffic, tropical equatorial vegetation, Brazilian-style divided highway with concrete median, European-style semi-truck, and a hood sticker with 'AMS' and red star suggesting Amazonas state. The lush green tropical landscape and road infrastructure strongly indicate northern Brazil."", ""country"": ""BR"", ""latitude"": -3.4653, ""longitude"": -60.0222}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,6.592674732208252,-58.039215087890625,10533.654,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,6.669220924377441,-61.947532653808594,10952.425,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,15325.165,US,True,,stop,0.000142875,634,32,0,8.11,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.19,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,9.43,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.97,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.7,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.64,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.33,

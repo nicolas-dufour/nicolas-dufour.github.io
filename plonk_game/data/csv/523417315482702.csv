@@ -1,0 +1,69 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-3.2628038867101,-79.279215642216,0.0,EC,True,,,,,,,,"Cuenca, None, Azuay, EC"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-2.2829554080963135,-79.19544982910156,109.351,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-2.061406135559082,-78.96680450439453,138.023,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-1.5604029893875122,-78.90286254882812,193.861,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,6.15,-75.3,1136.091,CO,True,,stop,0.011720016,834,3343,3281,147.25,"{""reasoning"": ""Tropical Andean foothills with Spanish-language 'El Bambú' roadside restaurant signage, right-hand traffic, and vehicle/building styles characteristic of rural Colombia."", ""country"": ""CO"", ""latitude"": 6.15, ""longitude"": -75.3}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-14.05794620513916,-73.38815307617188,1363.418,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,9.9333,-84.0833,1560.835,CR,True,,stop,0.001404,786,30,0,7.24,"{""country"": ""CR"", ""latitude"": 9.9333, ""longitude"": -84.0833}"
+google/gemini-3.1-pro-preview,CoT,10.0,-84.0,1564.693,CR,True,,stop,0.011038,1307,702,623,9.11,"{
+  ""reasoning"": ""The sign 'RESTAURANT EL TURISMO' indicates a Spanish-speaking country. The tropical vegetation, mountainous terrain, and road infrastructure suggest Central America, likely Costa Rica or El Salvador."",
+  ""country"": ""CR"",
+  ""latitude"": 10.0,
+  ""longitude"": -84.0
+}"
+qwen/qwen3.5-27b,no-CoT,9.9625,-84.1389,1565.989,CR,True,,stop,0.00026416,586,43,0,1.45,"```json
+{
+  ""country"": ""CR"",
+  ""latitude"": 9.9625,
+  ""longitude"": -84.1389
+}
+```"
+qwen/qwen3.5-9b,no-CoT,10.0002,-84.2287,1573.358,CR,True,,stop,6.325e-05,586,31,0,4.68,"{""country"": ""CR"", ""latitude"": 10.0002, ""longitude"": -84.2287}"
+qwen/qwen3.5-397b-a17b,no-CoT,10.0167,-84.2167,1574.613,CR,True,,stop,0.00043188,585,31,0,3.29,"{""country"": ""CR"", ""latitude"": 10.0167, ""longitude"": -84.2167}"
+qwen/qwen3.6-35b-a3b,no-CoT,10.467,-84.643,1638.098,CR,True,,stop,0.0039877981,583,4034,4001,24.17,"{""country"": ""CR"", ""latitude"": 10.467, ""longitude"": -84.643}"
+xiaomi/mimo-v2.5,CoT,13.47,-88.57,2124.366,SV,True,,stop,0.0001633576,899,228,155,9.46,"{""reasoning"": ""The Spanish-language 'TURIASO' sign, tropical vegetation, rural Central American road/vehicle infrastructure point to this location in El Salvador, matching the town of Turiasso's geography."", ""country"": ""SV"", ""latitude"": 13.47, ""longitude"": -88.57}"
+anthropic/claude-opus-4.8,CoT,14.45,-87.65,2174.925,HN,True,,stop,0.007045,949,92,0,9.09,"{""reasoning"": ""Spanish 'TURISMO' sign, mountainous tropical terrain, right-side driving, and Latin American small-town architecture suggest a Central American highland town."", ""country"": ""HN"", ""latitude"": 14.45, ""longitude"": -87.65}"
+minimax/minimax-m3,CoT,13.85,-89.93,2236.261,SV,True,,stop,0.00109026,995,711,623,27.85,"{""reasoning"": ""The 'Restaurant Tacuba' sign and small-town setting with semi-arid mountain backdrop, red-tile roofs, and modest architecture strongly suggest Tacuba in El Salvador's Ahuachapán department. The vegetation, road style, and mountain terrain match western El Salvador's volcanic highlands."", ""country"": ""SV"", ""latitude"": 13.85, ""longitude"": -89.93}"
+google/gemini-3.1-pro-preview,no-CoT,14.5568,-90.7336,2349.309,GT,True,,stop,0.00287,1225,35,0,8.86,"```json
+{""country"": ""GT"", ""latitude"": 14.5568, ""longitude"": -90.7336}
+```"
+google/gemini-3.5-flash,CoT (effort=high),14.5214,-90.7985,2349.878,GT,True,,stop,0.0372945,1307,3926,3836,31.82,"```json
+{""reasoning"": ""The round sign on the right reads 'RESTAURANTE EL TURISMO' in Spanish, and the prominent volcanic peak in the background on the left is characteristic of the Highlands of Guatemala, specifically near the Antigua/Sacatepéquez region."", ""country"": ""GT"", ""latitude"": 14.5214, ""longitude"": -90.7985}
+```"
+google/gemini-3.5-flash,CoT (effort=low),14.6342,-90.7211,2355.764,GT,True,,stop,0.0060465,1307,454,388,10.96,"{""reasoning"": ""The Spanish sign 'Restaurante El Turismo', concrete utility poles, mountainous terrain, and vehicle types suggest a location in Central America, most likely Guatemala."", ""country"": ""GT"", ""latitude"": 14.6342, ""longitude"": -90.7211}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),14.641254,-90.728412,2356.851,GT,True,,stop,0.0021885,1225,39,0,1.63,"```json
+{""country"": ""GT"", ""latitude"": 14.641254, ""longitude"": -90.728412}
+```"
+anthropic/claude-opus-4.8,no-CoT,14.8333,-91.5167,2421.968,GT,True,,stop,0.00489,818,32,0,2.99,"{""country"": ""GT"", ""latitude"": 14.8333, ""longitude"": -91.5167}"
+google/gemini-3.5-flash,CoT (effort=medium),14.9291,-91.9132,2455.206,GT,True,,stop,0.0218145,1307,2206,2113,28.89,"```json
+{""reasoning"": ""The sign on the right reads 'RESTAURANTE EL TURISMO' in Spanish. The steep volcanic peak in the background, concrete utility poles, and vehicle types strongly point to the mountainous regions of Guatemala, specifically near San Rafael Pie de la Cuesta."", ""country"": ""GT"", ""latitude"": 14.9291, ""longitude"": -91.9132}
+```"
+google/gemma-4-31b-it,no-CoT,19.4326,-99.1332,3328.428,MX,True,,stop,7.096e-05,404,36,0,17.46,"```json
+{""country"": ""MX"", ""latitude"": 19.4326, ""longitude"": -99.1332}
+```"
+openai/gpt-5.5,no-CoT,-33.7085,-70.7426,3499.366,CL,True,,stop,0.00414,678,25,0,2.29,"{""country"":""CL"",""latitude"":-33.7085,""longitude"":-70.7426}"
+qwen/qwen3.5-122b-a10b,no-CoT,19.765,-101.205,3506.115,MX,True,,stop,0.0002475,585,30,0,1.81,"{""country"": ""MX"", ""latitude"": 19.765, ""longitude"": -101.205}"
+x-ai/grok-4.3,CoT,19.85,-102.75,3629.84,MX,True,,stop,0.002824,788,870,793,13.31,"{""reasoning"": ""Spanish-language 'EL TURISMO' sign with sombrero logo, right-hand traffic, tropical vegetation + distant mountains, concrete-block buildings with tiled roofs, and utility infrastructure all point to rural Latin America; visual style and signage match western/central Mexico."", ""country"": ""MX"", ""latitude"": 19.85, ""longitude"": -102.75}"
+qwen/qwen3.6-27b,no-CoT,20.6738,-103.3489,3737.821,MX,True,,stop,0.0002299,585,32,0,14.08,"{""country"": ""MX"", ""latitude"": 20.6738, ""longitude"": -103.3489}"
+x-ai/grok-4.3,no-CoT,20.629,-103.425,3740.282,MX,True,,stop,0.0007334,704,22,0,1.18,"{""country"": ""MX"", ""latitude"": 20.629, ""longitude"": -103.425}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-40.63468551635742,-77.87866973876953,4157.939,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-27.311342239379883,-109.61847686767578,4186.939,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,36.1699,-115.1398,5750.256,US,True,,stop,0.0001371,786,32,0,11.42,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+xiaomi/mimo-v2.5,no-CoT,10.3157,123.8854,17341.681,PH,True,,stop,9.74176e-05,820,32,0,13.28,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+openai/gpt-5.5,CoT,16.4129,120.6217,17394.449,PH,True,,stop,0.021835,755,602,516,19.27,"{""reasoning"":""The red arched sign appears to read “THE MANSION,” matching the famous presidential residence in Baguio; the tropical highland vegetation, right-hand traffic, concrete road, and Philippine-style vehicles support this. This is most likely near The Mansion in Baguio, Philippines."",""country"":""PH"",""latitude"":16.4129,""longitude"":120.6217}"
+qwen/qwen3.5-35b-a3b,no-CoT,14.6123,121.0456,17454.186,PH,True,,stop,0.0001366625,585,32,0,0.66,"{""country"": ""PH"", ""latitude"": 14.6123, ""longitude"": 121.0456}"
+google/gemma-4-26b-a4b-it,no-CoT,14.5995,120.9842,17460.7,,True,,stop,6.028e-05,404,45,0,1.92,"{"" than-
+
+```json
+{""country own-code"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.92,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.2,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.63,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.72,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.43,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.46,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.15,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.53,

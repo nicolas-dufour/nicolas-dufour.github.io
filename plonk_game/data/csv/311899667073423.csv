@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-32.810643544454,139.242082032,0.0,AU,True,,,,,,,,"Peterborough, Peterborough, South Australia, AU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-32.74379348754883,138.7154083251953,49.797,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-32.75593185424805,138.7110595703125,50.014,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-32.699161529541016,138.71815490722656,50.538,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-33.5732,138.8996,90.583,AU,True,,stop,0.011655,621,285,205,16.72,"{""reasoning"":""Left-side driving road layout with Australian-style white edge lines/delineator posts, plus eucalyptus scrub and semi-arid farmland strongly indicate rural Australia. The dry rolling landscape and mallee/saltbush vegetation fit South Australia's Mid North/Barrier Highway region."",""country"":""AU"",""latitude"":-33.5732,""longitude"":138.8996}"
+google/gemini-3.1-pro-preview,no-CoT,-33.8523,138.6125,129.757,AU,True,,stop,0.00281,1189,36,0,34.18,"```json
+{""country"": ""AU"", ""latitude"": -33.8523, ""longitude"": 138.6125}
+```"
+openai/gpt-5.5,no-CoT,-34.0967,139.1884,143.09,AU,True,,stop,0.00344,544,24,0,1.51,"{""country"":""AU"",""latitude"":-34.0967,""longitude"":139.1884}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-34.3125,140.1254,185.974,AU,True,,stop,0.0021075,1189,36,0,1.33,"```json
+{""country"": ""AU"", ""latitude"": -34.3125, ""longitude"": 140.1254}
+```"
+moonshotai/kimi-k2.6,CoT,-32.0,137.5,186.737,AU,True,,stop,0.01030161,682,2889,2825,159.16,"{""reasoning"": ""Red lateritic soil, scattered eucalyptus trees, and dry scrub vegetation are characteristic of inland Australia; the rural highway marking style with white delineator posts confirms Australian road standards."", ""country"": ""AU"", ""latitude"": -32.0, ""longitude"": 137.5}"
+google/gemini-3.1-pro-preview,CoT,-32.5,137.0,212.719,AU,True,,stop,0.005278,1271,228,150,10.58,"{
+  ""reasoning"": ""The dry landscape with scattered eucalyptus trees, white road edge lines, and white guide posts are highly characteristic of rural Australia. The terrain and vegetation suggest a semi-arid region like South Australia."",
+  ""country"": ""AU"",
+  ""latitude"": -32.5,
+  ""longitude"": 137.0
+}"
+x-ai/grok-4.3,no-CoT,-34.85,138.65,233.266,AU,True,,stop,0.0007278,592,22,0,2.05,"{""country"": ""AU"", ""latitude"": -34.85, ""longitude"": 138.65}"
+qwen/qwen3.5-122b-a10b,no-CoT,-34.9285,138.6007,242.824,AU,True,,stop,0.00018954,473,32,0,8.43,"{""country"": ""AU"", ""latitude"": -34.9285, ""longitude"": 138.6007}"
+qwen/qwen3.6-27b,no-CoT,-34.9285,138.6007,242.824,AU,True,,stop,0.0001963,473,32,0,16.83,"{""country"": ""AU"", ""latitude"": -34.9285, ""longitude"": 138.6007}"
+google/gemini-3.5-flash,CoT (effort=medium),-33.1352,136.4124,266.412,AU,True,,stop,0.0067125,1271,534,464,7.62,"{""reasoning"": ""The dry, grassy landscape with scattered mallee eucalyptus trees, wide gravel shoulders, and a simple white guide post strongly indicates rural South Australia, likely along the Eyre Highway."", ""country"": ""AU"", ""latitude"": -33.1352, ""longitude"": 136.4124}"
+xiaomi/mimo-v2.5,CoT,-35.225,138.545,276.042,AU,True,,stop,0.0007451976,787,2362,2263,30.74,"{""reasoning"": ""The vehicle is driving on the left side of the road, and the landscape features dry, grassy hills with distinctive Eucalyptus trees, which are characteristic of the Australian bush. Additionally, the presence of vineyards on the left slope strongly suggests a wine-producing region like McLaren Vale in South Australia."", ""country"": ""AU"", ""latitude"": -35.225, ""longitude"": 138.545}"
+google/gemini-3.5-flash,CoT (effort=high),-32.85,136.21,283.326,AU,True,,stop,0.0090075,1271,789,722,7.37,"{""reasoning"": ""The dry, semi-arid landscape with scattered mallee eucalyptus trees, low shrubs, and a white guide post on the left-hand drive road strongly indicates rural South Australia."", ""country"": ""AU"", ""latitude"": -32.85, ""longitude"": 136.21}"
+anthropic/claude-opus-4.8,CoT,-31.5,142.0,297.716,AU,True,,stop,0.00616,797,87,0,2.97,"{""reasoning"": ""Dry grassland with eucalyptus and saltbush, red soil hints, left-side driving, and outback rural highway markings indicate inland Australia."", ""country"": ""AU"", ""latitude"": -31.5, ""longitude"": 142.0}"
+anthropic/claude-opus-4.8,no-CoT,-31.5,142.0,297.716,AU,True,,stop,0.00408,666,30,0,9.0,"{""country"": ""AU"", ""latitude"": -31.5, ""longitude"": 142.0}"
+qwen/qwen3.5-27b,no-CoT,-34.65,141.85,316.196,AU,True,,stop,0.000135915,473,28,0,2.83,"{""country"": ""AU"", ""latitude"": -34.65, ""longitude"": 141.85}"
+google/gemini-3.5-flash,CoT (effort=low),-35.8125,140.1234,343.46,AU,True,,stop,0.0039405,1271,226,161,2.62,"{""reasoning"": ""The dry, grassy landscape with scattered eucalyptus trees, left-hand driving, and white edge lines and guide posts are characteristic of rural South Australia."", ""country"": ""AU"", ""latitude"": -35.8125, ""longitude"": 140.1234}"
+minimax/minimax-m3,CoT,-31.5,145.0,561.205,AU,True,,stop,0.00054906,843,298,228,8.57,"{""reasoning"": ""Eucalyptus trees, reddish soil, dry arid grassland, two-lane sealed highway with white delineator post, and clear blue sky are highly characteristic of rural inland Australia, likely western NSW or southwest Queensland."", ""country"": ""AU"", ""latitude"": -31.5, ""longitude"": 145.0}"
+minimax/minimax-m3,no-CoT,-33.5,147.0,726.078,AU,True,,stop,0.00019176,752,23,0,10.9,"{""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 147.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,-33.5,147.2,744.581,AU,True,,stop,0.0003774,473,26,0,2.52,"{""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 147.2}"
+qwen/qwen3.6-35b-a3b,CoT,-34.56,147.35,774.741,AU,True,,stop,0.0050196,554,3068,2653,57.13,"{""reasoning"": ""The image shows left-hand traffic, eucalyptus trees, and reddish soil, which are strong indicators of rural Australia, specifically the New South Wales slopes or Riverina region. The road markings and white delineator posts are standard for Australian highways."", ""country"": ""AU"", ""latitude"": -34.56, ""longitude"": 147.35}"
+xiaomi/mimo-v2.5,no-CoT,-33.5,148.0,818.634,AU,True,,stop,8.00576e-05,708,26,0,6.0,"{""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 148.0}"
+mistralai/mistral-medium-3-5,no-CoT,-32.0,148.0,826.871,AU,True,,stop,0.001146,634,26,0,1.02,"{""country"": ""AU"", ""latitude"": -32.0, ""longitude"": 148.0}"
+x-ai/grok-4.3,CoT,-35.3,147.8,835.22,AU,True,,stop,0.0022465,676,695,621,15.13,"{
+  ""reasoning"": ""Eucalyptus/gum trees, dry savanna grassland, and rural two-lane asphalt road with edge lines are characteristic of southeastern Australia; clear skies and terrain match NSW/Victoria wheatbelt or tablelands."",
+  ""country"": ""AU"",
+  ""latitude"": -35.3,
+  ""longitude"": 147.8
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,-34.2456,148.3214,856.274,AU,True,,stop,9.836e-05,474,32,0,2.08,"{""country"": ""AU"", ""latitude"": -34.2456, ""longitude"": 148.3214}"
+moonshotai/kimi-k2.6,no-CoT,-33.5,150.0,1003.945,AU,True,,stop,0.00051219,602,23,0,15.52,"{""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 150.0}"
+google/gemma-4-31b-it,CoT,-33.8688,150.762,1076.017,AU,True,,stop,0.00042308,491,534,499,5.19,"{""reasoning"": ""The left-hand traffic, characteristic Eucalyptus trees, and arid, rolling landscape are strongly indicative of rural Australia."", ""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 150.762}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.8688,151.2093,1117.261,AU,True,,stop,0.00015825,473,32,0,7.49,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+google/gemma-4-31b-it,no-CoT,-31.5,121.0,1721.313,AU,True,,stop,6.178e-05,406,31,0,4.33,"```json
+{""country"": ""AU"", ""latitude"": -31.5, ""longitude"": 121.0}
+```"
+qwen/qwen3.5-122b-a10b,CoT,-32.85,118.25,1958.143,AU,True,,stop,0.00730106,553,3441,3347,28.02,"{""reasoning"": ""The image displays a left-hand traffic road with white center and edge markings, characteristic of Australia. The vegetation consists of dry grass and scattered Eucalyptus trees (gum trees) on rolling hills with reddish soil visible in the distance, strongly indicating the Western Australian Wheatbelt region."", ""country"": ""AU"", ""latitude"": -32.85, ""longitude"": 118.25}"
+qwen/qwen3.5-397b-a17b,CoT,-31.4833,118.2833,1975.492,AU,True,,stop,0.00516765,553,1654,1,91.92,"{""reasoning"": ""The image shows left-hand traffic with standard white road markings and a white guide post on the roadside, which are characteristic of Australia. The vegetation consists of scattered Eucalyptus trees (gum trees) and dry, scrubby grass on reddish-brown soil, strongly suggesting the Wheatbelt region of Western Australia."", ""country"": ""AU"", ""latitude"": -31.4833, ""longitude"": 118.2833}"
+qwen/qwen3.5-9b,no-CoT,-32.0567,116.0619,2172.727,AU,True,,stop,5.22e-05,474,32,0,5.24,"{""country"": ""AU"", ""latitude"": -32.0567, ""longitude"": 116.0619}"
+mistralai/mistral-small-2603,no-CoT,-18.911,47.531,9036.18,MG,True,,stop,0.0001125,634,29,0,1.84,"{""country"": ""MG"", ""latitude"": -18.911, ""longitude"": 47.531}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-32.85346603393555,20.88426971435547,10271.354,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-32.132568359375,21.134384155273438,10307.777,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-31.263757705688477,20.298229217529297,10431.303,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,14404.315,,True,True,,,,,,20.15,
+mistralai/mistral-small-2603,CoT,37.75,-3.8,16637.91,ES,True,,stop,0.00124824,716,2013,2151,13.62,"{""reasoning"": ""Spanish license plates with 'E' code, olive trees, and rural road in Mediterranean climate indicate southern Spain."", ""country"": ""ES"", ""latitude"": 37.75, ""longitude"": -3.8}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.28,

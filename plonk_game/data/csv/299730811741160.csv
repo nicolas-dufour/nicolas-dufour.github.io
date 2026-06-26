@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-23.643117736299,-70.387881121047,0.0,CL,True,,,,,,,,"Antofagasta, Provincia de Antofagasta, Antofagasta, CL"
+google/gemini-3.5-flash,CoT (effort=medium),-23.6152,-70.3891,3.107,CL,True,,stop,0.0138675,1271,1329,1237,10.05,"```json
+{""reasoning"": ""The blue and white microbus corresponds to Line 104 of the TransAntofagasta transit system in Chile. The dry, barren hills in the background and the Chilean-style license plate on the BMW confirm the location is Antofagasta."", ""country"": ""CL"", ""latitude"": -23.6152, ""longitude"": -70.3891}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-27.3665,-70.3321,414.059,CL,True,,stop,0.0056955,1271,421,347,4.57,"{""reasoning"": ""The arid, mountainous background combined with the style of the concrete utility poles, the architecture, and the regional bus design strongly points to northern Chile, likely in a valley city like Copiapó."", ""country"": ""CL"", ""latitude"": -27.3665, ""longitude"": -70.3321}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-18.4883,-70.2956,573.269,CL,True,,stop,0.0020985,1189,35,0,2.99,"```json
+{""country"": ""CL"", ""latitude"": -18.4883, ""longitude"": -70.2956}
+```"
+xiaomi/mimo-v2.5,no-CoT,-17.4139,-66.1653,820.269,BO,True,,stop,8.14576e-05,708,31,0,2.33,"{""country"": ""BO"", ""latitude"": -17.4139, ""longitude"": -66.1653}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-32.54590606689453,-71.66250610351562,997.78,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-32.62455749511719,-71.62220764160156,1005.97,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,-33.0335,-71.5332,1050.137,CL,True,,stop,0.00347,544,25,0,1.77,"{""country"":""CL"",""latitude"":-33.0335,""longitude"":-71.5332}"
+anthropic/claude-opus-4.8,no-CoT,-33.047,-71.45,1050.796,CL,True,,stop,0.00408,666,30,0,9.24,"{""country"": ""CL"", ""latitude"": -33.047, ""longitude"": -71.45}"
+openai/gpt-5.5,CoT,-33.0496,-71.4403,1050.99,CL,True,,stop,0.013575,621,349,273,45.6,"{""reasoning"":""Spanish signage, right-side traffic, white license plates, dry Mediterranean hills and utility/architecture styles point strongly to central Chile. The hilly urban outskirts resemble the Valparaíso/Quilpué area rather than flatter Santiago."",""country"":""CL"",""latitude"":-33.0496,""longitude"":-71.4403}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-33.06991958618164,-71.23631286621094,1051.481,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-33.05,-71.55,1052.136,CL,True,,stop,0.00671,797,109,0,10.53,"{""reasoning"": ""Spanish signage, hilly terrain with dense informal housing, and the bus/architecture style suggest a Chilean town; the overall look matches central Chile's coastal hill cities like Valparaíso/Viña area."", ""country"": ""CL"", ""latitude"": -33.05, ""longitude"": -71.55}"
+google/gemini-3.1-pro-preview,CoT,-33.0456,-71.6203,1052.413,CL,True,,stop,0.006804,1272,355,276,12.13,"{
+  ""reasoning"": ""The Spanish signage, white license plates, and arid hilly background strongly suggest Chile. The style of the local bus and utility poles are typical of central/northern Chilean cities."",
+  ""country"": ""CL"",
+  ""latitude"": -33.0456,
+  ""longitude"": -71.6203
+}"
+google/gemini-3.1-pro-preview,no-CoT,-33.0456,-71.6203,1052.413,CL,True,,stop,0.002798,1189,35,0,9.04,"```json
+{""country"": ""CL"", ""latitude"": -33.0456, ""longitude"": -71.6203}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-33.4489,-70.6693,1090.698,CL,True,,stop,0.0011835,634,31,0,1.34,"{""country"": ""CL"", ""latitude"": -33.4489, ""longitude"": -70.6693}"
+qwen/qwen3.6-27b,no-CoT,-33.4489,-70.6693,1090.698,CL,True,,stop,0.00025088,474,31,0,6.84,"{""country"": ""CL"", ""latitude"": -33.4489, ""longitude"": -70.6693}"
+x-ai/grok-4.3,no-CoT,-13.531,-71.967,1136.624,PE,True,,stop,0.0005934,592,22,0,0.91,"{""country"": ""PE"", ""latitude"": -13.531, ""longitude"": -71.967}"
+qwen/qwen3.6-35b-a3b,no-CoT,-13.516667,-71.983333,1138.454,PE,True,,stop,0.0001588,474,40,0,3.04,"```json
+{""country"": ""PE"", ""latitude"": -13.516667, ""longitude"": -71.983333}
+```"
+minimax/minimax-m3,CoT,-34.17,-70.74,1171.035,CL,True,,stop,0.00071946,843,440,350,17.85,"{""reasoning"": ""Blue-and-white Chilean micros-style bus, Spanish 'Pepsi' signage, wooden corrugated-metal architecture, and E34 BMW driving on the right all point to central Chile. The arid valley with green hills in the distance is characteristic of the Rancagua/San Fernando area in the O'Higgins region."", ""country"": ""CL"", ""latitude"": -34.17, ""longitude"": -70.74}"
+moonshotai/kimi-k2.6,CoT,-12.03,-76.92,1464.029,PE,True,,stop,0.013299768,682,3817,3748,149.92,"{""reasoning"": ""Spanish signage, a visible red-and-white flag indicating Peru, dry mountainous desert terrain, corrugated-metal informal architecture, and a Chinese-made interprovincial bus are characteristic of the eastern outskirts of Lima."", ""country"": ""PE"", ""latitude"": -12.03, ""longitude"": -76.92}"
+qwen/qwen3.5-35b-a3b,no-CoT,-12.046389,-77.042222,1468.54,PE,True,,stop,0.00010136,474,35,0,2.81,"{""country"": ""PE"", ""latitude"": -12.046389, ""longitude"": -77.042222}"
+qwen/qwen3.5-122b-a10b,no-CoT,-1.8312,-78.1834,2566.563,EC,True,,stop,0.00018564,474,30,0,5.92,"{""country"": ""EC"", ""latitude"": -1.8312, ""longitude"": -78.1834}"
+qwen/qwen3.5-9b,no-CoT,-0.2311,-78.5123,2746.985,EC,True,,stop,5.19e-05,474,30,0,3.28,"{""country"": ""EC"", ""latitude"": -0.2311, ""longitude"": -78.5123}"
+qwen/qwen3.5-27b,no-CoT,4.609722,-74.081667,3167.008,CO,True,,stop,0.00022464,474,39,0,9.34,"```json
+{""country"": ""CO"", ""latitude"": 4.609722, ""longitude"": -74.081667}
+```"
+xiaomi/mimo-v2.5,CoT,4.68,-74.06,3174.467,CO,True,,stop,0.0009532376,787,3105,3014,35.67,"{
+""reasoning"": ""The yellow license plate on the bus is a distinctive feature of Colombian vehicles, and the 'Restaurante' sign indicates a Spanish-speaking country. The landscape, featuring arid hills, reddish soil, and concrete utility poles, is consistent with the Andean region of Colombia."",
+""country"": ""CO"",
+""latitude"": 4.68,
+""longitude"": -74.06
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,5.012071132659912,-74.99102020263672,3225.201,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,6.152374744415283,-75.596923828125,3361.02,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,6.156968116760254,-75.59479522705078,3361.485,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,14.6349,-90.5069,4785.341,GT,True,,stop,6.378e-05,406,36,0,6.68,"```json
+{""country"": ""GT"", ""latitude"": 14.6349, ""longitude"": -90.5069}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,14.6349,-90.5069,4785.341,GT,True,,stop,0.0003322,473,31,0,3.0,"{""country"": ""GT"", ""latitude"": 14.6349, ""longitude"": -90.5069}"
+x-ai/grok-4.3,CoT,14.634,-90.513,4785.555,GT,True,,stop,0.0029665,676,983,918,14.77,"{""reasoning"": ""Spanish signage (Surgir pharmacy, Pepsi), Guatemala flag on pole, right-side driving, hilly arid terrain with dense overhead wires, and typical Central American street/building style pinpoint Guatemala."", ""country"": ""GT"", ""latitude"": 14.634, ""longitude"": -90.513}"
+mistralai/mistral-small-2603,no-CoT,48.8584,2.2945,10790.679,FR,True,,stop,0.0001131,634,30,0,2.23,"{""country"": ""FR"", ""latitude"": 48.8584, ""longitude"": 2.2945}"
+google/gemma-4-26b-a4b-it,no-CoT,14.5995,120.9842,18454.918,PH,True,,stop,6.014e-05,406,44,0,2.81,"Please own- own-
+{""country own"": ""{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}""}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.26,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.8,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.23,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.21,
+google/gemini-3.5-flash,CoT (effort=high),,,,,False,,length,0.0378705,1271,3996,3838,34.93,"""Skorpios"" in Antofagasta?
+        *   Let's search for ""Skorpios"" on Chilean business directories (like Telexplore, Amarillas, etc.):
+            *   ""Sociedad Comercial Skorpios"" or similar?
+            *   Maybe ""Amasandería Skorpios"" or ""Panadería Skorpios""?
+            *   Wait, there is a ""Skorpios"" in Antofagasta: ""Skorpios"" (a pub/nightclub) on Calle Condell or similar? No, that's downtown.
+            *   What about ""Amasanderia Skorpios"" or ""Minimarket Skorpios""?
+            *   Let's look at the sign again.
+            *"

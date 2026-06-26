@@ -1,0 +1,56 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,60.469698156767,18.410897684373,0.0,SE,True,,,,,,,,"Oregrund, Osthammars Kommun, Uppsala, SE"
+qwen/qwen3.5-397b-a17b,no-CoT,59.8234,17.6543,83.176,SE,True,,stop,0.00043188,585,31,0,17.6,"{""country"": ""SE"", ""latitude"": 59.8234, ""longitude"": 17.6543}"
+qwen/qwen3.5-35b-a3b,no-CoT,59.3293,18.4672,126.845,SE,True,,stop,0.00011304,586,31,0,1.58,"{""country"": ""SE"", ""latitude"": 59.3293, ""longitude"": 18.4672}"
+qwen/qwen3.6-35b-a3b,no-CoT,59.3293,18.0686,128.235,SE,True,,stop,0.00011875,585,31,0,1.47,"{""country"": ""SE"", ""latitude"": 59.3293, ""longitude"": 18.0686}"
+minimax/minimax-m3,CoT,59.4,17.3,134.076,SE,True,,stop,0.00063066,995,328,254,13.34,"{""reasoning"": ""Dashed white edge lines on a narrow rural two-lane road, flat terrain with mixed boreal forest (pines and deciduous trees), tall green grass, and overcast sky are highly characteristic of central Sweden's countryside."", ""country"": ""SE"", ""latitude"": 59.4, ""longitude"": 17.3}"
+google/gemini-3.1-pro-preview,CoT,59.5,16.5,151.395,SE,True,,stop,0.004896,1308,190,113,9.77,"{
+  ""reasoning"": ""The dashed white edge lines on the road are highly characteristic of rural roads in Sweden. The mixed pine and deciduous vegetation along with the flat terrain further supports a location in central or southern Sweden."",
+  ""country"": ""SE"",
+  ""latitude"": 59.5,
+  ""longitude"": 16.5
+}"
+google/gemini-3.1-pro-preview,no-CoT,59.32,16.55,164.655,SE,True,,stop,0.003902,1225,121,90,4.13,"```json
+{""country"": ""SE"", ""latitude"": 59.32, ""longitude"": 16.55}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,60.05088424682617,21.33260154724121,167.737,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,59.16107177734375,16.904617309570312,168.114,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,59.020957946777344,16.7658748626709,185.58,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,59.01008605957031,16.448461532592773,196.026,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,59.0,16.0,212.016,SE,True,,stop,0.016640415,833,4464,4957,51.69,"{""reasoning"": ""The small white rectangular marker on the right roadside strongly resembles a Swedish hectometer post, combined with dashed white edge markings and wooden utility poles typical of rural Sweden."", ""country"": ""SE"", ""latitude"": 59.0, ""longitude"": 16.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,60.4033,22.4086,219.413,FI,True,,stop,0.00021684,586,31,0,10.47,"{""country"": ""FI"", ""latitude"": 60.4033, ""longitude"": 22.4086}"
+x-ai/grok-4.3,CoT,61.45,23.75,308.003,FI,True,,stop,0.002084,788,574,505,9.38,"{""reasoning"": ""Boreal mix of pine/birch, overcast northern sky, right-hand traffic with dashed center + solid edge lines, wooden utility poles and distant white rectangular sign all point to rural Finland or Baltic states."", ""country"": ""FI"", ""latitude"": 61.45, ""longitude"": 23.75}"
+google/gemini-3.5-flash,CoT (effort=low),58.3854,22.5012,327.348,EE,True,,stop,0.0041925,1307,248,172,3.14,"{""reasoning"": ""The flat landscape with scattered juniper bushes and pine trees is highly characteristic of the Baltic islands, particularly Saaremaa in Estonia. The road markings and wooden utility poles with curved streetlights support this Baltic location."", ""country"": ""EE"", ""latitude"": 58.3854, ""longitude"": 22.5012}"
+google/gemini-3.5-flash,CoT (effort=medium),57.5123,18.4567,328.858,SE,True,,stop,0.0063975,1307,493,428,4.68,"{""reasoning"": ""The short dashed white edge lines, flat landscape with junipers and pines, and wooden utility poles are highly characteristic of the Swedish island of Gotland."", ""country"": ""SE"", ""latitude"": 57.5123, ""longitude"": 18.4567}"
+google/gemini-3.5-flash,CoT (effort=high),57.5123,18.4567,328.858,SE,True,,stop,0.0093945,1307,826,754,8.17,"{""reasoning"": ""The flat landscape with abundant juniper bushes and pine trees, combined with the narrow paved road featuring dashed white edge lines, is highly characteristic of the Baltic islands, particularly Gotland in Sweden."", ""country"": ""SE"", ""latitude"": 57.5123, ""longitude"": 18.4567}"
+openai/gpt-5.5,CoT,58.3442,22.4776,329.77,EE,True,,stop,0.015025,755,375,286,15.08,"{""reasoning"":""Narrow right-driving rural road with dashed white edge markings, simple utility poles, boreal mixed forest and juniper/grassland landscape strongly fit the Baltic states, especially Estonia. The flat, open meadow with pines/junipers is particularly characteristic of rural Saaremaa/Estonian island roads."",""country"":""EE"",""latitude"":58.3442,""longitude"":22.4776}"
+mistralai/mistral-medium-3-5,no-CoT,60.9945,24.4728,334.54,FI,True,,stop,0.0014115,786,31,0,2.07,"{""country"": ""FI"", ""latitude"": 60.9945, ""longitude"": 24.4728}"
+qwen/qwen3.5-27b,no-CoT,61.2345,24.5678,343.983,FI,True,,stop,0.00022491,585,31,0,8.93,"{""country"": ""FI"", ""latitude"": 61.2345, ""longitude"": 24.5678}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),57.3245,18.3412,349.753,SE,True,,stop,0.002154,1226,35,0,1.09,"```json
+{""country"": ""SE"", ""latitude"": 57.3245, ""longitude"": 18.3412}
+```"
+anthropic/claude-opus-4.8,no-CoT,57.3,18.4,352.455,SE,True,,stop,0.00484,818,30,0,8.73,"{""country"": ""SE"", ""latitude"": 57.3, ""longitude"": 18.4}"
+qwen/qwen3.6-27b,no-CoT,60.1699,24.9384,360.791,FI,True,,stop,0.0002279,585,31,0,6.44,"{""country"": ""FI"", ""latitude"": 60.1699, ""longitude"": 24.9384}"
+x-ai/grok-4.3,no-CoT,59.35,24.75,374.509,EE,True,,stop,0.0007334,704,22,0,1.85,"{""country"": ""EE"", ""latitude"": 59.35, ""longitude"": 24.75}"
+qwen/qwen3.5-9b,no-CoT,61.7606,25.5281,408.087,FI,True,,stop,6.325e-05,586,31,0,2.08,"{""country"": ""FI"", ""latitude"": 61.7606, ""longitude"": 25.5281}"
+openai/gpt-5.5,no-CoT,58.4215,24.5463,414.658,EE,True,,stop,0.00408,678,23,0,2.63,"{""country"":""EE"",""latitude"":58.4215,""longitude"":24.5463}"
+google/gemma-4-31b-it,no-CoT,58.85,25.2,421.461,EE,True,,stop,6.348e-05,404,36,0,5.37,"```json
+{""country"": ""EE"", ""latitude"": 58.8500, ""longitude"": 25.2000}
+```"
+anthropic/claude-opus-4.8,CoT,58.5,25.5,455.931,EE,True,,stop,0.007195,949,98,0,10.83,"{""reasoning"": ""Boreal mixed forest with pines, narrow rural road with center dashed line, overcast Nordic sky and grassy meadow suggest Baltic/Scandinavian countryside."", ""country"": ""EE"", ""latitude"": 58.5, ""longitude"": 25.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,61.839908599853516,27.354116439819336,502.9,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,61.9182243347168,27.545618057250977,514.737,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,54.8983,25.2794,741.103,LT,True,,stop,5.668e-05,404,36,0,1.37,"```json
+{""country"": ""LT"", ""latitude"": 54.8983, ""longitude"": 25.2794}
+```"
+xiaomi/mimo-v2.5,no-CoT,52.23,20.78,927.613,PL,True,,stop,9.60176e-05,820,27,0,7.15,"{""country"": ""PL"", ""latitude"": 52.23, ""longitude"": 20.78}"
+xiaomi/mimo-v2.5,CoT,52.1534,19.8765,929.078,PL,True,,stop,0.0004601576,899,1288,1184,22.73,"{""reasoning"": ""The road markings, particularly the dashed white center line and shoulder markings, along with the style of the wooden utility poles and street lamp, are highly characteristic of rural Poland. The landscape featuring mixed coniferous forest, tall grass, and flat terrain under an overcast sky is typical of the Central European plain in this region."", ""country"": ""PL"", ""latitude"": 52.1534, ""longitude"": 19.8765}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.71,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.37,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.65,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,12.65,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.74,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.26,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.28,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,0.95,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.2,

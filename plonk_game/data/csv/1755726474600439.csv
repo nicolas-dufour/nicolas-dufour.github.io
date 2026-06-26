@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-21.427545441152,23.806408536502,0.0,BW,True,,,,,,,,"Rakops, None, Central, BW"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-20.972471237182617,23.753637313842773,50.897,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-21.0,24.5,86.194,BW,True,,stop,0.006185,797,88,0,9.7,"{""reasoning"": ""Flat semi-arid savanna with whitish calcrete/sandy track, sparse grass and low scrub typical of the Kalahari in Botswana."", ""country"": ""BW"", ""latitude"": -21.0, ""longitude"": 24.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-20.662113189697266,23.370235443115234,96.4,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-20.60236930847168,23.393308639526367,101.28,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-20.5,24.5,125.794,BW,True,,stop,0.00408,666,30,0,15.59,"{""country"": ""BW"", ""latitude"": -20.5, ""longitude"": 24.5}"
+openai/gpt-5.5,no-CoT,-20.3925,24.5142,136.569,BW,True,,stop,0.00344,544,24,0,1.39,"{""country"":""BW"",""latitude"":-20.3925,""longitude"":24.5142}"
+moonshotai/kimi-k2.6,CoT,-20.65,25.1,159.682,BW,True,,stop,0.013817808,682,3977,3889,75.98,"{""reasoning"": ""The bright white cracked calcrete road across a vast, flat semi-arid grassland under a deep blue subtropical sky is characteristic of Botswana's Makgadikgadi salt pans. The absence of topography, infrastructure, or trees matches the expansive Nwetwe/Sua Pan safari tracks."", ""country"": ""BW"", ""latitude"": -20.65, ""longitude"": 25.1}"
+minimax/minimax-m3,CoT,-20.85,25.45,182.155,BW,True,,stop,0.00062106,843,358,281,10.15,"{""reasoning"": ""Vast flat salt pan with white chalky/salt-crusted soil, sparse grassy vegetation, and featureless horizon under a bright blue sky with cumulus clouds is highly characteristic of the Makgadikgadi Pan in Botswana."", ""country"": ""BW"", ""latitude"": -20.85, ""longitude"": 25.45}"
+x-ai/grok-4.3,CoT,-20.75,25.5,191.175,BW,True,,stop,0.002424,676,766,692,12.96,"{""reasoning"": ""Flat arid grassland with cracked white calcrete/salt road and featureless horizon under clear sky is characteristic of the Kalahari/Makgadikgadi region; no other visual cues (signage, vehicles, architecture) present."", ""country"": ""BW"", ""latitude"": -20.75, ""longitude"": 25.5}"
+google/gemini-3.5-flash,CoT (effort=high),-19.9251,24.7583,194.207,BW,True,,stop,0.0083595,1271,717,643,6.53,"{""reasoning"": ""The extremely flat terrain, white calcrete/clay soil, and sparse dry grassland under a clear blue sky are highly characteristic of the Makgadikgadi and Nxai Pan region in Botswana."", ""country"": ""BW"", ""latitude"": -19.9251, ""longitude"": 24.7583}"
+openai/gpt-5.5,CoT,-20.3945,25.5682,216.06,BW,True,,stop,0.011415,621,277,190,10.68,"{""reasoning"":""The featureless flat savanna with a bright white calcrete/salt-pan track and sparse dry grass is characteristic of Botswana’s Makgadikgadi/Nxai Pan area. Lack of road furniture or settlements points to an unpaved park/pan road rather than a public highway."",""country"":""BW"",""latitude"":-20.3945,""longitude"":25.5682}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-19.1158,22.9125,273.44,BW,True,,stop,0.0020985,1189,35,0,1.82,"```json
+{""country"": ""BW"", ""latitude"": -19.1158, ""longitude"": 22.9125}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-18.9833,26.15,365.6,BW,True,,stop,0.002798,1189,35,0,2.59,"```json
+{""country"": ""BW"", ""latitude"": -18.9833, ""longitude"": 26.1500}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-24.6583,25.9167,419.121,BW,True,,stop,0.0003954,473,31,0,9.67,"{""country"": ""BW"", ""latitude"": -24.6583, ""longitude"": 25.9167}"
+qwen/qwen3.5-122b-a10b,no-CoT,-21.1234,17.8901,613.923,NA,True,,stop,0.0002163,473,31,0,2.47,"{""country"": ""NA"", ""latitude"": -21.1234, ""longitude"": 17.8901}"
+qwen/qwen3.5-9b,no-CoT,-25.0657,29.2064,683.988,ZA,True,,stop,5.205e-05,474,31,0,5.14,"{""country"": ""ZA"", ""latitude"": -25.0657, ""longitude"": 29.2064}"
+qwen/qwen3.6-35b-a3b,no-CoT,-28.4567,24.1234,782.258,ZA,True,,stop,0.00010195,473,31,0,2.74,"{""country"": ""ZA"", ""latitude"": -28.4567, ""longitude"": 24.1234}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-19.295738220214844,16.183698654174805,829.117,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-18.8508,16.3254,831.741,NA,True,,stop,0.0034635,1271,173,107,16.58,"{""reasoning"": ""The extremely flat landscape with white, chalky clay soil and sparse, low vegetation is highly characteristic of the roads surrounding the Etosha Pan in northern Namibia."", ""country"": ""NA"", ""latitude"": -18.8508, ""longitude"": 16.3254}"
+google/gemini-3.5-flash,CoT (effort=medium),-18.7812,16.1543,851.332,NA,True,,stop,0.0068295,1271,547,480,12.22,"{""reasoning"": ""The extremely flat landscape with white calcrete soil, sparse low vegetation, and bright blue sky is highly characteristic of the roads around the Etosha Pan in Namibia."", ""country"": ""NA"", ""latitude"": -18.7812, ""longitude"": 16.1543}"
+google/gemini-3.1-pro-preview,CoT,-19.015,15.935,863.86,NA,True,,stop,0.004954,1271,201,127,10.87,"{
+  ""reasoning"": ""The extremely flat terrain, sparse scrub vegetation, and distinctively white, chalky unpaved road are highly characteristic of Etosha National Park in Namibia."",
+  ""country"": ""NA"",
+  ""latitude"": -19.015,
+  ""longitude"": 15.935
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-18.971960067749023,15.706445693969727,888.119,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-18.896804809570312,15.63301944732666,898.184,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3514.38,,True,True,,,,,,16.86,
+xiaomi/mimo-v2.5,CoT,30.8567,34.7869,5930.747,IL,True,,stop,0.0001482376,787,230,114,9.8,"{""reasoning"": ""The image shows a straight paved road made of pale, rectangular stones stretching across a vast, flat, dry grassy plain under a clear blue sky, which is highly characteristic of the Negev Desert in Israel, specifically the historic Roman road or similar paths in the region. The vegetation, terrain, and road construction style point to the southern Negev area near Sde Boker."", ""country"": ""IL"", ""latitude"": 30.8567, ""longitude"": 34.7869}"
+qwen/qwen3.5-27b,no-CoT,-25.2744,133.7751,10847.721,AU,True,,stop,0.00021944,474,37,0,1.16,"```json
+{""country"": ""AU"", ""latitude"": -25.2744, ""longitude"": 133.7751}
+```"
+google/gemma-4-31b-it,no-CoT,-23.5,133.0,10870.145,AU,True,,stop,6.518e-05,406,31,0,9.71,"```json
+{""country"": ""AU"", ""latitude"": -23.5, ""longitude"": 133.0}
+```"
+qwen/qwen3.6-27b,no-CoT,-23.698,133.8807,10939.382,AU,True,,stop,0.0001963,473,32,0,17.34,"{""country"": ""AU"", ""latitude"": -23.6980, ""longitude"": 133.8807}"
+qwen/qwen3.5-35b-a3b,no-CoT,-23.6512,133.8945,10943.059,AU,True,,stop,9.836e-05,474,32,0,9.7,"{""country"": ""AU"", ""latitude"": -23.6512, ""longitude"": 133.8945}"
+x-ai/grok-4.3,no-CoT,27.3,-98.4,14174.671,US,True,,stop,0.0005934,592,22,0,6.97,"{""country"": ""US"", ""latitude"": 27.3, ""longitude"": -98.4}"
+xiaomi/mimo-v2.5,no-CoT,33.5,-101.5,14517.808,US,True,,stop,8.00576e-05,708,26,0,1.37,"{""country"": ""US"", ""latitude"": 33.5, ""longitude"": -101.5}"
+mistralai/mistral-medium-3-5,no-CoT,35.0,-102.0,14563.166,US,True,,stop,0.001146,634,26,0,1.06,"{""country"": ""US"", ""latitude"": 35.0, ""longitude"": -102.0}"
+mistralai/mistral-small-2603,no-CoT,36.5323,-116.9325,15879.47,US,True,,stop,0.000142875,634,32,0,1.31,"{""country"": ""US"", ""latitude"": 36.5323, ""longitude"": -116.9325}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.57,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.27,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.83,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.39,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.41,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.39,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.24,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.14,

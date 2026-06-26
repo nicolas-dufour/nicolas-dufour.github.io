@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-5.7112050822921,-78.583810361787,0.0,PE,True,,,,,,,,"Bagua, Provincia de Bagua, Amazonas, PE"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-6.00793981552124,-78.04428100585938,68.193,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-6.024881362915039,-78.05216217041016,68.372,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-6.364806652069092,-77.9176025390625,103.484,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-5.6,-79.8,135.143,PE,True,,stop,0.006835,797,114,0,9.88,"{""reasoning"": ""Spanish signage ('LA PROVINCIA'), mototaxi (tuk-tuk) and dry scrub landscape indicate northern Peru; right-side driving and arid terrain match the Piura/Lambayeque region."", ""country"": ""PE"", ""latitude"": -5.6, ""longitude"": -79.8}"
+moonshotai/kimi-k2.6,CoT,-6.0,-79.8,138.308,PE,True,,stop,0.01621222,682,3929,4017,98.52,"{""reasoning"": ""Spanish text 'A LA PROVINCIA' and hand-painted wall ads are typical of Peru, while the blue-canopy mototaxi and arid flat coastal scrub strongly indicate the country's northern coast."", ""country"": ""PE"", ""latitude"": -6.0, ""longitude"": -79.8}"
+openai/gpt-5.5,CoT,-6.6257,-79.8779,175.519,PE,True,,stop,0.021435,621,611,516,56.29,"{""reasoning"":""Spanish signage reading “CHICHERIA / RESTAURANT” and the blue mototaxi point strongly to northern Peru, especially the arid coastal Lambayeque/Piura region where roadside chicherías are common. The dry scrubland, simple adobe roadside buildings, and right-hand traffic fit rural northern Peru."",""country"":""PE"",""latitude"":-6.6257,""longitude"":-79.8779}"
+openai/gpt-5.5,no-CoT,-6.7365,-79.9012,184.942,PE,True,,stop,0.00347,544,25,0,7.62,"{""country"":""PE"",""latitude"":-6.7365,""longitude"":-79.9012}"
+google/gemini-3.1-pro-preview,no-CoT,-5.1965,-80.6254,233.121,PE,True,,stop,0.005966,1189,299,265,20.3,"```json
+{""country"": ""PE"", ""latitude"": -5.1965, ""longitude"": -80.6254}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-5.1944,-80.6278,233.436,PE,True,,stop,0.002091,1190,34,0,1.19,"```json
+{""country"": ""PE"", ""latitude"": -5.1944, ""longitude"": -80.6278}
+```"
+anthropic/claude-opus-4.8,no-CoT,-5.196,-80.629,233.521,PE,True,,stop,0.00408,666,30,0,14.94,"{""country"": ""PE"", ""latitude"": -5.196, ""longitude"": -80.629}"
+google/gemini-3.5-flash,CoT (effort=medium),-5.1944,-80.6312,233.801,PE,True,,stop,0.0374655,1271,3951,3836,34.91,"```json
+{""reasoning"": ""The hand-painted political mural mentions 'ALCALDE DISTRITAL' and 'A LA PROVINCIA' alongside the name 'PAPILON', which is a common nickname for a local politician in Peru. The blue mototaxi and dry, semi-arid landscape are highly characteristic of the northern coastal region of Peru, such as Piura or Lambayeque."", ""country"": ""PE"", ""latitude"": -5.1944, ""longitude"": -80.6312}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-5.1944,-80.6328,233.972,PE,True,,stop,0.0372315,1271,3925,3836,19.08,"
+```json
+{""reasoning"": ""The wall painting features Peruvian political campaign slogans ('ALCALDE DISTRITO', 'A LA PROVINCIA') and the name 'PAPILON', while the blue mototaxi and dry, flat landscape are characteristic of northern Peru."", ""country"": ""PE"", ""latitude"": -5.1944, ""longitude"": -80.6328}
+```"
+google/gemini-3.1-pro-preview,CoT,-4.852,-80.513,233.996,PE,True,,stop,0.005818,1271,273,194,11.45,"{
+  ""reasoning"": ""The black and white striped roadside poles and the blue mototaxi are strong indicators of Peru. The painted political mural and dry, scrubby landscape suggest a northern region like Piura."",
+  ""country"": ""PE"",
+  ""latitude"": -4.852,
+  ""longitude"": -80.513
+}"
+google/gemini-3.5-flash,CoT (effort=low),-5.1833,-80.6333,234.334,PE,True,,stop,0.005697,1272,421,331,3.65,"```json
+{""reasoning"": ""The Spanish text 'PAPILON A LA PROVINCIA' painted on the wall, the presence of a mototaxi, and the dry, scrubby vegetation are highly characteristic of northern Peru, particularly the Piura or Lambayeque regions."", ""country"": ""PE"", ""latitude"": -5.1833, ""longitude"": -80.6333}
+```"
+xiaomi/mimo-v2.5,CoT,-8.0,-76.0,382.268,PE,True,,stop,0.0005713176,787,1741,1674,24.59,"{""reasoning"": ""Spanish signage with 'A LA PROVINCIA' and a blue auto-rickshaw typical of Peruvian rural roads, along with the landscape and vegetation, point to Peru."", ""country"": ""PE"", ""latitude"": -8.0, ""longitude"": -76.0}"
+mistralai/mistral-medium-3-5,no-CoT,-18.0041,-70.2518,1639.182,PE,True,,stop,0.0011835,634,31,0,1.02,"{""country"": ""PE"", ""latitude"": -18.0041, ""longitude"": -70.2518}"
+google/gemma-4-31b-it,no-CoT,12.5833,-86.2167,2202.223,NI,True,,stop,5.772e-05,408,36,0,2.32,"```json
+{""country"": ""NI"", ""latitude"": 12.5833, ""longitude"": -86.2167}
+```"
+xiaomi/mimo-v2.5,no-CoT,18.95,-72.28,2827.834,HT,True,,stop,8.03376e-05,708,27,0,4.68,"{""country"": ""HT"", ""latitude"": 18.95, ""longitude"": -72.28}"
+x-ai/grok-4.3,no-CoT,19.113,-72.693,2834.73,HT,True,,stop,0.0005934,592,22,0,1.79,"{""country"": ""HT"", ""latitude"": 19.113, ""longitude"": -72.693}"
+qwen/qwen3.6-27b,no-CoT,19.75,-72.2,2916.029,HT,True,,stop,0.0001843,473,26,0,7.76,"{""country"": ""HT"", ""latitude"": 19.75, ""longitude"": -72.2}"
+qwen/qwen3.5-122b-a10b,no-CoT,21.5213,-77.8308,3029.229,CU,True,,stop,0.00018746,473,31,0,7.28,"{""country"": ""CU"", ""latitude"": 21.5213, ""longitude"": -77.8308}"
+qwen/qwen3.5-397b-a17b,no-CoT,22.9833,-82.4167,3217.766,CU,True,,stop,0.00025701,473,31,0,1.36,"{""country"": ""CU"", ""latitude"": 22.9833, ""longitude"": -82.4167}"
+qwen/qwen3.5-27b,no-CoT,20.6594,-103.3496,3988.992,MX,True,,stop,0.00019683,473,32,0,8.61,"{""country"": ""MX"", ""latitude"": 20.6594, ""longitude"": -103.3496}"
+qwen/qwen3.6-35b-a3b,no-CoT,12.5,-12.5,7577.187,SN,True,,stop,0.0039658827,471,4030,4001,24.54,"{""country"": ""SN"", ""latitude"": 12.5, ""longitude"": -12.5}"
+x-ai/grok-4.3,CoT,1.865,9.77,9846.142,GQ,True,,stop,0.0033065,676,1119,1053,13.01,"{""reasoning"": ""Spanish text 'A LA PROVINCIA' on billboard, right-hand traffic, savanna vegetation and tuk-tuk-style vehicle indicate Equatorial Guinea; sign style and landscape match roads near Bata."", ""country"": ""GQ"", ""latitude"": 1.865, ""longitude"": 9.77}"
+mistralai/mistral-small-2603,no-CoT,28.6357,77.2245,16412.312,IN,True,,stop,0.0001137,634,31,0,9.26,"{""country"": ""IN"", ""latitude"": 28.6357, ""longitude"": 77.2245}"
+minimax/minimax-m3,CoT,-9.48,124.55,16945.211,ID,True,,stop,0.00089982,845,587,539,11.12,"{""reasoning"": ""The 'Papillon' beer advertisement and 'Province' text on the wall indicate Indonesia (likely NTT region where this pilsner is famously popular). The dry tropical scrub vegetation, simple roadside warung with corrugated metal, motorcycle with sidecar, and asphalt road style with white edge line are all characteristic of Timor or Flores island in eastern Indonesia."", ""country"": ""ID"", ""latitude"": -9.48, ""longitude"": 124.55}"
+qwen/qwen3.5-35b-a3b,no-CoT,14.5995,121.0269,17654.478,PH,True,,stop,0.00010295,473,32,0,1.81,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 121.0269}"
+qwen/qwen3.5-9b,no-CoT,14.5995,120.9842,17658.715,PH,True,,stop,5.22e-05,474,32,0,4.67,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,12.752431869506836,102.8143081665039,19217.263,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,11.452622413635254,103.3476791381836,19342.305,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,11.340197563171387,103.40855407714844,19351.965,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,12.44,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,28.12,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.62,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.5,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.23,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.28,

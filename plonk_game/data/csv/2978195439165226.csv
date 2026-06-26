@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-36.848768404231,175.80159600799,0.0,NZ,True,,,,,,,,"Whitianga, Thames-Coromandel District, Waikato, NZ"
+minimax/minimax-m3,CoT,-37.05,175.72,23.521,NZ,True,,stop,0.00094806,957,602,516,23.58,"{""reasoning"": ""Left-hand driving, white edge lines on a rural highway, a '50' speed limit sign in red circle (km/h), and vegetation typical of coastal New Zealand scrub (mānuka-like trees) all point to the Coromandel Peninsula coastline in NZ's North Island."", ""country"": ""NZ"", ""latitude"": -37.05, ""longitude"": 175.72}"
+google/gemini-3.5-flash,CoT (effort=low),-36.7432,174.9865,73.521,NZ,True,,stop,0.0048675,1283,327,236,3.45,"{""reasoning"": ""The yellow diamond sign containing a red-bordered '50' speed limit with a '200 m' sub-plate is characteristic of New Zealand road signage. The lush, temperate vegetation and left-hand driving confirm this location in the North Island of New Zealand."", ""country"": ""NZ"", ""latitude"": -36.7432, ""longitude"": 174.9865}"
+mistralai/mistral-medium-3-5,no-CoT,-36.8485,174.7633,92.388,NZ,True,,stop,0.001362,748,32,0,2.43,"{""country"": ""NZ"", ""latitude"": -36.8485, ""longitude"": 174.7633}"
+moonshotai/kimi-k2.6,CoT,-36.5,174.8,97.38,NZ,True,,stop,0.012761784,796,3659,3592,94.3,"{""reasoning"": ""Left-hand traffic with a right-mounted side mirror, circular red-bordered 50 km/h speed limit sign with a supplementary yellow warning plate, and dense coastal scrub vegetation are definitive for New Zealand."", ""country"": ""NZ"", ""latitude"": -36.5, ""longitude"": 174.8}"
+google/gemini-3.1-pro-preview,CoT,-37.7,175.3,104.541,NZ,True,,stop,0.006394,1283,319,240,4.56,"{
+  ""reasoning"": ""The yellow diamond sign with a red circle indicating a speed limit is characteristic of temporary speed limits in New Zealand. The left-hand driving and lush, hilly vegetation further support a New Zealand location."",
+  ""country"": ""NZ"",
+  ""latitude"": -37.7,
+  ""longitude"": 175.3
+}"
+x-ai/grok-4.3,CoT,-37.82,175.32,116.086,NZ,True,,stop,0.003374,756,1106,1029,24.32,"{""reasoning"": ""Left-hand traffic (oncoming vehicle on right side of road) + 50 km/h limit sign with characteristic NZ backing plate and 'SCHOOL ZONE FINISH' legend; rolling green hills, roadside vegetation and road markings match rural North Island NZ."", ""country"": ""NZ"", ""latitude"": -37.82, ""longitude"": 175.32}"
+google/gemini-3.1-pro-preview,no-CoT,-38.0,175.0,146.277,NZ,True,,stop,0.005174,1201,231,201,10.45,"```json
+{""country"": ""NZ"", ""latitude"": -38.0, ""longitude"": 175.0}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-38.0654,176.4321,146.282,NZ,True,,stop,0.0021255,1201,36,0,7.4,"```json
+{""country"": ""NZ"", ""latitude"": -38.0654, ""longitude"": 176.4321}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-36.25539016723633,174.2311553955078,155.019,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,-38.5421,175.2134,195.271,NZ,True,,stop,6.968e-05,392,37,0,4.5,"```json
+{""country"": ""NZ"", ""latitude"": -38.5421, ""longitude"": 175.2134}
+```"
+anthropic/claude-opus-4.8,CoT,-35.4,174.1,222.048,NZ,True,,stop,0.00668,911,85,0,9.46,"{""reasoning"": ""Left-side driving, '50 200m' speed sign style and pohutukawa-like coastal vegetation indicate New Zealand rural road."", ""country"": ""NZ"", ""latitude"": -35.4, ""longitude"": 174.1}"
+anthropic/claude-opus-4.8,no-CoT,-35.3,174.1,230.306,NZ,True,,stop,0.004675,780,31,0,3.19,"{""country"": ""NZ"", ""latitude"": -35.3, ""longitude"": 174.1}"
+moonshotai/kimi-k2.6,no-CoT,-35.2333,174.1833,231.16,NZ,True,,stop,0.00061686,716,25,0,5.76,"{""country"": ""NZ"", ""latitude"": -35.2333, ""longitude"": 174.1833}"
+openai/gpt-5.5,CoT,-35.1053,173.7796,265.859,NZ,True,,stop,0.026955,717,779,703,16.06,"{""reasoning"":""Left-hand traffic with New Zealand-style red-ring speed sign, white road edge markings, and lush subtropical hilly vegetation point strongly to rural Northland, NZ. The road and settlement approach resemble the SH10/Kaeo area."",""country"":""NZ"",""latitude"":-35.1053,""longitude"":173.7796}"
+openai/gpt-5.5,no-CoT,-38.6612,178.0257,280.78,NZ,True,,stop,0.00392,640,24,0,2.25,"{""country"":""NZ"",""latitude"":-38.6612,""longitude"":178.0257}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-35.276363372802734,173.2470245361328,288.592,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-35.269927978515625,173.24366760253906,289.273,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-35.0025,173.5312,289.704,NZ,True,,stop,0.01635,1282,1603,1522,12.39,"{""reasoning"": ""The yellow diamond warning sign with a speed limit inside a red circle is characteristic of New Zealand road signage. The lush, subtropical-looking native vegetation and left-hand driving confirm a location in the North Island of New Zealand."", ""country"": ""NZ"", ""latitude"": -35.0025, ""longitude"": 173.5312}"
+google/gemini-3.5-flash,CoT (effort=medium),-34.9895,173.5312,290.742,NZ,True,,stop,0.007836,1282,657,579,12.31,"```json
+{""reasoning"": ""The speed limit sign mounted on a yellow diamond backing, left-hand driving, and distinctive coastal vegetation (such as Pohutukawa-like trees) are highly characteristic of New Zealand."", ""country"": ""NZ"", ""latitude"": -34.9895, ""longitude"": 173.5312}
+```"
+minimax/minimax-m3,no-CoT,-41.2,175.45,484.786,NZ,True,,stop,0.00022872,868,22,0,2.38,"{""country"": ""NZ"", ""latitude"": -41.2, ""longitude"": 175.45}{""country"": ""NZ"", ""latitude"": -41.2, ""longitude"": 175.45}"
+qwen/qwen3.5-27b,no-CoT,-41.2865,174.776,501.322,NZ,True,,stop,0.0002165,570,37,0,3.44,"```json
+{""country"": ""NZ"", ""latitude"": -41.2865, ""longitude"": 174.7760}
+```"
+x-ai/grok-4.3,no-CoT,-41.288,174.777,501.471,NZ,True,,stop,0.0008278,672,22,0,7.65,"{""country"": ""NZ"", ""latitude"": -41.288, ""longitude"": 174.777}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,15894.932,,True,True,,,,,,12.61,
+qwen/qwen3.5-122b-a10b,no-CoT,40.8215,14.4523,18343.976,IT,True,,stop,0.00022906,569,39,0,1.16,"{
+  ""country"": ""IT"",
+  ""latitude"": 40.8215,
+  ""longitude"": 14.4523
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.8902,12.4922,18477.924,IT,True,,stop,0.00011635,569,31,0,2.43,"{""country"": ""IT"", ""latitude"": 41.8902, ""longitude"": 12.4922}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.8902,12.4823,18478.712,IT,True,,stop,0.00011635,569,31,0,7.63,"{""country"": ""IT"", ""latitude"": 41.8902, ""longitude"": 12.4823}"
+xiaomi/mimo-v2.5,CoT,28.25,-16.45,18523.14,ES,True,,stop,0.0001765176,883,283,206,3.72,"{""reasoning"": ""The European-style 50 km/h speed limit sign, Spanish-language signage, and subtropical vegetation typical of the Canary Islands point to Spain's Tenerife region, with right-hand traffic matching Spanish road norms."", ""country"": ""ES"", ""latitude"": 28.25, ""longitude"": -16.45}"
+mistralai/mistral-small-2603,no-CoT,48.5833,-1.75,18695.213,FR,True,,stop,0.000129,748,28,0,3.48,"{""country"": ""FR"", ""latitude"": 48.5833, ""longitude"": -1.75}"
+xiaomi/mimo-v2.5,no-CoT,48.6833,-3.0167,18695.661,FR,True,,stop,9.46176e-05,804,30,0,1.94,"{""country"": ""FR"", ""latitude"": 48.6833, ""longitude"": -3.0167}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,39.093994140625,8.654070854187012,18862.222,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,39.0860481262207,8.641118049621582,18863.457,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,43.2876,5.9842,18892.535,FR,True,,stop,0.00041868,569,30,0,2.92,"{""country"": ""FR"", ""latitude"": 43.2876, ""longitude"": 5.9842}"
+qwen/qwen3.6-27b,no-CoT,43.6047,3.882,18998.773,FR,True,,stop,0.0002211,569,30,0,12.76,"{""country"": ""FR"", ""latitude"": 43.6047, ""longitude"": 3.8820}"
+qwen/qwen3.5-9b,no-CoT,43.8931,1.494,19095.798,FR,True,,stop,0.00010398,569,29,0,4.16,"{""country"": ""FR"", ""latitude"": 43.8931, ""longitude"": 1.494}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.2269401550293,4.16750431060791,19144.478,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.17,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.23,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.25,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.14,

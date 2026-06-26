@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,46.2111575,1.4043325,0.0,FR,True,,,,,,,,"Saint-Maurice-la-Souterraine, Departement de la Creuse, Limousin, FR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,46.328369140625,0.6076328158378601,62.61,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,46.393531799316406,0.40870732069015503,79.125,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,46.51740646362305,-0.02970508486032486,115.184,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,47.2383,2.3997,137.114,FR,True,,stop,0.0001428,474,30,0,9.3,"{""country"": ""FR"", ""latitude"": 47.2383, ""longitude"": 2.3997}"
+anthropic/claude-opus-4.8,no-CoT,47.5,1.5,143.497,FR,True,,stop,0.00408,666,30,0,6.72,"{""country"": ""FR"", ""latitude"": 47.5, ""longitude"": 1.5}"
+google/gemini-3.1-pro-preview,CoT,47.5,2.0,150.299,FR,True,,stop,0.005266,1271,227,159,10.9,"{
+  ""reasoning"": ""The speed camera warning sign with the radar symbol and vehicle icons is distinctly French. The road markings and rolling agricultural landscape are also typical of rural France."",
+  ""country"": ""FR"",
+  ""latitude"": 47.5,
+  ""longitude"": 2.0
+}"
+google/gemini-3.1-pro-preview,no-CoT,48.0,2.0,203.953,FR,True,,stop,0.005222,1189,237,209,4.97,"```json
+{""country"": ""FR"", ""latitude"": 48.0, ""longitude"": 2.0}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,47.9029,2.6932,211.934,FR,True,,stop,0.0002331,473,38,0,1.53,"{
+  ""country"": ""FR"",
+  ""latitude"": 47.9029,
+  ""longitude"": 2.6932
+}"
+openai/gpt-5.5,CoT,47.7732,3.2568,223.39,FR,True,,stop,0.012735,621,321,244,24.41,"{""reasoning"":""The roadside radar-warning sign with French-style pictograms/text, right-side driving, EU road markings and guardrails point strongly to rural France. The rolling cereal fields and wooded low hills fit central/northern France, likely Burgundy/Loiret area."",""country"":""FR"",""latitude"":47.7732,""longitude"":3.2568}"
+google/gemini-3.5-flash,CoT (effort=medium),47.8542,3.2145,228.458,FR,True,,stop,0.0094845,1271,842,773,7.1,"{""reasoning"": ""The speed camera warning sign is of the distinct French design introduced in 2017, and the rolling agricultural landscape with deciduous trees is characteristic of central-northern France."", ""country"": ""FR"", ""latitude"": 47.8542, ""longitude"": 3.2145}"
+google/gemini-3.5-flash,CoT (effort=low),48.1234,3.1234,249.185,FR,True,,stop,0.0035175,1271,179,114,9.22,"{""reasoning"": ""The speed camera warning sign is of the classic French design, and the road markings, guardrails, and rolling agricultural landscape are highly characteristic of rural France."", ""country"": ""FR"", ""latitude"": 48.1234, ""longitude"": 3.1234}"
+anthropic/claude-opus-4.8,CoT,48.5,1.5,254.61,FR,True,,stop,0.006135,797,86,0,9.55,"{""reasoning"": ""Speed camera warning sign style and rural farmland with mixed crops and woodland typical of northern France; right-side driving and road markings consistent with France."", ""country"": ""FR"", ""latitude"": 48.5, ""longitude"": 1.5}"
+moonshotai/kimi-k2.6,CoT,48.0,-0.75,257.176,FR,True,,stop,0.017234928,682,4973,4883,218.26,"{""reasoning"": ""The sign displays the distinctive French 'radar automatique' speed-camera warning symbol (black car with emission waves on a white/gray rectangle), and the straight rural road with W-beam guardrails, dashed white lane markings, and bocage hedgerows is characteristic of north-western France."", ""country"": ""FR"", ""latitude"": 48.0, ""longitude"": -0.75}"
+openai/gpt-5.5,no-CoT,48.3662,2.8469,263.162,FR,True,,stop,0.00341,544,23,0,1.78,"{""country"":""FR"",""latitude"":48.3662,""longitude"":2.8469}"
+google/gemma-4-31b-it,no-CoT,48.5,2.3,263.294,FR,True,,stop,6.438e-05,406,29,0,8.9,"```json
+{""country"": ""FR"", ""latitude"": 48.5, ""longitude"": 2.3}
+```"
+mistralai/mistral-medium-3-5,no-CoT,48.5,2.5,267.548,FR,True,,stop,0.001131,634,24,0,1.28,"{""country"": ""FR"", ""latitude"": 48.5, ""longitude"": 2.5}"
+qwen/qwen3.5-9b,no-CoT,48.8623,2.0689,298.982,FR,True,,stop,5.19e-05,474,30,0,7.18,"{""country"": ""FR"", ""latitude"": 48.8623, ""longitude"": 2.0689}"
+xiaomi/mimo-v2.5,CoT,48.85,2.35,301.887,FR,True,,stop,0.0001538376,787,250,144,9.44,"{
+  ""reasoning"": ""The speed camera warning sign with a car and radio waves is a standard design used in France, specifically the older model often found on departmental roads or national routes. The landscape features flat agricultural fields with some trees and a grey, overcast sky typical of northern or central France, and the road markings and guardrails match French standards."",
+  ""country"": ""FR"",
+  ""latitude"": 48.85,
+  ""longitude"": 2.35
+}"
+xiaomi/mimo-v2.5,no-CoT,48.8566,2.3522,302.638,FR,True,,stop,8.11776e-05,708,30,0,7.9,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+google/gemini-3.5-flash,CoT (effort=high),48.3125,4.0833,308.935,FR,True,,stop,0.0076395,1271,637,573,6.74,"{""reasoning"": ""The speed camera warning sign with radar waves and vehicle icons is characteristic of France. The rolling agricultural landscape and road markings point to northern or central France."", ""country"": ""FR"", ""latitude"": 48.3125, ""longitude"": 4.0833}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),49.1245,2.9876,344.941,FR,True,,stop,0.002091,1190,34,0,1.52,"```json
+{""country"": ""FR"", ""latitude"": 49.1245, ""longitude"": 2.9876}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,49.096946716308594,6.095028877258301,475.657,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,51.752,-1.257,645.884,GB,True,,stop,0.0002091,473,28,0,1.98,"{""country"": ""GB"", ""latitude"": 51.752, ""longitude"": -1.257}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,48.62347412109375,9.256223678588867,648.414,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,48.75,9.35,660.052,DE,True,,stop,0.0026565,676,859,785,6.56,"{""reasoning"": ""Right-hand traffic, metal guardrails, dashed lane markings, and rectangular black-on-white regulatory sign with overtaking/trailer pictogram are diagnostic of German Autobahn; flat agricultural landscape with mixed deciduous trees matches central/southern Germany."", ""country"": ""DE"", ""latitude"": 48.75, ""longitude"": 9.35}"
+minimax/minimax-m3,CoT,41.85,-4.55,679.153,ES,True,,stop,0.00083466,843,536,450,22.33,"{""reasoning"": ""The square 130 km/h speed limit sign with the distinctive Spanish-style concentric arcs pictogram, combined with right-hand driving, metal beam guardrails, and the dry golden meseta landscape with scattered vegetation are all classic indicators of an autopista in the Castilian plateau region of Spain."", ""country"": ""ES"", ""latitude"": 41.85, ""longitude"": -4.55}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,48.591636657714844,9.759323120117188,681.795,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,51.2277,6.7735,682.461,DE,True,,stop,0.0001923,473,30,0,18.92,"{""country"": ""DE"", ""latitude"": 51.2277, ""longitude"": 6.7735}"
+minimax/minimax-m3,no-CoT,49.0,11.0,782.667,DE,True,,stop,0.00044562,767,228,265,5.78,"{""country"": ""DE"", ""latitude"": 49.0, ""longitude"": 11.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,51.2345,10.6789,879.115,DE,True,,stop,0.000258055,473,31,0,8.89,"{""country"": ""DE"", ""latitude"": 51.2345, ""longitude"": 10.6789}"
+x-ai/grok-4.3,no-CoT,52.3,10.6,949.276,DE,True,,stop,0.0005934,592,22,0,0.82,"{""country"": ""DE"", ""latitude"": 52.3, ""longitude"": 10.6}"
+qwen/qwen3.5-35b-a3b,no-CoT,52.4589,10.7821,970.278,DE,True,,stop,0.00010195,473,31,0,3.03,"{""country"": ""DE"", ""latitude"": 52.4589, ""longitude"": 10.7821}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5140.28,,True,True,,,,,,1.27,
+mistralai/mistral-small-2603,no-CoT,35.6895,139.6917,9997.404,JP,True,,stop,0.0001143,634,32,0,0.96,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.33,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.41,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.1,

@@ -1,0 +1,88 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,55.743212493776,42.434139510653,0.0,RU,True,,,,,,,,"Savasleyka, None, Nizjnij Novgorod, RU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,55.75028991699219,42.8504524230957,26.067,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,55.798892974853516,43.010990142822266,36.608,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,56.83600997924805,41.124732971191406,145.923,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,58.0,40.0,291.253,RU,True,,stop,0.002798,1225,29,0,17.36,"```json
+{""country"": ""RU"", ""latitude"": 58.0, ""longitude"": 40.0}
+```"
+qwen/qwen3.5-397b-a17b,CoT,55.7558,37.6173,301.389,RU,True,,stop,0.0094842,665,2537,2435,20.27,"{""reasoning"": ""The blue vehicle is a Lada Kalina, a car model ubiquitous in Russia, driving on the right side of the road (oncoming traffic on the left). The surrounding environment is a dense, snowy mixed forest of birch and pine trees, which is characteristic of the Russian taiga and central European Russian landscape."", ""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+anthropic/claude-opus-4.8,no-CoT,58.5,38.0,406.78,RU,True,,stop,0.00484,818,30,0,9.01,"{""country"": ""RU"", ""latitude"": 58.5, ""longitude"": 38.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),56.8542,35.9125,420.719,RU,True,,stop,0.0021525,1225,35,0,7.66,"```json
+{""country"": ""RU"", ""latitude"": 56.8542, ""longitude"": 35.9125}
+```"
+anthropic/claude-opus-4.8,CoT,57.8,35.9,458.874,RU,True,,stop,0.00747,949,109,0,9.7,"{""reasoning"": ""Snowy birch/spruce boreal forest, wet winter road, right-hand traffic, Chevrolet Aveo common in Eastern Europe/Russia suggests Baltic or western Russia winter landscape."", ""country"": ""RU"", ""latitude"": 57.8, ""longitude"": 35.9}"
+google/gemma-4-31b-it,no-CoT,61.215,48.467,701.62,RU,True,,stop,6.268e-05,404,34,0,19.71,"```json
+{""country"": ""RU"", ""latitude"": 61.215, ""longitude"": 48.467}
+```"
+google/gemini-3.1-pro-preview,CoT,59.5,32.0,747.394,RU,True,,stop,0.00595,1307,278,208,20.56,"{
+  ""reasoning"": ""The snowy boreal forest, right-hand driving, and double solid center lines strongly suggest Russia. The vehicle and general road infrastructure are consistent with western Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 59.5,
+  ""longitude"": 32.0
+}"
+minimax/minimax-m3,CoT,59.45,31.05,792.216,RU,True,,stop,0.00102666,995,658,575,13.61,"{""reasoning"": ""Right-hand traffic, dense taiga forest (birch and spruce) with snow, typical Russian-style metal guardrails, and a Hyundai Getz/Accent (common in Russia) all point to a regional highway in northwestern Russia, likely in Leningrad Oblast."", ""country"": ""RU"", ""latitude"": 59.45, ""longitude"": 31.05}"
+moonshotai/kimi-k2.6,CoT,59.5,30.5,822.596,RU,True,,stop,0.012476196,834,3572,3511,256.93,"{""reasoning"": ""Snow-covered birch taiga and reddish-brown road shoulders with right-hand traffic indicate rural European Russia in winter; the approaching sedan resembles a Chevrolet Lacetti ubiquitous there."", ""country"": ""RU"", ""latitude"": 59.5, ""longitude"": 30.5}"
+moonshotai/kimi-k2.6,no-CoT,59.9343,30.3351,852.47,RU,True,,stop,0.000333,755,25,0,1.85,"{""country"": ""RU"", ""latitude"": 59.9343, ""longitude"": 30.3351}"
+google/gemini-3.5-flash,CoT (effort=low),60.15,30.3,865.619,RU,True,,stop,0.004365,1308,267,202,2.96,"{""reasoning"": ""The snowy mixed birch and coniferous forest, combined with the Chevrolet Aveo (highly popular in Russia) and the style of the metal guardrails, strongly points to northwestern Russia."", ""country"": ""RU"", ""latitude"": 60.15, ""longitude"": 30.3}"
+google/gemini-3.5-flash,CoT (effort=high),61.7,30.7,944.83,RU,True,,stop,0.0147315,1307,1419,1353,18.25,"{""reasoning"": ""The dense mixed forest of birch and conifers, the Chevrolet Aveo (highly popular in Russia), and the wet, snowy road conditions are characteristic of northwestern Russia, such as Karelia."", ""country"": ""RU"", ""latitude"": 61.7, ""longitude"": 30.7}"
+google/gemini-3.5-flash,CoT (effort=medium),61.7012,30.6954,945.103,RU,True,,stop,0.0174855,1307,1725,1635,21.4,"{""reasoning"": ""The image shows a wet two-lane road with a Chevrolet Aveo (highly popular in Russia) driving through a dense birch and coniferous taiga forest. The landscape, vegetation, and road style strongly suggest northwestern Russia, specifically the Republic of Karelia near the Finnish border."", ""country"": ""RU"", ""latitude"": 61.7012, ""longitude"": 30.6954}"
+x-ai/grok-4.3,CoT,61.45,28.75,1012.132,FI,True,,stop,0.0026315,788,793,714,7.7,"{""reasoning"": ""Right-hand traffic (oncoming car in left lane), European metal guardrails, mixed birch/conifer taiga forest under fresh snow, and Chevrolet hatchback all point to northern Europe/Russia in winter; image style and vegetation match southern Finland or Karelia."", ""country"": ""FI"", ""latitude"": 61.45, ""longitude"": 28.75}"
+qwen/qwen3.6-35b-a3b,no-CoT,60.1695,24.9354,1139.068,FI,True,,stop,0.00011875,585,31,0,9.46,"{""country"": ""FI"", ""latitude"": 60.1695, ""longitude"": 24.9354}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,61.7694206237793,26.15846061706543,1148.219,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,61.79440689086914,26.183734893798828,1148.373,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,60.3,24.8,1150.681,FI,True,,stop,0.0007334,704,22,0,1.08,"{""country"": ""FI"", ""latitude"": 60.3, ""longitude"": 24.8}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,61.31562423706055,25.526103973388672,1155.598,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,61.5,25.5,1165.603,FI,True,,stop,0.00026808,904,23,0,1.64,"{""country"": ""FI"", ""latitude"": 61.5, ""longitude"": 25.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,62.5,26.0,1195.849,FI,True,,stop,0.00041028,585,25,0,2.13,"{""country"": ""FI"", ""latitude"": 62.5, ""longitude"": 26.0}"
+qwen/qwen3.5-9b,no-CoT,62.9167,25.75,1231.249,FI,True,,stop,6.295e-05,586,29,0,10.2,"{""country"": ""FI"", ""latitude"": 62.9167, ""longitude"": 25.75}"
+qwen/qwen3.6-35b-a3b,CoT,61.45,23.85,1243.389,FI,True,,stop,0.0113600825,665,11658,11544,189.84,"```json
+{
+  ""reasoning"": ""The image shows a snowy, birch-dominated forest typical of Finland, with a car driving on the right side of the road (oncoming lane on the left). The road infrastructure, including the metal guardrails and wet asphalt, along with the specific mix of birch and pine trees, strongly points to a rural road in Finland."",
+  ""country"": ""FI"",
+  ""latitude"": 61.45,
+  ""longitude"": 23.85
+}
+```"
+mistralai/mistral-medium-3-5,no-CoT,64.75,25.5,1361.318,FI,True,,stop,0.001374,786,26,0,1.12,"{""country"": ""FI"", ""latitude"": 64.75, ""longitude"": 25.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,60.1282,18.6435,1476.938,SE,True,,stop,0.0003588,585,39,0,2.78,"{
+  ""country"": ""SE"",
+  ""latitude"": 60.1282,
+  ""longitude"": 18.6435
+}"
+openai/gpt-5.5,no-CoT,59.35021,18.03603,1500.513,SE,True,,stop,0.00408,678,23,0,2.55,"{""country"":""SE"",""latitude"":59.35021,""longitude"":18.03603}"
+xiaomi/mimo-v2.5,CoT,51.05,20.5,1537.214,PL,True,,stop,0.0001468376,899,169,87,3.37,"{""reasoning"": ""The image shows a cold, snowy climate with mixed deciduous and coniferous forests typical of Northern or Eastern Europe. The road markings, guardrails, and the right-hand drive orientation suggest a location in a country like Poland or Belarus."", ""country"": ""PL"", ""latitude"": 51.05, ""longitude"": 20.50}"
+openai/gpt-5.5,CoT,60.0115,10.8762,1905.233,NO,True,,stop,0.014395,755,354,285,15.64,"{""reasoning"":""Right-hand traffic on a snowy forest road with a yellow centerline strongly suggests Norway rather than Sweden/Estonia, and the mixed birch-spruce woodland with rolling terrain fits southern Norway near Oslo."",""country"":""NO"",""latitude"":60.0115,""longitude"":10.8762}"
+xiaomi/mimo-v2.5,no-CoT,51.1,10.5,2157.215,DE,True,,stop,9.54576e-05,820,25,0,3.56,"{""country"": ""DE"", ""latitude"": 51.1, ""longitude"": 10.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,61.218056,-149.900278,6964.79,US,True,,stop,0.00012375,585,36,0,7.8,"{""country"": ""US"", ""latitude"": 61.218056, ""longitude"": -149.900278}"
+qwen/qwen3.6-27b,no-CoT,44.2663,-72.5813,7340.837,US,True,,stop,0.0002279,585,31,0,19.05,"{""country"": ""US"", ""latitude"": 44.2663, ""longitude"": -72.5813}"
+qwen/qwen3.5-27b,no-CoT,44.9778,-93.265,8071.432,US,True,,stop,0.00022275,585,30,0,8.42,"{""country"": ""US"", ""latitude"": 44.9778, ""longitude"": -93.265}"
+google/gemma-4-26b-a4b-it,no-CoT,45.3333,-122.3333,8685.51,US,True,,stop,0.00015428,404,280,0,6.56,"```json
+{""country"": own"": ""US"", ""latitude"": 45. own"": -122.3333, ""longitude"": 45.3333}
+```
+
+Wait, I apologize, there was a technical error in my output format. Here is own is the correct format:
+
+```json own:
+{""country"": ""US own"": ""US"", ""latitude own"": -122.3333, ""longitude"": 45.3333}
+```
+
+Actually, let me provide the correct JSON format as requested:
+
+```json
+{""country"": ""US"", ""latitude"": 45.3333 own-122.3333, ""longitude"": -122.333 own"": -122.3333 own"": -122 own"": -122.3333, ""longitude"": -122.3333}
+```
+
+*Self own-122.3333*
+
+Let me try again to provide a clean, single JSON object as requested:
+
+```json
+{""country"": ""US"", ""latitude"": 45.3333, ""longitude"": -122.3333}
+```"
+mistralai/mistral-small-2603,no-CoT,44.428,-122.262,8784.167,US,True,,stop,0.000169875,786,30,0,8.41,"{""country"": ""US"", ""latitude"": 44.428, ""longitude"": -122.262}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.31,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.3,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,

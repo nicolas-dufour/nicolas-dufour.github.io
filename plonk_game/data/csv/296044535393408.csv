@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,46.413786110625,-74.967305553638,0.0,CA,True,,,,,,,,"Riviere-Rouge, Laurentides, Quebec, CA"
+google/gemini-3.5-flash,no-CoT (effort=minimal),46.183421,-74.612453,37.408,CA,True,,stop,0.0021345,1189,39,0,3.68,"```json
+{""country"": ""CA"", ""latitude"": 46.183421, ""longitude"": -74.612453}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),46.1182,-74.5851,44.085,CA,True,,stop,0.0076035,1271,633,553,12.85,"{""reasoning"": ""The dense mixed forest with birch trees and the narrow paved path are characteristic of the 'Le P'tit Train du Nord' multi-use trail in Quebec, Canada, captured by a low-mounted Google Street View camera."", ""country"": ""CA"", ""latitude"": 46.1182, ""longitude"": -74.5851}"
+google/gemini-3.5-flash,CoT (effort=low),46.0123,-74.2987,68.115,CA,True,,stop,0.004041,1272,237,173,2.96,"{""reasoning"": ""The lush mixed forest, narrow paved path, and bicycle-mounted camera setup are highly characteristic of the Route Verte cycling network in Quebec, Canada."", ""country"": ""CA"", ""latitude"": 46.0123, ""longitude"": -74.2987}"
+google/gemini-3.5-flash,CoT (effort=high),46.0125,-74.2854,68.876,CA,True,,stop,0.0074505,1271,616,539,12.38,"{""reasoning"": ""The narrow paved path surrounded by dense northern mixed-deciduous forest, including birch trees, is characteristic of rail-trail bicycle paths in Quebec, Canada, such as the P'tit Train du Nord."", ""country"": ""CA"", ""latitude"": 46.0125, ""longitude"": -74.2854}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,45.684349060058594,-75.98170471191406,112.725,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,45.662513732910156,-76.00912475585938,115.953,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,45.4358,-75.7012,122.67,CA,True,,stop,0.00344,544,24,0,1.71,"{""country"":""CA"",""latitude"":45.4358,""longitude"":-75.7012}"
+moonshotai/kimi-k2.6,no-CoT,45.4215,-75.6972,123.943,CA,True,,stop,0.000293292,603,25,0,3.14,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -75.6972}"
+qwen/qwen3.5-9b,no-CoT,45.4215,-75.6972,123.943,CA,True,,stop,5.205e-05,474,31,0,4.33,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -75.6972}"
+qwen/qwen3.6-35b-a3b,no-CoT,45.4215,-75.6972,123.943,CA,True,,stop,0.00010195,473,31,0,3.02,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -75.6972}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,45.52705001831055,-73.87939453125,129.578,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,45.430110931396484,-73.85779571533203,139.027,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,45.4215,-73.8204,141.58,CA,True,,stop,0.0001943,473,31,0,11.19,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -73.8204}"
+google/gemma-4-31b-it,no-CoT,45.5017,-73.5673,148.313,CA,True,,stop,6.718e-05,406,36,0,4.49,"```json
+{""country"": ""CA"", ""latitude"": 45.5017, ""longitude"": -73.5673}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.209014892578125,-76.12384033203125,161.183,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,46.5,-72.5,189.236,CA,True,,stop,0.006485,797,100,0,9.55,"{""reasoning"": ""Narrow rural paved road through dense mixed deciduous-coniferous forest typical of northeastern North America; lush green summer vegetation suggests Quebec/Ontario or northern US."", ""country"": ""CA"", ""latitude"": 46.5, ""longitude"": -72.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,44.55568313598633,-74.0207290649414,219.39,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,46.8,-71.5,268.306,CA,True,,stop,0.00408,666,30,0,2.11,"{""country"": ""CA"", ""latitude"": 46.8, ""longitude"": -71.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,46.8139,-71.2082,290.522,CA,True,,stop,0.0002163,473,31,0,3.9,"{""country"": ""CA"", ""latitude"": 46.8139, ""longitude"": -71.2082}"
+moonshotai/kimi-k2.6,CoT,45.5,-78.5,291.345,CA,True,,stop,0.010685268,682,3059,2982,87.11,"{""reasoning"": ""The visible right-side mirror from the interior indicates a left-hand-drive vehicle (traffic drives on the right); a narrow, unmarked paved road cutting straight through flat, dense mixed deciduous forest is characteristic of the Canadian Shield in rural Ontario."", ""country"": ""CA"", ""latitude"": 45.5, ""longitude"": -78.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,44.2612,-72.5834,303.301,US,True,,stop,0.0001236625,473,36,0,1.85,"{
+""country"": ""US"",
+""latitude"": 44.2612,
+""longitude"": -72.5834
+}"
+x-ai/grok-4.3,no-CoT,47.3,-79.4,351.104,CA,True,,stop,0.0005934,592,22,0,1.02,"{""country"": ""CA"", ""latitude"": 47.3, ""longitude"": -79.4}"
+google/gemini-3.1-pro-preview,no-CoT,44.5638,-71.1815,359.669,US,True,,stop,0.0028,1190,35,0,8.9,"```json
+{""country"": ""US"", ""latitude"": 44.5638, ""longitude"": -71.1815}
+```"
+minimax/minimax-m3,CoT,45.85,-68.5,502.141,US,True,,stop,0.00136386,843,977,898,28.86,"{""reasoning"": ""Narrow rural paved road with no center line through mixed birch/spruce/conifer forest typical of northern New England; right-side mirror visible suggests left-hand drive vehicle (US/Canada); lush deciduous-boreal forest composition strongly resembles Maine woodland."", ""country"": ""US"", ""latitude"": 45.85, ""longitude"": -68.50}"
+xiaomi/mimo-v2.5,no-CoT,44.5,-84.5,772.822,US,True,,stop,7.97776e-05,708,25,0,8.23,"{""country"": ""US"", ""latitude"": 44.5, ""longitude"": -84.5}"
+google/gemini-3.1-pro-preview,CoT,45.373,-84.955,781.031,US,True,,stop,0.00558,1272,253,177,307.62,"{
+  ""reasoning"": ""The image shows a paved bike path through a temperate deciduous forest. The vegetation and path style are characteristic of recreational trails in the Great Lakes region or northeastern United States."",
+  ""country"": ""US"",
+  ""latitude"": 45.373,
+  ""longitude"": -84.955
+}"
+mistralai/mistral-medium-3-5,no-CoT,44.5,-89.5,1151.579,US,True,,stop,0.0011385,634,25,0,1.12,"{""country"": ""US"", ""latitude"": 44.5, ""longitude"": -89.5}"
+qwen/qwen3.5-27b,no-CoT,54.5733,-113.4944,2831.112,CA,True,,stop,0.00019683,473,32,0,2.33,"{""country"": ""CA"", ""latitude"": 54.5733, ""longitude"": -113.4944}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,3974.458,US,True,,stop,0.0001143,634,32,0,3.76,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+x-ai/grok-4.3,CoT,59.85,17.65,5823.506,SE,True,,stop,0.0023165,676,723,650,5.48,"{""reasoning"": ""Narrow unmarked asphalt road through dense mixed boreal forest (birch, pine, spruce) with lush undergrowth and overcast northern light is characteristic of rural Scandinavia; right-side interior frame suggests LHD vehicle on right-hand traffic road."", ""country"": ""SE"", ""latitude"": 59.85, ""longitude"": 17.65}"
+qwen/qwen3.5-397b-a17b,no-CoT,64.135,27.812,6024.491,FI,True,,stop,0.0003252,473,29,0,1.87,"{""country"": ""FI"", ""latitude"": 64.135, ""longitude"": 27.812}"
+openai/gpt-5.5,CoT,58.6352,25.4027,6267.527,EE,True,,stop,0.013485,621,346,263,10.1,"{""reasoning"":""A narrow unmarked chipseal road through flat mixed birch-conifer forest with grassy shoulders strongly suggests the Baltic region, especially Estonia/Latvia rather than Nordic roads with more frequent markings. The temperate boreal vegetation and right-side rural road appearance fit central Estonia best."",""country"":""EE"",""latitude"":58.6352,""longitude"":25.4027}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8862.11,,True,True,,,,,,8.26,
+xiaomi/mimo-v2.5,CoT,35.0,135.8,10452.655,JP,True,,stop,0.0001392776,787,198,99,4.16,"{""reasoning"": ""The lush, dense green vegetation, combined with the narrow paved road lacking center lines and the specific mossy, damp climate appearance, is highly characteristic of rural Japan (inaka). The vehicle's position (left side) and the specific road aesthetics, including the bollard/vegetation style, strongly suggest a Japanese location."", ""country"": ""JP"", ""latitude"": 35.0, ""longitude"": 135.8}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.22,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.8,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.5,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,13.02,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.09,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,2.24,

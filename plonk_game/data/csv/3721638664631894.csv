@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-11.363984512276,27.782459607532,0.0,CD,True,,,,,,,,"Lubumbashi, None, Katanga, CD"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-11.464568138122559,28.603910446166992,90.23,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-12.8,28.2,166.006,ZM,True,,stop,0.007395,949,106,0,10.54,"{""reasoning"": ""Reddish lateritic soil, dry-season miombo woodland, hazy sky from burning, left-side driving on a two-lane rural road typical of central/southern Africa, likely Zambia or DRC."", ""country"": ""ZM"", ""latitude"": -12.8, ""longitude"": 28.2}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-10.69842529296875,29.206809997558594,172.17,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,-13.0,28.0,183.447,ZM,True,,stop,0.00031428,755,23,0,8.48,"{""country"": ""ZM"", ""latitude"": -13.0, ""longitude"": 28.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-10.663118362426758,29.30775260925293,183.818,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-13.5,28.5,249.966,ZM,True,,stop,0.004865,818,31,0,2.84,"{""country"": ""ZM"", ""latitude"": -13.5, ""longitude"": 28.5}"
+minimax/minimax-m3,CoT,-14.5,28.5,357.272,ZM,True,,stop,0.00093186,995,579,496,24.28,"{""reasoning"": ""Red lateritic soil, miombo woodland vegetation, dry savanna landscape, and a paved highway with yellow center-line markings strongly indicate sub-Saharan Africa, most likely Zambia. The white Toyota Land Cruiser-style SUV is typical of NGO/aid vehicles operating on Zambian highways."", ""country"": ""ZM"", ""latitude"": -14.5, ""longitude"": 28.5}"
+minimax/minimax-m3,no-CoT,-6.8,37.5,1181.232,TZ,True,,stop,0.00035802,919,117,120,4.16,"{""country"": ""TZ"", ""latitude"": -6.8, ""longitude"": 37.5}"
+qwen/qwen3.5-27b,no-CoT,-0.9038,37.0906,1552.032,KE,True,,stop,0.0002325,586,43,0,3.01,"```json
+{
+  ""country"": ""KE"",
+  ""latitude"": -0.9038,
+  ""longitude"": 37.0906
+}
+```"
+google/gemini-3.5-flash,CoT (effort=low),0.9821,35.0124,1588.429,KE,True,,stop,0.0044265,1307,274,202,3.69,"{""reasoning"": ""The white vehicle hood with a black scoop, driving on the left, and yellow outer road lines are characteristic of Google Street View coverage in Kenya, specifically in the drier western or northern regions."", ""country"": ""KE"", ""latitude"": 0.9821, ""longitude"": 35.0124}"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.0234,37.9065,1685.445,KE,True,,stop,0.00011775,585,30,0,1.86,"{""country"": ""KE"", ""latitude"": -0.0234, ""longitude"": 37.9065}"
+qwen/qwen3.5-35b-a3b,no-CoT,-29.8586,31.0218,2083.62,ZA,True,,stop,0.00011875,585,31,0,1.14,"{""country"": ""ZA"", ""latitude"": -29.8586, ""longitude"": 31.0218}"
+google/gemini-3.5-flash,CoT (effort=medium),10.3521,7.4215,3300.707,NG,True,,stop,0.0143895,1307,1381,1289,10.65,"```json
+{""reasoning"": ""The white vehicle hood with a central black scoop is characteristic of the Google Street View car used in Nigeria. The dry, flat savanna landscape with a hazy sky (Harmattan) and driving on the right side with yellow outer road lines points to central or northern Nigeria."", ""country"": ""NG"", ""latitude"": 10.3521, ""longitude"": 7.4215}
+```"
+moonshotai/kimi-k2.6,CoT,10.5,7.4,3314.261,NG,True,,stop,0.019451736,834,5605,5536,247.48,"{""reasoning"": ""Harmattan haze, red laterite soil, and dry savanna vegetation are diagnostic of northern Nigeria; the road-marking style and white Toyota Land Cruiser pickup are common on Nigerian federal highways."", ""country"": ""NG"", ""latitude"": 10.5, ""longitude"": 7.4}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3318.561,,True,True,,,,,,25.62,
+google/gemma-4-31b-it,no-CoT,6.6667,-1.0,3762.948,GH,True,,stop,6.268e-05,404,34,0,4.68,"```json
+{""country"": ""GH"", ""latitude"": 6.6667, ""longitude"": -1.0000}
+```"
+openai/gpt-5.5,no-CoT,6.7392,-1.6298,3826.304,GH,True,,stop,0.00411,678,24,0,1.43,"{""country"":""GH"",""latitude"":6.7392,""longitude"":-1.6298}"
+qwen/qwen3.5-397b-a17b,no-CoT,7.9465,-1.0232,3842.248,GH,True,,stop,0.0004394,585,29,0,7.72,"{""country"": ""GH"", ""latitude"": 7.9465, ""longitude"": -1.0232}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),9.4034,-0.8392,3917.484,GH,True,,stop,0.002136,1226,33,0,1.62,"```json
+{""country"": ""GH"", ""latitude"": 9.4034, ""longitude"": -0.8392}
+```"
+openai/gpt-5.5,CoT,9.4076,-0.8421,3918.014,GH,True,,stop,0.013645,755,329,255,9.54,"{""reasoning"":""Right-hand traffic with yellow edge lines and a white centerline, plus dry West African savanna vegetation and red dirt shoulders, strongly suggests rural Ghana. The landscape fits the northern/central Ghana corridor around Tamale/Yendi."",""country"":""GH"",""latitude"":9.4076,""longitude"":-0.8421}"
+google/gemini-3.5-flash,CoT (effort=high),9.825,-0.815,3942.723,GH,True,,stop,0.0167655,1307,1645,1567,19.2,"```json
+{""reasoning"": ""The white vehicle hood with a prominent black scoop, combined with right-hand traffic, yellow outer road lines, and dry savanna vegetation with reddish soil, is highly characteristic of Northern Ghana during the Harmattan season."", ""country"": ""GH"", ""latitude"": 9.825, ""longitude"": -0.815}
+```"
+xiaomi/mimo-v2.5,CoT,12.3575,-1.5212,4173.871,BF,True,,stop,0.0001476776,899,172,99,2.48,"{""reasoning"": ""The dry, reddish soil, sparse vegetation, and left-hand traffic indicate a Sahelian region in West Africa. The road style and landscape are typical of Burkina Faso."", ""country"": ""BF"", ""latitude"": 12.3575, ""longitude"": -1.5212}"
+x-ai/grok-4.3,CoT,12.65,-8.0,4767.091,ML,True,,stop,0.003554,788,1162,1090,15.55,"{""reasoning"": ""Red laterite soil, scattered savanna trees, hazy dry-season sky and paved two-lane road with yellow edge lines match West African Sahel; right-hand traffic and RHD mirror position narrow to Mali/Burkina region."", ""country"": ""ML"", ""latitude"": 12.65, ""longitude"": -8.0}"
+x-ai/grok-4.3,no-CoT,12.65,-8.0,4767.091,ML,True,,stop,0.0007334,704,22,0,1.0,"{""country"": ""ML"", ""latitude"": 12.65, ""longitude"": -8.0}"
+google/gemini-3.1-pro-preview,CoT,14.15,-16.05,5602.778,SN,True,,stop,0.005842,1307,269,190,5.56,"{
+  ""reasoning"": ""The white car with a black hood scoop and the suction cup on the windshield is a distinct Google Street View car meta for Senegal. The dry savanna landscape and road markings further support this location."",
+  ""country"": ""SN"",
+  ""latitude"": 14.15,
+  ""longitude"": -16.05
+}"
+google/gemini-3.1-pro-preview,no-CoT,14.15,-16.05,5602.778,SN,True,,stop,0.004442,1225,166,135,4.22,"```json
+{""country"": ""SN"", ""latitude"": 14.15, ""longitude"": -16.05}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,9.8353910446167,77.23870849609375,5953.386,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,9.780733108520508,77.33048248291016,5960.418,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,19.076,72.8777,5989.53,IN,True,,stop,9.68576e-05,820,30,0,2.34,"{""country"": ""IN"", ""latitude"": 19.076, ""longitude"": 72.8777}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,12.60096263885498,77.7679443359375,6126.374,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,20.5937,78.9629,6627.464,IN,True,,stop,6.325e-05,586,31,0,5.4,"{""country"": ""IN"", ""latitude"": 20.5937, ""longitude"": 78.9629}"
+qwen/qwen3.5-122b-a10b,no-CoT,21.2084,79.1951,6680.648,IN,True,,stop,0.00021684,586,31,0,6.6,"{""country"": ""IN"", ""latitude"": 21.2084, ""longitude"": 79.1951}"
+qwen/qwen3.6-27b,no-CoT,28.6139,77.209,6923.239,IN,True,,stop,0.0002279,585,31,0,21.03,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+mistralai/mistral-medium-3-5,no-CoT,-7.2111,-35.8711,6988.116,BR,True,,stop,0.001404,786,30,0,4.97,"{""country"": ""BR"", ""latitude"": -7.2111, ""longitude"": -35.8711}"
+mistralai/mistral-small-2603,no-CoT,36.1699,-115.1398,15388.615,US,True,,stop,0.0001371,786,32,0,4.0,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.42,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.42,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.84,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.55,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.36,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.12,

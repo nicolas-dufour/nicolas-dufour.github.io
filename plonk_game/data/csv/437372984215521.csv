@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,42.931264747856,-106.58704713536,0.0,US,True,,,,,,,,"Mills, Natrona County, Wyoming, US"
+google/gemini-3.5-flash,CoT (effort=medium),43.1234,-106.5432,21.66,US,True,,stop,0.0055875,1307,403,335,10.76,"{""reasoning"": ""The vast, rolling semi-arid grasslands, double yellow center lines, and right-hand driving are characteristic of the western United States, particularly Wyoming or Montana."", ""country"": ""US"", ""latitude"": 43.1234, ""longitude"": -106.5432}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,42.73046875,-106.1428451538086,42.551,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,42.79794692993164,-105.94788360595703,54.161,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,43.5,-106.5,63.633,US,True,,stop,0.004815,818,29,0,3.38,"{""country"": ""US"", ""latitude"": 43.5, ""longitude"": -106.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,43.0731,-107.5423,79.265,US,True,,stop,0.00011975,585,32,0,2.13,"{""country"": ""US"", ""latitude"": 43.0731, ""longitude"": -107.5423}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.71086120605469,-106.9709243774414,92.081,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.77107238769531,-106.98724365234375,98.829,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,43.5,-105.5,108.439,US,True,,stop,0.00692,949,87,0,9.45,"{""reasoning"": ""Yellow center line, right-hand driving, vast semi-arid high plains grassland with rolling hills typical of Wyoming/Montana western US highway."", ""country"": ""US"", ""latitude"": 43.5, ""longitude"": -105.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.0125,-108.1542,127.821,US,True,,stop,0.0021615,1225,36,0,1.69,"```json
+{""country"": ""US"", ""latitude"": 43.0125, ""longitude"": -108.1542}
+```"
+openai/gpt-5.5,CoT,43.6124,-105.1897,136.141,US,True,,stop,0.015415,755,388,311,12.27,"{""reasoning"":""Right-side driving with US-style yellow centerlines/white edge lines and rural highway delineators indicates the United States. The vast treeless high-plains grassland, fencing, dry climate, and rolling terrain are most consistent with eastern Wyoming."",""country"":""US"",""latitude"":43.6124,""longitude"":-105.1897}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,44.112266540527344,-107.36257934570312,145.447,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,44.0581,-105.3822,158.569,US,True,,stop,0.002882,1225,36,0,8.75,"```json
+{""country"": ""US"", ""latitude"": 44.0581, ""longitude"": -105.3822}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,42.70893096923828,-104.58773040771484,164.925,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),44.3512,-105.9814,165.239,US,True,,stop,0.004167,1308,245,171,8.78,"{""reasoning"": ""The wide-open, rolling grassy plains, weathered asphalt road with double yellow center lines, and wooden fence posts are highly characteristic of the Great Plains in the western United States, particularly Wyoming."", ""country"": ""US"", ""latitude"": 44.3512, ""longitude"": -105.9814}"
+moonshotai/kimi-k2.6,CoT,42.0,-105.0,166.337,US,True,,stop,0.010368936,834,2944,2871,61.14,"{""reasoning"": ""Right-hand traffic with US-standard yellow centerline and white edge markings on cracked asphalt, set in open semi-arid rolling grasslands with post-and-wire fencing and no trees, characteristic of the High Plains in eastern Wyoming."", ""country"": ""US"", ""latitude"": 42.0, ""longitude"": -105.0}"
+google/gemini-3.1-pro-preview,CoT,44.2815,-105.5022,173.695,US,True,,stop,0.006226,1307,301,207,11.65,"{
+  ""reasoning"": ""The yellow left edge line and white right edge line on a divided highway indicate North America. The wide open, grassy rolling plains and road condition are highly characteristic of the western Great Plains in the United States, such as Wyoming or South Dakota."",
+  ""country"": ""US"",
+  ""latitude"": 44.2815,
+  ""longitude"": -105.5022
+}"
+x-ai/grok-4.3,no-CoT,44.45,-105.85,178.969,US,True,,stop,0.0007334,704,22,0,0.79,"{""country"": ""US"", ""latitude"": 44.45, ""longitude"": -105.85}"
+google/gemini-3.5-flash,CoT (effort=high),43.1234,-104.3567,182.546,US,True,,stop,0.0097635,1307,867,800,15.34,"{""reasoning"": ""The double yellow center lines, wide-open semi-arid rolling plains, and wooden ranch fencing are highly characteristic of the western United States, particularly Wyoming."", ""country"": ""US"", ""latitude"": 43.1234, ""longitude"": -104.3567}"
+minimax/minimax-m3,no-CoT,42.0,-104.5,200.066,US,True,,stop,0.00024012,906,22,0,1.65,"{""country"": ""US"", ""latitude"": 42.0, ""longitude"": -104.5}"
+openai/gpt-5.5,no-CoT,43.8798,-104.1906,220.449,US,True,,stop,0.00411,678,24,0,2.8,"{""country"":""US"",""latitude"":43.8798,""longitude"":-104.1906}"
+qwen/qwen3.5-27b,no-CoT,44.5234,-104.8912,223.396,US,True,,stop,0.00022707,585,32,0,8.84,"{""country"": ""US"", ""latitude"": 44.5234, ""longitude"": -104.8912}"
+qwen/qwen3.5-35b-a3b,no-CoT,44.2612,-103.2345,307.791,US,True,,stop,0.00011404,586,32,0,1.09,"{""country"": ""US"", ""latitude"": 44.2612, ""longitude"": -103.2345}"
+google/gemma-4-31b-it,no-CoT,41.25,-103.5,315.934,US,True,,stop,6.532e-05,404,32,0,3.06,"```json
+{""country"": ""US"", ""latitude"": 41.25, ""longitude"": -103.5}
+```"
+qwen/qwen3.5-9b,no-CoT,44.9236,-103.5342,329.883,US,True,,stop,6.34e-05,586,32,0,3.41,"{""country"": ""US"", ""latitude"": 44.9236, ""longitude"": -103.5342}"
+qwen/qwen3.5-122b-a10b,no-CoT,45.6769,-108.5007,341.145,US,True,,stop,0.0002523,585,32,0,4.15,"{""country"": ""US"", ""latitude"": 45.6769, ""longitude"": -108.5007}"
+xiaomi/mimo-v2.5,no-CoT,41.15,-102.95,359.727,US,True,,stop,9.62976e-05,820,28,0,1.26,"{""country"": ""US"", ""latitude"": 41.15, ""longitude"": -102.95}"
+google/gemma-4-26b-a4b-it,no-CoT,44.428,-110.5885,362.22,US,True,,stop,5.628e-05,404,35,0,14.04,"Please own: {""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5885}"
+xiaomi/mimo-v2.5,CoT,46.5,-106.5,396.885,US,True,,stop,0.0003663576,899,953,884,10.48,"{""reasoning"": ""The double yellow line and right-hand driving indicate North America, specifically the United States. The rolling prairie landscape with dry grass and distant hills is characteristic of the Great Plains region."", ""country"": ""US"", ""latitude"": 46.5, ""longitude"": -106.5}"
+x-ai/grok-4.3,CoT,46.85,-105.75,440.697,US,True,,stop,0.0021015,788,581,489,6.26,"{
+  ""reasoning"": ""US-style double yellow center line + white edge lines, right-side driving implied, cracked asphalt rural highway, open shortgrass prairie with rolling hills and barbed-wire fences on wooden posts all point to the northern Great Plains; vegetation, sky, and road condition match eastern Montana/Wyoming high plains."",
+  ""country"": ""US"",
+  ""latitude"": 46.85,
+  ""longitude"": -105.75
+}"
+qwen/qwen3.6-27b,no-CoT,46.8523,-104.0508,479.528,US,True,,stop,0.0002299,585,32,0,7.51,"{""country"": ""US"", ""latitude"": 46.8523, ""longitude"": -104.0508}"
+qwen/qwen3.5-397b-a17b,no-CoT,46.8721,-103.4567,502.697,US,True,,stop,0.0003917,585,32,0,1.7,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -103.4567}"
+mistralai/mistral-medium-3-5,no-CoT,46.5,-102.5,511.475,US,True,,stop,0.001374,786,26,0,7.03,"{""country"": ""US"", ""latitude"": 46.5, ""longitude"": -102.5}"
+minimax/minimax-m3,CoT,50.45,-108.45,847.959,CA,True,,stop,0.00086706,995,525,451,21.48,"{""reasoning"": ""Wide divided highway with double yellow center line on flat prairie grassland with wooden post ranch fencing and distant low hills suggests the Canadian Prairies, most likely along the Trans-Canada Highway (Hwy 1) in southwestern Saskatchewan."", ""country"": ""CA"", ""latitude"": 50.45, ""longitude"": -108.45}"
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,2694.119,US,True,,stop,0.0001359,786,30,0,3.76,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.51,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.49,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.79,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.14,

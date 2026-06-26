@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-22.787184215205,-49.514998336943,0.0,BR,True,,,,,,,,"Santa Cruz do Rio Pardo, Santa Cruz Do Rio Pardo, Sao Paulo, BR"
+google/gemini-3.5-flash,CoT (effort=low),-22.4251,-47.4562,215.138,BR,True,,stop,0.0049305,1307,330,249,3.86,"{""reasoning"": ""The car transporter is carrying Chevrolet Onix and S10 models, which are highly popular in Brazil. The high-quality divided highway with concrete barriers and lush tropical vegetation is characteristic of major state highways in São Paulo, Brazil."", ""country"": ""BR"", ""latitude"": -22.4251, ""longitude"": -47.4562}"
+google/gemini-3.5-flash,CoT (effort=medium),-23.154,-47.152,245.33,BR,True,,stop,0.0125175,1307,1173,1099,16.78,"{""reasoning"": ""The car carrier is transporting vehicles highly popular in South America (such as the Renault Duster and Chevrolet S10), and the highway infrastructure with concrete barriers and lush tropical vegetation is characteristic of southeastern Brazil."", ""country"": ""BR"", ""latitude"": -23.154, ""longitude"": -47.152}"
+google/gemini-3.1-pro-preview,CoT,-22.8,-47.1,247.566,BR,True,,stop,0.005866,1307,271,179,5.4,"{
+  ""reasoning"": ""The lush tropical vegetation including bamboo, the style of the highway, and the specific models of vehicles on the car carrier (like the Chevrolet S10) strongly point to Brazil. The red and white reflective tape on the truck is also a common requirement in Brazil."",
+  ""country"": ""BR"",
+  ""latitude"": -22.8,
+  ""longitude"": -47.1
+}"
+google/gemini-3.1-pro-preview,no-CoT,-22.9055,-47.0608,251.827,BR,True,,stop,0.004754,1225,192,157,10.97,"```json
+{""country"": ""BR"", ""latitude"": -22.9055, ""longitude"": -47.0608}
+```"
+anthropic/claude-opus-4.8,CoT,-22.9,-47.06,251.882,BR,True,,stop,0.007395,949,106,0,26.66,"{""reasoning"": ""Right-hand traffic on a divided highway with tropical vegetation and concrete Jersey barriers; car carrier loaded with new vehicles suggests a Latin American highway, likely Brazil's interior."", ""country"": ""BR"", ""latitude"": -22.9, ""longitude"": -47.06}"
+anthropic/claude-opus-4.8,no-CoT,-22.9,-47.06,251.882,BR,True,,stop,0.00484,818,30,0,8.79,"{""country"": ""BR"", ""latitude"": -22.9, ""longitude"": -47.06}"
+google/gemini-3.5-flash,CoT (effort=high),-23.105,-46.925,267.547,BR,True,,stop,0.0097095,1307,861,762,20.01,"```json
+{""reasoning"": ""The car carrier is transporting Chevrolet Onix and S10 models, which are highly popular in Brazil, and the truck features the mandatory Brazilian red-and-white reflective safety tape. The high-quality divided highway with lush tropical vegetation and bamboo is characteristic of major state highways in São Paulo, Brazil."", ""country"": ""BR"", ""latitude"": -23.105, ""longitude"": -46.925}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-23.1856,-46.8978,271.545,BR,True,,stop,0.002154,1226,35,0,1.47,"```json
+{""country"": ""BR"", ""latitude"": -23.1856, ""longitude"": -46.8978}
+```"
+qwen/qwen3.5-9b,no-CoT,-23.5391,-46.6666,302.953,BR,True,,stop,6.325e-05,586,31,0,3.56,"{""country"": ""BR"", ""latitude"": -23.5391, ""longitude"": -46.6666}"
+x-ai/grok-4.3,no-CoT,-23.55,-46.65,304.908,BR,True,,stop,0.0007334,704,22,0,0.9,"{""country"": ""BR"", ""latitude"": -23.55, ""longitude"": -46.65}"
+google/gemma-4-31b-it,no-CoT,-23.5505,-46.6333,306.563,BR,True,,stop,6.692e-05,404,36,0,3.49,"```json
+{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}
+```"
+minimax/minimax-m3,no-CoT,-23.5505,-46.6333,306.563,BR,True,,stop,0.00023976,904,25,0,1.54,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,306.563,BR,True,,stop,0.0002691,585,39,0,2.39,"{
+  ""country"": ""BR"",
+  ""latitude"": -23.5505,
+  ""longitude"": -46.6333
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5505,-46.6333,306.563,BR,True,,stop,0.00043188,585,31,0,6.57,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.6333,306.563,BR,True,,stop,0.0002279,585,31,0,11.45,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-35b-a3b,no-CoT,-23.5505,-46.6333,306.563,BR,True,,stop,0.00011875,585,31,0,2.29,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+moonshotai/kimi-k2.6,no-CoT,-23.5,-46.5,318.291,BR,True,,stop,0.00064215,754,23,0,31.71,"{""country"": ""BR"", ""latitude"": -23.5, ""longitude"": -46.5}"
+moonshotai/kimi-k2.6,CoT,-23.22,-45.9,373.111,BR,True,,stop,0.013854276,834,3971,3890,102.56,"{""reasoning"": ""The carrier is hauling Brazilian-market Chevrolet models (S10, Trailblazer/Onix) on a right-hand-traffic divided highway with tropical vegetation and road markings consistent with Brazilian rodovias; São José dos Campos is a major GM manufacturing hub."", ""country"": ""BR"", ""latitude"": -23.22, ""longitude"": -45.9}"
+minimax/minimax-m3,CoT,-15.5,-49.0,812.098,BR,True,,stop,0.00108906,995,710,633,20.96,"{""reasoning"": ""Tropical vegetation, concrete Jersey barriers, well-maintained divided highway, and the car-hauler style combined with the equatorial cumulus cloud formations point to a Brazilian federal highway, likely BR-153 or BR-060 in central Brazil."", ""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -49.0}"
+openai/gpt-5.5,no-CoT,8.9146,-79.6934,4818.693,PA,True,,stop,0.00411,678,24,0,7.85,"{""country"":""PA"",""latitude"":8.9146,""longitude"":-79.6934}"
+openai/gpt-5.5,CoT,9.1356,-79.5968,4829.705,PA,True,,stop,0.020155,755,546,458,22.53,"{""reasoning"":""Tropical roadside vegetation, right-side driving, North American-style car carrier/vehicles, and divided highway design point to Panama, especially the Panama–Colón corridor where vehicle transporters are common. The lush flat highway setting best fits the Autopista Panamá–Colón north of Panama City."",""country"":""PA"",""latitude"":9.1356,""longitude"":-79.5968}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,9.360208511352539,-79.37115478515625,4831.666,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,9.379607200622559,-79.41676330566406,4836.612,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,11.789375305175781,-86.08345031738281,5535.425,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,25.7617,-80.1918,6329.399,US,True,,stop,0.0014115,786,31,0,1.15,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,25.851051330566406,-80.26435852050781,6341.699,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,25.865535736083984,-80.24473571777344,6341.928,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,25.759225845336914,-81.0541763305664,6378.144,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,28.5383,-81.3792,6650.781,US,True,,stop,0.00019644,586,31,0,2.59,"{""country"": ""US"", ""latitude"": 28.5383, ""longitude"": -81.3792}"
+mistralai/mistral-small-2603,no-CoT,38.9515,-77.3582,7451.742,US,True,,stop,0.0001365,786,31,0,10.18,"{""country"": ""US"", ""latitude"": 38.9515, ""longitude"": -77.3582}"
+google/gemma-4-26b-a4b-it,no-CoT,34.0522,-1.0,8138.837,,True,,stop,5.828e-05,404,40,0,1.8,"{"" than-도
+
+{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -1 own-118.2437}"
+qwen/qwen3.5-27b,no-CoT,-27.4698,153.0251,13924.934,AU,True,,stop,0.000163995,585,32,0,1.55,"{""country"": ""AU"", ""latitude"": -27.4698, ""longitude"": 153.0251}"
+xiaomi/mimo-v2.5,CoT,-6.178,106.475,15868.901,ID,True,,stop,0.0012178376,899,3994,3861,48.53,"{""reasoning"": ""The left-hand traffic, tropical vegetation, and vehicle models (Toyota Hilux Revo/Fortuner) indicate Southeast Asia, likely Indonesia or Thailand. The decisive clue is the white license plate on the commercial car carrier; in Thailand, commercial vehicles must have green plates, whereas Indonesia switched to white plates for all vehicle types (including commercial) in 2022. This identifies the location as Indonesia, likely on the Tangerang-Merak Toll Road in West Java."", ""country"": ""ID"", ""latitude"": -6.178, ""longitude"": 106.475}"
+xiaomi/mimo-v2.5,no-CoT,3.0733,101.5185,16202.495,MY,True,,stop,9.71376e-05,820,31,0,1.47,"{""country"": ""MY"", ""latitude"": 3.0733, ""longitude"": 101.5185}"
+x-ai/grok-4.3,CoT,14.015,100.615,16723.451,TH,True,,stop,0.0020865,788,575,498,12.89,"{
+  ""reasoning"": ""Right-hand traffic (median barrier on left), tropical vegetation (bamboo/palms), white Toyota/Hyundai-style SUVs on transporter, and open divided highway with cumulus sky all point to SE Asia expressway."",
+  ""country"": ""TH"",
+  ""latitude"": 14.015,
+  ""longitude"": 100.615
+}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,12.7,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.8,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.14,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.69,

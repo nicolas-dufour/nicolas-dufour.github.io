@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,26.604310598284,68.327285862067,0.0,PK,True,,,,,,,,"Bandhi, None, Sindh, PK"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,26.204662322998047,68.6812973022461,56.727,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,26.188743591308594,68.70230102539062,59.417,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,25.819229125976562,68.65699768066406,93.288,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,28.7041,77.1025,895.015,IN,True,,stop,0.0014115,786,31,0,1.34,"{""country"": ""IN"", ""latitude"": 28.7041, ""longitude"": 77.1025}"
+qwen/qwen3.5-35b-a3b,no-CoT,32.6542,48.3156,2043.913,IR,True,,stop,0.00018415,585,31,0,8.42,"{""country"": ""IR"", ""latitude"": 32.6542, ""longitude"": 48.3156}"
+google/gemini-3.1-pro-preview,no-CoT,31.0123,47.4321,2090.547,IQ,True,,stop,0.002872,1226,35,0,2.42,"```json
+{""country"": ""IQ"", ""latitude"": 31.0123, ""longitude"": 47.4321}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),31.0425,47.4116,2092.967,IQ,True,,stop,0.0021525,1225,35,0,8.25,"```json
+{""country"": ""IQ"", ""latitude"": 31.0425, ""longitude"": 47.4116}
+```"
+google/gemini-3.1-pro-preview,CoT,30.95,47.05,2125.643,IQ,True,,stop,0.005254,1307,220,137,4.57,"{
+  ""reasoning"": ""The flat, arid landscape with a dirt road and tall reeds (Phragmites) strongly suggests a marshland environment in a dry region. This is highly characteristic of the Mesopotamian Marshes in southern Iraq."",
+  ""country"": ""IQ"",
+  ""latitude"": 30.95,
+  ""longitude"": 47.05
+}"
+openai/gpt-5.5,CoT,30.9657,47.0521,2125.683,IQ,True,,stop,0.016465,755,423,341,23.46,"{""reasoning"":""A raised dusty track flanked by dense phragmites reeds in a flat arid wetland landscape strongly matches the Mesopotamian Marshes. The lack of road markings or infrastructure and the levee-style road point to rural southern Iraq near Chibayish."",""country"":""IQ"",""latitude"":30.9657,""longitude"":47.0521}"
+google/gemini-3.5-flash,CoT (effort=high),30.965,47.032,2127.571,IQ,True,,stop,0.0076575,1307,633,564,5.4,"{""reasoning"": ""The flat, arid landscape with a dirt embankment road flanked by dense Phragmites reeds is highly characteristic of the Mesopotamian Marshes (Al-Ahwar) in southern Iraq."", ""country"": ""IQ"", ""latitude"": 30.965, ""longitude"": 47.032}"
+google/gemini-3.5-flash,CoT (effort=low),31.0125,47.0211,2129.325,IQ,True,,stop,0.003519,1308,173,107,8.55,"{""reasoning"": ""The flat, arid landscape with tall Phragmites reeds along a dirt track is highly characteristic of the Mesopotamian Marshes and canal banks in southern Iraq."", ""country"": ""IQ"", ""latitude"": 31.0125, ""longitude"": 47.0211}"
+google/gemini-3.5-flash,CoT (effort=medium),31.05,47.02,2130.009,IQ,True,,stop,0.0065505,1307,510,446,12.66,"{""reasoning"": ""The flat terrain, dry dirt embankment road, and dense stands of Phragmites reeds are highly characteristic of the Mesopotamian Marshes and river canals in southern Iraq."", ""country"": ""IQ"", ""latitude"": 31.05, ""longitude"": 47.02}"
+anthropic/claude-opus-4.8,CoT,31.0,47.0,2131.125,IQ,True,,stop,0.00742,949,107,0,9.98,"{""reasoning"": ""Flat arid floodplain with reeds and dry scrub, dirt track, hazy dusk sky suggests Middle Eastern marshland, likely southern Iraq's Mesopotamian wetlands."", ""country"": ""IQ"", ""latitude"": 31.0, ""longitude"": 47.0}"
+openai/gpt-5.5,no-CoT,31.8492,47.1458,2132.515,IQ,True,,stop,0.00408,678,23,0,1.46,"{""country"":""IQ"",""latitude"":31.8492,""longitude"":47.1458}"
+moonshotai/kimi-k2.6,CoT,31.02,46.85,2145.59,IQ,True,,stop,0.007452036,834,2099,2027,40.88,"{""reasoning"": ""Elevated dirt road cutting through vast reed beds (Phragmites) and salt-tolerant shrubs in a flat, hyper-arid marsh landscape is characteristic of the Mesopotamian Marshes in southern Iraq."", ""country"": ""IQ"", ""latitude"": 31.02, ""longitude"": 46.85}"
+anthropic/claude-opus-4.8,no-CoT,31.0,46.5,2178.353,IQ,True,,stop,0.004865,818,31,0,9.18,"{""country"": ""IQ"", ""latitude"": 31.0, ""longitude"": 46.5}"
+qwen/qwen3.5-27b,no-CoT,31.2769,34.7917,3291.642,IL,True,,stop,0.0002345,586,44,0,16.01,"```json
+{
+  ""country"": ""IL"",
+  ""latitude"": 31.2769,
+  ""longitude"": 34.7917
+}
+```"
+google/gemma-4-31b-it,no-CoT,31.85,34.75,3296.681,IL,True,,stop,6.692e-05,404,36,0,24.78,"```json
+{""country"": ""IL"", ""latitude"": 31.8500, ""longitude"": 34.7500}
+```"
+qwen/qwen3.5-9b,no-CoT,30.5955,31.6364,3593.692,EG,True,,stop,6.325e-05,586,31,0,4.96,"{""country"": ""EG"", ""latitude"": 30.5955, ""longitude"": 31.6364}"
+x-ai/grok-4.3,CoT,30.85,31.25,3629.57,EG,True,,stop,0.0023865,788,695,637,11.91,"{""reasoning"": ""Flat unpaved road bordered by Phragmites reeds and scrub in an arid plain at dusk; no signage/vehicles but matches Nile Delta levee roads."", ""country"": ""EG"", ""latitude"": 30.85, ""longitude"": 31.25}"
+qwen/qwen3.6-27b,no-CoT,30.0444,31.2357,3635.025,EG,True,,stop,0.0002279,585,31,0,7.39,"{""country"": ""EG"", ""latitude"": 30.0444, ""longitude"": 31.2357}"
+xiaomi/mimo-v2.5,no-CoT,30.0444,31.2357,3635.025,EG,True,,stop,9.71376e-05,820,31,0,1.23,"{""country"": ""EG"", ""latitude"": 30.0444, ""longitude"": 31.2357}"
+qwen/qwen3.6-35b-a3b,no-CoT,30.8467,31.0122,3652.27,EG,True,,stop,0.0001668,586,31,0,9.37,"{""country"": ""EG"", ""latitude"": 30.8467, ""longitude"": 31.0122}"
+x-ai/grok-4.3,no-CoT,31.139,29.849,3761.851,EG,True,,stop,0.0007334,704,22,0,6.93,"{""country"": ""EG"", ""latitude"": 31.139, ""longitude"": 29.849}"
+xiaomi/mimo-v2.5,CoT,37.0,27.5,3994.102,TR,True,,stop,0.0002476376,899,529,460,12.36,"{""reasoning"": ""The unpaved road flanked by tall, dried reed-like vegetation and hazy, flat terrain suggests a coastal wetland area, typical of the Aegean region of Turkey."", ""country"": ""TR"", ""latitude"": 37.0, ""longitude"": 27.5}"
+minimax/minimax-m3,no-CoT,40.72,0.68,6298.336,ES,True,,stop,0.00053802,919,267,293,7.57,"{""country"": ""ES"", ""latitude"": 40.72, ""longitude"": 0.68}"
+qwen/qwen3.5-397b-a17b,no-CoT,37.52,-0.85,6487.43,ES,True,,stop,0.000288925,585,26,0,9.43,"{""country"": ""ES"", ""latitude"": 37.52, ""longitude"": -0.85}"
+qwen/qwen3.5-122b-a10b,no-CoT,36.7213,-2.4456,6643.853,ES,True,,stop,0.00023114,585,38,0,1.02,"{
+  ""country"": ""ES"",
+  ""latitude"": 36.7213,
+  ""longitude"": -2.4456
+}"
+minimax/minimax-m3,CoT,39.17,-3.62,6688.813,ES,True,,stop,0.00065706,995,350,270,22.83,"{""reasoning"": ""Tall golden reeds (Phragmites) flanking a flat unpaved track through dry wetland terrain with reddish soil and a hazy pastel sky strongly suggest the seasonal marshes of central Spain, such as the Tablas de Daimiel or La Mancha wetlands."", ""country"": ""ES"", ""latitude"": 39.17, ""longitude"": -3.62}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7863.587,,True,True,,,,,,19.82,
+mistralai/mistral-small-2603,no-CoT,36.1699,-115.1398,13025.451,US,True,,stop,0.0001371,786,32,0,25.78,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,30.22710609436035,-97.54944610595703,13519.556,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,26.058950424194336,-97.26897430419922,13959.249,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,26.051929473876953,-97.2646713256836,13959.882,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.15,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.73,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.27,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.63,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.65,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,13.01,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.15,

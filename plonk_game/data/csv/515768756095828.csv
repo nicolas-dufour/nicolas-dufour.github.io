@@ -1,0 +1,70 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,43.42077776268,-3.508697893312,0.0,ES,True,,,,,,,,"Barcena de Cicero, Provincia de Cantabria, Cantabria, ES"
+anthropic/claude-opus-4.8,no-CoT,43.3167,-3.85,29.917,ES,True,,stop,0.00413,666,32,0,8.81,"{""country"": ""ES"", ""latitude"": 43.3167, ""longitude"": -3.8500}"
+anthropic/claude-opus-4.8,CoT,43.3,-3.95,38.121,ES,True,,stop,0.00666,797,107,0,10.71,"{""reasoning"": ""Green hilly landscape, terracotta-roofed stone farmhouse and lush vegetation typical of northern Spain (Cantabria/Asturias); right-hand traffic and Spanish-style road markings."", ""country"": ""ES"", ""latitude"": 43.30, ""longitude"": -3.95}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.341254,-4.041258,43.939,ES,True,,stop,0.002127,1190,38,0,7.58,"```json
+{""country"": ""ES"", ""latitude"": 43.341254, ""longitude"": -4.041258}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,43.263,-2.935,49.601,ES,True,,stop,0.00020202,473,38,0,1.56,"{
+  ""country"": ""ES"",
+  ""latitude"": 43.2630,
+  ""longitude"": -2.9350
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,43.32313919067383,-4.113818168640137,50.101,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,43.2627,-2.9253,50.347,ES,True,,stop,0.00036108,473,30,0,4.34,"{""country"": ""ES"", ""latitude"": 43.2627, ""longitude"": -2.9253}"
+google/gemini-3.1-pro-preview,no-CoT,43.25,-2.9,52.765,ES,True,,stop,0.0058,1190,285,256,11.04,"```json
+{""country"": ""ES"", ""latitude"": 43.25, ""longitude"": -2.9}
+```"
+google/gemini-3.5-flash,CoT (effort=high),43.3785,-4.2912,63.394,ES,True,,stop,0.009495,1272,843,767,5.69,"{""reasoning"": ""The lush green landscape, traditional northern Spanish architecture with a red-tiled roof and wooden balcony, and the highway maintenance van referencing the A-8 autovía point to Northern Spain, specifically Cantabria."", ""country"": ""ES"", ""latitude"": 43.3785, ""longitude"": -4.2912}"
+google/gemini-3.5-flash,CoT (effort=low),43.3812,-4.3215,65.813,ES,True,,stop,0.0047865,1271,320,238,3.92,"{""reasoning"": ""The architecture of the building on the right, the lush green hilly landscape, and the road maintenance van with markings indicating the A-8 highway point to northern Spain, specifically the Cantabria or Asturias region along the N-634."", ""country"": ""ES"", ""latitude"": 43.3812, ""longitude"": -4.3215}"
+google/gemini-3.5-flash,CoT (effort=medium),43.3642,-4.3515,68.389,ES,True,,stop,0.0072975,1271,599,512,5.23,"{""reasoning"": ""The van features markings for the A-8 and N-634 highways, which run along the northern coast of Spain. The lush green landscape, hilly terrain, and traditional stone house with a wooden balcony are highly characteristic of the Cantabria or Asturias regions."", ""country"": ""ES"", ""latitude"": 43.3642, ""longitude"": -4.3515}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.35575866699219,-4.458171844482422,77.064,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.359012603759766,-4.474387168884277,78.334,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,43.25,-2.5,83.761,ES,True,,stop,6.884e-05,406,30,0,2.1,"```json
+{""country"": ""ES"", ""latitude"": 43.25, ""longitude"": -2.5}
+```"
+mistralai/mistral-medium-3-5,no-CoT,43.0,-2.5,94.19,ES,True,,stop,0.001131,634,24,0,13.47,"{""country"": ""ES"", ""latitude"": 43.0, ""longitude"": -2.5}"
+google/gemini-3.1-pro-preview,CoT,43.25,-2.05,119.493,ES,True,,stop,0.00858,1272,503,409,6.45,"{
+  ""reasoning"": ""The architecture of the building on the right is a classic Basque farmhouse (caserío). The lush green, hilly landscape and the highway maintenance van with red and white chevrons (possibly indicating the A-8 highway) strongly suggest the Basque Country in northern Spain."",
+  ""country"": ""ES"",
+  ""latitude"": 43.25,
+  ""longitude"": -2.05
+}"
+minimax/minimax-m3,CoT,42.95,-1.85,144.308,ES,True,,stop,0.00072066,843,441,356,11.73,"{""reasoning"": ""Red-and-white chevron breakdown vehicle typical of Spanish traffic assistance, right-hand driving, red-tiled rural architecture with stone elements, lush green hilly/mountainous terrain, and Spanish-style town entry sign all point to northern Spain, likely Navarra or the Basque Country foothills."", ""country"": ""ES"", ""latitude"": 42.95, ""longitude"": -1.85}"
+moonshotai/kimi-k2.6,no-CoT,43.2,-5.7,178.986,ES,True,,stop,0.00051219,602,23,0,2.34,"{""country"": ""ES"", ""latitude"": 43.2, ""longitude"": -5.7}"
+qwen/qwen3.5-397b-a17b,CoT,43.3612,-5.8493,189.238,ES,True,,stop,0.012963,553,3522,3414,27.79,"{""reasoning"": ""The van features red and yellow diagonal chevron stripes, a standard marking for Spanish emergency and municipal service vehicles (like Protección Civil or Bomberos), combined with a European license plate. The lush green vegetation, cloudy sky, and architecture of the house (terracotta roof, stucco walls) are characteristic of Northern Spain, likely Asturias or Galicia."", ""country"": ""ES"", ""latitude"": 43.3612, ""longitude"": -5.8493}"
+qwen/qwen3.5-9b,no-CoT,43.3667,-5.85,189.266,ES,True,,stop,5.16e-05,474,28,0,12.62,"{""country"": ""ES"", ""latitude"": 43.3667, ""longitude"": -5.85}"
+moonshotai/kimi-k2.6,CoT,43.35,-5.85,189.36,ES,True,,stop,0.007381368,682,2095,2022,58.76,"{""reasoning"": ""The rural house with a red-tiled roof and enclosed wooden gallery is highly characteristic of Asturian architecture in northern Spain, further supported by the Spanish road maintenance van with diagonal red-and-white stripes and European road signage."", ""country"": ""ES"", ""latitude"": 43.35, ""longitude"": -5.85}"
+minimax/minimax-m3,no-CoT,43.35,-5.85,189.36,ES,True,,stop,0.00022248,752,23,0,1.16,"{""country"": ""ES"", ""latitude"": 43.35, ""longitude"": -5.85}"
+qwen/qwen3.5-35b-a3b,no-CoT,42.8963,-7.6542,341.235,ES,True,,stop,0.00010095,473,30,0,3.28,"{""country"": ""ES"", ""latitude"": 42.8963, ""longitude"": -7.6542}"
+x-ai/grok-4.3,no-CoT,43.15,1.35,394.377,FR,True,,stop,0.0005934,592,22,0,6.97,"{""country"": ""FR"", ""latitude"": 43.15, ""longitude"": 1.35}"
+openai/gpt-5.5,CoT,41.7872,-8.4976,446.799,PT,True,,stop,0.013155,621,335,254,16.84,"{""reasoning"":""Right-side driving, EU-style plates and road markings, plus red-tiled rural houses and lush hilly landscape strongly suggest northern Portugal. The emergency/utility van chevrons and general roadside style fit the Minho region near Ponte de Lima/Braga."",""country"":""PT"",""latitude"":41.7872,""longitude"":-8.4976}"
+qwen/qwen3.6-35b-a3b,CoT,41.54,-8.42,453.715,PT,True,,stop,0.0045395,553,3521,3225,27.32,"{""reasoning"": ""The text 'PROTECÇÃO CIVIL' on the van (using the pre-orthographic agreement spelling common in Portugal) and the yellow commercial license plate definitively identify the country as Portugal. The lush green landscape, red-tiled roofs, and concrete utility poles are characteristic of the rural Minho region in Northern Portugal."", ""country"": ""PT"", ""latitude"": 41.54, ""longitude"": -8.42}"
+openai/gpt-5.5,no-CoT,41.7672,-8.5836,454.191,PT,True,,stop,0.00344,544,24,0,1.95,"{""country"":""PT"",""latitude"":41.7672,""longitude"":-8.5836}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,42.7332878112793,2.2373433113098145,472.817,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,41.1579,-8.6291,490.489,PT,True,,stop,0.00015575,473,30,0,1.94,"{""country"": ""PT"", ""latitude"": 41.1579, ""longitude"": -8.6291}"
+qwen/qwen3.6-27b,no-CoT,42.8805,2.6502,503.11,ES,True,,stop,0.0001923,473,30,0,10.92,"{""country"": ""ES"", ""latitude"": 42.8805, ""longitude"": 2.6502}"
+x-ai/grok-4.3,CoT,45.75,3.15,587.238,FR,True,,stop,0.002109,676,640,563,13.33,"{
+  ""reasoning"": ""Right-hand traffic, French-style red/yellow chevron rear markings on the utility van, red-tiled roof architecture, triangular warning sign, and rural hilly terrain with Mediterranean vegetation point to rural central/southern France."",
+  ""country"": ""FR"",
+  ""latitude"": 45.75,
+  ""longitude"": 3.15
+}"
+qwen/qwen3.5-27b,no-CoT,45.766667,4.833333,709.745,FR,True,,stop,0.00024544,474,47,0,9.83,"```json
+{
+  ""country"": ""FR"",
+  ""latitude"": 45.766667,
+  ""longitude"": 4.833333
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.931697845458984,5.38327169418335,717.014,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,43.85985565185547,6.083032131195068,772.956,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,48.0833,7.15,974.737,FR,True,,stop,8.11776e-05,708,30,0,1.31,"{""country"": ""FR"", ""latitude"": 48.0833, ""longitude"": 7.1500}"
+mistralai/mistral-small-2603,CoT,53.645,-1.795,1143.773,GB,True,,stop,0.0005358,716,714,772,12.09,"{""reasoning"": ""The UK-style license plate format and design, combined with the distinctive British road sign style and suburban architecture, decisively indicate this is in the United Kingdom."", ""country"": ""GB"", ""latitude"": 53.645, ""longitude"": -1.795}"
+xiaomi/mimo-v2.5,CoT,45.81,14.49,1445.954,SI,True,,stop,0.0001958376,787,400,326,17.41,"{""reasoning"": ""Left-side traffic, rural Central European terracotta-roofed architecture, and the ambulance's chevron design confirm this is Slovenia, a left-hand traffic country in southeastern Europe with this landscape style."", ""country"": ""SI"", ""latitude"": 45.81, ""longitude"": 14.49}"
+mistralai/mistral-small-2603,no-CoT,60.3927,5.3245,1977.967,NO,True,,stop,0.0001131,634,30,0,5.75,"{""country"": ""NO"", ""latitude"": 60.3927, ""longitude"": 5.3245}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4840.777,,True,True,,,,,,7.82,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.15,

@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,62.008599412389,131.77604782111,0.0,RU,True,,,,,,,,"Churapcha, None, Sakha, RU"
+google/gemini-3.5-flash,CoT (effort=medium),61.9833,130.65,58.857,RU,True,,stop,0.0072525,1271,594,517,6.64,"{""reasoning"": ""The wide dirt road, flat grassy pastures with wooden fences (alasy), and larch forests are highly characteristic of the Sakha Republic (Yakutia) in Russia, specifically along the Kolyma or Lena highways."", ""country"": ""RU"", ""latitude"": 61.9833, ""longitude"": 130.65}"
+google/gemini-3.1-pro-preview,CoT,62.0338,129.733,106.611,RU,True,,stop,0.006094,1271,296,214,4.92,"{
+  ""reasoning"": ""The unpaved dirt road, flat landscape with taiga-like vegetation, and right-hand driving strongly suggest a rural area in Russia, likely in Siberia or the Far East."",
+  ""country"": ""RU"",
+  ""latitude"": 62.0338,
+  ""longitude"": 129.733
+}"
+anthropic/claude-opus-4.8,CoT,62.0,129.7,108.36,RU,True,,stop,0.006385,797,96,0,4.12,"{""reasoning"": ""Wide dirt road through boreal taiga/grassland with distant conifer forest suggests rural Russian Siberia; flat terrain and dashcam style consistent with Russia."", ""country"": ""RU"", ""latitude"": 62.0, ""longitude"": 129.7}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),62.0154,129.6755,109.609,RU,True,,stop,0.0021075,1189,36,0,1.59,"```json
+{""country"": ""RU"", ""latitude"": 62.0154, ""longitude"": 129.6755}
+```"
+anthropic/claude-opus-4.8,no-CoT,62.0,129.5,118.797,RU,True,,stop,0.00408,666,30,0,2.59,"{""country"": ""RU"", ""latitude"": 62.0, ""longitude"": 129.5}"
+google/gemini-3.5-flash,CoT (effort=low),61.9854,129.4122,123.432,RU,True,,stop,0.004671,1272,307,235,9.43,"{""reasoning"": ""The flat, grassy landscape with sparse taiga forest, dirt road conditions, and oncoming SUV suggest the Sakha Republic (Yakutia) in Russia, likely along the Lena Highway."", ""country"": ""RU"", ""latitude"": 61.9854, ""longitude"": 129.4122}"
+google/gemini-3.5-flash,CoT (effort=high),62.1024,128.0015,196.932,RU,True,,stop,0.0098445,1271,882,811,7.99,"{""reasoning"": ""The wide, unpaved dirt road, flat taiga landscape with wooden fences, and characteristic Siberian vegetation strongly point to the Sakha Republic (Yakutia) in Russia."", ""country"": ""RU"", ""latitude"": 62.1024, ""longitude"": 128.0015}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,66.34925842285156,124.50953674316406,596.544,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,70.0569076538086,130.17958068847656,897.754,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,52.98675537109375,126.51142120361328,1050.502,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,54.0,120.0,1125.33,RU,True,,stop,0.005726,1189,279,249,13.23,"```json
+{""country"": ""RU"", ""latitude"": 54.0, ""longitude"": 120.0}
+```"
+google/gemma-4-31b-it,no-CoT,62.15,105.32,1367.993,RU,True,,stop,6.258e-05,406,33,0,16.41,"```json
+{""country"": ""RU"", ""latitude"": 62.15, ""longitude"": 105.32}
+```"
+minimax/minimax-m3,no-CoT,62.0,105.0,1387.647,RU,True,,stop,0.00019452,754,22,0,2.57,"{""country"": ""RU"", ""latitude"": 62.0, ""longitude"": 105.0}{""country"": ""RU"", ""latitude"": 62.0, ""longitude"": 105.0}"
+minimax/minimax-m3,CoT,52.3,113.5,1532.727,RU,True,,stop,0.00077226,843,484,399,22.76,"{""reasoning"": ""Dirt road through flat grassy steppe/forest-steppe with distant conifer taiga horizon, right-hand traffic, and rural vehicle typical of southern Siberia. The vast treeless plain transitioning to boreal forest suggests the Trans-Baikal forest-steppe zone of Russia."", ""country"": ""RU"", ""latitude"": 52.3, ""longitude"": 113.5}"
+moonshotai/kimi-k2.6,no-CoT,56.5,85.0,2665.566,RU,True,,stop,0.00051219,602,23,0,2.21,"{""country"": ""RU"", ""latitude"": 56.5, ""longitude"": 85.0}"
+moonshotai/kimi-k2.6,CoT,55.0,82.5,2888.693,RU,True,,stop,0.012853548,682,3693,3623,278.08,"{""reasoning"": ""The dirt road cuts through flat West Siberian forest-steppe with mixed taiga forest on one side and open grassland on the other, paired with a boxy Russian-built SUV typical of rural Russia."", ""country"": ""RU"", ""latitude"": 55.0, ""longitude"": 82.5}"
+xiaomi/mimo-v2.5,CoT,59.2,65.8,3457.553,RU,True,,stop,0.0001622376,787,280,201,4.03,"{""reasoning"": ""The boreal forest (taiga) landscape, rural dirt road, and vehicle design typical of northern Eurasia point to Russia; the landscape aligns with the Urals/western Siberian transition zone between forest and steppe."", ""country"": ""RU"", ""latitude"": 59.2, ""longitude"": 65.8}"
+openai/gpt-5.5,CoT,57.2387,65.5391,3595.905,RU,True,,stop,0.013575,621,349,269,14.31,"{""reasoning"":""A muddy unpaved rural road through flat boreal forest/pasture with right-hand traffic and dashcam-style imagery strongly suggests remote Russia. The landscape fits the West Siberian/Urals fringe, so I place it in rural Tyumen Oblast."",""country"":""RU"",""latitude"":57.2387,""longitude"":65.5391}"
+xiaomi/mimo-v2.5,no-CoT,56.85,60.6,3858.837,RU,True,,stop,8.00576e-05,708,26,0,8.57,"{""country"": ""RU"", ""latitude"": 56.85, ""longitude"": 60.6}"
+openai/gpt-5.5,no-CoT,56.3187,51.7429,4309.259,RU,True,,stop,0.00341,544,23,0,1.22,"{""country"":""RU"",""latitude"":56.3187,""longitude"":51.7429}"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,4970.491,RU,True,,stop,0.001191,634,32,0,1.27,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-35b-a3b,no-CoT,58.4234,-113.2156,5513.072,CA,True,,stop,0.0001184625,473,32,0,1.68,"{""country"": ""CA"", ""latitude"": 58.4234, ""longitude"": -113.2156}"
+qwen/qwen3.5-397b-a17b,CoT,56.2451,-117.4892,5567.689,CA,True,,stop,0.0133166,553,3755,3545,261.71,"{
+""reasoning"": ""The image shows a wide, maintained gravel road with right-hand traffic, flanked by boreal forest (spruce/pine) and flat grassy terrain, which is characteristic of rural Northern Canada (specifically Alberta or Saskatchewan). The wooden post-and-rail fencing on the right is typical of ranchland in the Canadian prairies/boreal transition zone."",
+""country"": ""CA"",
+""latitude"": 56.2451,
+""longitude"": -117.4892
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,56.7234,-111.3891,5730.872,CA,True,,stop,0.00036828,473,32,0,8.73,"{""country"": ""CA"", ""latitude"": 56.7234, ""longitude"": -111.3891}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,55.957862854003906,-111.1670150756836,5810.243,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,55.75347900390625,-111.59233093261719,5815.47,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,54.5632,-113.4567,5864.35,CA,True,,stop,0.00019683,473,32,0,2.57,"{""country"": ""CA"", ""latitude"": 54.5632, ""longitude"": -113.4567}"
+qwen/qwen3.5-122b-a10b,no-CoT,53.5461,-113.4938,5958.784,CA,True,,stop,0.0002187,473,32,0,1.29,"{""country"": ""CA"", ""latitude"": 53.5461, ""longitude"": -113.4938}"
+qwen/qwen3.6-35b-a3b,no-CoT,52.5,-113.5,6057.441,CA,True,,stop,0.00217920495,471,2179,2148,11.32,"{""country"": ""CA"", ""latitude"": 52.5, ""longitude"": -113.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,51.77920913696289,-112.06834411621094,6176.573,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,54.0,-105.0,6195.89,CA,True,,stop,0.000199097,473,26,0,13.01,"{""country"": ""CA"", ""latitude"": 54.0, ""longitude"": -105.0}"
+x-ai/grok-4.3,no-CoT,52.85,-106.65,6255.947,CA,True,,stop,0.0005934,592,22,0,1.76,"{""country"": ""CA"", ""latitude"": 52.85, ""longitude"": -106.65}"
+qwen/qwen3.5-9b,no-CoT,54.6566,-100.3414,6270.078,CA,True,,stop,5.22e-05,474,32,0,8.22,"{""country"": ""CA"", ""latitude"": 54.6566, ""longitude"": -100.3414}"
+x-ai/grok-4.3,CoT,51.8,-105.2,6405.435,CA,True,,stop,0.001734,676,490,412,11.3,"{""reasoning"": ""Right-hand traffic (oncoming vehicle on left of dirt road), North American prairie landscape with mixed conifers/open fields/fences, unpaved rural road style all point to Canadian prairies. No left-side driving or non-North-American vegetation/signage."", ""country"": ""CA"", ""latitude"": 51.8, ""longitude"": -105.2}"
+google/gemma-4-26b-a4b-it,no-CoT,50.4501,3.0,6717.91,,True,,stop,5.854e-05,406,40,0,8.39,"{""country"": ""UA"", ""latitude own-latitude"": 50.4501, ""longitude"": 3 own-longitude"": 30.4618}"
+mistralai/mistral-small-2603,no-CoT,40.0758,-105.2196,7573.214,US,True,,stop,0.0001143,634,32,0,10.36,"{""country"": ""US"", ""latitude"": 40.0758, ""longitude"": -105.2196}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.15,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.24,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.18,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.28,

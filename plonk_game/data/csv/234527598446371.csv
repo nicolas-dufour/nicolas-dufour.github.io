@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,49.03071944271,-77.039830550774,0.0,CA,True,,,,,,,,"Lebel-sur-Quevillon, Nord-du-Quebec, Quebec, CA"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,48.86501693725586,-77.62861633300781,46.778,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,48.860958099365234,-77.65461730957031,48.704,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,48.40621566772461,-78.13727569580078,106.319,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),49.4512,-75.6245,112.884,CA,True,,stop,0.0072255,1271,591,526,5.24,"{""reasoning"": ""The dense boreal forest with slender black spruce trees, combined with the yellow center line and cracked asphalt road, is highly characteristic of northern Quebec, Canada."", ""country"": ""CA"", ""latitude"": 49.4512, ""longitude"": -75.6245}"
+google/gemini-3.1-pro-preview,no-CoT,47.5,-76.5,174.834,CA,True,,stop,0.004322,1189,162,133,9.9,"```json
+{""country"": ""CA"", ""latitude"": 47.5, ""longitude"": -76.5}
+```"
+openai/gpt-5.5,CoT,49.7215,-74.3412,209.917,CA,True,,stop,0.014775,621,389,304,62.88,"{""reasoning"":""Boreal spruce forest, cracked two-lane asphalt with North American white edge/yellow center markings and roadside utility lines point strongly to rural Canada. The flat, remote conifer landscape is most consistent with northern Quebec around the Chibougamau/Abitibi region."",""country"":""CA"",""latitude"":49.7215,""longitude"":-74.3412}"
+anthropic/claude-opus-4.8,no-CoT,48.9,-80.1,223.853,CA,True,,stop,0.00408,666,30,0,3.05,"{""country"": ""CA"", ""latitude"": 48.9, ""longitude"": -80.1}"
+moonshotai/kimi-k2.6,CoT,48.0,-80.0,246.302,CA,True,,stop,0.010391508,682,2972,2884,61.48,"{""reasoning"": ""The dashed yellow centerline and white fog line are standard North American road markings, while the flat, endless corridor of dense black-spruce boreal forest is characteristic of the Canadian Shield. The complete absence of buildings, signs, or hills strongly suggests a remote stretch of northern Ontario or western Quebec."", ""country"": ""CA"", ""latitude"": 48.0, ""longitude"": -80.0}"
+anthropic/claude-opus-4.8,CoT,49.0,-81.0,288.794,CA,True,,stop,0.00646,797,99,0,9.55,"{""reasoning"": ""Boreal spruce forest, flat terrain, weathered two-lane highway with yellow center line and white edge line suggests rural Canada, likely Ontario/Quebec boreal region."", ""country"": ""CA"", ""latitude"": 49.0, ""longitude"": -81.0}"
+x-ai/grok-4.3,CoT,48.3,-81.4,330.303,CA,True,,stop,0.002444,676,774,706,12.76,"{""reasoning"": ""Boreal conifer forest, right-hand traffic with yellow center line + white edge line, cracked asphalt rural highway, and overhead power lines point to northern Canada; image style and vegetation match Ontario Shield country."", ""country"": ""CA"", ""latitude"": 48.3, ""longitude"": -81.4}"
+google/gemini-3.1-pro-preview,CoT,48.5123,-72.4567,340.728,CA,True,,stop,0.00648,1272,328,239,11.88,"{
+  ""reasoning"": ""The dashed yellow center line and solid white edge line indicate North America. The dense boreal forest of spruce and fir trees, along with the cracked road surface, strongly suggests a northern latitude in Canada, likely Quebec or Ontario."",
+  ""country"": ""CA"",
+  ""latitude"": 48.5123,
+  ""longitude"": -72.4567
+}"
+mistralai/mistral-medium-3-5,no-CoT,48.5,-72.0,373.998,CA,True,,stop,0.0011385,634,25,0,1.05,"{""country"": ""CA"", ""latitude"": 48.5, ""longitude"": -72.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,49.78724670410156,-82.69471740722656,417.579,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,49.41968536376953,-83.50150299072266,471.089,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,48.6,-70.5,481.087,CA,True,,stop,0.00079026,843,499,421,15.39,"{""reasoning"": ""Two-lane rural highway with yellow center line (North American standard), dense boreal coniferous forest (spruce/fir) typical of the Canadian Shield, wooden utility poles, and high summer sun angle indicate northern Quebec's boreal zone."", ""country"": ""CA"", ""latitude"": 48.6, ""longitude"": -70.5}"
+google/gemini-3.5-flash,CoT (effort=low),49.6835,-83.6542,484.356,CA,True,,stop,0.0043455,1271,271,198,9.76,"{""reasoning"": ""The dense coniferous boreal forest, cracked asphalt road with a white shoulder line, and wide-angle camera perspective are highly characteristic of northern Ontario, Canada, along the Trans-Canada Highway corridor."", ""country"": ""CA"", ""latitude"": 49.6835, ""longitude"": -83.6542}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,46.182647705078125,-82.89511108398438,541.028,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,48.766,-85.342,607.291,CA,True,,stop,0.0005934,592,22,0,0.8,"{""country"": ""CA"", ""latitude"": 48.766, ""longitude"": -85.342}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),49.1524,-68.2412,640.466,CA,True,,stop,0.0021,1190,35,0,1.2,"```json
+{""country"": ""CA"", ""latitude"": 49.1524, ""longitude"": -68.2412}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),49.7123,-86.5234,690.356,CA,True,,stop,0.0059925,1271,454,382,4.89,"{""reasoning"": ""The boreal forest vegetation with slender coniferous trees, cracked asphalt road with a yellow center line and white edge line, and wide gravel shoulder are characteristic of northern Canada, specifically Ontario or Quebec."", ""country"": ""CA"", ""latitude"": 49.7123, ""longitude"": -86.5234}"
+openai/gpt-5.5,no-CoT,49.4587,-67.1734,717.281,CA,True,,stop,0.00344,544,24,0,1.51,"{""country"":""CA"",""latitude"":49.4587,""longitude"":-67.1734}"
+qwen/qwen3.5-397b-a17b,no-CoT,49.2827,-66.0602,798.234,CA,True,,stop,0.0003794,473,31,0,1.98,"{""country"": ""CA"", ""latitude"": 49.2827, ""longitude"": -66.0602}"
+qwen/qwen3.6-35b-a3b,no-CoT,56.1234,-106.5678,2125.178,CA,True,,stop,0.00015825,473,32,0,8.05,"{""country"": ""CA"", ""latitude"": 56.1234, ""longitude"": -106.5678}"
+xiaomi/mimo-v2.5,no-CoT,56.7,-111.4,2428.221,CA,True,,stop,8.00576e-05,708,26,0,2.38,"{""country"": ""CA"", ""latitude"": 56.7, ""longitude"": -111.4}"
+qwen/qwen3.5-35b-a3b,no-CoT,56.7234,-111.8923,2458.376,CA,True,,stop,9.836e-05,474,32,0,8.01,"{""country"": ""CA"", ""latitude"": 56.7234, ""longitude"": -111.8923}"
+qwen/qwen3.5-27b,no-CoT,54.5639,-113.0507,2521.501,CA,True,,stop,0.00021944,474,37,0,4.69,"```json
+{""country"": ""CA"", ""latitude"": 54.5639, ""longitude"": -113.0507}
+```"
+google/gemma-4-31b-it,no-CoT,55.1234,-113.4567,2547.129,CA,True,,stop,0.00011056,406,36,0,2.62,"```json
+{""country"": ""CA"", ""latitude"": 55.1234, ""longitude"": -113.4567}
+```"
+qwen/qwen3.5-9b,no-CoT,52.8735,-114.2417,2610.475,CA,True,,stop,8.841e-05,473,32,0,3.0,"{""country"": ""CA"", ""latitude"": 52.8735, ""longitude"": -114.2417}"
+xiaomi/mimo-v2.5,CoT,62.453,-114.372,2714.985,CA,True,,stop,0.0002742376,787,680,588,14.7,"{""reasoning"": ""The presence of a dense boreal coniferous forest, flat terrain, and right-hand traffic road markings (yellow center line, white edge line) is characteristic of Northern North America. The specific combination of road maintenance style and vegetation strongly points towards the Northwest Territories in Canada."", ""country"": ""CA"", ""latitude"": 62.453, ""longitude"": -114.372}"
+qwen/qwen3.5-122b-a10b,no-CoT,53.9333,-116.5769,2753.806,CA,True,,stop,0.0002187,473,32,0,2.43,"{""country"": ""CA"", ""latitude"": 53.9333, ""longitude"": -116.5769}"
+qwen/qwen3.6-27b,no-CoT,54.7272,-127.0409,3414.234,CA,True,,stop,0.0001963,473,32,0,14.33,"{""country"": ""CA"", ""latitude"": 54.7272, ""longitude"": -127.0409}"
+mistralai/mistral-small-2603,no-CoT,63.417,10.401,5170.673,NO,True,,stop,0.0001125,634,29,0,3.44,"{""country"": ""NO"", ""latitude"": 63.417, ""longitude"": 10.401}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9067.304,,True,True,,,,,,25.33,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.47,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.67,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,13.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.65,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.68,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.22,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.33,

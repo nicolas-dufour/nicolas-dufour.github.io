@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-13.878867978853,-44.451540147977,0.0,BR,True,,,,,,,,"Santa Maria da Vitoria, Sao Felix Do Coribe, Bahia, BR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-14.358497619628906,-43.30695343017578,134.457,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-14.37598705291748,-43.06185531616211,159.722,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-14.370766639709473,-43.032470703125,162.504,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,-12.5,-45.0,164.418,BR,True,,stop,6.198e-05,410,30,0,9.12,"```json
+{""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -45.0}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-12.1524,-45.0123,201.357,BR,True,,stop,0.004236,1288,256,176,2.75,"{""reasoning"": ""The road markings with a yellow dashed center line and white outer lines, combined with the reddish soil and dry Cerrado-like vegetation, strongly indicate the interior of Brazil, likely in the state of Bahia or Tocantins."", ""country"": ""BR"", ""latitude"": -12.1524, ""longitude"": -45.0123}"
+google/gemini-3.5-flash,CoT (effort=medium),-12.25,-42.55,274.271,BR,True,,stop,0.0068805,1287,550,480,17.05,"{""reasoning"": ""The yellow dashed center line, white edge lines, reddish soil, and dry scrubby vegetation (caatinga/cerrado) are highly characteristic of the interior of Northeast Brazil, particularly Bahia."", ""country"": ""BR"", ""latitude"": -12.25, ""longitude"": -42.55}"
+google/gemini-3.1-pro-preview,CoT,-12.5432,-41.5678,345.691,BR,True,,stop,0.00549,1287,243,157,10.6,"{
+  ""reasoning"": ""The dashed yellow center line and solid white edge lines are typical of Brazilian highways. The reddish soil and scrubby savanna vegetation strongly suggest the Cerrado or Caatinga biomes in central or northeastern Brazil."",
+  ""country"": ""BR"",
+  ""latitude"": -12.5432,
+  ""longitude"": -41.5678
+}"
+google/gemini-3.1-pro-preview,no-CoT,-12.5,-41.5,354.41,BR,True,,stop,0.004162,1205,146,117,9.85,"```json
+{""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -41.5}
+```"
+moonshotai/kimi-k2.6,no-CoT,-15.5,-47.5,374.163,BR,True,,stop,0.000251784,546,23,0,2.41,"{""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -47.5}"
+minimax/minimax-m3,no-CoT,-15.5,-47.8,402.738,BR,True,,stop,0.00017466,695,23,0,6.13,"{""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -47.8}"
+qwen/qwen3.5-122b-a10b,no-CoT,-15.5989,-47.7822,406.016,BR,True,,stop,0.0001794,442,31,0,7.22,"{""country"": ""BR"", ""latitude"": -15.5989, ""longitude"": -47.7822}"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7942,-47.8822,425.817,BR,True,,stop,0.0003162,441,31,0,0.99,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}"
+mistralai/mistral-medium-3-5,no-CoT,-15.7801,-47.9292,429.435,BR,True,,stop,0.001098,577,31,0,1.08,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+google/gemini-3.5-flash,CoT (effort=high),-10.0234,-45.3125,438.816,BR,True,,stop,0.0107145,1287,976,901,12.04,"{""reasoning"": ""The yellow dashed center line with white outer lines combined with the reddish soil and dry, scrubby Caatinga/Cerrado vegetation strongly indicates northeastern Brazil, likely in Bahia or Piauí."", ""country"": ""BR"", ""latitude"": -10.0234, ""longitude"": -45.3125}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-10.1234,-42.5678,465.125,BR,True,,stop,0.002124,1206,35,0,1.63,"```json
+{""country"": ""BR"", ""latitude"": -10.1234, ""longitude"": -42.5678}
+```"
+qwen/qwen3.6-35b-a3b,CoT,-15.0,-50.0,610.314,BR,True,,stop,0.0035665,521,2749,2536,144.67,"```json
+{
+    ""reasoning"": ""The yellow center line indicates right-hand traffic, common in Brazil and the Americas, while the distinctive red soil (latosol) and savanna-like vegetation (Cerrado) strongly point to central Brazil. The road markings (yellow center, white edge) and the specific type of dry scrubland vegetation are characteristic of Brazilian federal highways in the interior."",
+    ""country"": ""BR"",
+    ""latitude"": -15.0,
+    ""longitude"": -50.0
+}
+```"
+moonshotai/kimi-k2.6,CoT,-12.5,-50.0,619.916,BR,True,,stop,0.0066825,625,1891,1832,164.09,"{""reasoning"":""Red lateritic soil and low fire-adapted cerrado scrub with scattered broad-crowned trees alongside a paved highway with a yellow center line are characteristic of central Brazil."",""country"":""BR"",""latitude"":-12.5,""longitude"":-50.0}"
+xiaomi/mimo-v2.5,no-CoT,-12.97,-38.51,650.493,BR,True,,stop,7.58576e-05,676,27,0,3.52,"{""country"": ""BR"", ""latitude"": -12.97, ""longitude"": -38.51}"
+qwen/qwen3.5-9b,no-CoT,-14.2356,-51.9242,806.979,BR,True,,stop,4.885e-05,442,31,0,3.18,"{""country"": ""BR"", ""latitude"": -14.2356, ""longitude"": -51.9242}"
+qwen/qwen3.6-35b-a3b,no-CoT,-14.235,-51.9253,807.095,BR,True,,stop,9.615e-05,441,30,0,3.57,"{""country"": ""BR"", ""latitude"": -14.235, ""longitude"": -51.9253}"
+qwen/qwen3.5-397b-a17b,CoT,-15.5234,-55.0192,1151.068,BR,True,,stop,0.0067426,521,1863,1816,68.28,"{""reasoning"": ""The reddish lateritic soil and sparse, scrubby vegetation are characteristic of the Cerrado biome in central Brazil, while the yellow center line and white shoulder markings indicate right-hand traffic on a two-lane highway typical of Brazilian federal roads."", ""country"": ""BR"", ""latitude"": -15.5234, ""longitude"": -55.0192}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-15.962516784667969,-57.151527404785156,1383.817,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-20.947080612182617,-60.7127685546875,1894.118,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-21.217273712158203,-61.61151123046875,1991.873,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5129.617,,True,True,,,,,,8.43,
+xiaomi/mimo-v2.5,CoT,14.333,-3.583,5483.556,ML,True,,stop,0.0001291976,755,178,100,2.29,"{""reasoning"": ""The dry savanna landscape with scattered baobab-like trees and reddish soil suggests a West African location. The road markings and general terrain are consistent with Mali, specifically near the Bandiagara Escarpment."", ""country"": ""ML"", ""latitude"": 14.333, ""longitude"": -3.583}"
+x-ai/grok-4.3,no-CoT,-19.85,23.75,7242.326,BW,True,,stop,0.0005534,560,22,0,1.18,"{""country"": ""BW"", ""latitude"": -19.85, ""longitude"": 23.75}"
+openai/gpt-5.5,no-CoT,-22.3876,24.6849,7308.78,BW,True,,stop,0.00325,506,24,0,2.88,"{""country"":""BW"",""latitude"":-22.3876,""longitude"":24.6849}"
+openai/gpt-5.5,CoT,-20.3975,25.5286,7419.695,BW,True,,stop,0.013745,583,361,281,17.45,"{""reasoning"":""The road has southern African-style yellow center markings with white edge lines, left-side-driving country conventions, and dry Kalahari bushveld with red sandy soil. These clues most strongly fit rural Botswana, likely along a highway near Nata/Maun."",""country"":""BW"",""latitude"":-20.3975,""longitude"":25.5286}"
+x-ai/grok-4.3,CoT,-22.35,26.72,7517.326,BW,True,,stop,0.0028065,644,935,856,11.9,"{
+  ""reasoning"": ""Savanna bushveld with red sandy soil, acacia/marula-style trees, and left-side yellow center line + white edge markings indicate Southern Africa left-hand traffic country; narrow paved rural highway matches Botswana/South Africa border region."",
+  ""country"": ""BW"",
+  ""latitude"": -22.35,
+  ""longitude"": 26.72
+}"
+minimax/minimax-m3,CoT,-23.8,28.5,7680.315,ZA,True,,stop,0.00066792,788,408,403,7.3,"{""reasoning"": ""Reddish iron-rich soil, bushveld vegetation with acacia-type trees, two-lane paved road with yellow centerline and white edges, and overcast highveld sky are highly characteristic of South Africa's Limpopo/North West province bushveld."", ""country"": ""ZA"", ""latitude"": -23.8, ""longitude"": 28.5}{""reasoning"": ""Reddish iron-rich soil, bushveld vegetation with acacia-type trees, two-lane paved road with yellow centerline and white edges, and overcast highveld sky are highly characteristic of South Africa's Limpopo/North West province bushveld."", ""country"": ""ZA"", ""latitude"": -23.8, ""longitude"": 28.5}"
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,8670.784,US,True,,stop,0.00010515,577,31,0,3.28,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+anthropic/claude-opus-4.8,CoT,-15.5,38.5,8861.627,MZ,True,,stop,0.0064,740,108,0,3.9,"{""reasoning"": ""Dry savanna/miombo woodland with reddish sandy soil and a flat two-lane highway, consistent with interior Mozambique or southern Tanzania; vegetation and road style suggest Mozambique."", ""country"": ""MZ"", ""latitude"": -15.5, ""longitude"": 38.5}"
+anthropic/claude-opus-4.8,no-CoT,-15.1167,39.2667,8950.837,MZ,True,,stop,0.00387,609,33,0,23.74,"{""country"": ""MZ"", ""latitude"": -15.1167, ""longitude"": 39.2667}"
+qwen/qwen3.6-27b,no-CoT,-27.9833,153.0167,14994.307,AU,True,,stop,0.0001867,441,32,0,15.66,"{""country"": ""AU"", ""latitude"": -27.9833, ""longitude"": 153.0167}"
+qwen/qwen3.5-27b,no-CoT,-27.6583,142.625,15333.778,AU,True,,stop,0.0001985,442,44,0,2.62,"```json
+{
+  ""country"": ""AU"",
+  ""latitude"": -27.6583,
+  ""longitude"": 142.625
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,-20.8123,132.4567,16142.844,AU,True,,stop,9.388e-05,442,32,0,8.03,"{""country"": ""AU"", ""latitude"": -20.8123, ""longitude"": 132.4567}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.21,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,16.46,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.13,

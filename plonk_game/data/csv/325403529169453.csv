@@ -1,0 +1,72 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,2.8150395830704,-60.669831510513,0.0,BR,True,,,,,,,,"Boa Vista, Boa Vista, Roraima, BR"
+minimax/minimax-m3,CoT,-3.1019,-60.025,661.826,BR,True,,stop,0.00110502,997,720,826,19.3,"{""reasoning"": ""Left-hand traffic, Volkswagen Gol (ubiquitous in Brazil), tropical lush vegetation, corrugated metal construction hoarding, and damaged concrete structure all strongly indicate a Brazilian city, likely in the Amazon region given the heavy vegetation and overcast rainy conditions."", ""country"": ""BR"", ""latitude"": -3.1019, ""longitude"": -60.025}"
+openai/gpt-5.5,CoT,-3.1045,-60.0121,662.27,BR,True,,stop,0.013405,755,321,234,14.78,"{""reasoning"":""The scene shows right-side traffic with Brazilian-market vehicles (notably a VW Gol) and Mercosur-style white plates, plus tropical wet urban conditions and Portuguese-looking commercial signage. The humid Amazonian feel, vegetation, and rough urban roadway make Manaus, Brazil the most likely fit."",""country"":""BR"",""latitude"":-3.1045,""longitude"":-60.0121}"
+anthropic/claude-opus-4.8,no-CoT,-3.10719,-60.02611,662.397,BR,True,,stop,0.00489,818,32,0,8.52,"{""country"": ""BR"", ""latitude"": -3.10719, ""longitude"": -60.02611}"
+anthropic/claude-opus-4.8,CoT,-1.4558,-48.4902,1434.776,BR,True,,stop,0.00712,949,95,0,10.39,"{""reasoning"": ""VW Gol model and tropical streetscape with Portuguese signage suggest Brazil; bus and pharmacy-style green sign typical of northern Brazilian city."", ""country"": ""BR"", ""latitude"": -1.4558, ""longitude"": -48.4902}"
+google/gemini-3.5-flash,CoT (effort=medium),-1.4558,-48.4802,1435.825,BR,True,,stop,0.0113115,1307,1039,946,9.27,"```json
+{""reasoning"": ""The image shows a white Volkswagen Gol with a Mercosur license plate and a Brazilian 'E' (Estacionamento) traffic sign on the right. The tropical vegetation, heavy rain, and urban infrastructure are highly characteristic of northern or northeastern Brazil, such as Belém."", ""country"": ""BR"", ""latitude"": -1.4558, ""longitude"": -48.4802}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-1.3635,-48.4482,1435.828,BR,True,,stop,0.0372945,1307,3926,3839,28.31,"```json
+{""reasoning"": ""The image shows a large concrete BRT terminal under construction, characteristic of the BRT system in Belém, Brazil. The yellow bus and vehicle models like the VW Gol with Mercosur plates further confirm this location along Rodovia Augusto Montenegro."", ""country"": ""BR"", ""latitude"": -1.3635, ""longitude"": -48.4482}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-1.438521,-48.461245,1437.18,BR,True,,stop,0.002181,1226,38,0,1.56,"```json
+{""country"": ""BR"", ""latitude"": -1.438521, ""longitude"": -48.461245}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-3.7319,-38.5267,2566.204,BR,True,,stop,0.005126,1225,223,189,7.13,"```json
+{""country"": ""BR"", ""latitude"": -3.7319, ""longitude"": -38.5267}
+```"
+google/gemini-3.1-pro-preview,CoT,-12.9714,-38.5014,3011.683,BR,True,,stop,0.006756,1308,345,267,318.55,"{
+  ""reasoning"": ""The Volkswagen Gol, the 'E' parking sign, and the general street environment strongly indicate Brazil. The tropical vegetation and red soil suggest a northern or northeastern city."",
+  ""country"": ""BR"",
+  ""latitude"": -12.9714,
+  ""longitude"": -38.5014
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5489,-46.6388,3301.947,BR,True,,stop,0.0004466,585,31,0,1.5,"{""country"": ""BR"", ""latitude"": -23.5489, ""longitude"": -46.6388}"
+moonshotai/kimi-k2.6,CoT,-23.5505,-46.6333,3302.376,BR,True,,stop,0.0120563,834,2816,3315,265.04,"{""reasoning"": ""Mercosur license plate with blue strip on white VW Gol and yellow public bus are characteristic of Brazil."", ""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+google/gemma-4-31b-it,no-CoT,-23.5505,-46.6333,3302.376,BR,True,,stop,5.748e-05,406,36,0,7.92,"```json
+{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,3302.376,BR,True,,stop,0.0014115,786,31,0,1.45,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+openai/gpt-5.5,no-CoT,-23.5505,-46.6333,3302.376,BR,True,,stop,0.00414,678,25,0,7.68,"{""country"":""BR"",""latitude"":-23.5505,""longitude"":-46.6333}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,3302.376,BR,True,,stop,0.0003588,585,39,0,2.05,"{
+  ""country"": ""BR"",
+  ""latitude"": -23.5505,
+  ""longitude"": -46.6333
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,-23.5505,-46.6333,3302.376,BR,True,,stop,0.00019644,586,31,0,2.07,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+x-ai/grok-4.3,no-CoT,-23.5505,-46.6333,3302.376,BR,True,,stop,0.0007384,704,24,0,0.86,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+google/gemini-3.5-flash,CoT (effort=low),-25.4284,-49.2733,3372.184,BR,True,,stop,0.0047235,1307,307,245,9.77,"{""reasoning"": ""The white Volkswagen Gol with a Mercosur license plate, the yellow municipal bus, and the tropical urban environment are highly characteristic of Brazil."", ""country"": ""BR"", ""latitude"": -25.4284, ""longitude"": -49.2733}"
+xiaomi/mimo-v2.5,CoT,-22.98,-43.22,3436.238,BR,True,,stop,0.0011965576,899,3918,3853,93.36,"{""reasoning"": ""Portuguese signage ('Lavanderia'), Brazilian vehicle models (VW Up!, Fiat Palio), and infrastructure construction typical of Rio de Janeiro."", ""country"": ""BR"", ""latitude"": -22.98, ""longitude"": -43.22}"
+mistralai/mistral-small-2603,no-CoT,-33.4489,-70.6693,4166.795,CL,True,,stop,0.0001365,786,31,0,4.55,"{""country"": ""CL"", ""latitude"": -33.4489, ""longitude"": -70.6693}"
+x-ai/grok-4.3,CoT,19.434,-99.136,4567.668,MX,True,,stop,0.0026865,788,815,744,12.73,"{
+  ""reasoning"": ""Telcel signage on right + right-hand traffic, VW Polo, yellow public bus, and tropical vegetation/buildings confirm Mexico; distinctive concrete structure and wet urban street narrow to Mexico City area."",
+  ""country"": ""MX"",
+  ""latitude"": 19.434,
+  ""longitude"": -99.136
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,20.542387008666992,-99.9850082397461,4692.129,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,51.87945556640625,1.9016598463058472,7914.451,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,52.31485366821289,4.886195182800293,8122.85,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,53.212257385253906,6.613302707672119,8263.665,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,54.09907913208008,38.19228744506836,10329.069,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,42.12490463256836,75.54850006103516,13357.337,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,12.9716,77.5946,15085.396,IN,True,,stop,0.000185,585,31,0,0.84,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.5-27b,no-CoT,3.139,101.6869,17945.39,MY,True,,stop,0.0002345,586,44,0,3.84,"```json
+{
+  ""country"": ""MY"",
+  ""latitude"": 3.1390,
+  ""longitude"": 101.6869
+}
+```"
+qwen/qwen3.5-9b,no-CoT,14.5995,120.9842,18070.124,PH,True,,stop,0.00010745,585,32,0,7.34,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+qwen/qwen3.6-27b,no-CoT,14.5995,120.9842,18070.124,PH,True,,stop,0.0002299,585,32,0,10.49,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.43,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.57,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,9.33,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.71,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.19,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.2,
+xiaomi/mimo-v2.5,no-CoT,,,,,False,,,,,,,7.6,

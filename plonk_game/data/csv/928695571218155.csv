@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,39.434617383569,30.677406051472,0.0,TR,True,,,,,,,,"Seyitgazi, None, Eskisehir, TR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.94310760498047,30.618478775024414,54.889,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.91966247558594,30.60614013671875,57.589,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,39.5,32.0,113.764,TR,True,,stop,0.034308,680,9408,10491,307.63,"{""reasoning"": ""European-style road markings and a triangular warning sign on a worn rural asphalt road through semi-arid rolling hills with scattered deciduous trees match the rural Turkish landscape."", ""country"": ""TR"", ""latitude"": 39.5, ""longitude"": 32.0}"
+moonshotai/kimi-k2.6,no-CoT,39.0,35.0,375.471,TR,True,,stop,0.00051219,602,23,0,2.36,"{""country"": ""TR"", ""latitude"": 39.0, ""longitude"": 35.0}"
+google/gemini-3.5-flash,CoT (effort=medium),42.5125,26.2146,507.314,BG,True,,stop,0.0075315,1271,625,556,5.44,"{""reasoning"": ""The road markings, worn asphalt, wooden utility poles, and deciduous tree lines against rolling, dry hills in the background are highly characteristic of the Balkan region, particularly Bulgaria."", ""country"": ""BG"", ""latitude"": 42.5125, ""longitude"": 26.2146}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.2184,26.8912,526.156,BG,True,,stop,0.0020985,1189,35,0,41.57,"```json
+{""country"": ""BG"", ""latitude"": 43.2184, ""longitude"": 26.8912}
+```"
+openai/gpt-5.5,CoT,42.2557,25.6524,526.213,BG,True,,stop,0.013845,621,358,281,8.47,"{""reasoning"":""Rural right-hand-drive European road with white double center/edge lines, dry Balkan vegetation, orchards, and low rolling hills points most strongly to interior Bulgaria. The road style and landscape fit the Stara Zagora/Haskovo region."",""country"":""BG"",""latitude"":42.2557,""longitude"":25.6524}"
+google/gemini-3.5-flash,CoT (effort=low),43.2835,26.9241,530.24,BG,True,,stop,0.004005,1272,233,174,3.03,"{""reasoning"": ""The road markings, worn asphalt, deciduous roadside trees, and rolling hills are characteristic of the Balkan region, particularly Bulgaria."", ""country"": ""BG"", ""latitude"": 43.2835, ""longitude"": 26.9241}"
+google/gemini-3.1-pro-preview,CoT,42.65,25.4,568.764,BG,True,,stop,0.005122,1271,215,139,10.98,"{
+  ""reasoning"": ""The solid white edge lines, dashed center line, and right-hand traffic point to Europe. The landscape, road condition, and vegetation are characteristic of the Balkans, specifically Bulgaria."",
+  ""country"": ""BG"",
+  ""latitude"": 42.65,
+  ""longitude"": 25.4
+}"
+mistralai/mistral-medium-3-5,no-CoT,44.43965,26.10626,672.569,RO,True,,stop,0.0011985,634,33,0,1.84,"{""country"": ""RO"", ""latitude"": 44.43965, ""longitude"": 26.10626}"
+google/gemini-3.1-pro-preview,no-CoT,42.6977,23.3219,715.088,BG,True,,stop,0.002798,1189,35,0,3.01,"```json
+{""country"": ""BG"", ""latitude"": 42.6977, ""longitude"": 23.3219}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.629146575927734,22.67290496826172,718.808,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,41.348304748535156,21.390878677368164,814.293,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,47.0,28.5,859.44,MD,True,,stop,0.00621,797,89,0,3.29,"{""reasoning"": ""Rural two-lane road, right-hand driving, deciduous trees and dry grass typical of Eastern European hilly countryside like Moldova/Romania."", ""country"": ""MD"", ""latitude"": 47.0, ""longitude"": 28.5}"
+anthropic/claude-opus-4.8,no-CoT,47.2,28.5,881.157,MD,True,,stop,0.00408,666,30,0,2.4,"{""country"": ""MD"", ""latitude"": 47.2, ""longitude"": 28.5}"
+google/gemma-4-31b-it,no-CoT,45.0333,38.9167,919.822,RU,True,,stop,6.378e-05,406,36,0,6.88,"```json
+{""country"": ""RU"", ""latitude"": 45.0333, ""longitude"": 38.9167}
+```"
+minimax/minimax-m3,CoT,43.95,21.25,929.059,RS,True,,stop,0.00078786,843,497,419,14.73,"{""reasoning"": ""Right-hand traffic with European-style road markings, a blue directional road sign on the left, deciduous vegetation on rolling hills, and arid-looking terrain with overcast skies suggest a rural road in southeastern Europe, likely Serbia or a neighboring Balkan country."", ""country"": ""RS"", ""latitude"": 43.95, ""longitude"": 21.25}"
+openai/gpt-5.5,no-CoT,44.1452,20.6357,982.513,RS,True,,stop,0.00341,544,23,0,1.51,"{""country"":""RS"",""latitude"":44.1452,""longitude"":20.6357}"
+google/gemini-3.5-flash,CoT (effort=high),48.8521,28.6543,1059.439,UA,True,,stop,0.012141,1272,1137,1065,7.67,"{""reasoning"": ""The road markings, worn asphalt with longitudinal wear patterns, and dense roadside tree lines (shelterbelts) against a backdrop of rolling hills are highly characteristic of regional roads in Ukraine."", ""country"": ""UA"", ""latitude"": 48.8521, ""longitude"": 28.6543}"
+minimax/minimax-m3,no-CoT,54.5,36.3,1727.295,RU,True,,stop,0.00022248,752,23,0,8.76,"{""country"": ""RU"", ""latitude"": 54.5, ""longitude"": 36.3}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,39.324832916259766,8.659675598144531,1887.716,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.42610168457031,6.427232265472412,2062.022,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,44.3,5.1,2176.192,FR,True,,stop,0.0023115,676,721,655,7.44,"{""reasoning"": ""Right-hand traffic (solid edge line visible on left of forward lane), rural asphalt road with European-style markings and distant triangular sign, hilly Mediterranean landscape with mixed deciduous trees and dry grass verges."", ""country"": ""FR"", ""latitude"": 44.3, ""longitude"": 5.1}"
+qwen/qwen3.6-27b,no-CoT,41.6488,1.3584,2477.666,ES,True,,stop,0.0001923,473,30,0,17.49,"{""country"": ""ES"", ""latitude"": 41.6488, ""longitude"": 1.3584}"
+xiaomi/mimo-v2.5,CoT,47.4333,1.3,2515.04,FR,True,,stop,0.0003271576,787,869,792,16.39,"{""reasoning"": ""The right-hand traffic, white road markings, and a blue circular recommended speed sign are characteristic of rural France. The poplar trees lining the road and the gently rolling terrain are typical of the Loire Valley region."", ""country"": ""FR"", ""latitude"": 47.4333, ""longitude"": 1.3}"
+qwen/qwen3.5-122b-a10b,no-CoT,41.6512,-0.8901,2663.837,ES,True,,stop,0.0002852,473,30,0,7.81,"{""country"": ""ES"", ""latitude"": 41.6512, ""longitude"": -0.8901}"
+xiaomi/mimo-v2.5,no-CoT,41.5,-1.5,2715.966,ES,True,,stop,7.94976e-05,708,24,0,2.83,"{""country"": ""ES"", ""latitude"": 41.5, ""longitude"": -1.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.6532,-1.8745,2745.224,ES,True,,stop,0.00016776,474,30,0,2.27,"{""country"": ""ES"", ""latitude"": 41.6532, ""longitude"": -1.8745}"
+qwen/qwen3.5-9b,no-CoT,41.3874,-2.945,2837.054,ES,True,,stop,5.175e-05,474,29,0,5.23,"{""country"": ""ES"", ""latitude"": 41.3874, ""longitude"": -2.945}"
+qwen/qwen3.5-27b,no-CoT,40.4167,-3.7031,2915.189,ES,True,,stop,0.0002045,474,43,0,10.01,"```json
+{
+  ""country"": ""ES"",
+  ""latitude"": 40.4167,
+  ""longitude"": -3.7031
+}
+```"
+x-ai/grok-4.3,no-CoT,41.85,-4.65,2971.717,ES,True,,stop,0.0007278,592,22,0,0.72,"{""country"": ""ES"", ""latitude"": 41.85, ""longitude"": -4.65}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.6523,-4.7289,2980.874,ES,True,,stop,0.0003287,473,30,0,1.81,"{""country"": ""ES"", ""latitude"": 41.6523, ""longitude"": -4.7289}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5378.971,,True,True,,,,,,6.77,
+mistralai/mistral-small-2603,CoT,47.6062,-122.3321,9975.095,US,True,,stop,0.0006072,716,833,889,7.64,"{""reasoning"": ""The road markings (dashed white center line) and dense coniferous forest suggest a temperate, forested region in a right-hand traffic country. The soil color and tree species are consistent with the Pacific Northwest of North America."", ""country"": ""US"", ""latitude"": 47.6062, ""longitude"": -122.3321}"
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,10114.001,US,True,,stop,0.0001137,634,31,0,2.98,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+qwen/qwen3.6-35b-a3b,no-CoT,36.7783,-119.4179,11005.166,US,True,,stop,0.00015825,473,32,0,0.53,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.28,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.25,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.14,

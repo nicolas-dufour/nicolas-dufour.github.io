@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,18.658134450407,-101.97682372045,0.0,MX,True,,,,,,,,"Las Canas, Arteaga, Michoacan, MX"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,19.51476287841797,-100.88661193847656,148.987,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,19.51106834411621,-100.86492156982422,150.488,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,20.13837242126465,-101.26263427734375,180.837,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,18.1523,-97.3845,487.761,MX,True,,stop,0.005892,1272,279,192,10.8,"{
+  ""reasoning"": ""The arid landscape featuring prominent columnar cacti and dry scrub, combined with the road markings and distant flat-topped mountains, strongly indicates the Tehuacán-Cuicatlán region in central/southern Mexico."",
+  ""country"": ""MX"",
+  ""latitude"": 18.1523,
+  ""longitude"": -97.3845
+}"
+google/gemini-3.1-pro-preview,no-CoT,24.0277,-104.6532,658.21,MX,True,,stop,0.002812,1190,36,0,8.21,"```json
+{""country"": ""MX"", ""latitude"": 24.0277, ""longitude"": -104.6532}
+```"
+moonshotai/kimi-k2.6,CoT,25.4,-101.2,753.918,MX,True,,stop,0.007476408,682,2125,2035,60.17,"{""reasoning"": ""The semi-arid scrubland, flat-topped mesas, metal W-beam guardrail on the left, and cream bridge-style railing on the right are characteristic of northern Mexican federal highways in the Chihuahuan Desert; the white sedan and right-hand traffic further support Mexico over the US Southwest."", ""country"": ""MX"", ""latitude"": 25.4, ""longitude"": -101.2}"
+qwen/qwen3.5-35b-a3b,no-CoT,25.6869,-100.3153,800.036,MX,True,,stop,0.0001184625,473,32,0,1.94,"{""country"": ""MX"", ""latitude"": 25.6869, ""longitude"": -100.3153}"
+google/gemma-4-31b-it,no-CoT,25.6867,-100.3128,800.069,MX,True,,stop,6.418e-05,406,37,0,8.19,"```json
+{""country"": ""MX"", ""latitude"": 25.6867, ""longitude"": -100.3128}
+```"
+moonshotai/kimi-k2.6,no-CoT,26.5,-100.0,895.231,MX,True,,stop,0.00051219,602,23,0,3.58,"{""country"": ""MX"", ""latitude"": 26.5, ""longitude"": -100.0}"
+anthropic/claude-opus-4.8,no-CoT,27.5,-105.5,1046.953,MX,True,,stop,0.00408,666,30,0,5.56,"{""country"": ""MX"", ""latitude"": 27.5, ""longitude"": -105.5}"
+minimax/minimax-m3,no-CoT,29.0,-106.0,1220.305,MX,True,,stop,0.00022248,752,23,0,2.79,"{""country"": ""MX"", ""latitude"": 29.0, ""longitude"": -106.0}"
+google/gemini-3.5-flash,CoT (effort=high),25.85,-111.35,1252.145,MX,True,,stop,0.0077835,1271,653,582,21.37,"{""reasoning"": ""The arid landscape with columnar cacti (cardón) and rugged volcanic mountains is highly characteristic of the Baja California peninsula in Mexico. The road markings and guardrails align with Mexican Federal Highway 1."", ""country"": ""MX"", ""latitude"": 25.85, ""longitude"": -111.35}"
+anthropic/claude-opus-4.8,CoT,28.5,-108.0,1254.156,MX,True,,stop,0.006435,797,98,0,9.6,"{""reasoning"": ""Arid scrubland with cacti and dramatic mesa-like mountains, drive on right, yellow centerline typical of Mexican highway through Sonora/Chihuahua desert."", ""country"": ""MX"", ""latitude"": 28.5, ""longitude"": -108.0}"
+google/gemini-3.5-flash,CoT (effort=medium),25.9154,-111.3782,1258.837,MX,True,,stop,0.0079365,1271,670,581,6.79,"{""reasoning"": ""The arid landscape with prominent columnar cacti (cardón/organ pipe) and rugged mountains, combined with a two-lane highway with a yellow center line, strongly points to the Sonoran Desert region, specifically along Federal Highway 1 in Baja California Sur, Mexico."", ""country"": ""MX"", ""latitude"": 25.9154, ""longitude"": -111.3782}"
+google/gemini-3.5-flash,CoT (effort=low),26.2341,-111.4752,1288.453,MX,True,,stop,0.0048045,1271,322,254,17.38,"{""reasoning"": ""The arid landscape with columnar cacti, rugged volcanic mountains, and highway infrastructure is highly characteristic of the Baja California peninsula in Mexico, specifically along Federal Highway 1."", ""country"": ""MX"", ""latitude"": 26.2341, ""longitude"": -111.4752}"
+minimax/minimax-m3,CoT,30.21,-103.24,1290.824,US,True,,stop,0.00123942,845,870,953,19.37,"{""reasoning"": ""Arid desert landscape with sparse vegetation, W-beam guardrail on divided highway, right-hand traffic, and distinctive flat-topped mesas with rugged peaks in the background characteristic of the Big Bend region of West Texas. The wide flat basin and mountain profile suggest this is along US Highway 90 or 385 near Marathon, Texas."", ""country"": ""US"", ""latitude"": 30.21, ""longitude"": -103.24}{""reasoning"": ""Arid desert landscape with sparse vegetation, W-beam guardrail on divided highway, right-hand traffic, and distinctive flat-topped mesas with rugged peaks in the background characteristic of the Big Bend region of West Texas. The wide flat basin and mountain profile suggest this is along US Highway 90 or 385 near Marathon, Texas."", ""country"": ""US"", ""latitude"": 30.21, ""longitude"": -103.24}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),27.834215,-112.987412,1517.144,MX,True,,stop,0.002145,1190,40,0,1.2,"```json
+{""country"": ""MX"", ""latitude"": 27.834215, ""longitude"": -112.987412}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,31.8457,-106.4245,1532.607,US,True,,stop,0.0001898,474,32,0,5.19,"{""country"": ""US"", ""latitude"": 31.8457, ""longitude"": -106.4245}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,31.902917861938477,-110.53669738769531,1704.1,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,32.15302658081055,-110.87300872802734,1744.596,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,32.2217,-110.8015,1747.398,US,True,,stop,5.22e-05,474,32,0,17.13,"{""country"": ""US"", ""latitude"": 32.2217, ""longitude"": -110.8015}"
+x-ai/grok-4.3,CoT,32.15,-111.05,1753.409,US,True,,stop,0.0030265,676,1007,936,16.96,"{""reasoning"": ""Arid scrub vegetation, flat-topped mountains, clear blue sky and right-hand traffic (yellow center line, vehicle positioned right of center) indicate American Southwest desert; metal guardrails and road markings match US highway standards."", ""country"": ""US"", ""latitude"": 32.15, ""longitude"": -111.05}"
+qwen/qwen3.5-397b-a17b,no-CoT,32.2226,-110.9747,1756.289,US,True,,stop,0.00036828,473,32,0,2.0,"{""country"": ""US"", ""latitude"": 32.2226, ""longitude"": -110.9747}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,33.202613830566406,-111.50350189208984,1874.672,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,CoT,32.55,-113.05,1899.496,US,True,,stop,0.0005136,716,677,753,6.29,"{""reasoning"": ""Arid desert landscape with sparse vegetation and mountains, vehicle driving on the right side, and standard road infrastructure point to the Sonoran Desert region of the southwestern United States."", ""country"": ""US"", ""latitude"": 32.55, ""longitude"": -113.05}"
+qwen/qwen3.6-35b-a3b,no-CoT,32.7767,-117.0719,2174.688,US,True,,stop,0.000146,474,32,0,2.13,"{""country"": ""US"", ""latitude"": 32.7767, ""longitude"": -117.0719}"
+mistralai/mistral-medium-3-5,no-CoT,36.1069,-112.1129,2179.778,US,True,,stop,0.001191,634,32,0,2.09,"{""country"": ""US"", ""latitude"": 36.1069, ""longitude"": -112.1129}"
+qwen/qwen3.5-27b,no-CoT,34.2589,-117.4294,2312.378,US,True,,stop,0.00019683,473,32,0,1.37,"{""country"": ""US"", ""latitude"": 34.2589, ""longitude"": -117.4294}"
+qwen/qwen3.6-27b,no-CoT,34.4208,-117.5894,2335.482,US,True,,stop,0.0001963,473,32,0,12.46,"{""country"": ""US"", ""latitude"": 34.4208, ""longitude"": -117.5894}"
+xiaomi/mimo-v2.5,no-CoT,34.25,-118.45,2379.593,US,True,,stop,8.06176e-05,708,28,0,2.88,"{""country"": ""US"", ""latitude"": 34.25, ""longitude"": -118.45}"
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,2395.657,US,True,,stop,0.000142125,634,31,0,1.74,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+xiaomi/mimo-v2.5,CoT,37.5585,-121.9447,2859.836,US,True,,stop,0.0004926376,787,1460,1382,16.11,"{
+  ""reasoning"": ""The right-hand traffic with yellow center lines and dry, mountainous landscape with oak trees strongly indicates California, USA. The terrain and vegetation suggest the Diablo Range region."",
+  ""country"": ""US"",
+  ""latitude"": 37.5585,
+  ""longitude"": -121.9447
+}"
+openai/gpt-5.5,no-CoT,42.2376,19.0754,10946.006,ME,True,,stop,0.00341,544,23,0,1.74,"{""country"":""ME"",""latitude"":42.2376,""longitude"":19.0754}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11268.358,,True,True,,,,,,2.43,
+openai/gpt-5.5,CoT,37.6208,30.5942,12031.63,TR,True,,stop,0.020625,621,584,516,35.03,"{""reasoning"":""Right-hand traffic with Turkish-style yellow centerline/white edge markings and metal guardrails fits rural Turkey. The dry, rugged Anatolian mountain landscape and sparse winter vegetation suggest southwestern/central Anatolia."",""country"":""TR"",""latitude"":37.6208,""longitude"":30.5942}"
+qwen/qwen3.5-397b-a17b,CoT,-28.365,29.315,14966.717,ZA,True,,stop,0.0191622,553,5244,5129,187.19,"{""reasoning"": ""The image shows a right-hand traffic road with a yellow center line and white edge line, characteristic of South Africa or the USA. The dry, reddish soil, sparse acacia-like vegetation, and distant flat-topped mountains (Drakensberg escarpment) strongly point to the Free State/KZN border region in South Africa, specifically the N3 highway near Van Reenen's Pass."", ""country"": ""ZA"", ""latitude"": -28.365, ""longitude"": 29.315}"
+x-ai/grok-4.3,no-CoT,-25.35,30.95,15129.573,ZA,True,,stop,0.0007278,592,22,0,0.85,"{""country"": ""ZA"", ""latitude"": -25.35, ""longitude"": 30.95}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.2,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.14,

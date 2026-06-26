@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,61.861720869086,6.0957849283145,0.0,NO,True,,,,,,,,"Nordfjordeid, Eid, Sogn og Fjordane, NO"
+moonshotai/kimi-k2.6,CoT,61.5,6.5,45.523,NO,True,,stop,0.009371808,682,2677,2615,177.52,"{""reasoning"": ""Steep rocky fjord-valley road with thick white edge lines, short dashed center markings, wooden Nordic power poles, and mixed boreal forest matches rural western Norway."", ""country"": ""NO"", ""latitude"": 61.5, ""longitude"": 6.5}"
+anthropic/claude-opus-4.8,no-CoT,61.5,6.5,45.523,NO,True,,stop,0.00408,666,30,0,1.96,"{""country"": ""NO"", ""latitude"": 61.5, ""longitude"": 6.5}"
+google/gemini-3.1-pro-preview,no-CoT,61.5,6.5,45.523,NO,True,,stop,0.004036,1190,138,110,3.06,"```json
+{""country"": ""NO"", ""latitude"": 61.5, ""longitude"": 6.5}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,61.44655227661133,5.854264736175537,47.893,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,61.443580627441406,5.838836193084717,48.434,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,61.2,6.5,76.636,NO,True,,stop,0.00636,797,95,0,10.12,"{""reasoning"": ""Narrow rural road with white center dashes, exposed dark rock cuts, conifer/birch vegetation and wooden power poles typical of Norwegian fjord countryside."", ""country"": ""NO"", ""latitude"": 61.2, ""longitude"": 6.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),61.1245,6.1234,81.988,NO,True,,stop,0.002091,1190,34,0,9.58,"```json
+{""country"": ""NO"", ""latitude"": 61.1245, ""longitude"": 6.1234}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,61.15167236328125,6.546877861022949,82.5,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),61.1234,6.4567,84.302,NO,True,,stop,0.004392,1272,276,209,9.17,"{""reasoning"": ""The narrow road with dashed white edge lines and no center line, combined with the distinctive wooden utility poles and rocky, forested terrain, is highly characteristic of rural Norway."", ""country"": ""NO"", ""latitude"": 61.1234, ""longitude"": 6.4567}"
+google/gemini-3.1-pro-preview,CoT,61.0,6.5,98.2,NO,True,,stop,0.004692,1272,179,107,9.56,"{
+  ""reasoning"": ""The dashed white edge lines on the road are a distinct feature of Norwegian roads. The rocky terrain, coniferous vegetation, and wooden power poles further support a location in Norway."",
+  ""country"": ""NO"",
+  ""latitude"": 61.0,
+  ""longitude"": 6.5
+}"
+google/gemma-4-31b-it,no-CoT,61.25,7.5,100.782,NO,True,,stop,6.884e-05,406,30,0,8.3,"```json
+{""country"": ""NO"", ""latitude"": 61.25, ""longitude"": 7.5}
+```"
+minimax/minimax-m3,CoT,60.85,7.15,125.748,NO,True,,stop,0.00078546,843,495,419,18.6,"{""reasoning"": ""European road markings, right-hand driving, wooden utility poles with Norwegian-style crossbar transformers, steep rocky hillside with exposed bedrock, and dense coniferous forest are all characteristic of rural western Norway, likely along a fjord valley road."", ""country"": ""NO"", ""latitude"": 60.85, ""longitude"": 7.15}"
+openai/gpt-5.5,CoT,60.6412,6.4218,136.831,NO,True,,stop,0.010635,621,251,170,14.82,"{""reasoning"":""Narrow right-side-driving rural road with Norwegian-style white edge markings, wooden utility poles, exposed rock cuts, and lush conifer/birch mountain vegetation strongly indicate western Norway. The fjordland terrain and road design fit the Voss/Hardanger region."",""country"":""NO"",""latitude"":60.6412,""longitude"":6.4218}"
+openai/gpt-5.5,no-CoT,60.6362,6.4315,137.449,NO,True,,stop,0.00341,544,23,0,15.07,"{""country"":""NO"",""latitude"":60.6362,""longitude"":6.4315}"
+minimax/minimax-m3,no-CoT,60.5,6.0,151.503,NO,True,,stop,0.00019452,754,22,0,8.83,"{""country"": ""NO"", ""latitude"": 60.5, ""longitude"": 6.0}{""country"": ""NO"", ""latitude"": 60.5, ""longitude"": 6.0}"
+moonshotai/kimi-k2.6,no-CoT,60.5,6.0,151.503,NO,True,,stop,0.000286452,603,23,0,1.83,"{""country"": ""NO"", ""latitude"": 60.5, ""longitude"": 6.0}"
+qwen/qwen3.5-35b-a3b,no-CoT,60.4722,5.7322,155.732,NO,True,,stop,0.00015575,473,30,0,1.87,"{""country"": ""NO"", ""latitude"": 60.4722, ""longitude"": 5.7322}"
+google/gemini-3.5-flash,CoT (effort=medium),60.4285,6.4512,160.503,NO,True,,stop,0.0059925,1271,454,387,5.11,"{""reasoning"": ""The narrow asphalt road with dashed white edge lines and no center line, combined with the distinctive wooden utility poles and dark rocky cuts, is highly characteristic of rural Norway."", ""country"": ""NO"", ""latitude"": 60.4285, ""longitude"": 6.4512}"
+google/gemini-3.5-flash,CoT (effort=high),60.3912,6.2014,163.613,NO,True,,stop,0.0084675,1271,729,668,6.07,"{""reasoning"": ""The narrow asphalt road with dashed white edge lines, distinctive wooden utility poles, and rocky, forested terrain are highly characteristic of rural Norway."", ""country"": ""NO"", ""latitude"": 60.3912, ""longitude"": 6.2014}"
+qwen/qwen3.6-35b-a3b,no-CoT,60.3913,5.3221,168.695,NO,True,,stop,0.00015575,473,30,0,6.81,"{""country"": ""NO"", ""latitude"": 60.3913, ""longitude"": 5.3221}"
+x-ai/grok-4.3,no-CoT,60.35,6.45,169.169,NO,True,,stop,0.0005934,592,22,0,1.26,"{""country"": ""NO"", ""latitude"": 60.35, ""longitude"": 6.45}"
+qwen/qwen3.5-122b-a10b,no-CoT,60.7253,8.5489,182.005,NO,True,,stop,0.00018564,474,30,0,12.74,"{""country"": ""NO"", ""latitude"": 60.7253, ""longitude"": 8.5489}"
+qwen/qwen3.5-27b,no-CoT,60.472,8.468,200.128,NO,True,,stop,0.000135915,473,28,0,1.11,"{""country"": ""NO"", ""latitude"": 60.472, ""longitude"": 8.468}"
+qwen/qwen3.5-9b,no-CoT,60.3696,8.5497,211.868,NO,True,,stop,8.791e-05,473,30,0,4.04,"{""country"": ""NO"", ""latitude"": 60.3696, ""longitude"": 8.5497}"
+mistralai/mistral-medium-3-5,no-CoT,60.1055,9.5858,271.166,NO,True,,stop,0.001176,634,30,0,7.57,"{""country"": ""NO"", ""latitude"": 60.1055, ""longitude"": 9.5858}"
+google/gemma-4-26b-a4b-it,no-CoT,60.0,10.5,315.271,,True,,stop,5.214e-05,406,24,0,1.76,"{""country"": ""NO"", ""latitude"": 60 own, ""longitude"": 10.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,59.3498,10.7211,376.304,NO,True,,stop,0.00036468,473,31,0,3.14,"{""country"": ""NO"", ""latitude"": 59.3498, ""longitude"": 10.7211}"
+xiaomi/mimo-v2.5,CoT,52.8,-6.3,1248.097,IE,True,,stop,0.0001613976,787,277,160,3.77,"```json
+{""reasoning"": ""The image shows a narrow, paved rural road with vegetation and terrain typical of a temperate climate, possibly in the British Isles or Western Europe. The style of the utility poles (wooden with specific cross-arms) and the lack of road markings on the shoulder, combined with the lush green ferns and rock cutting, are highly suggestive of Ireland or the UK; the specific aesthetic leans towards rural Ireland."", ""country"": ""IE"", ""latitude"": 52.8, ""longitude"": -6.3}
+```"
+x-ai/grok-4.3,CoT,50.35,11.85,1327.582,DE,True,,stop,0.0024115,676,761,683,8.75,"{""reasoning"": ""Right-hand traffic with standard European white dashed lane markings, wooden utility poles with multiple crossarms, and steep rocky cut with mixed temperate forest vegetation indicate rural Central/Northern Europe. No other continents match the pole style, road markings, and terrain simultaneously."", ""country"": ""DE"", ""latitude"": 50.35, ""longitude"": 11.85}"
+xiaomi/mimo-v2.5,no-CoT,48.0833,6.9833,1533.101,FR,True,,stop,8.11776e-05,708,30,0,1.9,"{""country"": ""FR"", ""latitude"": 48.0833, ""longitude"": 6.9833}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,46.85456085205078,10.401765823364258,1690.973,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,46.84313201904297,10.4384765625,1692.611,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,46.649452209472656,10.138391494750977,1710.975,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,39.4642,-8.8204,2688.213,PT,True,,stop,0.0001131,634,30,0,3.6,"{""country"": ""PT"", ""latitude"": 39.4642, ""longitude"": -8.8204}"
+qwen/qwen3.6-27b,no-CoT,36.5944,138.3827,8259.632,JP,True,,stop,0.0001963,473,32,0,21.66,"{""country"": ""JP"", ""latitude"": 36.5944, ""longitude"": 138.3827}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.51,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.43,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.37,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.66,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.72,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.11,

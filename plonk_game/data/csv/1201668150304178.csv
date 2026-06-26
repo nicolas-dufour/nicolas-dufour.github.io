@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-21.218107733916,47.246323535363,0.0,MG,True,,,,,,,,"Fianarantsoa, None, Upper Matsiatra, MG"
+anthropic/claude-opus-4.8,CoT,-19.5,47.2,191.106,MG,True,,stop,0.00636,797,95,0,3.03,"{""reasoning"": ""Eroded red-orange laterite road cuts, eucalyptus trees on highland plateau, and people walking with bundles strongly suggest the central highlands of Madagascar."", ""country"": ""MG"", ""latitude"": -19.5, ""longitude"": 47.2}"
+google/gemini-3.5-flash,CoT (effort=low),-19.4521,47.2854,196.413,MG,True,,stop,0.005382,1272,386,306,10.35,"{""reasoning"": ""The long front-mounted whip antenna on a Toyota Land Cruiser, combined with the hilly highland landscape, eucalyptus trees, and reddish soil, is highly characteristic of Google Street View coverage in Madagascar, specifically along the RN7 highway."", ""country"": ""MG"", ""latitude"": -19.4521, ""longitude"": 47.2854}"
+anthropic/claude-opus-4.8,no-CoT,-19.0,47.5,248.06,MG,True,,stop,0.00408,666,30,0,2.8,"{""country"": ""MG"", ""latitude"": -19.0, ""longitude"": 47.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-18.913684,47.53613,258.021,MG,True,,stop,0.0021255,1189,38,0,1.89,"```json
+{""country"": ""MG"", ""latitude"": -18.913684, ""longitude"": 47.53613}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-1.1911520957946777,36.51713180541992,2512.54,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-1.149680256843567,36.52847671508789,2516.086,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,-0.3476,36.8025,2582.808,KE,True,,stop,0.00036108,473,30,0,2.38,"{""country"": ""KE"", ""latitude"": -0.3476, ""longitude"": 36.8025}"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.0234,36.3456,2637.314,KE,True,,stop,0.0001428,474,30,0,9.33,"{""country"": ""KE"", ""latitude"": -0.0234, ""longitude"": 36.3456}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-1.4750628471374512,32.34159469604492,2725.784,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,-3.376,29.358,2770.677,BI,True,,stop,0.00019452,754,22,0,2.54,"{""country"": ""BI"", ""latitude"": -3.376, ""longitude"": 29.358}{""country"": ""BI"", ""latitude"": -3.376, ""longitude"": 29.358}"
+xiaomi/mimo-v2.5,CoT,-2.0,29.9,2845.575,RW,True,,stop,0.0007465976,787,2367,2276,26.24,"{""reasoning"": ""The lush green terraced hills, reddish laterite soil, and characteristic East African highland vegetation (likely Grevillea or Eucalyptus trees) are highly indicative of the region. The road style and rural setting point specifically to the highlands of Rwanda or neighboring western Kenya."", ""country"": ""RW"", ""latitude"": -2.0, ""longitude"": 29.9}"
+moonshotai/kimi-k2.6,no-CoT,-1.9403,29.8739,2852.523,RW,True,,stop,0.00062229,603,25,0,2.43,"{""country"": ""RW"", ""latitude"": -1.9403, ""longitude"": 29.8739}"
+xiaomi/mimo-v2.5,no-CoT,-1.9403,29.8739,2852.523,RW,True,,stop,8.11776e-05,708,30,0,7.63,"{""country"": ""RW"", ""latitude"": -1.9403, ""longitude"": 29.8739}"
+google/gemini-3.1-pro-preview,CoT,-2.0512,29.5321,2867.718,RW,True,,stop,0.005892,1272,279,196,11.04,"{
+  ""reasoning"": ""The long radio antenna with a spring base on the Google car is a distinct feature of Street View coverage in Rwanda. The lush, hilly terrain with eucalyptus trees further confirms this East African highland setting."",
+  ""country"": ""RW"",
+  ""latitude"": -2.0512,
+  ""longitude"": 29.5321
+}"
+google/gemini-3.5-flash,CoT (effort=high),-1.9501,29.6502,2867.734,RW,True,,stop,0.0137775,1271,1319,1246,18.3,"{""reasoning"": ""The vehicle's hood ornament and prominent front-mounted antenna match the Google Street View car used in Rwanda, which features right-hand traffic, hilly terrain with eucalyptus trees, and red soil."", ""country"": ""RW"", ""latitude"": -1.9501, ""longitude"": 29.6502}"
+google/gemini-3.1-pro-preview,no-CoT,-2.05,29.45,2873.774,RW,True,,stop,0.005704,1190,277,247,4.5,"```json
+{""country"": ""RW"", ""latitude"": -2.05, ""longitude"": 29.45}
+```"
+openai/gpt-5.5,CoT,-1.7423,29.6417,2885.983,RW,True,,stop,0.016695,621,453,373,19.02,"{""reasoning"":""Hilly, densely cultivated highland landscape with eucalyptus rows, narrow rough paved rural road, and pedestrian-heavy roadside strongly match Rwanda’s western/northern highlands. The official Street View-style car antenna and lack of lane markings are consistent with rural Rwanda coverage."",""country"":""RW"",""latitude"":-1.7423,""longitude"":29.6417}"
+google/gemini-3.5-flash,CoT (effort=medium),-1.2245,29.8532,2915.356,UG,True,,stop,0.0089805,1271,786,708,7.72,"```json
+{""reasoning"": ""The mountainous, green terrain with eucalyptus trees and reddish soil is highly characteristic of southwestern Uganda near Kabale. The vehicle's hood ornament and long HF antenna are typical of transport in this region."", ""country"": ""UG"", ""latitude"": -1.2245, ""longitude"": 29.8532}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,8.55,39.27,3422.767,ET,True,,stop,0.0002043,473,26,0,3.45,"{""country"": ""ET"", ""latitude"": 8.55, ""longitude"": 39.27}"
+minimax/minimax-m3,CoT,7.85,35.95,3459.575,ET,True,,stop,0.00059946,843,340,272,17.83,"{""reasoning"": ""Red lateritic soil, eucalyptus plantations on steep slopes, highland tropical climate with overcast sky, poorly maintained winding mountain road, and pedestrians carrying loads are highly characteristic of the Ethiopian highlands."", ""country"": ""ET"", ""latitude"": 7.85, ""longitude"": 35.95}"
+x-ai/grok-4.3,CoT,9.03,38.74,3489.396,ET,True,,stop,0.002089,676,632,551,11.72,"{
+  ""reasoning"": ""Dirt road through steep red-soil cuts, eucalyptus-like trees, overcast highland sky, and pedestrians in long dark garments carrying loads match Ethiopian highlands; vehicle-mounted HF antenna is also common on NGO/relief vehicles there."",
+  ""country"": ""ET"",
+  ""latitude"": 9.03,
+  ""longitude"": 38.74
+}"
+x-ai/grok-4.3,no-CoT,9.05,38.75,3491.25,ET,True,,stop,0.0005934,592,22,0,0.8,"{""country"": ""ET"", ""latitude"": 9.05, ""longitude"": 38.75}"
+google/gemma-4-31b-it,no-CoT,9.1234,38.7567,3498.928,ET,True,,stop,6.678e-05,406,35,0,8.94,"```json
+{""country"": ""ET"", ""latitude"": 9.1234, ""longitude"": 38.7567}
+```"
+openai/gpt-5.5,no-CoT,9.5934,39.5712,3527.166,ET,True,,stop,0.00341,544,23,0,7.89,"{""country"":""ET"",""latitude"":9.5934,""longitude"":39.5712}"
+moonshotai/kimi-k2.6,CoT,9.55,39.27,3530.453,ET,True,,stop,0.010928448,682,3129,3065,72.56,"{""reasoning"": ""Dense eucalyptus stands on a winding highland road with reddish soils are classic for the Ethiopian plateau, and the front-mounted vehicle whip antenna is typical of East African rural transport."", ""country"": ""ET"", ""latitude"": 9.55, ""longitude"": 39.27}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,11.504190444946289,76.71094512939453,4857.528,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,11.521886825561523,76.72112274169922,4859.736,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,12.563636779785156,77.22222900390625,4982.615,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5642.13,,True,True,,,,,,37.88,
+qwen/qwen3.5-35b-a3b,no-CoT,26.8467,80.9462,6459.804,IN,True,,stop,0.000157,473,31,0,1.72,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+qwen/qwen3.5-9b,no-CoT,14.0583,100.5018,7011.821,TH,True,,stop,5.22e-05,474,32,0,1.05,"{""country"": ""TH"", ""latitude"": 14.0583, ""longitude"": 100.5018}"
+mistralai/mistral-medium-3-5,no-CoT,-12.0,-77.0,12895.213,PE,True,,stop,0.0011385,634,25,0,1.21,"{""country"": ""PE"", ""latitude"": -12.0, ""longitude"": -77.0}"
+qwen/qwen3.5-27b,no-CoT,4.6097,-74.0817,13433.579,CO,True,,stop,0.0002139,473,30,0,1.99,"{""country"": ""CO"", ""latitude"": 4.6097, ""longitude"": -74.0817}"
+qwen/qwen3.6-27b,no-CoT,4.6097,-75.1581,13544.13,CO,True,,stop,0.0001923,473,30,0,9.95,"{""country"": ""CO"", ""latitude"": 4.6097, ""longitude"": -75.1581}"
+mistralai/mistral-small-2603,no-CoT,36.5912,-121.8944,18008.644,US,True,,stop,0.0001143,634,32,0,3.83,"{""country"": ""US"", ""latitude"": 36.5912, ""longitude"": -121.8944}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,9.53,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.28,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.36,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.33,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,

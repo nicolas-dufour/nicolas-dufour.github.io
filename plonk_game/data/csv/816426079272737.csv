@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,34.337851795502,-105.52203334795,0.0,US,True,,,,,,,,"Estancia, Torrance County, New Mexico, US"
+anthropic/claude-opus-4.8,CoT,35.5,-106.0,136.375,US,True,,stop,0.005665,683,90,0,15.57,"{""reasoning"": ""Yellow diamond school bus stop ahead sign, MUTCD road markings, semi-arid high plains with snow patches and mesa suggests US western high desert."", ""country"": ""US"", ""latitude"": 35.5, ""longitude"": -106.0}"
+anthropic/claude-opus-4.8,no-CoT,35.687,-105.9378,154.723,US,True,,stop,0.003535,552,31,0,9.02,"{""country"": ""US"", ""latitude"": 35.6870, ""longitude"": -105.9378}"
+moonshotai/kimi-k2.6,CoT,35.2,-103.2,232.75,US,True,,stop,0.0135117,566,3283,3533,80.33,"{""reasoning"": ""Yellow diamond MUTCD warning signs with English text, right-hand driving, and dry high plains with distant red mesas and patchy winter snow are characteristic of the American Southwest Great Plains."", ""country"": ""US"", ""latitude"": 35.2, ""longitude"": -103.2}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,32.073265075683594,-105.09819030761719,254.879,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,31.748056411743164,-104.93313598632812,293.155,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,35.1983,-101.9876,336.702,US,True,,stop,7.05376e-05,628,32,0,2.75,"{""country"": ""US"", ""latitude"": 35.1983, ""longitude"": -101.9876}"
+google/gemini-3.1-pro-preview,no-CoT,35.5214,-110.1245,439.681,US,True,,stop,0.00556,1214,261,225,4.66,"```json
+{""country"": ""US"", ""latitude"": 35.5214, ""longitude"": -110.1245}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),36.4125,-110.7842,529.836,US,True,,stop,0.006489,1296,505,421,4.93,"{""reasoning"": ""The yellow diamond 'SCHOOL BUS STOP AHEAD' sign, road markings, and wooden utility poles are characteristic of the rural United States. The arid, high-desert landscape with patchy snow and distant mesas strongly suggests northern Arizona or southern Utah."", ""country"": ""US"", ""latitude"": 36.4125, ""longitude"": -110.7842}"
+google/gemini-3.1-pro-preview,CoT,36.135,-111.254,557.506,US,True,,stop,0.006492,1296,325,229,5.52,"{
+  ""reasoning"": ""The yellow diamond 'SCHOOL BUS STOP AHEAD' sign and road markings indicate the United States. The arid landscape with scrub vegetation, a distant mesa, and light snow cover strongly suggests the high desert of the Colorado Plateau, likely in northern Arizona or New Mexico."",
+  ""country"": ""US"",
+  ""latitude"": 36.135,
+  ""longitude"": -111.254
+}"
+moonshotai/kimi-k2.6,no-CoT,41.0,-104.8,743.509,US,True,,stop,0.000249516,489,23,0,2.03,"{""country"": ""US"", ""latitude"": 41.0, ""longitude"": -104.8}"
+mistralai/mistral-medium-3-5,no-CoT,40.8136,-103.0024,753.431,US,True,,stop,0.00102,520,32,0,1.03,"{""country"": ""US"", ""latitude"": 40.8136, ""longitude"": -103.0024}"
+x-ai/grok-4.3,no-CoT,41.1403,-104.8203,758.902,US,True,,stop,0.0004784,496,24,0,0.79,"{""country"": ""US"", ""latitude"": 41.1403, ""longitude"": -104.8203}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.2033,-104.8022,766.012,US,True,,stop,0.0002957,393,32,0,2.72,"{""country"": ""US"", ""latitude"": 41.2033, ""longitude"": -104.8022}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.2567,-104.8932,771.316,US,True,,stop,0.00013825,393,32,0,1.05,"{""country"": ""US"", ""latitude"": 41.2567, ""longitude"": -104.8932}"
+google/gemma-4-31b-it,no-CoT,41.25,-104.5,773.807,US,True,,stop,6.824e-05,396,32,0,2.21,"```json
+{""country"": ""US"", ""latitude"": 41.25, ""longitude"": -104.5}
+```"
+qwen/qwen3.6-35b-a3b,CoT,41.3114,-105.5911,775.447,US,True,,stop,0.00482624285,473,4921,4821,46.69,"```json
+{
+  ""reasoning"": ""The yellow diamond warning signs, yellow center line, and right-hand traffic indicate the USA. The sagebrush vegetation, flat terrain with distant hills, and patchy snow are characteristic of the high plains in Wyoming, likely near Laramie."",
+  ""country"": ""US"",
+  ""latitude"": 41.3114,
+  ""longitude"": -105.5911
+}
+```"
+xiaomi/mimo-v2.5,CoT,41.5,-107.5,815.007,US,True,,stop,0.0003691576,707,1059,979,11.99,"{""reasoning"": ""The yellow 'TRUCK ESCAPE RAMP AHEAD' sign is a standard warning in the United States, particularly in western states with steep grades, and the road markings with double yellow lines confirm right-hand traffic typical of the US."", ""country"": ""US"", ""latitude"": 41.5, ""longitude"": -107.5}"
+openai/gpt-5.5,CoT,41.3762,-109.1806,845.752,US,True,,stop,0.01219,506,322,241,8.1,"{""reasoning"":""The yellow diamond 'OPEN RANGE' sign, right-side driving, US-style lane markings, and high-desert snowy sagebrush/mesa landscape point to the western United States. The terrain and winter conditions most closely fit southwest Wyoming near Rock Springs/Green River."",""country"":""US"",""latitude"":41.3762,""longitude"":-109.1806}"
+qwen/qwen3.5-9b,no-CoT,41.8781,-107.2931,852.578,US,True,,stop,4.42e-05,394,32,0,4.57,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -107.2931}"
+google/gemini-3.5-flash,CoT (effort=low),41.5845,-109.2421,869.05,US,True,,stop,0.0045105,1297,285,198,9.13,"{""reasoning"": ""The yellow diamond 'SCHOOL BUS STOP AHEAD' sign, yellow dashed center line, and wooden utility poles are characteristic of the United States. The arid, high-desert landscape with sagebrush and light snow cover strongly suggests a location in Wyoming or Utah."", ""country"": ""US"", ""latitude"": 41.5845, ""longitude"": -109.2421}"
+google/gemini-3.5-flash,CoT (effort=high),42.115,-109.435,929.592,US,True,,stop,0.0128805,1297,1215,1137,8.1,"{""reasoning"": ""The yellow diamond 'SCHOOL BUS STOP AHEAD' sign, wide asphalt road with yellow center lines, wooden utility poles, and snowy sagebrush plains with a distant mesa are characteristic of the western United States, particularly Wyoming."", ""country"": ""US"", ""latitude"": 42.115, ""longitude"": -109.435}"
+openai/gpt-5.5,no-CoT,44.0815,-103.231,1101.15,US,True,,stop,0.002865,429,24,0,2.46,"{""country"":""US"",""latitude"":44.0815,""longitude"":-103.2310}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.1254,-112.9842,1170.946,US,True,,stop,0.0021465,1215,36,0,1.25,"```json
+{""country"": ""US"", ""latitude"": 43.1254, ""longitude"": -112.9842}
+```"
+mistralai/mistral-small-2603,no-CoT,36.5828,-118.2956,1182.556,US,True,,stop,9.72e-05,520,32,0,4.61,"{""country"": ""US"", ""latitude"": 36.5828, ""longitude"": -118.2956}"
+x-ai/grok-4.3,CoT,45.8,-105.2,1274.824,US,True,,stop,0.002324,580,774,704,10.48,"{""reasoning"": ""US-style yellow diamond 'NO PASSING ZONE' sign, right-hand traffic with yellow center / white edge lines, English-only text, open snowy prairie with distant hills and wooden utility poles match northern Great Plains highway."", ""country"": ""US"", ""latitude"": 45.8, ""longitude"": -105.2}"
+minimax/minimax-m3,CoT,46.81,-101.5,1427.319,US,True,,stop,0.00056046,729,336,249,18.28,"{""reasoning"": ""Right-hand traffic, MUTCD-style yellow diamond warning sign, flat prairie landscape with snow patches and dormant grass, and overhead power lines are classic indicators of the northern US Great Plains, most likely North Dakota. The treeless, wide-open terrain with sparse snow cover matches the western Dakotas."", ""country"": ""US"", ""latitude"": 46.81, ""longitude"": -101.50}"
+minimax/minimax-m3,no-CoT,46.8,-100.9,1438.991,US,True,,stop,0.00044814,653,233,267,5.97,"{""country"": ""US"", ""latitude"": 46.8, ""longitude"": -100.9}"
+qwen/qwen3.5-35b-a3b,no-CoT,46.8721,-100.4532,1457.133,US,True,,stop,9.095e-05,393,32,0,1.98,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -100.4532}"
+qwen/qwen3.6-27b,no-CoT,46.8772,-100.4458,1457.851,US,True,,stop,0.00023205,394,32,0,1.7,"{""country"": ""US"", ""latitude"": 46.8772, ""longitude"": -100.4458}"
+qwen/qwen3.5-27b,no-CoT,47.5234,-101.4567,1504.851,US,True,,stop,0.00017523,393,32,0,1.85,"{""country"": ""US"", ""latitude"": 47.5234, ""longitude"": -101.4567}"
+qwen/qwen3.5-122b-a10b,no-CoT,47.9253,-101.2876,1551.285,US,True,,stop,0.000169,394,32,0,6.27,"{""country"": ""US"", ""latitude"": 47.9253, ""longitude"": -101.2876}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,46.462554931640625,-117.27035522460938,1671.569,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,47.17387008666992,-118.4207992553711,1788.706,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,47.172760009765625,-118.42711639404297,1788.931,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-43.48527526855469,-65.79591369628906,9544.592,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,CoT,44.5,25.5,9951.436,RO,True,,stop,0.0006927,602,1004,1152,13.8,"```json
+{""reasoning"": ""Yellow diamond priority road sign and right-hand traffic indicate Europe; dry steppe terrain suggests Eastern Europe, specifically Romania."", ""country"": ""RO"", ""latitude"": 44.5, ""longitude"": 25.5}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11427.07,,True,True,,,,,,17.29,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.24,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.34,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.28,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.23,

@@ -1,0 +1,85 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,33.772485941253,77.772649757876,0.0,IN,True,,,,,,,,"Leh, Ladakh, Kashmir, IN"
+google/gemma-4-26b-a4b-it,no-CoT,34.15,77.5833,45.465,IN,True,,stop,0.00011238,406,149,0,4.87,"``` own than own own {""country"": ""IN"", ""latitude"":  own 34.152 own own than 34.15, ""longitude"": 77.5 own 7 own 77.55}
+
+Wait, I apologize. I cannot process the image provided as it appears to be a placeholder or failed to load correctly in the prompt. However, based on the visual characteristics of own of a high-altitude, arid, mountainous landscape own road landscape typical of own of own of the Ladakh/Ladakh region in India:
+
+{""country"": ""IN"", ""latitude"": 34.1500, ""longitude"": 77.5833}"
+anthropic/claude-opus-4.8,CoT,34.15,77.58,45.583,IN,True,,stop,0.00631,797,93,0,9.84,"{""reasoning"": ""Arid rocky mountain canyon with bare steep slopes and stone walls beside a paved road suggests a high-altitude desert valley typical of Ladakh, India."", ""country"": ""IN"", ""latitude"": 34.15, ""longitude"": 77.58}"
+google/gemma-4-26b-a4b-it,CoT,34.1526,77.5771,45.954,IN,True,,stop,0.00071391,491,1654,1539,21.92,"{""reasoning"": ""The steep, dark, craggy mountain cliffs and the narrow valley with sparse vegetation are highly characteristic of the high-altitude desert landscape in Ladakh, India."", ""country"": ""IN"", ""latitude"": 34.1526, ""longitude"": 77.5771}"
+google/gemma-4-31b-it,CoT,34.1526,77.5771,45.954,IN,True,,stop,0.00026677,491,526,460,20.3,"{""reasoning"": ""The arid, steep rocky cliffs combined with sparse greenery along a paved road are characteristic of high-altitude desert regions such as Ladakh, India."", ""country"": ""IN"", ""latitude"": 34.1526, ""longitude"": 77.5771}"
+anthropic/claude-opus-4.8,no-CoT,34.1526,77.5771,45.954,IN,True,,stop,0.00413,666,32,0,2.55,"{""country"": ""IN"", ""latitude"": 34.1526, ""longitude"": 77.5771}"
+mistralai/mistral-medium-3-5,no-CoT,34.1526,77.5771,45.954,IN,True,,stop,0.0011835,634,31,0,2.83,"{""country"": ""IN"", ""latitude"": 34.1526, ""longitude"": 77.5771}"
+mistralai/mistral-medium-3-5,CoT,34.1638,77.5847,46.837,IN,True,,stop,0.0095565,716,1131,1080,16.6,"{""reasoning"": ""Rocky Himalayan terrain with Buddhist stupa on cliff, stone roadside wall, and left-hand traffic context point to Ladakh, India"", ""country"": ""IN"", ""latitude"": 34.1638, ""longitude"": 77.5847}"
+google/gemini-3.1-pro-preview,no-CoT,34.2268,77.5619,54.124,IN,True,,stop,0.0028,1190,35,0,2.71,"```json
+{""country"": ""IN"", ""latitude"": 34.2268, ""longitude"": 77.5619}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),34.1642,77.3315,59.601,IN,True,,stop,0.0020985,1189,35,0,1.69,"```json
+{""country"": ""IN"", ""latitude"": 34.1642, ""longitude"": 77.3315}
+```"
+google/gemini-3.1-pro-preview,CoT,34.2833,76.8167,104.818,IN,True,,stop,0.005566,1271,252,172,5.89,"{
+  ""reasoning"": ""The steep, arid, rocky gorge and the low stone retaining wall along the paved road are highly characteristic of the Himalayan regions in northern India, particularly Ladakh or Spiti Valley."",
+  ""country"": ""IN"",
+  ""latitude"": 34.2833,
+  ""longitude"": 76.8167
+}"
+google/gemini-3.5-flash,CoT (effort=medium),34.2825,76.7742,108.084,IN,True,,stop,0.0060735,1271,463,389,6.95,"{""reasoning"": ""The dark, jagged rocky cliffs, dry stone wall, and willow-like tree in a arid mountain valley are highly characteristic of the Ladakh region in northern India, specifically along the NH1 highway."", ""country"": ""IN"", ""latitude"": 34.2825, ""longitude"": 76.7742}"
+moonshotai/kimi-k2.6,CoT,34.28,76.77,108.27,IN,True,,stop,0.0114917,682,3238,3170,197.26,"{""reasoning"": ""Barren dark-rock Himalayan gorge with a paved road, dry-stone retaining wall, and clustered valley-bottom trees matches the Trans-Himalayan cold-desert landscape of Ladakh."", ""country"": ""IN"", ""latitude"": 34.2800, ""longitude"": 76.7700}"
+qwen/qwen3.5-9b,no-CoT,31.3547,75.1174,366.297,IN,True,,stop,5.205e-05,474,31,0,6.19,"{""country"": ""IN"", ""latitude"": 31.3547, ""longitude"": 75.1174}"
+qwen/qwen3.5-35b-a3b,CoT,37.055,71.955,641.018,TJ,True,,stop,0.011365425,553,6245,6146,89.34,"{
+""reasoning"": ""The image shows a paved road winding through a steep, dark rocky canyon with lush green trees on the right, characteristic of the Pamir Highway (M41) in Tajikistan, likely near Khorog where the Panj River valley features such dramatic cliffs and riverine vegetation."",
+""country"": ""TJ"",
+""latitude"": 37.055,
+""longitude"": 71.955
+}"
+google/gemini-3.5-flash,CoT (effort=low),37.6542,71.5083,711.164,TJ,True,,stop,0.0040845,1271,242,171,3.34,"{""reasoning"": ""The rugged, dark rocky cliffs, arid mountain environment, and specific stone walling alongside the paved road are highly characteristic of the Pamir Highway (M41) in Tajikistan."", ""country"": ""TJ"", ""latitude"": 37.6542, ""longitude"": 71.5083}"
+google/gemini-3.5-flash,CoT (effort=high),37.9452,71.5631,726.618,TJ,True,,stop,0.0164415,1271,1615,1522,15.3,"```json
+{""reasoning"": ""The extremely steep, dark, barren rocky cliffs paired with a narrow asphalt road, dry stone walls, and a lush green deciduous tree are highly characteristic of the Pamir Highway (M41) along the Panj River valley on the border of Tajikistan and Afghanistan."", ""country"": ""TJ"", ""latitude"": 37.9452, ""longitude"": 71.5631}
+```"
+minimax/minimax-m3,CoT,38.2,71.8,728.49,TJ,True,,stop,0.00090102,845,588,600,14.8,"{""reasoning"": ""Dramatic dark canyon walls with loose scree slopes, arid mountain terrain, stone retaining walls, and sparse vegetation (single large poplar-like tree) are highly characteristic of the Pamir/Bartang region in Tajikistan along the M41 highway."", ""country"": ""TJ"", ""latitude"": 38.2, ""longitude"": 71.8}"
+x-ai/grok-4.3,no-CoT,34.85,68.72,839.733,AF,True,,stop,0.0007278,592,22,0,1.08,"{""country"": ""AF"", ""latitude"": 34.85, ""longitude"": 68.72}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.229515075683594,56.386871337890625,1981.635,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,23.15,57.55,2296.254,OM,True,,stop,0.002279,676,708,635,14.09,"{""reasoning"": ""Steep dark rocky gorge with dry-stone retaining wall, sparse but lush green trees, and arid highland terrain match Hajar Mountains roads; no signage/vehicles but regional style and geology point to northern Oman/UAE border area."", ""country"": ""OM"", ""latitude"": 23.15, ""longitude"": 57.55}"
+qwen/qwen3.5-122b-a10b,CoT,23.16,57.47,2302.278,OM,True,,stop,0.00478244,554,2230,2002,72.74,"{
+""reasoning"": ""The image displays a paved road winding through a rugged, arid mountain landscape with dark, jagged rock formations on the left, characteristic of the Hajar Mountains in Oman. The presence of olive-like trees and a low, rough stone wall on the right side are typical features of Omani wadis and rural roads. The lack of lane markings and the specific geology strongly point to the Al Hajar region."",
+""country"": ""OM"",
+""latitude"": 23.16,
+""longitude"": 57.47
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,35.55916213989258,52.52854537963867,2310.934,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,35.59312057495117,52.37635803222656,2324.527,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,23.366,56.533,2367.991,OM,True,,stop,0.00402295,553,3940,3355,170.26,"{""reasoning"": ""The steep, dark rocky cliffs and the lush green trees (likely poplars or palms) in a wadi setting are characteristic of the Hajar Mountains in Oman, specifically the area around Jebel Akhdar or Wadi Ghubrah. The stone wall and paved road are consistent with rural infrastructure in this region."", ""country"": ""OM"", ""latitude"": 23.366, ""longitude"": 56.533}"
+openai/gpt-5.5,no-CoT,31.5219,-5.5286,7570.279,MA,True,,stop,0.00344,544,24,0,2.18,"{""country"":""MA"",""latitude"":31.5219,""longitude"":-5.5286}"
+openai/gpt-5.5,CoT,31.5886,-5.5909,7572.149,MA,True,,stop,0.009495,621,213,108,5.76,"{""reasoning"":""The arid canyon with sheer reddish-brown rock walls, narrow unmarked asphalt road, stone retaining walls, and sparse oasis vegetation strongly matches the Todra/Tinghir gorge landscape in Morocco's High Atlas region. The lack of lane markings and North African desert-mountain architecture/roadside walls point most likely to Todra Gorge rather than a European or Middle Eastern canyon road."",""country"":""MA"",""latitude"":31.5886,""longitude"":-5.5909}"
+qwen/qwen3.5-397b-a17b,CoT,31.618,-5.968,7602.418,MA,True,,stop,0.00645177,553,2665,2537,155.02,"{
+""reasoning"": ""The image displays a paved road winding through an arid, mountainous landscape with towering reddish-brown sedimentary cliffs on the left and lush green poplar trees on the right, a signature visual combination of the Dadès Valley or Todra Gorge region in the High Atlas Mountains of Morocco. The dry stone wall on the right and the specific vegetation pattern near a valley floor strongly point to this North African location."",
+""country"": ""MA"",
+""latitude"": 31.618,
+""longitude"": -5.968
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,31.0583,-6.0667,7639.366,MA,True,,stop,0.0001428,474,30,0,3.79,"{""country"": ""MA"", ""latitude"": 31.0583, ""longitude"": -6.0667}"
+google/gemma-4-31b-it,no-CoT,31.4521,-6.8214,7682.694,MA,True,,stop,7.084e-05,406,35,0,8.19,"```json
+{""country"": ""MA"", ""latitude"": 31.4521, ""longitude"": -6.8214}
+```"
+minimax/minimax-m3,no-CoT,31.63,-7.99,7771.398,MA,True,,stop,0.00022248,752,23,0,5.95,"{""country"": ""MA"", ""latitude"": 31.63, ""longitude"": -7.99}"
+qwen/qwen3.5-122b-a10b,no-CoT,31.1225,-7.8512,7786.329,MA,True,,stop,0.0002139,473,30,0,2.93,"{""country"": ""MA"", ""latitude"": 31.1225, ""longitude"": -7.8512}"
+qwen/qwen3.6-27b,CoT,31.066,-7.833,7787.763,MA,True,,stop,0.013042709,554,4064,3399,176.09,"{""reasoning"": ""The image displays a winding paved road through a steep, rocky gorge with a dry stone wall on the right and dense poplar trees (typical of river valleys in the Atlas Mountains) on the right side. The dark, layered rock face on the left and the specific road layout are characteristic of the Tizi n'Tichka pass in the High Atlas Mountains of Morocco, specifically the section driving south towards Ouarzazate where the river and trees are on the right."", ""country"": ""MA"", ""latitude"": 31.066, ""longitude"": -7.833}"
+qwen/qwen3.5-35b-a3b,no-CoT,31.1234,-7.8901,7789.547,MA,True,,stop,9.636e-05,474,30,0,2.23,"{""country"": ""MA"", ""latitude"": 31.1234, ""longitude"": -7.8901}"
+qwen/qwen3.5-397b-a17b,no-CoT,31.0456,-7.9123,7795.493,MA,True,,stop,0.000255605,473,30,0,4.36,"{""country"": ""MA"", ""latitude"": 31.0456, ""longitude"": -7.9123}"
+qwen/qwen3.5-27b,no-CoT,31.0986,-7.9753,7797.999,MA,True,,stop,0.0002045,474,43,0,4.12,"```json
+{
+  ""country"": ""MA"",
+  ""latitude"": 31.0986,
+  ""longitude"": -7.9753
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,31.05,-7.95,7798.428,MA,True,,stop,8.00576e-05,708,26,0,6.28,"{""country"": ""MA"", ""latitude"": 31.05, ""longitude"": -7.95}"
+xiaomi/mimo-v2.5,CoT,0.0,0.0,8880.041,XX,True,,stop,0.000118405,565,211,105,31.56,"{""reasoning"": ""The image is extremely low-resolution and appears abstract or heavily processed, resembling AI-generated art or a very stylized, dark landscape rather than a clear geolocation photograph. There are no discernible road markings, vehicles, signs, or distinct vegetation patterns to provide reliable coordinates. However, the rocky terrain and lighting vaguely suggest a desolate, possibly volcanic or canyon-like environment, though any specific coordinate is purely speculative."", ""country"": ""XX"", ""latitude"": 0.0, ""longitude"": 0.0}"
+mistralai/mistral-small-2603,CoT,51.45,-116.3,10439.443,CA,True,,stop,0.00040404,716,606,661,17.78,"{""reasoning"": ""Double yellow center lines and mountainous coniferous terrain indicate North America; the dramatic limestone peaks and road style match Alberta's Icefields Parkway."", ""country"": ""CA"", ""latitude"": 51.45, ""longitude"": -116.3}"
+mistralai/mistral-small-2603,no-CoT,48.1981,-118.5482,10756.932,US,True,,stop,0.0001143,634,32,0,9.09,"{""country"": ""US"", ""latitude"": 48.1981, ""longitude"": -118.5482}"
+qwen/qwen3.5-27b,CoT,37.204,-113.024,12044.046,US,True,,stop,0.009222915,553,5843,5722,86.89,"{""reasoning"": ""The image displays a paved road winding through a narrow canyon with sheer, dark sandstone cliffs on the left and a dense riparian zone (trees) on the right, which is characteristic of the Virgin River corridor in Zion National Park, Utah. The stone wall on the right and the specific geology (Navajo Sandstone) point to the Zion Canyon Scenic Drive (SR-9) near the Zion Lodge."", ""country"": ""US"", ""latitude"": 37.204, ""longitude"": -113.024}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.50715255737305,-113.0040512084961,12120.771,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,36.115230560302734,-112.08641815185547,12176.772,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,36.11460494995117,-112.08769989013672,12176.823,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,36.0586,-112.1396,12182.273,US,True,,stop,0.0002059,473,32,0,7.28,"{""country"": ""US"", ""latitude"": 36.0586, ""longitude"": -112.1396}"
+moonshotai/kimi-k2.6,no-CoT,-26.0383,-65.4094,16383.996,AR,True,,stop,0.000279792,603,25,0,5.46,"{""country"": ""AR"", ""latitude"": -26.0383, ""longitude"": -65.4094}"

@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,32.448111445165,117.79437016767,0.0,CN,True,,,,,,,,"Dingcheng, None, Anhui Sheng, CN"
+google/gemini-3.1-pro-preview,no-CoT,32.05,117.2,71.302,CN,True,,stop,0.004516,1190,178,147,10.14,"```json
+{""country"": ""CN"", ""latitude"": 32.05, ""longitude"": 117.2}
+```"
+moonshotai/kimi-k2.6,no-CoT,32.5,116.5,121.558,CN,True,,stop,0.000279972,603,23,0,7.4,"{""country"": ""CN"", ""latitude"": 32.5, ""longitude"": 116.5}"
+google/gemini-3.1-pro-preview,CoT,33.5,118.5,134.213,CN,True,,stop,0.005808,1272,272,179,17.17,"{
+  ""reasoning"": ""The white-painted tree trunks, flat agricultural landscape, and the white van with blue markings and a blue license plate strongly indicate rural China. The bare trees and hazy sky suggest a winter scene in the central or eastern plains, such as Anhui or Jiangsu province."",
+  ""country"": ""CN"",
+  ""latitude"": 33.5,
+  ""longitude"": 118.5
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),32.455612,119.422314,152.752,CN,True,,stop,0.002145,1190,40,0,8.06,"```json
+{""country"": ""CN"", ""latitude"": 32.455612, ""longitude"": 119.422314}
+```"
+moonshotai/kimi-k2.6,CoT,33.5,116.5,168.103,CN,True,,stop,0.008225388,682,2344,2273,214.75,"{""reasoning"": ""The flat, agricultural landscape with bare deciduous trees painted white at the base, narrow concrete rural road, and utility pole style are definitive visual cues of winter in rural central China, specifically the North China Plain."", ""country"": ""CN"", ""latitude"": 33.5, ""longitude"": 116.5}"
+qwen/qwen3.5-9b,no-CoT,34.1667,117.0333,203.764,CN,True,,stop,5.22e-05,474,32,0,4.19,"{""country"": ""CN"", ""latitude"": 34.1667, ""longitude"": 117.0333}"
+x-ai/grok-4.3,no-CoT,31.85,120.35,249.615,CN,True,,stop,0.0005934,592,22,0,6.9,"{""country"": ""CN"", ""latitude"": 31.85, ""longitude"": 120.35}"
+minimax/minimax-m3,CoT,32.85,114.95,270.019,CN,True,,stop,0.00073506,843,453,353,19.71,"{""reasoning"": ""Narrow concrete rural road with young planted saplings on both sides is highly characteristic of China's 'village-connecting road' (村村通) program in the North China Plain; the white microvan ahead is a typical Chinese small van, and the flat tilled fields with bare deciduous trees indicate a temperate winter climate in central/eastern China."", ""country"": ""CN"", ""latitude"": 32.85, ""longitude"": 114.95}"
+google/gemini-3.5-flash,CoT (effort=low),33.5231,115.1245,276.211,CN,True,,stop,0.004032,1272,236,155,8.93,"{""reasoning"": ""The narrow concrete road, flat agricultural landscape with bare deciduous trees, concrete utility poles, and the style of the microvan ahead are highly characteristic of rural areas in the North China Plain, particularly Henan or Anhui province."", ""country"": ""CN"", ""latitude"": 33.5231, ""longitude"": 115.1245}"
+anthropic/claude-opus-4.8,no-CoT,33.0,114.5,314.213,CN,True,,stop,0.00408,666,30,0,2.5,"{""country"": ""CN"", ""latitude"": 33.0, ""longitude"": 114.5}"
+anthropic/claude-opus-4.8,CoT,33.6,114.5,332.751,CN,True,,stop,0.006285,797,92,0,3.23,"{""reasoning"": ""Flat agricultural plain with bare winter trees, concrete rural road, and a Chinese-style microbus van under hazy gray sky typical of the North China Plain."", ""country"": ""CN"", ""latitude"": 33.6, ""longitude"": 114.5}"
+qwen/qwen3.5-397b-a17b,CoT,34.7821,114.6235,391.836,CN,True,,stop,0.0051042,553,1339,1224,11.61,"{""reasoning"": ""The vehicle is driving on the right side of the road and features a yellow license plate, which is standard for larger commercial vehicles and minibuses in China. The flat, agricultural landscape with narrow concrete roads, specific utility poles, and leafless saplings is highly characteristic of the North China Plain (e.g., Henan or Shandong provinces) during the winter or early spring."", ""country"": ""CN"", ""latitude"": 34.7821, ""longitude"": 114.6235}"
+google/gemini-3.5-flash,CoT (effort=medium),34.5012,114.3124,395.453,CN,True,,stop,0.0075225,1271,624,542,13.08,"{""reasoning"": ""The narrow concrete road, flat agricultural landscape with rows of bare deciduous trees, concrete utility poles, and the style of the microvan ahead are highly characteristic of rural areas in the North China Plain, particularly Henan or Shandong province."", ""country"": ""CN"", ""latitude"": 34.5012, ""longitude"": 114.3124}"
+google/gemini-3.5-flash,CoT (effort=high),34.5234,114.3125,396.841,CN,True,,stop,0.0071085,1271,578,503,5.06,"{""reasoning"": ""The narrow concrete road, concrete utility poles, flat agricultural landscape with bare winter trees, and the characteristic Chinese minivan (mianbaoche) indicate rural China, likely on the North China Plain."", ""country"": ""CN"", ""latitude"": 34.5234, ""longitude"": 114.3125}"
+minimax/minimax-m3,no-CoT,35.5,115.5,399.871,CN,True,,stop,0.00019176,752,23,0,1.66,"{""country"": ""CN"", ""latitude"": 35.5, ""longitude"": 115.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.7523,114.3651,408.018,CN,True,,stop,0.000383,473,32,0,0.81,"{""country"": ""CN"", ""latitude"": 34.7523, ""longitude"": 114.3651}"
+openai/gpt-5.5,CoT,34.7895,114.3072,414.732,CN,True,,stop,0.011925,621,294,202,6.77,"{""reasoning"":""Right-side driving, Chinese-style rural concrete lane, whitewashed tree trunks, flat North China Plain agriculture, and the minibus plate style point strongly to rural China. The leafless poplar-lined fields suggest a winter scene in Henan/Shandong/Anhui; best estimate is central Henan near Kaifeng."",""country"":""CN"",""latitude"":34.7895,""longitude"":114.3072}"
+qwen/qwen3.6-27b,no-CoT,35.1234,114.5678,421.147,CN,True,,stop,0.00029925,473,32,0,7.13,"{""country"": ""CN"", ""latitude"": 35.1234, ""longitude"": 114.5678}"
+qwen/qwen3.5-35b-a3b,no-CoT,34.2678,113.6234,436.987,CN,True,,stop,0.00015825,473,32,0,0.52,"{""country"": ""CN"", ""latitude"": 34.2678, ""longitude"": 113.6234}"
+openai/gpt-5.5,no-CoT,34.7825,113.7068,458.893,CN,True,,stop,0.00341,544,23,0,1.37,"{""country"":""CN"",""latitude"":34.7825,""longitude"":113.7068}"
+xiaomi/mimo-v2.5,no-CoT,34.5,113.5,458.962,CN,True,,stop,8.00576e-05,708,26,0,3.63,"{""country"": ""CN"", ""latitude"": 34.5, ""longitude"": 113.5}"
+mistralai/mistral-medium-3-5,no-CoT,34.75,113.6667,459.999,CN,True,,stop,0.001176,634,30,0,1.05,"{""country"": ""CN"", ""latitude"": 34.75, ""longitude"": 113.6667}"
+qwen/qwen3.5-27b,no-CoT,34.7466,113.6253,462.986,CN,True,,stop,0.000142155,473,32,0,8.09,"{""country"": ""CN"", ""latitude"": 34.7466, ""longitude"": 113.6253}"
+x-ai/grok-4.3,CoT,34.75,113.55,469.015,CN,True,,stop,0.0021315,676,649,587,6.54,"{""reasoning"": ""Flat open farmland, leafless trees, narrow unmarked concrete road, right-hand traffic, and distant white van with typical Chinese rear styling point to North China Plain in winter."", ""country"": ""CN"", ""latitude"": 34.75, ""longitude"": 113.55}"
+qwen/qwen3.5-122b-a10b,no-CoT,34.5678,112.3456,557.35,CN,True,,stop,0.0002379,473,40,0,1.79,"{
+  ""country"": ""CN"",
+  ""latitude"": 34.5678,
+  ""longitude"": 112.3456
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,38.63831329345703,118.90599060058594,695.61,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,39.03950881958008,116.115478515625,748.384,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,39.12972640991211,116.1125259399414,758.246,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,39.42446517944336,116.31678009033203,787.023,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,39.5,116.5,792.71,CN,True,,stop,0.0004551176,787,1326,1247,20.62,"{""reasoning"": ""Right-hand traffic and rural flat terrain with bare deciduous trees in winter suggest northern China; the van model appears to be a common Chinese domestic vehicle. No visible signage, but overall landscape fits agricultural plains in a temperate climate."", ""country"": ""CN"", ""latitude"": 39.5, ""longitude"": 116.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,34.26,108.93,847.296,CN,True,,stop,9.895e-05,473,28,0,1.93,"{""country"": ""CN"", ""latitude"": 34.26, ""longitude"": 108.93}"
+google/gemma-4-31b-it,no-CoT,34.3416,108.9424,848.004,CN,True,,stop,6.418e-05,406,37,0,12.64,"```json
+{""country"": ""CN"", ""latitude"": 34.3416, ""longitude"": 108.9424}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,40.12145233154297,117.26589965820312,854.545,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,40.36954116821289,117.79690551757812,880.823,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,40.0,-83.0,11679.696,US,True,,stop,0.0001101,634,25,0,9.13,"{""country"": ""US"", ""latitude"": 40.0, ""longitude"": -83.0}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12584.202,,True,True,,,,,,13.24,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.75,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.76,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.82,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.24,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.26,

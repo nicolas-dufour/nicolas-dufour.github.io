@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,30.461777813652333,104.52676056386916,0.0,CN,True,,,,,,,,"Jiancheng, None, Sichuan, CN"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,30.336566925048828,104.48390197753906,14.517,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,30.33041000366211,104.51348876953125,14.663,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,30.314167022705078,104.52095794677734,16.423,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,30.45,103.85,64.882,CN,True,,stop,0.009205668,682,2621,2553,69.65,"{""reasoning"": ""The rural asphalt road with poured-concrete curbs, arched plastic tunnel greenhouses, and dense hillside bamboo under an overcast sky are classic features of the Sichuan Basin in China."", ""country"": ""CN"", ""latitude"": 30.45, ""longitude"": 103.85}"
+qwen/qwen3.5-9b,no-CoT,39.9042,116.4074,1503.407,CN,True,,stop,5.22e-05,474,32,0,5.36,"{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}"
+qwen/qwen3.6-35b-a3b,no-CoT,31.2304,121.4737,1618.532,CN,True,,stop,0.00015825,473,32,0,0.66,"{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}"
+minimax/minimax-m3,no-CoT,23.7,121.0,1793.284,TW,True,,stop,0.00028122,767,91,86,10.24,"{""country"": ""TW"", ""latitude"": 23.7, ""longitude"": 121.0}"
+xiaomi/mimo-v2.5,CoT,35.1796,126.9008,2150.434,KR,True,,stop,0.0001406776,787,203,115,2.78,"{""reasoning"": ""The image shows a paved rural road with vehicles driving on the right side. The distinctive plastic-covered greenhouses (poly-tunnels) on the left and the vegetation style are characteristic of agricultural areas in South Korea, particularly in the southern regions."", ""country"": ""KR"", ""latitude"": 35.1796, ""longitude"": 126.9008}"
+google/gemini-3.5-flash,CoT (effort=low),36.8154,127.1132,2200.723,KR,True,,stop,0.003564,1272,184,115,2.33,"```json
+{""reasoning"": ""The plastic tunnel greenhouse on the left, concrete road shoulders, and lush green vegetation under an overcast sky are highly characteristic of rural South Korea."", ""country"": ""KR"", ""latitude"": 36.8154, ""longitude"": 127.1132}
+```"
+google/gemini-3.5-flash,CoT (effort=high),36.9512,127.1543,2207.505,KR,True,,stop,0.0077745,1271,652,572,20.3,"{""reasoning"": ""The presence of a plastic hoop greenhouse (vinyl house) alongside a well-paved rural road with concrete gutters is highly characteristic of South Korea. The lush green vegetation and deciduous trees further support an East Asian temperate climate."", ""country"": ""KR"", ""latitude"": 36.9512, ""longitude"": 127.1543}"
+google/gemini-3.1-pro-preview,CoT,36.5,127.5,2227.553,KR,True,,stop,0.005002,1271,205,133,3.92,"{
+  ""reasoning"": ""The presence of bamboo and the specific style of the greenhouse on the left are characteristic of rural East Asia. The overall landscape and road infrastructure strongly suggest South Korea."",
+  ""country"": ""KR"",
+  ""latitude"": 36.5,
+  ""longitude"": 127.5
+}"
+google/gemini-3.1-pro-preview,no-CoT,36.5,127.5,2227.553,KR,True,,stop,0.00274,1190,30,0,8.82,"```json
+{""country"": ""KR"", ""latitude"": 36.5, ""longitude"": 127.5}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.5682,127.2145,2228.395,KR,True,,stop,0.002109,1190,36,0,7.54,"```json
+{""country"": ""KR"", ""latitude"": 37.5682, ""longitude"": 127.2145}
+```"
+qwen/qwen3.5-397b-a17b,CoT,37.4521,127.3489,2236.83,KR,True,,stop,0.0099606,553,2688,2578,20.86,"{""reasoning"": ""The vehicle is driving on the right side of a narrow rural road featuring distinctive concrete drainage curbs and a large, low-profile plastic greenhouse (vinyl house) on the left, which are characteristic of agricultural infrastructure in South Korea. The dashboard appears to be from a Kia (likely a Niro), a South Korean manufacturer, further supporting this location."", ""country"": ""KR"", ""latitude"": 37.4521, ""longitude"": 127.3489}"
+google/gemini-3.5-flash,CoT (effort=medium),37.2543,127.5512,2249.22,KR,True,,stop,0.0074955,1271,621,556,12.12,"{""reasoning"": ""The presence of a plastic hoop greenhouse (vinyl house), concrete roadside gutters, and lush deciduous vegetation under an overcast sky strongly indicates rural South Korea."", ""country"": ""KR"", ""latitude"": 37.2543, ""longitude"": 127.5512}"
+qwen/qwen3.5-397b-a17b,no-CoT,35.1234,128.5678,2300.101,KR,True,,stop,0.00036828,473,32,0,4.53,"{""country"": ""KR"", ""latitude"": 35.1234, ""longitude"": 128.5678}"
+x-ai/grok-4.3,no-CoT,21.1458,79.0882,2741.039,IN,True,,stop,0.0005984,592,24,0,0.85,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+anthropic/claude-opus-4.8,CoT,35.05,134.5,2837.904,JP,True,,stop,0.006985,797,120,0,3.56,"{""reasoning"": ""Rural narrow road with greenhouse/vinyl tunnel and bamboo, lush vegetation typical of East Asian countryside; right-hand drive vehicle suggests Japan or Korea, with the agricultural style resembling rural Japan."", ""country"": ""JP"", ""latitude"": 35.05, ""longitude"": 134.5}"
+moonshotai/kimi-k2.6,no-CoT,34.5,136.5,3019.835,JP,True,,stop,0.000296172,603,23,0,15.12,"{""country"": ""JP"", ""latitude"": 34.5, ""longitude"": 136.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.3606,136.7909,3046.846,JP,True,,stop,0.00010295,473,32,0,12.94,"{""country"": ""JP"", ""latitude"": 35.3606, ""longitude"": 136.7909}"
+anthropic/claude-opus-4.8,no-CoT,35.6,137.2,3084.415,JP,True,,stop,0.00408,666,30,0,8.4,"{""country"": ""JP"", ""latitude"": 35.6, ""longitude"": 137.2}"
+mistralai/mistral-medium-3-5,no-CoT,36.2048,138.254,3181.065,JP,True,,stop,0.0011835,634,31,0,7.19,"{""country"": ""JP"", ""latitude"": 36.2048, ""longitude"": 138.254}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.6895,139.6917,3309.655,JP,True,,stop,0.0001898,474,32,0,12.59,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+qwen/qwen3.5-27b,no-CoT,35.6586,139.7454,3314.512,JP,True,,stop,0.0002085,474,45,0,3.82,"```json
+{
+  ""country"": ""JP"",
+  ""latitude"": 35.6586,
+  ""longitude"": 139.7454
+}
+```"
+x-ai/grok-4.3,CoT,18.52,73.85,3361.809,IN,True,,stop,0.0019965,676,595,523,6.31,"{""reasoning"": ""Lush tropical vegetation, agricultural shade-netting on left, wet monsoon-style road with concrete curbs, and overcast sky point to rural South Asia; right-side driving position and lack of other signage/vehicles narrow to India."", ""country"": ""IN"", ""latitude"": 18.52, ""longitude"": 73.85}"
+openai/gpt-5.5,CoT,46.2306,15.5172,7548.925,SI,True,,stop,0.015465,621,412,336,9.98,"{""reasoning"":""Rural right-hand-drive European road with narrow unmarked asphalt, concrete drainage edges, lush temperate vegetation, and polytunnel greenhouses strongly suggests the Slovenia/Croatia countryside. The greener landscape and road style fit eastern Slovenia best."",""country"":""SI"",""latitude"":46.2306,""longitude"":15.5172}"
+minimax/minimax-m3,CoT,41.15,15.85,7739.066,IT,True,,stop,0.00079026,843,499,427,13.39,"{""reasoning"": ""Narrow rural road with right-hand traffic, white plastic tunnel greenhouses typical of Mediterranean horticulture (especially Southern Italy/Spain), and lush deciduous vegetation under overcast skies suggest an Italian agricultural region like Puglia."", ""country"": ""IT"", ""latitude"": 41.15, ""longitude"": 15.85}"
+openai/gpt-5.5,no-CoT,43.8591,4.9468,8411.972,FR,True,,stop,0.00341,544,23,0,1.25,"{""country"":""FR"",""latitude"":43.8591,""longitude"":4.9468}"
+qwen/qwen3.6-27b,no-CoT,44.8378,-0.5792,8736.573,FR,True,,stop,0.0001923,473,30,0,12.78,"{""country"": ""FR"", ""latitude"": 44.8378, ""longitude"": -0.5792}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11395.976,,True,True,,,,,,23.01,
+mistralai/mistral-small-2603,no-CoT,36.1699,-115.1398,11528.293,US,True,,stop,0.0001143,634,32,0,10.42,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+google/gemma-4-31b-it,no-CoT,34.0522,-118.2437,11554.153,US,True,,stop,6.418e-05,406,37,0,5.65,"```json
+{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}
+```"
+xiaomi/mimo-v2.5,no-CoT,38.9,-77.0,12300.788,US,True,,stop,7.97776e-05,708,25,0,2.16,"{""country"": ""US"", ""latitude"": 38.9, ""longitude"": -77.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,38.342529296875,-81.64706420898438,12337.626,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,36.82328414916992,-82.281005859375,12499.766,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,36.367733001708984,-83.24144744873047,12539.908,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.24,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.81,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.18,

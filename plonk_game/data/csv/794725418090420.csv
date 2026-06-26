@@ -1,0 +1,76 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-3.8618910051812,103.07225800718,0.0,ID,True,,,,,,,,"Muarapinang, None, South Sumatra, ID"
+anthropic/claude-opus-4.8,no-CoT,-3.7956,102.5421,59.279,ID,True,,stop,0.00489,818,32,0,2.26,"{""country"": ""ID"", ""latitude"": -3.7956, ""longitude"": 102.5421}"
+qwen/qwen3.5-9b,no-CoT,-2.5333,103.6167,159.619,ID,True,,stop,6.325e-05,586,31,0,5.24,"{""country"": ""ID"", ""latitude"": -2.5333, ""longitude"": 103.6167}"
+google/gemma-4-26b-a4b-it,CoT,-3.382,104.721,190.588,ID,True,,stop,0.00062122,490,1425,1348,29.41,"{""reasoning"": ""The wooden stilt houses with corrugated metal roofs and tropical vegetation are highly characteristic of rural Indonesia, specifically in regions like Sumatra. The presence of a Toyota Avanza and the style of the utility poles further support this location."", ""country"": ""ID"", ""latitude"": -3.382, ""longitude"": 104.721}"
+anthropic/claude-opus-4.8,CoT,-2.5,101.5,231.088,ID,True,,stop,0.007245,949,100,0,11.54,"{""reasoning"": ""Indonesian-language campaign banners, traditional rusty-roofed wooden stilt houses, tropical village setting, and left-side driving suggest rural Sumatra, Indonesia."", ""country"": ""ID"", ""latitude"": -2.5, ""longitude"": 101.5}"
+minimax/minimax-m3,no-CoT,-1.6358,103.5444,253.023,ID,True,,stop,0.00027048,904,25,0,6.14,"{""country"": ""ID"", ""latitude"": -1.6358, ""longitude"": 103.5444}"
+google/gemini-3.1-pro-preview,no-CoT,-1.6123,103.5842,256.523,ID,True,,stop,0.006398,1225,329,294,5.96,"```json
+{""country"": ""ID"", ""latitude"": -1.6123, ""longitude"": 103.5842}
+```"
+qwen/qwen3.6-27b,no-CoT,-0.9471,100.4172,438.218,ID,True,,stop,0.000267331,586,31,0,12.41,"{""country"": ""ID"", ""latitude"": -0.9471, ""longitude"": 100.4172}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-6.196760177612305,106.91802978515625,498.84,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-6.638712406158447,106.68559265136719,505.356,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-6.627573013305664,106.69425964355469,505.364,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,0.92,104.45,553.325,ID,True,,stop,0.00088302,997,535,534,15.69,"{""reasoning"": ""Traditional raised wooden houses (rumah panggung) with characteristic sloped roofs, tangled overhead power lines, Indonesian political party flags and banners, satellite dishes, and a small pickup truck all point to a rural town in the Riau Islands of Indonesia, likely near Tanjung Pinang."", ""country"": ""ID"", ""latitude"": 0.92, ""longitude"": 104.45}{""reasoning"": ""Traditional raised wooden houses (rumah panggung) with characteristic sloped roofs, tangled overhead power lines, Indonesian political party flags and banners, satellite dishes, and a small pickup truck all point to a rural town in the Riau Islands of Indonesia, likely near Tanjung Pinang."", ""country"": ""ID"", ""latitude"": 0.92, ""longitude"": 104.45}"
+mistralai/mistral-medium-3-5,CoT,2.5,99.1,833.844,ID,True,,stop,0.016617,868,2042,2175,17.36,"{""reasoning"": ""Indonesian signage ('Pemerintah Kabupaten') and yellow/blue flags matching Simalungun Regency, North Sumatra, with left-hand traffic and tropical rural architecture."", ""country"": ""ID"", ""latitude"": 2.5, ""longitude"": 99.1}"
+openai/gpt-5.5,CoT,2.6675,98.8578,863.988,ID,True,,stop,0.014935,755,372,297,16.37,"{""reasoning"":""Indonesian political banners/flags and tropical left-side road environment point to Indonesia, while the wooden stilt houses with rusty metal roofs and lakeside village feel are characteristic of Batak settlements around Lake Toba in North Sumatra."",""country"":""ID"",""latitude"":2.6675,""longitude"":98.8578}"
+openai/gpt-5.5,no-CoT,2.9676,99.0612,880.552,ID,True,,stop,0.00408,678,23,0,1.79,"{""country"":""ID"",""latitude"":2.9676,""longitude"":99.0612}"
+qwen/qwen3.5-27b,no-CoT,-0.7893,111.4215,988.44,ID,True,,stop,0.00022491,585,31,0,2.97,"{""country"": ""ID"", ""latitude"": -0.7893, ""longitude"": 111.4215}"
+qwen/qwen3.5-397b-a17b,CoT,-1.363,113.053,1142.856,ID,True,,stop,0.0137656,665,3849,3464,594.87,"{
+""reasoning"": ""The yellow flag explicitly displays 'GOLKAR', a major Indonesian political party, confirming the country. The traditional wooden stilt houses (Rumah Panggung) lining a paved road in a tropical setting are characteristic of villages along the Trans-Kalimantan Highway in Central Kalimantan."",
+""country"": ""ID"",
+""latitude"": -1.363,
+""longitude"": 113.053
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,-0.7892,113.9234,1252.935,ID,True,,stop,0.000185,585,31,0,7.68,"{""country"": ""ID"", ""latitude"": -0.7892, ""longitude"": 113.9234}"
+qwen/qwen3.5-397b-a17b,no-CoT,-0.5333,117.1333,1605.388,ID,True,,stop,0.00030069,585,31,0,1.42,"{""country"": ""ID"", ""latitude"": -0.5333, ""longitude"": 117.1333}"
+mistralai/mistral-medium-3-5,no-CoT,-0.5897,117.1536,1606.129,ID,True,,stop,0.0014115,786,31,0,2.03,"{""country"": ""ID"", ""latitude"": -0.5897, ""longitude"": 117.1536}"
+x-ai/grok-4.3,CoT,-0.9,117.3,1614.453,ID,True,,stop,0.0026465,788,799,709,13.77,"{
+  ""reasoning"": ""Indonesian PILKADA election banners, Latin-script shop signs (e.g. JASA), left-side driving, corrugated-roof stilt houses, palm vegetation and tropical climate fix the location to Indonesia; rural road layout and architecture match small towns on Sumatra or Kalimantan."",
+  ""country"": ""ID"",
+  ""latitude"": -0.9,
+  ""longitude"": 117.3
+}"
+google/gemma-4-31b-it,no-CoT,-0.2345,118.1234,1720.21,ID,True,,stop,6.692e-05,404,36,0,9.62,"```json
+{""country"": ""ID"", ""latitude"": -0.2345, ""longitude"": 118.1234}
+```"
+moonshotai/kimi-k2.6,no-CoT,-3.5,119.5,1823.328,ID,True,,stop,0.00035046,755,23,0,10.73,"{""country"": ""ID"", ""latitude"": -3.5, ""longitude"": 119.5}"
+google/gemini-3.1-pro-preview,CoT,-4.5,120.0,1878.564,ID,True,,stop,0.005878,1307,272,196,6.33,"{
+  ""reasoning"": ""The yellow flag for 'PARTAI GOLKAR' clearly identifies the country as Indonesia. The wooden stilt houses with corrugated roofs are characteristic of rural areas in regions like South Sulawesi."",
+  ""country"": ""ID"",
+  ""latitude"": -4.5,
+  ""longitude"": 120.0
+}"
+google/gemini-3.5-flash,CoT (effort=high),-4.1245,120.0214,1880.275,ID,True,,stop,0.011817,1308,1095,1023,13.48,"{""reasoning"": ""The wooden stilt houses (Rumah Panggung), large mesh satellite dishes, and Indonesian political campaign posters are highly characteristic of rural Indonesia, particularly the Bugis region of South Sulawesi."", ""country"": ""ID"", ""latitude"": -4.1245, ""longitude"": 120.0214}"
+google/gemini-3.5-flash,CoT (effort=medium),-4.1245,120.0234,1880.497,ID,True,,stop,0.0086385,1307,742,655,14.5,"```json
+{""reasoning"": ""The architectural style of the elevated wooden houses (rumah panggung), the large mesh satellite dishes in front of homes, and the Indonesian political campaign posters indicate a rural village in Indonesia, specifically characteristic of the Bugis region in South Sulawesi."", ""country"": ""ID"", ""latitude"": -4.1245, ""longitude"": 120.0234}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-4.1235,120.0241,1880.574,ID,True,,stop,0.0044985,1307,282,209,10.69,"```json
+{""reasoning"": ""The elevated wooden houses on stilts, numerous satellite dishes, and Indonesian political banners (such as the yellow Golkar flag) strongly indicate rural South Sulawesi, Indonesia."", ""country"": ""ID"", ""latitude"": -4.1235, ""longitude"": 120.0241}
+```"
+x-ai/grok-4.3,no-CoT,-0.789,119.859,1895.873,ID,True,,stop,0.0007334,704,22,0,0.83,"{""country"": ""ID"", ""latitude"": -0.789, ""longitude"": 119.859}"
+qwen/qwen3.5-122b-a10b,no-CoT,-0.5472,119.8707,1902.295,ID,True,,stop,0.00021684,586,31,0,6.24,"{""country"": ""ID"", ""latitude"": -0.5472, ""longitude"": 119.8707}"
+xiaomi/mimo-v2.5,no-CoT,13.3633,103.86,1917.327,KH,True,,stop,9.74176e-05,820,32,0,4.1,"{""country"": ""KH"", ""latitude"": 13.3633, ""longitude"": 103.8600}"
+moonshotai/kimi-k2.6,CoT,-2.5,120.5,1940.739,ID,True,,stop,0.012755565,203,3495,3433,35.48,"{""reasoning"": ""Wooden stilt houses with oversized C-band satellite dishes, Indonesian political party banners in Latin script, and tropical vegetation indicate a rural village in Sulawesi, Indonesia."", ""country"": ""ID"", ""latitude"": -2.5, ""longitude"": 120.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-2.154321,120.712345,1967.872,ID,True,,stop,0.00219,1226,39,0,10.52,"```json
+{""country"": ""ID"", ""latitude"": -2.154321, ""longitude"": 120.712345}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,15.376860618591309,103.95116424560547,2141.439,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,CoT,16.7667,96.15,2416.587,MM,True,,stop,0.00033564,868,490,498,10.45,"{""reasoning"": ""Left-hand traffic, Burmese script on signage, and Myanmar's national flag indicate Myanmar"", ""country"": ""MM"", ""latitude"": 16.7667, ""longitude"": 96.15}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,19.533674240112305,98.97264099121094,2639.805,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,7.95,124.35,2701.071,PH,True,,stop,0.0039858676,583,4032,3998,20.49,"{""country"": ""PH"", ""latitude"": 7.95, ""longitude"": 124.35}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,20.501970291137695,100.0604476928711,2729.005,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,10.3157,123.8854,2792.236,PH,True,,stop,0.126732554,665,131184,131072,507.65,"```json
+{
+  ""reasoning"": ""The decisive clues are the Philippine flags (blue, red, white triangle with sun/stars) and the yellow political campaign banner, combined with left-hand traffic, the Mitsubishi L300 utility vehicle, and the tropical architecture with corrugated metal roofs and satellite dishes."",
+  ""country"": ""PH"",
+  ""latitude"": 10.3157,
+  ""longitude"": 123.8854
+}
+```"
+xiaomi/mimo-v2.5,CoT,20.56,96.93,2797.082,MM,True,,stop,0.0011248776,899,3662,3554,79.54,"{""reasoning"": ""The presence of Burmese script on signs (including the 'Paras' satellite dish box and billboards) and the distinctive wooden stilt architecture with rusty metal roofs strongly indicate a town in Myanmar's Shan State. The right-hand traffic and tropical vegetation with reddish soil are consistent with a location like Nyaungshwe, the gateway to Inle Lake."", ""country"": ""MM"", ""latitude"": 20.56, ""longitude"": 96.93}"
+google/gemma-4-26b-a4b-it,no-CoT,23.8103,90.4,3369.353,,True,,stop,5.668e-05,404,36,0,8.56,"{""country"": ""BD"", ""latitude"": 23.8103, ""longitude"": 90.4 own-4.5500}"
+mistralai/mistral-small-2603,no-CoT,26.9124,75.7873,4505.393,IN,True,,stop,0.0001365,786,31,0,4.86,"{""country"": ""IN"", ""latitude"": 26.9124, ""longitude"": 75.7873}"
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.7,

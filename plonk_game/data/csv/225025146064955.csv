@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,32.551795940632,-7.8344511311108,0.0,MA,True,,,,,,,,"Sidi Abdallah, Kelaa-Des-Sraghna, Marrakech-Tensift-Al Haouz, MA"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,32.447845458984375,-7.807946681976318,11.823,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,32.29644012451172,-7.877557277679443,28.681,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,32.29604721069336,-7.896213054656982,29.023,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),31.8125,-8.1243,86.613,MA,True,,stop,0.0045,1308,282,200,9.24,"```json
+{""reasoning"": ""The presence of eucalyptus trees in an arid landscape, right-hand traffic, and a white transit van with a heavy roof rack are highly characteristic of Morocco, particularly along the national highways in the semi-arid regions."", ""country"": ""MA"", ""latitude"": 31.8125, ""longitude"": -8.1243}
+```"
+moonshotai/kimi-k2.6,no-CoT,33.5,-7.5,109.949,MA,True,,stop,0.00031806,755,23,0,15.98,"{""country"": ""MA"", ""latitude"": 33.5, ""longitude"": -7.5}"
+google/gemini-3.5-flash,CoT (effort=medium),31.5384,-8.3542,122.872,MA,True,,stop,0.0067575,1307,533,460,12.34,"{""reasoning"": ""The arid landscape with eucalyptus trees, right-hand traffic, and a white commercial van with a heavy-duty roof rack are highly characteristic of Morocco, particularly the national roads in the western plains."", ""country"": ""MA"", ""latitude"": 31.5384, ""longitude"": -8.3542}"
+google/gemini-3.5-flash,CoT (effort=high),31.54,-8.45,126.584,MA,True,,stop,0.0132555,1307,1255,1190,10.76,"{""reasoning"": ""The dry, semi-arid landscape with planted eucalyptus trees, right-hand traffic, and a white van with a heavy-duty roof rack are highly characteristic of rural Morocco."", ""country"": ""MA"", ""latitude"": 31.54, ""longitude"": -8.45}"
+openai/gpt-5.5,CoT,31.5536,-8.7609,141.219,MA,True,,stop,0.015415,755,388,306,19.16,"{""reasoning"":""Arid Mediterranean/North African landscape with eucalyptus windbreaks, right-hand traffic, and Moroccan-style rural highway markings/shoulders point most strongly to inland Morocco. The dry plains and roadside vegetation fit the Marrakech–Chichaoua/Essaouira corridor."",""country"":""MA"",""latitude"":31.5536,""longitude"":-8.7609}"
+anthropic/claude-opus-4.8,CoT,31.5,-9.0,160.471,MA,True,,stop,0.00707,949,93,0,306.57,"{""reasoning"": ""Arid semi-desert landscape with eucalyptus trees, dry reddish soil, and right-hand traffic on a two-lane highway typical of rural Morocco."", ""country"": ""MA"", ""latitude"": 31.5, ""longitude"": -9.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),31.5083,-9.6542,207.094,MA,True,,stop,0.0021435,1225,34,0,1.55,"```json
+{""country"": ""MA"", ""latitude"": 31.5083, ""longitude"": -9.6542}
+```"
+anthropic/claude-opus-4.8,no-CoT,30.42,-9.6,290.191,MA,True,,stop,0.00484,818,30,0,2.21,"{""country"": ""MA"", ""latitude"": 30.42, ""longitude"": -9.6}"
+google/gemini-3.1-pro-preview,CoT,30.0521,-9.4812,318.949,MA,True,,stop,0.006636,1308,335,261,5.09,"{
+  ""reasoning"": ""Right-hand driving, solid white edge lines, and arid landscape with reddish soil and eucalyptus-like trees strongly suggest Morocco, particularly the southern regions."",
+  ""country"": ""MA"",
+  ""latitude"": 30.0521,
+  ""longitude"": -9.4812
+}"
+google/gemini-3.1-pro-preview,no-CoT,29.715,-9.721,362.943,MA,True,,stop,0.005308,1226,238,206,10.68,"```json
+{""country"": ""MA"", ""latitude"": 29.715, ""longitude"": -9.721}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3711.712,,True,True,,,,,,12.94,
+mistralai/mistral-small-2603,no-CoT,-22.901,-47.061,7440.517,BR,True,,stop,0.0001353,786,29,0,4.8,"{""country"": ""BR"", ""latitude"": -22.901, ""longitude"": -47.061}"
+mistralai/mistral-medium-3-5,no-CoT,-31.4272,115.8928,14770.775,AU,True,,stop,0.001419,786,32,0,8.74,"{""country"": ""AU"", ""latitude"": -31.4272, ""longitude"": 115.8928}"
+qwen/qwen3.5-122b-a10b,no-CoT,-31.9505,115.8605,14784.697,AU,True,,stop,0.0002715,585,40,0,4.73,"{
+  ""country"": ""AU"",
+  ""latitude"": -31.9505,
+  ""longitude"": 115.8605
+}"
+x-ai/grok-4.3,no-CoT,-31.85,116.05,14798.643,AU,True,,stop,0.0007334,704,22,0,8.15,"{""country"": ""AU"", ""latitude"": -31.85, ""longitude"": 116.05}"
+qwen/qwen3.5-9b,no-CoT,-31.4067,116.2756,14804.844,AU,True,,stop,6.34e-05,586,32,0,9.48,"{""country"": ""AU"", ""latitude"": -31.4067, ""longitude"": 116.2756}"
+openai/gpt-5.5,no-CoT,-31.9172,116.1036,14805.627,AU,True,,stop,0.00411,678,24,0,1.41,"{""country"":""AU"",""latitude"":-31.9172,""longitude"":116.1036}"
+x-ai/grok-4.3,CoT,-32.15,117.45,14934.717,AU,True,,stop,0.002179,788,612,541,6.19,"{""reasoning"": ""Eucalyptus trees, dry scrub, red soil and clear arid sky are diagnostic of southern Australia; left-hand driving (vehicles ahead on left of road) plus road markings confirm AU rather than similar landscapes in Africa or Americas."", ""country"": ""AU"", ""latitude"": -32.15, ""longitude"": 117.45}"
+qwen/qwen3.5-397b-a17b,no-CoT,-32.0567,117.8923,14971.938,AU,True,,stop,0.00030303,585,32,0,1.59,"{""country"": ""AU"", ""latitude"": -32.0567, ""longitude"": 117.8923}"
+google/gemma-4-31b-it,no-CoT,-24.5,128.0,15640.002,AU,True,,stop,0.00010658,404,30,0,2.6,"```json
+{""country"": ""AU"", ""latitude"": -24.5, ""longitude"": 128.0}
+```"
+xiaomi/mimo-v2.5,CoT,-23.47,133.22,16084.224,AU,True,,stop,0.0001720376,899,259,190,8.99,"{""reasoning"": ""Left-hand traffic, distinctive Australian eucalyptus trees, and red arid outback soil confirm this is central Australia; the highway matches the Stuart Highway region."", ""country"": ""AU"", ""latitude"": -23.47, ""longitude"": 133.22}"
+xiaomi/mimo-v2.5,no-CoT,-23.7,133.8,16148.625,AU,True,,stop,9.57376e-05,820,26,0,1.45,"{""country"": ""AU"", ""latitude"": -23.7, ""longitude"": 133.8}"
+qwen/qwen3.6-27b,no-CoT,-30.0,135.0,16489.407,AU,True,,stop,0.0002179,585,26,0,11.28,"{""country"": ""AU"", ""latitude"": -30.0, ""longitude"": 135.0}"
+minimax/minimax-m3,no-CoT,-32.0,137.0,16723.679,AU,True,,stop,0.00031242,919,79,79,3.3,"{""country"": ""AU"", ""latitude"": -32.0, ""longitude"": 137.0}"
+minimax/minimax-m3,CoT,-32.5,137.5,16779.746,AU,True,,stop,0.00098706,995,625,544,16.5,"{""reasoning"": ""Eucalyptus (gum) trees, arid semi-desert landscape with dry reddish soil and sparse scrub, left-hand traffic, and the style of rural highway with simple white edge lines are all classic indicators of the Australian outback, likely South Australia."", ""country"": ""AU"", ""latitude"": -32.5, ""longitude"": 137.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,-26.0,140.0,16824.347,AU,True,,stop,0.0001588,586,26,0,2.61,"{""country"": ""AU"", ""latitude"": -26.0, ""longitude"": 140.0}"
+qwen/qwen3.5-27b,no-CoT,-34.6208,138.5447,16906.602,AU,True,,stop,0.00024856,586,37,0,2.75,"```json
+{""country"": ""AU"", ""latitude"": -34.6208, ""longitude"": 138.5447}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,-31.7845,140.2312,17019.356,AU,True,,stop,0.00011404,586,32,0,1.03,"{""country"": ""AU"", ""latitude"": -31.7845, ""longitude"": 140.2312}"
+moonshotai/kimi-k2.6,CoT,-35.5,139.8,17027.807,AU,True,,stop,0.011766996,834,3358,3306,81.03,"{""reasoning"": ""Eucalyptus trees, red soil and dry climate indicate Australia. Road markings and left-hand traffic confirm rural South Australia."", ""country"": ""AU"", ""latitude"": -35.5, ""longitude"": 139.8}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-35.73380661010742,142.20945739746094,17246.458,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-36.33453369140625,142.8445587158203,17304.22,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-42.27737045288086,148.04379272460938,17637.498,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.69,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.51,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,24.57,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.19,

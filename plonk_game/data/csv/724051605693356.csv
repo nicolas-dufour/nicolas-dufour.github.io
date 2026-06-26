@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.19790326886023,16.367040036868676,0.0,BA,True,,,,,,,,"Bosansko Grahovo, None, Federation of Bosnia and Herzegovina, BA"
+google/gemini-3.5-flash,no-CoT (effort=minimal),44.341254,15.812451,46.947,HR,True,,stop,0.0021885,1225,39,0,1.53,"```json
+{""country"": ""HR"", ""latitude"": 44.341254, ""longitude"": 15.812451}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,44.674888610839844,16.1785888671875,55.108,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),44.4281,15.7345,56.462,HR,True,,stop,0.0088635,1307,767,697,7.13,"```json
+{""reasoning"": ""The white bollards with black tops, high-quality asphalt, and karst mountain ridges in the background are characteristic of the Lika region in Croatia."", ""country"": ""HR"", ""latitude"": 44.4281, ""longitude"": 15.7345}
+```"
+google/gemini-3.5-flash,CoT (effort=high),44.428,15.715,57.845,HR,True,,stop,0.0126075,1307,1183,1115,14.89,"{""reasoning"": ""The pristine asphalt road with white edge lines, distinctive white bollards with black tops, and the karst mountain range in the background strongly point to the Lika region of Croatia."", ""country"": ""HR"", ""latitude"": 44.428, ""longitude"": 15.715}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,44.78558349609375,16.093482971191406,68.855,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,44.79275131225586,16.08820152282715,69.744,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),44.6251,15.5124,82.853,HR,True,,stop,0.0041835,1307,247,178,10.0,"{""reasoning"": ""The white bollards with black tops and red reflectors, combined with the rolling karst-like hills and distant mountains, are highly characteristic of the Lika region in Croatia."", ""country"": ""HR"", ""latitude"": 44.6251, ""longitude"": 15.5124}"
+openai/gpt-5.5,no-CoT,44.1287,17.9134,123.586,BA,True,,stop,0.00408,678,23,0,2.37,"{""country"":""BA"",""latitude"":44.1287,""longitude"":17.9134}"
+anthropic/claude-opus-4.8,no-CoT,43.85,18.05,140.008,BA,True,,stop,0.00484,818,30,0,2.23,"{""country"": ""BA"", ""latitude"": 43.85, ""longitude"": 18.05}"
+anthropic/claude-opus-4.8,CoT,43.85,18.2,151.57,BA,True,,stop,0.007245,949,100,0,10.22,"{""reasoning"": ""Balkan-style rolling pastureland with white roadside delineator posts with red reflectors, dry summer grass and distant hills typical of Bosnia/Serbia/Montenegro region."", ""country"": ""BA"", ""latitude"": 43.85, ""longitude"": 18.2}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,45.81756591796875,15.139713287353516,204.31,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,45.99827575683594,15.424948692321777,213.408,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,46.0,14.5,248.236,SI,True,,stop,0.0013665,786,25,0,1.07,"{""country"": ""SI"", ""latitude"": 46.0, ""longitude"": 14.5}"
+google/gemini-3.1-pro-preview,no-CoT,43.1523,19.1234,250.297,ME,True,,stop,0.005702,1225,271,236,11.49,"```json
+{""country"": ""ME"", ""latitude"": 43.1523, ""longitude"": 19.1234}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,46.0569,14.5057,253.07,SI,True,,stop,0.0001668,586,31,0,2.66,"{""country"": ""SI"", ""latitude"": 46.0569, ""longitude"": 14.5057}"
+google/gemini-3.1-pro-preview,CoT,42.95,19.1,260.222,ME,True,,stop,0.00733,1307,393,308,7.36,"{
+  ""reasoning"": ""The white bollards with a black band and the solid white road lines are characteristic of the Balkans, particularly Montenegro or Serbia. The hilly, green landscape with distant rugged mountains strongly suggests the Dinaric Alps region in Montenegro."",
+  ""country"": ""ME"",
+  ""latitude"": 42.95,
+  ""longitude"": 19.1
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,46.537967681884766,14.961071014404297,282.422,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,43.7895,20.0553,298.492,RS,True,,stop,0.015055,755,376,284,50.82,"{""reasoning"":""Rural Balkan road with right-hand traffic, white edge/center markings and the distinctive black-topped white delineator posts common in former Yugoslavia; rolling green hills and distant mountains fit western/central Serbia. Lack of EU-style signage/road furniture and the landscape point more to Serbia than Slovenia/Croatia."",""country"":""RS"",""latitude"":43.7895,""longitude"":20.0553}"
+qwen/qwen3.5-122b-a10b,no-CoT,47.15,15.45,335.895,AT,True,,stop,0.00020852,586,27,0,13.39,"{""country"": ""AT"", ""latitude"": 47.15, ""longitude"": 15.45}"
+moonshotai/kimi-k2.6,CoT,43.6247,20.8123,361.705,RS,True,,stop,0.021132936,834,6098,6019,202.06,"{""reasoning"": ""Rigid white road-edge markers with black caps and small red reflectors are classic ex-Yugoslav delineators, and the rolling green hills with a lone lattice pylon on a grassy summit fit the rural magistral roads of central Serbia."", ""country"": ""RS"", ""latitude"": 43.6247, ""longitude"": 20.8123}"
+qwen/qwen3.5-35b-a3b,no-CoT,44.4938,11.6423,377.092,IT,True,,stop,0.00011304,586,31,0,3.34,"{""country"": ""IT"", ""latitude"": 44.4938, ""longitude"": 11.6423}"
+qwen/qwen3.6-27b,no-CoT,45.4654,11.8768,381.039,IT,True,,stop,0.0002279,585,31,0,20.16,"{""country"": ""IT"", ""latitude"": 45.4654, ""longitude"": 11.8768}"
+qwen/qwen3.5-9b,no-CoT,45.4236,11.8553,381.048,IT,True,,stop,6.325e-05,586,31,0,9.14,"{""country"": ""IT"", ""latitude"": 45.4236, ""longitude"": 11.8553}"
+x-ai/grok-4.3,no-CoT,43.85,11.35,402.933,IT,True,,stop,0.0007334,704,22,0,0.85,"{""country"": ""IT"", ""latitude"": 43.85, ""longitude"": 11.35}"
+x-ai/grok-4.3,CoT,44.35,11.05,423.588,IT,True,,stop,0.0023265,788,671,594,4.76,"{""reasoning"": ""Right-hand traffic, EU-style edge/center road markings + reflective verge posts, rolling agricultural hills with rapeseed/wheat fields, distant transmission tower and low mountains all point to central/southern Europe; landscape and vegetation most consistent with northern Italy."", ""country"": ""IT"", ""latitude"": 44.35, ""longitude"": 11.05}"
+qwen/qwen3.5-27b,no-CoT,47.8342,13.0519,478.456,AT,True,,stop,0.00022491,585,31,0,1.42,"{""country"": ""AT"", ""latitude"": 47.8342, ""longitude"": 13.0519}"
+minimax/minimax-m3,CoT,42.7,23.2,575.993,BG,True,,stop,0.00087666,995,533,466,18.91,"{""reasoning"": ""European-style white roadside delineator posts, right-hand driving, temperate continental climate with rolling green hills and distant mountains suggest the Balkan region, most likely rural Bulgaria given road design and vegetation."", ""country"": ""BG"", ""latitude"": 42.7, ""longitude"": 23.2}"
+google/gemma-4-31b-it,no-CoT,42.65,25.12,727.144,BG,True,,stop,6.188e-05,404,32,0,4.02,"```json
+{""country"": ""BG"", ""latitude"": 42.65, ""longitude"": 25.12}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,45.764,5.95,836.979,FR,True,,stop,0.0003847,585,30,0,2.23,"{""country"": ""FR"", ""latitude"": 45.7640, ""longitude"": 5.9500}"
+xiaomi/mimo-v2.5,no-CoT,45.75,4.85,921.392,FR,True,,stop,9.57376e-05,820,26,0,1.0,"{""country"": ""FR"", ""latitude"": 45.75, ""longitude"": 4.85}"
+google/gemma-4-26b-a4b-it,no-CoT,52.2297,21.0122,956.62,PL,True,,stop,5.868e-05,404,41,0,2.05,"
+
+ ownthought
+```json
+{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}
+```"
+xiaomi/mimo-v2.5,CoT,45.53,2.81,1077.365,FR,True,,stop,0.0002557576,899,558,467,6.9,"```json
+{""reasoning"": ""The road markings, specifically the white bollards with red/white reflectors and the dashed center line, are characteristic of rural roads in France. The landscape features rolling green hills, hayfields, and a mix of forests typical of regions like the Massif Central."", ""country"": ""FR"", ""latitude"": 45.53, ""longitude"": 2.81}
+```"
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,1188.338,FR,True,,stop,0.0001359,786,30,0,2.07,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.52,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,21.93,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.32,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.56,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.37,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.91,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.29,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.38,

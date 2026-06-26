@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,0.1710996877425,32.913092872837,0.0,UG,True,,,,,,,,"Buikwe, Buikwe District, Central Region, UG"
+anthropic/claude-opus-4.8,no-CoT,0.3476,32.5825,41.671,UG,True,,stop,0.00489,818,32,0,3.04,"{""country"": ""UG"", ""latitude"": 0.3476, ""longitude"": 32.5825}"
+google/gemini-3.1-pro-preview,no-CoT,0.3476,32.5825,41.671,UG,True,,stop,0.002858,1225,34,0,9.59,"```json
+{""country"": ""UG"", ""latitude"": 0.3476, ""longitude"": 32.5825}
+```"
+xiaomi/mimo-v2.5,no-CoT,0.3476,32.5825,41.671,UG,True,,stop,9.68576e-05,820,30,0,2.12,"{""country"": ""UG"", ""latitude"": 0.3476, ""longitude"": 32.5825}"
+x-ai/grok-4.3,no-CoT,0.35,32.55,45.008,UG,True,,stop,0.0007334,704,22,0,1.1,"{""country"": ""UG"", ""latitude"": 0.35, ""longitude"": 32.55}"
+openai/gpt-5.5,CoT,0.476,32.632,46.112,UG,True,,stop,0.011665,755,263,186,13.92,"{""reasoning"":""The red laterite dirt road bordered by dense humid equatorial vegetation and small-scale rural track appearance is most typical of inland East Africa, especially Uganda. Lack of road markings or signage leaves uncertainty, but the lush lowland setting fits rural central Uganda best."",""country"":""UG"",""latitude"":0.476,""longitude"":32.632}"
+xiaomi/mimo-v2.5,CoT,0.25,32.5,46.764,UG,True,,stop,0.0003506776,899,897,837,10.34,"{""reasoning"": ""The red laterite soil road and lush tropical vegetation with eucalyptus trees are characteristic of rural East Africa, specifically central Uganda."", ""country"": ""UG"", ""latitude"": 0.25, ""longitude"": 32.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),0.4285,32.5124,52.956,UG,True,,stop,0.0021435,1225,34,0,7.87,"```json
+{""country"": ""UG"", ""latitude"": 0.4285, ""longitude"": 32.5124}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),0.5833,32.5833,58.699,UG,True,,stop,0.0101595,1307,911,843,8.43,"{""reasoning"": ""The image shows a lush tropical environment with highly characteristic reddish-clay soil and a mix of broadleaf vegetation and pine plantations, strongly indicative of East Africa, particularly Uganda."", ""country"": ""UG"", ""latitude"": 0.5833, ""longitude"": 32.5833}"
+moonshotai/kimi-k2.6,CoT,0.5,32.5,58.714,UG,True,,stop,0.008505216,834,2403,2345,53.95,"{""reasoning"": ""The bright red laterite murram road and lush tropical savanna vegetation with tall grasses are characteristic of rural equatorial East Africa, particularly Uganda."", ""country"": ""UG"", ""latitude"": 0.5, ""longitude"": 32.5}"
+anthropic/claude-opus-4.8,CoT,0.6,32.5,66.214,UG,True,,stop,0.00712,949,95,0,9.23,"{""reasoning"": ""Red lateritic dirt road, lush tropical vegetation, and a person with cattle suggest rural sub-Saharan Africa, consistent with Uganda's countryside."", ""country"": ""UG"", ""latitude"": 0.6, ""longitude"": 32.5}"
+google/gemini-3.1-pro-preview,CoT,0.5132,32.2154,86.403,UG,True,,stop,0.005914,1307,275,186,4.75,"{
+  ""reasoning"": ""The vibrant red soil and lush, dense green vegetation are highly characteristic of East Africa, particularly Uganda. The mix of broadleaf plants and pine-like trees along a rural dirt road further supports a location in the Ugandan countryside."",
+  ""country"": ""UG"",
+  ""latitude"": 0.5132,
+  ""longitude"": 32.2154
+}"
+openai/gpt-5.5,no-CoT,0.4476,32.0432,101.495,UG,True,,stop,0.00408,678,23,0,2.38,"{""country"":""UG"",""latitude"":0.4476,""longitude"":32.0432}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,1.8771852254867554,32.1104736328125,209.645,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,1.8951135873794556,32.143680572509766,209.919,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-0.42,36.95,453.667,KE,True,,stop,0.0155505,1307,1510,1443,12.05,"{""reasoning"": ""The bright red clay road, lush tropical vegetation, and presence of pine trees on the hillside are highly characteristic of the highland regions of East Africa, such as the area around Mount Kenya."", ""country"": ""KE"", ""latitude"": -0.42, ""longitude"": 36.95}"
+x-ai/grok-4.3,CoT,-1.35,36.85,469.269,KE,True,,stop,0.002059,788,564,502,6.04,"{""reasoning"": ""Red dirt road + plantain/banana foliage + lush tropical roadside vegetation + rural cart/pedestrian scene point to East African highlands; Kenya is the single best match."", ""country"": ""KE"", ""latitude"": -1.35, ""longitude"": 36.85}"
+qwen/qwen3.5-27b,no-CoT,-0.0236,37.9062,555.629,KE,True,,stop,0.000160875,585,30,0,7.22,"{""country"": ""KE"", ""latitude"": -0.0236, ""longitude"": 37.9062}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,8.392242431640625,39.50163269042969,1169.813,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,-18.521,32.878,2078.47,MZ,True,,stop,0.0002239,585,29,0,8.07,"{""country"": ""MZ"", ""latitude"": -18.521, ""longitude"": 32.878}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3659.813,,True,True,,,,,,6.84,
+minimax/minimax-m3,CoT,6.5,-5.5,4319.329,CI,True,,stop,0.00085026,995,511,414,8.39,"{""reasoning"": ""Distinctive red laterite soil on the unpaved road combined with lush tropical vegetation including what appears to be cassava plants on the right strongly indicates rural West Africa, most likely Côte d'Ivoire or Ghana. The flat terrain, dense green vegetation, and lateritic road are characteristic of the forest-savanna transition zone in this region."", ""country"": ""CI"", ""latitude"": 6.5, ""longitude"": -5.5}"
+qwen/qwen3.5-9b,no-CoT,13.7563,100.5018,7585.845,TH,True,,stop,6.34e-05,586,32,0,3.66,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.6-35b-a3b,no-CoT,14.35,100.55,7597.386,TH,True,,stop,0.00018125,585,28,0,4.36,"{""country"": ""TH"", ""latitude"": 14.35, ""longitude"": 100.55}"
+qwen/qwen3.5-35b-a3b,no-CoT,-23.4567,-46.789,8965.683,BR,True,,stop,0.00018255,585,30,0,7.98,"{""country"": ""BR"", ""latitude"": -23.4567, ""longitude"": -46.789}"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7942,-47.8822,9028.231,BR,True,,stop,0.000301175,585,31,0,4.92,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}"
+mistralai/mistral-medium-3-5,no-CoT,-15.7801,-47.9292,9033.181,BR,True,,stop,0.0014115,786,31,0,7.44,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-21.48630142211914,-48.20949172973633,9096.562,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-22.082807540893555,-49.86065673828125,9270.451,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-22.246788024902344,-50.77081298828125,9364.938,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-26.6254,-54.1235,9721.534,AR,True,,stop,0.004221,1308,251,186,9.0,"{""reasoning"": ""The vibrant red laterite soil combined with a mix of subtropical broadleaf vegetation and pine plantations is highly characteristic of the Misiones Province in northeastern Argentina."", ""country"": ""AR"", ""latitude"": -26.6254, ""longitude"": -54.1235}"
+qwen/qwen3.5-122b-a10b,no-CoT,-12.2861,-54.9592,9780.426,BR,True,,stop,0.00021684,586,31,0,6.49,"{""country"": ""BR"", ""latitude"": -12.2861, ""longitude"": -54.9592}"
+google/gemma-4-31b-it,no-CoT,-12.5,-55.8,9871.958,BR,True,,stop,6.108e-05,404,30,0,4.42,"```json
+{""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -55.8}
+```"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,15101.843,US,True,,stop,0.0001371,786,32,0,1.02,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,24.9,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,13.3,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.51,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.2,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.64,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.77,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.11,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.45,

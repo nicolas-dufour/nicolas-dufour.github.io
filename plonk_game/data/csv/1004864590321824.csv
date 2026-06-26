@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,41.75998147605,35.217464645352,0.0,TR,True,,,,,,,,"Gerze, None, Sinop, TR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.82666015625,35.03461456298828,16.875,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,41.89590072631836,34.961971282958984,26.011,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.898277282714844,34.956241607666016,26.55,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),41.9425,34.9512,29.971,TR,True,,stop,0.006174,1272,474,399,10.27,"{""reasoning"": ""The coastal highway with a mortared stone retaining wall, pine-covered hills, and sea on the left is highly characteristic of the D.010 highway along Turkey's Black Sea coast."", ""country"": ""TR"", ""latitude"": 41.9425, ""longitude"": 34.9512}"
+google/gemini-3.1-pro-preview,no-CoT,41.0205,38.5211,287.576,TR,True,,stop,0.002798,1189,35,0,9.11,"```json
+{""country"": ""TR"", ""latitude"": 41.0205, ""longitude"": 38.5211}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.0125,38.8125,311.196,TR,True,,stop,0.0021,1190,35,0,7.4,"```json
+{""country"": ""TR"", ""latitude"": 41.0125, ""longitude"": 38.8125}
+```"
+google/gemini-3.1-pro-preview,CoT,41.015,38.825,312.122,TR,True,,stop,0.007822,1271,440,355,6.96,"{
+  ""reasoning"": ""The coastal highway with the sea on the left (driving east), steep pine-forested hills, and stone retaining walls are highly characteristic of the D010 highway along Turkey's Black Sea coast."",
+  ""country"": ""TR"",
+  ""latitude"": 41.015,
+  ""longitude"": 38.825
+}"
+moonshotai/kimi-k2.6,CoT,41.0,40.8,473.288,TR,True,,stop,0.011682855,681,3123,3394,141.99,"{""reasoning"": ""Coastal highway with right-hand traffic, metal guardrail over a steep sea drop, mortared stone retaining wall, and dense Pontic pine forest on the mountainside are characteristic of Turkey's eastern Black Sea coast."", ""country"": ""TR"", ""latitude"": 41.0, ""longitude"": 40.8}"
+google/gemma-4-31b-it,no-CoT,40.75,29.15,519.369,TR,True,,stop,6.558e-05,406,32,0,9.5,"```json
+{""country"": ""TR"", ""latitude"": 40.75, ""longitude"": 29.15}
+```"
+mistralai/mistral-medium-3-5,no-CoT,41.0082,28.9784,527.065,TR,True,,stop,0.0011835,634,31,0,1.09,"{""country"": ""TR"", ""latitude"": 41.0082, ""longitude"": 28.9784}"
+google/gemini-3.5-flash,CoT (effort=medium),36.145,33.12,650.107,TR,True,,stop,0.0143445,1271,1382,1283,18.94,"```json
+{""reasoning"": ""The image shows a high-quality dual-carriageway coastal highway with the sea on the left and steep, pine-covered slopes on the right. The stone retaining wall, curb style, and guardrails are highly characteristic of Turkish state highways, specifically the D400 along the Mediterranean coast."", ""country"": ""TR"", ""latitude"": 36.145, ""longitude"": 33.12}
+```"
+google/gemini-3.5-flash,CoT (effort=high),36.2152,32.3354,664.858,TR,True,,stop,0.0186105,1271,1856,1771,21.89,"{""reasoning"": ""The wide asphalt road with distinct Turkish-style concrete curbs, a stone-masonry retaining wall, and Mediterranean pine trees next to the sea indicates the D400 coastal highway in southern Turkey, driving west with the Mediterranean Sea on the left."", ""country"": ""TR"", ""latitude"": 36.2152, ""longitude"": 32.3354}"
+openai/gpt-5.5,CoT,36.7475,30.5708,685.848,TR,True,,stop,0.018585,621,516,420,17.99,"{""reasoning"":""Mediterranean coastal dual carriageway with right-hand traffic, Turkish-style guardrails/curbs and stone retaining walls, plus pine-covered Taurus mountains beside the sea point strongly to the D400 near Antalya/Kemer. The sea on the left and steep forested slopes on the right fit the Antalya–Kemer coastal road in southern Turkey."",""country"":""TR"",""latitude"":36.7475,""longitude"":30.5708}"
+openai/gpt-5.5,no-CoT,36.2245,29.8426,770.765,TR,True,,stop,0.00341,544,23,0,1.78,"{""country"":""TR"",""latitude"":36.2245,""longitude"":29.8426}"
+anthropic/claude-opus-4.8,CoT,36.65,29.12,773.452,TR,True,,stop,0.00641,797,97,0,21.08,"{""reasoning"": ""Coastal mountain highway with stone retaining walls, pine forest, and Mediterranean terrain typical of southern Turkey's Aegean/Mediterranean coast roads."", ""country"": ""TR"", ""latitude"": 36.65, ""longitude"": 29.12}"
+anthropic/claude-opus-4.8,no-CoT,36.6,29.1,778.828,TR,True,,stop,0.00408,666,30,0,2.25,"{""country"": ""TR"", ""latitude"": 36.6, ""longitude"": 29.1}"
+qwen/qwen3.5-122b-a10b,no-CoT,38.2654,21.7345,1210.67,GR,True,,stop,0.0002884,473,31,0,8.27,"{""country"": ""GR"", ""latitude"": 38.2654, ""longitude"": 21.7345}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,42.25648880004883,19.016239166259766,1337.718,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,42.34632873535156,18.93442726135254,1343.931,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,42.455204010009766,18.447465896606445,1383.328,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,42.6403,18.1103,1410.159,HR,True,,stop,0.00010617035,473,31,0,8.08,"{""country"": ""HR"", ""latitude"": 42.6403, ""longitude"": 18.1103}"
+qwen/qwen3.5-397b-a17b,no-CoT,42.6507,18.0944,1411.422,HR,True,,stop,0.0003322,473,31,0,1.98,"{""country"": ""HR"", ""latitude"": 42.6507, ""longitude"": 18.0944}"
+qwen/qwen3.5-9b,no-CoT,43.4222,17.9395,1423.815,HR,True,,stop,8.816e-05,473,31,0,1.68,"{""country"": ""HR"", ""latitude"": 43.4222, ""longitude"": 17.9395}"
+xiaomi/mimo-v2.5,no-CoT,43.2085,17.0535,1495.186,HR,True,,stop,8.14576e-05,708,31,0,1.29,"{""country"": ""HR"", ""latitude"": 43.2085, ""longitude"": 17.0535}"
+minimax/minimax-m3,CoT,43.37,16.95,1503.645,HR,True,,stop,0.00067026,843,399,323,13.17,"{""reasoning"": ""Driving on the right side, coastal highway with stone retaining walls, Mediterranean pine vegetation, white rock cliffs, and guardrail style strongly indicate the Adriatic coastal road (Jadranska magistrala) in Croatia's Dalmatian region."", ""country"": ""HR"", ""latitude"": 43.37, ""longitude"": 16.95}"
+x-ai/grok-4.3,CoT,43.29,16.88,1509.249,HR,True,,stop,0.001854,676,538,459,4.36,"{
+  ""reasoning"": ""Right-hand driving (inferred from road layout), Mediterranean pines, dry-stone retaining walls, and coastal highway with sea immediately left of the guardrail point to the Adriatic coast; blue rectangular sign in distance is consistent with Croatian signage."",
+  ""country"": ""HR"",
+  ""latitude"": 43.29,
+  ""longitude"": 16.88
+}"
+qwen/qwen3.5-27b,no-CoT,44.1725,15.5683,1617.122,HR,True,,stop,0.00023764,474,44,0,1.8,"```json
+{
+  ""country"": ""HR"",
+  ""latitude"": 44.1725,
+  ""longitude"": 15.5683
+}
+```"
+xiaomi/mimo-v2.5,CoT,39.2,16.2,1629.96,IT,True,,stop,0.0006068776,787,1868,1818,20.55,"{""reasoning"": ""Right-hand traffic and Mediterranean coastal landscape with stone retaining wall suggest Southern Europe, likely Italy."", ""country"": ""IT"", ""latitude"": 39.2, ""longitude"": 16.2}"
+qwen/qwen3.6-27b,no-CoT,44.0817,14.9253,1668.004,HR,True,,stop,0.0001943,473,31,0,16.72,"{""country"": ""HR"", ""latitude"": 44.0817, ""longitude"": 14.9253}"
+x-ai/grok-4.3,no-CoT,44.85,14.85,1678.792,HR,True,,stop,0.0005934,592,22,0,7.12,"{""country"": ""HR"", ""latitude"": 44.85, ""longitude"": 14.85}"
+qwen/qwen3.5-35b-a3b,no-CoT,30.1589,120.8347,7497.321,CN,True,,stop,9.836e-05,474,32,0,1.5,"{""country"": ""CN"", ""latitude"": 30.1589, ""longitude"": 120.8347}"
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,10087.273,US,True,,stop,0.0001137,634,31,0,8.83,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.66,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,15.37,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,7.57,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.28,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,18.77,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.37,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.37,

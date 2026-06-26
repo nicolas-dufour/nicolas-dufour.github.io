@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,13.450500211851,39.474563195375,0.0,ET,True,,,,,,,,"Mekele, None, Tigray, ET"
+google/gemini-3.5-flash,no-CoT (effort=minimal),13.4961,39.4748,5.071,ET,True,,stop,0.002136,1214,35,0,1.57,"```json
+{""country"": ""ET"", ""latitude"": 13.4961, ""longitude"": 39.4748}
+```"
+anthropic/claude-opus-4.8,CoT,9.6,38.7,436.39,ET,True,,stop,0.005515,683,84,0,2.78,"{""reasoning"": ""Dry highland plateau with eucalyptus trees, golden harvested fields, and a wide rural road suggest Ethiopian highlands."", ""country"": ""ET"", ""latitude"": 9.6, ""longitude"": 38.7}"
+anthropic/claude-opus-4.8,no-CoT,9.6,38.7,436.39,ET,True,,stop,0.00351,552,30,0,17.42,"{""country"": ""ET"", ""latitude"": 9.6, ""longitude"": 38.7}"
+google/gemini-3.5-flash,CoT (effort=medium),9.3542,38.7812,461.712,ET,True,,stop,0.005877,1296,437,377,10.64,"{""reasoning"": ""The arid highland landscape with eucalyptus trees, golden soil, and modern asphalt road with concrete curbs is highly characteristic of the Ethiopian Highlands."", ""country"": ""ET"", ""latitude"": 9.3542, ""longitude"": 38.7812}"
+google/gemini-3.5-flash,CoT (effort=low),9.2543,38.8125,472.143,ET,True,,stop,0.0034935,1297,172,106,8.67,"{""reasoning"": ""The combination of eucalyptus trees, dry golden fields, high-altitude plateau landscape, and specific road construction style with concrete curbs is highly characteristic of the Ethiopian Highlands."", ""country"": ""ET"", ""latitude"": 9.2543, ""longitude"": 38.8125}"
+xiaomi/mimo-v2.5,CoT,31.253,34.7915,2036.594,IL,True,,stop,0.0001546776,707,293,216,3.94,"{
+  ""reasoning"": ""Eucalyptus trees and arid flat fields are typical of the Negev region in Israel, with right-hand traffic and road markings consistent with Israeli infrastructure."",
+  ""country"": ""IL"",
+  ""latitude"": 31.253,
+  ""longitude"": 34.7915
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,31.4567,34.8901,2056.201,IL,True,,stop,0.00031668,393,31,0,4.24,"{""country"": ""IL"", ""latitude"": 31.4567, ""longitude"": 34.8901}"
+qwen/qwen3.5-397b-a17b,CoT,31.56,34.85,2068.269,IL,True,,stop,0.013887,473,3792,3704,33.73,"{""reasoning"": ""The dry yellow loess soil, Eucalyptus trees, and distinct low concrete curbs at the junction are characteristic of the Lachish region in Israel. The clear sky and harsh lighting further support a semi-arid Mediterranean climate typical of this area."", ""country"": ""IL"", ""latitude"": 31.56, ""longitude"": 34.85}"
+x-ai/grok-4.3,CoT,31.65,34.78,2079.604,IL,True,,stop,0.0017615,580,549,469,5.66,"{""reasoning"": ""Arid agricultural landscape with golden stubble fields, scattered eucalyptus-style trees, distant low hills, and typical Israeli-style asphalt road with concrete edge barriers points to the northern Negev or southern coastal plain; right-hand traffic and Hebrew road infrastructure implied by regional context."", ""country"": ""IL"", ""latitude"": 31.65, ""longitude"": 34.78}"
+qwen/qwen3.6-27b,no-CoT,31.7683,35.2855,2081.161,IL,True,,stop,0.0001703,393,31,0,11.27,"{""country"": ""IL"", ""latitude"": 31.7683, ""longitude"": 35.2855}"
+qwen/qwen3.5-27b,no-CoT,31.7683,35.2137,2082.676,IL,True,,stop,0.0001827,393,31,0,17.34,"{""country"": ""IL"", ""latitude"": 31.7683, ""longitude"": 35.2137}"
+xiaomi/mimo-v2.5,no-CoT,31.78,34.78,2093.61,IL,True,,stop,6.91376e-05,628,27,0,3.4,"{""country"": ""IL"", ""latitude"": 31.78, ""longitude"": 34.78}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,36.52336120605469,10.329524993896484,3870.667,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,36.505714416503906,10.241412162780762,3876.113,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,36.5351448059082,10.26552963256836,3876.144,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,36.2806,9.9874,3881.253,TN,True,,stop,0.01516,506,421,340,12.62,"{""reasoning"":""Dry Mediterranean/North African farmland with eucalyptus windbreaks, right-hand driving and pale concrete curbs on a wide rural road point most strongly to Tunisia. The rolling semi-arid landscape resembles the Zaghouan/Siliana interior rather than coastal Morocco or Algeria."",""country"":""TN"",""latitude"":36.2806,""longitude"":9.9874}"
+google/gemini-3.5-flash,CoT (effort=high),36.15,4.85,4272.337,DZ,True,,stop,0.011448,1296,1056,978,14.97,"```json
+{""reasoning"": ""The dry, golden agricultural landscape with scattered eucalyptus trees and rolling hills is highly characteristic of the high plains of North Africa. The road infrastructure, featuring concrete curbs and worn white lane markings, points specifically to inland Algeria."", ""country"": ""DZ"", ""latitude"": 36.15, ""longitude"": 4.85}
+```"
+moonshotai/kimi-k2.6,no-CoT,35.5,1.2,4539.953,DZ,True,,stop,0.00056055,489,24,0,12.98," {""country"": ""DZ"", ""latitude"": 35.5, ""longitude"": 1.2}"
+google/gemini-3.1-pro-preview,no-CoT,-26.2041,28.0473,4579.367,ZA,True,,stop,0.002848,1214,35,0,9.62,"```json
+{""country"": ""ZA"", ""latitude"": -26.2041, ""longitude"": 28.0473}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4597.461,,True,True,,,,,,12.76,
+moonshotai/kimi-k2.6,CoT,-27.5,27.0,4748.067,ZA,True,,stop,0.018351252,568,5314,5255,246.11,"{""reasoning"": ""Arid golden grassland with eucalyptus windbreaks and a divided rural highway with concrete median barrier matches the South African Highveld in winter."", ""country"": ""ZA"", ""latitude"": -27.5, ""longitude"": 27.0}"
+google/gemini-3.1-pro-preview,CoT,-29.1,26.2,4941.58,ZA,True,,stop,0.00876,1296,514,443,14.65,"{
+  ""reasoning"": ""The dry, golden landscape, eucalyptus trees, and road markings with a white center line are characteristic of the South African highveld or similar semi-arid regions."",
+  ""country"": ""ZA"",
+  ""latitude"": -29.1,
+  ""longitude"": 26.2
+}"
+mistralai/mistral-medium-3-5,no-CoT,37.1882,-3.6067,5009.237,ES,True,,stop,0.001005,520,30,0,1.16,"{""country"": ""ES"", ""latitude"": 37.1882, ""longitude"": -3.6067}"
+minimax/minimax-m3,no-CoT,32.5,-6.0,5066.014,MA,True,,stop,0.00044742,653,258,310,5.47,"{""country"": ""MA"", ""latitude"": 32.5, ""longitude"": -6.0}"
+x-ai/grok-4.3,no-CoT,31.7917,-7.0926,5148.41,MA,True,,stop,0.0004784,496,24,0,0.55,"{""country"": ""MA"", ""latitude"": 31.7917, ""longitude"": -7.0926}"
+openai/gpt-5.5,no-CoT,33.9776,-6.8644,5184.176,MA,True,,stop,0.002865,429,24,0,1.4,"{""country"":""MA"",""latitude"":33.9776,""longitude"":-6.8644}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,45.82726287841797,79.4514389038086,5189.753,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,37.3886,-5.9953,5216.086,ES,True,,stop,0.0002091,393,38,0,8.67,"{
+  ""country"": ""ES"",
+  ""latitude"": 37.3886,
+  ""longitude"": -5.9953
+}"
+google/gemma-4-31b-it,no-CoT,33.5731,-7.5898,5238.272,MA,True,,stop,0.00010938,406,34,0,3.0,"```json
+{""country"": ""MA"", ""latitude"": 33.5731, ""longitude"": -7.5898}
+```"
+qwen/qwen3.5-9b,no-CoT,33.4256,-7.9842,5270.041,MA,True,,stop,4.39e-05,394,30,0,9.79,"{""country"": ""MA"", ""latitude"": 33.4256, ""longitude"": -7.9842}"
+qwen/qwen3.5-35b-a3b,no-CoT,-33.9249,18.4241,5719.852,ZA,True,,stop,0.000144225,393,31,0,1.32,"{""country"": ""ZA"", ""latitude"": -33.9249, ""longitude"": 18.4241}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,42.94510269165039,94.23667907714844,6149.412,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,34.142826080322266,99.23574829101562,6404.098,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-34.2,139.1,11717.88,AU,True,,stop,0.00075126,729,495,427,13.3,"{""reasoning"": ""Eucalyptus trees, arid rolling terrain with cleared agricultural land, white road curbing style, and dusty soil are highly characteristic of rural South Australia (Mid North or Murray Mallee region)."", ""country"": ""AU"", ""latitude"": -34.2, ""longitude"": 139.1}"
+qwen/qwen3.6-35b-a3b,no-CoT,-34.25,146.75,12419.79,AU,True,,stop,0.00395588245,391,4033,3999,17.17,"{""country"": ""AU"", ""latitude"": -34.25, ""longitude"": 146.75}"
+mistralai/mistral-small-2603,no-CoT,38.5,-121.5,13908.606,US,True,,stop,9.36e-05,520,26,0,1.95,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -121.5}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.32,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.79,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.55,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.94,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.23,

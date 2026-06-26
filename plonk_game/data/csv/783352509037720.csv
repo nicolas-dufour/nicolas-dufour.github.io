@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.184738484827,-93.500973676894,0.0,US,True,,,,,,,,"Republic, Greene County, Missouri, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,37.284366607666016,-93.36700439453125,16.229,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,37.28695297241211,-93.35943603515625,16.917,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.03436279296875,-93.70271301269531,24.487,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,39.0,-94.5,219.964,US,True,,stop,0.00080925,755,23,0,1.21," {""country"": ""US"", ""latitude"": 39.0, ""longitude"": -94.5}"
+x-ai/grok-4.3,CoT,38.95,-92.35,220.633,US,True,,stop,0.002554,788,762,690,8.91,"{""reasoning"": ""Right-hand traffic with US-style yellow edge line + white dashed lane markers; Nissan Rogue (NA-market badge) with NA-spec white rear plate; divided multi-lane highway with green signage and rolling wooded hills typical of US interstate."", ""country"": ""US"", ""latitude"": 38.95, ""longitude"": -92.35}"
+google/gemini-3.1-pro-preview,no-CoT,38.9517,-92.3341,221.439,US,True,,stop,0.00287,1225,35,0,8.93,"```json
+{""country"": ""US"", ""latitude"": 38.9517, ""longitude"": -92.3341}
+```"
+google/gemini-3.1-pro-preview,CoT,38.951,-92.328,221.617,US,True,,stop,0.005832,1308,268,187,20.98,"{
+  ""reasoning"": ""The yellow left edge line, dashed white lane dividers, and right-hand driving indicate a North American divided highway. The rolling green landscape and concrete road surface are typical of the US Midwest."",
+  ""country"": ""US"",
+  ""latitude"": 38.951,
+  ""longitude"": -92.328
+}"
+x-ai/grok-4.3,no-CoT,38.95,-94.72,223.416,US,True,,stop,0.0007334,704,22,0,0.83,"{""country"": ""US"", ""latitude"": 38.95, ""longitude"": -94.72}"
+anthropic/claude-opus-4.8,CoT,38.5,-85.5,717.38,US,True,,stop,0.006995,949,90,0,9.19,"{""reasoning"": ""US-style interstate with green mile marker sign, wide grassy median, rolling forested hills suggesting Midwest/Appalachian region; right-hand traffic."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -85.5}"
+anthropic/claude-opus-4.8,no-CoT,38.5,-85.0,760.371,US,True,,stop,0.004815,818,29,0,8.85,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -85.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),38.1845,-84.8921,765.389,US,True,,stop,0.002154,1226,35,0,1.42,"```json
+{""country"": ""US"", ""latitude"": 38.1845, ""longitude"": -84.8921}
+```"
+moonshotai/kimi-k2.6,CoT,37.75,-84.3,814.133,US,True,,stop,0.011711016,834,3347,3276,74.98,"{""reasoning"": ""Right-hand traffic, yellow left-edge road line, and small green highway sign on a post match U.S. Interstate standards; rolling green hills with dense eastern deciduous forest suggest the Appalachian/Ohio Valley region."", ""country"": ""US"", ""latitude"": 37.75, ""longitude"": -84.3}"
+google/gemini-3.5-flash,CoT (effort=medium),44.8812,-91.9154,866.029,US,True,,stop,0.0079455,1307,665,584,6.15,"{""reasoning"": ""The divided highway with a yellow left shoulder line, white dashed lane dividers, and a green mile marker is characteristic of a US Interstate. The rolling green hills and deciduous trees suggest a location in the Upper Midwest, such as Wisconsin."", ""country"": ""US"", ""latitude"": 44.8812, ""longitude"": -91.9154}"
+minimax/minimax-m3,no-CoT,44.015,-88.56,866.104,US,True,,stop,0.00023976,904,25,0,4.77,"{""country"": ""US"", ""latitude"": 44.0150, ""longitude"": -88.5600}"
+xiaomi/mimo-v2.5,no-CoT,33.45,-84.35,927.748,US,True,,stop,9.60176e-05,820,27,0,2.98,"{""country"": ""US"", ""latitude"": 33.45, ""longitude"": -84.35}"
+openai/gpt-5.5,no-CoT,42.7065,-84.4232,986.86,US,True,,stop,0.00411,678,24,0,1.73,"{""country"":""US"",""latitude"":42.7065,""longitude"":-84.4232}"
+google/gemini-3.5-flash,CoT (effort=low),40.4521,-82.6124,1010.014,US,True,,stop,0.003888,1308,214,131,2.59,"{""reasoning"": ""The divided highway with a yellow left shoulder line, green highway signage, and a white Nissan Rogue Sport with a North American license plate indicates the United States. The rolling green hills and deciduous vegetation are characteristic of the Midwestern US, likely Ohio."", ""country"": ""US"", ""latitude"": 40.4521, ""longitude"": -82.6124}"
+google/gemini-3.5-flash,CoT (effort=high),40.8125,-82.2854,1048.793,US,True,,stop,0.008748,1308,754,681,11.67,"{""reasoning"": ""The divided highway with a yellow left shoulder line, rolling green hills, deciduous vegetation, and a white Nissan Rogue with a North American license plate point to the Midwestern United States, likely Ohio."", ""country"": ""US"", ""latitude"": 40.8125, ""longitude"": -82.2854}"
+mistralai/mistral-medium-3-5,no-CoT,35.7804,-81.3911,1093.108,US,True,,stop,0.0014115,786,31,0,2.45,"{""country"": ""US"", ""latitude"": 35.7804, ""longitude"": -81.3911}"
+xiaomi/mimo-v2.5,CoT,35.81,-80.24,1194.18,US,True,,stop,0.0001770776,899,277,208,9.98,"{""reasoning"": ""Right-hand traffic, US-style vehicle license plates, and dense temperate deciduous forest typical of the Eastern United States (Appalachian foothill region) are decisive clues."", ""country"": ""US"", ""latitude"": 35.81, ""longitude"": -80.24}"
+qwen/qwen3.6-35b-a3b,CoT,40.4406,-80.0,1223.046,US,True,,stop,0.0054759185,665,5562,5456,39.54,"```json
+{
+  ""reasoning"": ""The solid yellow line on the left shoulder and white dashed lane dividers indicate a divided highway in North America (US or Canada). The rolling green hills, deciduous forest, and concrete road surface are characteristic of the Appalachian region or Midwest US, specifically Western Pennsylvania or Ohio."",
+  ""country"": ""US"",
+  ""latitude"": 40.4406,
+  ""longitude"": -80.0000
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,35.42443084716797,-79.31534576416016,1284.895,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,35.77768325805664,-79.00882720947266,1303.802,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,38.0982780456543,-78.21688079833984,1348.054,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,42.891234,-78.876543,1394.71,US,True,,stop,0.00011704,586,35,0,3.64,"{""country"": ""US"", ""latitude"": 42.891234, ""longitude"": -78.876543}"
+minimax/minimax-m3,CoT,41.5,-77.5,1454.635,US,True,,stop,0.00060186,995,304,233,25.31,"{""reasoning"": ""Right-hand traffic, solid yellow edge line, US-style green highway exit sign, Chevrolet Traverse (US-market vehicle), rolling hills with dense deciduous forest typical of the Appalachian region in the northeastern United States."", ""country"": ""US"", ""latitude"": 41.5, ""longitude"": -77.5}"
+qwen/qwen3.5-397b-a17b,CoT,40.5523,-76.8015,1490.908,US,True,,stop,0.0079578,665,2113,2023,147.7,"{""reasoning"": ""The solid yellow line on the left edge of the road indicates right-hand traffic, characteristic of North America. The green highway signage, white license plate, and rolling forested terrain are consistent with a rural interstate in the Northeastern United States, likely Pennsylvania."", ""country"": ""US"", ""latitude"": 40.5523, ""longitude"": -76.8015}"
+qwen/qwen3.5-9b,no-CoT,40.4406,-74.7059,1664.773,US,True,,stop,6.325e-05,586,31,0,3.24,"{""country"": ""US"", ""latitude"": 40.4406, ""longitude"": -74.7059}"
+openai/gpt-5.5,CoT,45.4568,-76.4796,1687.729,CA,True,,stop,0.021835,755,602,516,14.79,"{""reasoning"":""Right-side driving with North American freeway markings (yellow left edge, white dashed lanes) and lush rolling mixed forest strongly suggest rural eastern Canada/US; the plate/road style and terrain best fit Ontario rather than the US. I estimate a divided rural Ontario highway near the Ottawa Valley."",""country"":""CA"",""latitude"":45.4568,""longitude"":-76.4796}"
+qwen/qwen3.5-27b,no-CoT,40.7128,-74.006,1726.994,US,True,,stop,0.000160875,585,30,0,3.01,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+qwen/qwen3.5-397b-a17b,no-CoT,45.3892,-75.6981,1739.134,CA,True,,stop,0.00043188,585,31,0,2.57,"{""country"": ""CA"", ""latitude"": 45.3892, ""longitude"": -75.6981}"
+qwen/qwen3.6-27b,no-CoT,45.4215,-73.7628,1878.835,CA,True,,stop,0.0002912,586,31,0,1.18,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -73.7628}"
+qwen/qwen3.5-122b-a10b,no-CoT,42.3601,-71.0589,1995.675,US,True,,stop,0.0002499,585,31,0,8.49,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.6-35b-a3b,no-CoT,42.3601,-71.0589,1995.675,US,True,,stop,0.000185,585,31,0,7.04,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+mistralai/mistral-small-2603,no-CoT,36.7783,-119.4179,2295.334,US,True,,stop,0.0001371,786,32,0,3.24,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+google/gemma-4-31b-it,no-CoT,38.8951,-39.0082,4703.575,US,True,,stop,6.692e-05,404,36,0,11.59,"```json
+{""country"": ""US"", ""latitude"": 38.8951, ""longitude"": -39.0082}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10317.617,,True,True,,,,,,8.04,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.23,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.23,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.28,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.21,

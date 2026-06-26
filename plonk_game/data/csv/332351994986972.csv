@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,47.312023969328,-105.35196339502,0.0,US,True,,,,,,,,"Circle, McCone County, Montana, US"
+qwen/qwen3.6-27b,no-CoT,46.8721,-104.4503,83.977,US,True,,stop,0.0002299,585,32,0,8.83,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -104.4503}"
+minimax/minimax-m3,no-CoT,47.5,-106.5,88.889,US,True,,stop,0.00045,868,158,134,14.1,"{""country"": ""US"", ""latitude"": 47.5, ""longitude"": -106.5}"
+minimax/minimax-m3,CoT,47.42,-103.52,138.49,US,True,,stop,0.00104454,997,644,686,12.5,"{""reasoning"": ""The distinctive white/light-colored chalk or limestone bluffs in the distance combined with rolling prairie grassland, sparse vegetation, wide highway with yellow center stripes, and continental cumulus cloud formations are characteristic of the Northern Great Plains badlands, specifically western North Dakota's Killdeer Mountains or chalk butte area."", ""country"": ""US"", ""latitude"": 47.42, ""longitude"": -103.52}"
+google/gemini-3.5-flash,CoT (effort=low),47.1542,-103.5241,139.118,US,True,,stop,0.0039405,1307,220,149,3.1,"{""reasoning"": ""The yellow dashed center line and white edge lines indicate North America, while the rolling grasslands and distant badlands formations are characteristic of the northern Great Plains, specifically western North Dakota."", ""country"": ""US"", ""latitude"": 47.1542, ""longitude"": -103.5241}"
+google/gemini-3.5-flash,CoT (effort=medium),47.1542,-103.5241,139.118,US,True,,stop,0.0052815,1307,369,298,3.88,"{""reasoning"": ""The dashed yellow center line and solid white edge lines indicate North America, while the rolling prairie landscape with distant badlands formations is highly characteristic of western North Dakota or South Dakota."", ""country"": ""US"", ""latitude"": 47.1542, ""longitude"": -103.5241}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),47.0156,-103.5242,142.055,US,True,,stop,0.002163,1226,36,0,7.66,"```json
+{""country"": ""US"", ""latitude"": 47.0156, ""longitude"": -103.5242}
+```"
+google/gemini-3.1-pro-preview,no-CoT,46.9123,-103.5432,143.91,US,True,,stop,0.004742,1225,191,155,10.14,"```json
+{""country"": ""US"", ""latitude"": 46.9123, ""longitude"": -103.5432}
+```"
+google/gemini-3.1-pro-preview,CoT,47.0,-103.5,144.263,US,True,,stop,0.00523,1307,218,140,12.0,"{
+  ""reasoning"": ""The dashed yellow center line and solid white edge lines indicate North America. The grassy plains and distant eroded badlands formations strongly suggest the northern Great Plains, likely western North Dakota or eastern Montana."",
+  ""country"": ""US"",
+  ""latitude"": 47.0,
+  ""longitude"": -103.5
+}"
+moonshotai/kimi-k2.6,CoT,47.0,-103.5,144.263,US,True,,stop,0.008516556,834,2409,2337,52.73,"{""reasoning"": ""The straight rural US highway with yellow dashed centerline traverses flat prairie grassland toward distant light-colored sedimentary badlands buttes, a hallmark of the western Dakotas or eastern Montana under summer cumulus skies."", ""country"": ""US"", ""latitude"": 47.0, ""longitude"": -103.5}"
+moonshotai/kimi-k2.6,no-CoT,46.9143,-103.5284,144.906,US,True,,stop,0.0080436,752,1856,2149,44.58,"{""country"": ""US"", ""latitude"": 46.9143, ""longitude"": -103.5284}"
+anthropic/claude-opus-4.8,CoT,46.9,-103.5,147.458,US,True,,stop,0.007145,949,96,0,3.98,"{""reasoning"": ""Yellow center line, right-hand traffic, semi-arid grassland with badland-like buttes suggests the northern Great Plains, likely western North Dakota/eastern Montana."", ""country"": ""US"", ""latitude"": 46.9, ""longitude"": -103.5}"
+openai/gpt-5.5,CoT,47.2745,-103.3942,147.705,US,True,,stop,0.015865,755,403,305,12.51,"{""reasoning"":""The yellow centerline/white edge markings and right-side rural two-lane road indicate North America, while the open prairie with eroded badlands buttes matches the Little Missouri/Badlands region of western North Dakota. Sparse fencing, utility poles, and lush northern plains vegetation make the western ND badlands more likely than the drier Southwest."",""country"":""US"",""latitude"":47.2745,""longitude"":-103.3942}"
+google/gemini-3.5-flash,CoT (effort=high),47.5812,-103.2543,160.55,US,True,,stop,0.0087285,1307,752,678,6.56,"{""reasoning"": ""The yellow dashed center line and wide asphalt road are characteristic of North America, while the rolling grassy plains and distant badlands formations strongly point to the northern Great Plains, specifically western North Dakota."", ""country"": ""US"", ""latitude"": 47.5812, ""longitude"": -103.2543}"
+anthropic/claude-opus-4.8,no-CoT,46.2,-103.5,187.591,US,True,,stop,0.004815,818,29,0,2.32,"{""country"": ""US"", ""latitude"": 46.2, ""longitude"": -103.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,46.8523,-102.7891,200.665,US,True,,stop,0.00041295,585,32,0,15.28,"{""country"": ""US"", ""latitude"": 46.8523, ""longitude"": -102.7891}"
+xiaomi/mimo-v2.5,CoT,47.4145,-102.2548,233.534,US,True,,stop,0.0001566376,899,204,101,3.05,"{""reasoning"": ""The landscape features rolling hills with eroded formations typical of the North Dakota badlands, alongside right-hand traffic patterns on a two-lane highway with distinct yellow center lines. The wide, open prairie with sparse vegetation and the specific style of road infrastructure strongly suggest a rural highway in the Great Plains region of North America."", ""country"": ""US"", ""latitude"": 47.4145, ""longitude"": -102.2548}"
+mistralai/mistral-medium-3-5,no-CoT,46.5,-102.5,234.702,US,True,,stop,0.001374,786,26,0,0.83,"{""country"": ""US"", ""latitude"": 46.5, ""longitude"": -102.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,46.729553,-101.342262,310.742,US,True,,stop,0.00022724,586,36,0,7.3,"{""country"": ""US"", ""latitude"": 46.729553, ""longitude"": -101.342262}"
+qwen/qwen3.6-35b-a3b,no-CoT,44.428056,-103.458333,352.58,US,True,,stop,0.00019125,585,36,0,1.97,"{""country"": ""US"", ""latitude"": 44.428056, ""longitude"": -103.458333}"
+qwen/qwen3.5-27b,no-CoT,44.5333,-103.0667,355.931,US,True,,stop,0.00026936,586,45,0,4.16,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 44.5333,
+  ""longitude"": -103.0667
+}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,44.30763244628906,-103.00967407226562,380.17,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,43.9826,-103.2145,405.749,US,True,,stop,0.00011975,585,32,0,7.78,"{""country"": ""US"", ""latitude"": 43.9826, ""longitude"": -103.2145}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,44.08762741088867,-102.73372650146484,412.121,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,44.06842803955078,-102.69544982910156,415.463,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,43.7312,-103.2867,429.408,US,True,,stop,0.00411,678,24,0,2.53,"{""country"":""US"",""latitude"":43.7312,""longitude"":-103.2867}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,43.36302185058594,-105.1126480102539,439.507,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,43.85,-102.45,446.241,US,True,,stop,0.0007334,704,22,0,0.95,"{""country"": ""US"", ""latitude"": 43.85, ""longitude"": -102.45}"
+qwen/qwen3.5-9b,no-CoT,44.5566,-100.6521,475.218,US,True,,stop,6.34e-05,586,32,0,3.74,"{""country"": ""US"", ""latitude"": 44.5566, ""longitude"": -100.6521}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,42.47787857055664,-104.54216766357422,541.295,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,42.31105422973633,-104.7061538696289,558.405,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,41.15,-103.5,700.836,US,True,,stop,9.60176e-05,820,27,0,1.16,"{""country"": ""US"", ""latitude"": 41.15, ""longitude"": -103.5}"
+x-ai/grok-4.3,CoT,38.85,-101.75,985.067,US,True,,stop,0.0023165,788,667,588,5.37,"{
+  ""reasoning"": ""US-style right-hand traffic road markings (solid white edges + dashed yellow center), open shortgrass prairie with rolling hills, utility poles, and absence of other signage/vegetation point to Great Plains (Kansas/Nebraska)."",
+  ""country"": ""US"",
+  ""latitude"": 38.85,
+  ""longitude"": -101.75
+}"
+google/gemma-4-31b-it,no-CoT,35.1234,-101.5678,1391.326,US,True,,stop,6.732e-05,404,37,0,4.01,"```json
+{""country"": ""US"", ""latitude"": 35.1234, ""longitude"": -101.5678}
+```"
+mistralai/mistral-small-2603,no-CoT,52.155,20.825,7831.767,PL,True,,stop,0.0001365,786,31,0,3.9,"{""country"": ""PL"", ""latitude"": 52.1550, ""longitude"": 20.8250}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11157.372,,True,True,,,,,,16.08,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.85,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,324.65,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,9.22,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.31,

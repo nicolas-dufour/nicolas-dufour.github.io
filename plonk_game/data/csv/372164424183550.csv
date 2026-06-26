@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-10.296507590223,-48.329619619205,0.0,BR,True,,,,,,,,"Palmas, Palmas, Tocantins, BR"
+google/gemini-3.5-flash,CoT (effort=low),-10.3251,-48.3124,3.696,BR,True,,stop,0.0046875,1271,309,232,3.69,"{""reasoning"": ""The double yellow center lines, white edge lines, concrete utility poles with T-shaped crossarms, and flat green landscape are highly characteristic of federal or state highways in Brazil, particularly in the Cerrado region."", ""country"": ""BR"", ""latitude"": -10.3251, ""longitude"": -48.3124}"
+qwen/qwen3.5-9b,no-CoT,-11.565,-48.3692,141.116,BR,True,,stop,8.791e-05,473,30,0,7.63,"{""country"": ""BR"", ""latitude"": -11.565, ""longitude"": -48.3692}"
+google/gemini-3.5-flash,CoT (effort=medium),-12.15,-45.0,417.547,BR,True,,stop,0.0066855,1271,531,454,11.65,"{""reasoning"": ""The road features a double yellow center line with white lane dividers and a wide shoulder, characteristic of Brazilian federal highways. The concrete utility poles, flat Cerrado-like vegetation, and overcast tropical sky further point to central or northeastern Brazil."", ""country"": ""BR"", ""latitude"": -12.15, ""longitude"": -45.0}"
+google/gemini-3.5-flash,CoT (effort=high),-14.25,-48.85,443.228,BR,True,,stop,0.0120855,1271,1131,1075,8.65,"{""reasoning"": ""The concrete utility poles, double yellow center lines, and Cerrado-like vegetation are characteristic of federal highways in central Brazil."", ""country"": ""BR"", ""latitude"": -14.25, ""longitude"": -48.85}"
+moonshotai/kimi-k2.6,CoT,-15.0,-49.0,528.035,BR,True,,stop,0.011834208,682,3397,3337,73.82,"{""reasoning"": ""Red lateritic soil and scattered Cerrado vegetation alongside a paved highway with wooden utility poles are diagnostic of central Brazil, and vehicles drive on the right."", ""country"": ""BR"", ""latitude"": -15.0, ""longitude"": -49.0}"
+anthropic/claude-opus-4.8,CoT,-15.6,-47.8,592.505,BR,True,,stop,0.006085,797,84,0,9.63,"{""reasoning"": ""Tropical savanna vegetation, red soil, concrete utility poles and highway markings typical of Brazilian interior roads (cerrado)."", ""country"": ""BR"", ""latitude"": -15.6, ""longitude"": -47.8}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-15.6411,-47.8125,596.925,BR,True,,stop,0.0021,1190,35,0,7.63,"```json
+{""country"": ""BR"", ""latitude"": -15.6411, ""longitude"": -47.8125}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,-15.7939,-47.8828,613.194,BR,True,,stop,0.00010617035,473,31,0,7.69,"{""country"": ""BR"", ""latitude"": -15.7939, ""longitude"": -47.8828}"
+x-ai/grok-4.3,no-CoT,-15.7942,-47.8825,613.23,BR,True,,stop,0.0005984,592,24,0,7.18,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8825}"
+google/gemma-4-31b-it,no-CoT,-15.7942,-47.8822,613.232,BR,True,,stop,6.718e-05,406,36,0,3.22,"```json
+{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7942,-47.8822,613.232,BR,True,,stop,0.00036468,473,31,0,8.12,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}"
+minimax/minimax-m3,CoT,-11.5,-42.3,671.81,BR,True,,stop,0.00054306,843,293,227,8.48,"{""reasoning"": ""Double yellow center line, right-hand traffic, wooden utility poles with horizontal crossbars, reddish soil, and flat cerrado/sertão vegetation with scattered low trees indicate interior northeastern Brazil."", ""country"": ""BR"", ""latitude"": -11.5, ""longitude"": -42.3}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-16.423355102539062,-48.49630355834961,681.513,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-16.42352867126465,-48.496646881103516,681.533,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,-16.5,-49.0,693.594,BR,True,,stop,0.004166,1189,149,120,3.52,"```json
+{""country"": ""BR"", ""latitude"": -16.5, ""longitude"": -49.0}
+```"
+x-ai/grok-4.3,CoT,-16.686,-49.267,717.664,BR,True,,stop,0.0028765,676,947,868,7.19,"{""reasoning"": ""Right-hand traffic (double yellow center line on left of view, white edge line on right) + tropical rural vegetation, flat terrain, wooden-post fencing, and utility poles match interior Brazil. No other region fits all markings, driving side, and flora simultaneously."", ""country"": ""BR"", ""latitude"": -16.686, ""longitude"": -49.267}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-18.63677406311035,-47.776031494140625,929.305,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-15.6,-56.1,1027.711,BR,True,,stop,0.00408,666,30,0,9.41,"{""country"": ""BR"", ""latitude"": -15.6, ""longitude"": -56.1}"
+google/gemini-3.1-pro-preview,CoT,-19.0,-44.0,1073.802,BR,True,,stop,0.005482,1271,245,164,11.27,"{
+  ""reasoning"": ""The double yellow center lines, red soil, and distinctive concrete utility pole with a ladder-like top structure are highly characteristic of Brazil. The green, rolling landscape suggests a central or southeastern state like Minas Gerais."",
+  ""country"": ""BR"",
+  ""latitude"": -19.0,
+  ""longitude"": -44.0
+}"
+openai/gpt-5.5,CoT,-20.5152,-54.7428,1327.467,BR,True,,stop,0.015435,621,411,333,15.43,"{""reasoning"":""Right-side driving with Brazilian-style double yellow centerlines, concrete utility poles, red-soil shoulders, and cerrado/pasture vegetation point to interior Brazil. The flat subtropical landscape is most consistent with Mato Grosso do Sul near Campo Grande."",""country"":""BR"",""latitude"":-20.5152,""longitude"":-54.7428}"
+openai/gpt-5.5,no-CoT,-20.9505,-54.8472,1374.335,BR,True,,stop,0.00347,544,25,0,8.72,"{""country"":""BR"",""latitude"":-20.9505,""longitude"":-54.8472}"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,1484.721,BR,True,,stop,0.0011835,634,31,0,1.12,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,1484.721,BR,True,,stop,0.00018772,474,31,0,5.21,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.6333,1484.721,BR,True,,stop,0.0001943,473,31,0,315.12,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,10.406757354736328,-61.8429069519043,2744.603,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,18.0700626373291,-67.0552978515625,3764.921,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,25.490928649902344,-77.74020385742188,5096.555,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5464.754,,True,True,,,,,,19.36,
+qwen/qwen3.5-35b-a3b,no-CoT,27.9506,-82.4572,5618.662,US,True,,stop,9.736e-05,474,31,0,0.89,"{""country"": ""US"", ""latitude"": 27.9506, ""longitude"": -82.4572}"
+xiaomi/mimo-v2.5,no-CoT,30.35,-92.05,6498.784,US,True,,stop,8.03376e-05,708,27,0,7.48,"{""country"": ""US"", ""latitude"": 30.35, ""longitude"": -92.05}"
+qwen/qwen3.5-27b,no-CoT,30.2672,-97.7431,6942.358,US,True,,stop,0.00019467,473,31,0,8.56,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+xiaomi/mimo-v2.5,CoT,41.8,-93.5,7399.943,US,True,,stop,0.0002341976,787,537,454,7.44,"{""reasoning"": ""The double yellow center lines indicate right-hand traffic, and the wooden utility poles with attached streetlights are characteristic of US rural highways. The flat, green agricultural landscape with mixed deciduous trees under an overcast sky is consistent with the Midwestern United States."", ""country"": ""US"", ""latitude"": 41.8, ""longitude"": -93.5}"
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,8228.847,FR,True,,stop,0.0001131,634,30,0,21.73,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.29,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,9.32,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.83,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.48,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.08,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.15,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.25,

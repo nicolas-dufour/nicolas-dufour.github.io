@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-14.842353895761,-46.732961998114,0.0,BR,True,,,,,,,,"Iaciara, Iaciara, Goias, BR"
+anthropic/claude-opus-4.8,no-CoT,-15.5,-47.8,135.871,BR,True,,stop,0.00408,666,30,0,8.33,"{""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -47.8}"
+anthropic/claude-opus-4.8,CoT,-15.6,-47.8,142.142,BR,True,,stop,0.00621,797,89,0,3.07,"{""reasoning"": ""Two-lane highway with yellow center lines and right-hand traffic, tropical cerrado vegetation and rolling terrain typical of interior Brazil."", ""country"": ""BR"", ""latitude"": -15.6, ""longitude"": -47.8}"
+moonshotai/kimi-k2.6,CoT,-17.5,-48.5,350.619,BR,True,,stop,0.010600128,682,3033,2946,59.3,"{""reasoning"": ""Tropical cerrado vegetation with scattered broadleaf trees and reddish soil is characteristic of Brazil's Central Plateau; the paved two-lane highway with double yellow center lines, white edge lines, and W-beam guardrail on the left shoulder confirms right-hand traffic typical of Brazilian federal highways."", ""country"": ""BR"", ""latitude"": -17.5, ""longitude"": -48.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-12.61704158782959,-43.2621955871582,449.175,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-12.467123985290527,-43.17782211303711,466.146,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-12.456984519958496,-43.14566421508789,469.656,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,-20.0,-45.0,602.23,BR,True,,stop,0.00395,1189,131,102,10.4,"```json
+{""country"": ""BR"", ""latitude"": -20.0, ""longitude"": -45.0}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-19.8542,-43.9758,629.395,BR,True,,stop,0.0020985,1189,35,0,1.61,"```json
+{""country"": ""BR"", ""latitude"": -19.8542, ""longitude"": -43.9758}
+```"
+google/gemini-3.1-pro-preview,CoT,-19.9166,-43.9344,637.555,BR,True,,stop,0.005182,1271,220,144,10.71,"{
+  ""reasoning"": ""The double yellow center lines, white edge lines, and lush tropical vegetation are characteristic of highways in Brazil. The rolling hills suggest a region like Minas Gerais."",
+  ""country"": ""BR"",
+  ""latitude"": -19.9166,
+  ""longitude"": -43.9344
+}"
+minimax/minimax-m3,CoT,-21.5,-47.0,740.833,BR,True,,stop,0.00066546,843,395,320,16.56,"{""reasoning"": ""Yellow double center lines on a highway with right-hand driving, combined with cerrado-type vegetation (dry grass, scattered trees) and tropical convective clouds strongly indicate a rural highway in interior Brazil, likely São Paulo or Minas Gerais state."", ""country"": ""BR"", ""latitude"": -21.5, ""longitude"": -47.0}"
+openai/gpt-5.5,no-CoT,-22.7934,-43.3726,952.091,BR,True,,stop,0.00347,544,25,0,2.33,"{""country"":""BR"",""latitude"":-22.7934,""longitude"":-43.3726}"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,968.358,BR,True,,stop,0.0011835,634,31,0,1.86,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,968.358,BR,True,,stop,0.0002884,473,31,0,2.1,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5505,-46.6333,968.358,BR,True,,stop,0.0003322,473,31,0,3.2,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+google/gemini-3.5-flash,CoT (effort=low),4.3125,-74.8542,3759.937,CO,True,,stop,0.004077,1272,241,183,2.73,"{""reasoning"": ""The double yellow center lines, lush green rolling hills, and road infrastructure are highly characteristic of the Andean region of Colombia."", ""country"": ""CO"", ""latitude"": 4.3125, ""longitude"": -74.8542}"
+google/gemini-3.5-flash,CoT (effort=medium),4.3512,-75.0123,3776.765,CO,True,,stop,0.0080175,1271,679,606,13.41,"{""reasoning"": ""The double yellow center lines, lush tropical vegetation, rolling green hills, and right-hand driving are highly characteristic of the Andean region of Colombia, particularly in the Magdalena or Cauca river valleys."", ""country"": ""CO"", ""latitude"": 4.3512, ""longitude"": -75.0123}"
+google/gemini-3.5-flash,CoT (effort=high),6.1524,-75.4211,3930.685,CO,True,,stop,0.0088005,1271,766,703,9.21,"{""reasoning"": ""The double yellow center lines, lush tropical vegetation, rolling green hills, and right-hand driving are highly characteristic of the Andean region of Colombia."", ""country"": ""CO"", ""latitude"": 6.1524, ""longitude"": -75.4211}"
+openai/gpt-5.5,CoT,18.065,-66.86,4272.591,PR,True,,stop,0.014835,621,391,310,16.21,"{""reasoning"":""The road has US-style double yellow center lines/white edge lines and right-hand driving, while the lush tropical hilly landscape and guardrails strongly suggest Puerto Rico rather than mainland US. The vegetation and terrain fit rural roads in the island’s interior/southern hills."",""country"":""PR"",""latitude"":18.065,""longitude"":-66.86}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5393.714,,True,True,,,,,,19.41,
+google/gemma-4-31b-it,no-CoT,19.4326,-99.1332,6883.325,MX,True,,stop,6.718e-05,406,36,0,4.42,"```json
+{""country"": ""MX"", ""latitude"": 19.4326, ""longitude"": -99.1332}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,42.18526840209961,-77.05768585205078,7060.612,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,46.00065612792969,-72.72195434570312,7250.95,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.2237434387207,-78.20030975341797,7300.872,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,-25.35,30.95,8092.896,ZA,True,,stop,0.0005934,592,22,0,1.03,"{""country"": ""ZA"", ""latitude"": -25.35, ""longitude"": 30.95}"
+qwen/qwen3.6-27b,no-CoT,34.0522,-118.2437,9301.818,US,True,,stop,0.0001963,473,32,0,10.77,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+xiaomi/mimo-v2.5,no-CoT,34.25,-118.45,9327.812,US,True,,stop,8.06176e-05,708,28,0,2.8,"{""country"": ""US"", ""latitude"": 34.25, ""longitude"": -118.45}"
+xiaomi/mimo-v2.5,CoT,34.58,-119.72,9449.529,US,True,,stop,0.0002731176,787,676,612,14.28,"{""reasoning"": ""US road markings (double yellow lines), guardrail style, and California-like vegetation (oaks, dry grass) indicate a rural California highway."", ""country"": ""US"", ""latitude"": 34.58, ""longitude"": -119.72}"
+qwen/qwen3.5-27b,no-CoT,36.7783,-119.4179,9516.084,US,True,,stop,0.0002085,474,45,0,8.73,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 36.7783,
+  ""longitude"": -119.4179
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,37.4219,-122.0841,9762.329,US,True,,stop,0.00010295,473,32,0,2.76,"{""country"": ""US"", ""latitude"": 37.4219, ""longitude"": -122.0841}"
+qwen/qwen3.5-9b,no-CoT,37.4419,-122.143,9767.979,US,True,,stop,5.205e-05,474,31,0,16.94,"{""country"": ""US"", ""latitude"": 37.4419, ""longitude"": -122.143}"
+qwen/qwen3.5-35b-a3b,no-CoT,37.7749,-122.4194,9803.757,US,True,,stop,0.0001184625,473,32,0,1.73,"{""country"": ""US"", ""latitude"": 37.7749, ""longitude"": -122.4194}"
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4778,9807.642,US,True,,stop,0.0001143,634,32,0,1.07,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4778}"
+x-ai/grok-4.3,CoT,14.685,100.48,16492.878,TH,True,,stop,0.003494,676,1194,1126,15.18,"{""reasoning"": ""Left-hand traffic (yellow edge line on right of lane, opposing vehicle passing left of center line); lush tropical broadleaf vegetation, overcast subtropical sky and metal Armco-style barrier point to rural Thailand."", ""country"": ""TH"", ""latitude"": 14.685, ""longitude"": 100.48}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.28,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.32,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.18,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.42,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.24,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.28,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,2.16,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.11,

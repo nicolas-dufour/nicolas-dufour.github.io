@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,69.752462453861,-50.240052379257,0.0,GL,True,,,,,,,,"Ilulissat, None, Qaasuitsup, GL"
+google/gemini-3.5-flash,CoT (effort=high),69.7555,-50.2165,0.967,GL,True,,stop,0.0112845,1271,1042,968,16.26,"{""reasoning"": ""The barren tundra landscape, rocky terrain, and distinctive row of red tourist cabins overlooking a fjord point to Camp Eqi (Eqi Glacier Lodge) near the Eqip Sermia glacier in Greenland."", ""country"": ""GL"", ""latitude"": 69.7555, ""longitude"": -50.2165}"
+google/gemini-3.1-pro-preview,no-CoT,69.2285,-51.0614,66.469,GL,True,,stop,0.002798,1189,35,0,8.9,"```json
+{""country"": ""GL"", ""latitude"": 69.2285, ""longitude"": -51.0614}
+```"
+google/gemini-3.5-flash,CoT (effort=low),69.2185,-51.0986,68.149,GL,True,,stop,0.0033465,1271,160,93,2.25,"{""reasoning"": ""The barren tundra landscape, rocky terrain, and small colorful houses near a fjord with icebergs are highly characteristic of coastal Greenland, specifically near Ilulissat."", ""country"": ""GL"", ""latitude"": 69.2185, ""longitude"": -51.0986}"
+openai/gpt-5.5,no-CoT,69.2167,-51.105,68.447,GL,True,,stop,0.00344,544,24,0,7.59,"{""country"":""GL"",""latitude"":69.2167,""longitude"":-51.1050}"
+google/gemini-3.1-pro-preview,CoT,69.213,-51.095,68.617,GL,True,,stop,0.00565,1271,259,181,5.34,"{
+  ""reasoning"": ""The barren rocky tundra, presence of icebergs in the water, and the row of small red houses strongly indicate a coastal settlement in Greenland, likely near Ilulissat."",
+  ""country"": ""GL"",
+  ""latitude"": 69.213,
+  ""longitude"": -51.095
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),69.2114,-51.0912,68.701,GL,True,,stop,0.0021,1190,35,0,7.78,"```json
+{""country"": ""GL"", ""latitude"": 69.2114, ""longitude"": -51.0912}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),69.215,-51.115,68.804,GL,True,,stop,0.0082965,1271,710,633,7.81,"```json
+{""reasoning"": ""The barren tundra landscape, rocky terrain, and distant row of colorful wooden houses overlooking an ice-filled fjord are highly characteristic of coastal Greenland, specifically near the hiking trails of Ilulissat."", ""country"": ""GL"", ""latitude"": 69.215, ""longitude"": -51.115}
+```"
+qwen/qwen3.5-9b,no-CoT,69.0167,-51.7333,100.548,GL,True,,stop,5.205e-05,474,31,0,6.53,"{""country"": ""GL"", ""latitude"": 69.0167, ""longitude"": -51.7333}"
+google/gemma-4-31b-it,no-CoT,71.15,-52.85,183.21,GL,True,,stop,6.558e-05,406,32,0,2.83,"```json
+{""country"": ""GL"", ""latitude"": 71.15, ""longitude"": -52.85}
+```"
+moonshotai/kimi-k2.6,CoT,67.01,-50.69,305.502,GL,True,,stop,0.017348508,682,5004,4939,201.27,"{""reasoning"":""Treeless red-brown tundra, scattered red wooden houses along an icy fjord, and distant snow-patched mountains are diagnostic of West Greenland, closely matching the landscape around Kangerlussuaq."",""country"":""GL"",""latitude"":67.01,""longitude"":-50.69}"
+anthropic/claude-opus-4.8,CoT,64.1835,-51.7216,622.539,GL,True,,stop,0.006285,797,92,0,4.44,"{""reasoning"": ""Treeless Arctic tundra with rocky terrain, a fjord with sea ice, and colorful houses suggest Greenland, likely near Nuuk."", ""country"": ""GL"", ""latitude"": 64.1835, ""longitude"": -51.7216}"
+anthropic/claude-opus-4.8,no-CoT,64.1835,-51.7216,622.539,GL,True,,stop,0.00413,666,32,0,2.47,"{""country"": ""GL"", ""latitude"": 64.1835, ""longitude"": -51.7216}"
+qwen/qwen3.5-122b-a10b,no-CoT,64.175,-51.74,623.563,GL,True,,stop,0.00018122,473,28,0,7.38,"{""country"": ""GL"", ""latitude"": 64.175, ""longitude"": -51.74}"
+minimax/minimax-m3,CoT,64.17,-51.75,624.161,GL,True,,stop,0.00068226,843,409,320,12.1,"{""reasoning"": ""Arctic tundra landscape with autumn-colored low vegetation, rocky outcrops, a fjord, and a small coastal settlement with brightly colored houses characteristic of Greenlandic towns suggests this is near Nuuk, likely viewed from a hiking trail on Store Malene/Quassussuaq mountain."", ""country"": ""GL"", ""latitude"": 64.17, ""longitude"": -51.75}"
+minimax/minimax-m3,no-CoT,64.15,-51.6,625.733,GL,True,,stop,0.00019452,754,22,0,5.66,"{""country"": ""GL"", ""latitude"": 64.15, ""longitude"": -51.6}{""country"": ""GL"", ""latitude"": 64.15, ""longitude"": -51.6}"
+qwen/qwen3.5-35b-a3b,no-CoT,64.1466,-51.6917,626.494,GL,True,,stop,0.0001865625,473,31,0,2.06,"{""country"": ""GL"", ""latitude"": 64.1466, ""longitude"": -51.6917}"
+openai/gpt-5.5,CoT,65.615,-37.64,701.007,GL,True,,stop,0.020655,621,585,516,51.35,"{""reasoning"":""Arctic treeless tundra, rocky slopes, fjord coastline, and scattered colorful houses strongly indicate a Greenlandic settlement; the terrain and coastal view best fit the hills above Tasiilaq in East Greenland."",""country"":""GL"",""latitude"":65.615,""longitude"":-37.64}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,61.20034408569336,-45.31800842285156,976.94,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,61.193485260009766,-45.348934173583984,977.367,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,61.16537857055664,-45.37794876098633,980.135,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,63.9948,-22.5556,1351.499,IS,True,,stop,0.0011835,634,31,0,7.35,"{""country"": ""IS"", ""latitude"": 63.9948, ""longitude"": -22.5556}"
+x-ai/grok-4.3,CoT,64.15,-21.95,1363.065,IS,True,,stop,0.0021865,676,671,608,5.57,"{""reasoning"": ""Tundra vegetation, rocky terrain, overcast Arctic light, and row of red Nordic-style buildings along a fjord indicate sub-Arctic North Atlantic coast; typical of western Iceland."", ""country"": ""IS"", ""latitude"": 64.15, ""longitude"": -21.95}"
+qwen/qwen3.6-27b,no-CoT,64.1466,-21.9426,1363.582,IS,True,,stop,0.0001943,473,31,0,12.69,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.9426}"
+qwen/qwen3.6-35b-a3b,no-CoT,64.1465,-21.9026,1365.087,IS,True,,stop,0.0001444,474,31,0,2.9,"{""country"": ""IS"", ""latitude"": 64.1465, ""longitude"": -21.9026}"
+qwen/qwen3.5-27b,no-CoT,64.1355,-21.8954,1366.134,IS,True,,stop,0.000140595,473,31,0,7.52,"{""country"": ""IS"", ""latitude"": 64.1355, ""longitude"": -21.8954}"
+x-ai/grok-4.3,no-CoT,65.066,-14.017,1604.407,IS,True,,stop,0.0005934,592,22,0,7.74,"{""country"": ""IS"", ""latitude"": 65.066, ""longitude"": -14.017}"
+xiaomi/mimo-v2.5,CoT,62.2407,-6.9354,2072.997,FO,True,,stop,0.0001563576,787,259,154,4.13,"{""reasoning"": ""The grassy, treeless hillsides sloping down to the water, combined with the red-roofed houses in the distance and the specific quality of light and overcast sky, are highly characteristic of the Faroe Islands. The terrain and settlement patterns match the landscape found on the island of Eysturoy near Funningur."", ""country"": ""FO"", ""latitude"": 62.2407, ""longitude"": -6.9354}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,74.30007934570312,16.0385684967041,2201.724,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,74.09062957763672,16.35564422607422,2219.067,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,70.26675415039062,16.152729034423828,2399.601,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,69.6492,18.9553,2526.536,NO,True,,stop,8.14576e-05,708,31,0,1.22,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+qwen/qwen3.5-397b-a17b,no-CoT,70.6634,23.6601,2613.092,NO,True,,stop,0.0003794,473,31,0,0.71,"{""country"": ""NO"", ""latitude"": 70.6634, ""longitude"": 23.6601}"
+mistralai/mistral-small-2603,no-CoT,37.0902,-3.4597,4557.617,ES,True,,stop,0.0001131,634,30,0,7.7,"{""country"": ""ES"", ""latitude"": 37.0902, ""longitude"": -3.4597}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8585.603,,True,True,,,,,,6.42,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.42,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.58,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.22,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.2,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.72,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.94,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.22,

@@ -1,0 +1,88 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-23.315037832739,-51.375526523693,0.0,BR,True,,,,,,,,"Rolandia, Rolandia, Parana, BR"
+google/gemini-3.5-flash,CoT (effort=high),-23.3082,-51.1612,21.9,BR,True,,stop,0.010737,1272,981,899,6.59,"```json
+{""reasoning"": ""The presence of a Volkswagen Beetle (Fusca), characteristic Brazilian commercial architecture with colorful facades, double yellow center lines, and wooden utility poles strongly indicate Brazil, likely in the southern or southeastern region such as Paraná."", ""country"": ""BR"", ""latitude"": -23.3082, ""longitude"": -51.1612}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-23.22174072265625,-51.94404983520508,58.994,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-23.24325942993164,-51.98227310180664,62.486,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-23.238908767700195,-51.98536682128906,62.864,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,-22.3221,-49.0682,260.982,BR,True,,stop,0.0028,1190,35,0,8.34,"```json
+{""country"": ""BR"", ""latitude"": -22.3221, ""longitude"": -49.0682}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-20.8114,-49.3758,346.35,BR,True,,stop,0.0021,1190,35,0,7.46,"```json
+{""country"": ""BR"", ""latitude"": -20.8114, ""longitude"": -49.3758}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-21.79,-48.17,370.273,BR,True,,stop,0.0102135,1271,923,842,15.06,"```json
+{""reasoning"": ""The presence of a Volkswagen Beetle (Fusca), double yellow center lines, distinctive wooden utility poles with crossarms, and Brazilian-style architecture and signage indicate this is in Brazil, likely in the interior of São Paulo state."", ""country"": ""BR"", ""latitude"": -21.79, ""longitude"": -48.17}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-22.0083,-47.8908,385.945,BR,True,,stop,0.0039225,1271,224,158,3.24,"{""reasoning"": ""The double yellow lines, wooden utility poles, architecture, and the presence of a Volkswagen Fusca (Beetle) indicate a street scene in Brazil."", ""country"": ""BR"", ""latitude"": -22.0083, ""longitude"": -47.8908}"
+anthropic/claude-opus-4.8,no-CoT,-21.1767,-47.8208,436.291,BR,True,,stop,0.00413,666,32,0,9.41,"{""country"": ""BR"", ""latitude"": -21.1767, ""longitude"": -47.8208}"
+anthropic/claude-opus-4.8,CoT,-21.17,-47.81,437.636,BR,True,,stop,0.006235,797,90,0,4.11,"{""reasoning"": ""Brazilian-style street with VW Beetle, Portuguese signage, right-hand traffic, tropical climate and typical interior São Paulo town architecture."", ""country"": ""BR"", ""latitude"": -21.17, ""longitude"": -47.81}"
+moonshotai/kimi-k2.6,CoT,-21.17,-47.81,437.636,BR,True,,stop,0.013157028,682,3786,3714,98.41,"{""reasoning"": ""Classic VW Beetles and Mercosul-format license plates point strongly to Brazil, while wooden utility poles with attached street lamps and colorful low-rise mixed-use buildings match the typical streetscape of interior São Paulo state cities."", ""country"": ""BR"", ""latitude"": -21.17, ""longitude"": -47.81}"
+google/gemini-3.1-pro-preview,CoT,-22.9068,-47.0616,443.502,BR,True,,stop,0.005184,1272,220,130,10.97,"{
+  ""reasoning"": ""The black street signs hanging over the road, double yellow lines, and general architecture are highly characteristic of Brazil. The presence of a classic VW Beetle and the style of the buildings suggest a city in the state of São Paulo."",
+  ""country"": ""BR"",
+  ""latitude"": -22.9068,
+  ""longitude"": -47.0616
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-23.259933471679688,-46.93939208984375,453.114,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-23.529987335205078,-46.67047119140625,480.64,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-23.534791946411133,-46.66935729980469,480.772,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,-23.5505,-46.6333,484.508,BR,True,,stop,5.774e-05,406,38,0,3.32,"{"" than ownmuch-needed
+
+{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+google/gemma-4-31b-it,no-CoT,-23.5505,-46.6333,484.508,BR,True,,stop,6.378e-05,406,36,0,7.65,"```json
+{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,484.508,BR,True,,stop,0.0011835,634,31,0,1.05,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+moonshotai/kimi-k2.6,no-CoT,-23.5505,-46.6333,484.508,BR,True,,stop,0.000290052,603,25,0,8.24,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,484.508,BR,True,,stop,0.00018746,473,31,0,7.33,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+minimax/minimax-m3,CoT,-23.62,-46.52,496.387,BR,True,,stop,0.00077502,845,483,514,10.26,"{""reasoning"": ""The wide avenue with colorful low-rise commercial buildings, dense overhead power lines, Brazilian-style traffic signals on horizontal arms, right-hand driving, and tropical sky strongly indicate Brazil. The architecture and street layout are characteristic of São Paulo's peripheral neighborhoods or nearby ABC region cities."", ""country"": ""BR"", ""latitude"": -23.62, ""longitude"": -46.52}{""reasoning"": ""The wide avenue with colorful low-rise commercial buildings, dense overhead power lines, Brazilian-style traffic signals on horizontal arms, right-hand driving, and tropical sky strongly indicate Brazil. The architecture and street layout are characteristic of São Paulo's peripheral neighborhoods or nearby ABC region cities."", ""country"": ""BR"", ""latitude"": -23.62, ""longitude"": -46.52}"
+openai/gpt-5.5,no-CoT,-15.8792,-48.0176,898.405,BR,True,,stop,0.00347,544,25,0,2.34,"{""country"":""BR"",""latitude"":-15.8792,""longitude"":-48.0176}"
+openai/gpt-5.5,CoT,-15.8208,-48.1086,900.749,BR,True,,stop,0.013875,621,359,273,8.94,"{""reasoning"":""The scene shows right-hand traffic, Brazilian-style double yellow centerlines, dense overhead utility wiring, tropical urban low-rise storefronts, and Portuguese-looking signage/license plates. The flat savanna-like environment and wide commercial avenue are most consistent with a satellite-city area of Brasília, Brazil."",""country"":""BR"",""latitude"":-15.8208,""longitude"":-48.1086}"
+qwen/qwen3.5-9b,no-CoT,-14.8333,-48.5417,988.915,BR,True,,stop,5.205e-05,474,31,0,9.39,"{""country"": ""BR"", ""latitude"": -14.8333, ""longitude"": -48.5417}"
+xiaomi/mimo-v2.5,no-CoT,-12.97,-38.51,1778.749,BR,True,,stop,8.03376e-05,708,27,0,1.3,"{""country"": ""BR"", ""latitude"": -12.97, ""longitude"": -38.51}"
+minimax/minimax-m3,no-CoT,-5.2,-39.5,2382.993,BR,True,,stop,0.00033402,767,135,147,5.58,"{""country"": ""BR"", ""latitude"": -5.2, ""longitude"": -39.5}"
+qwen/qwen3.6-27b,no-CoT,23.137,-82.354,6155.073,CU,True,,stop,0.0003954,473,31,0,18.76,"{""country"": ""CU"", ""latitude"": 23.1370, ""longitude"": -82.3540}"
+qwen/qwen3.5-35b-a3b,no-CoT,23.1367,-82.3816,6156.668,CU,True,,stop,0.00016956,474,31,0,3.71,"{""country"": ""CU"", ""latitude"": 23.1367, ""longitude"": -82.3816}"
+xiaomi/mimo-v2.5,CoT,20.9674,-89.5926,6432.806,MX,True,,stop,8.06904e-05,787,271,147,43.81,"```json
+{
+  ""reasoning"": ""The image shows a tropical Latin American street with right-hand traffic, double yellow center lines, and overhead power lines typical of Mexico. The architecture, flat-roofed concrete buildings, and the white license plates with a blue strip on the left side (consistent with Mexican plates) strongly point to a Mexican city, likely in the Yucatan region given the vegetation and flat terrain."",
+  ""country"": ""MX"",
+  ""latitude"": 20.9674,
+  ""longitude"": -89.5926
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,20.9674,-89.5926,6432.806,MX,True,,stop,0.00029145,473,31,0,3.78,"{""country"": ""MX"", ""latitude"": 20.9674, ""longitude"": -89.5926}"
+x-ai/grok-4.3,CoT,20.967,-89.623,6434.892,MX,True,,stop,0.0025015,676,797,718,10.15,"{""reasoning"": ""Right-hand traffic, Spanish signage (FARMACIA visible), colorful flat-roofed buildings, overhead utility wires on wooden poles, and iconic light-green VW Beetle all point to provincial Mexico; vegetation, sky, and street layout match Yucatán peninsula towns."", ""country"": ""MX"", ""latitude"": 20.967, ""longitude"": -89.623}"
+qwen/qwen3.5-397b-a17b,CoT,17.993,-94.545,6562.545,MX,True,,stop,0.0474251,553,13482,12930,531.15,"{
+""reasoning"": ""The combination of a VW Beetle ('Vocho'), VW Jetta, and a Nissan Tsuru (white car on left) is iconic to Mexico, while the Spanish signage ('Farmacia'), wooden utility poles with messy wiring, and tropical flat terrain suggest a coastal state like Veracruz."",
+""country"": ""MX"",
+""latitude"": 17.993,
+""longitude"": -94.545
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,19.4326,-99.1332,7030.034,MX,True,,stop,0.00010617035,473,31,0,0.9,"{""country"": ""MX"", ""latitude"": 19.4326, ""longitude"": -99.1332}"
+qwen/qwen3.6-35b-a3b,CoT,19.2827,-99.6567,7061.218,MX,True,,stop,0.0079443481,553,8138,8000,110.73,"```json
+{
+  ""reasoning"": ""The image shows right-hand traffic, Spanish signage ('FARMACIA', 'PAPELERIA'), and license plates consistent with Mexico (white background, black text, likely 'MEX' state code). The architecture (low-rise concrete/stucco, flat roofs) and the presence of a classic VW Beetle are strong indicators of a Mexican town, likely in the State of Mexico or nearby central states."",
+  ""country"": ""MX"",
+  ""latitude"": 19.2827,
+  ""longitude"": -99.6567
+}
+```"
+x-ai/grok-4.3,no-CoT,20.6597,-103.3496,7457.226,MX,True,,stop,0.0005984,592,24,0,1.01,"{""country"": ""MX"", ""latitude"": 20.6597, ""longitude"": -103.3496}"
+qwen/qwen3.5-27b,no-CoT,20.6736,-103.3535,7458.501,MX,True,,stop,0.0002085,474,45,0,4.12,"```json
+{
+  ""country"": ""MX"",
+  ""latitude"": 20.6736,
+  ""longitude"": -103.3535
+}
+```"
+mistralai/mistral-small-2603,CoT,37.9838,23.7275,10374.081,GR,True,,stop,0.0005604,716,755,841,12.45,"```json
+{""reasoning"": ""Overhead trolleybus wires and Mediterranean two-story pastel buildings indicate Southern Europe; driving on the right and license plate style suggest Greece."", ""country"": ""GR"", ""latitude"": 37.9838, ""longitude"": 23.7275}
+```"
+mistralai/mistral-small-2603,no-CoT,14.5995,120.9842,18756.916,PH,True,,stop,0.0001143,634,32,0,9.74,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.15,

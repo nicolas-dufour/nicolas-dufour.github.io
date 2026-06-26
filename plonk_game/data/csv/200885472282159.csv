@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,60.07435629997226,-130.45189969999998,0.0,CA,True,,,,,,,,"Watson Lake, None, Yukon, CA"
+moonshotai/kimi-k2.6,CoT,60.0,-130.0,26.423,CA,True,,stop,0.01478822,682,3573,4027,76.82,"{""reasoning"": ""Yellow dashed center line and paved rural highway through dense boreal conifer forest with distant subarctic mountains are characteristic of remote western Canadian highways such as the Alaska or Cassiar routes."", ""country"": ""CA"", ""latitude"": 60.0000, ""longitude"": -130.0000}"
+x-ai/grok-4.3,CoT,59.85,-128.95,87.238,CA,True,,stop,0.002234,676,690,618,7.48,"{
+  ""reasoning"": ""Yellow center line on asphalt road indicates North American right-hand traffic rules; boreal conifer forest + low rolling mountains under overcast sky match western Canada (Yukon/BC border region)."",
+  ""country"": ""CA"",
+  ""latitude"": 59.85,
+  ""longitude"": -128.95
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,60.383670806884766,-132.40350341796875,113.103,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,60.40009689331055,-132.51016235351562,119.241,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),60.167,-132.716,125.835,CA,True,,stop,0.0089085,1271,778,705,6.48,"{""reasoning"": ""The dashed yellow center line and dense boreal forest of spruce and birch are characteristic of northern North America, specifically the Yukon Territory in Canada. The rolling mountainous terrain suggests a location along the Alaska Highway."", ""country"": ""CA"", ""latitude"": 60.167, ""longitude"": -132.716}"
+google/gemini-3.5-flash,CoT (effort=medium),60.2154,-132.7123,126.094,CA,True,,stop,0.0068025,1271,544,473,12.38,"{""reasoning"": ""The single dashed yellow center line and wide paved road are characteristic of North American highways, while the dense boreal forest and rolling mountainous terrain strongly point to the Yukon Territory in Canada."", ""country"": ""CA"", ""latitude"": 60.2154, ""longitude"": -132.7123}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,60.39247512817383,-134.3003387451172,215.344,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,61.10308074951172,-133.96514892578125,223.313,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,60.5,-135.0,255.039,CA,True,,stop,0.0001571976,787,262,144,5.98,"{""reasoning"": ""The image shows a rural two-lane paved road with a yellow center line and white edge lines, driving on the right side, flanked by boreal forest (spruce/pine trees) typical of northern North America. The overcast sky, rolling hills, and lack of distinct signage or buildings suggest a remote highway in Canada or the northern US, likely Yukon or northern British Columbia given the vegetation and road style."", ""country"": ""CA"", ""latitude"": 60.5, ""longitude"": -135.0}"
+anthropic/claude-opus-4.8,CoT,60.7,-135.0,259.34,CA,True,,stop,0.006285,797,92,0,9.3,"{""reasoning"": ""Wide remote highway with boreal spruce forest, yellow center line, and distant low mountains suggests northern Canada/Alaska, likely a Yukon highway."", ""country"": ""CA"", ""latitude"": 60.7, ""longitude"": -135.0}"
+qwen/qwen3.5-35b-a3b,no-CoT,60.7212,-135.0456,262.31,CA,True,,stop,0.00010295,473,32,0,1.48,"{""country"": ""CA"", ""latitude"": 60.7212, ""longitude"": -135.0456}"
+google/gemini-3.1-pro-preview,no-CoT,60.716667,-135.05,262.421,CA,True,,stop,0.002812,1190,36,0,1.98,"```json
+{""country"": ""CA"", ""latitude"": 60.716667, ""longitude"": -135.05}
+```"
+google/gemini-3.5-flash,CoT (effort=low),60.7211,-135.0568,262.898,CA,True,,stop,0.0039045,1271,222,147,2.71,"{""reasoning"": ""The dashed yellow center line and wide asphalt road are characteristic of North American highways, while the dense boreal forest and rolling hills strongly point to the Yukon Territory in Canada, likely along the Alaska Highway."", ""country"": ""CA"", ""latitude"": 60.7211, ""longitude"": -135.0568}"
+anthropic/claude-opus-4.8,no-CoT,60.7212,-135.0568,262.901,CA,True,,stop,0.00413,666,32,0,2.38,"{""country"": ""CA"", ""latitude"": 60.7212, ""longitude"": -135.0568}"
+google/gemini-3.1-pro-preview,CoT,60.7,-135.1,264.634,CA,True,,stop,0.005952,1272,284,212,4.68,"{
+  ""reasoning"": ""The dashed yellow center line and boreal forest landscape strongly suggest a northern North American highway. The mountainous terrain and vegetation are characteristic of the Yukon or northern British Columbia."",
+  ""country"": ""CA"",
+  ""latitude"": 60.7,
+  ""longitude"": -135.1
+}"
+qwen/qwen3.5-9b,no-CoT,59.437,-135.036,266.285,CA,True,,stop,8.791e-05,473,30,0,1.11,"{""country"": ""CA"", ""latitude"": 59.437, ""longitude"": -135.036}"
+openai/gpt-5.5,no-CoT,62.0894,-135.1167,336.184,CA,True,,stop,0.00344,544,24,0,2.1,"{""country"":""CA"",""latitude"":62.0894,""longitude"":-135.1167}"
+minimax/minimax-m3,CoT,60.75,-137.5,393.985,CA,True,,stop,0.00076506,843,478,404,18.88,"{""reasoning"": ""Wide paved highway with yellow center line markings, boreal forest vegetation (white spruce, birch), distant mountains, overcast high-latitude sky, and no guardrails strongly indicate the Alaska Highway in Yukon Territory, Canada."", ""country"": ""CA"", ""latitude"": 60.75, ""longitude"": -137.50}"
+openai/gpt-5.5,CoT,61.7342,-136.9826,398.199,CA,True,,stop,0.014775,621,389,309,10.35,"{""reasoning"":""Remote boreal forest and rolling hills with a wide right-hand-driving North American highway, faded single yellow centerline and gravel shoulders strongly suggest the Yukon/Alaska Highway region. The lack of edge lines and sparse infrastructure fit rural Yukon more than populated areas."",""country"":""CA"",""latitude"":61.7342,""longitude"":-136.9826}"
+qwen/qwen3.5-397b-a17b,no-CoT,58.4167,-122.5,487.891,CA,True,,stop,0.00028545,473,29,0,2.64,"{""country"": ""CA"", ""latitude"": 58.4167, ""longitude"": -122.5}"
+xiaomi/mimo-v2.5,no-CoT,59.3,-121.5,509.315,CA,True,,stop,8.00576e-05,708,26,0,1.48,"{""country"": ""CA"", ""latitude"": 59.3, ""longitude"": -121.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,63.31278991699219,-140.4818878173828,638.716,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,54.2769,-128.4453,655.817,CA,True,,stop,0.0002085,474,45,0,3.83,"```json
+{
+  ""country"": ""CA"",
+  ""latitude"": 54.2769,
+  ""longitude"": -128.4453
+}
+```"
+qwen/qwen3.6-27b,no-CoT,54.2,-128.5,663.655,CA,True,,stop,0.0001843,473,26,0,5.13,"{""country"": ""CA"", ""latitude"": 54.2, ""longitude"": -128.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,63.41664505004883,-142.51895141601562,734.255,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,62.4555,-114.3718,896.741,CA,True,,stop,0.0001898,474,32,0,10.12,"{""country"": ""CA"", ""latitude"": 62.4555, ""longitude"": -114.3718}"
+qwen/qwen3.6-35b-a3b,no-CoT,50.6,-120.3,1230.645,CA,True,,stop,0.0039716742,471,4036,4000,16.59,"```json
+{""country"": ""CA"", ""latitude"": 50.6, ""longitude"": -120.3}
+```"
+mistralai/mistral-medium-3-5,no-CoT,53.5444,-113.4909,1256.368,CA,True,,stop,0.001191,634,32,0,1.04,"{""country"": ""CA"", ""latitude"": 53.5444, ""longitude"": -113.4909}"
+google/gemma-4-31b-it,no-CoT,53.548,-113.001,1280.254,CA,True,,stop,6.678e-05,406,35,0,2.32,"```json
+{""country"": ""CA"", ""latitude"": 53.548, ""longitude"": -113.001}
+```"
+x-ai/grok-4.3,no-CoT,55.7667,-98.7833,1910.23,CA,True,,stop,0.0005984,592,24,0,0.78,"{""country"": ""CA"", ""latitude"": 55.7667, ""longitude"": -98.7833}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),52.8542,-67.1235,3814.555,CA,True,,stop,0.0020985,1189,35,0,7.75,"```json
+{""country"": ""CA"", ""latitude"": 52.8542, ""longitude"": -67.1235}
+```"
+mistralai/mistral-small-2603,no-CoT,61.145,8.367,6082.259,NO,True,,stop,0.000139875,634,28,0,1.37,"{""country"": ""NO"", ""latitude"": 61.145, ""longitude"": 8.367}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.55,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.17,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.72,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.55,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.46,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.28,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.33,

@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-30.84439689657539,-55.022860568958976,0.0,BR,True,,,,,,,,"Dom Pedrito, Dom Pedrito, Rio Grande do Sul, BR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-30.573253631591797,-54.82360076904297,35.664,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-30.513534545898438,-54.7476806640625,45.233,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-31.33797836303711,-55.14812088012695,56.165,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-33.6,-55.2,306.862,UY,True,,stop,0.012518136,834,3583,3527,69.37,"{""reasoning"": ""Right-hand traffic with double yellow centerline; rolling scrubland with unpaved shoulders and absence of roadside fences are characteristic of rural Uruguay."", ""country"": ""UY"", ""latitude"": -33.6, ""longitude"": -55.2}"
+openai/gpt-5.5,no-CoT,-34.0147,-55.8201,360.371,UY,True,,stop,0.00414,678,25,0,1.9,"{""country"":""UY"",""latitude"":-34.0147,""longitude"":-55.8201}"
+google/gemini-3.5-flash,CoT (effort=low),-34.3521,-55.2145,390.451,UY,True,,stop,0.0041655,1307,245,176,9.63,"{""reasoning"": ""The double yellow center lines, white edge lines, and rolling green hills with low, scrubby vegetation under an overcast sky are highly characteristic of the interior highways of Uruguay."", ""country"": ""UY"", ""latitude"": -34.3521, ""longitude"": -55.2145}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-34.412543,-54.312451,402.295,UY,True,,stop,0.0021885,1225,39,0,8.59,"```json
+{""country"": ""UY"", ""latitude"": -34.412543, ""longitude"": -54.312451}
+```"
+google/gemini-3.1-pro-preview,CoT,-34.5,-54.5,409.418,UY,True,,stop,0.005374,1307,230,162,5.1,"{
+  ""reasoning"": ""Double yellow center lines and white edge lines are typical of the Americas. The rolling hills, scrubby vegetation, and road style strongly suggest Uruguay."",
+  ""country"": ""UY"",
+  ""latitude"": -34.5,
+  ""longitude"": -54.5
+}"
+google/gemini-3.1-pro-preview,no-CoT,-34.5123,-54.5678,410.068,UY,True,,stop,0.005918,1225,289,254,5.07,"```json
+{""country"": ""UY"", ""latitude"": -34.5123, ""longitude"": -54.5678}
+```"
+openai/gpt-5.5,CoT,-34.5786,-54.7802,415.844,UY,True,,stop,0.014755,755,366,265,15.18,"{""reasoning"":""Right-hand traffic with double yellow center lines and white edge lines on a well-maintained rural highway fits Uruguay/Argentina, while the gently rolling green scrubland, gravel shoulders, and humid overcast Atlantic-pampas landscape are especially typical of eastern Uruguay. The scene most likely lies on a rural stretch of Ruta 9 in Maldonado/Rocha department."",""country"":""UY"",""latitude"":-34.5786,""longitude"":-54.7802}"
+google/gemini-3.5-flash,CoT (effort=medium),-34.6125,-55.1843,419.266,UY,True,,stop,0.0089265,1307,774,692,23.39,"```json
+{""reasoning"": ""The double yellow center line with white edge lines on a right-hand drive road, combined with rolling green hills and low, scrubby temperate vegetation, is highly characteristic of southern Uruguay, particularly the Maldonado department."", ""country"": ""UY"", ""latitude"": -34.6125, ""longitude"": -55.1843}
+```"
+anthropic/claude-opus-4.8,CoT,-31.5,-59.5,432.115,AR,True,,stop,0.00742,949,107,0,9.04,"{""reasoning"": ""Two-lane rural highway with double yellow centerline, right-hand traffic, dry winter scrubland and low rolling terrain typical of Argentina's pampas/Entre Ríos region under overcast sky."", ""country"": ""AR"", ""latitude"": -31.5, ""longitude"": -59.5}"
+google/gemma-4-31b-it,no-CoT,-34.6037,-58.3816,522.848,AR,True,,stop,6.348e-05,404,36,0,4.1,"```json
+{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}
+```"
+anthropic/claude-opus-4.8,no-CoT,-31.5,-60.5,526.112,AR,True,,stop,0.00484,818,30,0,2.43,"{""country"": ""AR"", ""latitude"": -31.5, ""longitude"": -60.5}"
+google/gemini-3.5-flash,CoT (effort=high),-37.845,-58.255,832.91,AR,True,,stop,0.0110325,1307,1008,932,15.13,"```json
+{""reasoning"": ""The double yellow center line with white edge lines, combined with the rolling grassy terrain and scrubby temperate vegetation, is highly characteristic of the southern Pampas region in Buenos Aires Province, Argentina."", ""country"": ""AR"", ""latitude"": -37.845, ""longitude"": -58.255}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,1159.451,BR,True,,stop,0.0014115,786,31,0,1.5,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,1159.451,BR,True,,stop,0.00021684,586,31,0,6.42,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+minimax/minimax-m3,CoT,-43.5,-69.0,1869.266,AR,True,,stop,0.00090426,995,556,460,24.51,"{""reasoning"": ""Yellow double center line on a right-hand-drive two-lane highway with characteristic Patagonian steppe vegetation (low shrubs, grasses, scrubland) and overcast gray sky strongly suggests a rural highway in Patagonia, Argentina. The road style and landscape match routes in Chubut province, such as along RN 40 or RN 26."", ""country"": ""AR"", ""latitude"": -43.5, ""longitude"": -69.0}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6729.143,,True,True,,,,,,16.17,
+x-ai/grok-4.3,no-CoT,27.85,-81.65,7111.364,US,True,,stop,0.0007334,704,22,0,1.1,"{""country"": ""US"", ""latitude"": 27.85, ""longitude"": -81.65}"
+qwen/qwen3.5-397b-a17b,no-CoT,28.3852,-80.6491,7124.067,US,True,,stop,0.000579,586,31,0,2.42,"{""country"": ""US"", ""latitude"": 28.3852, ""longitude"": -80.6491}"
+qwen/qwen3.5-35b-a3b,no-CoT,27.9506,-82.4572,7155.835,US,True,,stop,0.00011304,586,31,0,2.22,"{""country"": ""US"", ""latitude"": 27.9506, ""longitude"": -82.4572}"
+qwen/qwen3.5-27b,no-CoT,33.749,-84.388,7815.518,US,True,,stop,0.0002499,585,31,0,2.36,"{""country"": ""US"", ""latitude"": 33.7490, ""longitude"": -84.3880}"
+x-ai/grok-4.3,CoT,30.45,-98.55,8220.68,US,True,,stop,0.003224,788,1030,958,8.47,"{""reasoning"": ""Right-hand traffic confirmed by double solid yellow center line positioned on left side of driver's view; rural two-lane asphalt with gravel shoulders, leafless scrub vegetation and overcast sky match Texas Hill Country / Edwards Plateau in winter."", ""country"": ""US"", ""latitude"": 30.45, ""longitude"": -98.55}"
+mistralai/mistral-small-2603,no-CoT,40.0,-105.25,9425.722,US,True,,stop,0.000167625,786,27,0,1.57,"{""country"": ""US"", ""latitude"": 40.0, ""longitude"": -105.25}"
+qwen/qwen3.6-35b-a3b,no-CoT,34.0522,-118.2437,9794.663,US,True,,stop,0.00018625,585,32,0,0.66,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+xiaomi/mimo-v2.5,CoT,34.31,-119.27,9885.657,US,True,,stop,0.0004895576,899,1393,1311,15.37,"{""reasoning"": ""The double yellow line and right-hand traffic indicate the United States, specifically a western state. The low scrub, oak trees, and hilly terrain are characteristic of the California chaparral biome found in the coastal ranges or foothills."", ""country"": ""US"", ""latitude"": 34.31, ""longitude"": -119.27}"
+qwen/qwen3.6-27b,no-CoT,36.7783,-119.4179,10069.862,US,True,,stop,0.0002299,585,32,0,6.76,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,36.0877685546875,-121.7659683227539,10186.212,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,36.17155456542969,-121.77767944335938,10192.764,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.640045166015625,-121.90316009521484,10233.594,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,-34.9285,138.6007,12563.769,AU,True,,stop,6.34e-05,586,32,0,9.82,"{""country"": ""AU"", ""latitude"": -34.9285, ""longitude"": 138.6007}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.52,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.37,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.32,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.83,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.39,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.28,
+xiaomi/mimo-v2.5,no-CoT,,,,,False,,,,,,,12.86,

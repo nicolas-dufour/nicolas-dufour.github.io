@@ -1,0 +1,72 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,8.3060412575987,80.953354354919,0.0,LK,True,,,,,,,,"Polonnaruwa, None, North Central, LK"
+google/gemini-3.5-flash,no-CoT (effort=minimal),8.3452,80.4971,50.387,LK,True,,stop,0.0020895,1189,34,0,13.61,"```json
+{""country"": ""LK"", ""latitude"": 8.3452, ""longitude"": 80.4971}
+```"
+anthropic/claude-opus-4.8,no-CoT,8.3114,80.4037,60.48,LK,True,,stop,0.00413,666,32,0,9.1,"{""country"": ""LK"", ""latitude"": 8.3114, ""longitude"": 80.4037}"
+anthropic/claude-opus-4.8,CoT,8.35,80.4,61.077,LK,True,,stop,0.006285,797,92,0,2.93,"{""reasoning"": ""Reddish lateritic soil, tropical dry scrub, left-hand traffic, and the typical rural roadside layout point to dry-zone Sri Lanka."", ""country"": ""LK"", ""latitude"": 8.35, ""longitude"": 80.4}"
+google/gemini-3.5-flash,CoT (effort=low),8.7521,80.4982,70.464,LK,True,,stop,0.004905,1272,333,264,3.18,"{""reasoning"": ""The left-hand traffic, reddish soil, tropical dry-zone vegetation, and oncoming light commercial vehicle are highly characteristic of Sri Lanka, particularly the northern or eastern dry zones."", ""country"": ""LK"", ""latitude"": 8.7521, ""longitude"": 80.4982}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,8.593400001525879,80.31340026855469,77.3,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,8.773056030273438,80.42616271972656,77.829,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,8.894535064697266,80.42351531982422,87.61,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,8.85,80.25,98.179,LK,True,,stop,0.011218788,682,3215,3158,68.74,"{""reasoning"": ""Left-hand traffic, vivid reddish lateritic road shoulders, and low tropical dry-zone scrub are distinctive of Sri Lanka’s northern Vanni plains."", ""country"": ""LK"", ""latitude"": 8.85, ""longitude"": 80.25}"
+google/gemini-3.5-flash,CoT (effort=high),9.115,80.445,105.893,LK,True,,stop,0.0108075,1271,989,921,7.35,"```json
+{""reasoning"": ""The left-hand traffic, reddish soil, tropical scrub vegetation, and utility pole style are characteristic of northern Sri Lanka, specifically along the A9 highway."", ""country"": ""LK"", ""latitude"": 9.115, ""longitude"": 80.445}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,8.910533905029297,79.41333770751953,182.166,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,8.869915008544922,79.36827087402344,185.212,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,12.12681770324707,83.59033966064453,513.553,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,10.8505,76.2711,586.142,IN,True,,stop,0.0011835,634,31,0,3.54,"{""country"": ""IN"", ""latitude"": 10.8505, ""longitude"": 76.2711}"
+mistralai/mistral-small-2603,no-CoT,13.7563,100.5018,2216.697,TH,True,,stop,0.0001143,634,32,0,2.58,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+x-ai/grok-4.3,no-CoT,14.85,100.45,2243.383,TH,True,,stop,0.0005934,592,22,0,0.84,"{""country"": ""TH"", ""latitude"": 14.85, ""longitude"": 100.45}"
+xiaomi/mimo-v2.5,no-CoT,14.8,100.5,2246.938,TH,True,,stop,8.00576e-05,708,26,0,2.19,"{""country"": ""TH"", ""latitude"": 14.8, ""longitude"": 100.5}"
+google/gemma-4-31b-it,no-CoT,14.21,101.35,2317.723,TH,True,,stop,7.164e-05,406,37,0,8.22,"```json
+{""country"": ""TH"", ""latitude"": 14.2100, ""longitude"": 101.3500}
+```"
+openai/gpt-5.5,no-CoT,11.5632,104.9306,2650.068,KH,True,,stop,0.00341,544,23,0,1.34,"{""country"":""KH"",""latitude"":11.5632,""longitude"":104.9306}"
+google/gemini-3.5-flash,CoT (effort=medium),13.2154,104.9123,2672.056,KH,True,,stop,0.0094845,1271,842,748,7.52,"```json
+{""reasoning"": ""The road features right-hand traffic with a solid white outer line and dashed center line, accompanied by reddish-orange soil and tropical scrub vegetation characteristic of Cambodia. The concrete utility poles and flat terrain further point to rural Cambodia, likely along National Road 62."", ""country"": ""KH"", ""latitude"": 13.2154, ""longitude"": 104.9123}
+```"
+minimax/minimax-m3,CoT,11.15,108.45,3028.895,VN,True,,stop,0.00085986,843,557,477,22.1,"{""reasoning"": ""Red lateritic soil, right-hand driving, tropical vegetation with palms, Toyota Hiace-style van, and the highway style with white edge markings are highly characteristic of a Vietnamese national highway (likely QL1A in the south-central coastal region)."", ""country"": ""VN"", ""latitude"": 11.15, ""longitude"": 108.45}"
+xiaomi/mimo-v2.5,CoT,14.55,121.05,4418.907,PH,True,,stop,0.0005746776,787,1753,1692,24.69,"{""reasoning"": ""Right-hand traffic and tropical vegetation with reddish soil suggest a Southeast Asian country, likely the Philippines given the road infrastructure and climate."", ""country"": ""PH"", ""latitude"": 14.55, ""longitude"": 121.05}"
+openai/gpt-5.5,CoT,-3.7582,39.7768,4759.247,KE,True,,stop,0.018855,621,525,445,15.4,"{""reasoning"":""The scene shows left-hand traffic with British-style white lane markings, tropical vegetation, red laterite shoulders, and rural utility-pole roadside infrastructure typical of coastal Kenya. The flat humid landscape and road character fit the Kilifi/Mombasa coastal corridor best."",""country"":""KE"",""latitude"":-3.7582,""longitude"":39.7768}"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.0236,37.9062,4858.297,KE,True,,stop,0.0001052051,473,30,0,8.28,"{""country"": ""KE"", ""latitude"": -0.0236, ""longitude"": 37.9062}"
+x-ai/grok-4.3,CoT,-1.38,36.92,4998.347,KE,True,,stop,0.002904,676,958,872,6.95,"{
+  ""reasoning"": ""Red laterite soil, acacia-like savanna vegetation, left-hand traffic (oncoming vehicle positioned right-of-center), British-style dashed white center line + solid edge markings, and lattice telecom tower point to rural East Africa; no other region matches all cues simultaneously."",
+  ""country"": ""KE"",
+  ""latitude"": -1.38,
+  ""longitude"": 36.92
+}"
+google/gemini-3.1-pro-preview,no-CoT,0.5,32.5,5436.307,UG,True,,stop,0.006266,1189,324,296,11.06,"```json
+{""country"": ""UG"", ""latitude"": 0.5, ""longitude"": 32.5}
+```"
+google/gemini-3.1-pro-preview,CoT,0.5123,32.4567,5440.788,UG,True,,stop,0.006778,1271,353,279,5.69,"{
+  ""reasoning"": ""Left-hand driving, reddish soil, and tropical vegetation suggest an East or Southern African country. The road markings and utility poles are consistent with Uganda."",
+  ""country"": ""UG"",
+  ""latitude"": 0.5123,
+  ""longitude"": 32.4567
+}"
+qwen/qwen3.6-27b,no-CoT,-17.8314,31.0484,6201.848,ZW,True,,stop,0.0002414,474,31,0,2.14,"{""country"": ""ZW"", ""latitude"": -17.8314, ""longitude"": 31.0484}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.7406,28.2294,6838.951,ZA,True,,stop,0.00010236,474,36,0,2.87,"```json
+{""country"": ""ZA"", ""latitude"": -25.7406, ""longitude"": 28.2294}
+```"
+qwen/qwen3.5-9b,no-CoT,-25.7479,28.2293,6839.321,ZA,True,,stop,5.205e-05,474,31,0,2.34,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 28.2293}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9012.241,,True,True,,,,,,12.96,
+qwen/qwen3.5-122b-a10b,no-CoT,-12.9777,-38.5016,13392.011,BR,True,,stop,0.0002163,473,31,0,8.22,"{""country"": ""BR"", ""latitude"": -12.9777, ""longitude"": -38.5016}"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7801,-47.9292,14407.504,BR,True,,stop,0.00036468,473,31,0,8.24,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+qwen/qwen3.5-27b,no-CoT,-14.235,-51.925,14842.776,BR,True,,stop,0.0002025,474,42,0,2.95,"```json
+{
+  ""country"": ""BR"",
+  ""latitude"": -14.235,
+  ""longitude"": -51.925
+}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.5,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.29,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.59,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,9.35,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.64,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,31.8,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.35,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.24,

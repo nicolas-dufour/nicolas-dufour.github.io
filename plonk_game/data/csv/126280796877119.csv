@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,14.89196863655631,5.275587157946642,0.0,NE,True,,,,,,,,"Tahoua, None, Tahoua, NE"
+openai/gpt-5.5,CoT,13.5236,2.1098,373.625,NE,True,,stop,0.016365,621,442,361,17.62,"{""reasoning"":""Yellow auto-rickshaws, right-side driving, dusty Sahelian urban environment, French-influenced streetscape and solar streetlights point strongly to Niamey, Niger. The concrete median and roadside architecture fit a main boulevard in central Niamey."",""country"":""NE"",""latitude"":13.5236,""longitude"":2.1098}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,12.651555061340332,8.476313591003418,426.066,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,12.0,8.0,436.116,NG,True,,stop,0.001131,634,24,0,0.93,"{""country"": ""NG"", ""latitude"": 12.0, ""longitude"": 8.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,12.520142555236816,8.596543312072754,445.241,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,12.0,8.5,474.316,NG,True,,stop,7.94976e-05,708,24,0,1.4,"{""country"": ""NG"", ""latitude"": 12.0, ""longitude"": 8.5}"
+anthropic/claude-opus-4.8,CoT,11.9964,8.5167,475.918,NG,True,,stop,0.00636,797,95,0,3.88,"{""reasoning"": ""Yellow tricycle keke taxis, dusty Sahel environment, mud-brick architecture and solar street lights indicate northern Nigeria, likely Kano."", ""country"": ""NG"", ""latitude"": 11.9964, ""longitude"": 8.5167}"
+qwen/qwen3.5-397b-a17b,no-CoT,11.9964,8.5167,475.918,NG,True,,stop,0.0003287,473,30,0,1.26,"{""country"": ""NG"", ""latitude"": 11.9964, ""longitude"": 8.5167}"
+google/gemini-3.1-pro-preview,CoT,11.9934,8.5167,476.145,NG,True,,stop,0.005278,1271,228,147,4.66,"{
+  ""reasoning"": ""The yellow auto-rickshaws (Keke Napep), red soil, and Airtel kiosk strongly indicate Nigeria. The architectural style and arid environment suggest a northern city like Kano."",
+  ""country"": ""NG"",
+  ""latitude"": 11.9934,
+  ""longitude"": 8.5167
+}"
+google/gemini-3.1-pro-preview,no-CoT,11.9934,8.5167,476.145,NG,True,,stop,0.004862,1189,207,173,4.91,"```json
+{""country"": ""NG"", ""latitude"": 11.9934, ""longitude"": 8.5167}
+```"
+moonshotai/kimi-k2.6,CoT,12.0022,8.5919,481.504,NG,True,,stop,0.008909388,682,2544,2465,59.84,"{""reasoning"": ""The yellow auto-rickshaws with commercial yellow plates are iconic to Nigeria, and the Sahelian vegetation, dusty red soil, Hausa-influenced arched architecture, and flowing white robes indicate a major city in Northern Nigeria."", ""country"": ""NG"", ""latitude"": 12.0022, ""longitude"": 8.5919}"
+anthropic/claude-opus-4.8,no-CoT,12.0022,8.5919,481.504,NG,True,,stop,0.00413,666,32,0,8.7,"{""country"": ""NG"", ""latitude"": 12.0022, ""longitude"": 8.5919}"
+moonshotai/kimi-k2.6,no-CoT,12.0022,8.5919,481.504,NG,True,,stop,0.000296532,603,25,0,11.08,"{""country"": ""NG"", ""latitude"": 12.0022, ""longitude"": 8.5919}"
+google/gemini-3.5-flash,CoT (effort=low),12.0022,8.592,481.512,NG,True,,stop,0.004491,1272,287,218,9.09,"{""reasoning"": ""The yellow auto-rickshaws (Keke Napep), sandy roadside, Airtel kiosk, and Sahelian-style architecture are highly characteristic of northern Nigeria, particularly Kano."", ""country"": ""NG"", ""latitude"": 12.0022, ""longitude"": 8.592}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),12.0022,8.592,481.512,NG,True,,stop,0.002091,1190,34,0,13.69,"```json
+{""country"": ""NG"", ""latitude"": 12.0022, ""longitude"": 8.5920}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),12.0022,8.592,481.512,NG,True,,stop,0.0083955,1271,721,635,6.37,"{""reasoning"": ""The yellow auto-rickshaws (kekes), sandy roadside, solar streetlights, and the driver wearing traditional Northern Nigerian attire (baban riga) indicate Northern Nigeria, most likely Kano. The red Airtel kiosk and distinct arched architecture further support this region."", ""country"": ""NG"", ""latitude"": 12.0022, ""longitude"": 8.592}"
+google/gemini-3.5-flash,CoT (effort=high),12.0022,8.592,481.512,NG,True,,stop,0.0079725,1271,674,610,11.63,"{""reasoning"": ""The yellow auto-rickshaws (kekes), sandy roadside, solar streetlights, and distinctive architecture are highly characteristic of Northern Nigeria, particularly Kano."", ""country"": ""NG"", ""latitude"": 12.0022, ""longitude"": 8.592}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,10.994342803955078,7.283145427703857,484.915,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,9.0765,7.3986,686.608,NG,True,,stop,0.0001145625,473,29,0,1.63,"{""country"": ""NG"", ""latitude"": 9.0765, ""longitude"": 7.3986}"
+google/gemma-4-31b-it,no-CoT,9.0579,7.4951,692.146,NG,True,,stop,6.298e-05,406,34,0,2.33,"```json
+{""country"": ""NG"", ""latitude"": 9.0579, ""longitude"": 7.4951}
+```"
+x-ai/grok-4.3,no-CoT,9.0579,7.4951,692.146,NG,True,,stop,0.0005984,592,24,0,0.82,"{""country"": ""NG"", ""latitude"": 9.0579, ""longitude"": 7.4951}"
+qwen/qwen3.5-9b,no-CoT,7.37755,7.94656,884.845,NG,True,,stop,5.205e-05,474,31,0,2.66,"{""country"": ""NG"", ""latitude"": 7.37755, ""longitude"": 7.94656}"
+qwen/qwen3.6-27b,no-CoT,6.5244,3.3792,953.178,NG,True,,stop,0.0001903,473,29,0,8.39,"{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+xiaomi/mimo-v2.5,CoT,6.464,3.543,956.041,NG,True,,stop,0.0019858776,787,6793,6677,130.54,"{""reasoning"": ""The yellow 'Keke' (tricycle taxis) are a signature vehicle of Lagos, Nigeria, driving on the right side of the road. The stone-clad architecture, reddish laterite dust, and modern solar streetlights are characteristic of the developing Lekki-Ajah corridor (specifically the Lekki-Epe Expressway)."", ""country"": ""NG"", ""latitude"": 6.464, ""longitude"": 3.543}"
+minimax/minimax-m3,no-CoT,12.65,-8.0,1454.971,ML,True,,stop,0.00019452,754,22,0,22.22,"{""country"": ""ML"", ""latitude"": 12.65, ""longitude"": -8.0}{""country"": ""ML"", ""latitude"": 12.65, ""longitude"": -8.0}"
+openai/gpt-5.5,no-CoT,12.6392,-8.0029,1455.517,ML,True,,stop,0.00344,544,24,0,7.97,"{""country"":""ML"",""latitude"":12.6392,""longitude"":-8.0029}"
+minimax/minimax-m3,CoT,28.02,73.31,7106.016,IN,True,,stop,0.00094626,843,629,537,18.03,"{""reasoning"": ""Yellow auto-rickshaws with black canopies (Delhi/NCR or Rajasthan color scheme), right-hand driving on left side of road, distinctive arched sandstone haveli-style architecture, arid dusty terrain with red/orange soil, and solar street lights all point to northwestern India, likely a town in Rajasthan."", ""country"": ""IN"", ""latitude"": 28.02, ""longitude"": 73.31}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,31.291461944580078,75.21084594726562,7268.433,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,31.244340896606445,75.21072387695312,7268.696,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,29.848966598510742,76.03227996826172,7356.764,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,26.9124,75.7873,7359.22,IN,True,,stop,0.001994,676,594,512,11.57,"{
+  ""reasoning"": ""Yellow three-wheeled auto-rickshaws (Bajaj-style), left-hand traffic, arched brick building, dusty roadside with concrete barriers and Hindi/English signage are definitive for India; scene matches mid-sized northern Indian cities."",
+  ""country"": ""IN"",
+  ""latitude"": 26.9124,
+  ""longitude"": 75.7873
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,26.8467,75.8042,7361.556,IN,True,,stop,0.0001444,474,31,0,8.79,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 75.8042}"
+google/gemma-4-26b-a4b-it,no-CoT,28.6139,77.209,7481.534,IN,True,,stop,5.494e-05,406,31,0,1.68,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+mistralai/mistral-small-2603,no-CoT,28.6357,77.2245,7482.825,IN,True,,stop,0.0001137,634,31,0,4.32,"{""country"": ""IN"", ""latitude"": 28.6357, ""longitude"": 77.2245}"
+qwen/qwen3.5-27b,no-CoT,28.5355,77.391,7500.018,IN,True,,stop,0.0002065,474,44,0,11.32,"```json
+{
+  ""country"": ""IN"",
+  ""latitude"": 28.5355,
+  ""longitude"": 77.3910
+}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,17.6865,83.2185,8263.068,IN,True,,stop,0.00018772,474,31,0,5.09,"{""country"": ""IN"", ""latitude"": 17.6865, ""longitude"": 83.2185}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,16.49,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.58,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.15,

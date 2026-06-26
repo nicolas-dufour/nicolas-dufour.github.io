@@ -1,0 +1,75 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,30.61118908609249,104.44642422828386,0.0,CN,True,,,,,,,,"Longquan, None, Sichuan, CN"
+qwen/qwen3.6-35b-a3b,no-CoT,30.5728,104.0668,36.587,CN,True,,stop,0.0001071356,473,32,0,7.91,"{""country"": ""CN"", ""latitude"": 30.5728, ""longitude"": 104.0668}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,29.844619750976562,104.79957580566406,91.743,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,29.83130645751953,104.80535888671875,93.325,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,29.60373878479004,104.97785186767578,123.135,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,29.5,106.5,233.08,CN,True,,stop,0.006185,797,88,0,3.69,"{""reasoning"": ""Lush green hills, blue-railed median barriers, and right-hand traffic on a highway with a tarp-covered truck suggest mountainous southern China."", ""country"": ""CN"", ""latitude"": 29.5, ""longitude"": 106.5}"
+anthropic/claude-opus-4.8,no-CoT,29.5,106.5,233.08,CN,True,,stop,0.00408,666,30,0,17.3,"{""country"": ""CN"", ""latitude"": 29.5, ""longitude"": 106.5}"
+moonshotai/kimi-k2.6,no-CoT,30.5,114.3,943.299,CN,True,,stop,0.00061429,603,23,0,1.11,"{""country"": ""CN"", ""latitude"": 30.5, ""longitude"": 114.3}"
+google/gemini-3.5-flash,CoT (effort=medium),22.815,108.325,948.425,CN,True,,stop,0.0051285,1271,358,285,7.66,"{""reasoning"": ""The lush, subtropical green hills combined with the specific style of the cargo truck covered in a blue-and-white striped tarp are highly characteristic of southern China, particularly Guangxi or Guangdong provinces."", ""country"": ""CN"", ""latitude"": 22.815, ""longitude"": 108.325}"
+minimax/minimax-m3,CoT,25.18,112.54,998.129,CN,True,,stop,0.00085494,845,524,535,15.46,"{""reasoning"": ""Right-hand driving, Chinese-style cargo truck with tarp cover, concrete-and-rail guardrail design, and lush subtropical vegetation on hilly terrain are all characteristic of a rural expressway in southern China, likely in the Nanling mountain region."", ""country"": ""CN"", ""latitude"": 25.18, ""longitude"": 112.54}"
+moonshotai/kimi-k2.6,CoT,25.0,114.0,1127.163,CN,True,,stop,0.0146525,682,4074,4545,260.97,"{""reasoning"": ""The blue-striped tarp on the heavy truck, concrete-post guardrails, and lush subtropical mountain vegetation are characteristic of a right-hand-traffic mountain highway in southern China."", ""country"": ""CN"", ""latitude"": 25.0, ""longitude"": 114.0}"
+google/gemini-3.5-flash,CoT (effort=high),23.58,113.25,1169.922,CN,True,,stop,0.0104475,1271,949,872,7.97,"{""reasoning"": ""The blue-and-white striped cargo tarp on the truck and the specific style of concrete central divider are highly characteristic of highways in mainland China, while the lush, humid, hilly vegetation points to a southern province like Guangdong."", ""country"": ""CN"", ""latitude"": 23.58, ""longitude"": 113.25}"
+google/gemini-3.5-flash,CoT (effort=low),23.5123,113.4567,1190.363,CN,True,,stop,0.0038235,1271,213,135,9.29,"{""reasoning"": ""The lush green hilly terrain, right-hand driving, and the truck covered with a blue-and-white striped tarp are highly characteristic of highways in southern China, particularly in provinces like Guangdong or Guangxi."", ""country"": ""CN"", ""latitude"": 23.5123, ""longitude"": 113.4567}"
+google/gemini-3.1-pro-preview,CoT,23.5,113.5,1194.509,CN,True,,stop,0.005122,1271,215,129,5.47,"{
+  ""reasoning"": ""Right-hand driving, lush subtropical vegetation, and the specific style of the truck with a blue-and-white striped tarp strongly suggest southern China. The concrete median barriers and blue side guardrails are also typical of Chinese highways."",
+  ""country"": ""CN"",
+  ""latitude"": 23.5,
+  ""longitude"": 113.5
+}"
+mistralai/mistral-medium-3-5,CoT,23.1291,113.2644,1206.215,CN,True,,stop,0.0241815,716,3081,3263,102.58,"{""reasoning"": ""Right-hand traffic, subtropical lush vegetation, and Chinese expressway infrastructure with concrete barriers and blue signage"", ""country"": ""CN"", ""latitude"": 23.1291, ""longitude"": 113.2644}"
+qwen/qwen3.5-122b-a10b,CoT,23.1291,113.2644,1206.215,CN,True,,stop,0.00668122,553,3143,3051,33.74,"{""reasoning"": ""The image shows right-hand traffic with a truck driving on the right side of a concrete median barrier, which is a style very common on Chinese expressways. The lush, green subtropical vegetation and the blue tarp covering the truck's cargo further point to Southern China."", ""country"": ""CN"", ""latitude"": 23.1291, ""longitude"": 113.2644}"
+google/gemini-3.1-pro-preview,no-CoT,23.1291,113.2644,1206.215,CN,True,,stop,0.002812,1190,36,0,3.47,"```json
+{""country"": ""CN"", ""latitude"": 23.1291, ""longitude"": 113.2644}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),23.1291,113.2644,1206.215,CN,True,,stop,0.0021075,1189,36,0,3.86,"```json
+{""country"": ""CN"", ""latitude"": 23.1291, ""longitude"": 113.2644}
+```"
+google/gemma-4-31b-it,no-CoT,23.1291,113.2644,1206.215,CN,True,,stop,6.758e-05,406,37,0,11.9,"```json
+{""country"": ""CN"", ""latitude"": 23.1291, ""longitude"": 113.2644}
+```"
+qwen/qwen3.5-9b,no-CoT,23.1257,113.2651,1206.534,CN,True,,stop,5.22e-05,474,32,0,5.49,"{""country"": ""CN"", ""latitude"": 23.1257, ""longitude"": 113.2651}"
+qwen/qwen3.5-122b-a10b,no-CoT,22.785,114.215,1302.291,CN,True,,stop,0.00018564,474,30,0,7.47,"{""country"": ""CN"", ""latitude"": 22.785, ""longitude"": 114.215}"
+minimax/minimax-m3,no-CoT,22.5,114.0,1308.951,CN,True,,stop,0.00019176,752,23,0,7.41,"{""country"": ""CN"", ""latitude"": 22.5, ""longitude"": 114.0}"
+xiaomi/mimo-v2.5,no-CoT,22.5,114.0,1308.951,CN,True,,stop,8.00576e-05,708,26,0,6.22,"{""country"": ""CN"", ""latitude"": 22.5, ""longitude"": 114.0}"
+qwen/qwen3.5-27b,no-CoT,22.5431,114.0579,1309.714,CN,True,,stop,0.0002085,474,45,0,19.37,"```json
+{
+  ""country"": ""CN"",
+  ""latitude"": 22.5431,
+  ""longitude"": 114.0579
+}
+```"
+qwen/qwen3.6-27b,no-CoT,22.5431,114.0579,1309.714,CN,True,,stop,0.000213497,473,32,0,6.51,"{""country"": ""CN"", ""latitude"": 22.5431, ""longitude"": 114.0579}"
+qwen/qwen3.5-35b-a3b,no-CoT,25.8342,119.0231,1522.206,CN,True,,stop,0.00017136,474,32,0,2.82,"{""country"": ""CN"", ""latitude"": 25.8342, ""longitude"": 119.0231}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,24.993968963623047,121.92220306396484,1826.297,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,33.3046,126.5572,2103.323,KR,True,,stop,0.014925,621,394,318,9.65,"{""reasoning"":""Right-hand traffic with Korean-style lane markings/center bollards and a small tarp-covered cargo truck point to South Korea. The lush subtropical vegetation, hilly rural road, and orchard-like netting are especially characteristic of Jeju Island."",""country"":""KR"",""latitude"":33.3046,""longitude"":126.5572}"
+openai/gpt-5.5,no-CoT,26.3892,127.7776,2323.238,JP,True,,stop,0.00341,544,23,0,4.41,"{""country"":""JP"",""latitude"":26.3892,""longitude"":127.7776}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,26.84433937072754,128.3468017578125,2363.145,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,26.94155502319336,128.572265625,2381.741,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,33.5,133.5,2747.844,JP,True,,stop,0.02412165,553,6805,6680,155.2,"{
+""reasoning"": ""The yellow license plate on the truck with a two-line format (classification number on top, hiragana/number on bottom) identifies it as a Japanese large commercial vehicle. The concrete post-and-rail guardrails on the left and the lush, dense vegetation on the embankments are characteristic of rural Japanese national highways, and the vehicle positions (truck in left lane, camera in right lane) confirm left-hand traffic."",
+""country"": ""JP"",
+""latitude"": 33.5,
+""longitude"": 133.5
+}"
+mistralai/mistral-medium-3-5,no-CoT,35.0,135.0,2885.427,JP,True,,stop,0.001146,634,26,0,1.0,"{""country"": ""JP"", ""latitude"": 35.0, ""longitude"": 135.0}"
+x-ai/grok-4.3,CoT,34.85,135.6,2939.916,JP,True,,stop,0.002699,676,876,809,15.67,"{
+  ""reasoning"": ""Right-side driving with solid white edge line and median concrete barriers; dense subtropical green hills, blue guardrail, and distant lattice transmission tower match East Asian expressway scenery."",
+  ""country"": ""JP"",
+  ""latitude"": 34.85,
+  ""longitude"": 135.6
+}"
+x-ai/grok-4.3,no-CoT,34.85,135.65,2944.479,JP,True,,stop,0.0007278,592,22,0,1.13,"{""country"": ""JP"", ""latitude"": 34.85, ""longitude"": 135.65}"
+qwen/qwen3.5-35b-a3b,CoT,35.0116,135.7681,2955.396,JP,True,,stop,0.0067952625,553,5158,5067,32.25,"{""reasoning"": ""The image shows left-hand traffic, lush green vegetation, and a distinctive concrete block median barrier typical of Japanese expressways (like the Meishin or Tomei Expressway). The truck's license plate shape and the road markings (white dashed lines) further confirm Japan."", ""country"": ""JP"", ""latitude"": 35.0116, ""longitude"": 135.7681}"
+mistralai/mistral-small-2603,CoT,2.0333,102.8333,3182.253,MY,True,,stop,0.00060744,716,945,1043,13.75,"{""reasoning"": ""Left-hand traffic, blue road signs with white text reading 'Jalan', tropical vegetation with palm trees, and license plates consistent with Malaysian format indicate Malaysia."", ""country"": ""MY"", ""latitude"": 2.0333, ""longitude"": 102.8333}"
+google/gemma-4-26b-a4b-it,CoT,35.35,138.75,3226.443,JP,True,,stop,0.00056311,491,1277,1221,22.7,"{""reasoning"": ""The concrete barriers and left-hand driving are characteristic of Japanese expressways, and the lush, hilly terrain is consistent with Japan."", ""country"": ""JP"", ""latitude"": 35.35, ""longitude"": 138.75}"
+xiaomi/mimo-v2.5,CoT,36.2,138.8,3231.414,JP,True,,stop,0.001018605,565,3426,3380,291.21,"{""reasoning"": ""The image shows a left-hand traffic environment with lush, green mountainous vegetation typical of Japan in summer. The road infrastructure, including the striped delineators and specific guardrail style, strongly aligns with Japanese road standards; the truck style (boxy layout with tarp) also points to Japan."", ""country"": ""JP"", ""latitude"": 36.2, ""longitude"": 138.8}"
+qwen/qwen3.5-397b-a17b,no-CoT,35.1234,139.5678,3301.104,JP,True,,stop,0.000399,473,32,0,2.0,"{""country"": ""JP"", ""latitude"": 35.1234, ""longitude"": 139.5678}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4194,10989.842,US,True,,stop,0.000142875,634,32,0,2.69,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4194}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11386.185,,True,True,,,,,,12.95,
+google/gemma-4-31b-it,CoT,34.0522,-118.2437,11545.064,US,True,,stop,0.00146178,494,2530,2459,17.26,"```json
+{""reasoning"": ""No image was provided for analysis; a random coordinate was selected to comply with the strict 'do not refuse' and 'always commit' constraints."", ""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}
+```"
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.14,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,

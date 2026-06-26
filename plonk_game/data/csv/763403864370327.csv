@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-23.346549269773,44.350901827007,0.0,MG,True,,,,,,,,"Antanimena, None, Atsimo-Andrefana, MG"
+xiaomi/mimo-v2.5,CoT,-21.15,32.05,1288.856,ZW,True,,stop,0.0008518776,787,2743,2649,36.67,"{""reasoning"": ""The reddish sandy soil and acacia scrub vegetation are characteristic of the Southern African lowveld, specifically regions like the Zimbabwean bushveld. The vehicle configuration, including the heavy-duty whip antenna and the hood logo, suggests an operational vehicle within a Zimbabwean wildlife conservancy or park area."", ""country"": ""ZW"", ""latitude"": -21.15, ""longitude"": 32.05}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-23.843936920166016,31.547956466674805,1305.331,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-23.98386573791504,31.518226623535156,1308.401,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-24.5,31.5,1311.99,ZA,True,,stop,0.011503728,682,3295,3219,91.06,"{""reasoning"": ""The dry sandy bushveld with scattered acacia trees and ochre soils matches the South African Lowveld savanna, and the safari-configured Toyota with a tall radio antenna is characteristic of Kruger National Park game-drive vehicles."", ""country"": ""ZA"", ""latitude"": -24.5, ""longitude"": 31.5}"
+moonshotai/kimi-k2.6,no-CoT,-24.5,31.5,1311.99,ZA,True,,stop,0.00061429,603,23,0,15.02,"{""country"": ""ZA"", ""latitude"": -24.5, ""longitude"": 31.5}"
+qwen/qwen3.6-27b,no-CoT,-24.0533,31.3333,1327.267,ZA,True,,stop,0.0001943,473,31,0,26.2,"{""country"": ""ZA"", ""latitude"": -24.0533, ""longitude"": 31.3333}"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.6416,31.1089,1352.352,ZA,True,,stop,0.00010195,473,31,0,1.29,"{""country"": ""ZA"", ""latitude"": -24.6416, ""longitude"": 31.1089}"
+qwen/qwen3.5-122b-a10b,no-CoT,-24.9833,31.1167,1354.332,ZA,True,,stop,0.0002884,473,31,0,16.41,"{""country"": ""ZA"", ""latitude"": -24.9833, ""longitude"": 31.1167}"
+xiaomi/mimo-v2.5,no-CoT,-24.5,31.0,1362.52,ZA,True,,stop,7.97776e-05,708,25,0,1.79,"{""country"": ""ZA"", ""latitude"": -24.5, ""longitude"": 31.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-24.55040168762207,30.34055519104004,1429.416,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,-24.0735,29.2639,1537.384,ZA,True,,stop,0.0002067,473,31,0,17.06,"{""country"": ""ZA"", ""latitude"": -24.0735, ""longitude"": 29.2639}"
+mistralai/mistral-medium-3-5,no-CoT,-24.7833,29.1667,1549.098,ZA,True,,stop,0.0011835,634,31,0,0.77,"{""country"": ""ZA"", ""latitude"": -24.7833, ""longitude"": 29.1667}"
+openai/gpt-5.5,no-CoT,-6.2167,35.75,2115.507,TZ,True,,stop,0.00344,544,24,0,1.78,"{""country"":""TZ"",""latitude"":-6.2167,""longitude"":35.7500}"
+google/gemma-4-31b-it,no-CoT,-22.1234,23.4567,2145.272,BW,True,,stop,7.124e-05,406,36,0,2.35,"```json
+{""country"": ""BW"", ""latitude"": -22.1234, ""longitude"": 23.4567}
+```"
+openai/gpt-5.5,CoT,-3.3576,38.7574,2302.63,KE,True,,stop,0.014025,621,364,290,9.35,"{""reasoning"":""Dry acacia savanna on an unpaved safari track with a Land Cruiser hood/antenna setup strongly suggests an East African national park; the red sandy soil and scrubby terrain best fit Kenya's Tsavo area."",""country"":""KE"",""latitude"":-3.3576,""longitude"":38.7574}"
+anthropic/claude-opus-4.8,CoT,-2.5,38.0,2416.801,KE,True,,stop,0.00666,797,107,0,3.23,"{""reasoning"": ""Toyota Land Cruiser with UN/NGO radio antenna on dirt track through dry acacia savanna bushland, typical of East African semi-arid terrain like Kenya/Tanzania border regions."", ""country"": ""KE"", ""latitude"": -2.5, ""longitude"": 38.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-2.3154,38.3516,2426.187,KE,True,,stop,0.0020895,1189,34,0,13.36,"```json
+{""country"": ""KE"", ""latitude"": -2.3154, ""longitude"": 38.3516}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-2.583400011062622,37.0997314453125,2437.179,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),-2.035,37.852,2471.034,KE,True,,stop,0.0372585,1271,3928,3837,25.49,"{""reasoning"": ""The vehicle hood features a Toyota emblem and a logo that resembles 'FITPANS' or a similar conservation/research organization logo. The dry, sandy landscape with acacia trees and flat-topped hills in the distance is highly characteristic of the semi-arid regions of East Africa, specifically Kenya."", ""country"": ""KE"", ""latitude"": -2.035, ""longitude"": 37.852}"
+x-ai/grok-4.3,CoT,-2.15,37.45,2471.421,KE,True,,stop,0.0022665,676,703,632,12.44,"{""reasoning"": ""Red dirt track, acacia savanna, overcast sky and Toyota hood emblem with roof-mounted antenna are classic East African rural scenery; no left/right traffic clues but vegetation/soil match Kenya/Tanzania borderlands."", ""country"": ""KE"", ""latitude"": -2.15, ""longitude"": 37.45}"
+anthropic/claude-opus-4.8,no-CoT,-1.5,38.5,2509.816,KE,True,,stop,0.00408,666,30,0,2.46,"{""country"": ""KE"", ""latitude"": -1.5, ""longitude"": 38.5}"
+qwen/qwen3.5-397b-a17b,CoT,-2.45,34.83,2539.721,TZ,True,,stop,0.01044285,553,3398,3053,101.44,"{""reasoning"": ""The blue logo on the vehicle hood reads 'TANZANIA NATIONAL PARKS' (partially visible as '...PARKS' in blue text), and the red soil combined with acacia vegetation and left-hand traffic is characteristic of the Serengeti ecosystem."", ""country"": ""TZ"", ""latitude"": -2.45, ""longitude"": 34.83}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-1.4850422143936157,37.435211181640625,2542.701,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-1.459391713142395,37.43538284301758,2545.43,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,-1.45,37.05,2558.91,KE,True,,stop,0.0005934,592,22,0,0.95,"{""country"": ""KE"", ""latitude"": -1.45, ""longitude"": 37.05}"
+qwen/qwen3.5-9b,no-CoT,-1.3738,36.8434,2573.919,KE,True,,stop,8.791e-05,473,30,0,4.83,"{""country"": ""KE"", ""latitude"": -1.3738, ""longitude"": 36.8434}"
+qwen/qwen3.5-397b-a17b,no-CoT,-0.75,37.5,2619.172,KE,True,,stop,0.00034308,473,25,0,3.09,"{""country"": ""KE"", ""latitude"": -0.75, ""longitude"": 37.5}"
+minimax/minimax-m3,no-CoT,-1.4068,35.0061,2639.533,KE,True,,stop,0.00034722,767,146,148,4.44,"{""country"": ""KE"", ""latitude"": -1.4068, ""longitude"": 35.0061}"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.5234,36.8912,2662.551,KE,True,,stop,0.00010095,473,30,0,1.57,"{""country"": ""KE"", ""latitude"": -0.5234, ""longitude"": 36.8912}"
+minimax/minimax-m3,CoT,-0.45,36.85,2671.699,KE,True,,stop,0.00101466,843,686,600,28.49,"{""reasoning"": ""Reddish-orange lateritic soil, sparse acacia/bushland vegetation, rolling low hills, and a safari-style Toyota Land Cruiser with whip antenna strongly suggest an East African game reserve. The landscape is most consistent with Kenya's Laikipia or northern Tanzania conservancy regions."", ""country"": ""KE"", ""latitude"": -0.45, ""longitude"": 36.85}"
+google/gemini-3.1-pro-preview,CoT,0.5,39.5,2702.969,KE,True,,stop,0.006778,1271,353,269,5.68,"{
+  ""reasoning"": ""The dry savanna landscape with reddish soil and acacia trees is typical of East Africa. The vehicle hood displays the FAO (Food and Agriculture Organization) logo, suggesting a rural development or aid context, commonly found in regions like eastern Kenya."",
+  ""country"": ""KE"",
+  ""latitude"": 0.5,
+  ""longitude"": 39.5
+}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5444.615,,True,True,,,,,,12.8,
+google/gemini-3.1-pro-preview,no-CoT,13.7521,-13.2145,7495.881,SN,True,,stop,0.005474,1189,258,223,13.71,"```json
+{""country"": ""SN"", ""latitude"": 13.7521, ""longitude"": -13.2145}
+```"
+mistralai/mistral-small-2603,no-CoT,-22.9016,-47.0647,9155.606,BR,True,,stop,0.000142125,634,31,0,2.08,"{""country"": ""BR"", ""latitude"": -22.9016, ""longitude"": -47.0647}"
+google/gemini-3.5-flash,CoT (effort=high),-16.5,-56.5,10346.45,BR,True,,stop,0.0371325,1271,3914,3840,25.53,"```json
+{""reasoning"": ""The vehicle's hood features a logo with 'PANTANAL', indicating the Pantanal region of Brazil, characterized by sandy tracks, scrubby vegetation, and distant flat-topped chapadas."", ""country"": ""BR"", ""latitude"": -16.5, ""longitude"": -56.5}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-25.0125,-61.2054,10361.805,AR,True,,stop,0.005346,1272,382,307,10.3,"{""reasoning"": ""The sandy dirt road, dry Chaco-like vegetation, and the 'Parques Nacionales' logo on the hood of the Toyota patrol vehicle indicate a national park in the Argentine Chaco region."", ""country"": ""AR"", ""latitude"": -25.0125, ""longitude"": -61.2054}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.41,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.38,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.38,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.2,

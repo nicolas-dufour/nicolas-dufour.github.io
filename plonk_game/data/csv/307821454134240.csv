@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,24.821956672863,81.539200948607,0.0,IN,True,,,,,,,,"Mangawan, Rewa, Madhya Pradesh, IN"
+anthropic/claude-opus-4.8,CoT,25.3,81.5,53.302,IN,True,,stop,0.00717,949,97,0,9.45,"{""reasoning"": ""Rural Indian village scene with motorcyclist, cattle on road, sari-clad woman, and typical dry-region vegetation and building styles; left-hand traffic confirms India."", ""country"": ""IN"", ""latitude"": 25.3, ""longitude"": 81.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),24.8542,82.1235,59.07,IN,True,,stop,0.002154,1226,35,0,7.44,"```json
+{""country"": ""IN"", ""latitude"": 24.8542, ""longitude"": 82.1235}
+```"
+google/gemini-3.5-flash,CoT (effort=low),25.3584,81.8456,67.157,IN,True,,stop,0.003816,1308,206,140,15.01,"{""reasoning"": ""The left-hand traffic, presence of a cow on the road, typical rural concrete storefront architecture, and vegetation are highly characteristic of northern or central India."", ""country"": ""IN"", ""latitude"": 25.3584, ""longitude"": 81.8456}"
+openai/gpt-5.5,no-CoT,25.4358,81.8463,74.931,IN,True,,stop,0.00408,678,23,0,1.82,"{""country"":""IN"",""latitude"":25.4358,""longitude"":81.8463}"
+anthropic/claude-opus-4.8,no-CoT,25.5,81.0,92.894,IN,True,,stop,0.00484,818,30,0,2.08,"{""country"": ""IN"", ""latitude"": 25.5, ""longitude"": 81.0}"
+google/gemini-3.5-flash,CoT (effort=medium),25.45,80.33,140.333,IN,True,,stop,0.0060105,1307,450,384,4.76,"{""reasoning"": ""The presence of a cow on the road, a woman wearing a sari, left-hand traffic, and typical rural North Indian architecture and vegetation point to Uttar Pradesh, India."", ""country"": ""IN"", ""latitude"": 25.45, ""longitude"": 80.33}"
+google/gemini-3.5-flash,CoT (effort=high),26.15,81.2,151.546,IN,True,,stop,0.0112665,1307,1034,953,8.72,"```json
+{""reasoning"": ""The presence of a cow on the road, a woman in a sari, left-hand traffic, and typical rural Indian architecture with flat-roofed shuttered shops and tiled roofs indicate India, likely the plains of Uttar Pradesh."", ""country"": ""IN"", ""latitude"": 26.15, ""longitude"": 81.2}
+```"
+openai/gpt-5.5,CoT,25.7465,82.6847,154.378,IN,True,,stop,0.009865,755,203,127,7.06,"{""reasoning"":""Left-side traffic, motorcycles, sari clothing, cattle on the road, and low brick/plaster village buildings strongly indicate rural northern India. The flat alluvial landscape and vegetation fit the Uttar Pradesh/Bihar plains; I estimate eastern Uttar Pradesh."",""country"":""IN"",""latitude"":25.7465,""longitude"":82.6847}"
+x-ai/grok-4.3,no-CoT,25.3176,82.9739,154.654,IN,True,,stop,0.0007384,704,24,0,0.93,"{""country"": ""IN"", ""latitude"": 25.3176, ""longitude"": 82.9739}"
+xiaomi/mimo-v2.5,CoT,25.4,83.0,160.511,IN,True,,stop,0.0001585976,899,211,139,9.4,"{""reasoning"": ""Vehicles drive on the left, a cow is on the road, and tilted wooden utility poles are common in rural India. The vegetation and architecture further support a South Asian, likely Indian, setting."", ""country"": ""IN"", ""latitude"": 25.4, ""longitude"": 83.0}"
+moonshotai/kimi-k2.6,CoT,26.75,80.95,222.356,IN,True,,stop,0.013001976,834,3727,3664,80.16,"{""reasoning"": ""Left-hand traffic with bullock carts and motorcycles on a flat rural road, combined with wooden utility poles and small shuttered shops, is characteristic of the North Indian plains."", ""country"": ""IN"", ""latitude"": 26.75, ""longitude"": 80.95}"
+google/gemma-4-31b-it,no-CoT,26.8467,80.9462,232.831,IN,True,,stop,5.108e-05,262,36,0,15.03,"```json
+{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,26.8467,80.9462,232.831,IN,True,,stop,0.0001353625,585,31,0,1.89,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+qwen/qwen3.6-27b,no-CoT,26.8467,80.9462,232.831,IN,True,,stop,0.0002279,585,31,0,10.89,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+qwen/qwen3.6-35b-a3b,no-CoT,26.8467,80.9462,232.831,IN,True,,stop,0.00011875,585,31,0,3.1,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+minimax/minimax-m3,CoT,26.85,80.95,233.089,IN,True,,stop,0.00075066,995,428,348,16.81,"{""reasoning"": ""Cow wandering freely on a rural road, woman in sari, motorcycle with plaid-shirt rider, small shop with red trim, and tropical deciduous vegetation are all strong indicators of rural northern/central India, likely in the Indo-Gangetic plains region."", ""country"": ""IN"", ""latitude"": 26.85, ""longitude"": 80.95}"
+google/gemini-3.1-pro-preview,no-CoT,23.5123,78.5432,337.013,IN,True,,stop,0.004996,1226,212,177,10.09,"```json
+{""country"": ""IN"", ""latitude"": 23.5123, ""longitude"": 78.5432}
+```"
+google/gemini-3.1-pro-preview,CoT,23.5,78.5,341.57,IN,True,,stop,0.005856,1308,270,191,4.05,"{
+  ""reasoning"": ""Left-hand driving, a cow wandering on the road, and the style of the small roadside shop strongly indicate rural India. The lush vegetation and road conditions suggest a central or northern state like Madhya Pradesh."",
+  ""country"": ""IN"",
+  ""latitude"": 23.5,
+  ""longitude"": 78.5
+}"
+xiaomi/mimo-v2.5,no-CoT,25.6,85.1,368.512,IN,True,,stop,9.54576e-05,820,25,0,5.37,"{""country"": ""IN"", ""latitude"": 25.6, ""longitude"": 85.1}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,22.255645751953125,83.98265075683594,378.76,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,22.279647827148438,84.74586486816406,432.115,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,22.243547439575195,84.77291870117188,436.862,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,28.35,76.95,601.671,IN,True,,stop,0.0025065,788,743,682,5.32,"{""reasoning"": ""Left-side driving (oncoming motorcycle on right of road), free-roaming cattle, rural South Asian vegetation/buildings/power poles, and clothing all point to northern India."", ""country"": ""IN"", ""latitude"": 28.35, ""longitude"": 76.95}"
+qwen/qwen3.5-27b,no-CoT,28.6139,77.209,602.182,IN,True,,stop,0.000160875,585,30,0,7.74,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+qwen/qwen3.5-397b-a17b,no-CoT,28.6139,77.209,602.182,IN,True,,stop,0.000298725,585,30,0,3.77,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+mistralai/mistral-small-2603,no-CoT,28.6353,77.2249,602.698,IN,True,,stop,0.0001365,786,31,0,2.94,"{""country"": ""IN"", ""latitude"": 28.6353, ""longitude"": 77.2249}"
+mistralai/mistral-medium-3-5,no-CoT,28.7041,77.1025,616.623,IN,True,,stop,0.0014115,786,31,0,2.16,"{""country"": ""IN"", ""latitude"": 28.7041, ""longitude"": 77.1025}"
+qwen/qwen3.5-9b,no-CoT,26.9124,75.7873,620.578,IN,True,,stop,6.325e-05,586,31,0,10.49,"{""country"": ""IN"", ""latitude"": 26.9124, ""longitude"": 75.7873}"
+qwen/qwen3.5-122b-a10b,no-CoT,26.8467,75.6709,628.891,IN,True,,stop,0.00021684,586,31,0,5.61,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 75.6709}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,17.062294006347656,76.42674255371094,1012.78,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,14.18807315826416,74.98224639892578,1366.948,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,14.143178939819336,75.00469207763672,1370.138,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9154.21,,True,True,,,,,,6.79,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.44,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,16.81,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.38,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,13.43,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.81,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.16,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.19,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.33,

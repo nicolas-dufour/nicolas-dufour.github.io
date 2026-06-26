@@ -1,0 +1,77 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,63.75948,26.806415,0.0,FI,True,,,,,,,,"Vieremae, Ylae-Savo, Northern Savo, FI"
+anthropic/claude-opus-4.8,no-CoT,63.5,26.5,32.581,FI,True,,stop,0.00484,818,30,0,9.45,"{""country"": ""FI"", ""latitude"": 63.5, ""longitude"": 26.5}"
+openai/gpt-5.5,no-CoT,63.5124,27.2698,35.754,FI,True,,stop,0.00408,678,23,0,7.59,"{""country"":""FI"",""latitude"":63.5124,""longitude"":27.2698}"
+anthropic/claude-opus-4.8,CoT,63.5,26.0,49.181,FI,True,,stop,0.006845,949,84,0,4.08,"{""reasoning"": ""Boreal forest with birch and spruce, narrow two-lane road with yellow center line, clear summer sky typical of Finnish countryside."", ""country"": ""FI"", ""latitude"": 63.5, ""longitude"": 26.0}"
+openai/gpt-5.5,CoT,64.245,27.735,70.448,FI,True,,stop,0.011995,755,274,202,7.19,"{""reasoning"":""The yellow centerlines with white edge lines on a flat, right-driving boreal forest road are characteristic of rural Finland. The birch and conifer mix, sparse development, and long straight road suggest central/eastern Finnish countryside."",""country"":""FI"",""latitude"":64.245,""longitude"":27.735}"
+google/gemini-3.1-pro-preview,no-CoT,64.5,26.5,83.673,FI,True,,stop,0.004598,1225,179,150,3.59,"```json
+{""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 26.5}
+```"
+google/gemma-4-31b-it,no-CoT,63.5,25.0,93.764,FI,True,,stop,6.108e-05,404,30,0,11.63,"```json
+{""country"": ""FI"", ""latitude"": 63.5, ""longitude"": 25.0}
+```"
+google/gemini-3.5-flash,CoT (effort=low),62.6012,27.5214,133.695,FI,True,,stop,0.00387,1308,212,155,2.65,"{""reasoning"": ""The double yellow center lines combined with the dense birch and coniferous forest are highly characteristic of rural roads in Finland."", ""country"": ""FI"", ""latitude"": 62.6012, ""longitude"": 27.5214}"
+google/gemini-3.1-pro-preview,CoT,62.5,26.0,145.791,FI,True,,stop,0.00721,1307,383,313,6.29,"{
+  ""reasoning"": ""The combination of boreal forest (birch and conifers) and yellow center lines with white edge lines strongly suggests Finland, which historically used yellow for center lines."",
+  ""country"": ""FI"",
+  ""latitude"": 62.5,
+  ""longitude"": 26.0
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),62.4512,25.8914,152.577,FI,True,,stop,0.0021525,1225,35,0,304.79,"```json
+{""country"": ""FI"", ""latitude"": 62.4512, ""longitude"": 25.8914}
+```"
+x-ai/grok-4.3,CoT,62.4,25.7,161.097,FI,True,,stop,0.0024565,788,723,644,9.78,"{
+  ""reasoning"": ""Boreal forest mix of birch/pine, double solid yellow center + white edge lines, right-hand traffic, and empty straight highway indicate northern Europe (Finland/Sweden); summer foliage and clear northern sky narrow to central Finland."",
+  ""country"": ""FI"",
+  ""latitude"": 62.4,
+  ""longitude"": 25.7
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,62.360591888427734,27.97156524658203,166.249,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,62.3209228515625,27.975147247314453,170.459,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),62.2426,25.7473,176.934,FI,True,,stop,0.016803,1308,1649,1573,10.79,"{""reasoning"": ""The double yellow center lines combined with solid white edge lines and a lack of gravel shoulder are characteristic of older Finnish road markings. The dense flat boreal forest consisting of birch and spruce further points to central Finland."", ""country"": ""FI"", ""latitude"": 62.2426, ""longitude"": 25.7473}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,62.1603889465332,26.566110610961914,178.225,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,62.0,25.5,206.538,FI,True,,stop,0.00039162,919,145,159,5.91,"{""country"": ""FI"", ""latitude"": 62.0, ""longitude"": 25.5}"
+moonshotai/kimi-k2.6,CoT,62.0,25.0,215.992,FI,True,,stop,0.010305216,834,2932,2867,69.43,"{""reasoning"": ""Double solid yellow center lines with white edge markings are characteristic of Finland, and the flat rural asphalt road through dense mixed birch-spruce boreal forest matches the Finnish Lakeland region."", ""country"": ""FI"", ""latitude"": 62.0, ""longitude"": 25.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,62.033145904541016,23.42618179321289,257.175,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,62.02374267578125,23.427364349365234,257.934,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,61.5,25.0,267.65,FI,True,,stop,0.00033858,755,23,0,9.91,"{""country"": ""FI"", ""latitude"": 61.5, ""longitude"": 25.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,61.796783447265625,23.5168399810791,274.93,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,62.445,-114.32,5616.267,CA,True,,stop,0.000183825,585,29,0,2.05,"{""country"": ""CA"", ""latitude"": 62.445, ""longitude"": -114.32}"
+x-ai/grok-4.3,no-CoT,49.7667,-74.15,5661.517,CA,True,,stop,0.0007359,704,23,0,1.85,"{""country"": ""CA"", ""latitude"": 49.7667, ""longitude"": -74.15}"
+xiaomi/mimo-v2.5,CoT,63.5,-150.0,5862.025,US,True,,stop,0.0006217176,899,1865,1790,25.8,"{
+""reasoning"": ""The double yellow center lines and right-hand traffic are standard for the United States. The flat terrain combined with a dense forest of white birch and spruce trees strongly indicates a location in Interior Alaska."",
+""country"": ""US"",
+""latitude"": 63.5,
+""longitude"": -150.0
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,56.1234,-106.5678,6101.316,CA,True,,stop,0.00018625,585,32,0,1.4,"{""country"": ""CA"", ""latitude"": 56.1234, ""longitude"": -106.5678}"
+qwen/qwen3.5-397b-a17b,CoT,49.0,-84.0,6113.224,CA,True,,stop,0.018599,665,5100,5004,68.04,"{
+""reasoning"": ""The double yellow center lines indicate a right-hand traffic country (likely Canada, USA, or Sweden), while the boreal forest vegetation (mix of birch/aspen and spruce) combined with the wide, unkempt gravel shoulders is highly characteristic of rural Northern Ontario, Canada."",
+""country"": ""CA"",
+""latitude"": 49.0,
+""longitude"": -84.0
+}"
+google/gemini-3.5-flash,CoT (effort=medium),47.8253,-81.3125,6124.787,CA,True,,stop,0.0076485,1307,632,572,12.02,"{""reasoning"": ""The double solid yellow center line combined with the mixed boreal forest of birch and spruce is highly characteristic of northern Ontario, Canada."", ""country"": ""CA"", ""latitude"": 47.8253, ""longitude"": -81.3125}"
+qwen/qwen3.6-35b-a3b,CoT,60.0,-135.0,6168.585,CA,True,,stop,0.006091748,665,6200,6096,117.64,"```json
+{
+    ""reasoning"": ""The double yellow center lines and right-hand traffic indicate North America. The specific mix of Paper Birch and White Spruce trees, along with the wide gravel shoulders and flat terrain, is characteristic of the boreal forest in the Yukon or Northern British Columbia, Canada."",
+    ""country"": ""CA"",
+    ""latitude"": 60.0,
+    ""longitude"": -135.0
+}
+```"
+mistralai/mistral-medium-3-5,no-CoT,48.4234,-89.2568,6357.663,CA,True,,stop,0.0014115,786,31,0,0.98,"{""country"": ""CA"", ""latitude"": 48.4234, ""longitude"": -89.2568}"
+qwen/qwen3.5-9b,no-CoT,52.8566,-104.9294,6394.017,CA,True,,stop,6.34e-05,586,32,0,4.55,"{""country"": ""CA"", ""latitude"": 52.8566, ""longitude"": -104.9294}"
+qwen/qwen3.5-27b,no-CoT,54.5632,-113.4909,6421.918,CA,True,,stop,0.00022707,585,32,0,2.49,"{""country"": ""CA"", ""latitude"": 54.5632, ""longitude"": -113.4909}"
+minimax/minimax-m3,CoT,47.8,-91.5,6496.441,US,True,,stop,0.00137946,995,952,858,27.66,"{""reasoning"": ""Double yellow center line (no-passing) is a strong North American convention, combined with boreal mixed forest of birch and spruce/pine typical of the Upper Midwest/Great Lakes region. The clear summer sky, well-maintained rural asphalt, and absence of shoulders suggest a remote northern highway in the US or Canada."", ""country"": ""US"", ""latitude"": 47.8, ""longitude"": -91.5}"
+xiaomi/mimo-v2.5,no-CoT,46.5,-92.0,6642.449,US,True,,stop,9.54576e-05,820,25,0,2.7,"{""country"": ""US"", ""latitude"": 46.5, ""longitude"": -92.0}"
+qwen/qwen3.6-27b,no-CoT,54.7156,-127.0421,6650.187,CA,True,,stop,0.00028992,586,32,0,18.73,"{""country"": ""CA"", ""latitude"": 54.7156, ""longitude"": -127.0421}"
+qwen/qwen3.5-122b-a10b,no-CoT,49.2827,-123.1207,7174.033,CA,True,,stop,0.00021892,586,32,0,7.1,"{""country"": ""CA"", ""latitude"": 49.2827, ""longitude"": -123.1207}"
+qwen/qwen3.5-397b-a17b,no-CoT,49.2827,-123.1207,7174.033,CA,True,,stop,0.0004662,585,32,0,8.25,"{""country"": ""CA"", ""latitude"": 49.2827, ""longitude"": -123.1207}"
+mistralai/mistral-small-2603,CoT,47.5,-123.5,7373.139,US,True,,stop,0.0022602,868,3550,3803,22.81,"{""reasoning"": ""Right-hand traffic with double yellow center line and solid white edge line, dense coniferous forest typical of the US Pacific Northwest."", ""country"": ""US"", ""latitude"": 47.5, ""longitude"": -123.5}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7423.08,,True,True,,,,,,14.86,
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,8407.55,US,True,,stop,0.000171375,786,32,0,1.93,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.19,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.21,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.22,

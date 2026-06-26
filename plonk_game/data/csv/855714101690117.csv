@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,9.2555722643771,80.412600277298,0.0,LK,True,,,,,,,,"Kilinochchi, None, Northern Province, LK"
+moonshotai/kimi-k2.6,CoT,8.85,80.4,45.119,LK,True,,stop,0.009402768,682,2684,2622,73.73,"{""reasoning"": ""Red laterite soil shoulder, left-hand traffic, and dry-zone scrub vegetation with concrete utility poles are characteristic of northern Sri Lanka's A9 highway corridor."", ""country"": ""LK"", ""latitude"": 8.8500, ""longitude"": 80.4000}"
+google/gemini-3.5-flash,CoT (effort=high),8.7542,80.5013,56.595,LK,True,,stop,0.0108435,1271,993,922,8.49,"{""reasoning"": ""The left-hand traffic, distinctive concrete utility poles, reddish soil, and dry-zone vegetation are highly characteristic of Sri Lanka, particularly along the northern highways such as the A9."", ""country"": ""LK"", ""latitude"": 8.7542, ""longitude"": 80.5013}"
+google/gemini-3.5-flash,CoT (effort=low),8.6214,80.4982,71.141,LK,True,,stop,0.003771,1272,207,134,8.82,"```json
+{""reasoning"": ""The road features left-hand traffic with a solid white outer line and dashed center line, combined with concrete utility poles and dry-zone vegetation characteristic of northern Sri Lanka."", ""country"": ""LK"", ""latitude"": 8.6214, ""longitude"": 80.4982}
+```"
+google/gemini-3.1-pro-preview,no-CoT,8.5521,80.4132,78.223,LK,True,,stop,0.00472,1190,195,161,4.61,"```json
+{""country"": ""LK"", ""latitude"": 8.5521, ""longitude"": 80.4132}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),8.5385,80.4922,80.213,LK,True,,stop,0.0067845,1271,542,470,12.26,"{""reasoning"": ""The smooth asphalt road with white markings, left-hand traffic, concrete utility poles, dry-zone tropical vegetation, and reddish soil are highly characteristic of northern or north-central Sri Lanka."", ""country"": ""LK"", ""latitude"": 8.5385, ""longitude"": 80.4922}"
+google/gemini-3.1-pro-preview,CoT,8.5,80.5,84.563,LK,True,,stop,0.005424,1272,240,171,4.22,"{
+  ""reasoning"": ""Driving on the left, reddish soil, tropical dry vegetation, and the specific concrete utility poles with multiple crossarms strongly indicate Sri Lanka's dry zone."",
+  ""country"": ""LK"",
+  ""latitude"": 8.5,
+  ""longitude"": 80.5
+}"
+moonshotai/kimi-k2.6,no-CoT,8.5,80.5,84.563,LK,True,,stop,0.00061429,603,23,0,0.8,"{""country"": ""LK"", ""latitude"": 8.5, ""longitude"": 80.5}"
+anthropic/claude-opus-4.8,CoT,8.35,80.4,100.705,LK,True,,stop,0.006435,797,98,0,3.41,"{""reasoning"": ""Dry tropical savanna with reddish soil, scrubby vegetation, and well-paved highway typical of Sri Lanka's dry zone; left-hand traffic confirmed."", ""country"": ""LK"", ""latitude"": 8.35, ""longitude"": 80.4}"
+anthropic/claude-opus-4.8,no-CoT,8.35,80.4,100.705,LK,True,,stop,0.00413,666,32,0,8.68,"{""country"": ""LK"", ""latitude"": 8.3500, ""longitude"": 80.4000}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),8.3452,80.4971,101.654,LK,True,,stop,0.002091,1190,34,0,7.9,"```json
+{""country"": ""LK"", ""latitude"": 8.3452, ""longitude"": 80.4971}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,10.817243576049805,80.05945587158203,177.903,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,10.984908103942871,80.06414794921875,196.04,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,11.059666633605957,80.0001449584961,205.623,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,6.2478,81.2106,345.81,LK,True,,stop,0.014295,621,373,294,19.91,"{""reasoning"":""Left-side driving with white center/edge markings, red laterite shoulders, tropical dry-zone scrub, and utility pole style strongly suggest rural Sri Lanka. The flat dry landscape is consistent with the Hambantota/Tissamaharama area in the southeast."",""country"":""LK"",""latitude"":6.2478,""longitude"":81.2106}"
+mistralai/mistral-medium-3-5,no-CoT,13.0827,80.2707,425.839,IN,True,,stop,0.0011835,634,31,0,0.95,"{""country"": ""IN"", ""latitude"": 13.0827, ""longitude"": 80.2707}"
+minimax/minimax-m3,no-CoT,12.9141,79.1322,430.125,IN,True,,stop,0.00019692,754,24,0,30.05,"{""country"": ""IN"", ""latitude"": 12.9141, ""longitude"": 79.1322}{""country"": ""IN"", ""latitude"": 12.9141, ""longitude"": 79.1322}"
+xiaomi/mimo-v2.5,no-CoT,12.9716,77.5946,515.013,IN,True,,stop,8.14576e-05,708,31,0,7.71,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+minimax/minimax-m3,CoT,14.5,76.2,741.633,IN,True,,stop,0.00064986,843,382,296,13.25,"{""reasoning"": ""Left-hand traffic, red lateritic soil, dry tropical deciduous vegetation, and Indian-style concrete power poles on a well-paved highway strongly indicate southern India's Deccan Plateau. The dry scrubland with scattered trees matches the climate of interior Karnataka or northern Andhra Pradesh during the dry season."", ""country"": ""IN"", ""latitude"": 14.5, ""longitude"": 76.2}"
+qwen/qwen3.5-9b,no-CoT,17.385,78.45,928.513,IN,True,,stop,5.16e-05,474,28,0,4.52,"{""country"": ""IN"", ""latitude"": 17.385, ""longitude"": 78.45}"
+google/gemma-4-31b-it,no-CoT,15.45,74.25,960.202,IN,True,,stop,6.558e-05,406,32,0,9.34,"```json
+{""country"": ""IN"", ""latitude"": 15.45, ""longitude"": 74.25}
+```"
+xiaomi/mimo-v2.5,CoT,16.05,74.85,966.701,IN,True,,stop,0.0003884776,787,1088,993,13.55,"{""reasoning"": ""The image shows a vehicle driving on the left side of the road, which, combined with the distinct reddish soil, scrubby tropical vegetation, and concrete utility poles, is highly characteristic of rural highways in the Indian Deccan plateau. The road markings and general infrastructure style confirm India as the location."", ""country"": ""IN"", ""latitude"": 16.05, ""longitude"": 74.85}"
+qwen/qwen3.5-27b,no-CoT,21.1458,79.0882,1329.716,IN,True,,stop,0.0002067,473,31,0,13.82,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+qwen/qwen3.6-27b,no-CoT,21.1458,79.0882,1329.716,IN,True,,stop,0.0001943,473,31,0,12.47,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+x-ai/grok-4.3,no-CoT,21.15,79.08,1330.274,IN,True,,stop,0.0005934,592,22,0,0.8,"{""country"": ""IN"", ""latitude"": 21.15, ""longitude"": 79.08}"
+openai/gpt-5.5,no-CoT,-14.0286,33.7891,5757.997,MW,True,,stop,0.00344,544,24,0,8.07,"{""country"":""MW"",""latitude"":-14.0286,""longitude"":33.7891}"
+qwen/qwen3.6-35b-a3b,no-CoT,-17.8251,31.0335,6201.516,ZW,True,,stop,0.0001444,474,31,0,8.45,"{""country"": ""ZW"", ""latitude"": -17.8251, ""longitude"": 31.0335}"
+x-ai/grok-4.3,CoT,-24.35,31.15,6519.937,ZA,True,,stop,0.0021565,676,659,588,5.93,"{""reasoning"": ""Savanna woodland with acacia-like trees, red lateritic soil, clear dry-season sky and utility poles match southern African bushveld; road markings, left-hand driving orientation and lack of other signage point to South Africa."", ""country"": ""ZA"", ""latitude"": -24.35, ""longitude"": 31.15}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.7461,28.2293,6852.578,ZA,True,,stop,0.0001865625,473,31,0,7.71,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.2293}"
+qwen/qwen3.5-122b-a10b,no-CoT,-25.7461,28.1876,6856.28,ZA,True,,stop,0.00018772,474,31,0,5.9,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.1876}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8955.481,,True,True,,,,,,7.53,
+mistralai/mistral-small-2603,no-CoT,-22.8333,-47.05,14233.225,BR,True,,stop,0.0001125,634,29,0,4.05,"{""country"": ""BR"", ""latitude"": -22.8333, ""longitude"": -47.05}"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7801,-47.9292,14373.868,BR,True,,stop,0.0003794,473,31,0,1.42,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-18.337961196899414,-52.736637115478516,14870.638,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-20.377883911132812,-54.83560562133789,15065.157,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-16.274845123291016,-55.45463562011719,15175.311,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.58,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.31,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.2,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.67,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.14,

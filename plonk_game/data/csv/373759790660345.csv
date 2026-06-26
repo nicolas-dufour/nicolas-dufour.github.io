@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,47.354930401086,107.47297223231,0.0,MN,True,,,,,,,,"Maanit, None, Central Aimak, MN"
+google/gemini-3.5-flash,CoT (effort=medium),47.785,107.215,51.589,MN,True,,stop,0.0097635,1271,873,807,8.22,"{""reasoning"": ""The vast, arid steppe landscape combined with distinctive streetlights connected by overhead power lines is highly characteristic of rural highways in Mongolia, particularly near Ulaanbaatar."", ""country"": ""MN"", ""latitude"": 47.785, ""longitude"": 107.215}"
+google/gemini-3.5-flash,CoT (effort=high),47.8125,107.3125,52.284,MN,True,,stop,0.0109605,1271,1006,923,8.43,"```json
+{""reasoning"": ""The vast, arid steppe landscape, simple two-lane paved road with overhead-wired streetlights, and distant rolling hills are highly characteristic of the Mongolian countryside, particularly on the outskirts of Ulaanbaatar."", ""country"": ""MN"", ""latitude"": 47.8125, ""longitude"": 107.3125}
+```"
+minimax/minimax-m3,CoT,47.5,106.8,53.133,MN,True,,stop,0.00063906,843,373,298,19.81,"{""reasoning"": ""The vast flat arid steppe landscape with distant low hills/mesas, dry grassland vegetation, style of street lamp posts, and remote paved highway strongly suggest the Mongolian steppe, likely along a main highway in central Mongolia."", ""country"": ""MN"", ""latitude"": 47.5, ""longitude"": 106.8}"
+google/gemini-3.5-flash,CoT (effort=low),47.8512,107.6123,56.163,MN,True,,stop,0.0042465,1271,260,195,4.34,"{""reasoning"": ""The vast, flat steppe landscape combined with paved roads lined with streetlights connected by overhead wires is highly characteristic of the outskirts of towns in Mongolia."", ""country"": ""MN"", ""latitude"": 47.8512, ""longitude"": 107.6123}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,47.87877655029297,107.83601379394531,64.292,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,47.75,106.8,66.936,MN,True,,stop,0.005374,1271,236,158,4.59,"{
+  ""reasoning"": ""The vast, dry, rolling steppe landscape combined with the specific style of streetlights along an otherwise empty paved road strongly suggests Mongolia, likely on the outskirts of a major city or development."",
+  ""country"": ""MN"",
+  ""latitude"": 47.75,
+  ""longitude"": 106.8
+}"
+openai/gpt-5.5,CoT,47.7436,106.7779,67.743,MN,True,,stop,0.019875,621,559,473,14.7,"{""reasoning"":""The barren rolling steppe landscape, right-hand traffic road markings, and sparse Soviet/Central Asian-style roadside lighting strongly suggest rural Mongolia near Ulaanbaatar rather than Europe or the Middle East. The fenced open grassland and low hills fit the outskirts of the capital/airport approach area."",""country"":""MN"",""latitude"":47.7436,""longitude"":106.7779}"
+minimax/minimax-m3,no-CoT,47.8869,106.9062,72.824,MN,True,,stop,0.00031446,765,122,95,2.96,"{""country"": ""MN"", ""latitude"": 47.8869, ""longitude"": 106.9062}"
+xiaomi/mimo-v2.5,no-CoT,47.9,106.9,74.277,MN,True,,stop,8.00576e-05,708,26,0,7.87,"{""country"": ""MN"", ""latitude"": 47.9, ""longitude"": 106.9}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),47.9083,106.9172,74.3,MN,True,,stop,0.002109,1190,36,0,1.51,"```json
+{""country"": ""MN"", ""latitude"": 47.9083, ""longitude"": 106.9172}
+```"
+xiaomi/mimo-v2.5,CoT,47.91,106.91,74.759,MN,True,,stop,0.0009109576,787,2954,2853,337.24,"```json
+{""reasoning"": ""The flat, treeless steppe landscape, combined with the specific style of metal grid fencing and modern streetlights lining a rural road, is characteristic of the 'ger districts' surrounding Ulaanbaatar, Mongolia. The road markings and overhead power lines further support this location in the Eurasian Steppe."", ""country"": ""MN"", ""latitude"": 47.91, ""longitude"": 106.91}
+```"
+google/gemini-3.1-pro-preview,no-CoT,47.9167,106.9167,75.094,MN,True,,stop,0.00281,1189,36,0,3.31,"```json
+{""country"": ""MN"", ""latitude"": 47.9167, ""longitude"": 106.9167}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,47.983367919921875,108.05760955810547,82.459,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,47.98558044433594,108.06736755371094,83.056,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,47.2751,103.8196,275.533,MN,True,,stop,0.00341,544,23,0,1.59,"{""country"":""MN"",""latitude"":47.2751,""longitude"":103.8196}"
+qwen/qwen3.5-9b,no-CoT,40.8246,111.8892,806.93,CN,True,,stop,5.22e-05,474,32,0,2.03,"{""country"": ""CN"", ""latitude"": 40.8246, ""longitude"": 111.8892}"
+qwen/qwen3.6-35b-a3b,no-CoT,43.58,125.82,1487.038,CN,True,,stop,0.0001396,474,28,0,8.48,"{""country"": ""CN"", ""latitude"": 43.58, ""longitude"": 125.82}"
+qwen/qwen3.5-122b-a10b,no-CoT,41.7064,86.8546,1744.422,CN,True,,stop,0.00018772,474,31,0,7.4,"{""country"": ""CN"", ""latitude"": 41.7064, ""longitude"": 86.8546}"
+x-ai/grok-4.3,no-CoT,49.8,72.9,2535.135,KZ,True,,stop,0.0005934,592,22,0,1.86,"{""country"": ""KZ"", ""latitude"": 49.8, ""longitude"": 72.9}"
+moonshotai/kimi-k2.6,CoT,48.5,72.0,2622.324,KZ,True,,stop,0.010614168,682,3036,2966,83.44,"{""reasoning"": ""Flat, arid steppe with distant low hills and continuous Soviet-era street lamps along a paved rural road is archetypal of the Kazakh steppe, where such intercity road lighting is common."", ""country"": ""KZ"", ""latitude"": 48.5, ""longitude"": 72.0}"
+x-ai/grok-4.3,CoT,48.2,67.8,2932.839,KZ,True,,stop,0.0024915,676,793,718,6.21,"{""reasoning"": ""Flat arid steppe with distant low hills, modern single-arm streetlights along right-hand roadside, wire fence on left, power lines, and empty asphalt road match vast Central Asian plains; sun+moon visible implies clear high-latitude continental climate."", ""country"": ""KZ"", ""latitude"": 48.2, ""longitude"": 67.8}"
+google/gemma-4-31b-it,no-CoT,48.0196,66.9237,3000.79,KZ,True,,stop,5.248e-05,272,36,0,11.16,"```json
+{""country"": ""KZ"", ""latitude"": 48.0196, ""longitude"": 66.9237}
+```"
+mistralai/mistral-medium-3-5,no-CoT,41.5,64.0,3466.289,UZ,True,,stop,0.001146,634,26,0,2.23,"{""country"": ""UZ"", ""latitude"": 41.5, ""longitude"": 64.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,38.473106384277344,62.52044677734375,3735.531,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,39.043853759765625,58.1031608581543,4036.018,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,39.00212860107422,58.089786529541016,4039.323,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,46.8721,-100.4234,9192.855,US,True,,stop,9.836e-05,474,32,0,1.56,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -100.4234}"
+qwen/qwen3.6-27b,no-CoT,44.428,-108.566,9217.411,US,True,,stop,0.0001963,473,32,0,9.03,"{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -108.5660}"
+qwen/qwen3.5-27b,no-CoT,41.1456,-104.8203,9671.381,US,True,,stop,0.00021944,474,37,0,3.22,"```json
+{""country"": ""US"", ""latitude"": 41.1456, ""longitude"": -104.8203}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,40.7128,-104.9903,9711.031,US,True,,stop,0.00029445,473,32,0,7.94,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -104.9903}"
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,10221.311,US,True,,stop,0.0001131,634,30,0,2.57,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11312.574,,True,True,,,,,,15.52,
+anthropic/claude-opus-4.8,no-CoT,-51.623,-69.218,19483.845,AR,True,,stop,0.00408,666,30,0,2.21,"{""country"": ""AR"", ""latitude"": -51.623, ""longitude"": -69.218}"
+anthropic/claude-opus-4.8,CoT,-51.62,-69.22,19484.204,AR,True,,stop,0.006335,797,94,0,9.91,"{""reasoning"": ""Flat, treeless arid steppe with sparse grass and low hills, drive-on-right road with simple street lamps suggests Patagonian plateau in southern Argentina."", ""country"": ""AR"", ""latitude"": -51.62, ""longitude"": -69.22}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.83,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,18.64,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.7,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.33,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.44,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.13,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.42,

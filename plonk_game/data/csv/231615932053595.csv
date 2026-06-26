@@ -1,0 +1,76 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,38.54008387468,-109.51496067783,0.0,US,True,,,,,,,,"Moab, Grand County, Utah, US"
+anthropic/claude-opus-4.8,CoT,38.535,-109.49,2.243,US,True,,stop,0.006335,797,94,0,3.94,"{""reasoning"": ""Red rock mesas, desert scrub, and English billboard advertising 'miles ahead' indicate the American Southwest, consistent with Moab, Utah area on US-191."", ""country"": ""US"", ""latitude"": 38.535, ""longitude"": -109.49}"
+google/gemini-3.1-pro-preview,CoT,38.52,-109.5,2.585,US,True,,stop,0.00756,1272,418,336,12.2,"{
+  ""reasoning"": ""The double yellow road lines, English billboard, and red rock formations strongly indicate the American Southwest. The specific landscape and highway style are highly characteristic of US Route 191 near Moab, Utah."",
+  ""country"": ""US"",
+  ""latitude"": 38.52,
+  ""longitude"": -109.50
+}"
+google/gemini-3.5-flash,CoT (effort=low),38.5152,-109.5511,4.188,US,True,,stop,0.0051915,1271,365,291,11.65,"{""reasoning"": ""The red rock landscape and highway layout are characteristic of the American Southwest, specifically approaching Moab, Utah on US-191 from the south, as indicated by the Holiday Inn Express billboard."", ""country"": ""US"", ""latitude"": 38.5152, ""longitude"": -109.5511}"
+qwen/qwen3.6-35b-a3b,CoT,38.5733,-109.5498,4.777,US,True,,stop,0.00684492835,553,6999,6884,47.7,"```json
+{
+    ""reasoning"": ""The double yellow lines and right-hand traffic indicate a country like the US. The red rock formations in the background are characteristic of the American Southwest, specifically Utah. The billboard text '5 Miles Ahead On Left' and the green logo (likely Farm Bureau Insurance) confirm a US location in a rural, desert environment."",
+    ""country"": ""US"",
+    ""latitude"": 38.5733,
+    ""longitude"": -109.5498
+}
+```"
+anthropic/claude-opus-4.8,no-CoT,38.5733,-109.5498,4.777,US,True,,stop,0.004105,666,31,0,8.73,"{""country"": ""US"", ""latitude"": 38.5733, ""longitude"": -109.5498}"
+moonshotai/kimi-k2.6,no-CoT,38.5733,-109.5498,4.777,US,True,,stop,0.000296532,603,25,0,1.88,"{""country"": ""US"", ""latitude"": 38.5733, ""longitude"": -109.5498}"
+moonshotai/kimi-k2.6,CoT,38.5,-109.6,8.637,US,True,,stop,0.013528728,682,3886,3804,86.51,"{""reasoning"": ""Standard US road markings, right-hand traffic, and an English billboard for a medical clinic confirm the United States; the vivid red-rock mesas, semi-arid grassland, and clear blue sky are hallmarks of the Colorado Plateau near Moab, Utah."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -109.6}"
+openai/gpt-5.5,CoT,38.6005,-109.5948,9.66,US,True,,stop,0.036945,621,1128,1034,28.98,"{""reasoning"":""The dry red-rock desert terrain and US-style road markings point to southeast Utah, and the billboard appears to advertise a Moab attraction “8 miles ahead on left,” consistent with US-191 near Moab. The landscape and road configuration fit the north side of Moab heading toward the Arches/UT-313 area."",""country"":""US"",""latitude"":38.6005,""longitude"":-109.5948}"
+google/gemini-3.1-pro-preview,no-CoT,38.6158,-109.5825,10.264,US,True,,stop,0.002812,1190,36,0,8.42,"```json
+{""country"": ""US"", ""latitude"": 38.6158, ""longitude"": -109.5825}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),38.624512,-109.583124,11.101,US,True,,stop,0.002145,1190,40,0,1.21,"```json
+{""country"": ""US"", ""latitude"": 38.624512, ""longitude"": -109.583124}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),38.6552,-109.6181,15.627,US,True,,stop,0.0105285,1271,958,880,20.26,"```json
+{""reasoning"": ""The billboard advertises a Holiday Inn Express '5 Miles Ahead On Left' in a red rock desert landscape, which corresponds to US-191 heading south towards Moab, Utah."", ""country"": ""US"", ""latitude"": 38.6552, ""longitude"": -109.6181}
+```"
+google/gemini-3.5-flash,CoT (effort=high),38.64,-109.65,16.161,US,True,,stop,0.030816,1272,3212,3137,18.0,"{""reasoning"": ""The distinctive red sandstone cliffs and desert vegetation indicate the Moab region of Utah. The billboard advertising a Holiday Inn Express '5 Miles Ahead On Left' places this location on US-191 heading south toward Moab."", ""country"": ""US"", ""latitude"": 38.64, ""longitude"": -109.65}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.76409149169922,-109.70812225341797,30.03,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.68203353881836,-109.85372924804688,33.4,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.77414321899414,-109.25538635253906,34.429,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.873756408691406,-109.14591217041016,49.011,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.87723922729492,-109.13565826416016,49.887,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,37.05,-110.12,174.008,US,True,,stop,5.128e-05,272,33,0,4.42,"```json
+{""country"": ""US"", ""latitude"": 37.05, ""longitude"": -110.12}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,37.2715,-111.5125,224.961,,True,,stop,5.974e-05,406,43,0,1.9,"Please own-brand
+{""country"": ""US"", "" own- own-brand ""latitude"": 37.2715, ""longitude"": -111.5125}"
+qwen/qwen3.5-122b-a10b,no-CoT,36.9995,-111.4538,241.624,US,True,,stop,0.00018954,473,32,0,1.56,"{""country"": ""US"", ""latitude"": 36.9995, ""longitude"": -111.4538}"
+qwen/qwen3.5-35b-a3b,no-CoT,36.9783,-111.4532,243.28,US,True,,stop,9.836e-05,474,32,0,7.16,"{""country"": ""US"", ""latitude"": 36.9783, ""longitude"": -111.4532}"
+qwen/qwen3.6-35b-a3b,no-CoT,36.9741,-111.4548,243.716,US,True,,stop,0.00010295,473,32,0,1.97,"{""country"": ""US"", ""latitude"": 36.9741, ""longitude"": -111.4548}"
+xiaomi/mimo-v2.5,CoT,36.92,-111.45,247.802,US,True,,stop,0.0002084376,787,445,357,5.03,"{""reasoning"": ""The billboard advertises 'C-A-L Ranch Stores', a chain in the western US, and the landscape features red rock mesas characteristic of northern Arizona near Page. Driving is on the right, and the arid terrain with double yellow lines confirms a US location."", ""country"": ""US"", ""latitude"": 36.92, ""longitude"": -111.45}"
+qwen/qwen3.6-27b,no-CoT,36.8569,-111.3743,248.564,US,True,,stop,0.0001963,473,32,0,25.37,"{""country"": ""US"", ""latitude"": 36.8569, ""longitude"": -111.3743}"
+openai/gpt-5.5,no-CoT,36.8947,-111.4552,250.185,US,True,,stop,0.00344,544,24,0,2.28,"{""country"":""US"",""latitude"":36.8947,""longitude"":-111.4552}"
+x-ai/grok-4.3,CoT,36.85,-111.45,253.57,US,True,,stop,0.002769,676,904,827,13.77,"{""reasoning"": ""US highway with right-side driving, double yellow center line, arid red-rock desert buttes, and National Park Foundation billboard indicate American Southwest; sparse dry grass/soil and distant settlement match US-89 corridor approaching Page, AZ / Lake Powell area."", ""country"": ""US"", ""latitude"": 36.85, ""longitude"": -111.45}"
+qwen/qwen3.5-27b,no-CoT,36.8647,-111.4719,253.653,US,True,,stop,0.0002085,474,45,0,9.54,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 36.8647,
+  ""longitude"": -111.4719
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,37.12037658691406,-112.81407165527344,329.928,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,37.15,-113.35,370.484,US,True,,stop,0.00035202,767,150,166,28.44,"{""country"": ""US"", ""latitude"": 37.15, ""longitude"": -113.35}"
+xiaomi/mimo-v2.5,no-CoT,37.0,-113.5,389.843,US,True,,stop,8.00576e-05,708,26,0,1.55,"{""country"": ""US"", ""latitude"": 37.0, ""longitude"": -113.5}"
+mistralai/mistral-medium-3-5,no-CoT,37.1045,-113.5732,390.516,US,True,,stop,0.001191,634,32,0,1.82,"{""country"": ""US"", ""latitude"": 37.1045, ""longitude"": -113.5732}"
+qwen/qwen3.5-397b-a17b,CoT,37.065,-113.635,397.355,US,True,,stop,0.02729265,553,7711,7590,147.36,"{
+""reasoning"": ""The image shows a desert landscape with distinctive red rock formations in the distance, characteristic of St. George, Utah. The billboard on the right reads '5 Miles Ahead On Left', which likely advertises the entrance to Snow Canyon State Park (via Snow Canyon Parkway), placing the vehicle on Utah State Route 18 heading north, approximately 5 miles south of that intersection."",
+""country"": ""US"",
+""latitude"": 37.065,
+""longitude"": -113.635
+}"
+x-ai/grok-4.3,no-CoT,36.914,-113.845,421.5,US,True,,stop,0.0005934,592,22,0,1.31,"{""country"": ""US"", ""latitude"": 36.914, ""longitude"": -113.845}"
+qwen/qwen3.5-9b,no-CoT,36.9516,-114.0588,436.755,US,True,,stop,5.22e-05,474,32,0,10.71,"{""country"": ""US"", ""latitude"": 36.9516, ""longitude"": -114.0588}"
+qwen/qwen3.5-397b-a17b,no-CoT,36.9742,-114.5321,474.107,US,True,,stop,0.00036828,473,32,0,3.59,"{""country"": ""US"", ""latitude"": 36.9742, ""longitude"": -114.5321}"
+mistralai/mistral-small-2603,no-CoT,33.4342,-111.9116,607.251,US,True,,stop,0.0001143,634,32,0,3.03,"{""country"": ""US"", ""latitude"": 33.4342, ""longitude"": -111.9116}"
+minimax/minimax-m3,CoT,33.45,-114.35,713.578,US,True,,stop,0.00077982,845,487,449,7.87,"{""reasoning"": ""The billboard mentions '15 Miles Ahead' and 'Quartzsite' fuel, indicating this is on a road approaching Quartzsite, Arizona. The red rock desert mountains, right-hand traffic, US-style yellow road lines, and arid Sonoran landscape confirm western Arizona, likely on US-95 south of Quartzsite."", ""country"": ""US"", ""latitude"": 33.45, ""longitude"": -114.35}{""reasoning"": ""The billboard mentions '15 Miles Ahead' and 'Quartzsite' fuel, indicating this is on a road approaching Quartzsite, Arizona. The red rock desert mountains, right-hand traffic, US-style yellow road lines, and arid Sonoran landscape confirm western Arizona, likely on US-95 south of Quartzsite."", ""country"": ""US"", ""latitude"": 33.45, ""longitude"": -114.35}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.15,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.18,

@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,60.68323649997225,-137.3669217,0.0,CA,True,,,,,,,,"Haines Junction, None, Yukon, CA"
+google/gemini-3.5-flash,no-CoT (effort=minimal),60.7512,-137.5051,10.658,CA,True,,stop,0.002109,1190,36,0,2.24,"```json
+{""country"": ""CA"", ""latitude"": 60.7512, ""longitude"": -137.5051}
+```"
+google/gemini-3.5-flash,CoT (effort=high),60.8521,-137.5083,20.286,CA,True,,stop,0.0074685,1271,618,549,12.64,"{""reasoning"": ""The vast boreal forest with characteristic black spruce and birch trees, combined with the wide paved highway and distant mountains, strongly points to the Alaska Highway in Yukon, Canada."", ""country"": ""CA"", ""latitude"": 60.8521, ""longitude"": -137.5083}"
+minimax/minimax-m3,CoT,60.82,-136.15,67.84,CA,True,,stop,0.00096786,843,647,558,32.11,"{""reasoning"": ""Paved 2-lane highway with yellow center line (North American standard), boreal spruce forest, distant mountains, and subarctic summer sky strongly indicate the Alaska Highway in the Yukon Territory, Canada. The flat terrain with mountains on the horizon matches the stretch near Champagne/Little Salmon Lake."", ""country"": ""CA"", ""latitude"": 60.82, ""longitude"": -136.15}"
+google/gemini-3.5-flash,CoT (effort=medium),61.0512,-138.4025,69.402,CA,True,,stop,0.0060015,1271,455,387,4.06,"{""reasoning"": ""The boreal forest vegetation with black spruce and birch, combined with the distant mountains and wide paved highway, is highly characteristic of the Alaska Highway in Yukon, Canada."", ""country"": ""CA"", ""latitude"": 61.0512, ""longitude"": -138.4025}"
+google/gemini-3.5-flash,CoT (effort=low),61.0583,-138.4125,70.3,CA,True,,stop,0.0039675,1271,229,160,10.85,"{""reasoning"": ""The vast boreal forest with skinny conifers and birch trees, combined with the wide asphalt highway and distant mountains, is highly characteristic of the Alaska Highway in Yukon, Canada."", ""country"": ""CA"", ""latitude"": 61.0583, ""longitude"": -138.4125}"
+google/gemini-3.1-pro-preview,CoT,60.8123,-136.0456,73.214,CA,True,,stop,0.00559,1271,254,166,19.89,"{
+  ""reasoning"": ""The boreal forest with stunted conifers, expansive sky, and road markings (solid white edge lines) strongly suggest a high-latitude North American location. The landscape is highly characteristic of the Yukon or northern British Columbia."",
+  ""country"": ""CA"",
+  ""latitude"": 60.8123,
+  ""longitude"": -136.0456
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,61.33247375488281,-136.4515380859375,87.437,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,61.1845,-138.6523,89.038,CA,True,,stop,0.016155,621,435,349,17.49,"{""reasoning"":""Boreal black spruce/aspen forest, distant subarctic mountains, and North American right-side paved highway markings point strongly to the Alaska Highway/Yukon interior. The remote forested roadscape is most consistent with southwestern Yukon near Kluane rather than denser populated areas."",""country"":""CA"",""latitude"":61.1845,""longitude"":-138.6523}"
+anthropic/claude-opus-4.8,CoT,60.7,-135.1,123.399,CA,True,,stop,0.006085,797,84,0,2.9,"{""reasoning"": ""Boreal spruce forest, wide empty highway with yellow center line, distant mountains—typical of Yukon/northern BC remote highways."", ""country"": ""CA"", ""latitude"": 60.7, ""longitude"": -135.1}"
+xiaomi/mimo-v2.5,CoT,60.7211,-135.0857,124.194,CA,True,,stop,0.0001468376,787,225,124,47.33,"{
+  ""reasoning"": ""The image depicts a straight, paved road with broken white center lines and solid white edge lines, consistent with right-hand traffic. The surrounding vegetation features dense boreal forest with coniferous trees (likely spruce), typical of high-latitude North American landscapes like Canada or Alaska."",
+  ""country"": ""CA"",
+  ""latitude"": 60.7211,
+  ""longitude"": -135.0857
+}"
+anthropic/claude-opus-4.8,no-CoT,60.7212,-135.0568,125.765,CA,True,,stop,0.00413,666,32,0,8.55,"{""country"": ""CA"", ""latitude"": 60.7212, ""longitude"": -135.0568}"
+qwen/qwen3.5-122b-a10b,no-CoT,60.7214,-135.0568,125.766,CA,True,,stop,0.00020618,473,40,0,2.26,"{
+  ""country"": ""CA"",
+  ""latitude"": 60.7214,
+  ""longitude"": -135.0568
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,60.7219,-135.0568,125.766,CA,True,,stop,0.00036828,473,32,0,4.49,"{""country"": ""CA"", ""latitude"": 60.7219, ""longitude"": -135.0568}"
+google/gemini-3.1-pro-preview,no-CoT,60.7166,-135.05,126.128,CA,True,,stop,0.002788,1190,34,0,305.25,"```json
+{""country"": ""CA"", ""latitude"": 60.7166, ""longitude"": -135.05}
+```"
+openai/gpt-5.5,no-CoT,60.7085,-135.0498,126.131,CA,True,,stop,0.00344,544,24,0,1.65,"{""country"":""CA"",""latitude"":60.7085,""longitude"":-135.0498}"
+x-ai/grok-4.3,CoT,60.72,-135.05,126.133,CA,True,,stop,0.001884,676,550,483,11.29,"{""reasoning"": ""Boreal/taiga forest with conifers + dead snags, distant mountains, right-side driving (edge lines), empty two-lane asphalt typical of northern Canada highways; classic Alaska Highway / Yukon scenery."", ""country"": ""CA"", ""latitude"": 60.72, ""longitude"": -135.05}"
+minimax/minimax-m3,no-CoT,61.0,-135.0,132.974,CA,True,,stop,0.00019452,754,22,0,3.24,"{""country"": ""CA"", ""latitude"": 61.0, ""longitude"": -135.0}{""country"": ""CA"", ""latitude"": 61.0, ""longitude"": -135.0}"
+moonshotai/kimi-k2.6,no-CoT,60.0,-135.0,150.76,CA,True,,stop,0.00051219,602,23,0,3.99,"{""country"": ""CA"", ""latitude"": 60.0, ""longitude"": -135.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,61.44130325317383,-134.5833282470703,171.837,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,61.48645782470703,-134.62144470214844,172.506,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,61.2181,-140.4381,176.142,CA,True,,stop,0.0001963,473,32,0,16.0,"{""country"": ""CA"", ""latitude"": 61.2181, ""longitude"": -140.4381}"
+google/gemma-4-31b-it,no-CoT,62.1234,-135.4567,189.668,CA,True,,stop,6.418e-05,406,37,0,10.72,"```json
+{""country"": ""CA"", ""latitude"": 62.1234, ""longitude"": -135.4567}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,62.4453,-134.7722,239.259,CA,True,,stop,0.00017136,474,32,0,2.22,"{""country"": ""CA"", ""latitude"": 62.4453, ""longitude"": -134.7722}"
+qwen/qwen3.6-35b-a3b,no-CoT,62.45,-133.5,283.654,CA,True,,stop,9.795e-05,473,27,0,1.59,"{""country"": ""CA"", ""latitude"": 62.45, ""longitude"": -133.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,63.075340270996094,-133.69215393066406,328.285,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,62.84577560424805,-141.93453979492188,339.79,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,64.11944580078125,-137.1595001220703,382.238,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,63.35,-145.4,512.835,US,True,,stop,0.012651588,682,3636,3573,104.19,"{""reasoning"": ""North American rural highway with yellow centerline crosses flat boreal taiga with black spruce and deciduous regrowth toward a distant mountain range, matching interior Alaska's highway corridors."", ""country"": ""US"", ""latitude"": 63.35, ""longitude"": -145.4}"
+qwen/qwen3.5-27b,no-CoT,61.2181,-149.9003,678.258,CA,True,,stop,0.0002085,474,45,0,2.66,"```json
+{
+  ""country"": ""CA"",
+  ""latitude"": 61.2181,
+  ""longitude"": -149.9003
+}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,60.0,-120.0,955.768,CA,True,,stop,5.534e-05,406,32,0,3.63,"Please own-thought
+{""country"": ""CA"", ""latitude"": 60.0, ""longitude"": -120.0}"
+x-ai/grok-4.3,no-CoT,55.8,-121.5,1071.732,CA,True,,stop,0.0005934,592,22,0,0.84,"{""country"": ""CA"", ""latitude"": 55.8, ""longitude"": -121.5}"
+mistralai/mistral-medium-3-5,no-CoT,53.9164,-122.7526,1151.752,CA,True,,stop,0.001191,634,32,0,2.03,"{""country"": ""CA"", ""latitude"": 53.9164, ""longitude"": -122.7526}"
+xiaomi/mimo-v2.5,no-CoT,62.454,-114.3718,1226.409,CA,True,,stop,8.17376e-05,708,32,0,2.33,"{""country"": ""CA"", ""latitude"": 62.4540, ""longitude"": -114.3718}"
+qwen/qwen3.5-9b,no-CoT,62.835,-114.25,1232.518,CA,True,,stop,8.766e-05,473,29,0,1.14,"{""country"": ""CA"", ""latitude"": 62.835, ""longitude"": -114.25}"
+mistralai/mistral-small-2603,no-CoT,60.3929,5.3266,6177.014,NO,True,,stop,0.0001131,634,30,0,9.63,"{""country"": ""NO"", ""latitude"": 60.3929, ""longitude"": 5.3266}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,16.24,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.82,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.2,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.38,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.49,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.15,

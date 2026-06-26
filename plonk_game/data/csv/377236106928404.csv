@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-13.652509859682,-75.40418507962,0.0,PE,True,,,,,,,,"Quito-Arma, Huaytara, Huancavelica, PE"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-16.718698501586914,-68.02896881103516,861.624,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-16.71804428100586,-68.02462768554688,862.024,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-16.707307815551758,-68.010009765625,863.014,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,-22.9506,-68.9962,1234.994,AR,True,,stop,0.0001072,585,31,0,2.81,"{""country"": ""AR"", ""latitude"": -22.9506, ""longitude"": -68.9962}"
+x-ai/grok-4.3,no-CoT,-22.9085,-68.2073,1278.652,CL,True,,stop,0.0007384,704,24,0,1.87,"{""country"": ""CL"", ""latitude"": -22.9085, ""longitude"": -68.2073}"
+xiaomi/mimo-v2.5,CoT,-22.9039,-68.1986,1278.791,CL,True,,stop,0.001165885,677,3910,3910,331.5,"{""reasoning"": ""The image features a high-altitude arid landscape with a light-colored gravel dirt track, low-lying yellowish-brown scrub vegetation, and rounded, eroded, brownish/rocky hills under a deep blue sky, a combination most characteristic of the Altiplano or Atacama Desert regions in the Andes (Chile/Argentina) where such terrain and road conditions are common."", ""country"": ""CL"", ""latitude"": -22.9039, ""longitude"": -68.1986}"
+qwen/qwen3.6-35b-a3b,CoT,-23.15,-68.35,1291.311,CL,True,,stop,0.00405875,665,3959,3649,110.03,"```json
+{
+  ""reasoning"": ""The image displays a classic high-altitude desert landscape with reddish rocky hills and sparse scrub vegetation, highly characteristic of the Atacama Desert in Northern Chile. The unpaved gravel road (ripio) and the specific type of dry, low-lying vegetation point strongly to this region."",
+  ""country"": ""CL"",
+  ""latitude"": -23.15,
+  ""longitude"": -68.35
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.5389,-69.2147,1373.514,CL,True,,stop,0.00019644,586,31,0,2.72,"{""country"": ""CL"", ""latitude"": -24.5389, ""longitude"": -69.2147}"
+minimax/minimax-m3,no-CoT,-37.5,-70.0,2705.211,AR,True,,stop,0.00026808,904,23,0,8.11,"{""country"": ""AR"", ""latitude"": -37.5, ""longitude"": -70.0}"
+qwen/qwen3.6-27b,CoT,33.65,-111.05,6474.476,US,True,,stop,0.0155567,665,7693,1,364.16,"{""reasoning"": ""The arid landscape with reddish-brown soil and creosote-like scrub vegetation is characteristic of the Sonoran Desert in Arizona. The unpaved road and rounded hills suggest a location in the Superstition Mountains area."", ""country"": ""US"", ""latitude"": 33.65, ""longitude"": -111.05}"
+mistralai/mistral-medium-3-5,CoT,33.415,-111.553,6486.303,US,True,,stop,0.0163395,868,2005,2025,79.44,"{""reasoning"": ""Left-hand drive vehicle (wiper on left) implies right-side driving; desert terrain with rocky hills and white edge road markings point to the American Southwest, likely Arizona's Superstition Mountains area."", ""country"": ""US"", ""latitude"": 33.415, ""longitude"": -111.553}"
+x-ai/grok-4.3,CoT,35.2,-115.4,6873.927,US,True,,stop,0.0020765,788,571,504,19.45,"{""reasoning"": ""Arid rocky hills with sparse dry scrub, dirt/gravel road, and clear high-sun desert lighting match the Mojave Desert region; no signage/vehicles but US-style vehicle interior and landscape are consistent."", ""country"": ""US"", ""latitude"": 35.2, ""longitude"": -115.4}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,19.221567153930664,-21.607940673828125,6931.596,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,36.5323,-116.9325,7076.246,US,True,,stop,0.0001371,786,32,0,2.21,"{""country"": ""US"", ""latitude"": 36.5323, ""longitude"": -116.9325}"
+xiaomi/mimo-v2.5,no-CoT,36.5,-117.0,7078.092,US,True,,stop,9.57376e-05,820,26,0,6.34,"{""country"": ""US"", ""latitude"": 36.5, ""longitude"": -117.0}"
+google/gemma-4-26b-a4b-it,no-CoT,36.5785,-117.1234,7092.088,,True,,stop,6.788e-05,404,64,0,6.68,"{"" elimate de la de la de la de la de la de la de la de la de la de own-thought
+{""country"": ""US"", "" own-thought
+""latitude"": 36.5785, ""longitude"": -117.1234}"
+qwen/qwen3.5-27b,no-CoT,36.5787,-118.2923,7167.976,US,True,,stop,0.000163995,585,32,0,3.06,"{""country"": ""US"", ""latitude"": 36.5787, ""longitude"": -118.2923}"
+moonshotai/kimi-k2.6,no-CoT,39.25,-119.65,7457.021,US,True,,stop,0.0008144,752,25,0,5.21,"{""country"": ""US"", ""latitude"": 39.25, ""longitude"": -119.65}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-19.653207778930664,13.623861312866211,9401.976,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-23.5,15.0,9447.247,NA,True,,stop,0.0013665,786,25,0,0.86,"{""country"": ""NA"", ""latitude"": -23.5, ""longitude"": 15.0}"
+mistralai/mistral-small-2603,CoT,37.05,-2.35,9472.786,ES,True,,stop,0.00071424,868,1121,1252,21.0,"{""reasoning"": ""Arid desert terrain with barren hills and the presence of an EU-style license plate (blue band on left) indicate southeastern Spain, specifically Almería province."", ""country"": ""ES"", ""latitude"": 37.05, ""longitude"": -2.35}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-31.194072723388672,18.076311111450195,9549.798,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,-29.6667,17.8833,9571.4,ZA,True,,stop,0.006838,1307,352,266,11.67,"{
+  ""reasoning"": ""The arid, rocky landscape with sparse scrub vegetation is characteristic of the Karoo or Namaqualand regions in southern Africa. The vehicle appears to be right-hand drive, pointing towards South Africa or Namibia."",
+  ""country"": ""ZA"",
+  ""latitude"": -29.6667,
+  ""longitude"": 17.8833
+}"
+google/gemini-3.5-flash,CoT (effort=medium),-30.2485,18.0452,9571.456,ZA,True,,stop,0.0098175,1307,873,804,24.23,"```json
+{""reasoning"": ""The arid landscape with distinctive granitic dome hills and scattered boulders is highly characteristic of the Kamiesberg region in the Northern Cape of South Africa."", ""country"": ""ZA"", ""latitude"": -30.2485, ""longitude"": 18.0452}
+```"
+anthropic/claude-opus-4.8,CoT,-29.6,17.9,9574.7,ZA,True,,stop,0.006995,949,90,0,3.65,"{""reasoning"": ""Arid rocky scrubland with rounded granite koppies and dry grass, gravel road typical of South Africa's Northern Cape Namaqualand region."", ""country"": ""ZA"", ""latitude"": -29.6, ""longitude"": 17.9}"
+anthropic/claude-opus-4.8,no-CoT,-29.6667,18.0,9582.363,ZA,True,,stop,0.00489,818,32,0,8.41,"{""country"": ""ZA"", ""latitude"": -29.6667, ""longitude"": 18.0}"
+qwen/qwen3.5-122b-a10b,CoT,-32.12,19.08,9617.704,ZA,True,,stop,0.00587626,665,2742,2640,29.58,"{""reasoning"": ""The landscape features arid, reddish-brown soil and dry grassy scrub typical of the Cederberg region in the Western Cape, South Africa. The vehicle is driving on the left side of the unpaved gravel road, consistent with South African traffic laws, and the dashboard suggests a common local vehicle like a Toyota Hilux."", ""country"": ""ZA"", ""latitude"": -32.12, ""longitude"": 19.08}"
+google/gemini-3.1-pro-preview,no-CoT,-29.1538,18.7654,9667.928,ZA,True,,stop,0.002872,1226,35,0,2.31,"```json
+{""country"": ""ZA"", ""latitude"": -29.1538, ""longitude"": 18.7654}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-31.8542,19.9835,9707.558,ZA,True,,stop,0.0041205,1307,240,170,3.51,"{""reasoning"": ""The arid, rocky mountain landscape with sparse scrub vegetation combined with right-hand drive vehicle wipers suggests the dry interior of South Africa, likely the Northern Cape or Western Cape region."", ""country"": ""ZA"", ""latitude"": -31.8542, ""longitude"": 19.9835}"
+qwen/qwen3.5-397b-a17b,CoT,-32.3845,20.6215,9750.878,ZA,True,,stop,0.00603681,665,2469,2367,45.69,"{
+""reasoning"": ""The arid, rocky landscape with low-lying succulent karoo vegetation and reddish soil is highly characteristic of the Northern Cape province in South Africa. The unpaved gravel road and deep blue sky are typical of the semi-desert regions around Sutherland or the Tankwa Karoo."",
+""country"": ""ZA"",
+""latitude"": -32.3845,
+""longitude"": 20.6215
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,-32.3589,20.8105,9768.767,ZA,True,,stop,0.00043025,585,31,0,3.81,"{""country"": ""ZA"", ""latitude"": -32.3589, ""longitude"": 20.8105}"
+qwen/qwen3.6-27b,no-CoT,-32.2968,20.9029,9778.929,ZA,True,,stop,0.00026002,585,31,0,14.85,"{""country"": ""ZA"", ""latitude"": -32.2968, ""longitude"": 20.9029}"
+qwen/qwen3.6-35b-a3b,no-CoT,-29.4567,20.8912,9859.139,ZA,True,,stop,0.00011875,585,31,0,2.92,"{""country"": ""ZA"", ""latitude"": -29.4567, ""longitude"": 20.8912}"
+google/gemini-3.5-flash,CoT (effort=high),-32.216,22.566,9932.134,ZA,True,,stop,0.0173235,1307,1707,1630,13.85,"{""reasoning"": ""The arid landscape with characteristic dolerite rock formations and low-lying 'Karoo bossies' vegetation points to the Karoo region of South Africa, specifically along a gravel mountain pass like the Molteno Pass."", ""country"": ""ZA"", ""latitude"": -32.216, ""longitude"": 22.566}"
+minimax/minimax-m3,CoT,-31.8,23.2,10002.312,ZA,True,,stop,0.00065934,997,323,322,12.74,"{""reasoning"": ""Arid Karoo-like landscape with reddish-brown soil, sparse dry grasses, rounded weathered rocky mountains, and an unpaved gravel road are highly characteristic of rural South Africa's Northern/Eastern Cape interior."", ""country"": ""ZA"", ""latitude"": -31.8, ""longitude"": 23.2}{""reasoning"": ""Arid Karoo-like landscape with reddish-brown soil, sparse dry grasses, rounded weathered rocky mountains, and an unpaved gravel road are highly characteristic of rural South Africa's Northern/Eastern Cape interior."", ""country"": ""ZA"", ""latitude"": -31.8, ""longitude"": 23.2}"
+google/gemma-4-26b-a4b-it,CoT,-32.32,23.48,10011.554,ZA,True,,stop,0.00074293,489,1768,1591,106.54,"{""reasoning"": ""The arid, hilly landscape with sparse, low-lying scrub vegetation and rocky outcrops is highly characteristic of the Karoo region in South Africa."", ""country"": ""ZA"", ""latitude"": -32.32, ""longitude"": 23.48}"
+google/gemma-4-31b-it,CoT,-30.5,23.0,10023.966,ZA,True,,stop,0.00059415,489,1302,1233,39.73,"```json
+{""reasoning"": ""The arid, hilly terrain with sparse, low-lying scrub vegetation and a well-maintained dirt road is highly characteristic of the Karoo region in South Africa."", ""country"": ""ZA"", ""latitude"": -30.5, ""longitude"": 23.0}
+```"
+google/gemma-4-31b-it,no-CoT,-28.4521,23.5612,10139.381,ZA,True,,stop,6.348e-05,404,36,0,14.33,"```json
+{""country"": ""ZA"", ""latitude"": -28.4521, ""longitude"": 23.5612}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,-31.2734,26.0628,10278.942,ZA,True,,stop,0.0003332,585,31,0,3.56,"{""country"": ""ZA"", ""latitude"": -31.2734, ""longitude"": 26.0628}"
+moonshotai/kimi-k2.6,CoT,-32.5,26.8,10303.467,ZA,True,,stop,0.00900724,834,2480,2411,142.36,"{""reasoning"": ""The dry savanna vegetation, wide gravel road, and concrete power poles with distinctive cross-arm configurations are characteristic of rural South Africa; the dashboard view matches common pickup trucks used on South African district roads."", ""country"": ""ZA"", ""latitude"": -32.5, ""longitude"": 26.8}"
+openai/gpt-5.5,no-CoT,-29.4235,28.1452,10532.753,LS,True,,stop,0.00411,678,24,0,3.18,"{""country"":""LS"",""latitude"":-29.4235,""longitude"":28.1452}"
+openai/gpt-5.5,CoT,-29.2895,28.6021,10579.474,LS,True,,stop,0.012775,755,300,211,15.02,"{""reasoning"":""The dry high-altitude grassland, rocky rounded mountains, and remote unpaved road strongly fit the Lesotho highlands rather than greener South African or Namibian terrain. The dashboard view and lack of markings are consistent with rural mountain tracks around Thaba-Tseka/Mokhotlong."",""country"":""LS"",""latitude"":-29.2895,""longitude"":28.6021}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-29.4678,29.2143,10629.131,LS,True,,stop,0.0021525,1225,35,0,2.85,"```json
+{""country"": ""LS"", ""latitude"": -29.4678, ""longitude"": 29.2143}
+```"

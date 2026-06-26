@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,57.164896908951,21.764332452429,0.0,LV,True,,,,,,,,"Piltene, None, Ventspils Rajons, LV"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,56.99677658081055,21.98126792907715,22.832,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,56.99217224121094,21.977745056152344,23.135,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,56.925689697265625,22.138643264770508,34.93,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,56.9,24.5,168.119,LV,True,,stop,0.00588,1272,278,199,4.7,"{
+  ""reasoning"": ""The A-frame wooden utility pole and the mix of birch and coniferous trees with autumn foliage strongly suggest the Baltic region. The unlined paved rural road is typical of the countryside in Latvia or Estonia."",
+  ""country"": ""LV"",
+  ""latitude"": 56.9,
+  ""longitude"": 24.5
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),56.8831,25.1245,205.742,LV,True,,stop,0.0021,1190,35,0,1.2,"```json
+{""country"": ""LV"", ""latitude"": 56.8831, ""longitude"": 25.1245}
+```"
+google/gemini-3.5-flash,CoT (effort=high),57.3125,25.2784,212.061,LV,True,,stop,0.0070365,1271,570,502,5.93,"{""reasoning"": ""The narrow paved road with gravel shoulders, autumn birch and coniferous forest, and wooden utility poles with diagonal support struts are highly characteristic of the Baltic states, particularly Latvia."", ""country"": ""LV"", ""latitude"": 57.3125, ""longitude"": 25.2784}"
+openai/gpt-5.5,no-CoT,58.6207,25.0136,251.112,EE,True,,stop,0.00341,544,23,0,2.79,"{""country"":""EE"",""latitude"":58.6207,""longitude"":25.0136}"
+google/gemini-3.5-flash,CoT (effort=medium),58.3752,25.5831,263.376,EE,True,,stop,0.0061005,1271,466,396,11.51,"{""reasoning"": ""The flat landscape, autumn birch forest, narrow asphalt road with gravel shoulders, and wooden utility pole with a diagonal support strut are highly characteristic of the Baltic region, particularly Estonia."", ""country"": ""EE"", ""latitude"": 58.3752, ""longitude"": 25.5831}"
+google/gemini-3.1-pro-preview,no-CoT,58.5,25.5,266.3,EE,True,,stop,0.005116,1190,228,199,10.62,"```json
+{""country"": ""EE"", ""latitude"": 58.5, ""longitude"": 25.5}
+```"
+openai/gpt-5.5,CoT,58.7354,25.6137,286.436,EE,True,,stop,0.014775,621,389,303,17.06,"{""reasoning"":""Flat rural landscape with birch/mixed forest, autumn colors, narrow unmarked gravel/asphalt road, and Soviet/Baltic-style utility poles strongly suggest the Baltic states, most likely rural Estonia. The vegetation and open fields fit central Estonia better than Latvia/Lithuania or Finland."",""country"":""EE"",""latitude"":58.7354,""longitude"":25.6137}"
+minimax/minimax-m3,no-CoT,59.3,25.2,311.074,EE,True,,stop,0.00019452,754,22,0,8.37,"{""country"": ""EE"", ""latitude"": 59.3, ""longitude"": 25.2}{""country"": ""EE"", ""latitude"": 59.3, ""longitude"": 25.2}"
+mistralai/mistral-medium-3-5,no-CoT,59.3293,18.0686,323.468,SE,True,,stop,0.0011835,634,31,0,1.31,"{""country"": ""SE"", ""latitude"": 59.3293, ""longitude"": 18.0686}"
+google/gemini-3.5-flash,CoT (effort=low),58.378,26.729,323.733,EE,True,,stop,0.003321,1272,157,96,8.28,"{""reasoning"": ""The flat landscape, autumn birch trees, and wooden utility pole with a diagonal support strut are highly characteristic of the Baltic states, particularly Estonia."", ""country"": ""EE"", ""latitude"": 58.378, ""longitude"": 26.729}"
+qwen/qwen3.6-35b-a3b,no-CoT,54.4231,25.2897,376.075,LT,True,,stop,0.00010195,473,31,0,2.99,"{""country"": ""LT"", ""latitude"": 54.4231, ""longitude"": 25.2897}"
+qwen/qwen3.5-122b-a10b,no-CoT,60.4634,24.3956,396.759,FI,True,,stop,0.00018772,474,31,0,6.25,"{""country"": ""FI"", ""latitude"": 60.4634, ""longitude"": 24.3956}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,60.536293029785156,25.328203201293945,427.124,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,61.0,25.0,464.653,FI,True,,stop,0.012289428,682,3529,3465,94.23,"{""reasoning"": ""Dense birch-pine forest with autumn ruska foliage, paired with wooden utility poles featuring diagonal bracing and a narrow unmarked paved road, are classic indicators of rural Finland."", ""country"": ""FI"", ""latitude"": 61.0, ""longitude"": 25.0}"
+qwen/qwen3.6-27b,no-CoT,61.52401,23.80454,498.259,FI,True,,stop,0.0001983,473,33,0,13.51,"{""country"": ""FI"", ""latitude"": 61.52401, ""longitude"": 23.80454}"
+x-ai/grok-4.3,CoT,61.85,25.75,567.173,FI,True,,stop,0.0020915,676,633,562,5.81,"{""reasoning"": ""Birch-dominated boreal forest with peak autumn foliage, rural asphalt road, and distinctive wooden utility poles with cross-arms point to northern European taiga; right-side driving implied and overcast northern light narrow it to Finland."", ""country"": ""FI"", ""latitude"": 61.85, ""longitude"": 25.75}"
+moonshotai/kimi-k2.6,no-CoT,59.5,30.5,571.654,RU,True,,stop,0.0005752,600,25,0,15.25,"{""country"": ""RU"", ""latitude"": 59.5, ""longitude"": 30.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,61.777748107910156,26.291677474975586,572.818,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,62.5,25.0,619.984,FI,True,,stop,0.00027345,473,25,0,3.91,"{""country"": ""FI"", ""latitude"": 62.5, ""longitude"": 25.0}"
+qwen/qwen3.5-9b,no-CoT,61.7925,27.944,621.157,FI,True,,stop,5.19e-05,474,30,0,4.3,"{""country"": ""FI"", ""latitude"": 61.7925, ""longitude"": 27.944}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,62.001163482666016,27.662206649780273,631.452,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,62.8547,25.9139,673.067,FI,True,,stop,0.00019467,473,31,0,2.46,"{""country"": ""FI"", ""latitude"": 62.8547, ""longitude"": 25.9139}"
+minimax/minimax-m3,CoT,62.8,28.5,729.218,FI,True,,stop,0.00060666,843,346,266,12.38,"{""reasoning"": ""Birch-conifer mixed forest in autumn colors with flat terrain and rural asphalt road lacking center markings, combined with Nordic-style wooden utility poles, strongly indicates a boreal forest region of Finland or Sweden. The landscape and vegetation type point to central Finland."", ""country"": ""FI"", ""latitude"": 62.8, ""longitude"": 28.5}"
+anthropic/claude-opus-4.8,CoT,56.8,35.9,855.897,RU,True,,stop,0.00641,797,97,0,9.22,"{""reasoning"": ""Birch-dominated mixed forest with autumn colors, flat terrain, narrow rural asphalt road, and concrete utility poles typical of rural Russia/Baltic region."", ""country"": ""RU"", ""latitude"": 56.8, ""longitude"": 35.9}"
+anthropic/claude-opus-4.8,no-CoT,56.8,35.9,855.897,RU,True,,stop,0.00408,666,30,0,9.12,"{""country"": ""RU"", ""latitude"": 56.8, ""longitude"": 35.9}"
+qwen/qwen3.5-35b-a3b,no-CoT,55.7558,37.6173,984.153,RU,True,,stop,9.736e-05,474,31,0,1.34,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+xiaomi/mimo-v2.5,no-CoT,55.75,37.62,984.491,RU,True,,stop,8.03376e-05,708,27,0,1.2,"{""country"": ""RU"", ""latitude"": 55.75, ""longitude"": 37.62}"
+xiaomi/mimo-v2.5,CoT,57.9,51.1,1739.236,RU,True,,stop,0.0001417976,787,207,115,10.45,"{
+  ""reasoning"": ""The image shows a rural asphalt road flanked by mixed birch and pine forests exhibiting autumn colors, typical of temperate zones in Russia. The most distinctive feature is the style of the concrete utility poles with the characteristic Y-shaped support, widely used in Russian rural infrastructure."",
+  ""country"": ""RU"",
+  ""latitude"": 57.9,
+  ""longitude"": 51.1
+}"
+x-ai/grok-4.3,no-CoT,56.85,60.55,2316.83,RU,True,,stop,0.0005934,592,22,0,0.78,"{""country"": ""RU"", ""latitude"": 56.85, ""longitude"": 60.55}"
+google/gemma-4-31b-it,no-CoT,61.215,105.241,4447.53,RU,True,,stop,6.678e-05,406,35,0,2.7,"```json
+{""country"": ""RU"", ""latitude"": 61.215, ""longitude"": 105.241}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6645.389,,True,True,,,,,,0.18,
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,8148.602,US,True,,stop,0.0001143,634,32,0,3.31,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.52,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.92,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,28.71,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.75,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.2,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,

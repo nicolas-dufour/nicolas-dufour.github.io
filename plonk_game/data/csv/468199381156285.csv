@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-34.610707543438,139.23581141722,0.0,AU,True,,,,,,,,"Angaston, Barossa, South Australia, AU"
+x-ai/grok-4.3,CoT,-34.28,139.05,40.529,AU,True,,stop,0.0018215,788,469,406,20.34,"{""reasoning"": ""Eucalyptus trees, red dirt road, dry grassy hills and clear blue sky are definitive of rural Australia; left-hand driving implied by typical road layout and no contradictory signage/vehicles."", ""country"": ""AU"", ""latitude"": -34.28, ""longitude"": 139.05}"
+moonshotai/kimi-k2.6,no-CoT,-34.5,138.8,41.766,AU,True,,stop,0.00075869,755,23,0,13.46,"{""country"": ""AU"", ""latitude"": -34.5, ""longitude"": 138.8}"
+google/gemini-3.1-pro-preview,CoT,-34.852,138.815,46.89,AU,True,,stop,0.005158,1307,212,132,3.69,"{
+  ""reasoning"": ""The presence of eucalyptus trees, dry yellow grass on rolling hills, and a standard Australian white guide post strongly indicate rural Australia. The landscape is typical of South Australia or inland Victoria."",
+  ""country"": ""AU"",
+  ""latitude"": -34.852,
+  ""longitude"": 138.815
+}"
+moonshotai/kimi-k2.6,CoT,-34.82,138.76,49.325,AU,True,,stop,0.006801615,833,1731,1963,24.48,"{""reasoning"": ""Eucalyptus trees with red-brown soil and dry grassy hills are distinctive of rural South Australia, and the unsealed road style with roadside posts confirms Australia."", ""country"": ""AU"", ""latitude"": -34.82, ""longitude"": 138.76}"
+google/gemini-3.1-pro-preview,no-CoT,-35.0,138.8,58.797,AU,True,,stop,0.00425,1225,150,120,4.12,"```json
+{""country"": ""AU"", ""latitude"": -35.0, ""longitude"": 138.8}
+```"
+x-ai/grok-4.3,no-CoT,-34.85,138.65,59.782,AU,True,,stop,0.0007334,704,22,0,0.83,"{""country"": ""AU"", ""latitude"": -34.85, ""longitude"": 138.65}"
+openai/gpt-5.5,CoT,-35.0876,138.7824,67.26,AU,True,,stop,0.015655,755,396,321,10.58,"{""reasoning"":""Dry rolling hills with native eucalyptus woodland, pale gravel road, and Australian-style white roadside guideposts strongly indicate rural southern Australia. The Mediterranean-dry grassland and terrain fit the Adelaide Hills/Fleurieu region of South Australia best."",""country"":""AU"",""latitude"":-35.0876,""longitude"":138.7824}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-34.98029708862305,138.6519317626953,67.316,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-33.85,138.85,91.722,AU,True,,stop,0.00484,818,30,0,2.14,"{""country"": ""AU"", ""latitude"": -33.85, ""longitude"": 138.85}"
+openai/gpt-5.5,no-CoT,-35.3512,138.6794,96.692,AU,True,,stop,0.00411,678,24,0,8.96,"{""country"":""AU"",""latitude"":-35.3512,""longitude"":138.6794}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-35.2601432800293,138.47579956054688,100.073,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-35.29768371582031,138.4544677734375,104.43,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-33.64067077636719,138.80007934570312,115.078,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,-33.5,139.0,125.401,AU,True,,stop,0.00023736,904,23,0,5.16,"{""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 139.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-35.5831,138.4825,128.014,AU,True,,stop,0.0021615,1225,36,0,8.92,"```json
+{""country"": ""AU"", ""latitude"": -35.5831, ""longitude"": 138.4825}
+```"
+anthropic/claude-opus-4.8,CoT,-33.5,138.7,133.003,AU,True,,stop,0.00692,949,87,0,3.53,"{""reasoning"": ""Dry golden grasslands with eucalyptus trees, red-dirt rural road, and white guide post typical of South Australian rangeland/hill country."", ""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 138.7}"
+google/gemini-3.5-flash,CoT (effort=low),-35.5832,138.3125,136.927,AU,True,,stop,0.0034455,1307,165,103,9.08,"{""reasoning"": ""The dry golden grass, reddish-brown dirt road, and eucalyptus trees are highly characteristic of the Fleurieu Peninsula in South Australia."", ""country"": ""AU"", ""latitude"": -35.5832, ""longitude"": 138.3125}"
+google/gemini-3.5-flash,CoT (effort=high),-35.55,138.25,137.678,AU,True,,stop,0.0056865,1307,414,355,10.42,"{""reasoning"": ""The dry, rolling grassy hills combined with eucalyptus trees and a reddish dirt road are highly characteristic of the Fleurieu Peninsula in South Australia."", ""country"": ""AU"", ""latitude"": -35.55, ""longitude"": 138.25}"
+google/gemini-3.5-flash,CoT (effort=medium),-35.5834,138.2851,138.488,AU,True,,stop,0.0053805,1307,380,317,10.71,"{""reasoning"": ""The dry, rolling golden hills, reddish dirt road, and distinctive eucalyptus trees are highly characteristic of the Fleurieu Peninsula in South Australia."", ""country"": ""AU"", ""latitude"": -35.5834, ""longitude"": 138.2851}"
+qwen/qwen3.5-397b-a17b,CoT,-33.28,138.88,151.564,AU,True,,stop,0.0053334,665,1384,1291,18.32,"{""reasoning"": ""The image features distinct Eucalyptus trees (gum trees) and red lateritic soil on an unpaved road, which are characteristic of rural Australia, specifically the Mid North region of South Australia. The white guide post on the roadside is a standard Australian road marker style."", ""country"": ""AU"", ""latitude"": -33.28, ""longitude"": 138.88}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-33.24568176269531,138.61778259277344,162.14,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-35.553104400634766,143.6291046142578,413.229,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,-36.4521,145.8214,629.959,AU,True,,stop,6.388e-05,404,37,0,13.54,"```json
+{""country"": ""AU"", ""latitude"": -36.4521, ""longitude"": 145.8214}
+```"
+qwen/qwen3.5-9b,no-CoT,-35.2833,146.7833,691.794,AU,True,,stop,0.00010745,585,32,0,1.92,"{""country"": ""AU"", ""latitude"": -35.2833, ""longitude"": 146.7833}"
+qwen/qwen3.5-27b,no-CoT,-35.2833,147.2167,731.046,AU,True,,stop,0.0002365,586,45,0,4.14,"```json
+{
+  ""country"": ""AU"",
+  ""latitude"": -35.2833,
+  ""longitude"": 147.2167
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,-35.2809,148.4321,841.203,AU,True,,stop,0.00012519,585,32,0,2.26,"{""country"": ""AU"", ""latitude"": -35.2809, ""longitude"": 148.4321}"
+qwen/qwen3.5-35b-a3b,no-CoT,-35.2897,148.4563,843.44,AU,True,,stop,0.00018625,585,32,0,7.5,"{""country"": ""AU"", ""latitude"": -35.2897, ""longitude"": 148.4563}"
+qwen/qwen3.6-27b,CoT,-36.82,148.25,849.693,AU,True,,stop,0.0102427,665,5036,1,231.19,"{""reasoning"": ""The reddish-brown soil, dry golden grass, and eucalyptus trees (likely Alpine Ash or Stringybark) are characteristic of the Australian High Country, specifically the Alpine National Park in Victoria. The white road delineator post with a red reflector on the left side confirms the location is in a country that drives on the left, such as Australia."", ""country"": ""AU"", ""latitude"": -36.82, ""longitude"": 148.25}"
+xiaomi/mimo-v2.5,no-CoT,-33.5,148.5,862.03,AU,True,,stop,9.57376e-05,820,26,0,1.6,"{""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 148.5}"
+minimax/minimax-m3,CoT,-35.38,148.72,867.807,AU,True,,stop,0.00056982,997,274,247,12.7,"{""reasoning"": ""The eucalyptus woodland, dry golden grass, red-brown dirt road, and rolling arid hills are highly characteristic of inland southeastern Australia, likely the ACT/NSW Southern Tablelands region. The vegetation and soil type strongly match rural NSW near Canberra."", ""country"": ""AU"", ""latitude"": -35.38, ""longitude"": 148.72}"
+xiaomi/mimo-v2.5,CoT,-35.32,148.8,874.744,AU,True,,stop,0.0006603576,899,2003,1915,22.34,"{""reasoning"": ""The landscape features distinctive Eucalyptus trees and dry, golden grass typical of the Australian temperate zone, specifically the tablelands regions. The unsealed gravel road and traditional wooden post-and-wire rural fencing are characteristic of the New South Wales Southern Tablelands."", ""country"": ""AU"", ""latitude"": -35.32, ""longitude"": 148.8}"
+qwen/qwen3.5-122b-a10b,no-CoT,-35.2809,149.13,904.508,AU,True,,stop,0.000362,585,40,0,3.5,"{
+  ""country"": ""AU"",
+  ""latitude"": -35.2809,
+  ""longitude"": 149.1300
+}"
+qwen/qwen3.6-27b,no-CoT,-35.2809,149.13,904.508,AU,True,,stop,0.0002299,585,32,0,5.98,"{""country"": ""AU"", ""latitude"": -35.2809, ""longitude"": 149.1300}"
+qwen/qwen3.5-397b-a17b,no-CoT,-33.5,149.2,925.825,AU,True,,stop,0.0004446,585,26,0,2.88,"{""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 149.2}"
+mistralai/mistral-medium-3-5,no-CoT,-34.0,150.0,990.569,AU,True,,stop,0.001374,786,26,0,1.21,"{""country"": ""AU"", ""latitude"": -34.0, ""longitude"": 150.0}"
+mistralai/mistral-small-2603,CoT,-20.5,134.5,1636.402,AU,True,,stop,0.00034404,868,504,522,4.42,"{""reasoning"": ""The vegetation (spinifex grass and acacia-like trees) and red soil are characteristic of the Australian outback. The remote dirt road in a semi-arid grassland biome strongly indicates interior Australia."", ""country"": ""AU"", ""latitude"": -20.5, ""longitude"": 134.5}"
+qwen/qwen3.6-35b-a3b,CoT,-31.8,116.9,2097.041,AU,True,,stop,0.0046532,666,2825,2529,114.87,"{""reasoning"": ""The reddish-brown soil, dry golden grass, and Eucalyptus trees (particularly the tall ones on the right and scrubby ones on the left) are characteristic of the Australian Wheatbelt region in Western Australia. The unsealed road and white delineator post further confirm a rural Australian setting."", ""country"": ""AU"", ""latitude"": -31.8, ""longitude"": 116.9}"
+mistralai/mistral-small-2603,no-CoT,-33.9815,18.4649,10209.467,ZA,True,,stop,0.000170625,786,31,0,2.05,"{""country"": ""ZA"", ""latitude"": -33.9815, ""longitude"": 18.4649}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,14295.48,,True,True,,,,,,19.6,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.34,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.14,

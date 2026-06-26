@@ -1,0 +1,78 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,59.72806518582643,-136.6002371369495,0.0,US,True,,,,,,,,"Haines, Haines Borough, Alaska, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,59.867698669433594,-136.1029510498047,31.856,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,59.832359313964844,-135.9086151123047,40.407,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,60.28632736206055,-138.3894805908203,117.233,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,62.8096,-141.0003,415.399,US,True,,stop,5.22e-05,474,32,0,4.82,"{""country"": ""US"", ""latitude"": 62.8096, ""longitude"": -141.0003}"
+qwen/qwen3.6-35b-a3b,no-CoT,63.5887,-142.7003,536.146,US,True,,stop,0.00015825,473,32,0,0.57,"{""country"": ""US"", ""latitude"": 63.5887, ""longitude"": -142.7003}"
+google/gemini-3.5-flash,CoT (effort=high),63.131,-145.525,606.082,US,True,,stop,0.01197,1272,1118,1039,13.69,"{""reasoning"": ""The yellow dashed center line and solid white edge lines indicate North America, while the vast, treeless tundra landscape and rugged mountains under heavy clouds are characteristic of high-latitude Alaska, specifically along the Richardson Highway near Isabel Pass."", ""country"": ""US"", ""latitude"": 63.131, ""longitude"": -145.525}"
+google/gemini-3.5-flash,CoT (effort=low),63.1852,-145.5324,609.827,US,True,,stop,0.0045255,1271,291,216,4.23,"{""reasoning"": ""The paved road with a yellow dashed center line and white edge lines in a vast, treeless subarctic tundra landscape with distant mountains is characteristic of Alaska, specifically the Richardson Highway near Isabel Pass."", ""country"": ""US"", ""latitude"": 63.1852, ""longitude"": -145.5324}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),63.4518,-145.7312,635.211,US,True,,stop,0.002109,1190,36,0,7.74,"```json
+{""country"": ""US"", ""latitude"": 63.4518, ""longitude"": -145.7312}
+```"
+anthropic/claude-opus-4.8,CoT,63.15,-147.5,691.847,US,True,,stop,0.00661,797,105,0,3.37,"{""reasoning"": ""Treeless alpine tundra, distant cloud-shrouded mountains, and a remote two-lane highway with yellow centerline suggest sub-Arctic Alaska, likely the Denali Highway region."", ""country"": ""US"", ""latitude"": 63.15, ""longitude"": -147.5}"
+minimax/minimax-m3,CoT,63.4,-147.5,705.498,US,True,,stop,0.00061146,843,350,278,14.43,"{""reasoning"": ""Yellow dashed centerline and road shoulder style indicate North America; treeless tundra vegetation, rolling hills, and rugged snow-patched mountains in the background strongly suggest interior Alaska, most likely the Denali Highway."", ""country"": ""US"", ""latitude"": 63.4, ""longitude"": -147.5}"
+xiaomi/mimo-v2.5,no-CoT,60.85,-149.55,723.252,US,True,,stop,8.06176e-05,708,28,0,14.46,"{""country"": ""US"", ""latitude"": 60.85, ""longitude"": -149.55}"
+qwen/qwen3.6-27b,no-CoT,61.2181,-149.8997,745.996,US,True,,stop,0.00025805,474,32,0,0.98,"{""country"": ""US"", ""latitude"": 61.2181, ""longitude"": -149.8997}"
+qwen/qwen3.5-35b-a3b,no-CoT,61.218056,-149.900278,746.026,US,True,,stop,0.00016639,473,36,0,9.86,"{""country"": ""US"", ""latitude"": 61.218056, ""longitude"": -149.900278}"
+google/gemini-3.5-flash,CoT (effort=medium),63.3114,-148.8425,759.844,US,True,,stop,0.0076305,1271,636,552,9.24,"{""reasoning"": ""The paved road with a dashed yellow center line and solid white edge lines, combined with the vast, treeless tundra valley and rugged mountains under low clouds, is highly characteristic of the Alaska Range, specifically near Broad Pass on the Parks Highway."", ""country"": ""US"", ""latitude"": 63.3114, ""longitude"": -148.8425}"
+anthropic/claude-opus-4.8,no-CoT,63.3833,-148.9,765.952,US,True,,stop,0.00408,666,30,0,9.18,"{""country"": ""US"", ""latitude"": 63.3833, ""longitude"": -148.9}"
+google/gemini-3.1-pro-preview,no-CoT,63.315,-149.123,772.638,US,True,,stop,0.006014,1189,303,269,5.52,"```json
+{""country"": ""US"", ""latitude"": 63.315, ""longitude"": -149.123}
+```"
+google/gemini-3.1-pro-preview,CoT,63.315,-149.125,772.728,US,True,,stop,0.007234,1271,391,301,12.22,"{
+  ""reasoning"": ""The dashed yellow center line and solid white edge lines indicate North America. The tundra-like vegetation, rolling hills, and distant mountains under a cloudy sky strongly suggest a northern highway in Alaska, such as the Parks or Richardson Highway."",
+  ""country"": ""US"",
+  ""latitude"": 63.315,
+  ""longitude"": -149.125
+}"
+minimax/minimax-m3,no-CoT,63.7332,-148.9115,784.543,US,True,,stop,0.00019416,752,25,0,4.81,"{""country"": ""US"", ""latitude"": 63.7332, ""longitude"": -148.9115}"
+qwen/qwen3.5-122b-a10b,no-CoT,64.8378,-147.7164,806.179,US,True,,stop,0.0001898,474,32,0,6.36,"{""country"": ""US"", ""latitude"": 64.8378, ""longitude"": -147.7164}"
+qwen/qwen3.5-397b-a17b,no-CoT,64.8378,-147.7164,806.179,US,True,,stop,0.0003357,473,32,0,2.14,"{""country"": ""US"", ""latitude"": 64.8378, ""longitude"": -147.7164}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,63.55355453491211,-149.66055297851562,808.205,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,63.608734130859375,-150.47726440429688,847.413,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,63.0695,-151.0074,849.675,US,True,,stop,0.0002085,474,45,0,11.58,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 63.0695,
+  ""longitude"": -151.0074
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,63.622962951660156,-150.51466369628906,849.748,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,63.4709,-150.8564,858.576,US,True,,stop,0.00344,544,24,0,2.32,"{""country"":""US"",""latitude"":63.4709,""longitude"":-150.8564}"
+qwen/qwen3.5-397b-a17b,CoT,67.35,-150.35,1082.435,US,True,,stop,0.00798165,553,2592,1,71.74,"{
+""reasoning"": ""The yellow dashed center line indicates a right-hand traffic country, most likely the USA or Canada. The vast, treeless tundra landscape with low-lying green scrub and distant rugged mountains is highly characteristic of the Dalton Highway in Alaska as it approaches the Brooks Range."",
+""country"": ""US"",
+""latitude"": 67.35,
+""longitude"": -150.35
+}"
+google/gemma-4-31b-it,CoT,68.34,-148.32,1110.534,US,True,,stop,0.00074672,492,572,529,9.15,"{""reasoning"": ""The yellow center line and tundra landscape are highly characteristic of the Dalton Highway in Alaska, USA."", ""country"": ""US"", ""latitude"": 68.34, ""longitude"": -148.32}"
+qwen/qwen3.6-27b,CoT,68.35,-149.6,1143.615,US,True,,stop,0.0151806,554,4692,4363,355.9,"```json
+{
+    ""reasoning"": ""The yellow center line indicates right-hand traffic (North America), and the treeless, low-shrub tundra vegetation combined with distant rugged mountains (likely the Brooks Range) strongly points to Northern Alaska, specifically the Dalton Highway. The overcast sky and road condition are characteristic of this remote industrial route."",
+    ""country"": ""US"",
+    ""latitude"": 68.35,
+    ""longitude"": -149.6
+}
+```"
+qwen/qwen3.6-35b-a3b,CoT,66.85,-153.6,1154.533,US,True,,stop,0.0031567081,553,3178,3072,43.76,"{""reasoning"": ""The yellow center line indicates driving on the right, typical of the US, while the treeless tundra landscape, low shrubs, and distant mountains under a dramatic cloudy sky are characteristic of the Alaska interior, specifically the Dalton Highway (Route 11). The straight road and specific vegetation suggest a location north of Fairbanks, likely in the Brooks Range foothills."", ""country"": ""US"", ""latitude"": 66.85, ""longitude"": -153.6}"
+mistralai/mistral-medium-3-5,no-CoT,39.5501,-105.7821,3102.68,US,True,,stop,0.001191,634,32,0,1.9,"{""country"": ""US"", ""latitude"": 39.5501, ""longitude"": -105.7821}"
+x-ai/grok-4.3,no-CoT,64.85,-22.65,5113.722,IS,True,,stop,0.0007278,592,22,0,1.16,"{""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -22.65}"
+x-ai/grok-4.3,CoT,64.85,-18.35,5240.39,IS,True,,stop,0.0022665,676,703,625,12.79,"{
+  ""reasoning"": ""Empty two-lane asphalt road with yellow center dashes + white edge lines, low tundra-style vegetation, dramatic overcast mountains with valley cloud typical of subarctic volcanic terrain; no other signage/vehicles but matches Iceland's highlands exactly."",
+  ""country"": ""IS"",
+  ""latitude"": 64.85,
+  ""longitude"": -18.35
+}"
+moonshotai/kimi-k2.6,no-CoT,64.8,-18.5,5240.509,IS,True,,stop,0.000289692,603,23,0,21.96,"{""country"": ""IS"", ""latitude"": 64.8, ""longitude"": -18.5}"
+google/gemma-4-31b-it,no-CoT,64.85,-18.21,5244.394,IS,True,,stop,6.558e-05,406,32,0,2.24,"```json
+{""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -18.21}
+```"
+openai/gpt-5.5,CoT,65.386,-15.846,5262.619,IS,True,,stop,0.021135,621,601,516,15.2,"{""reasoning"":""Treeless subarctic/highland landscape, right-side driving road with yellow centerline and white edge lines, plus low cloud over volcanic-looking mountains strongly suggest rural Iceland rather than continental Europe. The sparse roadside posts and barren green tundra fit the Ring Road/highland area in northeast Iceland."",""country"":""IS"",""latitude"":65.386,""longitude"":-15.846}"
+xiaomi/mimo-v2.5,CoT,56.68,-5.0,6389.752,GB,True,,stop,0.0004587576,787,1339,1271,19.3,"{""reasoning"": ""Overcast skies, green rolling hills, and distant mountains are characteristic of the Scottish Highlands. The road markings with a yellow center line and white edges are consistent with UK rural roads."", ""country"": ""GB"", ""latitude"": 56.68, ""longitude"": -5.0}"
+mistralai/mistral-small-2603,CoT,51.75,-1.85,6972.868,GB,True,,stop,0.00033444,716,490,506,4.1,"{""reasoning"": ""Rolling green hills and overcast sky with sunlight breaks suggest temperate maritime climate; road style and markings consistent with UK rural roads."", ""country"": ""GB"", ""latitude"": 51.75, ""longitude"": -1.85}"
+moonshotai/kimi-k2.6,CoT,-0.38,-78.14,8345.295,EC,True,,stop,0.0147636,480,3987,4302,108.06,"{""reasoning"": ""The treeless green páramo grassland, overcast Andean sky, and paved highway with yellow dashed center line and white edge markings are characteristic of the high-altitude E45 corridor near Papallacta in Ecuador."", ""country"": ""EC"", ""latitude"": -0.3800, ""longitude"": -78.1400}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12396.659,,True,True,,,,,,7.7,
+mistralai/mistral-small-2603,no-CoT,-45.8733,170.5033,12686.376,NZ,True,,stop,0.0001143,634,32,0,3.2,"{""country"": ""NZ"", ""latitude"": -45.8733, ""longitude"": 170.5033}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.14,

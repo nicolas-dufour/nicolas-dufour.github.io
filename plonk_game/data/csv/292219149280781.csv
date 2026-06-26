@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,45.855384302253,81.680974389013,0.0,KZ,True,,,,,,,,"Dostyq, None, Almaty Oblysy, KZ"
+anthropic/claude-opus-4.8,no-CoT,43.2,78.5,388.22,KZ,True,,stop,0.004105,666,31,0,8.64,"{""country"": ""KZ"", ""latitude"": 43.2, ""longitude"": 78.5}"
+anthropic/claude-opus-4.8,CoT,43.5,78.0,391.461,KZ,True,,stop,0.00631,797,93,0,3.1,"{""reasoning"": ""Dry steppe grassland with a long mountain range backdrop suggests Central Asia, likely the Tien Shan foothills of southeastern Kazakhstan."", ""country"": ""KZ"", ""latitude"": 43.5, ""longitude"": 78.0}"
+qwen/qwen3.5-9b,no-CoT,43.3285,76.9633,467.304,KZ,True,,stop,5.22e-05,474,32,0,8.81,"{""country"": ""KZ"", ""latitude"": 43.3285, ""longitude"": 76.9633}"
+google/gemma-4-31b-it,no-CoT,43.2222,77.0111,471.792,KZ,True,,stop,0.00010997,406,35,0,9.31,"```json
+{""country"": ""KZ"", ""latitude"": 43.2222, ""longitude"": 77.0111}
+```"
+google/gemini-3.1-pro-preview,no-CoT,43.2567,76.9286,474.501,KZ,True,,stop,0.002798,1189,35,0,9.58,"```json
+{""country"": ""KZ"", ""latitude"": 43.2567, ""longitude"": 76.9286}
+```"
+google/gemini-3.1-pro-preview,CoT,43.55,76.5,482.944,KZ,True,,stop,0.00553,1271,249,176,5.25,"{
+  ""reasoning"": ""The flat, dry steppe leading directly into a steep, rugged mountain range is highly characteristic of Central Asia, particularly southeastern Kazakhstan or northern Kyrgyzstan near the Tien Shan mountains."",
+  ""country"": ""KZ"",
+  ""latitude"": 43.55,
+  ""longitude"": 76.5
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.09357833862305,76.52729034423828,511.215,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.106285095214844,76.51155853271484,511.332,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,43.141639709472656,76.33114624023438,520.476,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,42.5,76.0,586.638,KG,True,,stop,0.000286632,603,27,0,1.89,"```json
+{""country"": ""KG"", ""latitude"": 42.5, ""longitude"": 76.0}
+```"
+openai/gpt-5.5,no-CoT,42.5885,75.8142,591.777,KG,True,,stop,0.00341,544,23,0,1.38,"{""country"":""KG"",""latitude"":42.5885,""longitude"":75.8142}"
+openai/gpt-5.5,CoT,42.2165,75.7568,622.58,KG,True,,stop,0.010965,621,262,187,13.67,"{""reasoning"":""Dry Central Asian steppe with broad intermontane basin and rugged Tian Shan-style ranges strongly suggests rural Kyrgyzstan. The arid grassland and mountain backdrop fit the Kochkor/Naryn valley area better than flatter Kazakhstan or Mongolia."",""country"":""KG"",""latitude"":42.2165,""longitude"":75.7568}"
+qwen/qwen3.6-35b-a3b,CoT,42.87,74.56,655.877,KG,True,,stop,0.0052706056,553,5368,5245,49.69,"```json
+{
+  ""reasoning"": ""The image displays a vast, flat steppe landscape with dry, yellow grass leading up to a rugged, brownish mountain range, which is characteristic of the Chuy Valley in Kyrgyzstan with the Kyrgyz Ala-Too range in the background. The lack of snow on the peaks and the specific color of the vegetation suggest late summer or early autumn in this region."",
+  ""country"": ""KG"",
+  ""latitude"": 42.87,
+  ""longitude"": 74.56
+}
+```"
+moonshotai/kimi-k2.6,CoT,43.15,74.05,675.434,KZ,True,,stop,0.021924,680,5968,6360,142.45,"{""reasoning"": ""Vast dry continental steppe with tall golden grass and an abrupt dark mountain wall, completely lacking fences or roadside infrastructure, matches the southern Kazakhstan steppe near the Kyrgyz Ala-Too foothills."", ""country"": ""KZ"", ""latitude"": 43.15, ""longitude"": 74.05}"
+minimax/minimax-m3,CoT,42.15,73.75,755.852,KG,True,,stop,0.00113586,843,787,714,27.56,"{""reasoning"": ""Dry golden steppe grassland with scattered low shrubs and a long, gentle mountain ridge in the background is highly characteristic of the high-altitude Suusamyr Valley in Kyrgyzstan, viewed toward the surrounding Tien Shan ranges."", ""country"": ""KG"", ""latitude"": 42.15, ""longitude"": 73.75}"
+qwen/qwen3.5-27b,no-CoT,40.1825,96.9875,1391.952,CN,True,,stop,0.0002067,473,31,0,15.82,"{""country"": ""CN"", ""latitude"": 40.1825, ""longitude"": 96.9875}"
+xiaomi/mimo-v2.5,CoT,48.0,100.0,1407.906,MN,True,,stop,0.0003977176,787,1121,1060,11.77,"{""reasoning"": ""The vast dry grassland, lack of trees, and distant flat-topped mountains indicate a semi-arid steppe environment typical of Mongolia."", ""country"": ""MN"", ""latitude"": 48.0, ""longitude"": 100.0}"
+qwen/qwen3.6-27b,no-CoT,40.1825,100.4456,1645.761,CN,True,,stop,0.00025408,474,32,0,7.38,"{""country"": ""CN"", ""latitude"": 40.1825, ""longitude"": 100.4456}"
+google/gemini-3.5-flash,CoT (effort=medium),-1.05,36.35,6844.024,KE,True,,stop,0.013176,1272,1252,1184,8.85,"{""reasoning"": ""The vast, dry grassy plains set against a long, deeply-gullied escarpment are highly characteristic of the Great Rift Valley floor in Kenya, specifically near the Kedong Valley."", ""country"": ""KE"", ""latitude"": -1.05, ""longitude"": 36.35}"
+google/gemini-3.5-flash,CoT (effort=high),-1.15,36.35,6853.213,KE,True,,stop,0.013446,1272,1282,1207,15.69,"```json
+{""reasoning"": ""The vast, dry grassy plain set against a long, continuous, and deeply eroded escarpment is highly characteristic of the Great Rift Valley in East Africa, specifically the Kedong Valley region in Kenya."", ""country"": ""KE"", ""latitude"": -1.15, ""longitude"": 36.35}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-1.6234,36.2856,6900.773,KE,True,,stop,0.004716,1272,312,244,3.2,"{""reasoning"": ""The vast dry savanna plain set against a continuous, steep rift valley escarpment is highly characteristic of the Great Rift Valley floor in East Africa, specifically in southern Kenya."", ""country"": ""KE"", ""latitude"": -1.6234, ""longitude"": 36.2856}"
+minimax/minimax-m3,no-CoT,-2.65,36.15,7003.812,TZ,True,,stop,0.00019176,752,23,0,4.92,"{""country"": ""TZ"", ""latitude"": -2.65, ""longitude"": 36.15}"
+x-ai/grok-4.3,CoT,-2.333,34.833,7057.041,TZ,True,,stop,0.001784,676,510,449,5.67,"{""reasoning"": ""Vast dry savanna grassland with distant rugged mountains and no visible infrastructure/vehicles/signage matches East African plains (e.g. Serengeti/Mara ecosystem)."", ""country"": ""TZ"", ""latitude"": -2.333, ""longitude"": 34.833}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-3.2245,35.8452,7075.713,TZ,True,,stop,0.002091,1190,34,0,13.91,"```json
+{""country"": ""TZ"", ""latitude"": -3.2245, ""longitude"": 35.8452}
+```"
+mistralai/mistral-small-2603,CoT,-3.4,35.7,7100.9,TZ,True,,stop,0.0004866,716,632,668,5.36,"{""reasoning"": ""Left-hand traffic and dry savanna vegetation with reddish, rugged mountains strongly indicate East Africa, specifically Tanzania's Rift Valley region near Lake Manyara."", ""country"": ""TZ"", ""latitude"": -3.4, ""longitude"": 35.7}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,23.847412109375,-24.9261417388916,9317.756,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9364.453,,True,True,,,,,,18.66,
+qwen/qwen3.5-397b-a17b,CoT,40.33,-119.53,10202.269,US,True,,stop,0.0078546,553,2103,2009,23.8,"{
+""reasoning"": ""The landscape features flat, dry grassland leading to a rugged, barren mountain range, which is characteristic of the Basin and Range topography found in the high desert of Nevada, USA (specifically resembling the Humboldt Range viewed from the Pyramid Lake area)."",
+""country"": ""US"",
+""latitude"": 40.33,
+""longitude"": -119.53
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,39.5,-118.0,10323.551,US,True,,stop,0.00034668,473,26,0,3.37,"{""country"": ""US"", ""latitude"": 39.5, ""longitude"": -118.0}"
+mistralai/mistral-small-2603,no-CoT,38.5,-120.5,10377.402,US,True,,stop,0.000138375,634,26,0,2.61,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -120.5}"
+xiaomi/mimo-v2.5,no-CoT,38.8,-117.5,10409.268,US,True,,stop,8.00576e-05,708,26,0,8.72,"{""country"": ""US"", ""latitude"": 38.8, ""longitude"": -117.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,39.7392,-104.9903,10474.235,US,True,,stop,0.00010295,473,32,0,2.25,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,39.86204528808594,-100.04210662841797,10482.199,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,37.7519,-119.2259,10486.372,US,True,,stop,0.00010295,473,32,0,1.97,"{""country"": ""US"", ""latitude"": 37.7519, ""longitude"": -119.2259}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,37.61576461791992,-104.86489868164062,10710.46,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,36.5,-108.5,10800.952,US,True,,stop,0.001146,634,26,0,2.18,"{""country"": ""US"", ""latitude"": 36.5, ""longitude"": -108.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,34.1478,-118.1445,10898.759,US,True,,stop,0.0001898,474,32,0,12.36,"{""country"": ""US"", ""latitude"": 34.1478, ""longitude"": -118.1445}"
+x-ai/grok-4.3,no-CoT,-33.05,-68.95,17143.067,AR,True,,stop,0.0005934,592,22,0,7.08,"{""country"": ""AR"", ""latitude"": -33.05, ""longitude"": -68.95}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.19,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.22,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.22,

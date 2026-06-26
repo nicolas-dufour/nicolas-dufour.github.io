@@ -1,0 +1,77 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-30.256534876580844,-54.91055949915676,0.0,BR,True,,,,,,,,"Rosario do Sul, Rosario Do Sul, Rio Grande do Sul, BR"
+google/gemini-3.1-pro-preview,no-CoT,-29.6842,-53.8069,123.903,BR,True,,stop,0.00604,1226,299,264,5.66,"```json
+{""country"": ""BR"", ""latitude"": -29.6842, ""longitude"": -53.8069}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-29.684,-53.806,123.989,BR,True,,stop,0.0096825,1307,858,791,7.58,"{""reasoning"": ""The concrete utility poles, white-painted curbs, residential architecture with brick walls, and vehicle models like the Fiat Uno strongly indicate Southern Brazil, particularly Rio Grande do Sul."", ""country"": ""BR"", ""latitude"": -29.684, ""longitude"": -53.806}"
+google/gemini-3.5-flash,CoT (effort=high),-29.684,-53.806,123.989,BR,True,,stop,0.0129675,1307,1223,1155,13.74,"{""reasoning"": ""The white-painted curbs, concrete utility poles, blue plastic drum used as a trash bin, and vehicle models like the Fiat Uno strongly indicate a suburban street in Southern Brazil."", ""country"": ""BR"", ""latitude"": -29.684, ""longitude"": -53.806}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-31.3303,-54.1069,141.944,BR,True,,stop,0.002154,1226,35,0,7.38,"```json
+{""country"": ""BR"", ""latitude"": -31.3303, ""longitude"": -54.1069}
+```"
+anthropic/claude-opus-4.8,CoT,-31.77,-52.34,297.192,BR,True,,stop,0.006945,949,88,0,9.23,"{""reasoning"": ""Brazilian-style residential township with brick walls, satellite dishes, right-hand driving and Portuguese signage suggest southern Brazil suburb."", ""country"": ""BR"", ""latitude"": -31.77, ""longitude"": -52.34}"
+anthropic/claude-opus-4.8,no-CoT,-31.77,-52.34,297.192,BR,True,,stop,0.00484,818,30,0,2.47,"{""country"": ""BR"", ""latitude"": -31.77, ""longitude"": -52.34}"
+google/gemini-3.1-pro-preview,CoT,-30.0346,-51.2177,355.931,BR,True,,stop,0.006192,1308,298,212,4.86,"{
+  ""reasoning"": ""The ladder-style utility pole, painted curbs, and vehicle models (like the Fiat Uno) are highly characteristic of Brazil. The vegetation and overall climate suggest a southern state such as Rio Grande do Sul."",
+  ""country"": ""BR"",
+  ""latitude"": -30.0346,
+  ""longitude"": -51.2177
+}"
+google/gemini-3.5-flash,CoT (effort=low),-30.0346,-51.2177,355.931,BR,True,,stop,0.005184,1308,358,276,3.69,"```json
+{""reasoning"": ""The concrete utility poles, white-painted curbs, architecture of the residential houses, and vehicle models (such as the Fiat Uno) are highly characteristic of southern Brazil, particularly the state of Rio Grande do Sul."", ""country"": ""BR"", ""latitude"": -30.0346, ""longitude"": -51.2177}
+```"
+qwen/qwen3.5-9b,no-CoT,-34.5731,-58.4236,582.241,AR,True,,stop,6.325e-05,586,31,0,3.59,"{""country"": ""AR"", ""latitude"": -34.5731, ""longitude"": -58.4236}"
+minimax/minimax-m3,no-CoT,-34.6037,-58.3816,582.806,AR,True,,stop,0.00049362,919,230,273,6.5,"{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}"
+qwen/qwen3.5-35b-a3b,no-CoT,-34.6037,-58.3816,582.806,AR,True,,stop,0.000187425,585,31,0,1.86,"{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}"
+x-ai/grok-4.3,no-CoT,-34.6037,-58.3816,582.806,AR,True,,stop,0.0007384,704,24,0,1.21,"{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}"
+qwen/qwen3.6-35b-a3b,no-CoT,-34.6037,-58.4155,584.588,AR,True,,stop,0.0001748,586,36,0,2.69,"```json
+{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.4155}
+```"
+qwen/qwen3.6-35b-a3b,CoT,-34.9214,-57.9543,591.837,AR,True,,stop,0.005902559,665,6004,5891,78.15,"```json
+{
+  ""reasoning"": ""The decisive clues are the 'NOS' supermarket sign (a major Argentine chain), the black-and-white painted curbs (characteristic of La Plata, Argentina), the right-hand traffic, and the Argentine-style license plates (specifically the 'H' prefix on the red car indicating Buenos Aires province)."",
+  ""country"": ""AR"",
+  ""latitude"": -34.9214,
+  ""longitude"": -57.9543
+}
+```"
+xiaomi/mimo-v2.5,CoT,-35.0,-59.0,651.658,AR,True,,stop,0.0005209176,899,1505,1451,15.33,"{""reasoning"": ""License plate style and right-hand traffic indicate a South American country, with architectural and vegetation clues consistent with Argentina."", ""country"": ""AR"", ""latitude"": -35.0, ""longitude"": -59.0}"
+openai/gpt-5.5,no-CoT,-25.4589,-49.3076,766.561,BR,True,,stop,0.00414,678,25,0,1.74,"{""country"":""BR"",""latitude"":-25.4589,""longitude"":-49.3076}"
+moonshotai/kimi-k2.6,CoT,-25.4512,-49.2749,769.479,BR,True,,stop,0.012026736,834,3430,3366,192.28,"{""reasoning"": ""Blue public water tank, concrete utility poles with dense wiring, Mercosur-style rear license plate, and hillside brick-and-stucco housing typify urban southern Brazil."", ""country"": ""BR"", ""latitude"": -25.4512, ""longitude"": -49.2749}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-25.41829490661621,-49.29396057128906,770.74,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-25.41135597229004,-49.29375076293945,771.305,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,-25.4284,-49.2733,771.394,BR,True,,stop,0.0002499,585,31,0,3.24,"{""country"": ""BR"", ""latitude"": -25.4284, ""longitude"": -49.2733}"
+xiaomi/mimo-v2.5,no-CoT,-38.0,-57.55,894.531,AR,True,,stop,9.57376e-05,820,26,0,1.25,"{""country"": ""AR"", ""latitude"": -38.0, ""longitude"": -57.55}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-23.736648559570312,-47.84423065185547,1007.32,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-23.371580123901367,-47.76941680908203,1042.652,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5489,-46.6388,1107.919,BR,True,,stop,0.00043188,585,31,0,4.02,"{""country"": ""BR"", ""latitude"": -23.5489, ""longitude"": -46.6388}"
+qwen/qwen3.5-27b,no-CoT,-23.55052,-46.633308,1108.195,BR,True,,stop,0.00027456,586,47,0,2.29,"```json
+{
+  ""country"": ""BR"",
+  ""latitude"": -23.55052,
+  ""longitude"": -46.633308
+}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,1108.197,BR,True,,stop,0.0014115,786,31,0,2.41,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+moonshotai/kimi-k2.6,no-CoT,-23.5505,-46.6333,1108.197,BR,True,,stop,0.00064935,754,25,0,9.22,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-23.026138305664062,-46.617923736572266,1150.597,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,-22.013,-47.892,1153.057,BR,True,,stop,0.0103181,665,2864,2755,100.42,"{""reasoning"": ""The presence of a Chevrolet Celta (red car) and a classic Brazilian station wagon (blue car driving away), combined with distinctive concrete utility poles and segmented concrete curbs, points definitively to Brazil. The reddish soil visible on the roadside and the hilly terrain with tropical vegetation are characteristic of the interior of São Paulo state."", ""country"": ""BR"", ""latitude"": -22.013, ""longitude"": -47.892}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-22.97557830810547,-46.587554931640625,1156.804,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,-33.4489,-70.6693,1528.471,CL,True,,stop,0.00026002,585,31,0,26.77,"{""country"": ""CL"", ""latitude"": -33.4489, ""longitude"": -70.6693}"
+openai/gpt-5.5,CoT,-33.0459,-71.6152,1609.47,CL,True,,stop,0.018745,755,499,420,12.81,"{""reasoning"":""Right-hand traffic with white Chile-style plates, yellow diamond warning signage, painted curbs, overhead wiring and steep residential streets overlooking the Pacific strongly suggest a Chilean coastal hill city. The hilly urban fabric and architecture best fit Valparaíso."",""country"":""CL"",""latitude"":-33.0459,""longitude"":-71.6152}"
+google/gemma-4-31b-it,no-CoT,-15.7942,-47.8822,1760.423,BR,True,,stop,5.748e-05,406,36,0,8.33,"```json
+{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6697.071,unknown,True,,stop,5.228e-05,404,25,0,8.87,"{""country"": ""unknown"", ""latitude"": 0.0, ""longitude"": 0.0} own}"
+minimax/minimax-m3,CoT,20.587,-100.395,7456.869,MX,True,,stop,0.00124866,995,843,762,19.16,"{""reasoning"": ""Spanish commercial signage ('lmar' visible), white-painted concrete curbs, peaked-roof commercial architecture typical of newer Latin American developments, overhead power lines with concrete poles, and mixed deciduous/palm vegetation suggest a central Mexican city in the Bajío region."", ""country"": ""MX"", ""latitude"": 20.587, ""longitude"": -100.395}"
+x-ai/grok-4.3,CoT,-26.2041,28.0473,7949.057,ZA,True,,stop,0.0030065,788,943,871,7.94,"{
+  ""reasoning"": ""Left-hand traffic (oncoming red car positioned on right side of road from driver's view), combined with architecture, utility poles, vegetation, and vehicle types, points to suburban South Africa."",
+  ""country"": ""ZA"",
+  ""latitude"": -26.2041,
+  ""longitude"": 28.0473
+}"
+mistralai/mistral-small-2603,no-CoT,55.7558,37.6173,12895.716,RU,True,,stop,0.0001371,786,32,0,3.73,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.19,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.09,

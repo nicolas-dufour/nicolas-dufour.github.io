@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,38.492108790992,57.314626077321,0.0,TM,True,,,,,,,,"Baharly, None, Ahal, TM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.16892623901367,57.81906509399414,56.81,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.153846740722656,57.84211730957031,59.432,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.07236862182617,57.941524505615234,71.92,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,37.95,58.38,110.884,TM,True,,stop,0.002822,1225,31,0,3.04,"```json
+{""country"": ""TM"", ""latitude"": 37.95, ""longitude"": 58.38}
+```"
+minimax/minimax-m3,CoT,39.2,58.5,129.359,TM,True,,stop,0.00082746,995,492,413,20.12,"{""reasoning"": ""Extremely flat arid desert terrain with sandy loess soil, Cyrillic-script tanker truck on left, Central Asian road infrastructure with planted median shrubs and concrete curbs, and barren Karakum-style horizon all point to a highway through Turkmenistan."", ""country"": ""TM"", ""latitude"": 39.2, ""longitude"": 58.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.6892,51.389,610.857,IR,True,,stop,0.000185,585,31,0,7.16,"{""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.3890}"
+google/gemini-3.5-flash,CoT (effort=high),40.0125,64.7852,664.873,UZ,True,,stop,0.0095655,1307,845,767,13.5,"{""reasoning"": ""The presence of a Daewoo Nexia, black-and-white painted curbs, and manicured roadside thujas in an arid landscape are highly characteristic of Uzbekistan, specifically along the M37 highway."", ""country"": ""UZ"", ""latitude"": 40.0125, ""longitude"": 64.7852}"
+openai/gpt-5.5,CoT,40.3447,49.8326,674.666,AZ,True,,stop,0.019525,755,525,440,11.81,"{""reasoning"":""The arid flat landscape, right-hand traffic, Soviet-style road construction and alternating black-white curb stones point strongly to the post-Soviet Caspian region. The oil/industrial roadside setting and semi-desert vegetation make the outskirts of Baku, Azerbaijan the most likely fit."",""country"":""AZ"",""latitude"":40.3447,""longitude"":49.8326}"
+openai/gpt-5.5,no-CoT,40.4116,49.8327,676.667,AZ,True,,stop,0.00408,678,23,0,1.1,"{""country"":""AZ"",""latitude"":40.4116,""longitude"":49.8327}"
+google/gemini-3.1-pro-preview,CoT,40.1,65.3,709.754,UZ,True,,stop,0.004894,1307,190,125,4.31,"{
+  ""reasoning"": ""The presence of a Daewoo Nexia, black and white painted curbs, and the flat, arid landscape strongly suggest Uzbekistan."",
+  ""country"": ""UZ"",
+  ""latitude"": 40.1,
+  ""longitude"": 65.3
+}"
+google/gemini-3.5-flash,CoT (effort=medium),40.0835,65.3788,715.936,UZ,True,,stop,0.0058935,1307,437,360,10.45,"{""reasoning"": ""The flat, arid landscape, black-and-white painted curbs, and the presence of a Daewoo Nexia on the road are highly characteristic of Uzbekistan, specifically along the main M37 highway."", ""country"": ""UZ"", ""latitude"": 40.0835, ""longitude"": 65.3788}"
+anthropic/claude-opus-4.8,no-CoT,40.3,49.0,741.88,AZ,True,,stop,0.004865,818,31,0,2.46,"{""country"": ""AZ"", ""latitude"": 40.3, ""longitude"": 49.0}"
+x-ai/grok-4.3,CoT,43.72,51.15,777.162,KZ,True,,stop,0.002489,788,736,659,13.61,"{""reasoning"": ""Right-hand traffic, black-white striped curb barriers, Cyrillic-style tanker lettering, Lada-like sedan, and arid Central Asian steppe with tamarisk bushes point to post-Soviet Kazakhstan; flat horizon and distant water match the eastern Caspian shore near Aktau."", ""country"": ""KZ"", ""latitude"": 43.72, ""longitude"": 51.15}"
+anthropic/claude-opus-4.8,CoT,39.65,66.95,841.279,UZ,True,,stop,0.007395,949,106,0,3.31,"{""reasoning"": ""Arid flat steppe with divided highway, Lada-style sedan, painted curbs typical of Central Asia; landscape and infrastructure suggest Uzbekistan/Turkmenistan plains."", ""country"": ""UZ"", ""latitude"": 39.65, ""longitude"": 66.95}"
+google/gemini-3.5-flash,CoT (effort=low),40.1235,67.8541,924.162,UZ,True,,stop,0.004194,1308,248,166,2.94,"{""reasoning"": ""The flat, arid landscape, black-and-white painted curbs, and the presence of a Daewoo Nexia (extremely common in Uzbekistan) indicate a location in Uzbekistan, likely along a major highway like the M39."", ""country"": ""UZ"", ""latitude"": 40.1235, ""longitude"": 67.8541}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,30.602325439453125,54.10926055908203,924.936,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,30.343544006347656,54.269676208496094,947.982,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,41.284,69.205,1059.906,UZ,True,,stop,0.0007334,704,22,0,0.82,"{""country"": ""UZ"", ""latitude"": 41.284, ""longitude"": 69.205}"
+qwen/qwen3.6-27b,no-CoT,41.2995,69.2401,1063.153,UZ,True,,stop,0.0002279,585,31,0,13.92,"{""country"": ""UZ"", ""latitude"": 41.2995, ""longitude"": 69.2401}"
+qwen/qwen3.5-9b,no-CoT,41.3116,69.2401,1063.461,UZ,True,,stop,6.325e-05,586,31,0,1.08,"{""country"": ""UZ"", ""latitude"": 41.3116, ""longitude"": 69.2401}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.3115,69.2403,1063.474,UZ,True,,stop,0.00011875,585,31,0,8.57,"{""country"": ""UZ"", ""latitude"": 41.3115, ""longitude"": 69.2403}"
+moonshotai/kimi-k2.6,CoT,42.3,69.5,1114.085,KZ,True,,stop,0.0079564,832,1831,2001,49.57,"{""reasoning"": ""Black-and-white striped road-edge blocks and flat arid steppe with irrigated roadside shrubs are characteristic of Kazakh highways; right-hand traffic and post-Soviet vehicle plates confirm Central Asia."", ""country"": ""KZ"", ""latitude"": 42.3, ""longitude"": 69.5}"
+google/gemma-4-31b-it,no-CoT,44.85,68.65,1175.54,KZ,True,,stop,5.608e-05,406,32,0,1.66,"```json
+{""country"": ""KZ"", ""latitude"": 44.85, ""longitude"": 68.65}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,33.98984909057617,44.405303955078125,1259.847,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),42.8758,74.5892,1532.685,KG,True,,stop,0.002154,1226,35,0,7.31,"```json
+{""country"": ""KG"", ""latitude"": 42.8758, ""longitude"": 74.5892}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,43.2201,76.8512,1720.432,KZ,True,,stop,0.0002715,585,40,0,8.33,"{
+  ""country"": ""KZ"",
+  ""latitude"": 43.2201,
+  ""longitude"": 76.8512
+}"
+mistralai/mistral-medium-3-5,no-CoT,43.25,76.9,1724.954,KZ,True,,stop,0.0013815,786,27,0,7.19,"{""country"": ""KZ"", ""latitude"": 43.25, ""longitude"": 76.9}"
+qwen/qwen3.5-27b,no-CoT,43.2236,76.9322,1726.947,KZ,True,,stop,0.0002365,586,45,0,5.93,"```json
+{
+  ""country"": ""KZ"",
+  ""latitude"": 43.2236,
+  ""longitude"": 76.9322
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,24.7136,46.6753,1830.653,SA,True,,stop,9.71376e-05,820,31,0,1.38,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+qwen/qwen3.5-397b-a17b,no-CoT,39.4567,34.8912,1936.383,TR,True,,stop,0.00034185,585,31,0,3.15,"{""country"": ""TR"", ""latitude"": 39.4567, ""longitude"": 34.8912}"
+mistralai/mistral-small-2603,no-CoT,28.6246,77.2099,2138.317,IN,True,,stop,0.0001365,786,31,0,7.23,"{""country"": ""IN"", ""latitude"": 28.6246, ""longitude"": 77.2099}"
+xiaomi/mimo-v2.5,CoT,33.5839,-7.6115,5741.977,MA,True,,stop,0.0001611176,899,220,115,3.8,"{""reasoning"": ""The image shows vehicles driving on the right side of the road, arid terrain with sandy soil, and specific vegetation like olive trees and cypress often found in Mediterranean/North African climates. The vehicle models, specifically the older Peugeot sedan and the Mitsubishi Fuso truck, along with the distinct license plate shapes, strongly point towards Morocco."", ""country"": ""MA"", ""latitude"": 33.5839, ""longitude"": -7.6115}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.33,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.22,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,13.42,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.33,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.47,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.28,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.16,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.18,

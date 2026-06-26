@@ -1,0 +1,72 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,62.446626072205,12.662273618043,0.0,NO,True,,,,,,,,"Engerdal, Engerdal, Hedmark, NO"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,62.73527908325195,11.958240509033203,48.258,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,62.75111770629883,11.849581718444824,53.627,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,62.69957733154297,11.542132377624512,63.894,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),62.8542,14.4521,102.044,SE,True,,stop,0.0021525,1225,35,0,8.0,"```json
+{""country"": ""SE"", ""latitude"": 62.8542, ""longitude"": 14.4521}
+```"
+openai/gpt-5.5,CoT,63.345,13.105,102.381,SE,True,,stop,0.015985,755,407,330,23.14,"{""reasoning"":""The yellow circular speed-limit sign with red border, right-side rural road design, and boreal conifer forest point strongly to Sweden rather than Norway. The hilly/mountainous forest landscape suggests inland northern/central Sweden, likely Jämtland."",""country"":""SE"",""latitude"":63.345,""longitude"":13.105}"
+qwen/qwen3.5-9b,no-CoT,62.2833,14.6167,102.421,SE,True,,stop,6.325e-05,586,31,0,2.74,"{""country"": ""SE"", ""latitude"": 62.2833, ""longitude"": 14.6167}"
+google/gemini-3.5-flash,CoT (effort=high),63.1234,14.3456,113.971,SE,True,,stop,0.010233,1308,919,844,8.18,"{""reasoning"": ""The yellow-background '70' speed limit sign is characteristic of Sweden, and the dense coniferous forest with distant hills suggests a location in central or northern Sweden, such as Jämtland."", ""country"": ""SE"", ""latitude"": 63.1234, ""longitude"": 14.3456}"
+x-ai/grok-4.3,no-CoT,62.35,10.45,114.474,NO,True,,stop,0.0007334,704,22,0,0.88,"{""country"": ""NO"", ""latitude"": 62.35, ""longitude"": 10.45}"
+google/gemini-3.5-flash,CoT (effort=medium),63.1524,14.3812,117.433,SE,True,,stop,0.0086835,1307,747,673,6.68,"{""reasoning"": ""The yellow-background speed limit sign of 70 km/h is characteristic of Sweden, and the dense coniferous forest with distant hills points to the Jämtland or Dalarna region."", ""country"": ""SE"", ""latitude"": 63.1524, ""longitude"": 14.3812}"
+moonshotai/kimi-k2.6,no-CoT,63.5,13.2,120.239,SE,True,,stop,0.00030996,755,23,0,2.75,"{""country"": ""SE"", ""latitude"": 63.5, ""longitude"": 13.2}"
+moonshotai/kimi-k2.6,CoT,62.0,15.0,130.916,SE,True,,stop,0.01705812,834,4857,4786,149.6,"{""reasoning"": ""The circular 70 km/h speed limit sign with yellow background and red border is standard in Sweden and the Nordic region; the dense boreal coniferous forest and rural road setting are most characteristic of central Sweden."", ""country"": ""SE"", ""latitude"": 62.0, ""longitude"": 15.0}"
+x-ai/grok-4.3,CoT,61.35,10.85,154.517,NO,True,,stop,0.0021965,788,619,552,12.84,"{
+  ""reasoning"": ""Yellow/red circular 70 km/h sign is Nordic style; dense boreal conifer forest, gravel road, and distant hills point to Scandinavia (Norway/Sweden)."",
+  ""country"": ""NO"",
+  ""latitude"": 61.35,
+  ""longitude"": 10.85
+}"
+google/gemini-3.5-flash,CoT (effort=low),63.4125,15.1234,164.435,SE,True,,stop,0.0048405,1307,320,249,9.47,"{""reasoning"": ""The yellow-background '70' speed limit sign is characteristic of Sweden, and the dense coniferous forest with distant hills suggests a location in northern Sweden (Norrland)."", ""country"": ""SE"", ""latitude"": 63.4125, ""longitude"": 15.1234}"
+google/gemini-3.1-pro-preview,CoT,63.1234,15.5678,165.794,SE,True,,stop,0.005182,1307,214,134,4.03,"{
+  ""reasoning"": ""The yellow speed limit sign with a red border is characteristic of Sweden or Finland. The dense coniferous forest and unpaved road suggest a rural area in central or northern Scandinavia."",
+  ""country"": ""SE"",
+  ""latitude"": 63.1234,
+  ""longitude"": 15.5678
+}"
+google/gemini-3.1-pro-preview,no-CoT,63.5,15.5,185.115,SE,True,,stop,0.003878,1225,119,90,3.91,"```json
+{""country"": ""SE"", ""latitude"": 63.5, ""longitude"": 15.5}
+```"
+anthropic/claude-opus-4.8,CoT,61.5,9.5,195.873,NO,True,,stop,0.00707,949,93,0,3.76,"{""reasoning"": ""Yellow 70 km/h speed sign with red border and gravel road through boreal spruce forest is typical of rural Scandinavia, likely Norway or Sweden."", ""country"": ""NO"", ""latitude"": 61.5, ""longitude"": 9.5}"
+openai/gpt-5.5,no-CoT,60.9354,8.7546,265.813,NO,True,,stop,0.00408,678,23,0,2.78,"{""country"":""NO"",""latitude"":60.9354,""longitude"":8.7546}"
+anthropic/claude-opus-4.8,no-CoT,60.5,9.5,273.891,NO,True,,stop,0.00484,818,30,0,9.05,"{""country"": ""NO"", ""latitude"": 60.5, ""longitude"": 9.5}"
+mistralai/mistral-medium-3-5,no-CoT,60.1234,9.5678,306.625,NO,True,,stop,0.001404,786,30,0,1.26,"{""country"": ""NO"", ""latitude"": 60.1234, ""longitude"": 9.5678}"
+qwen/qwen3.5-122b-a10b,no-CoT,60.472024,8.468946,312.678,NO,True,,stop,0.0002763,585,42,0,2.52,"{
+  ""country"": ""NO"",
+  ""latitude"": 60.472024,
+  ""longitude"": 8.468946
+}"
+minimax/minimax-m3,CoT,64.75,17.5,350.265,SE,True,,stop,0.00062346,995,322,250,9.13,"{""reasoning"": ""Yellow 70 km/h speed limit sign (Scandinavian style), gravel forest road through dense boreal spruce/pine forest with overcast sky strongly indicates rural northern Sweden (Norrland region)."", ""country"": ""SE"", ""latitude"": 64.7500, ""longitude"": 17.5000}"
+qwen/qwen3.6-35b-a3b,no-CoT,64.85,19.55,432.036,SE,True,,stop,0.0039858676,583,4032,3999,19.78,"{""country"": ""SE"", ""latitude"": 64.85, ""longitude"": 19.55}"
+qwen/qwen3.5-27b,no-CoT,64.1653,21.6744,488.515,SE,True,,stop,0.0002811,585,44,0,4.64,"```json
+{
+  ""country"": ""SE"",
+  ""latitude"": 64.1653,
+  ""longitude"": 21.6744
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,65.8923,18.9456,488.885,SE,True,,stop,0.00011875,585,31,0,1.64,"{""country"": ""SE"", ""latitude"": 65.8923, ""longitude"": 18.9456}"
+xiaomi/mimo-v2.5,no-CoT,66.5,18.5,529.976,SE,True,,stop,9.54576e-05,820,25,0,1.43,"{""country"": ""SE"", ""latitude"": 66.5, ""longitude"": 18.5}"
+qwen/qwen3.5-397b-a17b,CoT,66.33,20.55,573.799,SE,True,,stop,0.0096678,665,2588,2470,117.47,"{""reasoning"": ""The yellow circular speed limit sign (70) with a red border indicates a temporary speed limit, a standard traffic sign convention in Sweden (and neighboring Nordic countries) often used on gravel roads during maintenance. The landscape features a flat, graded gravel road surrounded by dense boreal forest (Scots pine and spruce), which is characteristic of rural Northern Sweden (Norrbottland/Västerbotten)."", ""country"": ""SE"", ""latitude"": 66.33, ""longitude"": 20.55}"
+xiaomi/mimo-v2.5,CoT,61.4978,23.761,588.662,FI,True,,stop,0.0001434776,899,157,88,10.04,"{""reasoning"": ""The yellow circular speed limit sign is characteristic of Finnish road signage. The dense coniferous forest, gravel road, and general landscape are consistent with rural Finland."", ""country"": ""FI"", ""latitude"": 61.4978, ""longitude"": 23.761}"
+qwen/qwen3.6-27b,no-CoT,63.5,26.5,707.478,FI,True,,stop,0.00033075,585,25,0,1.33,"{""country"": ""FI"", ""latitude"": 63.5, ""longitude"": 26.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,69.7234,18.9876,856.829,NO,True,,stop,0.00034185,585,31,0,3.19,"{""country"": ""NO"", ""latitude"": 69.7234, ""longitude"": 18.9876}"
+mistralai/mistral-small-2603,CoT,48.1,8.2,1619.173,DE,True,,stop,0.00042144,868,633,725,5.17,"{""reasoning"": ""Triangular red-bordered deer warning sign and road markings match German road sign regulations; dense coniferous forest typical of Black Forest region"", ""country"": ""DE"", ""latitude"": 48.1, ""longitude"": 8.2}"
+google/gemma-4-31b-it,no-CoT,63.5,101.0,4105.917,RU,True,,stop,4.908e-05,262,31,0,2.82,"```json
+{""country"": ""RU"", ""latitude"": 63.5, ""longitude"": 101.0}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,61.298431396484375,-125.71420288085938,5815.021,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,63.44852066040039,-141.80465698242188,5855.892,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,54.5,-123.5,6463.541,CA,True,,stop,0.00023736,904,23,0,5.21,"{""country"": ""CA"", ""latitude"": 54.5, ""longitude"": -123.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,51.11469650268555,-118.67223358154297,6683.972,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,49.2827,-123.1207,6993.0,CA,True,,stop,0.0001371,786,32,0,1.16,"{""country"": ""CA"", ""latitude"": 49.2827, ""longitude"": -123.1207}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7024.329,,True,True,,,,,,6.8,
+google/gemma-4-31b-it,CoT,37.7749,-122.4194,8171.755,US,True,,stop,0.00103509,492,1755,1706,13.77,"```json
+{""reasoning"": ""No image was provided for analysis."", ""country"": ""US"", ""latitude"": 37.7749, ""longitude"": -122.4194}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.24,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.41,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.31,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.18,

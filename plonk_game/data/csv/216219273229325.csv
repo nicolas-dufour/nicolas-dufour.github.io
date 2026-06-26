@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,35.502884403422,128.39621983995,0.0,KR,True,,,,,,,,"Changnyeong, None, Gyeongsangnam-do, KR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,35.94894027709961,128.72337341308594,57.725,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,35.1,127.8,70.245,KR,True,,stop,0.00040482,767,194,225,4.7,"{""country"": ""KR"", ""latitude"": 35.1, ""longitude"": 127.8}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,36.063907623291016,128.80648803710938,72.534,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,36.102481842041016,128.78395080566406,75.285,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,36.5,128.2,112.27,KR,True,,stop,6.518e-05,406,31,0,2.65,"```json
+{""country"": ""KR"", ""latitude"": 36.5, ""longitude"": 128.2}
+```"
+qwen/qwen3.5-9b,no-CoT,36.6428,127.0142,177.462,KR,True,,stop,5.22e-05,474,32,0,4.47,"{""country"": ""KR"", ""latitude"": 36.6428, ""longitude"": 127.0142}"
+anthropic/claude-opus-4.8,no-CoT,37.45,128.6,217.274,KR,True,,stop,0.00413,666,32,0,2.05,"{""country"": ""KR"", ""latitude"": 37.4500, ""longitude"": 128.6000}"
+openai/gpt-5.5,no-CoT,37.4735,128.2578,219.472,KR,True,,stop,0.00341,544,23,0,1.22,"{""country"":""KR"",""latitude"":37.4735,""longitude"":128.2578}"
+anthropic/claude-opus-4.8,CoT,37.5,128.4,222.069,KR,True,,stop,0.006335,797,94,0,3.14,"{""reasoning"": ""Mountainous forested terrain with yellow center line, red-painted shoulder edge, and concrete utility poles with black-yellow guard markers typical of rural South Korea."", ""country"": ""KR"", ""latitude"": 37.5, ""longitude"": 128.4}"
+google/gemini-3.1-pro-preview,no-CoT,37.5,128.5,222.263,KR,True,,stop,0.004432,1190,171,141,3.06,"```json
+{""country"": ""KR"", ""latitude"": 37.5, ""longitude"": 128.5}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,37.2345,127.1234,223.739,KR,True,,stop,0.00010295,473,32,0,3.34,"{""country"": ""KR"", ""latitude"": 37.2345, ""longitude"": 127.1234}"
+google/gemini-3.1-pro-preview,CoT,37.55,128.55,228.043,KR,True,,stop,0.00564,1272,258,172,11.07,"{
+  ""reasoning"": ""The yellow and black striped hazard markings on the utility poles and the red painted section on the road edge are distinct features of South Korean road infrastructure. The mountainous terrain and lush vegetation are consistent with the country's interior."",
+  ""country"": ""KR"",
+  ""latitude"": 37.55,
+  ""longitude"": 128.55
+}"
+qwen/qwen3.5-397b-a17b,CoT,37.3821,127.2945,231.027,KR,True,,stop,0.0089454,553,2406,2320,20.89,"{
+""reasoning"": ""The red painted road shoulder indicates a no-parking zone, a common marking in South Korea, while the concrete utility poles with black and yellow safety stripes and specific transformer mounting are characteristic of Korean infrastructure."",
+""country"": ""KR"",
+""latitude"": 37.3821,
+""longitude"": 127.2945
+}"
+google/gemini-3.5-flash,CoT (effort=low),37.7512,128.4215,250.011,KR,True,,stop,0.0038235,1271,213,140,4.13,"{""reasoning"": ""The concrete utility poles with yellow-and-black striped bases, the specific transformer design, the yellow center line, and the lush, mountainous vegetation are highly characteristic of rural South Korea."", ""country"": ""KR"", ""latitude"": 37.7512, ""longitude"": 128.4215}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.7835,128.3842,253.595,KR,True,,stop,0.0021075,1189,36,0,28.76,"```json
+{""country"": ""KR"", ""latitude"": 37.7835, ""longitude"": 128.3842}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),37.8125,128.2344,257.223,KR,True,,stop,0.0060465,1271,460,379,11.72,"{""reasoning"": ""The concrete utility poles with yellow-and-black warning bands, the solid yellow center line on the right-hand drive road, the red-painted road shoulder, and the lush mountainous vegetation are highly characteristic of South Korea."", ""country"": ""KR"", ""latitude"": 37.8125, ""longitude"": 128.2344}"
+google/gemini-3.5-flash,CoT (effort=high),37.825,128.152,259.124,KR,True,,stop,0.009747,1272,871,798,6.27,"{""reasoning"": ""The concrete utility poles with yellow-and-black striped warning bands, the solid yellow center line with right-hand traffic, and the lush, mountainous East Asian vegetation are characteristic of South Korea."", ""country"": ""KR"", ""latitude"": 37.825, ""longitude"": 128.152}"
+qwen/qwen3.5-397b-a17b,no-CoT,37.5665,127.0,261.171,KR,True,,stop,0.00036828,473,32,0,2.88,"{""country"": ""KR"", ""latitude"": 37.5665, ""longitude"": 127.0000}"
+minimax/minimax-m3,CoT,33.3606,126.54,292.775,KR,True,,stop,0.00076302,845,473,469,16.13,"{""reasoning"": ""Yellow-and-black striped bollards, Korean-style utility poles with transformers, lush subtropical vegetation on steep hills, and the specific road marking style (red painted zone, yellow center line) are highly characteristic of rural South Korea, likely Jeju Island given the volcanic hilly terrain and humid climate."", ""country"": ""KR"", ""latitude"": 33.3606, ""longitude"": 126.5400}{""reasoning"": ""Yellow-and-black striped bollards, Korean-style utility poles with transformers, lush subtropical vegetation on steep hills, and the specific road marking style (red painted zone, yellow center line) are highly characteristic of rural South Korea, likely Jeju Island given the volcanic hilly terrain and humid climate."", ""country"": ""KR"", ""latitude"": 33.3606, ""longitude"": 126.5400}"
+xiaomi/mimo-v2.5,CoT,33.8,133.0,461.661,JP,True,,stop,0.0004427976,787,1282,1219,22.14,"{""reasoning"": ""The road markings featuring a yellow center line and red shoulder, combined with concrete utility poles and dense subtropical vegetation, are highly characteristic of rural Japan."", ""country"": ""JP"", ""latitude"": 33.8, ""longitude"": 133.0}"
+mistralai/mistral-small-2603,CoT,33.45,133.1,487.784,JP,True,,stop,0.0004626,716,592,631,5.33,"{""reasoning"": ""Left-side road markings and triangular warning sign style indicate Japan, with rural vegetation matching Shikoku region."", ""country"": ""JP"", ""latitude"": 33.45, ""longitude"": 133.1}"
+x-ai/grok-4.3,no-CoT,34.85,135.65,663.118,JP,True,,stop,0.0005934,592,22,0,7.29,"{""country"": ""JP"", ""latitude"": 34.85, ""longitude"": 135.65}"
+qwen/qwen3.6-35b-a3b,CoT,34.05,135.55,672.882,JP,True,,stop,0.0056123041,553,5722,5618,44.21,"```json
+{
+  ""reasoning"": ""The concrete utility poles with black and yellow hazard stripes at the base, the yellow center line, and the red painted bike lane marking are distinctive features of rural Japanese roads. The lush, humid vegetation and mountainous terrain are consistent with the Kii Peninsula or similar regions in Japan."",
+  ""country"": ""JP"",
+  ""latitude"": 34.05,
+  ""longitude"": 135.55
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,34.6851,135.8048,679.977,JP,True,,stop,8.17376e-05,708,32,0,1.06,"{""country"": ""JP"", ""latitude"": 34.6851, ""longitude"": 135.8048}"
+x-ai/grok-4.3,CoT,34.72,135.85,683.401,JP,True,,stop,0.002279,676,708,640,7.4,"{""reasoning"": ""Japanese rural road with left-hand traffic implied by markings/shoulder, yellow-black striped poles, overhead utility configuration, red-white curb paint, kudzu vegetation, and misty hilly terrain all match Japan exclusively."", ""country"": ""JP"", ""latitude"": 34.72, ""longitude"": 135.85}"
+moonshotai/kimi-k2.6,CoT,35.5,138.0,869.028,JP,True,,stop,0.012684,680,3049,3344,113.81,"{""reasoning"": ""Red paved road shoulder and Japanese-style concrete utility poles with cross-arm insulators in a humid temperate mountain forest are characteristic of rural Japan."", ""country"": ""JP"", ""latitude"": 35.5, ""longitude"": 138.0}"
+qwen/qwen3.6-27b,no-CoT,36.5154,138.1067,880.278,JP,True,,stop,0.0001963,473,32,0,14.52,"{""country"": ""JP"", ""latitude"": 36.5154, ""longitude"": 138.1067}"
+qwen/qwen3.5-122b-a10b,no-CoT,36.1699,138.5953,921.953,JP,True,,stop,0.0001898,474,32,0,5.59,"{""country"": ""JP"", ""latitude"": 36.1699, ""longitude"": 138.5953}"
+qwen/qwen3.5-27b,no-CoT,35.3617,138.9247,953.575,JP,True,,stop,0.00021944,474,37,0,0.99,"```json
+{""country"": ""JP"", ""latitude"": 35.3617, ""longitude"": 138.9247}
+```"
+moonshotai/kimi-k2.6,no-CoT,35.6762,139.6503,1017.271,JP,True,,stop,0.000299772,603,25,0,1.59,"{""country"": ""JP"", ""latitude"": 35.6762, ""longitude"": 139.6503}"
+mistralai/mistral-small-2603,no-CoT,35.6895,139.6917,1020.951,JP,True,,stop,0.000142875,634,32,0,1.93,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.6895,139.6917,1020.951,JP,True,,stop,0.00010295,473,32,0,8.48,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+google/gemma-4-26b-a4b-it,no-CoT,35.0,139.7,1027.396,,True,,stop,5.694e-05,406,36,0,3.32,"Please own- own-thought own-
+
+{""country"": ""JP"", ""latitude"": 35 own- ""longitude"": 139.7 own- }"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,39.06443405151367,139.80931091308594,1083.636,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,24.8694,121.8314,1339.318,TW,True,,stop,0.0011985,634,33,0,1.39,"{""country"": ""TW"", ""latitude"": 24.8694, ""longitude"": 121.8314}"
+openai/gpt-5.5,CoT,23.4897,120.7362,1526.378,TW,True,,stop,0.011955,621,295,210,15.23,"{""reasoning"":""Lush subtropical mountains, right-side driving with a single yellow centerline, red-painted shoulder/anti-skid pavement, and black-yellow hazard bands on concrete utility poles are characteristic of rural Taiwan. The misty forested terrain strongly suggests the central mountain/Alishan area."",""country"":""TW"",""latitude"":23.4897,""longitude"":120.7362}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.69022750854492,142.30685424804688,1559.303,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,44.09867858886719,144.23556518554688,1652.007,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.41,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.16,

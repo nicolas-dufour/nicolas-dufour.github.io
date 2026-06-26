@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-20.794555483963823,-51.68079402200586,0.0,BR,True,,,,,,,,"Tres Lagoas, Tres Lagoas, Mato Grosso do Sul, BR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-22.69101905822754,-50.640464782714844,236.671,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-22.784461975097656,-50.76824188232422,240.49,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),-23.4125,-51.9251,292.188,BR,True,,stop,0.0059475,1271,449,374,5.82,"{""reasoning"": ""The red soil, palm trees, wooden utility poles, and vehicle models (like the white hatchback) strongly indicate Brazil, specifically the southern/southeastern region such as Paraná or São Paulo state."", ""country"": ""BR"", ""latitude"": -23.4125, ""longitude"": -51.9251}"
+google/gemini-3.5-flash,CoT (effort=low),-20.4642,-54.6128,307.318,BR,True,,stop,0.0045975,1271,299,220,3.75,"{""reasoning"": ""The red soil, wooden utility poles, palm-lined median, and vehicle types (like the white hatchback and microbus) are highly characteristic of urban highways in central-southern Brazil, particularly in Mato Grosso do Sul."", ""country"": ""BR"", ""latitude"": -20.4642, ""longitude"": -54.6128}"
+minimax/minimax-m3,CoT,-21.5,-48.5,339.059,BR,True,,stop,0.00094626,843,629,547,24.53,"{""reasoning"": ""Royal palm trees (Roystonea regia) lining a divided avenue, Brazilian-style street lights and concrete fencing, industrial warehouses with arched roofs, and right-hand driving on a well-marked highway are all hallmarks of an interior São Paulo state industrial district in Brazil."", ""country"": ""BR"", ""latitude"": -21.5, ""longitude"": -48.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-22.30426788330078,-48.75947570800781,345.62,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-22.223,-54.775,357.326,BR,True,,stop,0.0192225,1271,1924,1843,19.93,"{""reasoning"": ""The red soil, specific style of concrete utility poles, royal palm trees in the median, and vehicle models (such as the VW Gol) are highly characteristic of major avenues in agricultural hub cities of Brazil, particularly in Mato Grosso do Sul."", ""country"": ""BR"", ""latitude"": -22.223, ""longitude"": -54.775}"
+google/gemini-3.1-pro-preview,CoT,-21.1704,-47.8103,403.997,BR,True,,stop,0.005674,1271,261,176,5.01,"{
+  ""reasoning"": ""The ladder-like utility poles, reddish soil, and palm trees in the median strongly indicate Brazil. The flat terrain and wide avenue are typical of cities in the interior of São Paulo or Mato Grosso."",
+  ""country"": ""BR"",
+  ""latitude"": -21.1704,
+  ""longitude"": -47.8103
+}"
+google/gemini-3.1-pro-preview,no-CoT,-21.1704,-47.8103,403.997,BR,True,,stop,0.004514,1189,178,143,3.93,"```json
+{""country"": ""BR"", ""latitude"": -21.1704, ""longitude"": -47.8103}
+```"
+openai/gpt-5.5,CoT,-21.1775,-47.8103,404.07,BR,True,,stop,0.016125,621,434,353,29.19,"{""reasoning"":""Right-hand traffic, Brazilian-style road markings/curbs, tropical palm-lined urban avenue, and white Mercosur-like plates point strongly to Brazil. The flat, warm, industrial/commercial streetscape fits inland São Paulo state, especially around Ribeirão Preto."",""country"":""BR"",""latitude"":-21.1775,""longitude"":-47.8103}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-22.04161262512207,-47.719093322753906,432.887,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-22.04250717163086,-47.61806106567383,442.835,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,-22.75,-47.45,487.962,BR,True,,stop,0.0004836776,787,1428,1328,78.75,"{""reasoning"": ""The presence of tall Royal Palm trees, the specific design of the overhead street lights, the red-painted curb (indicating no parking per Brazilian traffic law), the style of the utility poles with overhead wiring, and the vehicle model (resembling a VW Gol, common in Brazil) all strongly suggest this location is in Brazil."", ""country"": ""BR"", ""latitude"": -22.75, ""longitude"": -47.45}"
+x-ai/grok-4.3,CoT,-22.85,-47.1,525.15,BR,True,,stop,0.0020315,676,609,539,13.31,"{
+  ""reasoning"": ""Right-hand traffic, tropical palms, barbed-wire industrial fencing, yellow-green road sign, and utility infrastructure match Brazilian suburban arterials; image style and vegetation point to interior São Paulo state."",
+  ""country"": ""BR"",
+  ""latitude"": -22.85,
+  ""longitude"": -47.1
+}"
+minimax/minimax-m3,no-CoT,-22.82,-47.07,526.55,BR,True,,stop,0.00019452,754,22,0,2.4,"{""country"": ""BR"", ""latitude"": -22.82, ""longitude"": -47.07}{""country"": ""BR"", ""latitude"": -22.82, ""longitude"": -47.07}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-23.027851104736328,-47.003292083740234,542.637,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,-23.511,-46.835,583.266,BR,True,,stop,0.0005934,592,22,0,0.88,"{""country"": ""BR"", ""latitude"": -23.511, ""longitude"": -46.835}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5629,-46.6544,602.095,BR,True,,stop,0.0003794,473,31,0,9.06,"{""country"": ""BR"", ""latitude"": -23.5629, ""longitude"": -46.6544}"
+qwen/qwen3.5-9b,no-CoT,-23.5475,-46.6361,602.869,BR,True,,stop,5.205e-05,474,31,0,2.37,"{""country"": ""BR"", ""latitude"": -23.5475, ""longitude"": -46.6361}"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,603.282,BR,True,,stop,0.0011835,634,31,0,1.01,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,603.282,BR,True,,stop,0.00018746,473,31,0,2.65,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-27b,no-CoT,-23.55052,-46.633308,603.282,BR,True,,stop,0.00024544,474,47,0,2.56,"```json
+{
+  ""country"": ""BR"",
+  ""latitude"": -23.55052,
+  ""longitude"": -46.633308
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,-23.5505,-46.6333,603.282,BR,True,,stop,0.00010195,473,31,0,1.14,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.6333,603.282,BR,True,,stop,0.0001943,473,31,0,6.42,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+anthropic/claude-opus-4.8,CoT,-15.85,-48.05,670.113,BR,True,,stop,0.006235,797,90,0,9.5,"{""reasoning"": ""Palm-lined divided avenue, Brazilian-style concrete utility poles and warehouses, tropical vegetation typical of Brazil's central-west region."", ""country"": ""BR"", ""latitude"": -15.85, ""longitude"": -48.05}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-15.8142,-48.0815,671.519,BR,True,,stop,0.0021,1190,35,0,1.5,"```json
+{""country"": ""BR"", ""latitude"": -15.8142, ""longitude"": -48.0815}
+```"
+anthropic/claude-opus-4.8,no-CoT,-15.9,-47.95,671.656,BR,True,,stop,0.00408,666,30,0,2.09,"{""country"": ""BR"", ""latitude"": -15.9, ""longitude"": -47.95}"
+qwen/qwen3.6-35b-a3b,no-CoT,-15.7939,-47.8828,685.439,BR,True,,stop,0.00010195,473,31,0,2.01,"{""country"": ""BR"", ""latitude"": -15.7939, ""longitude"": -47.8828}"
+google/gemma-4-31b-it,no-CoT,-15.7942,-47.8822,685.449,BR,True,,stop,6.718e-05,406,36,0,9.92,"```json
+{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}
+```"
+moonshotai/kimi-k2.6,CoT,-15.65,-56.1,738.167,BR,True,,stop,0.011143008,682,3196,3114,182.79,"{""reasoning"": ""Right-hand traffic, Mercosur-format license plate with blue top stripe, tropical cerrado red-soil landscape, and distinctive Brazilian wooden crossbar utility poles confirm Brazil; flat, palm-lined arterial road with airport-style fence points to a planned central-western city."", ""country"": ""BR"", ""latitude"": -15.65, ""longitude"": -56.1}"
+openai/gpt-5.5,no-CoT,-22.8615,-43.2496,899.955,BR,True,,stop,0.00347,544,25,0,1.44,"{""country"":""BR"",""latitude"":-22.8615,""longitude"":-43.2496}"
+xiaomi/mimo-v2.5,no-CoT,-22.9068,-43.1729,908.759,BR,True,,stop,8.14576e-05,708,31,0,1.13,"{""country"": ""BR"", ""latitude"": -22.9068, ""longitude"": -43.1729}"
+mistralai/mistral-small-2603,no-CoT,25.7617,-80.1918,6022.223,US,True,,stop,0.0001137,634,31,0,9.28,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6068.343,,True,True,,,,,,25.69,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,303.2,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.9,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.11,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.34,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.16,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.22,

@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-14.733943336846,-39.146495200146,0.0,BR,True,,,,,,,,"Ilheus, Ilheus, Bahia, BR"
+minimax/minimax-m3,no-CoT,-14.795,-39.046,12.761,BR,True,,stop,0.00019176,752,23,0,5.86,"{""country"": ""BR"", ""latitude"": -14.795, ""longitude"": -39.046}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-13.790660858154297,-38.930625915527344,107.437,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-13.778763771057129,-38.92137145996094,108.947,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,-15.8712,-39.0558,126.831,BR,True,,stop,0.00347,544,25,0,1.54,"{""country"":""BR"",""latitude"":-15.8712,""longitude"":-39.0558}"
+xiaomi/mimo-v2.5,no-CoT,-12.97,-38.51,207.829,BR,True,,stop,8.03376e-05,708,27,0,8.53,"{""country"": ""BR"", ""latitude"": -12.97, ""longitude"": -38.51}"
+minimax/minimax-m3,CoT,-12.45,-38.62,260.259,BR,True,,stop,0.00061302,845,348,339,12.89,"{""reasoning"": ""Right-hand traffic, red iron-rich tropical soil, palm trees mixed with dense Atlantic Forest/Amazonian-style vegetation, and an unmarked rural paved road are all classic indicators of rural northeastern Brazil, likely the coastal Bahia region."", ""country"": ""BR"", ""latitude"": -12.45, ""longitude"": -38.62}{""reasoning"": ""Right-hand traffic, red iron-rich tropical soil, palm trees mixed with dense Atlantic Forest/Amazonian-style vegetation, and an unmarked rural paved road are all classic indicators of rural northeastern Brazil, likely the coastal Bahia region."", ""country"": ""BR"", ""latitude"": -12.45, ""longitude"": -38.62}"
+google/gemma-4-31b-it,no-CoT,-12.5,-45.2,699.71,BR,True,,stop,6.138e-05,406,30,0,4.11,"```json
+{""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -45.2}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7942,-47.8822,944.407,BR,True,,stop,0.00025701,473,31,0,1.77,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-22.582096099853516,-46.73001480102539,1182.547,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-22.57892608642578,-46.73713302612305,1182.798,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,-10.5747,-49.3341,1197.829,BR,True,,stop,8.816e-05,473,31,0,11.54,"{""country"": ""BR"", ""latitude"": -10.5747, ""longitude"": -49.3341}"
+google/gemma-4-26b-a4b-it,no-CoT,-23.5505,-46.0,1215.709,,True,,stop,5.894e-05,406,41,0,3.3,"``` own estimate own estimate.-도
+{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46. own estimate. -도}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-23.313547134399414,-46.462745666503906,1224.768,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-3.7172,-38.5431,1226.789,BR,True,,stop,0.001176,634,30,0,1.1,"{""country"": ""BR"", ""latitude"": -3.7172, ""longitude"": -38.5431}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-22.856050491333008,-47.074039459228516,1228.965,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,-22.9016,-47.0647,1231.945,BR,True,,stop,0.000142125,634,31,0,3.68,"{""country"": ""BR"", ""latitude"": -22.9016, ""longitude"": -47.0647}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,1256.131,BR,True,,stop,0.00018772,474,31,0,8.17,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-35b-a3b,no-CoT,-23.5505,-46.6333,1256.131,BR,True,,stop,9.736e-05,474,31,0,2.21,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.6333,1256.131,BR,True,,stop,0.000211097,473,31,0,7.56,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+x-ai/grok-4.3,no-CoT,-23.45,-47.05,1275.577,BR,True,,stop,0.0007278,592,22,0,1.25,"{""country"": ""BR"", ""latitude"": -23.45, ""longitude"": -47.05}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-2.9543,-47.5124,1599.169,BR,True,,stop,0.0020895,1189,34,0,3.43,"```json
+{""country"": ""BR"", ""latitude"": -2.9543, ""longitude"": -47.5124}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-1.4558,-48.5024,1798.798,BR,True,,stop,0.002788,1190,34,0,2.58,"```json
+{""country"": ""BR"", ""latitude"": -1.4558, ""longitude"": -48.5024}
+```"
+moonshotai/kimi-k2.6,no-CoT,-15.0,-56.0,1811.096,BR,True,,stop,0.000279972,603,23,0,9.37,"{""country"": ""BR"", ""latitude"": -15.0, ""longitude"": -56.0}"
+google/gemini-3.5-flash,CoT (effort=low),-3.1245,-60.0214,2627.496,BR,True,,stop,0.0040305,1271,236,169,3.21,"{""reasoning"": ""The lush tropical vegetation, including oil palms, combined with the narrow paved road lacking markings and showing reddish soil on the shoulders, is highly characteristic of rural northern Brazil."", ""country"": ""BR"", ""latitude"": -3.1245, ""longitude"": -60.0214}"
+openai/gpt-5.5,CoT,10.4205,-61.0338,3693.535,TT,True,,stop,0.016065,621,432,343,15.29,"{""reasoning"":""Tropical Caribbean vegetation with oil palms and a narrow unmarked asphalt road, with the vehicle position suggesting left-side driving, fits rural Trinidad and Tobago better than most nearby countries. The lush roadside jungle and plantation-like palms are consistent with eastern/central Trinidad around the Manzanilla–Mayaro area."",""country"":""TT"",""latitude"":10.4205,""longitude"":-61.0338}"
+google/gemini-3.5-flash,CoT (effort=high),-8.412,-74.805,3942.751,PE,True,,stop,0.0160455,1271,1571,1498,13.48,"{""reasoning"": ""The presence of a red car hood in a lush, tropical environment with oil palms is highly characteristic of the Ucayali and San Martín regions of Peru, where this specific Google Street View vehicle was used."", ""country"": ""PE"", ""latitude"": -8.412, ""longitude"": -74.805}"
+google/gemini-3.5-flash,CoT (effort=medium),-8.635,-74.965,3954.091,PE,True,,stop,0.0121035,1271,1133,1059,12.31,"{""reasoning"": ""The presence of a red car hood in a tropical environment with extensive oil palm cultivation is highly characteristic of the Ucayali region in Peru, specifically along the Carretera Federico Basadre near Neshuya."", ""country"": ""PE"", ""latitude"": -8.635, ""longitude"": -74.965}"
+google/gemini-3.1-pro-preview,CoT,18.85,-70.15,5046.755,DO,True,,stop,0.006406,1271,322,251,5.5,"{
+  ""reasoning"": ""The visible red car hood and dashboard, combined with the tropical vegetation and palm trees, are classic hallmarks of Google Street View coverage in the Dominican Republic."",
+  ""country"": ""DO"",
+  ""latitude"": 18.85,
+  ""longitude"": -70.15
+}"
+moonshotai/kimi-k2.6,CoT,6.455,3.384,5247.239,NG,True,,stop,0.01340471,682,3799,3746,223.11,"{""reasoning"": ""Dense tropical vegetation with oil palms and mixed forest alongside a worn, unmarked asphalt road is characteristic of rural southern Nigeria."", ""country"": ""NG"", ""latitude"": 6.455, ""longitude"": 3.384}"
+anthropic/claude-opus-4.8,no-CoT,0.4162,9.4673,5603.372,GA,True,,stop,0.00413,666,32,0,9.61,"{""country"": ""GA"", ""latitude"": 0.4162, ""longitude"": 9.4673}"
+qwen/qwen3.6-35b-a3b,CoT,18.465,-78.015,5635.224,JM,True,,stop,0.00673,554,4137,3895,136.01,"```json
+{
+  ""reasoning"": ""The vehicle is positioned on the left side of the road, indicating left-hand traffic, which narrows the location to countries like Jamaica, the Bahamas, or Trinidad. The lush tropical vegetation, featuring prominent coconut palms and dense green undergrowth, along with the style of the paved rural road, is highly characteristic of the parishes in western Jamaica (e.g., St. James or Hanover)."",
+  ""country"": ""JM"",
+  ""latitude"": 18.465,
+  ""longitude"": -78.015
+}
+```"
+anthropic/claude-opus-4.8,CoT,-0.4,11.0,5734.671,GA,True,,stop,0.00636,797,95,0,3.12,"{""reasoning"": ""Lush tropical vegetation with oil palms and dense green roadside, right-hand traffic on a worn two-lane road suggests Central African equatorial zone like Gabon."", ""country"": ""GA"", ""latitude"": -0.4, ""longitude"": 11.0}"
+qwen/qwen3.5-397b-a17b,CoT,-17.932,25.832,6908.41,ZW,True,,stop,0.0112866,553,3043,2957,53.58,"{
+""reasoning"": ""The vehicle is driving on the left side of an unmarked rural road, flanked by distinctive red lateritic soil and tropical vegetation including fan palms (likely Ilala palms) and broadleaf trees characteristic of Southern African woodland."",
+""country"": ""ZW"",
+""latitude"": -17.932,
+""longitude"": 25.832
+}"
+xiaomi/mimo-v2.5,CoT,10.48,76.25,13010.724,IN,True,,stop,0.0001711976,787,312,240,3.83,"{""reasoning"": ""The dense tropical palm and lush broadleaf vegetation, rural paved narrow road, and bright tropical climate point to South India, specifically the Kerala region; these elements are highly characteristic of this area."", ""country"": ""IN"", ""latitude"": 10.48, ""longitude"": 76.25}"
+x-ai/grok-4.3,CoT,20.78,-156.32,13366.739,US,True,,stop,0.002379,676,748,671,14.49,"{""reasoning"": ""US-style double yellow center line + right-hand traffic positioning, red vehicle hood, cracked asphalt, and dense palm/jungle vegetation under clear subtropical skies indicate Hawaii; no left-side driving or non-Latin signage rules out Asia/Africa/Australia."", ""country"": ""US"", ""latitude"": 20.78, ""longitude"": -156.32}"
+qwen/qwen3.5-27b,no-CoT,-27.9333,153.3667,15082.889,AU,True,,stop,0.0002499,473,45,0,8.49,"```json
+{
+  ""country"": ""AU"",
+  ""latitude"": -27.9333,
+  ""longitude"": 153.3667
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,-27.4698,153.0251,15142.092,AU,True,,stop,0.00010295,473,32,0,2.86,"{""country"": ""AU"", ""latitude"": -27.4698, ""longitude"": 153.0251}"
+qwen/qwen3.6-27b,CoT,8.35,98.55,15358.98,TH,True,,stop,0.0155591,553,7711,1,535.38,"{""reasoning"": ""The vehicle is positioned on the left side of the road, indicating left-hand traffic. The lush tropical vegetation, specifically the coconut palms and dense green foliage, combined with the rural paved road style and bright blue sky, strongly points to Southern Thailand."", ""country"": ""TH"", ""latitude"": 8.35, ""longitude"": 98.55}"
+google/gemma-4-31b-it,CoT,-0.5,102.0,15419.192,ID,True,,stop,0.00033077,491,686,624,34.96,"{""reasoning"": ""Lush tropical vegetation and oil palm trees suggest a tropical region; the road style and environment are consistent with rural areas in Southeast Asia, specifically Indonesia."", ""country"": ""ID"", ""latitude"": -0.5, ""longitude"": 102.0}"
+mistralai/mistral-small-2603,CoT,10.25,105.9,16191.77,VN,True,,stop,0.00085104,716,1351,1604,15.01,"{""reasoning"": ""Right-hand traffic, tropical vegetation including coconut palms, and road style consistent with rural Vietnam."", ""country"": ""VN"", ""latitude"": 10.25, ""longitude"": 105.9}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.37,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,2.09,

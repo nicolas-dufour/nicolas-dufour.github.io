@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,64.412755000043,-14.536580160389,0.0,IS,True,,,,,,,,"Hoefn, None, East, IS"
+google/gemini-3.5-flash,CoT (effort=medium),64.4115,-14.5412,0.262,IS,True,,stop,0.0113565,1271,1050,962,14.0,"{""reasoning"": ""The landscape, road markings, and yellow delineator posts are characteristic of Iceland. The coastal road with the ocean on the left and the steep scree slopes of Eystrahorn on the right indicates we are traveling southwest on Route 1 near Hvalnes."", ""country"": ""IS"", ""latitude"": 64.4115, ""longitude"": -14.5412}"
+google/gemini-3.5-flash,CoT (effort=high),64.415,-14.53,0.403,IS,True,,stop,0.0216165,1271,2190,2110,52.59,"{""reasoning"": ""The barren, treeless landscape with yellow roadside bollards, white dashed road markings, and a dramatic volcanic mountain next to the ocean is highly characteristic of the coastal Ring Road (Route 1) in eastern Iceland near Eystrahorn."", ""country"": ""IS"", ""latitude"": 64.415, ""longitude"": -14.53}"
+google/gemini-3.1-pro-preview,no-CoT,64.405,-14.545,0.952,IS,True,,stop,0.006184,1190,317,284,11.06,"```json
+{""country"": ""IS"", ""latitude"": 64.405, ""longitude"": -14.545}
+```"
+openai/gpt-5.5,CoT,64.4228,-14.5456,1.198,IS,True,,stop,0.016545,621,448,369,18.17,"{""reasoning"":""The barren volcanic coastal landscape, right-side driving, road markings, and treeless tundra strongly indicate rural Iceland. The steep dark coastal mountain beside a straight section of Route 1 resembles the Eystrahorn/Hvalnes area in southeast Iceland."",""country"":""IS"",""latitude"":64.4228,""longitude"":-14.5456}"
+google/gemini-3.1-pro-preview,CoT,64.395,-14.532,1.986,IS,True,,stop,0.006564,1272,335,245,5.79,"{
+  ""reasoning"": ""The barren, treeless landscape, rocky mountain, and yellow road bollards are highly characteristic of Iceland. The coastal road with the ocean on the left suggests a location along the eastern or southern coast, possibly near Eystrahorn."",
+  ""country"": ""IS"",
+  ""latitude"": 64.395,
+  ""longitude"": -14.532
+}"
+google/gemini-3.5-flash,CoT (effort=low),64.4052,-14.2815,12.28,IS,True,,stop,0.0043005,1271,266,197,12.38,"{""reasoning"": ""The volcanic landscape, dry yellowish grass, coastal road, and yellow roadside markers are characteristic of Iceland's Ring Road, specifically near the southeastern coast near Hvalnes."", ""country"": ""IS"", ""latitude"": 64.4052, ""longitude"": -14.2815}"
+moonshotai/kimi-k2.6,CoT,64.6,-14.9,27.13,IS,True,,stop,0.092268855,681,25508,25122,286.26,"{""reasoning"": ""Barren coastal plain with brown subarctic vegetation, right-hand traffic on a white-marked road, and a steep standalone mountain profile are characteristic of Iceland's Ring Road in the East Fjords near Búlandstindur."", ""country"": ""IS"", ""latitude"": 64.6, ""longitude"": -14.9}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),64.2514,-14.9852,28.085,IS,True,,stop,0.0021,1190,35,0,1.15,"```json
+{""country"": ""IS"", ""latitude"": 64.2514, ""longitude"": -14.9852}
+```"
+xiaomi/mimo-v2.5,no-CoT,65.68,-18.12,219.294,IS,True,,stop,8.03376e-05,708,27,0,7.31,"{""country"": ""IS"", ""latitude"": 65.68, ""longitude"": -18.12}"
+qwen/qwen3.5-35b-a3b,no-CoT,64.9631,-19.0208,221.74,IS,True,,stop,0.0001865625,473,31,0,2.19,"{""country"": ""IS"", ""latitude"": 64.9631, ""longitude"": -19.0208}"
+qwen/qwen3.5-9b,no-CoT,64.0373,-19.0811,223.615,IS,True,,stop,5.205e-05,474,31,0,8.24,"{""country"": ""IS"", ""latitude"": 64.0373, ""longitude"": -19.0811}"
+xiaomi/mimo-v2.5,CoT,65.8,-18.2,230.579,IS,True,,stop,0.0005363176,787,1616,1552,18.21,"{""reasoning"": ""The barren volcanic landscape with a coastal road and right-hand traffic is characteristic of Iceland's Ring Road, with the prominent mountain suggesting a northern or eastern coastal location."", ""country"": ""IS"", ""latitude"": 65.8, ""longitude"": -18.2}"
+qwen/qwen3.6-35b-a3b,no-CoT,64.1466,-20.1103,270.501,IS,True,,stop,0.00010195,473,31,0,3.08,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -20.1103}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,64.0840072631836,-20.122529983520508,272.236,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,63.8055419921875,-19.970443725585938,272.245,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,64.18732452392578,-20.371074676513672,282.357,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,64.0022,-20.3067,282.778,IS,True,,stop,0.00023764,474,44,0,3.98,"```json
+{
+  ""country"": ""IS"",
+  ""latitude"": 64.0022,
+  ""longitude"": -20.3067
+}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,64.11289978027344,-20.51852035522461,290.65,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,63.8283,-20.4025,291.907,IS,True,,stop,0.00018746,473,31,0,7.32,"{""country"": ""IS"", ""latitude"": 63.8283, ""longitude"": -20.4025}"
+qwen/qwen3.6-27b,no-CoT,64.1466,-21.9426,358.404,IS,True,,stop,0.0001943,473,31,0,6.48,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.9426}"
+google/gemma-4-31b-it,no-CoT,64.8383,-22.4489,379.73,IS,True,,stop,0.00019404,408,36,0,2.28,"```json
+{""country"": ""IS"", ""latitude"": 64.8383, ""longitude"": -22.4489}
+```"
+mistralai/mistral-medium-3-5,no-CoT,63.9856,-22.6056,393.122,IS,True,,stop,0.0011835,634,31,0,0.87,"{""country"": ""IS"", ""latitude"": 63.9856, ""longitude"": -22.6056}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,63.970802307128906,-22.632291793823242,394.706,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,63.81238555908203,-22.775972366333008,405.24,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,64.85,-23.35,422.33,IS,True,,stop,0.0005934,592,22,0,1.73,"{""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -23.35}"
+openai/gpt-5.5,no-CoT,64.7805,-23.6024,434.003,IS,True,,stop,0.00344,544,24,0,2.15,"{""country"":""IS"",""latitude"":64.7805,""longitude"":-23.6024}"
+minimax/minimax-m3,CoT,64.85,-23.65,436.494,IS,True,,stop,0.00081342,845,515,501,16.72,"{""reasoning"": ""Barren tundra-like landscape with no trees, a distinctive pointed peak on the right, coastal view on the left, white road markings on a wide-shouldered rural road, and right-hand drive vehicle all point to Iceland, likely the Snæfellsnes peninsula."", ""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -23.65}"
+anthropic/claude-opus-4.8,no-CoT,64.8,-23.7,438.677,IS,True,,stop,0.00408,666,30,0,3.27,"{""country"": ""IS"", ""latitude"": 64.8, ""longitude"": -23.7}"
+qwen/qwen3.5-397b-a17b,no-CoT,64.85,-23.7,438.855,IS,True,,stop,0.00036468,473,31,0,3.2,"{""country"": ""IS"", ""latitude"": 64.8500, ""longitude"": -23.7000}"
+x-ai/grok-4.3,CoT,64.85,-23.75,441.216,IS,True,,stop,0.002329,676,728,649,12.08,"{""reasoning"": ""Barren volcanic tundra, distant sea on left, isolated rocky hill on right, and empty two-lane asphalt road with dashed markings match Iceland's Ring Road (Route 1) coastal sections; right-hand traffic, pole style, and clear northern light confirm location."", ""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -23.75}"
+anthropic/claude-opus-4.8,CoT,64.85,-23.8,443.578,IS,True,,stop,0.00631,797,93,0,9.74,"{""reasoning"": ""Treeless tundra, volcanic mountain, coastal road and yellow-edged tarmac strongly indicate Iceland's Snæfellsnes peninsula."", ""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -23.8}"
+mistralai/mistral-small-2603,no-CoT,-22.5,-68.9167,10727.519,CL,True,,stop,0.0001137,634,31,0,3.94,"{""country"": ""CL"", ""latitude"": -22.5000, ""longitude"": -68.9167}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.41,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.57,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.49,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,10.5,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.45,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.08,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.44,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.38,

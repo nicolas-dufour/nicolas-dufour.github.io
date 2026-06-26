@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,35.601512090397,-78.130243168536,0.0,US,True,,,,,,,,"Kenly, Johnston County, North Carolina, US"
+qwen/qwen3.5-397b-a17b,no-CoT,35.7796,-78.6382,49.965,US,True,,stop,0.00034185,585,31,0,9.71,"{""country"": ""US"", ""latitude"": 35.7796, ""longitude"": -78.6382}"
+mistralai/mistral-medium-3-5,no-CoT,35.7804,-78.6391,50.075,US,True,,stop,0.0014115,786,31,0,7.17,"{""country"": ""US"", ""latitude"": 35.7804, ""longitude"": -78.6391}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,36.0956916809082,-77.84162139892578,60.797,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,35.10260772705078,-78.63868713378906,72.137,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,35.08454132080078,-78.6399154663086,73.766,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,36.29629898071289,-77.72935485839844,85.269,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.35035705566406,-78.3553695678711,85.697,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,34.2611,-77.8693,150.933,US,True,,stop,0.00411,678,24,0,2.54,"{""country"":""US"",""latitude"":34.2611,""longitude"":-77.8693}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,35.18623733520508,-79.72069549560547,151.379,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,34.2386,-78.0314,151.817,US,True,,stop,0.013705,755,331,248,10.61,"{""reasoning"":""Right-hand divided highway with US-style yellow left edge/white lane markings and blurred North American plates points to the United States. Flat, humid coastal-plain terrain with dense loblolly pine forest is most consistent with the southeastern US, likely North Carolina/South Carolina."",""country"":""US"",""latitude"":34.2386,""longitude"":-78.0314}"
+google/gemini-3.5-flash,CoT (effort=low),35.4521,-80.6142,225.393,US,True,,stop,0.0039675,1307,223,151,3.7,"{""reasoning"": ""The divided highway with a yellow left shoulder line, right-hand traffic, and dense stands of loblolly pines indicates the southeastern United States, likely along an interstate in North Carolina."", ""country"": ""US"", ""latitude"": 35.4521, ""longitude"": -80.6142}"
+anthropic/claude-opus-4.8,no-CoT,35.2,-80.8,246.055,US,True,,stop,0.004815,818,29,0,3.42,"{""country"": ""US"", ""latitude"": 35.2, ""longitude"": -80.8}"
+google/gemini-3.1-pro-preview,no-CoT,35.2271,-80.8431,249.336,US,True,,stop,0.002872,1226,35,0,1.84,"```json
+{""country"": ""US"", ""latitude"": 35.2271, ""longitude"": -80.8431}
+```"
+google/gemma-4-31b-it,no-CoT,34.0522,-81.0322,315.955,US,True,,stop,6.692e-05,404,36,0,9.77,"```json
+{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -81.0322}
+```"
+google/gemini-3.5-flash,CoT (effort=high),32.5385,-82.9012,555.852,US,True,,stop,0.0077295,1307,641,571,5.03,"{""reasoning"": ""The divided highway with a yellow left shoulder line, combined with the dense wall of tall loblolly pine trees, is highly characteristic of the Southeastern United States, particularly Georgia."", ""country"": ""US"", ""latitude"": 32.5385, ""longitude"": -82.9012}"
+google/gemini-3.5-flash,CoT (effort=medium),32.535,-82.915,557.102,US,True,,stop,0.0080355,1307,675,608,11.6,"{""reasoning"": ""The highway features a yellow left shoulder line and white right shoulder line typical of North America, combined with dense southern pine trees characteristic of the Southeastern United States, particularly Georgia."", ""country"": ""US"", ""latitude"": 32.535, ""longitude"": -82.915}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),33.9519,-84.1401,578.617,US,True,,stop,0.0021525,1225,35,0,1.53,"```json
+{""country"": ""US"", ""latitude"": 33.9519, ""longitude"": -84.1401}
+```"
+google/gemini-3.1-pro-preview,CoT,32.8,-83.6,591.526,US,True,,stop,0.005268,1308,221,151,10.95,"{
+  ""reasoning"": ""The wide multi-lane highway with a grassy median, yellow left edge line, and dense pine trees strongly indicate an Interstate highway in the Southeastern United States."",
+  ""country"": ""US"",
+  ""latitude"": 32.8,
+  ""longitude"": -83.6
+}"
+moonshotai/kimi-k2.6,CoT,32.85,-83.65,592.422,US,True,,stop,0.006532056,834,1830,1773,47.68,"{""reasoning"": ""US Interstate highway markings with a yellow median line and right-hand traffic, combined with dense southeastern pine forest and flat terrain, strongly indicate Georgia."", ""country"": ""US"", ""latitude"": 32.85, ""longitude"": -83.65}"
+qwen/qwen3.5-27b,no-CoT,33.849062,-84.299969,596.441,US,True,,stop,0.00027716,586,48,0,2.69,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 33.849062,
+  ""longitude"": -84.299969
+}
+```"
+x-ai/grok-4.3,CoT,33.8,-84.4,607.02,US,True,,stop,0.0020865,788,575,505,4.91,"{""reasoning"": ""Right-hand traffic with US-style pavement markings (double yellow center line), highway architecture, and dense pine forest indicate southeastern US; raindrops, overcast sky and loblolly-style pines narrow to coastal plain interstate."", ""country"": ""US"", ""latitude"": 33.8, ""longitude"": -84.4}"
+qwen/qwen3.5-122b-a10b,no-CoT,33.749,-84.388,608.046,US,True,,stop,0.0002451,585,29,0,7.7,"{""country"": ""US"", ""latitude"": 33.749, ""longitude"": -84.388}"
+qwen/qwen3.6-35b-a3b,no-CoT,33.749,-84.388,608.046,US,True,,stop,0.00011675,585,29,0,2.3,"{""country"": ""US"", ""latitude"": 33.749, ""longitude"": -84.388}"
+xiaomi/mimo-v2.5,no-CoT,33.75,-84.39,608.177,US,True,,stop,9.60176e-05,820,27,0,1.15,"{""country"": ""US"", ""latitude"": 33.75, ""longitude"": -84.39}"
+x-ai/grok-4.3,no-CoT,33.95,-84.55,614.287,US,True,,stop,0.0007334,704,22,0,0.77,"{""country"": ""US"", ""latitude"": 33.95, ""longitude"": -84.55}"
+anthropic/claude-opus-4.8,CoT,35.2,-85.0,624.126,US,True,,stop,0.00692,949,87,0,9.1,"{""reasoning"": ""Wide US-style interstate highway with overpass, right-hand traffic, dense green deciduous/pine forest and humid climate typical of southeastern US."", ""country"": ""US"", ""latitude"": 35.2, ""longitude"": -85.0}"
+qwen/qwen3.5-9b,no-CoT,39.0997,-84.5213,685.603,US,True,,stop,0.0001072,585,31,0,10.75,"{""country"": ""US"", ""latitude"": 39.0997, ""longitude"": -84.5213}"
+minimax/minimax-m3,CoT,29.25,-82.15,800.502,US,True,,stop,0.00089226,995,546,470,15.9,"{""reasoning"": ""Right-hand driving, American sedan, multi-lane divided highway with concrete Jersey barrier median, dense pine forest typical of southeastern coastal plain, flat terrain, and overcast humid sky all point to the southeastern US, likely Florida or Georgia."", ""country"": ""US"", ""latitude"": 29.25, ""longitude"": -82.15}"
+xiaomi/mimo-v2.5,CoT,33.5201,-86.7934,826.037,US,True,,stop,0.0002974776,899,707,610,7.8,"{""reasoning"": ""The image depicts a divided highway with right-hand traffic and a wide yellow center line, consistent with North American standards. The vegetation is dominated by tall pine trees (likely loblolly or longleaf pines) and lush green undergrowth, which is highly characteristic of the Southeastern United States."", ""country"": ""US"", ""latitude"": 33.5201, ""longitude"": -86.7934}"
+qwen/qwen3.6-27b,no-CoT,41.8781,-87.6298,1078.577,US,True,,stop,0.0002279,585,31,0,13.99,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.5-35b-a3b,no-CoT,30.2672,-97.7431,1920.125,US,True,,stop,0.00011304,586,31,0,1.99,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8937.016,,True,True,,,,,,7.71,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.78,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.18,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,15.4,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.44,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.33,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.68,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.22,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,8.22,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.26,

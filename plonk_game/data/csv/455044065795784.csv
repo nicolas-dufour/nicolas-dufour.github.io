@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-3.3193409891639,152.09644256741,0.0,PG,True,,,,,,,,"Rabaul, None, East New Britain, PG"
+anthropic/claude-opus-4.8,no-CoT,-3.3192,152.0964,0.016,PG,True,,stop,0.00489,818,32,0,2.31,"{""country"": ""PG"", ""latitude"": -3.3192, ""longitude"": 152.0964}"
+google/gemini-3.1-pro-preview,CoT,-3.319167,152.096389,0.02,PG,True,,stop,0.007162,1307,379,285,5.4,"{
+  ""reasoning"": ""The image contains a watermark in the bottom right corner with the exact GPS coordinates: -3°19'9\"", 152°5'47\"", which points to New Ireland Province in Papua New Guinea."",
+  ""country"": ""PG"",
+  ""latitude"": -3.319167,
+  ""longitude"": 152.096389
+}"
+google/gemini-3.5-flash,CoT (effort=low),-3.319167,152.096389,0.02,PG,True,,stop,0.0045795,1307,291,211,4.37,"{""reasoning"": ""The image contains embedded GPS coordinates in the bottom right watermark (-3°19'9\"", 152°5'47\""), which point directly to New Ireland, Papua New Guinea."", ""country"": ""PG"", ""latitude"": -3.319167, ""longitude"": 152.096389}"
+google/gemini-3.1-pro-preview,no-CoT,-3.319167,152.096389,0.02,PG,True,,stop,0.006988,1226,378,339,5.15,"```json
+{""country"": ""PG"", ""latitude"": -3.319167, ""longitude"": 152.096389}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-3.319167,152.096389,0.02,PG,True,,stop,0.0021885,1225,39,0,44.68,"```json
+{""country"": ""PG"", ""latitude"": -3.319167, ""longitude"": 152.096389}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-3.319167,152.096389,0.02,PG,True,,stop,0.0064065,1307,494,434,10.05,"{""reasoning"": ""The image contains embedded GPS coordinates in the bottom right corner, pointing to New Ireland, Papua New Guinea."", ""country"": ""PG"", ""latitude"": -3.319167, ""longitude"": 152.096389}"
+google/gemini-3.5-flash,CoT (effort=high),-3.319167,152.096389,0.02,PG,True,,stop,0.0095835,1307,847,787,6.29,"{""reasoning"": ""The image contains embedded GPS coordinates in the bottom right corner, pointing to New Ireland, Papua New Guinea."", ""country"": ""PG"", ""latitude"": -3.319167, ""longitude"": 152.096389}"
+openai/gpt-5.5,no-CoT,-3.3164,152.0953,0.351,PG,True,,stop,0.00411,678,24,0,8.23,"{""country"":""PG"",""latitude"":-3.3164,""longitude"":152.0953}"
+x-ai/grok-4.3,CoT,-3.199,152.547,51.778,PG,True,,stop,0.0030015,788,941,872,13.65,"{""reasoning"": ""Tropical rainforest vegetation with palms, dirt road construction, and embedded camera GPS data (3.199,152.547) point to New Ireland Province, Papua New Guinea; southern hemisphere latitude inferred from geography."", ""country"": ""PG"", ""latitude"": -3.199, ""longitude"": 152.547}"
+qwen/qwen3.5-27b,no-CoT,-3.199152,152.547114,51.786,ID,True,,stop,0.00023355,585,35,0,9.81,"{""country"": ""ID"", ""latitude"": -3.199152, ""longitude"": 152.547114}"
+openai/gpt-5.5,CoT,-3.3192,152.9019,89.413,PG,True,,stop,0.013675,755,330,262,7.98,"{""reasoning"":""The photo contains a GPS-style overlay reading about 3°19′S, 152°54′E, and the tropical vegetation/remote coral road matches New Ireland, Papua New Guinea."",""country"":""PG"",""latitude"":-3.3192,""longitude"":152.9019}"
+anthropic/claude-opus-4.8,CoT,-4.319167,152.096389,111.176,PG,True,,stop,0.007195,949,98,0,6.15,"{""reasoning"": ""GPS overlay reads 4°19'9\""S 152°5'47\""E, matching tropical road construction in New Ireland/East New Britain region of Papua New Guinea."", ""country"": ""PG"", ""latitude"": -4.319167, ""longitude"": 152.096389}"
+moonshotai/kimi-k2.6,no-CoT,-5.3167,152.9167,239.995,PG,True,,stop,0.00064935,754,25,0,3.67,"{""country"": ""PG"", ""latitude"": -5.3167, ""longitude"": 152.9167}"
+minimax/minimax-m3,CoT,-7.1997,152.5427,434.295,PG,True,,stop,0.00084546,995,507,415,23.43,"{""reasoning"": ""The watermark in the bottom-right corner displays coordinates -7.1997, 152.5427 (PNG survey datum), the date is DD/MM/YYYY, the road is under active construction by heavy machinery, and tropical rainforest vegetation with palm trees is consistent with Papua New Guinea's islands."", ""country"": ""PG"", ""latitude"": -7.1997, ""longitude"": 152.5427}"
+xiaomi/mimo-v2.5,no-CoT,-6.5667,155.4667,519.371,PG,True,,stop,9.71376e-05,820,31,0,1.58,"{""country"": ""PG"", ""latitude"": -6.5667, ""longitude"": 155.4667}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-4.588537693023682,146.50013732910156,636.625,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,-9.319,152.119,667.136,PG,True,,stop,0.00036642,919,124,105,3.25,"{""country"": ""PG"", ""latitude"": -9.319, ""longitude"": 152.119}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-3.537700653076172,145.18453979492188,767.575,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-3.592947483062744,145.12054443359375,774.869,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,-6.315,143.956,961.417,PG,True,,stop,0.0007334,704,22,0,7.34,"{""country"": ""PG"", ""latitude"": -6.315, ""longitude"": 143.956}"
+moonshotai/kimi-k2.6,CoT,8.3167,152.9,1296.934,FM,True,,stop,0.012721356,834,3641,3558,375.35,"{""reasoning"": ""GPS coordinates stamped in the image read 8°19′N 152°54′E, placing it in the Mortlock Islands of Chuuk State, Federated States of Micronesia; the tropical coral-road construction scene matches this Pacific atoll setting."", ""country"": ""FM"", ""latitude"": 8.3167, ""longitude"": 152.9}"
+xiaomi/mimo-v2.5,CoT,6.9242,158.1616,1323.087,FM,True,,stop,0.0004735976,899,1336,1217,21.85,"{
+  ""reasoning"": ""The tropical vegetation, light-colored coral-based soil, and rural road construction suggest a Pacific island setting. The GPS data snippet visible in the corner, when interpreted as latitude ~3.03° N and longitude ~152.91° E, points to an area near Pohnpei, Federated States of Micronesia, matching the terrain and climate."",
+  ""country"": ""FM"",
+  ""latitude"": 6.9242,
+  ""longitude"": 158.1616
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,-31.99,152.547,3188.379,AU,True,,stop,0.0039877981,583,4034,4000,13.4,"{""country"": ""AU"", ""latitude"": -31.99, ""longitude"": 152.547}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,10.624757766723633,125.34818267822266,3342.092,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,10.19320011138916,125.02459716796875,3353.135,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,10.879586219787598,123.5499038696289,3531.5,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,-3.1952,116.0473,4001.807,ID,True,,stop,0.0003588,585,39,0,10.39,"{
+  ""country"": ""ID"",
+  ""latitude"": -3.1952,
+  ""longitude"": 116.0473
+}"
+google/gemma-4-31b-it,no-CoT,-3.199,111.547,4501.299,ID,True,,stop,6.612e-05,404,34,0,9.52,"```json
+{""country"": ""ID"", ""latitude"": -3.199, ""longitude"": 111.547}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,4.2105,101.9758,5631.505,MY,True,,stop,0.0004626,585,31,0,8.04,"{""country"": ""MY"", ""latitude"": 4.2105, ""longitude"": 101.9758}"
+qwen/qwen3.5-35b-a3b,no-CoT,3.199152547,101.41611231,5678.759,MY,True,,stop,0.00012204,586,40,0,3.4,"{""country"": ""MY"", ""latitude"": 3.199152547, ""longitude"": 101.41611231}"
+mistralai/mistral-medium-3-5,no-CoT,-0.5833,100.8167,5706.066,ID,True,,stop,0.0014115,786,31,0,2.32,"{""country"": ""ID"", ""latitude"": -0.5833, ""longitude"": 100.8167}"
+mistralai/mistral-small-2603,no-CoT,43.6109,3.8772,14552.46,FR,True,,stop,0.0001359,786,30,0,4.71,"{""country"": ""FR"", ""latitude"": 43.6109, ""longitude"": 3.8772}"
+google/gemma-4-26b-a4b-it,no-CoT,-23.5505,-46.6333,16403.388,BR,True,,stop,5.668e-05,404,36,0,8.01,"```json
+{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}
+```"
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.9253,16725.363,BR,True,,stop,0.0002279,585,31,0,10.31,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9253}"
+qwen/qwen3.5-9b,no-CoT,-15.7956,-47.8828,16957.764,BR,True,,stop,6.325e-05,586,31,0,5.9,"{""country"": ""BR"", ""latitude"": -15.7956, ""longitude"": -47.8828}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.67,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,15.45,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,15.87,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.22,

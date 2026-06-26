@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,19.405887534172,101.3139599699,0.0,TH,True,,,,,,,,"Chaloem Phra Kiat, None, None, TH"
+google/gemini-3.5-flash,CoT (effort=low),19.2584,100.8751,48.881,TH,True,,stop,0.004491,1272,287,213,9.11,"```json
+{""reasoning"": ""The narrow, damaged asphalt road with reddish-brown soil, dense tropical vegetation including bamboo, and concrete utility poles are highly characteristic of rural mountainous regions in northern Thailand."", ""country"": ""TH"", ""latitude"": 19.2584, ""longitude"": 100.8751}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),19.1234,100.7891,63.419,TH,True,,stop,0.0091875,1271,809,727,7.96,"```json
+{""reasoning"": ""The narrow, winding asphalt road with potholes exposing reddish soil, dense tropical vegetation including bamboo, and concrete utility poles are highly characteristic of mountainous regions in northern Thailand, such as Nan or Mae Hong Son provinces."", ""country"": ""TH"", ""latitude"": 19.1234, ""longitude"": 100.7891}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),19.8562,102.1425,100.185,LA,True,,stop,0.002109,1190,36,0,1.17,"```json
+{""country"": ""LA"", ""latitude"": 19.8562, ""longitude"": 102.1425}
+```"
+anthropic/claude-opus-4.8,no-CoT,19.8856,102.1347,101.156,LA,True,,stop,0.00413,666,32,0,8.54,"{""country"": ""LA"", ""latitude"": 19.8856, ""longitude"": 102.1347}"
+google/gemini-3.5-flash,CoT (effort=high),20.1234,102.1543,118.736,LA,True,,stop,0.0096645,1271,862,791,13.96,"{""reasoning"": ""The combination of dense tropical vegetation, reddish clay soil, a heavily potholed narrow asphalt road, and a concrete utility pole strongly points to rural Southeast Asia, most likely Laos."", ""country"": ""LA"", ""latitude"": 20.1234, ""longitude"": 102.1543}"
+anthropic/claude-opus-4.8,CoT,20.25,102.6,164.03,LA,True,,stop,0.006435,797,98,0,9.25,"{""reasoning"": ""Tropical hill vegetation with bamboo, red lateritic soil, rough rural mountain road typical of upland Southeast Asia, likely northern Laos/Vietnam region."", ""country"": ""LA"", ""latitude"": 20.25, ""longitude"": 102.6}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,19.353530883789062,103.18544006347656,196.394,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,21.2943172454834,101.92457580566406,219.42,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,21.310659408569336,101.92871856689453,221.284,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,21.370880126953125,102.03632354736328,231.104,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,19.2674,98.9426,249.283,TH,True,,stop,0.014235,621,371,295,9.81,"{""reasoning"":""Narrow unmarked paved road through humid tropical hillside vegetation with red lateritic soil and simple concrete utility poles fits rural northern Thailand more than nearby countries. The terrain and vegetation suggest a forested mountain road around Chiang Mai/Chiang Rai."",""country"":""TH"",""latitude"":19.2674,""longitude"":98.9426}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,19.31819725036621,103.72093200683594,252.692,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,18.7883,98.9853,254.136,TH,True,,stop,0.0028,1190,35,0,2.21,"```json
+{""country"": ""TH"", ""latitude"": 18.7883, ""longitude"": 98.9853}
+```"
+xiaomi/mimo-v2.5,no-CoT,18.7883,98.9853,254.136,TH,True,,stop,8.14576e-05,708,31,0,8.24,"{""country"": ""TH"", ""latitude"": 18.7883, ""longitude"": 98.9853}"
+mistralai/mistral-medium-3-5,no-CoT,18.8034,98.9556,256.687,TH,True,,stop,0.0011835,634,31,0,0.8,"{""country"": ""TH"", ""latitude"": 18.8034, ""longitude"": 98.9556}"
+moonshotai/kimi-k2.6,CoT,18.8,98.3,323.763,TH,True,,stop,0.008288568,682,2356,2304,50.18,"{""reasoning"": ""Red laterite soil and dense tropical hillside forest with bamboo alongside a paved rural mountain road are characteristic of Northern Thailand."", ""country"": ""TH"", ""latitude"": 18.8, ""longitude"": 98.3}"
+minimax/minimax-m3,no-CoT,21.5,105.0,449.078,VN,True,,stop,0.00033402,767,135,147,4.29,"{""country"": ""VN"", ""latitude"": 21.5, ""longitude"": 105.0}"
+x-ai/grok-4.3,CoT,14.35,99.55,592.669,TH,True,,stop,0.002214,676,682,605,5.99,"{
+  ""reasoning"": ""Tropical jungle foliage with banana/palm undergrowth, red laterite soil, potholed narrow asphalt road, and wooden utility poles point to rural SE Asia; left-side driving implied by typical regional context and road setup."",
+  ""country"": ""TH"",
+  ""latitude"": 14.35,
+  ""longitude"": 99.55
+}"
+x-ai/grok-4.3,no-CoT,14.35,99.05,611.588,TH,True,,stop,0.0005934,592,22,0,0.97,"{""country"": ""TH"", ""latitude"": 14.35, ""longitude"": 99.05}"
+qwen/qwen3.5-9b,no-CoT,13.7563,100.5018,634.134,TH,True,,stop,5.22e-05,474,32,0,0.93,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+xiaomi/mimo-v2.5,CoT,15.93,107.87,794.75,VN,True,,stop,0.0001314376,787,170,96,2.32,"{""reasoning"": ""The reddish-orange laterite soil combined with dense tropical vegetation including bamboo strongly suggests a region in Southeast Asia or Southern China. The road style and surrounding environment are consistent with rural areas in Vietnam."", ""country"": ""VN"", ""latitude"": 15.93, ""longitude"": 107.87}"
+google/gemini-3.1-pro-preview,CoT,11.6123,103.1456,888.51,KH,True,,stop,0.006132,1272,299,222,5.23,"{
+  ""reasoning"": ""The reddish soil, lush tropical vegetation including bamboo, and degraded paved road are characteristic of rural Southeast Asia. The overall landscape and road conditions strongly suggest Cambodia."",
+  ""country"": ""KH"",
+  ""latitude"": 11.6123,
+  ""longitude"": 103.1456
+}"
+minimax/minimax-m3,CoT,14.05,108.05,932.038,VN,True,,stop,0.00051906,843,273,199,7.8,"{""reasoning"": ""Reddish tropical soil, dense bamboo vegetation, concrete utility poles with multiple wires, and potholed narrow rural road strongly indicate the Central Highlands of Vietnam. The climate, foliage, and infrastructure style are characteristic of rural Vietnam."", ""country"": ""VN"", ""latitude"": 14.05, ""longitude"": 108.05}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,22.38492202758789,114.3486328125,1393.421,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,24.5,117.2,1732.061,CN,True,,stop,0.00010702,406,30,0,21.61,"```json
+{""country"": ""CN"", ""latitude"": 24.5, ""longitude"": 117.2}
+```"
+openai/gpt-5.5,no-CoT,7.2785,80.7184,2599.845,LK,True,,stop,0.00341,544,23,0,1.13,"{""country"":""LK"",""latitude"":7.2785,""longitude"":80.7184}"
+qwen/qwen3.6-35b-a3b,no-CoT,12.9716,77.5946,2629.014,IN,True,,stop,0.0001444,474,31,0,3.23,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.5-35b-a3b,no-CoT,10.3039,76.2532,2872.795,IN,True,,stop,0.000157,473,31,0,2.07,"{""country"": ""IN"", ""latitude"": 10.3039, ""longitude"": 76.2532}"
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,9025.436,FR,True,,stop,0.0001131,634,30,0,9.65,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11193.263,,True,True,,,,,,6.53,
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,16673.578,BR,True,,stop,0.00018772,474,31,0,12.95,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-27b,no-CoT,-23.5505,-46.6333,16673.578,BR,True,,stop,0.00019467,473,31,0,8.78,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5505,-46.6333,16673.578,BR,True,,stop,0.0003794,473,31,0,8.92,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.6333,16673.578,BR,True,,stop,0.0001943,473,31,0,17.53,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.33,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.3,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.4,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.4,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.33,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.56,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,12.71,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,2.63,

@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,56.218900769195,25.788002677883,0.0,LV,True,,,,,,,,"Akniste, None, Akniste, LV"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,56.27574157714844,25.363996505737305,26.947,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,55.948184967041016,26.310518264770508,44.24,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,55.94387435913086,26.41652488708496,49.559,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),56.812451,25.843124,66.086,LV,True,,stop,0.002136,1190,39,0,8.12,"```json
+{""country"": ""LV"", ""latitude"": 56.812451, ""longitude"": 25.843124}
+```"
+anthropic/claude-opus-4.8,CoT,56.9,25.3,81.424,LV,True,,stop,0.00666,797,107,0,10.14,"{""reasoning"": ""Rural two-lane road with birch and conifer mix, flat terrain, wooden utility poles, right-hand traffic typical of Baltic countryside; vegetation and light suggest Latvia/Estonia."", ""country"": ""LV"", ""latitude"": 56.9, ""longitude"": 25.3}"
+anthropic/claude-opus-4.8,no-CoT,56.95,24.6,109.089,LV,True,,stop,0.00408,666,30,0,8.28,"{""country"": ""LV"", ""latitude"": 56.95, ""longitude"": 24.6}"
+x-ai/grok-4.3,no-CoT,56.85,24.35,112.686,LV,True,,stop,0.0005934,592,22,0,0.99,"{""country"": ""LV"", ""latitude"": 56.85, ""longitude"": 24.35}"
+google/gemini-3.1-pro-preview,CoT,58.3,25.5,232.054,EE,True,,stop,0.005746,1271,267,187,4.85,"{
+  ""reasoning"": ""The flat landscape with mixed coniferous and deciduous trees, combined with the white road edge lines and wooden utility poles, strongly suggests the Baltic region. The road quality and specific pole style are very typical of Estonia."",
+  ""country"": ""EE"",
+  ""latitude"": 58.3,
+  ""longitude"": 25.5
+}"
+moonshotai/kimi-k2.6,CoT,57.8,28.3,232.436,RU,True,,stop,0.0094716,480,2517,2979,126.23,"{""reasoning"": ""Mixed boreal forest, flat terrain, and wooden utility poles with cross-arms alongside a paved two-lane road with white edge markings are characteristic of the former Soviet Union, specifically rural European Russia near the Baltic states."", ""country"": ""RU"", ""latitude"": 57.8, ""longitude"": 28.3}"
+google/gemini-3.5-flash,CoT (effort=medium),58.3752,26.7251,246.284,EE,True,,stop,0.0060735,1271,463,394,11.94,"{""reasoning"": ""The flat landscape, mixed birch and coniferous forests, well-maintained asphalt road with white markings, and wooden utility poles are highly characteristic of the Baltic region, particularly Estonia."", ""country"": ""EE"", ""latitude"": 58.3752, ""longitude"": 26.7251}"
+google/gemini-3.5-flash,CoT (effort=high),58.378,26.729,246.64,EE,True,,stop,0.0098535,1271,883,815,7.77,"{""reasoning"": ""The flat landscape with mixed birch and coniferous forests, combined with the well-maintained asphalt road and specific wooden utility poles, is highly characteristic of the Baltic states, particularly Estonia."", ""country"": ""EE"", ""latitude"": 58.378, ""longitude"": 26.729}"
+google/gemini-3.1-pro-preview,no-CoT,58.5953,25.9301,264.38,EE,True,,stop,0.005138,1189,230,195,4.46,"```json
+{""country"": ""EE"", ""latitude"": 58.5953, ""longitude"": 25.9301}
+```"
+google/gemini-3.5-flash,CoT (effort=low),58.6254,25.5322,268.028,EE,True,,stop,0.0037605,1271,206,138,9.22,"{""reasoning"": ""The flat landscape, birch and coniferous trees, wooden utility poles, and high-quality asphalt road with white markings are highly characteristic of the Baltic states, particularly Estonia."", ""country"": ""EE"", ""latitude"": 58.6254, ""longitude"": 25.5322}"
+openai/gpt-5.5,CoT,58.735,25.642,279.913,EE,True,,stop,0.009855,621,225,152,7.93,"{""reasoning"":""Flat boreal farmland with birch/conifer forest, right-hand driving, EU-style white road markings and Baltic/Nordic rural utility poles point most strongly to Estonia. The landscape and road style fit central Estonia away from major towns."",""country"":""EE"",""latitude"":58.735,""longitude"":25.642}"
+openai/gpt-5.5,no-CoT,58.7686,25.7642,283.517,EE,True,,stop,0.00341,544,23,0,1.45,"{""country"":""EE"",""latitude"":58.7686,""longitude"":25.7642}"
+google/gemma-4-31b-it,no-CoT,58.85,25.2,294.659,EE,True,,stop,6.378e-05,406,36,0,4.74,"```json
+{""country"": ""EE"", ""latitude"": 58.8500, ""longitude"": 25.2000}
+```"
+minimax/minimax-m3,CoT,59.45,31.2,481.075,RU,True,,stop,0.00062346,843,360,287,17.73,"{""reasoning"": ""Boreal mixed forest with conifers, flat terrain, wooden utility poles with multi-wire configuration typical of Russian infrastructure, white edge-line road markings, and clear northern sky strongly suggest northwest Russia, likely Leningrad Oblast."", ""country"": ""RU"", ""latitude"": 59.45, ""longitude"": 31.20}"
+qwen/qwen3.5-122b-a10b,no-CoT,60.4518,22.2686,513.38,FI,True,,stop,0.0002884,473,31,0,2.26,"{""country"": ""FI"", ""latitude"": 60.4518, ""longitude"": 22.2686}"
+mistralai/mistral-medium-3-5,no-CoT,60.9945,25.2556,531.912,FI,True,,stop,0.0011835,634,31,0,1.04,"{""country"": ""FI"", ""latitude"": 60.9945, ""longitude"": 25.2556}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,61.16124725341797,25.0843563079834,551.057,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,59.3293,18.0686,573.121,SE,True,,stop,0.00010195,473,31,0,8.21,"{""country"": ""SE"", ""latitude"": 59.3293, ""longitude"": 18.0686}"
+qwen/qwen3.6-35b-a3b,no-CoT,59.3293,18.0686,573.121,SE,True,,stop,0.00010995,473,39,0,8.93,"{
+  ""country"": ""SE"",
+  ""latitude"": 59.3293,
+  ""longitude"": 18.0686
+}"
+minimax/minimax-m3,no-CoT,61.5,25.0,588.966,FI,True,,stop,0.00019452,754,22,0,4.41,"{""country"": ""FI"", ""latitude"": 61.5, ""longitude"": 25.0}{""country"": ""FI"", ""latitude"": 61.5, ""longitude"": 25.0}"
+x-ai/grok-4.3,CoT,61.45,23.75,593.302,FI,True,,stop,0.0018265,676,527,441,5.02,"{""reasoning"": ""Right-hand traffic with standard EU white dashed center + solid edge lines, rural asphalt road with gravel shoulder, wooden utility poles, birch/pine mix forest and open fields under clear northern sky indicate Northern Europe (not UK/JP/AU). Landscape and vegetation most consistent with southern/central Finland."", ""country"": ""FI"", ""latitude"": 61.45, ""longitude"": 23.75}"
+qwen/qwen3.6-27b,no-CoT,61.52401,23.80454,600.747,FI,True,,stop,0.0001983,473,33,0,31.15,"{""country"": ""FI"", ""latitude"": 61.52401, ""longitude"": 23.80454}"
+qwen/qwen3.5-9b,no-CoT,61.6994,26.0564,609.597,FI,True,,stop,8.816e-05,473,31,0,3.49,"{""country"": ""FI"", ""latitude"": 61.6994, ""longitude"": 26.0564}"
+xiaomi/mimo-v2.5,CoT,51.2,30.5,638.108,UA,True,,stop,0.0001445976,787,217,129,10.34,"{""reasoning"": ""The combination of right-hand traffic, rural road style with white edge lines and dashed center line, wooden utility poles, and the specific mix of deciduous and coniferous trees strongly suggests Eastern Europe, specifically Ukraine. The landscape and vegetation are consistent with the northern regions of Ukraine."", ""country"": ""UA"", ""latitude"": 51.2, ""longitude"": 30.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,62.046363830566406,28.054210662841797,660.652,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,62.06605529785156,28.232311248779297,664.83,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,55.7558,37.6173,736.668,RU,True,,stop,0.00051939,602,25,0,2.24,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-27b,no-CoT,62.8997,25.9101,742.902,FI,True,,stop,0.00023764,474,44,0,1.52,"```json
+{
+  ""country"": ""FI"",
+  ""latitude"": 62.8997,
+  ""longitude"": 25.9101
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,63.5,26.0,809.707,FI,True,,stop,0.00034308,473,25,0,7.76,"{""country"": ""FI"", ""latitude"": 63.5, ""longitude"": 26.0}"
+xiaomi/mimo-v2.5,no-CoT,56.8389,60.6057,2113.224,RU,True,,stop,8.14576e-05,708,31,0,1.55,"{""country"": ""RU"", ""latitude"": 56.8389, ""longitude"": 60.6057}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6666.933,,True,True,,,,,,6.44,
+mistralai/mistral-small-2603,no-CoT,39.7684,-104.9915,8380.97,US,True,,stop,0.0001143,634,32,0,1.7,"{""country"": ""US"", ""latitude"": 39.7684, ""longitude"": -104.9915}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.75,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.36,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.59,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.19,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.14,

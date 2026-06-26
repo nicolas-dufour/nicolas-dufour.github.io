@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-24.042320729962,-70.27283439152,0.0,CL,True,,,,,,,,"Antofagasta, Provincia de Antofagasta, Antofagasta, CL"
+google/gemini-3.1-pro-preview,CoT,-23.652,-70.395,45.145,CL,True,,stop,0.00715,1271,384,291,5.86,"{
+  ""reasoning"": ""The extremely arid, barren landscape with rolling hills and sandy/rocky soil is characteristic of the Atacama Desert. The presence of the large lattice transmission tower suggests a major infrastructure corridor, typical of the Pan-American Highway region in northern Chile."",
+  ""country"": ""CL"",
+  ""latitude"": -23.652,
+  ""longitude"": -70.395
+}"
+anthropic/claude-opus-4.8,no-CoT,-23.65,-70.4,45.501,CL,True,,stop,0.00408,666,30,0,2.82,"{""country"": ""CL"", ""latitude"": -23.65, ""longitude"": -70.4}"
+google/gemini-3.5-flash,CoT (effort=low),-24.3512,-69.8854,52.19,CL,True,,stop,0.0040035,1271,233,161,3.1,"{""reasoning"": ""The hyper-arid desert landscape with barren, reddish-brown hills and a high-voltage power line is highly characteristic of the Atacama Desert along Route 5 in northern Chile."", ""country"": ""CL"", ""latitude"": -24.3512, ""longitude"": -69.8854}"
+anthropic/claude-opus-4.8,CoT,-23.5,-69.5,99.103,CL,True,,stop,0.00631,797,93,0,9.25,"{""reasoning"": ""Barren tan-brown desert hills with no vegetation under deep blue sky, plus transmission tower, strongly resembles the Atacama Desert of northern Chile."", ""country"": ""CL"", ""latitude"": -23.5, ""longitude"": -69.5}"
+google/gemma-4-31b-it,no-CoT,-24.5,-69.2,120.068,CL,True,,stop,6.478e-05,406,30,0,12.53,"```json
+{""country"": ""CL"", ""latitude"": -24.5, ""longitude"": -69.2}
+```"
+x-ai/grok-4.3,no-CoT,-22.45,-68.9,225.876,CL,True,,stop,0.0007278,592,22,0,1.24,"{""country"": ""CL"", ""latitude"": -22.45, ""longitude"": -68.9}"
+openai/gpt-5.5,no-CoT,-22.8705,-68.2547,243.628,CL,True,,stop,0.00347,544,25,0,7.95,"{""country"":""CL"",""latitude"":-22.8705,""longitude"":-68.2547}"
+qwen/qwen3.5-27b,no-CoT,-27.0,-70.0,330.016,CL,True,,stop,0.0001923,473,25,0,18.53,"{""country"": ""CL"", ""latitude"": -27.0, ""longitude"": -70.0}"
+minimax/minimax-m3,CoT,-23.45,-66.35,404.651,AR,True,,stop,0.00074946,843,465,374,23.92,"{""reasoning"": ""Arid, high-altitude landscape with reddish-brown barren hills, sparse vegetation, and high-voltage transmission pylons strongly suggest the Andean Puna/Altiplano region. The soil coloration and terrain profile are characteristic of northwestern Argentina (Jujuy/Salta provinces) along a high-altitude route."", ""country"": ""AR"", ""latitude"": -23.45, ""longitude"": -66.35}"
+mistralai/mistral-medium-3-5,no-CoT,-16.5,-68.5,858.772,PE,True,,stop,0.0011385,634,25,0,1.23,"{""country"": ""PE"", ""latitude"": -16.5, ""longitude"": -68.5}"
+google/gemini-3.1-pro-preview,no-CoT,-16.5532,-72.5124,864.823,PE,True,,stop,0.002798,1189,35,0,20.12,"```json
+{""country"": ""PE"", ""latitude"": -16.5532, ""longitude"": -72.5124}
+```"
+minimax/minimax-m3,no-CoT,-16.0,-71.0,897.479,PE,True,,stop,0.00019176,752,23,0,6.22,"{""country"": ""PE"", ""latitude"": -16.0, ""longitude"": -71.0}"
+google/gemini-3.5-flash,CoT (effort=high),-15.35,-74.75,1073.917,PE,True,,stop,0.0119775,1271,1119,1055,9.85,"{""reasoning"": ""The extremely arid, sandy desert landscape with rounded barren hills and a high-voltage transmission line is characteristic of the coastal desert of Peru along the Pan-American Highway."", ""country"": ""PE"", ""latitude"": -15.35, ""longitude"": -74.75}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-15.196239471435547,-74.98648071289062,1100.275,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),-14.5123,-75.1845,1178.074,PE,True,,stop,0.0068565,1271,550,482,7.93,"{""reasoning"": ""The extremely arid, barren sandy hills and the style of the high-voltage transmission tower are highly characteristic of the coastal desert of Peru along the Pan-American Highway."", ""country"": ""PE"", ""latitude"": -14.5123, ""longitude"": -75.1845}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-14.1234,-75.2345,1219.579,PE,True,,stop,0.0020985,1189,35,0,1.36,"```json
+{""country"": ""PE"", ""latitude"": -14.1234, ""longitude"": -75.2345}
+```"
+openai/gpt-5.5,CoT,-12.4786,-76.7412,1455.241,PE,True,,stop,0.014775,621,389,296,15.18,"{""reasoning"":""Extremely barren tan desert hills with virtually no vegetation and high-voltage pylons are characteristic of the Pacific coastal desert/Andean foothills, especially Peru's arid corridor near Lima. With no signage or road details visible, the landscape most strongly suggests the Pan-American/foothill outskirts south of Lima."",""country"":""PE"",""latitude"":-12.4786,""longitude"":-76.7412}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8011.118,,True,True,,,,,,22.88,
+qwen/qwen3.6-27b,CoT,36.1,-115.5,8201.809,US,True,,stop,0.01118385,553,4050,3971,110.2,"{""reasoning"": ""The arid, scrub-covered landscape with rounded, barren hills and a standard lattice high-voltage transmission tower is highly characteristic of the Mojave Desert region in the American Southwest, likely along a highway in Nevada or California."", ""country"": ""US"", ""latitude"": 36.1, ""longitude"": -115.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.0228,-117.3256,8227.789,US,True,,stop,0.0001898,474,32,0,8.15,"{""country"": ""US"", ""latitude"": 35.0228, ""longitude"": -117.3256}"
+mistralai/mistral-small-2603,no-CoT,36.5323,-116.9325,8324.469,US,True,,stop,0.0001143,634,32,0,4.15,"{""country"": ""US"", ""latitude"": 36.5323, ""longitude"": -116.9325}"
+xiaomi/mimo-v2.5,CoT,27.15,-13.25,8355.558,MA,True,,stop,0.0001403976,787,202,110,3.05,"{""reasoning"": ""The image depicts an arid desert landscape with barren, eroded hills and a high-voltage transmission tower featuring a distinctive lattice design often seen in North African infrastructure. The specific soil color, terrain profile, and lack of vegetation strongly suggest a location in the Western Sahara or southern Morocco region."", ""country"": ""MA"", ""latitude"": 27.15, ""longitude"": -13.25}"
+mistralai/mistral-small-2603,CoT,20.5,1.5,9209.841,DZ,True,,stop,0.00059184,716,919,1042,6.88,"{""reasoning"": ""The decisive clues are the arid desert landscape with characteristic sandy dunes and light-colored soil typical of the Sahara Desert, combined with sparse vegetation and basic road infrastructure in a remote desert region."", ""country"": ""DZ"", ""latitude"": 20.5, ""longitude"": 1.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,25.0,33.0,12368.845,EG,True,,stop,0.0003738,473,25,0,4.34,"{""country"": ""EG"", ""latitude"": 25.0, ""longitude"": 33.0}"
+google/gemma-4-26b-a4b-it,CoT,31.2,36.8,12912.913,JO,True,,stop,0.00048668,492,1088,1026,23.74,"{""reasoning"": ""The arid, sandy terrain and large electrical pylon are characteristic of desert regions in the Middle East."", ""country"": ""JO"", ""latitude"": 31.2, ""longitude"": 36.8}"
+x-ai/grok-4.3,CoT,24.35,44.85,13500.607,SA,True,,stop,0.002204,676,678,601,12.6,"{""reasoning"": ""Arid gravel desert with tan sedimentary hills, clear blue sky, and lattice transmission tower indicate a remote Middle Eastern or North African desert; lack of vegetation, dunes, or distinctive rock formations points to central Saudi interior rather than Sahara or Arabian Gulf coast."", ""country"": ""SA"", ""latitude"": 24.35, ""longitude"": 44.85}"
+qwen/qwen3.5-397b-a17b,CoT,24.35,46.82,13694.19,SA,True,,stop,0.00903165,553,2942,1,101.32,"{
+""reasoning"": ""The arid, sandy landscape featuring low, rounded sedimentary hills and a high-voltage lattice pylon is characteristic of the central region of Saudi Arabia. The lack of vegetation, the specific hue of the soil, and the deep blue sky strongly suggest the interior of the Arabian Peninsula."",
+""country"": ""SA"",
+""latitude"": 24.35,
+""longitude"": 46.82
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,30.8093318939209,55.10195541381836,14623.283,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,37.501686096191406,58.477783203125,14961.169,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,37.474220275878906,58.53647994995117,14966.452,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.264949798583984,60.29912567138672,15123.072,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,34.49088668823242,63.217674255371094,15398.507,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,CoT,43.5,67.0,15577.468,KZ,True,,stop,0.00033694,492,794,736,16.83,"{""reasoning"": ""Arid, hilly desert landscape with a standard lattice power pylon, characteristic of the Central Asian steppes."", ""country"": ""KZ"", ""latitude"": 43.5, ""longitude"": 67.0}"
+qwen/qwen3.5-9b,no-CoT,39.0799,76.0269,16439.747,CN,True,,stop,5.205e-05,474,31,0,4.98,"{""country"": ""CN"", ""latitude"": 39.0799, ""longitude"": 76.0269}"
+qwen/qwen3.6-27b,no-CoT,39.5489,79.9339,16737.004,CN,True,,stop,0.0002414,474,31,0,2.56,"{""country"": ""CN"", ""latitude"": 39.5489, ""longitude"": 79.9339}"
+moonshotai/kimi-k2.6,no-CoT,47.8864,106.9057,17352.07,MN,True,,stop,0.000678,600,27,0,9.95,"{""country"": ""MN"", ""latitude"": 47.8864, ""longitude"": 106.9057}"
+qwen/qwen3.6-35b-a3b,CoT,45.5,106.5,17611.485,MN,True,,stop,0.0040644,554,2471,2244,149.75,"```json
+{
+""reasoning"": ""The image displays the classic arid landscape of the Gobi Desert, characterized by barren, ochre-colored rolling hills and a lack of vegetation. The presence of high-voltage transmission lines indicates a major route, likely the Trans-Mongolian highway, cutting through this remote, flat terrain."",
+""country"": ""MN"",
+""latitude"": 45.5,
+""longitude"": 106.5
+}
+```"
+moonshotai/kimi-k2.6,CoT,43.8,104.2,17761.086,MN,True,,stop,0.011064,680,2644,2912,115.44,"{""reasoning"": ""Barren reddish-brown rocky hills and desert pavement under a deep blue sky with lattice transmission towers is characteristic of the southern Gobi Desert."", ""country"": ""MN"", ""latitude"": 43.8, ""longitude"": 104.2}"
+qwen/qwen3.5-35b-a3b,CoT,43.45,103.45,17782.09,MN,True,,stop,0.00091156,554,834,806,16.51,"{""reasoning"": ""The image displays a classic arid steppe/desert landscape with low, barren brown hills and a vast blue sky, highly characteristic of the Gobi Desert in Mongolia. The presence of a high-voltage transmission tower in such a remote, treeless environment is a common feature of the infrastructure connecting mining sites in southern Mongolia."", ""country"": ""MN"", ""latitude"": 43.45, ""longitude"": 103.45}"
+xiaomi/mimo-v2.5,no-CoT,39.5,98.5,17998.9,CN,True,,stop,7.97776e-05,708,25,0,4.14,"{""country"": ""CN"", ""latitude"": 39.5, ""longitude"": 98.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,40.82,115.2,18081.175,CN,True,,stop,0.000138,474,27,0,3.52,"{""country"": ""CN"", ""latitude"": 40.82, ""longitude"": 115.2}"
+qwen/qwen3.5-35b-a3b,no-CoT,40.8234,111.6789,18140.289,CN,True,,stop,0.00010295,473,32,0,1.98,"{""country"": ""CN"", ""latitude"": 40.8234, ""longitude"": 111.6789}"
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,

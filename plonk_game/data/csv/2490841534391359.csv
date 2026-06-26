@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,51.96064257560542,77.61100777257033,0.0,KZ,True,,,,,,,,"Koktobe, None, Pavlodar, KZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,52.09208297729492,77.43507385253906,18.934,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,52.24772644042969,77.02449035644531,51.222,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,51.15,71.45,435.24,KZ,True,,stop,0.00545,1225,250,219,11.1,"```json
+{""country"": ""KZ"", ""latitude"": 51.15, ""longitude"": 71.45}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,48.052433013916016,73.97516632080078,506.179,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,51.5,68.0,663.402,KZ,True,,stop,0.004865,818,31,0,2.71,"{""country"": ""KZ"", ""latitude"": 51.5, ""longitude"": 68.0}"
+anthropic/claude-opus-4.8,CoT,52.5,67.0,724.494,KZ,True,,stop,0.007445,949,108,0,9.51,"{""reasoning"": ""Flat steppe with shelterbelt tree lines, simple two-lane road and wooden power poles typical of northern Kazakhstan/Russian steppe agriculture; sparse landscape and overcast sky."", ""country"": ""KZ"", ""latitude"": 52.5, ""longitude"": 67.0}"
+openai/gpt-5.5,no-CoT,43.8927,76.9864,898.311,KZ,True,,stop,0.00411,678,24,0,1.14,"{""country"":""KZ"",""latitude"":43.8927,""longitude"":76.9864}"
+qwen/qwen3.5-122b-a10b,no-CoT,44.1638,87.6298,1140.681,CN,True,,stop,0.00021684,586,31,0,5.79,"{""country"": ""CN"", ""latitude"": 44.1638, ""longitude"": 87.6298}"
+openai/gpt-5.5,CoT,42.8567,69.4215,1183.465,KZ,True,,stop,0.021895,755,604,516,57.71,"{""reasoning"":""Flat arid agricultural steppe with poplar windbreaks, sparse utility poles, right-hand traffic markings and rough unedged asphalt are most consistent with rural southern Kazakhstan/Central Asia. The long straight road through dry fields points to the Turkestan/Shymkent plains rather than mountainous areas."",""country"":""KZ"",""latitude"":42.8567,""longitude"":69.4215}"
+mistralai/mistral-medium-3-5,no-CoT,51.5,46.0,2160.448,RU,True,,stop,0.001374,786,26,0,1.39,"{""country"": ""RU"", ""latitude"": 51.5, ""longitude"": 46.0}"
+moonshotai/kimi-k2.6,CoT,48.5,44.3,2378.936,RU,True,,stop,0.010023516,834,2843,2769,147.14,"{""reasoning"": ""The flat steppe landscape with shelterbelt tree lines, rural asphalt road style, gravel shoulders, and utility pole design are characteristic of southern Russia; the green marking on the vehicle hood suggests a Yandex Street View fleet car."", ""country"": ""RU"", ""latitude"": 48.5, ""longitude"": 44.3}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,2618.71,RU,True,,stop,5.108e-05,262,36,0,9.46,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+mistralai/mistral-small-2603,no-CoT,55.7558,37.6173,2618.71,RU,True,,stop,0.0001371,786,32,0,14.82,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+google/gemini-3.5-flash,CoT (effort=medium),48.1542,34.8254,3038.579,UA,True,,stop,0.0111315,1307,1019,932,8.59,"{""reasoning"": ""The flat agricultural steppe landscape, Soviet-style concrete utility poles, and roadside shelterbelts are highly characteristic of southern or central Ukraine. The vehicle hood features a green 'ICG' logo, likely representing a local agricultural or consulting enterprise operating in the region."", ""country"": ""UA"", ""latitude"": 48.1542, ""longitude"": 34.8254}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),45.712543,34.389124,3188.84,UA,True,,stop,0.00219,1226,39,0,7.82,"```json
+{""country"": ""UA"", ""latitude"": 45.712543, ""longitude"": 34.389124}
+```"
+google/gemini-3.5-flash,CoT (effort=high),46.75,33.25,3212.86,UA,True,,stop,0.0259635,1307,2667,2592,30.49,"{""reasoning"": ""The green 'UCG' logo on the car hood belongs to the Ukrainian Cartographic Group, placing this image in Ukraine. The flat, dry steppe landscape with concrete utility poles and orchards is highly characteristic of southern Ukraine."", ""country"": ""UA"", ""latitude"": 46.75, ""longitude"": 33.25}"
+google/gemini-3.5-flash,CoT (effort=low),46.8425,32.8112,3238.003,UA,True,,stop,0.0048765,1307,324,253,9.98,"{""reasoning"": ""The flat steppe landscape, concrete utility poles, and road markings are highly characteristic of southern Ukraine. The green lettering on the car hood is associated with local mapping efforts in the region."", ""country"": ""UA"", ""latitude"": 46.8425, ""longitude"": 32.8112}"
+x-ai/grok-4.3,CoT,52.35,5.25,4722.422,NL,True,,stop,0.002814,788,866,802,12.8,"{""reasoning"": ""Flat open agricultural landscape with straight asphalt road, European utility poles, and windshield sticker using British spelling 'AGGREGATES' point to northern Europe (likely NL/DE lowlands)."", ""country"": ""NL"", ""latitude"": 52.35, ""longitude"": 5.25}"
+qwen/qwen3.5-9b,no-CoT,45.8936,6.0254,5058.544,FR,True,,stop,6.31e-05,586,30,0,5.13,"{""country"": ""FR"", ""latitude"": 45.8936, ""longitude"": 6.0254}"
+qwen/qwen3.5-27b,no-CoT,48.695833,2.895833,5077.565,FR,True,,stop,0.0002405,586,47,0,2.96,"```json
+{
+  ""country"": ""FR"",
+  ""latitude"": 48.695833,
+  ""longitude"": 2.895833
+}
+```"
+x-ai/grok-4.3,no-CoT,47.35,-1.15,5409.737,FR,True,,stop,0.0007334,704,22,0,0.89,"{""country"": ""FR"", ""latitude"": 47.35, ""longitude"": -1.15}"
+xiaomi/mimo-v2.5,CoT,27.0,21.0,5417.704,ZA,True,,stop,0.0002008776,899,362,272,5.44,"{""reasoning"": ""Flat semi-arid grassland, straight rural paved road with southern African-style utility poles, and sparse dry vegetation typical of the Kalahari region pinpoint this location to South Africa's interior. The road layout and landscape are consistent with rural areas in the North West/Northern Cape provinces."", ""country"": ""ZA"", ""latitude"": 27.0, ""longitude"": 21.0}"
+qwen/qwen3.6-35b-a3b,no-CoT,51.0447,-114.0719,8508.885,CA,True,,stop,0.00012519,585,32,0,8.12,"{""country"": ""CA"", ""latitude"": 51.0447, ""longitude"": -114.0719}"
+qwen/qwen3.5-397b-a17b,no-CoT,50.4501,-104.6178,8625.595,CA,True,,stop,0.00034485,585,32,0,6.91,"{""country"": ""CA"", ""latitude"": 50.4501, ""longitude"": -104.6178}"
+qwen/qwen3.5-35b-a3b,no-CoT,46.8721,-113.9845,8969.918,US,True,,stop,0.00011975,585,32,0,1.58,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -113.9845}"
+google/gemini-3.1-pro-preview,CoT,14.6521,-16.2145,8987.367,SN,True,,stop,0.006252,1308,303,214,12.04,"{
+  ""reasoning"": ""The visible car hood with the green 'ICG' logo is a well-known Street View meta clue unique to Senegal. The flat, dry landscape with sparse vegetation is consistent with the Sahel region found in the country."",
+  ""country"": ""SN"",
+  ""latitude"": 14.6521,
+  ""longitude"": -16.2145
+}"
+qwen/qwen3.6-27b,no-CoT,46.8772,-96.7898,9011.86,US,True,,stop,0.0002279,585,31,0,6.17,"{""country"": ""US"", ""latitude"": 46.8772, ""longitude"": -96.7898}"
+google/gemma-4-26b-a4b-it,no-CoT,44.428,-110.5885,9268.313,US,True,,stop,5.508e-05,404,32,0,8.28,"{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5885}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,37.42842483520508,-121.07597351074219,9911.123,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,36.93161392211914,-120.39949798583984,9976.943,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,36.92350387573242,-120.36598205566406,9978.395,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,33.5,-101.5,10511.902,US,True,,stop,9.57376e-05,820,26,0,8.91,"{""country"": ""US"", ""latitude"": 33.5, ""longitude"": -101.5}"
+minimax/minimax-m3,CoT,-34.65,140.85,11417.748,AU,True,,stop,0.00094026,995,586,503,17.12,"{""reasoning"": ""Extremely flat arid landscape with sparse vegetation, red-brown soil, wooden utility poles, and left-hand traffic strongly indicate rural South Australia, likely the Murray-Mallee or Riverland region. The cleared agricultural land and road style are typical of outback Australian highways."", ""country"": ""AU"", ""latitude"": -34.65, ""longitude"": 140.85}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.32,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,27.95,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,10.38,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.44,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.13,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.12,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.23,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.36,

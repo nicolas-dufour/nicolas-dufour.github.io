@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,30.333073055563,130.65902639029,0.0,JP,True,,,,,,,,"Nishinoomote, None, Kagoshima, JP"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,30.854827880859375,130.4746856689453,60.64,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,30.967119216918945,130.53945922851562,71.424,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,31.5,130.5,130.64,JP,True,,stop,0.006208,1226,313,283,4.68,"```json
+{""country"": ""JP"", ""latitude"": 31.5, ""longitude"": 130.5}
+```"
+google/gemini-3.5-flash,CoT (effort=high),31.6254,130.5721,143.939,JP,True,,stop,0.0101415,1307,909,819,7.69,"{""reasoning"": ""The image features left-hand traffic, a clean asphalt road with standard Japanese white markings, a typical round concrete utility pole, and a dark metal pedestrian fence on the left. The lush, dense green vegetation is characteristic of rural Japan, particularly in southern regions like Kyushu."", ""country"": ""JP"", ""latitude"": 31.6254, ""longitude"": 130.5721}"
+google/gemini-3.1-pro-preview,CoT,31.75,130.82,158.3,JP,True,,stop,0.005904,1308,274,199,21.5,"{
+  ""reasoning"": ""The smooth concrete utility pole, dashed white center line, and solid white edge lines are characteristic of Japan. The lush, subtropical vegetation suggests a southern location like Kyushu."",
+  ""country"": ""JP"",
+  ""latitude"": 31.75,
+  ""longitude"": 130.82
+}"
+qwen/qwen3.5-9b,no-CoT,32.0636,130.8114,192.971,JP,True,,stop,6.34e-05,586,32,0,4.14,"{""country"": ""JP"", ""latitude"": 32.0636, ""longitude"": 130.8114}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,33.084197998046875,131.29920959472656,311.845,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,33.85,133.25,460.937,JP,True,,stop,0.002799,788,860,781,7.56,"{""reasoning"": ""White dashed center line + solid edge lines, concrete utility poles, metal guardrail and dense subtropical broadleaf forest indicate Japan (left-side driving, non-US markings); no text or vehicles visible but road/vegetation style matches rural Shikoku or Kyushu."", ""country"": ""JP"", ""latitude"": 33.85, ""longitude"": 133.25}"
+minimax/minimax-m3,CoT,26.74,128.25,463.647,JP,True,,stop,0.00079026,995,461,392,22.88,"{""reasoning"": ""Left-hand traffic, Japanese-style concrete utility poles with multiple crossbars, white edge-line road markings characteristic of Japan, and dense subtropical broadleaf vegetation consistent with the Yanbaru region of northern Okinawa."", ""country"": ""JP"", ""latitude"": 26.74, ""longitude"": 128.25}"
+moonshotai/kimi-k2.6,CoT,26.6,127.9,494.967,JP,True,,stop,0.007085916,834,1988,1926,37.43,"{""reasoning"": ""The round concrete utility pole with step bolts, Japanese rural guardrail design, and subtropical broadleaf forest are distinctive of Okinawa Prefecture, Japan."", ""country"": ""JP"", ""latitude"": 26.6000, ""longitude"": 127.9000}"
+google/gemma-4-31b-it,no-CoT,34.65,135.32,649.068,JP,True,,stop,6.976e-05,404,33,0,8.02,"```json
+{""country"": ""JP"", ""latitude"": 34.65, ""longitude"": 135.32}
+```"
+xiaomi/mimo-v2.5,no-CoT,34.6851,135.5273,665.071,JP,True,,stop,9.74176e-05,820,32,0,7.85,"{""country"": ""JP"", ""latitude"": 34.6851, ""longitude"": 135.5273}"
+mistralai/mistral-medium-3-5,no-CoT,34.8116,135.8048,692.956,JP,True,,stop,0.001419,786,32,0,8.15,"{""country"": ""JP"", ""latitude"": 34.8116, ""longitude"": 135.8048}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.3606,136.6059,787.794,JP,True,,stop,0.00011975,585,32,0,7.74,"{""country"": ""JP"", ""latitude"": 35.3606, ""longitude"": 136.6059}"
+google/gemini-3.5-flash,CoT (effort=low),33.1125,139.7912,916.963,JP,True,,stop,0.004725,1308,307,230,3.06,"{""reasoning"": ""The left-hand traffic, high-quality asphalt road with white markings, distinctive concrete utility pole, and lush subtropical vegetation are highly characteristic of southern Japan, particularly the Ryukyu or Izu islands."", ""country"": ""JP"", ""latitude"": 33.1125, ""longitude"": 139.7912}"
+openai/gpt-5.5,CoT,33.1094,139.7968,917.359,JP,True,,stop,0.014515,755,358,280,8.42,"{""reasoning"":""Left-side driving with Japanese-style road markings, concrete utility poles, and dense subtropical roadside vegetation point to rural Japan. The lush volcanic-island greenery and narrow forested road are most consistent with Hachijojima in the Izu Islands."",""country"":""JP"",""latitude"":33.1094,""longitude"":139.7968}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),33.114215,139.808421,918.551,JP,True,,stop,0.002199,1226,40,0,1.21,"```json
+{""country"": ""JP"", ""latitude"": 33.114215, ""longitude"": 139.808421}
+```"
+qwen/qwen3.6-27b,no-CoT,36.5944,137.1841,922.029,JP,True,,stop,0.0002299,585,32,0,10.81,"{""country"": ""JP"", ""latitude"": 36.5944, ""longitude"": 137.1841}"
+anthropic/claude-opus-4.8,no-CoT,34.0833,139.5333,932.767,JP,True,,stop,0.00489,818,32,0,2.66,"{""country"": ""JP"", ""latitude"": 34.0833, ""longitude"": 139.5333}"
+x-ai/grok-4.3,no-CoT,35.3606,138.7274,937.831,JP,True,,stop,0.0007384,704,24,0,1.19,"{""country"": ""JP"", ""latitude"": 35.3606, ""longitude"": 138.7274}"
+openai/gpt-5.5,no-CoT,34.3295,139.4872,940.468,JP,True,,stop,0.00408,678,23,0,8.33,"{""country"":""JP"",""latitude"":34.3295,""longitude"":139.4872}"
+anthropic/claude-opus-4.8,CoT,34.748,139.388,953.629,JP,True,,stop,0.00717,949,97,0,3.17,"{""reasoning"": ""Left-hand traffic, Japanese-style road markings and concrete utility poles, lush subtropical island vegetation suggest a Japanese island like Izu Oshima or similar."", ""country"": ""JP"", ""latitude"": 34.748, ""longitude"": 139.388}"
+qwen/qwen3.5-397b-a17b,no-CoT,35.1234,139.5678,988.37,JP,True,,stop,0.00043548,585,32,0,2.65,"{""country"": ""JP"", ""latitude"": 35.1234, ""longitude"": 139.5678}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.1706,139.5889,992.669,JP,True,,stop,0.0003364,585,32,0,8.11,"{""country"": ""JP"", ""latitude"": 35.1706, ""longitude"": 139.5889}"
+google/gemma-4-26b-a4b-it,no-CoT,35.6895,139.6917,1030.782,JP,True,,stop,5.508e-05,404,32,0,8.25,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+google/gemini-3.5-flash,CoT (effort=medium),35.218,140.085,1034.45,JP,True,,stop,0.0085305,1307,730,668,7.47,"{""reasoning"": ""The concrete utility pole, dark metal roadside fencing, and lush temperate vegetation are highly characteristic of rural Japan, where driving is on the left."", ""country"": ""JP"", ""latitude"": 35.218, ""longitude"": 140.085}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.76975631713867,139.43603515625,1082.497,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.637786865234375,141.04135131835938,1324.249,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.633697509765625,141.22897338867188,1336.29,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,-37.885,175.515,8901.306,NZ,True,,stop,0.000160875,585,30,0,7.58,"{""country"": ""NZ"", ""latitude"": -37.885, ""longitude"": 175.515}"
+qwen/qwen3.6-35b-a3b,no-CoT,-40.9284,174.8859,9135.603,NZ,True,,stop,0.00018625,585,32,0,0.65,"{""country"": ""NZ"", ""latitude"": -40.9284, ""longitude"": 174.8859}"
+xiaomi/mimo-v2.5,CoT,52.0,-1.0,9722.285,GB,True,,stop,0.0003299576,899,823,766,9.14,"{""reasoning"": ""The road markings and left-side driving indicate left-hand traffic, and the dense green temperate vegetation is typical of the UK countryside."", ""country"": ""GB"", ""latitude"": 52.0, ""longitude"": -1.0}"
+mistralai/mistral-small-2603,no-CoT,48.8584,2.2945,9829.888,FR,True,,stop,0.0001359,786,30,0,4.44,"{""country"": ""FR"", ""latitude"": 48.8584, ""longitude"": 2.2945}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.79,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.53,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.79,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.48,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,15.97,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.89,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.71,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.35,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.47,

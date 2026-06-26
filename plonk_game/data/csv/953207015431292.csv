@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,20.016269407388,-75.654005503187,0.0,CU,True,,,,,,,,"Santiago de Cuba, Municipio de Santiago de Cuba, Santiago de Cuba, CU"
+google/gemini-3.1-pro-preview,CoT,18.9,-70.7,533.995,DO,True,,stop,0.00643,1271,324,245,11.52,"{
+  ""reasoning"": ""The combination of pine trees and tropical vegetation suggests a highland tropical area. The left-hand drive vehicle and road style are consistent with the central highlands of the Dominican Republic."",
+  ""country"": ""DO"",
+  ""latitude"": 18.9000,
+  ""longitude"": -70.7000
+}"
+openai/gpt-5.5,no-CoT,19.1732,-70.6048,537.149,DO,True,,stop,0.00344,544,24,0,1.26,"{""country"":""DO"",""latitude"":19.1732,""longitude"":-70.6048}"
+qwen/qwen3.5-397b-a17b,no-CoT,25.7617,-80.1918,789.896,US,True,,stop,0.00036468,473,31,0,5.53,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+moonshotai/kimi-k2.6,CoT,22.78,-83.05,824.909,CU,True,,stop,0.01239622,682,2975,3227,70.51,"{""reasoning"": ""Dense Caribbean pine forest and tropical highland vegetation are diagnostic of western Cuba's Sierra del Rosario, while the utilitarian vehicle dashboard and rustic stone-lined rural road match Cuban infrastructure."", ""country"": ""CU"", ""latitude"": 22.78, ""longitude"": -83.05}"
+google/gemini-3.5-flash,CoT (effort=high),18.1438,-66.9783,935.025,PR,True,,stop,0.0173865,1271,1720,1633,12.82,"```json
+{""reasoning"": ""The combination of Caribbean pine trees and lush tropical undergrowth, along with the rustic stone curb characteristic of CCC-built roads in US territories, points to the highlands of Puerto Rico, likely along the Ruta Panorámica near Maricao."", ""country"": ""PR"", ""latitude"": 18.1438, ""longitude"": -66.9783}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,8.003683090209961,-72.24987030029297,1385.096,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,32.5801,-81.4708,1511.8,US,True,,stop,0.0011835,634,31,0,1.04,"{""country"": ""US"", ""latitude"": 32.5801, ""longitude"": -81.4708}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,3.36104416847229,-74.91434478759766,1853.713,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,13.2185,-59.5798,1870.512,BB,True,,stop,0.019305,621,540,441,54.54,"{""reasoning"":""Tropical left-driving Caribbean setting with narrow unmarked rural asphalt, concrete drainage gutters/kerbs, and lush vegetation including casuarina/pine-like trees fits Barbados' interior roads, especially the greener Scotland District/Turners Hall area. The absence of lane markings and the road/ditch construction are typical of rural Barbados rather than mainland tropical countries."",""country"":""BB"",""latitude"":13.2185,""longitude"":-59.5798}"
+x-ai/grok-4.3,no-CoT,19.45,-96.95,2228.343,MX,True,,stop,0.0005934,592,22,0,0.69,"{""country"": ""MX"", ""latitude"": 19.45, ""longitude"": -96.95}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-0.11075299978256226,-76.93910217285156,2242.394,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,34.0522,-118.2437,4460.165,US,True,,stop,0.0001963,473,32,0,17.09,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+qwen/qwen3.6-35b-a3b,no-CoT,34.0522,-118.2437,4460.165,US,True,,stop,0.00010295,473,32,0,9.09,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4188,4900.595,US,True,,stop,0.000142875,634,32,0,2.36,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4188}"
+qwen/qwen3.5-27b,no-CoT,-22.9068,-47.0616,5692.246,BR,True,,stop,0.000140595,473,31,0,1.09,"{""country"": ""BR"", ""latitude"": -22.9068, ""longitude"": -47.0616}"
+minimax/minimax-m3,CoT,-28.9,-50.2,6086.608,BR,True,,stop,0.00072786,843,447,360,20.43,"{""reasoning"": ""Araucaria angustifolia (Paraná pine) trees dominate the landscape — a species endemic to southern Brazil's highlands, combined with the red soil, rural dirt road with stone retaining walls, and hilly green terrain strongly suggest the Serra Gaúcha/Catarinense region."", ""country"": ""BR"", ""latitude"": -28.9, ""longitude"": -50.2}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8510.575,,True,True,,,,,,19.45,
+google/gemini-3.5-flash,CoT (effort=medium),-21.2012,55.3685,14936.49,RE,True,,stop,0.0122475,1271,1149,1069,9.25,"```json
+{""reasoning"": ""The combination of tropical pine trees, lush undergrowth, and a narrow asphalt road with a distinct stone-block curb is highly characteristic of the forest roads (Routes Forestières) in Réunion Island."", ""country"": ""RE"", ""latitude"": -21.2012, ""longitude"": 55.3685}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-21.1142,55.5715,14956.047,RE,True,,stop,0.006714,1272,534,454,4.69,"```json
+{""reasoning"": ""The stone-lined curbs, specific pine vegetation mixed with tropical ferns, and the damp, high-altitude tropical climate are highly characteristic of the forest roads (Routes Forestières) in Réunion Island."", ""country"": ""RE"", ""latitude"": -21.1142, ""longitude"": 55.5715}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-21.135833,55.628333,14962.212,RE,True,,stop,0.002136,1190,39,0,1.2,"```json
+{""country"": ""RE"", ""latitude"": -21.135833, ""longitude"": 55.628333}
+```"
+xiaomi/mimo-v2.5,CoT,25.0,102.7,15006.342,CN,True,,stop,0.0004156376,787,1185,1128,12.73,"{""reasoning"": ""The pine forest on hilly terrain and concrete drainage infrastructure suggest a rural subtropical area, commonly found in southern China."", ""country"": ""CN"", ""latitude"": 25.0, ""longitude"": 102.7}"
+google/gemini-3.1-pro-preview,no-CoT,-20.3885,57.4682,15140.305,MU,True,,stop,0.002798,1189,35,0,16.49,"```json
+{""country"": ""MU"", ""latitude"": -20.3885, ""longitude"": 57.4682}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,23.315229415893555,104.73709106445312,15196.657,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-6.05,145.38,15323.413,PG,True,,stop,0.006185,797,88,0,3.53,"{""reasoning"": ""Tropical highland vegetation with pines and palms, rough unpaved road, right-hand drive vehicle suggests Papua New Guinea highlands."", ""country"": ""PG"", ""latitude"": -6.05, ""longitude"": 145.38}"
+anthropic/claude-opus-4.8,no-CoT,-6.083,145.388,15324.051,PG,True,,stop,0.00408,666,30,0,8.25,"{""country"": ""PG"", ""latitude"": -6.083, ""longitude"": 145.388}"
+qwen/qwen3.5-35b-a3b,no-CoT,16.6012,120.8234,15563.446,PH,True,,stop,0.00010295,473,32,0,2.26,"{""country"": ""PH"", ""latitude"": 16.6012, ""longitude"": 120.8234}"
+qwen/qwen3.5-9b,no-CoT,16.45,120.63,15587.271,PH,True,,stop,8.741e-05,473,28,0,1.25,"{""country"": ""PH"", ""latitude"": 16.45, ""longitude"": 120.63}"
+x-ai/grok-4.3,CoT,16.41,120.59,15593.079,PH,True,,stop,0.002134,676,650,584,5.02,"{""reasoning"": ""Lush pine-dominated montane forest, unpaved road with low stone retaining wall/barrier, left-hand-drive vehicle interior and tropical highland light all point to Cordillera region of northern Philippines."", ""country"": ""PH"", ""latitude"": 16.41, ""longitude"": 120.59}"
+google/gemma-4-31b-it,no-CoT,14.6812,121.0581,15746.069,PH,True,,stop,0.00019501,408,37,0,7.85,"```json
+{""country"": ""PH"", ""latitude"": 14.6812, ""longitude"": 121.0581}
+```"
+xiaomi/mimo-v2.5,no-CoT,10.3157,123.8854,16021.42,PH,True,,stop,8.17376e-05,708,32,0,1.84,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,7.879025936126709,100.33873748779297,16882.427,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,4.524288654327393,101.3651351928711,17266.925,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,-6.8915,107.6107,18513.794,ID,True,,stop,0.0002163,473,31,0,7.78,"{""country"": ""ID"", ""latitude"": -6.8915, ""longitude"": 107.6107}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.58,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,19.03,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.49,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.5,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.58,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.86,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.12,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.38,

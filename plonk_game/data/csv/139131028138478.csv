@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,61.736024432748,6.4741487016714,0.0,NO,True,,,,,,,,"Skei, Jolster, Sogn og Fjordane, NO"
+openai/gpt-5.5,CoT,61.8045,6.8132,19.39,NO,True,,stop,0.016755,621,455,370,17.73,"{""reasoning"":""The narrow right-driving rural road, Norwegian-style roadside reflector posts, wrapped hay bales, birch/conifer vegetation, and steep snow-dusted fjord-valley mountains strongly indicate western Norway. The landscape most closely matches the agricultural valleys around Stryn/Olden in Vestland."",""country"":""NO"",""latitude"":61.8045,""longitude"":6.8132}"
+minimax/minimax-m3,CoT,61.95,6.55,24.124,NO,True,,stop,0.00066066,843,391,303,11.12,"{""reasoning"": ""Red wooden buildings with Scandinavian alpine architecture, snow-capped mountains, birch trees with autumn foliage, white concrete roadside bollards, and right-hand driving all point to western Norway, likely along a valley road in Møre og Fjordane region near Stryn or Hellesylt."", ""country"": ""NO"", ""latitude"": 61.95, ""longitude"": 6.55}"
+google/gemini-3.5-flash,CoT (effort=high),61.904,6.825,26.235,NO,True,,stop,0.012978,1272,1230,1160,14.21,"{""reasoning"": ""The dramatic snow-capped mountains, birch trees with autumn foliage, and white plastic-wrapped silage bales in the fields are highly characteristic of western Norway, specifically the valleys around the fjords."", ""country"": ""NO"", ""latitude"": 61.904, ""longitude"": 6.825}"
+moonshotai/kimi-k2.6,no-CoT,62.0,6.8,33.962,NO,True,,stop,0.000289692,603,23,0,16.78,"{""country"": ""NO"", ""latitude"": 62.0, ""longitude"": 6.8}"
+qwen/qwen3.5-397b-a17b,no-CoT,62.0833,7.0,47.425,NO,True,,stop,0.0003182,473,27,0,5.68,"{""country"": ""NO"", ""latitude"": 62.0833, ""longitude"": 7.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,61.82151412963867,7.4420294761657715,51.772,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,61.946868896484375,7.3922295570373535,53.577,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,62.1856,6.0662,54.348,NO,True,,stop,0.00341,544,23,0,1.53,"{""country"":""NO"",""latitude"":62.1856,""longitude"":6.0662}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,61.992034912109375,7.398153781890869,56.194,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,62.15,7.25,61.363,NO,True,,stop,6.178e-05,406,31,0,14.74,"```json
+{""country"": ""NO"", ""latitude"": 62.15, ""longitude"": 7.25}
+```"
+anthropic/claude-opus-4.8,no-CoT,62.2,7.3,67.261,NO,True,,stop,0.00408,666,30,0,2.4,"{""country"": ""NO"", ""latitude"": 62.2, ""longitude"": 7.3}"
+google/gemini-3.5-flash,CoT (effort=medium),62.3112,6.9385,68.389,NO,True,,stop,0.0082335,1271,703,642,9.12,"{""reasoning"": ""The dramatic snow-capped mountains, birch trees with autumn foliage, white silage bales, and road characteristics are highly characteristic of western Norway."", ""country"": ""NO"", ""latitude"": 62.3112, ""longitude"": 6.9385}"
+anthropic/claude-opus-4.8,CoT,62.25,7.3,71.593,NO,True,,stop,0.00636,797,95,0,9.66,"{""reasoning"": ""Snow-capped steep mountains, autumn birches, white-wrapped hay bales, red barns, and yellow road edge lines indicate a Norwegian fjord valley."", ""country"": ""NO"", ""latitude"": 62.25, ""longitude"": 7.3}"
+qwen/qwen3.5-35b-a3b,no-CoT,61.1345,7.1892,76.935,NO,True,,stop,0.00016776,474,30,0,2.63,"{""country"": ""NO"", ""latitude"": 61.1345, ""longitude"": 7.1892}"
+google/gemma-4-26b-a4b-it,CoT,61.1125,7.1833,78.927,NO,True,,stop,0.00046671,491,1036,954,31.01,"{""reasoning"": ""The snow-capped mountains, birch trees in autumn colors, and right-hand traffic are highly characteristic of the mountainous valleys in Western Norway."", ""country"": ""NO"", ""latitude"": 61.1125, ""longitude"": 7.1833}"
+x-ai/grok-4.3,no-CoT,62.35,7.3,80.71,NO,True,,stop,0.0007278,592,22,0,0.91,"{""country"": ""NO"", ""latitude"": 62.35, ""longitude"": 7.3}"
+minimax/minimax-m3,no-CoT,62.5,7.0,89.242,NO,True,,stop,0.00022248,752,23,0,5.65,"{""country"": ""NO"", ""latitude"": 62.5, ""longitude"": 7.0}"
+moonshotai/kimi-k2.6,CoT,62.45,7.5,95.67,NO,True,,stop,0.011065,682,3049,3210,80.56,"{""reasoning"": ""White-wrapped hay bales and red wooden barns are iconic to Norwegian agriculture, while the steep snow-capped mountains and valley geography match Western Norway's fjord regions."", ""country"": ""NO"", ""latitude"": 62.45, ""longitude"": 7.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),62.5312,7.4418,101.719,NO,True,,stop,0.002091,1190,34,0,1.43,"```json
+{""country"": ""NO"", ""latitude"": 62.5312, ""longitude"": 7.4418}
+```"
+google/gemini-3.1-pro-preview,CoT,62.55,7.65,109.196,NO,True,,stop,0.005242,1271,225,153,11.11,"{
+  ""reasoning"": ""The dashed white edge lines on the road, steep snow-capped mountains, and general landscape are highly characteristic of Norway. The scenery suggests the western fjord region."",
+  ""country"": ""NO"",
+  ""latitude"": 62.55,
+  ""longitude"": 7.65
+}"
+google/gemini-3.5-flash,CoT (effort=low),62.5385,7.6892,109.309,NO,True,,stop,0.0044085,1271,278,209,11.17,"{""reasoning"": ""The dramatic snow-capped mountains, birch trees with autumn foliage, white-wrapped hay bales, and narrow asphalt road with solid white edge lines are highly characteristic of western Norway."", ""country"": ""NO"", ""latitude"": 62.5385, ""longitude"": 7.6892}"
+google/gemini-3.1-pro-preview,no-CoT,62.5521,7.6834,110.367,NO,True,,stop,0.004298,1189,160,126,4.16,"```json
+{""country"": ""NO"", ""latitude"": 62.5521, ""longitude"": 7.6834}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,47.3294,11.0631,1628.081,AT,True,,stop,0.00018772,474,31,0,11.21,"{""country"": ""AT"", ""latitude"": 47.3294, ""longitude"": 11.0631}"
+xiaomi/mimo-v2.5,no-CoT,47.45,13.25,1645.288,AT,True,,stop,8.03376e-05,708,27,0,2.91,"{""country"": ""AT"", ""latitude"": 47.45, ""longitude"": 13.25}"
+qwen/qwen3.5-397b-a17b,CoT,47.413,13.135,1647.429,AT,True,,stop,0.01498665,553,4195,4075,159.46,"{
+""reasoning"": ""The landscape features high Alpine mountains with snow-capped peaks (likely the Hochkönig massif) and lush green valleys with white wrapped hay bales, characteristic of Austria. The vehicle drives on the right, and the license plate appears to be a standard EU format (white with blue strip), consistent with Austrian registration on the B311 road near Mühlbach am Hochkönig."",
+""country"": ""AT"",
+""latitude"": 47.413,
+""longitude"": 13.135
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,47.18568420410156,11.373961448669434,1647.485,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,47.14959716796875,11.37037181854248,1651.404,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,46.85,8.65,1661.031,CH,True,,stop,0.002734,676,890,811,14.68,"{""reasoning"": ""Right-hand traffic (edge line on right from driver view), European vehicles, Alpine terrain with snow-capped peaks, autumn birch/conifer mix and round white field markers point to Central Europe Alps; distinctive valley/mountain profile matches Swiss/Austrian border region."", ""country"": ""CH"", ""latitude"": 46.85, ""longitude"": 8.65}"
+qwen/qwen3.6-35b-a3b,no-CoT,46.8182,8.2277,1662.538,CH,True,,stop,0.00010095,473,30,0,2.31,"{""country"": ""CH"", ""latitude"": 46.8182, ""longitude"": 8.2277}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,47.04326629638672,11.35810661315918,1662.935,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,46.736,7.965,1670.629,CH,True,,stop,0.0112319896,553,11544,11431,45.5,"```json
+{
+  ""reasoning"": ""The image shows a right-hand traffic road in an Alpine setting with snow-capped mountains, typical of Switzerland. The specific mountain shape resembles the Brienzer Rothorn, and the road layout with hay bales and chalet-style buildings points to the area near Iseltwald on the road to Brienz."",
+  ""country"": ""CH"",
+  ""latitude"": 46.736,
+  ""longitude"": 7.965
+}
+```"
+qwen/qwen3.6-27b,no-CoT,46.5833,7.9167,1687.418,CH,True,,stop,0.00025155,474,30,0,9.87,"{""country"": ""CH"", ""latitude"": 46.5833, ""longitude"": 7.9167}"
+qwen/qwen3.5-27b,no-CoT,46.5833,7.9833,1687.655,CH,True,,stop,0.000139035,473,30,0,7.39,"{""country"": ""CH"", ""latitude"": 46.5833, ""longitude"": 7.9833}"
+qwen/qwen3.5-9b,no-CoT,46.5167,8.0167,1695.175,CH,True,,stop,5.19e-05,474,30,0,10.26,"{""country"": ""CH"", ""latitude"": 46.5167, ""longitude"": 8.0167}"
+mistralai/mistral-medium-3-5,no-CoT,46.5,7.5,1695.435,CH,True,,stop,0.001131,634,24,0,0.95,"{""country"": ""CH"", ""latitude"": 46.5, ""longitude"": 7.5}"
+xiaomi/mimo-v2.5,CoT,47.15,15.3,1715.709,AT,True,,stop,0.0001896776,787,378,301,54.84,"{""reasoning"": ""Right-hand vehicle traffic, snow-capped Eastern Alps mountain silhouette, and rural alpine farm hay bales indicate this is an Austrian rural alpine region. The mountain and road layout match central Austria's Styria area."", ""country"": ""AT"", ""latitude"": 47.15, ""longitude"": 15.3}"
+mistralai/mistral-small-2603,no-CoT,46.3125,7.5636,1716.434,CH,True,,stop,0.000141375,634,30,0,1.49,"{""country"": ""CH"", ""latitude"": 46.3125, ""longitude"": 7.5636}"
+mistralai/mistral-small-2603,CoT,44.76,6.72,1887.715,FR,True,,stop,0.00047604,716,726,816,5.85,"{""reasoning"": ""European road markings and bollard style combined with Alpine mountainous terrain and autumn vegetation indicate the French Alps region."", ""country"": ""FR"", ""latitude"": 44.76, ""longitude"": 6.72}"
+google/gemma-4-31b-it,CoT,38.8977,-77.0364,5949.751,US,True,,stop,0.00123133,494,2111,2068,11.94,"{""reasoning"": ""No image was provided for analysis."", ""country"": ""US"", ""latitude"": 38.8977, ""longitude"": -77.0364}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6886.556,,True,True,,,,,,12.62,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.1,

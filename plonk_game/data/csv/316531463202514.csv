@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,43.836216585887,-101.65726487606,0.0,US,True,,,,,,,,"Kadoka, Jackson County, South Dakota, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.71464920043945,-101.6879653930664,13.741,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.71098327636719,-101.66675567626953,13.946,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,43.05705642700195,-101.47686767578125,87.854,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),43.8115,-100.0112,132.08,US,True,,stop,0.007722,1272,646,574,4.51,"{""reasoning"": ""The flat, grassy plains, wide divided highway with shoulder rumble strips, and distant RV strongly indicate a US Interstate in the Great Plains, likely I-90 in South Dakota."", ""country"": ""US"", ""latitude"": 43.8115, ""longitude"": -100.0112}"
+google/gemini-3.5-flash,CoT (effort=medium),43.8012,-99.8541,144.719,US,True,,stop,0.0050025,1271,344,267,3.38,"{""reasoning"": ""The extremely flat, grassy plains combined with a wide interstate highway featuring right-side rumble strips and a white dashed lane divider are highly characteristic of the US Great Plains, specifically Interstate 90 in South Dakota."", ""country"": ""US"", ""latitude"": 43.8012, ""longitude"": -99.8541}"
+google/gemini-3.1-pro-preview,CoT,43.75,-99.35,185.435,US,True,,stop,0.005712,1272,264,183,4.51,"{
+  ""reasoning"": ""The wide, flat divided highway with rumble strips and expansive green plains is highly characteristic of the US Great Plains. The road markings and landscape suggest an Interstate highway in a state like South Dakota or Nebraska."",
+  ""country"": ""US"",
+  ""latitude"": 43.75,
+  ""longitude"": -99.35
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.7845,-99.3281,186.979,US,True,,stop,0.0020985,1189,35,0,23.83,"```json
+{""country"": ""US"", ""latitude"": 43.7845, ""longitude"": -99.3281}
+```"
+google/gemini-3.1-pro-preview,no-CoT,43.8561,-99.3218,187.297,US,True,,stop,0.002798,1189,35,0,29.08,"```json
+{""country"": ""US"", ""latitude"": 43.8561, ""longitude"": -99.3218}
+```"
+google/gemma-4-31b-it,no-CoT,41.25,-102.5,295.741,US,True,,stop,6.218e-05,406,32,0,10.87,"```json
+{""country"": ""US"", ""latitude"": 41.25, ""longitude"": -102.5}
+```"
+anthropic/claude-opus-4.8,no-CoT,46.8,-100.5,341.743,US,True,,stop,0.004055,666,29,0,2.65,"{""country"": ""US"", ""latitude"": 46.8, ""longitude"": -100.5}"
+anthropic/claude-opus-4.8,CoT,46.9,-100.5,352.457,US,True,,stop,0.00641,797,97,0,10.09,"{""reasoning"": ""Flat green prairie with divided highway, rumble strips, right-side driving suggests US/Canada Great Plains; vegetation and terrain match North Dakota/Montana interstate."", ""country"": ""US"", ""latitude"": 46.9, ""longitude"": -100.5}"
+google/gemini-3.5-flash,CoT (effort=low),40.8122,-99.8438,367.799,US,True,,stop,0.003816,1272,212,140,9.5,"{""reasoning"": ""The extremely flat, grassy landscape combined with a divided interstate highway featuring shoulder rumble strips is highly characteristic of the Great Plains in the United States, specifically along Interstate 80 in Nebraska."", ""country"": ""US"", ""latitude"": 40.8122, ""longitude"": -99.8438}"
+qwen/qwen3.5-122b-a10b,no-CoT,40.7831,-99.3456,389.045,US,True,,stop,0.00018772,474,31,0,13.16,"{""country"": ""US"", ""latitude"": 40.7831, ""longitude"": -99.3456}"
+qwen/qwen3.6-35b-a3b,CoT,41.15,-98.5,395.194,US,True,,stop,0.00346462285,553,3497,3384,35.67,"```json
+{
+  ""reasoning"": ""The image shows a divided highway with right-hand traffic, standard US Interstate lane markings (dashed white lines), and a blue service sign on the right shoulder, which is characteristic of the US Interstate Highway System. The flat, grassy terrain and scattered deciduous trees strongly suggest the Great Plains region, likely Nebraska or the Dakotas."",
+  ""country"": ""US"",
+  ""latitude"": 41.15,
+  ""longitude"": -98.5
+}
+```"
+qwen/qwen3.5-9b,no-CoT,43.8563,-96.6078,404.88,US,True,,stop,5.205e-05,474,31,0,2.71,"{""country"": ""US"", ""latitude"": 43.8563, ""longitude"": -96.6078}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.85,-98.35,429.038,US,True,,stop,0.00035028,473,27,0,1.9,"{""country"": ""US"", ""latitude"": 40.85, ""longitude"": -98.35}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,48.072261810302734,-99.50871276855469,499.399,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,46.8772,-96.7898,508.727,US,True,,stop,0.0001943,473,31,0,14.2,"{""country"": ""US"", ""latitude"": 46.8772, ""longitude"": -96.7898}"
+openai/gpt-5.5,no-CoT,40.7882,-96.8205,522.373,US,True,,stop,0.00344,544,24,0,7.56,"{""country"":""US"",""latitude"":40.7882,""longitude"":-96.8205}"
+mistralai/mistral-medium-3-5,no-CoT,40.0,-98.0,522.874,US,True,,stop,0.0011385,634,25,0,0.92,"{""country"": ""US"", ""latitude"": 40.0, ""longitude"": -98.0}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.2565,-96.0123,543.992,US,True,,stop,0.0001865625,473,31,0,1.98,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -96.0123}"
+moonshotai/kimi-k2.6,CoT,39.5,-98.5,548.764,US,True,,stop,0.0114444,680,3057,3531,100.47,"{""reasoning"": ""Flat grassland prairie with North American rural highway markings including paved shoulder rumble strips, dashed centerline, and standard signpost; right-hand traffic confirms the Great Plains region of the United States."", ""country"": ""US"", ""latitude"": 39.5, ""longitude"": -98.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,48.61648178100586,-99.41085815429688,558.858,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,48.639625549316406,-99.50375366210938,559.142,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,41.1456,-95.8903,559.348,US,True,,stop,0.000140595,473,31,0,2.17,"{""country"": ""US"", ""latitude"": 41.1456, ""longitude"": -95.8903}"
+qwen/qwen3.5-397b-a17b,CoT,39.05,-99.3,567.247,US,True,,stop,0.0108462,553,2934,2838,30.43,"{""reasoning"": ""The extremely flat horizon and vast, open prairie landscape are characteristic of the Great Plains in the United States, specifically Kansas. The road infrastructure, including the wide asphalt shoulders with rumble strips and right-hand traffic flow, aligns with US Department of Transportation standards found on highways like I-70."", ""country"": ""US"", ""latitude"": 39.05, ""longitude"": -99.30}"
+qwen/qwen3.6-35b-a3b,no-CoT,39.0,-98.5,598.627,US,True,,stop,0.0039658827,471,4030,3998,23.62,"{""country"": ""US"", ""latitude"": 39.0, ""longitude"": -98.5}"
+x-ai/grok-4.3,no-CoT,38.85,-98.4,617.4,US,True,,stop,0.0005934,592,22,0,1.41,"{""country"": ""US"", ""latitude"": 38.85, ""longitude"": -98.4}"
+moonshotai/kimi-k2.6,no-CoT,41.0,-95.0,630.667,US,True,,stop,0.00051219,602,23,0,14.71,"{""country"": ""US"", ""latitude"": 41.0, ""longitude"": -95.0}"
+x-ai/grok-4.3,CoT,38.84,-97.61,650.041,US,True,,stop,0.0015115,676,401,339,13.33,"{""reasoning"": ""Right-hand traffic on divided highway with US-style rumble strips/shoulder markings, vast flat agricultural plains, and distant horizon indicate US Great Plains (Kansas/Nebraska)."", ""country"": ""US"", ""latitude"": 38.84, ""longitude"": -97.61}"
+minimax/minimax-m3,no-CoT,38.5,-97.8,675.321,US,True,,stop,0.00032082,767,124,127,3.26,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -97.8}"
+openai/gpt-5.5,CoT,49.8897,-97.9664,729.035,CA,True,,stop,0.017085,621,466,380,14.0,"{""reasoning"":""Flat, treeless prairie farmland with a wide divided highway, right-side driving, North American lane markings and shoulder rumble strips strongly point to the Canadian Prairies. The very flat Red River/Manitoba landscape and road style fit the Trans-Canada Highway west of Winnipeg."",""country"":""CA"",""latitude"":49.8897,""longitude"":-97.9664}"
+minimax/minimax-m3,CoT,50.2,-106.5,796.772,CA,True,,stop,0.00056982,845,312,318,14.29,"{""reasoning"": ""Extremely flat prairie terrain with endless grasslands to the horizon, combined with a divided highway featuring rumble strips and a typical North American road design, strongly suggests the Canadian Prairies, likely the Trans-Canada Highway through Saskatchewan."", ""country"": ""CA"", ""latitude"": 50.2, ""longitude"": -106.5}{""reasoning"": ""Extremely flat prairie terrain with endless grasslands to the horizon, combined with a divided highway featuring rumble strips and a typical North American road design, strongly suggests the Canadian Prairies, likely the Trans-Canada Highway through Saskatchewan."", ""country"": ""CA"", ""latitude"": 50.2, ""longitude"": -106.5}"
+xiaomi/mimo-v2.5,CoT,50.51,-105.52,797.183,CA,True,,stop,0.0001686776,787,303,215,19.46,"{""reasoning"": ""The expansive flat grassland prairie, highway with shoulder rumble strips, and North American-style vehicle/road infrastructure confirm this is the Canadian Prairies; the vegetation and terrain match central Saskatchewan. Country is Canada, coordinates set to the heart of this region."", ""country"": ""CA"", ""latitude"": 50.51, ""longitude"": -105.52}"
+xiaomi/mimo-v2.5,no-CoT,36.5,-100.5,821.63,US,True,,stop,8.00576e-05,708,26,0,0.95,"{""country"": ""US"", ""latitude"": 36.5, ""longitude"": -100.5}"
+mistralai/mistral-small-2603,no-CoT,38.9592,-77.1483,2106.391,US,True,,stop,0.000142125,634,31,0,7.61,"{""country"": ""US"", ""latitude"": 38.9592, ""longitude"": -77.1483}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10939.424,,True,True,,,,,,1.12,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.3,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.26,

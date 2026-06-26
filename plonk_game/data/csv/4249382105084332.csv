@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,21.012444556295,71.049967658185,0.0,IN,True,,,,,,,,"Una, Junagadh, Gujarat, IN"
+google/gemini-3.5-flash,no-CoT (effort=minimal),21.1245,70.7982,28.943,IN,True,,stop,0.0020985,1189,35,0,8.28,"```json
+{""country"": ""IN"", ""latitude"": 21.1245, ""longitude"": 70.7982}
+```"
+google/gemini-3.5-flash,CoT (effort=high),22.3,70.8,145.481,IN,True,,stop,0.0102135,1271,923,840,8.83,"```json
+{""reasoning"": ""The combination of lush green undergrowth, semi-arid Acacia-like trees (likely Prosopis juliflora), dark soil, and a narrow paved road without markings is highly characteristic of western India, particularly Gujarat, during or after the monsoon season."", ""country"": ""IN"", ""latitude"": 22.3, ""longitude"": 70.8}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),22.3072,70.8022,146.229,IN,True,,stop,0.0077025,1271,644,558,7.21,"```json
+{""reasoning"": ""The abundance of Prosopis juliflora (mesquite) trees, lush green undergrowth typical of the post-monsoon season, dark clayey soil, and narrow asphalt road without markings strongly point to western India, likely Gujarat."", ""country"": ""IN"", ""latitude"": 22.3072, ""longitude"": 70.8022}
+```"
+google/gemini-3.5-flash,CoT (effort=low),22.3072,72.1341,182.426,IN,True,,stop,0.00369,1272,198,120,2.55,"{""reasoning"": ""The narrow paved road without markings, flanked by dense Prosopis juliflora (mesquite) and acacia-like scrub vegetation under a bright, partly cloudy sky, is highly characteristic of rural western India, particularly Gujarat."", ""country"": ""IN"", ""latitude"": 22.3072, ""longitude"": 72.1341}"
+qwen/qwen3.5-122b-a10b,no-CoT,19.076,72.8777,287.769,IN,True,,stop,0.0002041,473,39,0,2.11,"{
+  ""country"": ""IN"",
+  ""latitude"": 19.0760,
+  ""longitude"": 72.8777
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,19.076,72.8777,287.769,IN,True,,stop,0.00010195,473,31,0,2.41,"{""country"": ""IN"", ""latitude"": 19.0760, ""longitude"": 72.8777}"
+anthropic/claude-opus-4.8,no-CoT,19.076,73.0479,299.858,IN,True,,stop,0.00413,666,32,0,9.58,"{""country"": ""IN"", ""latitude"": 19.0760, ""longitude"": 73.0479}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,22.74432373046875,73.28450775146484,300.405,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,21.345918655395508,73.95388793945312,303.361,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,22.709978103637695,73.3599853515625,304.06,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,19.0,74.0,380.876,IN,True,,stop,0.005064,1272,210,131,3.79,"{
+  ""reasoning"": ""The lush green vegetation with acacia-like trees and narrow paved road without markings are characteristic of rural India during or after the monsoon season. The landscape strongly resembles the Deccan Plateau region, such as Maharashtra."",
+  ""country"": ""IN"",
+  ""latitude"": 19.0,
+  ""longitude"": 74.0
+}"
+moonshotai/kimi-k2.6,no-CoT,19.5,74.5,397.236,IN,True,,stop,0.000283212,603,23,0,1.6,"{""country"": ""IN"", ""latitude"": 19.5, ""longitude"": 74.5}"
+anthropic/claude-opus-4.8,CoT,18.52,73.85,403.289,IN,True,,stop,0.006335,797,94,0,4.66,"{""reasoning"": ""Acacia/thorny trees and lush green undergrowth suggest a tropical dry region during monsoon; narrow paved rural road typical of rural India (Deccan region)."", ""country"": ""IN"", ""latitude"": 18.52, ""longitude"": 73.85}"
+qwen/qwen3.5-397b-a17b,CoT,18.58,73.92,404.104,IN,True,,stop,0.0092961,553,2588,2331,129.09,"{
+""reasoning"": ""The vegetation features tropical dry deciduous trees, specifically resembling Peltophorum pterocarpum (yellow flowers visible), which is ubiquitous in the Deccan Plateau of India. The narrow, unmarked asphalt road with dirt shoulders and overhead power lines is characteristic of rural infrastructure in the Maharashtra region."",
+""country"": ""IN"",
+""latitude"": 18.58,
+""longitude"": 73.92
+}"
+minimax/minimax-m3,no-CoT,20.5,75.5,466.184,IN,True,,stop,0.00035562,767,153,176,4.29,"{""country"": ""IN"", ""latitude"": 20.5, ""longitude"": 75.5}"
+google/gemma-4-31b-it,no-CoT,24.5851,73.8567,490.459,IN,True,,stop,6.718e-05,406,36,0,3.28,"```json
+{""country"": ""IN"", ""latitude"": 24.5851, ""longitude"": 73.8567}
+```"
+openai/gpt-5.5,no-CoT,15.3679,73.9268,697.276,IN,True,,stop,0.00341,544,23,0,1.27,"{""country"":""IN"",""latitude"":15.3679,""longitude"":73.9268}"
+moonshotai/kimi-k2.6,CoT,20.25,79.0,831.552,IN,True,,stop,0.014573655,681,3926,4135,65.65,"{""reasoning"": ""The dense acacia scrub and narrow asphalt road with earthen shoulders are characteristic of rural India during the monsoon season. The implied left-hand traffic pattern and road construction style are consistent with Indian rural highways."", ""country"": ""IN"", ""latitude"": 20.25, ""longitude"": 79.0}"
+google/gemini-3.1-pro-preview,no-CoT,21.1458,79.0882,834.044,IN,True,,stop,0.0028,1190,35,0,1.91,"```json
+{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}
+```"
+x-ai/grok-4.3,no-CoT,21.1458,79.0882,834.044,IN,True,,stop,0.0007328,592,24,0,0.9,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+qwen/qwen3.6-35b-a3b,no-CoT,17.385044,78.486671,878.735,IN,True,,stop,0.00011003135,473,35,0,1.42,"{""country"": ""IN"", ""latitude"": 17.385044, ""longitude"": 78.486671}"
+qwen/qwen3.5-9b,no-CoT,17.385,78.4867,878.74,IN,True,,stop,8.791e-05,473,30,0,3.35,"{""country"": ""IN"", ""latitude"": 17.385, ""longitude"": 78.4867}"
+qwen/qwen3.6-27b,no-CoT,28.6139,77.209,1048.743,IN,True,,stop,0.000235019,474,31,0,2.89,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+mistralai/mistral-medium-3-5,no-CoT,12.9716,77.5946,1132.57,IN,True,,stop,0.0011835,634,31,0,1.92,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.5-397b-a17b,no-CoT,12.9716,77.5946,1132.57,IN,True,,stop,0.0003322,473,31,0,8.07,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+xiaomi/mimo-v2.5,no-CoT,12.9716,77.5946,1132.57,IN,True,,stop,8.14576e-05,708,31,0,1.79,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+x-ai/grok-4.3,CoT,11.0168,76.9558,1277.692,IN,True,,stop,0.0021865,676,671,587,12.45,"{""reasoning"": ""Tropical/subtropical roadside vegetation with yellow-flowering trees (likely Cassia/Acacia spp.), lush green undergrowth, and narrow unmarked asphalt road with dirt shoulders are characteristic of rural South India; bright sky and road style further support this over Africa or Latin America."", ""country"": ""IN"", ""latitude"": 11.0168, ""longitude"": 76.9558}"
+qwen/qwen3.5-27b,no-CoT,22.5726,88.3639,1795.01,IN,True,,stop,0.00023764,474,44,0,3.84,"```json
+{
+  ""country"": ""IN"",
+  ""latitude"": 22.5726,
+  ""longitude"": 88.3639
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-1.525281310081482,43.924530029296875,3871.38,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-0.5167,36.95,4411.125,KE,True,,stop,0.00068502,845,408,397,14.96,"{""reasoning"": ""Lush tropical green vegetation with acacia-like trees, reddish lateritic soil visible at road edges, narrow unmarked rural paved road with power lines on the right, and bright tropical sky with cumulus clouds are all highly characteristic of the East African highlands during/after a rainy season — most consistent with central Kenya."", ""country"": ""KE"", ""latitude"": -0.5167, ""longitude"": 36.9500}{""reasoning"": ""Lush tropical green vegetation with acacia-like trees, reddish lateritic soil visible at road edges, narrow unmarked rural paved road with power lines on the right, and bright tropical sky with cumulus clouds are all highly characteristic of the East African highlands during/after a rainy season — most consistent with central Kenya."", ""country"": ""KE"", ""latitude"": -0.5167, ""longitude"": 36.9500}"
+qwen/qwen3.6-35b-a3b,CoT,-0.55,36.95,4413.246,KE,True,,stop,0.0040447381,553,4098,4001,44.67,"{""reasoning"": ""The distinctive umbrella-shaped Acacia trees (likely Acacia tortilis or Faidherbia albida) and the lush green vegetation on red soil are characteristic of the Kenyan highlands or Rift Valley. The narrow paved road with unpaved shoulders and simple concrete power poles further supports a rural location in Kenya."", ""country"": ""KE"", ""latitude"": -0.55, ""longitude"": 36.95}"
+xiaomi/mimo-v2.5,CoT,-1.35,37.0,4460.21,KE,True,,stop,0.0004439176,787,1286,1220,15.86,"{""reasoning"": ""Reddish laterite soil and acacia-dominated vegetation point to an East African savanna region. The narrow paved road with no markings is typical of rural areas in Kenya."", ""country"": ""KE"", ""latitude"": -1.35, ""longitude"": 37.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-14.378938674926758,30.065763473510742,5958.835,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-15.401922225952148,30.225900650024414,6020.154,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,CoT,42.85,141.35,6857.314,JP,True,,stop,0.0006516,716,907,932,6.78,"{""reasoning"": ""Left-hand traffic indicates a country like Japan, and the dense temperate forest with mixed coniferous/deciduous trees matches Hokkaido's landscape."", ""country"": ""JP"", ""latitude"": 42.85, ""longitude"": 141.35}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8045.306,,True,True,,,,,,7.91,
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,13329.925,US,True,,stop,0.000142875,634,32,0,1.55,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+openai/gpt-5.5,CoT,13.2615,-59.5832,13413.089,BB,True,,stop,0.014625,621,384,314,10.63,"{""reasoning"":""Narrow unmarked asphalt road through dense tropical dry scrub and left-side Caribbean road feel strongly suggest rural Barbados. The flat limestone-island vegetation and road style fit the less-developed northern/eastern parishes."",""country"":""BB"",""latitude"":13.2615,""longitude"":-59.5832}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.66,

@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,69.42334597725807,24.75330429874722,0.0,NO,True,,,,,,,,"Lakselv, Porsanger, Finnmark Fylke, NO"
+google/gemini-3.5-flash,CoT (effort=medium),69.4125,25.1234,14.517,NO,True,,stop,0.0077565,1271,650,579,6.12,"{""reasoning"": ""The subarctic birch forest, rolling hills, and road markings are highly characteristic of northern Scandinavia, specifically Finnmark in Norway, where the blue Google Street View car is frequently seen."", ""country"": ""NO"", ""latitude"": 69.4125, ""longitude"": 25.1234}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,69.34342193603516,24.2806396484375,20.53,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,69.34405517578125,24.272117614746094,20.801,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,69.31919860839844,24.061702728271484,29.465,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,69.5123,24.0156,30.423,NO,True,,stop,0.005374,1271,236,153,4.24,"{
+  ""reasoning"": ""The dashed white edge lines on the road are characteristic of Norway. The birch-dominated boreal forest and the blue Google car hood strongly point to northern Norway, likely in the Finnmark region."",
+  ""country"": ""NO"",
+  ""latitude"": 69.5123,
+  ""longitude"": 24.0156
+}"
+anthropic/claude-opus-4.8,no-CoT,69.7,24.5,32.297,NO,True,,stop,0.00408,666,30,0,2.78,"{""country"": ""NO"", ""latitude"": 69.7, ""longitude"": 24.5}"
+anthropic/claude-opus-4.8,CoT,69.8,25.5,50.899,NO,True,,stop,0.006335,797,94,0,9.53,"{""reasoning"": ""Subarctic birch forest, low rolling tundra terrain, and yellow-edge road markings suggest far northern Scandinavia, likely Finnmark, Norway."", ""country"": ""NO"", ""latitude"": 69.8, ""longitude"": 25.5}"
+google/gemini-3.5-flash,CoT (effort=high),69.9125,25.1234,56.239,NO,True,,stop,0.0124275,1271,1169,1096,10.35,"{""reasoning"": ""The narrow paved road with dashed white edge lines, subarctic mountain birch vegetation, and the blue car hood with a black bug deflector are highly characteristic of northern Norway (Finnmark)."", ""country"": ""NO"", ""latitude"": 69.9125, ""longitude"": 25.1234}"
+openai/gpt-5.5,CoT,69.3457,23.1458,63.523,NO,True,,stop,0.015735,621,421,343,16.8,"{""reasoning"":""Right-side driving on a narrow Scandinavian road with white edge lines, boreal birch forest and subarctic rolling terrain point most strongly to northern Norway. The lack of centerline and remote taiga landscape fit Finnmark/Troms rural roads."",""country"":""NO"",""latitude"":69.3457,""longitude"":23.1458}"
+google/gemini-3.1-pro-preview,no-CoT,69.9312,23.5123,74.064,NO,True,,stop,0.003962,1189,132,97,10.02,"```json
+{""country"": ""NO"", ""latitude"": 69.9312, ""longitude"": 23.5123}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),69.891234,23.284567,77.004,NO,True,,stop,0.002136,1190,39,0,1.37,"```json
+{""country"": ""NO"", ""latitude"": 69.891234, ""longitude"": 23.284567}
+```"
+google/gemini-3.5-flash,CoT (effort=low),69.9512,23.2845,81.602,NO,True,,stop,0.003798,1272,210,145,2.48,"{""reasoning"": ""The blue car hood, white dashed outer road lines, and subarctic birch forest vegetation are highly characteristic of northern Norway, specifically the Finnmark region."", ""country"": ""NO"", ""latitude"": 69.9512, ""longitude"": 23.2845}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,68.47429656982422,28.133073806762695,171.307,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,68.35138702392578,28.273990631103516,184.593,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,69.7345,29.8412,200.347,NO,True,,stop,0.00341,544,23,0,1.62,"{""country"":""NO"",""latitude"":69.7345,""longitude"":29.8412}"
+google/gemma-4-31b-it,no-CoT,68.35,20.12,220.562,NO,True,,stop,6.218e-05,406,32,0,3.95,"```json
+{""country"": ""NO"", ""latitude"": 68.35, ""longitude"": 20.12}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,69.6685,18.1194,259.086,NO,True,,stop,0.0003794,473,31,0,2.91,"{""country"": ""NO"", ""latitude"": 69.6685, ""longitude"": 18.1194}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,66.96783447265625,23.64875030517578,276.814,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,64.9631,27.9775,514.884,FI,True,,stop,5.205e-05,474,31,0,7.65,"{""country"": ""FI"", ""latitude"": 64.9631, ""longitude"": 27.9775}"
+qwen/qwen3.5-122b-a10b,no-CoT,64.8392,18.6103,574.079,SE,True,,stop,0.0002355,473,39,0,2.34,"{
+  ""country"": ""SE"",
+  ""latitude"": 64.8392,
+  ""longitude"": 18.6103
+}"
+qwen/qwen3.6-27b,no-CoT,64.13,26.52,593.606,FI,True,,stop,0.0001863,473,27,0,16.06,"{""country"": ""FI"", ""latitude"": 64.13, ""longitude"": 26.52}"
+qwen/qwen3.5-27b,no-CoT,63.8547,25.7134,620.631,FI,True,,stop,0.00021684,474,36,0,1.17,"```json
+{""country"": ""FI"", ""latitude"": 63.8547, ""longitude"": 25.7134}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,63.8245,17.3562,701.796,SE,True,,stop,9.736e-05,474,31,0,1.74,"{""country"": ""SE"", ""latitude"": 63.8245, ""longitude"": 17.3562}"
+x-ai/grok-4.3,no-CoT,63.35,16.55,766.347,SE,True,,stop,0.0005934,592,22,0,6.79,"{""country"": ""SE"", ""latitude"": 63.35, ""longitude"": 16.55}"
+qwen/qwen3.6-35b-a3b,no-CoT,63.5,15.5,774.486,SE,True,,stop,0.0001348,474,25,0,2.51,"{""country"": ""SE"", ""latitude"": 63.5, ""longitude"": 15.5}"
+x-ai/grok-4.3,CoT,63.2,16.5,782.561,SE,True,,stop,0.002119,676,644,570,6.06,"{""reasoning"": ""Boreal mixed birch/conifer forest on rolling hills, right-hand traffic with standard EU-style dashed center + solid edge lines, and gravel shoulders point to Fennoscandia; blue sky and autumn foliage narrow to late-summer northern Europe."", ""country"": ""SE"", ""latitude"": 63.2, ""longitude"": 16.5}"
+moonshotai/kimi-k2.6,CoT,62.4,27.5,790.648,FI,True,,stop,0.009156,680,2167,2579,37.77,"{""reasoning"": ""White dashed center line and right-hand traffic align with Nordic road standards excluding Norway; mixed boreal forest with birch understory and rolling hills matches central Finland's lakeland terrain."", ""country"": ""FI"", ""latitude"": 62.4, ""longitude"": 27.5}"
+minimax/minimax-m3,CoT,62.15,9.55,1059.378,NO,True,,stop,0.00070266,843,426,341,17.25,"{""reasoning"": ""Birch-dominated sparse sub-arctic forest with rolling treeless terrain, simple white road markings on a two-lane secondary highway, right-hand traffic, and lack of guardrails all point to a Norwegian mountain plateau road, likely in the Dovrefjell/Rondane area."", ""country"": ""NO"", ""latitude"": 62.15, ""longitude"": 9.55}"
+xiaomi/mimo-v2.5,no-CoT,62.4734,6.1549,1135.122,NO,True,,stop,8.11776e-05,708,30,0,2.78,"{""country"": ""NO"", ""latitude"": 62.4734, ""longitude"": 6.1549}"
+mistralai/mistral-medium-3-5,no-CoT,60.1234,10.4567,1229.582,NO,True,,stop,0.0011835,634,31,0,1.03,"{""country"": ""NO"", ""latitude"": 60.1234, ""longitude"": 10.4567}"
+xiaomi/mimo-v2.5,CoT,48.43,-70.82,5262.921,CA,True,,stop,0.0001849176,787,361,289,6.87,"{""reasoning"": ""The boreal (taiga) forest, right-hand traffic on a rural paved road with Canadian-style road markings, and northern temperate climate/terrain confirm this is northern Quebec, Canada."", ""country"": ""CA"", ""latitude"": 48.43, ""longitude"": -70.82}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.44,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.53,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,13.26,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.43,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,12.81,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.35,

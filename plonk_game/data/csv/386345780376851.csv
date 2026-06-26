@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-7.549141505289795,-63.29334377799979,0.0,BR,True,,,,,,,,"Humaita, Humaita, Amazonas, BR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-8.84631061553955,-63.87364959716797,157.746,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-8.846498489379883,-63.885337829589844,158.29,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-8.857306480407715,-63.93191909790039,161.549,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-9.5,-56.0,830.79,BR,True,,stop,0.00747,949,109,0,15.72,"{""reasoning"": ""Reddish-orange dusty dirt road through cleared tropical savanna/farmland with sparse trees suggests deforested Amazon frontier in Brazil; dry season conditions and vegetation typical of interior states."", ""country"": ""BR"", ""latitude"": -9.5, ""longitude"": -56.0}"
+anthropic/claude-opus-4.8,no-CoT,-9.5,-56.0,830.79,BR,True,,stop,0.00484,818,30,0,9.67,"{""country"": ""BR"", ""latitude"": -9.5, ""longitude"": -56.0}"
+openai/gpt-5.5,CoT,-12.5562,-55.7248,998.076,BR,True,,stop,0.017185,755,447,371,41.08,"{""reasoning"":""The flat, dusty lateritic unpaved road through cerrado-like tropical vegetation and agricultural clearings is most consistent with rural central Brazil. Sparse utility poles and simple white roadside marker stakes fit interior Mato Grosso/Rondônia backroads."",""country"":""BR"",""latitude"":-12.5562,""longitude"":-55.7248}"
+moonshotai/kimi-k2.6,CoT,-12.5,-55.0,1061.65,BR,True,,stop,0.006404436,834,1790,1719,49.0,"{""reasoning"": ""The bright red-orange laterite soil and tropical scrub vegetation are unmistakable signatures of the Brazilian Cerrado biome, and the unpaved rural road with simple fencing matches the infrastructure of Brazil's central agricultural frontier."", ""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -55.0}"
+google/gemma-4-31b-it,no-CoT,-12.5,-55.0,1061.65,BR,True,,stop,5.538e-05,406,30,0,8.2,"```json
+{""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -55.0}
+```"
+qwen/qwen3.5-27b,no-CoT,-14.235,-51.9253,1446.162,BR,True,,stop,0.00022275,585,30,0,3.53,"{""country"": ""BR"", ""latitude"": -14.235, ""longitude"": -51.9253}"
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.9253,1446.162,BR,True,,stop,0.0002279,585,31,0,28.99,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9253}"
+qwen/qwen3.6-35b-a3b,no-CoT,-14.235,-51.9253,1446.162,BR,True,,stop,0.0001652,586,30,0,2.07,"{""country"": ""BR"", ""latitude"": -14.235, ""longitude"": -51.9253}"
+qwen/qwen3.5-35b-a3b,no-CoT,-14.23502,-51.92528,1446.165,BR,True,,stop,0.00011704,586,35,0,1.56,"{""country"": ""BR"", ""latitude"": -14.235020, ""longitude"": -51.925280}"
+openai/gpt-5.5,no-CoT,-10.1847,-48.3336,1669.228,BR,True,,stop,0.00414,678,25,0,1.95,"{""country"":""BR"",""latitude"":-10.1847,""longitude"":-48.3336}"
+qwen/qwen3.5-9b,no-CoT,-10.7954,-47.8479,1733.126,BR,True,,stop,6.325e-05,586,31,0,3.79,"{""country"": ""BR"", ""latitude"": -10.7954, ""longitude"": -47.8479}"
+qwen/qwen3.5-397b-a17b,no-CoT,-13.5,-47.5,1848.077,BR,True,,stop,0.0003672,585,25,0,1.84,"{""country"": ""BR"", ""latitude"": -13.5, ""longitude"": -47.5}"
+mistralai/mistral-medium-3-5,no-CoT,-3.7172,-38.5431,2771.03,BR,True,,stop,0.001404,786,30,0,1.24,"{""country"": ""BR"", ""latitude"": -3.7172, ""longitude"": -38.5431}"
+minimax/minimax-m3,CoT,11.2,-4.4,6840.486,BF,True,,stop,0.00061266,995,313,237,11.94,"{""reasoning"": ""Reddish-orange laterite (cuirasse) dirt road with tropical savanna vegetation including banana plants and scattered trees, dust haze, and power lines are highly characteristic of West Africa's Sudano-Sahelian zone, most likely Burkina Faso."", ""country"": ""BF"", ""latitude"": 11.2, ""longitude"": -4.4}"
+x-ai/grok-4.3,no-CoT,6.15,-1.65,7004.801,GH,True,,stop,0.0007334,704,22,0,1.85,"{""country"": ""GH"", ""latitude"": 6.15, ""longitude"": -1.65}"
+x-ai/grok-4.3,CoT,6.72,-1.65,7017.835,GH,True,,stop,0.002029,788,552,490,4.99,"{""reasoning"": ""Red lateritic dirt road, dusty conditions, scattered palms/savanna trees and embankment match rural West Africa; right-hand driving implied by vehicle interior and typical Ghana road style."", ""country"": ""GH"", ""latitude"": 6.72, ""longitude"": -1.65}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7065.649,,True,True,,,,,,6.89,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,9.807808876037598,2.5711071491241455,7544.463,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,8.315452575683594,5.493704795837402,7824.901,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,6.834356307983398,8.010966300964355,8067.203,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,28.6139,77.209,15262.718,IN,True,,stop,0.0001359,786,30,0,10.64,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+xiaomi/mimo-v2.5,CoT,19.76,96.08,17410.151,MM,True,,stop,0.0001706376,899,254,193,49.14,"{""reasoning"": ""The unpaved, dusty road, reddish laterite soil, tropical vegetation, and simple rural infrastructure are highly characteristic of rural Myanmar."", ""country"": ""MM"", ""latitude"": 19.76, ""longitude"": 96.08}"
+minimax/minimax-m3,no-CoT,19.76,96.13,17414.746,MM,True,,stop,0.00041322,919,163,178,7.32,"{""country"": ""MM"", ""latitude"": 19.76, ""longitude"": 96.13}"
+xiaomi/mimo-v2.5,no-CoT,14.5,100.5,18086.066,TH,True,,stop,9.57376e-05,820,26,0,3.25,"{""country"": ""TH"", ""latitude"": 14.5, ""longitude"": 100.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,16.8211,104.1954,18310.037,TH,True,,stop,0.00021866,585,32,0,7.02,"{""country"": ""TH"", ""latitude"": 16.8211, ""longitude"": 104.1954}"
+google/gemini-3.5-flash,CoT (effort=medium),13.3524,104.1235,18495.987,KH,True,,stop,0.0097995,1307,871,802,16.09,"```json
+{""reasoning"": ""The flat terrain, tropical vegetation with palms, and extremely dusty light-yellow dirt road are highly characteristic of rural Cambodia during the dry season."", ""country"": ""KH"", ""latitude"": 13.3524, ""longitude"": 104.1235}
+```"
+google/gemini-3.5-flash,CoT (effort=low),13.1254,104.2341,18517.047,KH,True,,stop,0.00387,1308,212,150,5.66,"{""reasoning"": ""The flat landscape, yellowish-sandy dirt road, tropical vegetation, and the white vehicle hood are highly characteristic of rural Cambodia."", ""country"": ""KH"", ""latitude"": 13.1254, ""longitude"": 104.2341}"
+google/gemini-3.5-flash,CoT (effort=high),13.45,104.95,18572.536,KH,True,,stop,0.0129045,1307,1216,1140,16.42,"{""reasoning"": ""The extremely dusty, bright yellow-orange dirt road combined with tropical deciduous vegetation and flat terrain is highly characteristic of rural Cambodia during the dry season. The white vehicle hood matches the Google Street View car used in the country."", ""country"": ""KH"", ""latitude"": 13.45, ""longitude"": 104.95}"
+google/gemini-3.1-pro-preview,no-CoT,12.5657,104.9909,18616.807,KH,True,,stop,0.006544,1226,341,305,10.98,"```json
+{""country"": ""KH"", ""latitude"": 12.5657, ""longitude"": 104.9909}
+```"
+google/gemini-3.1-pro-preview,CoT,12.5657,104.9912,18616.837,KH,True,,stop,0.005256,1308,220,135,4.54,"{
+  ""reasoning"": ""The white post with a black top on the right is a typical Cambodian road marker. The sandy dirt road, tropical vegetation, and white car hood are also characteristic of Street View coverage in Cambodia."",
+  ""country"": ""KH"",
+  ""latitude"": 12.5657,
+  ""longitude"": 104.9912
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),13.483125,106.987412,18764.79,KH,True,,stop,0.002199,1226,40,0,1.81,"```json
+{""country"": ""KH"", ""latitude"": 13.483125, ""longitude"": 106.987412}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.66,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.19,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.23,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.27,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.17,

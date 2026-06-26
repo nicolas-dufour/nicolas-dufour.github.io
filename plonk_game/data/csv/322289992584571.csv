@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,8.5435846890445,98.869255332183,0.0,TH,True,,,,,,,,"Plai Phraya, None, Krabi, TH"
+google/gemini-3.5-flash,CoT (effort=low),8.4325,98.6122,30.851,TH,True,,stop,0.004365,1272,273,195,9.06,"{""reasoning"": ""The image shows left-hand traffic, tropical vegetation, and a concrete utility pole with red/orange bands at the base, which is characteristic of Thailand. The distant karst-like hills suggest a location in Southern Thailand."", ""country"": ""TH"", ""latitude"": 8.4325, ""longitude"": 98.6122}"
+google/gemini-3.5-flash,CoT (effort=medium),8.4521,98.5204,39.691,TH,True,,stop,0.0066855,1271,531,451,10.59,"{""reasoning"": ""The left-hand traffic, tropical vegetation with banana trees, distinctive metal light pole with orange and black stripes, and the prominent black pickup truck strongly indicate Thailand. The karst hills visible in the background suggest a location in Southern Thailand."", ""country"": ""TH"", ""latitude"": 8.4521, ""longitude"": 98.5204}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),8.4385,98.5214,40.001,TH,True,,stop,0.002091,1190,34,0,13.49,"```json
+{""country"": ""TH"", ""latitude"": 8.4385, ""longitude"": 98.5214}
+```"
+google/gemini-3.5-flash,CoT (effort=high),8.9123,98.8765,41.007,TH,True,,stop,0.0112485,1271,1038,945,16.44,"```json
+{""reasoning"": ""The left-hand traffic, tropical vegetation, and a black pickup truck combined with concrete utility poles featuring orange/black warning stripes strongly indicate Thailand. The distant karst limestone hills suggest a location in the southern part of the country, likely near Surat Thani or Phang Nga."", ""country"": ""TH"", ""latitude"": 8.9123, ""longitude"": 98.8765}
+```"
+google/gemini-3.1-pro-preview,CoT,8.1,98.9,49.44,TH,True,,stop,0.004824,1272,190,131,10.44,"{
+  ""reasoning"": ""Left-hand traffic, black and white striped utility pole, and tropical karst landscape strongly indicate southern Thailand."",
+  ""country"": ""TH"",
+  ""latitude"": 8.1,
+  ""longitude"": 98.9
+}"
+openai/gpt-5.5,no-CoT,8.0862,98.9046,51.007,TH,True,,stop,0.00341,544,23,0,2.73,"{""country"":""TH"",""latitude"":8.0862,""longitude"":98.9046}"
+google/gemini-3.1-pro-preview,no-CoT,8.0833,98.9167,51.447,TH,True,,stop,0.002788,1190,34,0,2.24,"```json
+{""country"": ""TH"", ""latitude"": 8.0833, ""longitude"": 98.9167}
+```"
+openai/gpt-5.5,CoT,7.9208,98.3356,90.8,TH,True,,stop,0.016965,621,462,384,10.6,"{""reasoning"":""Left-hand traffic, tropical roadside vegetation, Thai-style utility poles/streetlights with black-orange bands, and the general road/building appearance point to Thailand. The hilly tropical setting and resort-road feel are most consistent with Phuket/southern Thailand."",""country"":""TH"",""latitude"":7.9208,""longitude"":98.3356}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,9.504859924316406,100.06842041015625,169.609,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,9.689688682556152,100.03614044189453,180.703,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,5.4,100.5,393.158,MY,True,,stop,0.00646,797,99,0,10.45,"{""reasoning"": ""Left-hand traffic, tropical vegetation with banana plants, limestone karst hills in distance, and roadside shophouses suggest peninsular Malaysia/southern Thailand."", ""country"": ""MY"", ""latitude"": 5.4, ""longitude"": 100.5}"
+anthropic/claude-opus-4.8,no-CoT,4.5921,101.0901,503.209,MY,True,,stop,0.00413,666,32,0,2.64,"{""country"": ""MY"", ""latitude"": 4.5921, ""longitude"": 101.0901}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,12.922216415405273,100.86369323730469,533.39,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,13.7563,100.5018,606.354,TH,True,,stop,6.418e-05,406,37,0,8.56,"```json
+{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}
+```"
+mistralai/mistral-medium-3-5,no-CoT,13.7563,100.5018,606.354,TH,True,,stop,0.001191,634,32,0,0.91,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-9b,no-CoT,13.7563,100.5018,606.354,TH,True,,stop,8.841e-05,473,32,0,3.15,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.6-27b,no-CoT,13.7563,100.5018,606.354,TH,True,,stop,0.000399,473,32,0,8.56,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.6-35b-a3b,no-CoT,13.7563,100.5018,606.354,TH,True,,stop,0.0001071356,473,32,0,2.7,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+xiaomi/mimo-v2.5,no-CoT,13.7563,100.5018,606.354,TH,True,,stop,8.17376e-05,708,32,0,3.06,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+xiaomi/mimo-v2.5,CoT,14.0641,99.5523,618.351,TH,True,,stop,0.0007395976,787,2342,2244,30.54,"```json
+{""reasoning"": ""The image shows left-hand traffic and a gas station with the distinctive orange and green branding of PTT, a major Thai state-owned oil company. The roadside utility pole features orange and black warning stripes, and the tropical vegetation with banana trees confirms a Southeast Asian location, specifically Thailand."", ""country"": ""TH"", ""latitude"": 14.0641, ""longitude"": 99.5523}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,14.0583,100.6012,641.606,TH,True,,stop,0.000383,473,32,0,2.98,"{""country"": ""TH"", ""latitude"": 14.0583, ""longitude"": 100.6012}"
+moonshotai/kimi-k2.6,no-CoT,14.0583,100.6014,641.612,TH,True,,stop,0.000290052,603,25,0,22.04,"{""country"": ""TH"", ""latitude"": 14.0583, ""longitude"": 100.6014}"
+x-ai/grok-4.3,no-CoT,14.021,100.733,642.047,TH,True,,stop,0.0005934,592,22,0,2.0,"{""country"": ""TH"", ""latitude"": 14.021, ""longitude"": 100.733}"
+qwen/qwen3.5-27b,no-CoT,14.2512,100.6223,662.775,TH,True,,stop,0.00019683,473,32,0,20.47,"{""country"": ""TH"", ""latitude"": 14.2512, ""longitude"": 100.6223}"
+qwen/qwen3.5-35b-a3b,no-CoT,14.3528,100.5628,671.781,TH,True,,stop,0.00015825,473,32,0,6.83,"{""country"": ""TH"", ""latitude"": 14.3528, ""longitude"": 100.5628}"
+mistralai/mistral-small-2603,CoT,3.0523,101.6137,681.865,MY,True,,stop,0.00038004,716,566,623,5.36,"{""reasoning"": ""Left-hand traffic and Malaysian-style license plate format indicate Malaysia; tropical vegetation and architecture confirm Peninsular Malaysia region."", ""country"": ""MY"", ""latitude"": 3.0523, ""longitude"": 101.6137}"
+qwen/qwen3.5-397b-a17b,CoT,14.535,100.915,702.471,TH,True,,stop,0.01192035,553,5002,4888,92.3,"{""reasoning"": ""The image shows left-hand traffic with distinctive black and yellow striped utility poles and tropical vegetation (banana trees), which are characteristic of Thailand. The orange and green building on the right strongly resembles a 'Boonthavorn' home improvement store, and the hills in the distance match the terrain along Phahonyothin Road (Highway 1) near Saraburi."", ""country"": ""TH"", ""latitude"": 14.535, ""longitude"": 100.915}"
+moonshotai/kimi-k2.6,CoT,14.5623,100.9134,705.292,TH,True,,stop,0.027238455,681,7444,8131,65.31,"{""reasoning"": ""The right-hand-drive vehicle is traveling on the left side of the road and the car ahead has a white front license plate, which points to Thailand; the tropical banana vegetation, orange-roofed commercial building, and black-and-orange striped road-pole bases are typical of rural highways in the central region."", ""country"": ""TH"", ""latitude"": 14.5623, ""longitude"": 100.9134}"
+x-ai/grok-4.3,CoT,14.652,100.912,714.704,TH,True,,stop,0.002569,676,824,742,8.84,"{
+  ""reasoning"": ""Left-hand traffic (oncoming dark SUV positioned right of center line), tropical banana plants + roadside pole with orange/black bands, and colorful single-story shop architecture point to Thailand; distant hills and open two-lane asphalt match provincial highways north of Bangkok."",
+  ""country"": ""TH"",
+  ""latitude"": 14.652,
+  ""longitude"": 100.912
+}"
+qwen/qwen3.6-35b-a3b,CoT,14.97,102.1,796.355,TH,True,,stop,0.02302444885,553,23761,23658,334.11,"```json
+{
+  ""reasoning"": ""The image shows left-hand traffic, tropical vegetation (banana trees), and a street light pole with red and white reflective stripes at the base, which is a distinctive feature of Thai roads. The white front license plate on the oncoming vehicle and the architecture are consistent with rural Thailand."",
+  ""country"": ""TH"",
+  ""latitude"": 14.97,
+  ""longitude"": 102.1
+}
+```"
+minimax/minimax-m3,CoT,15.7133,100.1356,809.018,TH,True,,stop,0.00066546,843,395,318,10.68,"{""reasoning"": ""Left-hand driving, circular red-bordered speed limit sign (Thai style), tropical vegetation with mountains in the background, and roadside commercial buildings with metal roofs are all highly characteristic of a major highway in central/northern Thailand."", ""country"": ""TH"", ""latitude"": 15.7133, ""longitude"": 100.1356}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,17.2900333404541,100.20958709716797,983.326,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,17.293132781982422,100.2030258178711,983.562,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,17.404172897338867,100.10034942626953,994.221,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,17.8756,102.7512,1119.33,TH,True,,stop,0.0002187,473,32,0,1.74,"{""country"": ""TH"", ""latitude"": 17.8756, ""longitude"": 102.7512}"
+minimax/minimax-m3,no-CoT,18.7903,98.9847,1139.451,TH,True,,stop,0.00019416,752,25,0,2.85,"{""country"": ""TH"", ""latitude"": 18.7903, ""longitude"": 98.9847}"
+mistralai/mistral-small-2603,no-CoT,12.9716,77.5946,2374.553,IN,True,,stop,0.000142125,634,31,0,2.51,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10982.729,,True,True,,,,,,7.89,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.21,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.2,

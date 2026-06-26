@@ -1,0 +1,77 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,62.434830894026,7.8709659115661,0.0,NO,True,,,,,,,,"Andalsnes, Rauma, More og Romsdal, NO"
+google/gemini-3.5-flash,no-CoT (effort=minimal),62.4912,7.7284,9.644,NO,True,,stop,0.002091,1190,34,0,1.47,"```json
+{""country"": ""NO"", ""latitude"": 62.4912, ""longitude"": 7.7284}
+```"
+moonshotai/kimi-k2.6,CoT,62.3,7.5,24.306,NO,True,,stop,0.012832,680,3086,3202,96.62,"{""reasoning"": ""Steep glacially scoured rock faces rising directly from a flat valley floor, combined with dense boreal coniferous forest and European-style white road markings, are classic features of a Western Norwegian fjord valley."", ""country"": ""NO"", ""latitude"": 62.3, ""longitude"": 7.5}"
+x-ai/grok-4.3,no-CoT,62.35,7.15,38.329,NO,True,,stop,0.0005934,592,22,0,0.81,"{""country"": ""NO"", ""latitude"": 62.35, ""longitude"": 7.15}"
+x-ai/grok-4.3,CoT,62.15,7.25,45.097,NO,True,,stop,0.002454,676,778,696,9.26,"{
+  ""reasoning"": ""Steep bare-rock cliffs, conifer forest, autumn foliage, right-side driving with EU-style dashed center lines, and metal guardrail all point to western Norway fjord/valley terrain; the single visible diamond-backed sign matches Norwegian road furniture."",
+  ""country"": ""NO"",
+  ""latitude"": 62.15,
+  ""longitude"": 7.25
+}"
+google/gemma-4-31b-it,no-CoT,62.1015,7.2028,50.685,NO,True,,stop,6.338e-05,406,35,0,4.75,"```json
+{""country"": ""NO"", ""latitude"": 62.1015, ""longitude"": 7.2028}
+```"
+google/gemini-3.1-pro-preview,CoT,62.1,7.1,54.567,NO,True,,stop,0.00499,1271,204,137,4.2,"{
+  ""reasoning"": ""The short white dashed edge lines on the road are characteristic of Norway. The steep, rocky mountains and coniferous trees strongly suggest a Norwegian fjord landscape."",
+  ""country"": ""NO"",
+  ""latitude"": 62.1,
+  ""longitude"": 7.1
+}"
+minimax/minimax-m3,no-CoT,62.1,6.8,66.76,NO,True,,stop,0.00040002,767,190,197,5.71,"{""country"": ""NO"", ""latitude"": 62.1, ""longitude"": 6.8}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,61.840858459472656,6.985644817352295,80.49,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,61.9241,6.7456,81.459,NO,True,,stop,0.00025467,473,30,0,7.93,"{""country"": ""NO"", ""latitude"": 61.9241, ""longitude"": 6.7456}"
+openai/gpt-5.5,CoT,61.875,6.855,81.603,NO,True,,stop,0.014385,621,376,294,17.02,"{""reasoning"":""The white edge lines with a yellow centerline indicate Norway, and the steep glaciated rocky mountains with conifer forest and wet green verge are characteristic of western Norwegian fjord valleys. This most likely fits a rural road around the Stryn/Loen area in Vestland."",""country"":""NO"",""latitude"":61.875,""longitude"":6.855}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,61.8250846862793,6.955657005310059,82.827,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,62.0,6.5,85.944,NO,True,,stop,0.000283212,603,23,0,2.1,"{""country"": ""NO"", ""latitude"": 62.0, ""longitude"": 6.5}"
+mistralai/mistral-small-2603,no-CoT,62.4736,6.1638,87.891,NO,True,,stop,0.000141375,634,30,0,2.5,"{""country"": ""NO"", ""latitude"": 62.4736, ""longitude"": 6.1638}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,62.21011734008789,5.6236982345581055,118.723,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,62.20591735839844,5.614592552185059,119.289,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,61.5689,6.4738,120.784,NO,True,,stop,0.00341,544,23,0,7.55,"{""country"":""NO"",""latitude"":61.5689,""longitude"":6.4738}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,61.26694869995117,6.910371780395508,139.293,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,61.24,6.77,144.874,NO,True,,stop,0.0001289176,787,161,76,2.39,"{
+  ""reasoning"": ""The image shows a left-hand drive vehicle on a road with white dashed center lines, suggesting a RHT country like Norway, set against a backdrop of steep, rocky mountains and coniferous forests typical of the Norwegian fjords."",
+  ""country"": ""NO"",
+  ""latitude"": 61.24,
+  ""longitude"": 6.77
+}"
+xiaomi/mimo-v2.5,no-CoT,61.2,6.8,148.374,NO,True,,stop,7.94976e-05,708,24,0,1.01,"{""country"": ""NO"", ""latitude"": 61.2, ""longitude"": 6.8}"
+google/gemini-3.1-pro-preview,no-CoT,61.1523,6.8812,151.797,NO,True,,stop,0.002788,1190,34,0,8.42,"```json
+{""country"": ""NO"", ""latitude"": 61.1523, ""longitude"": 6.8812}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,61.1234,6.9876,153.04,NO,True,,stop,0.00010095,473,30,0,3.56,"{""country"": ""NO"", ""latitude"": 61.1234, ""longitude"": 6.9876}"
+anthropic/claude-opus-4.8,CoT,61.2,6.5,155.03,NO,True,,stop,0.006335,797,94,0,3.56,"{""reasoning"": ""Steep granite/gneiss mountainside with conifers and lush green grass, yellow center line markings and right-hand traffic typical of Norwegian fjord valley roads."", ""country"": ""NO"", ""latitude"": 61.2, ""longitude"": 6.5}"
+anthropic/claude-opus-4.8,no-CoT,61.2,6.5,155.03,NO,True,,stop,0.00408,666,30,0,2.3,"{""country"": ""NO"", ""latitude"": 61.2, ""longitude"": 6.5}"
+google/gemini-3.5-flash,CoT (effort=medium),60.8642,6.8125,183.365,NO,True,,stop,0.0072795,1271,597,534,6.09,"{""reasoning"": ""The steep, rocky glaciated mountains combined with coniferous forests and dashed white road edge lines are highly characteristic of western Norway's fjord valleys."", ""country"": ""NO"", ""latitude"": 60.8642, ""longitude"": 6.8125}"
+google/gemini-3.5-flash,CoT (effort=low),60.8742,6.7215,183.832,NO,True,,stop,0.0034545,1271,172,110,10.38,"{""reasoning"": ""The dramatic glaciated rocky mountains, pine trees, and white dashed outer road lines are highly characteristic of western Norway's fjord valleys."", ""country"": ""NO"", ""latitude"": 60.8742, ""longitude"": 6.7215}"
+google/gemini-3.5-flash,CoT (effort=high),60.8542,6.8014,184.605,NO,True,,stop,0.008631,1272,747,687,12.47,"{""reasoning"": ""The dramatic steep rocky mountains, coniferous vegetation, and specific dashed white road edge lines are highly characteristic of the valleys in Western Norway."", ""country"": ""NO"", ""latitude"": 60.8542, ""longitude"": 6.8014}"
+qwen/qwen3.5-122b-a10b,no-CoT,60.472024,8.468946,220.553,NO,True,,stop,0.000298,473,34,0,2.14,"{""country"": ""NO"", ""latitude"": 60.472024, ""longitude"": 8.468946}"
+minimax/minimax-m3,CoT,60.43,7.12,226.471,NO,True,,stop,0.00074226,843,459,373,13.1,"{""reasoning"": ""Dramatic pale granite cliff face on the left, dense spruce forest on the right, right-hand drive with European-style white road markings, and the dashboard of a European car all strongly indicate a Norwegian fjord landscape, likely along the inner Hardangerfjord or Aurland region."", ""country"": ""NO"", ""latitude"": 60.43, ""longitude"": 7.12}"
+qwen/qwen3.5-9b,no-CoT,60.6069,5.8292,230.263,NO,True,,stop,5.19e-05,474,30,0,3.76,"{""country"": ""NO"", ""latitude"": 60.6069, ""longitude"": 5.8292}"
+qwen/qwen3.6-27b,no-CoT,60.472,6.154,236.538,NO,True,,stop,0.000208697,473,30,0,13.75,"{""country"": ""NO"", ""latitude"": 60.4720, ""longitude"": 6.1540}"
+qwen/qwen3.6-35b-a3b,no-CoT,60.3913,5.3221,264.577,NO,True,,stop,0.00010095,473,30,0,1.84,"{""country"": ""NO"", ""latitude"": 60.3913, ""longitude"": 5.3221}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,60.108638763427734,4.17612886428833,325.32,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,56.66,-5.12,970.694,GB,True,,stop,0.0423114,553,11661,11543,235.27,"{
+""reasoning"": ""The vehicle is driving on the left side of the road, indicating a left-hand traffic country like the UK or New Zealand. The landscape features steep, grey rocky mountains and coniferous plantations typical of the Scottish Highlands, and the road markings (long dash center line) and white marker post with reflector are consistent with UK roads, specifically the A82 near Glencoe."",
+""country"": ""GB"",
+""latitude"": 56.66,
+""longitude"": -5.12
+}"
+mistralai/mistral-small-2603,CoT,47.08,12.815,1735.365,AT,True,,stop,0.0011562,716,1748,1858,13.1,"{""reasoning"": ""The decisive clues are the European road infrastructure style, dense coniferous forest in an alpine environment, and the characteristic curve of the Großglockner High Alpine Road in Austria."", ""country"": ""AT"", ""latitude"": 47.0800, ""longitude"": 12.8150}"
+qwen/qwen3.6-35b-a3b,CoT,44.8925,0.1956,2011.774,FR,True,,stop,0.00405728635,553,4111,3998,48.93,"```json
+{
+  ""reasoning"": ""The image shows a right-hand traffic road with a priority road sign (yellow diamond, appearing white due to overexposure) on the left, typical of France. The landscape features steep, rocky mountains and coniferous trees, characteristic of the French Alps or Pyrenees."",
+  ""country"": ""FR"",
+  ""latitude"": 44.8925,
+  ""longitude"": 0.1956
+}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6973.728,,True,True,,,,,,11.01,
+qwen/qwen3.5-27b,no-CoT,-43.5321,170.1543,17619.896,NZ,True,,stop,0.0002187,473,32,0,7.81,"{""country"": ""NZ"", ""latitude"": -43.5321, ""longitude"": 170.1543}"
+mistralai/mistral-medium-3-5,no-CoT,-44.7,168.3,17678.092,NZ,True,,stop,0.001146,634,26,0,0.9,"{""country"": ""NZ"", ""latitude"": -44.7, ""longitude"": 168.3}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.19,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.18,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.19,

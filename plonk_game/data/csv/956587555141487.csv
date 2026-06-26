@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,60.987336392146,61.746436762856,0.0,RU,True,,,,,,,,"Ous, None, Sverdlovsk, RU"
+google/gemini-3.5-flash,CoT (effort=high),61.0123,69.0123,391.502,RU,True,,stop,0.0087645,1271,762,696,10.65,"{""reasoning"": ""The flat taiga landscape with birch and pine trees, snowy conditions, and low sun angle are highly characteristic of winter Google Street View coverage in northern Russia."", ""country"": ""RU"", ""latitude"": 61.0123, ""longitude"": 69.0123}"
+google/gemini-3.5-flash,CoT (effort=medium),61.0125,69.0184,391.829,RU,True,,stop,0.0050745,1271,352,279,11.03,"{""reasoning"": ""The flat taiga landscape with mixed birch and coniferous trees, snowy roadside, and low winter sun is highly characteristic of northern Russia, specifically the Khanty-Mansi Autonomous Okrug region."", ""country"": ""RU"", ""latitude"": 61.0125, ""longitude"": 69.0184}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,57.81545639038086,56.812904357910156,449.604,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,57.76353454589844,56.83376693725586,453.548,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,61.5,50.8,587.637,RU,True,,stop,0.006385,797,96,0,11.91,"{""reasoning"": ""Snowy boreal highway with sparse spruce/birch forest, low sun and icy road suggest northern Russia/Siberia, right-side driving on a remote two-lane road."", ""country"": ""RU"", ""latitude"": 61.5, ""longitude"": 50.8}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,59.97555160522461,50.752567291259766,611.963,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),61.5562,50.2344,617.701,RU,True,,stop,0.004536,1272,292,220,5.18,"{""reasoning"": ""The snowy taiga landscape, flat terrain, and low winter sun on a wide asphalt highway are highly characteristic of northern Russia, particularly the regions of Komi or Arkhangelsk."", ""country"": ""RU"", ""latitude"": 61.5562, ""longitude"": 50.2344}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),61.2541,73.3962,625.502,RU,True,,stop,0.0021,1190,35,0,1.22,"```json
+{""country"": ""RU"", ""latitude"": 61.2541, ""longitude"": 73.3962}
+```"
+google/gemini-3.1-pro-preview,CoT,61.25,73.41,626.259,RU,True,,stop,0.006154,1271,301,220,5.21,"{
+  ""reasoning"": ""The snowy landscape, coniferous taiga forest, and low sun angle strongly suggest a high-latitude location in winter. The wide, straight road and general atmosphere are characteristic of major highways in northern Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 61.25,
+  ""longitude"": 73.41
+}"
+google/gemini-3.1-pro-preview,no-CoT,61.25,73.416667,626.615,RU,True,,stop,0.0028,1190,35,0,14.59,"```json
+{""country"": ""RU"", ""latitude"": 61.25, ""longitude"": 73.416667}
+```"
+xiaomi/mimo-v2.5,CoT,56.5,84.9,1416.841,RU,True,,stop,0.0001734376,787,320,237,10.55,"{""reasoning"": ""The right-hand traffic, snow-covered taiga boreal forest landscape, and subarctic winter highway match the characteristics of northern Siberia, Russia; the low sun indicates a high-latitude winter location, typical of Russia's Trans-Siberian region."", ""country"": ""RU"", ""latitude"": 56.5, ""longitude"": 84.9}"
+minimax/minimax-m3,no-CoT,66.5,25.7,1845.274,FI,True,,stop,0.00019452,754,22,0,8.08,"{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 25.7}{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 25.7}"
+openai/gpt-5.5,CoT,66.6502,25.5856,1851.022,FI,True,,stop,0.015135,621,401,320,22.56,"{""reasoning"":""A flat, snowy boreal-forest highway with right-hand traffic and low winter sun strongly suggests northern Fennoscandia; the road style and forested terrain fit Finnish Lapland best. I place it near Rovaniemi on a major plowed highway."",""country"":""FI"",""latitude"":66.6502,""longitude"":25.5856}"
+moonshotai/kimi-k2.6,CoT,66.7189,25.5012,1855.086,FI,True,,stop,0.01802526,682,5154,5097,342.3,"{""reasoning"": ""Boreal forest winter landscape with low sun angle, icy two-lane road, and right-hand traffic consistent with Finnish Lapland."", ""country"": ""FI"", ""latitude"": 66.7189, ""longitude"": 25.5012}"
+mistralai/mistral-medium-3-5,no-CoT,64.75,25.5,1857.278,FI,True,,stop,0.001146,634,26,0,0.81,"{""country"": ""FI"", ""latitude"": 64.75, ""longitude"": 25.5}"
+minimax/minimax-m3,CoT,68.0,25.5,1867.188,FI,True,,stop,0.00061422,845,349,318,22.69,"{""reasoning"": ""Boreal forest with spruce/birch mix, deep snow on flat terrain, low sun angle indicating high latitude (~68°N), and Nordic-style road with guardrail suggest Finnish Lapland. The flat topography and forest composition are characteristic of inland northern Finland."", ""country"": ""FI"", ""latitude"": 68.0, ""longitude"": 25.5}{""reasoning"": ""Boreal forest with spruce/birch mix, deep snow on flat terrain, low sun angle indicating high latitude (~68°N), and Nordic-style road with guardrail suggest Finnish Lapland. The flat topography and forest composition are characteristic of inland northern Finland."", ""country"": ""FI"", ""latitude"": 68.0, ""longitude"": 25.5}"
+qwen/qwen3.6-35b-a3b,CoT,62.2408,25.7473,1883.412,FI,True,,stop,0.00385651435,553,3903,3801,87.5,"```json
+{
+  ""reasoning"": ""The image shows a flat, snow-covered landscape with boreal forest (pine/spruce) typical of Finland, driving on the right side of a narrow rural road with utility poles on the left, which is common in Finnish infrastructure."",
+  ""country"": ""FI"",
+  ""latitude"": 62.2408,
+  ""longitude"": 25.7473
+}
+```"
+qwen/qwen3.5-27b,no-CoT,64.1667,21.65,2047.777,SE,True,,stop,0.00021164,474,34,0,10.17,"```json
+{""country"": ""SE"", ""latitude"": 64.1667, ""longitude"": 21.65}
+```"
+google/gemma-4-31b-it,no-CoT,62.15,105.31,2266.252,RU,True,,stop,7.004e-05,406,33,0,1.51,"```json
+{""country"": ""RU"", ""latitude"": 62.15, ""longitude"": 105.31}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,68.57942199707031,-155.44921875,5304.028,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,67.78438568115234,-157.16488647460938,5356.396,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,65.9,-149.4,5675.276,US,True,,stop,0.01015065,553,3315,1,79.68,"{
+""reasoning"": ""The image displays a straight, rough-surfaced road (likely gravel or worn asphalt) cutting through a sparse boreal forest (taiga) with snow cover, characteristic of the Dalton Highway in Interior Alaska. The right-hand traffic, diamond-shaped warning sign in the distance, and the specific 'haul road' aesthetic with wide shoulders point strongly to Northern Alaska."",
+""country"": ""US"",
+""latitude"": 65.9,
+""longitude"": -149.4
+}"
+qwen/qwen3.6-27b,no-CoT,61.2345,-145.6789,6225.096,CA,True,,stop,0.0002446,474,32,0,13.79,"{""country"": ""CA"", ""latitude"": 61.2345, ""longitude"": -145.6789}"
+qwen/qwen3.5-9b,no-CoT,62.6382,-114.0423,6263.948,CA,True,,stop,8.841e-05,473,32,0,4.21,"{""country"": ""CA"", ""latitude"": 62.6382, ""longitude"": -114.0423}"
+qwen/qwen3.5-35b-a3b,no-CoT,62.454,-114.3717,6285.107,CA,True,,stop,0.000164025,473,32,0,1.75,"{""country"": ""CA"", ""latitude"": 62.4540, ""longitude"": -114.3717}"
+qwen/qwen3.5-397b-a17b,no-CoT,62.454,-114.3718,6285.107,CA,True,,stop,0.0003322,473,31,0,7.85,"{""country"": ""CA"", ""latitude"": 62.454, ""longitude"": -114.3718}"
+qwen/qwen3.6-35b-a3b,no-CoT,62.45,-114.3,6285.405,CA,True,,stop,9.795e-05,473,27,0,1.42,"{""country"": ""CA"", ""latitude"": 62.45, ""longitude"": -114.3}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,61.638832092285156,-125.3600845336914,6366.281,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,56.0,-93.0,6819.953,CA,True,,stop,0.00066485,603,23,0,7.01," {""country"": ""CA"", ""latitude"": 56.0, ""longitude"": -93.0}"
+xiaomi/mimo-v2.5,no-CoT,56.7,-111.4,6915.155,CA,True,,stop,8.00576e-05,708,26,0,1.34,"{""country"": ""CA"", ""latitude"": 56.7, ""longitude"": -111.4}"
+x-ai/grok-4.3,CoT,55.8,-120.3,7027.687,CA,True,,stop,0.002234,676,690,619,13.59,"{
+  ""reasoning"": ""Boreal taiga forest, snow-covered unpaved/gravel road with central tire tracks, low sun angle at sunset/sunrise, and right-side driving all point to northern Canada in winter."",
+  ""country"": ""CA"",
+  ""latitude"": 55.8,
+  ""longitude"": -120.3
+}"
+x-ai/grok-4.3,no-CoT,53.85,-122.75,7239.574,CA,True,,stop,0.0005934,592,22,0,7.28,"{""country"": ""CA"", ""latitude"": 53.85, ""longitude"": -122.75}"
+openai/gpt-5.5,no-CoT,53.5461,-113.4938,7272.588,CA,True,,stop,0.00344,544,24,0,1.22,"{""country"":""CA"",""latitude"":53.5461,""longitude"":-113.4938}"
+anthropic/claude-opus-4.8,no-CoT,53.5,-113.5,7277.727,CA,True,,stop,0.00408,666,30,0,9.26,"{""country"": ""CA"", ""latitude"": 53.5, ""longitude"": -113.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,53.4017,-113.4938,7288.629,CA,True,,stop,0.00018954,473,32,0,1.52,"{""country"": ""CA"", ""latitude"": 53.4017, ""longitude"": -113.4938}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8531.674,,True,True,,,,,,8.0,
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,8722.451,US,True,,stop,0.0001137,634,31,0,4.45,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.19,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.23,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,13.37,

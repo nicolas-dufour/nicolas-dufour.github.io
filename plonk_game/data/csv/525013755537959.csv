@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-30.002983994629,-57.723387532981,0.0,AR,True,,,,,,,,"Libertad, None, Corrientes, AR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-32.372005462646484,-60.30055236816406,359.82,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-32.340877532958984,-60.34966278076172,360.543,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-32.736751556396484,-60.2535285949707,387.404,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-35.9823,-59.9124,695.445,AR,True,,stop,0.004536,1272,292,217,3.77,"{""reasoning"": ""The flat, grassy landscape with distant tree lines viewed through a rear window resembles the Argentine Pampas. The road markings with white outer lines and a dashed white center line are consistent with Argentine national routes."", ""country"": ""AR"", ""latitude"": -35.9823, ""longitude"": -59.9124}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6944.644,,True,True,,,,,,21.89,
+xiaomi/mimo-v2.5,no-CoT,33.5,-84.5,7601.683,US,True,,stop,7.97776e-05,708,25,0,1.33,"{""country"": ""US"", ""latitude"": 33.5, ""longitude"": -84.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,36.1627,-86.7816,7958.612,US,True,,stop,0.00010195,473,31,0,1.67,"{""country"": ""US"", ""latitude"": 36.1627, ""longitude"": -86.7816}"
+google/gemini-3.1-pro-preview,CoT,-28.0,26.5,7987.937,ZA,True,,stop,0.005316,1272,231,158,10.14,"{
+  ""reasoning"": ""The flat landscape with dry grass and scattered trees, combined with the road markings (white edge lines and dashed center line), strongly suggests the highveld region of South Africa."",
+  ""country"": ""ZA"",
+  ""latitude"": -28.0,
+  ""longitude"": 26.5
+}"
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,8040.111,US,True,,stop,0.0001137,634,31,0,4.71,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.0060}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.7128,-74.006,8040.111,US,True,,stop,0.00025467,473,30,0,8.45,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+google/gemini-3.5-flash,CoT (effort=medium),-28.25,27.25,8042.817,ZA,True,,stop,0.0083955,1271,721,663,7.3,"{""reasoning"": ""The flat grassland terrain, sparse trees, and characteristic cloud patterns strongly suggest the Highveld region of South Africa, specifically the Free State."", ""country"": ""ZA"", ""latitude"": -28.25, ""longitude"": 27.25}"
+google/gemini-3.5-flash,CoT (effort=high),-28.25,27.25,8042.817,ZA,True,,stop,0.0097545,1271,872,811,9.16,"{""reasoning"": ""The flat grassy landscape, wide paved road with characteristic South African road markings, and distinct Highveld cloud formations indicate the Free State province of South Africa."", ""country"": ""ZA"", ""latitude"": -28.25, ""longitude"": 27.25}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-26.8541,27.1235,8097.883,ZA,True,,stop,0.0021,1190,35,0,1.13,"```json
+{""country"": ""ZA"", ""latitude"": -26.8541, ""longitude"": 27.1235}
+```"
+qwen/qwen3.5-9b,no-CoT,32.7767,-96.797,8102.65,US,True,,stop,5.19e-05,474,30,0,4.9,"{""country"": ""US"", ""latitude"": 32.7767, ""longitude"": -96.797}"
+anthropic/claude-opus-4.8,no-CoT,-26.5,27.0,8103.763,ZA,True,,stop,0.004105,666,31,0,2.4,"{""country"": ""ZA"", ""latitude"": -26.5, ""longitude"": 27.0}"
+anthropic/claude-opus-4.8,CoT,-26.5,27.5,8148.628,ZA,True,,stop,0.00666,797,107,0,3.62,"{""reasoning"": ""Flat highveld grassland with summer cumulus clouds, dry winter-brown vegetation, and a straight two-lane highway typical of South Africa's interior plains seen through a rear window with defroster lines."", ""country"": ""ZA"", ""latitude"": -26.5, ""longitude"": 27.5}"
+moonshotai/kimi-k2.6,no-CoT,-26.5,28.0,8193.431,ZA,True,,stop,0.000286452,603,23,0,2.13,"{""country"": ""ZA"", ""latitude"": -26.5, ""longitude"": 28.0}"
+google/gemini-3.1-pro-preview,no-CoT,-26.158,28.854,8286.594,ZA,True,,stop,0.002776,1190,33,0,2.02,"```json
+{""country"": ""ZA"", ""latitude"": -26.158, ""longitude"": 28.854}
+```"
+mistralai/mistral-medium-3-5,no-CoT,37.0902,-95.7129,8444.589,US,True,,stop,0.0011835,634,31,0,8.03,"{""country"": ""US"", ""latitude"": 37.0902, ""longitude"": -95.7129}"
+x-ai/grok-4.3,CoT,36.8,-97.3,8496.612,US,True,,stop,0.002574,676,826,757,7.96,"{""reasoning"": ""Right-hand driving with yellow edge line + white lane markings, US-style rural highway, flat farmland with scattered trees and power poles under fair-weather cumulus, side-mirror view all point to central US plains."", ""country"": ""US"", ""latitude"": 36.8, ""longitude"": -97.3}"
+x-ai/grok-4.3,no-CoT,36.8,-97.3,8496.612,US,True,,stop,0.0005934,592,22,0,1.83,"{""country"": ""US"", ""latitude"": 36.8, ""longitude"": -97.3}"
+qwen/qwen3.6-27b,no-CoT,41.8781,-87.6298,8560.839,US,True,,stop,0.0001943,473,31,0,15.82,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+moonshotai/kimi-k2.6,CoT,38.5,-98.0,8687.066,US,True,,stop,0.012463128,682,3582,3521,261.62,"{""reasoning"": ""Yellow centerline and white edge markings on a flat, rural two-lane highway with wooden-pole power lines are characteristic of the U.S. Great Plains."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -98.0}"
+qwen/qwen3.5-397b-a17b,CoT,38.9517,-98.3804,8747.137,US,True,,stop,0.00873204,553,2359,2238,46.94,"{""reasoning"": ""The view through the rear window (indicated by defroster lines) shows a white line on the left and a yellow line on the right, which confirms Right-Hand Traffic (looking back, the right shoulder is on the image-left and the center yellow line is on the image-right). The extremely flat terrain, agricultural horizon, and cumulus clouds are highly characteristic of the American Great Plains, specifically Kansas."", ""country"": ""US"", ""latitude"": 38.9517, ""longitude"": -98.3804}"
+xiaomi/mimo-v2.5,CoT,41.5,-93.5,8758.051,US,True,,stop,0.0001527176,787,246,163,3.59,"{""reasoning"": ""The image shows a straight, two-lane highway with flat agricultural terrain, distinct yellow and white road markings typical of North America, and a driving-on-the-right configuration. The vegetation and sky are consistent with the Great Plains or Midwest of the United States."", ""country"": ""US"", ""latitude"": 41.5, ""longitude"": -93.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,39.8283,-98.5795,8836.681,US,True,,stop,0.00018746,473,31,0,1.24,"{""country"": ""US"", ""latitude"": 39.8283, ""longitude"": -98.5795}"
+qwen/qwen3.5-27b,no-CoT,39.7392,-104.9903,9162.777,US,True,,stop,0.00024024,474,45,0,2.78,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 39.7392,
+  ""longitude"": -104.9903
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,39.7392,-104.9903,9162.777,US,True,,stop,0.000146,474,32,0,3.0,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemma-4-31b-it,no-CoT,36.1699,-115.1398,9488.586,US,True,,stop,0.00019501,408,37,0,7.1,"```json
+{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.96611785888672,8.971320152282715,10313.909,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,45.792999267578125,6.093014240264893,10594.569,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,40.38018035888672,14.7808837890625,10810.072,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,45.4,11.9,10930.252,IT,True,,stop,0.00020778,703,23,0,1.58,"{""country"": ""IT"", ""latitude"": 45.4, ""longitude"": 11.9}"
+openai/gpt-5.5,no-CoT,52.8652,6.0437,11080.11,NL,True,,stop,0.00341,544,23,0,7.5,"{""country"":""NL"",""latitude"":52.8652,""longitude"":6.0437}"
+minimax/minimax-m3,CoT,46.8,20.0,11541.588,HU,True,,stop,0.00060582,845,342,362,8.11,"{""reasoning"": ""Extremely flat agricultural plain with sparse low vegetation, standard European two-lane highway with power lines, cumulus clouds typical of continental summer — consistent with the Great Hungarian Plain (Alföld)."", ""country"": ""HU"", ""latitude"": 46.8, ""longitude"": 20.0}{""reasoning"": ""Extremely flat agricultural plain with sparse low vegetation, standard European two-lane highway with power lines, cumulus clouds typical of continental summer — consistent with the Great Hungarian Plain (Alföld)."", ""country"": ""HU"", ""latitude"": 46.8, ""longitude"": 20.0}"
+openai/gpt-5.5,CoT,46.8124,20.3746,11567.134,HU,True,,stop,0.015435,621,411,339,10.04,"{""reasoning"":""The white European-style lane markings on a narrow rural two-lane road and right-hand traffic context fit continental Europe. The very flat agricultural landscape with scattered poplar windbreaks is most characteristic of the Great Hungarian Plain."",""country"":""HU"",""latitude"":46.8124,""longitude"":20.3746}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.37,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.21,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.08,

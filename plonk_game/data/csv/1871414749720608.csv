@@ -1,0 +1,77 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-6.346562280282301,23.88319306723369,0.0,CD,True,,,,,,,,"Mbuji-Mayi, None, Kasai-Oriental, CD"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-8.468186378479004,19.395368576049805,548.187,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-5.0,18.5,614.167,CD,True,,stop,0.00408,666,30,0,8.65,"{""country"": ""CD"", ""latitude"": -5.0, ""longitude"": 18.5}"
+anthropic/claude-opus-4.8,CoT,-4.5,18.5,630.26,CD,True,,stop,0.00631,797,93,0,5.58,"{""reasoning"": ""Red laterite dirt road with oil palms and tropical savanna vegetation typical of Central/West Africa; right-hand drive vehicle suggests DRC interior."", ""country"": ""CD"", ""latitude"": -4.5, ""longitude"": 18.5}"
+moonshotai/kimi-k2.6,no-CoT,-4.5,18.5,630.26,CD,True,,stop,0.00051219,602,23,0,21.36,"{""country"": ""CD"", ""latitude"": -4.5, ""longitude"": 18.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-0.5210078358650208,26.863052368164062,727.261,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,0.9904565811157227,27.317907333374023,900.522,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,0.8723238110542297,27.651880264282227,905.157,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,-4.2,12.0,1337.135,CG,True,,stop,0.00022248,752,23,0,6.03,"{""country"": ""CG"", ""latitude"": -4.2, ""longitude"": 12.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-1.9679747819900513,12.417909622192383,1361.25,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,0.17177563905715942,11.509193420410156,1552.723,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,5.556,6.628,2328.001,NG,True,,stop,0.0037435801,553,3786,3668,117.58,"```json
+{
+    ""reasoning"": ""The distinctive red lateritic soil and the presence of oil palm trees strongly suggest a tropical location in West Africa, specifically Nigeria. The round chrome side mirror is a common feature on older Toyota vehicles (like Land Cruisers or pickups) widely used in Nigeria, and the yellowish dry grass indicates the dry season typical of the region."",
+    ""country"": ""NG"",
+    ""latitude"": 5.556,
+    ""longitude"": 6.628
+}
+```"
+xiaomi/mimo-v2.5,CoT,5.8,6.5,2355.058,NG,True,,stop,0.0002647176,787,646,577,8.31,"{""reasoning"": ""The reddish laterite soil, tropical palm vegetation, and rural unpaved road are characteristic of southern Nigeria's countryside. The vehicle's side mirror and overall setting align with West African rural infrastructure."", ""country"": ""NG"", ""latitude"": 5.8, ""longitude"": 6.5}"
+mistralai/mistral-medium-3-5,no-CoT,5.5,6.0,2382.246,NG,True,,stop,0.0011235,634,23,0,1.88,"{""country"": ""NG"", ""latitude"": 5.5, ""longitude"": 6.0}"
+google/gemini-3.5-flash,CoT (effort=high),6.15,5.6,2459.168,NG,True,,stop,0.017883,1272,1775,1705,17.83,"{""reasoning"": ""The black fender mirror on the left side of the hood is characteristic of the Google Street View vehicle used in Nigeria, while the reddish-yellow dirt road and extensive oil palm plantations indicate a location in southern Nigeria."", ""country"": ""NG"", ""latitude"": 6.15, ""longitude"": 5.6}"
+moonshotai/kimi-k2.6,CoT,6.35,5.65,2467.145,NG,True,,stop,0.0138276,680,3719,3984,298.31,"{""reasoning"": ""Red laterite dirt road flanked by tropical oil palm and savanna vegetation, combined with a left-hand-drive vehicle configuration, strongly indicates rural southern Nigeria within the West African palm belt."", ""country"": ""NG"", ""latitude"": 6.35, ""longitude"": 5.65}"
+google/gemini-3.1-pro-preview,CoT,6.3333,5.6222,2468.623,NG,True,,stop,0.006132,1272,299,211,21.83,"{
+  ""reasoning"": ""The distinctive black mirror on the front left fender is a known meta clue for the Google Street View car in Nigeria. The reddish dirt road and abundant oil palms indicate a tropical region, likely in the southern part of the country."",
+  ""country"": ""NG"",
+  ""latitude"": 6.3333,
+  ""longitude"": 5.6222
+}"
+google/gemini-3.5-flash,CoT (effort=low),6.4521,5.5834,2479.652,NG,True,,stop,0.0049485,1271,338,269,11.22,"{""reasoning"": ""The presence of oil palm plantations, a yellowish-brown dirt road, and the specific black vehicle hood with a left-side fender mirror indicates Nigeria, particularly the southern agricultural regions."", ""country"": ""NG"", ""latitude"": 6.4521, ""longitude"": 5.5834}"
+xiaomi/mimo-v2.5,no-CoT,6.45,3.4,2681.536,NG,True,,stop,7.97776e-05,708,25,0,8.57,"{""country"": ""NG"", ""latitude"": 6.45, ""longitude"": 3.40}"
+google/gemini-3.1-pro-preview,no-CoT,6.5244,3.3792,2687.84,NG,True,,stop,0.002774,1189,33,0,19.39,"```json
+{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,2742.536,,True,True,,,,,,13.07,
+google/gemini-3.5-flash,no-CoT (effort=minimal),6.0833,-1.0167,3089.662,GH,True,,stop,0.0020805,1189,33,0,1.36,"```json
+{""country"": ""GH"", ""latitude"": 6.0833, ""longitude"": -1.0167}
+```"
+x-ai/grok-4.3,CoT,5.72,-1.68,3138.443,GH,True,,stop,0.002694,676,874,803,8.35,"{""reasoning"": ""Left side-mirror visible on left of frame indicates LHD vehicle (drive on right); red laterite dirt road through dense oil-palm plantation matches West African tropics (not Malaysia/Indonesia which use RHD)."", ""country"": ""GH"", ""latitude"": 5.72, ""longitude"": -1.68}"
+openai/gpt-5.5,no-CoT,6.2425,-1.6158,3156.949,GH,True,,stop,0.00344,544,24,0,3.64,"{""country"":""GH"",""latitude"":6.2425,""longitude"":-1.6158}"
+x-ai/grok-4.3,no-CoT,5.85,-1.95,3171.623,GH,True,,stop,0.0005934,592,22,0,7.1,"{""country"": ""GH"", ""latitude"": 5.85, ""longitude"": -1.95}"
+google/gemma-4-31b-it,CoT,5.12,-4.25,3373.097,CI,True,,stop,0.00066648,492,1752,1603,28.18,"```json
+{""reasoning"": ""The presence of a vast oil palm plantation and reddish laterite soil, combined with a left-hand drive vehicle (indicating a right-hand traffic country), strongly suggests West Africa, specifically Côte d'Ivoire."", ""country"": ""CI"", ""latitude"": 5.12, ""longitude"": -4.25}
+```"
+minimax/minimax-m3,CoT,5.25,-5.85,3543.31,CI,True,,stop,0.00123186,791,880,781,33.07,"{""reasoning"": ""Reddish lateritic soil, dense oil palm plantations, tropical climate, and rural dirt road are highly characteristic of West Africa's palm belt. The vehicle's left-side mirror suggests left-hand drive (right-side driving), consistent with Côte d'Ivoire or Ghana. The specific combination of lateritic red soil and oil palm monoculture points to southwestern Côte d'Ivoire."", ""country"": ""CI"", ""latitude"": 5.25, ""longitude"": -5.85}"
+qwen/qwen3.5-27b,no-CoT,6.8276,-5.2893,3552.688,CI,True,,stop,0.00019035,473,29,0,9.91,"{""country"": ""CI"", ""latitude"": 6.8276, ""longitude"": -5.2893}"
+qwen/qwen3.6-27b,no-CoT,11.9454,79.8043,6508.923,IN,True,,stop,0.000211097,473,31,0,4.83,"{""country"": ""IN"", ""latitude"": 11.9454, ""longitude"": 79.8043}"
+mistralai/mistral-small-2603,no-CoT,-22.9035,-47.0518,7783.336,BR,True,,stop,0.0001137,634,31,0,9.79,"{""country"": ""BR"", ""latitude"": -22.9035, ""longitude"": -47.0518}"
+qwen/qwen3.5-35b-a3b,no-CoT,-0.7893,100.6512,8535.569,ID,True,,stop,0.000157,473,31,0,7.57,"{""country"": ""ID"", ""latitude"": -0.7893, ""longitude"": 100.6512}"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.7893,100.6512,8535.569,ID,True,,stop,0.00010195,473,31,0,2.22,"{""country"": ""ID"", ""latitude"": -0.7893, ""longitude"": 100.6512}"
+qwen/qwen3.5-122b-a10b,CoT,3.25,101.5,8682.236,ID,True,,stop,0.0068715,553,2794,2663,27.53,"{
+""reasoning"": ""The image displays a straight, unpaved road with reddish laterite soil running through a dense oil palm plantation, which is highly characteristic of Southeast Asia, particularly Indonesia or Malaysia. The presence of the side mirror on the left suggests a left-hand traffic system (or a right-hand drive car in a LHT country), consistent with Indonesia. The specific combination of mature oil palms, red soil, and tropical undergrowth strongly points to a plantation in Sumatra."",
+""country"": ""ID"",
+""latitude"": 3.25,
+""longitude"": 101.5
+}"
+qwen/qwen3.5-122b-a10b,no-CoT,6.5244,101.2538,8702.992,TH,True,,stop,0.00018772,474,31,0,6.29,"{""country"": ""TH"", ""latitude"": 6.5244, ""longitude"": 101.2538}"
+qwen/qwen3.5-9b,no-CoT,2.4357,101.9738,8723.283,MY,True,,stop,5.205e-05,474,31,0,5.54,"{""country"": ""MY"", ""latitude"": 2.4357, ""longitude"": 101.9738}"
+google/gemma-4-31b-it,no-CoT,4.2105,101.8667,8736.116,MY,True,,stop,6.378e-05,406,36,0,4.98,"```json
+{""country"": ""MY"", ""latitude"": 4.2105, ""longitude"": 101.8667}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,2.5,102.5,8782.175,MY,True,,stop,0.00024297,473,25,0,1.38,"{""country"": ""MY"", ""latitude"": 2.5, ""longitude"": 102.5}"
+qwen/qwen3.6-27b,CoT,-3.5,103.5,8818.576,ID,True,,stop,0.02536755,554,7750,7429,369.65,"{""reasoning"": ""The image features a red laterite soil road flanked by oil palm plantations and tropical vegetation (including coconut palms and cogon grass), which is highly characteristic of the landscape in Sumatra, Indonesia. The side mirror is visible on the left, indicating a left-hand drive vehicle, which aligns with Indonesia's right-hand traffic system (unlike neighboring Malaysia or Thailand where traffic is on the left)."", ""country"": ""ID"", ""latitude"": -3.5, ""longitude"": 103.5}"
+google/gemini-3.5-flash,CoT (effort=medium),-0.95,103.95,8898.158,ID,True,,stop,0.0105735,1271,963,886,16.04,"```json
+{""reasoning"": ""The presence of extensive oil palm plantations, a right-hand drive vehicle with a left-fender blind-spot mirror, and the characteristic reddish-yellow clay road strongly point to rural Sumatra, Indonesia."", ""country"": ""ID"", ""latitude"": -0.95, ""longitude"": 103.95}
+```"
+mistralai/mistral-small-2603,CoT,-31.85,115.75,9811.088,AU,True,,stop,0.00045384,716,689,798,6.2,"{""reasoning"": ""Left-hand traffic combined with coastal desert vegetation featuring palm trees indicates Western Australia."", ""country"": ""AU"", ""latitude"": -31.85, ""longitude"": 115.75}"
+qwen/qwen3.5-397b-a17b,CoT,5.1245,116.8321,10395.135,MY,True,,stop,0.01741565,553,4889,4759,118.43,"{
+""reasoning"": ""The image shows a straight, red lateritic soil road cutting through a mature oil palm plantation, a landscape ubiquitous in Southeast Asia, particularly Malaysia (Sabah/Sarawak) and Indonesia. The vehicle appears to be driving on the left (or positioned on the left side of the track), consistent with Left-Hand Traffic countries like Malaysia, and the vegetation density and soil color strongly point to a Borneo plantation setting."",
+""country"": ""MY"",
+""latitude"": 5.1245,
+""longitude"": 116.8321
+}"
+openai/gpt-5.5,CoT,5.0652,118.2817,10554.113,MY,True,,stop,0.012615,621,317,237,13.81,"{""reasoning"":""The scene shows a tropical oil-palm plantation with an unpaved laterite estate road, very characteristic of Malaysian Borneo/Sabah plantations. The vehicle/road context fits left-side-driving Malaysia better than most alternatives, with no signage to narrow it further."",""country"":""MY"",""latitude"":5.0652,""longitude"":118.2817}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,

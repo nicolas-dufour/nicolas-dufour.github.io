@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,30.705879022617847,120.72507110844064,0.0,CN,True,,,,,,,,"Chengnan, None, Zhejiang Sheng, CN"
+openai/gpt-5.5,no-CoT,31.0665,121.1298,55.674,CN,True,,stop,0.00341,544,23,0,1.51,"{""country"":""CN"",""latitude"":31.0665,""longitude"":121.1298}"
+openai/gpt-5.5,CoT,31.456,120.519,85.687,CN,True,,stop,0.013815,621,357,274,14.03,"{""reasoning"":""The highway layout, right-side driving, guardrails and overhead LED gantry with Chinese characters point to a Chinese expressway. Flat, wintery vegetation with poplars/evergreens is typical of the Yangtze River Delta, especially Jiangsu near Suzhou/Wuxi."",""country"":""CN"",""latitude"":31.456,""longitude"":120.519}"
+qwen/qwen3.5-9b,no-CoT,31.2256,121.4567,90.586,CN,True,,stop,5.22e-05,474,32,0,3.4,"{""country"": ""CN"", ""latitude"": 31.2256, ""longitude"": 121.4567}"
+minimax/minimax-m3,CoT,31.2,121.5,92.084,CN,True,,stop,0.00079266,843,501,421,20.85,"{""reasoning"": ""Right-hand traffic on a divided expressway with w-beam guardrails, an overhead gantry with amber/orange LED message board (characteristic Chinese expressway signage), flat terrain with dense manicured green vegetation typical of the Yangtze River Delta region."", ""country"": ""CN"", ""latitude"": 31.2, ""longitude"": 121.5}"
+google/gemini-3.1-pro-preview,no-CoT,31.2304,121.4737,92.176,CN,True,,stop,0.002812,1190,36,0,3.44,"```json
+{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),31.2304,121.4737,92.176,CN,True,,stop,0.0021075,1189,36,0,3.1,"```json
+{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}
+```"
+google/gemma-4-31b-it,no-CoT,31.2304,121.4737,92.176,CN,True,,stop,6.418e-05,406,37,0,4.54,"```json
+{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,31.2304,121.4737,92.176,CN,True,,stop,0.00018954,473,32,0,0.99,"{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}"
+qwen/qwen3.5-35b-a3b,no-CoT,31.2304,121.4737,92.176,CN,True,,stop,0.0001184625,473,32,0,7.28,"{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}"
+qwen/qwen3.6-35b-a3b,no-CoT,31.2304,121.4737,92.176,CN,True,,stop,0.000146,474,32,0,15.34,"{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}"
+google/gemini-3.5-flash,CoT (effort=high),31.57,120.3,104.255,CN,True,,stop,0.007452,1272,616,551,11.13,"{""reasoning"": ""The overhead LED gantry displays Chinese characters, and the flat terrain with dense roadside tree planting and overcast sky is characteristic of expressways in eastern China, particularly Jiangsu province."", ""country"": ""CN"", ""latitude"": 31.57, ""longitude"": 120.3}"
+anthropic/claude-opus-4.8,CoT,31.5,119.5,146.292,CN,True,,stop,0.006335,797,94,0,2.76,"{""reasoning"": ""Highway with orange LED gantry sign showing Chinese characters, right-hand traffic, poplar windbreaks and overcast winter sky typical of eastern China plains."", ""country"": ""CN"", ""latitude"": 31.5, ""longitude"": 119.5}"
+google/gemini-3.1-pro-preview,CoT,32.05,119.15,211.409,CN,True,,stop,0.005076,1272,211,136,3.42,"{
+  ""reasoning"": ""The overhead electronic sign displays Chinese characters, and the highway infrastructure is typical of China. The bare trees and hazy sky suggest a winter scene in eastern or central China."",
+  ""country"": ""CN"",
+  ""latitude"": 32.05,
+  ""longitude"": 119.15
+}"
+google/gemini-3.5-flash,CoT (effort=low),32.0415,118.7968,235.722,CN,True,,stop,0.00351,1272,178,110,8.5,"{""reasoning"": ""The overhead electronic gantry sign displays Chinese characters, and the highway design, flat terrain, and winter vegetation are characteristic of eastern China, likely in Jiangsu province."", ""country"": ""CN"", ""latitude"": 32.0415, ""longitude"": 118.7968}"
+moonshotai/kimi-k2.6,CoT,32.06,118.78,238.243,CN,True,,stop,0.008463888,682,2403,2327,65.25,"{""reasoning"": ""The overhead gantry displays amber LED signage with simplified Chinese characters characteristic of mainland China expressways. Right-hand traffic, standardized Chinese W-beam guardrails, and flat terrain with winter-deciduous vegetation confirm a highway in eastern China."", ""country"": ""CN"", ""latitude"": 32.06, ""longitude"": 118.78}"
+google/gemini-3.5-flash,CoT (effort=medium),33.5231,119.1245,347.628,CN,True,,stop,0.0047955,1271,321,249,3.59,"{""reasoning"": ""The overhead gantry displays Chinese characters on an LED screen, and the flat terrain with mixed deciduous and evergreen trees under an overcast sky is characteristic of Eastern China, particularly Jiangsu province."", ""country"": ""CN"", ""latitude"": 33.5231, ""longitude"": 119.1245}"
+xiaomi/mimo-v2.5,CoT,31.5,116.5,411.815,CN,True,,stop,0.0001527176,787,246,168,2.97,"{""reasoning"": ""The highway uses right-hand traffic, the overhead sign has Chinese characters, and the mixed evergreen/deciduous trees match the subtropical-temperate transition zone of central China, typical of this region's expressways."", ""country"": ""CN"", ""latitude"": 31.5, ""longitude"": 116.5}"
+anthropic/claude-opus-4.8,no-CoT,30.5,114.3,615.268,CN,True,,stop,0.00408,666,30,0,2.7,"{""country"": ""CN"", ""latitude"": 30.5, ""longitude"": 114.3}"
+minimax/minimax-m3,no-CoT,30.5,114.3,615.268,CN,True,,stop,0.00032562,767,128,142,4.4,"{""country"": ""CN"", ""latitude"": 30.5, ""longitude"": 114.3}{""country"": ""CN"", ""latitude"": 30.5, ""longitude"": 114.3}"
+xiaomi/mimo-v2.5,no-CoT,30.5728,104.0668,1592.319,CN,True,,stop,8.17376e-05,708,32,0,2.28,"{""country"": ""CN"", ""latitude"": 30.5728, ""longitude"": 104.0668}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,40.837528228759766,30.159473419189453,7881.894,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,40.838584899902344,30.074413299560547,7888.356,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,40.87845230102539,29.64495849609375,7919.329,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,51.5074,-0.1278,9207.662,GB,True,,stop,0.001176,634,30,0,0.96,"{""country"": ""GB"", ""latitude"": 51.5074, ""longitude"": -0.1278}"
+x-ai/grok-4.3,no-CoT,48.8566,2.3522,9268.682,FR,True,,stop,0.0005984,592,24,0,1.87,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+x-ai/grok-4.3,CoT,48.85,2.35,9269.281,FR,True,,stop,0.0025315,676,809,731,7.62,"{""reasoning"": ""Right-hand traffic on divided motorway with metal guardrails, overhead yellow VMS gantry, round yellow sign on left verge, leafless temperate trees and overcast sky all point to France; gantry/message-board style is characteristic of French autoroutes."", ""country"": ""FR"", ""latitude"": 48.85, ""longitude"": 2.35}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.466835021972656,-5.440423011779785,10275.652,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,42.17672348022461,-8.477136611938477,10389.309,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,41.22581100463867,-8.617469787597656,10475.852,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,11930.238,US,True,,stop,0.0001131,634,30,0,3.41,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+qwen/qwen3.6-27b,no-CoT,40.7128,-74.006,11930.238,US,True,,stop,0.0001923,473,30,0,6.6,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+qwen/qwen3.5-27b,no-CoT,35.7796,-78.6382,12350.541,US,True,,stop,0.00021684,474,36,0,1.54,"```json
+{""country"": ""US"", ""latitude"": 35.7796, ""longitude"": -78.6382}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,35.7796,-78.6382,12350.541,US,True,,stop,0.00036468,473,31,0,3.85,"{""country"": ""US"", ""latitude"": 35.7796, ""longitude"": -78.6382}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12905.114,,True,True,,,,,,12.69,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.43,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.42,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,8.22,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.29,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.26,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.23,

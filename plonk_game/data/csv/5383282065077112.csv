@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-34.75555865756,139.42397627445,0.0,AU,True,,,,,,,,"Mannum, Mid Murray, South Australia, AU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-34.93306350708008,139.02923583984375,41.076,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-35.10125732421875,139.16171264648438,45.269,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-35.0954,139.8917,56.976,AU,True,,stop,0.013855,755,336,255,15.54,"{""reasoning"":""Left-side driving, Australian-style white guideposts and lane markings, plus flat dry wheatbelt terrain with eucalyptus/mallee shelterbelts point strongly to rural southern Australia. The sandy shoulders and open mallee farmland are most consistent with South Australia's Murray Mallee region."",""country"":""AU"",""latitude"":-35.0954,""longitude"":139.8917}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-35.183773040771484,138.95538330078125,63.955,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-34.6037,138.7099,67.444,AU,True,,stop,0.001419,786,32,0,0.88,"{""country"": ""AU"", ""latitude"": -34.6037, ""longitude"": 138.7099}"
+x-ai/grok-4.3,CoT,-35.12,138.75,73.597,AU,True,,stop,0.002284,788,654,582,28.36,"{""reasoning"": ""Eucalyptus-style trees, dry grass paddocks, red-brown soil and left-hand traffic road markings (dashed center line with shoulder on right of view) identify rural Australia; flat horizon and overcast sky consistent with southern states."", ""country"": ""AU"", ""latitude"": -35.12, ""longitude"": 138.75}"
+x-ai/grok-4.3,no-CoT,-34.85,138.55,80.486,AU,True,,stop,0.0007334,704,22,0,0.9,"{""country"": ""AU"", ""latitude"": -34.85, ""longitude"": 138.55}"
+qwen/qwen3.5-397b-a17b,no-CoT,-35.1234,138.5678,88.111,AU,True,,stop,0.0004662,585,32,0,1.59,"{""country"": ""AU"", ""latitude"": -35.1234, ""longitude"": 138.5678}"
+google/gemma-4-31b-it,no-CoT,-34.25,138.6,94.134,AU,True,,stop,6.572e-05,404,33,0,8.73,"```json
+{""country"": ""AU"", ""latitude"": -34.25, ""longitude"": 138.60}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,-34.2456,138.5678,96.804,AU,True,,stop,0.00018625,585,32,0,6.77,"{""country"": ""AU"", ""latitude"": -34.2456, ""longitude"": 138.5678}"
+qwen/qwen3.5-122b-a10b,no-CoT,-34.0833,138.5167,111.864,AU,True,,stop,0.00021866,585,32,0,0.97,"{""country"": ""AU"", ""latitude"": -34.0833, ""longitude"": 138.5167}"
+openai/gpt-5.5,no-CoT,-35.242,140.676,126.219,AU,True,,stop,0.00405,678,22,0,7.64,"{""country"":""AU"",""latitude"":-35.242,""longitude"":140.676}"
+xiaomi/mimo-v2.5,no-CoT,-35.0,138.0,132.709,AU,True,,stop,9.57376e-05,820,26,0,2.75,"{""country"": ""AU"", ""latitude"": -35.0, ""longitude"": 138.0}"
+xiaomi/mimo-v2.5,CoT,-35.55,138.2,142.076,AU,True,,stop,0.0007835576,899,2443,2359,25.84,"{""reasoning"": ""The wind-sculpted coastal vegetation, sandy soil, and standard Australian rural road markings (white guide posts and dashed white lines) are characteristic of the southern coast of Australia, specifically the Fleurieu Peninsula or Eyre Peninsula in South Australia."", ""country"": ""AU"", ""latitude"": -35.55, ""longitude"": 138.2}"
+moonshotai/kimi-k2.6,no-CoT,-35.0,137.5,177.597,AU,True,,stop,0.00064215,754,23,0,23.28,"{""country"": ""AU"", ""latitude"": -35.0, ""longitude"": 137.5}"
+moonshotai/kimi-k2.6,CoT,-34.0,137.5,195.532,AU,True,,stop,0.010984716,834,3128,3064,83.12,"{""reasoning"": ""The flat rural landscape with red-tan soil, eucalyptus windbreaks, white Australian-style road markings, and simple rural guide posts is characteristic of South Australia's agricultural districts."", ""country"": ""AU"", ""latitude"": -34.0, ""longitude"": 137.5}"
+google/gemini-3.5-flash,CoT (effort=low),-33.7012,136.1245,325.187,AU,True,,stop,0.00441,1308,272,203,9.1,"{""reasoning"": ""The left-hand driving, white road markings, sandy shoulders, and mallee eucalyptus vegetation are highly characteristic of southern Australia, particularly the Eyre Peninsula in South Australia."", ""country"": ""AU"", ""latitude"": -33.7012, ""longitude"": 136.1245}"
+google/gemini-3.5-flash,CoT (effort=medium),-33.7012,136.1245,325.187,AU,True,,stop,0.006255,1308,477,410,3.75,"{""reasoning"": ""The mallee eucalyptus vegetation, sandy light-colored shoulders, and white road markings are highly characteristic of southern Australia, particularly the Eyre Peninsula in South Australia."", ""country"": ""AU"", ""latitude"": -33.7012, ""longitude"": 136.1245}"
+google/gemini-3.1-pro-preview,no-CoT,-33.5,136.0,344.674,AU,True,,stop,0.00503,1225,215,185,4.67,"```json
+{""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 136.0}
+```"
+qwen/qwen3.5-397b-a17b,CoT,-34.72,135.58,351.25,AU,True,,stop,0.00771405,665,2486,1,89.65,"{
+""reasoning"": ""The image displays left-hand traffic on a paved road with red earth shoulders, characteristic of the Eyre Peninsula in South Australia. The vegetation consists of mallee eucalypts and dry grasses typical of the Australian semi-arid agricultural zone, alongside standard Australian white roadside marker posts."",
+""country"": ""AU"",
+""latitude"": -34.72,
+""longitude"": 135.58
+}"
+minimax/minimax-m3,CoT,-33.75,135.15,408.383,AU,True,,stop,0.00092502,997,570,597,12.32,"{""reasoning"": ""Eucalyptus trees with characteristic spreading canopies, reddish-brown Australian soil, flat semi-arid agricultural landscape, left-hand driving with white edge guide posts, and the style of the asphalt road all strongly indicate rural South Australia, likely the Eyre Peninsula or Murray Mallee region."", ""country"": ""AU"", ""latitude"": -33.75, ""longitude"": 135.15}"
+minimax/minimax-m3,no-CoT,-33.5,135.0,430.428,AU,True,,stop,0.00033282,919,96,100,5.03,"{""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 135.0}"
+qwen/qwen3.5-27b,no-CoT,-37.4714,143.8456,498.851,AU,True,,stop,0.00026936,586,45,0,5.27,"```json
+{
+  ""country"": ""AU"",
+  ""latitude"": -37.4714,
+  ""longitude"": 143.8456
+}
+```"
+qwen/qwen3.6-27b,no-CoT,-37.0,145.0,560.827,AU,True,,stop,0.00024652,585,26,0,20.5,"{""country"": ""AU"", ""latitude"": -37.0, ""longitude"": 145.0}"
+qwen/qwen3.5-9b,no-CoT,-35.9623,148.0256,791.211,AU,True,,stop,6.34e-05,586,32,0,5.76,"{""country"": ""AU"", ""latitude"": -35.9623, ""longitude"": 148.0256}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-33.654218,121.245124,1673.954,AU,True,,stop,0.002199,1226,40,0,14.31,"```json
+{""country"": ""AU"", ""latitude"": -33.654218, ""longitude"": 121.245124}
+```"
+google/gemini-3.1-pro-preview,CoT,-33.5833,120.05,1784.41,AU,True,,stop,0.00625,1307,303,210,6.94,"{
+  ""reasoning"": ""The white guide posts with red reflectors on the left indicate left-hand driving in Australia. The dry, sandy soil and mallee-style eucalyptus trees suggest a southern agricultural region such as the Wheatbelt in Western Australia or South Australia."",
+  ""country"": ""AU"",
+  ""latitude"": -33.5833,
+  ""longitude"": 120.0500
+}"
+google/gemini-3.5-flash,CoT (effort=high),-33.2845,119.8974,1804.195,AU,True,,stop,0.0072165,1307,584,518,8.52,"{""reasoning"": ""The mallee eucalyptus vegetation, sandy light-colored road shoulders, and left-hand driving indicate the semi-arid wheatbelt of southern Western Australia."", ""country"": ""AU"", ""latitude"": -33.2845, ""longitude"": 119.8974}"
+anthropic/claude-opus-4.8,no-CoT,-33.5,119.0,1881.88,AU,True,,stop,0.00484,818,30,0,8.67,"{""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 119.0}"
+anthropic/claude-opus-4.8,CoT,-32.5,118.5,1949.858,AU,True,,stop,0.00697,949,89,0,3.91,"{""reasoning"": ""Eucalyptus trees, dry agricultural fields, and left-side driving on a rural two-lane road suggest the wheatbelt of southern Australia."", ""country"": ""AU"", ""latitude"": -32.5, ""longitude"": 118.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.62,117.62,2005.584,AU,True,,stop,0.00398683285,583,4033,3999,21.82,"{""country"": ""AU"", ""latitude"": -33.62, ""longitude"": 117.62}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-35.00923538208008,116.6548843383789,2072.585,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-34.83876419067383,116.44461059570312,2093.657,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-33.3796501159668,116.50614929199219,2111.958,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,14300.932,,True,True,,,,,,0.5,
+mistralai/mistral-small-2603,no-CoT,37.0194,-8.5306,17130.88,PT,True,,stop,0.0001359,786,30,0,2.99,"{""country"": ""PT"", ""latitude"": 37.0194, ""longitude"": -8.5306}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.19,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.07,

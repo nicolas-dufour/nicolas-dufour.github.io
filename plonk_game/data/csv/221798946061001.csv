@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-12.274573976724,142.59169949611,0.0,AU,True,,,,,,,,"Weipa, Cook, Queensland, AU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-12.381378173828125,142.94969177246094,40.662,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-12.455942153930664,143.02609252929688,51.311,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-13.634793281555176,144.01461791992188,215.988,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,-19.25,146.8,896.716,AU,True,,stop,0.00041748,585,27,0,9.6,"{""country"": ""AU"", ""latitude"": -19.25, ""longitude"": 146.8}"
+google/gemini-3.5-flash,CoT (effort=high),-13.85,134.15,930.941,AU,True,,stop,0.0078555,1307,655,593,12.98,"{""reasoning"": ""The reddish dirt road, sparse eucalyptus savanna vegetation, and bright tropical sun are highly characteristic of the northern regions of Australia, such as the Northern Territory."", ""country"": ""AU"", ""latitude"": -13.85, ""longitude"": 134.15}"
+qwen/qwen3.5-122b-a10b,no-CoT,-19.6543,138.2105,944.647,AU,True,,stop,0.00021866,585,32,0,19.08,"{""country"": ""AU"", ""latitude"": -19.6543, ""longitude"": 138.2105}"
+google/gemini-3.5-flash,CoT (effort=medium),-14.3521,134.1254,944.687,AU,True,,stop,0.0049215,1307,329,268,4.71,"{""reasoning"": ""The red dirt road, flat savanna landscape, and characteristic eucalyptus vegetation are highly indicative of northern Australia, specifically the Northern Territory."", ""country"": ""AU"", ""latitude"": -14.3521, ""longitude"": 134.1254}"
+qwen/qwen3.5-35b-a3b,no-CoT,-20.8123,139.4567,1006.316,AU,True,,stop,0.00011404,586,32,0,2.14,"{""country"": ""AU"", ""latitude"": -20.8123, ""longitude"": 139.4567}"
+qwen/qwen3.5-9b,no-CoT,-20.75,146.05,1011.818,AU,True,,stop,6.28e-05,586,28,0,10.89,"{""country"": ""AU"", ""latitude"": -20.75, ""longitude"": 146.05}"
+google/gemini-3.5-flash,CoT (effort=low),-13.5432,132.9876,1050.367,AU,True,,stop,0.003258,1308,144,80,9.95,"{""reasoning"": ""The red dirt road, sparse eucalyptus vegetation, and bright tropical sun are highly characteristic of the northern Australian outback, particularly the Northern Territory."", ""country"": ""AU"", ""latitude"": -13.5432, ""longitude"": 132.9876}"
+x-ai/grok-4.3,CoT,-14.85,133.15,1059.852,AU,True,,stop,0.001829,788,472,405,7.25,"{""reasoning"": ""Red dirt road through open eucalypt savanna woodland with bright tropical sky and sun flare is diagnostic of northern Australia; dashcam overlay and lack of other traffic markings reinforce remote AU outback setting."", ""country"": ""AU"", ""latitude"": -14.85, ""longitude"": 133.15}"
+openai/gpt-5.5,CoT,-13.2574,132.5486,1094.523,AU,True,,stop,0.014695,755,364,290,17.66,"{""reasoning"":""Red lateritic dirt track through open eucalyptus savanna and left-side vehicle setup point strongly to remote northern Australia. The tropical dry woodland/soil fits the Northern Territory around Kakadu/Arnhem Land better than most other regions."",""country"":""AU"",""latitude"":-13.2574,""longitude"":132.5486}"
+x-ai/grok-4.3,no-CoT,-16.45,133.35,1098.158,AU,True,,stop,0.0007334,704,22,0,1.92,"{""country"": ""AU"", ""latitude"": -16.45, ""longitude"": 133.35}"
+moonshotai/kimi-k2.6,CoT,-13.4,132.45,1106.526,AU,True,,stop,0.020703456,834,5971,5906,260.63,"{""reasoning"": ""The red lateritic dirt road and open eucalypt savanna woodland are diagnostic of tropical northern Australia, and the inferred right-hand-drive vehicle confirms left-hand traffic consistent with Australia."", ""country"": ""AU"", ""latitude"": -13.4, ""longitude"": 132.45}"
+google/gemini-3.1-pro-preview,CoT,-14.5,132.5,1119.197,AU,True,,stop,0.005146,1307,211,146,4.42,"{
+  ""reasoning"": ""The distinct red dirt road and sparse eucalyptus vegetation are highly characteristic of the Australian outback, particularly in the northern savanna regions."",
+  ""country"": ""AU"",
+  ""latitude"": -14.5,
+  ""longitude"": 132.5
+}"
+google/gemini-3.1-pro-preview,no-CoT,-14.5,132.5,1119.197,AU,True,,stop,0.004658,1225,184,154,9.39,"```json
+{""country"": ""AU"", ""latitude"": -14.5, ""longitude"": 132.5}
+```"
+moonshotai/kimi-k2.6,no-CoT,-14.5,132.5,1119.197,AU,True,,stop,0.0007196,752,25,0,25.3,"{""country"": ""AU"", ""latitude"": -14.5, ""longitude"": 132.5}"
+anthropic/claude-opus-4.8,CoT,-13.2,132.0,1153.266,AU,True,,stop,0.007545,949,112,0,4.41,"{""reasoning"": ""Red dirt outback track with sparse eucalyptus/savanna woodland and bright dry sky strongly indicates northern Australia's tropical savanna, likely the Northern Territory near Kakadu/Arnhem region."", ""country"": ""AU"", ""latitude"": -13.2, ""longitude"": 132.0}"
+anthropic/claude-opus-4.8,no-CoT,-13.5,132.0,1156.028,AU,True,,stop,0.00484,818,30,0,2.8,"{""country"": ""AU"", ""latitude"": -13.5, ""longitude"": 132.0}"
+minimax/minimax-m3,no-CoT,-17.0,133.0,1157.623,AU,True,,stop,0.00030642,919,74,67,11.23,"{""country"": ""AU"", ""latitude"": -17.0, ""longitude"": 133.0}"
+openai/gpt-5.5,no-CoT,-13.8532,131.8266,1179.053,AU,True,,stop,0.00411,678,24,0,1.5,"{""country"":""AU"",""latitude"":-13.8532,""longitude"":131.8266}"
+minimax/minimax-m3,CoT,-15.5,132.0,1197.991,AU,True,,stop,0.00055986,943,282,213,15.02,"{""reasoning"": ""Distinctive red laterite soil, eucalyptus woodland, and remote unsealed road are hallmarks of northern Australian outback (Kimberley/Northern Territory). Dashcam model and vegetation profile confirm Australia."", ""country"": ""AU"", ""latitude"": -15.5, ""longitude"": 132.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-14.25466251373291,131.63772583007812,1205.641,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-12.7833,131.3333,1223.277,AU,True,,stop,0.0021615,1225,36,0,1.55,"```json
+{""country"": ""AU"", ""latitude"": -12.7833, ""longitude"": 131.3333}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-15.176307678222656,131.37905883789062,1253.173,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-14.265800476074219,131.15676879882812,1257.027,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,-23.698,133.882,1567.84,AU,True,,stop,0.00011775,585,30,0,11.76,"{""country"": ""AU"", ""latitude"": -23.698, ""longitude"": 133.882}"
+xiaomi/mimo-v2.5,no-CoT,-23.5,133.5,1574.661,AU,True,,stop,9.57376e-05,820,26,0,7.31,"{""country"": ""AU"", ""latitude"": -23.5, ""longitude"": 133.5}"
+xiaomi/mimo-v2.5,CoT,-23.5,133.0,1607.383,AU,True,,stop,0.0003851176,899,1020,957,18.23,"{""reasoning"": ""Reddish soil and eucalyptus trees are characteristic of the Australian outback; the dashcam perspective suggests left-hand traffic typical of Australia."", ""country"": ""AU"", ""latitude"": -23.5, ""longitude"": 133.0}"
+google/gemma-4-31b-it,no-CoT,-18.5,128.0,1709.539,AU,True,,stop,6.732e-05,404,37,0,13.99,"```json
+{""country"": ""AU"", ""latitude"": -18.5000, ""longitude"": 128.0000}
+```"
+qwen/qwen3.5-27b,no-CoT,-25.2744,133.7751,1716.363,AU,True,,stop,0.00022707,585,32,0,1.76,"{""country"": ""AU"", ""latitude"": -25.2744, ""longitude"": 133.7751}"
+qwen/qwen3.5-397b-a17b,CoT,-18.2345,127.6678,1731.626,AU,True,,stop,0.00808305,665,2609,1,69.39,"{
+""reasoning"": ""The combination of intense red lateritic soil and tall Eucalyptus/Corymbia woodland is iconic to the Australian Outback, particularly the Kimberley region. The vehicle is positioned on the left side of the track, consistent with Australian traffic laws."",
+""country"": ""AU"",
+""latitude"": -18.2345,
+""longitude"": 127.6678
+}"
+mistralai/mistral-medium-3-5,no-CoT,-18.175,125.875,1908.481,AU,True,,stop,0.001404,786,30,0,1.04,"{""country"": ""AU"", ""latitude"": -18.175, ""longitude"": 125.875}"
+qwen/qwen3.6-27b,no-CoT,-30.0,149.0,2078.774,AU,True,,stop,0.000259,586,26,0,5.49,"{""country"": ""AU"", ""latitude"": -30.0, ""longitude"": 149.0}"
+mistralai/mistral-small-2603,no-CoT,34.0522,-118.2437,11604.129,US,True,,stop,0.0001371,786,32,0,9.77,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,15668.597,,True,True,,,,,,0.95,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.09,

@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,20.764814596133,-88.202791200953,0.0,MX,True,,,,,,,,"Temozon, None, Yucatan, MX"
+openai/gpt-5.5,CoT,20.6895,-88.3732,19.601,MX,True,,stop,0.013365,621,342,249,8.12,"{""reasoning"":""Right-side driving with double yellow centerlines and white edge lines matches Mexican rural highways, and the flat limestone terrain with dense dry tropical scrub is characteristic of the Yucatán Peninsula. The lack of mountains and the roadside power infrastructure/vegetation point most strongly to an inland Yucatán/Quintana Roo road."",""country"":""MX"",""latitude"":20.6895,""longitude"":-88.3732}"
+moonshotai/kimi-k2.6,CoT,20.6,-88.3,20.931,MX,True,,stop,0.01059622,682,2525,2744,59.48,"{""reasoning"": ""The flat tropical dry scrub forest, North American-style wooden utility poles with crossarms, and right-hand traffic road markings with double yellow center lines are distinctive of rural Mexico, specifically the Yucatan Peninsula."", ""country"": ""MX"", ""latitude"": 20.6, ""longitude"": -88.3}"
+google/gemini-3.5-flash,CoT (effort=high),20.6842,-88.4512,27.345,MX,True,,stop,0.0082245,1271,702,634,6.12,"{""reasoning"": ""The flat terrain, low-canopy tropical dry forest, and concrete utility poles are highly characteristic of the Yucatán Peninsula in Mexico, along with standard Mexican road markings."", ""country"": ""MX"", ""latitude"": 20.6842, ""longitude"": -88.4512}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),20.6842,-88.5678,39.005,MX,True,,stop,0.0021,1190,35,0,2.24,"```json
+{""country"": ""MX"", ""latitude"": 20.6842, ""longitude"": -88.5678}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),20.7543,-88.9512,77.825,MX,True,,stop,0.0051105,1271,356,291,4.37,"{""reasoning"": ""The flat terrain, dense scrubby tropical dry forest, double yellow center lines, and concrete utility poles are highly characteristic of the Yucatan Peninsula in Mexico."", ""country"": ""MX"", ""latitude"": 20.7543, ""longitude"": -88.9512}"
+google/gemini-3.5-flash,CoT (effort=low),20.6542,-89.0124,85.101,MX,True,,stop,0.0035625,1271,184,118,10.08,"{""reasoning"": ""The flat terrain, dense low-lying tropical scrub vegetation, double yellow center lines, and concrete utility poles are highly characteristic of the Yucatan Peninsula in Mexico."", ""country"": ""MX"", ""latitude"": 20.6542, ""longitude"": -89.0124}"
+anthropic/claude-opus-4.8,CoT,20.7,-89.1,93.582,MX,True,,stop,0.006585,797,104,0,3.47,"{""reasoning"": ""Flat scrubland with low dense vegetation typical of Yucatán Peninsula, yellow center line and white edge lines on right-hand drive road, concrete utility poles match rural Mexican highways."", ""country"": ""MX"", ""latitude"": 20.7, ""longitude"": -89.1}"
+anthropic/claude-opus-4.8,no-CoT,20.7,-89.1,93.582,MX,True,,stop,0.00408,666,30,0,8.2,"{""country"": ""MX"", ""latitude"": 20.7, ""longitude"": -89.1}"
+minimax/minimax-m3,CoT,20.21,-87.46,98.955,MX,True,,stop,0.00064386,843,377,294,14.31,"{""reasoning"": ""Double yellow center line, white edge lines, concrete utility poles with multiple crossarms carrying distribution lines, flat terrain with low tropical scrub vegetation, and cloudy tropical sky strongly indicate a rural highway on Mexico's Yucatan Peninsula, most likely Highway 307 in Quintana Roo."", ""country"": ""MX"", ""latitude"": 20.21, ""longitude"": -87.46}"
+qwen/qwen3.5-122b-a10b,no-CoT,20.6597,-87.0322,122.311,MX,True,,stop,0.0002163,473,31,0,2.03,"{""country"": ""MX"", ""latitude"": 20.6597, ""longitude"": -87.0322}"
+google/gemini-3.1-pro-preview,CoT,20.8512,-89.5431,139.645,MX,True,,stop,0.00577,1271,269,186,39.58,"{
+  ""reasoning"": ""The double yellow center lines, white edge lines, and concrete utility pole with multiple crossarms are typical of Mexico. The flat terrain and dry, scrubby vegetation strongly suggest the Yucatan Peninsula."",
+  ""country"": ""MX"",
+  ""latitude"": 20.8512,
+  ""longitude"": -89.5431
+}"
+google/gemini-3.1-pro-preview,no-CoT,20.968,-89.624,149.384,MX,True,,stop,0.002776,1190,33,0,8.56,"```json
+{""country"": ""MX"", ""latitude"": 20.968, ""longitude"": -89.624}
+```"
+openai/gpt-5.5,no-CoT,20.7523,-89.6438,149.837,MX,True,,stop,0.00344,544,24,0,1.41,"{""country"":""MX"",""latitude"":20.7523,""longitude"":-89.6438}"
+x-ai/grok-4.3,no-CoT,20.85,-89.65,150.724,MX,True,,stop,0.0005934,592,22,0,1.12,"{""country"": ""MX"", ""latitude"": 20.85, ""longitude"": -89.65}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,19.505056381225586,-91.66690826416016,387.816,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,18.15829849243164,-92.50743865966797,536.303,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,18.07594871520996,-93.43097686767578,624.417,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,25.561052322387695,-81.09762573242188,900.811,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,25.76774787902832,-81.21086883544922,904.991,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,25.0865,-80.6234,912.617,US,True,,stop,0.00036468,473,31,0,8.33,"{""country"": ""US"", ""latitude"": 25.0865, ""longitude"": -80.6234}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,26.600553512573242,-81.66085052490234,929.61,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,27.9506,-82.4572,988.135,US,True,,stop,0.0001943,473,31,0,6.62,"{""country"": ""US"", ""latitude"": 27.9506, ""longitude"": -82.4572}"
+qwen/qwen3.6-35b-a3b,no-CoT,27.9506,-82.4572,988.135,US,True,,stop,0.0036145317,471,3666,3635,33.01,"{""country"": ""US"", ""latitude"": 27.9506, ""longitude"": -82.4572}"
+mistralai/mistral-medium-3-5,no-CoT,25.7617,-80.1918,988.74,US,True,,stop,0.0011835,634,31,0,0.86,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+qwen/qwen3.5-27b,no-CoT,25.7617,-80.1918,988.74,US,True,,stop,0.00019467,473,31,0,1.9,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+qwen/qwen3.5-35b-a3b,no-CoT,25.7617,-80.1918,988.74,US,True,,stop,0.0001236625,473,36,0,0.76,"{
+""country"": ""US"",
+""latitude"": 25.7617,
+""longitude"": -80.1918
+}"
+xiaomi/mimo-v2.5,no-CoT,29.9511,-90.0715,1038.522,US,True,,stop,8.14576e-05,708,31,0,1.66,"{""country"": ""US"", ""latitude"": 29.9511, ""longitude"": -90.0715}"
+xiaomi/mimo-v2.5,CoT,27.52,-80.58,1077.6,US,True,,stop,0.0008910776,787,2883,2779,38.73,"{""reasoning"": ""The image features a two-lane paved road with double yellow center lines and white edge lines, which is the standard marking convention for the United States, indicating right-hand traffic. The dense, low-growing vegetation resembles the scrub habitat (saw palmetto and scrub oak) characteristic of Florida's landscape, particularly in rural areas or near conservation lands."", ""country"": ""US"", ""latitude"": 27.52, ""longitude"": -80.58}"
+google/gemma-4-31b-it,no-CoT,20.5887,-103.2583,1565.82,MX,True,,stop,6.758e-05,406,37,0,4.78,"```json
+{""country"": ""MX"", ""latitude"": 20.5887, ""longitude"": -103.2583}
+```"
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4196,3787.764,US,True,,stop,0.0001143,634,32,0,3.52,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4196}"
+x-ai/grok-4.3,CoT,-15.8,-56.1,5367.446,BR,True,,stop,0.0021915,676,673,596,12.07,"{
+  ""reasoning"": ""Right-hand traffic with double yellow center line + white edge lines, rural asphalt road, dense dry-forest/savanna scrub vegetation, and utility pole style point to interior Brazil; the scene matches typical cerrado highway views."",
+  ""country"": ""BR"",
+  ""latitude"": -15.8,
+  ""longitude"": -56.1
+}"
+qwen/qwen3.5-9b,no-CoT,-10.7954,-46.8136,5725.165,BR,True,,stop,5.205e-05,474,31,0,3.56,"{""country"": ""BR"", ""latitude"": -10.7954, ""longitude"": -46.8136}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.34,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.56,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.27,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.65,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.3,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.24,

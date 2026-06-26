@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,11.22776092231986,42.26026617741651,0.0,DJ,True,,,,,,,,"Dikhil, None, Dikhil, DJ"
+anthropic/claude-opus-4.8,no-CoT,11.5,42.5,39.992,DJ,True,,stop,0.004865,818,31,0,2.63,"{""country"": ""DJ"", ""latitude"": 11.5, ""longitude"": 42.5}"
+google/gemini-3.1-pro-preview,CoT,11.55,42.55,47.763,DJ,True,,stop,0.00612,1308,292,212,5.03,"{
+  ""reasoning"": ""The barren, rocky desert landscape with sparse scrub and the specific style of the utility pole with a diagonal support are characteristic of Djibouti. The degraded paved road and overall arid environment further support this region."",
+  ""country"": ""DJ"",
+  ""latitude"": 11.55,
+  ""longitude"": 42.55
+}"
+google/gemini-3.1-pro-preview,no-CoT,11.588,42.619,55.977,DJ,True,,stop,0.002848,1226,33,0,2.56,"```json
+{""country"": ""DJ"", ""latitude"": 11.588, ""longitude"": 42.619}
+```"
+anthropic/claude-opus-4.8,CoT,12.5,41.0,197.027,ET,True,,stop,0.00712,949,95,0,11.67,"{""reasoning"": ""Barren volcanic desert with dark basalt rocks, gravel track, hazy hot atmosphere typical of the Afar/Danakil region of the Horn of Africa."", ""country"": ""ET"", ""latitude"": 12.5, ""longitude"": 41.0}"
+minimax/minimax-m3,CoT,14.22,40.3,394.84,ET,True,,stop,0.00087906,995,535,444,17.19,"{""reasoning"": ""Volcanic dark terrain on the right with pale salt-flat-like ground on the left, extreme aridity, dusty haze, and a Toyota Land Cruiser hood are highly characteristic of the Afar Triangle. This matches the landscape around the Dallol/Erta Ale region in Ethiopia's Afar Depression."", ""country"": ""ET"", ""latitude"": 14.22, ""longitude"": 40.30}"
+google/gemini-3.5-flash,CoT (effort=low),2.6543,37.2112,1104.003,KE,True,,stop,0.0054885,1307,392,325,3.83,"{""reasoning"": ""The extremely arid volcanic desert landscape, combined with the characteristic white vehicle hood and snorkel, indicates northern Kenya, specifically the remote C77 road near Lake Turkana."", ""country"": ""KE"", ""latitude"": 2.6543, ""longitude"": 37.2112}"
+google/gemini-3.5-flash,CoT (effort=medium),2.6154,36.7812,1132.325,KE,True,,stop,0.0089175,1307,773,704,12.83,"{""reasoning"": ""The extremely arid, volcanic basalt desert landscape combined with the white vehicle hood and snorkel on the right side indicates the C77 road in northern Kenya, near Lake Turkana."", ""country"": ""KE"", ""latitude"": 2.6154, ""longitude"": 36.7812}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),3.1161,36.0294,1133.698,KE,True,,stop,0.002145,1226,34,0,1.93,"```json
+{""country"": ""KE"", ""latitude"": 3.1161, ""longitude"": 36.0294}
+```"
+google/gemini-3.5-flash,CoT (effort=high),2.183,36.912,1166.012,KE,True,,stop,0.0142905,1307,1370,1303,12.18,"{""reasoning"": ""The extremely arid, flat landscape with dark volcanic basalt rocks and a highly degraded road is characteristic of northern Kenya, specifically the remote C77 route leading towards Lake Turkana."", ""country"": ""KE"", ""latitude"": 2.183, ""longitude"": 36.912}"
+qwen/qwen3.6-35b-a3b,no-CoT,24.7136,46.6753,1570.16,SA,True,,stop,0.0001668,586,31,0,8.43,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+openai/gpt-5.5,no-CoT,25.125,51.015,1799.357,QA,True,,stop,0.00402,678,21,0,2.57,"{""country"":""QA"",""latitude"":25.125,""longitude"":51.015}"
+openai/gpt-5.5,CoT,25.5258,50.8466,1828.334,QA,True,,stop,0.014995,755,374,296,16.89,"{""reasoning"":""The flat, pale limestone/gravel desert with sparse scrub and coastal haze matches Qatar’s west-coast desert tracks around Zekreet/Ras Abrouq. The off-road sandy track and Gulf-style arid terrain are decisive despite lack of signage."",""country"":""QA"",""latitude"":25.5258,""longitude"":50.8466}"
+qwen/qwen3.6-27b,no-CoT,29.3193,33.5547,2204.892,EG,True,,stop,0.0002279,585,31,0,20.87,"{""country"": ""EG"", ""latitude"": 29.3193, ""longitude"": 33.5547}"
+qwen/qwen3.5-27b,no-CoT,29.9167,29.8333,2443.397,EG,True,,stop,0.00025299,585,44,0,11.06,"```json
+{
+  ""country"": ""EG"",
+  ""latitude"": 29.9167,
+  ""longitude"": 29.8333
+}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.16469192504883,55.535072326660156,3273.208,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.652896881103516,54.746829986572266,3291.368,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.65172576904297,54.774410247802734,3292.28,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,26.5,12.0,3593.765,DZ,True,,stop,6.452e-05,404,30,0,20.2,"```json
+{""country"": ""DZ"", ""latitude"": 26.5, ""longitude"": 12.0}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4831.808,,True,True,,,,,,16.44,
+xiaomi/mimo-v2.5,CoT,-22.7,14.5,4834.947,NA,True,,stop,0.0005077576,899,1458,1394,14.65,"{""reasoning"": ""The foggy, barren coastal desert with an unpaved road strongly suggests the Skeleton Coast in Namibia, known for such desolate landscapes and frequent coastal fog."", ""country"": ""NA"", ""latitude"": -22.7, ""longitude"": 14.5}"
+qwen/qwen3.5-9b,no-CoT,28.1,-13.7,6096.493,ES,True,,stop,6.325e-05,586,31,0,5.42,"{""country"": ""ES"", ""latitude"": 28.1000, ""longitude"": -13.7000}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,23.657773971557617,-15.931879997253418,6284.567,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,23.019546508789062,-16.636423110961914,6354.432,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,22.853126525878906,-16.668846130371094,6357.354,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,70.9356,25.9758,6733.64,NO,True,,stop,0.0001365,786,31,0,8.02,"{""country"": ""NO"", ""latitude"": 70.9356, ""longitude"": 25.9758}"
+qwen/qwen3.5-122b-a10b,no-CoT,63.8667,-19.0167,7507.415,IS,True,,stop,0.0003332,585,31,0,7.49,"{""country"": ""IS"", ""latitude"": 63.8667, ""longitude"": -19.0167}"
+x-ai/grok-4.3,CoT,64.85,-18.4,7520.675,IS,True,,stop,0.0022565,788,643,572,11.67,"{""reasoning"": ""Barren volcanic/rocky desert with dark lava-like soil, sparse low shrubs, unpaved F-road style track, leaning utility pole and extreme haze point to Icelandic highlands; right-hand driving and vehicle silhouette also consistent."", ""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -18.4}"
+moonshotai/kimi-k2.6,CoT,63.86,-22.55,7670.058,IS,True,,stop,0.013850856,834,3970,3893,74.04,"{""reasoning"": ""The completely barren dark volcanic lava field, flat terrain, and maritime atmospheric haze are highly characteristic of Iceland's Reykjanes Peninsula, where paved roads cut through recent basalt flows between Keflavík and Grindavík."", ""country"": ""IS"", ""latitude"": 63.86, ""longitude"": -22.55}"
+mistralai/mistral-medium-3-5,no-CoT,63.9948,-22.5562,7674.992,IS,True,,stop,0.0014115,786,31,0,1.08,"{""country"": ""IS"", ""latitude"": 63.9948, ""longitude"": -22.5562}"
+x-ai/grok-4.3,no-CoT,63.88,-22.65,7675.403,IS,True,,stop,0.0007334,704,22,0,7.43,"{""country"": ""IS"", ""latitude"": 63.88, ""longitude"": -22.65}"
+xiaomi/mimo-v2.5,no-CoT,-23.8,-69.1,12667.27,CL,True,,stop,9.54576e-05,820,25,0,2.27,"{""country"": ""CL"", ""latitude"": -23.8, ""longitude"": -69.1}"
+qwen/qwen3.5-35b-a3b,no-CoT,36.1699,-115.8182,14265.296,US,True,,stop,0.00011404,586,32,0,8.44,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.8182}"
+qwen/qwen3.5-397b-a17b,no-CoT,36.2345,-116.8765,14302.291,US,True,,stop,0.00043548,585,32,0,11.46,"{""country"": ""US"", ""latitude"": 36.2345, ""longitude"": -116.8765}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.29,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,15.7,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.45,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.63,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,12.65,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.21,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.4,

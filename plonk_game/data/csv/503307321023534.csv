@@ -1,0 +1,70 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,9.4292732685622,-84.114206561869,0.0,CR,True,,,,,,,,"Quepos, None, Puntarenas, CR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,9.445528984069824,-83.9933090209961,13.384,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,9.85,-84.1,46.809,CR,True,,stop,0.0008678,704,22,0,0.8,"{""country"": ""CR"", ""latitude"": 9.85, ""longitude"": -84.1}"
+openai/gpt-5.5,CoT,9.8796,-84.0208,51.11,CR,True,,stop,0.022015,755,608,516,36.53,"{""reasoning"":""The Spanish green bridge/stream sign reading “QUEBRADA VILLA,” right-side driving with yellow center lines, lush tropical highland vegetation and pastureland point most strongly to rural Costa Rica. The road-sign style and landscape resemble Costa Rica’s central highlands rather than drier or more urbanized neighboring countries."",""country"":""CR"",""latitude"":9.8796,""longitude"":-84.0208}"
+moonshotai/kimi-k2.6,no-CoT,9.7489,-83.7534,53.18,CR,True,,stop,0.00076669,755,25,0,0.84,"{""country"": ""CR"", ""latitude"": 9.7489, ""longitude"": -83.7534}"
+qwen/qwen3.6-35b-a3b,no-CoT,9.9281,-84.0907,55.527,CR,True,,stop,0.00011775,585,30,0,8.67,"{""country"": ""CR"", ""latitude"": 9.9281, ""longitude"": -84.0907}"
+mistralai/mistral-medium-3-5,no-CoT,9.9333,-84.1333,56.084,CR,True,,stop,0.001404,786,30,0,2.47,"{""country"": ""CR"", ""latitude"": 9.9333, ""longitude"": -84.1333}"
+xiaomi/mimo-v2.5,no-CoT,9.9355,-84.0833,56.392,CR,True,,stop,9.68576e-05,820,30,0,2.91,"{""country"": ""CR"", ""latitude"": 9.9355, ""longitude"": -84.0833}"
+x-ai/grok-4.3,CoT,9.95,-84.05,58.328,CR,True,,stop,0.002504,788,742,675,8.1,"{""reasoning"": ""Green rectangular sign reading 'QUEBRADA VILLA' plus right-hand traffic (yellow edge line on right), metal W-beam guardrail, and lush tropical broadleaf vegetation point to rural Costa Rica."", ""country"": ""CR"", ""latitude"": 9.95, ""longitude"": -84.05}"
+qwen/qwen3.5-397b-a17b,no-CoT,9.9876,-84.1234,62.091,CR,True,,stop,0.000298725,585,30,0,3.3,"{""country"": ""CR"", ""latitude"": 9.9876, ""longitude"": -84.1234}"
+anthropic/claude-opus-4.8,no-CoT,10.0,-84.2,64.155,CR,True,,stop,0.00484,818,30,0,5.68,"{""country"": ""CR"", ""latitude"": 10.0, ""longitude"": -84.2}"
+xiaomi/mimo-v2.5,CoT,10.0167,-83.9667,67.29,CR,True,,stop,0.0001633576,899,228,151,2.88,"{""reasoning"": ""The green road sign with white text 'GUERRA VILLA' uses the distinct font and styling found in Costa Rica, and the lush tropical vegetation and road markings are consistent with that region."", ""country"": ""CR"", ""latitude"": 10.0167, ""longitude"": -83.9667}"
+moonshotai/kimi-k2.6,CoT,10.1,-84.5,85.73,CR,True,,stop,0.01004388,834,2784,2716,234.91,"{""reasoning"": ""Green road sign reading 'QUEBRADA VILLA' in Spanish, tropical vegetation, right-hand traffic, and utility pole/guardrail styles match Costa Rica's Interamericana highway infrastructure."", ""country"": ""CR"", ""latitude"": 10.1, ""longitude"": -84.5}"
+google/gemini-3.1-pro-preview,no-CoT,10.25,-84.0,92.114,CR,True,,stop,0.00503,1225,215,185,11.22,"```json
+{""country"": ""CR"", ""latitude"": 10.25, ""longitude"": -84.0}
+```"
+google/gemini-3.1-pro-preview,CoT,10.25,-84.5,100.573,CR,True,,stop,0.003526,1307,76,0,5.11,"{
+  ""reasoning"": ""The sign reads 'QUEBRADA VILLA', indicating a Spanish-speaking country. The tropical vegetation, road markings (double yellow lines), and general landscape strongly suggest Costa Rica."",
+  ""country"": ""CR"",
+  ""latitude"": 10.25,
+  ""longitude"": -84.5
+}"
+anthropic/claude-opus-4.8,CoT,10.35,-84.0,103.142,CR,True,,stop,0.00697,949,89,0,3.42,"{""reasoning"": ""Spanish 'Quebrada Villa' green stream sign, tropical lush vegetation, yellow road markings typical of Costa Rica rural highway."", ""country"": ""CR"", ""latitude"": 10.35, ""longitude"": -84.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),10.4125,-84.4833,116.565,CR,True,,stop,0.002154,1226,35,0,7.69,"```json
+{""country"": ""CR"", ""latitude"": 10.4125, ""longitude"": -84.4833}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,10.099821090698242,-85.03244018554688,125.237,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,10.104341506958008,-85.02963256835938,125.29,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),7.75,-76.65,841.604,,True,,length,0.0379245,1307,3996,3836,24.39,"something>""? No, it clearly says ""QUEBRADA VILLA"".
+                                        *   Let's write down the JSON response.
+                                        *   Country: CO (Colombia)
+                                        *   Latitude: 7.75
+                                        *   Longitude: -76.65
+                                        *   Let's refine the coordinates to be on Route 62 near Carepa, Colombia.
+                                        *   Route 62 runs north-south through Carepa.
+                                        *   Let's use 7.73, -76.66.
+
+2.  **Formulate the response:**
+    *   Reasoning: ""The green sign reading 'QUEBRADA VILLA' indicates a creek"
+google/gemini-3.5-flash,CoT (effort=medium),7.5145,-75.3845,983.365,CO,True,,stop,0.0282585,1307,2922,2849,22.13,"{""reasoning"": ""The green 'QUEBRADA VILLA' sign is characteristic of Colombian water body identification signs, and the lush tropical vegetation and road markings align with Ruta 25 in Antioquia, Colombia."", ""country"": ""CO"", ""latitude"": 7.5145, ""longitude"": -75.3845}"
+qwen/qwen3.5-122b-a10b,no-CoT,6.2442,-75.5812,1004.339,CO,True,,stop,0.0002475,585,30,0,1.49,"{""country"": ""CO"", ""latitude"": 6.2442, ""longitude"": -75.5812}"
+qwen/qwen3.5-9b,no-CoT,4.7297,-75.5862,1076.147,CO,True,,stop,6.31e-05,586,30,0,9.94,"{""country"": ""CO"", ""latitude"": 4.7297, ""longitude"": -75.5862}"
+google/gemini-3.5-flash,CoT (effort=low),6.3451,-74.4123,1122.127,CO,True,,stop,0.0054885,1307,392,325,11.3,"{""reasoning"": ""The green sign reads 'QUEBRADA VILLA', indicating a Spanish-speaking country with tropical vegetation. The sign style and road markings are highly characteristic of Colombia."", ""country"": ""CO"", ""latitude"": 6.3451, ""longitude"": -74.4123}"
+google/gemma-4-31b-it,no-CoT,4.6521,-74.1234,1223.521,CO,True,,stop,6.308e-05,404,35,0,7.21,"```json
+{""country"": ""CO"", ""latitude"": 4.6521, ""longitude"": -74.1234}
+```"
+mistralai/mistral-medium-3-5,CoT,18.925,-99.233,1939.938,MX,True,,stop,0.0068145,868,735,655,6.9,"{""reasoning"": ""Spanish sign 'CUERNAVACA VILLA' indicates Mexico; tropical vegetation and right-hand traffic align with Morelos state near Cuernavaca."", ""country"": ""MX"", ""latitude"": 18.925, ""longitude"": -99.233}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-21.97734832763672,-47.74067306518555,5284.632,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-21.77857208251953,-47.079063415527344,5325.697,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-21.859088897705078,-46.902286529541016,5345.676,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.7341,5473.168,BR,True,,stop,0.00028672,586,31,0,1.83,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.7341}"
+openai/gpt-5.5,no-CoT,-23.6217,-46.7674,5475.335,BR,True,,stop,0.00414,678,25,0,2.47,"{""country"":""BR"",""latitude"":-23.6217,""longitude"":-46.7674}"
+qwen/qwen3.5-35b-a3b,no-CoT,-23.5505,-46.6333,5481.3,BR,True,,stop,0.00019644,586,31,0,3.69,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+minimax/minimax-m3,no-CoT,-22.5,-45.0,5545.921,BR,True,,stop,0.00027084,906,22,0,2.95,"{""country"": ""BR"", ""latitude"": -22.5, ""longitude"": -45.0}{""country"": ""BR"", ""latitude"": -22.5, ""longitude"": -45.0}"
+qwen/qwen3.5-397b-a17b,CoT,-34.1185,-54.8152,5744.329,UY,True,,stop,0.02138325,665,6005,5876,144.91,"{
+""reasoning"": ""The green road sign reads 'QUEBRADA VILLA' (Spanish for 'Villa Ravine/Stream'), indicating a Spanish-speaking country. The landscape features rolling green hills with Eucalyptus trees and a paved road with double yellow center lines and a metal guardrail, which is characteristic of the countryside in Uruguay, specifically the hilly region near Villa Serrana in the Lavalleja Department."",
+""country"": ""UY"",
+""latitude"": -34.1185,
+""longitude"": -54.8152
+}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9361.946,,True,True,,,,,,25.85,
+mistralai/mistral-small-2603,no-CoT,45.4642,11.3262,9681.315,IT,True,,stop,0.000170625,786,31,0,1.69,"{""country"": ""IT"", ""latitude"": 45.4642, ""longitude"": 11.3262}"
+qwen/qwen3.5-27b,no-CoT,-37.885,175.515,11556.664,NZ,True,,stop,0.000160875,585,30,0,1.72,"{""country"": ""NZ"", ""latitude"": -37.885, ""longitude"": 175.515}"
+mistralai/mistral-small-2603,CoT,-33.7,150.3,13859.897,AU,True,,stop,0.00037284,868,552,594,4.33,"{""reasoning"": ""Driving on the left, eucalyptus trees, and English signage indicate Australia; rural road style suggests southeastern Australia."", ""country"": ""AU"", ""latitude"": -33.7, ""longitude"": 150.3}"
+minimax/minimax-m3,CoT,1.2942,103.7864,18536.095,SG,True,,stop,0.00088986,995,544,469,13.13,"{""reasoning"": ""Green directional sign with white text reading 'QUEENSTOWN VILLAGE' combined with lush tropical vegetation, left-hand traffic, and yellow center line road markings strongly indicate Singapore, specifically the Queenstown residential area."", ""country"": ""SG"", ""latitude"": 1.2942, ""longitude"": 103.7864}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.29,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.16,

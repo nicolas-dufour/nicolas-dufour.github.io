@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,19.368497693297,-69.852129512575,0.0,DO,True,,,,,,,,"Nagua, None, Maria Trinidad Sanchez, DO"
+google/gemini-3.1-pro-preview,no-CoT,19.3,-70.25,42.435,DO,True,,stop,0.00538,1190,250,215,10.37,"```json
+{""country"": ""DO"", ""latitude"": 19.3000, ""longitude"": -70.2500}
+```"
+openai/gpt-5.5,CoT,19.3007,-70.2564,43.082,DO,True,,stop,0.011055,621,265,179,30.58,"{""reasoning"":""Spanish wall murals and the acronym FALPO point strongly to the Dominican Republic, especially the Duarte/San Francisco de Macorís area where that movement is prominent. Tropical vegetation, right-side driving road layout, dense overhead wiring, and political wall advertising match urban outskirts in the DR."",""country"":""DO"",""latitude"":19.3007,""longitude"":-70.2564}"
+google/gemini-3.1-pro-preview,CoT,18.8,-70.3,78.81,DO,True,,stop,0.007128,1272,382,306,5.77,"{
+  ""reasoning"": ""The painted political slogans mention 'FALPO' and 'Fuerza del Pueblo', which are political organizations in the Dominican Republic. The tropical vegetation and Spanish text confirm this location."",
+  ""country"": ""DO"",
+  ""latitude"": 18.8,
+  ""longitude"": -70.3
+}"
+google/gemini-3.5-flash,CoT (effort=medium),18.6731,-70.1705,84.257,DO,True,,stop,0.007461,1272,617,538,21.39,"{""reasoning"": ""The painted walls feature political advertising for 'FALPO', 'Fuerza del Pueblo', and 'Joel Dotel Regidor', which are highly specific to the Dominican Republic, particularly around Villa Altagracia."", ""country"": ""DO"", ""latitude"": 18.6731, ""longitude"": -70.1705}"
+mistralai/mistral-medium-3-5,no-CoT,18.4861,-69.8822,98.169,DO,True,,stop,0.0011835,634,31,0,1.0,"{""country"": ""DO"", ""latitude"": 18.4861, ""longitude"": -69.8822}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),18.4861,-69.9312,98.47,DO,True,,stop,0.0021,1190,35,0,2.18,"```json
+{""country"": ""DO"", ""latitude"": 18.4861, ""longitude"": -69.9312}
+```"
+google/gemini-3.5-flash,CoT (effort=high),18.4861,-69.9312,98.47,DO,True,,stop,0.0104475,1271,949,846,13.72,"```json
+{""reasoning"": ""The murals feature 'FALPO' (Frente Amplio de Lucha Popular) and 'La Fuerza del Pueblo', which are prominent political and social organizations in the Dominican Republic. The surname 'Dotel' and the term 'Regidor' (councilman) further confirm a local Dominican municipal election context."", ""country"": ""DO"", ""latitude"": 18.4861, ""longitude"": -69.9312}
+```"
+x-ai/grok-4.3,CoT,18.486,-69.931,98.479,DO,True,,stop,0.0022115,676,681,601,12.29,"{""reasoning"": ""Spanish signage (\""ALQUILER\"", \""VENTA AL POR MAYOR\"", \""JOSE DOTEL\"") plus tropical vegetation, overhead distribution lines, and red fire hydrant point to a Caribbean Spanish-speaking country; \""Dotel\"" is a common Dominican surname."", ""country"": ""DO"", ""latitude"": 18.486, ""longitude"": -69.931}"
+google/gemini-3.5-flash,CoT (effort=low),18.4251,-70.0244,106.455,DO,True,,stop,0.005004,1272,344,266,3.78,"{""reasoning"": ""The painted walls feature political advertisements for 'FALPO' and 'Fuerza del Pueblo', which are prominent political and social organizations in the Dominican Republic, along with a local candidate 'Joel Dotel'."", ""country"": ""DO"", ""latitude"": 18.4251, ""longitude"": -70.0244}"
+anthropic/claude-opus-4.8,no-CoT,18.5036,-88.3055,1942.34,MX,True,,stop,0.00413,666,32,0,15.02,"{""country"": ""MX"", ""latitude"": 18.5036, ""longitude"": -88.3055}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,15.552877426147461,-88.0113296508789,1971.179,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,20.9674,-89.5926,2066.796,MX,True,,stop,0.00018772,474,31,0,5.58,"{""country"": ""MX"", ""latitude"": 20.9674, ""longitude"": -89.5926}"
+qwen/qwen3.5-9b,no-CoT,20.6745,-89.6156,2068.613,MX,True,,stop,5.205e-05,474,31,0,5.18,"{""country"": ""MX"", ""latitude"": 20.6745, ""longitude"": -89.6156}"
+google/gemma-4-31b-it,no-CoT,14.634,-90.506,2256.675,GT,True,,stop,6.638e-05,406,34,0,9.19,"```json
+{""country"": ""GT"", ""latitude"": 14.634, ""longitude"": -90.506}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,14.628387451171875,-90.75776672363281,2282.844,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,14.622518539428711,-90.76130676269531,2283.393,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,17.99,-92.93,2434.016,MX,True,,stop,0.00651,797,101,0,9.63,"{""reasoning"": ""Spanish painted political/advertising murals on concrete walls, tropical lowland vegetation, and rural roadside style typical of southeastern Mexico (Yucatán/Tabasco region)."", ""country"": ""MX"", ""latitude"": 17.99, ""longitude"": -92.93}"
+minimax/minimax-m3,CoT,17.5,-93.0,2448.85,MX,True,,stop,0.00084666,843,546,465,21.42,"{""reasoning"": ""Spanish-language political campaign posters ('JOXE DONCEL DELECTOR'), tropical vegetation, and rural concrete walls plastered with advertisements are characteristic of southern Mexico, likely Chiapas or Veracruz region. The road style, power lines, and signage layout match rural Mexican highways."", ""country"": ""MX"", ""latitude"": 17.5, ""longitude"": -93.0}"
+moonshotai/kimi-k2.6,CoT,18.5,-96.5,2801.696,MX,True,,stop,0.017939088,682,5180,5122,170.3,"{""reasoning"": ""Spanish-language hand-painted commercial signage on roadside concrete walls with tropical vegetation and right-hand traffic is archetypal of rural and peri-urban Mexico."", ""country"": ""MX"", ""latitude"": 18.5, ""longitude"": -96.5}"
+xiaomi/mimo-v2.5,CoT,19.5,-99.0,3052.731,MX,True,,stop,0.0004590376,787,1340,1282,14.17,"{""reasoning"": ""Spanish-language signage such as 'Fox Hotel' and 'regidor', yellow fire hydrant, and right-hand traffic indicate Mexico."", ""country"": ""MX"", ""latitude"": 19.5, ""longitude"": -99.0}"
+qwen/qwen3.6-35b-a3b,no-CoT,19.4326,-99.1332,3067.269,MX,True,,stop,0.00010195,473,31,0,2.73,"{""country"": ""MX"", ""latitude"": 19.4326, ""longitude"": -99.1332}"
+x-ai/grok-4.3,no-CoT,20.6295,-103.3117,3492.909,MX,True,,stop,0.0005984,592,24,0,7.13,"{""country"": ""MX"", ""latitude"": 20.6295, ""longitude"": -103.3117}"
+qwen/qwen3.5-35b-a3b,no-CoT,20.6597,-103.3378,3495.408,MX,True,,stop,9.836e-05,474,32,0,7.8,"{""country"": ""MX"", ""latitude"": 20.6597, ""longitude"": -103.3378}"
+qwen/qwen3.5-27b,no-CoT,20.6595,-103.3496,3496.634,MX,True,,stop,0.00021944,474,37,0,1.3,"```json
+{""country"": ""MX"", ""latitude"": 20.6595, ""longitude"": -103.3496}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-2.5287,-44.3028,3704.12,BR,True,,stop,0.0003287,473,30,0,8.04,"{""country"": ""BR"", ""latitude"": -2.5287, ""longitude"": -44.3028}"
+openai/gpt-5.5,no-CoT,-25.2886,-57.5619,5140.438,PY,True,,stop,0.00347,544,25,0,5.32,"{""country"":""PY"",""latitude"":-25.2886,""longitude"":-57.5619}"
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.6333,5395.921,BR,True,,stop,0.0001943,473,31,0,7.81,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+xiaomi/mimo-v2.5,no-CoT,-22.9068,-43.1729,5521.275,BR,True,,stop,8.14576e-05,708,31,0,1.3,"{""country"": ""BR"", ""latitude"": -22.9068, ""longitude"": -43.1729}"
+mistralai/mistral-small-2603,no-CoT,50.4501,30.5234,9064.175,UA,True,,stop,0.0001137,634,31,0,8.48,"{""country"": ""UA"", ""latitude"": 50.4501, ""longitude"": 30.5234}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,12.942375183105469,80.1226806640625,15144.902,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,12.941628456115723,80.13878631591797,15146.152,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,13.050741195678711,94.65290069580078,16030.832,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,14.5995,120.9842,16056.215,PH,True,,stop,5.774e-05,406,38,0,1.38,"Please own-thought
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,13.06,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.5,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.44,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.41,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.08,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.46,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.3,

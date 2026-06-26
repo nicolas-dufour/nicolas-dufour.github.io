@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,32.798914713811,-4.9445554667533,0.0,MA,True,,,,,,,,"Itzer, Khenifra, Meknes-Tafilalet, MA"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,32.47721862792969,-4.642514705657959,45.601,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,32.43893051147461,-4.595746040344238,51.667,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,33.00868225097656,-4.074082851409912,84.546,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,31.5,-5.5,153.607,MA,True,,stop,0.006485,797,100,0,3.13,"{""reasoning"": ""Reddish arid soil, sparse scrub, distant Atlas-like mountains under hazy sky, and right-hand driving suggest southern Morocco's pre-Saharan plateau."", ""country"": ""MA"", ""latitude"": 31.5, ""longitude"": -5.5}"
+anthropic/claude-opus-4.8,no-CoT,31.5,-5.5,153.607,MA,True,,stop,0.00408,666,30,0,8.72,"{""country"": ""MA"", ""latitude"": 31.5, ""longitude"": -5.5}"
+openai/gpt-5.5,no-CoT,31.2736,-6.3562,215.569,MA,True,,stop,0.00344,544,24,0,1.38,"{""country"":""MA"",""latitude"":31.2736,""longitude"":-6.3562}"
+moonshotai/kimi-k2.6,CoT,30.9,-6.8,274.392,MA,True,,stop,0.01472422,682,3557,3674,73.18,"{""reasoning"": ""Red lateritic desert soil, sparse steppe vegetation, and distant hazy mountains are characteristic of the pre-Saharan plateau in southern Morocco, matching the paved N9/N13 national routes."", ""country"": ""MA"", ""latitude"": 30.9, ""longitude"": -6.8}"
+google/gemini-3.5-flash,CoT (effort=high),30.9202,-6.9118,279.556,MA,True,,stop,0.0164415,1271,1615,1538,18.55,"{""reasoning"": ""The reddish soil, arid landscape, and distant hazy mountains are highly characteristic of the pre-Saharan region of Morocco. The narrow paved road with a dashed white center line and dirt shoulders is typical of Moroccan regional highways."", ""country"": ""MA"", ""latitude"": 30.9202, ""longitude"": -6.9118}"
+openai/gpt-5.5,CoT,30.8265,-6.8582,284.238,MA,True,,stop,0.013785,621,356,267,8.65,"{""reasoning"":""Arid red-soil landscape with low Atlas-like mountains, sparse vegetation, right-hand traffic, and Moroccan-style rural road markings with no edge lines point strongly to southern Morocco. The scene most resembles the desert highways around Ouarzazate/Agdz on the edge of the Anti-Atlas."",""country"":""MA"",""latitude"":30.8265,""longitude"":-6.8582}"
+google/gemma-4-31b-it,no-CoT,31.1234,-7.2345,285.256,MA,True,,stop,6.338e-05,406,35,0,5.92,"```json
+{""country"": ""MA"", ""latitude"": 31.1234, ""longitude"": -7.2345}
+```"
+x-ai/grok-4.3,no-CoT,31.095,-7.382,297.956,MA,True,,stop,0.0005934,592,22,0,0.83,"{""country"": ""MA"", ""latitude"": 31.095, ""longitude"": -7.382}"
+qwen/qwen3.5-122b-a10b,no-CoT,31.6295,-7.9811,313.855,MA,True,,stop,0.0002139,473,30,0,2.54,"{""country"": ""MA"", ""latitude"": 31.6295, ""longitude"": -7.9811}"
+qwen/qwen3.5-397b-a17b,no-CoT,31.0456,-7.9823,346.678,MA,True,,stop,0.00036108,473,30,0,8.76,"{""country"": ""MA"", ""latitude"": 31.0456, ""longitude"": -7.9823}"
+qwen/qwen3.5-9b,no-CoT,31.0398,-9.7699,495.582,MA,True,,stop,5.19e-05,474,30,0,3.13,"{""country"": ""MA"", ""latitude"": 31.0398, ""longitude"": -9.7699}"
+google/gemini-3.1-pro-preview,CoT,29.85,35.35,3818.578,JO,True,,stop,0.006036,1272,291,206,4.94,"{
+  ""reasoning"": ""The arid landscape with reddish soil, sparse vegetation, and distant mountains is characteristic of the Middle East or North Africa. The road markings and right-hand driving suggest a country like Jordan, particularly in the southern desert regions."",
+  ""country"": ""JO"",
+  ""latitude"": 29.85,
+  ""longitude"": 35.35
+}"
+google/gemini-3.1-pro-preview,no-CoT,30.5,36.0,3860.083,JO,True,,stop,0.0049,1190,210,181,10.11,"```json
+{""country"": ""JO"", ""latitude"": 30.5, ""longitude"": 36.0}
+```"
+mistralai/mistral-medium-3-5,no-CoT,32.0,53.0,5369.346,IR,True,,stop,0.0011385,634,25,0,0.86,"{""country"": ""IR"", ""latitude"": 32.0, ""longitude"": 53.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),42.218333,76.185278,6962.346,KG,True,,stop,0.002136,1190,39,0,1.31,"```json
+{""country"": ""KG"", ""latitude"": 42.218333, ""longitude"": 76.185278}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,-30.4521,21.1234,7549.138,ZA,True,,stop,0.000157,473,31,0,1.24,"{""country"": ""ZA"", ""latitude"": -30.4521, ""longitude"": 21.1234}"
+google/gemini-3.5-flash,CoT (effort=low),44.7125,104.2811,8825.933,MN,True,,stop,0.0055245,1271,402,318,5.04,"{""reasoning"": ""The reddish soil, sparse desert vegetation, distant low mountains, and narrow paved road with dashed white center lines are highly characteristic of the Gobi desert region in southern Mongolia, specifically along the highway between Mandalgovi and Dalanzadgad."", ""country"": ""MN"", ""latitude"": 44.7125, ""longitude"": 104.2811}"
+google/gemini-3.5-flash,CoT (effort=medium),44.8125,105.7214,8910.612,MN,True,,stop,0.0081255,1271,691,599,6.56,"```json
+{""reasoning"": ""The reddish-brown soil, sparse desert vegetation, and narrow paved road with a dashed white center line under an overcast sky are highly characteristic of the Gobi Desert region in southern Mongolia, specifically along the highway between Mandalgovi and Dalanzadgad."", ""country"": ""MN"", ""latitude"": 44.8125, ""longitude"": 105.7214}
+```"
+xiaomi/mimo-v2.5,no-CoT,36.998,-110.098,9045.09,US,True,,stop,8.11776e-05,708,30,0,1.31,"{""country"": ""US"", ""latitude"": 36.998, ""longitude"": -110.098}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-23.197906494140625,-68.56127166748047,9177.263,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-23.36420249938965,-68.6221694946289,9194.016,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-25.772695541381836,-69.28826904296875,9419.213,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-27.5,-70.3,9620.071,CL,True,,stop,0.00054702,845,293,269,6.79,"{""reasoning"": ""Reddish arid soil, sparse desert vegetation, hazy coastal cordillera in the distance, and a well-maintained divided highway with white lane markings strongly suggest the Atacama Desert region of northern Chile along Ruta 5 (Pan-American Highway). Right-hand driving and road design are consistent with Chile."", ""country"": ""CL"", ""latitude"": -27.5, ""longitude"": -70.3}"
+x-ai/grok-4.3,CoT,-26.15,122.8,14953.141,AU,True,,stop,0.0026665,676,863,794,10.95,"{""reasoning"": ""Red laterite soil, sparse arid scrub, distant hazy ranges and empty two-lane asphalt road with standard dashed white center line match Australian outback; right-hand traffic implied by typical RHT layout and vehicle position."", ""country"": ""AU"", ""latitude"": -26.15, ""longitude"": 122.8}"
+xiaomi/mimo-v2.5,CoT,-23.7,133.8,15876.882,AU,True,,stop,0.0004117176,787,1171,1104,23.02,"{""reasoning"": ""Left-hand traffic and reddish desert soil are strong indicators of the Australian outback. The straight highway with sparse vegetation and distant mountains suggests a remote area in central Australia."", ""country"": ""AU"", ""latitude"": -23.7, ""longitude"": 133.8}"
+qwen/qwen3.6-35b-a3b,no-CoT,-23.7,133.8,15876.882,AU,True,,stop,0.00396684795,471,4031,4001,22.34,"{""country"": ""AU"", ""latitude"": -23.7, ""longitude"": 133.8}"
+qwen/qwen3.5-27b,no-CoT,-23.7,133.87,15883.413,AU,True,,stop,0.0002091,473,32,0,24.09,"{""country"": ""AU"", ""latitude"": -23.7000, ""longitude"": 133.8700}"
+qwen/qwen3.6-27b,no-CoT,-23.7,133.88,15884.346,AU,True,,stop,0.0001963,473,32,0,9.71,"{""country"": ""AU"", ""latitude"": -23.7000, ""longitude"": 133.8800}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.44,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.4,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.27,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.93,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.52,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,11.6,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.23,

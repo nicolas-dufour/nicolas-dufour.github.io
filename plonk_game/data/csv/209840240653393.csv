@@ -1,0 +1,79 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,39.658389708931,-0.28077286072264,0.0,ES,True,,,,,,,,"Sagunto, Provincia de Valencia, Valencia, ES"
+google/gemini-3.1-pro-preview,CoT,39.4699,-0.3762,22.499,ES,True,,stop,0.006156,1308,295,225,14.94,"{
+  ""reasoning"": ""The presence of a Repsol gas station strongly indicates Spain. The Mediterranean vegetation and highway infrastructure are consistent with the Spanish coastal regions."",
+  ""country"": ""ES"",
+  ""latitude"": 39.4699,
+  ""longitude"": -0.3762
+}"
+moonshotai/kimi-k2.6,CoT,39.45,-0.35,23.92,ES,True,,stop,0.00548676,832,1366,1468,51.6,"{""reasoning"": ""Mediterranean stone-pine vegetation, right-hand traffic, European W-beam guardrails, and the distinctive toll-plaza building with white cylindrical bollards are characteristic of eastern Spain's autopistas."", ""country"": ""ES"", ""latitude"": 39.45, ""longitude"": -0.35}"
+xiaomi/mimo-v2.5,CoT,39.42,-0.35,27.164,ES,True,,stop,0.0001977976,899,351,285,60.34,"{""reasoning"": ""Right-hand driving, Mediterranean pine vegetation, warm dry climate, and roadside architecture typical of Spanish autovía (motorway) systems confirm this is in southern Spain."", ""country"": ""ES"", ""latitude"": 39.42, ""longitude"": -0.35}"
+xiaomi/mimo-v2.5,no-CoT,39.45,-0.45,27.339,ES,True,,stop,9.57376e-05,820,26,0,1.47,"{""country"": ""ES"", ""latitude"": 39.45, ""longitude"": -0.45}"
+google/gemini-3.5-flash,CoT (effort=medium),39.2812,-0.4256,43.745,ES,True,,stop,0.0103035,1307,927,835,7.61,"```json
+{""reasoning"": ""The presence of a Repsol service station on the left, the Mediterranean pine vegetation, and the three-lane highway layout with specific concrete median barriers indicate a major Spanish autovía or autopista, likely the AP-7 or A-7 in eastern Spain."", ""country"": ""ES"", ""latitude"": 39.2812, ""longitude"": -0.4256}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,40.74272918701172,-0.3109694719314575,120.6,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,38.35,-1.0,158.203,ES,True,,stop,0.00707,949,93,0,3.26,"{""reasoning"": ""Wide multilane motorway with dry Mediterranean vegetation, white concrete barrier posts and arid landscape typical of inland Spain; right-hand traffic."", ""country"": ""ES"", ""latitude"": 38.35, ""longitude"": -1.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.216270446777344,-0.6723406910896301,163.893,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.215721130371094,-0.6978635787963867,164.423,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.30621337890625,0.7345349788665771,202.349,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.51375961303711,0.1565595120191574,209.586,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,41.58848571777344,-0.12273159623146057,215.031,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,41.65,-0.88,227.151,ES,True,,stop,0.0007334,704,22,0,7.44,"{""country"": ""ES"", ""latitude"": 41.65, ""longitude"": -0.88}"
+moonshotai/kimi-k2.6,no-CoT,41.65,-0.9,227.532,ES,True,,stop,0.00032616,755,23,0,7.64,"{""country"": ""ES"", ""latitude"": 41.65, ""longitude"": -0.9}"
+minimax/minimax-m3,CoT,39.45,-3.12,244.508,ES,True,,stop,0.00074622,997,421,402,13.64,"{""reasoning"": ""Right-hand traffic on a multi-lane autopista with concrete median barrier, Mediterranean pine vegetation (Pinus halepensis), dry clear sky, and European guardrail/overpass styling all point to central Spain, likely along the A-3 or A-4 motorway in Castilla-La Mancha."", ""country"": ""ES"", ""latitude"": 39.45, ""longitude"": -3.12}"
+qwen/qwen3.5-397b-a17b,CoT,40.105,-3.612,288.533,ES,True,,stop,0.0218226,665,5951,5844,116.51,"{
+""reasoning"": ""The image shows a divided highway with right-hand traffic, concrete median barriers, and white road markings characteristic of Spanish 'autovías'. The Mediterranean vegetation (pine trees), reddish soil, and the building with a traditional tiled roof on the left strongly point to central Spain, likely on the A-4 south of Madrid."",
+""country"": ""ES"",
+""latitude"": 40.105,
+""longitude"": -3.612
+}"
+google/gemini-3.5-flash,CoT (effort=low),40.1584,-3.6125,289.547,ES,True,,stop,0.004023,1308,229,153,2.63,"{""reasoning"": ""The presence of a Repsol gas station on the left, along with the specific style of highway guardrails, concrete barriers, and Mediterranean pine trees, indicates a major highway (autovía) in Spain."", ""country"": ""ES"", ""latitude"": 40.1584, ""longitude"": -3.6125}"
+google/gemini-3.5-flash,CoT (effort=high),40.1524,-3.6512,292.673,ES,True,,stop,0.014445,1308,1387,1310,8.3,"```json
+{""reasoning"": ""The image shows a multi-lane highway with a Repsol service station on the left, characteristic Spanish concrete barriers with white vertical reflectors, and Mediterranean pine vegetation, indicating a location in Spain."", ""country"": ""ES"", ""latitude"": 40.1524, ""longitude"": -3.6512}
+```"
+qwen/qwen3.5-27b,no-CoT,40.4167,-3.7037,303.336,ES,True,,stop,0.000181155,585,43,0,9.01,"```json
+{
+  ""country"": ""ES"",
+  ""latitude"": 40.4167,
+  ""longitude"": -3.7037
+}
+```"
+mistralai/mistral-medium-3-5,no-CoT,40.4168,-3.7038,303.347,ES,True,,stop,0.001404,786,30,0,2.02,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+qwen/qwen3.5-122b-a10b,no-CoT,40.4168,-3.7038,303.347,ES,True,,stop,0.0002667,585,38,0,7.55,"{
+  ""country"": ""ES"",
+  ""latitude"": 40.4168,
+  ""longitude"": -3.7038
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,40.4168,-3.7038,303.347,ES,True,,stop,0.00019464,586,30,0,1.9,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.4168,-3.7038,303.347,ES,True,,stop,0.0003847,585,30,0,1.94,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+qwen/qwen3.6-27b,no-CoT,40.4168,-3.7038,303.347,ES,True,,stop,0.0002259,585,30,0,7.03,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+minimax/minimax-m3,no-CoT,36.85,-2.45,365.203,ES,True,,stop,0.00045882,919,201,241,11.12,"{""country"": ""ES"", ""latitude"": 36.85, ""longitude"": -2.45}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.341254,-5.912412,553.527,ES,True,,stop,0.002181,1226,38,0,7.48,"```json
+{""country"": ""ES"", ""latitude"": 37.341254, ""longitude"": -5.912412}
+```"
+anthropic/claude-opus-4.8,no-CoT,37.388,-5.982,556.373,ES,True,,stop,0.00484,818,30,0,2.71,"{""country"": ""ES"", ""latitude"": 37.388, ""longitude"": -5.982}"
+google/gemini-3.1-pro-preview,no-CoT,37.3891,-5.9845,556.508,ES,True,,stop,0.002858,1225,34,0,8.83,"```json
+{""country"": ""ES"", ""latitude"": 37.3891, ""longitude"": -5.9845}
+```"
+google/gemma-4-31b-it,no-CoT,37.4215,-6.3521,583.52,ES,True,,stop,7.056e-05,404,35,0,7.9,"```json
+{""country"": ""ES"", ""latitude"": 37.4215, ""longitude"": -6.3521}
+```"
+x-ai/grok-4.3,CoT,41.85,12.55,1106.748,IT,True,,stop,0.002369,788,688,619,7.18,"{
+  ""reasoning"": ""Mediterranean pines/cypresses, tiled-roof building, concrete overpass and metal guardrail style match Italian autostrada; right-side driving implied by European highway design."",
+  ""country"": ""IT"",
+  ""latitude"": 41.85,
+  ""longitude"": 12.55
+}"
+qwen/qwen3.5-9b,no-CoT,44.4268,11.8798,1133.956,IT,True,,stop,6.325e-05,586,31,0,3.25,"{""country"": ""IT"", ""latitude"": 44.4268, ""longitude"": 11.8798}"
+openai/gpt-5.5,CoT,38.1905,23.8468,2087.275,GR,True,,stop,0.020335,755,552,466,13.36,"{""reasoning"":""Right-hand motorway traffic with European lane markings and Mediterranean pine/dry landscape point to Greece; the roadside commercial signage appears to use Greek/Greek-brand lettering. The wide 3-lane divided motorway and terrain are most consistent with the A1/E75 north of Athens near Afidnes."",""country"":""GR"",""latitude"":38.1905,""longitude"":23.8468}"
+mistralai/mistral-small-2603,CoT,60.5,10.5,2434.482,NO,True,,stop,0.0004326,868,504,555,10.98,"{""reasoning"": ""The distinctive guardrail design with horizontal bars is characteristic of Norwegian roads, and the temperate coniferous vegetation matches Norway's climate and landscape."", ""country"": ""NO"", ""latitude"": 60.5, ""longitude"": 10.5}"
+openai/gpt-5.5,no-CoT,36.9075,30.9875,2732.406,TR,True,,stop,0.00408,678,23,0,1.58,"{""country"":""TR"",""latitude"":36.9075,""longitude"":30.9875}"
+qwen/qwen3.6-35b-a3b,CoT,32.0853,34.7818,3247.096,IL,True,,stop,0.12671807525,665,131169,131071,995.95,"{""reasoning"": ""The white vertical slats on the concrete barrier are a distinctive feature of Israeli highways (e.g., Highway 6). The Stone Pines and dry, scrubby vegetation are characteristic of the Israeli landscape. The structure in the distance resembles a toll plaza common on Highway 6."", ""country"": ""IL"", ""latitude"": 32.0853, ""longitude"": 34.7818}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4409.904,,True,True,,,,,,0.48,
+mistralai/mistral-small-2603,no-CoT,38.9572,-77.1478,6393.786,US,True,,stop,0.000170625,786,31,0,9.02,"{""country"": ""US"", ""latitude"": 38.9572, ""longitude"": -77.1478}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.6895,139.6917,10687.149,JP,True,,stop,0.00012519,585,32,0,1.48,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.11,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.17,

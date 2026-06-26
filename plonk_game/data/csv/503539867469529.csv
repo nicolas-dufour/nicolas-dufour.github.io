@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-5.7971693219895,39.300644928439,0.0,TZ,True,,,,,,,,"Kijini, None, Zanzibar North, TZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-5.91299295425415,39.51238250732422,26.729,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-6.1335,39.3512,37.814,TZ,True,,stop,0.0041115,1271,245,176,9.29,"{""reasoning"": ""The left-hand traffic, lush tropical vegetation, reddish soil, and style of the tin-roofed house are highly characteristic of coastal East Africa, particularly Zanzibar, Tanzania."", ""country"": ""TZ"", ""latitude"": -6.1335, ""longitude"": 39.3512}"
+google/gemini-3.5-flash,CoT (effort=high),-6.163,39.352,41.073,TZ,True,,stop,0.0132015,1271,1255,1194,10.61,"{""reasoning"": ""The lush tropical vegetation, sandy soil, concrete block architecture with corrugated metal roofing, and left-hand traffic are highly characteristic of Zanzibar, Tanzania."", ""country"": ""TZ"", ""latitude"": -6.163, ""longitude"": 39.352}"
+google/gemini-3.1-pro-preview,no-CoT,-6.1659,39.2026,42.41,TZ,True,,stop,0.002786,1189,34,0,2.65,"```json
+{""country"": ""TZ"", ""latitude"": -6.1659, ""longitude"": 39.2026}
+```"
+openai/gpt-5.5,CoT,-6.1667,39.2026,42.496,TZ,True,,stop,0.011715,621,287,211,8.26,"{""reasoning"":""Left-hand traffic, tropical coastal vegetation, and coral-stone/block roadside buildings strongly suggest Zanzibar, Tanzania rather than mainland East Africa. The narrow unmarked village road and sandy limestone shoulders fit the outskirts of Zanzibar Town/central Unguja."",""country"":""TZ"",""latitude"":-6.1667,""longitude"":39.2026}"
+google/gemini-3.5-flash,CoT (effort=medium),-6.2625,39.4184,53.356,TZ,True,,stop,0.0084225,1271,724,657,8.06,"{""reasoning"": ""The lush tropical vegetation, reddish soil, left-hand traffic, and distinctive local architecture with corrugated metal roofs and concrete blocks are highly characteristic of rural Zanzibar, Tanzania."", ""country"": ""TZ"", ""latitude"": -6.2625, ""longitude"": 39.4184}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-5.73666524887085,39.782588958740234,53.741,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-5.728556156158447,39.79016876220703,54.692,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-5.218432,39.743211,80.874,TZ,True,,stop,0.0021255,1189,38,0,2.07,"```json
+{""country"": ""TZ"", ""latitude"": -5.218432, ""longitude"": 39.743211}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,-6.7924,39.2083,111.134,TZ,True,,stop,0.00018564,474,30,0,5.52,"{""country"": ""TZ"", ""latitude"": -6.7924, ""longitude"": 39.2083}"
+qwen/qwen3.5-397b-a17b,no-CoT,-6.7924,39.2083,111.134,TZ,True,,stop,0.0003758,473,30,0,2.8,"{""country"": ""TZ"", ""latitude"": -6.7924, ""longitude"": 39.2083}"
+openai/gpt-5.5,no-CoT,-4.0435,39.6682,199.205,KE,True,,stop,0.00344,544,24,0,1.66,"{""country"":""KE"",""latitude"":-4.0435,""longitude"":39.6682}"
+google/gemini-3.1-pro-preview,CoT,-4.043,39.668,199.255,KE,True,,stop,0.00607,1271,294,212,5.36,"{
+  ""reasoning"": ""Driving on the left, lush tropical vegetation, reddish soil, and the style of the building with a corrugated metal roof strongly suggest East Africa. The overall environment and vehicle type are consistent with coastal Kenya."",
+  ""country"": ""KE"",
+  ""latitude"": -4.043,
+  ""longitude"": 39.668
+}"
+moonshotai/kimi-k2.6,CoT,-6.5,37.2,245.033,TZ,True,,stop,0.012999708,682,3740,3676,80.37,"{""reasoning"": ""Red lateritic soil, dense tropical canopy, and rural mud-block shop with corrugated iron roof are characteristic of East African lowlands, and left-hand traffic positioning points to Tanzania."", ""country"": ""TZ"", ""latitude"": -6.5, ""longitude"": 37.2}"
+anthropic/claude-opus-4.8,CoT,-3.3869,36.683,394.961,TZ,True,,stop,0.00641,797,97,0,3.12,"{""reasoning"": ""Left-hand traffic, tropical vegetation, red brick buildings with corrugated metal roofs, and red soil suggest rural East Africa, likely Tanzania."", ""country"": ""TZ"", ""latitude"": -3.3869, ""longitude"": 36.6830}"
+anthropic/claude-opus-4.8,no-CoT,-3.3869,36.6829,394.97,TZ,True,,stop,0.004155,666,33,0,2.67,"{""country"": ""TZ"", ""latitude"": -3.3869, ""longitude"": 36.6829}"
+x-ai/grok-4.3,no-CoT,-1.2921,36.8219,571.472,KE,True,,stop,0.0005984,592,24,0,0.91,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.0236,37.9042,660.441,KE,True,,stop,0.00015575,473,30,0,7.16,"{""country"": ""KE"", ""latitude"": -0.0236, ""longitude"": 37.9042}"
+qwen/qwen3.5-35b-a3b,no-CoT,0.3476,32.5825,1011.483,UG,True,,stop,0.00015575,473,30,0,0.93,"{""country"": ""UG"", ""latitude"": 0.3476, ""longitude"": 32.5825}"
+xiaomi/mimo-v2.5,no-CoT,0.3476,32.5825,1011.483,UG,True,,stop,8.11776e-05,708,30,0,1.49,"{""country"": ""UG"", ""latitude"": 0.3476, ""longitude"": 32.5825}"
+minimax/minimax-m3,CoT,-14.05,34.55,1054.687,MW,True,,stop,0.00088146,843,575,498,11.43,"{""reasoning"": ""Red lateritic soil, mango trees, concrete-block buildings with corrugated metal roofs, and left-hand traffic strongly indicate an East African former British colony. The combination of tropical vegetation, road condition, and architecture is most characteristic of rural Malawi."", ""country"": ""MW"", ""latitude"": -14.05, ""longitude"": 34.55}"
+qwen/qwen3.5-9b,no-CoT,-15.8269,31.0333,1434.149,ZW,True,,stop,5.205e-05,474,31,0,10.38,"{""country"": ""ZW"", ""latitude"": -15.8269, ""longitude"": 31.0333}"
+xiaomi/mimo-v2.5,CoT,-15.416667,28.283333,1609.395,ZM,True,,stop,0.0001515976,787,242,131,9.29,"```json
+{
+  ""reasoning"": ""Traffic is driving on the left side of the road, and the general vegetation and rural setting suggest a location in Southern or East Africa, specifically resembling Zambia or Zimbabwe. The presence of a white vehicle with green stripes in the distance and the architectural style of the roadside buildings strongly point towards Zambia."",
+  ""country"": ""ZM"",
+  ""latitude"": -15.416667,
+  ""longitude"": 28.283333
+}
+```"
+qwen/qwen3.6-27b,no-CoT,-24.434,29.418,2325.436,ZA,True,,stop,0.0001903,473,29,0,9.65,"{""country"": ""ZA"", ""latitude"": -24.434, ""longitude"": 29.418}"
+x-ai/grok-4.3,CoT,-19.98,23.42,2330.595,BW,True,,stop,0.002564,676,822,761,6.68,"{""reasoning"": ""Left-hand traffic (SUV positioned on left), miombo woodland vegetation, dirt verges, simple brick building with metal roof, and white SUV typical of rural southern Africa."", ""country"": ""BW"", ""latitude"": -19.98, ""longitude"": 23.42}"
+qwen/qwen3.5-27b,no-CoT,-26.7167,28.1833,2607.543,ZA,True,,stop,0.00019467,473,31,0,9.27,"{""country"": ""ZA"", ""latitude"": -26.7167, ""longitude"": 28.1833}"
+mistralai/mistral-medium-3-5,no-CoT,12.9716,77.5946,4716.8,IN,True,,stop,0.0011835,634,31,0,7.58,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+google/gemma-4-26b-a4b-it,no-CoT,23.5432,87.3456,6148.022,IN,True,,stop,5.774e-05,406,38,0,1.67,"Please own-thought
+{""country"": ""IN"", ""latitude"": 23.5432, ""longitude"": 87.3456}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,17.93448829650879,98.42888641357422,7001.024,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,17.051328659057617,99.352783203125,7067.918,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,13.7563,100.5018,7094.235,TH,True,,stop,5.288e-05,272,37,0,3.83,"```json
+{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,14.799934387207031,100.33180236816406,7104.435,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,37.7749,-122.4194,16007.222,US,True,,stop,0.000142875,634,32,0,1.61,"{""country"": ""US"", ""latitude"": 37.7749, ""longitude"": -122.4194}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.53,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.4,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,16.02,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.3,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.11,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.34,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.33,

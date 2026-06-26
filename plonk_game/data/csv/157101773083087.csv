@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,46.028285302629,-65.09239794853,0.0,CA,True,,,,,,,,"Salisbury, None, New Brunswick, CA"
+google/gemini-3.5-flash,no-CoT (effort=minimal),46.2412,-63.6854,110.968,CA,True,,stop,0.002154,1226,35,0,7.86,"```json
+{""country"": ""CA"", ""latitude"": 46.2412, ""longitude"": -63.6854}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,40.7128,-74.006,930.909,US,True,,stop,0.0002475,585,30,0,3.96,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,44.261592864990234,-79.63575744628906,1155.693,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,44.25762176513672,-79.66423034667969,1157.998,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,38.9519,-77.1467,1260.966,US,True,,stop,0.0001365,786,31,0,2.05,"{""country"": ""US"", ""latitude"": 38.9519, ""longitude"": -77.1467}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,43.931697845458984,-81.00106811523438,1270.56,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,42.5048,-83.4845,1512.172,US,True,,stop,0.0014115,786,31,0,8.22,"{""country"": ""US"", ""latitude"": 42.5048, ""longitude"": -83.4845}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.668548583984375,-84.70002746582031,1640.486,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,41.8781,-87.6298,1855.288,US,True,,stop,7.096e-05,404,36,0,1.86,"```json
+{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,41.8781,-87.6298,1855.288,US,True,,stop,0.0001418625,585,36,0,6.99,"{
+""country"": ""US"",
+""latitude"": 41.8781,
+""longitude"": -87.6298
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.8781,-87.6298,1855.288,US,True,,stop,0.00043188,585,31,0,8.24,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.6-27b,no-CoT,41.8781,-87.6298,1855.288,US,True,,stop,0.0002279,585,31,0,19.66,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,41.59664535522461,-89.02965545654297,1974.629,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,41.597782135009766,-89.0401382446289,1975.386,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,33.5,-84.5,2155.867,US,True,,stop,9.54576e-05,820,25,0,1.18,"{""country"": ""US"", ""latitude"": 33.5, ""longitude"": -84.5}"
+x-ai/grok-4.3,no-CoT,44.85,-93.15,2181.664,US,True,,stop,0.0007334,704,22,0,6.98,"{""country"": ""US"", ""latitude"": 44.85, ""longitude"": -93.15}"
+minimax/minimax-m3,CoT,44.5,-93.1,2187.19,US,True,,stop,0.00056346,995,272,203,16.3,"{""reasoning"": ""W-beam metal guardrails on weak posts, dashed white lane markings, flat agricultural landscape with deciduous tree lines, and low sun angle suggest a rural highway in the northern US Midwest or southern Canada."", ""country"": ""US"", ""latitude"": 44.5, ""longitude"": -93.1}"
+qwen/qwen3.5-9b,no-CoT,43.6598,-93.6091,2251.422,US,True,,stop,6.325e-05,586,31,0,14.63,"{""country"": ""US"", ""latitude"": 43.6598, ""longitude"": -93.6091}"
+x-ai/grok-4.3,CoT,41.85,-93.65,2320.118,US,True,,stop,0.002269,788,648,573,5.72,"{""reasoning"": ""US-style yellow edge line + white lane markings, metal W-beam guardrail, right-hand traffic, rural two-lane highway with open fields and mixed deciduous/conifer trees indicate North America; low sun angle and vegetation point to Midwest summer evening."", ""country"": ""US"", ""latitude"": 41.85, ""longitude"": -93.65}"
+google/gemini-3.1-pro-preview,CoT,41.65,-93.55,2320.558,US,True,,stop,0.00607,1307,288,215,18.01,"{
+  ""reasoning"": ""The wide multi-lane highway with a paved shoulder, rumble strips on the edge line, and flat agricultural landscape strongly suggest a major highway in the US Midwest."",
+  ""country"": ""US"",
+  ""latitude"": 41.65,
+  ""longitude"": -93.55
+}"
+anthropic/claude-opus-4.8,no-CoT,41.5,-93.5,2322.935,US,True,,stop,0.004815,818,29,0,8.41,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -93.5}"
+anthropic/claude-opus-4.8,CoT,41.5,-93.6,2330.65,US,True,,stop,0.007045,949,92,0,3.95,"{""reasoning"": ""Wide divided highway with rumble strips, dashed yellow center line on right-hand driving, flat agricultural plains and guardrail typical of US Midwest interstate."", ""country"": ""US"", ""latitude"": 41.5, ""longitude"": -93.6}"
+google/gemini-3.5-flash,CoT (effort=medium),46.1234,-96.0123,2369.88,US,True,,stop,0.0057135,1307,417,349,11.29,"{""reasoning"": ""The flat terrain, coniferous trees, wide divided highway with rumble strips on the shoulder, and guardrail style are highly characteristic of the northern United States, particularly Minnesota."", ""country"": ""US"", ""latitude"": 46.1234, ""longitude"": -96.0123}"
+google/gemini-3.5-flash,CoT (effort=high),46.1588,-96.0712,2373.585,US,True,,stop,0.0131835,1307,1247,1169,16.43,"{""reasoning"": ""The white dashed lane markings and right-shoulder rumble strips indicate a divided highway in North America, while the flat terrain mixed with coniferous and deciduous trees points to the Upper Midwest region of the United States, likely Minnesota."", ""country"": ""US"", ""latitude"": 46.1588, ""longitude"": -96.0712}"
+google/gemini-3.5-flash,CoT (effort=low),49.8521,-97.5124,2432.34,CA,True,,stop,0.003924,1308,218,145,2.62,"{""reasoning"": ""The wide highway with rumble strips on the shoulder, guardrails, flat terrain, and mixed coniferous/deciduous vegetation is highly characteristic of the Trans-Canada Highway in Manitoba, Canada."", ""country"": ""CA"", ""latitude"": 49.8521, ""longitude"": -97.5124}"
+moonshotai/kimi-k2.6,no-CoT,41.5,-95.0,2438.688,US,True,,stop,0.00034668,755,23,0,1.74,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -95.0}"
+moonshotai/kimi-k2.6,CoT,44.3,-96.6,2461.507,US,True,,stop,0.011377836,834,3239,3166,78.89,"{""reasoning"": ""Standard US W-beam guardrail with blockouts, shoulder rumble strips, and flat agricultural prairie with mixed windbreak trees match the northern Great Plains; absence of Canadian bilingual signage or metric markers points to the US."", ""country"": ""US"", ""latitude"": 44.3, ""longitude"": -96.6}"
+google/gemini-3.1-pro-preview,no-CoT,43.61234,-96.73456,2493.515,US,True,,stop,0.002896,1226,37,0,8.14,"```json
+{""country"": ""US"", ""latitude"": 43.61234, ""longitude"": -96.73456}
+```"
+minimax/minimax-m3,no-CoT,50.5,-106.0,3028.98,CA,True,,stop,0.00043122,919,178,208,5.85,"{""country"": ""CA"", ""latitude"": 50.5, ""longitude"": -106.0}"
+qwen/qwen3.5-27b,no-CoT,53.5461,-113.4938,3501.259,CA,True,,stop,0.00026936,586,45,0,1.34,"```json
+{
+  ""country"": ""CA"",
+  ""latitude"": 53.5461,
+  ""longitude"": -113.4938
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,49.2827,-123.1207,4253.463,CA,True,,stop,0.00012519,585,32,0,1.44,"{""country"": ""CA"", ""latitude"": 49.2827, ""longitude"": -123.1207}"
+openai/gpt-5.5,CoT,56.7421,9.8587,5061.519,DK,True,,stop,0.012685,755,297,224,9.41,"{""reasoning"":""Flat agricultural landscape, right-hand European motorway markings/guardrails, and the shoulder rumble-strip style strongly suggest a Danish motorway. The open terrain and hedgerows fit Jutland rather than a denser urban region."",""country"":""DK"",""latitude"":56.7421,""longitude"":9.8587}"
+openai/gpt-5.5,no-CoT,55.4482,10.3481,5140.854,DK,True,,stop,0.00408,678,23,0,1.75,"{""country"":""DK"",""latitude"":55.4482,""longitude"":10.3481}"
+xiaomi/mimo-v2.5,CoT,52.35,18.95,5796.909,PL,True,,stop,0.0007239176,899,2230,2151,35.76,"{""reasoning"": ""The specific design of the metal guardrails and the presence of transverse rumble strips on the shoulder are highly characteristic of Polish highway infrastructure. The flat agricultural landscape and vegetation are consistent with the central or western regions of Poland."", ""country"": ""PL"", ""latitude"": 52.35, ""longitude"": 18.95}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8116.974,,True,True,,,,,,12.64,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.62,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.23,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.23,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.16,

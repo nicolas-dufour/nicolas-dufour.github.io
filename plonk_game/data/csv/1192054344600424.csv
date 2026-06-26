@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,6.4979217297416,-73.247206130137,0.0,CO,True,,,,,,,,"Socorro, None, Santander, CO"
+google/gemini-3.1-pro-preview,CoT,6.5532,-73.1245,14.884,CO,True,,stop,0.005626,1271,257,183,4.43,"{
+  ""reasoning"": ""The yellow license plate on the vehicle and the tropical, mountainous terrain strongly indicate Colombia. The yellow chevron sign is also consistent with South American road signage."",
+  ""country"": ""CO"",
+  ""latitude"": 6.5532,
+  ""longitude"": -73.1245
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,6.640109062194824,-73.26311492919922,15.908,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,6.653900623321533,-73.25577545166016,17.37,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),6.3521,-73.1485,19.541,CO,True,,stop,0.0096375,1271,859,797,7.87,"{""reasoning"": ""The yellow license plate on the SUV, the yellow chevron sign, and the mountainous tropical terrain with concrete roadside drainage are highly characteristic of Colombia."", ""country"": ""CO"", ""latitude"": 6.3521, ""longitude"": -73.1485}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,5.6634840965271,-74.35932159423828,154.044,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,5.2,-75.0,241.701,CO,True,,stop,0.006535,797,102,0,3.44,"{""reasoning"": ""Tropical mountainous terrain with dry-season vegetation, right-hand traffic, yellow chevron sign, and a small Suzuki-type jeep common in rural Colombia/Central America."", ""country"": ""CO"", ""latitude"": 5.2, ""longitude"": -75.0}"
+google/gemini-3.1-pro-preview,no-CoT,6.312,-75.435,242.635,CO,True,,stop,0.00449,1189,176,144,9.8,"```json
+{""country"": ""CO"", ""latitude"": 6.312, ""longitude"": -75.435}
+```"
+google/gemini-3.5-flash,CoT (effort=low),6.2954,-75.4362,242.935,CO,True,,stop,0.0040485,1271,238,172,10.38,"{""reasoning"": ""The yellow license plate on the vehicle, combined with the tropical mountainous vegetation, right-hand driving, and specific style of yellow chevron sign, strongly indicates Colombia."", ""country"": ""CO"", ""latitude"": 6.2954, ""longitude"": -75.4362}"
+anthropic/claude-opus-4.8,no-CoT,4.5709,-74.2973,243.762,CO,True,,stop,0.00413,666,32,0,8.73,"{""country"": ""CO"", ""latitude"": 4.5709, ""longitude"": -74.2973}"
+moonshotai/kimi-k2.6,CoT,4.62,-74.42,245.864,CO,True,,stop,0.012682908,682,3642,3581,93.52,"{""reasoning"": ""Yellow license plate is characteristic of private vehicles in Colombia, and the tropical mountain road with MUTCD-style signage and dry forest vegetation matches the northern Andes."", ""country"": ""CO"", ""latitude"": 4.62, ""longitude"": -74.42}"
+google/gemini-3.5-flash,CoT (effort=medium),6.1524,-75.5012,252.052,CO,True,,stop,0.0093045,1271,822,761,6.41,"{""reasoning"": ""The yellow license plate on the vehicle, right-hand traffic, yellow chevron sign, and mountainous tropical vegetation are highly characteristic of Colombia."", ""country"": ""CO"", ""latitude"": 6.1524, ""longitude"": -75.5012}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),6.1854,-75.6012,262.461,CO,True,,stop,0.002091,1190,34,0,1.6,"```json
+{""country"": ""CO"", ""latitude"": 6.1854, ""longitude"": -75.6012}
+```"
+moonshotai/kimi-k2.6,no-CoT,10.4236,-75.5253,503.287,CO,True,,stop,0.00067285,603,25,0,30.97," {""country"": ""CO"", ""latitude"": 10.4236, ""longitude"": -75.5253}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,12.625276565551758,-81.68047332763672,1148.203,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,9.263412475585938,-83.77120971679688,1199.114,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,9.345367431640625,-83.92247772216797,1217.441,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,9.9281,-84.0907,1252.631,CR,True,,stop,0.001176,634,30,0,1.1,"{""country"": ""CR"", ""latitude"": 9.9281, ""longitude"": -84.0907}"
+qwen/qwen3.5-397b-a17b,no-CoT,9.9876,-84.1234,1257.991,CR,True,,stop,0.0003287,473,30,0,2.1,"{""country"": ""CR"", ""latitude"": 9.9876, ""longitude"": -84.1234}"
+x-ai/grok-4.3,no-CoT,10.05,-84.25,1273.285,CR,True,,stop,0.0005934,592,22,0,0.73,"{""country"": ""CR"", ""latitude"": 10.05, ""longitude"": -84.25}"
+openai/gpt-5.5,CoT,9.7842,-84.6305,1304.99,CR,True,,stop,0.014895,621,393,303,53.3,"{""reasoning"":""Right-side driving, yellow diamond curve signage, center/edge markings, and tropical dry-forest roadside are characteristic of Central American roads, especially Costa Rica. The vegetation and hilly two-lane highway best fit the Pacific-side dry forest around Puntarenas/Guanacaste rather than wetter Caribbean areas."",""country"":""CR"",""latitude"":9.7842,""longitude"":-84.6305}"
+minimax/minimax-m3,CoT,14.63,-90.51,2090.67,GT,True,,stop,0.00063426,843,369,301,15.9,"{""reasoning"": ""Left-hand traffic (Jeep on left side of road), tropical mountainous terrain with lush vegetation, yellow diamond warning sign style, and guardrail design strongly suggest Central America, most likely Guatemala."", ""country"": ""GT"", ""latitude"": 14.63, ""longitude"": -90.51}"
+minimax/minimax-m3,no-CoT,16.75,-93.1,2441.082,MX,True,,stop,0.00034362,767,143,163,4.33,"{""country"": ""MX"", ""latitude"": 16.75, ""longitude"": -93.1}"
+qwen/qwen3.5-9b,no-CoT,-22.8456,-46.6925,4357.222,BR,True,,stop,5.205e-05,474,31,0,5.74,"{""country"": ""BR"", ""latitude"": -22.8456, ""longitude"": -46.6925}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,4417.454,BR,True,,stop,0.0002041,473,39,0,2.55,"{
+  ""country"": ""BR"",
+  ""latitude"": -23.5505,
+  ""longitude"": -46.6333
+}"
+xiaomi/mimo-v2.5,no-CoT,-22.45,-43.17,4590.894,BR,True,,stop,8.03376e-05,708,27,0,1.44,"{""country"": ""BR"", ""latitude"": -22.45, ""longitude"": -43.17}"
+openai/gpt-5.5,no-CoT,-22.9754,-43.2137,4626.046,BR,True,,stop,0.00347,544,25,0,2.5,"{""country"":""BR"",""latitude"":-22.9754,""longitude"":-43.2137}"
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4778,6047.666,US,True,,stop,0.0001143,634,32,0,3.69,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4778}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8157.034,,True,True,,,,,,6.29,
+x-ai/grok-4.3,CoT,-25.74,27.68,11412.903,ZA,True,,stop,0.0022415,676,693,620,6.01,"{""reasoning"": ""Left-hand traffic (vehicle positioned right-of-frame on right edge line), yellow diamond chevron curve sign, beige 4x4 with rear spare (common in ZA), savanna woodland on hilly terrain all point to South Africa."", ""country"": ""ZA"", ""latitude"": -25.74, ""longitude"": 27.68}"
+xiaomi/mimo-v2.5,CoT,19.7515,74.4836,15434.165,IN,True,,stop,0.0001261176,787,151,77,53.75,"{""reasoning"": ""The yellow warning sign style and the Tata Sumo vehicle strongly point to India. The dry, rocky terrain with scattered vegetation suggests the Deccan Plateau region, specifically Maharashtra."", ""country"": ""IN"", ""latitude"": 19.7515, ""longitude"": 74.4836}"
+qwen/qwen3.5-35b-a3b,no-CoT,26.2124,127.6799,15734.13,JP,True,,stop,9.836e-05,474,32,0,1.32,"{""country"": ""JP"", ""latitude"": 26.2124, ""longitude"": 127.6799}"
+qwen/qwen3.6-27b,no-CoT,12.9716,77.5946,16134.071,IN,True,,stop,0.0001943,473,31,0,11.56,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.6-35b-a3b,no-CoT,12.9716,77.5946,16134.071,IN,True,,stop,0.00010195,473,31,0,6.94,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.5-27b,no-CoT,10.3285,76.3214,16160.892,IN,True,,stop,0.000140595,473,31,0,1.01,"{""country"": ""IN"", ""latitude"": 10.3285, ""longitude"": 76.3214}"
+google/gemma-4-31b-it,no-CoT,6.9271,80.2333,16716.001,LK,True,,stop,6.678e-05,406,35,0,2.81,"```json
+{""country"": ""LK"", ""latitude"": 6.9271, ""longitude"": 80.2333}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,18.77,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.29,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.69,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.26,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.14,

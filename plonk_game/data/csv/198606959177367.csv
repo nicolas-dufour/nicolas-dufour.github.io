@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,63.62685909997226,-142.3233279,0.0,US,True,,,,,,,,"Tok, Southeast Fairbanks Census Area, Alaska, US"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,62.938148498535156,-145.20144653320312,162.974,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,64.0,-139.0,168.249,CA,True,,stop,0.00066485,603,23,0,7.41," {""country"": ""CA"", ""latitude"": 64.0, ""longitude"": -139.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,62.68052673339844,-145.95689392089844,210.586,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,62.75849914550781,-146.21055603027344,217.492,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,64.882,-146.348,239.235,US,True,,stop,0.013005,621,330,234,13.95,"{""reasoning"":""Right-hand driving with North American double-yellow centerlines and white edge lines, plus boreal black spruce/birch vegetation and overcast subarctic landscape point strongly to interior Alaska/Yukon. The narrow rural paved road and fire-scarred taiga are most consistent with Alaska, likely near Fairbanks/Chena Hot Springs Road."",""country"":""US"",""latitude"":64.882,""longitude"":-146.348}"
+anthropic/claude-opus-4.8,CoT,64.5,-147.0,247.226,US,True,,stop,0.00616,797,87,0,3.49,"{""reasoning"": ""Boreal spruce/birch vegetation, double yellow centerline with white edge lines, overcast subarctic sky suggest interior Alaska highway."", ""country"": ""US"", ""latitude"": 64.5, ""longitude"": -147.0}"
+qwen/qwen3.5-27b,no-CoT,64.0685,-147.3292,250.136,US,True,,stop,0.000142155,473,32,0,8.26,"{""country"": ""US"", ""latitude"": 64.0685, ""longitude"": -147.3292}"
+anthropic/claude-opus-4.8,no-CoT,64.8,-147.7,290.836,US,True,,stop,0.004055,666,29,0,2.58,"{""country"": ""US"", ""latitude"": 64.8, ""longitude"": -147.7}"
+moonshotai/kimi-k2.6,CoT,65.0,-147.5,292.383,US,True,,stop,0.0148,680,3578,3894,113.51,"{""reasoning"":""Double yellow centerlines with white edge markings indicate a North American road. Boreal forest and flat subarctic terrain suggest interior Alaska near Fairbanks."",""country"":""US"",""latitude"":65.0,""longitude"":-147.5}"
+mistralai/mistral-medium-3-5,no-CoT,64.8378,-147.7164,293.287,US,True,,stop,0.001191,634,32,0,0.86,"{""country"": ""US"", ""latitude"": 64.8378, ""longitude"": -147.7164}"
+xiaomi/mimo-v2.5,no-CoT,64.8378,-147.7164,293.287,US,True,,stop,8.17376e-05,708,32,0,3.51,"{""country"": ""US"", ""latitude"": 64.8378, ""longitude"": -147.7164}"
+qwen/qwen3.5-397b-a17b,CoT,64.85,-147.75,295.299,US,True,,stop,0.0133491,553,3746,3447,130.89,"{""reasoning"": ""The double solid yellow center line and right-hand traffic confirm a North American location, while the stunted boreal forest (mix of birch and spruce) and flat, overcast terrain are characteristic of Interior Alaska."", ""country"": ""US"", ""latitude"": 64.85, ""longitude"": -147.75}"
+google/gemini-3.5-flash,CoT (effort=low),63.1234,-136.4567,297.544,CA,True,,stop,0.004671,1272,307,238,3.21,"{""reasoning"": ""The skinny black spruce trees, rolling northern terrain, and double yellow center lines are highly characteristic of the boreal forest along the Klondike Highway in Yukon, Canada."", ""country"": ""CA"", ""latitude"": 63.1234, ""longitude"": -136.4567}"
+google/gemini-3.1-pro-preview,no-CoT,63.8,-149.0,329.198,US,True,,stop,0.004744,1190,197,167,20.93,"```json
+{""country"": ""US"", ""latitude"": 63.8, ""longitude"": -149.0}
+```"
+google/gemini-3.1-pro-preview,CoT,63.5,-149.0,330.677,US,True,,stop,0.005266,1271,227,157,10.76,"{
+  ""reasoning"": ""Double yellow center lines and white edge lines indicate North America. The spindly black spruce trees and boreal landscape are highly characteristic of central or southern Alaska."",
+  ""country"": ""US"",
+  ""latitude"": 63.5,
+  ""longitude"": -149.0
+}"
+google/gemma-4-31b-it,no-CoT,62.45,-135.12,385.759,CA,True,,stop,6.598e-05,406,33,0,2.99,"```json
+{""country"": ""CA"", ""latitude"": 62.45, ""longitude"": -135.12}
+```"
+xiaomi/mimo-v2.5,CoT,62.1,-149.9,419.773,US,True,,stop,0.0001532776,787,248,172,3.44,"{""reasoning"": ""The solid double yellow center line and white edge line, combined with right-hand traffic, point to North America. The boreal vegetation, flat terrain, and specific road texture are highly characteristic of the interior of Alaska."", ""country"": ""US"", ""latitude"": 62.1, ""longitude"": -149.9}"
+qwen/qwen3.5-122b-a10b,no-CoT,61.2984,-149.9003,467.265,CA,True,,stop,0.0001898,474,32,0,12.45,"{""country"": ""CA"", ""latitude"": 61.2984, ""longitude"": -149.9003}"
+qwen/qwen3.6-27b,no-CoT,61.2180556,-149.9002778,472.686,US,True,,stop,0.0002083,473,38,0,12.34,"{""country"": ""US"", ""latitude"": 61.2180556, ""longitude"": -149.9002778}"
+openai/gpt-5.5,no-CoT,60.7382,-135.0956,493.29,CA,True,,stop,0.00344,544,24,0,1.29,"{""country"":""CA"",""latitude"":60.7382,""longitude"":-135.0956}"
+qwen/qwen3.5-35b-a3b,no-CoT,62.4456,-130.4231,613.236,CA,True,,stop,0.0001184625,473,32,0,1.65,"{""country"": ""CA"", ""latitude"": 62.4456, ""longitude"": -130.4231}"
+x-ai/grok-4.3,CoT,68.4,-149.3,616.539,US,True,,stop,0.0022515,676,697,628,7.51,"{""reasoning"": ""North American double-yellow center line + white edge lines, right-hand traffic, boreal forest with black spruce/aspen mix and flat overcast subarctic terrain indicate remote northern road (Dalton Hwy or similar)."", ""country"": ""US"", ""latitude"": 68.4, ""longitude"": -149.3}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,59.48528289794922,-134.24411010742188,627.728,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,59.041229248046875,-131.9872283935547,749.36,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,58.91910171508789,-131.58070373535156,775.165,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,61.85,-121.35,1081.2,CA,True,,stop,0.0005934,592,22,0,0.81,"{""country"": ""CA"", ""latitude"": 61.85, ""longitude"": -121.35}"
+google/gemini-3.5-flash,CoT (effort=high),61.7583,-116.1234,1342.753,CA,True,,stop,0.0098085,1271,878,801,8.73,"{""reasoning"": ""The double yellow center lines and white outer edge lines indicate North America, while the sparse, skinny black spruce trees (taiga vegetation) are highly characteristic of the boreal forests in the Northwest Territories, Canada."", ""country"": ""CA"", ""latitude"": 61.7583, ""longitude"": -116.1234}"
+google/gemini-3.5-flash,CoT (effort=medium),62.4512,-115.1234,1366.965,CA,True,,stop,0.0073965,1271,610,533,5.73,"{""reasoning"": ""The double yellow center lines and white edge lines indicate North America, while the stunted black spruce trees and taiga vegetation are highly characteristic of the subarctic boreal forest in northern Canada, specifically the Northwest Territories."", ""country"": ""CA"", ""latitude"": 62.4512, ""longitude"": -115.1234}"
+qwen/qwen3.5-397b-a17b,no-CoT,62.45,-114.38,1403.447,CA,True,,stop,0.00028245,473,28,0,3.57,"{""country"": ""CA"", ""latitude"": 62.45, ""longitude"": -114.38}"
+qwen/qwen3.6-35b-a3b,no-CoT,62.4539,-114.3732,1403.648,CA,True,,stop,0.000146,474,32,0,3.32,"{""country"": ""CA"", ""latitude"": 62.4539, ""longitude"": -114.3732}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),62.4125,-114.1234,1417.294,CA,True,,stop,0.0021075,1189,36,0,7.75,"```json
+{""country"": ""CA"", ""latitude"": 62.4125, ""longitude"": -114.1234}
+```"
+qwen/qwen3.5-9b,no-CoT,62.4566,-114.0726,1418.28,CA,True,,stop,5.22e-05,474,32,0,9.11,"{""country"": ""CA"", ""latitude"": 62.4566, ""longitude"": -114.0726}"
+minimax/minimax-m3,no-CoT,55.3089,-114.6612,1794.747,CA,True,,stop,0.00019416,752,25,0,2.68,"{""country"": ""CA"", ""latitude"": 55.3089, ""longitude"": -114.6612}"
+minimax/minimax-m3,CoT,55.75,-96.0,2673.93,CA,True,,stop,0.00111222,845,764,829,15.54,"{""reasoning"": ""Two-lane paved highway with double yellow center line, right-hand driving, flat terrain with sparse, stunted black spruce and alder/willow scrub typical of the northern boreal-subarctic transition zone. The overcast sky, low vegetation, and remote road style are highly characteristic of northern Manitoba (likely along Highway 6 or the route to Churchill)."", ""country"": ""CA"", ""latitude"": 55.75, ""longitude"": -96.0}"
+mistralai/mistral-small-2603,no-CoT,60.8333,8.25,5957.321,NO,True,,stop,0.0001119,634,28,0,10.03,"{""country"": ""NO"", ""latitude"": 60.8333, ""longitude"": 8.25}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12296.406,,True,True,,,,,,0.34,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,13.04,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.42,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.18,

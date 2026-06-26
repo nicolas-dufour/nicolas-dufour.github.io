@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-19.086778076788,-50.085735111912,0.0,BR,True,,,,,,,,"Santa Vitoria, Santa Vitoria, Minas Gerais, BR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-19.0878849029541,-49.869171142578125,22.757,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-19.135276794433594,-50.29863739013672,23.01,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-19.136474609375,-50.318119049072266,25.033,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-18.5,-49.5,89.771,BR,True,,stop,0.00646,797,99,0,3.03,"{""reasoning"": ""Red lateritic dirt road with wooden cattle gate and dry savanna/cerrado vegetation typical of rural Brazilian interior, with sparse trees and clear blue sky."", ""country"": ""BR"", ""latitude"": -18.5, ""longitude"": -49.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-20.150291442871094,-51.265289306640625,171.02,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-20.021699905395508,-51.389007568359375,171.625,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,-18.5,-48.5,179.222,BR,True,,stop,0.00020778,703,23,0,1.2,"{""country"": ""BR"", ""latitude"": -18.5, ""longitude"": -48.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-19.1234,-48.2345,194.552,BR,True,,stop,0.0021,1190,35,0,1.09,"```json
+{""country"": ""BR"", ""latitude"": -19.1234, ""longitude"": -48.2345}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-20.802257537841797,-50.59190368652344,197.953,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),-18.6035,-48.2142,204.148,BR,True,,stop,0.0059835,1271,453,384,4.94,"{""reasoning"": ""The reddish-orange soil, rustic wooden gate (porteira), and dry vegetation are highly characteristic of the Cerrado region in Brazil, particularly in Minas Gerais or Goiás."", ""country"": ""BR"", ""latitude"": -18.6035, ""longitude"": -48.2142}"
+qwen/qwen3.6-35b-a3b,CoT,-17.85,-48.25,237.478,BR,True,,stop,0.0019945471,553,1974,1868,20.86,"```json
+{
+  ""reasoning"": ""The distinctive red laterite soil (terra roxa) and the rustic wooden farm gate are classic indicators of rural Brazil, specifically the Cerrado region or Triângulo Mineiro. The dry, yellowish grass and scattered trees suggest a dry season in a tropical savanna climate."",
+  ""country"": ""BR"",
+  ""latitude"": -17.85,
+  ""longitude"": -48.25
+}
+```"
+qwen/qwen3.5-397b-a17b,CoT,-16.5218,-49.0532,305.439,BR,True,,stop,0.0035574,553,896,813,8.61,"{""reasoning"": ""The distinct reddish-orange lateritic soil of the unpaved road is highly characteristic of the Brazilian Cerrado region, and the rustic, heavy wooden post fencing style is typical of Brazilian cattle ranches (fazendas)."", ""country"": ""BR"", ""latitude"": -16.5218, ""longitude"": -49.0532}"
+anthropic/claude-opus-4.8,no-CoT,-21.5,-52.5,367.953,BR,True,,stop,0.00408,666,30,0,8.49,"{""country"": ""BR"", ""latitude"": -21.5, ""longitude"": -52.5}"
+google/gemini-3.5-flash,CoT (effort=high),-15.95,-48.96,368.649,BR,True,,stop,0.0073335,1271,603,534,10.72,"{""reasoning"": ""The reddish-orange dirt road, dry grassy vegetation, and distinctive heavy wooden gate ('porteira') are highly characteristic of the Brazilian Cerrado, particularly in states like Goiás or Minas Gerais."", ""country"": ""BR"", ""latitude"": -15.95, ""longitude"": -48.96}"
+qwen/qwen3.5-122b-a10b,no-CoT,-22.2833,-51.1667,372.794,BR,True,,stop,0.0002163,473,31,0,8.1,"{""country"": ""BR"", ""latitude"": -22.2833, ""longitude"": -51.1667}"
+google/gemini-3.5-flash,CoT (effort=low),-18.5122,-46.5185,380.886,BR,True,,stop,0.003258,1272,150,75,8.52,"{""reasoning"": ""The reddish-orange soil, dry pasture, and distinctive rustic wooden gate (porteira) and fence posts are highly characteristic of rural Brazil, particularly in the Cerrado region of Minas Gerais or Goiás."", ""country"": ""BR"", ""latitude"": -18.5122, ""longitude"": -46.5185}"
+google/gemini-3.1-pro-preview,no-CoT,-18.5,-46.5,383.048,BR,True,,stop,0.003976,1190,133,104,15.96,"```json
+{""country"": ""BR"", ""latitude"": -18.5, ""longitude"": -46.5}
+```"
+minimax/minimax-m3,CoT,-15.5,-50.0,398.935,BR,True,,stop,0.00074586,843,462,381,12.22,"{""reasoning"": ""Distinctive red-orange lateritic soil, flat cerrado-style savanna terrain with sparse dry vegetation, wooden plank gate and post-and-wire fencing characteristic of Brazilian fazendas. These features together strongly indicate the Brazilian cerrado region, likely in Goiás or western Minas Gerais."", ""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -50.0}"
+google/gemini-3.1-pro-preview,CoT,-19.0,-46.0,429.548,BR,True,,stop,0.00468,1272,178,105,9.61,"{
+  ""reasoning"": ""The deep red soil and dry savanna-like vegetation strongly suggest the Cerrado biome in Brazil. The style of the wooden gate and fencing is typical of rural Brazilian farms."",
+  ""country"": ""BR"",
+  ""latitude"": -19.0,
+  ""longitude"": -46.0
+}"
+google/gemma-4-31b-it,no-CoT,-15.7801,-47.9292,433.029,BR,True,,stop,7.124e-05,406,36,0,9.33,"```json
+{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-15.7801,-47.9292,433.029,BR,True,,stop,0.0011835,634,31,0,1.35,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7942,-47.8822,434.356,BR,True,,stop,0.00025701,473,31,0,7.62,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}"
+qwen/qwen3.5-9b,no-CoT,-15.7801,-47.8449,437.818,BR,True,,stop,8.816e-05,473,31,0,2.15,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.8449}"
+openai/gpt-5.5,no-CoT,-20.5963,-54.6021,501.288,BR,True,,stop,0.00347,544,25,0,7.55,"{""country"":""BR"",""latitude"":-20.5963,""longitude"":-54.6021}"
+moonshotai/kimi-k2.6,no-CoT,-15.5,-47.0,516.087,BR,True,,stop,0.00051219,602,23,0,8.52,"{""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -47.0}"
+moonshotai/kimi-k2.6,CoT,-19.75,-55.1,530.968,BR,True,,stop,0.009868455,681,2619,2882,37.14,"{""reasoning"": ""Deep red-orange laterite soil and sparse dry cerrado grassland with scattered trees are classic markers of Brazilian cattle country; the rustic wooden ranch gate and flat terrain match the Pantanal/Cerrado border region in Mato Grosso do Sul."", ""country"": ""BR"", ""latitude"": -19.75, ""longitude"": -55.1}"
+openai/gpt-5.5,CoT,-20.6548,-55.0912,551.679,BR,True,,stop,0.011625,621,284,207,8.28,"{""reasoning"":""The red lateritic dirt track, dry cerrado-like pasture, wooden cattle gates/fencing, and flat ranch landscape are characteristic of rural central-west Brazil. The scene most closely matches cattle country in Mato Grosso do Sul during the dry season."",""country"":""BR"",""latitude"":-20.6548,""longitude"":-55.0912}"
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.9253,573.955,BR,True,,stop,0.0001943,473,31,0,22.47,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9253}"
+x-ai/grok-4.3,no-CoT,-34.85,-58.95,1958.315,AR,True,,stop,0.0005934,592,22,0,7.21,"{""country"": ""AR"", ""latitude"": -34.85, ""longitude"": -58.95}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5856.948,,True,True,,,,,,19.31,
+qwen/qwen3.5-27b,no-CoT,-26.75,28.15,7937.442,ZA,True,,stop,0.000160875,473,44,0,4.26,"```json
+{
+  ""country"": ""ZA"",
+  ""latitude"": -26.7500,
+  ""longitude"": 28.1500
+}
+```"
+mistralai/mistral-small-2603,no-CoT,36.1699,-115.1398,9184.869,US,True,,stop,0.000142875,634,32,0,2.78,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.5-35b-a3b,no-CoT,-27.4567,152.8901,14278.498,AU,True,,stop,0.00017136,474,32,0,1.9,"{""country"": ""AU"", ""latitude"": -27.4567, ""longitude"": 152.8901}"
+qwen/qwen3.6-35b-a3b,no-CoT,-27.45,152.9,14278.695,AU,True,,stop,0.000138,474,27,0,10.25,"{""country"": ""AU"", ""latitude"": -27.45, ""longitude"": 152.9}"
+xiaomi/mimo-v2.5,CoT,-26.0,146.0,14709.087,AU,True,,stop,0.0003671976,787,1012,945,17.85,"{""reasoning"": ""The reddish-orange dirt soil is highly characteristic of the Australian Outback, and the wooden rural fencing and dry grassland vegetation match pastoral regions in Queensland or similar areas."", ""country"": ""AU"", ""latitude"": -26.0, ""longitude"": 146.0}"
+xiaomi/mimo-v2.5,no-CoT,-23.5,148.0,14889.294,AU,True,,stop,8.00576e-05,708,26,0,1.49,"{""country"": ""AU"", ""latitude"": -23.5, ""longitude"": 148.0}"
+x-ai/grok-4.3,CoT,-23.44,144.25,15037.104,AU,True,,stop,0.001919,676,564,501,4.78,"{""reasoning"": ""Red dirt road + wooden farm gate + sparse eucalyptus/acacia savanna + clear blue sky match rural Queensland outback; power poles and fence style are typical Australian pastoral infrastructure."", ""country"": ""AU"", ""latitude"": -23.44, ""longitude"": 144.25}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,11.0,

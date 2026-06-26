@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-16.357585648577512,45.61380340237423,0.0,MG,True,,,,,,,,"Sitampiky, None, Boeny, MG"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-16.142990112304688,45.52885437011719,25.527,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-16.145200729370117,45.52240753173828,25.552,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-16.017404556274414,45.59724807739258,37.868,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-15.4528,46.3161,125.547,MG,True,,stop,0.002154,1226,35,0,8.37,"```json
+{""country"": ""MG"", ""latitude"": -15.4528, ""longitude"": 46.3161}
+```"
+qwen/qwen3.6-27b,no-CoT,-18.5,33.5,1306.739,MZ,True,,stop,0.0002159,585,25,0,11.05,"{""country"": ""MZ"", ""latitude"": -18.5, ""longitude"": 33.5}"
+qwen/qwen3.5-9b,no-CoT,-17.8253,31.0336,1557.8,ZW,True,,stop,6.325e-05,586,31,0,9.46,"{""country"": ""ZW"", ""latitude"": -17.8253, ""longitude"": 31.0336}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-14.924838066101074,30.725069046020508,1601.808,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,-3.2,38.8,1641.747,KE,True,,stop,0.00883,1307,518,441,7.96,"{
+  ""reasoning"": ""The deep red soil, dry savanna grass, and scattered trees are characteristic of East African bushlands. The landscape strongly resembles Tsavo East National Park in Kenya, known for its iconic red earth."",
+  ""country"": ""KE"",
+  ""latitude"": -3.2,
+  ""longitude"": 38.8
+}"
+google/gemini-3.1-pro-preview,no-CoT,-3.0555,38.6543,1663.364,KE,True,,stop,0.005474,1225,252,218,11.38,"```json
+{""country"": ""KE"", ""latitude"": -3.0555, ""longitude"": 38.6543}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-2.7835,38.7824,1684.16,KE,True,,stop,0.0103485,1307,932,848,8.54,"```json
+{""reasoning"": ""The extremely vibrant red soil, dry savannah vegetation, and presence of fan palms (Hyphaene compressa) are highly characteristic of Tsavo East National Park in Kenya, where safari vehicles like this Land Cruiser are commonly used."", ""country"": ""KE"", ""latitude"": -2.7835, ""longitude"": 38.7824}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-2.7812,38.7524,1685.847,KE,True,,stop,0.0054795,1307,391,319,4.6,"{""reasoning"": ""The intense reddish-orange sandy track, dry savanna vegetation, and Lala palms are highly characteristic of Tsavo East National Park in Kenya, where Google Street View was captured from a safari vehicle."", ""country"": ""KE"", ""latitude"": -2.7812, ""longitude"": 38.7524}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-23.244617462158203,31.193553924560547,1690.352,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-23.286836624145508,31.16254425048828,1695.174,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-24.0,31.5,1698.884,ZA,True,,stop,0.006695,949,78,0,20.08,"{""reasoning"": ""Red sandy track through dry bushveld savanna with palms and acacia, typical of southern African game reserve in dry season."", ""country"": ""ZA"", ""latitude"": -24.0, ""longitude"": 31.5}"
+anthropic/claude-opus-4.8,no-CoT,-24.5,31.5,1725.148,ZA,True,,stop,0.004865,818,31,0,9.33,"{""country"": ""ZA"", ""latitude"": -24.5, ""longitude"": 31.5}"
+x-ai/grok-4.3,CoT,-24.35,31.3,1734.962,ZA,True,,stop,0.002219,788,628,555,11.94,"{""reasoning"": ""Red dirt track through dry savanna with scattered acacias/mopane and fan palms, clear blue sky, plus RHD mirror visible on right edge of frame, all point to Southern African bushveld (left-side driving)."", ""country"": ""ZA"", ""latitude"": -24.35, ""longitude"": 31.3}"
+xiaomi/mimo-v2.5,CoT,-2.35,37.95,1768.957,KE,True,,stop,0.0004453176,899,1235,1144,21.12,"{""reasoning"": ""The distinctive reddish-orange volcanic soil and savanna landscape with scattered palm trees (likely Hyphaene species) are highly characteristic of the Tsavo region in Kenya. The dry, tall golden grass and clear blue sky further support a location within the East African savanna during the dry season."", ""country"": ""KE"", ""latitude"": -2.35, ""longitude"": 37.95}"
+qwen/qwen3.5-122b-a10b,no-CoT,-24.9947,31.1256,1785.08,ZA,True,,stop,0.0003588,585,39,0,8.75,"{
+  ""country"": ""ZA"",
+  ""latitude"": -24.9947,
+  ""longitude"": 31.1256
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,-24.15,29.85,1856.645,ZA,True,,stop,0.00011475,585,27,0,2.57,"{""country"": ""ZA"", ""latitude"": -24.15, ""longitude"": 29.85}"
+qwen/qwen3.5-27b,no-CoT,-22.3404,28.5811,1905.064,NA,True,,stop,0.00022491,585,31,0,2.77,"{""country"": ""NA"", ""latitude"": -22.3404, ""longitude"": 28.5811}"
+xiaomi/mimo-v2.5,no-CoT,-1.5,36.8,1913.389,KE,True,,stop,9.51776e-05,820,24,0,1.32,"{""country"": ""KE"", ""latitude"": -1.5, ""longitude"": 36.8}"
+mistralai/mistral-medium-3-5,no-CoT,-24.8,28.5,2010.972,ZA,True,,stop,0.0013665,786,25,0,1.18,"{""country"": ""ZA"", ""latitude"": -24.8, ""longitude"": 28.5}"
+mistralai/mistral-small-2603,no-CoT,-25.8563,28.2293,2086.548,ZA,True,,stop,0.0001365,786,31,0,3.63,"{""country"": ""ZA"", ""latitude"": -25.8563, ""longitude"": 28.2293}"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.1234,25.5678,2259.345,ZA,True,,stop,0.00011875,585,31,0,3.01,"{""country"": ""ZA"", ""latitude"": -24.1234, ""longitude"": 25.5678}"
+google/gemini-3.5-flash,CoT (effort=high),-18.6231,24.1854,2285.094,BW,True,,stop,0.0186915,1307,1859,1761,16.6,"```json
+{""reasoning"": ""The deep sandy track with reddish-orange soil, dry golden savanna grass, and distinctive fan palms (Hyphaene petersiana) is highly characteristic of northern Botswana, particularly within Chobe National Park or the Okavango Delta region, where extensive safari-based Street View coverage exists."", ""country"": ""BW"", ""latitude"": -18.6231, ""longitude"": 24.1854}
+```"
+moonshotai/kimi-k2.6,CoT,-21.5,24.5,2290.945,BW,True,,stop,0.010031616,834,2852,2776,70.76,"{""reasoning"": ""The deep red-orange Kalahari sand track, dry winter savanna grassland, and scattered broadleaf woodland are classic of Botswana's dry-season bush, particularly within the Central Kalahari or Makgadikgadi ecosystem."", ""country"": ""BW"", ""latitude"": -21.5, ""longitude"": 24.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,-19.2833,23.8167,2328.625,BW,True,,stop,0.0003882,585,31,0,1.32,"{""country"": ""BW"", ""latitude"": -19.2833, ""longitude"": 23.8167}"
+x-ai/grok-4.3,no-CoT,-19.45,23.65,2347.58,BW,True,,stop,0.0007334,704,22,0,7.02,"{""country"": ""BW"", ""latitude"": -19.45, ""longitude"": 23.65}"
+openai/gpt-5.5,CoT,-19.2467,23.4215,2369.673,BW,True,,stop,0.011155,755,246,168,6.12,"{""reasoning"":""Red Kalahari sand track through dry mopane/acacia savanna with fan palms strongly suggests a safari route in northern Botswana rather than South Africa or East Africa. The flat terrain and vegetation fit the Moremi/Okavango fringe area."",""country"":""BW"",""latitude"":-19.2467,""longitude"":23.4215}"
+google/gemma-4-31b-it,no-CoT,-20.5,23.5,2375.775,BW,True,,stop,4.868e-05,262,30,0,10.36,"```json
+{""country"": ""BW"", ""latitude"": -20.5, ""longitude"": 23.5}
+```"
+minimax/minimax-m3,CoT,-19.25,22.85,2429.54,BW,True,,stop,0.00083586,995,499,416,13.51,"{""reasoning"": ""Distinctive orange-red Kalahari sand, fan palms (likely Hyphaene/makalani) mixed with acacia-mopane woodland, dry savanna grassland, and the safari vehicle hood ornament strongly indicate the Okavango/Chobe region of northern Botswana."", ""country"": ""BW"", ""latitude"": -19.25, ""longitude"": 22.85}"
+openai/gpt-5.5,no-CoT,-20.3301,22.4457,2482.553,BW,True,,stop,0.00411,678,24,0,1.45,"{""country"":""BW"",""latitude"":-20.3301,""longitude"":22.4457}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5319.785,,True,True,,,,,,1.23,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.15,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.73,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.12,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.39,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.4,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.27,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.38,

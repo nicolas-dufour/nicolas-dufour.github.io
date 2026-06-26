@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,7.9942375567168,99.90588990807,0.0,TH,True,,,,,,,,"Chulabhorn, None, Nakhon Si Thammarat, TH"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,8.91740608215332,99.21570587158203,127.67,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,9.015511512756348,99.18061065673828,138.772,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,13.410017013549805,100.26775360107422,603.503,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,13.7563,100.5018,644.005,TH,True,,stop,0.001191,634,32,0,1.09,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-122b-a10b,no-CoT,13.7563,100.5018,644.005,TH,True,,stop,0.0001898,474,32,0,12.38,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-27b,no-CoT,13.7563,100.5018,644.005,TH,True,,stop,0.0002085,474,45,0,5.86,"```json
+{
+  ""country"": ""TH"",
+  ""latitude"": 13.7563,
+  ""longitude"": 100.5018
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,13.7563,100.5018,644.005,TH,True,,stop,0.0001878125,473,32,0,1.74,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.6-35b-a3b,no-CoT,13.7563,100.5018,644.005,TH,True,,stop,0.00010295,473,32,0,2.32,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+xiaomi/mimo-v2.5,no-CoT,13.7563,100.5018,644.005,TH,True,,stop,8.17376e-05,708,32,0,1.6,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+x-ai/grok-4.3,CoT,14.034,100.628,676.195,TH,True,,stop,0.0029305,676,944,868,311.3,"{
+  ""reasoning"": ""Left-side driving confirmed by white dashed center line + solid yellow edge line on right of frame; tropical broadleaf vegetation, rural divided highway with modern cobra-head streetlights, and right-hand dashboard view point to Thailand."",
+  ""country"": ""TH"",
+  ""latitude"": 14.034,
+  ""longitude"": 100.628
+}"
+x-ai/grok-4.3,no-CoT,14.036,100.617,676.277,TH,True,,stop,0.0005934,592,22,0,0.75,"{""country"": ""TH"", ""latitude"": 14.036, ""longitude"": 100.617}"
+qwen/qwen3.5-9b,no-CoT,14.0547,100.6038,678.18,TH,True,,stop,8.841e-05,473,32,0,4.27,"{""country"": ""TH"", ""latitude"": 14.0547, ""longitude"": 100.6038}"
+google/gemma-4-31b-it,no-CoT,14.3214,100.5231,706.759,TH,True,,stop,7.164e-05,406,37,0,3.98,"```json
+{""country"": ""TH"", ""latitude"": 14.3214, ""longitude"": 100.5231}
+```"
+openai/gpt-5.5,no-CoT,14.4203,100.9128,722.927,TH,True,,stop,0.00341,544,23,0,3.08,"{""country"":""TH"",""latitude"":14.4203,""longitude"":100.9128}"
+openai/gpt-5.5,CoT,14.5623,100.7421,735.999,TH,True,,stop,0.016665,621,452,382,19.97,"{""reasoning"":""Left-side driving on a divided tropical highway with yellow median edge line, white/black roadside bollards and Thai-style dual streetlights strongly suggests rural Thailand. Flat lush vegetation and road design fit central Thailand highways."",""country"":""TH"",""latitude"":14.5623,""longitude"":100.7421}"
+minimax/minimax-m3,no-CoT,15.0,100.5,781.687,TH,True,,stop,0.00033762,767,138,148,3.57,"{""country"": ""TH"", ""latitude"": 15.0, ""longitude"": 100.5}"
+moonshotai/kimi-k2.6,CoT,15.2,100.1,801.523,TH,True,,stop,0.012954168,682,3718,3644,192.25,"{""reasoning"": ""Left-hand traffic, black-and-white striped roadside delineators, distinctive Thai-style streetlight poles, tropical flat terrain, and a Toyota Hilux/Fortuner dashboard strongly indicate a rural highway in Thailand's central plains."", ""country"": ""TH"", ""latitude"": 15.2000, ""longitude"": 100.1000}"
+minimax/minimax-m3,CoT,15.7,100.1,857.102,TH,True,,stop,0.00059226,843,334,270,17.42,"{""reasoning"": ""Left-hand traffic, tropical vegetation, yellow center line with white lane markings, and the distinctive curved-arm street lamps are characteristic of Thai national highways in the central plains region."", ""country"": ""TH"", ""latitude"": 15.7, ""longitude"": 100.1}"
+google/gemini-3.5-flash,CoT (effort=high),16.4523,100.3245,941.591,TH,True,,stop,0.0076395,1271,637,575,11.42,"{""reasoning"": ""The left-hand traffic, yellow shoulder lines, concrete utility poles, and tropical vegetation are highly characteristic of a highway in Thailand."", ""country"": ""TH"", ""latitude"": 16.4523, ""longitude"": 100.3245}"
+google/gemini-3.1-pro-preview,CoT,16.821,100.254,982.217,TH,True,,stop,0.005458,1271,243,166,11.39,"{
+  ""reasoning"": ""Driving on the left with a yellow right-edge line and curved streetlights strongly indicates Thailand. The lush tropical vegetation and flat terrain suggest a central or northern region."",
+  ""country"": ""TH"",
+  ""latitude"": 16.821,
+  ""longitude"": 100.254
+}"
+google/gemini-3.5-flash,CoT (effort=medium),16.8256,100.2634,982.768,TH,True,,stop,0.0061005,1271,466,403,10.6,"{""reasoning"": ""The left-hand traffic, tropical vegetation, rectangular concrete utility poles with holes, and specific curved streetlights are highly characteristic of Thailand."", ""country"": ""TH"", ""latitude"": 16.8256, ""longitude"": 100.2634}"
+anthropic/claude-opus-4.8,CoT,16.4322,102.8236,990.287,TH,True,,stop,0.005985,797,80,0,15.93,"{""reasoning"": ""Left-hand traffic with wide divided highway, tropical vegetation, and lamppost style typical of rural Thailand."", ""country"": ""TH"", ""latitude"": 16.4322, ""longitude"": 102.8236}"
+moonshotai/kimi-k2.6,no-CoT,16.4322,102.8236,990.287,TH,True,,stop,0.0005832,600,27,0,12.46,"{""country"": ""TH"", ""latitude"": 16.4322, ""longitude"": 102.8236}"
+google/gemini-3.1-pro-preview,no-CoT,16.4382,102.8236,990.918,TH,True,,stop,0.00281,1189,36,0,9.57,"```json
+{""country"": ""TH"", ""latitude"": 16.4382, ""longitude"": 102.8236}
+```"
+google/gemini-3.5-flash,CoT (effort=low),16.4392,102.8281,991.179,TH,True,,stop,0.003582,1272,186,122,15.67,"{""reasoning"": ""The left-hand driving, yellow shoulder line on the right, rectangular concrete utility poles, and lush tropical vegetation are highly characteristic of Thailand."", ""country"": ""TH"", ""latitude"": 16.4392, ""longitude"": 102.8281}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),16.4396,102.8286,991.238,TH,True,,stop,0.002109,1190,36,0,53.89,"```json
+{""country"": ""TH"", ""latitude"": 16.4396, ""longitude"": 102.8286}
+```"
+anthropic/claude-opus-4.8,no-CoT,16.4419,102.8359,991.734,TH,True,,stop,0.00413,666,32,0,8.38,"{""country"": ""TH"", ""latitude"": 16.4419, ""longitude"": 102.8359}"
+qwen/qwen3.5-397b-a17b,no-CoT,16.5833,104.25,1065.091,TH,True,,stop,0.00036108,473,30,0,3.22,"{""country"": ""TH"", ""latitude"": 16.5833, ""longitude"": 104.25}"
+qwen/qwen3.6-27b,no-CoT,14.5995,120.9842,2411.05,PH,True,,stop,0.0001963,473,32,0,17.0,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+xiaomi/mimo-v2.5,CoT,15.4,120.9,2427.563,PH,True,,stop,0.0007493976,787,2377,2313,23.94,"{""reasoning"": ""Road markings with yellow lines on the left indicate right-hand traffic, and lush tropical vegetation points to a Southeast Asian region with similar infrastructure, likely the Philippines."", ""country"": ""PH"", ""latitude"": 15.4, ""longitude"": 120.9}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,52.184608459472656,0.12163203209638596,9964.943,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,52.38976287841797,-1.4911574125289917,10066.498,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,55.953826904296875,-3.246278762817383,10077.098,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11098.218,,True,True,,,,,,20.49,
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4196,13297.492,US,True,,stop,0.0001143,634,32,0,9.48,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4196}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,15.35,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.35,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.11,

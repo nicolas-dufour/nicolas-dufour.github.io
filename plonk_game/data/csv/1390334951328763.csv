@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,34.368189881367,109.20291901462,0.0,CN,True,,,,,,,,"Lintong, None, Shaanxi, CN"
+google/gemini-3.5-flash,CoT (effort=low),34.3652,109.2048,0.375,CN,True,,stop,0.0086745,1271,752,664,6.2,"{""reasoning"": ""The large building features the Chinese characters '空军疗养院' (Air Force Sanatorium) with a distinctive red-and-white grid facade and traditional Chinese roof elements, corresponding to the PLA Air Force Sanatorium in Lintong, Xi'an."", ""country"": ""CN"", ""latitude"": 34.3652, ""longitude"": 109.2048}"
+google/gemini-3.5-flash,CoT (effort=high),34.3652,109.2048,0.375,CN,True,,stop,0.0374745,1271,3952,3837,24.85,"```json
+{""reasoning"": ""The image shows the 'Air Force Sanatorium' (空军疗养院) in China, featuring distinctive 1950s Chinese socialist-classicist architecture with green glazed tiles and red columns. This specific building and wide road layout correspond to the Lintong Air Force Sanatorium located along Huaqing South Road in the Lintong District of Xi'an."", ""country"": ""CN"", ""latitude"": 34.3652, ""longitude"": 109.2048}
+```"
+moonshotai/kimi-k2.6,CoT,34.372,109.21,0.776,CN,True,,stop,0.007388748,682,2094,2008,122.91,"{""reasoning"": ""The large red Chinese characters '空军疗养院' (Air Force Sanatorium) on a white building with traditional green-tiled Chinese roofs, combined with right-hand traffic and blue Chinese license plates, identifies this as the Air Force Lintong Sanatorium in Xi'an's Lintong District."", ""country"": ""CN"", ""latitude"": 34.372, ""longitude"": 109.21}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),34.221542,109.023451,23.189,CN,True,,stop,0.002145,1190,40,0,1.17,"```json
+{""country"": ""CN"", ""latitude"": 34.221542, ""longitude"": 109.023451}
+```"
+qwen/qwen3.5-27b,no-CoT,34.3416,108.9398,24.334,CN,True,,stop,0.00019683,473,32,0,3.36,"{""country"": ""CN"", ""latitude"": 34.3416, ""longitude"": 108.9398}"
+x-ai/grok-4.3,no-CoT,34.3416,108.9398,24.334,CN,True,,stop,0.0005984,592,24,0,0.78,"{""country"": ""CN"", ""latitude"": 34.3416, ""longitude"": 108.9398}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.341577,108.93977,24.337,CN,True,,stop,0.00038265,473,35,0,2.15,"{""country"": ""CN"", ""latitude"": 34.341577, ""longitude"": 108.93977}"
+openai/gpt-5.5,no-CoT,34.2447,108.9683,25.553,CN,True,,stop,0.00341,544,23,0,1.46,"{""country"":""CN"",""latitude"":34.2447,""longitude"":108.9683}"
+qwen/qwen3.6-35b-a3b,no-CoT,34.2628,108.9432,26.576,CN,True,,stop,0.00010295,473,32,0,8.71,"{""country"": ""CN"", ""latitude"": 34.2628, ""longitude"": 108.9432}"
+qwen/qwen3.5-35b-a3b,no-CoT,34.266667,108.933333,27.211,CN,True,,stop,0.00010236,474,36,0,1.79,"{""country"": ""CN"", ""latitude"": 34.266667, ""longitude"": 108.933333}"
+qwen/qwen3.5-9b,no-CoT,34.5226,113.6293,406.223,CN,True,,stop,8.841e-05,473,32,0,8.05,"{""country"": ""CN"", ""latitude"": 34.5226, ""longitude"": 113.6293}"
+mistralai/mistral-medium-3-5,no-CoT,34.7466,113.6255,407.146,CN,True,,stop,0.001191,634,32,0,0.92,"{""country"": ""CN"", ""latitude"": 34.7466, ""longitude"": 113.6255}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,39.08213424682617,117.16423797607422,881.566,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,39.915,116.385,885.793,CN,True,,stop,7.084e-05,406,35,0,2.44,"```json
+{""country"": ""CN"", ""latitude"": 39.915, ""longitude"": 116.385}
+```"
+mistralai/mistral-small-2603,no-CoT,39.9042,116.4074,886.417,CN,True,,stop,0.0001143,634,32,0,3.68,"{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}"
+qwen/qwen3.5-122b-a10b,no-CoT,39.9042,116.4074,886.417,CN,True,,stop,0.0003172,473,40,0,1.72,"{
+  ""country"": ""CN"",
+  ""latitude"": 39.9042,
+  ""longitude"": 116.4074
+}"
+qwen/qwen3.6-27b,no-CoT,39.9042,116.4074,886.417,CN,True,,stop,0.00025805,474,32,0,12.89,"{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,39.96733474731445,116.3909683227539,890.065,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,39.97560501098633,116.40753936767578,891.73,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,40.139060974121094,116.59473419189453,915.737,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.090274810791016,118.37471008300781,920.306,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,40.196693420410156,116.63651275634766,922.672,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,25.2748,110.3025,1016.665,CN,True,,stop,0.035415,621,1077,989,24.3,"{""reasoning"":""The rooftop sign is in simplified Chinese and appears to read “桂林空军疗养院” (Guilin Air Force Sanatorium), with China-style blue plates and right-hand traffic confirming mainland China. The lush subtropical vegetation and low karst-like hills fit Guilin, Guangxi."",""country"":""CN"",""latitude"":25.2748,""longitude"":110.3025}"
+xiaomi/mimo-v2.5,CoT,25.2666,110.2953,1017.5,CN,True,,stop,0.0002607976,787,632,530,6.47,"{""reasoning"": ""The large red Chinese characters on the building read '空军疗养院' (Air Force Sanatorium), and the distinct traditional-modern architectural style combined with subtropical vegetation points to the Guilin Air Force Sanatorium. The road layout and vehicle types (including the blue license plates) confirm the location within China."", ""country"": ""CN"", ""latitude"": 25.2666, ""longitude"": 110.2953}"
+anthropic/claude-opus-4.8,no-CoT,36.067,120.382,1032.337,CN,True,,stop,0.00408,666,30,0,3.64,"{""country"": ""CN"", ""latitude"": 36.067, ""longitude"": 120.382}"
+x-ai/grok-4.3,CoT,39.83,119.48,1094.11,CN,True,,stop,0.0019565,676,579,502,11.42,"{""reasoning"": ""Chinese signage ('空军疗养院 飞扬宾馆'), right-side driving, blue Chinese plates, and traditional Chinese roof/architecture identify the location as China; military sanatorium style points to a coastal resort area such as Beidaihe."", ""country"": ""CN"", ""latitude"": 39.83, ""longitude"": 119.48}"
+anthropic/claude-opus-4.8,CoT,39.8243,119.5167,1096.492,CN,True,,stop,0.00676,797,111,0,12.78,"{""reasoning"": ""Chinese signage reading '空军疗养院' (Air Force Sanatorium) with blue license plates and right-hand traffic indicates China; such air force sanatoriums are common in resort cities like Beidaihe."", ""country"": ""CN"", ""latitude"": 39.8243, ""longitude"": 119.5167}"
+google/gemini-3.1-pro-preview,CoT,30.245,120.125,1123.364,CN,True,,stop,0.007704,1272,430,333,6.09,"{
+  ""reasoning"": ""The building features simplified Chinese characters reading '空军疗养院' (Air Force Sanatorium) and traditional Chinese architectural elements. The blue license plates on the vehicles confirm the location is in mainland China, likely in a major city known for such facilities like Hangzhou."",
+  ""country"": ""CN"",
+  ""latitude"": 30.245,
+  ""longitude"": 120.125
+}"
+google/gemini-3.1-pro-preview,no-CoT,30.245,120.135,1124.22,CN,True,,stop,0.00454,1190,180,146,3.45,"```json
+{""country"": ""CN"", ""latitude"": 30.245, ""longitude"": 120.135}
+```"
+minimax/minimax-m3,CoT,30.265,120.155,1124.93,CN,True,,stop,0.00102546,843,695,607,26.03,"{""reasoning"": ""Chinese signage '空军疗养' (Air Force Sanatorium) on a building with traditional pagoda-style roof elements, right-hand traffic, blue Chinese license plates, Chinese-brand vehicles, and lush subtropical vegetation all point to an air force sanatorium in eastern China, likely the Hangzhou area."", ""country"": ""CN"", ""latitude"": 30.265, ""longitude"": 120.155}"
+xiaomi/mimo-v2.5,no-CoT,30.25,120.22,1131.256,CN,True,,stop,8.06176e-05,708,28,0,7.83,"{""country"": ""CN"", ""latitude"": 30.25, ""longitude"": 120.22}"
+google/gemini-3.5-flash,CoT (effort=medium),40.6118,120.7218,1229.118,CN,True,,stop,0.0373665,1271,3940,3837,25.89,"```json
+{""reasoning"": ""The image shows a large building with traditional Chinese architectural elements and a sign reading '空军疗养院' (Air Force Sanatorium) with the PLAAF emblem. This matches the main building of the PLA Air Force Sanatorium in Xingcheng, Liaoning Province, located along the wide Xinghai Road."", ""country"": ""CN"", ""latitude"": 40.6118, ""longitude"": 120.7218}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,28.6139,77.209,3086.925,IN,True,,stop,5.494e-05,406,31,0,1.02,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.19,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.73,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,15.72,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.73,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,13.32,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.39,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.35,

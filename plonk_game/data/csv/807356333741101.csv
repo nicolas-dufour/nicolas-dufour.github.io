@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-8.684564928268912,-64.1751629054292,0.0,BR,True,,,,,,,,"Porto Velho, Porto Velho, Rondonia, BR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-8.556624412536621,-64.22108459472656,15.096,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-8.503430366516113,-64.34083557128906,27.156,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-8.498258590698242,-64.34736633300781,28.065,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,-10.5944,-61.3508,375.437,BR,True,,stop,8.816e-05,473,31,0,10.63,"{""country"": ""BR"", ""latitude"": -10.5944, ""longitude"": -61.3508}"
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.9253,1470.107,BR,True,,stop,0.000211097,473,31,0,1.07,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9253}"
+qwen/qwen3.5-35b-a3b,no-CoT,-14.235004,-51.92528,1470.109,BR,True,,stop,0.00016319,473,34,0,17.48,"{""country"": ""BR"", ""latitude"": -14.235004, ""longitude"": -51.92528}"
+anthropic/claude-opus-4.8,CoT,-10.5,-50.0,1567.044,BR,True,,stop,0.00641,797,97,0,3.67,"{""reasoning"": ""Dusty red-dirt rural road with dry tropical scrub vegetation and wooden fence posts suggests a savanna/cerrado region; overall look fits interior Brazil."", ""country"": ""BR"", ""latitude"": -10.5, ""longitude"": -50.0}"
+anthropic/claude-opus-4.8,no-CoT,-3.5,-49.5,1721.37,BR,True,,stop,0.00408,666,30,0,8.24,"{""country"": ""BR"", ""latitude"": -3.5, ""longitude"": -49.5}"
+openai/gpt-5.5,CoT,-10.1835,-48.3332,1745.493,BR,True,,stop,0.012885,621,326,241,15.4,"{""reasoning"":""The red lateritic dirt road, dry tropical scrub/cerrado vegetation, simple wire fencing, and rural unpaved track are most characteristic of interior Brazil. With no signage or plates visible, the best fit is a remote cerrado area in Tocantins/central Brazil."",""country"":""BR"",""latitude"":-10.1835,""longitude"":-48.3332}"
+google/gemma-4-31b-it,no-CoT,-15.7801,-47.9292,1932.314,BR,True,,stop,6.378e-05,406,36,0,6.67,"```json
+{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}
+```"
+x-ai/grok-4.3,no-CoT,-15.7942,-47.8825,1937.533,BR,True,,stop,0.0005984,592,24,0,2.1,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8825}"
+minimax/minimax-m3,CoT,-11.5,-46.0,2013.72,BR,True,,stop,0.00043266,843,201,132,7.88,"{""reasoning"": ""Red/orange latosol soil, dry tropical vegetation (cerrado-like), wooden fence posts typical of rural Brazilian fazendas, and dusty unpaved road indicate interior Brazil during the dry season."", ""country"": ""BR"", ""latitude"": -11.5, ""longitude"": -46.0}"
+moonshotai/kimi-k2.6,no-CoT,-15.5,-47.0,2013.882,BR,True,,stop,0.00051219,602,23,0,15.44,"{""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -47.0}"
+minimax/minimax-m3,no-CoT,-10.0,-45.0,2108.668,BR,True,,stop,0.00019452,754,22,0,2.41,"{""country"": ""BR"", ""latitude"": -10.0, ""longitude"": -45.0}{""country"": ""BR"", ""latitude"": -10.0, ""longitude"": -45.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,-13.7563,-45.0395,2160.871,BR,True,,stop,0.00036468,473,31,0,11.36,"{""country"": ""BR"", ""latitude"": -13.7563, ""longitude"": -45.0395}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-19.96735191345215,-47.30140686035156,2205.58,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-18.001012802124023,-39.93925094604492,2815.243,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,-12.9714,-38.5014,2842.642,BR,True,,stop,0.0002041,473,39,0,13.09,"{
+  ""country"": ""BR"",
+  ""latitude"": -12.9714,
+  ""longitude"": -38.5014
+}"
+mistralai/mistral-medium-3-5,no-CoT,-12.7083,-38.3456,2855.991,BR,True,,stop,0.0011835,634,31,0,2.73,"{""country"": ""BR"", ""latitude"": -12.7083, ""longitude"": -38.3456}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-17.0131778717041,-39.1561393737793,2862.421,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),14.4521,-16.5834,5844.676,SN,True,,stop,0.0053175,1271,379,315,4.33,"{""reasoning"": ""The white vehicle hood scoop, dry tropical vegetation, and dusty reddish-brown dirt road are highly characteristic of rural Google Street View coverage in Senegal."", ""country"": ""SN"", ""latitude"": 14.4521, ""longitude"": -16.5834}"
+google/gemini-3.1-pro-preview,no-CoT,14.1532,-16.0514,5884.513,SN,True,,stop,0.004888,1190,209,174,11.01,"```json
+{""country"": ""SN"", ""latitude"": 14.1532, ""longitude"": -16.0514}
+```"
+google/gemini-3.1-pro-preview,CoT,13.05,-15.15,5928.689,SN,True,,stop,0.005784,1272,270,191,10.75,"{
+  ""reasoning"": ""The white vehicle hood with a scoop is a classic Google Street View meta-clue for Senegal. The dry, reddish dirt road and scrubby vegetation are consistent with the West African landscape."",
+  ""country"": ""SN"",
+  ""latitude"": 13.05,
+  ""longitude"": -15.15
+}"
+xiaomi/mimo-v2.5,CoT,6.5,-1.5,7149.108,GH,True,,stop,0.0002747976,787,682,631,14.24,"{""reasoning"": ""Reddish laterite soil and savanna-like vegetation are typical of rural West Africa, strongly suggesting Ghana."", ""country"": ""GH"", ""latitude"": 6.5, ""longitude"": -1.5}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7171.256,,True,True,,,,,,12.86,
+mistralai/mistral-small-2603,no-CoT,36.3333,-119.2667,7618.49,US,True,,stop,0.000142875,634,32,0,3.17,"{""country"": ""US"", ""latitude"": 36.3333, ""longitude"": -119.2667}"
+google/gemini-3.5-flash,CoT (effort=high),7.6251,4.5622,7829.281,NG,True,,stop,0.0154605,1271,1506,1424,16.49,"```json
+{""reasoning"": ""The white car hood with a central scoop and a vehicle ahead kicking up a dust cloud on a red dirt road is highly characteristic of Google Street View coverage in Nigeria, where the camera car is accompanied by an escort vehicle."", ""country"": ""NG"", ""latitude"": 7.6251, ""longitude"": 4.5622}
+```"
+openai/gpt-5.5,no-CoT,-14.435,28.452,10047.302,ZM,True,,stop,0.00338,544,22,0,2.45,"{""country"":""ZM"",""latitude"":-14.435,""longitude"":28.452}"
+x-ai/grok-4.3,CoT,-24.65,31.55,10177.355,ZA,True,,stop,0.0022515,676,697,622,6.3,"{
+  ""reasoning"": ""Red dirt road, dust, savanna woodland with acacia-like trees, and concrete speed bump with black/white markings are classic rural Southern/East Africa; left-side driving implied by regional norms and vehicle interior."",
+  ""country"": ""ZA"",
+  ""latitude"": -24.65,
+  ""longitude"": 31.55
+}"
+moonshotai/kimi-k2.6,CoT,0.35,32.75,10774.62,UG,True,,stop,0.007620948,682,2163,2108,59.19,"{""reasoning"": ""Red laterite soil, dry-season dust, banana plantations, and rustic wooden fencing are classic indicators of rural Uganda in East Africa."", ""country"": ""UG"", ""latitude"": 0.35, ""longitude"": 32.75}"
+xiaomi/mimo-v2.5,no-CoT,-1.2921,36.8219,11193.777,KE,True,,stop,8.11776e-05,708,30,0,8.65,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+qwen/qwen3.5-27b,no-CoT,-0.0236,37.9062,11334.894,KE,True,,stop,0.00019251,473,30,0,1.89,"{""country"": ""KE"", ""latitude"": -0.0236, ""longitude"": 37.9062}"
+qwen/qwen3.6-35b-a3b,no-CoT,19.076,72.8777,15251.007,IN,True,,stop,0.000157,473,31,0,0.59,"{""country"": ""IN"", ""latitude"": 19.0760, ""longitude"": 72.8777}"
+qwen/qwen3.5-397b-a17b,CoT,15.4521,75.1532,15536.112,IN,True,,stop,0.0088761,553,2468,2370,119.85,"{
+""reasoning"": ""The distinct red laterite soil and dry deciduous vegetation are characteristic of the Deccan Plateau in India, while the rustic wooden post fencing is typical of rural agricultural boundaries in this region."",
+""country"": ""IN"",
+""latitude"": 15.4521,
+""longitude"": 75.1532
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),13.485214,103.124587,18530.498,KH,True,,stop,0.002145,1190,40,0,7.83,"```json
+{""country"": ""KH"", ""latitude"": 13.485214, ""longitude"": 103.124587}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),13.3502,103.9601,18620.499,KH,True,,stop,0.0068565,1271,550,476,5.57,"{""reasoning"": ""The white hood scoop on the camera vehicle, combined with the flat terrain, dense tropical vegetation, wooden fence posts, and extremely dusty red-dirt road, is highly characteristic of rural Cambodia."", ""country"": ""KH"", ""latitude"": 13.3502, ""longitude"": 103.9601}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.71,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.22,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.75,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.43,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.21,

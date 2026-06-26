@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,15.822981576690088,-87.89364376743703,0.0,HN,True,,,,,,,,"Puerto Cortez, None, Cortes, HN"
+anthropic/claude-opus-4.8,no-CoT,18.5,-88.3,300.785,MX,True,,stop,0.00484,818,30,0,2.24,"{""country"": ""MX"", ""latitude"": 18.5, ""longitude"": -88.3}"
+anthropic/claude-opus-4.8,CoT,19.5,-88.0,409.021,MX,True,,stop,0.007295,949,102,0,11.28,"{""reasoning"": ""Right-hand traffic, lush tropical roadside vegetation, US-style truck and container, flat terrain suggesting a Caribbean/Central American highway likely in Mexico's coastal region."", ""country"": ""MX"", ""latitude"": 19.5, ""longitude"": -88.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,18.127111434936523,-93.44721984863281,643.737,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,18.12925910949707,-93.4910888671875,648.11,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),18.124512,-94.412345,738.913,MX,True,,stop,0.00219,1226,39,0,1.16,"```json
+{""country"": ""MX"", ""latitude"": 18.124512, ""longitude"": -94.412345}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,18.69919204711914,-94.78466033935547,798.449,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,22.975,-82.425,980.21,CU,True,,stop,0.00021242,585,29,0,7.27,"{""country"": ""CU"", ""latitude"": 22.975, ""longitude"": -82.425}"
+google/gemma-4-31b-it,no-CoT,25.7617,-80.1918,1363.784,US,True,,stop,5.748e-05,406,36,0,8.07,"```json
+{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,25.7617,-80.1918,1363.784,US,True,,stop,0.00030069,585,31,0,1.77,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+openai/gpt-5.5,no-CoT,25.0478,-77.3554,1501.26,BS,True,,stop,0.00411,678,24,0,3.08,"{""country"":""BS"",""latitude"":25.0478,""longitude"":-77.3554}"
+qwen/qwen3.5-35b-a3b,no-CoT,28.5383,-81.3792,1564.014,US,True,,stop,0.00011304,586,31,0,7.58,"{""country"": ""US"", ""latitude"": 28.5383, ""longitude"": -81.3792}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,30.34823226928711,-84.37216186523438,1654.488,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,20.6597,-103.3496,1717.503,MX,True,,stop,0.0002365,586,45,0,2.53,"```json
+{
+  ""country"": ""MX"",
+  ""latitude"": 20.6597,
+  ""longitude"": -103.3496
+}
+```"
+qwen/qwen3.5-9b,no-CoT,29.7604,-95.3698,1727.597,US,True,,stop,6.325e-05,586,31,0,5.74,"{""country"": ""US"", ""latitude"": 29.7604, ""longitude"": -95.3698}"
+xiaomi/mimo-v2.5,no-CoT,30.3322,-81.6557,1733.975,US,True,,stop,9.71376e-05,820,31,0,1.01,"{""country"": ""US"", ""latitude"": 30.3322, ""longitude"": -81.6557}"
+google/gemini-3.5-flash,CoT (effort=high),18.4532,-69.6451,1960.051,DO,True,,stop,0.0206715,1307,2079,2004,22.3,"{""reasoning"": ""The US-style semi-truck carrying a shipping container, flat tropical terrain, and concrete utility poles with curved arms are characteristic of the Dominican Republic, likely near the major port of Caucedo."", ""country"": ""DO"", ""latitude"": 18.4532, ""longitude"": -69.6451}"
+google/gemini-3.1-pro-preview,CoT,18.433,-69.633,1961.096,DO,True,,stop,0.010692,1308,673,591,10.85,"{
+  ""reasoning"": ""American-style semi-truck, tropical vegetation, and white dashed lane markings indicating a multi-lane road suggest a Caribbean location with US influence, likely near a major port in the Dominican Republic."",
+  ""country"": ""DO"",
+  ""latitude"": 18.433,
+  ""longitude"": -69.633
+}"
+google/gemini-3.5-flash,CoT (effort=medium),18.4452,-69.6281,1961.746,DO,True,,stop,0.0157215,1307,1529,1435,31.15,"{""reasoning"": ""The image shows US-style conventional semi-trucks carrying shipping containers on a flat, lush tropical road with concrete utility poles. This combination of US-style trucking infrastructure, tropical vegetation, and road markings is highly characteristic of the Dominican Republic, particularly near major port areas like Caucedo."", ""country"": ""DO"", ""latitude"": 18.4452, ""longitude"": -69.6281}"
+google/gemini-3.5-flash,CoT (effort=low),18.4315,-69.6214,1962.297,DO,True,,stop,0.0047685,1307,312,239,3.58,"{""reasoning"": ""The presence of US-style conventional trucks combined with lush, tropical vegetation and right-hand driving suggests a Caribbean or Central American location, highly characteristic of the Dominican Republic near major port highways."", ""country"": ""DO"", ""latitude"": 18.4315, ""longitude"": -69.6214}"
+minimax/minimax-m3,CoT,32.78,-79.93,2049.074,US,True,,stop,0.00082986,995,494,424,13.59,"{""reasoning"": ""Right-hand driving, yellow center line with US-style highway markings, lush deciduous vegetation typical of the southeastern US coastal plain, and Maersk Sealand container truck suggesting proximity to a major container port."", ""country"": ""US"", ""latitude"": 32.78, ""longitude"": -79.93}"
+mistralai/mistral-medium-3-5,no-CoT,35.7804,-78.6391,2401.629,US,True,,stop,0.0014115,786,31,0,0.87,"{""country"": ""US"", ""latitude"": 35.7804, ""longitude"": -78.6391}"
+google/gemini-3.1-pro-preview,no-CoT,38.8951,-77.0364,2775.339,US,True,,stop,0.00287,1225,35,0,2.77,"```json
+{""country"": ""US"", ""latitude"": 38.8951, ""longitude"": -77.0364}
+```"
+moonshotai/kimi-k2.6,CoT,41.0,-84.5,2818.565,US,True,,stop,0.008010216,834,2257,2195,48.91,"{""reasoning"": ""American conventional long-nose trucks driving on the right side of a rural two-lane highway with lush deciduous trees and standard US road markings indicate the eastern Midwest."", ""country"": ""US"", ""latitude"": 41.0, ""longitude"": -84.5}"
+x-ai/grok-4.3,no-CoT,41.85,-87.65,2894.166,US,True,,stop,0.0007334,704,22,0,13.78,"{""country"": ""US"", ""latitude"": 41.85, ""longitude"": -87.65}"
+openai/gpt-5.5,CoT,13.1215,-59.6308,3055.454,BB,True,,stop,0.016825,755,435,364,47.41,"{""reasoning"":""Left-hand traffic on a tropical coastal road with English/Caribbean-style infrastructure and vegetation points strongly to Barbados. The container-truck traffic suggests the west-coast road near Bridgetown/Port of Bridgetown."",""country"":""BB"",""latitude"":13.1215,""longitude"":-59.6308}"
+qwen/qwen3.6-27b,no-CoT,33.4484,-112.074,3117.871,US,True,,stop,0.0002299,585,32,0,11.16,"{""country"": ""US"", ""latitude"": 33.4484, ""longitude"": -112.0740}"
+minimax/minimax-m3,no-CoT,42.5,-76.0,3175.642,US,True,,stop,0.00044208,868,177,152,12.57,"{""country"": ""US"", ""latitude"": 42.5, ""longitude"": -76.0}"
+xiaomi/mimo-v2.5,CoT,34.05,-118.25,3647.578,US,True,,stop,0.0004539976,899,1266,1198,14.06,"{""reasoning"": ""The Maersk Sealand truck suggests a location near a shipping port, and the right-hand traffic with English signage indicates the United States, likely a coastal highway."", ""country"": ""US"", ""latitude"": 34.05, ""longitude"": -118.25}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-32.07420349121094,-61.20156478881836,6037.546,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-32.885223388671875,-60.74397659301758,6136.721,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,55.6761,12.5683,9198.319,DK,True,,stop,0.0001365,786,31,0,4.37,"{""country"": ""DK"", ""latitude"": 55.6761, ""longitude"": 12.5683}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9782.206,,True,True,,,,,,28.81,
+x-ai/grok-4.3,CoT,52.1,20.3,9812.394,PL,True,,stop,0.0031865,788,1015,949,22.9,"{""reasoning"": ""Oncoming truck on left side of road indicates right-hand traffic; Maersk Sealand container + rural two-lane asphalt road with deciduous trees and utility poles typical of central/eastern Europe in summer."", ""country"": ""PL"", ""latitude"": 52.1, ""longitude"": 20.3}"
+qwen/qwen3.6-35b-a3b,no-CoT,-41.2865,174.7762,11763.563,NZ,True,,stop,0.00011975,585,32,0,14.26,"{""country"": ""NZ"", ""latitude"": -41.2865, ""longitude"": 174.7762}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.61,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.53,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.4,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.24,

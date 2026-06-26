@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,31.972704467376,-106.58262336771,0.0,US,True,,,,,,,,"Westway, El Paso County, Texas, US"
+google/gemini-3.5-flash,CoT (effort=medium),31.9942,-106.6065,3.284,US,True,,stop,0.0157935,1271,1543,1459,17.39,"{""reasoning"": ""The blue sign indicates entering New Mexico, with the large vehicle lot of Copart El Paso on the right and a water tower on the left, placing this on Interstate 10 Westbound just south of the Texas-New Mexico border."", ""country"": ""US"", ""latitude"": 31.9942, ""longitude"": -106.6065}"
+google/gemini-3.5-flash,CoT (effort=low),31.9982,-106.6031,3.43,US,True,,stop,0.007146,1272,582,505,4.73,"{""reasoning"": ""The blue sign indicates a New Mexico rest area ahead, and the arid landscape with industrial/truck stop infrastructure in the background suggests the Texas-New Mexico border on Interstate 10 Westbound near Anthony."", ""country"": ""US"", ""latitude"": 31.9982, ""longitude"": -106.6031}"
+google/gemini-3.1-pro-preview,CoT,31.9985,-106.6231,4.775,US,True,,stop,0.00763,1271,424,333,12.24,"{
+  ""reasoning"": ""The blue sign clearly indicates entering New Mexico with a rest area 1 mile ahead. The arid landscape and large industrial facilities on the right are consistent with Interstate 10 westbound crossing from Texas into New Mexico near El Paso."",
+  ""country"": ""US"",
+  ""latitude"": 31.9985,
+  ""longitude"": -106.6231
+}"
+google/gemini-3.5-flash,CoT (effort=high),32.0125,-106.6231,5.844,US,True,,stop,0.0373485,1271,3938,3841,22.31,"```json
+{""reasoning"": ""The image shows a highway in a flat desert landscape with a blue sign indicating 'NEW MEXICO' and a Port of Entry or Welcome Center ahead. This matches Interstate 10 Westbound just after crossing the Texas-New Mexico border near Anthony, heading towards the Port of Entry."", ""country"": ""US"", ""latitude"": 32.0125, ""longitude"": -106.6231}
+```"
+anthropic/claude-opus-4.8,CoT,31.85,-106.6,13.742,US,True,,stop,0.006285,797,92,0,4.07,"{""reasoning"": ""Sign mentions 'New Mexico' rest area, desert terrain, US interstate markings—near the Texas/New Mexico border on I-10 west of El Paso."", ""country"": ""US"", ""latitude"": 31.85, ""longitude"": -106.6}"
+google/gemini-3.1-pro-preview,no-CoT,31.8055,-106.5536,18.793,US,True,,stop,0.00281,1189,36,0,9.35,"```json
+{""country"": ""US"", ""latitude"": 31.8055, ""longitude"": -106.5536}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),31.8012,-106.5351,19.591,US,True,,stop,0.0021075,1189,36,0,1.66,"```json
+{""country"": ""US"", ""latitude"": 31.8012, ""longitude"": -106.5351}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,31.87760353088379,-106.4065933227539,19.693,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,31.8476,-106.4271,20.224,US,True,,stop,0.004105,666,31,0,2.23,"{""country"": ""US"", ""latitude"": 31.8476, ""longitude"": -106.4271}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,32.15108871459961,-106.64686584472656,20.739,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,31.902326583862305,-106.3556137084961,22.806,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,32.15997314453125,-106.69465637207031,23.347,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,32.15864944458008,-106.69784545898438,23.354,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,35.0844,-106.6504,346.062,US,True,,stop,0.001191,634,32,0,1.01,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -106.6504}"
+minimax/minimax-m3,CoT,35.05,-114.55,813.724,US,True,,stop,0.00096546,843,645,565,16.28,"{""reasoning"": ""US interstate highway with standard FHWA blue exit sign, right-side driving, arid desert vegetation with creosote bushes, and distant mountain ranges indicate the American Southwest desert (likely I-15 or I-40 corridor in Arizona/Nevada)."", ""country"": ""US"", ""latitude"": 35.05, ""longitude"": -114.55}"
+google/gemma-4-31b-it,no-CoT,35.1234,-114.8567,842.634,US,True,,stop,7.164e-05,406,37,0,3.88,"```json
+{""country"": ""US"", ""latitude"": 35.1234, ""longitude"": -114.8567}
+```"
+x-ai/grok-4.3,no-CoT,35.026,-115.142,862.826,US,True,,stop,0.0005934,592,22,0,1.97,"{""country"": ""US"", ""latitude"": 35.026, ""longitude"": -115.142}"
+xiaomi/mimo-v2.5,CoT,32.62,-115.82,870.945,US,True,,stop,0.0001678376,787,300,210,4.26,"{""reasoning"": ""Right-hand traffic, arid desert highway infrastructure, and the style of road signage/buildings indicate a southwestern US border-adjacent area; this matches the landscape of southern California near Calexico. The highway layout and desert terrain confirm a desert region of the southwestern US."", ""country"": ""US"", ""latitude"": 32.62, ""longitude"": -115.82}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.68141174316406,-114.57926940917969,901.309,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,35.9911,-115.1485,906.911,US,True,,stop,0.0001898,474,32,0,6.43,"{""country"": ""US"", ""latitude"": 35.9911, ""longitude"": -115.1485}"
+moonshotai/kimi-k2.6,CoT,36.028,-115.208,913.544,US,True,,stop,0.013673808,682,3936,3870,81.11,"{""reasoning"": ""Standard US Interstate blue MUTCD exit signage, right-hand driving, and Mojave Desert scrub with distant mountains match the I-15 corridor on the outskirts of Las Vegas, Nevada."", ""country"": ""US"", ""latitude"": 36.028, ""longitude"": -115.208}"
+qwen/qwen3.5-27b,no-CoT,36.1699,-115.1398,915.434,US,True,,stop,0.00019683,473,32,0,2.56,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.5-35b-a3b,no-CoT,36.1699,-115.1398,915.434,US,True,,stop,0.00015999,473,32,0,7.35,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.5-9b,no-CoT,36.1699,-115.1398,915.434,US,True,,stop,5.22e-05,474,32,0,3.28,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.6-27b,no-CoT,36.1699,-115.1398,915.434,US,True,,stop,0.0001963,473,32,0,14.42,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.6-35b-a3b,no-CoT,36.1699,-115.1398,915.434,US,True,,stop,0.00010295,473,32,0,11.33,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+xiaomi/mimo-v2.5,no-CoT,34.7465,-117.0172,1016.404,US,True,,stop,8.17376e-05,708,32,0,3.85,"{""country"": ""US"", ""latitude"": 34.7465, ""longitude"": -117.0172}"
+x-ai/grok-4.3,CoT,34.896,-117.023,1021.267,US,True,,stop,0.003084,676,1030,963,7.49,"{""reasoning"": ""US interstate highway in arid desert with distant mountains, right-hand traffic, yellow/white pavement markings, English blue exit/service signs, and American vehicle/road infrastructure all point to Mojave Desert, Southern California."", ""country"": ""US"", ""latitude"": 34.896, ""longitude"": -117.023}"
+openai/gpt-5.5,CoT,34.8495,-117.0862,1025.45,US,True,,stop,0.017145,621,468,382,17.5,"{""reasoning"":""Right-side driving, US-style interstate markings/signage, arid Mojave desert terrain, and California-like freeway services signs point to I-15 near Barstow. The water tower, outlet/commercial strip, and low desert mountains fit the Lenwood/Barstow area."",""country"":""US"",""latitude"":34.8495,""longitude"":-117.0862}"
+openai/gpt-5.5,no-CoT,34.5191,-117.3187,1037.172,US,True,,stop,0.00344,544,24,0,1.67,"{""country"":""US"",""latitude"":34.5191,""longitude"":-117.3187}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.582,-117.321,1038.953,US,True,,stop,0.0003287,473,30,0,8.84,"{""country"": ""US"", ""latitude"": 34.582, ""longitude"": -117.321}"
+mistralai/mistral-small-2603,no-CoT,43.3905,44.8084,11143.948,RU,True,,stop,0.0001143,634,32,0,8.88,"{""country"": ""RU"", ""latitude"": 43.3905, ""longitude"": 44.8084}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11565.462,,True,True,,,,,,15.56,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.53,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.36,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.45,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.43,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.26,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.17,

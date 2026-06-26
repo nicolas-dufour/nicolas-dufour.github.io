@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,10.445221955556,39.232115186599,0.0,ET,True,,,,,,,,"Were Ilu, None, Amhara, ET"
+xiaomi/mimo-v2.5,CoT,10.325,39.272,14.062,ET,True,,stop,0.0006564376,899,1989,1901,28.61,"{""reasoning"": ""The dry, dusty soil, specific vegetation including eucalyptus trees, and the rural water tower design are characteristic of the Ethiopian highlands. The vehicle's perspective from the left side of the road indicates right-hand traffic, which is consistent with Ethiopia."", ""country"": ""ET"", ""latitude"": 10.325, ""longitude"": 39.272}"
+openai/gpt-5.5,CoT,9.6812,39.5328,91.111,ET,True,,stop,0.011335,755,252,172,14.5,"{""reasoning"":""Dry highland agricultural landscape with eucalyptus windbreaks, stone-strewn fields, and unmarked gravel roads is characteristic of rural Ethiopian highlands. The terrain and vegetation most closely fit the central highlands north of Addis Ababa around Debre Birhan."",""country"":""ET"",""latitude"":9.6812,""longitude"":39.5328}"
+google/gemini-3.5-flash,CoT (effort=low),9.5521,39.1243,100.01,ET,True,,stop,0.00342,1308,162,90,2.45,"{""reasoning"": ""The dark volcanic soil, high-altitude flat landscape, and scattered eucalyptus trees are highly characteristic of the Ethiopian Highlands, particularly in the Amhara or Oromia regions north of Addis Ababa."", ""country"": ""ET"", ""latitude"": 9.5521, ""longitude"": 39.1243}"
+google/gemma-4-31b-it,no-CoT,9.1234,38.7654,155.623,ET,True,,stop,6.652e-05,404,35,0,3.32,"```json
+{""country"": ""ET"", ""latitude"": 9.1234, ""longitude"": 38.7654}
+```"
+moonshotai/kimi-k2.6,CoT,9.05,38.75,163.891,ET,True,,stop,0.008275176,834,2337,2282,54.16,"{""reasoning"": ""Unpaved road with painted center line, eucalyptus trees, and reddish-brown agricultural highland plateau are characteristic of rural Ethiopia."", ""country"": ""ET"", ""latitude"": 9.05, ""longitude"": 38.75}"
+qwen/qwen3.5-9b,no-CoT,9.032,38.767,165.203,ET,True,,stop,6.28e-05,586,28,0,10.64,"{""country"": ""ET"", ""latitude"": 9.032, ""longitude"": 38.767}"
+qwen/qwen3.5-122b-a10b,no-CoT,9.032,38.7469,165.896,ET,True,,stop,0.0002145,585,30,0,1.24,"{""country"": ""ET"", ""latitude"": 9.0320, ""longitude"": 38.7469}"
+qwen/qwen3.5-35b-a3b,no-CoT,9.032,38.746,165.928,ET,True,,stop,0.00011575,585,28,0,9.06,"{""country"": ""ET"", ""latitude"": 9.032, ""longitude"": 38.746}"
+qwen/qwen3.6-27b,no-CoT,9.03,38.75,165.998,ET,True,,stop,0.00033345,585,26,0,325.07,"{""country"": ""ET"", ""latitude"": 9.03, ""longitude"": 38.75}"
+google/gemini-3.1-pro-preview,no-CoT,9.03,38.74,166.35,ET,True,,stop,0.00281,1225,30,0,8.46,"```json
+{""country"": ""ET"", ""latitude"": 9.03, ""longitude"": 38.74}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,9.02,38.75,167.053,ET,True,,stop,0.00011375,585,26,0,8.2,"{""country"": ""ET"", ""latitude"": 9.02, ""longitude"": 38.75}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),9.0552,38.6248,168.283,ET,True,,stop,0.0021435,1225,34,0,1.45,"```json
+{""country"": ""ET"", ""latitude"": 9.0552, ""longitude"": 38.6248}
+```"
+google/gemini-3.1-pro-preview,CoT,9.123,38.456,169.848,ET,True,,stop,0.005338,1307,227,150,4.49,"{
+  ""reasoning"": ""The dark soil, agricultural fields, and tall eucalyptus trees are characteristic of the Ethiopian highlands. The unpaved road and general landscape strongly suggest a rural area in central Ethiopia."",
+  ""country"": ""ET"",
+  ""latitude"": 9.123,
+  ""longitude"": 38.456
+}"
+openai/gpt-5.5,no-CoT,8.9806,38.7578,170.954,ET,True,,stop,0.00408,678,23,0,1.64,"{""country"":""ET"",""latitude"":8.9806,""longitude"":38.7578}"
+x-ai/grok-4.3,no-CoT,8.98,38.75,171.279,ET,True,,stop,0.0007334,704,22,0,1.87,"{""country"": ""ET"", ""latitude"": 8.98, ""longitude"": 38.75}"
+x-ai/grok-4.3,CoT,8.95,38.75,174.456,ET,True,,stop,0.002094,788,578,511,11.06,"{""reasoning"": ""Red-brown dirt road, plowed fields, distant hills and especially the tall eucalyptus tree on the right are characteristic of the Ethiopian highlands; right-hand driving position and vehicle hood also consistent with ET."", ""country"": ""ET"", ""latitude"": 8.95, ""longitude"": 38.75}"
+anthropic/claude-opus-4.8,no-CoT,9.0,38.5,179.618,ET,True,,stop,0.00484,818,30,0,2.12,"{""country"": ""ET"", ""latitude"": 9.0, ""longitude"": 38.5}"
+anthropic/claude-opus-4.8,CoT,9.05,38.3,185.75,ET,True,,stop,0.00697,949,89,0,8.93,"{""reasoning"": ""Highland plateau with eucalyptus trees, plowed reddish-brown fields, and a rough gravel road typical of rural Ethiopian highlands."", ""country"": ""ET"", ""latitude"": 9.05, ""longitude"": 38.3}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,9.93215274810791,37.3291015625,215.94,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,9.657217979431152,37.318138122558594,227.137,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,8.772075653076172,37.43771743774414,270.762,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,8.0,38.7,278.097,ET,True,,stop,9.51776e-05,820,24,0,4.94,"{""country"": ""ET"", ""latitude"": 8.0, ""longitude"": 38.7}"
+minimax/minimax-m3,CoT,9.5931,41.8542,302.343,ET,True,,stop,0.00095106,995,595,516,14.36,"{""reasoning"": ""Right-hand drive vehicle on left-side road, reddish-brown lateritic soil, eucalyptus trees, and arid highland plateau with cultivated fields are classic indicators of the Ethiopian Rift Valley or eastern highlands, likely near Dire Dawa/Harar."", ""country"": ""ET"", ""latitude"": 9.5931, ""longitude"": 41.8542}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,9.563265800476074,42.77272033691406,399.916,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,9.06515121459961,42.90043258666992,430.283,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,16.508481979370117,43.24937438964844,801.899,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,-0.0236,37.9062,1173.277,KE,True,,stop,0.000160875,585,30,0,7.68,"{""country"": ""KE"", ""latitude"": -0.0236, ""longitude"": 37.9062}"
+google/gemini-3.5-flash,CoT (effort=medium),0.6215,35.2541,1177.53,KE,True,,stop,0.0094305,1307,830,759,14.58,"```json
+{""reasoning"": ""The high-altitude plateau landscape with dark volcanic soil, harvested agricultural fields, and tall eucalyptus trees is highly characteristic of the Uasin Gishu plateau in Kenya."", ""country"": ""KE"", ""latitude"": 0.6215, ""longitude"": 35.2541}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-0.5912,35.9543,1279.629,KE,True,,stop,0.0153525,1307,1488,1424,19.22,"{""reasoning"": ""The dark volcanic soil, flat highland plateau, and tall eucalyptus trees are highly characteristic of the Kenyan highlands, specifically the agricultural areas around Mau Narok."", ""country"": ""KE"", ""latitude"": -0.5912, ""longitude"": 35.9543}"
+qwen/qwen3.5-397b-a17b,no-CoT,-25.7479,28.2293,4196.995,ZA,True,,stop,0.0004046,586,31,0,4.24,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 28.2293}"
+mistralai/mistral-medium-3-5,no-CoT,28.7041,77.1025,4428.447,IN,True,,stop,0.0014115,786,31,0,4.63,"{""country"": ""IN"", ""latitude"": 28.7041, ""longitude"": 77.1025}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4490.153,,True,True,,,,,,13.31,
+mistralai/mistral-small-2603,no-CoT,40.0095,-105.2428,13317.524,US,True,,stop,0.0001371,786,32,0,1.03,"{""country"": ""US"", ""latitude"": 40.0095, ""longitude"": -105.2428}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.76,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.57,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.35,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.23,

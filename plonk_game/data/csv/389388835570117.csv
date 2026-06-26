@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-29.035583255511,134.85639105093,0.0,AU,True,,,,,,,,"Coober Pedy, Coober Pedy, South Australia, AU"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-29.0142,134.7544,10.198,AU,True,,stop,0.002163,1226,36,0,7.44,"```json
+{""country"": ""AU"", ""latitude"": -29.0142, ""longitude"": 134.7544}
+```"
+google/gemini-3.1-pro-preview,CoT,-28.5123,135.4891,84.785,AU,True,,stop,0.00666,1308,337,249,6.44,"{
+  ""reasoning"": ""The wide, corrugated dirt road, reddish soil, and arid, flat landscape are highly characteristic of the Australian Outback. The white guide posts along the road further confirm Australia, likely in South Australia or Western Australia."",
+  ""country"": ""AU"",
+  ""latitude"": -28.5123,
+  ""longitude"": 135.4891
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-28.39181900024414,135.82496643066406,118.516,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,-28.5,136.0,126.379,AU,True,,stop,0.002812,1226,30,0,2.84,"```json
+{""country"": ""AU"", ""latitude"": -28.5, ""longitude"": 136.0}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-28.3668212890625,135.93800354003906,129.067,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-28.55,136.15,137.135,AU,True,,stop,0.0234345,1307,2386,2314,24.9,"{""reasoning"": ""The extremely flat, reddish-brown gibber plains (stony desert) and wide, corrugated gravel road are highly characteristic of the Australian Outback, specifically the Oodnadatta Track in South Australia."", ""country"": ""AU"", ""latitude"": -28.55, ""longitude"": 136.15}"
+x-ai/grok-4.3,CoT,-27.85,134.05,153.607,AU,True,,stop,0.0024015,788,701,630,13.78,"{""reasoning"": ""Reddish arid gravel road with cattle grid, sparse low shrubs, distant flat-topped hills and clear sky match Australian outback; right-hand drive implied by interior view and stock-grid fencing typical of AU outback highways."", ""country"": ""AU"", ""latitude"": -27.85, ""longitude"": 134.05}"
+minimax/minimax-m3,CoT,-28.7,136.8,192.904,AU,True,,stop,0.00111942,997,732,764,19.66,"{""reasoning"": ""The distinctive red-orange sandy soil, completely barren and treeless flat terrain with low distant ridges, sealed but remote outback road, and the metal rock-catcher grille on the vehicle hood are highly characteristic of the Australian Outback, likely the Lake Eyre basin/Strzelecki Desert region in northern South Australia."", ""country"": ""AU"", ""latitude"": -28.7, ""longitude"": 136.8}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-30.16008949279785,136.79583740234375,225.376,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-31.277503967285156,136.59005737304688,299.869,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-31.386404037475586,136.6239013671875,311.718,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,-26.2,135.5,321.613,AU,True,,stop,0.00036162,919,120,132,4.87,"{""country"": ""AU"", ""latitude"": -26.2, ""longitude"": 135.5}"
+google/gemini-3.5-flash,CoT (effort=medium),-27.8451,138.7214,400.389,AU,True,,stop,0.0081075,1307,683,611,6.63,"{""reasoning"": ""The wide, corrugated red-dirt gravel road, extremely flat arid landscape, and sparse desert vegetation are highly characteristic of the Australian Outback, specifically the Birdsville Track in South Australia."", ""country"": ""AU"", ""latitude"": -27.8451, ""longitude"": 138.7214}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-32.77740478515625,137.7463836669922,499.077,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,-23.7017,133.8753,601.091,AU,True,,stop,0.000270501,586,32,0,1.17,"{""country"": ""AU"", ""latitude"": -23.7017, ""longitude"": 133.8753}"
+google/gemma-4-31b-it,no-CoT,-23.698,133.881,601.405,AU,True,,stop,6.308e-05,404,35,0,7.32,"```json
+{""country"": ""AU"", ""latitude"": -23.698, ""longitude"": 133.881}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,-23.6512,133.8901,606.4,AU,True,,stop,0.00019824,586,32,0,8.04,"{""country"": ""AU"", ""latitude"": -23.6512, ""longitude"": 133.8901}"
+qwen/qwen3.5-397b-a17b,CoT,-26.4521,118.2394,1658.865,AU,True,,stop,0.00701505,665,2253,1,66.31,"{
+""reasoning"": ""The reddish-brown iron-rich soil, vast flat horizon with low breakaway hills, and sparse chenopod shrubland (saltbush) are iconic features of the Australian Outback. The wide, graded gravel road is typical of remote shire roads in Western Australia or the Northern Territory."",
+""country"": ""AU"",
+""latitude"": -26.4521,
+""longitude"": 118.2394
+}"
+google/gemini-3.5-flash,CoT (effort=low),44.2583,104.8521,8701.626,MN,True,,stop,0.004401,1308,271,203,3.39,"{""reasoning"": ""The wide, corrugated dirt road, extremely arid gravel desert landscape, and the characteristic white car hood with a central black mount indicate the Gobi Desert in Mongolia."", ""country"": ""MN"", ""latitude"": 44.2583, ""longitude"": 104.8521}"
+openai/gpt-5.5,no-CoT,44.2406,103.4097,8752.249,MN,True,,stop,0.00408,678,23,0,1.72,"{""country"":""MN"",""latitude"":44.2406,""longitude"":103.4097}"
+moonshotai/kimi-k2.6,no-CoT,44.5,103.5,8774.461,MN,True,,stop,0.00064215,754,23,0,8.53,"{""country"": ""MN"", ""latitude"": 44.5, ""longitude"": 103.5}"
+mistralai/mistral-medium-3-5,no-CoT,20.5,56.5,10037.429,OM,True,,stop,0.0013665,786,25,0,7.13,"{""country"": ""OM"", ""latitude"": 20.5, ""longitude"": 56.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,-28.4567,21.3456,10488.218,ZA,True,,stop,0.00011875,585,31,0,2.29,"{""country"": ""ZA"", ""latitude"": -28.4567, ""longitude"": 21.3456}"
+qwen/qwen3.5-397b-a17b,no-CoT,-29.5,18.5,10638.252,ZA,True,,stop,0.00041028,585,25,0,5.14,"{""country"": ""ZA"", ""latitude"": -29.5, ""longitude"": 18.5}"
+moonshotai/kimi-k2.6,CoT,-24.75,15.85,11172.409,NA,True,,stop,0.009561096,834,2713,2639,181.91,"{""reasoning"": ""Hyper-arid barren reddish-rock desert with corrugated unpaved road and zero vegetation matches Namib Desert gravel plains; right-side sun visor deployed in front of driver indicates right-hand-drive vehicle used in left-traffic Namibia."", ""country"": ""NA"", ""latitude"": -24.75, ""longitude"": 15.85}"
+anthropic/claude-opus-4.8,CoT,-23.5,16.5,11207.829,NA,True,,stop,0.006995,949,90,0,9.48,"{""reasoning"": ""Flat gravel desert road with sparse rocky terrain and low ridges suggests Namibian gravel roads; arid stony plains typical of central Namibia."", ""country"": ""NA"", ""latitude"": -23.5, ""longitude"": 16.5}"
+xiaomi/mimo-v2.5,CoT,-24.5,15.5,11217.397,NA,True,,stop,0.0005833576,899,1728,1668,24.29,"{""reasoning"": ""The reddish desert soil, straight gravel road, and barren landscape with distant low hills are characteristic of the Namib Desert in Namibia."", ""country"": ""NA"", ""latitude"": -24.5, ""longitude"": 15.5}"
+anthropic/claude-opus-4.8,no-CoT,-24.5,15.5,11217.397,NA,True,,stop,0.00484,818,30,0,2.35,"{""country"": ""NA"", ""latitude"": -24.5, ""longitude"": 15.5}"
+openai/gpt-5.5,CoT,-22.7386,15.3269,11354.392,NA,True,,stop,0.020245,755,549,466,35.39,"{""reasoning"":""The wide, well-graded unmarked gravel road through barren reddish gravel plains with sparse scrub and low mesas is highly characteristic of rural Namibia, especially the Namib/Damaraland region. The dry desert climate and road style fit Namibia better than most other arid countries."",""country"":""NA"",""latitude"":-22.7386,""longitude"":15.3269}"
+qwen/qwen3.5-27b,no-CoT,-23.5,-68.5,13661.242,CL,True,,stop,0.00021195,585,25,0,2.73,"{""country"": ""CL"", ""latitude"": -23.5, ""longitude"": -68.5}"
+mistralai/mistral-small-2603,no-CoT,-22.5,-68.9,13745.163,CL,True,,stop,0.000166125,786,25,0,1.47,"{""country"": ""CL"", ""latitude"": -22.5, ""longitude"": -68.9}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,14241.23,,True,True,,,,,,13.01,
+qwen/qwen3.5-9b,no-CoT,36.6721,-5.0144,16200.545,ES,True,,stop,6.31e-05,586,30,0,1.12,"{""country"": ""ES"", ""latitude"": 36.6721, ""longitude"": -5.0144}"
+x-ai/grok-4.3,no-CoT,31.85,-6.95,16358.962,MA,True,,stop,0.0007334,704,22,0,0.89,"{""country"": ""MA"", ""latitude"": 31.85, ""longitude"": -6.95}"
+qwen/qwen3.5-122b-a10b,no-CoT,31.7917,-7.0926,16371.784,MA,True,,stop,0.00021476,586,30,0,7.39,"{""country"": ""MA"", ""latitude"": 31.7917, ""longitude"": -7.0926}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.62,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,21.86,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.67,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.25,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.2,
+xiaomi/mimo-v2.5,no-CoT,,,,,False,,stop,9.74176e-05,820,32,0,2.03,"{""country"": ""AU"", ""latitude"": -25.3444, ""latitude"": 131.0369}"

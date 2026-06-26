@@ -1,0 +1,56 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,13.499099333439,-14.812805537142,0.0,GM,True,,,,,,,,"Georgetown, None, Central River, GM"
+google/gemini-3.5-flash,no-CoT (effort=minimal),13.764211,-15.054322,39.372,SN,True,,stop,0.002136,1190,39,0,7.61,"```json
+{""country"": ""SN"", ""latitude"": 13.764211, ""longitude"": -15.054322}
+```"
+openai/gpt-5.5,CoT,13.2045,-14.2408,70.02,SN,True,,stop,0.014595,621,383,297,10.02,"{""reasoning"":""Flat Sahelian savanna with lateritic shoulders, unmarked narrow asphalt, right-side driving context, and French/West African-style concrete utility poles point most strongly to rural Senegal. The lush fields suggest the southern Tambacounda/Kolda corridor rather than the drier north."",""country"":""SN"",""latitude"":13.2045,""longitude"":-14.2408}"
+google/gemini-3.1-pro-preview,CoT,14.15,-15.5,103.652,SN,True,,stop,0.00571,1271,264,184,11.34,"{
+  ""reasoning"": ""The specific concrete utility pole with a metal crossarm and the flat, green savanna landscape are characteristic of Senegal during the wet season. The visible car hood also matches Google Street View coverage in the country."",
+  ""country"": ""SN"",
+  ""latitude"": 14.15,
+  ""longitude"": -15.5
+}"
+google/gemini-3.5-flash,CoT (effort=high),14.1152,-15.5481,104.868,SN,True,,stop,0.0107625,1271,984,898,16.53,"```json
+{""reasoning"": ""The flat, green savanna landscape combined with the distinctive French-style concrete utility pole and narrow asphalt road strongly points to Senegal during the wet season. The vehicle's hood shape matches the Google Street View car used in this region."", ""country"": ""SN"", ""latitude"": 14.1152, ""longitude"": -15.5481}
+```"
+google/gemini-3.5-flash,CoT (effort=low),14.1245,-15.8542,132.215,SN,True,,stop,0.0048135,1271,323,256,4.36,"{""reasoning"": ""The flat, green landscape with scattered trees, combined with the distinctive concrete utility pole with a metal lattice top, is highly characteristic of Senegal during the wet season."", ""country"": ""SN"", ""latitude"": 14.1245, ""longitude"": -15.8542}"
+google/gemini-3.1-pro-preview,no-CoT,14.1532,-16.0518,152.271,SN,True,,stop,0.002798,1189,35,0,11.21,"```json
+{""country"": ""SN"", ""latitude"": 14.1532, ""longitude"": -16.0518}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),15.1234,-15.6123,200.103,SN,True,,stop,0.0086025,1271,744,668,9.35,"{""reasoning"": ""The flat, green Sahelian landscape, lack of road markings, and distinctive concrete utility pole with a metal bracket are characteristic of Senegal, where the black car hood is also commonly seen on Google Street View."", ""country"": ""SN"", ""latitude"": 15.1234, ""longitude"": -15.6123}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,11.33003044128418,-4.78713846206665,1114.997,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,10.544530868530273,-3.418686866760254,1281.756,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,12.2,-1.5,1450.26,BF,True,,stop,0.006635,797,106,0,24.68,"{""reasoning"": ""Sparse savanna vegetation with scattered trees, reddish soil, simple paved road and concrete power pole suggest West African Sahel/Sudanian zone, likely Burkina Faso or Mali."", ""country"": ""BF"", ""latitude"": 12.2, ""longitude"": -1.5}"
+anthropic/claude-opus-4.8,no-CoT,12.0,-1.5,1453.203,BF,True,,stop,0.00408,666,30,0,2.69,"{""country"": ""BF"", ""latitude"": 12.0, ""longitude"": -1.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,8.682268142700195,1.1133393049240112,1817.753,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,10.5,7.5,2448.684,NG,True,,stop,0.0004377576,787,1264,1193,29.52,"{""reasoning"": ""The lush green savanna vegetation and the style of the concrete power poles are highly characteristic of West Africa, while the vehicle's position on the right side of the road specifically indicates a country like Nigeria."", ""country"": ""NG"", ""latitude"": 10.5, ""longitude"": 7.5}"
+xiaomi/mimo-v2.5,no-CoT,-12.5,-46.5,4533.937,BR,True,,stop,7.97776e-05,708,25,0,1.36,"{""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -46.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7942,-47.8822,4881.386,BR,True,,stop,0.00036468,473,31,0,2.28,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}"
+google/gemma-4-31b-it,no-CoT,-15.7801,-47.9292,4884.227,BR,True,,stop,5.772e-05,408,36,0,8.05,"```json
+{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-15.7801,-47.9292,4884.227,BR,True,,stop,0.0011835,634,31,0,7.23,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+qwen/qwen3.5-9b,no-CoT,-14.235,-51.925,5118.891,BR,True,,stop,5.175e-05,474,29,0,4.39,"{""country"": ""BR"", ""latitude"": -14.235, ""longitude"": -51.925}"
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.9253,5118.917,BR,True,,stop,0.0001943,473,31,0,8.86,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9253}"
+qwen/qwen3.5-122b-a10b,no-CoT,-22.4119,-48.5253,5425.721,BR,True,,stop,0.00018772,474,31,0,8.21,"{""country"": ""BR"", ""latitude"": -22.4119, ""longitude"": -48.5253}"
+openai/gpt-5.5,no-CoT,-20.5643,26.2247,5870.192,BW,True,,stop,0.00344,544,24,0,1.45,"{""country"":""BW"",""latitude"":-20.5643,""longitude"":26.2247}"
+minimax/minimax-m3,CoT,-6.0,35.0,5910.803,TZ,True,,stop,0.00072654,845,417,424,14.49,"{""reasoning"": ""Tropical savanna vegetation with scattered broadleaf trees, reddish-brown soil patches on roadside, flat terrain, and the style of power line infrastructure with metal pylons are highly characteristic of East African countries, most likely Tanzania. The lack of road markings and the rural paved road condition further supports a sub-Saharan African location."", ""country"": ""TZ"", ""latitude"": -6.0, ""longitude"": 35.0}"
+moonshotai/kimi-k2.6,CoT,-6.2,36.0,6021.748,TZ,True,,stop,0.0132768,680,3292,3630,61.91,"{""reasoning"": ""The right-hand driver position and reflected steering wheel indicate left-hand traffic; the flat tropical savanna with scattered acacia-like trees, red lateritic soil shoulders, and a concrete utility pole with a simple cross-arm is characteristic of rural East Africa."", ""country"": ""TZ"", ""latitude"": -6.2, ""longitude"": 36.0}"
+x-ai/grok-4.3,CoT,-24.35,28.75,6330.225,ZA,True,,stop,0.001904,676,558,485,10.93,"{""reasoning"": ""Flat-topped acacia savanna, red-brown soil, open two-lane asphalt road with gravel shoulders and right-side wooden power poles match rural South Africa; bright high sun and cloud cover consistent with Highveld or Limpopo summer."", ""country"": ""ZA"", ""latitude"": -24.35, ""longitude"": 28.75}"
+x-ai/grok-4.3,no-CoT,-25.746,28.188,6379.751,ZA,True,,stop,0.0005934,592,22,0,0.85,"{""country"": ""ZA"", ""latitude"": -25.746, ""longitude"": 28.188}"
+qwen/qwen3.5-27b,no-CoT,30.2672,-97.7431,8587.705,US,True,,stop,0.00019467,473,31,0,2.93,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+qwen/qwen3.6-35b-a3b,no-CoT,12.3,76.6,9839.944,IN,True,,stop,0.0039658827,471,4030,3999,25.7,"{""country"": ""IN"", ""latitude"": 12.3, ""longitude"": 76.6}"
+qwen/qwen3.5-35b-a3b,no-CoT,-17.1456,133.6789,16615.555,AU,True,,stop,9.836e-05,474,32,0,7.61,"{""country"": ""AU"", ""latitude"": -17.1456, ""longitude"": 133.6789}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-14.18241024017334,136.9893798828125,16971.545,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-14.629009246826172,139.22291564941406,17213.211,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-17.357818603515625,142.49427795410156,17546.811,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.57,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.43,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.35,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.88,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.04,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.29,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,28.6,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.24,

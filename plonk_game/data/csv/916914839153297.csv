@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,36.695863970639,67.113926486998,0.0,AF,True,,,,,,,,"Mazar-e Sharif, None, Balkh, AF"
+google/gemma-4-31b-it,no-CoT,34.5553,69.1711,302.016,AF,True,,stop,6.718e-05,406,36,0,2.16,"```json
+{""country"": ""AF"", ""latitude"": 34.5553, ""longitude"": 69.1711}
+```"
+moonshotai/kimi-k2.6,CoT,34.553,69.195,303.553,AF,True,,stop,0.008691255,681,2292,2456,21.97,"{""reasoning"": ""Persian-script road signs and right-hand traffic in a dry, mountain-backed city match Kabul, Afghanistan; the utilitarian flat-roof architecture and prominent vehicle antenna are typical of Afghan capital streets."", ""country"": ""AF"", ""latitude"": 34.553, ""longitude"": 69.195}"
+qwen/qwen3.5-122b-a10b,no-CoT,34.5553,69.2003,303.648,AF,True,,stop,0.00018772,474,31,0,6.73,"{""country"": ""AF"", ""latitude"": 34.5553, ""longitude"": 69.2003}"
+google/gemini-3.5-flash,CoT (effort=low),34.5333,69.1667,303.72,AF,True,,stop,0.004014,1272,234,164,4.14,"{""reasoning"": ""The vehicle antenna, yellow-and-black painted curbs, blue road signs, and Toyota Corolla are highly characteristic of Kabul, Afghanistan, set against a dusty, mountainous backdrop."", ""country"": ""AF"", ""latitude"": 34.5333, ""longitude"": 69.1667}"
+google/gemini-3.5-flash,CoT (effort=medium),34.5333,69.1667,303.72,AF,True,,stop,0.0064155,1271,501,431,4.69,"{""reasoning"": ""The vehicle's prominent HF antenna, the yellow-and-black painted curbs, the Toyota Corolla taxi, and the arid mountainous backdrop are highly characteristic of Kabul, Afghanistan."", ""country"": ""AF"", ""latitude"": 34.5333, ""longitude"": 69.1667}"
+google/gemini-3.5-flash,CoT (effort=high),34.5333,69.1667,303.72,AF,True,,stop,0.0114645,1271,1062,989,23.69,"{""reasoning"": ""The dusty environment, surrounding mountains, yellow-and-black painted curbs, right-hand traffic, and the prominent HF antenna on the camera vehicle are highly characteristic of Afghanistan, specifically Kabul."", ""country"": ""AF"", ""latitude"": 34.5333, ""longitude"": 69.1667}"
+qwen/qwen3.5-9b,no-CoT,34.5558,69.2075,304.008,AF,True,,stop,8.816e-05,473,31,0,9.28,"{""country"": ""AF"", ""latitude"": 34.5558, ""longitude"": 69.2075}"
+google/gemini-3.1-pro-preview,CoT,34.5553,69.2075,304.052,AF,True,,stop,0.005578,1271,253,163,4.67,"{
+  ""reasoning"": ""The large vehicle antenna, black and yellow painted curbs, and right-hand driving are characteristic of street-level imagery from Afghanistan, likely taken by a security or international organization vehicle. The mountainous backdrop and urban setting suggest Kabul."",
+  ""country"": ""AF"",
+  ""latitude"": 34.5553,
+  ""longitude"": 69.2075
+}"
+google/gemini-3.1-pro-preview,no-CoT,34.5553,69.2075,304.052,AF,True,,stop,0.00479,1189,201,166,11.77,"```json
+{""country"": ""AF"", ""latitude"": 34.5553, ""longitude"": 69.2075}
+```"
+moonshotai/kimi-k2.6,no-CoT,34.5553,69.2075,304.052,AF,True,,stop,0.000273312,603,25,0,13.24,"{""country"": ""AF"", ""latitude"": 34.5553, ""longitude"": 69.2075}"
+qwen/qwen3.5-35b-a3b,no-CoT,34.5553,69.2075,304.052,PK,True,,stop,0.00010195,473,31,0,8.17,"{""country"": ""PK"", ""latitude"": 34.5553, ""longitude"": 69.2075}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.5553,69.2075,304.052,AF,True,,stop,0.00029145,473,31,0,2.98,"{""country"": ""AF"", ""latitude"": 34.5553, ""longitude"": 69.2075}"
+qwen/qwen3.6-35b-a3b,no-CoT,34.5553,69.2075,304.052,AF,True,,stop,0.000157,473,31,0,0.99,"{""country"": ""AF"", ""latitude"": 34.5553, ""longitude"": 69.2075}"
+openai/gpt-5.5,no-CoT,34.5545,69.2075,304.122,AF,True,,stop,0.00341,544,23,0,2.51,"{""country"":""AF"",""latitude"":34.5545,""longitude"":69.2075}"
+openai/gpt-5.5,CoT,34.5296,69.1784,304.695,AF,True,,stop,0.013995,621,363,288,16.31,"{""reasoning"":""Arid Central Asian urban scene with right-hand traffic, black/yellow Afghan-style curb medians, blue U-turn signage, and walled concrete homes strongly indicate Afghanistan. The broad dusty boulevard and vehicle mix are most consistent with Kabul."",""country"":""AF"",""latitude"":34.5296,""longitude"":69.1784}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),34.5355,69.1908,304.861,AF,True,,stop,0.0021,1190,35,0,7.55,"```json
+{""country"": ""AF"", ""latitude"": 34.5355, ""longitude"": 69.1908}
+```"
+x-ai/grok-4.3,CoT,34.523,69.175,305.092,AF,True,,stop,0.002359,676,740,672,6.95,"{""reasoning"": ""Right-hand traffic, blue circular U-turn sign, arid mountainous backdrop, brick architecture, and motorcycle/sedan mix point to Afghanistan; foreground pole, solar panels, and striped curb match typical Kabul streetscape."", ""country"": ""AF"", ""latitude"": 34.523, ""longitude"": 69.175}"
+x-ai/grok-4.3,no-CoT,34.516,69.178,305.879,AF,True,,stop,0.0005934,592,22,0,1.75,"{""country"": ""AF"", ""latitude"": 34.516, ""longitude"": 69.178}"
+qwen/qwen3.5-397b-a17b,CoT,34.515,69.225,308.577,AF,True,,stop,0.0134846,553,3803,3586,270.85,"{""reasoning"": ""Traffic drives on the right side of the road (white car and motorcycle position), which rules out Pakistan (LHT) and points to Afghanistan (RHT). The arid landscape, flat-roofed brick/concrete architecture, dusty atmosphere, specific yellow-and-black curb markings, and the military-style whip antenna in the foreground are characteristic of Kabul, Afghanistan, likely on a main highway like the Jalalabad Road."", ""country"": ""AF"", ""latitude"": 34.515, ""longitude"": 69.225}"
+anthropic/claude-opus-4.8,no-CoT,34.3482,62.1997,515.587,AF,True,,stop,0.00413,666,32,0,2.48,"{""country"": ""AF"", ""latitude"": 34.3482, ""longitude"": 62.1997}"
+anthropic/claude-opus-4.8,CoT,34.348,62.199,515.653,AF,True,,stop,0.006535,797,102,0,3.03,"{""reasoning"": ""Arid mountainous terrain, dusty divided road with yellow-black curbs, Toyota-style sedan, motorcyclist without helmet, and brick buildings typical of Afghan cities."", ""country"": ""AF"", ""latitude"": 34.348, ""longitude"": 62.199}"
+qwen/qwen3.5-27b,no-CoT,34.0151,72.4015,564.478,PK,True,,stop,0.0002065,474,44,0,14.05,"```json
+{
+  ""country"": ""PK"",
+  ""latitude"": 34.0151,
+  ""longitude"": 72.4015
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,33.6844,73.0479,634.553,PK,True,,stop,8.14576e-05,708,31,0,8.62,"{""country"": ""PK"", ""latitude"": 33.6844, ""longitude"": 73.0479}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,37.10303497314453,58.1264762878418,800.159,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,37.18850326538086,57.618282318115234,845.314,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,31.545,74.339,877.213,PK,True,,stop,0.0003708376,787,1025,964,15.22,"{""reasoning"": ""Left-hand traffic and Urdu script on road signs point to Pakistan, while urban architecture and vehicle styles align with South Asian cities."", ""country"": ""PK"", ""latitude"": 31.545, ""longitude"": 74.339}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,35.70785140991211,52.967952728271484,1272.867,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,35.52,51.35,1420.564,IR,True,,stop,0.00067866,843,406,325,16.12,"{""reasoning"": ""The blue U-turn sign style, yellow-and-black curb markings, Peykan-style sedan, right-hand traffic, arid mountain backdrop, and flat-roofed brick architecture are all characteristic of suburban Iran, likely on the outskirts of a major city like Tehran."", ""country"": ""IR"", ""latitude"": 35.52, ""longitude"": 51.35}"
+minimax/minimax-m3,no-CoT,35.72,51.08,1440.977,IR,True,,stop,0.00043962,767,223,239,6.52,"{""country"": ""IR"", ""latitude"": 35.72, ""longitude"": 51.08}"
+mistralai/mistral-medium-3-5,no-CoT,32.6539,51.666,1480.418,IR,True,,stop,0.0011835,634,31,0,0.82,"{""country"": ""IR"", ""latitude"": 32.6539, ""longitude"": 51.6660}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,31.576095581054688,50.143375396728516,1659.569,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,29.830429077148438,48.12126159667969,1919.346,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,29.397396087646484,48.00795364379883,1952.261,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,27.7172,85.324,1977.86,NP,True,,stop,0.0001943,473,31,0,15.17,"{""country"": ""NP"", ""latitude"": 27.7172, ""longitude"": 85.3240}"
+mistralai/mistral-small-2603,no-CoT,12.9716,77.5946,2837.378,IN,True,,stop,0.0001137,634,31,0,3.1,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7987.199,,True,True,,,,,,8.04,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,

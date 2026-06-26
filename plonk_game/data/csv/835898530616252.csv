@@ -1,0 +1,58 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-3.7665829450117,-38.585913210325,0.0,BR,True,,,,,,,,"Fortaleza, Fortaleza, Ceara, BR"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-3.789245,-38.524123,7.304,BR,True,,stop,0.002127,1190,38,0,1.18,"```json
+{""country"": ""BR"", ""latitude"": -3.789245, ""longitude"": -38.524123}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-3.7327,-38.527,7.545,BR,True,,stop,0.005258,1189,240,206,10.89,"```json
+{""country"": ""BR"", ""latitude"": -3.7327, ""longitude"": -38.5270}
+```"
+anthropic/claude-opus-4.8,CoT,-12.95,-38.45,1021.259,BR,True,,stop,0.00721,797,129,0,3.48,"{""reasoning"": ""Portuguese-style urban setting with exposed brick/unfinished masonry buildings, tropical vegetation, right-hand traffic, and graffiti typical of northeastern Brazil; the worn streets and architecture suggest a suburb like Salvador or Fortaleza."", ""country"": ""BR"", ""latitude"": -12.95, ""longitude"": -38.45}"
+anthropic/claude-opus-4.8,no-CoT,-12.9714,-38.5014,1023.571,BR,True,,stop,0.00413,666,32,0,2.46,"{""country"": ""BR"", ""latitude"": -12.9714, ""longitude"": -38.5014}"
+minimax/minimax-m3,CoT,-14.79,-39.05,1226.802,BR,True,,stop,0.00090342,845,590,626,18.99,"{""reasoning"": ""The blue bus stop sign with a bus icon is the standard Brazilian 'ponto de ônibus' transit marker, and Portuguese script is visible. The architecture (low-rise buildings, red tile roofs, exposed concrete/brick), tropical vegetation, and street style all point to a smaller Brazilian city, likely in the interior Northeast or central region of Brazil."", ""country"": ""BR"", ""latitude"": -14.79, ""longitude"": -39.05}"
+xiaomi/mimo-v2.5,no-CoT,-22.9068,-43.1729,2184.778,BR,True,,stop,8.14576e-05,708,31,0,1.24,"{""country"": ""BR"", ""latitude"": -22.9068, ""longitude"": -43.1729}"
+x-ai/grok-4.3,CoT,-22.906,-43.19,2185.108,BR,True,,stop,0.0022765,676,707,637,7.99,"{""reasoning"": ""Right-hand traffic, blue square bus-stop sign, Renault Sandero-style hatchback, brick/painted buildings with graffiti, and subtropical vegetation/urban layout point to Brazil; no other country matches all visual markers simultaneously."", ""country"": ""BR"", ""latitude"": -22.906, ""longitude"": -43.19}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-23.473859786987305,-46.3702507019043,2345.505,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),-23.5984,-46.4012,2359.526,BR,True,,stop,0.0060375,1271,459,394,11.05,"{""reasoning"": ""The presence of a Renault Sandero, unfinished red clay brick architecture, and a distinctive blue bus stop sign strongly points to a suburban neighborhood in Brazil."", ""country"": ""BR"", ""latitude"": -23.5984, ""longitude"": -46.4012}"
+google/gemini-3.5-flash,CoT (effort=high),-23.5952,-46.4418,2360.75,BR,True,,stop,0.0116265,1271,1080,1022,14.92,"{""reasoning"": ""The unfinished red brick architecture, Renault Sandero, and distinctive blue bus stop sign are highly characteristic of suburban Brazil."", ""country"": ""BR"", ""latitude"": -23.5952, ""longitude"": -46.4418}"
+moonshotai/kimi-k2.6,CoT,-23.55,-46.6,2362.233,BR,True,,stop,0.011376,680,2722,3132,61.59,"{""reasoning"": ""The dark blue SPTrans bus stop sign is diagnostic of São Paulo municipality, and the pixação graffiti style, right-hand traffic, and compact hatchbacks confirm Brazil."", ""country"": ""BR"", ""latitude"": -23.55, ""longitude"": -46.6}"
+openai/gpt-5.5,CoT,-23.5447,-46.6353,2363.074,BR,True,,stop,0.010455,621,245,172,12.2,"{""reasoning"":""Right-side driving, Latin American urban streetscape with Brazilian-style bus stop sign and blurred white plates strongly suggest Brazil. The dense brick-and-plaster suburban neighborhood and road layout look most like the São Paulo metropolitan area."",""country"":""BR"",""latitude"":-23.5447,""longitude"":-46.6353}"
+xiaomi/mimo-v2.5,CoT,-23.55,-46.63,2363.409,BR,True,,stop,0.0004212376,787,1205,1137,12.06,"{
+  ""reasoning"": ""Right-hand traffic and architectural style with exposed brick buildings and graffiti indicate South America, while vehicle models like Renault Clio are common in Brazil."",
+  ""country"": ""BR"",
+  ""latitude"": -23.55,
+  ""longitude"": -46.63
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-23.543926239013672,-46.64805221557617,2363.496,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,-23.5505,-46.6333,2363.59,BR,True,,stop,0.005352,1272,234,140,22.55,"{
+  ""reasoning"": ""The unpainted brick buildings, concrete walls with graffiti, and the specific style of the bus stop sign are characteristic of urban areas in Brazil. The vehicle models and overall street layout further support a location in a Brazilian city, likely in the southeast."",
+  ""country"": ""BR"",
+  ""latitude"": -23.5505,
+  ""longitude"": -46.6333
+}"
+google/gemma-4-31b-it,no-CoT,-23.5505,-46.6333,2363.59,BR,True,,stop,6.718e-05,406,36,0,2.83,"```json
+{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,2363.59,BR,True,,stop,0.0011835,634,31,0,9.95,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,2363.59,BR,True,,stop,0.00018772,474,31,0,5.77,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-35b-a3b,no-CoT,-23.5505,-46.6333,2363.59,BR,True,,stop,0.0001865625,473,31,0,2.57,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5505,-46.6333,2363.59,BR,True,,stop,0.0003486,474,31,0,2.61,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-9b,no-CoT,-23.5505,-46.6333,2363.59,BR,True,,stop,8.816e-05,473,31,0,4.76,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.6333,2363.59,BR,True,,stop,0.0001943,473,31,0,6.17,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-35b-a3b,no-CoT,-23.5505,-46.6333,2363.59,BR,True,,stop,0.0001444,474,31,0,8.49,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+x-ai/grok-4.3,no-CoT,-23.5505,-46.6333,2363.59,BR,True,,stop,0.0005984,592,24,0,0.86,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-23.548377990722656,-46.648990631103516,2363.989,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-23.55078887939453,-46.64649963378906,2364.139,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-23.629343032836914,-46.57740020751953,2369.502,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-23.633399963378906,-46.57780838012695,2369.935,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-23.5984,-46.6751,2370.148,BR,True,,stop,0.004563,1272,295,225,3.32,"{""reasoning"": ""The unpainted red brick architecture, style of the bus stop sign, and vehicle models like the Renault Sandero strongly indicate Brazil, likely in a suburban area of São Paulo."", ""country"": ""BR"", ""latitude"": -23.5984, ""longitude"": -46.6751}"
+openai/gpt-5.5,no-CoT,-23.6579,-46.7042,2377.395,BR,True,,stop,0.00347,544,25,0,1.79,"{""country"":""BR"",""latitude"":-23.6579,""longitude"":-46.7042}"
+qwen/qwen3.5-27b,no-CoT,4.6097,-74.0817,4051.805,CO,True,,stop,0.00019251,473,30,0,2.19,"{""country"": ""CO"", ""latitude"": 4.6097, ""longitude"": -74.0817}"
+mistralai/mistral-small-2603,no-CoT,28.6359,77.2246,12718.547,IN,True,,stop,0.0001137,634,31,0,7.43,"{""country"": ""IN"", ""latitude"": 28.6359, ""longitude"": 77.2246}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.42,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,3.15,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,10.45,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.81,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.14,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.21,

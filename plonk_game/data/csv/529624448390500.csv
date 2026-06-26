@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-25.075310788806,31.797144210116,0.0,ZA,True,,,,,,,,"Komatipoort, Ehlanzeni District, Mpumalanga, ZA"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-24.9895,31.5926,22.71,ZA,True,,stop,0.0021,1190,35,0,2.08,"```json
+{""country"": ""ZA"", ""latitude"": -24.9895, ""longitude"": 31.5926}
+```"
+anthropic/claude-opus-4.8,no-CoT,-24.99,31.59,22.925,ZA,True,,stop,0.004105,666,31,0,8.58,"{""country"": ""ZA"", ""latitude"": -24.99, ""longitude"": 31.59}"
+openai/gpt-5.5,CoT,-24.9365,31.5658,27.96,ZA,True,,stop,0.010455,621,245,152,8.31,"{""reasoning"":""Open safari vehicle on a pale sandy bush track with lowveld thorn/mopane vegetation strongly suggests a private game reserve in the Greater Kruger/Kruger area of South Africa. The landscape and road style fit the Sabi Sands/Kruger bushveld more than East African savanna or Botswana salt-sand tracks."",""country"":""ZA"",""latitude"":-24.9365,""longitude"":31.5658}"
+anthropic/claude-opus-4.8,CoT,-24.85,31.5,39.05,ZA,True,,stop,0.006235,797,90,0,3.41,"{""reasoning"": ""Sandy dirt track through dense bushveld savanna with safari vehicle hood, typical of South African game reserves like Kruger/Sabi Sands."", ""country"": ""ZA"", ""latitude"": -24.85, ""longitude"": 31.5}"
+qwen/qwen3.6-35b-a3b,CoT,-24.55,31.55,63.515,ZA,True,,stop,0.00371172685,553,3753,3661,44.26,"{""reasoning"": ""The reddish lateritic soil, acacia-like vegetation, and the Land Rover Defender safari vehicle strongly point to the South African Lowveld, likely within or near Kruger National Park. The left-hand traffic position and the specific 'bushveld' environment are characteristic of this region."", ""country"": ""ZA"", ""latitude"": -24.55, ""longitude"": 31.55}"
+openai/gpt-5.5,no-CoT,-24.5365,31.4623,68.788,ZA,True,,stop,0.00344,544,24,0,1.91,"{""country"":""ZA"",""latitude"":-24.5365,""longitude"":31.4623}"
+xiaomi/mimo-v2.5,no-CoT,-24.5,31.5,70.655,ZA,True,,stop,7.97776e-05,708,25,0,1.45,"{""country"": ""ZA"", ""latitude"": -24.5, ""longitude"": 31.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,-24.9267,31.0956,72.604,ZA,True,,stop,0.00018772,474,31,0,5.79,"{""country"": ""ZA"", ""latitude"": -24.9267, ""longitude"": 31.0956}"
+google/gemini-3.1-pro-preview,no-CoT,-24.0123,31.5432,120.96,ZA,True,,stop,0.003832,1190,121,86,18.24,"```json
+{""country"": ""ZA"", ""latitude"": -24.0123, ""longitude"": 31.5432}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-24.0125,31.4852,122.319,ZA,True,,stop,0.0038775,1271,219,154,21.58,"{""reasoning"": ""The sandy dirt road, savanna vegetation, and safari vehicle hood with a bull bar are characteristic of national parks in South Africa, particularly Kruger National Park."", ""country"": ""ZA"", ""latitude"": -24.0125, ""longitude"": 31.4852}"
+google/gemini-3.5-flash,CoT (effort=medium),-24.0115,31.4892,122.322,ZA,True,,stop,0.0063705,1271,496,427,5.1,"{""reasoning"": ""The sandy dirt road, savanna vegetation, and safari vehicle hood with a bull bar are highly characteristic of national parks in Southern Africa, particularly Kruger National Park in South Africa."", ""country"": ""ZA"", ""latitude"": -24.0115, ""longitude"": 31.4892}"
+qwen/qwen3.6-27b,no-CoT,-24.05,31.35,122.65,ZA,True,,stop,0.0001863,473,27,0,19.72,"{""country"": ""ZA"", ""latitude"": -24.05, ""longitude"": 31.35}"
+google/gemini-3.5-flash,CoT (effort=high),-24.0084,31.4875,122.7,ZA,True,,stop,0.008064,1272,684,614,11.0,"{""reasoning"": ""The dirt road, savanna vegetation, and the distinctive safari vehicle hood with a bull bar strongly indicate a national park in Southern Africa, most likely Kruger National Park in South Africa."", ""country"": ""ZA"", ""latitude"": -24.0084, ""longitude"": 31.4875}"
+x-ai/grok-4.3,CoT,-24.01,31.48,122.724,ZA,True,,stop,0.0020115,676,601,526,19.32,"{
+  ""reasoning"": ""Reddish dirt road through acacia/bushveld savanna with typical safari 4x4 roof rack indicates a Southern or East African game reserve; left-hand driving convention and vegetation narrow it to South Africa."",
+  ""country"": ""ZA"",
+  ""latitude"": -24.01,
+  ""longitude"": 31.48
+}"
+google/gemini-3.1-pro-preview,CoT,-24.0,31.5,123.289,ZA,True,,stop,0.00481,1271,189,117,4.1,"{
+  ""reasoning"": ""The savanna vegetation, sandy dirt road, and the hood of a safari vehicle strongly suggest a game reserve in southern Africa, most likely Kruger National Park in South Africa."",
+  ""country"": ""ZA"",
+  ""latitude"": -24.0,
+  ""longitude"": 31.5
+}"
+moonshotai/kimi-k2.6,no-CoT,-24.0,31.5,123.289,ZA,True,,stop,0.000263232,603,23,0,1.76,"{""country"": ""ZA"", ""latitude"": -24.0, ""longitude"": 31.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-23.919692993164062,31.682432174682617,129.022,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-23.905559539794922,31.707386016845703,130.387,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,-25.35,29.12,271.047,ZA,True,,stop,0.000134355,473,27,0,7.49,"{""country"": ""ZA"", ""latitude"": -25.35, ""longitude"": 29.12}"
+qwen/qwen3.6-35b-a3b,no-CoT,-24.5,29.0,289.522,ZA,True,,stop,0.0001348,474,25,0,3.12,"{""country"": ""ZA"", ""latitude"": -24.5, ""longitude"": 29.0}"
+mistralai/mistral-medium-3-5,no-CoT,-24.8,28.5,333.842,ZA,True,,stop,0.0011385,634,25,0,0.89,"{""country"": ""ZA"", ""latitude"": -24.8, ""longitude"": 28.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.6416,25.8491,601.999,ZA,True,,stop,9.736e-05,474,31,0,1.6,"{""country"": ""ZA"", ""latitude"": -24.6416, ""longitude"": 25.8491}"
+qwen/qwen3.5-9b,no-CoT,-17.85,31.05,807.123,ZW,True,,stop,8.716e-05,473,27,0,8.66,"{""country"": ""ZW"", ""latitude"": -17.85, ""longitude"": 31.05}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-17.65781593322754,30.73972511291504,832.01,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-19.15,26.55,851.979,ZW,True,,stop,0.00065586,843,387,316,10.64,"{""reasoning"": ""Reddish sandy soil, mopane/bushveld vegetation, wide dirt safari track, and right-hand drive safari vehicle roof strongly indicate a game reserve in southern Africa, most likely Zimbabwe or Botswana bushveld."", ""country"": ""ZW"", ""latitude"": -19.15, ""longitude"": 26.55}"
+xiaomi/mimo-v2.5,CoT,-18.5,26.5,912.795,ZW,True,,stop,0.0004388776,787,1268,1196,14.03,"{""reasoning"": ""The unpaved reddish-brown road and surrounding bushveld vegetation (acacia-like trees and shrubs) are characteristic of the savanna regions in Southern Africa, specifically Zimbabwe or Botswana."", ""country"": ""ZW"", ""latitude"": -18.5, ""longitude"": 26.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-16.902437210083008,30.163366317749023,924.437,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-16.869487762451172,30.13808822631836,928.524,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,-20.1234,23.4567,1017.541,BW,True,,stop,6.718e-05,406,36,0,2.33,"```json
+{""country"": ""BW"", ""latitude"": -20.1234, ""longitude"": 23.4567}
+```"
+x-ai/grok-4.3,no-CoT,-19.25,23.55,1067.592,BW,True,,stop,0.0005934,592,22,0,1.4,"{""country"": ""BW"", ""latitude"": -19.25, ""longitude"": 23.55}"
+minimax/minimax-m3,no-CoT,-19.5,23.0,1096.525,BW,True,,stop,0.00018816,752,23,0,7.61,"{""country"": ""BW"", ""latitude"": -19.5, ""longitude"": 23.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,-18.95,23.45,1096.87,BW,True,,stop,0.00035028,473,27,0,2.37,"{""country"": ""BW"", ""latitude"": -18.95, ""longitude"": 23.45}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-7.34757137298584,36.91337203979492,2044.793,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-2.3,34.75,2552.202,TZ,True,,stop,0.013313448,682,3821,3759,93.33,"{""reasoning"": ""Flat orange-sand track flanked by low acacia scrub viewed from a safari vehicle with a tubular bull bar matches the Serengeti ecosystem in East Africa."", ""country"": ""TZ"", ""latitude"": -2.3, ""longitude"": 34.75}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4410.29,,True,True,,,,,,10.61,
+qwen/qwen3.5-397b-a17b,CoT,22.85,30.92,5329.891,ZA,True,,stop,0.0113466,553,3073,2968,24.15,"{""reasoning"": ""The reddish sandy soil, flat terrain, and scrubby Lowveld vegetation (likely Combretum/Acacia) are characteristic of the Limpopo River valley region. The white safari vehicle hood with a black roll bar suggests a game reserve, and the specific red soil profile strongly points to the northern section of Kruger National Park in South Africa."", ""country"": ""ZA"", ""latitude"": 22.85, ""longitude"": 30.92}"
+mistralai/mistral-small-2603,CoT,39.0,-6.0,8136.347,ES,True,,stop,0.0006402,716,888,990,7.49,"{""reasoning"": ""Right-hand traffic and road markings suggest Europe; dry Mediterranean vegetation and soil color indicate Iberian Peninsula; lack of coastal humidity points to interior regions like Extremadura, Spain."", ""country"": ""ES"", ""latitude"": 39.0, ""longitude"": -6.0}"
+mistralai/mistral-small-2603,no-CoT,36.5323,-118.2921,16904.168,US,True,,stop,0.000142875,634,32,0,3.07,"{""country"": ""US"", ""latitude"": 36.5323, ""longitude"": -118.2921}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.16,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.2,

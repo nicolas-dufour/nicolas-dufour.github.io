@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,58.396003316266,15.297690548652,0.0,SE,True,,,,,,,,"Mantorp, Mjolby Kommun, OEstergoetland, SE"
+google/gemini-3.5-flash,CoT (effort=high),58.4012,15.0234,15.992,SE,True,,stop,0.0103305,1307,930,863,8.73,"{""reasoning"": ""The flat agricultural landscape combined with the narrow asphalt road featuring dashed white edge lines and no center line is highly characteristic of rural Sweden, particularly in the southern plains."", ""country"": ""SE"", ""latitude"": 58.4012, ""longitude"": 15.0234}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,58.50497817993164,15.531538963317871,18.219,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),58.4152,15.6214,18.978,SE,True,,stop,0.0037425,1307,198,121,9.4,"{""reasoning"": ""The narrow asphalt road with short, dashed white edge lines and flat agricultural landscape is highly characteristic of rural Sweden. The vehicle's hood scoop is also typical of the Google Street View car used in this region."", ""country"": ""SE"", ""latitude"": 58.4152, ""longitude"": 15.6214}"
+google/gemini-3.1-pro-preview,no-CoT,58.4123,15.6234,19.061,SE,True,,stop,0.004996,1226,212,177,11.51,"```json
+{""country"": ""SE"", ""latitude"": 58.4123, ""longitude"": 15.6234}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,58.50627136230469,15.556212425231934,19.405,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,58.50875473022461,15.557737350463867,19.649,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,58.6411,16.2111,59.632,SE,True,,stop,0.0002279,585,31,0,4.52,"{""country"": ""SE"", ""latitude"": 58.6411, ""longitude"": 16.2111}"
+anthropic/claude-opus-4.8,CoT,58.4,13.5,104.745,SE,True,,stop,0.00702,949,91,0,9.61,"{""reasoning"": ""Flat agricultural landscape with narrow rural road, dashed center line, autumn colors and low sun angle suggest northern Europe, likely southern Sweden."", ""country"": ""SE"", ""latitude"": 58.4, ""longitude"": 13.5}"
+anthropic/claude-opus-4.8,no-CoT,58.4,13.5,104.745,SE,True,,stop,0.00484,818,30,0,8.76,"{""country"": ""SE"", ""latitude"": 58.4, ""longitude"": 13.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),58.3412,13.1245,126.874,SE,True,,stop,0.002154,1226,35,0,1.49,"```json
+{""country"": ""SE"", ""latitude"": 58.3412, ""longitude"": 13.1245}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,57.2456,14.8932,130.142,SE,True,,stop,0.00011875,585,31,0,7.54,"{""country"": ""SE"", ""latitude"": 57.2456, ""longitude"": 14.8932}"
+google/gemini-3.5-flash,CoT (effort=medium),58.2642,12.9534,137.635,SE,True,,stop,0.0064695,1307,501,421,4.57,"{""reasoning"": ""The narrow asphalt road with short dashed white edge lines and flat agricultural landscape is highly characteristic of southern or central Sweden. The white car hood with a scoop matches the Subaru Impreza used for Google Street View coverage in Sweden."", ""country"": ""SE"", ""latitude"": 58.2642, ""longitude"": 12.9534}"
+qwen/qwen3.5-122b-a10b,no-CoT,57.7089,12.0411,206.255,SE,True,,stop,0.0003588,585,39,0,1.55,"{
+  ""country"": ""SE"",
+  ""latitude"": 57.7089,
+  ""longitude"": 12.0411
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,56.02424240112305,12.972245216369629,298.559,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,55.8,13.5,308.381,SE,True,,stop,0.00529,1307,223,142,21.65,"{
+  ""reasoning"": ""The dashed white edge lines on a narrow rural road are highly characteristic of Sweden. The flat agricultural landscape suggests the southern part of the country, such as the Skåne region."",
+  ""country"": ""SE"",
+  ""latitude"": 55.8000,
+  ""longitude"": 13.5000
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,55.96863555908203,12.730738639831543,311.047,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,55.6,13.4,331.432,SE,True,,stop,0.01442462,834,3446,3722,61.8,"{""reasoning"": ""The dashed white edge lines on a narrow rural road are a hallmark of Swedish road markings, and the flat agricultural plains with scattered tree lines match the landscape of southern Sweden."", ""country"": ""SE"", ""latitude"": 55.6, ""longitude"": 13.4}"
+openai/gpt-5.5,no-CoT,55.4821,11.5837,394.511,DK,True,,stop,0.00408,678,23,0,1.45,"{""country"":""DK"",""latitude"":55.4821,""longitude"":11.5837}"
+minimax/minimax-m3,CoT,55.95,10.15,412.425,DK,True,,stop,0.00094506,995,590,501,20.78,"{""reasoning"": ""Extremely flat agricultural landscape with deciduous trees in autumn colors, narrow well-maintained rural road with white edge markings, and bright low-angle sun characteristic of a Northern European temperate climate. The terrain flatness and road style strongly indicate rural Denmark (likely Jutland or one of the islands)."", ""country"": ""DK"", ""latitude"": 55.95, ""longitude"": 10.15}"
+openai/gpt-5.5,CoT,54.8021,11.5376,461.003,DK,True,,stop,0.014245,755,349,276,9.17,"{""reasoning"":""Flat open farmland, narrow asphalt road with Danish-style dashed white edge lines and no centerline, plus temperate Nordic vegetation point strongly to rural Denmark. The very flat agricultural landscape suggests Lolland/Falster or southern Zealand."",""country"":""DK"",""latitude"":54.8021,""longitude"":11.5376}"
+qwen/qwen3.5-9b,no-CoT,52.52,13.405,664.12,DE,True,,stop,0.0001072,585,31,0,4.55,"{""country"": ""DE"", ""latitude"": 52.5200, ""longitude"": 13.4050}"
+x-ai/grok-4.3,no-CoT,52.85,11.25,666.704,DE,True,,stop,0.0007334,704,22,0,1.8,"{""country"": ""DE"", ""latitude"": 52.85, ""longitude"": 11.25}"
+x-ai/grok-4.3,CoT,52.35,19.85,730.829,PL,True,,stop,0.0023765,788,691,617,17.09,"{""reasoning"": ""Right-side driving on narrow asphalt with standard EU dashed center lines, flat open farmland with scattered deciduous trees, no visible signage or plates, bright northern sun angle and wet reflective road surface all point to rural Northern/Central Europe in autumn."", ""country"": ""PL"", ""latitude"": 52.35, ""longitude"": 19.85}"
+qwen/qwen3.5-397b-a17b,no-CoT,52.3456,10.1234,747.495,DE,True,,stop,0.00043188,585,31,0,8.56,"{""country"": ""DE"", ""latitude"": 52.3456, ""longitude"": 10.1234}"
+xiaomi/mimo-v2.5,no-CoT,51.2,10.5,856.69,DE,True,,stop,9.54576e-05,820,25,0,0.75,"{""country"": ""DE"", ""latitude"": 51.2, ""longitude"": 10.5}"
+qwen/qwen3.5-27b,no-CoT,52.5167,5.3833,902.763,NL,True,,stop,0.00026416,586,43,0,3.15,"```json
+{
+  ""country"": ""NL"",
+  ""latitude"": 52.5167,
+  ""longitude"": 5.3833
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,51.433982849121094,7.299091339111328,926.326,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,48.8566,2.3522,1356.802,FR,True,,stop,7.056e-05,404,35,0,1.41,"```json
+{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}
+```"
+mistralai/mistral-medium-3-5,no-CoT,48.8566,2.3522,1356.802,FR,True,,stop,0.001404,786,30,0,1.17,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+mistralai/mistral-small-2603,no-CoT,53.4129,-6.2672,1445.928,IE,True,,stop,0.0001359,786,30,0,2.8,"{""country"": ""IE"", ""latitude"": 53.4129, ""longitude"": -6.2672}"
+xiaomi/mimo-v2.5,CoT,49.5,32.5,1490.832,UA,True,,stop,0.0001700776,899,252,191,5.25,"{""reasoning"": ""Flat temperate agricultural landscape with right-hand traffic, northern hemisphere sun position, and open steppe farmland typical of central Ukraine's rural regions."", ""country"": ""UA"", ""latitude"": 49.5, ""longitude"": 32.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,-34.2891,140.7653,15230.803,AU,True,,stop,0.0001366625,585,32,0,6.83,"{""country"": ""AU"", ""latitude"": -34.2891, ""longitude"": 140.7653}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.21,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,27.9,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.55,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.2,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.32,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.13,

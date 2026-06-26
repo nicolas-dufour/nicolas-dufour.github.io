@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,45.140651965686,-87.755184549091,0.0,US,True,,,,,,,,"Peshtigo, Marinette County, Wisconsin, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,45.29838562011719,-88.04698181152344,28.809,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,45.29728317260742,-88.04917907714844,28.872,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.27678680419922,-88.10079193115234,31.019,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,44.5,-88.0,73.808,US,True,,stop,0.0011385,634,25,0,0.97,"{""country"": ""US"", ""latitude"": 44.5, ""longitude"": -88.0}"
+openai/gpt-5.5,CoT,45.9456,-89.2634,147.669,US,True,,stop,0.016575,621,449,358,17.17,"{""reasoning"":""The unmarked narrow asphalt road through mixed birch, pine, and leafless deciduous forest with grassy shoulders looks like a rural/park road in the northern Great Lakes rather than urban Europe. Vegetation, flat terrain, and autumn conditions best fit northern Wisconsin/Upper Michigan, so I estimate northern Wisconsin."",""country"":""US"",""latitude"":45.9456,""longitude"":-89.2634}"
+anthropic/claude-opus-4.8,no-CoT,45.8,-89.5,154.55,US,True,,stop,0.004055,666,29,0,8.56,"{""country"": ""US"", ""latitude"": 45.8, ""longitude"": -89.5}"
+google/gemini-3.5-flash,CoT (effort=high),45.9802,-89.5158,165.835,US,True,,stop,0.0087825,1271,764,691,7.58,"{""reasoning"": ""The mix of white birch and pine trees, along with the narrow, freshly paved rural road without markings, is highly characteristic of the Upper Midwest region of the United States, particularly northern Wisconsin."", ""country"": ""US"", ""latitude"": 45.9802, ""longitude"": -89.5158}"
+google/gemini-3.5-flash,CoT (effort=medium),45.8125,-89.7134,169.972,US,True,,stop,0.0052365,1271,370,299,4.88,"{""reasoning"": ""The mix of paper birch and white pine trees in late autumn, along with the narrow paved road, is highly characteristic of the Upper Midwest of the United States, particularly northern Wisconsin."", ""country"": ""US"", ""latitude"": 45.8125, ""longitude"": -89.7134}"
+google/gemini-3.1-pro-preview,no-CoT,45.0,-90.0,176.972,US,True,,stop,0.002726,1189,29,0,8.84,"```json
+{""country"": ""US"", ""latitude"": 45.0, ""longitude"": -90.0}
+```"
+google/gemini-3.5-flash,CoT (effort=low),45.9235,-90.1245,204.041,US,True,,stop,0.003501,1272,177,106,9.14,"{""reasoning"": ""The mix of birch and coniferous trees, along with the narrow paved road lacking markings, is highly characteristic of the Upper Midwest region of the United States, particularly northern Wisconsin or Minnesota."", ""country"": ""US"", ""latitude"": 45.9235, ""longitude"": -90.1245}"
+openai/gpt-5.5,no-CoT,45.3127,-84.7289,237.76,US,True,,stop,0.00344,544,24,0,1.32,"{""country"":""US"",""latitude"":45.3127,""longitude"":-84.7289}"
+anthropic/claude-opus-4.8,CoT,46.5,-91.0,293.348,US,True,,stop,0.006335,797,94,0,9.36,"{""reasoning"": ""Mixed northern hardwood-conifer forest with bare birches and late-autumn coloring, narrow paved rural road suggests northern US/Canada boreal transition zone."", ""country"": ""US"", ""latitude"": 46.5, ""longitude"": -91.0}"
+qwen/qwen3.5-9b,no-CoT,44.9778,-93.0642,417.316,US,True,,stop,5.205e-05,474,31,0,3.56,"{""country"": ""US"", ""latitude"": 44.9778, ""longitude"": -93.0642}"
+qwen/qwen3.5-35b-a3b,no-CoT,44.9778,-93.265,433.065,US,True,,stop,0.00015575,473,30,0,1.62,"{""country"": ""US"", ""latitude"": 44.9778, ""longitude"": -93.265}"
+xiaomi/mimo-v2.5,no-CoT,42.5,-83.5,450.177,US,True,,stop,7.97776e-05,708,25,0,1.23,"{""country"": ""US"", ""latitude"": 42.5, ""longitude"": -83.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),45.1235,-78.9124,693.331,CA,True,,stop,0.0021,1190,35,0,7.67,"```json
+{""country"": ""CA"", ""latitude"": 45.1235, ""longitude"": -78.9124}
+```"
+x-ai/grok-4.3,no-CoT,45.4235,-76.3489,892.218,CA,True,,stop,0.0005984,592,24,0,0.9,"{""country"": ""CA"", ""latitude"": 45.4235, ""longitude"": -76.3489}"
+qwen/qwen3.6-27b,no-CoT,45.4215,-73.7245,1096.813,CA,True,,stop,0.0001943,473,31,0,14.48,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -73.7245}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.02149200439453,-77.50062561035156,1161.954,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,37.95661926269531,-77.55247497558594,1164.04,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,45.4215,-72.7565,1172.212,CA,True,,stop,0.000140595,473,31,0,8.24,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -72.7565}"
+qwen/qwen3.5-122b-a10b,no-CoT,44.2619,-72.5805,1201.533,US,True,,stop,0.0002163,473,31,0,2.42,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -72.5805}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,37.10903549194336,-77.84276580810547,1217.569,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,43.95,-71.68,1278.648,US,True,,stop,0.0076,680,1778,2029,40.44,"{""reasoning"": ""Late-autumn deciduous forest with mixed conifers and stands of bare white-barked birch matches the boreal-temperate transition zone of the northeastern Appalachians, and the unmarked paved rural road is characteristic of U.S. Forest Service or secondary state roads in New England."", ""country"": ""US"", ""latitude"": 43.95, ""longitude"": -71.68}"
+google/gemini-3.1-pro-preview,CoT,44.0,-71.5,1291.665,US,True,,stop,0.005338,1271,233,151,4.6,"{
+  ""reasoning"": ""The mix of bare deciduous trees and evergreens, including white birches, strongly suggests a northern temperate climate like the northeastern US or eastern Canada. The unmarked paved road and general landscape are typical of rural New England."",
+  ""country"": ""US"",
+  ""latitude"": 44.0,
+  ""longitude"": -71.5
+}"
+x-ai/grok-4.3,CoT,44.3,-71.4,1293.372,US,True,,stop,0.002344,676,734,664,5.77,"{""reasoning"": ""Dashed white center line (not yellow), right-side driving position, autumnal mixed northern hardwood/birch forest and clear northern sky indicate rural northeastern North America in fall; no other continent matches all cues simultaneously."", ""country"": ""US"", ""latitude"": 44.3, ""longitude"": -71.4}"
+google/gemma-4-31b-it,no-CoT,42.3601,-71.0589,1373.569,US,True,,stop,7.124e-05,406,36,0,12.07,"```json
+{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,44.85,-68.75,1491.339,US,True,,stop,0.00035028,473,27,0,1.77,"{""country"": ""US"", ""latitude"": 44.85, ""longitude"": -68.75}"
+mistralai/mistral-small-2603,no-CoT,34.1527,-118.1441,2851.926,US,True,,stop,0.0001143,634,32,0,1.24,"{""country"": ""US"", ""latitude"": 34.1527, ""longitude"": -118.1441}"
+qwen/qwen3.6-35b-a3b,no-CoT,59.3293,18.0686,6586.246,SE,True,,stop,0.00397650045,471,4041,3998,24.51,"```json
+{""country"": ""SE"", ""latitude"": 59.3293, ""longitude"": 18.0686}
+```"
+minimax/minimax-m3,CoT,51.65,13.45,6884.128,DE,True,,stop,0.00059502,845,333,332,13.37,"{""reasoning"": ""Narrow rural road with no center markings, birch and mixed deciduous/conifer forest typical of Central European lowlands, distant houses with steep pitched roofs suggest eastern Germany (likely Brandenburg/Saxony region)."", ""country"": ""DE"", ""latitude"": 51.65, ""longitude"": 13.45}"
+xiaomi/mimo-v2.5,CoT,55.45,37.52,7710.383,RU,True,,stop,0.0008515976,787,2742,2665,31.01,"{""reasoning"": ""The landscape is characterized by a mix of silver birch and coniferous trees typical of the Russian boreal forest zone. The paved rural road lacking painted center markings is a common feature of regional infrastructure in Russia."", ""country"": ""RU"", ""latitude"": 55.45, ""longitude"": 37.52}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,13.08,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.06,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.44,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.92,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,18.67,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.22,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.27,

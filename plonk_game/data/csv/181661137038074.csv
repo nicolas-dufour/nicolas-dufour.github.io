@@ -1,0 +1,81 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-41.143190998769,-71.437785292743,0.0,AR,True,,,,,,,,"San Carlos de Bariloche, Departamento de Bariloche, Rio Negro, AR"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-41.1512,-71.4224,1.566,AR,True,,stop,0.0021525,1225,35,0,1.65,"```json
+{""country"": ""AR"", ""latitude"": -41.1512, ""longitude"": -71.4224}
+```"
+google/gemini-3.1-pro-preview,CoT,-41.1333,-71.3167,10.2,AR,True,,stop,0.006214,1307,300,217,12.08,"{
+  ""reasoning"": ""The combination of pine trees, yellow flowering bushes (likely gorse/retama), and mountainous terrain strongly suggests the Andean region of Patagonia, particularly around the Lake District in Argentina or Chile."",
+  ""country"": ""AR"",
+  ""latitude"": -41.1333,
+  ""longitude"": -71.3167
+}"
+google/gemini-3.1-pro-preview,no-CoT,-41.1333,-71.3103,10.733,AR,True,,stop,0.002872,1226,35,0,8.87,"```json
+{""country"": ""AR"", ""latitude"": -41.1333, ""longitude"": -71.3103}
+```"
+anthropic/claude-opus-4.8,CoT,-41.13,-71.31,10.802,AR,True,,stop,0.00717,949,97,0,4.3,"{""reasoning"": ""Forested Andean foothills with yellow flowering gorse (a common invasive) and dry roadside, suggesting Patagonian region of Argentina/Chile near Bariloche."", ""country"": ""AR"", ""latitude"": -41.13, ""longitude"": -71.31}"
+moonshotai/kimi-k2.6,no-CoT,-41.1367,-71.2924,12.196,AR,True,,stop,0.00035352,755,25,0,5.39,"{""country"": ""AR"", ""latitude"": -41.1367, ""longitude"": -71.2924}"
+anthropic/claude-opus-4.8,no-CoT,-41.1,-71.3,12.501,AR,True,,stop,0.00484,818,30,0,2.04,"{""country"": ""AR"", ""latitude"": -41.1, ""longitude"": -71.3}"
+google/gemini-3.5-flash,CoT (effort=medium),-40.9812,-71.4835,18.416,AR,True,,stop,0.0079005,1307,660,575,9.18,"```json
+{""reasoning"": ""The presence of yellow broom (retama) bushes, pine trees, and arid-mountainous terrain is highly characteristic of the Patagonian Andes region, particularly around San Carlos de Bariloche along Route 40."", ""country"": ""AR"", ""latitude"": -40.9812, ""longitude"": -71.4835}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-41.0532,-71.1845,23.465,AR,True,,stop,0.0039405,1307,220,151,3.28,"{""reasoning"": ""The landscape with pine trees, yellow flowering gorse bushes, and arid mountain terrain is highly characteristic of the Argentine Patagonia region, particularly near San Carlos de Bariloche."", ""country"": ""AR"", ""latitude"": -41.0532, ""longitude"": -71.1845}"
+google/gemini-3.5-flash,CoT (effort=high),-40.75,-71.65,47.214,AR,True,,stop,0.0100065,1307,894,820,7.82,"```json
+{""reasoning"": ""The presence of invasive yellow broom (retama) alongside conifers and the mountainous terrain strongly suggests the Patagonian Lake District in Argentina, specifically along Route 40 near Bariloche."", ""country"": ""AR"", ""latitude"": -40.75, ""longitude"": -71.65}
+```"
+google/gemma-4-31b-it,no-CoT,-41.2345,-72.1234,58.263,CL,True,,stop,6.692e-05,404,36,0,8.74,"```json
+{""country"": ""CL"", ""latitude"": -41.2345, ""longitude"": -72.1234}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-40.41444396972656,-71.60506439208984,82.248,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-40.37788772583008,-71.60889434814453,86.309,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-41.2,-72.5,89.132,CL,True,,stop,0.00835593,834,2289,2220,135.45,"{""reasoning"": ""Dense temperate rainforest with invasive yellow-flowering gorse, wooden utility poles with cross-arms, and a paved road with right-hand edge markings are characteristic of the Chilean Lake District in southern Chile."", ""country"": ""CL"", ""latitude"": -41.2, ""longitude"": -72.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-38.929161071777344,-71.66252899169922,246.931,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,-38.5,-71.5,293.957,CL,True,,stop,0.00023736,904,23,0,7.51,"{""country"": ""CL"", ""latitude"": -38.5, ""longitude"": -71.5}"
+google/gemma-4-31b-it,CoT,-46.5,-72.1,598.008,CL,True,,stop,0.00030087,489,612,547,11.89,"{""reasoning"": ""The right-hand traffic, temperate scrubland vegetation, and mountainous terrain are highly characteristic of the Southern Andes in Patagonia, specifically along the Carretera Austral in Chile."", ""country"": ""CL"", ""latitude"": -46.5, ""longitude"": -72.1}"
+xiaomi/mimo-v2.5,CoT,-32.97,27.81,8354.772,ZA,True,,stop,0.000943565,677,3116,3133,270.05,"```json
+{
+  ""reasoning"": ""The visual evidence points to South Africa, characterized by the deep blue sky, the specific type of scrubby vegetation and yellow flowering bushes (resembling coastal bushveld), and the sandy soil shoulder typical of rural roads in the Eastern Cape or KwaZulu-Natal. The road appears to be a well-maintained asphalt highway with white edge lines, and the terrain (hilly/mountainous with distinct ridges) matches the geography of the southern African coastal interior."",
+  ""country"": ""ZA"",
+  ""latitude"": -32.97,
+  ""longitude"": 27.81
+}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8465.221,,True,True,,,,,,19.35,
+qwen/qwen3.5-397b-a17b,CoT,-45.695,170.615,8566.067,NZ,True,,stop,0.0139026,665,3751,3626,105.82,"{
+""reasoning"": ""The presence of dense yellow gorse bushes alongside native-looking scrub and pine trees, combined with left-hand traffic (indicated by the vehicle position and white edge line on the right), strongly points to New Zealand. The crisp blue sky, specific light quality, and rolling green hills with a distinct peak in the background are characteristic of the Otago region, specifically State Highway 1 north of Dunedin."",
+""country"": ""NZ"",
+""latitude"": -45.695,
+""longitude"": 170.615
+}"
+mistralai/mistral-medium-3-5,no-CoT,-44.4,171.2,8639.751,NZ,True,,stop,0.001374,786,26,0,1.42,"{""country"": ""NZ"", ""latitude"": -44.4, ""longitude"": 171.2}"
+mistralai/mistral-small-2603,CoT,-44.5,171.0,8642.495,NZ,True,,stop,0.0004914,868,602,657,5.3,"{""reasoning"": ""Left-hand traffic, mountainous temperate forest terrain, and road design strongly indicate New Zealand's South Island."", ""country"": ""NZ"", ""latitude"": -44.5, ""longitude"": 171.0}"
+minimax/minimax-m3,CoT,-42.15,173.35,8700.619,NZ,True,,stop,0.00081666,943,496,412,24.2,"{""reasoning"": ""The presence of gorse (yellow-flowering shrubs), the dry mountainous terrain with rocky outcrops, the road style with solid white edge line and gravel shoulder, and the overall vegetation pattern strongly suggest the South Island of New Zealand, likely in the Marlborough or Canterbury region."", ""country"": ""NZ"", ""latitude"": -42.15, ""longitude"": 173.35}"
+mistralai/mistral-medium-3-5,CoT,-43.5,171.0,8723.787,NZ,True,,stop,0.022332,868,2804,2851,27.19,"{""reasoning"": ""Left-hand traffic implied by road markings, gorse vegetation, and mountainous terrain typical of New Zealand's South Island high country"", ""country"": ""NZ"", ""latitude"": -43.5, ""longitude"": 171.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,-43.5879,170.1418,8763.521,NZ,True,,stop,0.0004662,585,32,0,2.48,"{""country"": ""NZ"", ""latitude"": -43.5879, ""longitude"": 170.1418}"
+xiaomi/mimo-v2.5,no-CoT,34.15,-118.55,9658.267,US,True,,stop,9.62976e-05,820,28,0,2.08,"{""country"": ""US"", ""latitude"": 34.15, ""longitude"": -118.55}"
+qwen/qwen3.5-27b,no-CoT,37.8651,-119.5383,10050.966,US,True,,stop,0.00022707,585,32,0,8.91,"{""country"": ""US"", ""latitude"": 37.8651, ""longitude"": -119.5383}"
+qwen/qwen3.5-9b,no-CoT,37.8651,-119.5383,10050.966,US,True,,stop,6.34e-05,586,32,0,5.29,"{""country"": ""US"", ""latitude"": 37.8651, ""longitude"": -119.5383}"
+x-ai/grok-4.3,CoT,40.25,-7.8,11095.197,PT,True,,stop,0.0021965,788,619,557,8.75,"{""reasoning"": ""Mediterranean scrub with yellow-flowering broom/gorse, pine-covered hills, and right-side white edge line on asphalt road point to southern Europe (right-hand traffic)."", ""country"": ""PT"", ""latitude"": 40.25, ""longitude"": -7.8}"
+qwen/qwen3.6-35b-a3b,no-CoT,37.12,-3.55,11102.542,ES,True,,stop,0.00011375,585,26,0,2.44,"{""country"": ""ES"", ""latitude"": 37.12, ""longitude"": -3.55}"
+google/gemma-4-26b-a4b-it,CoT,37.3891,-3.7038,11114.044,ES,True,,stop,0.00056868,489,1275,1194,18.9,"{""reasoning"": ""The Mediterranean-style scrubland vegetation with yellow flowers and the hilly terrain suggest a Mediterranean climate, most likely in Southern Europe."", ""country"": ""ES"", ""latitude"": 37.3891, ""longitude"": -3.7038}"
+mistralai/mistral-small-2603,no-CoT,48.4567,-122.3518,11144.814,US,True,,stop,0.0001371,786,32,0,1.61,"{""country"": ""US"", ""latitude"": 48.4567, ""longitude"": -122.3518}"
+qwen/qwen3.5-35b-a3b,no-CoT,37.2512,-3.0145,11146.493,ES,True,,stop,0.00018255,585,30,0,8.27,"{""country"": ""ES"", ""latitude"": 37.2512, ""longitude"": -3.0145}"
+x-ai/grok-4.3,no-CoT,42.85,-8.55,11263.376,ES,True,,stop,0.0008678,704,22,0,0.89,"{""country"": ""ES"", ""latitude"": 42.85, ""longitude"": -8.55}"
+qwen/qwen3.5-122b-a10b,CoT,42.12,-6.18,11339.111,ES,True,,stop,0.0127569,665,6050,5941,46.94,"{""reasoning"": ""The light grey road surface (likely concrete or light aggregate), solid white edge line, and vegetation mix of maritime pines and bright yellow gorse are highly characteristic of rural roads in northern Spain, particularly the Castile and León region. The mountainous terrain and dry, scrubby landscape further support a location in the Iberian Peninsula, likely near the El Bierzo area."", ""country"": ""ES"", ""latitude"": 42.12, ""longitude"": -6.18}"
+qwen/qwen3.6-27b,CoT,40.87,-3.95,11371.679,ES,True,,stop,0.0080427,665,3936,1,163.1,"{""reasoning"": ""The landscape features characteristic Mediterranean scrub (maquis) with bright yellow *Genista* (broom) bushes and pine trees, typical of the Sierra de Guadarrama mountains near Madrid, Spain. The road is a narrow, winding rural asphalt road with a solid white edge line, consistent with Spanish rural infrastructure."", ""country"": ""ES"", ""latitude"": 40.87, ""longitude"": -3.95}"
+qwen/qwen3.5-122b-a10b,no-CoT,42.3156,-0.8923,11666.581,ES,True,,stop,0.00023114,585,38,0,2.7,"{
+  ""country"": ""ES"",
+  ""latitude"": 42.3156,
+  ""longitude"": -0.8923
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.409732818603516,1.7633167505264282,11762.268,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,42.7539,0.3781,11776.357,ES,True,,stop,0.0002355,585,30,0,9.11,"{""country"": ""ES"", ""latitude"": 42.7539, ""longitude"": 0.3781}"
+qwen/qwen3.6-35b-a3b,CoT,42.85,0.55,11793.933,FR,True,,stop,0.12671614475,665,131167,131071,560.36,"{
+  ""reasoning"": ""The landscape features bright yellow gorse bushes and dense green scrub typical of the Mediterranean maquis, combined with rugged, rocky mountains in the background. The road style and vegetation strongly suggest a location in the Pyrenees or Corsica, France."",
+  ""country"": ""FR"",
+  ""latitude"": 42.85,
+  ""longitude"": 0.55
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,39.997962951660156,9.512960433959961,12164.737,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,40.74274444580078,9.311256408691406,12202.129,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,35.3712,23.9098,12896.646,GR,True,,stop,0.015265,755,383,302,10.56,"{""reasoning"":""Mediterranean scrub/olive vegetation with limestone mountains and a narrow unmarked rural asphalt road with white edge line strongly suggests rural Greece, likely Crete. The dry rocky shoulder, maquis shrubs, and pine-covered hills fit the mountainous interior of western Crete."",""country"":""GR"",""latitude"":35.3712,""longitude"":23.9098}"
+openai/gpt-5.5,no-CoT,37.8921,22.8907,12973.798,GR,True,,stop,0.00408,678,23,0,1.46,"{""country"":""GR"",""latitude"":37.8921,""longitude"":22.8907}"

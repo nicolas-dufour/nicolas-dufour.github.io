@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,43.210302557654,51.56384931039,0.0,KZ,True,,,,,,,,"Kuryk, None, Mangghystau, KZ"
+google/gemini-3.5-flash,CoT (effort=medium),43.182,51.685,10.313,KZ,True,,stop,0.0151905,1271,1476,1383,11.16,"```json
+{""reasoning"": ""The landscape, vegetation, and soil are characteristic of the desert regions of western Kazakhstan (Mangystau). The truck's license plate duplicate format and the industrial port facilities on the horizon suggest a location near the Caspian Sea coast, likely near the port of Kuryk."", ""country"": ""KZ"", ""latitude"": 43.182, ""longitude"": 51.685}
+```"
+google/gemini-3.5-flash,CoT (effort=high),43.585,51.255,48.565,KZ,True,,stop,0.0211755,1271,2141,2059,19.42,"{""reasoning"": ""The arid, sandy desert landscape, CIS-style black-and-white striped posts, and the truck with a Kazakhstan registration plate (region 12 for Mangystau) point to the vicinity of Aktau near the Caspian Sea coast."", ""country"": ""KZ"", ""latitude"": 43.585, ""longitude"": 51.255}"
+anthropic/claude-opus-4.8,CoT,43.65,51.2,57.041,KZ,True,,stop,0.00671,797,109,0,9.71,"{""reasoning"": ""Flat arid steppe/desert with railway crossing St. Andrew's cross, sparse vegetation, and an industrial horizon resembles western Kazakhstan; truck plate style fits Kazakhstan."", ""country"": ""KZ"", ""latitude"": 43.65, ""longitude"": 51.2}"
+google/gemini-3.5-flash,CoT (effort=low),43.6812,51.2654,57.639,KZ,True,,stop,0.0057945,1271,432,345,12.07,"{""reasoning"": ""The flat, arid desert landscape, solar-powered street light, and the truck's license plate format with region code 14 (Pavlodar) or similar Kazakh styling suggest western or southwestern Kazakhstan, likely near the industrial port area of Aktau."", ""country"": ""KZ"", ""latitude"": 43.6812, ""longitude"": 51.2654}"
+openai/gpt-5.5,CoT,43.6578,51.1976,57.884,KZ,True,,stop,0.018225,621,504,431,26.6,"{""reasoning"":""Former-Soviet red-white railway crossbuck and right-side driving cues fit Kazakhstan, while the barren Caspian steppe/desert landscape with distant industrial cranes strongly suggests the Aktau/Mangystau industrial outskirts."",""country"":""KZ"",""latitude"":43.6578,""longitude"":51.1976}"
+anthropic/claude-opus-4.8,no-CoT,43.65,51.16,58.77,KZ,True,,stop,0.004105,666,31,0,2.11,"{""country"": ""KZ"", ""latitude"": 43.65, ""longitude"": 51.16}"
+x-ai/grok-4.3,no-CoT,43.65,51.15,59.222,KZ,True,,stop,0.0005934,592,22,0,0.81,"{""country"": ""KZ"", ""latitude"": 43.65, ""longitude"": 51.15}"
+xiaomi/mimo-v2.5,no-CoT,43.65,51.15,59.222,KZ,True,,stop,8.06176e-05,708,28,0,1.74,"{""country"": ""KZ"", ""latitude"": 43.65, ""longitude"": 51.15}"
+openai/gpt-5.5,no-CoT,43.6775,51.1836,60.342,KZ,True,,stop,0.00344,544,24,0,2.99,"{""country"":""KZ"",""latitude"":43.6775,""longitude"":51.1836}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.685214,51.148632,62.548,KZ,True,,stop,0.002136,1190,39,0,1.19,"```json
+{""country"": ""KZ"", ""latitude"": 43.685214, ""longitude"": 51.148632}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,40.0061149597168,51.852230072021484,357.095,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,46.9,51.9,411.123,KZ,True,,stop,0.005776,1190,283,254,4.46,"```json
+{""country"": ""KZ"", ""latitude"": 46.9, ""longitude"": 51.9}
+```"
+google/gemini-3.1-pro-preview,CoT,47.112,51.935,434.822,KZ,True,,stop,0.006348,1272,317,206,5.19,"{
+  ""reasoning"": ""The flat, arid steppe landscape, black-and-white painted bollards, and red-and-white railway crossing sign are characteristic of post-Soviet countries. The truck's license plate with a blue vertical band on the left suggests Kazakhstan, likely in the western oil-producing region near Atyrau given the distant industrial infrastructure."",
+  ""country"": ""KZ"",
+  ""latitude"": 47.112,
+  ""longitude"": 51.935
+}"
+minimax/minimax-m3,no-CoT,47.5,52.0,478.206,KZ,True,,stop,0.00043842,767,222,254,4.81,"{""country"": ""KZ"", ""latitude"": 47.5, ""longitude"": 52.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,43.79762649536133,58.936676025390625,598.011,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,43.80895233154297,59.15227508544922,615.358,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,46.35,59.65,726.961,KZ,True,,stop,0.00108822,845,744,776,20.81,"{""reasoning"": ""The license plate format with '92' region code, flat arid steppe landscape with salt deposits, St. Andrew's railway crossing, distant oil/gas industrial infrastructure, and unpaved desert road are characteristic of western Kazakhstan's Aral Sea / Caspian Depression region."", ""country"": ""KZ"", ""latitude"": 46.35, ""longitude"": 59.65}{""reasoning"": ""The license plate format with '92' region code, flat arid steppe landscape with salt deposits, St. Andrew's railway crossing, distant oil/gas industrial infrastructure, and unpaved desert road are characteristic of western Kazakhstan's Aral Sea / Caspian Depression region."", ""country"": ""KZ"", ""latitude"": 46.35, ""longitude"": 59.65}"
+x-ai/grok-4.3,CoT,47.85,64.15,1105.999,KZ,True,,stop,0.003299,676,1116,1044,13.96,"{""reasoning"": ""Red-and-white crossbuck, right-side driving, yellow truck plate, and high-voltage lines in flat arid scrubland point to a post-Soviet Central Asian republic; no other region matches all signage/vehicle/terrain cues simultaneously."", ""country"": ""KZ"", ""latitude"": 47.85, ""longitude"": 64.15}"
+google/gemma-4-31b-it,no-CoT,43.2222,66.9167,1242.383,KZ,True,,stop,7.124e-05,406,36,0,6.21,"```json
+{""country"": ""KZ"", ""latitude"": 43.2222, ""longitude"": 66.9167}
+```"
+moonshotai/kimi-k2.6,no-CoT,44.5,68.0,1323.393,KZ,True,,stop,0.000289872,603,24,0,25.13,"{""country"": ""KZ"", ""latitude"": 44.5, ""longitude"": 68.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.97233963012695,68.0528335571289,1328.436,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.952293395996094,68.42628479003906,1358.39,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,43.575462341308594,69.21684265136719,1424.273,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,48.0,70.0,1525.286,KZ,True,,stop,0.029263428,682,8489,8413,572.66,"{""reasoning"": ""The truck's license plate shows a blue band with a yellow emblem resembling the Kazakh flag, while the flat arid steppe and classic post-Soviet black-and-white striped railroad bollards are hallmarks of rural Kazakhstan."", ""country"": ""KZ"", ""latitude"": 48.0, ""longitude"": 70.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,27.6079,46.0158,1805.189,SA,True,,stop,0.00018772,474,31,0,4.25,"{""country"": ""SA"", ""latitude"": 27.6079, ""longitude"": 46.0158}"
+qwen/qwen3.5-397b-a17b,CoT,25.4521,49.1234,1987.052,SA,True,,stop,0.0139386,553,3793,3706,34.73,"{""reasoning"": ""The white license plate with a blue strip on the right side is characteristic of Saudi Arabia, and the arid, flat desert terrain with black-and-white striped bollards and solar-powered light poles is typical of Saudi infrastructure in the Eastern Province."", ""country"": ""SA"", ""latitude"": 25.4521, ""longitude"": 49.1234}"
+mistralai/mistral-medium-3-5,no-CoT,43.25,76.9,2044.759,KZ,True,,stop,0.0011535,634,27,0,7.1,"{""country"": ""KZ"", ""latitude"": 43.25, ""longitude"": 76.9}"
+qwen/qwen3.5-35b-a3b,no-CoT,43.2156,77.5892,2100.521,KZ,True,,stop,0.00010295,473,32,0,7.82,"{""country"": ""KZ"", ""latitude"": 43.2156, ""longitude"": 77.5892}"
+mistralai/mistral-small-2603,no-CoT,64.5442,40.5453,2471.383,RU,True,,stop,0.0001143,634,32,0,3.95,"{""country"": ""RU"", ""latitude"": 64.5442, ""longitude"": 40.5453}"
+qwen/qwen3.6-35b-a3b,no-CoT,45.58,84.95,2646.372,CN,True,,stop,0.00306144345,471,3093,3066,13.33,"{""country"": ""CN"", ""latitude"": 45.58, ""longitude"": 84.95}"
+xiaomi/mimo-v2.5,CoT,42.9513,93.3432,3357.287,CN,True,,stop,0.0001440376,787,215,116,6.4,"```json
+{""reasoning"": ""The landscape is flat and arid, resembling the Gobi Desert, and the railway crossing sign is a distinctive X-shape used in China. The truck has a yellow license plate typical of large vehicles in China, and the solar-powered streetlights are common along highways in this region."", ""country"": ""CN"", ""latitude"": 42.9513, ""longitude"": 93.3432}
+```"
+qwen/qwen3.5-9b,no-CoT,39.6,116.0,5254.282,CN,True,,stop,8.841e-05,473,32,0,3.77,"{""country"": ""CN"", ""latitude"": 39.6000, ""longitude"": 116.0000}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7011.781,,True,True,,,,,,12.55,
+qwen/qwen3.5-397b-a17b,no-CoT,34.7219,-117.3512,11276.694,US,True,,stop,0.00029445,473,32,0,10.95,"{""country"": ""US"", ""latitude"": 34.7219, ""longitude"": -117.3512}"
+qwen/qwen3.6-27b,no-CoT,-27.3668,-70.3323,14572.322,CL,True,,stop,0.0002414,474,31,0,20.26,"{""country"": ""CL"", ""latitude"": -27.3668, ""longitude"": -70.3323}"
+qwen/qwen3.5-27b,no-CoT,-27.15,-70.82,14598.039,CL,True,,stop,0.000134355,473,27,0,3.32,"{""country"": ""CL"", ""latitude"": -27.15, ""longitude"": -70.82}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.09,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.24,

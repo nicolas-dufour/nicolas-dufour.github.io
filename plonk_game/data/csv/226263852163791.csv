@@ -1,0 +1,75 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-11.542608923231,-41.177336469576,0.0,BR,True,,,,,,,,"Morro do Chapeu, Morro Do Chapeu, Bahia, BR"
+google/gemini-3.5-flash,CoT (effort=medium),-11.6542,-40.7125,52.13,BR,True,,stop,0.0062355,1307,475,406,10.96,"{""reasoning"": ""The double yellow center lines, concrete utility poles with diagonal metal street light arms, reddish soil, and dry Caatinga-like vegetation are highly characteristic of northeastern Brazil."", ""country"": ""BR"", ""latitude"": -11.6542, ""longitude"": -40.7125}"
+google/gemma-4-31b-it,no-CoT,-12.5,-41.2,106.486,BR,True,,stop,6.452e-05,404,30,0,2.84,"```json
+{""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -41.2}
+```"
+google/gemini-3.1-pro-preview,CoT,-12.054,-40.123,128.075,BR,True,,stop,0.005148,1308,211,134,26.58,"{
+  ""reasoning"": ""The double yellow lines, reddish soil, and style of the streetlights and road signs strongly indicate Brazil. The arid landscape and vegetation suggest the Northeast region, likely Bahia."",
+  ""country"": ""BR"",
+  ""latitude"": -12.054,
+  ""longitude"": -40.123
+}"
+google/gemini-3.5-flash,CoT (effort=high),-10.5,-39.5,216.69,BR,True,,stop,0.0117345,1307,1086,1026,9.95,"{""reasoning"": ""The double yellow center lines, red soil, dry Caatinga-like vegetation, and characteristic concrete utility poles with curved streetlight arms strongly indicate northeastern Brazil."", ""country"": ""BR"", ""latitude"": -10.5, ""longitude"": -39.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-8.82875919342041,-40.270751953125,317.656,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-8.3542,-39.2145,414.604,BR,True,,stop,0.004302,1308,260,190,10.18,"{""reasoning"": ""The double yellow center lines, concrete utility poles with curved metal arms, reddish soil, and dry, scrubby vegetation are highly characteristic of the semi-arid Northeast region of Brazil."", ""country"": ""BR"", ""latitude"": -8.3542, ""longitude"": -39.2145}"
+minimax/minimax-m3,CoT,-11.5,-45.0,416.52,BR,True,,stop,0.00077466,995,448,368,18.11,"{""reasoning"": ""Yellow center line with right-hand driving, vivid red latosol soil, sparse cerrado vegetation, and Brazilian-style highway infrastructure (streetlights, yellow signage) all point to a federal highway in the Brazilian interior, most likely western Bahia or northern Goiás."", ""country"": ""BR"", ""latitude"": -11.5, ""longitude"": -45.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-8.0745,-39.1182,446.768,BR,True,,stop,0.002145,1226,34,0,8.04,"```json
+{""country"": ""BR"", ""latitude"": -8.0745, ""longitude"": -39.1182}
+```"
+minimax/minimax-m3,no-CoT,-10.9111,-37.0717,453.256,BR,True,,stop,0.00023976,904,25,0,5.7,"{""country"": ""BR"", ""latitude"": -10.9111, ""longitude"": -37.0717}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-6.3975090980529785,-38.93329620361328,622.908,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-6.409658432006836,-38.667545318603516,633.796,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,-16.7234,-43.8567,644.413,BR,True,,stop,0.004478,1225,169,134,10.93,"```json
+{""country"": ""BR"", ""latitude"": -16.7234, ""longitude"": -43.8567}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-16.729393005371094,-45.06196212768555,712.699,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-16.880897521972656,-45.11433792114258,729.579,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-15.5,-47.8,840.248,BR,True,,stop,0.01246839,834,3495,3437,200.3,"{""reasoning"": ""Red lateritic soil and scrubby cerrado vegetation are characteristic of central Brazil, combined with right-hand traffic and typical Brazilian dashboard sun-protection cloth."", ""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -47.8}"
+moonshotai/kimi-k2.6,no-CoT,-15.8,-47.9,866.815,BR,True,,stop,0.00080925,755,23,0,2.23," {""country"": ""BR"", ""latitude"": -15.8, ""longitude"": -47.9}"
+mistralai/mistral-medium-3-5,no-CoT,-15.8267,-47.9218,870.373,BR,True,,stop,0.0014115,786,31,0,1.22,"{""country"": ""BR"", ""latitude"": -15.8267, ""longitude"": -47.9218}"
+openai/gpt-5.5,no-CoT,-15.947,-47.903,875.917,BR,True,,stop,0.00408,678,23,0,2.46,"{""country"":""BR"",""latitude"":-15.947,""longitude"":-47.903}"
+openai/gpt-5.5,CoT,-15.9436,-48.1032,893.717,BR,True,,stop,0.016285,755,417,333,17.19,"{""reasoning"":""Right-hand traffic with Brazilian-style double yellow centerlines, unpaved red-soil shoulders, and Portuguese-looking yellow roadside signage point to rural/industrial central Brazil. The flat cerrado-like agricultural landscape and red lateritic soil are typical around the Brasília/Goiás region."",""country"":""BR"",""latitude"":-15.9436,""longitude"":-48.1032}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-20.21519660949707,-46.45956802368164,1117.298,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-19.05,-65.26,2711.106,BO,True,,stop,0.00717,949,97,0,3.4,"{""reasoning"": ""Arid high-desert terrain with sparse dry vegetation, right-side driving, yellow road signage, and concrete walls suggest Andean Bolivia/Peru highlands."", ""country"": ""BO"", ""latitude"": -19.05, ""longitude"": -65.26}"
+qwen/qwen3.5-35b-a3b,no-CoT,-34.6037,-58.4815,3104.77,AR,True,,stop,0.00011804,586,36,0,3.98,"```json
+{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.4815}
+```"
+qwen/qwen3.5-9b,no-CoT,-31.3333,-64.1833,3227.885,AR,True,,stop,6.325e-05,586,31,0,4.5,"{""country"": ""AR"", ""latitude"": -31.3333, ""longitude"": -64.1833}"
+anthropic/claude-opus-4.8,no-CoT,-45.864,-67.498,4554.68,AR,True,,stop,0.00484,818,30,0,2.37,"{""country"": ""AR"", ""latitude"": -45.864, ""longitude"": -67.498}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4724.124,,True,True,,,,,,22.74,
+qwen/qwen3.6-35b-a3b,no-CoT,-33.9249,18.4241,6500.728,ZA,True,,stop,0.00012422475,585,31,0,7.93,"{""country"": ""ZA"", ""latitude"": -33.9249, ""longitude"": 18.4241}"
+xiaomi/mimo-v2.5,no-CoT,-33.9249,18.4241,6500.728,ZA,True,,stop,9.71376e-05,820,31,0,2.69,"{""country"": ""ZA"", ""latitude"": -33.9249, ""longitude"": 18.4241}"
+x-ai/grok-4.3,no-CoT,-33.85,18.65,6520.34,ZA,True,,stop,0.0008678,704,22,0,0.89,"{""country"": ""ZA"", ""latitude"": -33.85, ""longitude"": 18.65}"
+qwen/qwen3.5-397b-a17b,no-CoT,-29.1053,26.2167,7201.122,ZA,True,,stop,0.00030069,585,31,0,13.02,"{""country"": ""ZA"", ""latitude"": -29.1053, ""longitude"": 26.2167}"
+qwen/qwen3.5-122b-a10b,no-CoT,-29.0852,26.2945,7208.661,ZA,True,,stop,0.00021684,586,31,0,12.27,"{""country"": ""ZA"", ""latitude"": -29.0852, ""longitude"": 26.2945}"
+qwen/qwen3.5-397b-a17b,CoT,20.0845,-98.8512,7222.54,MX,True,,stop,0.011842075,665,4729,4325,354.91,"{
+""reasoning"": ""The image shows right-hand traffic with double yellow center lines and distinctive rectangular yellow warning signs (likely 'Zona de Niebla' or similar), which are standard in Mexico. The reddish volcanic soil, dry scrub vegetation, and concrete utility poles with cobra-head streetlights are characteristic of the Mexican Altiplano, specifically the state of Hidalgo near Pachuca."",
+""country"": ""MX"",
+""latitude"": 20.0845,
+""longitude"": -98.8512
+}"
+qwen/qwen3.5-27b,no-CoT,-29.1111,27.4833,7324.175,ZA,True,,stop,0.0002345,586,44,0,3.0,"```json
+{
+  ""country"": ""ZA"",
+  ""latitude"": -29.1111,
+  ""longitude"": 27.4833
+}
+```"
+qwen/qwen3.6-27b,no-CoT,-26.1858,28.1426,7394.143,ZA,True,,stop,0.0002279,585,31,0,9.23,"{""country"": ""ZA"", ""latitude"": -26.1858, ""longitude"": 28.1426}"
+x-ai/grok-4.3,CoT,29.12,-111.05,8743.162,MX,True,,stop,0.004579,788,1572,1479,15.23,"{""reasoning"": ""Right-hand traffic (oncoming vehicle left of double yellow centerline), arid red-soil landscape with low scrub, wooden/metal utility poles, and yellow warning signage match rural highways in northern Mexico or the southwestern US. Exact point placed on MX-45D near Hermosillo given matching terrain, road markings, and pole style."", ""country"": ""MX"", ""latitude"": 29.12, ""longitude"": -111.05}"
+mistralai/mistral-small-2603,no-CoT,36.1699,-115.1398,9366.697,US,True,,stop,0.000171375,786,32,0,2.53,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.6-35b-a3b,CoT,39.5296,-119.8138,9870.296,US,True,,stop,0.00681858125,665,6953,6838,58.19,"```json
+{
+  ""reasoning"": ""The image shows a two-lane highway with double yellow lines, indicating right-hand traffic typical of the US. The landscape is arid high desert with sagebrush, and the concrete utility poles are characteristic of Nevada (NV Energy). The road markings and sign styles (yellow warning sign) are standard US MUTCD."",
+  ""country"": ""US"",
+  ""latitude"": 39.5296,
+  ""longitude"": -119.8138
+}
+```"
+xiaomi/mimo-v2.5,CoT,-25.0,133.0,15902.965,AU,True,,stop,0.0005489176,899,1605,1537,17.0,"{""reasoning"": ""Left-hand traffic with double yellow lines and an arid, reddish-soil landscape are characteristic of rural Australia. The yellow road sign and sparse vegetation further support this conclusion."", ""country"": ""AU"", ""latitude"": -25.0, ""longitude"": 133.0}"
+mistralai/mistral-small-2603,CoT,-19.85,133.5,16476.086,AU,True,,stop,0.0006402,868,850,959,13.27,"{""reasoning"": ""Left-hand traffic, dry grassland vegetation, and highway infrastructure consistent with Stuart Highway in Northern Territory, Australia."", ""country"": ""AU"", ""latitude"": -19.85, ""longitude"": 133.5}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.18,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.19,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.18,

@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-33.283683139915,18.681864672709,0.0,ZA,True,,,,,,,,"Moorreesburg, West Coast District Municipality, Western Cape, ZA"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-33.22789764404297,20.443029403686523,163.877,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-32.99482345581055,20.621017456054688,183.383,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-36.23984146118164,13.476064682006836,577.948,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,-29.1215,25.1427,768.983,ZA,True,,stop,0.00344,544,24,0,7.91,"{""country"":""ZA"",""latitude"":-29.1215,""longitude"":25.1427}"
+google/gemini-3.5-flash,CoT (effort=low),-28.4532,25.8411,868.721,ZA,True,,stop,0.0050025,1271,344,264,12.09,"{""reasoning"": ""The road has yellow outer edge lines and a white dashed center line with left-hand traffic, characteristic of South Africa. The flat, dry agricultural landscape with a row of planted trees suggests the Free State or Northern Cape region."", ""country"": ""ZA"", ""latitude"": -28.4532, ""longitude"": 25.8411}"
+minimax/minimax-m3,CoT,-28.65,26.42,899.435,ZA,True,,stop,0.00064026,843,374,298,19.09,"{""reasoning"": ""Right-hand driving with yellow center line, vast flat golden grassland with distant planted tree line as windbreaks, wooden pole power lines, and clear high-altitude sky are highly characteristic of the South African Highveld/Free State plains."", ""country"": ""ZA"", ""latitude"": -28.65, ""longitude"": 26.42}"
+google/gemini-3.5-flash,CoT (effort=high),-28.15,26.15,913.585,ZA,True,,stop,0.0076215,1271,635,568,5.08,"{""reasoning"": ""The road features yellow outer shoulder lines and a white dashed center line with left-hand traffic, characteristic of South Africa. The flat, dry agricultural landscape suggests the Free State province."", ""country"": ""ZA"", ""latitude"": -28.15, ""longitude"": 26.15}"
+anthropic/claude-opus-4.8,no-CoT,-28.5,26.5,915.737,ZA,True,,stop,0.004105,666,31,0,2.15,"{""country"": ""ZA"", ""latitude"": -28.5, ""longitude"": 26.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-28.2345,26.3456,922.248,ZA,True,,stop,0.0021,1190,35,0,7.5,"```json
+{""country"": ""ZA"", ""latitude"": -28.2345, ""longitude"": 26.3456}
+```"
+openai/gpt-5.5,CoT,-28.7354,26.7832,922.482,ZA,True,,stop,0.011715,621,287,202,8.89,"{""reasoning"":""Left-side driving with South African-style yellow shoulder line and white center markings, plus vast flat dry farmland and fenced verges typical of the Free State/Northern Cape interior. The open treeless plains and road infrastructure point most likely to rural South Africa near the Free State agricultural belt."",""country"":""ZA"",""latitude"":-28.7354,""longitude"":26.7832}"
+anthropic/claude-opus-4.8,CoT,-28.5,26.7,931.318,ZA,True,,stop,0.006035,797,82,0,9.81,"{""reasoning"": ""Flat dry grassland highveld with yellow line markings, left-side driving, and open farmland fences typical of South African Free State plains."", ""country"": ""ZA"", ""latitude"": -28.5, ""longitude"": 26.7}"
+moonshotai/kimi-k2.6,CoT,-27.76,26.18,944.505,ZA,True,,stop,0.013541328,682,3893,3827,100.65,"{""reasoning"": ""Flat dry grassland with wire fences, yellow center line and white edge markings indicating left-hand traffic, and intense blue Highveld sky are characteristic of South Africa's Free State province."", ""country"": ""ZA"", ""latitude"": -27.76, ""longitude"": 26.18}"
+google/gemini-3.1-pro-preview,CoT,-28.0,26.5,950.563,ZA,True,,stop,0.005664,1272,260,185,21.33,"{
+  ""reasoning"": ""The yellow edge line on the left side of the road combined with driving on the left is highly characteristic of South Africa. The flat, dry agricultural landscape suggests the Free State province."",
+  ""country"": ""ZA"",
+  ""latitude"": -28.0,
+  ""longitude"": 26.5
+}"
+google/gemini-3.5-flash,CoT (effort=medium),-27.6241,26.2514,959.908,ZA,True,,stop,0.0067665,1271,540,464,10.85,"{""reasoning"": ""The road features yellow outer shoulder lines and a dashed white center line while driving on the left, which is characteristic of South Africa. The flat, dry agricultural landscape suggests the Free State or North West province."", ""country"": ""ZA"", ""latitude"": -27.6241, ""longitude"": 26.2514}"
+google/gemini-3.1-pro-preview,no-CoT,-27.5,26.5,987.279,ZA,True,,stop,0.004214,1189,153,124,3.92,"```json
+{""country"": ""ZA"", ""latitude"": -27.5, ""longitude"": 26.5}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-28.650814056396484,28.71312713623047,1085.583,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,-26.5,27.5,1135.605,ZA,True,,stop,0.00051219,602,23,0,9.01,"{""country"": ""ZA"", ""latitude"": -26.5, ""longitude"": 27.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-28.919200897216797,29.631916046142578,1149.123,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-28.79507827758789,29.625835418701172,1155.087,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4184.806,,True,True,,,,,,0.76,
+google/gemma-4-31b-it,no-CoT,-34.6037,-58.3816,6921.304,AR,True,,stop,6.718e-05,406,36,0,3.63,"```json
+{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}
+```"
+xiaomi/mimo-v2.5,CoT,38.5,-99.5,14520.611,US,True,,stop,0.0003921176,787,1101,1035,18.66,"{""reasoning"": ""The right-hand traffic with yellow center line and white edge lines is typical of the United States. The flat, open agricultural landscape with dry grass suggests the Great Plains region."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -99.5}"
+mistralai/mistral-medium-3-5,no-CoT,37.0,-100.0,14521.378,US,True,,stop,0.001146,634,26,0,3.08,"{""country"": ""US"", ""latitude"": 37.0, ""longitude"": -100.0}"
+minimax/minimax-m3,no-CoT,34.05,-101.3,14544.141,US,True,,stop,0.00038682,767,179,185,4.96,"{""country"": ""US"", ""latitude"": 34.05, ""longitude"": -101.3}"
+qwen/qwen3.5-122b-a10b,no-CoT,34.4071,-102.5482,14665.454,US,True,,stop,0.0001898,474,32,0,13.47,"{""country"": ""US"", ""latitude"": 34.4071, ""longitude"": -102.5482}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.2567,-100.5432,14674.217,US,True,,stop,0.00010295,473,32,0,2.6,"{""country"": ""US"", ""latitude"": 41.2567, ""longitude"": -100.5432}"
+xiaomi/mimo-v2.5,no-CoT,39.5,-101.5,14714.14,US,True,,stop,8.00576e-05,708,26,0,1.42,"{""country"": ""US"", ""latitude"": 39.5, ""longitude"": -101.5}"
+x-ai/grok-4.3,CoT,38.2,-102.1,14733.239,US,True,,stop,0.002174,676,666,599,6.15,"{""reasoning"": ""US-style double yellow center line + white edge lines, right-hand traffic road, vast flat shortgrass prairie with distant windbreak trees and utility poles indicate Great Plains (Kansas/Colorado border region)."", ""country"": ""US"", ""latitude"": 38.2, ""longitude"": -102.1}"
+qwen/qwen3.6-27b,no-CoT,46.8772,-100.4459,14760.284,US,True,,stop,0.0001963,473,32,0,10.17,"{""country"": ""US"", ""latitude"": 46.8772, ""longitude"": -100.4459}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.0,-104.0,14934.62,US,True,,stop,0.00034668,473,26,0,9.1,"{""country"": ""US"", ""latitude"": 40.0, ""longitude"": -104.0}"
+qwen/qwen3.5-35b-a3b,no-CoT,43.076069,-103.453493,14944.111,US,True,,stop,0.00010236,474,36,0,3.22,"{""country"": ""US"", ""latitude"": 43.076069, ""longitude"": -103.453493}"
+qwen/qwen3.5-27b,no-CoT,41.1456,-104.8019,15022.886,US,True,,stop,0.000142155,473,32,0,12.46,"{""country"": ""US"", ""latitude"": 41.1456, ""longitude"": -104.8019}"
+mistralai/mistral-small-2603,no-CoT,40.7128,-111.891,15607.543,US,True,,stop,0.0001143,634,32,0,8.79,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -111.8910}"
+qwen/qwen3.5-9b,no-CoT,41.8781,-111.9643,15624.471,US,True,,stop,5.22e-05,474,32,0,5.25,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -111.9643}"
+x-ai/grok-4.3,no-CoT,36.7783,-119.4179,16210.592,US,True,,stop,0.0005984,592,24,0,0.91,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.45,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.27,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.48,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.24,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.39,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.22,

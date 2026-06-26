@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>PLONK GeoGuessr — you vs. the AIs</title>
+    <meta
+      name="description"
+      content="Guess where a street-view photo was taken and see how you stack up against ~40 AI models (VLMs + PLONK). Scored with the GeoGuessr-style GeoScore."
+    />
+
+    <!-- icons -->
+    <link rel="icon" type="image/svg+xml" href="static/favicon.svg" />
+    <link rel="apple-touch-icon" href="static/icon-180.png" />
+    <meta name="theme-color" content="#0d1426" />
+
+    <!-- social share preview (Open Graph + Twitter). Absolute URLs target the
+         canonical deployment; if you host elsewhere, update these. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PLONK GeoGuessr" />
+    <meta property="og:url" content="https://nicolas-dufour.github.io/plonk_game/" />
+    <meta property="og:title" content="PLONK GeoGuessr — can you out-guess the AIs?" />
+    <meta
+      property="og:description"
+      content="Drop a pin where a street-view photo was taken, then see how you stack up against ~40 AI geolocators. Scored with the GeoGuessr-style GeoScore."
+    />
+    <meta property="og:image" content="https://nicolas-dufour.github.io/plonk_game/static/og-image.png" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="PLONK GeoGuessr — you vs. ~40 AI geolocators" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PLONK GeoGuessr — can you out-guess the AIs?" />
+    <meta
+      name="twitter:description"
+      content="Drop a pin where a street-view photo was taken, then see how you stack up against ~40 AI geolocators."
+    />
+    <meta name="twitter:image" content="https://nicolas-dufour.github.io/plonk_game/static/og-image.png" />
+
+    <link rel="stylesheet" href="static/lib/leaflet.css" />
+    <link rel="stylesheet" href="static/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- ===== START ===== -->
+      <section id="screen-start" class="screen active">
+        <div class="aurora"></div>
+        <div class="start-card glass">
+          <div class="logo">🌍</div>
+          <h1>PLONK <span class="grad">GeoGuessr</span></h1>
+          <p class="tagline">
+            Drop a pin where you think the photo was taken — then watch how you stack up
+            against <b>~40 AI methods</b> (vision-language models + the PLONK geolocator).
+          </p>
+          <div class="rules">
+            <div class="rule"><span class="rk">🗺️</span><span>Click the map to guess; drag to fine-tune.</span></div>
+            <div class="rule"><span class="rk">⏱️</span><span><b>2 min</b> per photo · <b>5 rounds</b> per game.</span></div>
+            <div class="rule"><span class="rk">🎯</span><span>GeoScore <code>5000·e<sup>−d/1492.7</sup></code> — closer is better.</span></div>
+          </div>
+          <input id="nickname" type="text" maxlength="32" placeholder="Nickname (optional)" autocomplete="off" />
+          <button id="play-btn" class="primary big" disabled>
+            <span class="btn-spinner"></span><span class="btn-label">▶ Play game</span>
+          </button>
+          <p id="start-status" class="status">Loading locations…</p>
+        </div>
+      </section>
+
+      <!-- ===== ROUND ===== -->
+      <section id="screen-round" class="screen hidden">
+        <div id="photo-pane" class="stage">
+          <div id="stage-bg"></div>
+          <img id="street-img" alt="Street view" />
+          <div id="img-spinner" class="spinner hidden"></div>
+        </div>
+
+        <div class="hud glass">
+          <div class="hud-item"><span class="hud-k">Round</span><b><span id="round-num">1</span>/<span id="round-total">5</span></b></div>
+          <div class="hud-sep"></div>
+          <div class="hud-item"><span class="hud-k">Score</span><b id="score-total">0</b></div>
+          <div class="hud-sep"></div>
+          <div class="hud-item timer-wrap"><span class="hud-k">⏱</span><b id="timer">2:00</b></div>
+          <button id="quit-btn" class="link hud-quit" title="Quit game">✕</button>
+        </div>
+
+        <div id="map-panel" class="map-panel glass">
+          <div id="guess-map"></div>
+          <div class="map-bar">
+            <span id="guess-hint" class="hint">Click the map to place your guess</span>
+            <button id="expand-btn" class="ghost lock-btn" title="Map fullscreen">⛶</button>
+            <button id="guess-btn" class="primary" disabled>Guess</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== RESULT ===== -->
+      <section id="screen-result" class="screen hidden">
+        <div class="result-grid">
+          <div id="result-map"></div>
+          <aside class="result-panel glass">
+            <div id="result-summary"></div>
+            <div class="legend">
+              <span>🎯 actual</span><span>📍 you</span>
+              <span><i class="dot best"></i> closest AI</span>
+              <span><i class="dot"></i> AI methods</span>
+            </div>
+            <div class="table-wrap">
+              <table class="board">
+                <thead>
+                  <tr><th>#</th><th>Method</th><th>Dist</th><th>Score</th></tr>
+                </thead>
+                <tbody id="leaderboard-body"></tbody>
+              </table>
+            </div>
+            <button id="next-btn" class="primary big">Next round →</button>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ===== FINAL ===== -->
+      <section id="screen-final" class="screen hidden">
+        <div class="aurora"></div>
+        <div class="final-card glass">
+          <h1>🏁 Game over</h1>
+          <div class="final-total"><b id="final-total">0</b> <span>/ <span id="final-max">25000</span></span></div>
+          <p id="final-rank" class="final-rank"></p>
+          <div id="final-breakdown" class="breakdown"></div>
+          <h2>Overall leaderboard · these 5 photos</h2>
+          <div class="table-wrap tall">
+            <table class="board">
+              <thead>
+                <tr><th>#</th><th>Method</th><th>Total</th><th>Rounds</th></tr>
+              </thead>
+              <tbody id="final-board-body"></tbody>
+            </table>
+          </div>
+          <div class="final-actions">
+            <button id="play-again-btn" class="primary big">▶ Play again</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="static/lib/leaflet.js"></script>
+    <script src="static/config.js"></script>
+    <script src="static/geo.js"></script>
+    <script src="static/recorder.js"></script>
+    <script src="static/app.js"></script>
+  </body>
+</html>

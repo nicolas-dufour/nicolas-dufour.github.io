@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,42.183215810929,-73.235165344813,0.0,US,True,,,,,,,,"New Marlborough, Berkshire County, Massachusetts, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,42.371856689453125,-73.29705047607422,21.585,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,42.4118,-73.4215,29.68,US,True,,stop,0.00344,544,24,0,1.26,"{""country"":""US"",""latitude"":42.4118,""longitude"":-73.4215}"
+google/gemma-4-31b-it,no-CoT,42.35,-72.5,63.273,US,True,,stop,6.518e-05,406,31,0,2.1,"```json
+{""country"": ""US"", ""latitude"": 42.35, ""longitude"": -72.5}
+```"
+x-ai/grok-4.3,no-CoT,42.85,-73.75,85.309,US,True,,stop,0.0005934,592,22,0,1.25,"{""country"": ""US"", ""latitude"": 42.85, ""longitude"": -73.75}"
+qwen/qwen3.5-9b,no-CoT,42.9614,-72.7849,94.058,US,True,,stop,5.205e-05,474,31,0,10.29,"{""country"": ""US"", ""latitude"": 42.9614, ""longitude"": -72.7849}"
+moonshotai/kimi-k2.6,CoT,43.0,-72.5,108.951,US,True,,stop,0.00896148,682,2496,2427,136.2,"{""reasoning"": ""Wooden utility poles with crossarms and yellow dashed center line are hallmarks of rural US roads, while the rolling green pasture and mixed deciduous forest with early autumn color suggest the Northeastern United States."", ""country"": ""US"", ""latitude"": 43.0, ""longitude"": -72.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.28545379638672,-72.49176788330078,136.776,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,42.3156,-71.4528,147.439,US,True,,stop,0.00018772,474,31,0,12.76,"{""country"": ""US"", ""latitude"": 42.3156, ""longitude"": -71.4528}"
+minimax/minimax-m3,no-CoT,43.5,-73.8,153.49,US,True,,stop,0.00054834,767,288,354,12.44,"{""country"": ""US"", ""latitude"": 43.5, ""longitude"": -73.8}"
+google/gemini-3.1-pro-preview,CoT,43.5,-72.5,158.212,US,True,,stop,0.00582,1272,273,190,11.32,"{
+  ""reasoning"": ""The dashed yellow center line and solid white edge lines are standard for two-way roads in the United States and Canada. The mix of coniferous and deciduous trees alongside green pastures strongly suggests a temperate region like the Northeastern US."",
+  ""country"": ""US"",
+  ""latitude"": 43.5,
+  ""longitude"": -72.5
+}"
+openai/gpt-5.5,CoT,43.6412,-72.6048,170.053,US,True,,stop,0.009885,621,226,147,5.47,"{""reasoning"":""Right-side driving with US-style yellow centerline/white edge lines and wooden utility poles points to rural North America. The lush rolling farmland, mixed deciduous/conifer forest, and cool humid climate are most consistent with northern New England, especially Vermont."",""country"":""US"",""latitude"":43.6412,""longitude"":-72.6048}"
+x-ai/grok-4.3,CoT,43.15,-74.85,170.257,US,True,,stop,0.0020815,676,629,543,9.91,"{""reasoning"": ""Right-hand traffic with dashed yellow center line + solid white edge lines, wooden utility poles with cross-arms, autumn foliage on mixed deciduous/coniferous trees, and open rural fields all point to the northeastern United States. No other region matches this exact combination of road markings, infrastructure, and vegetation."", ""country"": ""US"", ""latitude"": 43.15, ""longitude"": -74.85}"
+google/gemini-3.1-pro-preview,no-CoT,43.2081,-71.5376,179.532,US,True,,stop,0.002798,1189,35,0,32.98,"```json
+{""country"": ""US"", ""latitude"": 43.2081, ""longitude"": -71.5376}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,42.3601,-71.0589,180.136,US,True,,stop,0.0001171625,473,31,0,0.8,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.6-27b,no-CoT,42.3601,-71.0589,180.136,US,True,,stop,0.0001943,473,31,0,9.23,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+google/gemini-3.5-flash,CoT (effort=medium),43.8521,-72.9564,186.95,US,True,,stop,0.0049755,1271,341,266,3.96,"{""reasoning"": ""The yellow dashed center line and white edge lines indicate North America, while the mixed pine and deciduous forest, rolling green fields, and wooden utility poles are highly characteristic of New England or upstate New York."", ""country"": ""US"", ""latitude"": 43.8521, ""longitude"": -72.9564}"
+minimax/minimax-m3,CoT,43.45,-75.15,210.31,US,True,,stop,0.00054786,843,297,218,9.8,"{""reasoning"": ""Right-hand driving with yellow center line and solid white fog line, wooden utility poles with crossarms, mixed deciduous forest with early fall foliage, and rural two-lane road style are characteristic of the northeastern United States, likely upstate New York."", ""country"": ""US"", ""latitude"": 43.45, ""longitude"": -75.15}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),44.1235,-72.8542,217.951,US,True,,stop,0.0020985,1189,35,0,2.9,"```json
+{""country"": ""US"", ""latitude"": 44.1235, ""longitude"": -72.8542}
+```"
+google/gemini-3.5-flash,CoT (effort=high),44.15,-72.75,222.207,US,True,,stop,0.0079095,1271,667,604,14.97,"{""reasoning"": ""The dashed yellow center line, wooden utility poles, and mixed deciduous-coniferous forest with early autumn colors are characteristic of northeastern North America, particularly New England."", ""country"": ""US"", ""latitude"": 44.15, ""longitude"": -72.75}"
+google/gemini-3.5-flash,CoT (effort=low),44.1532,-72.6948,223.391,US,True,,stop,0.0039405,1271,226,159,3.02,"{""reasoning"": ""The road markings with a yellow dashed center line, wooden utility poles, and mixed pine and deciduous forest are characteristic of the northeastern United States, particularly New England."", ""country"": ""US"", ""latitude"": 44.1532, ""longitude"": -72.6948}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.26847457885742,-71.52246856689453,270.207,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,44.2619,-71.3036,279.123,US,True,,stop,0.00019467,473,31,0,8.31,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -71.3036}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,44.332767486572266,-70.83740997314453,307.919,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,40.0583,-76.3055,349.203,US,True,,stop,0.0076406,553,2115,2043,68.74,"{""reasoning"": ""The image shows a rural two-lane road with yellow center lines and white edge lines, indicating right-hand traffic typical of the USA. The wooden utility poles with cross-arms, combined with the rolling terrain, mixed deciduous/coniferous forest showing early autumn colors, and wire fencing, strongly suggest the Mid-Atlantic or Northeastern United States, particularly Pennsylvania."", ""country"": ""US"", ""latitude"": 40.0583, ""longitude"": -76.3055}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.0583,-76.7811,379.485,US,True,,stop,0.0003322,473,31,0,4.03,"{""country"": ""US"", ""latitude"": 40.0583, ""longitude"": -76.7811}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,46.717926025390625,-71.21752166748047,529.009,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,46.73597717285156,-71.12239074707031,533.236,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,38.5,-78.0,574.977,US,True,,stop,0.0005752,600,25,0,12.87,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -78.0}"
+qwen/qwen3.6-27b,CoT,38.45,-78.45,606.241,US,True,,stop,0.0103934,554,3196,2968,122.28,"```json
+{
+    ""reasoning"": ""The wooden utility poles with cross-arms, yellow dashed center line, and right-hand traffic are characteristic of rural roads in the United States. The mix of pine and deciduous trees with autumnal colors suggests the Mid-Atlantic or Southeastern US."",
+    ""country"": ""US"",
+    ""latitude"": 38.45,
+    ""longitude"": -78.45
+}
+```"
+anthropic/claude-opus-4.8,CoT,36.5,-80.5,887.967,US,True,,stop,0.00636,797,95,0,9.68,"{""reasoning"": ""Right-hand driving with yellow center lines, wooden utility poles, and early autumn foliage on deciduous-pine mix suggest rural northeastern/Appalachian US."", ""country"": ""US"", ""latitude"": 36.5, ""longitude"": -80.5}"
+anthropic/claude-opus-4.8,no-CoT,36.2,-81.1,948.943,US,True,,stop,0.004055,666,29,0,2.62,"{""country"": ""US"", ""latitude"": 36.2, ""longitude"": -81.1}"
+xiaomi/mimo-v2.5,no-CoT,35.2,-80.8,1015.974,US,True,,stop,7.97776e-05,708,25,0,8.57,"{""country"": ""US"", ""latitude"": 35.2, ""longitude"": -80.8}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.2271,-80.8431,1016.013,US,True,,stop,0.00010617035,473,31,0,4.04,"{""country"": ""US"", ""latitude"": 35.2271, ""longitude"": -80.8431}"
+mistralai/mistral-medium-3-5,no-CoT,35.7804,-82.5348,1072.602,US,True,,stop,0.0011835,634,31,0,1.54,"{""country"": ""US"", ""latitude"": 35.7804, ""longitude"": -82.5348}"
+xiaomi/mimo-v2.5,CoT,40.0,-89.0,1341.225,US,True,,stop,0.0003741976,787,1037,977,20.18,"{""reasoning"": ""Right-hand traffic indicated by dashed yellow center line and US-style wooden utility poles; deciduous trees with fall colors typical of the American Midwest."", ""country"": ""US"", ""latitude"": 40.0, ""longitude"": -89.0}"
+qwen/qwen3.6-35b-a3b,CoT,32.7157,-83.639,1394.841,US,True,,stop,0.0052724,554,3226,3023,48.8,"
+
+```json
+{
+  ""reasoning"": ""The yellow dashed center line confirms right-hand traffic in North America, specifically the USA given the road style. The vegetation, featuring a mix of Loblolly pines and hardwoods with lush green grass, is characteristic of the Southeastern United States, likely Georgia or Alabama."",
+  ""country"": ""US"",
+  ""latitude"": 32.7157,
+  ""longitude"": -83.639
+}
+```"
+mistralai/mistral-small-2603,no-CoT,53.3501,-6.2661,4961.395,IE,True,,stop,0.0001131,634,30,0,9.8,"{""country"": ""IE"", ""latitude"": 53.3501, ""longitude"": -6.2661}"
+mistralai/mistral-small-2603,CoT,52.2,0.1,5408.131,GB,True,,stop,0.00034704,716,511,564,4.13,"{""reasoning"": ""Left-hand road markings indicate driving on the left; English-language signage with railway crossing symbol; temperate climate with green fields and hedgerows typical of rural England."", ""country"": ""GB"", ""latitude"": 52.2, ""longitude"": 0.1}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8635.234,,True,True,,,,,,6.44,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.31,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.28,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.15,

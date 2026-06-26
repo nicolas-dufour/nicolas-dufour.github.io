@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,60.53027920187862,32.62593954981235,0.0,RU,True,,,,,,,,"Syas'stroy, None, Leningrad, RU"
+google/gemini-3.5-flash,CoT (effort=high),60.5309,32.6235,0.15,RU,True,,stop,0.0202215,1307,2029,1953,14.93,"{""reasoning"": ""The image shows the Storozhensky Lighthouse on Lake Ladoga, Russia, identifiable by its distinctive red-and-white striped pattern, height, and the specific gate and dirt path leading to it."", ""country"": ""RU"", ""latitude"": 60.5309, ""longitude"": 32.6235}"
+google/gemini-3.5-flash,CoT (effort=medium),60.5309,32.6234,0.155,RU,True,,stop,0.0124905,1307,1170,1093,9.57,"{""reasoning"": ""The image shows the Storozhensky Lighthouse on Lake Ladoga in Russia, recognizable by its distinct red-and-white horizontal stripes, height, and the surrounding remote forested terrain with a dirt access path."", ""country"": ""RU"", ""latitude"": 60.5309, ""longitude"": 32.6234}"
+anthropic/claude-opus-4.8,CoT,60.0833,32.6167,49.704,RU,True,,stop,0.007495,949,110,0,10.75,"{""reasoning"": ""Tall red-white striped lighthouse resembling Storozhno or Osinovets lighthouse on Lake Ladoga, Russia; Cyrillic signage and boreal vegetation with late northern sunset."", ""country"": ""RU"", ""latitude"": 60.0833, ""longitude"": 32.6167}"
+anthropic/claude-opus-4.8,no-CoT,60.0686,32.3056,54.285,RU,True,,stop,0.00489,818,32,0,2.29,"{""country"": ""RU"", ""latitude"": 60.0686, ""longitude"": 32.3056}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),60.11925,31.08358,96.424,RU,True,,stop,0.002172,1226,37,0,7.68,"```json
+{""country"": ""RU"", ""latitude"": 60.11925, ""longitude"": 31.08358}
+```"
+openai/gpt-5.5,CoT,60.119,31.0808,96.572,RU,True,,stop,0.020305,755,551,482,12.18,"{""reasoning"":""The Cyrillic warning sign, Russian-style concrete utility poles, and the distinctive tall red-white striped lighthouse in a flat forested setting match Osinovetsky Lighthouse on Lake Ladoga near St. Petersburg."",""country"":""RU"",""latitude"":60.119,""longitude"":31.0808}"
+google/gemini-3.5-flash,CoT (effort=low),60.1182,31.0804,96.635,RU,True,,stop,0.0040575,1307,233,166,3.47,"{""reasoning"": ""The image shows the Osinovetsky Lighthouse on Lake Ladoga in Russia, recognizable by its distinctive tall, slender structure with red and white horizontal stripes."", ""country"": ""RU"", ""latitude"": 60.1182, ""longitude"": 31.0804}"
+minimax/minimax-m3,CoT,60.119,31.074,96.902,RU,True,,stop,0.00074346,995,422,323,13.2,"{""reasoning"": ""Tall red-and-white banded cylindrical lighthouse with black lantern is characteristic of Soviet/Russian inland lighthouses; the boreal mixed forest, sandy soil, and late-summer 21:17 sunset indicate a northern Russian location. This matches the Osinovetsky Lighthouse on Cape Osinovets, Lake Ladoga, Leningrad Oblast."", ""country"": ""RU"", ""latitude"": 60.119, ""longitude"": 31.074}"
+google/gemini-3.1-pro-preview,no-CoT,60.1188,31.0683,97.19,RU,True,,stop,0.00287,1225,35,0,3.43,"```json
+{""country"": ""RU"", ""latitude"": 60.1188, ""longitude"": 31.0683}
+```"
+google/gemini-3.1-pro-preview,CoT,60.1186,31.0483,98.173,RU,True,,stop,0.00637,1307,313,228,11.84,"{
+  ""reasoning"": ""The distinctive red and white striped lighthouse with a grey stone base is the Osinovetsky Light on Lake Ladoga. The Cyrillic text on the yellow sign confirms the location in Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 60.1186,
+  ""longitude"": 31.0483
+}"
+mistralai/mistral-medium-3-5,no-CoT,59.8833,30.75,126.158,RU,True,,stop,0.001404,786,30,0,1.23,"{""country"": ""RU"", ""latitude"": 59.8833, ""longitude"": 30.75}"
+openai/gpt-5.5,no-CoT,59.9876,30.2053,146.517,RU,True,,stop,0.00408,678,23,0,2.03,"{""country"":""RU"",""latitude"":59.9876,""longitude"":30.2053}"
+qwen/qwen3.5-27b,no-CoT,59.9667,30.2167,146.959,RU,True,,stop,0.0002499,585,31,0,7.09,"{""country"": ""RU"", ""latitude"": 59.9667, ""longitude"": 30.2167}"
+qwen/qwen3.5-9b,no-CoT,59.9333,30.2167,148.64,RU,True,,stop,0.0001072,585,31,0,1.42,"{""country"": ""RU"", ""latitude"": 59.9333, ""longitude"": 30.2167}"
+qwen/qwen3.6-27b,no-CoT,59.9656,30.1125,152.23,RU,True,,stop,0.0002912,586,31,0,1.77,"{""country"": ""RU"", ""latitude"": 59.9656, ""longitude"": 30.1125}"
+x-ai/grok-4.3,CoT,60.0123,29.7128,170.629,RU,True,,stop,0.002469,788,728,645,5.82,"{""reasoning"": ""Cyrillic text on yellow gate sign + red/white banded lighthouse with lantern room in boreal forest/scrub at dusk on 2021-08-01 indicate Russia; late-August sunset timing and vegetation narrow to ~60°N Gulf of Finland or Ladoga coast."", ""country"": ""RU"", ""latitude"": 60.0123, ""longitude"": 29.7128}"
+x-ai/grok-4.3,no-CoT,59.9483,29.6239,177.866,RU,True,,stop,0.0007384,704,24,0,1.93,"{""country"": ""RU"", ""latitude"": 59.9483, ""longitude"": 29.6239}"
+qwen/qwen3.5-35b-a3b,no-CoT,59.9333,29.6167,178.883,RU,True,,stop,0.00018415,585,31,0,8.06,"{""country"": ""RU"", ""latitude"": 59.9333, ""longitude"": 29.6167}"
+minimax/minimax-m3,no-CoT,60.1667,29.2833,188.251,RU,True,,stop,0.00025578,855,25,0,7.77,"{""country"": ""RU"", ""latitude"": 60.1667, ""longitude"": 29.2833}"
+qwen/qwen3.6-35b-a3b,no-CoT,59.7386,28.9452,221.967,RU,True,,stop,0.000185,585,31,0,1.54,"{""country"": ""RU"", ""latitude"": 59.7386, ""longitude"": 28.9452}"
+qwen/qwen3.5-122b-a10b,no-CoT,56.5069,28.2669,513.77,RU,True,,stop,0.00023322,585,39,0,2.1,"{
+  ""country"": ""RU"",
+  ""latitude"": 56.5069,
+  ""longitude"": 28.2669
+}"
+moonshotai/kimi-k2.6,CoT,56.8,41.0,636.77,RU,True,,stop,0.035539776,834,10317,10224,504.68,"{""reasoning"": ""The yellow warning sign appears to use Cyrillic script and the leaning wooden utility pole with cross-arms is typical of Soviet-era Russian infrastructure; the late summer twilight at 21:17 local time implies a latitude around 55–58°N, consistent with the mixed forest and flat terrain of central European Russia."", ""country"": ""RU"", ""latitude"": 56.8, ""longitude"": 41.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,55.2044,37.6156,661.225,RU,True,,stop,0.0004466,585,31,0,0.82,"{""country"": ""RU"", ""latitude"": 55.2044, ""longitude"": 37.6156}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,56.16482925415039,20.94159698486328,835.05,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,55.91141891479492,21.015113830566406,850.142,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,54.515,18.458,1074.656,RU,True,,stop,7.016e-05,404,34,0,7.63,"```json
+{""country"": ""RU"", ""latitude"": 54.515, ""longitude"": 18.458}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,54.75115966796875,17.428924560546875,1105.294,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,50.45,30.52,1128.551,,True,,stop,5.788e-05,404,39,0,1.76,"{""country"": ""UA"", ""latitude"": 50.4500, ""longitude"": 30.52 own own 30.5000}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,51.780696868896484,44.596988677978516,1219.256,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,54.733150482177734,61.20288848876953,1801.643,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,54.696266174316406,61.218143463134766,1804.676,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,54.1833,137.4167,5644.996,RU,True,,stop,9.74176e-05,820,32,0,1.49,"{""country"": ""RU"", ""latitude"": 54.1833, ""longitude"": 137.4167}"
+xiaomi/mimo-v2.5,CoT,47.0129,143.0042,6523.131,RU,True,,stop,0.0001608376,899,219,114,9.7,"{""reasoning"": ""The image shows a tall lighthouse with red and white spiral patterns, distinctive of Russian lighthouses in the Far East. The signage uses Cyrillic script, and the vegetation and lighting (August 1st at 21:17, suggesting high latitude in summer) align with the Sakhalin region of Russia."", ""country"": ""RU"", ""latitude"": 47.0129, ""longitude"": 143.0042}"
+mistralai/mistral-small-2603,no-CoT,31.2304,121.4737,6963.263,CN,True,,stop,0.0001371,786,32,0,2.37,"{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.48,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,316.02,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,13.18,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.26,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,13.06,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.07,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.46,

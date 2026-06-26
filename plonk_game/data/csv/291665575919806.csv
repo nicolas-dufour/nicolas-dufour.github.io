@@ -1,0 +1,81 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-28.26843100337,-49.911863746648,0.0,BR,True,,,,,,,,"Sao Joaquim, Sao Joaquim, Santa Catarina, BR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-28.61322593688965,-49.958438873291016,38.609,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-28.72482681274414,-49.85923385620117,51.009,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-27.176410675048828,-49.52336120605469,127.306,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,-26.5,-50.0,196.833,BR,True,,stop,0.000286452,603,23,0,7.93,"{""country"": ""BR"", ""latitude"": -26.5, ""longitude"": -50.0}"
+qwen/qwen3.5-9b,no-CoT,-28.4667,-51.95,200.629,BR,True,,stop,5.175e-05,474,29,0,5.24,"{""country"": ""BR"", ""latitude"": -28.4667, ""longitude"": -51.95}"
+anthropic/claude-opus-4.8,CoT,-32.37,-54.17,612.286,UY,True,,stop,0.00696,797,119,0,10.51,"{""reasoning"": ""Rural industrial area with grassy hills, timber/sawmill-like buildings, wooden power poles, and right-hand traffic suggest temperate South America, likely Uruguay or southern Brazil with eucalyptus pulp/timber industry."", ""country"": ""UY"", ""latitude"": -32.37, ""longitude"": -54.17}"
+openai/gpt-5.5,no-CoT,-22.7443,-47.3907,664.261,BR,True,,stop,0.00347,544,25,0,1.68,"{""country"":""BR"",""latitude"":-22.7443,""longitude"":-47.3907}"
+moonshotai/kimi-k2.6,CoT,-21.8,-46.5,797.041,BR,True,,stop,0.011517255,681,3077,3454,28.31,"{""reasoning"": ""Red lateritic soil, wooden utility poles with distinctive cross-arms, and rural industrial shed architecture are hallmarks of southeastern Brazil's interior Planalto; the strong midday sun north of the camera confirms a Southern Hemisphere location."", ""country"": ""BR"", ""latitude"": -21.8, ""longitude"": -46.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-34.3852,-55.2361,847.23,UY,True,,stop,0.0021,1190,35,0,8.21,"```json
+{""country"": ""UY"", ""latitude"": -34.3852, ""longitude"": -55.2361}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-34.7215,-55.9542,917.752,UY,True,,stop,0.0113565,1271,1050,956,13.59,"```json
+{""reasoning"": ""The rolling grassy hills, presence of Pampas grass, and specific style of wooden utility poles are highly characteristic of rural Uruguay. The industrial warehouses in the background suggest an area near a major transit corridor or industrial park, likely in the Canelones or San José departments."", ""country"": ""UY"", ""latitude"": -34.7215, ""longitude"": -55.9542}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-34.7224,-56.0645,924.374,UY,True,,stop,0.0105915,1271,965,876,14.5,"```json
+{""reasoning"": ""The rolling green hills, wooden utility poles, and pampas grass on the roadside are highly characteristic of the rural and semi-industrial landscape of southern Uruguay. The road quality and warehouse architecture further point to the Canelones department near Montevideo."", ""country"": ""UY"", ""latitude"": -34.7224, ""longitude"": -56.0645}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-34.3852,-56.5214,925.114,UY,True,,stop,0.0043725,1271,274,216,10.95,"{""reasoning"": ""The rolling green hills, specific wooden utility pole design, and industrial buildings in a temperate climate strongly suggest rural Uruguay."", ""country"": ""UY"", ""latitude"": -34.3852, ""longitude"": -56.5214}"
+google/gemini-3.1-pro-preview,no-CoT,-34.8,-56.0,927.121,UY,True,,stop,0.004118,1189,145,116,25.6,"```json
+{""country"": ""UY"", ""latitude"": -34.8, ""longitude"": -56.0}
+```"
+anthropic/claude-opus-4.8,no-CoT,-33.2524,-58.0297,952.757,UY,True,,stop,0.00413,666,32,0,8.85,"{""country"": ""UY"", ""latitude"": -33.2524, ""longitude"": -58.0297}"
+google/gemma-4-26b-a4b-it,no-CoT,-34.6037,-58.3814,1067.805,AR,True,,stop,8.638e-05,406,84,0,4.88,"```json
+{"" even-1, ""latitude"": -34.6037, ""longitude"": -58.3814}
+```
+
+Wait, I must provide the correct JSON format as requested.
+
+```json
+{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3814}
+```"
+qwen/qwen3.6-27b,no-CoT,-34.6037,-58.3816,1067.819,AR,True,,stop,0.000211097,473,31,0,4.19,"{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}"
+x-ai/grok-4.3,no-CoT,-34.6037,-58.3816,1067.819,AR,True,,stop,0.0007328,592,24,0,1.83,"{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}"
+google/gemma-4-31b-it,CoT,-34.2,-60.5,1202.403,AR,True,,stop,0.00112987,492,967,922,19.22,"```json
+{""reasoning"": ""The flat pampas landscape, wooden utility poles with specific T-crossarms, and the style of the industrial building are highly characteristic of rural Buenos Aires province, Argentina."", ""country"": ""AR"", ""latitude"": -34.2, ""longitude"": -60.5}
+```"
+openai/gpt-5.5,CoT,13.1392,-59.4756,4717.999,BB,True,,stop,0.011475,621,279,197,13.49,"{""reasoning"":""The tropical dry landscape with sugarcane-like fields, narrow unmarked asphalt road, left-side Commonwealth-style utility infrastructure, and low industrial buildings strongly suggest rural Barbados. The flat coral-island terrain and road style fit the St. Philip/Six Roads industrial outskirts."",""country"":""BB"",""latitude"":13.1392,""longitude"":-59.4756}"
+google/gemini-3.1-pro-preview,CoT,19.35,-98.25,7417.278,MX,True,,stop,0.00613,1271,299,214,12.86,"{
+  ""reasoning"": ""The utility pole design with multiple crossbars and insulators is characteristic of Mexico. The rolling, semi-arid landscape with industrial buildings suggests the central highlands, likely near an industrial park in states like Tlaxcala or Puebla."",
+  ""country"": ""MX"",
+  ""latitude"": 19.35,
+  ""longitude"": -98.25
+}"
+x-ai/grok-4.3,CoT,-26.15,28.05,7568.067,ZA,True,,stop,0.0023665,676,743,678,7.48,"{""reasoning"": ""Left-side driving implied by road layout + RHT absent; industrial sheds, wooden H-poles, dry-grass savanna hills and high-contrast cumulus sky match Highveld near Johannesburg."", ""country"": ""ZA"", ""latitude"": -26.15, ""longitude"": 28.05}"
+google/gemma-4-31b-it,no-CoT,-26.1234,28.1234,7575.969,ZA,True,,stop,6.718e-05,406,36,0,2.8,"```json
+{""country"": ""ZA"", ""latitude"": -26.1234, ""longitude"": 28.1234}
+```"
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,8062.936,US,True,,stop,0.0001131,634,30,0,5.39,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+mistralai/mistral-small-2603,CoT,38.5,-98.5,8976.64,US,True,,stop,0.00034944,716,515,587,4.21,"{""reasoning"": ""Driving on the right with double yellow lines suggests North America; flat grassland terrain and road style are consistent with the central United States."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -98.5}"
+xiaomi/mimo-v2.5,CoT,41.0,-100.0,9268.336,US,True,,stop,0.0005651576,787,1719,1661,21.81,"{""reasoning"": ""Wooden utility poles and right-hand traffic indicate North America; agricultural buildings and grassland terrain point to the US Great Plains."", ""country"": ""US"", ""latitude"": 41.0, ""longitude"": -100.0}"
+xiaomi/mimo-v2.5,no-CoT,35.1983,-111.6513,9575.39,US,True,,stop,8.17376e-05,708,32,0,8.48,"{""country"": ""US"", ""latitude"": 35.1983, ""longitude"": -111.6513}"
+qwen/qwen3.5-35b-a3b,no-CoT,37.7749,-122.4194,10523.264,US,True,,stop,0.00015825,473,32,0,0.79,"{""country"": ""US"", ""latitude"": 37.7749, ""longitude"": -122.4194}"
+qwen/qwen3.5-397b-a17b,no-CoT,37.7749,-122.4194,10523.264,US,True,,stop,0.00025935,473,32,0,2.82,"{""country"": ""US"", ""latitude"": 37.7749, ""longitude"": -122.4194}"
+qwen/qwen3.5-122b-a10b,no-CoT,46.8721,-119.2772,10860.395,US,True,,stop,0.00018954,473,32,0,4.13,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -119.2772}"
+qwen/qwen3.6-35b-a3b,no-CoT,-44.396,171.26,10917.637,NZ,True,,stop,0.0039697437,471,4034,3999,25.17,"{""country"": ""NZ"", ""latitude"": -44.396, ""longitude"": 171.26}"
+mistralai/mistral-medium-3-5,CoT,-43.533,172.636,10929.443,NZ,True,,stop,0.0254865,716,3255,3599,28.96,"{""reasoning"": ""Left-hand traffic indicated by driver-side perspective, open pastoral landscape with rolling hills and concrete power poles suggest New Zealand's South Island rural roads"", ""country"": ""NZ"", ""latitude"": -43.533, ""longitude"": 172.636}"
+mistralai/mistral-medium-3-5,no-CoT,45.5152,-122.6784,10999.335,US,True,,stop,0.001191,634,32,0,0.96,"{""country"": ""US"", ""latitude"": 45.5152, ""longitude"": -122.6784}"
+qwen/qwen3.5-27b,no-CoT,-37.884,175.465,11273.902,NZ,True,,stop,0.0002085,474,45,0,6.0,"```json
+{
+  ""country"": ""NZ"",
+  ""latitude"": -37.8840,
+  ""longitude"": 175.4650
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-41.426273345947266,147.47540283203125,12061.577,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-40.88103485107422,148.18406677246094,12102.913,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,-36.418,146.332,12624.307,AU,True,,stop,0.02530749,553,10723,10623,139.83,"{
+""reasoning"": ""The image features left-hand traffic, wooden utility poles with cross-arms typical of rural Australia, and dry, yellowish grass under a bright blue sky, strongly suggesting a regional Australian setting. The large industrial sheds and the specific road curvature match the industrial estate near Wangaratta Airport in Victoria."",
+""country"": ""AU"",
+""latitude"": -36.418,
+""longitude"": 146.332
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-33.471351623535156,149.3256072998047,12856.729,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,CoT,-33.4269,115.7013,12989.218,AU,True,,stop,0.0061868625,553,4690,4567,26.62,"{""reasoning"": ""The image shows a rural road with dry, yellow grass and reddish soil, characteristic of the Australian landscape, particularly wine regions like Margaret River or the Barossa Valley. The wooden utility poles with cross-arms and the left-hand traffic position (implied by the road layout and lack of oncoming cars in the right lane) strongly point to Australia. The industrial buildings resemble wineries or agricultural processing facilities common in these areas."", ""country"": ""AU"", ""latitude"": -33.4269, ""longitude"": 115.7013}"
+minimax/minimax-m3,no-CoT,56.0,60.0,13797.209,RU,True,,stop,0.00019176,752,23,0,6.17,"{""country"": ""RU"", ""latitude"": 56.0, ""longitude"": 60.0}"
+minimax/minimax-m3,CoT,51.5,81.0,15218.349,RU,True,,stop,0.00076146,791,488,402,29.18,"{""reasoning"": ""Soviet-era industrial complex with tall smokestack, wooden utility poles, steppe grassland vegetation, and rolling semi-arid terrain are characteristic of the Altai region of Russia or eastern Kazakhstan. The road infrastructure and building styles strongly suggest a rural industrial area in southern Siberia/northern Kazakhstan."", ""country"": ""RU"", ""latitude"": 51.5, ""longitude"": 81.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.25,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.14,

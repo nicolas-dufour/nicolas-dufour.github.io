@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,69.42399359458634,19.277515357038645,0.0,NO,True,,,,,,,,"Storsteinnes, Balsfjord, Troms, NO"
+google/gemini-3.5-flash,CoT (effort=medium),69.435,19.255,1.507,NO,True,,stop,0.0079725,1307,668,598,6.74,"{""reasoning"": ""The yellow center lines next to the median barrier, combined with the dramatic snowy peaks and birch vegetation, are characteristic of northern Norway, specifically the E8 highway in Lavangsdalen."", ""country"": ""NO"", ""latitude"": 69.435, ""longitude"": 19.255}"
+google/gemini-3.5-flash,CoT (effort=high),69.435,19.255,1.507,NO,True,,stop,0.0152085,1307,1472,1395,11.74,"{""reasoning"": ""The dramatic alpine mountains with snow patches and mountain birch vegetation, combined with the yellow center lines on both sides of the median barrier, are highly characteristic of Northern Norway, specifically the E8 highway in Lavangsdalen."", ""country"": ""NO"", ""latitude"": 69.435, ""longitude"": 19.255}"
+openai/gpt-5.5,CoT,69.4523,19.3108,3.405,NO,True,,stop,0.014845,755,369,287,8.93,"{""reasoning"":""The yellow centerline/white edge markings, right-side driving, metal median barrier, and boreal birch-lined snowy mountains are characteristic of Norwegian roads. The alpine valley scenery strongly suggests northern Norway, likely the E8/Lavangsdalen area near Tromsø."",""country"":""NO"",""latitude"":69.4523,""longitude"":19.3108}"
+openai/gpt-5.5,no-CoT,69.345,18.83,19.599,NO,True,,stop,0.00402,678,21,0,1.28,"{""country"":""NO"",""latitude"":69.345,""longitude"":18.83}"
+google/gemini-3.1-pro-preview,no-CoT,69.25,19.15,19.984,NO,True,,stop,0.00479,1225,195,164,10.61,"```json
+{""country"": ""NO"", ""latitude"": 69.25, ""longitude"": 19.15}
+```"
+anthropic/claude-opus-4.8,CoT,69.2,19.5,26.396,NO,True,,stop,0.00697,949,89,0,3.89,"{""reasoning"": ""Snow-capped mountains with birch vegetation, wet road, yellow center lines, and overcast Arctic light suggest northern Norway's Troms region."", ""country"": ""NO"", ""latitude"": 69.2, ""longitude"": 19.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,69.6492,18.9553,28.0,NO,True,,stop,0.0002691,585,39,0,1.95,"{
+  ""country"": ""NO"",
+  ""latitude"": 69.6492,
+  ""longitude"": 18.9553
+}"
+qwen/qwen3.5-9b,no-CoT,69.6494,18.9553,28.02,NO,True,,stop,0.0001072,585,31,0,1.59,"{""country"": ""NO"", ""latitude"": 69.6494, ""longitude"": 18.9553}"
+anthropic/claude-opus-4.8,no-CoT,69.25,19.8,28.189,NO,True,,stop,0.00484,818,30,0,2.26,"{""country"": ""NO"", ""latitude"": 69.25, ""longitude"": 19.8}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,69.08920288085938,19.29608154296875,37.234,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,69.08798217773438,19.286251068115234,37.364,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,69.137,18.757,37.917,NO,True,,stop,0.00042325,585,29,0,2.17,"{""country"": ""NO"", ""latitude"": 69.137, ""longitude"": 18.757}"
+google/gemini-3.5-flash,CoT (effort=low),69.3825,20.2634,38.84,NO,True,,stop,0.0043455,1307,265,192,9.96,"{""reasoning"": ""The dramatic snow-capped mountains, birch vegetation, wet climate, and road markings with a yellow center line are highly characteristic of Northern Norway, specifically along the E8 or E6 highways."", ""country"": ""NO"", ""latitude"": 69.3825, ""longitude"": 20.2634}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),69.3125,20.2583,40.378,NO,True,,stop,0.002154,1226,35,0,1.07,"```json
+{""country"": ""NO"", ""latitude"": 69.3125, ""longitude"": 20.2583}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,69.63629150390625,20.3217830657959,46.97,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,69.63946533203125,20.385265350341797,49.288,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,68.92597961425781,18.947824478149414,56.889,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,68.5,19.0,103.339,NO,True,,stop,6.452e-05,404,30,0,3.39,"```json
+{""country"": ""NO"", ""latitude"": 68.5, ""longitude"": 19.0}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,68.39079284667969,18.27198600769043,121.725,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,68.45,17.42,131.288,NO,True,,stop,0.0007334,704,22,0,1.26,"{""country"": ""NO"", ""latitude"": 68.45, ""longitude"": 17.42}"
+google/gemini-3.1-pro-preview,CoT,68.0,16.0,206.291,NO,True,,stop,0.005088,1308,206,143,10.18,"{
+  ""reasoning"": ""The yellow center line on the road combined with the dramatic, snow-capped mountainous landscape and green vegetation strongly indicates Norway."",
+  ""country"": ""NO"",
+  ""latitude"": 68.0,
+  ""longitude"": 16.0
+}"
+minimax/minimax-m3,CoT,66.58,15.42,354.555,NO,True,,stop,0.00076902,997,440,426,8.3,"{""reasoning"": ""Rounded snow-streaked mountains, birch forest in the valley, Norwegian-style guardrails with yellow line markings, and right-hand traffic on a two-lane highway strongly indicate northern Norway, likely the Saltfjellet mountain pass area along the E6."", ""country"": ""NO"", ""latitude"": 66.58, ""longitude"": 15.42}"
+x-ai/grok-4.3,CoT,62.35,7.85,939.153,NO,True,,stop,0.002284,788,654,583,5.1,"{
+  ""reasoning"": ""Right-hand traffic, metal guardrail with yellow markings, overcast northern climate, and snow-capped mountains with mixed boreal forest match western Norway; no other region fits all visual cues simultaneously."",
+  ""country"": ""NO"",
+  ""latitude"": 62.35,
+  ""longitude"": 7.85
+}"
+xiaomi/mimo-v2.5,no-CoT,62.4733,7.15,944.733,NO,True,,stop,9.68576e-05,820,30,0,10.1,"{""country"": ""NO"", ""latitude"": 62.4733, ""longitude"": 7.1500}"
+moonshotai/kimi-k2.6,CoT,61.9049,7.2056,998.6,NO,True,,stop,0.01501312,832,3720,4002,115.86,"{""reasoning"": ""Yellow center lines separating opposing traffic is a hallmark of Norway, and the snow-capped alpine peaks with lush green valleys are characteristic of the Norwegian fjord region."", ""country"": ""NO"", ""latitude"": 61.9049, ""longitude"": 7.2056}"
+qwen/qwen3.6-35b-a3b,no-CoT,61.8925,6.7285,1011.729,NO,True,,stop,0.00011775,585,30,0,7.2,"{""country"": ""NO"", ""latitude"": 61.8925, ""longitude"": 6.7285}"
+xiaomi/mimo-v2.5,CoT,61.52,6.85,1045.196,NO,True,,stop,0.0010753176,899,3485,3402,46.56,"{""reasoning"": ""The yellow center line on the road is a distinctive marker for Norway in Europe, as most other European countries use white lines. The dramatic, steep snow-capped mountains and birch vegetation indicate a summer day in the Norwegian fjord or mountain region."", ""country"": ""NO"", ""latitude"": 61.52, ""longitude"": 6.85}"
+mistralai/mistral-medium-3-5,no-CoT,60.5,8.5,1110.681,NO,True,,stop,0.001359,786,24,0,0.84,"{""country"": ""NO"", ""latitude"": 60.5, ""longitude"": 8.5}"
+qwen/qwen3.6-27b,no-CoT,61.2181,-140.7309,5402.235,CA,True,,stop,0.0002299,585,32,0,11.36,"{""country"": ""CA"", ""latitude"": 61.2181, ""longitude"": -140.7309}"
+qwen/qwen3.5-27b,no-CoT,61.2181,-149.9003,5463.037,US,True,,stop,0.00022707,585,32,0,3.22,"{""country"": ""US"", ""latitude"": 61.2181, ""longitude"": -149.9003}"
+qwen/qwen3.5-35b-a3b,no-CoT,61.218056,-149.900278,5463.041,US,True,,stop,0.00012375,585,36,0,8.19,"{""country"": ""US"", ""latitude"": 61.218056, ""longitude"": -149.900278}"
+google/gemma-4-26b-a4b-it,no-CoT,45.4215,-75.6972,5537.494,CA,True,,stop,5.468e-05,404,31,0,7.47,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -75.6972}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.54,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.75,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.18,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.6,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.12,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,12.54,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.23,

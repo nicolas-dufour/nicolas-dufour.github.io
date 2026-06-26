@@ -1,0 +1,75 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,1.4061177979153,29.814174423639,0.0,CD,True,,,,,,,,"Bunia, None, Eastern Province, CD"
+google/gemini-3.1-pro-preview,no-CoT,0.5123,32.0456,267.254,UG,True,,stop,0.005318,1189,245,211,16.8,"```json
+{""country"": ""UG"", ""latitude"": 0.5123, ""longitude"": 32.0456}
+```"
+x-ai/grok-4.3,CoT,0.612,33.451,413.86,UG,True,,stop,0.002064,676,622,546,5.89,"{
+  ""reasoning"": ""Red laterite dirt road, oil palms + lush tropical vegetation, left-hand traffic (motorcycle position), and small roadside kiosk sign point to rural East Africa; overcast equatorial sky and distant hills narrow to Uganda."",
+  ""country"": ""UG"",
+  ""latitude"": 0.612,
+  ""longitude"": 33.451
+}"
+anthropic/claude-opus-4.8,CoT,-1.5,24.0,722.706,CD,True,,stop,0.00631,797,93,0,3.3,"{""reasoning"": ""Red laterite dirt road, tropical palm and dense bush vegetation, motorcycle rider, and rural West/Central African village setting suggest equatorial Africa."", ""country"": ""CD"", ""latitude"": -1.5, ""longitude"": 24.0}"
+google/gemma-4-31b-it,no-CoT,-1.5,22.5,875.064,CD,True,,stop,6.438e-05,406,29,0,2.7,"```json
+{""country"": ""CD"", ""latitude"": -1.5, ""longitude"": 22.5}
+```"
+x-ai/grok-4.3,no-CoT,-4.038,21.758,1080.693,CD,True,,stop,0.0005934,592,22,0,0.76,"{""country"": ""CD"", ""latitude"": -4.038, ""longitude"": 21.758}"
+qwen/qwen3.5-27b,no-CoT,-6.7924,39.2083,1384.895,TZ,True,,stop,0.000139035,473,30,0,1.4,"{""country"": ""TZ"", ""latitude"": -6.7924, ""longitude"": 39.2083}"
+minimax/minimax-m3,no-CoT,-0.5,15.5,1605.591,CG,True,,stop,0.00019452,754,22,0,3.4,"{""country"": ""CG"", ""latitude"": -0.5, ""longitude"": 15.5}{""country"": ""CG"", ""latitude"": -0.5, ""longitude"": 15.5}"
+anthropic/claude-opus-4.8,no-CoT,-4.3,15.3,1733.041,CD,True,,stop,0.00408,666,30,0,11.67,"{""country"": ""CD"", ""latitude"": -4.3, ""longitude"": 15.3}"
+minimax/minimax-m3,CoT,3.45,11.5,2047.145,CM,True,,stop,0.00075942,845,470,477,20.97,"{""reasoning"": ""Red laterite dirt road with characteristic reddish-brown soil, tropical vegetation including oil palms and tall eucalyptus-like trees, left-hand traffic with motorcycle, and small village structures are highly characteristic of southern Cameroon. The laterite color and vegetation match the Centre/South region of Cameroon."", ""country"": ""CM"", ""latitude"": 3.45, ""longitude"": 11.5}"
+openai/gpt-5.5,CoT,3.6748,11.5106,2048.704,CM,True,,stop,0.015435,621,411,337,18.64,"{""reasoning"":""The reddish laterite dirt road, dense humid tropical vegetation with oil palms/eucalyptus, and rural African motorcycle traffic point to Central/West Africa. The apparent right-side traffic and French-style rural setting make Cameroon the most likely fit."",""country"":""CM"",""latitude"":3.6748,""longitude"":11.5106}"
+openai/gpt-5.5,no-CoT,4.0435,11.5192,2052.863,CM,True,,stop,0.00341,544,23,0,8.35,"{""country"":""CM"",""latitude"":4.0435,""longitude"":11.5192}"
+qwen/qwen3.5-9b,no-CoT,5.9631,11.1599,2130.516,CM,True,,stop,8.791e-05,473,30,0,7.82,"{""country"": ""CM"", ""latitude"": 5.9631, ""longitude"": 11.1599}"
+google/gemini-3.5-flash,CoT (effort=low),6.2548,6.0832,2686.638,NG,True,,stop,0.0046155,1271,301,234,3.83,"{""reasoning"": ""The reddish dirt road, lush tropical vegetation with palm trees, and right-hand traffic are characteristic of southern Nigeria, where extensive Google Street View coverage exists on rural roads."", ""country"": ""NG"", ""latitude"": 6.2548, ""longitude"": 6.0832}"
+google/gemini-3.5-flash,CoT (effort=medium),6.5244,5.8922,2713.009,NG,True,,stop,0.0092955,1271,821,747,7.04,"```json
+{""reasoning"": ""The reddish-brown dirt road, tropical vegetation with oil palms, and right-hand traffic pattern are characteristic of southern Nigeria, where Google Street View coverage features similar landscapes and vehicles."", ""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 5.8922}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,6.005641937255859,5.659977912902832,2727.768,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,6.34,5.62,2738.702,NG,True,,stop,0.008254368,682,2346,2290,172.56,"{""reasoning"": ""Red lateritic dirt road with tropical vegetation including oil palms and a motorcycle taxi strongly indicates rural West Africa, most likely Nigeria."", ""country"": ""NG"", ""latitude"": 6.3400, ""longitude"": 5.6200}"
+mistralai/mistral-medium-3-5,no-CoT,6.5244,3.3792,2986.017,NG,True,,stop,0.0011685,634,29,0,7.58,"{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+moonshotai/kimi-k2.6,no-CoT,6.5244,3.3792,2986.017,NG,True,,stop,0.00051939,602,25,0,8.06,"{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3318.531,,True,True,,,,,,6.7,
+google/gemini-3.1-pro-preview,CoT,6.5,-1.5,3518.209,GH,True,,stop,0.00559,1271,254,180,11.42,"{
+  ""reasoning"": ""The reddish dirt road, lush tropical vegetation including palm trees, and the style of the motorcycle suggest a location in West Africa. The overall landscape is highly characteristic of southern Ghana or Nigeria."",
+  ""country"": ""GH"",
+  ""latitude"": 6.5,
+  ""longitude"": -1.5
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),6.1254,-2.1452,3583.453,GH,True,,stop,0.0020805,1189,33,0,28.55,"```json
+{""country"": ""GH"", ""latitude"": 6.1254, ""longitude"": -2.1452}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,6.85,-5.25,3933.873,CI,True,,stop,0.00034308,473,25,0,6.46,"{""country"": ""CI"", ""latitude"": 6.85, ""longitude"": -5.25}"
+qwen/qwen3.6-27b,no-CoT,6.8277,-5.2893,3937.864,CI,True,,stop,0.0001903,473,29,0,11.32,"{""country"": ""CI"", ""latitude"": 6.8277, ""longitude"": -5.2893}"
+qwen/qwen3.5-397b-a17b,CoT,7.4521,-5.3892,3958.022,CI,True,,stop,0.01062465,553,3473,1,107.44,"{
+""reasoning"": ""The vibrant red lateritic soil is characteristic of tropical West Africa, specifically Côte d'Ivoire. The right-hand traffic (indicated by the motorcycle facing the camera on the left side), combined with the mix of oil palms and tall tropical trees in a savanna-forest transition zone, points strongly to this region."",
+""country"": ""CI"",
+""latitude"": 7.4521,
+""longitude"": -5.3892
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,7.6291399002075195,-10.839111328125,4556.351,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,7.598757266998291,-10.85323715209961,4557.505,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),6.7521,-11.1543,4580.478,LR,True,,stop,0.0165765,1271,1630,1527,14.59,"```json
+{""reasoning"": ""The image shows a wide, unpaved laterite (red clay) road with lush tropical vegetation, including palm trees, under an overcast sky. This landscape, combined with right-hand traffic and the specific style of motorcycle, is highly characteristic of coastal West Africa, particularly the road leading towards Robertsport in Liberia."", ""country"": ""LR"", ""latitude"": 6.7521, ""longitude"": -11.1543}
+```"
+xiaomi/mimo-v2.5,no-CoT,14.85,100.65,7908.735,TH,True,,stop,8.06176e-05,708,28,0,7.34,"{""country"": ""TH"", ""latitude"": 14.85, ""longitude"": 100.65}"
+xiaomi/mimo-v2.5,CoT,11.5,105.0,8362.366,KH,True,,stop,0.0001504776,787,238,142,3.51,"```json
+{""reasoning"": ""The reddish soil (laterite), oil palm plantations, and specific style of black-and-white striped road bollards are highly characteristic of rural Cambodia. The motorcycle and helmet style align with Southeast Asian traffic norms, and the overall landscape points to a location in the central or southern provinces."", ""country"": ""KH"", ""latitude"": 11.5, ""longitude"": 105.0}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,-6.2088,106.8456,8591.887,ID,True,,stop,0.0001444,474,31,0,8.66,"{""country"": ""ID"", ""latitude"": -6.2088, ""longitude"": 106.8456}"
+qwen/qwen3.5-35b-a3b,no-CoT,-0.7892,113.9234,9354.944,ID,True,,stop,0.0001928125,473,36,0,1.29,"{
+""country"": ""ID"",
+""latitude"": -0.7892,
+""longitude"": 113.9234
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-1.3637053966522217,116.62181091308594,9656.503,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,-2.5489,118.0149,9814.687,ID,True,,stop,0.0002884,473,31,0,1.24,"{""country"": ""ID"", ""latitude"": -2.5489, ""longitude"": 118.0149}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-8.534049034118652,127.49481964111328,10875.235,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-7.4429802894592285,128.22479248046875,10955.017,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4194,14810.326,US,True,,stop,0.000142875,634,32,0,3.36,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4194}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.39,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.28,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.15,

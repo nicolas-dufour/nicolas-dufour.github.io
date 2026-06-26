@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,31.348600764818,48.703879763899,0.0,IR,True,,,,,,,,"Ahvaz, None, Khuzestan, IR"
+minimax/minimax-m3,CoT,35.78,50.95,534.847,IR,True,,stop,0.00079866,995,468,379,21.76,"{""reasoning"": ""Right-hand traffic, Toyota Hilux pickup with white civilian-style plate, MG sedan (popular in Iran), tall narrow planted trees lining a divided boulevard, multi-arm lampposts, and high-voltage transmission towers are all highly characteristic of suburban roads in Iran, likely in the Tehran/Karaj region."", ""country"": ""IR"", ""latitude"": 35.78, ""longitude"": 50.95}"
+moonshotai/kimi-k2.6,CoT,35.6892,51.389,542.994,IR,True,,stop,0.009056016,834,2568,2496,137.49,"{""reasoning"": ""Black-and-white painted curbs and Iranian-style license plates on a Zamyad pickup and a Saipa sedan are distinctive of Iran; the tree-lined boulevard and overcast sky fit the northern Tehran area."", ""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.389}"
+x-ai/grok-4.3,CoT,35.6892,51.389,542.994,IR,True,,stop,0.0026115,788,785,721,12.21,"{""reasoning"": ""Right-hand traffic, Isuzu pickup with regional plate style, green/white curb markings, tall poplar-style tree lines and overcast wet-road infrastructure typical of Iranian urban boulevards."", ""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.389}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.6892,51.389,542.994,IR,True,,stop,0.00021476,586,30,0,12.6,"{""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.389}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.6892,51.389,542.994,IR,True,,stop,0.000185,585,31,0,8.15,"{""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.3890}"
+x-ai/grok-4.3,no-CoT,35.7219,51.3344,543.922,IR,True,,stop,0.0007384,704,24,0,7.4,"{""country"": ""IR"", ""latitude"": 35.7219, ""longitude"": 51.3344}"
+google/gemini-3.1-pro-preview,CoT,35.7219,51.3347,543.934,IR,True,,stop,0.00672,1308,342,252,6.63,"{
+  ""reasoning"": ""The presence of domestic Iranian vehicles like the Saipa Tiba and the specific style of license plates with a blue strip on the left strongly indicate Iran. The painted curbs and streetlights are also typical of Iranian cities like Tehran."",
+  ""country"": ""IR"",
+  ""latitude"": 35.7219,
+  ""longitude"": 51.3347
+}"
+anthropic/claude-opus-4.8,no-CoT,35.7219,51.3347,543.934,IR,True,,stop,0.00489,818,32,0,8.64,"{""country"": ""IR"", ""latitude"": 35.7219, ""longitude"": 51.3347}"
+google/gemini-3.1-pro-preview,no-CoT,35.7219,51.3347,543.934,IR,True,,stop,0.005042,1225,216,181,4.16,"```json
+{""country"": ""IR"", ""latitude"": 35.7219, ""longitude"": 51.3347}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),35.7219,51.3347,543.934,IR,True,,stop,0.0021525,1225,35,0,7.67,"```json
+{""country"": ""IR"", ""latitude"": 35.7219, ""longitude"": 51.3347}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,35.7219,51.3347,543.934,IR,True,,stop,0.0003882,585,31,0,2.18,"{""country"": ""IR"", ""latitude"": 35.7219, ""longitude"": 51.3347}"
+google/gemini-3.5-flash,CoT (effort=medium),35.7009,51.4012,544.661,IR,True,,stop,0.0104295,1307,941,843,7.8,"```json
+{""reasoning"": ""The presence of a Saipa 151 pickup truck and a Saipa Saina sedan, along with the green-and-white painted curbs, strongly points to Iran. The lush green vegetation and wet road suggest a northern region or a well-irrigated boulevard in Tehran."", ""country"": ""IR"", ""latitude"": 35.7009, ""longitude"": 51.4012}
+```"
+openai/gpt-5.5,no-CoT,35.7448,51.3755,547.893,IR,True,,stop,0.00408,678,23,0,2.36,"{""country"":""IR"",""latitude"":35.7448,""longitude"":51.3755}"
+google/gemini-3.5-flash,CoT (effort=low),35.7721,51.4112,552.078,IR,True,,stop,0.0046245,1307,296,204,9.86,"{""reasoning"": ""The presence of a Saipa Tiba sedan and a Saipa pickup truck, along with the green-and-white painted curbs and Iranian-style license plates, indicates this is in Iran. The lush green trees and wet road suggest a northern region or a rainy day in Tehran."", ""country"": ""IR"", ""latitude"": 35.7721, ""longitude"": 51.4112}"
+openai/gpt-5.5,CoT,35.8012,51.4254,555.538,IR,True,,stop,0.018655,755,496,413,20.03,"{""reasoning"":""Iranian-style long white plates, ubiquitous black-and-white curb paint, right-hand traffic, and common Iran Khodro/Saipa-looking vehicles point strongly to Iran. The wet, tree-lined urban boulevard with dense conifers fits northern Tehran rather than arid central Iran."",""country"":""IR"",""latitude"":35.8012,""longitude"":51.4254}"
+google/gemini-3.5-flash,CoT (effort=high),37.2761,49.5883,664.084,IR,True,,stop,0.0130035,1307,1227,1127,9.66,"```json
+{""reasoning"": ""The presence of a Saipa 151 pickup and a Saipa Tiba sedan, along with the green-and-white painted curbs, clearly identifies the location as Iran. The lush green vegetation and wet road conditions are highly characteristic of the northern Caspian region, such as Gilan Province."", ""country"": ""IR"", ""latitude"": 37.2761, ""longitude"": 49.5883}
+```"
+anthropic/claude-opus-4.8,CoT,36.55,52.68,684.68,IR,True,,stop,0.00712,949,95,0,3.53,"{""reasoning"": ""Iranian-made vehicles (Saipa/Pride pickup, Peugeot) and Iranian license plates, with green lush vegetation suggesting the Caspian region."", ""country"": ""IR"", ""latitude"": 36.55, ""longitude"": 52.68}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,37.089420318603516,59.0279655456543,1142.811,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,37.090450286865234,59.03065872192383,1143.075,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.27460861206055,59.63260269165039,1199.414,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,41.3111,69.2406,2139.259,UZ,True,,stop,6.348e-05,404,36,0,10.73,"```json
+{""country"": ""UZ"", ""latitude"": 41.3111, ""longitude"": 69.2406}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,31.256223678588867,75.44698333740234,2534.536,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,31.31977653503418,75.47241973876953,2536.048,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,30.943931579589844,75.47760772705078,2542.042,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,50.4501,30.5234,2601.343,UA,True,,stop,0.0002279,585,31,0,15.04,"{""country"": ""UA"", ""latitude"": 50.4501, ""longitude"": 30.5234}"
+qwen/qwen3.5-27b,no-CoT,55.7558,37.6173,2849.087,RU,True,,stop,0.00022491,585,31,0,8.59,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-35b-a3b,no-CoT,55.7558,37.6173,2849.087,RU,True,,stop,0.00019644,586,31,0,2.38,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-9b,no-CoT,55.7964,37.6089,2853.463,RU,True,,stop,6.325e-05,586,31,0,5.21,"{""country"": ""RU"", ""latitude"": 55.7964, ""longitude"": 37.6089}"
+google/gemma-4-26b-a4b-it,no-CoT,13.7563,100.5018,5610.071,TH,True,,stop,5.828e-05,404,40,0,7.25,"Please provide own-thought
+{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+mistralai/mistral-medium-3-5,no-CoT,13.7563,100.5018,5610.071,TH,True,,stop,0.001419,786,32,0,2.62,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+xiaomi/mimo-v2.5,no-CoT,13.7563,100.5018,5610.071,TH,True,,stop,9.74176e-05,820,32,0,1.47,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+xiaomi/mimo-v2.5,CoT,35.69,139.69,8122.553,JP,True,,stop,0.0005581576,899,1638,1582,17.72,"{""reasoning"": ""Vehicles driving on the left side and Japanese-style utility poles with dense greenery are decisive clues."", ""country"": ""JP"", ""latitude"": 35.69, ""longitude"": 139.69}"
+mistralai/mistral-small-2603,no-CoT,35.6895,139.6917,8122.715,JP,True,,stop,0.0001371,786,32,0,2.34,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.38,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.45,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.3,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.6,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.37,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,8.85,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.17,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.23,

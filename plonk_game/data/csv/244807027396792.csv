@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,26.905370608853,75.865234390606,0.0,IN,True,,,,,,,,"Jaipur, Jaipur, Rajasthan, IN"
+openai/gpt-5.5,CoT,26.9586,75.8512,6.08,IN,True,,stop,0.015015,621,397,331,16.14,"{""reasoning"":""Left-side traffic, Indian road signage with Devanagari/English styling, and the dry Aravalli-like hills with Rajasthan-style village buildings point to rural Rajasthan near Jaipur/Amer."",""country"":""IN"",""latitude"":26.9586,""longitude"":75.8512}"
+google/gemini-3.1-pro-preview,CoT,26.9124,75.7873,7.767,IN,True,,stop,0.005362,1271,235,160,11.1,"{
+  ""reasoning"": ""The Devanagari script on the green road sign and the general architecture and arid, hilly landscape strongly indicate northern or western India, likely Rajasthan."",
+  ""country"": ""IN"",
+  ""latitude"": 26.9124,
+  ""longitude"": 75.7873
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,26.9124,75.7873,7.767,IN,True,,stop,9.736e-05,474,31,0,8.18,"{""country"": ""IN"", ""latitude"": 26.9124, ""longitude"": 75.7873}"
+qwen/qwen3.5-9b,no-CoT,26.9124,75.7873,7.767,IN,True,,stop,5.205e-05,474,31,0,4.05,"{""country"": ""IN"", ""latitude"": 26.9124, ""longitude"": 75.7873}"
+qwen/qwen3.6-35b-a3b,no-CoT,26.8467,75.8047,8.866,IN,True,,stop,0.0001444,474,31,0,10.64,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 75.8047}"
+google/gemini-3.5-flash,CoT (effort=low),26.9855,75.8512,9.018,IN,True,,stop,0.0039315,1271,225,156,3.74,"{""reasoning"": ""The left-hand driving, green highway signage with Hindi script, arid hilly terrain characteristic of the Aravalli Range, and local architectural styles indicate rural Rajasthan, India."", ""country"": ""IN"", ""latitude"": 26.9855, ""longitude"": 75.8512}"
+xiaomi/mimo-v2.5,CoT,26.88,75.77,9.857,IN,True,,stop,0.0001423576,787,209,139,3.21,"{""reasoning"": ""Left-hand traffic, Devanagari script on road signs, and arid, rocky hilly rural terrain with typical North Indian architecture confirm this is rural India, likely Rajasthan."", ""country"": ""IN"", ""latitude"": 26.88, ""longitude"": 75.77}"
+moonshotai/kimi-k2.6,no-CoT,27.2,76.0,35.375,IN,True,,stop,0.011564748,602,3320,3296,116.44,"{""country"": ""IN"", ""latitude"": 27.2, ""longitude"": 76.0}"
+anthropic/claude-opus-4.8,CoT,26.45,75.65,54.966,IN,True,,stop,0.006035,797,82,0,18.4,"{""reasoning"": ""Hindi/Devanagari signage, left-side driving, dry rocky hills and rural architecture typical of Rajasthan, India."", ""country"": ""IN"", ""latitude"": 26.45, ""longitude"": 75.65}"
+anthropic/claude-opus-4.8,no-CoT,26.5,76.2,56.014,IN,True,,stop,0.00408,666,30,0,8.44,"{""country"": ""IN"", ""latitude"": 26.5, ""longitude"": 76.2}"
+google/gemini-3.5-flash,CoT (effort=medium),27.3512,76.4318,74.841,IN,True,,stop,0.0066135,1271,523,448,12.02,"{""reasoning"": ""The left-hand driving, Devanagari script on the green sign, dry scrub vegetation, and flat-topped rocky hills are characteristic of the Aravalli Range in Rajasthan, India."", ""country"": ""IN"", ""latitude"": 27.3512, ""longitude"": 76.4318}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),27.1412,76.6125,78.528,IN,True,,stop,0.0020985,1189,35,0,36.58,"```json
+{""country"": ""IN"", ""latitude"": 27.1412, ""longitude"": 76.6125}
+```"
+google/gemini-3.5-flash,CoT (effort=high),27.553,76.601,102.362,IN,True,,stop,0.0085395,1271,737,665,15.69,"{""reasoning"": ""The left-hand driving, Devanagari script on the green sign, typical North Indian rural architecture, and the arid, hilly landscape of the Aravalli Range indicate Rajasthan, India."", ""country"": ""IN"", ""latitude"": 27.553, ""longitude"": 76.601}"
+google/gemini-3.1-pro-preview,no-CoT,27.553,76.6346,104.749,IN,True,,stop,0.004298,1189,160,126,10.35,"```json
+{""country"": ""IN"", ""latitude"": 27.553, ""longitude"": 76.6346}
+```"
+moonshotai/kimi-k2.6,CoT,26.5,74.5,142.911,IN,True,,stop,0.010395288,682,2972,2909,73.24,"{""reasoning"": ""Green road sign with Devanagari and English text, left-hand traffic, and distinctive white flat-roofed rural architecture with semi-arid hills confirm Rajasthan, India."", ""country"": ""IN"", ""latitude"": 26.5, ""longitude"": 74.5}"
+minimax/minimax-m3,no-CoT,25.35,75.85,172.956,IN,True,,stop,0.00031482,767,119,115,9.74,"{""country"": ""IN"", ""latitude"": 25.35, ""longitude"": 75.85}"
+mistralai/mistral-small-2603,no-CoT,28.6358,77.2245,234.32,IN,True,,stop,0.0001137,634,31,0,1.6,"{""country"": ""IN"", ""latitude"": 28.6358, ""longitude"": 77.2245}"
+minimax/minimax-m3,CoT,24.55,74.05,318.826,IN,True,,stop,0.00086706,843,563,483,21.06,"{""reasoning"": ""Left-hand driving, green directional signboard with Devanagari script, Tata-style blue truck, arid terrain with reddish soil, rocky Aravalli-like hills, and architecture with painted flat-roofed buildings all point to rural Rajasthan, India."", ""country"": ""IN"", ""latitude"": 24.55, ""longitude"": 74.05}"
+google/gemma-4-31b-it,no-CoT,24.5854,73.7125,336.191,IN,True,,stop,6.718e-05,406,36,0,2.82,"```json
+{""country"": ""IN"", ""latitude"": 24.5854, ""longitude"": 73.7125}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,24.5854,73.7107,336.307,IN,True,,stop,0.00018772,474,31,0,5.81,"{""country"": ""IN"", ""latitude"": 24.5854, ""longitude"": 73.7107}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,23.68560028076172,75.61026000976562,358.938,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,23.650056838989258,75.39944458007812,364.99,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,23.06665802001953,74.89507293701172,437.895,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,23.8103,79.4392,497.341,IN,True,,stop,0.000140595,473,31,0,7.57,"{""country"": ""IN"", ""latitude"": 23.8103, ""longitude"": 79.4392}"
+qwen/qwen3.6-27b,no-CoT,26.8467,80.9462,503.961,IN,True,,stop,0.0001943,473,31,0,20.25,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+openai/gpt-5.5,no-CoT,25.3608,82.9562,728.292,IN,True,,stop,0.00341,544,23,0,2.24,"{""country"":""IN"",""latitude"":25.3608,""longitude"":82.9562}"
+qwen/qwen3.5-397b-a17b,no-CoT,25.3176,82.9782,731.695,IN,True,,stop,0.0003794,473,31,0,1.21,"{""country"": ""IN"", ""latitude"": 25.3176, ""longitude"": 82.9782}"
+google/gemma-4-26b-a4b-it,no-CoT,25.3176,83.0333,737.033,IN,True,,stop,5.494e-05,406,31,0,7.95,"{""country"": ""IN"", ""latitude"": 25.3176, ""longitude"": 83.0333}"
+xiaomi/mimo-v2.5,no-CoT,19.8763,73.7883,809.774,IN,True,,stop,8.14576e-05,708,31,0,7.53,"{""country"": ""IN"", ""latitude"": 19.8763, ""longitude"": 73.7883}"
+mistralai/mistral-medium-3-5,no-CoT,19.076,72.8777,922.612,IN,True,,stop,0.001176,634,30,0,3.35,"{""country"": ""IN"", ""latitude"": 19.076, ""longitude"": 72.8777}"
+x-ai/grok-4.3,CoT,17.42,78.55,1090.239,IN,True,,stop,0.002044,676,614,544,4.83,"{
+  ""reasoning"": ""Left-hand traffic, green-and-white Indian highway sign, motorcycle with pillion rider, whitewashed buildings with green trim, arid scrub hills and overhead power lines all point to rural India."",
+  ""country"": ""IN"",
+  ""latitude"": 17.42,
+  ""longitude"": 78.55
+}"
+x-ai/grok-4.3,no-CoT,17.385,78.486,1092.37,IN,True,,stop,0.0005934,592,22,0,1.82,"{""country"": ""IN"", ""latitude"": 17.385, ""longitude"": 78.486}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,13.241321563720703,77.55070495605469,1529.469,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,13.025213241577148,77.09638214111328,1548.721,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,12.956032752990723,77.1389389038086,1556.76,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.65,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.38,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.53,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,22.09,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,

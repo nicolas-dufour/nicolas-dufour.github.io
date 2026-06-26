@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-10.247546075762,-48.333422317075,0.0,BR,True,,,,,,,,"Palmas, Palmas, Tocantins, BR"
+google/gemini-3.5-flash,CoT (effort=low),-15.7934,-47.8822,618.604,BR,True,,stop,0.0038415,1271,215,152,3.21,"{""reasoning"": ""The wide, multi-lane avenue with distinct curved streetlights, flat terrain, and lush green vegetation is highly characteristic of Brasília, Brazil."", ""country"": ""BR"", ""latitude"": -15.7934, ""longitude"": -47.8822}"
+google/gemini-3.1-pro-preview,CoT,-15.793889,-47.882778,618.653,BR,True,,stop,0.005388,1272,237,154,4.43,"{
+  ""reasoning"": ""The distinctive curved streetlights with a small spike on top, combined with the wide, multi-lane road and lush green surroundings, are highly characteristic of Brasília, Brazil."",
+  ""country"": ""BR"",
+  ""latitude"": -15.793889,
+  ""longitude"": -47.882778
+}"
+anthropic/claude-opus-4.8,no-CoT,-15.794,-47.882,618.672,BR,True,,stop,0.00408,666,30,0,8.28,"{""country"": ""BR"", ""latitude"": -15.794, ""longitude"": -47.882}"
+google/gemini-3.1-pro-preview,no-CoT,-15.7942,-47.8822,618.692,BR,True,,stop,0.0028,1190,35,0,8.31,"```json
+{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7942,-47.8822,618.692,BR,True,,stop,0.00036468,473,31,0,9.14,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-15.7975,-47.8919,618.976,BR,True,,stop,0.0021,1190,35,0,7.35,"```json
+{""country"": ""BR"", ""latitude"": -15.7975, ""longitude"": -47.8919}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-15.8084,-47.8892,620.207,BR,True,,stop,0.0077655,1271,651,584,6.2,"{""reasoning"": ""The wide multi-lane road with white-painted curbs, lush tropical vegetation, and distinctive curved streetlights with vertical spikes is highly characteristic of Brasília, Brazil."", ""country"": ""BR"", ""latitude"": -15.8084, ""longitude"": -47.8892}"
+google/gemini-3.5-flash,CoT (effort=high),-15.8185,-47.8872,621.343,BR,True,,stop,0.0161895,1271,1587,1515,18.47,"{""reasoning"": ""The distinctive curved streetlights with vertical tips, wide tree-lined avenue, and white-painted curbs are highly characteristic of Brasília, Brazil, specifically along major routes like L4 Sul."", ""country"": ""BR"", ""latitude"": -15.8185, ""longitude"": -47.8872}"
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.6333,1490.176,BR,True,,stop,0.0002548,474,31,0,24.38,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-27b,no-CoT,-23.55052,-46.633308,1490.178,BR,True,,stop,0.0002125,474,47,0,10.36,"```json
+{
+  ""country"": ""BR"",
+  ""latitude"": -23.55052,
+  ""longitude"": -46.633308
+}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-29.558073043823242,-58.01371765136719,2370.889,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-33.389076232910156,-59.74124526977539,2824.804,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-33.43645477294922,-59.84473419189453,2833.866,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5464.311,,True,True,,,,,,1.2,
+qwen/qwen3.6-35b-a3b,CoT,33.6407,-84.4277,6194.239,US,True,,stop,0.0045312241,553,4602,4474,27.84,"```json
+{
+  ""reasoning"": ""The yellow diamond-shaped warning sign on the left and the white dashed lane markings indicate right-hand traffic in North America, likely the US. The dense, mature deciduous trees (resembling Southern Live Oaks) and the wide, tree-lined parkway-style road suggest a location in the Southeastern United States, possibly near a large facility like an airport or university."",
+  ""country"": ""US"",
+  ""latitude"": 33.6407,
+  ""longitude"": -84.4277
+}
+```"
+moonshotai/kimi-k2.6,CoT,38.892,-77.035,6219.841,US,True,,stop,0.008133948,682,2313,2244,213.78,"{""reasoning"": ""Yellow diamond warning sign and white lane markings are distinctly North American; wide arterial road with mast-arm streetlights and mature temperate deciduous vegetation matches U.S. Mid-Atlantic suburban or parkway design."", ""country"": ""US"", ""latitude"": 38.892, ""longitude"": -77.035}"
+qwen/qwen3.5-122b-a10b,no-CoT,38.8951,-77.0364,6220.193,US,True,,stop,0.00018746,473,31,0,3.39,"{""country"": ""US"", ""latitude"": 38.8951, ""longitude"": -77.0364}"
+qwen/qwen3.5-35b-a3b,no-CoT,38.8977,-77.0365,6220.435,US,True,,stop,0.00010195,473,31,0,7.92,"{""country"": ""US"", ""latitude"": 38.8977, ""longitude"": -77.0365}"
+moonshotai/kimi-k2.6,no-CoT,38.9072,-77.0369,6221.323,US,True,,stop,0.00051939,602,25,0,9.18,"{""country"": ""US"", ""latitude"": 38.9072, ""longitude"": -77.0369}"
+qwen/qwen3.6-35b-a3b,no-CoT,38.9072,-77.0369,6221.323,US,True,,stop,0.000157,473,31,0,0.6,"{""country"": ""US"", ""latitude"": 38.9072, ""longitude"": -77.0369}"
+x-ai/grok-4.3,CoT,38.85,-77.25,6226.661,US,True,,stop,0.002269,676,704,635,13.34,"{""reasoning"": ""Yellow diamond warning sign indicates US-style MUTCD markings; right-hand white edge line + multi-lane divided asphalt road with European-style single-arm streetlights and deciduous tree canopy points to eastern US suburban/rural highway."", ""country"": ""US"", ""latitude"": 38.85, ""longitude"": -77.25}"
+qwen/qwen3.5-9b,no-CoT,42.3601,-71.0589,6291.047,US,True,,stop,5.205e-05,474,31,0,17.28,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+xiaomi/mimo-v2.5,no-CoT,30.0,-90.0,6315.036,US,True,,stop,7.97776e-05,708,25,0,1.19,"{""country"": ""US"", ""latitude"": 30.0, ""longitude"": -90.0}"
+x-ai/grok-4.3,no-CoT,39.7817,-86.1425,6791.464,US,True,,stop,0.0005984,592,24,0,0.76,"{""country"": ""US"", ""latitude"": 39.7817, ""longitude"": -86.1425}"
+openai/gpt-5.5,no-CoT,48.7815,2.1097,8205.295,FR,True,,stop,0.00341,544,23,0,1.59,"{""country"":""FR"",""latitude"":48.7815,""longitude"":2.1097}"
+anthropic/claude-opus-4.8,CoT,-15.405,28.287,8287.009,ZM,True,,stop,0.00621,797,89,0,9.79,"{""reasoning"": ""Wide divided boulevard with lush tropical trees and red soil, driving on right, consistent with planned African capital like Lilongwe or Lusaka."", ""country"": ""ZM"", ""latitude"": -15.405, ""longitude"": 28.287}"
+openai/gpt-5.5,CoT,52.1798,20.9819,9544.563,PL,True,,stop,0.020805,621,590,516,34.82,"{""reasoning"":""Right-hand traffic with European white lane markings and a yellow diamond priority-road sign point to continental Europe; the flat, tree-lined boulevard with simple modern streetlights is most consistent with Poland, especially a Warsaw park/arterial setting."",""country"":""PL"",""latitude"":52.1798,""longitude"":20.9819}"
+mistralai/mistral-small-2603,no-CoT,47.6062,-122.3321,9679.254,US,True,,stop,0.000142875,634,32,0,8.3,"{""country"": ""US"", ""latitude"": 47.6062, ""longitude"": -122.3321}"
+minimax/minimax-m3,CoT,-37.75,144.95,14501.704,AU,True,,stop,0.00075222,845,464,511,14.82,"{""reasoning"": ""Left-hand traffic, modern Australian-style street lights, wide suburban arterial road with grass verges, and overcast temperate sky with eucalyptus-like trees strongly indicate an outer suburban area of Melbourne, Australia."", ""country"": ""AU"", ""latitude"": -37.75, ""longitude"": 144.95}"
+google/gemma-4-31b-it,no-CoT,-35.2809,149.13,14629.874,AU,True,,stop,6.418e-05,406,37,0,10.31,"```json
+{""country"": ""AU"", ""latitude"": -35.2809, ""longitude"": 149.1300}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-35.2809,149.13,14629.874,AU,True,,stop,0.001191,634,32,0,1.85,"{""country"": ""AU"", ""latitude"": -35.2809, ""longitude"": 149.1300}"
+minimax/minimax-m3,no-CoT,-35.28,149.13,14629.966,AU,True,,stop,0.00035922,767,156,172,4.58,"{""country"": ""AU"", ""latitude"": -35.28, ""longitude"": 149.13}"
+xiaomi/mimo-v2.5,CoT,-33.85,151.21,14694.401,AU,True,,stop,0.0001417976,787,207,122,9.18,"{""reasoning"": ""The left-hand traffic combined with the distinct style of the streetlights, road markings, and lush vegetation suggests a location in the Southern Hemisphere, likely Australia. The Jacaranda-like foliage and suburban layout are characteristic of Australian cities like Sydney or Brisbane."", ""country"": ""AU"", ""latitude"": -33.85, ""longitude"": 151.21}"
+qwen/qwen3.5-397b-a17b,CoT,2.935,101.695,16608.815,MY,True,,stop,0.02069265,553,6829,1,220.67,"{
+""reasoning"": ""The image shows left-hand traffic with white lane markings and a yellow diamond warning sign, consistent with Malaysia. The wide, well-maintained road flanked by lush tropical trees (likely Rain Trees) and modern streetlights strongly suggests a planned area like Putrajaya or Cyberjaya."",
+""country"": ""MY"",
+""latitude"": 2.9350,
+""longitude"": 101.6950
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,1.381870150566101,103.73458862304688,16775.073,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,1.377854824066162,103.74645233154297,16776.177,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,1.1536352634429932,104.17095184326172,16812.598,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.51,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.06,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.23,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.09,

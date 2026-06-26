@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,34.274498477003,-97.959989929322,0.0,US,True,,,,,,,,"Comanche, Stephens County, Oklahoma, US"
+xiaomi/mimo-v2.5,no-CoT,33.5,-96.5,159.931,US,True,,stop,7.97776e-05,708,25,0,1.58,"{""country"": ""US"", ""latitude"": 33.5, ""longitude"": -96.5}"
+anthropic/claude-opus-4.8,CoT,35.8,-97.5,174.721,US,True,,stop,0.006235,797,90,0,3.71,"{""reasoning"": ""Yellow center line with white edge lines, wide rural two-lane road, flat grassland with scattered trees typical of the US Great Plains/Oklahoma region."", ""country"": ""US"", ""latitude"": 35.8, ""longitude"": -97.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,32.7767,-96.797,198.389,US,True,,stop,9.636e-05,474,30,0,1.42,"{""country"": ""US"", ""latitude"": 32.7767, ""longitude"": -96.797}"
+anthropic/claude-opus-4.8,no-CoT,36.5,-97.5,250.952,US,True,,stop,0.004055,666,29,0,2.25,"{""country"": ""US"", ""latitude"": 36.5, ""longitude"": -97.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),38.4125,-98.9542,468.652,US,True,,stop,0.0021,1190,35,0,7.55,"```json
+{""country"": ""US"", ""latitude"": 38.4125, ""longitude"": -98.9542}
+```"
+google/gemini-3.1-pro-preview,CoT,38.5,-98.0,469.868,US,True,,stop,0.005014,1271,206,123,11.33,"{
+  ""reasoning"": ""The double yellow center lines, solid white edge line, and rumble strips on the shoulder are characteristic of US highways. The flat, grassy landscape with scattered trees suggests the Great Plains region, likely Kansas or a neighboring state."",
+  ""country"": ""US"",
+  ""latitude"": 38.5,
+  ""longitude"": -98.0
+}"
+google/gemini-3.1-pro-preview,no-CoT,38.5,-98.0,469.868,US,True,,stop,0.004418,1189,170,141,10.07,"```json
+{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -98.0}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.45142364501953,-96.90569305419922,473.939,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.45208740234375,-96.90162658691406,474.084,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),38.5562,-98.2441,476.781,US,True,,stop,0.003285,1272,153,80,8.52,"{""reasoning"": ""The double yellow center lines, white shoulder lines with rumble strips, and flat, grassy landscape with scattered deciduous trees are highly characteristic of the Great Plains region in the United States, particularly Kansas."", ""country"": ""US"", ""latitude"": 38.5562, ""longitude"": -98.2441}"
+moonshotai/kimi-k2.6,CoT,38.5,-97.0,477.639,US,True,,stop,0.008311248,682,2368,2307,51.29,"{""reasoning"": ""The double-yellow rural highway, extremely flat terrain, and deciduous tree lines along open prairie are classic of the US Great Plains, strongly suggesting Kansas or Nebraska."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -97.0}"
+x-ai/grok-4.3,CoT,38.5,-97.0,477.639,US,True,,stop,0.001774,676,506,449,4.97,"{""reasoning"": ""US-style double yellow center line + white edge lines, right-hand traffic, rural deciduous trees/grassland on flat terrain all point to Midwest USA."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -97.0}"
+google/gemini-3.5-flash,CoT (effort=medium),38.5234,-97.1532,477.936,US,True,,stop,0.0048945,1271,332,257,11.09,"{""reasoning"": ""The double yellow center lines, white shoulder lines with rumble strips, and flat to gently rolling grassy landscape with scattered deciduous trees are highly characteristic of the Great Plains region in the United States, particularly Kansas."", ""country"": ""US"", ""latitude"": 38.5234, ""longitude"": -97.1532}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.511051177978516,-96.72273254394531,483.91,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,38.85,-97.65,509.524,US,True,,stop,0.0005934,592,22,0,0.76,"{""country"": ""US"", ""latitude"": 38.85, ""longitude"": -97.65}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.8057861328125,-96.23397827148438,526.892,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.86458206176758,-96.18577575683594,534.388,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,39.7392,-98.3381,608.572,US,True,,stop,0.0002065,474,44,0,9.11,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 39.7392,
+  ""longitude"": -98.3381
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,38.71471405029297,-93.55558013916016,631.307,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,40.0,-98.0,636.657,US,True,,stop,0.0011385,634,25,0,7.42,"{""country"": ""US"", ""latitude"": 40.0, ""longitude"": -98.0}"
+xiaomi/mimo-v2.5,CoT,40.5,-98.0,692.253,US,True,,stop,0.0001633576,787,284,214,10.02,"{""reasoning"": ""Two-lane asphalt highway with standard US road markings (yellow center lines, white edge lines); flat, open landscape with scattered trees (typical of Great Plains/Midwest US)."", ""country"": ""US"", ""latitude"": 40.5, ""longitude"": -98.0}"
+openai/gpt-5.5,CoT,41.1562,-98.0365,765.24,US,True,,stop,0.012375,621,309,227,8.63,"{""reasoning"":""Right-hand driving with US-style double yellow centerlines and white shoulder rumble strips points to the United States. The flat rural Great Plains landscape with cottonwood-like trees and broad grassy verges is most consistent with central Nebraska/Kansas, so I estimate central Nebraska."",""country"":""US"",""latitude"":41.1562,""longitude"":-98.0365}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.2565,-96.0123,794.952,US,True,,stop,0.000258055,473,31,0,10.97,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -96.0123}"
+google/gemma-4-31b-it,no-CoT,41.25,-95.85,797.434,US,True,,stop,5.632e-05,408,32,0,3.51,"```json
+{""country"": ""US"", ""latitude"": 41.25, ""longitude"": -95.85}
+```"
+google/gemini-3.5-flash,CoT (effort=high),41.5234,-99.4512,816.552,US,True,,stop,0.0078195,1271,657,584,11.65,"{""reasoning"": ""The double yellow center lines and white shoulder lines with rumble strips are characteristic of US highways, while the flat, grassy terrain with scattered deciduous trees points to the Great Plains region, likely Nebraska."", ""country"": ""US"", ""latitude"": 41.5234, ""longitude"": -99.4512}"
+openai/gpt-5.5,no-CoT,39.7392,-104.9903,870.612,US,True,,stop,0.00344,544,24,0,1.61,"{""country"":""US"",""latitude"":39.7392,""longitude"":-104.9903}"
+qwen/qwen3.6-35b-a3b,no-CoT,39.7392,-104.9903,870.612,US,True,,stop,0.000146,474,32,0,14.56,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+qwen/qwen3.5-9b,no-CoT,42.3601,-93.6091,975.556,US,True,,stop,5.205e-05,474,31,0,8.59,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -93.6091}"
+qwen/qwen3.5-122b-a10b,no-CoT,36.1627,-86.7816,1036.303,US,True,,stop,0.00018772,474,31,0,5.74,"{""country"": ""US"", ""latitude"": 36.1627, ""longitude"": -86.7816}"
+minimax/minimax-m3,CoT,43.65,-95.15,1070.259,US,True,,stop,0.00079386,843,502,439,18.04,"{""reasoning"": ""Yellow double center line with white edge markings indicates US highway design; flat prairie terrain with deciduous trees and agricultural surroundings suggests the Upper Midwest (Minnesota/Iowa plains)."", ""country"": ""US"", ""latitude"": 43.65, ""longitude"": -95.15}"
+qwen/qwen3.6-27b,no-CoT,41.8781,-87.6298,1236.201,US,True,,stop,0.0001943,473,31,0,11.01,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4196,2227.086,US,True,,stop,0.0001143,634,32,0,2.88,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4196}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10738.204,,True,True,,,,,,19.46,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.2,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,21.71,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.82,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.3,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,13.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.54,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.33,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.29,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.33,

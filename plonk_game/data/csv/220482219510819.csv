@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,26.571847367605,-78.561570454257,0.0,BS,True,,,,,,,,"Lucaya, None, Freeport, BS"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,26.280614852905273,-78.50556182861328,32.86,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,26.27180290222168,-78.47640991210938,34.424,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,26.229877471923828,-78.55586242675781,38.03,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,26.5885,-80.0318,146.214,US,True,,stop,0.0014115,786,31,0,1.39,"{""country"": ""US"", ""latitude"": 26.5885, ""longitude"": -80.0318}"
+minimax/minimax-m3,no-CoT,26.7,-80.2,163.471,US,True,,stop,0.00024012,906,22,0,1.5,"{""country"": ""US"", ""latitude"": 26.7, ""longitude"": -80.2}"
+qwen/qwen3.6-35b-a3b,no-CoT,26.1224,-80.1373,164.772,US,True,,stop,0.0001668,586,31,0,2.35,"{""country"": ""US"", ""latitude"": 26.1224, ""longitude"": -80.1373}"
+openai/gpt-5.5,no-CoT,26.1357,-80.2128,171.523,US,True,,stop,0.00411,678,24,0,7.32,"{""country"":""US"",""latitude"":26.1357,""longitude"":-80.2128}"
+anthropic/claude-opus-4.8,CoT,26.12,-80.35,185.154,US,True,,stop,0.006845,949,84,0,3.16,"{""reasoning"": ""Flat terrain with sabal palms, slash pines, and live oaks plus humid subtropical sky strongly suggests South Florida, USA."", ""country"": ""US"", ""latitude"": 26.12, ""longitude"": -80.35}"
+anthropic/claude-opus-4.8,no-CoT,26.6406,-80.455,188.398,US,True,,stop,0.004865,818,31,0,10.35,"{""country"": ""US"", ""latitude"": 26.6406, ""longitude"": -80.4550}"
+google/gemini-3.1-pro-preview,no-CoT,26.15,-80.45,193.905,US,True,,stop,0.004588,1226,178,147,9.43,"```json
+{""country"": ""US"", ""latitude"": 26.15, ""longitude"": -80.45}
+```"
+openai/gpt-5.5,CoT,25.7317,-80.3316,199.845,US,True,,stop,0.015445,755,389,319,13.05,"{""reasoning"":""Flat subtropical parkland with sabal palms, live-oak-like trees, mowed grass, and bright humid sky strongly suggests South Florida. The landscaping and terrain fit a Miami-area public park best."",""country"":""US"",""latitude"":25.7317,""longitude"":-80.3316}"
+x-ai/grok-4.3,CoT,27.176,-80.85,236.709,US,True,,stop,0.001824,788,470,400,16.96,"{""reasoning"": ""Sabal palms, live oaks with Spanish moss, flat open grassy terrain with pine flatwoods in background, and subtropical sky indicate central/south Florida, USA. Road layout and vegetation match state park or preserve scenery."", ""country"": ""US"", ""latitude"": 27.176, ""longitude"": -80.85}"
+google/gemini-3.5-flash,CoT (effort=low),25.7617,-80.7718,238.26,US,True,,stop,0.003033,1308,119,50,8.36,"{""reasoning"": ""The presence of Sabal palmetto (cabbage palms) and slash pines in a very flat, grassy landscape is highly characteristic of southern Florida, particularly near the Everglades."", ""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.7718}"
+google/gemini-3.1-pro-preview,CoT,25.85,-80.85,241.99,US,True,,stop,0.005076,1308,205,128,10.9,"{
+  ""reasoning"": ""The flat terrain, mix of Sabal palms, broadleaf trees, and distant pine trees strongly indicate a Florida landscape, likely in the southern part of the state near the Everglades."",
+  ""country"": ""US"",
+  ""latitude"": 25.85,
+  ""longitude"": -80.85
+}"
+google/gemini-3.5-flash,CoT (effort=medium),25.3505,-80.6812,251.684,US,True,,stop,0.0050295,1307,341,274,4.72,"{""reasoning"": ""The presence of cabbage palms (Sabal palmetto) and slash pines in a flat, grassy landscape is highly characteristic of southern Florida, particularly the Everglades region."", ""country"": ""US"", ""latitude"": 25.3505, ""longitude"": -80.6812}"
+google/gemini-3.5-flash,CoT (effort=high),25.3512,-80.7515,257.588,US,True,,stop,0.0056955,1307,415,345,5.36,"{""reasoning"": ""The presence of Sabal palmetto (cabbage palms) and slash pines in a flat, grassy landscape is highly characteristic of southern Florida, particularly within or near the Everglades."", ""country"": ""US"", ""latitude"": 25.3512, ""longitude"": -80.7515}"
+qwen/qwen3.5-35b-a3b,no-CoT,28.0836,-80.6081,262.913,US,True,,stop,0.00011875,585,31,0,1.88,"{""country"": ""US"", ""latitude"": 28.0836, ""longitude"": -80.6081}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),25.4481,-80.9231,267.025,US,True,,stop,0.002154,1226,35,0,1.91,"```json
+{""country"": ""US"", ""latitude"": 25.4481, ""longitude"": -80.9231}
+```"
+x-ai/grok-4.3,no-CoT,28.3852,-80.6051,285.115,US,True,,stop,0.0007384,704,24,0,7.5,"{""country"": ""US"", ""latitude"": 28.3852, ""longitude"": -80.6051}"
+qwen/qwen3.6-27b,no-CoT,28.5383,-81.3792,353.482,US,True,,stop,0.0002279,585,31,0,17.59,"{""country"": ""US"", ""latitude"": 28.5383, ""longitude"": -81.3792}"
+google/gemma-4-31b-it,no-CoT,28.3852,-81.5223,354.893,US,True,,stop,6.692e-05,404,36,0,2.75,"```json
+{""country"": ""US"", ""latitude"": 28.3852, ""longitude"": -81.5223}
+```"
+moonshotai/kimi-k2.6,CoT,28.5,-81.5,360.403,US,True,,stop,0.006397596,834,1788,1725,34.68,"{""reasoning"": ""Flat subtropical landscape with cabbage palms, slash pines, and sandy soil is diagnostic of central Florida; rural road style and vegetation density match Florida's interior parklands."", ""country"": ""US"", ""latitude"": 28.5, ""longitude"": -81.5}"
+xiaomi/mimo-v2.5,no-CoT,28.5,-81.5,360.403,US,True,,stop,9.54576e-05,820,25,0,7.25,"{""country"": ""US"", ""latitude"": 28.5, ""longitude"": -81.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,27.450796127319336,-82.36209106445312,388.959,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,27.4989,-82.5251,405.85,US,True,,stop,0.00021684,586,31,0,12.42,"{""country"": ""US"", ""latitude"": 27.4989, ""longitude"": -82.5251}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,27.454219818115234,-82.5592269897461,407.974,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,27.46697235107422,-82.57832336425781,410.13,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,27.9506,-82.4572,414.428,US,True,,stop,0.0004046,586,31,0,3.81,"{""country"": ""US"", ""latitude"": 27.9506, ""longitude"": -82.4572}"
+minimax/minimax-m3,CoT,28.04,-82.45,417.408,US,True,,stop,0.00058386,995,289,221,15.7,"{""reasoning"": ""Sabal palms mixed with oak trees on flat terrain in a park setting strongly indicate central Florida. The subtropical climate, grass species, and landscape style are characteristic of the Tampa Bay or Orlando region."", ""country"": ""US"", ""latitude"": 28.04, ""longitude"": -82.45}"
+qwen/qwen3.5-9b,no-CoT,27.9506,-82.6269,430.054,US,True,,stop,6.325e-05,586,31,0,11.53,"{""country"": ""US"", ""latitude"": 27.9506, ""longitude"": -82.6269}"
+mistralai/mistral-small-2603,no-CoT,34.0522,-118.2437,3873.937,US,True,,stop,0.0001371,786,32,0,1.48,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8871.524,,True,True,,,,,,12.66,
+xiaomi/mimo-v2.5,CoT,-28.0,153.5,14907.701,AU,True,,stop,0.0004693976,899,1321,1246,14.66,"{""reasoning"": ""The palm trees and subtropical vegetation are characteristic of eastern Australia, particularly in Queensland or New South Wales. The open grassy landscape and tree types suggest a park or roadside area in a warm, humid climate."", ""country"": ""AU"", ""latitude"": -28.0, ""longitude"": 153.5}"
+qwen/qwen3.5-27b,no-CoT,-27.6358,153.0089,14947.319,AU,True,,stop,0.000163995,585,32,0,1.35,"{""country"": ""AU"", ""latitude"": -27.6358, ""longitude"": 153.0089}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.39,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.81,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,15.68,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.75,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.08,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.27,

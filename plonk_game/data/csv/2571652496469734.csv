@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,50.901938541065,10.204000801035,0.0,DE,True,,,,,,,,"Marksuhl, None, Thuringia, DE"
+mistralai/mistral-medium-3-5,no-CoT,50.8503,10.4531,18.397,DE,True,,stop,0.0011835,634,31,0,1.94,"{""country"": ""DE"", ""latitude"": 50.8503, ""longitude"": 10.4531}"
+google/gemini-3.1-pro-preview,no-CoT,51.165691,10.451526,34.054,DE,True,,stop,0.002848,1190,39,0,2.17,"```json
+{""country"": ""DE"", ""latitude"": 51.165691, ""longitude"": 10.451526}
+```"
+xiaomi/mimo-v2.5,no-CoT,51.2,10.5,39.071,DE,True,,stop,7.97776e-05,708,25,0,1.77,"{""country"": ""DE"", ""latitude"": 51.2, ""longitude"": 10.5}"
+google/gemini-3.1-pro-preview,CoT,51.0,11.0,56.816,DE,True,,stop,0.004812,1272,189,117,3.41,"{
+  ""reasoning"": ""The white delineator posts with slanted black bands are characteristic of Germany. The rural, slightly rolling landscape with bare trees suggests a central or eastern German location in winter."",
+  ""country"": ""DE"",
+  ""latitude"": 51.0,
+  ""longitude"": 11.0
+}"
+qwen/qwen3.6-27b,no-CoT,51.5,10.5,69.626,DE,True,,stop,0.0001823,473,25,0,305.9,"{""country"": ""DE"", ""latitude"": 51.5, ""longitude"": 10.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,51.545921325683594,10.782669067382812,82.167,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),51.3852,11.2431,90.232,DE,True,,stop,0.0021,1190,35,0,1.09,"```json
+{""country"": ""DE"", ""latitude"": 51.3852, ""longitude"": 11.2431}
+```"
+google/gemini-3.5-flash,CoT (effort=low),51.4582,11.3824,102.823,DE,True,,stop,0.004158,1272,250,179,8.82,"{""reasoning"": ""The black-and-white road bollards (Leitpfosten) and the flat, agricultural landscape with bare deciduous trees are highly characteristic of rural Germany during the winter season."", ""country"": ""DE"", ""latitude"": 51.4582, ""longitude"": 11.3824}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,51.692752838134766,11.199869155883789,111.921,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,50.11035919189453,9.102311134338379,117.545,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,50.11481475830078,9.093086242675781,117.607,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),51.6253,11.4821,119.905,DE,True,,stop,0.0070185,1271,568,490,5.93,"{""reasoning"": ""The white road bollards with black tops and rectangular reflectors are characteristic of Germany. The flat to gently rolling agricultural landscape with dark soil and bare trees suggests a location in eastern Germany, such as Saxony-Anhalt."", ""country"": ""DE"", ""latitude"": 51.6253, ""longitude"": 11.4821}"
+minimax/minimax-m3,no-CoT,51.0,12.0,126.28,DE,True,,stop,0.00019452,754,22,0,2.25,"{""country"": ""DE"", ""latitude"": 51.0, ""longitude"": 12.0}{""country"": ""DE"", ""latitude"": 51.0, ""longitude"": 12.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,50.14570617675781,8.852322578430176,127.282,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,51.75,11.45,128.013,DE,True,,stop,0.00064662,845,376,361,8.31,"{""reasoning"": ""Bare deciduous oak trees, gently rolling hills with brown plowed fields, small rural road with standard European white-and-red delineator posts, and overcast winter sky strongly suggest a temperate central European agricultural region, most likely eastern Germany (Saxony-Anhalt/Brandenburg)."", ""country"": ""DE"", ""latitude"": 51.75, ""longitude"": 11.45}"
+moonshotai/kimi-k2.6,CoT,52.2,10.5,145.781,DE,True,,stop,0.007307388,682,2068,1996,50.86,"{""reasoning"": ""The white roadside delineator posts with reflective strips are standard German Leitpfosten, and the flat, straight road through dark agricultural soil with bare deciduous trees is characteristic of Germany's North European Plain in winter."", ""country"": ""DE"", ""latitude"": 52.2, ""longitude"": 10.5}"
+google/gemini-3.5-flash,CoT (effort=high),52.0125,11.3542,146.966,DE,True,,stop,0.0153165,1271,1490,1409,17.62,"{""reasoning"": ""The flat to gently rolling landscape with very dark, fertile soil and bare trees suggests the Magdeburger Börde region in Germany, supported by the characteristic German 'Leitpfosten' (delineator posts) along the roadside."", ""country"": ""DE"", ""latitude"": 52.0125, ""longitude"": 11.3542}"
+qwen/qwen3.5-397b-a17b,no-CoT,52.3456,10.1234,160.624,DE,True,,stop,0.0003486,474,31,0,8.4,"{""country"": ""DE"", ""latitude"": 52.3456, ""longitude"": 10.1234}"
+x-ai/grok-4.3,CoT,52.35,10.25,161.048,DE,True,,stop,0.001724,676,486,405,10.19,"{
+  ""reasoning"": ""Rural European road with white reflective Leitpfosten markers, dark plowed fields, bare deciduous trees and flat-to-gently rolling terrain under hazy temperate sky point to northern/central Europe; right-side marker placement and road style typical of Germany."",
+  ""country"": ""DE"",
+  ""latitude"": 52.35,
+  ""longitude"": 10.25
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,52.4583,10.9833,181.206,DE,True,,stop,9.736e-05,474,31,0,7.73,"{""country"": ""DE"", ""latitude"": 52.4583, ""longitude"": 10.9833}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,51.917964935302734,12.305914878845215,184.423,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,52.3758,13.405,275.012,DE,True,,stop,6.718e-05,406,36,0,2.61,"```json
+{""country"": ""DE"", ""latitude"": 52.3758, ""longitude"": 13.4050}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,52.4833,13.4167,282.72,DE,True,,stop,0.00018772,474,31,0,11.67,"{""country"": ""DE"", ""latitude"": 52.4833, ""longitude"": 13.4167}"
+xiaomi/mimo-v2.5,CoT,52.52,13.405,284.58,DE,True,,stop,0.0003761576,787,1044,981,16.73,"{""reasoning"": ""The white road bollards with black bands are characteristic of German rural roads, and the flat agricultural landscape with dark soil suggests eastern Germany."", ""country"": ""DE"", ""latitude"": 52.52, ""longitude"": 13.405}"
+openai/gpt-5.5,CoT,50.0457,15.2479,369.342,CZ,True,,stop,0.013125,621,334,248,17.1,"{""reasoning"":""The narrow unmarked rural asphalt road with Czech/Slovak-style white delineator bollards with black panels, flat ploughed fields, and leafless roadside trees point to central Europe. The landscape and road furniture most closely fit rural Czechia, likely in central Bohemia."",""country"":""CZ"",""latitude"":50.0457,""longitude"":15.2479}"
+openai/gpt-5.5,no-CoT,49.792,15.585,401.164,CZ,True,,stop,0.00335,544,21,0,2.26,"{""country"":""CZ"",""latitude"":49.792,""longitude"":15.585}"
+x-ai/grok-4.3,no-CoT,48.85,2.35,606.916,FR,True,,stop,0.0005934,592,22,0,7.09,"{""country"": ""FR"", ""latitude"": 48.85, ""longitude"": 2.35}"
+anthropic/claude-opus-4.8,no-CoT,51.2,19.5,650.203,PL,True,,stop,0.00408,666,30,0,8.98,"{""country"": ""PL"", ""latitude"": 51.2, ""longitude"": 19.5}"
+anthropic/claude-opus-4.8,CoT,51.5,19.5,650.646,PL,True,,stop,0.006335,797,94,0,10.36,"{""reasoning"": ""Rural narrow road with white delineator posts, plowed dark fields, bare deciduous trees suggest Central/Eastern European agricultural landscape, likely Poland."", ""country"": ""PL"", ""latitude"": 51.5, ""longitude"": 19.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,47.322,2.456,689.713,FR,True,,stop,0.00015325,473,28,0,1.52,"{""country"": ""FR"", ""latitude"": 47.322, ""longitude"": 2.456}"
+qwen/qwen3.5-9b,no-CoT,51.45,-0.75,765.327,GB,True,,stop,5.13e-05,474,26,0,9.58,"{""country"": ""GB"", ""latitude"": 51.45, ""longitude"": -0.75}"
+qwen/qwen3.5-27b,no-CoT,52.3456,-1.2345,804.869,GB,True,,stop,0.00019251,473,30,0,1.67,"{""country"": ""GB"", ""latitude"": 52.3456, ""longitude"": -1.2345}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5741.503,,True,True,,,,,,13.06,
+mistralai/mistral-small-2603,no-CoT,36.0,-119.0,9153.386,US,True,,stop,0.0001107,634,26,0,2.15,"{""country"": ""US"", ""latitude"": 36.0, ""longitude"": -119.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.67,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,9.28,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.69,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.4,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.27,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.27,

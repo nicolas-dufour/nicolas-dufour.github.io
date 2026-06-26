@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-26.871045325262,27.629491724815,0.0,ZA,True,,,,,,,,"Parys, Fezile Dabi District Municipality, Orange Free State, ZA"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-26.738162994384766,27.985904693603516,38.335,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-26.723093032836914,27.98741912841797,39.15,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-26.435951232910156,28.028419494628906,62.549,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-26.8125,28.2833,65.193,ZA,True,,stop,0.0021525,1225,35,0,1.93,"```json
+{""country"": ""ZA"", ""latitude"": -26.8125, ""longitude"": 28.2833}
+```"
+moonshotai/kimi-k2.6,no-CoT,-26.2,28.0,83.224,ZA,True,,stop,0.00030996,755,23,0,7.88,"{""country"": ""ZA"", ""latitude"": -26.2, ""longitude"": 28.0}"
+xiaomi/mimo-v2.5,CoT,-26.2,28.1,88.082,ZA,True,,stop,0.0001737176,899,265,197,4.13,"{""reasoning"": ""The open, grassy highveld landscape, highway road markings with yellow center lines, and tall roadside sign typical of South African road infrastructure are decisive clues pointing to this location."", ""country"": ""ZA"", ""latitude"": -26.2, ""longitude"": 28.1}"
+anthropic/claude-opus-4.8,CoT,-26.5,28.5,95.823,ZA,True,,stop,0.006995,949,90,0,3.04,"{""reasoning"": ""Dry golden highveld grassland, gentle hills, multi-lane highway with yellow edge lines, left-side driving — characteristic of South African highveld."", ""country"": ""ZA"", ""latitude"": -26.5, ""longitude"": 28.5}"
+anthropic/claude-opus-4.8,no-CoT,-26.5,28.5,95.823,ZA,True,,stop,0.004865,818,31,0,2.52,"{""country"": ""ZA"", ""latitude"": -26.5, ""longitude"": 28.5}"
+minimax/minimax-m3,no-CoT,-26.0,28.0,103.643,ZA,True,,stop,0.00023736,904,23,0,5.46,"{""country"": ""ZA"", ""latitude"": -26.0, ""longitude"": 28.0}"
+google/gemini-3.5-flash,CoT (effort=medium),-27.75,27.22,105.778,ZA,True,,stop,0.0087645,1307,756,684,6.12,"{""reasoning"": ""The yellow left-shoulder line indicates left-hand driving, while the dry, flat grassland with distant low hills is highly characteristic of the South African Highveld (Free State) during the winter dry season."", ""country"": ""ZA"", ""latitude"": -27.75, ""longitude"": 27.22}"
+openai/gpt-5.5,no-CoT,-26.2458,28.5512,115.055,ZA,True,,stop,0.00411,678,24,0,2.13,"{""country"":""ZA"",""latitude"":-26.2458,""longitude"":28.5512}"
+google/gemini-3.1-pro-preview,CoT,-28.0,27.0,140.064,ZA,True,,stop,0.005472,1308,238,159,3.88,"{
+  ""reasoning"": ""Driving on the left with a yellow line on the left edge of the road is characteristic of South Africa. The dry, grassy Highveld landscape and the style of the road sign back further support this."",
+  ""country"": ""ZA"",
+  ""latitude"": -28.0,
+  ""longitude"": 27.0
+}"
+google/gemini-3.5-flash,CoT (effort=low),-28.2512,27.1543,160.455,ZA,True,,stop,0.004221,1308,251,176,9.39,"{""reasoning"": ""The yellow shoulder line on the left side of the road and the flat, dry grassland landscape are characteristic of the Highveld region in South Africa, likely along a major national route like the N1."", ""country"": ""ZA"", ""latitude"": -28.2512, ""longitude"": 27.1543}"
+moonshotai/kimi-k2.6,CoT,-25.8,28.75,163.253,ZA,True,,stop,0.025604415,833,6954,7149,73.31,"{""reasoning"": ""The dry winter grassland and flat terrain match South Africa's Highveld region. The white road markings and large roadside gantry are typical of major highways like the N1 or N4."", ""country"": ""ZA"", ""latitude"": -25.8, ""longitude"": 28.75}"
+google/gemini-3.5-flash,CoT (effort=high),-28.2512,27.0125,165.078,ZA,True,,stop,0.0099255,1307,885,808,7.99,"```json
+{""reasoning"": ""The left-hand traffic with a yellow left shoulder line and flat, grassy Highveld landscape strongly points to a national highway in South Africa, likely the N1 in the Free State."", ""country"": ""ZA"", ""latitude"": -28.2512, ""longitude"": 27.0125}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-28.5,27.5,181.58,ZA,True,,stop,0.004792,1226,195,166,9.61,"```json
+{""country"": ""ZA"", ""latitude"": -28.5, ""longitude"": 27.5}
+```"
+minimax/minimax-m3,CoT,-28.05,28.95,184.824,ZA,True,,stop,0.00080466,995,473,395,11.81,"{""reasoning"": ""Left-hand driving on a divided highway with yellow edge lines and white lane markings, flat highveld grassland with distant low hills under overcast sky — characteristic of South Africa's Free State/KwaZulu-Natal border region along a national route."", ""country"": ""ZA"", ""latitude"": -28.05, ""longitude"": 28.95}"
+qwen/qwen3.5-397b-a17b,CoT,-28.254,29.105,211.662,ZA,True,,stop,0.02003925,665,6628,1,539.48,"{
+""reasoning"": ""The solid yellow line on the left edge of the road is a distinctive marking for South African National Roads (N-roads), combined with left-hand traffic and a dry, grassy highveld landscape typical of the Free State or KZN Midlands."",
+""country"": ""ZA"",
+""latitude"": -28.254,
+""longitude"": 29.105
+}"
+openai/gpt-5.5,CoT,-28.285,29.142,216.657,ZA,True,,stop,0.012865,755,303,228,10.06,"{""reasoning"":""Left-side driving with South African-style yellow shoulder lines and white lane markings points to South Africa. The open highveld grassland, rolling hills, and overcast climate are most consistent with the Free State/N3 area near Harrismith."",""country"":""ZA"",""latitude"":-28.285,""longitude"":29.142}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4201.621,,True,True,,,,,,6.37,
+mistralai/mistral-small-2603,CoT,51.5,-1.5,9168.354,GB,True,,stop,0.00036084,868,532,587,5.52,"{""reasoning"": ""Right-hand traffic and UK-style license plates, road sign design, and British architectural style in the background decisively indicate the United Kingdom."", ""country"": ""GB"", ""latitude"": 51.5, ""longitude"": -1.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,53.672611236572266,-2.8897433280944824,9426.429,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,53.07099533081055,-8.658440589904785,9556.75,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,53.5756950378418,-7.291173458099365,9557.386,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,-34.56,146.85,10659.932,AU,True,,stop,0.00636877475,665,6487,6372,95.76,"```json
+{
+  ""reasoning"": ""The image shows a left-hand traffic road with a solid yellow line on the left shoulder and double yellow lines on the right edge, which is a standard road marking configuration in Australia (yellow edge lines and double yellow no-parking lines). The flat, dry, grassy landscape is characteristic of the Riverina region in New South Wales."",
+  ""country"": ""AU"",
+  ""latitude"": -34.56,
+  ""longitude"": 146.85
+}
+```"
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,12847.756,US,True,,stop,0.0001359,786,30,0,2.75,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+qwen/qwen3.5-35b-a3b,no-CoT,40.7128,-74.006,12847.756,US,True,,stop,0.0001340625,585,30,0,0.96,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+qwen/qwen3.6-35b-a3b,no-CoT,44.9778,-93.265,14461.023,US,True,,stop,0.00011775,585,30,0,3.53,"{""country"": ""US"", ""latitude"": 44.9778, ""longitude"": -93.265}"
+x-ai/grok-4.3,CoT,38.85,-99.35,14960.152,US,True,,stop,0.0025415,788,757,674,11.31,"{""reasoning"": ""Right-hand traffic with yellow center line + white edge lines, left-hand-drive vehicle mirror, vast rolling shortgrass prairie with dry yellow vegetation and distant low hills point to US Great Plains; empty billboard gantry and road profile match rural Interstate or US highway in Kansas/Nebraska."", ""country"": ""US"", ""latitude"": 38.85, ""longitude"": -99.35}"
+xiaomi/mimo-v2.5,no-CoT,34.5,-101.5,15127.984,US,True,,stop,9.57376e-05,820,26,0,1.45,"{""country"": ""US"", ""latitude"": 34.5, ""longitude"": -101.5}"
+x-ai/grok-4.3,no-CoT,41.15,-102.98,15264.303,US,True,,stop,0.0008678,704,22,0,1.29,"{""country"": ""US"", ""latitude"": 41.15, ""longitude"": -102.98}"
+qwen/qwen3.6-27b,no-CoT,44.428,-110.5885,15825.014,US,True,,stop,0.0002299,585,32,0,20.51,"{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5885}"
+qwen/qwen3.5-122b-a10b,no-CoT,47.5234,-119.8765,16378.111,US,True,,stop,0.00023556,586,40,0,6.4,"{
+  ""country"": ""US"",
+  ""latitude"": 47.5234,
+  ""longitude"": -119.8765
+}"
+qwen/qwen3.5-27b,no-CoT,44.4268,-121.1619,16618.711,US,True,,stop,0.0002523,585,32,0,2.91,"{""country"": ""US"", ""latitude"": 44.4268, ""longitude"": -121.1619}"
+qwen/qwen3.5-9b,no-CoT,45.0021,-121.7565,16633.757,US,True,,stop,6.34e-05,586,32,0,4.17,"{""country"": ""US"", ""latitude"": 45.0021, ""longitude"": -121.7565}"
+google/gemma-4-31b-it,no-CoT,34.4208,-119.6982,16794.126,US,True,,stop,6.388e-05,404,37,0,4.16,"```json
+{""country"": ""US"", ""latitude"": 34.4208, ""longitude"": -119.6982}
+```"
+mistralai/mistral-medium-3-5,no-CoT,37.2982,-120.4934,16814.779,US,True,,stop,0.001419,786,32,0,2.18,"{""country"": ""US"", ""latitude"": 37.2982, ""longitude"": -120.4934}"
+qwen/qwen3.5-397b-a17b,no-CoT,37.7749,-122.4194,16967.912,US,True,,stop,0.0004502,585,32,0,7.53,"{""country"": ""US"", ""latitude"": 37.7749, ""longitude"": -122.4194}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.11,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.19,

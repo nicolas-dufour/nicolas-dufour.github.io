@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,65.977409669554,19.692536647087,0.0,SE,True,,,,,,,,"Jokkmokk, Jokkmokks Kommun, Norrbotten, SE"
+qwen/qwen3.5-35b-a3b,no-CoT,65.8421,18.9654,36.27,SE,True,,stop,0.00011875,585,31,0,7.73,"{""country"": ""SE"", ""latitude"": 65.8421, ""longitude"": 18.9654}"
+x-ai/grok-4.3,CoT,66.55,20.25,68.383,SE,True,,stop,0.0019315,788,513,442,5.18,"{
+  ""reasoning"": ""Boreal conifer forest, deep snow cover, and long twilight sky indicate high-latitude winter scene; right-hand road edge and plowed single-lane track are consistent with Nordic rural roads."",
+  ""country"": ""SE"",
+  ""latitude"": 66.55,
+  ""longitude"": 20.25
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,66.65911865234375,20.647661209106445,86.979,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,66.7090072631836,20.48113441467285,88.631,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,67.0,20.0,114.522,SE,True,,stop,0.00023736,904,23,0,3.09,"{""country"": ""SE"", ""latitude"": 67.0, ""longitude"": 20.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,66.8851089477539,20.910043716430664,114.526,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,65.64435577392578,22.8774471282959,149.744,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,67.85,20.22,209.487,SE,True,,stop,0.00012036375,585,27,0,8.06,"{""country"": ""SE"", ""latitude"": 67.85, ""longitude"": 20.22}"
+xiaomi/mimo-v2.5,no-CoT,67.8558,20.2253,210.153,SE,True,,stop,9.71376e-05,820,31,0,1.59,"{""country"": ""SE"", ""latitude"": 67.8558, ""longitude"": 20.2253}"
+google/gemma-4-31b-it,no-CoT,66.5,25.7,275.24,FI,True,,stop,6.452e-05,404,30,0,8.22,"```json
+{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 25.7}
+```"
+x-ai/grok-4.3,no-CoT,66.5,26.0,288.376,FI,True,,stop,0.0007334,704,22,0,0.81,"{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 26.0}"
+qwen/qwen3.5-27b,no-CoT,66.9355,25.8537,293.509,FI,True,,stop,0.0002345,586,44,0,9.61,"```json
+{
+  ""country"": ""FI"",
+  ""latitude"": 66.9355,
+  ""longitude"": 25.8537
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,67.33861541748047,25.701995849609375,304.791,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),67.8542,24.8611,306.952,FI,True,,stop,0.002154,1226,35,0,7.45,"```json
+{""country"": ""FI"", ""latitude"": 67.8542, ""longitude"": 24.8611}
+```"
+anthropic/claude-opus-4.8,CoT,67.0,26.5,322.468,FI,True,,stop,0.00692,949,87,0,10.03,"{""reasoning"": ""Snow-covered boreal forest with low light and conifers suggests far-northern Fennoscandia, likely Finnish/Swedish Lapland."", ""country"": ""FI"", ""latitude"": 67.0, ""longitude"": 26.5}"
+anthropic/claude-opus-4.8,no-CoT,67.5,26.5,343.293,FI,True,,stop,0.00484,818,30,0,2.38,"{""country"": ""FI"", ""latitude"": 67.5, ""longitude"": 26.5}"
+google/gemini-3.1-pro-preview,no-CoT,67.5,26.5,343.293,FI,True,,stop,0.0028,1226,29,0,9.03,"```json
+{""country"": ""FI"", ""latitude"": 67.5, ""longitude"": 26.5}
+```"
+qwen/qwen3.5-397b-a17b,CoT,67.415,26.625,344.051,FI,True,,stop,0.0072801,665,1996,1757,65.21,"{""reasoning"": ""The image displays a boreal forest (taiga) landscape with Scots Pine trees and distant rounded fells (tunturi), characteristic of Finnish Lapland. The deep blue twilight sky indicates a high-latitude location during winter, and the unmarked snowy road is typical of rural roads in this region."", ""country"": ""FI"", ""latitude"": 67.415, ""longitude"": 26.625}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,66.9930419921875,27.22687530517578,352.563,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,67.5,26.8,354.789,FI,True,,stop,0.00088986,995,544,449,22.61,"{""reasoning"": ""Boreal spruce taiga forest with heavy snow cover, low sun angle suggesting high-latitude winter, and a narrow plowed winter road with no signage or buildings are all consistent with northern Finnish Lapland (Fennoscandian taiga zone). The relatively flat terrain and tree species composition point specifically to the Finnish north."", ""country"": ""FI"", ""latitude"": 67.5, ""longitude"": 26.8}"
+xiaomi/mimo-v2.5,CoT,64.32,26.21,355.736,FI,True,,stop,0.0004934776,899,1407,1344,21.73,"{""reasoning"": ""Snow-covered straight road through coniferous forest and low sun position indicate a high-latitude boreal region, typical of Finland's winter landscape."", ""country"": ""FI"", ""latitude"": 64.32, ""longitude"": 26.21}"
+qwen/qwen3.5-9b,no-CoT,67.8333,26.5,361.281,FI,True,,stop,6.28e-05,586,28,0,23.45,"{""country"": ""FI"", ""latitude"": 67.8333, ""longitude"": 26.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,67.85,26.5,362.258,FI,True,,stop,0.00032685,585,26,0,7.36,"{""country"": ""FI"", ""latitude"": 67.85, ""longitude"": 26.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,67.8554,26.7211,370.479,FI,True,,stop,0.00021684,586,31,0,6.27,"{""country"": ""FI"", ""latitude"": 67.8554, ""longitude"": 26.7211}"
+openai/gpt-5.5,CoT,67.7895,26.8342,370.883,FI,True,,stop,0.009625,755,195,119,11.01,"{""reasoning"":""Snow-covered unmarked rural road through dense boreal conifer forest with low rolling terrain is characteristic of Finnish Lapland, and the right-side driving perspective fits Finland. The lack of mountains favors inland Lapland rather than Norway or northern Sweden."",""country"":""FI"",""latitude"":67.7895,""longitude"":26.8342}"
+google/gemini-3.5-flash,CoT (effort=medium),68.0512,26.5043,374.704,FI,True,,stop,0.0061095,1307,461,397,11.05,"{""reasoning"": ""The snow-covered road, dense pine and spruce forest, and low winter sun are highly characteristic of winter Street View coverage in Finnish Lapland."", ""country"": ""FI"", ""latitude"": 68.0512, ""longitude"": 26.5043}"
+google/gemini-3.1-pro-preview,CoT,68.0,27.0,388.811,FI,True,,stop,0.005256,1308,220,144,10.11,"{
+  ""reasoning"": ""The flat taiga landscape with dense coniferous forests and heavy snow cover strongly suggests a high-latitude location. The overall appearance is highly characteristic of northern Finland (Lapland) during winter."",
+  ""country"": ""FI"",
+  ""latitude"": 68.0,
+  ""longitude"": 27.0
+}"
+moonshotai/kimi-k2.6,CoT,68.09,27.08,396.975,FI,True,,stop,0.009589716,834,2728,2670,71.47,"{""reasoning"": ""Deep blue polar twilight and snow-covered road through flat boreal pine forest are characteristic of midwinter in Finnish Lapland north of the Arctic Circle."", ""country"": ""FI"", ""latitude"": 68.09, ""longitude"": 27.08}"
+openai/gpt-5.5,no-CoT,67.85,27.65,404.208,FI,True,,stop,0.00402,678,21,0,2.36,"{""country"":""FI"",""latitude"":67.85,""longitude"":27.65}"
+qwen/qwen3.6-27b,no-CoT,68.5,27.0,420.841,FI,True,,stop,0.00028672,586,31,0,13.16,"{""country"": ""FI"", ""latitude"": 68.5000, ""longitude"": 27.0000}"
+google/gemini-3.5-flash,CoT (effort=high),68.5052,27.1204,425.059,FI,True,,stop,0.0073965,1307,604,533,9.7,"{""reasoning"": ""The snow-covered road, dense coniferous taiga forest, and low winter sun are highly characteristic of winter Google Street View coverage in northern Fennoscandia, particularly Finnish Lapland."", ""country"": ""FI"", ""latitude"": 68.5052, ""longitude"": 27.1204}"
+google/gemini-3.5-flash,CoT (effort=low),68.7284,26.9135,434.417,FI,True,,stop,0.0039135,1307,217,154,10.34,"{""reasoning"": ""The snow-covered road, dense pine and spruce boreal forest, and low winter twilight sky are highly characteristic of northern Lapland in Finland."", ""country"": ""FI"", ""latitude"": 68.7284, ""longitude"": 26.9135}"
+moonshotai/kimi-k2.6,no-CoT,68.5,27.5,437.057,FI,True,,stop,0.00031806,755,23,0,19.0,"{""country"": ""FI"", ""latitude"": 68.5, ""longitude"": 27.5}"
+mistralai/mistral-medium-3-5,no-CoT,60.472,8.4689,828.817,NO,True,,stop,0.0013965,786,29,0,1.12,"{""country"": ""NO"", ""latitude"": 60.472, ""longitude"": 8.4689}"
+mistralai/mistral-small-2603,no-CoT,44.428,-110.5885,7023.652,US,True,,stop,0.0001365,786,31,0,2.88,"{""country"": ""US"", ""latitude"": 44.428, ""longitude"": -110.5885}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7501.491,,True,True,,,,,,6.49,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.6,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,15.5,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.25,

@@ -1,0 +1,79 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-11.63564077372116,24.71198708114343,0.0,ZM,True,,,,,,,,"Mwinilunga, None, North-Western, ZM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-11.883712768554688,24.862369537353516,32.076,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-11.887787818908691,24.891267776489258,34.161,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-11.985321998596191,25.00528907775879,50.309,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-14.6542,26.3012,377.179,ZM,True,,stop,0.003774,1286,205,135,8.84,"{""reasoning"": ""The vegetation resembles Miombo woodland with characteristic Brachystegia trees and sandy-clay soil, highly typical of the Zambezian region in Southern Africa, particularly Zambia."", ""country"": ""ZM"", ""latitude"": -14.6542, ""longitude"": 26.3012}"
+google/gemini-3.5-flash,CoT (effort=high),-14.6582,26.3014,377.584,ZM,True,,stop,0.0130155,1285,1232,1133,18.18,"```json
+{""reasoning"": ""The vegetation is highly characteristic of Miombo woodland, dominated by Brachystegia species, which is widespread across Southern and Central Africa. The sandy, light-colored dirt road and flat-topped tree canopy strongly suggest a location in Zambia, likely within or near Kafue National Park."", ""country"": ""ZM"", ""latitude"": -14.6582, ""longitude"": 26.3014}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-15.1123,26.0124,411.379,ZM,True,,stop,0.0063825,1285,495,431,5.71,"{""reasoning"": ""The flat-topped trees, sandy reddish-brown dirt road, and open woodland structure are highly characteristic of the Miombo woodlands in Zambia."", ""country"": ""ZM"", ""latitude"": -15.1123, ""longitude"": 26.0124}"
+moonshotai/kimi-k2.6,no-CoT,-13.5,28.0,412.679,ZM,True,,stop,0.000371268,907,23,0,2.15,"{""country"": ""ZM"", ""latitude"": -13.5, ""longitude"": 28.0}"
+anthropic/claude-opus-4.8,no-CoT,-12.5,28.5,422.957,ZM,True,,stop,0.005625,970,31,0,9.42,"{""country"": ""ZM"", ""latitude"": -12.5, ""longitude"": 28.5}"
+anthropic/claude-opus-4.8,CoT,-13.5,28.5,460.404,ZM,True,,stop,0.007655,1101,86,0,9.62,"{""reasoning"": ""Reddish dirt road through miombo woodland typical of Central/Southern Africa; lush green vegetation suggests Zambia's wet season."", ""country"": ""ZM"", ""latitude"": -13.5, ""longitude"": 28.5}"
+google/gemini-3.1-pro-preview,no-CoT,-13.9833,28.3833,476.003,ZM,True,,stop,0.002828,1204,35,0,9.25,"```json
+{""country"": ""ZM"", ""latitude"": -13.9833, ""longitude"": 28.3833}
+```"
+x-ai/grok-4.3,CoT,-14.85,27.95,500.543,ZM,True,,stop,0.001949,900,464,402,11.76,"{""reasoning"": ""Red dirt road through miombo-style woodland with broad-canopy trees and recent rain indicates southern/central African savanna; no other region matches this exact vegetation + soil combination."", ""country"": ""ZM"", ""latitude"": -14.85, ""longitude"": 27.95}"
+google/gemini-3.1-pro-preview,CoT,-14.5,28.5,519.371,ZM,True,,stop,0.0052,1286,219,148,10.62,"{
+  ""reasoning"": ""The reddish dirt road and Miombo woodland vegetation are highly characteristic of south-central Africa. The overall landscape and tree shapes strongly suggest a rural area in Zambia."",
+  ""country"": ""ZM"",
+  ""latitude"": -14.5,
+  ""longitude"": 28.5
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,-15.4167,28.3167,573.21,ZM,True,,stop,0.00321724325,695,3217,3185,15.46,"{""country"": ""ZM"", ""latitude"": -15.4167, ""longitude"": 28.3167}"
+x-ai/grok-4.3,no-CoT,-19.85,23.75,919.167,BW,True,,stop,0.0008734,816,22,0,1.87,"{""country"": ""BW"", ""latitude"": -19.85, ""longitude"": 23.75}"
+moonshotai/kimi-k2.6,CoT,-6.0,35.0,1292.066,TZ,True,,stop,0.00604472,986,1582,1524,41.53,"{""reasoning"": ""The reddish lateritic soil and open-canopy miombo woodland vegetation are diagnostic of the East African plateau, and the road style matches rural Tanzania."", ""country"": ""TZ"", ""latitude"": -6.0, ""longitude"": 35.0}"
+openai/gpt-5.5,CoT,-18.9725,34.3528,1316.337,MZ,True,,stop,0.02116,890,557,481,37.29,"{""reasoning"":""The sandy unmarked track through lush miombo/savanna woodland with burned understory and rainy windshield strongly suggests a safari road in southeastern Africa. The vegetation and flat dirt-road setting best fit Gorongosa National Park in Mozambique."",""country"":""MZ"",""latitude"":-18.9725,""longitude"":34.3528}"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.6416,31.1089,1595.543,ZA,True,,stop,0.0001535625,697,31,0,1.7,"{""country"": ""ZA"", ""latitude"": -24.6416, ""longitude"": 31.1089}"
+minimax/minimax-m3,CoT,-0.5,15.5,1602.286,CG,True,,stop,0.00065466,1147,310,240,16.52,"{""reasoning"": ""Reddish lateritic soil, dense tropical broadleaf forest canopy, unpaved dirt road with rain puddles, and overcast sky indicate a rainforest-savanna mosaic in the Congo Basin during rainy season."", ""country"": ""CG"", ""latitude"": -0.5, ""longitude"": 15.5}"
+google/gemma-4-31b-it,no-CoT,4.5,12.5,2245.797,CM,True,,stop,6.412e-05,404,29,0,11.28,"```json
+{""country"": ""CM"", ""latitude"": 4.5, ""longitude"": 12.5}
+```"
+qwen/qwen3.5-9b,no-CoT,6.5244,3.3792,3105.742,NG,True,,stop,0.00012574,697,29,0,10.71,"{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,9.79344654083252,-5.570252895355225,4108.509,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,10.92283821105957,-11.910135269165039,4760.028,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,11.25222110748291,-12.45085620880127,4829.46,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,CoT,11.5,76.6,6280.724,IN,True,,stop,0.0101563,777,4976,1,195.28,"{""reasoning"": ""The reddish-brown laterite soil and the specific mix of dry deciduous trees (likely Acacia and Terminalia species) strongly point to the Western Ghats region of South India, specifically the dry forests of the Mudumalai or Bandipur Tiger Reserve areas. The unpaved dirt road and lack of infrastructure suggest a remote forest track within a protected area."", ""country"": ""IN"", ""latitude"": 11.50, ""longitude"": 76.60}"
+minimax/minimax-m3,no-CoT,15.317,75.713,6364.181,IN,True,,stop,0.00028296,1056,23,0,5.67,"{""country"": ""IN"", ""latitude"": 15.317, ""longitude"": 75.713}"
+xiaomi/mimo-v2.5,CoT,20.9,77.6,6816.838,IN,True,,stop,0.0001683976,1011,190,110,3.49,"{""reasoning"": ""The reddish soil and dry deciduous forest type are characteristic of the Deccan Plateau region in India, specifically areas like Maharashtra or Telangana. The vegetation mix and road style suggest a rural area within the Indian subcontinent."", ""country"": ""IN"", ""latitude"": 20.9, ""longitude"": 77.6}"
+xiaomi/mimo-v2.5,no-CoT,20.5,78.5,6880.465,IN,True,,stop,0.0001111376,932,25,0,9.06,"{""country"": ""IN"", ""latitude"": 20.5, ""longitude"": 78.5}"
+mistralai/mistral-medium-3-5,no-CoT,21.1458,79.0882,6967.114,IN,True,,stop,0.0016395,938,31,0,2.46,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+qwen/qwen3.6-35b-a3b,CoT,22.45,78.65,6991.995,IN,True,,stop,0.0057524,778,3498,3158,53.85,"```json
+{
+  ""reasoning"": ""The distinctive red lateritic soil and the dry deciduous forest vegetation (featuring trees likely to be Teak and Acacia species) are characteristic of the Satpura range in Madhya Pradesh, India. The perspective suggests left-hand traffic, consistent with Indian roads."",
+  ""country"": ""IN"",
+  ""latitude"": 22.45,
+  ""longitude"": 78.65
+}
+```"
+qwen/qwen3.5-397b-a17b,CoT,22.254,80.612,7162.728,IN,True,,stop,0.006218345,777,2416,2256,122.5,"{
+""reasoning"": ""The reddish-brown laterite soil and the dense, tall dry deciduous forest (likely Sal and Teak) are characteristic of Central Indian tiger reserves, particularly in Madhya Pradesh. The unpaved but graded road and the view from a vehicle window suggest a safari track within a national park like Kanha."",
+""country"": ""IN"",
+""latitude"": 22.254,
+""longitude"": 80.612
+}"
+qwen/qwen3.5-27b,no-CoT,21.1458,81.6441,7206.148,IN,True,,stop,0.0003147,697,44,0,22.72,"```json
+{
+  ""country"": ""IN"",
+  ""latitude"": 21.1458,
+  ""longitude"": 81.6441
+}
+```"
+qwen/qwen3.6-27b,no-CoT,21.1458,81.788,7219.689,IN,True,,stop,0.0002615,697,31,0,12.06,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 81.7880}"
+qwen/qwen3.5-397b-a17b,no-CoT,21.2787,81.8661,7233.241,IN,True,,stop,0.0004442,697,31,0,3.85,"{""country"": ""IN"", ""latitude"": 21.2787, ""longitude"": 81.8661}"
+google/gemma-4-26b-a4b-it,no-CoT,22.5726,84.8275,7570.844,IN,True,,stop,5.468e-05,404,31,0,8.05,"{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 84.8275}"
+mistralai/mistral-small-2603,no-CoT,-22.901,-47.067,7657.193,BR,True,,stop,0.000197625,938,29,0,8.02,"{""country"": ""BR"", ""latitude"": -22.901, ""longitude"": -47.067}"
+openai/gpt-5.5,no-CoT,-15.8905,-47.8271,7811.689,BR,True,,stop,0.004815,813,25,0,1.63,"{""country"":""BR"",""latitude"":-15.8905,""longitude"":-47.8271}"
+qwen/qwen3.5-122b-a10b,no-CoT,22.5726,88.3639,7905.514,IN,True,,stop,0.00026234,697,39,0,7.44,"{
+  ""country"": ""IN"",
+  ""latitude"": 22.5726,
+  ""longitude"": 88.3639
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),13.824167,104.9875,9289.57,KH,True,,stop,0.0021465,1203,38,0,7.8,"```json
+{""country"": ""KH"", ""latitude"": 13.824167, ""longitude"": 104.9875}
+```"
+mistralai/mistral-small-2603,CoT,-12.46,130.85,11435.83,AU,True,,stop,0.0004914,1020,744,827,12.31,"{""reasoning"": ""Eucalyptus-like tree with light-colored bark and dense tropical vegetation suggest northern Australia, with reddish soil typical of the region."", ""country"": ""AU"", ""latitude"": -12.46, ""longitude"": 130.85}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.18,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,

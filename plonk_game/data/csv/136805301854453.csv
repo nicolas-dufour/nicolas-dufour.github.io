@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,17.39601844218763,121.53863534047692,0.0,PH,True,,,,,,,,"Agbannawag, Kalinga, Cordillera, PH"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,15.646842002868652,121.0291976928711,201.938,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),15.8425,120.3581,213.685,PH,True,,stop,0.0038715,1285,216,139,3.73,"```json
+{""reasoning"": ""The presence of a jeepney on the left, concrete road shoulders with an asphalt center, tropical vegetation, and right-hand driving are characteristic of rural national highways in the Philippines."", ""country"": ""PH"", ""latitude"": 15.8425, ""longitude"": 120.3581}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,15.543853759765625,120.98526763916016,214.237,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),15.7834,120.3421,220.026,PH,True,,stop,0.0066795,1285,528,455,11.28,"{""reasoning"": ""The concrete shoulders on the asphalt road, concrete utility poles, tropical vegetation with coconut palms, and the presence of a jeepney-style vehicle on the left are characteristic of the Philippines."", ""country"": ""PH"", ""latitude"": 15.7834, ""longitude"": 120.3421}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,15.233380317687988,120.94122314453125,248.781,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,14.5995,121.0277,315.717,PH,True,,stop,0.00013655,697,32,0,2.11,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 121.0277}"
+qwen/qwen3.6-35b-a3b,no-CoT,14.5995,121.0197,315.866,PH,True,,stop,0.00021425,697,32,0,2.36,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 121.0197}"
+google/gemma-4-31b-it,no-CoT,14.5995,120.9842,316.554,PH,True,,stop,5.783e-05,406,37,0,7.64,"```json
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}
+```"
+qwen/qwen3.5-9b,no-CoT,14.5995,120.9842,316.554,PH,True,,stop,7.46e-05,698,32,0,5.27,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+qwen/qwen3.6-27b,no-CoT,14.5995,120.9842,316.554,PH,True,,stop,0.0002635,697,32,0,13.45,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+qwen/qwen3.5-27b,no-CoT,14.5798,120.9822,318.747,PH,True,,stop,0.00025731,697,32,0,2.8,"{""country"": ""PH"", ""latitude"": 14.5798, ""longitude"": 120.9822}"
+google/gemini-3.5-flash,CoT (effort=high),11.1542,122.6234,703.822,PH,True,,stop,0.0083355,1285,712,641,13.02,"{""reasoning"": ""The presence of a jeepney-style vehicle on the left, a white multicab, concrete utility poles, and a road with concrete shoulders are characteristic of the rural Philippines."", ""country"": ""PH"", ""latitude"": 11.1542, ""longitude"": 122.6234}"
+anthropic/claude-opus-4.8,CoT,10.7202,122.5621,750.47,PH,True,,stop,0.00746,1082,82,0,10.49,"{""reasoning"": ""Tropical rural roadside with palms, simple houses, microvan, right-hand traffic typical of Philippines provincial highway."", ""country"": ""PH"", ""latitude"": 10.7202, ""longitude"": 122.5621}"
+anthropic/claude-opus-4.8,no-CoT,10.7202,122.5621,750.47,PH,True,,stop,0.005555,951,32,0,2.19,"{""country"": ""PH"", ""latitude"": 10.7202, ""longitude"": 122.5621}"
+google/gemini-3.1-pro-preview,CoT,10.7123,122.5541,751.213,PH,True,,stop,0.006578,1285,334,251,5.72,"{
+  ""reasoning"": ""The presence of a jeepney parked on the left and the concrete road with an asphalt center are highly characteristic of the Philippines. The tropical vegetation and right-hand driving confirm this location."",
+  ""country"": ""PH"",
+  ""latitude"": 10.7123,
+  ""longitude"": 122.5541
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),11.1245,124.9876,790.126,PH,True,,stop,0.0021285,1203,36,0,26.37,"```json
+{""country"": ""PH"", ""latitude"": 11.1245, ""longitude"": 124.9876}
+```"
+x-ai/grok-4.3,CoT,10.35,123.95,825.532,PH,True,,stop,0.0035815,884,1125,1062,11.28,"{""reasoning"": ""Tropical palms/bananas, corrugated-roof shacks, right-hand traffic (van positioned right of center line), right-side shoulder and utility style all point to rural Philippines."", ""country"": ""PH"", ""latitude"": 10.35, ""longitude"": 123.95}"
+minimax/minimax-m3,no-CoT,10.3157,123.8854,826.998,PH,True,,stop,0.00040992,1052,127,133,9.56,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+xiaomi/mimo-v2.5,no-CoT,10.3157,123.8854,826.998,PH,True,,stop,0.0001130976,932,32,0,1.58,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+x-ai/grok-4.3,no-CoT,10.315,123.885,827.059,PH,True,,stop,0.0008534,800,22,0,0.79,"{""country"": ""PH"", ""latitude"": 10.315, ""longitude"": 123.885}"
+qwen/qwen3.5-397b-a17b,no-CoT,10.3157,123.9063,827.691,PH,True,,stop,0.0005334,697,32,0,2.49,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.9063}"
+xiaomi/mimo-v2.5,CoT,10.32,124.01,830.758,PH,True,,stop,0.000120988,1011,397,330,50.13,"{""reasoning"": ""Tropical palm vegetation, rural Filipino-style residential architecture, and right-hand traffic confirm the Philippines; the rural road and van type align with the Visayas region."", ""country"": ""PH"", ""latitude"": 10.32, ""longitude"": 124.01}"
+moonshotai/kimi-k2.6,CoT,10.2,123.8,836.538,PH,True,,stop,0.012339648,967,3520,3440,84.36,"{""reasoning"": ""Right-hand traffic, tropical coconut palms, rural Philippine barangay housing with corrugated roofs on stilts, concrete utility poles, and an elevated green water tank strongly indicate the Philippines; the flat terrain and road shoulder style are typical of the Visayas region."", ""country"": ""PH"", ""latitude"": 10.2, ""longitude"": 123.8}"
+google/gemini-3.1-pro-preview,no-CoT,9.85,124.1435,884.963,PH,True,,stop,0.004554,1203,179,146,3.88,"```json
+{""country"": ""PH"", ""latitude"": 9.85, ""longitude"": 124.1435}
+```"
+minimax/minimax-m3,CoT,8.45,125.95,1103.433,PH,True,,stop,0.00135456,1128,898,822,23.71,"{""reasoning"": ""Right-hand traffic (van oncoming in left lane), tropical coconut palms, simple concrete houses with corrugated metal roofs, Filipino-style wooden/concrete utility poles, and tropical rural road infrastructure strongly indicate the southern Philippines, likely Mindanao."", ""country"": ""PH"", ""latitude"": 8.45, ""longitude"": 125.95}"
+mistralai/mistral-medium-3-5,no-CoT,13.7563,100.5018,2287.968,TH,True,,stop,0.0016185,919,32,0,3.62,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-122b-a10b,no-CoT,13.7258,100.4934,2289.613,TH,True,,stop,0.00024804,698,32,0,12.74,"{""country"": ""TH"", ""latitude"": 13.7258, ""longitude"": 100.4934}"
+google/gemma-4-26b-a4b-it,no-CoT,13.7563,100.0,2340.81,,True,,stop,5.508e-05,404,32,0,7.65,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100-7563}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,12.551397323608398,80.1737060546875,4467.589,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,4.083537578582764,73.44306182861328,5440.488,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-0.15878574550151825,73.17864990234375,5638.856,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,-25.7479,28.2293,11157.339,ZA,True,,stop,0.00015645,919,31,0,1.36,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 28.2293}"
+openai/gpt-5.5,CoT,13.1652,-59.5318,16614.803,BB,True,,stop,0.011915,871,252,182,8.36,"{""reasoning"":""Left-hand traffic, tropical Caribbean vegetation with coral-sandy shoulders, and the road/house style strongly suggest Barbados rather than mainland regions. The flat terrain and village roadside setting fit rural central/eastern Barbados."",""country"":""BB"",""latitude"":13.1652,""longitude"":-59.5318}"
+openai/gpt-5.5,no-CoT,13.1605,-59.4552,16615.606,BB,True,,stop,0.00469,794,24,0,1.41,"{""country"":""BB"",""latitude"":13.1605,""longitude"":-59.4552}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.52,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,14.26,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.36,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.41,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.11,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.37,

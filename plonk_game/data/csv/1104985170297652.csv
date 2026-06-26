@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,27.94434993061889,120.65319631157612,0.0,CN,True,,,,,,,,"Wenzhou, None, Zhejiang Sheng, CN"
+moonshotai/kimi-k2.6,CoT,27.95,120.85,19.342,CN,True,,stop,0.004266288,682,1181,1111,37.23,"{""reasoning"": ""Right-hand traffic with Chinese-standard expressway infrastructure including green noise barriers and guardrails, combined with densely packed hillside apartment blocks in humid subtropical mountains, strongly indicates coastal Zhejiang province near Wenzhou."", ""country"": ""CN"", ""latitude"": 27.95, ""longitude"": 120.85}"
+moonshotai/kimi-k2.6,no-CoT,30.0,120.0,237.244,CN,True,,stop,0.000269712,603,23,0,2.04,"{""country"": ""CN"", ""latitude"": 30.0, ""longitude"": 120.0}"
+x-ai/grok-4.3,no-CoT,30.05,121.15,239.07,CN,True,,stop,0.0005934,592,22,0,1.84,"{""country"": ""CN"", ""latitude"": 30.05, ""longitude"": 121.15}"
+minimax/minimax-m3,CoT,26.08,119.32,245.797,CN,True,,stop,0.00074706,843,463,390,14.3,"{""reasoning"": ""Chinese-style expressway with concrete barriers, right-hand driving, red cargo truck, subtropical mountainous terrain, and characteristic Chinese residential tower blocks point to southeastern China, most likely the Fuzhou area in Fujian province."", ""country"": ""CN"", ""latitude"": 26.08, ""longitude"": 119.32}"
+qwen/qwen3.5-9b,no-CoT,30.2672,120.1551,262.782,CN,True,,stop,5.22e-05,474,32,0,12.4,"{""country"": ""CN"", ""latitude"": 30.2672, ""longitude"": 120.1551}"
+qwen/qwen3.6-35b-a3b,no-CoT,30.2741,120.1551,263.536,CN,True,,stop,0.00010295,473,32,0,2.67,"{""country"": ""CN"", ""latitude"": 30.2741, ""longitude"": 120.1551}"
+minimax/minimax-m3,no-CoT,25.5,119.0,317.533,CN,True,,stop,0.00035682,767,154,182,10.92,"{""country"": ""CN"", ""latitude"": 25.5, ""longitude"": 119.0}"
+google/gemini-3.1-pro-preview,no-CoT,25.0833,121.4167,327.076,TW,True,,stop,0.002812,1190,36,0,2.93,"```json
+{""country"": ""TW"", ""latitude"": 25.0833, ""longitude"": 121.4167}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,25.0892,121.5281,329.192,TW,True,,stop,0.00036828,473,32,0,1.71,"{""country"": ""TW"", ""latitude"": 25.0892, ""longitude"": 121.5281}"
+google/gemini-3.1-pro-preview,CoT,25.0512,121.4135,330.478,TW,True,,stop,0.006202,1271,305,213,4.79,"{
+  ""reasoning"": ""The green noise barriers, concrete guardrails, and style of apartment buildings on the hillside are characteristic of elevated highways in Taiwan. The lush, mountainous terrain and right-hand driving further support a location near Taipei or New Taipei City."",
+  ""country"": ""TW"",
+  ""latitude"": 25.0512,
+  ""longitude"": 121.4135
+}"
+google/gemini-3.5-flash,CoT (effort=high),25.0725,121.6583,334.625,TW,True,,stop,0.0090615,1271,795,717,6.5,"{""reasoning"": ""The green anti-glare panels on the median, concrete guardrails, and distant high-rise residential architecture are highly characteristic of a Taiwanese national freeway, likely Freeway 1 or 3 in northern Taiwan."", ""country"": ""TW"", ""latitude"": 25.0725, ""longitude"": 121.6583}"
+openai/gpt-5.5,no-CoT,25.0605,121.6175,334.714,TW,True,,stop,0.00341,544,23,0,1.09,"{""country"":""TW"",""latitude"":25.0605,""longitude"":121.6175}"
+google/gemini-3.5-flash,CoT (effort=low),25.0685,121.6582,335.047,TW,True,,stop,0.0039945,1271,232,160,9.62,"{""reasoning"": ""The highway infrastructure, including the green noise barriers, concrete guardrails, and surrounding humid, mountainous terrain with typical East Asian apartment buildings, strongly points to a national freeway in Taiwan."", ""country"": ""TW"", ""latitude"": 25.0685, ""longitude"": 121.6582}"
+google/gemma-4-31b-it,no-CoT,25.0342,121.5288,335.118,TW,True,,stop,6.418e-05,406,37,0,4.27,"```json
+{""country"": ""TW"", ""latitude"": 25.0342, ""longitude"": 121.5288}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),25.0625,121.6584,335.69,TW,True,,stop,0.0113115,1271,1045,952,17.15,"```json
+{""reasoning"": ""The green vertical anti-glare panels on the median barrier, the specific style of the concrete and metal guardrail, and the dense subtropical hillside apartment buildings are highly characteristic of Taiwan's national highway system, particularly around the hilly areas of New Taipei City."", ""country"": ""TW"", ""latitude"": 25.0625, ""longitude"": 121.6584}
+```"
+mistralai/mistral-medium-3-5,no-CoT,25.033964,121.564468,336.083,TW,True,,stop,0.0012285,634,37,0,2.23,"{""country"": ""TW"", ""latitude"": 25.033964, ""longitude"": 121.564468}"
+qwen/qwen3.5-27b,no-CoT,25.033,121.5653,336.209,TW,True,,stop,0.00024024,474,45,0,2.99,"```json
+{
+  ""country"": ""TW"",
+  ""latitude"": 25.0330,
+  ""longitude"": 121.5653
+}
+```"
+anthropic/claude-opus-4.8,no-CoT,24.9876,121.4567,338.361,TW,True,,stop,0.00413,666,32,0,23.86,"{""country"": ""TW"", ""latitude"": 24.9876, ""longitude"": 121.4567}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),24.9685,121.4412,340.067,TW,True,,stop,0.002109,1190,36,0,7.97,"```json
+{""country"": ""TW"", ""latitude"": 24.9685, ""longitude"": 121.4412}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,24.8138,121.0244,350.059,TW,True,,stop,0.0002916,473,32,0,1.23,"{""country"": ""TW"", ""latitude"": 24.8138, ""longitude"": 121.0244}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,24.826032638549805,119.23706817626953,374.325,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,24.913000106811523,118.27865600585938,411.7,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,24.90822982788086,118.28038787841797,412.039,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,24.6,118.1,450.628,CN,True,,stop,0.006535,797,102,0,4.24,"{""reasoning"": ""Right-hand traffic on modern elevated highway with green hills and dense high-rise apartment blocks in hazy climate, typical of coastal southeastern China (Fujian/Zhejiang)."", ""country"": ""CN"", ""latitude"": 24.6, ""longitude"": 118.1}"
+qwen/qwen3.5-35b-a3b,no-CoT,24.4783,118.0892,462.524,CN,True,,stop,9.836e-05,474,32,0,1.78,"{""country"": ""CN"", ""latitude"": 24.4783, ""longitude"": 118.0892}"
+xiaomi/mimo-v2.5,CoT,22.95,114.4,837.933,CN,True,,stop,0.0001823976,787,352,280,11.06,"{""reasoning"": ""Right-hand traffic, southern Chinese mountainous landscape with typical mid-rise residential buildings adjacent to an expressway, and Chinese expressway road/guardrail infrastructure confirm this is a southern Chinese location."", ""country"": ""CN"", ""latitude"": 22.95, ""longitude"": 114.4}"
+x-ai/grok-4.3,CoT,22.79,113.85,891.677,CN,True,,stop,0.0022165,676,683,607,11.81,"{""reasoning"": ""Right-side driving, multi-lane divided highway with central barrier, red container truck, dense mid-rise apartment blocks, and leafless trees against rugged hills all indicate southern China; overcast subtropical winter light and infrastructure match Pearl River Delta expressways."", ""country"": ""CN"", ""latitude"": 22.79, ""longitude"": 113.85}"
+xiaomi/mimo-v2.5,no-CoT,22.55,114.05,894.534,CN,True,,stop,8.06176e-05,708,28,0,1.27,"{""country"": ""CN"", ""latitude"": 22.55, ""longitude"": 114.05}"
+openai/gpt-5.5,CoT,22.3892,114.2036,895.679,HK,True,,stop,0.025725,621,754,673,48.22,"{""reasoning"":""Left-side traffic is suggested by the median/fast lane position and the dense high-rise estates, green noise barriers, and steep subtropical hills are characteristic of Hong Kong expressways. The scene most closely matches the Sha Tin/Tolo Highway corridor in the New Territories."",""country"":""HK"",""latitude"":22.3892,""longitude"":114.2036}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,35.775150299072266,135.76551818847656,1668.852,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,35.89241409301758,137.9127197265625,1849.279,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,35.72653579711914,138.02752685546875,1851.481,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,60.3936,5.3239,8589.69,NO,True,,stop,0.0001131,634,30,0,3.2,"{""country"": ""NO"", ""latitude"": 60.3936, ""longitude"": 5.3239}"
+qwen/qwen3.6-27b,no-CoT,41.3874,2.1686,10047.5,ES,True,,stop,0.0001923,473,30,0,22.08,"{""country"": ""ES"", ""latitude"": 41.3874, ""longitude"": 2.1686}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12984.121,,True,True,,,,,,18.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,18.71,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.18,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.38,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.14,

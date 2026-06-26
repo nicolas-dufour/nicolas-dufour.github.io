@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-4.9283773593787,-38.970430250042,0.0,BR,True,,,,,,,,"Quixada, Quixada, Ceara, BR"
+google/gemini-3.5-flash,CoT (effort=high),-5.1204,-39.3125,43.492,BR,True,,stop,0.0095655,1307,845,762,7.35,"{""reasoning"": ""The dense, scrubby vegetation with small white flowers combined with the purple-tinted camera quality is highly characteristic of the Caatinga biome in Northeast Brazil. The road markings with a yellow center line and white outer line further support this region."", ""country"": ""BR"", ""latitude"": -5.1204, ""longitude"": -39.3125}"
+google/gemini-3.1-pro-preview,no-CoT,-5.1234,-39.5678,69.632,BR,True,,stop,0.002858,1225,34,0,2.52,"```json
+{""country"": ""BR"", ""latitude"": -5.1234, ""longitude"": -39.5678}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-5.5234,-39.3124,76.233,BR,True,,stop,0.0073425,1307,598,517,7.45,"{""reasoning"": ""The dense, low shrubby vegetation covered in small white flowers is characteristic of the Caatinga biome in Northeast Brazil, and the purple-tinted sky and road image quality is typical of older Google Street View coverage in this region."", ""country"": ""BR"", ""latitude"": -5.5234, ""longitude"": -39.3124}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-4.111427307128906,-38.9642448425293,90.843,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-5.2543,-38.1245,100.457,BR,True,,stop,0.0043455,1307,265,187,9.29,"{""reasoning"": ""The road markings with a yellow center line and white outer line, combined with the low, scrubby Caatinga-like vegetation and the purple-tinted sky characteristic of older camera generations, point to Northeast Brazil."", ""country"": ""BR"", ""latitude"": -5.2543, ""longitude"": -38.1245}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-3.859633445739746,-39.3881950378418,127.546,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-3.860591411590576,-39.39519500732422,127.73,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,-3.8127,-38.5146,133.957,BR,True,,stop,0.00414,678,25,0,2.05,"{""country"":""BR"",""latitude"":-3.8127,""longitude"":-38.5146}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-5.1234,-37.5678,156.872,BR,True,,stop,0.002145,1226,34,0,22.73,"```json
+{""country"": ""BR"", ""latitude"": -5.1234, ""longitude"": -37.5678}
+```"
+anthropic/claude-opus-4.8,CoT,-7.5,-38.5,290.641,BR,True,,stop,0.007045,949,92,0,9.59,"{""reasoning"": ""Dry caatinga-like scrubland with white flowering vines along a two-lane road, tropical climate, typical of the Brazilian Northeast interior (sertão)."", ""country"": ""BR"", ""latitude"": -7.5, ""longitude"": -38.5}"
+anthropic/claude-opus-4.8,no-CoT,-7.5,-38.5,290.641,BR,True,,stop,0.00484,818,30,0,2.36,"{""country"": ""BR"", ""latitude"": -7.5, ""longitude"": -38.5}"
+mistralai/mistral-medium-3-5,no-CoT,-7.2321,-35.8778,427.238,BR,True,,stop,0.001404,786,30,0,1.33,"{""country"": ""BR"", ""latitude"": -7.2321, ""longitude"": -35.8778}"
+moonshotai/kimi-k2.6,CoT,-12.0,-43.0,902.474,BR,True,,stop,0.010320696,834,2943,2872,70.7,"{""reasoning"": ""The yellow centerline with white edge markings matches Brazilian federal highway standards, while the red lateritic soil and dry scrub invaded by white morning-glory vines are characteristic of the interior Northeast/Cerrado transition zone."", ""country"": ""BR"", ""latitude"": -12.0, ""longitude"": -43.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,8.750200271606445,-62.59587860107422,3028.85,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,9.800594329833984,-62.36314010620117,3065.68,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,14.768750190734863,-65.64300537109375,3665.93,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,12.5106,-69.9569,3935.185,AW,True,,stop,0.021475,755,590,516,52.23,"{""reasoning"":""The right-side driving with yellow centerline/white edge markings plus flat, arid Caribbean scrub vegetation strongly suggest the Dutch Caribbean rather than left-driving nearby islands. The dry thorny landscape and road style fit rural Aruba best."",""country"":""AW"",""latitude"":12.5106,""longitude"":-69.9569}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4362.35,,True,True,,,,,,18.92,
+qwen/qwen3.5-9b,no-CoT,25.7617,-80.1918,5603.041,US,True,,stop,6.325e-05,586,31,0,2.02,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+xiaomi/mimo-v2.5,no-CoT,28.3,-81.5,5862.114,US,True,,stop,9.54576e-05,820,25,0,7.86,"{""country"": ""US"", ""latitude"": 28.3, ""longitude"": -81.5}"
+minimax/minimax-m3,CoT,19.55,-90.15,6222.175,MX,True,,stop,0.00080466,995,473,386,28.78,"{""reasoning"": ""The red lateritic soil, flat karst-like terrain, and dry tropical thorny scrub vegetation with mesquite/acacia-like trees are characteristic of the Yucatán Peninsula's secondary rural highways; the two-lane road with solid yellow center line and roadside ditches matches Mexican federal highway standards."", ""country"": ""MX"", ""latitude"": 19.55, ""longitude"": -90.15}"
+google/gemini-3.1-pro-preview,CoT,21.5,-105.0,7762.667,MX,True,,stop,0.005688,1308,256,174,5.09,"{
+  ""reasoning"": ""The distinct purplish tint of the camera is a classic artifact found in Google Street View coverage of Mexico. The yellow dashed center line and lush, subtropical vegetation further support a location in central or southern Mexico."",
+  ""country"": ""MX"",
+  ""latitude"": 21.5,
+  ""longitude"": -105.0
+}"
+google/gemma-4-31b-it,no-CoT,20.5887,-105.2551,7764.1,MX,True,,stop,5.148e-05,262,37,0,3.91,"```json
+{""country"": ""MX"", ""latitude"": 20.5887, ""longitude"": -105.2551}
+```"
+mistralai/mistral-small-2603,no-CoT,36.7783,-119.4179,9490.973,US,True,,stop,0.0001371,786,32,0,10.08,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+qwen/qwen3.6-27b,no-CoT,11.0168,76.9558,12938.478,IN,True,,stop,0.0002279,585,31,0,14.22,"{""country"": ""IN"", ""latitude"": 11.0168, ""longitude"": 76.9558}"
+xiaomi/mimo-v2.5,CoT,19.9,-155.6,12975.174,US,True,,stop,0.0001759576,899,273,186,4.23,"```json
+{""reasoning"": ""The distinctive reddish-pink soil on the road shoulder combined with the specific tropical vegetation, including the purple flowers (likely Solanum mauritianum or similar) and the style of the road markings, strongly points to the Big Island of Hawaii."", ""country"": ""US"", ""latitude"": 19.9, ""longitude"": -155.6}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,19.912,-155.714,12986.948,US,True,,stop,0.00021476,586,30,0,5.72,"{""country"": ""US"", ""latitude"": 19.912, ""longitude"": -155.714}"
+x-ai/grok-4.3,CoT,20.85,-156.3,13038.758,US,True,,stop,0.003624,788,1190,1117,8.93,"{""reasoning"": ""Yellow center line on left of frame indicates right-hand traffic; dense low tropical scrub with white-flowering vines (likely Ipomoea) and large cumulus build-ups point to a coastal subtropical/tropical setting such as Hawaii."", ""country"": ""US"", ""latitude"": 20.85, ""longitude"": -156.3}"
+qwen/qwen3.5-35b-a3b,no-CoT,20.7343,-156.3319,13043.249,US,True,,stop,0.00019824,586,32,0,3.54,"{""country"": ""US"", ""latitude"": 20.7343, ""longitude"": -156.3319}"
+qwen/qwen3.5-397b-a17b,no-CoT,20.7245,-156.4432,13054.875,US,True,,stop,0.00043548,585,32,0,1.62,"{""country"": ""US"", ""latitude"": 20.7245, ""longitude"": -156.4432}"
+qwen/qwen3.5-27b,no-CoT,21.306944,-157.858333,13194.522,US,True,,stop,0.00027976,586,49,0,1.34,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 21.306944,
+  ""longitude"": -157.858333
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,21.306944,-157.858333,13194.522,US,True,,stop,0.0001748,586,36,0,2.75,"{""country"": ""US"", ""latitude"": 21.306944, ""longitude"": -157.858333}"
+x-ai/grok-4.3,no-CoT,21.31,-157.86,13194.657,US,True,,stop,0.0007334,704,22,0,1.32,"{""country"": ""US"", ""latitude"": 21.31, ""longitude"": -157.86}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,2.5,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.33,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.74,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.4,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,9.29,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.33,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.28,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.3,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.23,

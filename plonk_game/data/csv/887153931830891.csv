@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,30.513182516946,-98.311530006199,0.0,US,True,,,,,,,,"Horseshoe Bay, Llano County, Texas, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,30.47865104675293,-98.24845886230469,7.16,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,30.57552146911621,-98.35579681396484,8.125,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,30.578964233398438,-98.35714721679688,8.52,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,30.5,-98.5,18.115,US,True,,stop,0.005124,1272,215,144,4.24,"{
+  ""reasoning"": ""Double yellow center lines and white edge lines indicate North America. The scrubby oak vegetation and gently rolling, semi-arid landscape are highly characteristic of central Texas."",
+  ""country"": ""US"",
+  ""latitude"": 30.5,
+  ""longitude"": -98.5
+}"
+qwen/qwen3.5-397b-a17b,CoT,30.258,-98.435,30.747,US,True,,stop,0.008355,553,2242,2156,34.83,"{""reasoning"": ""Right-side driving with double yellow center lines and white edge lines indicates the United States. The specific vegetation (scrubby Live Oak and Juniper) combined with the flat, pale limestone terrain is characteristic of the Edwards Plateau in the Texas Hill Country."", ""country"": ""US"", ""latitude"": 30.258, ""longitude"": -98.435}"
+google/gemini-3.5-flash,CoT (effort=high),30.25,-98.55,37.144,US,True,,stop,0.0076755,1271,641,572,5.44,"{""reasoning"": ""The double yellow center lines and white shoulder lines indicate North America, while the scrubby live oak and juniper vegetation combined with the dry, rolling terrain is highly characteristic of the Texas Hill Country."", ""country"": ""US"", ""latitude"": 30.25, ""longitude"": -98.55}"
+google/gemini-3.5-flash,CoT (effort=low),30.2506,-98.5556,37.425,US,True,,stop,0.003609,1272,189,111,2.45,"```json
+{""reasoning"": ""The double yellow center lines and white edge lines indicate North America, while the scrubby oak and juniper vegetation combined with flat-to-rolling terrain is highly characteristic of the Texas Hill Country."", ""country"": ""US"", ""latitude"": 30.2506, ""longitude"": -98.5556}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,30.080442428588867,-98.0482177734375,54.355,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,30.05,-98.55,56.365,US,True,,stop,0.005985,797,80,0,2.79,"{""reasoning"": ""Double yellow centerline, wide rural US highway, oak scrub vegetation and dry grass typical of Texas Hill Country."", ""country"": ""US"", ""latitude"": 30.05, ""longitude"": -98.55}"
+openai/gpt-5.5,CoT,30.1785,-98.7846,58.7,US,True,,stop,0.016575,621,449,370,11.53,"{""reasoning"":""The double yellow centerlines/white edge lines and right-side driving indicate the United States, while the dry scrub oak landscape and rolling limestone terrain strongly suggest Texas Hill Country. Rural highway design and vegetation fit the Fredericksburg/Kerrville area best."",""country"":""US"",""latitude"":30.1785,""longitude"":-98.7846}"
+x-ai/grok-4.3,no-CoT,30.15,-97.85,59.941,US,True,,stop,0.0005934,592,22,0,0.87,"{""country"": ""US"", ""latitude"": 30.15, ""longitude"": -97.85}"
+google/gemini-3.5-flash,CoT (effort=medium),30.2741,-98.8723,59.997,US,True,,stop,0.0047955,1271,321,245,10.2,"{""reasoning"": ""The double yellow center lines, wide paved shoulders, and green roadside signage are characteristic of the United States, while the scrub oak vegetation and flat-to-rolling terrain strongly point to the Texas Hill Country."", ""country"": ""US"", ""latitude"": 30.2741, ""longitude"": -98.8723}"
+x-ai/grok-4.3,CoT,30.2672,-97.7431,60.998,US,True,,stop,0.0016015,676,437,371,11.48,"{
+  ""reasoning"": ""US-style double yellow center line + right-side driving, green highway sign, and scrubby Texas vegetation/flat terrain under big sky indicate rural Texas highway."",
+  ""country"": ""US"",
+  ""latitude"": 30.2672,
+  ""longitude"": -97.7431
+}"
+google/gemini-3.1-pro-preview,no-CoT,30.2672,-97.7431,60.998,US,True,,stop,0.0028,1190,35,0,55.66,"```json
+{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}
+```"
+mistralai/mistral-medium-3-5,no-CoT,30.2672,-97.7431,60.998,US,True,,stop,0.0011835,634,31,0,1.1,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+moonshotai/kimi-k2.6,no-CoT,30.2672,-97.7431,60.998,US,True,,stop,0.00062229,603,25,0,14.95,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+qwen/qwen3.5-122b-a10b,no-CoT,30.2672,-97.7431,60.998,US,True,,stop,0.0002163,473,31,0,8.0,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+qwen/qwen3.5-27b,no-CoT,30.2672,-97.7431,60.998,US,True,,stop,0.0002163,473,31,0,19.54,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+qwen/qwen3.5-35b-a3b,no-CoT,30.2672,-97.7431,60.998,US,True,,stop,0.0001171625,473,31,0,6.99,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+qwen/qwen3.5-9b,no-CoT,30.2672,-97.7431,60.998,US,True,,stop,5.205e-05,474,31,0,9.51,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+qwen/qwen3.6-35b-a3b,no-CoT,30.2672,-97.7431,60.998,US,True,,stop,0.0001444,474,31,0,2.31,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),30.1245,-98.8152,64.848,US,True,,stop,0.0020985,1189,35,0,7.87,"```json
+{""country"": ""US"", ""latitude"": 30.1245, ""longitude"": -98.8152}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,29.92222023010254,-98.25798034667969,65.913,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,30.2,-98.9,66.339,US,True,,stop,0.004055,666,29,0,2.08,"{""country"": ""US"", ""latitude"": 30.2, ""longitude"": -98.9}"
+xiaomi/mimo-v2.5,no-CoT,30.5,-97.5,77.76,US,True,,stop,7.97776e-05,708,25,0,2.36,"{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -97.5}"
+moonshotai/kimi-k2.6,CoT,30.02,-98.92,80.138,US,True,,stop,0.004215348,682,1165,1099,29.57,"{""reasoning"": ""US-style double-yellow centerline, white edge lines, and green highway signage combined with rolling limestone hills covered in live-oak and juniper scrub are characteristic of the Texas Hill Country."", ""country"": ""US"", ""latitude"": 30.02, ""longitude"": -98.92}"
+qwen/qwen3.5-397b-a17b,no-CoT,29.7604,-98.4936,85.517,US,True,,stop,0.00029145,473,31,0,8.95,"{""country"": ""US"", ""latitude"": 29.7604, ""longitude"": -98.4936}"
+qwen/qwen3.6-35b-a3b,CoT,30.95,-99.05,85.68,US,True,,stop,0.006018,554,3692,3363,56.9,"{""reasoning"": ""The double yellow center lines and the green rectangular highway sign are characteristic of the United States. The vegetation, consisting of scrub oaks and dry, grassy terrain, strongly suggests a location in Central or West Texas, likely the Hill Country region."", ""country"": ""US"", ""latitude"": 30.95, ""longitude"": -99.05}"
+openai/gpt-5.5,no-CoT,29.8032,-98.7315,88.673,US,True,,stop,0.00344,544,24,0,8.61,"{""country"":""US"",""latitude"":29.8032,""longitude"":-98.7315}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,29.725357055664062,-99.04920196533203,112.73,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,29.5,-97.75,124.964,US,True,,stop,0.00049722,767,271,323,7.44,"{""country"": ""US"", ""latitude"": 29.5, ""longitude"": -97.75}"
+google/gemma-4-31b-it,no-CoT,31.5,-99.5,157.7,US,True,,stop,6.138e-05,406,30,0,3.93,"```json
+{""country"": ""US"", ""latitude"": 31.5, ""longitude"": -99.5}
+```"
+minimax/minimax-m3,CoT,27.15,-98.45,374.212,US,True,,stop,0.00067866,843,406,334,12.1,"{""reasoning"": ""Yellow center line marking, right-hand traffic, green US-style highway sign, flat terrain with mesquite brush and tan soil characteristic of South Texas brush country indicate a rural highway in the Rio Grande Valley region."", ""country"": ""US"", ""latitude"": 27.15, ""longitude"": -98.45}"
+qwen/qwen3.6-27b,no-CoT,35.4676,-97.5164,555.868,US,True,,stop,0.0001943,473,31,0,12.31,"{""country"": ""US"", ""latitude"": 35.4676, ""longitude"": -97.5164}"
+xiaomi/mimo-v2.5,CoT,28.23,-81.74,1624.21,US,True,,stop,0.000842485,565,2797,2918,259.88,"```json
+{""reasoning"": ""The road markings, specifically the double solid yellow lines separating opposing lanes and single white edge lines, are standard for United States highways. The flat terrain, dense subtropical/broadleaf vegetation (likely pine and oak mix), and the overcast, humid atmosphere are characteristic of the Southeastern United States, particularly Florida or Georgia."", ""country"": ""US"", ""latitude"": 28.23, ""longitude"": -81.74}
+```"
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4196,2352.162,US,True,,stop,0.000142875,634,32,0,1.4,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4196}"
+mistralai/mistral-small-2603,CoT,50.5,8.5,8507.429,DE,True,,stop,0.00050424,716,773,871,6.62,"{""reasoning"": ""Right-hand traffic and temperate deciduous vegetation suggest Central Europe; overcast sky and road style align with regions like Germany."", ""country"": ""DE"", ""latitude"": 50.5, ""longitude"": 8.5}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10803.029,,True,True,,,,,,12.88,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.24,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.43,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.25,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.15,

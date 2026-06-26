@@ -51,6 +51,10 @@
             {% endif %}
         </div>
         <div class="publication-buttons">
+            {% if publication.game %}
+            <a href="{{ publication.game }}" class="publication-game-link" target="_blank" rel="noopener noreferrer"
+                style="background:linear-gradient(120deg,#34d399,#38bdf8);color:#06241a;padding:2px 10px;border-radius:8px;font-weight:700;">🎮 Play the Game</a>
+            {% endif %}
             {% if publication.website %}
             <a href="{{ publication.website }}" target="_blank" rel="noopener noreferrer">Website</a>
             {% endif %}

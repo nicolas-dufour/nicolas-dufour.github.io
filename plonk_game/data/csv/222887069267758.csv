@@ -1,0 +1,70 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,65.675744258241,-20.684976135469,0.0,IS,True,,,,,,,,"Saudarkrokur, None, Northwest, IS"
+xiaomi/mimo-v2.5,CoT,65.8,-19.5,55.877,IS,True,,stop,0.0001507576,899,183,102,8.71,"{""reasoning"": ""The barren, rocky landscape with low-lying vegetation and the overcast sky suggests a northern latitude, likely in the Arctic region. The specific road curve, terrain, and distant water body are characteristic of roads in Iceland, possibly in the Westfjords or northern regions."",""country"":""IS"",""latitude"":65.8,""longitude"":-19.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,65.70246124267578,-19.31965446472168,62.57,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,65.66864776611328,-18.970077514648438,78.557,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,65.5,-22.5,85.667,IS,True,,stop,0.00682,949,83,0,9.39,"{""reasoning"": ""Treeless tundra, gravel road, basalt rocky hills and overcast coastal sky strongly indicate Iceland's countryside."", ""country"": ""IS"", ""latitude"": 65.5, ""longitude"": -22.5}"
+google/gemma-4-31b-it,no-CoT,64.8375,-21.1167,95.349,IS,True,,stop,6.348e-05,404,36,0,5.39,"```json
+{""country"": ""IS"", ""latitude"": 64.8375, ""longitude"": -21.1167}
+```"
+x-ai/grok-4.3,CoT,64.85,-21.35,96.891,IS,True,,stop,0.0021715,788,609,533,11.27,"{
+  ""reasoning"": ""Barren moss-covered volcanic terrain, gravel road, overcast sky and distant water/mountains match Iceland's remote highlands or coastal plateaus; no other country has this exact combination of road style, geology and vegetation."",
+  ""country"": ""IS"",
+  ""latitude"": 64.85,
+  ""longitude"": -21.35
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,65.61404418945312,-18.567668914794922,97.328,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,64.9631,-19.0532,109.627,IS,True,,stop,0.0001353625,585,31,0,6.97,"{""country"": ""IS"", ""latitude"": 64.9631, ""longitude"": -19.0532}"
+xiaomi/mimo-v2.5,no-CoT,65.68,-18.09,118.836,IS,True,,stop,9.60176e-05,820,27,0,7.51,"{""country"": ""IS"", ""latitude"": 65.68, ""longitude"": -18.09}"
+x-ai/grok-4.3,no-CoT,64.85,-22.65,129.568,IS,True,,stop,0.0007334,704,22,0,1.78,"{""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -22.65}"
+google/gemini-3.5-flash,CoT (effort=high),64.9521,-22.9114,131.004,IS,True,,stop,0.0101145,1307,906,832,10.27,"{""reasoning"": ""The barren volcanic landscape, mossy hills, gravel road, and yellow delineator posts are highly characteristic of Iceland. The coastal mountain terrain suggests a location on the Snæfellsnes Peninsula."", ""country"": ""IS"", ""latitude"": 64.9521, ""longitude"": -22.9114}"
+qwen/qwen3.6-35b-a3b,no-CoT,64.9631,-18.0,147.7,IS,True,,stop,0.00011875,585,31,0,2.22,"{""country"": ""IS"", ""latitude"": 64.9631, ""longitude"": -18.0000}"
+anthropic/claude-opus-4.8,no-CoT,65.4567,-23.8765,148.784,IS,True,,stop,0.00489,818,32,0,2.38,"{""country"": ""IS"", ""latitude"": 65.4567, ""longitude"": -23.8765}"
+google/gemini-3.1-pro-preview,CoT,64.85,-23.5,159.937,IS,True,,stop,0.005424,1308,234,172,5.14,"{
+  ""reasoning"": ""The barren volcanic landscape with green moss, dark rocks, and yellow road bollards are highly characteristic of Iceland."",
+  ""country"": ""IS"",
+  ""latitude"": 64.85,
+  ""longitude"": -23.5
+}"
+qwen/qwen3.5-122b-a10b,no-CoT,64.2539,-20.1234,160.293,IS,True,,stop,0.0002691,585,39,0,1.12,"{
+  ""country"": ""IS"",
+  ""latitude"": 64.2539,
+  ""longitude"": -20.1234
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),64.8831,-23.7125,166.071,IS,True,,stop,0.0021525,1225,35,0,1.53,"```json
+{""country"": ""IS"", ""latitude"": 64.8831, ""longitude"": -23.7125}
+```"
+google/gemini-3.5-flash,CoT (effort=low),64.8833,-23.7167,166.224,IS,True,,stop,0.004014,1308,228,163,8.77,"{""reasoning"": ""The barren, volcanic landscape with mossy rocks, lack of trees, overcast sky, and unpaved gravel road are highly characteristic of rural Iceland."", ""country"": ""IS"", ""latitude"": 64.8833, ""longitude"": -23.7167}"
+minimax/minimax-m3,CoT,64.85,-23.75,169.59,IS,True,,stop,0.00088866,995,543,461,12.72,"{""reasoning"": ""Treeless tundra landscape, volcanic basalt rock formations on the right, well-maintained gravel road, and overcast maritime weather are characteristic of Iceland's Snæfellsnes peninsula, likely along Route 574 between Búðir and Arnarstapi."", ""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -23.75}"
+google/gemini-3.1-pro-preview,no-CoT,64.8512,-23.7845,170.867,IS,True,,stop,0.002872,1226,35,0,1.75,"```json
+{""country"": ""IS"", ""latitude"": 64.8512, ""longitude"": -23.7845}
+```"
+openai/gpt-5.5,no-CoT,64.8827,-23.8364,171.003,IS,True,,stop,0.00411,678,24,0,2.74,"{""country"":""IS"",""latitude"":64.8827,""longitude"":-23.8364}"
+qwen/qwen3.6-27b,no-CoT,64.1466,-19.609,177.433,IS,True,,stop,0.0002279,585,31,0,22.17,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -19.6090}"
+moonshotai/kimi-k2.6,CoT,64.753,-23.901,181.633,IS,True,,stop,0.011055636,834,3150,3079,66.63,"{""reasoning"": ""The moss-covered volcanic lava fields, completely treeless barren terrain, and unpaved gravel road cutting through basaltic rock are unmistakably characteristic of Iceland's Snæfellsnes peninsula coastal approaches."", ""country"": ""IS"", ""latitude"": 64.753, ""longitude"": -23.901}"
+qwen/qwen3.5-27b,no-CoT,64.0425,-21.9533,191.227,IS,True,,stop,0.00026676,586,44,0,4.36,"```json
+{
+  ""country"": ""IS"",
+  ""latitude"": 64.0425,
+  ""longitude"": -21.9533
+}
+```"
+mistralai/mistral-medium-3-5,no-CoT,63.9948,-22.6056,207.783,IS,True,,stop,0.0014115,786,31,0,7.15,"{""country"": ""IS"", ""latitude"": 63.9948, ""longitude"": -22.6056}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,63.404457092285156,-18.847915649414062,267.358,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),64.8125,-14.1528,318.775,IS,True,,stop,0.0066405,1307,520,457,5.13,"{""reasoning"": ""The barren volcanic landscape, gravel road with yellow marker posts, and overcast sky are highly characteristic of rural Iceland, specifically the eastern fjord region."", ""country"": ""IS"", ""latitude"": 64.8125, ""longitude"": -14.1528}"
+qwen/qwen3.5-397b-a17b,no-CoT,64.85,-14.05,321.916,IS,True,,stop,0.000291375,585,27,0,3.46,"{""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -14.05}"
+qwen/qwen3.5-9b,no-CoT,65.0,-13.5,341.526,IS,True,,stop,6.235e-05,586,25,0,9.39,"{""country"": ""IS"", ""latitude"": 65.0, ""longitude"": -13.5}"
+openai/gpt-5.5,CoT,62.3496,-6.5298,780.176,FO,True,,stop,0.021895,755,604,516,38.08,"{""reasoning"":""Treeless North Atlantic volcanic terrain with a rough gravel coastal road, low brown grass, basaltic cliffs, and overcast maritime weather strongly suggest the Faroe Islands rather than mainland Europe. The narrow unmarked road and rugged cliffside/coastal setting fit remote roads on the northern Faroese islands."",""country"":""FO"",""latitude"":62.3496,""longitude"":-6.5298}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,61.305335998535156,-45.139591217041016,1296.974,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,61.240482330322266,-45.08652114868164,1298.475,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7487.274,,True,True,,,,,,0.19,
+mistralai/mistral-small-2603,no-CoT,-51.6333,-72.5,13766.743,CL,True,,stop,0.0001347,786,28,0,2.13,"{""country"": ""CL"", ""latitude"": -51.6333, ""longitude"": -72.5}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.2,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.89,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,13.06,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.4,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,13.52,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.33,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.11,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.29,

@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,51.733754286571,-8.6376224259068,0.0,IE,True,,,,,,,,"Bandon, County Cork, Munster, IE"
+google/gemini-3.1-pro-preview,CoT,52.0,-8.5,31.077,IE,True,,stop,0.006406,1271,322,239,5.21,"{
+  ""reasoning"": ""The lush green hedgerows, narrow road with a dashed white center line, and the presence of a tax/insurance disc holder on the lower left (from the driver's perspective) of the windshield strongly indicate Ireland."",
+  ""country"": ""IE"",
+  ""latitude"": 52.0,
+  ""longitude"": -8.5
+}"
+google/gemini-3.1-pro-preview,no-CoT,52.1,-8.5,41.804,IE,True,,stop,0.00437,1189,166,138,41.07,"```json
+{""country"": ""IE"", ""latitude"": 52.1, ""longitude"": -8.5}
+```"
+moonshotai/kimi-k2.6,CoT,52.15,-8.75,46.921,IE,True,,stop,0.036072855,681,9898,10828,336.43,"{""reasoning"": ""Narrow rural road with overgrown hedgerows and dashed white center line matches Irish R-roads; stone church spire and temperate maritime vegetation are consistent with Ireland."", ""country"": ""IE"", ""latitude"": 52.15, ""longitude"": -8.75}"
+openai/gpt-5.5,CoT,52.1327,-9.6421,81.917,IE,True,,stop,0.012885,621,326,246,10.02,"{""reasoning"":""Left-side driving on a narrow rural road with Irish/UK-style dashed center markings, dense hedgerows, stone walls, and lush Atlantic vegetation point most strongly to rural Ireland. The landscape and road character fit southwest Ireland, especially County Kerry/Cork."",""country"":""IE"",""latitude"":52.1327,""longitude"":-9.6421}"
+minimax/minimax-m3,no-CoT,52.0,-7.5,83.532,IE,True,,stop,0.00019176,752,23,0,6.08,"{""country"": ""IE"", ""latitude"": 52.0, ""longitude"": -7.5}"
+anthropic/claude-opus-4.8,CoT,52.65,-8.62,101.889,IE,True,,stop,0.006085,797,84,0,4.49,"{""reasoning"": ""Narrow rural road with hedgerows, driving on left, dashed center line, and a church spire suggest rural Ireland or UK countryside."", ""country"": ""IE"", ""latitude"": 52.65, ""longitude"": -8.62}"
+google/gemini-3.5-flash,CoT (effort=low),52.6541,-8.6234,102.342,IE,True,,stop,0.0038955,1271,221,157,3.17,"{""reasoning"": ""The narrow rural road with dense green hedges, dashed white center line, left-hand driving, and damp climate is highly characteristic of the Irish countryside."", ""country"": ""IE"", ""latitude"": 52.6541, ""longitude"": -8.6234}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),52.3412,-7.5124,102.4,IE,True,,stop,0.0020895,1189,34,0,11.35,"```json
+{""country"": ""IE"", ""latitude"": 52.3412, ""longitude"": -7.5124}
+```"
+openai/gpt-5.5,no-CoT,52.8612,-8.1997,128.854,IE,True,,stop,0.00344,544,24,0,1.47,"{""country"":""IE"",""latitude"":52.8612,""longitude"":-8.1997}"
+google/gemini-3.5-flash,CoT (effort=high),52.4532,-7.1245,130.705,IE,True,,stop,0.0089355,1271,781,722,7.42,"{""reasoning"": ""The narrow asphalt road lined with dense hedges, left-hand traffic, and lush green vegetation are highly characteristic of rural Ireland."", ""country"": ""IE"", ""latitude"": 52.4532, ""longitude"": -7.1245}"
+google/gemini-3.5-flash,CoT (effort=medium),52.336,-6.945,133.75,IE,True,,stop,0.0070455,1271,571,516,10.17,"{""reasoning"": ""Left-hand driving on a narrow rural road with dense green hedgerows and a windscreen disc typical of Ireland."", ""country"": ""IE"", ""latitude"": 52.336, ""longitude"": -6.945}"
+moonshotai/kimi-k2.6,no-CoT,53.0,-7.5,160.59,IE,True,,stop,0.000279972,603,23,0,5.8,"{""country"": ""IE"", ""latitude"": 53.0, ""longitude"": -7.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,53.2744,-9.0543,173.617,IE,True,,stop,0.0002139,473,30,0,3.8,"{""country"": ""IE"", ""latitude"": 53.2744, ""longitude"": -9.0543}"
+qwen/qwen3.5-27b,no-CoT,53.3478,-6.2651,240.712,IE,True,,stop,0.00019251,473,30,0,13.33,"{""country"": ""IE"", ""latitude"": 53.3478, ""longitude"": -6.2651}"
+qwen/qwen3.5-35b-a3b,no-CoT,53.3498,-6.2603,241.092,IE,True,,stop,0.00010095,473,30,0,2.32,"{""country"": ""IE"", ""latitude"": 53.3498, ""longitude"": -6.2603}"
+qwen/qwen3.6-35b-a3b,no-CoT,53.3498,-6.2603,241.092,IE,True,,stop,0.00015575,473,30,0,1.29,"{""country"": ""IE"", ""latitude"": 53.3498, ""longitude"": -6.2603}"
+xiaomi/mimo-v2.5,no-CoT,53.35,-6.25,241.573,IE,True,,stop,8.00576e-05,708,26,0,4.02,"{""country"": ""IE"", ""latitude"": 53.35, ""longitude"": -6.25}"
+google/gemma-4-31b-it,no-CoT,52.15,-4.2,307.638,GB,True,,stop,7.084e-05,406,35,0,2.26,"```json
+{""country"": ""GB"", ""latitude"": 52.1500, ""longitude"": -4.2000}
+```"
+minimax/minimax-m3,CoT,50.63,-4.35,323.015,GB,True,,stop,0.00087906,843,573,475,17.66,"{""reasoning"": ""Left-hand driving on a very narrow rural lane flanked by dense, ivy-covered hedgerows, with wooden telegraph poles and overcast light strongly indicate the British Isles, most likely rural England or Wales. The distant church spire and gentle rolling hills with lush green bracken vegetation point to the West Country (Devon/Cornwall)."", ""country"": ""GB"", ""latitude"": 50.63, ""longitude"": -4.35}"
+qwen/qwen3.6-35b-a3b,CoT,51.4816,-3.1791,377.9,GB,True,,stop,0.00550516135,553,5611,5495,29.08,"```json
+{
+  ""reasoning"": ""The image shows a left-hand traffic road with classic British hedgerows, wooden utility poles, and a rural road style typical of the UK. The lush green vegetation and the style of the distant building (possibly a church) further support a location in the United Kingdom, likely in a rural area like Wales or the West Country."",
+  ""country"": ""GB"",
+  ""latitude"": 51.4816,
+  ""longitude"": -3.1791
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,50.67586898803711,-3.4635846614837646,379.074,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,50.737823486328125,-3.3639535903930664,383.395,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,51.72,-2.41,428.802,GB,True,,stop,0.0023465,676,735,666,8.91,"{""reasoning"": ""Right-hand drive perspective (A-pillar and wiper placement), UK-style dashed center line, narrow hedgerow-lined rural lane with temperate deciduous trees/ivy, and distant stone building all point to Britain."", ""country"": ""GB"", ""latitude"": 51.72, ""longitude"": -2.41}"
+qwen/qwen3.6-27b,CoT,51.35,-2.15,450.537,GB,True,,stop,0.0078991,553,3881,1,295.74,"{""reasoning"": ""The image shows a vehicle driving on the left side of the road (indicated by the dashboard position and RHD steering wheel implication), which points to the UK or Ireland. The landscape features dense, lush green hedgerows, a narrow rural road with a dashed white center line, and a wooden utility pole, all highly characteristic of the English countryside. The building in the distance appears to be a stone church tower or manor house, further supporting a UK location."", ""country"": ""GB"", ""latitude"": 51.35, ""longitude"": -2.15}"
+mistralai/mistral-medium-3-5,CoT,51.3944,-2.1236,451.696,GB,True,,stop,0.030999,716,3990,4165,65.57,"{""reasoning"": ""Left-hand traffic indicated by solid left-edge line and dashed centerline; rural UK scenery with church tower and hedgerows."", ""country"": ""GB"", ""latitude"": 51.3944, ""longitude"": -2.1236}"
+google/gemma-4-26b-a4b-it,no-CoT,52.4862,-1.8904,468.121,GB,True,,stop,5.614e-05,406,34,0,9.11,"Please own de own {""country"": ""GB"", ""latitude"": 52.4862, ""longitude"": -1.8904}"
+google/gemma-4-26b-a4b-it,CoT,52.48,-1.88,468.728,GB,True,,stop,0.00048692,491,1070,996,14.65,"{""reasoning"": ""The right-hand drive vehicle and lush, temperate deciduous vegetation are highly characteristic of the United Kingdom."", ""country"": ""GB"", ""latitude"": 52.48, ""longitude"": -1.88}"
+qwen/qwen3.5-397b-a17b,CoT,51.85,-1.75,473.705,GB,True,,stop,0.00745563,553,3094,2977,55.08,"{
+""reasoning"": ""The vehicle is driving on the left side of a narrow road with white dashed center markings, flanked by dense, overgrown hedgerows and temperate deciduous trees, which is highly characteristic of rural United Kingdom. The stone tower visible in the distance on the right resembles a traditional English church, further pointing to the UK, likely in a region like the Cotswolds or Somerset."",
+""country"": ""GB"",
+""latitude"": 51.85,
+""longitude"": -1.75
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,48.89512634277344,-3.572084665298462,478.341,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,48.93833541870117,-3.4677717685699463,480.682,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,CoT,52.1234,-1.5678,486.498,GB,True,,stop,0.00040824,356,896,823,56.5,"```json
+{""reasoning"": ""Left-hand traffic, rural road markings, and stone architecture typical of the British Isles."", ""country"": ""GB"", ""latitude"": 52.1234, ""longitude"": -1.5678}
+```"
+xiaomi/mimo-v2.5,CoT,51.8,-1.3,504.775,GB,True,,stop,0.0005354776,787,1613,1558,15.47,"{""reasoning"": ""Left-hand traffic indicated by car position and road markings, combined with rural European church architecture, points to the United Kingdom."", ""country"": ""GB"", ""latitude"": 51.8, ""longitude"": -1.3}"
+qwen/qwen3.5-9b,no-CoT,51.9225,-1.2833,505.616,GB,True,,stop,5.19e-05,474,30,0,11.0,"{""country"": ""GB"", ""latitude"": 51.9225, ""longitude"": -1.2833}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,50.846954345703125,-1.2419945001602173,523.406,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,51.4545,-0.9781,529.766,GB,True,,stop,0.00024768,474,30,0,2.16,"{""country"": ""GB"", ""latitude"": 51.4545, ""longitude"": -0.9781}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,48.310611724853516,-2.8963875770568848,559.26,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,51.5074,-0.1278,587.699,GB,True,,stop,0.001176,634,30,0,1.9,"{""country"": ""GB"", ""latitude"": 51.5074, ""longitude"": -0.1278}"
+qwen/qwen3.5-397b-a17b,no-CoT,51.0447,-0.1858,591.102,GB,True,,stop,0.00036515,473,30,0,3.3,"{""country"": ""GB"", ""latitude"": 51.0447, ""longitude"": -0.1858}"
+anthropic/claude-opus-4.8,no-CoT,48.1119,-2.5023,595.539,FR,True,,stop,0.00413,666,32,0,2.28,"{""country"": ""FR"", ""latitude"": 48.1119, ""longitude"": -2.5023}"
+x-ai/grok-4.3,no-CoT,48.85,2.35,842.794,FR,True,,stop,0.0005934,592,22,0,2.08,"{""country"": ""FR"", ""latitude"": 48.85, ""longitude"": 2.35}"
+mistralai/mistral-small-2603,CoT,52.0907,5.1214,943.186,NL,True,,stop,0.00070344,716,1105,1198,13.91,"{""reasoning"": ""Right-hand traffic, blue highway sign with white 'H' symbol, temperate climate with leafless deciduous trees, and rolling grassy terrain consistent with Dutch highway overpasses."", ""country"": ""NL"", ""latitude"": 52.0907, ""longitude"": 5.1214}"
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4196,8178.107,US,True,,stop,0.0001143,634,32,0,2.96,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4196}"
+qwen/qwen3.5-122b-a10b,CoT,,,,,False,,stop,0.01294202,553,6153,6153,42.37,
+qwen/qwen3.5-27b,CoT,,,,,False,,stop,0.0129099,553,5310,5310,175.49,

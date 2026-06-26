@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,35.065312282904,-2.41525941868,0.0,MA,True,,,,,,,,"Madagh, Berkane-Taourirt, Oriental, MA"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,34.84074783325195,-2.2280688285827637,30.242,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,34.81284713745117,-2.2546682357788086,31.66,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,34.804527282714844,-2.2640221118927,32.108,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,36.7213,-2.4431,184.155,ES,True,,stop,0.00021476,586,30,0,11.78,"{""country"": ""ES"", ""latitude"": 36.7213, ""longitude"": -2.4431}"
+qwen/qwen3.6-35b-a3b,no-CoT,37.125,-3.58,251.798,ES,True,,stop,0.00012036375,585,27,0,1.76,"{""country"": ""ES"", ""latitude"": 37.125, ""longitude"": -3.58}"
+x-ai/grok-4.3,no-CoT,37.15,-3.62,255.821,ES,True,,stop,0.0007334,704,22,0,7.17,"{""country"": ""ES"", ""latitude"": 37.15, ""longitude"": -3.62}"
+minimax/minimax-m3,CoT,37.35,-3.15,262.456,ES,True,,stop,0.00054918,997,405,371,82.29,"{""reasoning"": ""Dry semi-arid landscape with sparse yellow grass, distant blue mountain ranges, clear blue sky, and a rural two-lane road with white edge markings strongly suggest southern Spain, likely the Andalusian interior around Granada province. The vegetation and topography are characteristic of the Hoya de Guadix/Baza basin area."", ""country"": ""ES"", ""latitude"": 37.35, ""longitude"": -3.15}"
+qwen/qwen3.5-9b,no-CoT,37.3891,-5.9831,411.265,ES,True,,stop,0.00010695,585,30,0,1.5,"{""country"": ""ES"", ""latitude"": 37.3891, ""longitude"": -5.9831}"
+qwen/qwen3.6-27b,no-CoT,39.4699,-0.3763,521.902,ES,True,,stop,0.0002259,585,30,0,9.63,"{""country"": ""ES"", ""latitude"": 39.4699, ""longitude"": -0.3763}"
+qwen/qwen3.5-27b,no-CoT,39.8617,-4.0276,551.963,ES,True,,stop,0.0002325,586,43,0,9.54,"```json
+{
+  ""country"": ""ES"",
+  ""latitude"": 39.8617,
+  ""longitude"": -4.0276
+}
+```"
+moonshotai/kimi-k2.6,CoT,31.52,-7.95,647.913,MA,True,,stop,0.026706015,833,7260,8306,100.44,"{""reasoning"": ""Whitewashed flat-roof building and arid rocky terrain are characteristic of North Africa, and the left-hand drive vehicle traveling on the right side of the road matches Morocco."", ""country"": ""MA"", ""latitude"": 31.52, ""longitude"": -7.95}"
+openai/gpt-5.5,CoT,31.3945,-7.8728,651.17,MA,True,,stop,0.017875,755,470,380,11.52,"{""reasoning"":""The dry Mediterranean foothill landscape, right-hand traffic, white road markings, utility poles, and pale Islamic/Maghrebi-style building with arched details point most strongly to rural Morocco in the Atlas foothills. The arid hills and roadside vegetation fit the outskirts south of Marrakech toward the High Atlas."",""country"":""MA"",""latitude"":31.3945,""longitude"":-7.8728}"
+google/gemini-3.5-flash,CoT (effort=low),36.1542,9.4853,1081.928,TN,True,,stop,0.0043455,1307,265,187,3.36,"{""reasoning"": ""The dry, hilly landscape, sparse vegetation, and flat-roofed light-colored architecture are characteristic of northern or central Tunisia. The solid white center line on the narrow asphalt road is also typical for Tunisian regional routes."", ""country"": ""TN"", ""latitude"": 36.1542, ""longitude"": 9.4853}"
+google/gemini-3.5-flash,CoT (effort=high),36.15,9.7,1101.158,TN,True,,stop,0.0124545,1307,1166,1085,16.55,"```json
+{""reasoning"": ""The arid, hilly landscape with sparse olive-like trees and the distinct beige, flat-roofed architecture on the left are highly characteristic of northern or central Tunisia. The road markings and concrete utility poles further support this North African location."", ""country"": ""TN"", ""latitude"": 36.15, ""longitude"": 9.7}
+```"
+openai/gpt-5.5,no-CoT,36.6245,10.0127,1132.699,TN,True,,stop,0.00408,678,23,0,1.88,"{""country"":""TN"",""latitude"":36.6245,""longitude"":10.0127}"
+google/gemini-3.1-pro-preview,no-CoT,36.4,10.1,1138.54,TN,True,,stop,0.00833,1225,490,455,8.24,"```json
+{""country"": ""TN"", ""latitude"": 36.4000, ""longitude"": 10.1000}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),35.124833,25.13825,2498.714,GR,True,,stop,0.0021795,1225,38,0,9.04,"```json
+{""country"": ""GR"", ""latitude"": 35.124833, ""longitude"": 25.13825}
+```"
+x-ai/grok-4.3,CoT,31.85,35.15,3482.71,IL,True,,stop,0.002434,788,714,636,5.97,"{
+  ""reasoning"": ""Arid rolling hills, dry grass/scrub, sparse trees, whitewashed building and wooden utility poles match Levantine/Middle-Eastern countryside; right-hand traffic, asphalt road markings and triangular sign also consistent with Israel."",
+  ""country"": ""IL"",
+  ""latitude"": 31.85,
+  ""longitude"": 35.15
+}"
+google/gemma-4-31b-it,no-CoT,31.5214,35.1231,3490.664,IL,True,,stop,6.348e-05,404,36,0,3.6,"```json
+{""country"": ""IL"", ""latitude"": 31.5214, ""longitude"": 35.1231}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),32.2542,35.8915,3537.488,JO,True,,stop,0.0080805,1307,680,615,7.03,"{""reasoning"": ""The arid, hilly landscape, sparse Mediterranean vegetation, and the beige flat-roofed concrete architecture on the left are highly characteristic of the Jordanian highlands."", ""country"": ""JO"", ""latitude"": 32.2542, ""longitude"": 35.8915}"
+google/gemini-3.1-pro-preview,CoT,32.154,35.892,3540.572,JO,True,,stop,0.007596,1308,415,334,13.46,"{
+  ""reasoning"": ""The arid, hilly landscape with sparse vegetation and the flat-roofed, blocky architecture on the left are characteristic of the Levant region. The road markings and overall environment strongly suggest Jordan."",
+  ""country"": ""JO"",
+  ""latitude"": 32.154,
+  ""longitude"": 35.892
+}"
+anthropic/claude-opus-4.8,no-CoT,-33.2,19.9,7938.931,ZA,True,,stop,0.004865,818,31,0,8.77,"{""country"": ""ZA"", ""latitude"": -33.2, ""longitude"": 19.9}"
+qwen/qwen3.5-397b-a17b,no-CoT,-33.6891,18.8602,7959.528,ZA,True,,stop,0.00043025,585,31,0,1.87,"{""country"": ""ZA"", ""latitude"": -33.6891, ""longitude"": 18.8602}"
+anthropic/claude-opus-4.8,CoT,-33.2,22.0,8005.733,ZA,True,,stop,0.00762,949,115,0,9.8,"{""reasoning"": ""Arid scrubland with low hills, dry grasses, and a flat-roofed building suggest semi-desert region; vehicles appear to drive on the right with rural two-lane road typical of interior South Africa Karoo or North Africa."", ""country"": ""ZA"", ""latitude"": -33.2, ""longitude"": 22.0}"
+mistralai/mistral-medium-3-5,no-CoT,36.6002,-108.7161,8996.027,US,True,,stop,0.001419,786,32,0,1.95,"{""country"": ""US"", ""latitude"": 36.6002, ""longitude"": -108.7161}"
+xiaomi/mimo-v2.5,CoT,-17.5,-67.5,9008.965,BO,True,,stop,0.0004747176,899,1340,1276,17.46,"{""reasoning"": ""The right-hand driving, high-altitude grassy hills, and rural road with simple architecture are decisive clues pointing to the Altiplano region in Bolivia."", ""country"": ""BO"", ""latitude"": -17.5, ""longitude"": -67.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.89790725708008,-119.86033630371094,9731.937,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,36.15715789794922,-120.37931823730469,9822.282,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,34.0522,-118.2437,9840.34,US,True,,stop,0.00018625,585,32,0,0.8,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,35.30820846557617,-119.9932632446289,9862.107,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,-38.0,-67.5,10530.463,AR,True,,stop,9.54576e-05,820,25,0,7.26,"{""country"": ""AR"", ""latitude"": -38.0, ""longitude"": -67.5}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.4,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.35,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,15.5,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.25,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.44,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,34.83,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.19,

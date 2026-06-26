@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,25.403280620801663,33.01699507588529,0.0,EG,True,,,,,,,,"Idfu, None, Aswan, EG"
+mistralai/mistral-small-2603,no-CoT,43.2965,5.3698,3198.995,FR,True,,stop,0.0001359,786,30,0,10.55,"{""country"": ""FR"", ""latitude"": 43.2965, ""longitude"": 5.3698}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4532.47,,True,True,,,,,,18.99,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-25.493759155273438,33.308040618896484,5659.579,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-25.50596046447754,33.346839904785156,5660.96,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-25.50686264038086,33.35350036621094,5661.065,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-28.0,32.4,5938.541,ZA,True,,stop,0.00727,949,101,0,9.74,"{""reasoning"": ""Sandy two-track road through dense green coastal scrub/bush suggests a tropical or subtropical wildlife reserve, consistent with African savanna bushland such as a South African game reserve."", ""country"": ""ZA"", ""latitude"": -28.0, ""longitude"": 32.4}"
+anthropic/claude-opus-4.8,no-CoT,-28.3,32.4,5971.897,ZA,True,,stop,0.004865,818,31,0,2.47,"{""country"": ""ZA"", ""latitude"": -28.3, ""longitude"": 32.4}"
+moonshotai/kimi-k2.6,no-CoT,-33.95,18.4,6777.927,ZA,True,,stop,0.00075869,755,23,0,0.74,"{""country"": ""ZA"", ""latitude"": -33.95, ""longitude"": 18.4}"
+qwen/qwen3.5-35b-a3b,no-CoT,-33.9897,18.4032,6782.112,ZA,True,,stop,0.00011304,586,31,0,1.27,"{""country"": ""ZA"", ""latitude"": -33.9897, ""longitude"": 18.4032}"
+openai/gpt-5.5,no-CoT,-34.0897,18.3569,6793.959,ZA,True,,stop,0.00411,678,24,0,8.18,"{""country"":""ZA"",""latitude"":-34.0897,""longitude"":18.3569}"
+openai/gpt-5.5,CoT,-34.2748,18.4216,6812.282,ZA,True,,stop,0.015505,755,391,310,9.87,"{""reasoning"":""White sandy track through dense coastal fynbos/dune scrub is highly characteristic of South Africa’s Western Cape coastal reserves, especially the Cape Peninsula/Cape Point area. The vegetation, pale sand, and Mediterranean coastal climate fit far better than inland African sandy tracks."",""country"":""ZA"",""latitude"":-34.2748,""longitude"":18.4216}"
+google/gemini-3.5-flash,CoT (effort=medium),-2.8125,-40.4812,8494.763,BR,True,,stop,0.0098715,1307,879,803,8.01,"```json
+{""reasoning"": ""The white sandy track and low, dense tropical coastal scrub (restinga) are highly characteristic of the coastal dunes and national park areas in northeastern Brazil, particularly around Jericoacoara."", ""country"": ""BR"", ""latitude"": -2.8125, ""longitude"": -40.4812}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-2.8765,-40.4489,8494.797,BR,True,,stop,0.004382,1225,161,127,10.36,"```json
+{""country"": ""BR"", ""latitude"": -2.8765, ""longitude"": -40.4489}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-2.795,-40.496,8495.344,BR,True,,stop,0.0123555,1307,1155,1089,9.84,"{""reasoning"": ""The white sandy track and dense coastal restinga vegetation under a tropical sky are highly characteristic of the northeastern coast of Brazil, particularly around the dunes of Jericoacoara."", ""country"": ""BR"", ""latitude"": -2.795, ""longitude"": -40.496}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-2.574215,-44.312451,8863.096,BR,True,,stop,0.0021795,1225,38,0,8.57,"```json
+{""country"": ""BR"", ""latitude"": -2.574215, ""longitude"": -44.312451}
+```"
+google/gemma-4-31b-it,no-CoT,-15.7801,-39.5132,9085.016,BR,True,,stop,6.348e-05,404,36,0,10.63,"```json
+{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -39.5132}
+```"
+google/gemini-3.1-pro-preview,CoT,-16.6133,-39.1055,9092.884,BR,True,,stop,0.007414,1307,400,319,7.66,"{
+  ""reasoning"": ""The white sandy road and dense, low-lying tropical scrub vegetation are characteristic of coastal restinga environments. This specific landscape is commonly found along the northeastern and eastern coasts of Brazil."",
+  ""country"": ""BR"",
+  ""latitude"": -16.6133,
+  ""longitude"": -39.1055
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,18.63443374633789,-64.20014190673828,9819.317,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,18.59093475341797,-64.25181579589844,9826.342,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-23.5,-46.5,10137.123,BR,True,,stop,0.0013665,786,25,0,1.3,"{""country"": ""BR"", ""latitude"": -23.5, ""longitude"": -46.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,21.33439064025879,-71.02740478515625,10314.222,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),25.1432,-76.1635,10558.617,BS,True,,stop,0.0047145,1307,306,244,4.02,"{""reasoning"": ""The white sandy track and low, dense subtropical coastal scrub vegetation are highly characteristic of the Bahamian islands, such as Eleuthera."", ""country"": ""BS"", ""latitude"": 25.1432, ""longitude"": -76.1635}"
+minimax/minimax-m3,CoT,25.45,-76.55,10574.189,BS,True,,stop,0.00066666,995,358,280,18.0,"{""reasoning"": ""White sandy path cutting through dense tropical coastal scrub vegetation with mangrove-like shrubs and the characteristic vegetation pattern strongly suggests a Caribbean island or Bahamas coastal trail. The bright tropical cumulus clouds and vegetation composition match Bahamian barrier islands like Eleuthera."", ""country"": ""BS"", ""latitude"": 25.45, ""longitude"": -76.55}"
+minimax/minimax-m3,no-CoT,25.0,-77.5,10681.813,BS,True,,stop,0.00040602,919,157,177,11.69,"{""country"": ""BS"", ""latitude"": 25.0, ""longitude"": -77.5}"
+qwen/qwen3.6-27b,no-CoT,27.5789,-80.3632,10768.282,US,True,,stop,0.0002279,585,31,0,15.14,"{""country"": ""US"", ""latitude"": 27.5789, ""longitude"": -80.3632}"
+moonshotai/kimi-k2.6,CoT,-31.2,115.4,10772.694,AU,True,,stop,0.024327036,834,7028,6937,349.15,"{""reasoning"": ""Dense broadleaf scrub on very white quartz sand with a single sandy 4WD track is characteristic of coastal Banksia woodland or kwongan heath in Western Australia, particularly the Swan Coastal Plain north of Perth; the rounded crowns of the scattered background trees match Eucalyptus/Banksia typical of that region."", ""country"": ""AU"", ""latitude"": -31.2, ""longitude"": 115.4}"
+qwen/qwen3.5-9b,no-CoT,26.0049,-80.1768,10848.76,US,True,,stop,6.325e-05,586,31,0,9.04,"{""country"": ""US"", ""latitude"": 26.0049, ""longitude"": -80.1768}"
+qwen/qwen3.5-397b-a17b,no-CoT,25.7617,-80.1918,10864.786,US,True,,stop,0.0003882,585,31,0,7.8,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+qwen/qwen3.6-35b-a3b,no-CoT,25.7617,-80.1918,10864.786,US,True,,stop,0.00011875,585,31,0,8.67,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+qwen/qwen3.5-122b-a10b,no-CoT,25.8693,-80.3256,10869.462,US,True,,stop,0.00021684,586,31,0,13.87,"{""country"": ""US"", ""latitude"": 25.8693, ""longitude"": -80.3256}"
+xiaomi/mimo-v2.5,no-CoT,25.1,-80.7,10947.767,US,True,,stop,9.54576e-05,820,25,0,7.47,"{""country"": ""US"", ""latitude"": 25.1, ""longitude"": -80.7}"
+xiaomi/mimo-v2.5,CoT,30.3535,-86.4203,11072.079,US,True,,stop,0.0002207576,899,433,340,12.43,"{""reasoning"": ""The white sandy two-track path combined with the coastal scrub vegetation, including scrub oak and palmetto, is highly characteristic of the Florida Panhandle in the southeastern United States. This specific 'sugar sand' appearance is common in coastal state parks and preserves in that region."", ""country"": ""US"", ""latitude"": 30.3535, ""longitude"": -86.4203}"
+qwen/qwen3.5-27b,no-CoT,23.1333,-81.7833,11159.941,CU,True,,stop,0.00026676,586,44,0,2.22,"```json
+{
+  ""country"": ""CU"",
+  ""latitude"": 23.1333,
+  ""longitude"": -81.7833
+}
+```"
+x-ai/grok-4.3,CoT,20.66,-87.03,11761.601,MX,True,,stop,0.0020415,788,557,496,11.72,"{""reasoning"": ""Tropical coastal scrub vegetation, white-sand two-track road, and vivid subtropical sky indicate Caribbean/Central American lowlands; no left/right traffic or signage clues visible."", ""country"": ""MX"", ""latitude"": 20.66, ""longitude"": -87.03}"
+x-ai/grok-4.3,no-CoT,20.6595,-87.0448,11762.885,MX,True,,stop,0.0007384,704,24,0,0.89,"{""country"": ""MX"", ""latitude"": 20.6595, ""longitude"": -87.0448}"
+qwen/qwen3.5-397b-a17b,CoT,20.2845,-87.4123,11818.31,MX,True,,stop,0.0071891,665,1970,1946,71.74,"{""reasoning"": ""The white, sandy limestone soil combined with dense, low-lying tropical scrub vegetation (typical of 'selva baja') is highly characteristic of the Yucatan Peninsula in Mexico."", ""country"": ""MX"", ""latitude"": 20.2845, ""longitude"": -87.4123}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.6,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.24,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.4,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.24,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,10.42,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.11,

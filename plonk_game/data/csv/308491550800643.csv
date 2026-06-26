@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,11.640695583879,-6.0505057541791,0.0,ML,True,,,,,,,,"Sikasso, None, Sikasso, ML"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,12.686728477478027,-6.529033184051514,127.414,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,12.754449844360352,-6.518171787261963,133.868,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,12.773796081542969,-6.523131847381592,136.063,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,11.5,-2.5,387.089,BF,True,,stop,0.006185,797,88,0,3.0,"{""reasoning"": ""Red laterite dirt road, sparse savanna woodland, overcast wet-season sky suggest Sahelian/Sudanian West Africa interior."", ""country"": ""BF"", ""latitude"": 11.5, ""longitude"": -2.5}"
+anthropic/claude-opus-4.8,no-CoT,11.5,-2.5,387.089,BF,True,,stop,0.00408,666,30,0,8.69,"{""country"": ""BF"", ""latitude"": 11.5, ""longitude"": -2.5}"
+openai/gpt-5.5,no-CoT,12.2383,-1.5616,492.838,BF,True,,stop,0.00344,544,24,0,13.72,"{""country"":""BF"",""latitude"":12.2383,""longitude"":-1.5616}"
+openai/gpt-5.5,CoT,9.2587,-1.8446,530.7,GH,True,,stop,0.010095,621,233,163,12.42,"{""reasoning"":""The red laterite dirt track, tropical savanna vegetation, and safari-vehicle hood strongly suggest a West African park setting; Ghana's Mole National Park matches this terrain and common street-level coverage style best."",""country"":""GH"",""latitude"":9.2587,""longitude"":-1.8446}"
+minimax/minimax-m3,CoT,9.4035,-1.0,605.559,GH,True,,stop,0.00051222,845,264,245,5.34,"{""reasoning"": ""Red laterite dirt road with tropical woodland vegetation and overcast wet-season sky are highly characteristic of rural West Africa, most likely northern Ghana or Burkina Faso. The lateritic soil and broadleaf savanna trees are the decisive clues."", ""country"": ""GH"", ""latitude"": 9.4035, ""longitude"": -1.0000}"
+google/gemini-3.1-pro-preview,no-CoT,13.7667,-13.6667,859.227,SN,True,,stop,0.004996,1190,218,183,4.44,"```json
+{""country"": ""SN"", ""latitude"": 13.7667, ""longitude"": -13.6667}
+```"
+google/gemini-3.1-pro-preview,CoT,13.7673,-13.6673,859.307,SN,True,,stop,0.007138,1271,383,307,12.42,"{
+  ""reasoning"": ""The visible silver car hood with a bullbar, combined with the red dirt road and savanna vegetation, is highly characteristic of Google Street View coverage in Senegal."",
+  ""country"": ""SN"",
+  ""latitude"": 13.7673,
+  ""longitude"": -13.6673
+}"
+google/gemini-3.5-flash,CoT (effort=low),13.1542,-14.0234,882.016,SN,True,,stop,0.004878,1272,330,265,10.03,"{""reasoning"": ""The reddish soil, flat savanna landscape, and the specific silver bull bar visible on the vehicle hood are highly characteristic of Google Street View coverage in Senegal."", ""country"": ""SN"", ""latitude"": 13.1542, ""longitude"": -14.0234}"
+qwen/qwen3.5-122b-a10b,no-CoT,-12.9777,-38.5019,4506.713,BR,True,,stop,0.00018746,473,31,0,1.07,"{""country"": ""BR"", ""latitude"": -12.9777, ""longitude"": -38.5019}"
+moonshotai/kimi-k2.6,CoT,-2.5,35.0,4802.25,TZ,True,,stop,0.011466288,682,3282,3215,74.24,"{""reasoning"": ""Red laterite soil and scattered savanna trees indicate tropical East Africa, while the safari-style 4x4 and wide unpaved track are typical of Tanzanian game reserves or rural districts."", ""country"": ""TZ"", ""latitude"": -2.5, ""longitude"": 35.0}"
+xiaomi/mimo-v2.5,CoT,-15.5,28.3,4837.764,ZM,True,,stop,0.0001451576,787,219,139,9.11,"{""reasoning"": ""The reddish soil, sparse vegetation, and flat terrain are characteristic of a savanna environment, likely in Southern Africa. The vehicle's left-hand drive configuration and the general landscape strongly suggest a location in a country like Zambia or Zimbabwe."", ""country"": ""ZM"", ""latitude"": -15.5, ""longitude"": 28.3}"
+qwen/qwen3.5-9b,no-CoT,-15.8269,28.4732,4874.345,ZW,True,,stop,5.205e-05,474,31,0,4.74,"{""country"": ""ZW"", ""latitude"": -15.8269, ""longitude"": 28.4732}"
+x-ai/grok-4.3,no-CoT,-1.2921,36.8219,4949.862,KE,True,,stop,0.0005984,592,24,0,7.28,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+xiaomi/mimo-v2.5,no-CoT,-1.2921,36.8219,4949.862,KE,True,,stop,8.11776e-05,708,30,0,2.44,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+x-ai/grok-4.3,CoT,-1.45,37.05,4979.426,KE,True,,stop,0.0021681,676,583,523,12.51,"{""reasoning"": ""Red lateritic soil, scattered savanna trees, and unpaved track with white marker posts match rural East Africa; vehicle viewpoint and vegetation exclude Australia/South America."", ""country"": ""KE"", ""latitude"": -1.45, ""longitude"": 37.05}"
+qwen/qwen3.5-27b,no-CoT,-6.1659,35.7516,5029.698,TZ,True,,stop,0.0002045,474,43,0,3.86,"```json
+{
+  ""country"": ""TZ"",
+  ""latitude"": -6.1659,
+  ""longitude"": 35.7516
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-10.5,-47.5,5199.44,BR,True,,stop,0.0003578,473,25,0,1.1,"{""country"": ""BR"", ""latitude"": -10.5, ""longitude"": -47.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,-25.7479,28.1804,5568.617,ZA,True,,stop,0.00010195,473,31,0,7.72,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 28.1804}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.7461,28.2293,5571.997,ZA,True,,stop,9.736e-05,474,31,0,1.94,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.2293}"
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.9253,5816.881,BR,True,,stop,0.0001943,473,31,0,11.43,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9253}"
+google/gemma-4-31b-it,no-CoT,-12.5,-55.0,6031.945,BR,True,,stop,6.478e-05,406,30,0,2.15,"```json
+{""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -55.0}
+```"
+mistralai/mistral-small-2603,no-CoT,28.6139,77.209,8740.628,IN,True,,stop,0.0001131,634,30,0,2.21,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+mistralai/mistral-medium-3-5,no-CoT,12.9716,77.5946,9042.246,IN,True,,stop,0.0011835,634,31,0,1.1,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),13.743215,103.012456,11701.709,KH,True,,stop,0.002145,1190,40,0,7.71,"```json
+{""country"": ""KH"", ""latitude"": 13.743215, ""longitude"": 103.012456}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-13.871557235717773,130.31512451171875,15282.66,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-14.528417587280273,131.2381591796875,15384.332,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-14.282415390014648,131.3195037841797,15392.419,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-13.85,131.85,15448.168,AU,True,,stop,0.0120945,1271,1132,1064,8.63,"{""reasoning"": ""The wide red dirt road, tropical savanna vegetation, and the distinctive silver bull bar on the camera vehicle are highly characteristic of remote unpaved roads in the Northern Territory of Australia."", ""country"": ""AU"", ""latitude"": -13.85, ""longitude"": 131.85}"
+google/gemini-3.5-flash,CoT (effort=medium),-13.8125,134.1542,15696.72,AU,True,,stop,0.0085395,1271,737,665,13.99,"{""reasoning"": ""The wide, reddish-brown dirt road, tropical savanna vegetation, and the distinctive silver bull bar on the vehicle hood are highly characteristic of remote roads in the Northern Territory of Australia."", ""country"": ""AU"", ""latitude"": -13.8125, ""longitude"": 134.1542}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,12.78,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.4,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.27,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,20.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.35,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.69,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.23,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.43,

@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-12.294943890609392,26.524288800899104,0.0,ZM,True,,,,,,,,"Solwezi, None, North-Western, ZM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-12.700550079345703,26.50063133239746,45.174,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-12.709738731384277,26.49355697631836,46.244,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-12.795860290527344,26.666982650756836,57.813,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,-15.42,28.3,396.849,ZM,True,,stop,0.004785,813,24,0,2.16,"{""country"":""ZM"",""latitude"":-15.4200,""longitude"":28.3000}"
+moonshotai/kimi-k2.6,CoT,-6.15,33.5,1025.892,TZ,True,,stop,0.011519424,986,3280,3200,93.56,"{""reasoning"": ""The vivid red lateritic soil and tall closed-canopy miombo woodland with dry roadside grass are classic signatures of the Tanzanian interior plateau during the dry season. Unpaved tracks through this exact biome are ubiquitous across the country’s western and central regions."", ""country"": ""TZ"", ""latitude"": -6.15, ""longitude"": 33.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.6416,31.1037,1454.946,ZA,True,,stop,0.000212625,697,31,0,9.01,"{""country"": ""ZA"", ""latitude"": -24.6416, ""longitude"": 31.1037}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3229.855,,True,True,,,,,,0.17,
+minimax/minimax-m3,CoT,7.5,-1.5,3800.056,GH,True,,stop,0.00115506,1147,727,650,18.23,"{""reasoning"": ""Distinctive reddish lateritic soil on an unpaved rural road, combined with tropical dry-forest vegetation (mixed green canopy with some dry/brown deciduous trees), strongly suggests West African forest-savanna transition zone, most characteristic of Ghana."", ""country"": ""GH"", ""latitude"": 7.5, ""longitude"": -1.5}"
+google/gemini-3.1-pro-preview,CoT,9.5001,-1.0001,3888.569,GH,True,,stop,0.007252,1286,390,305,12.37,"{
+  ""reasoning"": ""The reddish laterite soil and lush, broadleaf savanna woodland vegetation are highly characteristic of West African landscapes. The unpaved road and specific foliage strongly suggest a location in a country like Ghana or Ivory Coast."",
+  ""country"": ""GH"",
+  ""latitude"": 9.5001,
+  ""longitude"": -1.0001
+}"
+openai/gpt-5.5,CoT,9.2636,-1.8462,3946.26,GH,True,,stop,0.01837,890,464,375,14.54,"{""reasoning"":""A lateritic dirt road through lush West African savanna/woodland with no lane markings or infrastructure strongly suggests a national-park or rural track in Ghana, especially around Mole National Park. The red soil, tropical dry-forest vegetation, and Google-covered rural context fit northern Ghana better than alternatives."",""country"":""GH"",""latitude"":9.2636,""longitude"":-1.8462}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),12.5564,-12.2145,5088.907,SN,True,,stop,0.002121,1204,35,0,1.27,"```json
+{""country"": ""SN"", ""latitude"": 12.5564, ""longitude"": -12.2145}
+```"
+google/gemini-3.1-pro-preview,no-CoT,12.8765,-12.1876,5105.053,SN,True,,stop,0.002828,1204,35,0,8.4,"```json
+{""country"": ""SN"", ""latitude"": 12.8765, ""longitude"": -12.1876}
+```"
+google/gemini-3.5-flash,CoT (effort=high),12.7381,-15.5214,5408.693,SN,True,,stop,0.0149325,1285,1445,1370,17.86,"```json
+{""reasoning"": ""The wide, reddish-brown dirt road combined with the lush, semi-dense Guinea savanna vegetation and overcast sky is highly characteristic of the Casamance region in southern Senegal."", ""country"": ""SN"", ""latitude"": 12.7381, ""longitude"": -15.5214}
+```"
+minimax/minimax-m3,no-CoT,15.4,74.0,6064.525,IN,True,,stop,0.00050802,1071,204,226,12.99,"{""country"": ""IN"", ""latitude"": 15.4, ""longitude"": 74.0}"
+qwen/qwen3.6-35b-a3b,no-CoT,19.076,72.8777,6160.924,IN,True,,stop,0.00014227915,697,31,0,17.97,"{""country"": ""IN"", ""latitude"": 19.0760, ""longitude"": 72.8777}"
+mistralai/mistral-medium-3-5,no-CoT,18.5204,73.8567,6218.678,IN,True,,stop,0.0016395,938,31,0,1.27,"{""country"": ""IN"", ""latitude"": 18.5204, ""longitude"": 73.8567}"
+qwen/qwen3.6-35b-a3b,CoT,20.55,76.05,6530.172,IN,True,,stop,0.0023318139,777,2286,2195,13.93,"{""reasoning"": ""The distinctive red laterite soil and the dense tropical dry deciduous vegetation (likely Teak or similar species) strongly indicate a location in central or southern India, specifically the Deccan Plateau region. The unpaved road and surrounding flora are characteristic of rural forest areas in Maharashtra or Karnataka."", ""country"": ""IN"", ""latitude"": 20.55, ""longitude"": 76.05}"
+qwen/qwen3.5-122b-a10b,no-CoT,18.4637,77.8921,6589.292,IN,True,,stop,0.0003027,697,39,0,2.69,"{
+  ""country"": ""IN"",
+  ""latitude"": 18.4637,
+  ""longitude"": 77.8921
+}"
+xiaomi/mimo-v2.5,no-CoT,20.5,78.5,6751.028,IN,True,,stop,0.0001111376,932,25,0,6.95,"{""country"": ""IN"", ""latitude"": 20.5, ""longitude"": 78.5}"
+qwen/qwen3.5-9b,no-CoT,21.1702,78.6785,6802.561,IN,True,,stop,7.445e-05,698,31,0,9.2,"{""country"": ""IN"", ""latitude"": 21.1702, ""longitude"": 78.6785}"
+xiaomi/mimo-v2.5,CoT,20.25,79.3,6811.874,IN,True,,stop,0.0003277176,1011,759,663,9.54,"{
+  ""reasoning"": ""The reddish laterite soil and the specific mix of dry deciduous vegetation and green canopy are highly characteristic of the tropical dry deciduous forests found in Central India. The narrow, unpaved red dirt track is typical of the safari routes found in Indian tiger reserves and national parks."",
+  ""country"": ""IN"",
+  ""latitude"": 20.25,
+  ""longitude"": 79.30
+}"
+qwen/qwen3.5-27b,no-CoT,21.1458,79.0882,6838.741,IN,True,,stop,0.0002739,697,31,0,12.04,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+qwen/qwen3.5-397b-a17b,no-CoT,21.1458,79.0882,6838.741,IN,True,,stop,0.0004606,698,31,0,3.37,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+qwen/qwen3.6-27b,no-CoT,21.1458,79.0882,6838.741,IN,True,,stop,0.0002615,697,31,0,16.72,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+x-ai/grok-4.3,no-CoT,21.1458,79.0882,6838.741,IN,True,,stop,0.0008784,816,24,0,7.43,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+google/gemma-4-31b-it,no-CoT,21.15,79.15,6844.619,IN,True,,stop,0.00010717,404,31,0,2.86,"```json
+{""country"": ""IN"", ""latitude"": 21.15, ""longitude"": 79.15}
+```"
+google/gemini-3.5-flash,CoT (effort=low),21.4528,79.2842,6872.709,IN,True,,stop,0.0042045,1285,253,189,10.34,"{""reasoning"": ""The reddish-brown dirt road and dry deciduous forest vegetation are highly characteristic of central Indian forest reserves, such as those in Madhya Pradesh or Maharashtra."", ""country"": ""IN"", ""latitude"": 21.4528, ""longitude"": 79.2842}"
+anthropic/claude-opus-4.8,CoT,21.3,79.5,6884.485,IN,True,,stop,0.007655,1101,86,0,3.63,"{""reasoning"": ""Red lateritic dirt road through dry deciduous teak forest typical of central India; lush green foliage suggests monsoon-fed vegetation."", ""country"": ""IN"", ""latitude"": 21.3, ""longitude"": 79.5}"
+x-ai/grok-4.3,CoT,21.78,79.25,6886.749,IN,True,,stop,0.0020715,900,513,452,10.87,"{""reasoning"": ""Red lateritic dirt road + dense tropical deciduous woodland with broadleaf trees and undergrowth match central Indian monsoon forests; no left/right traffic, signage or built features visible."", ""country"": ""IN"", ""latitude"": 21.78, ""longitude"": 79.25}"
+anthropic/claude-opus-4.8,no-CoT,21.2,79.8,6906.828,IN,True,,stop,0.0056,970,30,0,2.51,"{""country"": ""IN"", ""latitude"": 21.2, ""longitude"": 79.8}"
+qwen/qwen3.5-397b-a17b,CoT,22.4581,80.3492,7022.134,IN,True,,stop,0.0055934,777,1531,1454,184.83,"{
+""reasoning"": ""The reddish-brown laterite soil combined with dense dry deciduous forest vegetation is highly characteristic of central India, particularly the Deccan Plateau region. The unpaved but wide road suggests a rural forest track or access road common in states like Madhya Pradesh or Chhattisgarh."",
+""country"": ""IN"",
+""latitude"": 22.4581,
+""longitude"": 80.3492
+}"
+moonshotai/kimi-k2.6,no-CoT,-15.5,-47.5,7958.907,BR,True,,stop,0.00077211,906,23,0,7.05,"{""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -47.5}"
+google/gemini-3.5-flash,CoT (effort=medium),12.4552,107.1914,9313.038,KH,True,,stop,0.0127905,1285,1207,1126,12.13,"```json
+{""reasoning"": ""The rich reddish-brown laterite soil combined with the dense, semi-deciduous tropical forest and dry undergrowth is highly characteristic of the highlands of eastern Cambodia, particularly Mondulkiri Province."", ""country"": ""KH"", ""latitude"": 12.4552, ""longitude"": 107.1914}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-12.680933952331543,130.85345458984375,11220.062,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-12.739862442016602,130.9660186767578,11230.089,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-12.656449317932129,130.96766662597656,11232.73,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,15837.601,US,True,,stop,0.000199875,938,32,0,2.22,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.45,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.51,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.15,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,16.51,

@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,15.416370576585347,74.2797658407752,0.0,IN,True,,,,,,,,"Valpoy, North Goa, Goa, IN"
+google/gemini-3.5-flash,CoT (effort=low),15.4052,74.1241,16.733,IN,True,,stop,0.004662,1308,300,231,10.06,"{""reasoning"": ""The lush tropical forest, reddish soil, narrow paved road, and a small white hatchback driving on the left suggest the Western Ghats region of India, likely in Goa."", ""country"": ""IN"", ""latitude"": 15.4052, ""longitude"": 74.1241}"
+google/gemini-3.5-flash,CoT (effort=medium),15.3524,74.1245,18.102,IN,True,,stop,0.0079275,1307,663,590,8.9,"{""reasoning"": ""The laterite stone retaining wall, dense tropical deciduous forest, and left-hand traffic with a small white hatchback point to the Konkan region or Western Ghats of India, likely Goa."", ""country"": ""IN"", ""latitude"": 15.3524, ""longitude"": 74.1245}"
+moonshotai/kimi-k2.6,no-CoT,15.2993,74.124,21.176,IN,True,,stop,0.00064575,754,24,0,8.96,"{""country"": ""IN"", ""latitude"": 15.2993, ""longitude"": 74.124}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),15.4909,74.0781,23.148,IN,True,,stop,0.0021525,1225,35,0,8.54,"```json
+{""country"": ""IN"", ""latitude"": 15.4909, ""longitude"": 74.0781}
+```"
+google/gemini-3.1-pro-preview,no-CoT,15.3173,74.0857,23.544,IN,True,,stop,0.00287,1225,35,0,9.32,"```json
+{""country"": ""IN"", ""latitude"": 15.3173, ""longitude"": 74.0857}
+```"
+google/gemini-3.5-flash,CoT (effort=high),15.3524,74.0518,25.454,IN,True,,stop,0.0088995,1307,771,694,12.09,"{""reasoning"": ""The narrow road with left-hand traffic, dense tropical vegetation, laterite stone wall, and a small white hatchback (likely a Maruti Suzuki) strongly point to the Konkan coast of India, specifically Goa."", ""country"": ""IN"", ""latitude"": 15.3524, ""longitude"": 74.0518}"
+google/gemini-3.1-pro-preview,CoT,15.35,74.05,25.715,IN,True,,stop,0.005662,1307,254,177,7.14,"{
+  ""reasoning"": ""The combination of driving on the left, dense tropical vegetation, and distinct red laterite soil banks strongly points to the Western Ghats region of India, likely Goa or coastal Karnataka."",
+  ""country"": ""IN"",
+  ""latitude"": 15.35,
+  ""longitude"": 74.05
+}"
+moonshotai/kimi-k2.6,CoT,15.3,74.0,32.669,IN,True,,stop,0.013498416,834,3863,3806,102.03,"{""reasoning"": ""Left-hand traffic and a narrow road cutting through dense tropical vegetation alongside a reddish lateritic rock face are characteristic of India's Western Ghats region."", ""country"": ""IN"", ""latitude"": 15.3, ""longitude"": 74.0}"
+anthropic/claude-opus-4.8,CoT,15.45,73.95,35.543,IN,True,,stop,0.00727,949,101,0,3.51,"{""reasoning"": ""Lush tropical deciduous vegetation, dry reddish-brown laterite soil, and narrow rural paved road typical of rural India (Goa/Konkan region); driving appears left-side."", ""country"": ""IN"", ""latitude"": 15.45, ""longitude"": 73.95}"
+anthropic/claude-opus-4.8,no-CoT,15.4909,73.8278,49.143,IN,True,,stop,0.00489,818,32,0,2.84,"{""country"": ""IN"", ""latitude"": 15.4909, ""longitude"": 73.8278}"
+openai/gpt-5.5,CoT,15.5897,73.7809,56.822,IN,True,,stop,0.012055,755,276,191,9.6,"{""reasoning"":""The lush tropical vegetation, narrow unmarked rural lane, left-side traffic appearance, and reddish laterite/brick boundary walls are characteristic of coastal western India, especially rural Goa. The dry-season greenery and road style best fit the North Goa hinterland near Assagao/Mapusa."",""country"":""IN"",""latitude"":15.5897,""longitude"":73.7809}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,13.663167953491211,75.05696868896484,212.136,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,13.3385,74.7652,236.89,IN,True,,stop,0.0054986,665,1487,1351,50.66,"{""reasoning"": ""The vehicle is driving on the left side of a narrow, unmarked road, indicating a left-hand traffic country. The distinct reddish-brown laterite soil on the embankment, combined with the low brick retaining wall and dense tropical vegetation, is highly characteristic of the coastal regions of Karnataka or Kerala in India."", ""country"": ""IN"", ""latitude"": 13.3385, ""longitude"": 74.7652}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,13.315770149230957,75.18801879882812,253.235,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,13.289106369018555,75.21100616455078,256.931,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,12.2958,76.6394,430.44,IN,True,,stop,0.0001543976,899,196,106,4.47,"{""reasoning"": ""The dense tropical vegetation, narrow paved road, and the car in the distance (resembling a Maruti Suzuki 800 or similar Indian model) strongly suggest a rural area in India, likely in the south or central regions given the terrain and lighting."", ""country"": ""IN"", ""latitude"": 12.2958, ""longitude"": 76.6394}"
+mistralai/mistral-medium-3-5,no-CoT,12.9716,77.5946,448.962,IN,True,,stop,0.0014115,786,31,0,7.27,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.6-35b-a3b,no-CoT,12.9716,77.5946,448.962,IN,True,,stop,0.000185,585,31,0,28.81,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+xiaomi/mimo-v2.5,no-CoT,12.9716,77.5946,448.962,IN,True,,stop,9.71376e-05,820,31,0,8.3,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,12.041375160217285,77.28968048095703,496.493,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,11.709646224975586,76.92312622070312,501.489,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,11.1271,77.0062,560.798,IN,True,,stop,0.000275,586,31,0,14.4,"{""country"": ""IN"", ""latitude"": 11.1271, ""longitude"": 77.0062}"
+x-ai/grok-4.3,CoT,10.85,76.72,572.363,IN,True,,stop,0.0019565,788,523,452,5.06,"{""reasoning"": ""Left-hand traffic (oncoming car position), narrow unmarked asphalt road, dense tropical forest with stone retaining wall, and vehicle type all point to rural South India; lush evergreen canopy and reddish foliage match Western Ghats foothills."", ""country"": ""IN"", ""latitude"": 10.85, ""longitude"": 76.72}"
+qwen/qwen3.5-35b-a3b,no-CoT,10.3039,76.2599,607.629,IN,True,,stop,0.00011875,585,31,0,8.17,"{""country"": ""IN"", ""latitude"": 10.3039, ""longitude"": 76.2599}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,15.508000373840332,80.01459503173828,614.67,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,11.9416,79.8083,711.28,IN,True,,stop,0.0002345,586,44,0,11.46,"```json
+{
+  ""country"": ""IN"",
+  ""latitude"": 11.9416,
+  ""longitude"": 79.8083
+}
+```"
+qwen/qwen3.5-9b,no-CoT,21.2514,78.7903,804.589,IN,True,,stop,0.0001072,585,31,0,1.01,"{""country"": ""IN"", ""latitude"": 21.2514, ""longitude"": 78.7903}"
+x-ai/grok-4.3,no-CoT,21.1458,79.0882,814.446,IN,True,,stop,0.0007384,704,24,0,1.15,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+minimax/minimax-m3,CoT,7.2935,80.6327,1137.79,LK,True,,stop,0.00081546,995,482,395,13.0,"{""reasoning"": ""Reddish lateritic soil on embankment, dense tropical evergreen vegetation, narrow unmarked rural road with bright tropical sun suggest South/Southeast Asia. The lateritic red earth combined with tropical wet-zone forest points most strongly to Sri Lanka's hill country or wet lowlands."", ""country"": ""LK"", ""latitude"": 7.2935, ""longitude"": 80.6327}"
+qwen/qwen3.5-122b-a10b,no-CoT,22.5726,88.3639,1679.568,IN,True,,stop,0.00021684,586,31,0,3.45,"{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 88.3639}"
+minimax/minimax-m3,no-CoT,16.8,96.15,2340.268,MM,True,,stop,0.00035802,919,117,122,10.53,"{""country"": ""MM"", ""latitude"": 16.8, ""longitude"": 96.15}"
+qwen/qwen3.5-397b-a17b,no-CoT,18.7883,98.9853,2650.035,TH,True,,stop,0.0004466,585,31,0,1.09,"{""country"": ""TH"", ""latitude"": 18.7883, ""longitude"": 98.9853}"
+google/gemma-4-31b-it,no-CoT,13.7563,100.5018,2826.103,TH,True,,stop,6.732e-05,404,37,0,8.69,"```json
+{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8323.964,,True,True,,,,,,15.84,
+openai/gpt-5.5,no-CoT,38.7406,-9.3448,8398.692,PT,True,,stop,0.00411,678,24,0,2.12,"{""country"":""PT"",""latitude"":38.7406,""longitude"":-9.3448}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,13849.73,US,True,,stop,0.0001371,786,32,0,4.65,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.59,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.84,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.22,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.15,

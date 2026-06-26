@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,11.007032593051,108.03831846889,0.0,VN,True,,,,,,,,"Phan Thiet, None, Binh Thuan, VN"
+anthropic/claude-opus-4.8,CoT,11.55,104.5,390.536,KH,True,,stop,0.006995,949,90,0,9.72,"{""reasoning"": ""Single-track railway through flat rice paddies with distant low mountains, tropical vegetation suggests Southeast Asia, likely Cambodia's southern line."", ""country"": ""KH"", ""latitude"": 11.55, ""longitude"": 104.5}"
+anthropic/claude-opus-4.8,no-CoT,11.5564,104.3,412.197,KH,True,,stop,0.00489,818,32,0,2.29,"{""country"": ""KH"", ""latitude"": 11.5564, ""longitude"": 104.3000}"
+google/gemini-3.5-flash,CoT (effort=low),12.4835,103.9122,478.242,KH,True,,stop,0.004284,1308,258,185,2.79,"{""reasoning"": ""The flat landscape with rice paddies, distant mountains, and the single-track meter-gauge railway with concrete sleepers is highly characteristic of the Cambodian railway network, specifically the Northern Line."", ""country"": ""KH"", ""latitude"": 12.4835, ""longitude"": 103.9122}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),12.4833,103.0167,570.778,KH,True,,stop,0.002163,1226,36,0,7.57,"```json
+{""country"": ""KH"", ""latitude"": 12.4833, ""longitude"": 103.0167}
+```"
+moonshotai/kimi-k2.6,CoT,14.979,102.098,780.451,TH,True,,stop,0.01144062,834,2700,3178,44.74,"{""reasoning"": ""Flat tropical plain with irrigated rice paddies and dry seasonal grasses alongside a meter-gauge railway, with distant mountain ranges under a bright tropical sky, is characteristic of Thailand's State Railway network in the Khorat Plateau region."", ""country"": ""TH"", ""latitude"": 14.979, ""longitude"": 102.098}"
+qwen/qwen3.5-397b-a17b,no-CoT,14.5167,101.4167,817.164,TH,True,,stop,0.0004502,585,32,0,1.07,"{""country"": ""TH"", ""latitude"": 14.5167, ""longitude"": 101.4167}"
+qwen/qwen3.5-9b,no-CoT,13.7563,100.5018,873.646,TH,True,,stop,6.34e-05,586,32,0,10.01,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.6-27b,no-CoT,14.367,100.579,891.127,TH,True,,stop,0.0002259,585,30,0,11.78,"{""country"": ""TH"", ""latitude"": 14.367, ""longitude"": 100.579}"
+qwen/qwen3.5-397b-a17b,CoT,14.8,100.6,909.695,TH,True,,stop,0.00893505,665,2893,1,101.85,"{""reasoning"": ""The image displays a single-track railway with concrete sleepers traversing flat, tropical agricultural land (rice paddies on the left, dry fields on the right) with a distant mountain ridge, which is characteristic of the Central or Northeastern plains of Thailand. The vegetation, soil color, and railway infrastructure style (State Railway of Thailand) strongly point to this region."", ""country"": ""TH"", ""latitude"": 14.8, ""longitude"": 100.6}"
+google/gemini-3.1-pro-preview,no-CoT,14.8833,100.5833,915.497,TH,True,,stop,0.002884,1226,36,0,2.55,"```json
+{""country"": ""TH"", ""latitude"": 14.8833, ""longitude"": 100.5833}
+```"
+x-ai/grok-4.3,no-CoT,14.85,100.55,917.0,TH,True,,stop,0.0007334,704,22,0,6.89,"{""country"": ""TH"", ""latitude"": 14.85, ""longitude"": 100.55}"
+google/gemini-3.5-flash,CoT (effort=high),15.2184,100.5482,936.405,TH,True,,stop,0.0117615,1307,1089,1010,15.47,"```json
+{""reasoning"": ""The single-track railway with concrete sleepers running through flat rice paddies with distant mountains to the east is highly characteristic of the State Railway of Thailand's Northern Line in the Central Plains."", ""country"": ""TH"", ""latitude"": 15.2184, ""longitude"": 100.5482}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),15.2451,100.1314,977.125,TH,True,,stop,0.0123915,1307,1159,1095,15.77,"{""reasoning"": ""The concrete sleepers, flat agricultural landscape with isolated distant hills, and vegetation are highly characteristic of the State Railway of Thailand network in central Thailand."", ""country"": ""TH"", ""latitude"": 15.2451, ""longitude"": 100.1314}"
+google/gemini-3.1-pro-preview,CoT,15.5,100.2,984.293,TH,True,,stop,0.005328,1308,226,151,3.85,"{
+  ""reasoning"": ""The flat agricultural landscape with rice paddies, distant mountains, and tropical vegetation strongly suggests Southeast Asia. The railway infrastructure with concrete sleepers is typical of Thailand's central plains."",
+  ""country"": ""TH"",
+  ""latitude"": 15.5,
+  ""longitude"": 100.2
+}"
+x-ai/grok-4.3,CoT,16.483,80.517,3031.386,IN,True,,stop,0.002374,788,690,613,8.17,"{""reasoning"": ""Tropical/subtropical agricultural plains with bright-green paddy-style fields, harvested stubble, scattered broadleaf trees and single-track concrete-sleeper railway are characteristic of monsoon South Asia; distant low hills match the landscape east of the Eastern Ghats."", ""country"": ""IN"", ""latitude"": 16.483, ""longitude"": 80.517}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.8688,151.2093,6759.494,AU,True,,stop,0.00012519,585,32,0,1.35,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+openai/gpt-5.5,no-CoT,-19.4275,47.0692,7484.664,MG,True,,stop,0.00411,678,24,0,1.46,"{""country"":""MG"",""latitude"":-19.4275,""longitude"":47.0692}"
+openai/gpt-5.5,CoT,-20.2147,47.0209,7521.674,MG,True,,stop,0.021865,755,603,516,30.22,"{""reasoning"":""Narrow-gauge-looking railway through rice paddies, dry highland fields, eucalyptus trees, and distant rounded hills strongly suggests Madagascar’s central highlands rail corridor. The rural tropical-highland agricultural landscape fits the area around Antsirabe/Fianarantsoa better than Europe or North Africa."",""country"":""MG"",""latitude"":-20.2147,""longitude"":47.0209}"
+google/gemma-4-31b-it,no-CoT,39.9333,32.8583,7965.37,TR,True,,stop,7.096e-05,404,36,0,9.43,"```json
+{""country"": ""TR"", ""latitude"": 39.9333, ""longitude"": 32.8583}
+```"
+mistralai/mistral-medium-3-5,no-CoT,46.5,27.5,8400.541,RO,True,,stop,0.0013665,786,25,0,7.12,"{""country"": ""RO"", ""latitude"": 46.5, ""longitude"": 27.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,42.36857604980469,23.66645622253418,8726.047,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,42.17555236816406,23.511276245117188,8740.47,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,42.169960021972656,23.496335983276367,8741.747,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-15.121810913085938,31.74721908569336,8888.362,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,45.25,20.15,8976.946,RS,True,,stop,0.00023736,904,23,0,5.74,"{""country"": ""RS"", ""latitude"": 45.25, ""longitude"": 20.15}"
+minimax/minimax-m3,CoT,47.3,19.8,8978.739,HU,True,,stop,0.00109506,995,715,633,19.44,"{""reasoning"": ""Single-track railway with concrete sleepers on the flat Pannonian Plain, with distant low mountains on the horizon, harvested wheat fields, and deciduous trees suggesting a continental Central European climate - characteristic of the Hungarian Great Plain with a view toward the northern mountain ranges."", ""country"": ""HU"", ""latitude"": 47.3, ""longitude"": 19.8}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-24.36699867248535,28.26341438293457,9497.608,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-24.369813919067383,28.250856399536133,9498.918,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,-30.5,28.5,9646.301,ZA,True,,stop,9.54576e-05,820,25,0,3.66,"{""country"": ""ZA"", ""latitude"": -30.5, ""longitude"": 28.5}"
+mistralai/mistral-small-2603,no-CoT,48.6312,-1.5376,10479.931,FR,True,,stop,0.0001359,786,30,0,4.09,"{""country"": ""FR"", ""latitude"": 48.6312, ""longitude"": -1.5376}"
+qwen/qwen3.5-122b-a10b,no-CoT,41.5833,1.1333,10561.133,ES,True,,stop,0.00021476,586,30,0,7.35,"{""country"": ""ES"", ""latitude"": 41.5833, ""longitude"": 1.1333}"
+qwen/qwen3.6-35b-a3b,CoT,40.737,0.736,10624.008,ES,True,,stop,0.00688035725,665,7017,6899,152.56,"```json
+{
+    ""reasoning"": ""The image shows a railway track running through the Ebro Delta in Catalonia, Spain, characterized by flat agricultural land with green rice paddies on the left and dry fields on the right. The mountains visible in the distance to the left are the Prades mountains, and the track is the Deltebre-Amposta line running north-west."",
+    ""country"": ""ES"",
+    ""latitude"": 40.737,
+    ""longitude"": 0.736
+}
+```"
+moonshotai/kimi-k2.6,no-CoT,40.4168,-3.7038,10986.472,ES,True,,stop,0.00064935,754,25,0,3.11,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11975.182,,True,True,,,,,,28.27,
+qwen/qwen3.5-27b,no-CoT,36.7783,-119.4179,12750.043,US,True,,stop,0.0002523,585,32,0,34.42,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+qwen/qwen3.5-35b-a3b,no-CoT,36.7783,-119.4179,12750.043,US,True,,stop,0.00019824,586,32,0,3.31,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+mistralai/mistral-small-2603,CoT,38.45,-98.35,13870.947,US,True,,stop,0.00038544,868,573,587,8.09,"{""reasoning"": ""The flat terrain with prairie grassland, standard US-style dashed white center line and solid edge lines, and rural road design indicate this is in the central United States."", ""country"": ""US"", ""latitude"": 38.45, ""longitude"": -98.35}"
+xiaomi/mimo-v2.5,CoT,-39.06,-67.48,16864.313,AR,True,,stop,0.0010307976,899,3326,3209,34.95,"```json
+{""reasoning"": ""The landscape features a single railway track running through flat agricultural fields with a stark contrast between green irrigated crops and dry yellow stubble, typical of the Rio Negro valley in Patagonia. The presence of Lombardy Poplar trees used as windbreaks, concrete railway sleepers, and the distant rugged foothills in the south strongly point to the agricultural district near General Roca, Argentina."", ""country"": ""AR"", ""latitude"": -39.06, ""longitude"": -67.48}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.22,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.22,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.3,

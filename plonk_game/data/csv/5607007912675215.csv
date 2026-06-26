@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.720047306225,-88.409656090614,0.0,US,True,,,,,,,,"Bonduel, Shawano County, Wisconsin, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,44.74578094482422,-88.41426086425781,2.884,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,44.7492790222168,-88.41175842285156,3.255,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,44.76136016845703,-88.38530731201172,4.98,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,41.8819,-87.6278,321.863,US,True,,stop,0.0014115,786,31,0,7.35,"{""country"": ""US"", ""latitude"": 41.8819, ""longitude"": -87.6278}"
+google/gemma-4-31b-it,no-CoT,41.8781,-87.6298,322.246,US,True,,stop,7.096e-05,404,36,0,7.38,"```json
+{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,41.8781,-87.6298,322.246,US,True,,stop,0.0001353625,585,31,0,7.21,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.6-27b,no-CoT,41.8781,-87.6298,322.246,US,True,,stop,0.0002279,585,31,0,8.28,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.8781,-87.6298,322.246,US,True,,stop,0.00011875,585,31,0,3.75,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+openai/gpt-5.5,CoT,42.4681,-91.1597,334.249,US,True,,stop,0.012085,755,277,199,9.25,"{""reasoning"":""Right-hand traffic with US-style yellow centerlines, white shoulders, orange construction delineators, and wide concrete rural highway indicate the United States. The rolling cornfields, humid summer sky, and flat Midwestern roadscape most strongly suggest rural Iowa."",""country"":""US"",""latitude"":42.4681,""longitude"":-91.1597}"
+qwen/qwen3.5-122b-a10b,no-CoT,41.5192,-89.0289,359.446,US,True,,stop,0.00021684,586,31,0,6.08,"{""country"": ""US"", ""latitude"": 41.5192, ""longitude"": -89.0289}"
+minimax/minimax-m3,no-CoT,41.5,-89.5,368.82,US,True,,stop,0.00035322,919,113,115,3.5,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -89.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,41.08146667480469,-91.75814819335938,487.839,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,41.68,-92.8,490.689,US,True,,stop,0.00571,1307,258,178,4.56,"{
+  ""reasoning"": ""The North American style semi-truck, double yellow lines, and orange construction barrels indicate the US or Canada. The flat, agricultural landscape with cornfields strongly suggests the American Midwest, such as Iowa."",
+  ""country"": ""US"",
+  ""latitude"": 41.68,
+  ""longitude"": -92.8
+}"
+google/gemini-3.1-pro-preview,no-CoT,41.878,-93.097,493.572,US,True,,stop,0.004838,1225,199,166,7.29,"```json
+{""country"": ""US"", ""latitude"": 41.878, ""longitude"": -93.097}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,41.8781,-93.0977,493.608,US,True,,stop,0.0003882,585,31,0,3.1,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -93.0977}"
+google/gemini-3.5-flash,CoT (effort=medium),42.465,-93.825,502.91,US,True,,stop,0.0075225,1307,618,555,7.63,"{""reasoning"": ""The flat agricultural landscape with cornfields, concrete divided highway under construction, and American-style semi-truck point to the US Midwest, specifically Iowa."", ""country"": ""US"", ""latitude"": 42.465, ""longitude"": -93.825}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,40.63538360595703,-91.10166931152344,504.623,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),41.6852,-93.1245,509.667,US,True,,stop,0.0036705,1307,190,121,3.69,"{""reasoning"": ""The flat terrain, concrete highway, cornfields, and American-style semi-truck indicate the US Midwest, likely Iowa along a major interstate like I-80."", ""country"": ""US"", ""latitude"": 41.6852, ""longitude"": -93.1245}"
+openai/gpt-5.5,no-CoT,42.0357,-93.5816,513.464,US,True,,stop,0.00411,678,24,0,1.53,"{""country"":""US"",""latitude"":42.0357,""longitude"":-93.5816}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,40.973548889160156,-92.14881134033203,516.081,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,41.5,-93.0,516.612,US,True,,stop,0.010640556,834,3034,2971,85.77,"{""reasoning"": ""The American conventional semi-truck, right-hand traffic, and flat rural interstate highway construction zone with orange bollards and adjacent cornfields are characteristic of the US Midwest."", ""country"": ""US"", ""latitude"": 41.5, ""longitude"": -93.0}"
+google/gemini-3.5-flash,CoT (effort=high),41.95,-93.62,521.794,US,True,,stop,0.0064965,1307,504,444,5.12,"{""reasoning"": ""The flat landscape with cornfields, concrete highway with double yellow lines, and American-style semi-truck indicate the US Midwest, likely Iowa."", ""country"": ""US"", ""latitude"": 41.95, ""longitude"": -93.62}"
+minimax/minimax-m3,CoT,40.05,-89.05,521.937,US,True,,stop,0.00083226,995,496,409,14.95,"{""reasoning"": ""Flat Midwestern US terrain with corn fields on the right, MUTCD-style orange delineator posts and cones in a road construction zone, an American Peterbilt-style semi-truck, and right-hand traffic all point to a rural highway in the US Midwest, likely Illinois or Iowa."", ""country"": ""US"", ""latitude"": 40.05, ""longitude"": -89.05}"
+xiaomi/mimo-v2.5,CoT,41.817,-93.483,522.256,US,True,,stop,0.0001882776,899,317,238,10.6,"{""reasoning"": ""Right-hand traffic, US-standard double yellow road lines, flat agricultural (cornfield) landscape typical of the US Midwest, and highway construction markers all confirm this is the United States, in a rural Corn Belt region."", ""country"": ""US"", ""latitude"": 41.817, ""longitude"": -93.483}"
+anthropic/claude-opus-4.8,CoT,42.5,-94.2,527.331,US,True,,stop,0.00672,949,79,0,9.29,"{""reasoning"": ""Flat US Midwest farmland with corn fields, concrete divided highway with construction cones, American semi truck, right-side driving."", ""country"": ""US"", ""latitude"": 42.5, ""longitude"": -94.2}"
+anthropic/claude-opus-4.8,no-CoT,42.5,-94.2,527.331,US,True,,stop,0.004815,818,29,0,8.66,"{""country"": ""US"", ""latitude"": 42.5, ""longitude"": -94.2}"
+x-ai/grok-4.3,no-CoT,41.85,-93.65,530.638,US,True,,stop,0.0007334,704,22,0,0.76,"{""country"": ""US"", ""latitude"": 41.85, ""longitude"": -93.65}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.6852,-93.5681,537.116,US,True,,stop,0.002154,1226,35,0,7.89,"```json
+{""country"": ""US"", ""latitude"": 41.6852, ""longitude"": -93.5681}
+```"
+x-ai/grok-4.3,CoT,41.65,-93.55,538.539,US,True,,stop,0.0019815,788,533,464,11.73,"{""reasoning"": ""Right-hand traffic on divided rural highway with US-style semi-truck, double yellow center line, orange-white construction markers, corn/soy fields, and lattice comms tower all point to Midwest USA corn belt."", ""country"": ""US"", ""latitude"": 41.65, ""longitude"": -93.55}"
+moonshotai/kimi-k2.6,no-CoT,41.5,-93.5,546.568,US,True,,stop,0.00034236,755,23,0,3.26,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -93.5}"
+xiaomi/mimo-v2.5,no-CoT,41.5,-96.0,712.204,US,True,,stop,9.54576e-05,820,25,0,8.15,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -96.0}"
+qwen/qwen3.5-27b,no-CoT,41.2565,-95.9345,722.688,US,True,,stop,0.0002499,585,31,0,8.1,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -95.9345}"
+qwen/qwen3.5-9b,no-CoT,43.0761,-98.6889,843.035,US,True,,stop,0.0001072,585,31,0,1.13,"{""country"": ""US"", ""latitude"": 43.0761, ""longitude"": -98.6889}"
+mistralai/mistral-small-2603,no-CoT,63.4167,10.4167,6061.963,NO,True,,stop,0.0001365,786,31,0,10.09,"{""country"": ""NO"", ""latitude"": 63.4167, ""longitude"": 10.4167}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9881.898,,True,True,,,,,,19.02,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,3.41,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,28.78,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.22,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,13.34,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.08,

@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,38.784368371774,35.455758790759,0.0,TR,True,,,,,,,,"Melikgazi, None, Kayseri, TR"
+google/gemini-3.1-pro-preview,CoT,38.7312,35.4787,6.238,TR,True,,stop,0.005974,1271,286,195,11.3,"{
+  ""reasoning"": ""The word 'ŞELALE' on the car is Turkish. The apartment building style and streetlights are highly characteristic of modern urban developments in Turkey, likely in a central or eastern Anatolian city given the distant mountains and climate."",
+  ""country"": ""TR"",
+  ""latitude"": 38.7312,
+  ""longitude"": 35.4787
+}"
+google/gemini-3.5-flash,CoT (effort=low),38.7205,35.4825,7.471,TR,True,,stop,0.0036615,1271,195,117,9.34,"{""reasoning"": ""The car on the right has the Turkish word 'ŞELALE' written on its side. The apartment architecture, streetlights, and dry, hilly landscape are highly characteristic of central Turkey, particularly around Kayseri."", ""country"": ""TR"", ""latitude"": 38.7205, ""longitude"": 35.4825}"
+openai/gpt-5.5,CoT,38.7436,35.5248,7.509,TR,True,,stop,0.017805,621,490,402,42.04,"{""reasoning"":""The car livery appears to read “Melikgazi,” a district municipality in Kayseri, and the Turkish road environment, right-side driving, mosque/minaret silhouettes, and apartment blocks fit central Anatolia. The flat urban fringe with distant mountains is consistent with Kayseri/Melikgazi."",""country"":""TR"",""latitude"":38.7436,""longitude"":35.5248}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.716705322265625,35.19696044921875,23.67,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.71807861328125,35.18866729736328,24.306,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.703453063964844,35.15410232543945,27.666,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,39.75,37.0,170.881,TR,True,,stop,0.013695048,682,3940,3877,88.72,"{""reasoning"": ""Vehicle text uses Turkish dotted-İ, flat-roof apartment blocks and interlocking stone sidewalks are hallmarks of Central Anatolia, and traffic drives on the right."", ""country"": ""TR"", ""latitude"": 39.75, ""longitude"": 37.0}"
+google/gemini-3.5-flash,CoT (effort=medium),39.7483,37.0152,171.784,TR,True,,stop,0.0085935,1271,743,663,6.78,"```json
+{""reasoning"": ""The Turkish word 'ŞELALE' on the side of the car, combined with the distinctive apartment architecture, dry steppe landscape, and distant mountains, points to Central or Eastern Anatolia in Turkey."", ""country"": ""TR"", ""latitude"": 39.7483, ""longitude"": 37.0152}
+```"
+anthropic/claude-opus-4.8,CoT,39.7477,37.0179,171.925,TR,True,,stop,0.00676,797,111,0,3.5,"{""reasoning"": ""Turkish text 'CELALE' taxi-style car, mid-rise apartment blocks, and bare winter trees on Anatolian plateau terrain suggest a Turkish city like Sivas or Kayseri."", ""country"": ""TR"", ""latitude"": 39.7477, ""longitude"": 37.0179}"
+qwen/qwen3.5-397b-a17b,no-CoT,39.7477,37.0179,171.925,TR,True,,stop,0.0003322,473,31,0,2.55,"{""country"": ""TR"", ""latitude"": 39.7477, ""longitude"": 37.0179}"
+openai/gpt-5.5,no-CoT,39.7505,37.0154,171.949,TR,True,,stop,0.00341,544,23,0,1.59,"{""country"":""TR"",""latitude"":39.7505,""longitude"":37.0154}"
+anthropic/claude-opus-4.8,no-CoT,39.75,37.0167,172.002,TR,True,,stop,0.00413,666,32,0,2.25,"{""country"": ""TR"", ""latitude"": 39.7500, ""longitude"": 37.0167}"
+google/gemini-3.1-pro-preview,no-CoT,39.92077,32.85411,256.903,TR,True,,stop,0.002822,1189,37,0,10.41,"```json
+{""country"": ""TR"", ""latitude"": 39.92077, ""longitude"": 32.85411}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,39.920773,32.854112,256.903,TR,True,,stop,0.00019604,474,35,0,12.01,"{""country"": ""TR"", ""latitude"": 39.920773, ""longitude"": 32.854112}"
+mistralai/mistral-medium-3-5,no-CoT,39.9334,32.8597,257.161,TR,True,,stop,0.0011835,634,31,0,8.41,"{""country"": ""TR"", ""latitude"": 39.9334, ""longitude"": 32.8597}"
+qwen/qwen3.6-35b-a3b,no-CoT,39.9334,32.8597,257.161,TR,True,,stop,0.00010195,473,31,0,2.43,"{""country"": ""TR"", ""latitude"": 39.9334, ""longitude"": 32.8597}"
+google/gemma-4-31b-it,no-CoT,39.9333,32.8567,257.38,TR,True,,stop,6.378e-05,406,36,0,4.52,"```json
+{""country"": ""TR"", ""latitude"": 39.9333, ""longitude"": 32.8567}
+```"
+x-ai/grok-4.3,CoT,39.925,32.84,258.184,TR,True,,stop,0.002299,676,716,644,14.2,"{""reasoning"": ""Right-hand traffic, Turkish-language decal ('BEYAZ') on Hyundai, multi-story pastel apartment blocks, distant mountains and overcast continental sky all point to an Anatolian city; cracked asphalt boulevard matches suburban Ankara arterials."", ""country"": ""TR"", ""latitude"": 39.925, ""longitude"": 32.84}"
+minimax/minimax-m3,CoT,39.87,32.63,271.362,TR,True,,stop,0.00071346,843,435,352,17.9,"{""reasoning"": ""Turkish word 'NEZLE' on the white Hyundai i20 indicates Turkey; wide boulevards, modern beige apartment blocks with red roofs, and the continental winter landscape are highly characteristic of Ankara's newer planned districts like Çayyolu or Batıkent."", ""country"": ""TR"", ""latitude"": 39.87, ""longitude"": 32.63}"
+google/gemini-3.5-flash,CoT (effort=high),38.6915,39.1825,323.377,TR,True,,stop,0.0374385,1271,3948,3839,29.55,"```json
+{""reasoning"": ""The vehicle on the right is a driving school car from 'Şelale Sürücü Kursu' in Elazığ, Turkey (area code 0424). The cracked asphalt, modern apartment blocks, and snowy mountains in the background are characteristic of the Çaydaçıra/Ataşehir districts of Elazığ."", ""country"": ""TR"", ""latitude"": 38.6915, ""longitude"": 39.1825}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),39.9523,41.2769,516.871,TR,True,,stop,0.0021,1190,35,0,7.64,"```json
+{""country"": ""TR"", ""latitude"": 39.9523, ""longitude"": 41.2769}
+```"
+qwen/qwen3.6-27b,no-CoT,40.7659,29.923,521.514,TR,True,,stop,0.0001943,473,31,0,9.05,"{""country"": ""TR"", ""latitude"": 40.7659, ""longitude"": 29.9230}"
+x-ai/grok-4.3,no-CoT,40.188,29.061,570.396,TR,True,,stop,0.0005934,592,22,0,1.87,"{""country"": ""TR"", ""latitude"": 40.188, ""longitude"": 29.061}"
+qwen/qwen3.5-9b,no-CoT,41.0082,29.4082,571.934,TR,True,,stop,5.205e-05,474,31,0,5.26,"{""country"": ""TR"", ""latitude"": 41.0082, ""longitude"": 29.4082}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,40.86717224121094,29.218854904174805,580.606,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,40.8541259765625,29.16117286682129,584.598,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,41.3275,19.8183,1358.607,AL,True,,stop,0.00010195,473,31,0,8.27,"{""country"": ""AL"", ""latitude"": 41.3275, ""longitude"": 19.8183}"
+qwen/qwen3.5-27b,no-CoT,44.7868,20.4489,1408.855,RS,True,,stop,0.0002065,474,44,0,10.79,"```json
+{
+  ""country"": ""RS"",
+  ""latitude"": 44.7868,
+  ""longitude"": 20.4489
+}
+```"
+xiaomi/mimo-v2.5,CoT,42.44,19.25,1424.498,ME,True,,stop,0.0002927176,787,746,670,14.87,"{""reasoning"": ""Cracked urban road, Eastern European-style architecture, overcast sky, and right-hand traffic suggest Montenegro (Podgorica area); the car’s text and infrastructure align with Montenegrin urban scenes."", ""country"": ""ME"", ""latitude"": 42.44, ""longitude"": 19.25}"
+mistralai/mistral-small-2603,no-CoT,52.2297,21.0122,1864.049,PL,True,,stop,0.0001137,634,31,0,9.83,"{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.202640533447266,5.646264553070068,2535.558,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,43.3614,-8.4189,3670.117,ES,True,,stop,8.11776e-05,708,30,0,7.99,"{""country"": ""ES"", ""latitude"": 43.3614, ""longitude"": -8.4189}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5624.574,,True,True,,,,,,19.73,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.58,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.84,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.29,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,7.36,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.11,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.19,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.26,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.27,

@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,41.462342276179,46.834373333377,0.0,AZ,True,,,,,,,,"Cinarli, None, Qakh Rayon, AZ"
+google/gemini-3.5-flash,CoT (effort=medium),41.4521,46.9483,9.562,AZ,True,,stop,0.0208515,1271,2105,2018,21.45,"```json
+{""reasoning"": ""The road features solid yellow edge lines and a dashed white center line while driving on the right, which is characteristic of Azerbaijan. The deciduous oak-like trees and flat terrain suggest the Alazan-Haftaran valley in northern Azerbaijan."", ""country"": ""AZ"", ""latitude"": 41.4521, ""longitude"": 46.9483}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.618333,46.153889,59.232,GE,True,,stop,0.002136,1190,39,0,1.13,"```json
+{""country"": ""GE"", ""latitude"": 41.618333, ""longitude"": 46.153889}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,41.04582595825195,47.54771423339844,75.505,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.03801727294922,47.57077407836914,77.564,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),41.6235,45.8912,80.515,GE,True,,stop,0.004833,1272,325,252,9.23,"{""reasoning"": ""The road features yellow outer edge lines and a white dashed center line, which is characteristic of Georgia. The deciduous trees and dry grassy landscape are typical of the Kakheti region in eastern Georgia."", ""country"": ""GE"", ""latitude"": 41.6235, ""longitude"": 45.8912}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,40.96665954589844,47.661476135253906,88.455,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),41.9523,45.6541,112.105,GE,True,,stop,0.0108435,1271,993,922,8.07,"{""reasoning"": ""The road features yellow outer edge lines and a white dashed center line, which is highly characteristic of Georgia. The deciduous trees and flat terrain suggest the Kakheti region in eastern Georgia."", ""country"": ""GE"", ""latitude"": 41.9523, ""longitude"": 45.6541}"
+openai/gpt-5.5,CoT,33.0446,35.4312,1374.218,IL,True,,stop,0.018825,621,524,438,10.83,"{""reasoning"":""Right-hand traffic with solid yellow edge lines and white center markings is characteristic of Israeli rural roads, and the dry Mediterranean woodland/olive-like vegetation with white-black delineator posts fits northern Israel/Galilee. The landscape is more consistent with rural Galilee than urban/coastal Israel or Turkey."",""country"":""IL"",""latitude"":33.0446,""longitude"":35.4312}"
+openai/gpt-5.5,no-CoT,37.8853,30.7776,1428.209,TR,True,,stop,0.00341,544,23,0,1.2,"{""country"":""TR"",""latitude"":37.8853,""longitude"":30.7776}"
+google/gemini-3.1-pro-preview,no-CoT,44.9333,26.0333,1724.579,RO,True,,stop,0.0028,1190,35,0,8.03,"```json
+{""country"": ""RO"", ""latitude"": 44.9333, ""longitude"": 26.0333}
+```"
+google/gemini-3.1-pro-preview,CoT,45.0,24.0,1884.602,RO,True,,stop,0.014568,1272,1002,923,18.67,"```json
+{""reasoning"": ""The white bollard with a red band is typical of Eastern European countries like Romania. The landscape and vegetation are consistent with the region, though the edge lines appear unusually yellowish, possibly due to lighting or specific local road markings."", ""country"": ""RO"", ""latitude"": 45.0, ""longitude"": 24.0}
+```"
+moonshotai/kimi-k2.6,CoT,51.15,71.4,2157.794,KZ,True,,stop,0.019910088,682,5753,5697,337.19,"{""reasoning"": ""Flat forest-steppe terrain with scattered mature broadleaf trees and former Soviet-style roadside marker posts indicate a rural highway in northern Kazakhstan."", ""country"": ""KZ"", ""latitude"": 51.15, ""longitude"": 71.4}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,46.7647705078125,19.39084243774414,2256.071,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,47.46603775024414,18.970006942749023,2295.723,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,33.6844,73.0479,2455.044,PK,True,,stop,0.00051939,602,25,0,9.66,"{""country"": ""PK"", ""latitude"": 33.6844, ""longitude"": 73.0479}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,46.58758544921875,14.361074447631836,2638.293,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,28.7041,77.1025,3075.831,IN,True,,stop,0.0011835,634,31,0,1.32,"{""country"": ""IN"", ""latitude"": 28.7041, ""longitude"": 77.1025}"
+qwen/qwen3.5-9b,no-CoT,23.0225,72.5714,3150.067,IN,True,,stop,5.205e-05,474,31,0,4.32,"{""country"": ""IN"", ""latitude"": 23.0225, ""longitude"": 72.5714}"
+minimax/minimax-m3,no-CoT,23.5,77.4,3464.338,IN,True,,stop,0.00019176,752,23,0,1.64,"{""country"": ""IN"", ""latitude"": 23.5, ""longitude"": 77.4}"
+minimax/minimax-m3,CoT,22.5,78.5,3622.499,IN,True,,stop,0.00056826,843,314,238,11.03,"{""reasoning"": ""Left-side driving, yellow edge lines with white dashed center, and dry deciduous forest (likely teak/sal) vegetation indicate a national highway in central India during the dry season, typical of Madhya Pradesh or Chhattisgarh."", ""country"": ""IN"", ""latitude"": 22.5, ""longitude"": 78.5}"
+anthropic/claude-opus-4.8,CoT,23.5,79.5,3623.653,IN,True,,stop,0.006085,797,84,0,3.02,"{""reasoning"": ""Dry deciduous forest, yellow-edged road markings, white concrete marker posts, and left-hand driving suggest rural central India highway."", ""country"": ""IN"", ""latitude"": 23.5, ""longitude"": 79.5}"
+anthropic/claude-opus-4.8,no-CoT,23.1815,79.9864,3684.326,IN,True,,stop,0.00413,666,32,0,9.32,"{""country"": ""IN"", ""latitude"": 23.1815, ""longitude"": 79.9864}"
+x-ai/grok-4.3,CoT,19.2,78.1,3852.475,IN,True,,stop,0.0026615,676,861,800,13.94,"{""reasoning"": ""Yellow edge lines + white dashed center line indicate left-hand traffic (India-style markings); broadleaf trees, dry grass, and roadside concrete markers match rural Indian highway scenery."", ""country"": ""IN"", ""latitude"": 19.2, ""longitude"": 78.1}"
+xiaomi/mimo-v2.5,CoT,15.5,101.0,5910.057,TH,True,,stop,0.0001672776,787,298,230,10.2,"{""reasoning"": ""The road layout, vegetation (lush trees with dry grass), and rural setting are characteristic of Thailand. The high sun angle and lack of specific signage suggest a rural Thai highway."", ""country"": ""TH"", ""latitude"": 15.5, ""longitude"": 101.0}"
+google/gemma-4-31b-it,no-CoT,14.3214,100.5231,5957.332,TH,True,,stop,6.758e-05,406,37,0,9.27,"```json
+{""country"": ""TH"", ""latitude"": 14.3214, ""longitude"": 100.5231}
+```"
+x-ai/grok-4.3,no-CoT,-24.65,31.55,7518.27,ZA,True,,stop,0.0005934,592,22,0,0.84,"{""country"": ""ZA"", ""latitude"": -24.65, ""longitude"": 31.55}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.7289,-97.4532,10692.483,US,True,,stop,9.736e-05,474,31,0,1.08,"{""country"": ""US"", ""latitude"": 35.7289, ""longitude"": -97.4532}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4194,11140.199,US,True,,stop,0.0001143,634,32,0,3.95,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4194}"
+xiaomi/mimo-v2.5,no-CoT,37.5,-120.5,11141.099,US,True,,stop,8.00576e-05,708,26,0,8.11,"{""country"": ""US"", ""latitude"": 37.5, ""longitude"": -120.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,30.2672,-97.7431,11249.451,US,True,,stop,0.00036468,473,31,0,4.53,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+qwen/qwen3.6-35b-a3b,no-CoT,34.0522,-118.2437,11480.85,US,True,,stop,0.000146,474,32,0,9.44,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+google/gemma-4-26b-a4b-it,no-CoT,34.05,-118.24,11481.022,US,True,,stop,0.00022014,406,444,0,24.05,"Please own-level photograph and'give your single best estimate of where the image was taken. Answer immediately with the coordinates own-level estimate of where the image was taken. Answer immediately with the coordinates only — no explanation, no reasoning, no extra text. Answer with ONLY this JSON object:
+{""country"": ""US own-level estimate own-level estimate of where the image was taken. Answer immediately with the coordinates only — no explanation, no reasoning, no extra text. Answer with ONLY this JSON object:
+{""country"": ""US"", ""latitude"": 34.052 own-level estimate of where the image was own-level estimate of where the image was taken. Answer immediately with the coordinates only — no explanation, no reasoning, no extra text. Answer with ONLY this JSON object:
+ own-level estimate of where the image was taken. Answer immediately with the coordinates only — no explanation, no reasoning, no extra own- own-level estimate of where the image was taken. Answer immediately with the coordinates only — no explanation, no reasoning, no extra text. Answer with own-level estimate of where the image was taken. Answer immediately with the coordinates only — no explanation, no reasoning, no extra own-level own-level estimate of where the image was taken. Answer immediately with the coordinates only — no explanation, no reasoning, no extra text. Answer with ONLY this JSON object:
+{""country"": ""US"", ""latitude"": own-level estimate of where the image was taken. Answer immediately with own-level estimate of where the image was taken. own-level estimate of where the image was taken. Answer immediately own-level estimate of where the image was taken. Answer immediately with the coordinates only — no explanation, no own-level estimate of where the image was taken. Answer immediately with the coordinates only own-level estimate of own-level estimate of where the image was taken. Answer immediately with the coordinates only — no explanation, no reasoning, no extra text. Answer with ONLY this JSON object:
+{""country"": ""US"", ""latitude"": 34.05, ""longitude"": -118.24}"
+qwen/qwen3.5-122b-a10b,no-CoT,-20.9173,-49.3301,12026.103,BR,True,,stop,0.00018772,474,31,0,5.37,"{""country"": ""BR"", ""latitude"": -20.9173, ""longitude"": -49.3301}"
+qwen/qwen3.6-27b,no-CoT,-34.9285,138.6007,12615.71,AU,True,,stop,0.0001963,473,32,0,8.11,"{""country"": ""AU"", ""latitude"": -34.9285, ""longitude"": 138.6007}"
+qwen/qwen3.5-27b,no-CoT,-34.6037,-58.3816,13625.995,AR,True,,stop,0.00023764,474,44,0,10.7,"```json
+{
+  ""country"": ""AR"",
+  ""latitude"": -34.6037,
+  ""longitude"": -58.3816
+}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.21,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.42,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.43,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.24,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.15,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.15,

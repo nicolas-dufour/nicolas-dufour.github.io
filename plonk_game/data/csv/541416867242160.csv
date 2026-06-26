@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,39.396276977083,53.334585916451,0.0,TM,True,,,,,,,,"Turkmenbasy, None, Balkan, TM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.62626647949219,53.74983215332031,92.834,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.61381149291992,53.76274490356445,94.545,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,39.5,54.5,100.73,TM,True,,stop,0.00711,797,125,0,3.4,"{""reasoning"": ""Flat sandy desert with sparse scrub, power lines, and a narrow paved road suggests an arid Central Asian or Middle Eastern desert; the hazy sky and terrain resemble Turkmenistan/Kazakhstan desert near the Caspian."", ""country"": ""TM"", ""latitude"": 39.5, ""longitude"": 54.5}"
+anthropic/claude-opus-4.8,no-CoT,39.5,54.5,100.73,TM,True,,stop,0.00408,666,30,0,2.83,"{""country"": ""TM"", ""latitude"": 39.5, ""longitude"": 54.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.66999816894531,54.412010192871094,123.215,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,40.1431,47.5769,498.955,AZ,True,,stop,0.00067285,603,25,0,12.71," {""country"": ""AZ"", ""latitude"": 40.1431, ""longitude"": 47.5769}"
+minimax/minimax-m3,no-CoT,32.5,55.0,781.303,IR,True,,stop,0.00034434,767,118,126,9.79,"{""country"": ""IR"", ""latitude"": 32.5, ""longitude"": 55.0}"
+qwen/qwen3.5-27b,no-CoT,33.25,44.36,1054.249,IQ,True,,stop,0.000134355,473,27,0,2.14,"{""country"": ""IQ"", ""latitude"": 33.25, ""longitude"": 44.36}"
+qwen/qwen3.5-9b,no-CoT,26.3946,46.6753,1572.515,SA,True,,stop,5.205e-05,474,31,0,10.45,"{""country"": ""SA"", ""latitude"": 26.3946, ""longitude"": 46.6753}"
+qwen/qwen3.5-397b-a17b,no-CoT,25.3548,51.1839,1574.206,QA,True,,stop,0.00029145,473,31,0,8.22,"{""country"": ""QA"", ""latitude"": 25.3548, ""longitude"": 51.1839}"
+openai/gpt-5.5,no-CoT,25.1702,51.1458,1595.043,QA,True,,stop,0.00341,544,23,0,8.05,"{""country"":""QA"",""latitude"":25.1702,""longitude"":51.1458}"
+openai/gpt-5.5,CoT,24.8776,51.5112,1623.4,QA,True,,stop,0.015045,621,398,320,17.55,"{""reasoning"":""Flat sandy desert with sparse shrubs, unmarked paved road, right-side driving context and Gulf-style high-voltage pylons point to the Arabian Peninsula. The low dunes and barren terrain are most consistent with southern Qatar near Mesaieed/Sealine."",""country"":""QA"",""latitude"":24.8776,""longitude"":51.5112}"
+qwen/qwen3.5-397b-a17b,CoT,25.3456,48.1234,1636.398,SA,True,,stop,0.0116058,553,3145,3056,25.85,"{""reasoning"": ""The image shows a flat, arid desert landscape with sparse scrub vegetation and tall metal lattice power transmission towers, characteristic of the infrastructure in Saudi Arabia. The vehicle is positioned on the right side of the road, indicating right-hand traffic common in the region."", ""country"": ""SA"", ""latitude"": 25.3456, ""longitude"": 48.1234}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,24.56325340270996,53.77890396118164,1649.883,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,24.554807662963867,51.24883270263672,1661.839,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,28.2,41.3,1666.106,SA,True,,stop,0.00167742,845,1235,1366,25.32,"{""reasoning"": ""Flat sandy desert with sparse acacia-like shrubs, sand mounds in the distance, hazy atmosphere, metal lattice high-voltage pylons, and a paved unmarked road all point to an arid Arabian Peninsula setting. The infrastructure style and vegetation are most consistent with northern/central Saudi Arabia."", ""country"": ""SA"", ""latitude"": 28.2, ""longitude"": 41.3}"
+google/gemini-3.1-pro-preview,no-CoT,24.152,54.681,1699.797,AE,True,,stop,0.002776,1190,33,0,8.24,"```json
+{""country"": ""AE"", ""latitude"": 24.152, ""longitude"": 54.681}
+```"
+google/gemini-3.1-pro-preview,CoT,24.1234,54.5678,1702.213,AE,True,,stop,0.007296,1272,396,315,6.64,"{
+  ""reasoning"": ""The flat, sandy desert landscape with sparse vegetation and specific lattice power line towers is characteristic of the Arabian Peninsula. The road style and environment suggest a location in the United Arab Emirates."",
+  ""country"": ""AE"",
+  ""latitude"": 24.1234,
+  ""longitude"": 54.5678
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,23.982135772705078,52.338623046875,1716.529,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,24.5,47.5,1744.391,SA,True,,stop,0.02069529,682,5937,5870,431.45,"{""reasoning"": ""Flat sandy desert with sparse green scrub alongside an unmarked paved road and lattice power transmission towers matches the Arabian Peninsula, and the white SUV plus rural road style are most consistent with Saudi Arabia."", ""country"": ""SA"", ""latitude"": 24.5, ""longitude"": 47.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,24.7136,46.6753,1747.724,SA,True,,stop,9.736e-05,474,31,0,1.9,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+x-ai/grok-4.3,no-CoT,24.7136,46.6753,1747.724,SA,True,,stop,0.0005984,592,24,0,0.75,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+qwen/qwen3.5-122b-a10b,no-CoT,24.5234,46.8123,1763.203,SA,True,,stop,0.0002163,473,31,0,1.33,"{""country"": ""SA"", ""latitude"": 24.5234, ""longitude"": 46.8123}"
+mistralai/mistral-medium-3-5,no-CoT,25.0,45.0,1780.491,SA,True,,stop,0.0011385,634,25,0,7.29,"{""country"": ""SA"", ""latitude"": 25.0, ""longitude"": 45.0}"
+x-ai/grok-4.3,CoT,24.85,44.92,1799.009,SA,True,,stop,0.0022465,676,695,620,8.73,"{
+  ""reasoning"": ""Desert highway with gravel shoulders, sparse xerophytic shrubs, distant sand hills, lattice transmission towers and hazy sky are characteristic of the Arabian interior; right-hand driving and vehicle styling narrow it to the Gulf states."",
+  ""country"": ""SA"",
+  ""latitude"": 24.85,
+  ""longitude"": 44.92
+}"
+xiaomi/mimo-v2.5,CoT,22.75,55.62,1863.547,OM,True,,stop,0.0002151576,787,469,395,11.95,"{""reasoning"": ""The flat, arid desert terrain with sparse drought-adapted shrubs, plus the large high-voltage transmission towers typical of Arabian Peninsula infrastructure, points to this location in Oman's interior desert."", ""country"": ""OM"", ""latitude"": 22.75, ""longitude"": 55.62}"
+google/gemma-4-31b-it,no-CoT,29.9604,31.1311,2276.733,EG,True,,stop,0.00093387,4151,35,0,2.93,"```json
+{""country"": ""EG"", ""latitude"": 29.9604, ""longitude"": 31.1311}
+```"
+qwen/qwen3.6-27b,no-CoT,29.3193,30.6136,2358.006,EG,True,,stop,0.0001943,473,31,0,16.52,"{""country"": ""EG"", ""latitude"": 29.3193, ""longitude"": 30.6136}"
+xiaomi/mimo-v2.5,no-CoT,39.0,90.0,3137.802,CN,True,,stop,7.97776e-05,708,25,0,2.3,"{""country"": ""CN"", ""latitude"": 39.0, ""longitude"": 90.0}"
+mistralai/mistral-small-2603,no-CoT,36.7538,3.0588,4353.459,DZ,True,,stop,0.000142125,634,31,0,1.66,"{""country"": ""DZ"", ""latitude"": 36.7538, ""longitude"": 3.0588}"
+qwen/qwen3.6-35b-a3b,no-CoT,27.15,2.5,4850.64,DZ,True,,stop,0.00015075,473,26,0,0.91,"{""country"": ""DZ"", ""latitude"": 27.15, ""longitude"": 2.5}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6951.788,,True,True,,,,,,7.69,
+mistralai/mistral-small-2603,CoT,-33.25,18.15,8853.196,ZA,True,,stop,0.00042432,716,683,745,5.45,"{""reasoning"": ""Left-hand traffic (steering wheel on right side) and South African road infrastructure style with reddish soil and semi-arid vegetation pattern."", ""country"": ""ZA"", ""latitude"": -33.25, ""longitude"": 18.15}"
+qwen/qwen3.6-35b-a3b,CoT,-25.0,120.0,9948.995,AU,True,,stop,0.1267029166,553,131172,131070,1131.94,"{""reasoning"": ""The image shows a left-hand traffic country with a desert landscape, lattice power lines, and sparse vegetation typical of the Australian outback or South African Karoo. The car is positioned on the left side of the road, and the vegetation and power lines suggest a remote area in Australia, likely Western Australia or South Australia."", ""country"": ""AU"", ""latitude"": -25.0, ""longitude"": 120.0}"
+google/gemini-3.5-flash,CoT (effort=low),-5.6542,-80.8211,14093.247,PE,True,,stop,0.005175,1272,363,297,3.7,"{""reasoning"": ""The extremely arid coastal desert landscape, sandy terrain, and specific style of power line lattice towers are highly characteristic of the Sechura Desert region in northwestern Peru."", ""country"": ""PE"", ""latitude"": -5.6542, ""longitude"": -80.8211}"
+google/gemini-3.5-flash,CoT (effort=high),-5.9012,-80.8215,14113.086,PE,True,,stop,0.0268995,1271,2777,2681,30.8,"```json
+{""reasoning"": ""The image depicts a coastal desert road with fine sand dunes, sparse halophytic vegetation, and a flat, overcast sky characteristic of the Peruvian 'garúa' fog. The presence of steel lattice power towers alongside a secondary paved road strongly suggests the Sechura Desert region in northwestern Peru."", ""country"": ""PE"", ""latitude"": -5.9012, ""longitude"": -80.8215}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-5.8721,-80.9124,14117.723,PE,True,,stop,0.0080355,1271,681,619,13.51,"{""reasoning"": ""The flat, sandy coastal desert landscape with overcast skies and specific power line infrastructure is highly characteristic of the Sechura Desert in northern Peru."", ""country"": ""PE"", ""latitude"": -5.8721, ""longitude"": -80.9124}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-8.742154,-78.748521,14174.182,PE,True,,stop,0.0021255,1189,38,0,3.04,"```json
+{""country"": ""PE"", ""latitude"": -8.742154, ""longitude"": -78.748521}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.2,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.41,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.18,

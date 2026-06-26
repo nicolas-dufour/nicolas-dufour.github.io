@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,51.195280805074,58.225438918218,0.0,RU,True,,,,,,,,"Staraya Akkermanovka, None, Orenburg, RU"
+anthropic/claude-opus-4.8,CoT,53.5,60.5,299.207,RU,True,,stop,0.00707,949,93,0,2.97,"{""reasoning"": ""Russian-style triangular warning signs, snow patches, bare birch trees, and low-rise village sprawl suggest rural southern Russia/Urals region in late winter."", ""country"": ""RU"", ""latitude"": 53.5, ""longitude"": 60.5}"
+anthropic/claude-opus-4.8,no-CoT,54.3,61.3,402.416,RU,True,,stop,0.00484,818,30,0,8.44,"{""country"": ""RU"", ""latitude"": 54.3, ""longitude"": 61.3}"
+google/gemini-3.5-flash,CoT (effort=low),54.8543,59.0234,410.342,RU,True,,stop,0.003798,1308,204,145,2.82,"{""reasoning"": ""The road signs, winter landscape with melting snow, and typical rural architecture indicate Russia, likely in the hilly Ural region."", ""country"": ""RU"", ""latitude"": 54.8543, ""longitude"": 59.0234}"
+google/gemini-3.5-flash,CoT (effort=medium),54.9912,57.6845,423.626,RU,True,,stop,0.0082875,1307,703,640,13.45,"{""reasoning"": ""The winter landscape, rural Russian architecture, and characteristic road signs and utility poles indicate a location in Russia, likely in the hilly Ural region."", ""country"": ""RU"", ""latitude"": 54.9912, ""longitude"": 57.6845}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,54.915374755859375,56.2760124206543,433.644,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,54.91899871826172,56.277732849121094,433.992,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,54.426612854003906,54.17084884643555,450.804,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,55.17,59.67,452.303,RU,True,,stop,0.00667,1307,338,251,5.54,"{
+  ""reasoning"": ""The blue triangular pedestrian crossing sign and the style of the houses in the background are characteristic of Russia. The snowy, slightly hilly landscape with dark soil/rocks pushed to the side suggests an industrial or mining region like the Urals."",
+  ""country"": ""RU"",
+  ""latitude"": 55.17,
+  ""longitude"": 59.67
+}"
+google/gemini-3.1-pro-preview,no-CoT,55.1644,61.4368,490.367,RU,True,,stop,0.00287,1225,35,0,8.91,"```json
+{""country"": ""RU"", ""latitude"": 55.1644, ""longitude"": 61.4368}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,51.517704010009766,65.30443572998047,492.665,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,56.85,60.6,647.523,RU,True,,stop,9.57376e-05,820,26,0,1.27,"{""country"": ""RU"", ""latitude"": 56.85, ""longitude"": 60.6}"
+qwen/qwen3.5-122b-a10b,no-CoT,56.8587,60.6122,648.649,RU,True,,stop,0.00021684,586,31,0,5.55,"{""country"": ""RU"", ""latitude"": 56.8587, ""longitude"": 60.6122}"
+x-ai/grok-4.3,no-CoT,55.45,65.35,668.503,RU,True,,stop,0.0007334,704,22,0,0.84,"{""country"": ""RU"", ""latitude"": 55.45, ""longitude"": 65.35}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),54.3512,48.5834,736.588,RU,True,,stop,0.002154,1226,35,0,7.31,"```json
+{""country"": ""RU"", ""latitude"": 54.3512, ""longitude"": 48.5834}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,53.06575012207031,79.06163024902344,1432.154,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,1448.412,RU,True,,stop,6.348e-05,404,36,0,10.83,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,1448.412,RU,True,,stop,0.001419,786,32,0,7.91,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-397b-a17b,no-CoT,55.7558,37.6173,1448.412,RU,True,,stop,0.00043188,585,31,0,9.0,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.6-27b,no-CoT,55.7558,37.6173,1448.412,RU,True,,stop,0.0002279,585,31,0,11.98,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-9b,no-CoT,55.7964,37.6089,1449.861,RU,True,,stop,6.325e-05,586,31,0,2.74,"{""country"": ""RU"", ""latitude"": 55.7964, ""longitude"": 37.6089}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,53.30968475341797,80.7687759399414,1545.806,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,40.7896,43.8477,1598.381,AM,True,,stop,0.011845,755,269,185,44.38,"{""reasoning"":""Snowy highland village with basalt/black stone roadside walls, Soviet-style rural road geometry and right-hand traffic cues strongly suggest Armenia, especially the Shirak/Gyumri area. The sparse leafless landscape and low-density tuff/stone houses fit northwestern Armenia in winter."",""country"":""AM"",""latitude"":40.7896,""longitude"":43.8477}"
+qwen/qwen3.6-35b-a3b,no-CoT,43.222,76.855,1656.069,KZ,True,,stop,0.0037484161,583,3786,3756,23.93,"{""country"": ""KZ"", ""latitude"": 43.222, ""longitude"": 76.855}"
+qwen/qwen3.5-35b-a3b,no-CoT,48.465,35.045,1682.795,UA,True,,stop,0.00011675,585,29,0,2.07,"{""country"": ""UA"", ""latitude"": 48.465, ""longitude"": 35.045}"
+openai/gpt-5.5,no-CoT,55.0221,82.9347,1693.52,RU,True,,stop,0.00408,678,23,0,1.61,"{""country"":""RU"",""latitude"":55.0221,""longitude"":82.9347}"
+xiaomi/mimo-v2.5,CoT,48.5,34.0,1754.336,UA,True,,stop,0.0002140376,899,409,353,5.43,"{""reasoning"": ""Right-hand driving, Cyrillic signage, and architectural style indicate Eastern Europe; landscape and climate match the Ukrainian steppe."", ""country"": ""UA"", ""latitude"": 48.5, ""longitude"": 34.0}"
+x-ai/grok-4.3,CoT,55.34,86.09,1895.573,RU,True,,stop,0.0026565,788,803,721,12.01,"{""reasoning"": ""Snow cover, bare deciduous trees, coal/gravel roadside heaps, Soviet-era low-rise architecture with distant industrial towers, and triangular road sign + utility pole style indicate a provincial town in Russia during winter/early spring; right-hand driving and Cyrillic-implied signage narrow to RU."", ""country"": ""RU"", ""latitude"": 55.34, ""longitude"": 86.09}"
+minimax/minimax-m3,CoT,54.45,86.15,1897.735,RU,True,,stop,0.00096822,997,606,593,11.54,"{""reasoning"": ""Right-hand drive vehicle (Japanese import, common in eastern Russia) on a right-side driving road, triangular Russian-style road sign, dark coal/rock piles along roadside, low-rise Soviet-era industrial architecture, and hilly bare deciduous winter landscape all point to a mining region in southwestern Siberia, most likely the Kemerovo Oblast (Kuzbass coal basin)."", ""country"": ""RU"", ""latitude"": 54.45, ""longitude"": 86.15}"
+google/gemini-3.5-flash,CoT (effort=high),54.0115,86.4312,1917.135,RU,True,,stop,0.0118245,1307,1096,1019,8.47,"{""reasoning"": ""The winter landscape with distinctive black, coal-dusted snow piles on the roadside, rural Russian architecture, and standard road signs points to the Kuzbass coal-mining region in Kemerovo Oblast, Russia."", ""country"": ""RU"", ""latitude"": 54.0115, ""longitude"": 86.4312}"
+moonshotai/kimi-k2.6,CoT,53.9,87.2,1967.946,RU,True,,stop,0.01240062,834,2940,3238,151.79,"{""reasoning"": ""Orthodox church domes on the left horizon, post-Soviet concrete-slab road, dark industrial/coal waste piles along the shoulder, and continental winter birch forest are characteristic of the Russian Kuzbass mining region."", ""country"": ""RU"", ""latitude"": 53.9, ""longitude"": 87.2}"
+qwen/qwen3.5-27b,no-CoT,53.9007,27.5572,2078.677,BY,True,,stop,0.0002345,586,44,0,10.53,"```json
+{
+  ""country"": ""BY"",
+  ""latitude"": 53.9007,
+  ""longitude"": 27.5572
+}
+```"
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,8795.89,US,True,,stop,0.0001359,786,30,0,3.87,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,9.42,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.63,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.46,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,7.3,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.45,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,15.91,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.4,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.2,

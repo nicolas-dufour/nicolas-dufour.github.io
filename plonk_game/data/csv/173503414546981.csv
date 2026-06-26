@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,45.128586389678,37.586828069202,0.0,RU,True,,,,,,,,"Varenikovskaya, None, Krasnodarskiy, RU"
+google/gemini-3.1-pro-preview,CoT,47.5,40.5,345.767,RU,True,,stop,0.005208,1296,218,144,10.64,"{
+  ""reasoning"": ""The flat landscape, lack of road markings, and type of vegetation suggest a rural road in Eastern Europe or Russia. The overall atmosphere and road condition are consistent with southern Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 47.5,
+  ""longitude"": 40.5
+}"
+google/gemini-3.5-flash,CoT (effort=low),48.2591,32.6147,514.56,UA,True,,stop,0.0032685,1297,147,84,8.8,"{""reasoning"": ""The flat agricultural landscape, dark fertile soil (chernozem), and typical tree line along the road are highly characteristic of the Ukrainian steppe."", ""country"": ""UA"", ""latitude"": 48.2591, ""longitude"": 32.6147}"
+google/gemini-3.5-flash,CoT (effort=high),49.5892,34.5512,546.05,UA,True,,stop,0.008658,1296,746,677,13.01,"{""reasoning"": ""The flat agricultural landscape with dark chernozem soil, lack of road markings on a worn asphalt road, and typical Eastern European deciduous vegetation suggest a rural location in Ukraine."", ""country"": ""UA"", ""latitude"": 49.5892, ""longitude"": 34.5512}"
+google/gemini-3.5-flash,CoT (effort=medium),48.5124,32.2612,552.726,UA,True,,stop,0.0041595,1297,246,181,3.56,"{""reasoning"": ""The flat terrain, dark chernozem soil, typical roadside shelterbelt trees, and worn asphalt road without markings are highly characteristic of the Ukrainian steppe."", ""country"": ""UA"", ""latitude"": 48.5124, ""longitude"": 32.2612}"
+openai/gpt-5.5,CoT,49.1032,32.6187,579.961,UA,True,,stop,0.01078,506,275,202,7.12,"{""reasoning"":""Flat, wet agricultural steppe with shelterbelt trees and an unmarked patched asphalt road with muddy shoulders strongly suggests a rural ex-Soviet road. The landscape and road style fit central/eastern Ukraine better than neighboring countries."",""country"":""UA"",""latitude"":49.1032,""longitude"":32.6187}"
+x-ai/grok-4.3,no-CoT,49.15,32.55,587.174,UA,True,,stop,0.0004734,496,22,0,0.94,"{""country"": ""UA"", ""latitude"": 49.15, ""longitude"": 32.55}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,50.53249740600586,36.753387451171875,604.089,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,49.15,32.05,612.323,UA,True,,stop,0.001909,580,608,541,13.7,"{""reasoning"": ""Flat rural two-lane asphalt road with dirt shoulder and tree line on right, vast open fields, overcast dramatic sky typical of Eastern European plains; right-hand traffic implied by camera position and road layout."", ""country"": ""UA"", ""latitude"": 49.15, ""longitude"": 32.05}"
+moonshotai/kimi-k2.6,CoT,51.0,36.5,657.827,RU,True,,stop,0.0138837,566,3376,3861,127.18,"{""reasoning"": ""Flat, straight rural road with dirt shoulders and tree-lined windbreaks amid expansive agricultural fields matches the East European Plain, and the white edge line without a yellow centerline fits Russian road standards."", ""country"": ""RU"", ""latitude"": 51.0, ""longitude"": 36.5}"
+openai/gpt-5.5,no-CoT,51.6294,39.2527,733.2,RU,True,,stop,0.002835,429,23,0,1.89,"{""country"":""RU"",""latitude"":51.6294,""longitude"":39.2527}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,45.69925308227539,27.92872428894043,756.08,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,52.0,37.5,764.093,RU,True,,stop,0.0106404,474,6591,6366,103.26,"```json
+{
+  ""reasoning"": ""The image shows a flat, rural landscape with an unmarked asphalt road, which is typical of regional roads in the Central Russian Plain. The dark soil (chernozem) visible on the left verge and the mix of dense deciduous and coniferous trees on the right are characteristic of this region, and the camera's position on the left suggests overtaking in a right-hand traffic country."",
+  ""country"": ""RU"",
+  ""latitude"": 52.0,
+  ""longitude"": 37.5
+}
+```"
+anthropic/claude-opus-4.8,CoT,51.5,42.0,779.666,RU,True,,stop,0.00579,683,95,0,3.51,"{""reasoning"": ""Flat agricultural steppe, tree windbreak lines along a worn rural road, overcast sky typical of southern Russia/Ukraine/Kazakhstan plains."", ""country"": ""RU"", ""latitude"": 51.5, ""longitude"": 42.0}"
+anthropic/claude-opus-4.8,no-CoT,51.5,42.5,795.763,RU,True,,stop,0.00351,552,30,0,2.41,"{""country"": ""RU"", ""latitude"": 51.5, ""longitude"": 42.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,52.12623977661133,40.21826171875,801.634,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,52.5,37.5,819.688,RU,True,,stop,0.0039529867,391,4030,4001,24.34,"{""country"": ""RU"", ""latitude"": 52.5, ""longitude"": 37.5}"
+google/gemini-3.1-pro-preview,no-CoT,51.505,46.115,947.643,RU,True,,stop,0.002824,1214,33,0,9.63,"```json
+{""country"": ""RU"", ""latitude"": 51.505, ""longitude"": 46.115}
+```"
+moonshotai/kimi-k2.6,no-CoT,54.5,39.0,1046.918,RU,True,,stop,0.00042844,489,23,0,17.43,"{""country"": ""RU"", ""latitude"": 54.5, ""longitude"": 39.0}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,1181.694,RU,True,,stop,6.984e-05,396,36,0,10.81,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+minimax/minimax-m3,CoT,47.2,19.8,1385.896,HU,True,,stop,0.00055962,731,332,314,7.85,"{""reasoning"": ""Flat, featureless agricultural plain with dark tilled soil on the left, sparse deciduous trees on the right, and an overcast sky strongly suggest the Pannonian Basin. The unmarked secondary road style and landscape match rural Hungary or northern Serbia, most likely the Hungarian Great Plain (Alföld) region."", ""country"": ""HU"", ""latitude"": 47.2, ""longitude"": 19.8}{""reasoning"": ""Flat, featureless agricultural plain with dark tilled soil on the left, sparse deciduous trees on the right, and an overcast sky strongly suggest the Pannonian Basin. The unmarked secondary road style and landscape match rural Hungary or northern Serbia, most likely the Hungarian Great Plain (Alföld) region."", ""country"": ""HU"", ""latitude"": 47.2, ""longitude"": 19.8}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),54.8234,55.3421,1657.235,RU,True,,stop,0.002136,1214,35,0,1.49,"```json
+{""country"": ""RU"", ""latitude"": 54.8234, ""longitude"": 55.3421}
+```"
+qwen/qwen3.5-9b,no-CoT,48.8566,2.3522,2679.673,FR,True,,stop,4.39e-05,394,30,0,5.2,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,51.82902526855469,-1.1360459327697754,2912.349,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,51.49538040161133,-1.607374906539917,2945.627,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,52.4862,-1.8904,2963.411,GB,True,,stop,0.00017091,393,30,0,1.97,"{""country"": ""GB"", ""latitude"": 52.4862, ""longitude"": -1.8904}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,53.0820426940918,-7.881997585296631,3364.155,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,31.0,75.5,3628.952,IN,True,,stop,0.00781665,473,2549,1,51.6,"{
+""reasoning"": ""The flat, expansive agricultural terrain combined with a wet, two-lane rural road and dense roadside vegetation is characteristic of the Indo-Gangetic Plain in South Asia. The camera position on the left side of the road implies left-hand traffic, strongly pointing towards India."",
+""country"": ""IN"",
+""latitude"": 31.0,
+""longitude"": 75.5
+}"
+xiaomi/mimo-v2.5,CoT,-1.2833,36.8167,5161.327,KE,True,,stop,0.0001135176,707,146,69,8.43,"{""reasoning"": ""The flat, open landscape with acacia-like trees on the roadside and the condition of the asphalt are characteristic of the East African savanna, likely along a major highway connecting towns in Kenya or Tanzania."", ""country"": ""KE"", ""latitude"": -1.2833, ""longitude"": 36.8167}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6227.833,,True,True,,,,,,2.12,
+qwen/qwen3.5-122b-a10b,no-CoT,14.3957,100.6111,6772.928,TH,True,,stop,0.000169,394,32,0,11.06,"{""country"": ""TH"", ""latitude"": 14.3957, ""longitude"": 100.6111}"
+qwen/qwen3.6-27b,no-CoT,41.8781,-87.6298,8918.164,US,True,,stop,0.000187977,393,31,0,3.11,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.5-35b-a3b,no-CoT,46.8721,-100.4532,8993.008,US,True,,stop,0.0001054625,393,32,0,0.88,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -100.4532}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.7128,-95.3698,9383.221,US,True,,stop,0.00031668,393,31,0,9.42,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -95.3698}"
+xiaomi/mimo-v2.5,no-CoT,33.5,-84.5,9506.044,US,True,,stop,6.85776e-05,628,25,0,7.54,"{""country"": ""US"", ""latitude"": 33.5, ""longitude"": -84.5}"
+mistralai/mistral-medium-3-5,no-CoT,37.0902,-95.7129,9743.535,US,True,,stop,0.0010125,520,31,0,7.58,"{""country"": ""US"", ""latitude"": 37.0902, ""longitude"": -95.7129}"
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,9848.524,US,True,,stop,0.00012075,520,31,0,1.9,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+minimax/minimax-m3,no-CoT,-34.0,-61.0,13223.577,AR,True,,stop,0.00035502,653,181,206,8.13,"{""country"": ""AR"", ""latitude"": -34.0, ""longitude"": -61.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.21,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.23,

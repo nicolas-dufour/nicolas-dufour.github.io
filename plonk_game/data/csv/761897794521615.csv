@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,34.536133962592,51.022336072871,0.0,IR,True,,,,,,,,"Qom, None, Qom, IR"
+google/gemini-3.5-flash,CoT (effort=low),34.1523,51.2341,46.9,IR,True,,stop,0.0049305,1271,336,262,4.77,"{""reasoning"": ""The arid, flat landscape with distant hazy mountains, dry vegetation, and modern highway infrastructure with blue signage is highly characteristic of the Iranian plateau, specifically along the major highways such as Route 7."", ""country"": ""IR"", ""latitude"": 34.1523, ""longitude"": 51.2341}"
+google/gemini-3.1-pro-preview,CoT,34.5,50.5,48.024,IR,True,,stop,0.00582,1272,273,202,4.83,"{
+  ""reasoning"": ""The arid landscape, distant mountains, and wide, well-paved multi-lane highway with specific lane markings are characteristic of major routes in the Iranian plateau."",
+  ""country"": ""IR"",
+  ""latitude"": 34.5,
+  ""longitude"": 50.5
+}"
+anthropic/claude-opus-4.8,CoT,35.6,51.0,118.314,IR,True,,stop,0.006285,797,92,0,2.84,"{""reasoning"": ""Wide divided highway driving on the right, arid steppe with distant mountains and dry winter grasses, suggesting a Central Asian or Iranian plateau setting."", ""country"": ""IR"", ""latitude"": 35.6, ""longitude"": 51.0}"
+anthropic/claude-opus-4.8,no-CoT,35.6892,51.389,132.482,IR,True,,stop,0.00413,666,32,0,3.68,"{""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.3890}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,33.716495513916016,48.23789596557617,272.011,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,31.860719680786133,55.45317840576172,508.304,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,31.98544692993164,55.69381332397461,518.652,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,39.2,35.8,1447.772,TR,True,,stop,0.00079746,843,505,428,19.56,"{""reasoning"": ""Arid flat steppe-like terrain with distant snow-capped mountains, European-style guardrails and highway infrastructure on the right-hand side consistent with Turkey's Anatolian plateau. Sparse vegetation, dry soil, and mountain silhouettes suggest central/eastern Turkey."", ""country"": ""TR"", ""latitude"": 39.2, ""longitude"": 35.8}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,33.522315979003906,34.82186508178711,1495.566,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),38.35,33.75,1599.435,TR,True,,stop,0.0195825,1271,1964,1879,15.68,"```json
+{""reasoning"": ""The image shows a divided highway in a semi-arid, mountainous region with white lane markings on both sides, characteristic of European and Middle Eastern road standards. The dry, shrubby landscape and distant rugged mountains strongly suggest Central Anatolia in Turkey."", ""country"": ""TR"", ""latitude"": 38.35, ""longitude"": 33.75}
+```"
+openai/gpt-5.5,CoT,38.1642,33.2176,1641.911,TR,True,,stop,0.017715,621,487,400,16.8,"{""reasoning"":""A right-driving divided highway with European-style white lane markings and guardrails crosses a dry Anatolian-looking plain with low mountains and sparse winter vegetation, most consistent with central Turkey. The arid terrain and broad dual carriageway suggest the Konya/Aksaray region rather than coastal or urban Turkey."",""country"":""TR"",""latitude"":38.1642,""longitude"":33.2176}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,30.33538246154785,34.03820037841797,1658.576,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,30.32426643371582,34.0268440246582,1660.034,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,37.9106,32.6473,1687.439,TR,True,,stop,0.00341,544,23,0,1.25,"{""country"":""TR"",""latitude"":37.9106,""longitude"":32.6473}"
+moonshotai/kimi-k2.6,CoT,37.85,32.45,1703.797,TR,True,,stop,0.020734308,682,5994,5917,211.98,"{""reasoning"": ""Flat arid steppe with distant mountain range and modern divided highway with European-style guardrails matches Turkey's central Anatolian plateau; sparse dry vegetation and horizon profile are consistent with the Konya Plain looking toward the Taurus Mountains."", ""country"": ""TR"", ""latitude"": 37.85, ""longitude"": 32.45}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6537.235,,True,True,,,,,,12.8,
+qwen/qwen3.5-122b-a10b,no-CoT,47.6205,-120.1833,10837.723,US,True,,stop,0.0002187,473,32,0,7.96,"{""country"": ""US"", ""latitude"": 47.6205, ""longitude"": -120.1833}"
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,11396.616,US,True,,stop,0.0001143,634,32,0,1.51,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+qwen/qwen3.5-35b-a3b,no-CoT,36.1699,-115.1398,12023.106,US,True,,stop,0.00015825,473,32,0,0.95,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.6-35b-a3b,no-CoT,36.1699,-115.1398,12023.106,US,True,,stop,0.0001071356,473,32,0,1.4,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+x-ai/grok-4.3,no-CoT,36.1699,-115.1398,12023.106,US,True,,stop,0.0005984,592,24,0,7.17,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+mistralai/mistral-medium-3-5,no-CoT,36.7783,-119.4179,12023.759,US,True,,stop,0.001191,634,32,0,2.22,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+qwen/qwen3.5-27b,no-CoT,36.7783,-119.4179,12023.759,US,True,,stop,0.0002091,473,32,0,13.37,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+qwen/qwen3.6-27b,no-CoT,36.7783,-119.4179,12023.759,US,True,,stop,0.0001963,473,32,0,12.96,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+google/gemma-4-31b-it,no-CoT,36.1234,-115.1234,12027.859,US,True,,stop,7.164e-05,406,37,0,2.75,"```json
+{""country"": ""US"", ""latitude"": 36.1234, ""longitude"": -115.1234}
+```"
+xiaomi/mimo-v2.5,CoT,35.8,-114.9,12058.811,US,True,,stop,0.0002764776,787,688,594,7.91,"{
+  ""reasoning"": ""The desert terrain, straight multi-lane highway with right-hand traffic, and sparse vegetation strongly suggest the Southwestern United States, specifically an arid region like southern Nevada or Arizona. The road markings and distant mountains are consistent with highways in the Mojave or Sonoran Desert."",
+  ""country"": ""US"",
+  ""latitude"": 35.8,
+  ""longitude"": -114.9
+}"
+qwen/qwen3.5-9b,no-CoT,36.0726,-119.824,12106.574,US,True,,stop,5.205e-05,474,31,0,9.2,"{""country"": ""US"", ""latitude"": 36.0726, ""longitude"": -119.824}"
+x-ai/grok-4.3,CoT,35.3,-119.0,12180.786,US,True,,stop,0.002214,676,682,606,5.25,"{""reasoning"": ""Arid scrub vegetation, distant hazy mountains, transmission towers, metal guardrail with wooden posts, and US-style dashed white lane markings on divided highway point to the American West; sunset gradient and road orientation indicate westbound travel in the Central Valley."", ""country"": ""US"", ""latitude"": 35.3, ""longitude"": -119.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,35.1234,-118.5678,12194.109,US,True,,stop,0.00036828,473,32,0,7.86,"{""country"": ""US"", ""latitude"": 35.1234, ""longitude"": -118.5678}"
+xiaomi/mimo-v2.5,no-CoT,34.05,-117.25,12291.439,US,True,,stop,8.06176e-05,708,28,0,1.31,"{""country"": ""US"", ""latitude"": 34.05, ""longitude"": -117.25}"
+google/gemini-3.5-flash,CoT (effort=medium),-28.8512,-70.8485,14553.631,CL,True,,stop,0.0292305,1271,3036,2942,20.36,"{""reasoning"": ""The arid steppe landscape with sparse shrubs and continuous mountain ridges in the background is characteristic of northern Chile. The dual-carriageway highway with European-style metal guardrails and small blue roadside markers corresponds to Ruta 5 (Pan-American Highway) between La Serena and Vallenar."", ""country"": ""CL"", ""latitude"": -28.8512, ""longitude"": -70.8485}"
+google/gemini-3.1-pro-preview,no-CoT,-29.9045,-71.2489,14633.173,CL,True,,stop,0.002798,1189,35,0,10.19,"```json
+{""country"": ""CL"", ""latitude"": -29.9045, ""longitude"": -71.2489}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-32.8541,-70.6214,14690.442,CL,True,,stop,0.0020985,1189,35,0,7.95,"```json
+{""country"": ""CL"", ""latitude"": -32.8541, ""longitude"": -70.6214}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.93,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.41,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.51,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.16,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.27,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,9.37,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.21,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.2,

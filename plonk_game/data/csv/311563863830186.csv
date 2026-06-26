@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,15.704996792844,-86.946103867674,0.0,HN,True,,,,,,,,"El Pino, None, Atlantida, HN"
+google/gemini-3.5-flash,CoT (effort=high),15.735,-86.89,6.87,HN,True,,stop,0.0093585,1307,822,751,10.85,"{""reasoning"": ""The billboard advertises 'Hotel Quinta Real' in 'La Ceiba' with a Honduran phone number, indicating a location on the CA-13 highway approaching La Ceiba, Honduras."", ""country"": ""HN"", ""latitude"": 15.735, ""longitude"": -86.89}"
+google/gemini-3.5-flash,CoT (effort=medium),15.7425,-86.8812,8.102,HN,True,,stop,0.0074865,1307,614,544,5.27,"{""reasoning"": ""The billboard advertises 'Hotel Quinta Real' on the beaches of La Ceiba, a major port city in northern Honduras, with a phone number matching the Honduran format."", ""country"": ""HN"", ""latitude"": 15.7425, ""longitude"": -86.8812}"
+qwen/qwen3.5-397b-a17b,CoT,15.7625,-86.8625,10.998,HN,True,,stop,0.0083406,665,2299,1926,81.61,"{""reasoning"": ""The billboard explicitly mentions 'En las Playas de La Ceiba' (In the beaches of La Ceiba) and displays a phone number with the '2440' prefix, which is the specific landline area code for La Ceiba, Honduras. The lush tropical vegetation and roadside billboard style are consistent with the CA-13 highway running west from La Ceiba towards the Garifuna beach villages."", ""country"": ""HN"", ""latitude"": 15.7625, ""longitude"": -86.8625}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),15.748333,-86.851667,11.198,HN,True,,stop,0.00219,1226,39,0,7.26,"```json
+{""country"": ""HN"", ""latitude"": 15.748333, ""longitude"": -86.851667}
+```"
+google/gemini-3.1-pro-preview,CoT,15.75,-86.85,11.439,HN,True,,stop,0.005758,1307,262,174,12.61,"{
+  ""reasoning"": ""The billboard advertises a hotel 'En las Playas de La Ceiba', pointing to La Ceiba, Honduras. The tropical vegetation and road style are consistent with the CA-13 highway approaching the city."",
+  ""country"": ""HN"",
+  ""latitude"": 15.7500,
+  ""longitude"": -86.8500
+}"
+google/gemini-3.5-flash,CoT (effort=low),15.7583,-86.8452,12.319,HN,True,,stop,0.004356,1308,266,175,2.73,"```json
+{""reasoning"": ""The billboard advertises 'Hotel Quinta Real' in 'La Ceiba' (Honduras) with a local 8-digit phone number starting with 2440, placing this on the CA-13 highway near La Ceiba."", ""country"": ""HN"", ""latitude"": 15.7583, ""longitude"": -86.8452}
+```"
+minimax/minimax-m3,CoT,15.78,-86.85,13.242,HN,True,,stop,0.00055182,997,259,182,12.47,"{""reasoning"": ""Billboard reads 'Hotel Quinta Real, Tel: 2440-3311' and 'En las Playas de La Ceiba' in Spanish, identifying La Ceiba, Honduras. Tropical vegetation and the highway setting match the CA-13 corridor west of La Ceiba toward the coastal beach area."", ""country"": ""HN"", ""latitude"": 15.78, ""longitude"": -86.85}{""reasoning"": ""Billboard reads 'Hotel Quinta Real, Tel: 2440-3311' and 'En las Playas de La Ceiba' in Spanish, identifying La Ceiba, Honduras. Tropical vegetation and the highway setting match the CA-13 corridor west of La Ceiba toward the coastal beach area."", ""country"": ""HN"", ""latitude"": 15.78, ""longitude"": -86.85}"
+x-ai/grok-4.3,CoT,15.75,-86.82,14.395,HN,True,,stop,0.002039,788,556,485,6.63,"{""reasoning"": ""Billboard text explicitly advertises 'Hotel Quinta Real' and 'En las Playas de La Ceiba' with local phone prefix 2440; lush tropical roadside vegetation matches the north-coast Honduran Caribbean plain."", ""country"": ""HN"", ""latitude"": 15.75, ""longitude"": -86.82}"
+google/gemini-3.1-pro-preview,no-CoT,15.765,-86.825,14.578,HN,True,,stop,0.004718,1225,189,156,10.6,"```json
+{""country"": ""HN"", ""latitude"": 15.765, ""longitude"": -86.825}
+```"
+qwen/qwen3.6-35b-a3b,CoT,15.7666,-86.7966,17.406,HN,True,,stop,0.01176645275,665,12079,11952,247.5,"```json
+{
+  ""reasoning"": ""The billboard advertises 'Hotel Quinta Real' with the phone number 2440-3311, which corresponds to a hotel in La Ceiba, Honduras (area code 2). The text 'En las Playas de La Ceiba' confirms the location is near the beaches of La Ceiba, likely on the Carretera a Trujillo."",
+  ""country"": ""HN"",
+  ""latitude"": 15.7666,
+  ""longitude"": -86.7966
+}
+```"
+openai/gpt-5.5,CoT,15.7728,-86.7959,17.756,HN,True,,stop,0.016705,755,431,346,15.7,"{""reasoning"":""The Spanish billboard explicitly mentions “En las Playas de La Ceiba” and a Honduran-style 2440 phone prefix, pointing to La Ceiba on Honduras’ Caribbean coast. Tropical roadside vegetation and rural highway setting fit the outskirts of La Ceiba in Atlántida."",""country"":""HN"",""latitude"":15.7728,""longitude"":-86.7959}"
+moonshotai/kimi-k2.6,CoT,15.7698,-86.7934,17.861,HN,True,,stop,0.013330656,834,3810,3726,116.62,"{""reasoning"": ""The Spanish billboard explicitly advertises 'En las Playas de La Ceiba' and displays an 8-digit phone number (2440-3311) matching La Ceiba's numbering in Honduras, while tropical vegetation and flat rural roadside confirm the northern Caribbean coast."", ""country"": ""HN"", ""latitude"": 15.7698, ""longitude"": -86.7934}"
+x-ai/grok-4.3,no-CoT,15.7833,-86.8,17.897,HN,True,,stop,0.0007359,704,23,0,0.98,"{""country"": ""HN"", ""latitude"": 15.7833, ""longitude"": -86.8}"
+xiaomi/mimo-v2.5,CoT,15.75,-86.78,18.469,HN,True,,stop,0.0001504776,899,182,92,9.36,"```json
+{
+  ""reasoning"": ""The sign reads 'Hotel Quinta Real' and 'En las Playas de La Ceiba', pointing directly to the city of La Ceiba, Honduras. The tropical vegetation and Spanish signage support this location on the Caribbean coast."",
+  ""country"": ""HN"",
+  ""latitude"": 15.75,
+  ""longitude"": -86.78
+}
+```"
+anthropic/claude-opus-4.8,CoT,15.7597,-86.7822,18.567,HN,True,,stop,0.00687,949,85,0,9.67,"{""reasoning"": ""Billboard advertises 'En las Playas de La Ceiba' with Honduras phone code (2440), tropical lowland vegetation."", ""country"": ""HN"", ""latitude"": 15.7597, ""longitude"": -86.7822}"
+anthropic/claude-opus-4.8,no-CoT,15.7597,-86.7822,18.567,HN,True,,stop,0.00489,818,32,0,2.5,"{""country"": ""HN"", ""latitude"": 15.7597, ""longitude"": -86.7822}"
+xiaomi/mimo-v2.5,no-CoT,15.78,-86.79,18.673,HN,True,,stop,9.60176e-05,820,27,0,3.55,"{""country"": ""HN"", ""latitude"": 15.78, ""longitude"": -86.79}"
+minimax/minimax-m3,no-CoT,15.7833,-86.7833,19.478,HN,True,,stop,0.00029922,919,68,44,3.92,"{""country"": ""HN"", ""latitude"": 15.7833, ""longitude"": -86.7833}"
+google/gemma-4-26b-a4b-it,no-CoT,15.0,-86.3333,102.288,,True,,stop,5.348e-05,404,28,0,1.92,"{""country"": ""HN"", ""latitude"": 15. own, ""longitude"": -86.3333}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,15.679802894592285,-88.00596618652344,113.493,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,15.659814834594727,-88.00613403320312,113.593,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,15.465,-88.185,135.351,HN,True,,stop,0.00091641,4077,33,0,9.53,"```json
+{""country"": ""HN"", ""latitude"": 15.465, ""longitude"": -88.185}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,13.49275016784668,-86.58489227294922,249.042,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,20.415,-87.325,525.257,MX,True,,stop,0.00019284,586,29,0,14.85,"{""country"": ""MX"", ""latitude"": 20.415, ""longitude"": -87.325}"
+qwen/qwen3.6-27b,no-CoT,10.4167,-84.1667,660.563,CR,True,,stop,0.00028672,586,31,0,24.68,"{""country"": ""CR"", ""latitude"": 10.4167, ""longitude"": -84.1667}"
+qwen/qwen3.5-9b,no-CoT,10.3167,-84.2167,668.093,CR,True,,stop,6.325e-05,586,31,0,3.65,"{""country"": ""CR"", ""latitude"": 10.3167, ""longitude"": -84.2167}"
+qwen/qwen3.5-397b-a17b,no-CoT,9.9876,-84.1234,705.497,CR,True,,stop,0.000459,585,30,0,1.79,"{""country"": ""CR"", ""latitude"": 9.9876, ""longitude"": -84.1234}"
+mistralai/mistral-small-2603,no-CoT,9.9281,-84.0907,713.01,CR,True,,stop,0.0001359,786,30,0,10.01,"{""country"": ""CR"", ""latitude"": 9.9281, ""longitude"": -84.0907}"
+openai/gpt-5.5,no-CoT,9.6545,-84.6632,716.873,CR,True,,stop,0.00411,678,24,0,1.41,"{""country"":""CR"",""latitude"":9.6545,""longitude"":-84.6632}"
+moonshotai/kimi-k2.6,no-CoT,9.7489,-82.7534,803.247,CR,True,,stop,0.0007276,752,27,0,16.03,"{""country"": ""CR"", ""latitude"": 9.7489, ""longitude"": -82.7534}"
+qwen/qwen3.6-35b-a3b,no-CoT,22.95,-82.35,938.691,CU,True,,stop,0.00011475,585,27,0,1.57,"{""country"": ""CU"", ""latitude"": 22.95, ""longitude"": -82.35}"
+qwen/qwen3.5-122b-a10b,no-CoT,22.4078,-79.9339,1047.731,CU,True,,stop,0.00021684,586,31,0,8.14,"{""country"": ""CU"", ""latitude"": 22.4078, ""longitude"": -79.9339}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,18.495527267456055,-77.20011138916016,1081.045,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,22.0,-76.0,1347.036,CU,True,,stop,0.0013665,786,25,0,7.59,"{""country"": ""CU"", ""latitude"": 22.0, ""longitude"": -76.0}"
+qwen/qwen3.5-27b,no-CoT,10.6918,-74.8666,1420.991,CO,True,,stop,0.000162435,585,31,0,1.64,"{""country"": ""CO"", ""latitude"": 10.6918, ""longitude"": -74.8666}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,6.296484470367432,-58.188140869140625,3303.813,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,6.242496967315674,-58.08060073852539,3317.058,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.11,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.3,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,2.12,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.22,

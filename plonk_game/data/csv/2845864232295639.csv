@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,40.917425662457,47.800202729739,0.0,AZ,True,,,,,,,,"Qutqashen, None, Qabala Rayon, AZ"
+google/gemini-3.5-flash,CoT (effort=low),40.9835,47.8452,8.262,AZ,True,,stop,0.0049665,1271,340,278,10.65,"{""reasoning"": ""The yellow outer road marking, ornate street lamps, and style of the residential fence are highly characteristic of rural and suburban highways in Azerbaijan."", ""country"": ""AZ"", ""latitude"": 40.9835, ""longitude"": 47.8452}"
+google/gemini-3.5-flash,CoT (effort=medium),40.9853,47.8462,8.478,AZ,True,,stop,0.0092955,1271,821,750,7.3,"{""reasoning"": ""The solid yellow edge line, ornate black streetlights, and distinctive limestone-pillared fence are highly characteristic of Azerbaijan, particularly along main highways in the northern/northwestern regions."", ""country"": ""AZ"", ""latitude"": 40.9853, ""longitude"": 47.8462}"
+anthropic/claude-opus-4.8,no-CoT,41.205,47.17,61.76,AZ,True,,stop,0.004155,666,33,0,2.8,"{""country"": ""AZ"", ""latitude"": 41.2050, ""longitude"": 47.1700}"
+anthropic/claude-opus-4.8,CoT,41.3,47.2,65.866,AZ,True,,stop,0.00651,797,101,0,3.1,"{""reasoning"": ""Wide road with yellow center line, distinctive concrete fence posts, green hills, and lush vegetation typical of Azerbaijan/Georgia Caucasus region road infrastructure."", ""country"": ""AZ"", ""latitude"": 41.3, ""longitude"": 47.2}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.47947692871094,46.75749969482422,107.314,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,41.48285675048828,46.72738265991211,109.586,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.63202667236328,46.255287170410156,151.596,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),43.1482,45.9013,293.452,RU,True,,stop,0.0148935,1271,1443,1347,11.5,"```json
+{""reasoning"": ""The pristine asphalt road with a solid yellow edge line, ornate black streetlights, and high-quality stone-and-wood fencing is highly characteristic of the North Caucasus region in Russia, particularly Chechnya. The low, green hills in the background further support this geographic location."", ""country"": ""RU"", ""latitude"": 43.1482, ""longitude"": 45.9013}
+```"
+x-ai/grok-4.3,no-CoT,43.68,39.78,727.218,RU,True,,stop,0.0005934,592,22,0,0.81,"{""country"": ""RU"", ""latitude"": 43.68, ""longitude"": 39.78}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,53.42557144165039,44.19906997680664,1416.758,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,53.83293151855469,45.128501892089844,1449.891,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,49.15,32.55,1503.302,UA,True,,stop,0.002799,676,916,837,6.44,"{
+  ""reasoning"": ""Right-hand traffic (oncoming car on left of center line), double yellow center lines + concrete panel fence style, ornate lampposts, and deciduous tree cover point to Eastern Europe; landscape and road furniture best match rural Ukraine."",
+  ""country"": ""UA"",
+  ""latitude"": 49.15,
+  ""longitude"": 32.55
+}"
+google/gemma-4-31b-it,no-CoT,41.3111,69.2403,1792.087,UZ,True,,stop,6.378e-05,406,36,0,15.43,"```json
+{""country"": ""UZ"", ""latitude"": 41.3111, ""longitude"": 69.2403}
+```"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,1809.095,RU,True,,stop,0.001191,634,32,0,1.39,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-27b,no-CoT,55.7558,37.6173,1809.095,RU,True,,stop,0.00019467,473,31,0,4.13,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-35b-a3b,no-CoT,55.7558,37.6173,1809.095,RU,True,,stop,0.0001865625,473,31,0,1.86,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-397b-a17b,no-CoT,55.7558,37.6173,1809.095,RU,True,,stop,0.00036468,473,31,0,2.02,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.6-27b,no-CoT,55.7558,37.6173,1809.095,RU,True,,stop,0.0001943,473,31,0,14.28,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.6-35b-a3b,no-CoT,55.7558,37.6173,1809.095,RU,True,,stop,0.00010195,473,31,0,2.25,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-9b,no-CoT,55.7964,37.6083,1813.332,RU,True,,stop,5.205e-05,474,31,0,4.81,"{""country"": ""RU"", ""latitude"": 55.7964, ""longitude"": 37.6083}"
+xiaomi/mimo-v2.5,no-CoT,56.85,60.6,1996.131,RU,True,,stop,8.00576e-05,708,26,0,1.44,"{""country"": ""RU"", ""latitude"": 56.85, ""longitude"": 60.6}"
+xiaomi/mimo-v2.5,CoT,56.8525,60.6125,1996.777,RU,True,,stop,0.0001636376,787,285,153,3.38,"```json
+{
+  ""reasoning"": ""The solid yellow line on the right edge and the white dashed line in the center indicate right-hand traffic, while the specific segmented concrete fence style and surrounding vegetation (temperate deciduous and coniferous trees) strongly suggest a location in Russia or a post-Soviet state. The architecture of the building with the green metal roof in the distance and the general infrastructure style aligns with the outskirts of a Russian city."",
+  ""country"": ""RU"",
+  ""latitude"": 56.8525,
+  ""longitude"": 60.6125
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,53.94638442993164,28.058359146118164,2061.26,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,42.85,74.6,2219.568,KG,True,,stop,0.006156,1272,301,225,11.88,"{
+  ""reasoning"": ""The visible side mirror in the top right corner is a classic Google Street View artifact for Kyrgyzstan. The landscape, road markings, and fence style are consistent with the Chuy Region."",
+  ""country"": ""KG"",
+  ""latitude"": 42.85,
+  ""longitude"": 74.6
+}"
+google/gemini-3.1-pro-preview,no-CoT,42.85,74.6,2219.568,KG,True,,stop,0.005332,1190,246,215,3.95,"```json
+{""country"": ""KG"", ""latitude"": 42.85, ""longitude"": 74.60}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),42.824167,74.625278,2221.808,KG,True,,stop,0.0021345,1189,39,0,1.41,"```json
+{""country"": ""KG"", ""latitude"": 42.824167, ""longitude"": 74.625278}
+```"
+minimax/minimax-m3,CoT,43.2389,76.8897,2402.436,KZ,True,,stop,0.00073026,843,449,356,18.79,"{""reasoning"": ""Yellow edge lines on the road, Soviet-era ornate street lamps, and the characteristic brick-and-concrete panel fence with green-roofed industrial buildings behind suggest a post-Soviet Central Asian city. The dry continental climate, deciduous trees, and faint mountains on the horizon point to the Almaty area in Kazakhstan."", ""country"": ""KZ"", ""latitude"": 43.2389, ""longitude"": 76.8897}"
+moonshotai/kimi-k2.6,CoT,43.238,76.899,2403.194,KZ,True,,stop,0.012208,680,2930,3359,109.49,"{""reasoning"": ""Post-Soviet road infrastructure with right-hand traffic, steppe-edge vegetation, and distinctive concrete-pillar fencing with horizontal slats typical of Kazakhstan."", ""country"": ""KZ"", ""latitude"": 43.238, ""longitude"": 76.899}"
+openai/gpt-5.5,no-CoT,43.2749,76.9301,2405.433,KZ,True,,stop,0.00344,544,24,0,7.67,"{""country"":""KZ"",""latitude"":43.2749,""longitude"":76.9301}"
+openai/gpt-5.5,CoT,43.2628,77.2196,2428.91,KZ,True,,stop,0.021495,621,613,516,23.14,"{""reasoning"":""The broad Soviet-style boulevard with yellow edge lines, ornate streetlights, right-hand traffic, arid foothill landscape and Tien Shan-like mountains strongly suggests the Almaty region of Kazakhstan. The walled residential plots and greenery fit the eastern/southern outskirts near Talgar/Almaty rather than a denser city center."",""country"":""KZ"",""latitude"":43.2628,""longitude"":77.2196}"
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,3629.886,FR,True,,stop,0.0001131,634,30,0,9.31,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+qwen/qwen3.5-122b-a10b,no-CoT,43.1155,131.8855,6638.571,RU,True,,stop,0.00018954,473,32,0,7.36,"{""country"": ""RU"", ""latitude"": 43.1155, ""longitude"": 131.8855}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.67,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,13.0,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,15.68,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.99,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.08,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.32,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.37,

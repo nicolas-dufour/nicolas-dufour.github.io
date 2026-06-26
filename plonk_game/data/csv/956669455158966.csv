@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,34.369875694988,109.16621851824,0.0,CN,True,,,,,,,,"Xiekou, None, Shaanxi, CN"
+x-ai/grok-4.3,CoT,34.333,108.95,20.268,CN,True,,stop,0.001849,676,536,457,5.05,"{
+  ""reasoning"": ""Large red Chinese characters on building explicitly read '西安城乡统筹新型社区' (Xi'an Urban-Rural Integration New Community); right-hand traffic, Chinese license plates, and architectural/vegetation style confirm Shaanxi province location."",
+  ""country"": ""CN"",
+  ""latitude"": 34.333,
+  ""longitude"": 108.95
+}"
+google/gemma-4-26b-a4b-it,CoT,34.3416,108.9398,21.021,CN,True,,stop,0.00043772,491,947,821,27.27,"{""reasoning"": ""The Chinese text on the building roof '西安城乡统筹新型社区' explicitly identifies the location as Xi'an, China."", ""country"": ""CN"", ""latitude"": 34.3416, ""longitude"": 108.9398}"
+minimax/minimax-m3,CoT,34.3416,108.9398,21.021,CN,True,,stop,0.00043386,843,202,124,13.33,"{""reasoning"": ""Large Chinese signage reading '西安城' (Xi'an City) on the apartment building is decisive, combined with typical Chinese residential architecture and a domestic SUV. This identifies the location as Xi'an, Shaanxi Province, China."", ""country"": ""CN"", ""latitude"": 34.3416, ""longitude"": 108.9398}"
+mistralai/mistral-medium-3-5,CoT,34.3416,108.9398,21.021,CN,True,,stop,0.0064365,716,715,688,8.99,"{""reasoning"": ""Chinese text on building explicitly names Xi'an (西安) and right-hand traffic confirms China."", ""country"": ""CN"", ""latitude"": 34.3416, ""longitude"": 108.9398}"
+minimax/minimax-m3,no-CoT,34.3416,108.9398,21.021,CN,True,,stop,0.00022488,752,25,0,6.45,"{""country"": ""CN"", ""latitude"": 34.3416, ""longitude"": 108.9398}"
+moonshotai/kimi-k2.6,no-CoT,34.3416,108.9398,21.021,CN,True,,stop,0.000276552,603,25,0,8.43,"{""country"": ""CN"", ""latitude"": 34.3416, ""longitude"": 108.9398}"
+qwen/qwen3.5-122b-a10b,no-CoT,34.3416,108.9398,21.021,CN,True,,stop,0.0001898,474,32,0,12.57,"{""country"": ""CN"", ""latitude"": 34.3416, ""longitude"": 108.9398}"
+qwen/qwen3.6-35b-a3b,no-CoT,34.3416,108.9398,21.021,CN,True,,stop,0.000146,474,32,0,15.33,"{""country"": ""CN"", ""latitude"": 34.3416, ""longitude"": 108.9398}"
+qwen/qwen3.5-9b,no-CoT,34.3416,108.9392,21.075,CN,True,,stop,8.841e-05,473,32,0,3.92,"{""country"": ""CN"", ""latitude"": 34.3416, ""longitude"": 108.9392}"
+moonshotai/kimi-k2.6,CoT,34.3,108.95,21.319,CN,True,,stop,0.01194523,682,3371,3291,180.3,"{""reasoning"": ""The large red sign on the building clearly reads '西安城乡统筹新型社区' (Xi'an Urban-Rural Integration New Community), definitively placing this in Xi'an, China; the blue license plate and right-hand traffic further confirm the country."", ""country"": ""CN"", ""latitude"": 34.3000, ""longitude"": 108.9500}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.2658,108.9547,22.611,CN,True,,stop,0.000399,473,32,0,6.12,"{""country"": ""CN"", ""latitude"": 34.2658, ""longitude"": 108.9547}"
+qwen/qwen3.5-35b-a3b,no-CoT,34.2916,108.9389,22.615,CN,True,,stop,0.000164025,473,32,0,2.09,"{""country"": ""CN"", ""latitude"": 34.2916, ""longitude"": 108.9389}"
+anthropic/claude-opus-4.8,CoT,34.2658,108.9541,22.659,CN,True,,stop,0.006235,797,90,0,9.42,"{""reasoning"": ""Chinese red characters read '西安城乡统筹新型社区' (Xi'an urban-rural new community), clearly indicating Xi'an, China."", ""country"": ""CN"", ""latitude"": 34.2658, ""longitude"": 108.9541}"
+anthropic/claude-opus-4.8,no-CoT,34.2658,108.9541,22.659,CN,True,,stop,0.00413,666,32,0,9.16,"{""country"": ""CN"", ""latitude"": 34.2658, ""longitude"": 108.9541}"
+qwen/qwen3.6-27b,no-CoT,34.2658,108.9541,22.659,CN,True,,stop,0.000213497,473,32,0,12.71,"{""country"": ""CN"", ""latitude"": 34.2658, ""longitude"": 108.9541}"
+x-ai/grok-4.3,no-CoT,34.267,108.95,22.916,CN,True,,stop,0.0007278,592,22,0,0.9,"{""country"": ""CN"", ""latitude"": 34.267, ""longitude"": 108.95}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),34.2634,108.9486,23.23,CN,True,,stop,0.0021075,1189,36,0,4.02,"```json
+{""country"": ""CN"", ""latitude"": 34.2634, ""longitude"": 108.9486}
+```"
+openai/gpt-5.5,no-CoT,34.2632,108.9477,23.312,CN,True,,stop,0.00341,544,23,0,1.35,"{""country"":""CN"",""latitude"":34.2632,""longitude"":108.9477}"
+google/gemini-3.1-pro-preview,CoT,34.2658,108.9422,23.605,CN,True,,stop,0.00517,1271,219,123,4.17,"{
+  ""reasoning"": ""The large red sign on the building reads '西安城乡统筹新型社区' (Xi'an Urban-Rural Integration New Community), placing the location in Xi'an, China. The architecture and street layout are typical of modern Chinese suburban developments."",
+  ""country"": ""CN"",
+  ""latitude"": 34.2658,
+  ""longitude"": 108.9422
+}"
+google/gemini-3.1-pro-preview,no-CoT,34.2658,108.9422,23.605,CN,True,,stop,0.003914,1189,128,92,42.08,"```json
+{""country"": ""CN"", ""latitude"": 34.2658, ""longitude"": 108.9422}
+```"
+qwen/qwen3.6-27b,CoT,34.2355,108.965,23.767,CN,True,,stop,0.012567817,553,5170,4839,251.97,"{""reasoning"": ""The large red Chinese characters on the building roof read '西安城乡统筹新型社区' (Xi'an Urban-Rural Coordination New Community), identifying the city as Xi'an, China. The presence of a bus stop with the same name ('城乡统筹新型社区') on Yanta Road confirms the specific location in Yanta District."", ""country"": ""CN"", ""latitude"": 34.2355, ""longitude"": 108.965}"
+mistralai/mistral-small-2603,CoT,34.25,108.95,23.918,CN,True,,stop,0.00039684,716,594,546,5.03,"{""reasoning"": ""Chinese language signage with 'Xi'an' and Qinjian Road, simplified Chinese license plate, and right-hand traffic confirm China, specifically Xi'an in Shaanxi province."", ""country"": ""CN"", ""latitude"": 34.25, ""longitude"": 108.95}"
+xiaomi/mimo-v2.5,CoT,34.26,108.94,24.102,CN,True,,stop,0.0003697176,787,1021,957,10.11,"{""reasoning"": ""The prominent Chinese text '西安' on the building directly identifies Xi'an, and the right-hand traffic with modern Chinese urban architecture confirms the country."", ""country"": ""CN"", ""latitude"": 34.26, ""longitude"": 108.94}"
+xiaomi/mimo-v2.5,no-CoT,34.23,108.94,25.956,CN,True,,stop,8.06176e-05,708,28,0,6.13,"{""country"": ""CN"", ""latitude"": 34.23, ""longitude"": 108.94}"
+google/gemma-4-31b-it,no-CoT,34.265,108.912,26.098,CN,True,,stop,7.084e-05,406,35,0,2.04,"```json
+{""country"": ""CN"", ""latitude"": 34.265, ""longitude"": 108.912}
+```"
+qwen/qwen3.5-27b,no-CoT,34.2667,108.9,27.007,CN,True,,stop,0.00019683,473,32,0,8.92,"{""country"": ""CN"", ""latitude"": 34.2667, ""longitude"": 108.9000}"
+qwen/qwen3.5-122b-a10b,CoT,34.1463,109.3065,28.005,CN,True,,stop,0.0054603,553,2206,2096,19.63,"{
+""reasoning"": ""The large red Chinese characters on the building roof read '西安城乡统筹新型社区' (Xi'an Urban-Rural Coordination New Community), which identifies this specific residential complex located in Lantian County, Xi'an, Shaanxi Province. The driving side, vehicle models, and architectural style are consistent with mainland China."",
+""country"": ""CN"",
+""latitude"": 34.1463,
+""longitude"": 109.3065
+}"
+google/gemini-3.5-flash,CoT (effort=high),34.1612,108.9387,31.234,CN,True,,stop,0.0188355,1271,1881,1799,21.39,"{""reasoning"": ""The large red Chinese characters on the building read '西安城乡统筹新型社区' (Xi'an Urban-Rural Integrated New Community), placing this in a suburban development of Xi'an, Shaanxi Province, China."", ""country"": ""CN"", ""latitude"": 34.1612, ""longitude"": 108.9387}"
+google/gemini-3.5-flash,CoT (effort=medium),34.1612,108.9384,31.252,CN,True,,stop,0.0064875,1271,509,428,7.46,"{""reasoning"": ""The large red Chinese characters on top of the building read '西安城乡统筹新型社区' (Xi'an Urban-Rural Integrated New Community), placing this location in Xi'an, Shaanxi Province, China."", ""country"": ""CN"", ""latitude"": 34.1612, ""longitude"": 108.9384}"
+google/gemini-3.5-flash,CoT (effort=low),34.1562,108.9431,31.384,CN,True,,stop,0.0044625,1271,284,200,3.86,"{""reasoning"": ""The large red Chinese characters on top of the building read '西安城乡统筹新型社区' (Xi'an Urban-Rural Integrated New Community), placing this location in the suburbs of Xi'an, Shaanxi Province, China."", ""country"": ""CN"", ""latitude"": 34.1562, ""longitude"": 108.9431}"
+openai/gpt-5.5,CoT,34.2897,108.8371,31.509,CN,True,,stop,0.017205,621,470,386,10.44,"{""reasoning"":""The rooftop Chinese sign explicitly reads “西安城乡统筹新型社区,” pointing to a Xi’an urban-rural integrated community; the road layout, apartment blocks, and vehicles match suburban mainland China. This most likely lies in the outskirts of Xi’an, Shaanxi."",""country"":""CN"",""latitude"":34.2897,""longitude"":108.8371}"
+qwen/qwen3.5-397b-a17b,CoT,34.1691,108.8363,37.65,CN,True,,stop,0.006095355,553,2401,2191,105.2,"{""reasoning"": ""The large red Chinese characters on the building read '西安城乡统筹新型社区' (Xi'an Urban-Rural Coordinated New Community), placing the location in Xi'an, China. The specific architectural style and signage correspond to the Xinglong Street area in the Xi'an High-tech Zone (Chang'an District)."", ""country"": ""CN"", ""latitude"": 34.1691, ""longitude"": 108.8363}"
+qwen/qwen3.6-35b-a3b,CoT,34.0536,108.9566,40.104,CN,True,,stop,0.00405149485,553,4105,3998,24.68,"{""reasoning"": ""The large red text on the building reads '西安城乡统筹新型社区' (Xi'an Urban-Rural Integration New Community), which identifies the location as a specific residential development in Xi'an, China. The driving on the right, the Haval SUV, and the bus stop design are consistent with modern Chinese infrastructure."", ""country"": ""CN"", ""latitude"": 34.0536, ""longitude"": 108.9566}"
+mistralai/mistral-medium-3-5,no-CoT,34.7466,113.6255,410.465,CN,True,,stop,0.001191,634,32,0,1.25,"{""country"": ""CN"", ""latitude"": 34.7466, ""longitude"": 113.6255}"
+mistralai/mistral-small-2603,no-CoT,34.7667,113.7167,418.951,CN,True,,stop,0.0001143,634,32,0,10.74,"{""country"": ""CN"", ""latitude"": 34.7667, ""longitude"": 113.7167}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,39.095855712890625,117.18656158447266,886.526,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,39.11856460571289,117.1884994506836,888.075,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,39.8114128112793,116.56094360351562,891.751,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,39.847774505615234,116.77631378173828,908.429,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,39.85892868041992,116.81800079345703,911.96,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,32.121559143066406,120.70549011230469,1101.149,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11755.884,,True,True,,,,,,0.42,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.33,

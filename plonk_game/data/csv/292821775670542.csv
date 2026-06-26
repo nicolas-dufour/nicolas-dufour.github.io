@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,61.964535208405,14.217238945112,0.0,SE,True,,,,,,,,"Sveg, Harjedalens Kommun, Jaemtland, SE"
+google/gemini-3.5-flash,CoT (effort=high),62.0285,14.3542,10.086,SE,True,,stop,0.0091155,1307,795,727,13.58,"{""reasoning"": ""The short dashed white edge lines are highly characteristic of Swedish road markings, and the dense coniferous forest of Scots pine and birch indicates a location in central or northern Sweden."", ""country"": ""SE"", ""latitude"": 62.0285, ""longitude"": 14.3542}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),61.8375,14.4822,19.801,SE,True,,stop,0.002154,1226,35,0,7.31,"```json
+{""country"": ""SE"", ""latitude"": 61.8375, ""longitude"": 14.4822}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,61.85341262817383,14.847638130187988,35.244,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,62.1623420715332,14.887813568115234,41.28,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,61.79411315917969,14.955191612243652,43.068,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),62.4852,14.3245,58.161,SE,True,,stop,0.0056415,1307,409,337,4.96,"```json
+{""reasoning"": ""The short dashed white edge lines on the road are highly characteristic of Sweden, and the dense coniferous forest with reddish-grey asphalt suggests a location in central Sweden."", ""country"": ""SE"", ""latitude"": 62.4852, ""longitude"": 14.3245}
+```"
+openai/gpt-5.5,CoT,61.1842,14.6678,89.986,SE,True,,stop,0.012985,755,307,225,8.31,"{""reasoning"":""Right-hand traffic with white dashed center and edge lines, plus dense boreal pine/birch forest and flat Nordic terrain, points most strongly to rural Sweden rather than Norway/Finland. The road and vegetation fit central Sweden/Dalarna or nearby inland forest highways."",""country"":""SE"",""latitude"":61.1842,""longitude"":14.6678}"
+openai/gpt-5.5,no-CoT,60.7475,15.1449,144.075,SE,True,,stop,0.00408,678,23,0,2.41,"{""country"":""SE"",""latitude"":60.7475,""longitude"":15.1449}"
+moonshotai/kimi-k2.6,no-CoT,60.5,15.5,176.717,SE,True,,stop,0.0007196,752,25,0,9.54,"{""country"": ""SE"", ""latitude"": 60.5, ""longitude"": 15.5}"
+moonshotai/kimi-k2.6,CoT,60.5,16.0,188.72,SE,True,,stop,0.009025236,834,2559,2496,56.6,"{""reasoning"": ""Dense boreal pine/spruce forest, driving on the right, and the distinctive frequent white dashed edge markings on a two-lane rural asphalt road are hallmarks of Sweden."", ""country"": ""SE"", ""latitude"": 60.5, ""longitude"": 16.0}"
+google/gemini-3.1-pro-preview,CoT,64.0,18.0,296.104,SE,True,,stop,0.005784,1308,264,191,11.33,"{
+  ""reasoning"": ""The dashed white edge lines on the road are a distinct feature of Swedish roads. The dense boreal pine forest suggests a location in the central or northern parts of the country."",
+  ""country"": ""SE"",
+  ""latitude"": 64.0,
+  ""longitude"": 18.0
+}"
+google/gemini-3.1-pro-preview,no-CoT,64.0,18.0,296.104,SE,True,,stop,0.004576,1226,177,148,15.95,"```json
+{""country"": ""SE"", ""latitude"": 64.0, ""longitude"": 18.0}
+```"
+minimax/minimax-m3,no-CoT,64.0,19.0,330.889,SE,True,,stop,0.00032682,919,91,91,2.86,"{""country"": ""SE"", ""latitude"": 64.0, ""longitude"": 19.0}"
+anthropic/claude-opus-4.8,CoT,64.5,18.5,354.08,SE,True,,stop,0.00692,949,87,0,9.16,"{""reasoning"": ""Boreal coniferous forest, wide road with yellow-edged markings typical of Scandinavia, summer sky—consistent with northern Sweden."", ""country"": ""SE"", ""latitude"": 64.5, ""longitude"": 18.5}"
+anthropic/claude-opus-4.8,no-CoT,64.5,18.5,354.08,SE,True,,stop,0.00484,818,30,0,2.32,"{""country"": ""SE"", ""latitude"": 64.5, ""longitude"": 18.5}"
+google/gemini-3.5-flash,CoT (effort=low),65.5833,19.1667,469.867,SE,True,,stop,0.00369,1308,192,118,15.1,"```json
+{""reasoning"": ""The dashed white outer edge lines and center line on the asphalt road, combined with the dense flat pine forest (boreal taiga), are highly characteristic of northern Sweden."", ""country"": ""SE"", ""latitude"": 65.5833, ""longitude"": 19.1667}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,62.66227722167969,25.347055435180664,579.488,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,61.85,25.3,579.746,FI,True,,stop,0.0021915,788,617,548,5.29,"{
+  ""reasoning"": ""Right-hand traffic on undivided 2-lane asphalt with standard EU dashed center/solid edge markings; dense boreal conifer forest (pine/spruce) on both sides indicates northern Europe."",
+  ""country"": ""FI"",
+  ""latitude"": 61.85,
+  ""longitude"": 25.3
+}"
+minimax/minimax-m3,CoT,66.45,20.85,592.39,SE,True,,stop,0.00079266,995,463,373,13.22,"{""reasoning"": ""Dense boreal coniferous forest (taiga) flanking a well-maintained Scandinavian-style highway with white dashed lane markings points strongly to northern Sweden's Norrland region. The flat terrain, summer vegetation, and road design are characteristic of routes like the E10/E45 in Norrbotten."", ""country"": ""SE"", ""latitude"": 66.45, ""longitude"": 20.85}"
+qwen/qwen3.5-9b,no-CoT,62.9356,25.7238,600.7,FI,True,,stop,6.325e-05,586,31,0,2.71,"{""country"": ""FI"", ""latitude"": 62.9356, ""longitude"": 25.7238}"
+qwen/qwen3.5-35b-a3b,no-CoT,61.9245,25.7289,601.263,FI,True,,stop,0.0001353625,585,31,0,0.62,"{""country"": ""FI"", ""latitude"": 61.9245, ""longitude"": 25.7289}"
+x-ai/grok-4.3,no-CoT,61.85,25.75,603.214,FI,True,,stop,0.0007334,704,22,0,0.77,"{""country"": ""FI"", ""latitude"": 61.85, ""longitude"": 25.75}"
+google/gemma-4-31b-it,no-CoT,64.5,25.0,608.1,FI,True,,stop,6.856e-05,404,30,0,1.88,"```json
+{""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 25.0}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,63.4811,25.9559,620.517,FI,True,,stop,0.00021684,586,31,0,6.78,"{""country"": ""FI"", ""latitude"": 63.4811, ""longitude"": 25.9559}"
+qwen/qwen3.5-27b,no-CoT,63.5,26.0,623.052,FI,True,,stop,0.0002259,585,25,0,16.65,"{""country"": ""FI"", ""latitude"": 63.5, ""longitude"": 26.0}"
+qwen/qwen3.6-27b,no-CoT,63.5,26.0,623.052,FI,True,,stop,0.0002159,585,25,0,15.08,"{""country"": ""FI"", ""latitude"": 63.5, ""longitude"": 26.0}"
+google/gemma-4-26b-a4b-it,no-CoT,64.1265,25.7483,627.831,FI,True,,stop,5.668e-05,404,36,0,1.45,"```json
+{""country"": ""FI"", ""latitude"": 64.1265, ""longitude"": 25.7483}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,64.215,25.748,630.807,FI,True,,stop,0.00012229425,585,29,0,7.9,"{""country"": ""FI"", ""latitude"": 64.215, ""longitude"": 25.748}"
+mistralai/mistral-medium-3-5,no-CoT,64.8388,25.2817,635.615,FI,True,,stop,0.0014115,786,31,0,1.97,"{""country"": ""FI"", ""latitude"": 64.8388, ""longitude"": 25.2817}"
+qwen/qwen3.5-397b-a17b,no-CoT,64.1234,26.5678,665.889,FI,True,,stop,0.0004466,585,31,0,1.44,"{""country"": ""FI"", ""latitude"": 64.1234, ""longitude"": 26.5678}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,65.79712677001953,29.856828689575195,872.86,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,65.78645324707031,29.953542709350586,876.515,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,55.0,-115.0,6277.617,CA,True,,stop,0.0003109176,899,755,670,9.46,"{""reasoning"": ""The landscape features a coniferous boreal forest and road markings (white dashed center line) characteristic of Western Canada or the northern United States. The dense stand of tall, straight evergreens and the flat terrain are highly typical of the Canadian boreal region."", ""country"": ""CA"", ""latitude"": 55.0, ""longitude"": -115.0}"
+xiaomi/mimo-v2.5,no-CoT,43.5,-114.5,7425.122,US,True,,stop,9.57376e-05,820,26,0,2.32,"{""country"": ""US"", ""latitude"": 43.5, ""longitude"": -114.5}"
+mistralai/mistral-small-2603,no-CoT,39.5501,-105.6672,7514.095,US,True,,stop,0.0001371,786,32,0,1.57,"{""country"": ""US"", ""latitude"": 39.5501, ""longitude"": -105.6672}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.11,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.36,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.33,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.27,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.08,

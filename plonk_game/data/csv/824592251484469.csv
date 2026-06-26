@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-21.563008192762,-64.639371123724,0.0,BO,True,,,,,,,,"Tarija, None, Tarija, BO"
+google/gemini-3.5-flash,CoT (effort=medium),-25.2845,-65.4832,422.668,AR,True,,stop,0.0079275,1271,669,588,19.1,"{""reasoning"": ""The dry, mountainous landscape with pepper trees (Schinus molle) and the '5+550' kilometer marking painted on the asphalt are highly characteristic of rural roads in northwestern Argentina, such as Salta or Jujuy."", ""country"": ""AR"", ""latitude"": -25.2845, ""longitude"": -65.4832}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-26.2431,-65.9682,537.634,AR,True,,stop,0.0021,1190,35,0,8.56,"```json
+{""country"": ""AR"", ""latitude"": -26.2431, ""longitude"": -65.9682}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-28.4685,-65.7792,776.381,AR,True,,stop,0.002798,1189,35,0,10.27,"```json
+{""country"": ""AR"", ""latitude"": -28.4685, ""longitude"": -65.7792}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-29.019054412841797,-69.64196014404297,969.377,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,-31.5333,-68.5333,1174.072,AR,True,,stop,0.00559,1271,254,178,11.41,"{
+  ""reasoning"": ""The arid landscape with irrigated agriculture (likely vineyards), distant mountains, and road markings suggest the Cuyo region of Argentina, such as Mendoza or San Juan."",
+  ""country"": ""AR"",
+  ""latitude"": -31.5333,
+  ""longitude"": -68.5333
+}"
+openai/gpt-5.5,CoT,-32.8407,-70.6869,1388.571,CL,True,,stop,0.013935,621,361,271,16.22,"{""reasoning"":""Arid irrigated valley with vineyards/orchards, eucalyptus-like roadside trees, dry Andean foothills, and right-side asphalt road markings strongly suggest central/northern Chile. The rural utility-pole style and landscape fit the Aconcagua/Coquimbo wine valleys more than Argentina or Mexico."",""country"":""CL"",""latitude"":-32.8407,""longitude"":-70.6869}"
+openai/gpt-5.5,no-CoT,-33.2808,-70.7386,1434.484,CL,True,,stop,0.00347,544,25,0,1.87,"{""country"":""CL"",""latitude"":-33.2808,""longitude"":-70.7386}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-33.442237854003906,-70.47605895996094,1440.13,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,-33.4567,-70.6234,1447.412,CL,True,,stop,0.0001171625,473,31,0,1.91,"{""country"": ""CL"", ""latitude"": -33.4567, ""longitude"": -70.6234}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.4489,-70.6693,1448.469,CL,True,,stop,0.00010195,473,31,0,2.57,"{""country"": ""CL"", ""latitude"": -33.4489, ""longitude"": -70.6693}"
+x-ai/grok-4.3,CoT,-33.45,-70.9,1458.002,CL,True,,stop,0.0017315,676,489,427,10.74,"{""reasoning"": ""Rural dirt track off paved road, utility pole style, scrub/trees and distant mountains match central Chile's Andean foothills; clear high-sun sky and soil color exclude other continents."", ""country"": ""CL"", ""latitude"": -33.45, ""longitude"": -70.9}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-33.944664001464844,-71.09282684326172,1515.195,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-33.95586013793945,-71.08909606933594,1516.158,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-34.24811553955078,-71.04325103759766,1543.529,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-34.296417236328125,-71.09260559082031,1550.334,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,-19.9167,-43.9333,2159.39,BR,True,,stop,0.0001137,634,31,0,1.05,"{""country"": ""BR"", ""latitude"": -19.9167, ""longitude"": -43.9333}"
+x-ai/grok-4.3,no-CoT,20.55,-101.2,6139.872,MX,True,,stop,0.0005934,592,22,0,0.74,"{""country"": ""MX"", ""latitude"": 20.55, ""longitude"": -101.2}"
+anthropic/claude-opus-4.8,CoT,20.85,-100.9,6143.607,MX,True,,stop,0.006235,797,90,0,2.95,"{""reasoning"": ""Semi-arid landscape with mesquite/willow trees, distant mountains, dirt farm access road and wooden power poles typical of central Mexican highlands."", ""country"": ""MX"", ""latitude"": 20.85, ""longitude"": -100.9}"
+google/gemini-3.5-flash,CoT (effort=high),22.1562,-100.9234,6253.6,MX,True,,stop,0.0080805,1271,686,598,18.45,"{""reasoning"": ""The dry landscape with pirul trees (Schinus molle) and the '5+550' kilometer marking painted on the asphalt are highly characteristic of the Mexican Altiplano, particularly in states like San Luis Potosí or Zacatecas."", ""country"": ""MX"", ""latitude"": 22.1562, ""longitude"": -100.9234}"
+google/gemini-3.5-flash,CoT (effort=low),22.1564,-100.9755,6257.17,MX,True,,stop,0.0043995,1271,277,201,10.65,"{""reasoning"": ""The road marking with chainage '5+550' painted on the asphalt, the wooden utility pole, and the semi-arid mountainous landscape with pepper trees are highly characteristic of central Mexico."", ""country"": ""MX"", ""latitude"": 22.1564, ""longitude"": -100.9755}"
+anthropic/claude-opus-4.8,no-CoT,20.8923,-102.7654,6278.706,MX,True,,stop,0.00413,666,32,0,2.14,"{""country"": ""MX"", ""latitude"": 20.8923, ""longitude"": -102.7654}"
+qwen/qwen3.6-27b,no-CoT,20.6735,-103.3448,6302.859,MX,True,,stop,0.0001963,473,32,0,9.6,"{""country"": ""MX"", ""latitude"": 20.6735, ""longitude"": -103.3448}"
+google/gemma-4-31b-it,no-CoT,23.6345,-102.5894,6489.891,MX,True,,stop,6.418e-05,406,37,0,24.17,"```json
+{""country"": ""MX"", ""latitude"": 23.6345, ""longitude"": -102.5894}
+```"
+qwen/qwen3.5-9b,no-CoT,25.6866,-100.3161,6512.288,MX,True,,stop,5.22e-05,474,32,0,10.1,"{""country"": ""MX"", ""latitude"": 25.6866, ""longitude"": -100.3161}"
+mistralai/mistral-medium-3-5,no-CoT,32.5,-105.0,7384.357,US,True,,stop,0.001146,634,26,0,8.11,"{""country"": ""US"", ""latitude"": 32.5, ""longitude"": -105.0}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7397.316,,True,True,,,,,,7.63,
+qwen/qwen3.5-397b-a17b,no-CoT,33.4484,-111.926,7906.734,US,True,,stop,0.000383,473,32,0,1.38,"{""country"": ""US"", ""latitude"": 33.4484, ""longitude"": -111.9260}"
+qwen/qwen3.5-27b,no-CoT,36.1699,-115.1398,8327.607,US,True,,stop,0.00019683,473,32,0,7.76,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+xiaomi/mimo-v2.5,no-CoT,34.25,-118.75,8438.428,US,True,,stop,8.06176e-05,708,28,0,1.28,"{""country"": ""US"", ""latitude"": 34.25, ""longitude"": -118.75}"
+moonshotai/kimi-k2.6,CoT,-32.2,22.8,8522.403,ZA,True,,stop,0.017572968,682,5075,5008,218.13,"{""reasoning"": ""Flat-topped Karoo mountains, acacia scrub vegetation, wooden utility pole with cross-arm, and dirt farm track branching off paved road are characteristic of South Africa's Great Karoo region."", ""country"": ""ZA"", ""latitude"": -32.2, ""longitude"": 22.8}"
+xiaomi/mimo-v2.5,CoT,37.4,-4.6,9075.694,ES,True,,stop,0.0003627176,787,996,922,18.29,"{""reasoning"": ""The Mediterranean vegetation, including olive-like trees, and the dry, reddish-brown soil with mountainous terrain suggest a rural area in Southern Europe. Right-hand traffic and generic power poles align with countries like Spain."", ""country"": ""ES"", ""latitude"": 37.4, ""longitude"": -4.6}"
+minimax/minimax-m3,CoT,39.1,-5.5,9122.791,ES,True,,stop,0.00135906,843,973,878,34.0,"{""reasoning"": ""Mediterranean-style vegetation (olive-like trees, dry grasses), reddish-brown soil, distant low mountains with hazy appearance, simple rural gate and wire fencing, and concrete utility poles suggest a semi-arid Mediterranean climate region. The overall landscape and rural infrastructure are characteristic of inland Spain (Extremadura/Castilla-La Mancha)."", ""country"": ""ES"", ""latitude"": 39.1, ""longitude"": -5.5}"
+minimax/minimax-m3,no-CoT,38.5,-4.5,9153.859,ES,True,,stop,0.00030522,767,111,119,4.77,"{""country"": ""ES"", ""latitude"": 38.5, ""longitude"": -4.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,41.6519,-0.8773,9606.168,ES,True,,stop,0.0002139,473,30,0,1.22,"{""country"": ""ES"", ""latitude"": 41.6519, ""longitude"": -0.8773}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.32,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.38,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,304.21,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.63,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.25,

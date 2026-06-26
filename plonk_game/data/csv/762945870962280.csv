@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.664690976544,39.233625836501,0.0,TR,True,,,,,,,,"Siverek, None, Sanliurfa, TR"
+google/gemini-3.5-flash,CoT (effort=medium),37.7512,39.3015,11.322,TR,True,,stop,0.0060375,1271,459,394,4.91,"{""reasoning"": ""The flat agricultural landscape with dark basalt rocks cleared from the fields is highly characteristic of the Karacadağ volcanic plateau in Southeastern Anatolia, Turkey."", ""country"": ""TR"", ""latitude"": 37.7512, ""longitude"": 39.3015}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.58928680419922,39.35725784301758,13.742,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),37.825,39.512,30.28,TR,True,,stop,0.0096735,1271,863,797,14.8,"{""reasoning"": ""The flat agricultural landscape with extensive dark basalt rock piles and stone walls is highly characteristic of the Karacadağ basalt plateau in southeastern Turkey, near Siverek."", ""country"": ""TR"", ""latitude"": 37.825, ""longitude"": 39.512}"
+anthropic/claude-opus-4.8,CoT,37.45,39.0,31.528,TR,True,,stop,0.00656,797,103,0,10.13,"{""reasoning"": ""Volcanic basalt stone field walls and flat cornfields suggest the basaltic plateau region of southeastern Anatolia near Şanlıurfa/Diyarbakır, Turkey."", ""country"": ""TR"", ""latitude"": 37.45, ""longitude"": 39.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,37.5828857421875,39.62050247192383,35.266,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,37.580318450927734,39.63624954223633,36.68,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,37.85,39.82,55.515,TR,True,,stop,0.005578,1271,253,179,10.66,"{
+  ""reasoning"": ""The flat agricultural landscape combined with the distinctive low walls made of dark, rough basalt stones strongly suggests the volcanic plateau region of southeastern Turkey, near Diyarbakır."",
+  ""country"": ""TR"",
+  ""latitude"": 37.85,
+  ""longitude"": 39.82
+}"
+openai/gpt-5.5,no-CoT,37.98,39.88,66.727,TR,True,,stop,0.00335,544,21,0,3.02,"{""country"":""TR"",""latitude"":37.98,""longitude"":39.88}"
+anthropic/claude-opus-4.8,no-CoT,37.15,38.79,69.359,TR,True,,stop,0.00408,666,30,0,8.26,"{""country"": ""TR"", ""latitude"": 37.15, ""longitude"": 38.79}"
+google/gemini-3.1-pro-preview,no-CoT,37.856,40.123,81.025,TR,True,,stop,0.002774,1189,33,0,9.38,"```json
+{""country"": ""TR"", ""latitude"": 37.856, ""longitude"": 40.123}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.7833,40.2167,87.463,TR,True,,stop,0.0021,1190,35,0,11.88,"```json
+{""country"": ""TR"", ""latitude"": 37.7833, ""longitude"": 40.2167}
+```"
+google/gemini-3.5-flash,CoT (effort=low),37.885,40.215,89.665,TR,True,,stop,0.0036255,1271,191,128,8.9,"{""reasoning"": ""The flat agricultural landscape with cleared basaltic rocks in the foreground is highly characteristic of the volcanic plains in southeastern Turkey, particularly around Diyarbakır."", ""country"": ""TR"", ""latitude"": 37.885, ""longitude"": 40.215}"
+openai/gpt-5.5,CoT,37.903,40.268,94.684,TR,True,,stop,0.013815,621,357,278,16.56,"{""reasoning"":""Flat, dry agricultural plain with irrigated maize and long low walls of dark volcanic stones strongly suggests the basalt-strewn fields of southeastern Turkey around Diyarbakır. The open Anatolian/Mesopotamian landscape and sparse rural infrastructure fit that region best."",""country"":""TR"",""latitude"":37.903,""longitude"":40.268}"
+google/gemma-4-31b-it,no-CoT,38.5,37.2,200.762,TR,True,,stop,6.478e-05,406,30,0,8.98,"```json
+{""country"": ""TR"", ""latitude"": 38.5, ""longitude"": 37.2}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,34.489383697509766,38.278114318847656,363.364,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,38.4233,34.6855,407.068,TR,True,,stop,8.816e-05,473,31,0,7.26,"{""country"": ""TR"", ""latitude"": 38.4233, ""longitude"": 34.6855}"
+google/gemma-4-26b-a4b-it,no-CoT,37.8712,32.8545,561.081,TR,True,,stop,5.494e-05,406,31,0,0.96,"{""country"": ""TR"", ""latitude"": 37.8712, ""longitude"": 32.8545}"
+moonshotai/kimi-k2.6,CoT,37.85,32.45,596.586,TR,True,,stop,0.008588268,682,2449,2380,136.48,"{""reasoning"": ""Vast flat cornfields and semi-arid rocky terrain are characteristic of Turkey's Central Anatolian Konya Plain; the bright summer light and featureless flat horizon confirm inland Anatolia."", ""country"": ""TR"", ""latitude"": 37.85, ""longitude"": 32.45}"
+x-ai/grok-4.3,no-CoT,39.85,32.75,612.264,TR,True,,stop,0.0005934,592,22,0,1.4,"{""country"": ""TR"", ""latitude"": 39.85, ""longitude"": 32.75}"
+qwen/qwen3.5-35b-a3b,no-CoT,32.8156,35.5123,636.211,IL,True,,stop,0.00010195,473,31,0,1.87,"{""country"": ""IL"", ""latitude"": 32.8156, ""longitude"": 35.5123}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,34.80501937866211,48.489219665527344,888.446,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,34.806068420410156,48.51824951171875,890.827,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,46.55,20.55,1823.673,HU,True,,stop,0.00095466,843,636,547,28.21,"{""reasoning"": ""Extremely flat agricultural plain with corn rows, characteristic dark rock piles used to clear fields in the Carpathian Basin, summer cumulus skies, and a distant tower suggest the Great Hungarian Plain (Alföld) region, likely southern Hungary near Szeged or Békéscsaba."", ""country"": ""HU"", ""latitude"": 46.55, ""longitude"": 20.55}"
+mistralai/mistral-small-2603,no-CoT,52.8535,-8.9237,4036.34,IE,True,,stop,0.0001131,634,30,0,8.54,"{""country"": ""IE"", ""latitude"": 52.8535, ""longitude"": -8.9237}"
+qwen/qwen3.6-27b,no-CoT,41.8781,-87.6298,9661.352,US,True,,stop,0.00029655,473,31,0,7.11,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.5-27b,no-CoT,41.2565,-95.9345,10129.186,US,True,,stop,0.000140595,473,31,0,2.83,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -95.9345}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.2565,-95.9345,10129.186,US,True,,stop,0.00010195,473,31,0,2.34,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -95.9345}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.85,-98.35,10277.704,US,True,,stop,0.00027945,473,27,0,12.08,"{""country"": ""US"", ""latitude"": 40.85, ""longitude"": -98.35}"
+qwen/qwen3.5-122b-a10b,no-CoT,40.7128,-98.5,10297.346,US,True,,stop,0.00018746,473,31,0,7.61,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -98.5000}"
+mistralai/mistral-medium-3-5,no-CoT,40.0,-98.0,10341.586,US,True,,stop,0.0011385,634,25,0,1.0,"{""country"": ""US"", ""latitude"": 40.0, ""longitude"": -98.0}"
+x-ai/grok-4.3,CoT,38.5,-98.5,10505.464,US,True,,stop,0.002139,676,652,593,11.92,"{""reasoning"": ""Flat endless maize fields, rocky field-clearing wall, distant windmill/pylon and open plains under bright cumulus sky match the US Great Plains agricultural landscape."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -98.5}"
+xiaomi/mimo-v2.5,no-CoT,36.7783,-119.4179,11451.381,US,True,,stop,8.17376e-05,708,32,0,2.66,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+xiaomi/mimo-v2.5,CoT,-17.9833,-67.15,12636.468,BO,True,,stop,0.0001412376,787,205,118,9.5,"{""reasoning"": ""The landscape features a flat, high-altitude agricultural plain with distinctive basalt stone walls, typical of the Andean Altiplano. The vast fields of quinoa or potatoes and the specific cloud formations strongly suggest the region near Oruro, Bolivia."", ""country"": ""BO"", ""latitude"": -17.9833, ""longitude"": -67.15}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,2.62,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.37,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.29,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.26,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.68,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.1,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.34,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.36,

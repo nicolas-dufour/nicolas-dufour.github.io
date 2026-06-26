@@ -1,0 +1,70 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,49.02323653256492,132.3946679903907,0.0,RU,True,,,,,,,,"Bira, None, Jewish Autonomous Oblast, RU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.851234436035156,133.87948608398438,369.948,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,45.79231643676758,133.74803161621094,373.402,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,45.68935775756836,133.7423858642578,384.342,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),51.3152,128.1354,396.089,RU,True,,stop,0.0132915,1307,1259,1165,25.14,"```json
+{""reasoning"": ""The landscape features dense birch and pine forests with sandy soil cuts, characteristic of the Russian Taiga. The modern asphalt road with specific guardrail reflectors and the rolling hills in the background strongly point to the R297 'Amur' Highway in eastern Russia."", ""country"": ""RU"", ""latitude"": 51.3152, ""longitude"": 128.1354}
+```"
+google/gemini-3.5-flash,CoT (effort=high),52.5123,124.6154,670.106,RU,True,,stop,0.010989,1308,1003,919,7.24,"```json
+{""reasoning"": ""The pristine asphalt, northern mixed forest with prominent birch trees, sandy roadside cuts, and standard Russian guardrails with red reflectors strongly point to the R297 'Amur' Highway in the Russian Far East."", ""country"": ""RU"", ""latitude"": 52.5123, ""longitude"": 124.6154}
+```"
+google/gemini-3.1-pro-preview,no-CoT,53.5123,120.4567,967.196,RU,True,,stop,0.004598,1225,179,143,10.79,"```json
+{""country"": ""RU"", ""latitude"": 53.5123, ""longitude"": 120.4567}
+```"
+google/gemini-3.1-pro-preview,CoT,53.5,118.5,1084.922,RU,True,,stop,0.00601,1307,283,200,11.38,"{
+  ""reasoning"": ""The white car visible at the bottom, birch and coniferous trees, and road markings are characteristic of Google Street View coverage in Russia. The landscape and road quality suggest a major highway in Siberia or the Russian Far East."",
+  ""country"": ""RU"",
+  ""latitude"": 53.5,
+  ""longitude"": 118.5
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),52.783412,111.543218,1514.679,RU,True,,stop,0.0021975,1225,40,0,19.36,"```json
+{""country"": ""RU"", ""latitude"": 52.783412, ""longitude"": 111.543218}
+```"
+moonshotai/kimi-k2.6,no-CoT,51.5,107.5,1782.028,RU,True,,stop,0.00031428,755,23,0,1.98,"{""country"": ""RU"", ""latitude"": 51.5, ""longitude"": 107.5}"
+google/gemini-3.5-flash,CoT (effort=low),51.6834,103.8921,2030.424,RU,True,,stop,0.0049755,1307,335,257,4.81,"{""reasoning"": ""The high-quality asphalt road, guardrail with red reflectors, and surrounding birch and pine forest are characteristic of federal highways in Russia, specifically the R-258 'Baikal' highway in Siberia."", ""country"": ""RU"", ""latitude"": 51.6834, ""longitude"": 103.8921}"
+anthropic/claude-opus-4.8,no-CoT,54.5,102.0,2159.563,RU,True,,stop,0.00484,818,30,0,2.49,"{""country"": ""RU"", ""latitude"": 54.5, ""longitude"": 102.0}"
+moonshotai/kimi-k2.6,CoT,56.0,93.0,2734.719,RU,True,,stop,0.02117916,832,5725,6161,214.62,"{""reasoning"": ""White road markings, European-style W-beam guardrail with red post reflectors, right-hand traffic, and mixed birch-conifer boreal forest with sandy/gravelly soil are characteristic of a Russian federal highway in the Siberian taiga zone."", ""country"": ""RU"", ""latitude"": 56.0, ""longitude"": 93.0}"
+openai/gpt-5.5,no-CoT,56.1098,92.8734,2742.534,RU,True,,stop,0.00408,678,23,0,7.83,"{""country"":""RU"",""latitude"":56.1098,""longitude"":92.8734}"
+anthropic/claude-opus-4.8,CoT,56.0,92.5,2765.807,RU,True,,stop,0.006795,949,82,0,3.38,"{""reasoning"": ""Birch and mixed taiga forest, sandy roadside cut, and highway style suggest the Siberian section of a Russian federal route."", ""country"": ""RU"", ""latitude"": 56.0, ""longitude"": 92.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,52.058502197265625,76.79743194580078,3846.513,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,54.9823,57.6387,4911.766,RU,True,,stop,0.017125,755,445,350,10.85,"{""reasoning"":""Right-hand traffic on a wide, well-marked divided highway with Russian-style metal guardrails/reflectors and boreal birch-pine forest on rolling terrain suggests the M5/Ural corridor. The forested foothills and sandy road cuts fit the southern Urals near Sim/Asha between Ufa and Chelyabinsk."",""country"":""RU"",""latitude"":54.9823,""longitude"":57.6387}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,52.141326904296875,56.72465515136719,5105.899,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,62.8456,27.6953,5941.015,FI,True,,stop,6.325e-05,586,31,0,5.99,"{""country"": ""FI"", ""latitude"": 62.8456, ""longitude"": 27.6953}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,5960.469,RU,True,,stop,6.348e-05,404,36,0,4.45,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,50.338069915771484,35.27601623535156,6453.724,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,53.9,27.5,6592.697,BY,True,,stop,0.0001977976,899,351,266,10.64,"{""reasoning"": ""The right-hand traffic, temperate deciduous forest with birch trees, and well-maintained European-style highway with a guardrail point strongly to a location in Belarus or western Russia. The landscape and road characteristics are most consistent with a major highway in Belarus."", ""country"": ""BY"", ""latitude"": 53.9, ""longitude"": 27.5}"
+qwen/qwen3.5-397b-a17b,CoT,45.1523,15.2987,7901.185,HR,True,,stop,0.00897585,665,3725,3607,66.63,"{
+""reasoning"": ""The image shows a right-hand traffic highway with standard European markings and a galvanized guardrail featuring red reflectors on the right side, which is highly characteristic of Croatian highways (HAC). The pale, chalky soil on the embankment and the mixed deciduous vegetation suggest the Dinaric Alps/Karst region, likely along the A1 motorway."",
+""country"": ""HR"",
+""latitude"": 45.1523,
+""longitude"": 15.2987
+}"
+xiaomi/mimo-v2.5,no-CoT,45.75,5.85,8276.831,FR,True,,stop,9.57376e-05,820,26,0,3.89,"{""country"": ""FR"", ""latitude"": 45.75, ""longitude"": 5.85}"
+qwen/qwen3.6-35b-a3b,no-CoT,43.6047,1.4442,8663.006,FR,True,,stop,0.0001232595,585,30,0,2.21,"{""country"": ""FR"", ""latitude"": 43.6047, ""longitude"": 1.4442}"
+qwen/qwen3.6-27b,no-CoT,42.6125,1.9533,8737.06,ES,True,,stop,0.000241065,585,30,0,7.72,"{""country"": ""ES"", ""latitude"": 42.6125, ""longitude"": 1.9533}"
+minimax/minimax-m3,CoT,42.85,-1.65,8859.57,ES,True,,stop,0.00095586,943,612,531,26.21,"{""reasoning"": ""Right-hand traffic, European-style semi-trailer, W-beam guardrails, and Mediterranean-temperate vegetation with birch trees and green hills suggest a highway in northern Spain, likely along the AP-1 or A-1 in the Navarra/Basque Country region."", ""country"": ""ES"", ""latitude"": 42.85, ""longitude"": -1.65}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.6512,1.0234,8868.038,ES,True,,stop,0.0001340625,585,30,0,1.64,"{""country"": ""ES"", ""latitude"": 41.6512, ""longitude"": 1.0234}"
+x-ai/grok-4.3,no-CoT,42.85,-2.65,8898.275,ES,True,,stop,0.0007334,704,22,0,1.5,"{""country"": ""ES"", ""latitude"": 42.85, ""longitude"": -2.65}"
+qwen/qwen3.5-397b-a17b,no-CoT,42.6853,-2.9234,8924.919,ES,True,,stop,0.00042675,585,30,0,14.22,"{""country"": ""ES"", ""latitude"": 42.6853, ""longitude"": -2.9234}"
+minimax/minimax-m3,no-CoT,42.3,-3.5,8984.834,ES,True,,stop,0.00026808,904,23,0,4.44,"{""country"": ""ES"", ""latitude"": 42.3, ""longitude"": -3.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,42.0833,-3.6667,9012.548,ES,True,,stop,0.0002667,585,38,0,2.16,"{
+  ""country"": ""ES"",
+  ""latitude"": 42.0833,
+  ""longitude"": -3.6667
+}"
+mistralai/mistral-small-2603,CoT,-31.9505,115.8605,9152.027,AU,True,,stop,0.00164004,868,2664,3097,24.04,"{""reasoning"": ""Left-side concrete barrier indicates left-hand traffic; Mediterranean-like scrubland and eucalyptus suggest Western Australia."", ""country"": ""AU"", ""latitude"": -31.9505, ""longitude"": 115.8605}"
+x-ai/grok-4.3,CoT,40.45,-3.75,9177.062,ES,True,,stop,0.002244,788,638,560,6.97,"{""reasoning"": ""Right-hand traffic (oncoming truck on left), European metal guardrail with red reflector, white road markings, and mix of pine/deciduous trees on hilly terrain point to a southern European motorway. Landscape, sky, and vegetation best match central Spain."", ""country"": ""ES"", ""latitude"": 40.45, ""longitude"": -3.75}"
+mistralai/mistral-medium-3-5,no-CoT,40.4168,-3.7038,9178.551,ES,True,,stop,0.001404,786,30,0,8.23,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+qwen/qwen3.5-27b,no-CoT,44.2619,-71.3036,9389.185,US,True,,stop,0.0002499,585,31,0,8.33,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -71.3036}"
+mistralai/mistral-small-2603,no-CoT,38.7223,-9.1393,9550.392,PT,True,,stop,0.0001359,786,30,0,4.58,"{""country"": ""PT"", ""latitude"": 38.7223, ""longitude"": -9.1393}"
+google/gemma-4-31b-it,CoT,40.7128,-74.006,9706.514,US,True,,stop,0.00072929,492,1199,1151,8.74,"```json
+{""reasoning"": ""No image was provided for analysis."", ""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.0060}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12925.288,,True,True,,,,,,6.57,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.2,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.23,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.18,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.14,

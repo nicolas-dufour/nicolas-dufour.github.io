@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,36.15406779897,-96.176959833827,0.0,US,True,,,,,,,,"Sand Springs, Tulsa County, Oklahoma, US"
+google/gemini-3.5-flash,CoT (effort=high),36.115,-96.25,7.867,US,True,,stop,0.010692,1272,976,904,6.52,"{""reasoning"": ""The rolling hills with dormant deciduous vegetation, dry yellow grass, and standard US highway markings and guardrails indicate the Cross Timbers region of Oklahoma, likely along US-412 near Keystone Lake."", ""country"": ""US"", ""latitude"": 36.115, ""longitude"": -96.25}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),36.1842,-96.2854,10.295,US,True,,stop,0.0021,1190,35,0,1.48,"```json
+{""country"": ""US"", ""latitude"": 36.1842, ""longitude"": -96.2854}
+```"
+anthropic/claude-opus-4.8,no-CoT,36.1156,-96.0,16.457,US,True,,stop,0.00408,666,30,0,3.36,"{""country"": ""US"", ""latitude"": 36.1156, ""longitude"": -96.0}"
+moonshotai/kimi-k2.6,no-CoT,36.1539,-95.9928,16.534,US,True,,stop,0.00051939,602,25,0,3.7,"{""country"": ""US"", ""latitude"": 36.1539, ""longitude"": -95.9928}"
+anthropic/claude-opus-4.8,CoT,36.3,-96.8,58.194,US,True,,stop,0.006135,797,86,0,3.62,"{""reasoning"": ""US-style highway with yellow chevron sign, dry winter grassland and low wooded hills typical of Oklahoma/Kansas region driving on right."", ""country"": ""US"", ""latitude"": 36.3, ""longitude"": -96.8}"
+google/gemini-3.5-flash,CoT (effort=low),36.8451,-96.3214,77.916,US,True,,stop,0.0039765,1271,230,155,10.73,"{""reasoning"": ""The rolling hills with leafless deciduous trees, dry winter grass, and wide highway design with a yellow shoulder line are characteristic of the Great Plains region in the United States, particularly Oklahoma or Kansas."", ""country"": ""US"", ""latitude"": 36.8451, ""longitude"": -96.3214}"
+mistralai/mistral-medium-3-5,no-CoT,35.5,-97.5,139.701,US,True,,stop,0.0011385,634,25,0,0.77,"{""country"": ""US"", ""latitude"": 35.5, ""longitude"": -97.5}"
+minimax/minimax-m3,no-CoT,35.8,-94.5,155.95,US,True,,stop,0.00036162,767,158,180,4.87,"{""country"": ""US"", ""latitude"": 35.8, ""longitude"": -94.5}"
+openai/gpt-5.5,no-CoT,37.0902,-94.5131,181.335,US,True,,stop,0.00344,544,24,0,1.39,"{""country"":""US"",""latitude"":37.0902,""longitude"":-94.5131}"
+moonshotai/kimi-k2.6,CoT,34.5,-96.5,186.244,US,True,,stop,0.02694923,682,7771,7701,188.27,"{""reasoning"": ""Standard US W-beam guardrail, road markings, and yellow warning signs identify the United States; dormant warm-season prairie grasses, bare oak woodlands, and rolling hills indicate south-central Oklahoma in winter."", ""country"": ""US"", ""latitude"": 34.5, ""longitude"": -96.5}"
+minimax/minimax-m3,CoT,34.65,-97.15,189.07,US,True,,stop,0.00096066,843,641,534,14.63,"{""reasoning"": ""Right-hand driving, US-style highway with dashed lane markings and guardrails, rolling hills with exposed reddish-brown soil and sparse winter deciduous vegetation strongly suggest the Great Plains states. The terrain characteristics (rolling hills, dry grass, exposed red soil, sparse trees) are most consistent with central Oklahoma, likely along I-35 or I-44 in the Arbuckle/Osage Hills region."", ""country"": ""US"", ""latitude"": 34.65, ""longitude"": -97.15}"
+xiaomi/mimo-v2.5,no-CoT,36.05,-93.95,200.405,US,True,,stop,8.03376e-05,708,27,0,4.03,"{""country"": ""US"", ""latitude"": 36.05, ""longitude"": -93.95}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,36.43083190917969,-93.92587280273438,204.08,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,36.44105911254883,-93.91252136230469,205.423,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),34.4352,-97.1441,210.317,US,True,,stop,0.0083865,1271,720,643,13.11,"{""reasoning"": ""The divided highway with a yellow left shoulder line, yellow diamond warning sign, and dry winter vegetation on rolling hills are characteristic of the South-Central United States, specifically the Arbuckle Mountains region in Oklahoma."", ""country"": ""US"", ""latitude"": 34.4352, ""longitude"": -97.1441}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,36.651641845703125,-93.84317779541016,216.063,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,38.15,-96.55,224.386,US,True,,stop,0.0021365,676,651,582,14.78,"{""reasoning"": ""US-style divided highway with white lane markings + yellow edge lines, right-hand traffic, rolling dry grassland hills with leafless hardwoods, diamond warning signs, and clear winter sky match central Kansas Flint Hills."", ""country"": ""US"", ""latitude"": 38.15, ""longitude"": -96.55}"
+qwen/qwen3.5-397b-a17b,CoT,37.1845,-93.3215,279.246,US,True,,stop,0.0199641,553,5636,4975,226.63,"{""reasoning"": ""The image shows a divided highway (yellow line on left shoulder, dashed white center line) with driving on the right, typical of the US. The rolling hills, dormant deciduous forest, and brown grass are characteristic of the Ozarks region in Missouri during late autumn or winter, and the road style matches Interstate 44."", ""country"": ""US"", ""latitude"": 37.1845, ""longitude"": -93.3215}"
+google/gemini-3.1-pro-preview,CoT,37.5,-93.0,319.904,US,True,,stop,0.006012,1272,289,208,11.38,"{
+  ""reasoning"": ""The yellow left edge line, white dashed lane dividers, and yellow diamond warning sign indicate the United States. The rolling hills with dormant vegetation and bare trees are characteristic of the Midwest or Ozarks region in winter."",
+  ""country"": ""US"",
+  ""latitude"": 37.5,
+  ""longitude"": -93.0
+}"
+google/gemini-3.1-pro-preview,no-CoT,38.9517,-95.2333,322.007,US,True,,stop,0.0028,1190,35,0,9.01,"```json
+{""country"": ""US"", ""latitude"": 38.9517, ""longitude"": -95.2333}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,39.0969,-94.5786,356.203,US,True,,stop,0.00015839,473,31,0,3.39,"{""country"": ""US"", ""latitude"": 39.0969, ""longitude"": -94.5786}"
+xiaomi/mimo-v2.5,CoT,34.75,-92.3,384.274,US,True,,stop,0.0001325576,787,174,74,3.56,"```json
+{
+  ""reasoning"": ""The image displays a highway in a hilly, wooded area with reddish soil and leafless deciduous trees, typical of the Ozarks or Ouachita Mountains in the south-central United States. The road infrastructure, including lane markings and signage style, aligns with US standards."",
+  ""country"": ""US"",
+  ""latitude"": 34.75,
+  ""longitude"": -92.3
+}
+```"
+x-ai/grok-4.3,no-CoT,37.85,-92.2,400.303,US,True,,stop,0.0005934,592,22,0,0.9,"{""country"": ""US"", ""latitude"": 37.85, ""longitude"": -92.2}"
+google/gemma-4-31b-it,no-CoT,36.1234,-91.4567,423.852,US,True,,stop,7.124e-05,406,36,0,8.59,"```json
+{""country"": ""US"", ""latitude"": 36.1234, ""longitude"": -91.4567}
+```"
+openai/gpt-5.5,CoT,37.9146,-91.8427,431.602,US,True,,stop,0.014385,621,376,290,15.87,"{""reasoning"":""Right-hand traffic, yellow left-edge interstate-style markings, cable median barrier, and broad concrete shoulders point to a US divided highway. The rolling, leafless deciduous hills and dry winter grass are characteristic of the Missouri Ozarks, likely along I-44 near Rolla/Cuba."",""country"":""US"",""latitude"":37.9146,""longitude"":-91.8427}"
+qwen/qwen3.5-122b-a10b,no-CoT,36.1627,-86.7816,843.164,US,True,,stop,0.00018746,473,31,0,1.68,"{""country"": ""US"", ""latitude"": 36.1627, ""longitude"": -86.7816}"
+qwen/qwen3.6-27b,no-CoT,39.7392,-104.9903,869.0,US,True,,stop,0.0001963,473,32,0,21.46,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+qwen/qwen3.6-35b-a3b,no-CoT,39.7392,-104.9903,869.0,US,True,,stop,0.00010295,473,32,0,2.09,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+mistralai/mistral-small-2603,CoT,36.5,-109.5,1193.201,US,True,,stop,0.000393,716,476,492,4.49,"{""reasoning"": ""Dry, arid landscape with mesas typical of the southwestern United States, road markings indicating right-hand traffic"", ""country"": ""US"", ""latitude"": 36.5, ""longitude"": -109.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.59475326538086,-82.12036895751953,1258.313,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,36.71433639526367,-82.0498275756836,1264.212,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,36.72013473510742,-82.04410552978516,1264.707,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,39.0458,-77.4874,1674.467,US,True,,stop,0.00036468,473,31,0,9.58,"{""country"": ""US"", ""latitude"": 39.0458, ""longitude"": -77.4874}"
+qwen/qwen3.5-9b,no-CoT,39.1012,-77.4645,1677.005,US,True,,stop,5.205e-05,474,31,0,8.98,"{""country"": ""US"", ""latitude"": 39.1012, ""longitude"": -77.4645}"
+qwen/qwen3.5-27b,no-CoT,38.907222,-77.036944,1711.991,US,True,,stop,0.0002145,474,48,0,10.54,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 38.907222,
+  ""longitude"": -77.036944
+}
+```"
+mistralai/mistral-small-2603,no-CoT,36.5323,-118.2921,1976.834,US,True,,stop,0.000142875,634,32,0,8.26,"{""country"": ""US"", ""latitude"": 36.5323, ""longitude"": -118.2921}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10561.751,,True,True,,,,,,13.26,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.11,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.11,

@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-13.376301668608097,23.871953485982228,0.0,ZM,True,,,,,,,,"Kabompo, None, North-Western, ZM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-12.695979118347168,25.85518455505371,227.769,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-12.692700386047363,25.931488037109375,235.701,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,-15.5,23.5,239.517,ZM,True,,stop,0.005236,1286,222,160,10.98,"{
+  ""reasoning"": ""The white sandy road and dry Miombo woodland vegetation are highly characteristic of the Kalahari sand regions in western Zambia."",
+  ""country"": ""ZM"",
+  ""latitude"": -15.5,
+  ""longitude"": 23.5
+}"
+google/gemini-3.5-flash,CoT (effort=low),-14.6543,26.1234,281.407,ZM,True,,stop,0.0039975,1285,230,159,3.93,"{""reasoning"": ""The sandy white track and the characteristic Miombo woodland vegetation (Brachystegia species) are highly indicative of the savanna regions of Zambia, particularly around Kafue National Park."", ""country"": ""ZM"", ""latitude"": -14.6543, ""longitude"": 26.1234}"
+google/gemini-3.5-flash,CoT (effort=high),-15.124,25.852,288.617,ZM,True,,stop,0.0147705,1285,1427,1351,12.44,"{""reasoning"": ""The vegetation strongly resembles Miombo woodland with its characteristic slender, light-barked Brachystegia trees and open canopy, situated on a white sandy track typical of the Kalahari sand system in western Zambia."", ""country"": ""ZM"", ""latitude"": -15.124, ""longitude"": 25.852}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-12.89738941192627,26.59996795654297,300.162,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-13.5,27.5,392.613,ZM,True,,stop,0.005625,970,31,0,8.84,"{""country"": ""ZM"", ""latitude"": -13.5, ""longitude"": 27.5}"
+anthropic/claude-opus-4.8,CoT,-13.5,28.5,500.707,ZM,True,,stop,0.00768,1101,87,0,4.1,"{""reasoning"": ""Sandy white-soil dirt track through miombo woodland with dry-season foliage, typical of central/southern African savanna woodland in Zambia."", ""country"": ""ZM"", ""latitude"": -13.5, ""longitude"": 28.5}"
+moonshotai/kimi-k2.6,CoT,-13.978,28.624,517.75,ZM,True,,stop,0.012347604,986,3519,3451,72.17,"{""reasoning"": ""The pale sandy track through tall, thin-stemmed open woodland with mixed green and dry-season brownish canopy matches miombo forest on Kalahari sands, a signature landscape of rural Zambia."", ""country"": ""ZM"", ""latitude"": -13.978, ""longitude"": 28.624}"
+openai/gpt-5.5,CoT,-19.2628,23.4726,655.933,BW,True,,stop,0.01882,890,479,396,19.22,"{""reasoning"":""The pale sandy single-track road through dry mopane/miombo-like woodland and the safari-vehicle camera shadow/roof edge strongly suggest a southern African game-reserve setting. This vegetation and road surface are especially typical of Botswana’s Okavango/Moremi area."",""country"":""BW"",""latitude"":-19.2628,""longitude"":23.4726}"
+x-ai/grok-4.3,CoT,-24.01,31.48,1427.475,ZA,True,,stop,0.002289,900,600,522,11.56,"{
+  ""reasoning"": ""Tropical/subtropical dry woodland with mixed deciduous trees showing seasonal color change, dusty unpaved single-track road, and bright hazy sky match southern African miombo/bushveld; no left/right traffic or script clues visible."",
+  ""country"": ""ZA"",
+  ""latitude"": -24.01,
+  ""longitude"": 31.48
+}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3021.32,,True,True,,,,,,9.32,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,9.434155464172363,77.17204284667969,6406.337,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,9.468470573425293,77.17408752441406,6408.007,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,21.1458,79.0882,7146.169,IN,True,,stop,0.00013555,697,31,0,3.39,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+qwen/qwen3.5-9b,no-CoT,-19.9167,-43.9333,7215.593,BR,True,,stop,7.445e-05,698,31,0,2.67,"{""country"": ""BR"", ""latitude"": -19.9167, ""longitude"": -43.9333}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,13.092425346374512,84.15926361083984,7265.247,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,-12.5,-45.5,7491.811,BR,True,,stop,0.002756,1204,29,0,8.5,"```json
+{""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -45.5}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-10.2125,-46.6182,7655.99,BR,True,,stop,0.0092985,1285,819,743,13.88,"```json
+{""reasoning"": ""The twisted, thick-barked trees and extremely white sandy road are highly characteristic of the Cerrado biome in Brazil, particularly in the Jalapão region of Tocantins."", ""country"": ""BR"", ""latitude"": -10.2125, ""longitude"": -46.6182}
+```"
+openai/gpt-5.5,no-CoT,-14.1523,-47.5231,7678.17,BR,True,,stop,0.004815,813,25,0,2.27,"{""country"":""BR"",""latitude"":-14.1523,""longitude"":-47.5231}"
+xiaomi/mimo-v2.5,CoT,-14.15,-47.53,7678.945,BR,True,,stop,0.0007073976,1011,2115,2032,22.39,"{""reasoning"": ""The image shows a white sandy track passing through a tropical dry forest with deciduous trees and a sparse canopy, a landscape highly characteristic of the Brazilian Cerrado biome during the dry season (likely the Chapada dos Veadeiros region)."", ""country"": ""BR"", ""latitude"": -14.15, ""longitude"": -47.53}"
+mistralai/mistral-medium-3-5,no-CoT,-15.8267,-47.9218,7691.777,BR,True,,stop,0.0016395,938,31,0,4.41,"{""country"": ""BR"", ""latitude"": -15.8267, ""longitude"": -47.9218}"
+qwen/qwen3.5-122b-a10b,no-CoT,22.5726,88.3639,8079.312,IN,True,,stop,0.0004036,697,39,0,2.58,"{
+  ""country"": ""IN"",
+  ""latitude"": 22.5726,
+  ""longitude"": 88.3639
+}"
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.9253,8144.628,BR,True,,stop,0.0002615,697,31,0,9.91,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9253}"
+qwen/qwen3.5-35b-a3b,no-CoT,-10.2345,-52.6789,8306.894,BR,True,,stop,0.00013555,697,31,0,3.45,"{""country"": ""BR"", ""latitude"": -10.2345, ""longitude"": -52.6789}"
+x-ai/grok-4.3,no-CoT,-15.8,-56.1,8555.172,BR,True,,stop,0.0008734,816,22,0,0.99,"{""country"": ""BR"", ""latitude"": -15.8, ""longitude"": -56.1}"
+xiaomi/mimo-v2.5,no-CoT,14.5,101.0,9036.016,TH,True,,stop,0.0001114176,932,26,0,1.34,"{""country"": ""TH"", ""latitude"": 14.5, ""longitude"": 101.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,14.5208,101.3892,9076.878,TH,True,,stop,0.0004477,697,32,0,2.33,"{""country"": ""TH"", ""latitude"": 14.5208, ""longitude"": 101.3892}"
+google/gemma-4-31b-it,no-CoT,-3.119,-60.0217,9267.336,BR,True,,stop,6.308e-05,404,35,0,9.97,"```json
+{""country"": ""BR"", ""latitude"": -3.1190, ""longitude"": -60.0217}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),13.458333,104.233333,9340.075,KH,True,,stop,0.002166,1204,40,0,9.86,"```json
+{""country"": ""KH"", ""latitude"": 13.458333, ""longitude"": 104.233333}
+```"
+minimax/minimax-m3,CoT,13.35,104.5,9364.722,KH,True,,stop,0.00078666,1147,420,332,23.54,"{""reasoning"": ""Pale sandy dirt road through tropical deciduous forest with tall sparse-canopy trees (likely Dipterocarpaceae) in dry-season condition, characteristic of mainland Southeast Asia seasonally dry forests. The vegetation, soil color, and road style strongly match rural Cambodia, particularly the central/northern provinces."", ""country"": ""KH"", ""latitude"": 13.35, ""longitude"": 104.5}"
+qwen/qwen3.5-27b,no-CoT,34.0522,-84.2731,12494.827,US,True,,stop,0.000184275,697,31,0,2.41,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -84.2731}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,15727.884,US,True,,stop,0.000199875,938,32,0,8.32,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,13.42,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.51,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,16.7,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,8.77,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.91,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.6,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.82,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.3,

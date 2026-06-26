@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,41.86435609158,-93.600385064303,0.0,US,True,,,,,,,,"Huxley, Story County, Iowa, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,41.81404495239258,-93.63589477539062,6.321,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.81288528442383,-93.64093017578125,6.636,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.80558776855469,-93.68834686279297,9.788,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,42.0,-93.5,17.218,US,True,,stop,0.004055,666,29,0,2.47,"{""country"": ""US"", ""latitude"": 42.0, ""longitude"": -93.5}"
+moonshotai/kimi-k2.6,CoT,42.03,-93.62,18.49,US,True,,stop,0.007023708,682,1983,1909,49.06,"{""reasoning"": ""The yellow center line, white fog line, and wooden utility poles are classic rural U.S. road infrastructure; the flat terrain with mature cornfields on both sides places this in the Midwest Corn Belt, most consistent with Iowa."", ""country"": ""US"", ""latitude"": 42.03, ""longitude"": -93.62}"
+google/gemini-3.1-pro-preview,CoT,42.032,-93.581,18.71,US,True,,stop,0.00516,1272,218,140,4.11,"{
+  ""reasoning"": ""Yellow dashed center lines and white edge lines indicate North America. The flat terrain, extensive cornfields, and wooden utility poles strongly suggest the US Midwest, likely Iowa or Illinois."",
+  ""country"": ""US"",
+  ""latitude"": 42.032,
+  ""longitude"": -93.581
+}"
+anthropic/claude-opus-4.8,CoT,41.8,-93.3,25.896,US,True,,stop,0.006185,797,88,0,9.3,"{""reasoning"": ""Flat terrain with corn fields, two-lane rural road with yellow center line, wooden utility poles, overcast sky—classic US Midwest farmland."", ""country"": ""US"", ""latitude"": 41.8, ""longitude"": -93.3}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.5234,-93.6012,37.913,US,True,,stop,0.0021,1190,35,0,1.31,"```json
+{""country"": ""US"", ""latitude"": 41.5234, ""longitude"": -93.6012}
+```"
+google/gemini-3.1-pro-preview,no-CoT,41.5,-93.5,41.363,US,True,,stop,0.002728,1190,29,0,8.47,"```json
+{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -93.5}
+```"
+google/gemma-4-31b-it,no-CoT,41.5,-93.5,41.363,US,True,,stop,6.478e-05,406,30,0,2.24,"```json
+{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -93.5}
+```"
+minimax/minimax-m3,CoT,41.878,-93.0977,41.65,US,True,,stop,0.00063426,843,369,284,12.44,"{""reasoning"": ""Flat terrain with mature/dried cornfields on both sides and a rural two-lane road with yellow center line markings strongly indicates the US Midwest Corn Belt. Wooden utility poles, overcast sky, and the small blue roadside sign are consistent with rural Iowa or Illinois farmland."", ""country"": ""US"", ""latitude"": 41.8780, ""longitude"": -93.0977}"
+google/gemini-3.5-flash,CoT (effort=high),42.3125,-93.6214,49.861,US,True,,stop,0.0090075,1271,789,724,12.39,"{""reasoning"": ""The flat terrain with extensive cornfields, wooden utility poles, and road markings with a yellow dashed center line strongly indicate the US Midwest, likely Iowa."", ""country"": ""US"", ""latitude"": 42.3125, ""longitude"": -93.6214}"
+mistralai/mistral-medium-3-5,no-CoT,42.0,-93.0,51.905,US,True,,stop,0.0011385,634,25,0,1.97,"{""country"": ""US"", ""latitude"": 42.0, ""longitude"": -93.0}"
+google/gemini-3.5-flash,CoT (effort=low),42.3512,-93.6254,54.174,US,True,,stop,0.003528,1272,180,119,8.45,"{""reasoning"": ""The flat terrain, extensive cornfields, wooden utility poles, and road markings are characteristic of the rural US Midwest, likely Iowa."", ""country"": ""US"", ""latitude"": 42.3512, ""longitude"": -93.6254}"
+google/gemini-3.5-flash,CoT (effort=medium),42.5124,-94.1835,86.605,US,True,,stop,0.0062175,1271,479,407,7.66,"{""reasoning"": ""The flat terrain, extensive cornfields, wooden utility poles, and a blue county road marker on the right side of the road are highly characteristic of the rural US Midwest, particularly Iowa."", ""country"": ""US"", ""latitude"": 42.5124, ""longitude"": -94.1835}"
+xiaomi/mimo-v2.5,CoT,41.0,-93.0,108.363,US,True,,stop,0.0003134376,787,820,755,9.4,"{""reasoning"": ""Right-hand traffic with yellow center lines, rural cornfields, and wooden utility poles are hallmarks of the American Midwest. These clues strongly point to the United States."", ""country"": ""US"", ""latitude"": 41.0, ""longitude"": -93.0}"
+moonshotai/kimi-k2.6,no-CoT,41.2,-92.0,152.322,US,True,,stop,0.00051219,602,23,0,14.53,"{""country"": ""US"", ""latitude"": 41.2, ""longitude"": -92.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.7128,-95.3698,195.573,US,True,,stop,0.0003794,473,31,0,1.74,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -95.3698}"
+qwen/qwen3.5-27b,no-CoT,41.2565,-95.9345,205.621,US,True,,stop,0.00019467,473,31,0,7.87,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -95.9345}"
+xiaomi/mimo-v2.5,no-CoT,41.5,-90.5,260.626,US,True,,stop,7.97776e-05,708,25,0,1.22,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -90.5}"
+minimax/minimax-m3,no-CoT,41.878,-89.45,343.626,US,True,,stop,0.00029082,767,99,93,2.85,"{""country"": ""US"", ""latitude"": 41.8780, ""longitude"": -89.4500}"
+x-ai/grok-4.3,no-CoT,41.85,-88.75,401.654,US,True,,stop,0.0005934,592,22,0,7.32,"{""country"": ""US"", ""latitude"": 41.85, ""longitude"": -88.75}"
+x-ai/grok-4.3,CoT,40.85,-88.75,420.181,US,True,,stop,0.0020465,676,615,553,5.24,"{""reasoning"": ""Flat rural highway with corn stubble fields, right-hand traffic, US-style wooden utility poles and yellow/white pavement markings, plus blue rectangular sign typical of Midwest US state routes."", ""country"": ""US"", ""latitude"": 40.85, ""longitude"": -88.75}"
+qwen/qwen3.5-122b-a10b,no-CoT,41.878,-87.6298,494.273,US,True,,stop,0.0002139,473,30,0,1.91,"{""country"": ""US"", ""latitude"": 41.878, ""longitude"": -87.6298}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.8781,-87.6298,494.273,US,True,,stop,9.736e-05,474,31,0,1.54,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.5-9b,no-CoT,41.8781,-87.6298,494.273,US,True,,stop,5.205e-05,474,31,0,14.55,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.6-27b,no-CoT,41.8781,-87.6298,494.273,US,True,,stop,0.0001943,473,31,0,10.57,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.6-35b-a3b,no-CoT,49.8951,-97.1384,933.751,CA,True,,stop,0.000157,473,31,0,0.71,"{""country"": ""CA"", ""latitude"": 49.8951, ""longitude"": -97.1384}"
+openai/gpt-5.5,CoT,43.2435,-81.0156,1041.147,CA,True,,stop,0.010905,621,260,180,12.98,"{""reasoning"":""Right-side driving with North American yellow centerline/white edge markings and flat cornfield landscape point strongly to rural southern Ontario/Great Lakes farmland. The utility poles, narrow paved county road, and blue roadside sign style fit Ontario more than the US Midwest."",""country"":""CA"",""latitude"":43.2435,""longitude"":-81.0156}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,45.0454216003418,-81.41319274902344,1044.122,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,45.09153747558594,-81.42351531982422,1044.725,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,43.6125,-80.5572,1081.614,CA,True,,stop,0.00344,544,24,0,7.8,"{""country"":""CA"",""latitude"":43.6125,""longitude"":-80.5572}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,44.162837982177734,-79.46891021728516,1175.441,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,69.6492,18.9553,6475.946,NO,True,,stop,0.0001137,634,31,0,2.81,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10305.603,,True,True,,,,,,6.57,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,9.33,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.44,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,9.38,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.08,

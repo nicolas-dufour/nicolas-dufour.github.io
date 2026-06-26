@@ -1,0 +1,82 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-7.495260012348083,-63.498922936013486,0.0,BR,True,,,,,,,,"Humaita, Humaita, Amazonas, BR"
+openai/gpt-5.5,no-CoT,-8.7612,-63.9004,147.54,BR,True,,stop,0.00414,678,25,0,1.4,"{""country"":""BR"",""latitude"":-8.7612,""longitude"":-63.9004}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-8.99923324584961,-63.600914001464844,167.61,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-9.03557300567627,-63.5830078125,171.525,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-6.0,-62.5,199.526,BR,True,,stop,0.012790836,834,3664,3588,84.88,"{""reasoning"": ""Wide, straight unpaved tropical highway with characteristic red lateritic dust, white concrete kilometer markers, and mixed palm/secondary forest vegetation is highly consistent with remote Brazilian federal highways such as BR-319 in Amazonas during the dry season."", ""country"": ""BR"", ""latitude"": -6.0, ""longitude"": -62.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-9.426370620727539,-59.7630729675293,463.593,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,-12.5678,-69.1234,834.946,BR,True,,stop,0.0003332,585,31,0,2.95,"{""country"": ""BR"", ""latitude"": -12.5678, ""longitude"": -69.1234}"
+anthropic/claude-opus-4.8,no-CoT,-15.5,-63.0,891.742,BO,True,,stop,0.00484,818,30,0,9.15,"{""country"": ""BO"", ""latitude"": -15.5, ""longitude"": -63.0}"
+moonshotai/kimi-k2.6,no-CoT,-8.5,-55.0,942.462,BR,True,,stop,0.00032616,755,23,0,2.09,"{""country"": ""BR"", ""latitude"": -8.5, ""longitude"": -55.0}"
+minimax/minimax-m3,CoT,-3.85,-55.5,973.337,BR,True,,stop,0.00061386,995,314,239,7.41,"{""reasoning"": ""Reddish-orange laterite soil, dense tropical rainforest with palm trees, straight unpaved highway, and right-hand driving are classic indicators of the Brazilian Amazon interior, likely along BR-163 or a similar highway in Pará state."", ""country"": ""BR"", ""latitude"": -3.85, ""longitude"": -55.50}"
+anthropic/claude-opus-4.8,CoT,-12.5,-55.0,1084.076,BR,True,,stop,0.00702,949,91,0,9.06,"{""reasoning"": ""Dusty red-orange dirt road through tropical savanna/cerrado vegetation with palms, suggesting interior Brazil/Bolivia lowlands."", ""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -55.0}"
+qwen/qwen3.5-35b-a3b,no-CoT,-10.2345,-52.6789,1227.003,BR,True,,stop,0.000185,585,31,0,7.37,"{""country"": ""BR"", ""latitude"": -10.2345, ""longitude"": -52.6789}"
+google/gemma-4-31b-it,no-CoT,-10.5,-52.3,1274.32,BR,True,,stop,6.108e-05,404,30,0,10.84,"```json
+{""country"": ""BR"", ""latitude"": -10.5, ""longitude"": -52.3}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-10.5,-52.0,1306.137,BR,True,,stop,0.00028665,585,25,0,1.38,"{""country"": ""BR"", ""latitude"": -10.5, ""longitude"": -52.0}"
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.9253,1468.582,BR,True,,stop,0.0002279,585,31,0,10.88,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9253}"
+minimax/minimax-m3,no-CoT,-10.1838,-48.3228,1693.776,BR,True,,stop,0.00027048,904,25,0,11.94,"{""country"": ""BR"", ""latitude"": -10.1838, ""longitude"": -48.3228}"
+qwen/qwen3.5-9b,no-CoT,-1.2345,-48.5678,1795.074,BR,True,,stop,6.31e-05,586,30,0,10.45,"{""country"": ""BR"", ""latitude"": -1.2345, ""longitude"": -48.5678}"
+openai/gpt-5.5,CoT,-2.755,-42.825,2348.78,BR,True,,stop,0.016825,755,435,342,18.67,"{""reasoning"":""The flat tropical landscape, sandy unpaved road, palms/scrub vegetation, and simple white roadside guide posts are most consistent with rural northeastern Brazil, especially Maranhão/Lençóis Maranhenses area. Lack of lane markings and dusty lateritic-sandy surface fit remote Brazilian rural roads rather than more formal African road infrastructure."",""country"":""BR"",""latitude"":-2.755,""longitude"":-42.825}"
+xiaomi/mimo-v2.5,CoT,-14.5,-42.5,2418.86,BR,True,,stop,0.0002778776,899,637,560,7.96,"{""reasoning"": ""The combination of a wide, reddish-brown dirt road, dense tropical scrub vegetation, and a specific type of palm tree is highly characteristic of the Cerrado or Caatinga-Cerrado transition zones in Brazil."", ""country"": ""BR"", ""latitude"": -14.5, ""longitude"": -42.5}"
+google/gemini-3.1-pro-preview,no-CoT,-12.5123,-41.6854,2451.71,BR,True,,stop,0.00287,1225,35,0,9.12,"```json
+{""country"": ""BR"", ""latitude"": -12.5123, ""longitude"": -41.6854}
+```"
+x-ai/grok-4.3,no-CoT,-3.85,-38.55,2789.516,BR,True,,stop,0.0007334,704,22,0,0.78,"{""country"": ""BR"", ""latitude"": -3.85, ""longitude"": -38.55}"
+qwen/qwen3.6-35b-a3b,no-CoT,-3.7172,-38.5433,2792.715,BR,True,,stop,0.00011775,585,30,0,8.33,"{""country"": ""BR"", ""latitude"": -3.7172, ""longitude"": -38.5433}"
+mistralai/mistral-medium-3-5,no-CoT,-3.7172,-38.5431,2792.737,BR,True,,stop,0.001404,786,30,0,2.08,"{""country"": ""BR"", ""latitude"": -3.7172, ""longitude"": -38.5431}"
+xiaomi/mimo-v2.5,no-CoT,-12.97,-38.51,2799.591,BR,True,,stop,9.60176e-05,820,27,0,2.73,"{""country"": ""BR"", ""latitude"": -12.97, ""longitude"": -38.51}"
+qwen/qwen3.5-27b,no-CoT,-10.1753,-35.7994,3057.044,BR,True,,stop,0.0002345,586,44,0,2.49,"```json
+{
+  ""country"": ""BR"",
+  ""latitude"": -10.1753,
+  ""longitude"": -35.7994
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,17.992692947387695,-85.21294403076172,3703.287,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,17.401756286621094,-88.04722595214844,3865.093,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,18.28760528564453,-88.88699340820312,3997.403,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,6.68,-1.62,7041.178,GH,True,,stop,0.0077693525,665,7938,7834,84.82,"```json
+{
+  ""reasoning"": ""The image features a wide, unpaved road with distinctive red laterite soil, which is characteristic of West Africa, particularly Ghana. The presence of lush tropical vegetation, including palm trees, and the left-hand traffic (indicated by the vehicle ahead driving on the left) strongly point to Ghana."",
+  ""country"": ""GH"",
+  ""latitude"": 6.68,
+  ""longitude"": -1.62
+}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7087.871,,True,True,,,,,,32.17,
+mistralai/mistral-small-2603,no-CoT,36.1699,-115.1398,7248.054,US,True,,stop,0.000171375,786,32,0,1.41,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+mistralai/mistral-small-2603,CoT,-18.5,16.0,8641.677,NA,True,,stop,0.00030984,868,447,455,10.09,"{""reasoning"": ""The acacia-like flat-topped trees and dry savanna vegetation are iconic of African landscapes, particularly Namibia's savanna regions. The road style and soil color match this environment."", ""country"": ""NA"", ""latitude"": -18.5, ""longitude"": 16.0}"
+qwen/qwen3.5-397b-a17b,CoT,-4.3,39.45,11366.97,KE,True,,stop,0.01294683,665,5422,5319,98.25,"{
+""reasoning"": ""The distinct reddish-orange laterite soil and dust are characteristic of tropical regions, particularly East Africa. The presence of palm trees mixed with scrubby bush suggests a coastal hinterland environment, while the white guide post on the left side of the road indicates left-hand traffic, strongly pointing to Kenya."",
+""country"": ""KE"",
+""latitude"": -4.3000,
+""longitude"": 39.4500
+}"
+x-ai/grok-4.3,CoT,-3.42,39.85,11425.417,KE,True,,stop,0.002274,788,650,573,6.42,"{
+  ""reasoning"": ""Tropical vegetation with palms, red-dirt unpaved road, right-side utility poles, and dusty conditions under equatorial sun point to rural East Africa; no left-side driving or distinctive signage rules out Asia/Latin America."",
+  ""country"": ""KE"",
+  ""latitude"": -3.42,
+  ""longitude"": 39.85
+}"
+google/gemini-3.1-pro-preview,CoT,-12.5,131.0,17274.458,AU,True,,stop,0.006142,1307,294,219,12.47,"{
+  ""reasoning"": ""The white guide post with a black band is characteristic of Australia. The tropical vegetation, palm trees, and dusty dirt road suggest a northern region like the Northern Territory or Queensland."",
+  ""country"": ""AU"",
+  ""latitude"": -12.5,
+  ""longitude"": 131.0
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),13.4521,103.8124,18478.382,KH,True,,stop,0.002163,1226,36,0,7.76,"```json
+{""country"": ""KH"", ""latitude"": 13.4521, ""longitude"": 103.8124}
+```"
+google/gemini-3.5-flash,CoT (effort=low),13.4582,103.9215,18488.849,KH,True,,stop,0.0040035,1307,227,160,3.23,"{""reasoning"": ""The wide, dusty yellow-orange dirt road, flat terrain, tropical vegetation with palm trees, and thin concrete utility poles are highly characteristic of rural Cambodia."", ""country"": ""KH"", ""latitude"": 13.4582, ""longitude"": 103.9215}"
+google/gemini-3.5-flash,CoT (effort=high),13.4852,104.8214,18575.448,KH,True,,stop,0.019485,1308,1947,1858,12.83,"```json
+{""reasoning"": ""The flat terrain, dense tropical vegetation with coconut palms, and extremely dusty orange-yellow dirt road are highly characteristic of rural Cambodia. The white car hood visible at the bottom matches the Google Street View vehicle used during the country's coverage."", ""country"": ""KH"", ""latitude"": 13.4852, ""longitude"": 104.8214}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),12.9512,105.0124,18619.692,KH,True,,stop,0.0076845,1307,636,550,14.91,"```json
+{""reasoning"": ""The yellowish-orange dirt road, tropical vegetation with palm trees, and thin concrete utility pole are highly characteristic of rural Cambodia. The small white concrete guide post on the left side of the road further supports this Southeast Asian location."", ""country"": ""KH"", ""latitude"": 12.9512, ""longitude"": 105.0124}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.09,

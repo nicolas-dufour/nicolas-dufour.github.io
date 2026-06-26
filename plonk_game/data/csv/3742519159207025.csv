@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,8.1121694867557,0.9754497415708,0.0,TG,True,,,,,,,,"Sotouboua, None, Centrale, TG"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,8.59827709197998,1.1897149085998535,58.969,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,8.937349319458008,1.276849389076233,97.558,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,8.944098472595215,1.2754778861999512,98.214,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,10.5,-4.5,656.833,BF,True,,stop,0.00075426,843,469,387,15.43,"{""reasoning"": ""Red laterite dirt road with characteristic reddish-orange soil, tall elephant grass savanna vegetation, scattered tropical trees, flat terrain, and overcast sky during rainy season strongly indicate the Sudanian zone of West Africa, most likely southern Burkina Faso or northern Côte d'Ivoire."", ""country"": ""BF"", ""latitude"": 10.5, ""longitude"": -4.5}"
+anthropic/claude-opus-4.8,CoT,3.5,22.0,2380.935,CD,True,,stop,0.00651,797,101,0,3.66,"{""reasoning"": ""Red lateritic dirt road, tall savanna grass and scattered trees typical of West/Central African wooded savanna woodland; soil and vegetation suggest sub-Saharan Africa."", ""country"": ""CD"", ""latitude"": 3.5, ""longitude"": 22.0}"
+google/gemini-3.5-flash,CoT (effort=high),0.2154,30.1245,3347.101,UG,True,,stop,0.0070185,1271,568,499,12.21,"{""reasoning"": ""The reddish-brown dirt road, tall savanna grass, and low-angle motorcycle camera perspective are highly characteristic of rural Uganda, particularly in the western region near the national parks."", ""country"": ""UG"", ""latitude"": 0.2154, ""longitude"": 30.1245}"
+google/gemini-3.5-flash,CoT (effort=low),2.2514,31.4822,3438.796,UG,True,,stop,0.0037695,1271,207,142,9.52,"{""reasoning"": ""The reddish-brown dirt track, tall savanna grasses, and sparse tropical trees are highly characteristic of rural Uganda, often captured via motorcycle or trekker coverage."", ""country"": ""UG"", ""latitude"": 2.2514, ""longitude"": 31.4822}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),2.3456,31.5678,3445.924,UG,True,,stop,0.002091,1190,34,0,18.33,"```json
+{""country"": ""UG"", ""latitude"": 2.3456, ""longitude"": 31.5678}
+```"
+google/gemini-3.1-pro-preview,CoT,1.3733,31.4388,3455.714,UG,True,,stop,0.005026,1271,207,130,10.47,"{
+  ""reasoning"": ""The reddish-brown dirt road, tall savanna grass, and scattered trees are characteristic of the East African landscape. The overall appearance strongly suggests a rural area in Uganda."",
+  ""country"": ""UG"",
+  ""latitude"": 1.3733,
+  ""longitude"": 31.4388
+}"
+google/gemini-3.5-flash,CoT (effort=medium),1.6833,31.7167,3477.907,UG,True,,stop,0.0055065,1271,400,336,11.54,"{""reasoning"": ""The reddish-brown soil, tall savanna grass, and tropical trees are highly characteristic of rural Uganda, where extensive motorbike-based Street View coverage exists."", ""country"": ""UG"", ""latitude"": 1.6833, ""longitude"": 31.7167}"
+google/gemini-3.1-pro-preview,no-CoT,2.7724,32.299,3516.118,UG,True,,stop,0.002774,1189,33,0,16.55,"```json
+{""country"": ""UG"", ""latitude"": 2.7724, ""longitude"": 32.299}
+```"
+anthropic/claude-opus-4.8,no-CoT,2.3,32.5,3548.345,UG,True,,stop,0.00408,666,30,0,9.14,"{""country"": ""UG"", ""latitude"": 2.3, ""longitude"": 32.5}"
+openai/gpt-5.5,no-CoT,0.4635,32.3238,3575.748,UG,True,,stop,0.00341,544,23,0,1.13,"{""country"":""UG"",""latitude"":0.4635,""longitude"":32.3238}"
+x-ai/grok-4.3,no-CoT,0.35,32.55,3603.275,UG,True,,stop,0.0005934,592,22,0,1.2,"{""country"": ""UG"", ""latitude"": 0.35, ""longitude"": 32.55}"
+openai/gpt-5.5,CoT,0.3536,32.5558,3603.797,UG,True,,stop,0.012495,621,313,232,16.98,"{""reasoning"":""The lateritic red dirt track, tall elephant grass, humid overcast savanna vegetation, and scattered eucalyptus-like trees strongly suggest rural equatorial East Africa. With no signage or road furniture, Uganda is the best fit among countries with similar street-level coverage and landscapes."",""country"":""UG"",""latitude"":0.3536,""longitude"":32.5558}"
+mistralai/mistral-medium-3-5,no-CoT,0.3166,32.5833,3607.799,UG,True,,stop,0.001176,634,30,0,7.36,"{""country"": ""UG"", ""latitude"": 0.3166, ""longitude"": 32.5833}"
+moonshotai/kimi-k2.6,CoT,2.0,33.0,3609.571,UG,True,,stop,0.013522968,682,3893,3834,74.88,"{""reasoning"": ""Red laterite murram road flanked by tall elephant grass and scattered savanna woodland under an overcast equatorial sky is characteristic of rural Uganda."", ""country"": ""UG"", ""latitude"": 2.0, ""longitude"": 33.0}"
+x-ai/grok-4.3,CoT,-1.493,35.34,3956.917,KE,True,,stop,0.0016465,676,455,381,10.6,"{
+  ""reasoning"": ""Reddish-brown dirt track, tall savanna grasses, scattered flat-topped trees and overcast equatorial light match East African bushveld; no signage/vehicles but typical of Kenyan/Tanzanian game reserves."",
+  ""country"": ""KE"",
+  ""latitude"": -1.493,
+  ""longitude"": 35.34
+}"
+qwen/qwen3.5-9b,no-CoT,-3.3833,35.6167,4049.065,TZ,True,,stop,5.19e-05,474,30,0,2.07,"{""country"": ""TZ"", ""latitude"": -3.3833, ""longitude"": 35.6167}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-9.66212272644043,33.46216583251953,4104.565,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,-1.286389,36.817222,4108.705,KE,True,,stop,6.498e-05,406,39,0,5.36,"```json
+{""country"": ""KE"", ""latitude"": -1.286389, ""longitude"": 36.817222}
+```"
+xiaomi/mimo-v2.5,no-CoT,-1.2921,36.8219,4109.374,KE,True,,stop,8.11776e-05,708,30,0,2.76,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-11.440141677856445,32.694664001464844,4127.236,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-7.786499977111816,34.79111862182617,4143.959,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,-3.385,36.72,4165.402,TZ,True,,stop,0.0003949176,787,1111,1046,11.75,"{""reasoning"": ""Reddish-brown soil and acacia-like trees indicate a savanna environment typical of East Africa, with no urban clues suggesting a rural setting in Tanzania."", ""country"": ""TZ"", ""latitude"": -3.385, ""longitude"": 36.72}"
+qwen/qwen3.5-122b-a10b,no-CoT,-6.1628,35.7516,4170.165,TZ,True,,stop,0.00018538,473,30,0,2.21,"{""country"": ""TZ"", ""latitude"": -6.1628, ""longitude"": 35.7516}"
+qwen/qwen3.5-27b,no-CoT,-6.1659,35.7516,4170.294,TZ,True,,stop,0.0002045,474,43,0,2.79,"```json
+{
+  ""country"": ""TZ"",
+  ""latitude"": -6.1659,
+  ""longitude"": 35.7516
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.0234,37.9065,4191.222,KE,True,,stop,0.0001428,474,30,0,2.75,"{""country"": ""KE"", ""latitude"": -0.0234, ""longitude"": 37.9065}"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.6416,25.8491,4531.513,ZA,True,,stop,9.736e-05,474,31,0,1.72,"{""country"": ""ZA"", ""latitude"": -24.6416, ""longitude"": 25.8491}"
+google/gemma-4-26b-a4b-it,no-CoT,-23.55,28.9667,4652.56,ZA,True,,stop,3.624e-05,406,36,0,3.54,"```json
+{""country"": ""ZA"", ""latitude"": -23.5500, ""longitude"": 28.9667}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7942,-47.8822,6000.084,BR,True,,stop,0.00036468,473,31,0,8.59,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}"
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.9253,6342.001,BR,True,,stop,0.0001943,473,31,0,13.94,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9253}"
+mistralai/mistral-small-2603,no-CoT,36.5323,-118.2921,11981.501,US,True,,stop,0.0001143,634,32,0,1.9,"{""country"": ""US"", ""latitude"": 36.5323, ""longitude"": -118.2921}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.51,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.7,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,9.56,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.31,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.36,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.63,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.64,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.39,

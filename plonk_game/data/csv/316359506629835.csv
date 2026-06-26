@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,67.006496753588,25.182645849359,0.0,FI,True,,,,,,,,"Kittilae, Tunturi-Lappi, Lapland, FI"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,66.49163055419922,25.38886833190918,57.962,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,66.5,25.5,58.016,FI,True,,stop,9.54576e-05,820,25,0,1.11,"{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 25.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,66.48554992675781,25.3616943359375,58.457,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,66.5,25.7,60.724,FI,True,,stop,6.108e-05,404,30,0,3.91,"```json
+{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 25.7}
+```"
+moonshotai/kimi-k2.6,no-CoT,66.5,25.7,60.724,FI,True,,stop,0.00033858,755,23,0,8.36,"{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 25.7}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),66.5039,25.7294,60.819,FI,True,,stop,0.002154,1226,35,0,7.34,"```json
+{""country"": ""FI"", ""latitude"": 66.5039, ""longitude"": 25.7294}
+```"
+anthropic/claude-opus-4.8,CoT,66.5,26.0,66.772,FI,True,,stop,0.00717,949,97,0,4.14,"{""reasoning"": ""Snow-covered road with boreal spruce/birch forest and low pinkish winter twilight suggests far northern Scandinavia, likely Finnish/Swedish Lapland."", ""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 26.0}"
+anthropic/claude-opus-4.8,no-CoT,66.5,26.0,66.772,FI,True,,stop,0.00484,818,30,0,2.7,"{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 26.0}"
+google/gemini-3.5-flash,CoT (effort=low),67.4152,26.5918,75.819,FI,True,,stop,0.0040305,1307,230,169,23.24,"{""reasoning"": ""The snowy road, dense coniferous taiga forest, and low winter sun are highly characteristic of northern Finland during winter Street View coverage."", ""country"": ""FI"", ""latitude"": 67.4152, ""longitude"": 26.5918}"
+qwen/qwen3.5-9b,no-CoT,67.3527,26.7606,78.182,FI,True,,stop,6.325e-05,586,31,0,5.3,"{""country"": ""FI"", ""latitude"": 67.3527, ""longitude"": 26.7606}"
+google/gemini-3.1-pro-preview,CoT,67.5,26.5,78.859,FI,True,,stop,0.005784,1308,264,184,4.66,"{
+  ""reasoning"": ""The flat, snow-covered landscape with dense coniferous forests and low winter sun is characteristic of the taiga biome in northern Europe. The wide, well-maintained road points towards a Nordic country like Finland."",
+  ""country"": ""FI"",
+  ""latitude"": 67.5,
+  ""longitude"": 26.5
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,66.5,26.5,80.71,FI,True,,stop,0.0003672,585,25,0,1.42,"{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 26.5}"
+google/gemini-3.5-flash,CoT (effort=high),67.65,26.6,93.859,FI,True,,stop,0.0084405,1307,720,652,13.05,"{""reasoning"": ""The snowy boreal forest, low winter sun with a pink horizon, and well-maintained two-lane road are highly characteristic of winter Google Street View coverage in northern Finland (Lapland)."", ""country"": ""FI"", ""latitude"": 67.65, ""longitude"": 26.6}"
+qwen/qwen3.5-27b,no-CoT,67.9233,25.4503,102.58,FI,True,,stop,0.00026676,586,44,0,10.49,"```json
+{
+  ""country"": ""FI"",
+  ""latitude"": 67.9233,
+  ""longitude"": 25.4503
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,67.85,26.5,109.35,FI,True,,stop,0.0001588,586,26,0,4.36,"{""country"": ""FI"", ""latitude"": 67.85, ""longitude"": 26.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,67.9234,26.5123,116.637,FI,True,,stop,0.00021658,585,31,0,9.87,"{""country"": ""FI"", ""latitude"": 67.9234, ""longitude"": 26.5123}"
+qwen/qwen3.5-35b-a3b,no-CoT,67.9162,26.6822,119.647,FI,True,,stop,0.00011875,585,31,0,3.59,"{""country"": ""FI"", ""latitude"": 67.9162, ""longitude"": 26.6822}"
+google/gemini-3.5-flash,CoT (effort=medium),68.0123,26.9012,133.6,FI,True,,stop,0.0062445,1307,476,402,5.05,"```json
+{""reasoning"": ""The dense boreal forest with frosted pine and spruce trees, flat terrain, and snowy road conditions under a low winter sun are highly characteristic of northern Finland (Lapland)."", ""country"": ""FI"", ""latitude"": 68.0123, ""longitude"": 26.9012}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,65.79696655273438,24.74591064453125,135.891,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,66.0,22.5,163.284,SE,True,,stop,0.00075546,995,432,355,13.71,"{""reasoning"": ""Boreal spruce-birch taiga forest, packed snow road with dark treated center strip typical of Nordic winter maintenance, low-angle polar twilight sky, and absence of any buildings suggest a remote highway in northern Scandinavia (likely Sweden)."", ""country"": ""SE"", ""latitude"": 66.0, ""longitude"": 22.5}"
+moonshotai/kimi-k2.6,CoT,68.42,26.59,167.995,FI,True,,stop,0.008453916,834,2388,2305,69.44,"{""reasoning"": ""Heavy snow-laden boreal forest and extended winter twilight with a low sun glow indicate a high-latitude taiga environment during polar night, consistent with Lapland; the straight, flat paved road through dense coniferous woodland matches the rural highway network of northern Finland."", ""country"": ""FI"", ""latitude"": 68.42, ""longitude"": 26.59}"
+openai/gpt-5.5,CoT,65.8456,29.1564,218.776,FI,True,,stop,0.014215,755,348,278,9.07,"{""reasoning"":""Snow-covered right-side-driving boreal road through dense spruce/birch forest strongly suggests rural northern Finland; the flat-to-gently rolling terrain and winter conditions fit the Kuusamo/Kainuu region best."",""country"":""FI"",""latitude"":65.8456,""longitude"":29.1564}"
+google/gemini-3.1-pro-preview,no-CoT,65.0121,25.4651,222.134,FI,True,,stop,0.00287,1225,35,0,29.43,"```json
+{""country"": ""FI"", ""latitude"": 65.0121, ""longitude"": 25.4651}
+```"
+mistralai/mistral-medium-3-5,no-CoT,64.8388,25.2828,241.08,FI,True,,stop,0.0014115,786,31,0,1.21,"{""country"": ""FI"", ""latitude"": 64.8388, ""longitude"": 25.2828}"
+x-ai/grok-4.3,CoT,64.85,26.35,245.556,FI,True,,stop,0.001989,788,536,464,6.64,"{
+  ""reasoning"": ""Boreal taiga forest of snow-laden spruce/pine with birch, low sun at twilight, and right-hand driving on an unmarked snowy paved road are diagnostic of northern Fennoscandia in winter."",
+  ""country"": ""FI"",
+  ""latitude"": 64.85,
+  ""longitude"": 26.35
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,65.70022583007812,29.68562889099121,247.759,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,65.66938018798828,29.767578125,252.828,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,64.1265,25.4655,320.504,FI,True,,stop,5.468e-05,404,31,0,8.54,"{""country"": ""FI"", ""latitude"": 64.1265, ""longitude"": 25.4655}"
+qwen/qwen3.6-27b,no-CoT,64.13,26.52,325.693,FI,True,,stop,0.0002199,585,27,0,21.29,"{""country"": ""FI"", ""latitude"": 64.13, ""longitude"": 26.52}"
+minimax/minimax-m3,no-CoT,64.0,26.0,336.417,FI,True,,stop,0.00024012,906,22,0,8.72,"{""country"": ""FI"", ""latitude"": 64.0, ""longitude"": 26.0}{""country"": ""FI"", ""latitude"": 64.0, ""longitude"": 26.0}"
+openai/gpt-5.5,no-CoT,62.7365,26.5123,478.907,FI,True,,stop,0.00408,678,23,0,7.5,"{""country"":""FI"",""latitude"":62.7365,""longitude"":26.5123}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,62.581336975097656,26.029109954833984,493.674,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,62.3,25.7,523.913,FI,True,,stop,0.0007334,704,22,0,7.35,"{""country"": ""FI"", ""latitude"": 62.3, ""longitude"": 25.7}"
+xiaomi/mimo-v2.5,CoT,66.2,113.5,3572.088,RU,True,,stop,0.0002689176,899,605,515,8.0,"{""reasoning"": ""The dense coniferous forest, heavy snow cover, and straight road through flat taiga are characteristic of the Siberian or Northern Russian landscape. The low sun angle and twilight sky suggest a high-latitude northern location, and the road style is consistent with regional highways in that area."", ""country"": ""RU"", ""latitude"": 66.2, ""longitude"": 113.5}"
+mistralai/mistral-small-2603,no-CoT,47.6062,-122.3321,6978.787,US,True,,stop,0.0001371,786,32,0,4.19,"{""country"": ""US"", ""latitude"": 47.6062, ""longitude"": -122.3321}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.27,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.78,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.31,

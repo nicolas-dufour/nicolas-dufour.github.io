@@ -1,0 +1,53 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,11.397047085227,104.86382449493,0.0,KH,True,,,,,,,,"Ta Khmau, None, Kandal, KH"
+google/gemini-3.1-pro-preview,CoT,12.5,104.9,122.706,KH,True,,stop,0.004906,1271,197,124,9.98,"{
+  ""reasoning"": ""The red signs with Khmer script and the Angkor Beer logo strongly indicate Cambodia. The flat, tropical landscape and right-hand driving are consistent with a major Cambodian highway."",
+  ""country"": ""KH"",
+  ""latitude"": 12.5,
+  ""longitude"": 104.9
+}"
+moonshotai/kimi-k2.6,CoT,12.5,104.5,128.871,KH,True,,stop,0.0150319,682,3596,3919,162.81," {""reasoning"": ""Right-hand traffic with motorcycles on the road shoulder and red commercial signage using Khmer script (likely Angkor Beer or WING) are decisive for Cambodia."", ""country"": ""KH"", ""latitude"": 12.5, ""longitude"": 104.5}"
+google/gemini-3.1-pro-preview,no-CoT,12.71,104.88,146.004,KH,True,,stop,0.004394,1189,168,136,5.38,"```json
+{""country"": ""KH"", ""latitude"": 12.71, ""longitude"": 104.88}
+```"
+google/gemini-3.5-flash,CoT (effort=high),12.7112,104.8884,146.152,KH,True,,stop,0.0072165,1271,590,501,12.02,"{""reasoning"": ""The red signs feature Khmer script and the Angkor Beer logo, which is highly characteristic of Cambodia. The flat landscape, right-hand traffic, and abundance of motorbikes on a paved national highway point to a rural area in Cambodia, likely along National Road 6."", ""country"": ""KH"", ""latitude"": 12.7112, ""longitude"": 104.8884}"
+google/gemini-3.5-flash,CoT (effort=low),12.7115,104.8884,146.185,KH,True,,stop,0.00342,1272,168,97,2.22,"{""reasoning"": ""The red billboard on the right features the Angkor Beer logo and Khmer script, indicating Cambodia. The flat terrain, roadside stalls, and motorbike traffic are typical of Cambodian national highways."", ""country"": ""KH"", ""latitude"": 12.7115, ""longitude"": 104.8884}"
+google/gemini-3.5-flash,CoT (effort=medium),12.7115,104.9012,146.217,KH,True,,stop,0.0047685,1271,318,253,4.61,"{""reasoning"": ""The red signs feature Khmer script and the Angkor Beer logo, indicating Cambodia. The flat terrain and road style are characteristic of National Highway 6."", ""country"": ""KH"", ""latitude"": 12.7115, ""longitude"": 104.9012}"
+qwen/qwen3.5-27b,no-CoT,10.8425,106.6781,207.332,VN,True,,stop,0.000142155,473,32,0,1.14,"{""country"": ""VN"", ""latitude"": 10.8425, ""longitude"": 106.6781}"
+x-ai/grok-4.3,no-CoT,10.85,106.75,214.594,VN,True,,stop,0.0005934,592,22,0,0.99,"{""country"": ""VN"", ""latitude"": 10.85, ""longitude"": 106.75}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),13.3622,103.8597,244.215,KH,True,,stop,0.002109,1190,36,0,1.12,"```json
+{""country"": ""KH"", ""latitude"": 13.3622, ""longitude"": 103.8597}
+```"
+x-ai/grok-4.3,CoT,13.361,103.856,244.276,KH,True,,stop,0.002154,676,658,585,6.0,"{""reasoning"": ""Scooters/motorbikes dominant, right-hand traffic, tropical broadleaf trees, market stalls with tarps, red English signs including one reading 'Angkor Town', and hazy tropical sky point to Cambodia near Siem Reap."", ""country"": ""KH"", ""latitude"": 13.361, ""longitude"": 103.856}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,12.338129043579102,101.73490905761719,356.195,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,15.2,102.5,494.188,TH,True,,stop,0.00079266,843,501,420,13.04,"{""reasoning"": ""Red signage with Thai script, presence of a Buddhist monk (orange robes) on a motorcycle, tropical deciduous vegetation, rural roadside market stalls with tarps, and motorcycles as dominant transport all strongly indicate rural Thailand, likely the Isan region or central plains."", ""country"": ""TH"", ""latitude"": 15.2, ""longitude"": 102.5}"
+mistralai/mistral-medium-3-5,no-CoT,13.7563,100.5018,541.187,TH,True,,stop,0.001191,634,32,0,0.89,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-35b-a3b,no-CoT,13.7563,100.5018,541.187,TH,True,,stop,9.836e-05,474,32,0,1.72,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-397b-a17b,no-CoT,13.7563,100.5018,541.187,TH,True,,stop,0.00036828,473,32,0,3.44,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-9b,no-CoT,13.7563,100.5018,541.187,TH,True,,stop,8.841e-05,473,32,0,8.91,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.6-27b,no-CoT,13.7563,100.5018,541.187,TH,True,,stop,0.0001963,473,32,0,12.97,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.6-35b-a3b,no-CoT,13.7563,100.5018,541.187,TH,True,,stop,0.000146,474,32,0,2.11,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+xiaomi/mimo-v2.5,CoT,16.31,107.62,622.024,VN,True,,stop,0.0001762376,787,330,250,11.86,"{""reasoning"": ""Left-hand traffic, Vietnamese script on roadside signage, tropical rural roadside stalls and motorbike-dominant transport are definitive markers of central Vietnam. The overcast tropical climate and large banyan-like trees align with this region."", ""country"": ""VN"", ""latitude"": 16.31, ""longitude"": 107.62}"
+qwen/qwen3.5-122b-a10b,no-CoT,16.8248,103.1775,630.317,TH,True,,stop,0.0001898,474,32,0,12.5,"{""country"": ""TH"", ""latitude"": 16.8248, ""longitude"": 103.1775}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,5.884551525115967,99.98389434814453,814.417,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,5.44292688369751,100.2389144897461,834.795,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,19.8564,96.1717,1322.54,MM,True,,stop,6.718e-05,406,36,0,8.41,"```json
+{""country"": ""MM"", ""latitude"": 19.8564, ""longitude"": 96.1717}
+```"
+anthropic/claude-opus-4.8,CoT,-0.5,102.0,1360.206,ID,True,,stop,0.006285,797,92,0,2.87,"{""reasoning"": ""Right-side driving, numerous motorcycles, roadside warungs with tarps, and tropical vegetation suggest rural Indonesia, likely Sumatra."", ""country"": ""ID"", ""latitude"": -0.5, ""longitude"": 102.0}"
+anthropic/claude-opus-4.8,no-CoT,-0.5,101.5,1374.108,ID,True,,stop,0.00408,666,30,0,2.58,"{""country"": ""ID"", ""latitude"": -0.5, ""longitude"": 101.5}"
+xiaomi/mimo-v2.5,no-CoT,-6.5,106.8,2001.557,ID,True,,stop,7.97776e-05,708,25,0,1.09,"{""country"": ""ID"", ""latitude"": -6.5, ""longitude"": 106.8}"
+openai/gpt-5.5,CoT,24.095,90.409,2079.249,BD,True,,stop,0.015525,621,414,335,12.16,"{""reasoning"":""Left-side traffic, tropical flat roadside markets, and red telecom-style billboards resembling Bangladesh's Robi branding point strongly to rural Bangladesh. The wet monsoon road and Bengali/South Asian roadside context fit the Dhaka-Gazipur/Mymensingh highway corridor."",""country"":""BD"",""latitude"":24.095,""longitude"":90.409}"
+openai/gpt-5.5,no-CoT,27.6784,85.4632,2714.374,NP,True,,stop,0.00341,544,23,0,3.33,"{""country"":""NP"",""latitude"":27.6784,""longitude"":85.4632}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,15.255748748779297,80.00679016113281,2721.844,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,12.987672805786133,77.57022857666016,2970.337,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,12.893851280212402,77.46998596191406,2981.144,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,28.6358,77.2245,3450.39,IN,True,,stop,0.0001137,634,31,0,3.16,"{""country"": ""IN"", ""latitude"": 28.6358, ""longitude"": 77.2245}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.68,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,19.21,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,312.51,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.24,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.35,

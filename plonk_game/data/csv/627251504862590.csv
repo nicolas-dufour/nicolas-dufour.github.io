@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-17.137878905493,46.827746238504,0.0,MG,True,,,,,,,,"Maevatanana, None, Betsiboka, MG"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-17.27739143371582,46.76723098754883,16.792,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-17.287132263183594,46.76234436035156,17.991,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-17.355770111083984,46.70789337158203,27.368,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-16.4583,46.9125,76.102,MG,True,,stop,0.0020985,1189,35,0,3.49,"```json
+{""country"": ""MG"", ""latitude"": -16.4583, ""longitude"": 46.9125}
+```"
+anthropic/claude-opus-4.8,CoT,-19.0,47.0,207.857,MG,True,,stop,0.006285,797,92,0,9.99,"{""reasoning"": ""Red lateritic soil cut, dry savanna grassland, sparse scrub trees and narrow rural paved road suggest highland Madagascar plateau landscape."", ""country"": ""MG"", ""latitude"": -19.0, ""longitude"": 47.0}"
+anthropic/claude-opus-4.8,no-CoT,-19.0,47.0,207.857,MG,True,,stop,0.00408,666,30,0,3.78,"{""country"": ""MG"", ""latitude"": -19.0, ""longitude"": 47.0}"
+openai/gpt-5.5,no-CoT,-19.3187,46.7801,242.548,MG,True,,stop,0.00344,544,24,0,1.37,"{""country"":""MG"",""latitude"":-19.3187,""longitude"":46.7801}"
+openai/gpt-5.5,CoT,-19.7445,47.0608,290.883,MG,True,,stop,0.011955,621,295,207,7.13,"{""reasoning"":""The unmarked narrow paved road with red lateritic soil cuttings, dry savanna grass, and sparse shrubs is highly characteristic of rural Madagascar highlands/plateau roads. The landscape fits central Madagascar more than mainland southern Africa, with no road furniture or lane markings typical of minor Malagasy roads."",""country"":""MG"",""latitude"":-19.7445,""longitude"":47.0608}"
+moonshotai/kimi-k2.6,no-CoT,-19.8,46.5,298.025,MG,True,,stop,0.0005752,600,25,0,3.42,"{""country"": ""MG"", ""latitude"": -19.8, ""longitude"": 46.5}"
+google/gemini-3.5-flash,CoT (effort=low),-20.2583,47.1254,348.388,MG,True,,stop,0.003681,1272,197,135,2.77,"{""reasoning"": ""The prominent red laterite soil, dry yellow grassland, and characteristic road style without markings are highly indicative of the central highlands of Madagascar."", ""country"": ""MG"", ""latitude"": -20.2583, ""longitude"": 47.1254}"
+google/gemini-3.5-flash,CoT (effort=medium),-20.8512,47.1543,414.327,MG,True,,stop,0.0062535,1271,483,418,5.3,"{""reasoning"": ""The reddish soil, dry yellowish grass, and narrow paved road without markings are highly characteristic of the highlands of Madagascar, particularly along the RN7 highway."", ""country"": ""MG"", ""latitude"": -20.8512, ""longitude"": 47.1543}"
+google/gemini-3.5-flash,CoT (effort=high),-22.25,46.25,571.648,MG,True,,stop,0.0109335,1271,1003,940,7.74,"{""reasoning"": ""The combination of distinct red laterite soil cuts, dry golden savanna grass, and a paved road without markings is highly characteristic of the RN7 highway in Madagascar."", ""country"": ""MG"", ""latitude"": -22.25, ""longitude"": 46.25}"
+google/gemini-3.1-pro-preview,CoT,-22.3,46.1,579.03,MG,True,,stop,0.005578,1271,253,180,10.71,"{
+  ""reasoning"": ""The deep red soil banks, dry savanna grass, and lack of road markings are highly characteristic of the central highlands of Madagascar, often seen along major routes like RN7."",
+  ""country"": ""MG"",
+  ""latitude"": -22.3,
+  ""longitude"": 46.1
+}"
+moonshotai/kimi-k2.6,CoT,-22.4,46.1,590.051,MG,True,,stop,0.012836,680,3087,3433,97.95,"{""reasoning"": ""The bright red laterite soil cuttings and dry golden savanna grassland are classic signatures of Madagascar's southern highland plateau, closely matching the RN7 corridor near Ihosy."", ""country"": ""MG"", ""latitude"": -22.4, ""longitude"": 46.1}"
+google/gemini-3.1-pro-preview,no-CoT,-22.4166,45.4666,603.983,MG,True,,stop,0.0028,1190,35,0,8.44,"```json
+{""country"": ""MG"", ""latitude"": -22.4166, ""longitude"": 45.4666}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,-29.8587,31.0218,2139.915,ZA,True,,stop,0.00018772,474,31,0,4.81,"{""country"": ""ZA"", ""latitude"": -29.8587, ""longitude"": 31.0218}"
+xiaomi/mimo-v2.5,CoT,-32.35,26.35,2662.379,ZA,True,,stop,0.0001417976,787,207,131,2.84,"{
+""reasoning"": ""The red-bordered triangular road sign is a standard design used in South Africa. The dry grass, reddish-brown soil, and vegetation are characteristic of the South African interior, likely the Eastern Cape."",
+""country"": ""ZA"",
+""latitude"": -32.35,
+""longitude"": 26.35
+}"
+google/gemma-4-31b-it,no-CoT,17.65,78.5,5194.295,IN,True,,stop,6.964e-05,406,32,0,8.19,"```json
+{""country"": ""IN"", ""latitude"": 17.65, ""longitude"": 78.50}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5467.473,,True,True,,,,,,14.97,
+minimax/minimax-m3,no-CoT,37.5,34.8,6204.558,TR,True,,stop,0.00021504,752,23,0,1.92,"{""country"": ""TR"", ""latitude"": 37.5, ""longitude"": 34.8}"
+qwen/qwen3.6-35b-a3b,CoT,42.1667,9.1667,7641.525,FR,True,,stop,0.00321944935,553,3243,3159,28.11,"{""reasoning"": ""The distinctive red soil embankment (characteristic of the 'Red Island' of Corsica), combined with dry golden grass and Mediterranean scrub vegetation (maquis), strongly points to a rural road in Corsica, France."", ""country"": ""FR"", ""latitude"": 42.1667, ""longitude"": 9.1667}"
+qwen/qwen3.6-27b,no-CoT,41.3874,2.1686,7964.966,ES,True,,stop,0.0001923,473,30,0,17.3,"{""country"": ""ES"", ""latitude"": 41.3874, ""longitude"": 2.1686}"
+minimax/minimax-m3,CoT,37.6,-4.1,8083.61,ES,True,,stop,0.00084786,843,547,465,15.15,"{""reasoning"": ""Reddish Mediterranean soil (terra rossa) embankment, dry golden grasses with sparse evergreen scrub vegetation, and a winding rural road with no markings strongly suggest a Mediterranean climate region. The vegetation and soil profile are characteristic of inland Andalusia, southern Spain."", ""country"": ""ES"", ""latitude"": 37.6, ""longitude"": -4.1}"
+qwen/qwen3.5-35b-a3b,no-CoT,37.0886,-7.9234,8317.081,PT,True,,stop,0.00016776,474,30,0,8.41,"{""country"": ""PT"", ""latitude"": 37.0886, ""longitude"": -7.9234}"
+x-ai/grok-4.3,no-CoT,41.15,-5.42,8419.798,ES,True,,stop,0.0005934,592,22,0,1.86,"{""country"": ""ES"", ""latitude"": 41.15, ""longitude"": -5.42}"
+x-ai/grok-4.3,CoT,38.72,-8.45,8461.11,PT,True,,stop,0.002014,676,602,531,18.87,"{""reasoning"": ""Dry Mediterranean scrub/grassland with reddish soil, scattered low trees/shrubs, and narrow unmarked asphalt road with gravel shoulder are characteristic of rural southern Portugal/Spain; no left-side driving or other regional markers visible."", ""country"": ""PT"", ""latitude"": 38.72, ""longitude"": -8.45}"
+qwen/qwen3.5-397b-a17b,no-CoT,38.7223,-9.1393,8509.801,PT,True,,stop,0.00036108,473,30,0,1.93,"{""country"": ""PT"", ""latitude"": 38.7223, ""longitude"": -9.1393}"
+qwen/qwen3.5-27b,no-CoT,42.4667,-7.3333,8634.935,ES,True,,stop,0.0002045,474,43,0,5.45,"```json
+{
+  ""country"": ""ES"",
+  ""latitude"": 42.4667,
+  ""longitude"": -7.3333
+}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-15.7801,-47.9292,9982.858,BR,True,,stop,0.0011835,634,31,0,1.29,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+qwen/qwen3.5-397b-a17b,CoT,-16.7823,-49.2615,10083.791,BR,True,,stop,0.0094134,553,2536,2441,28.13,"{
+""reasoning"": ""The distinct reddish-brown laterite soil combined with dry, golden savanna grass and scattered scrubby trees is characteristic of the Cerrado biome in central Brazil. The concrete drainage channel along the road edge is a common infrastructure feature in this region."",
+""country"": ""BR"",
+""latitude"": -16.7823,
+""longitude"": -49.2615
+}"
+qwen/qwen3.5-9b,no-CoT,-14.235,-51.9219,10443.916,BR,True,,stop,8.791e-05,473,30,0,7.25,"{""country"": ""BR"", ""latitude"": -14.235, ""longitude"": -51.9219}"
+mistralai/mistral-small-2603,no-CoT,48.9934,-122.7347,16349.585,US,True,,stop,0.000142875,634,32,0,1.46,"{""country"": ""US"", ""latitude"": 48.9934, ""longitude"": -122.7347}"
+xiaomi/mimo-v2.5,no-CoT,35.6,-105.9,16630.33,US,True,,stop,8.00576e-05,708,26,0,1.61,"{""country"": ""US"", ""latitude"": 35.6, ""longitude"": -105.9}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,37.79457473754883,-112.02156066894531,16927.43,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,37.2293586730957,-113.1904525756836,17045.767,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,38.183780670166016,-114.76116180419922,17067.164,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,36.1699,-115.5631,17278.974,US,True,,stop,0.000146,474,32,0,3.49,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.5631}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,2.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.11,

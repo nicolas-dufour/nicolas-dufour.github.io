@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,45.704703097995,23.596899783538,0.0,RO,True,,,,,,,,"Sugag, Comuna Sugag, Alba, RO"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.647369384765625,23.876182556152344,22.616,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,45.532569885253906,23.78590965270996,24.134,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,45.53150177001953,23.788509368896484,24.351,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),45.285,23.372,49.852,RO,True,,stop,0.0088785,1311,768,700,6.22,"{""reasoning"": ""The smooth asphalt, continuous concrete safety barrier, and dense deciduous forest on steep slopes are highly characteristic of Romanian mountain passes, such as the Jiu Valley (DN66)."", ""country"": ""RO"", ""latitude"": 45.285, ""longitude"": 23.372}"
+google/gemini-3.5-flash,CoT (effort=high),45.265,23.372,51.941,RO,True,,stop,0.0121185,1311,1128,1052,15.75,"{""reasoning"": ""The lush green mountainous terrain, European road markings, and the specific style of concrete safety barrier on the right are highly characteristic of mountain passes in the Romanian Carpathians, such as the Jiu Valley (DN66)."", ""country"": ""RO"", ""latitude"": 45.265, ""longitude"": 23.372}"
+google/gemini-3.1-pro-preview,no-CoT,45.35,24.3,67.494,RO,True,,stop,0.005734,1229,273,242,11.15,"```json
+{""country"": ""RO"", ""latitude"": 45.35, ""longitude"": 24.30}
+```"
+anthropic/claude-opus-4.8,CoT,45.6,24.6,78.831,RO,True,,stop,0.007285,987,94,0,3.64,"{""reasoning"": ""European mountain road with right-hand traffic, double-bend warning sign and concrete retaining wall typical of Romanian Carpathian roads like Transfăgărășan area."", ""country"": ""RO"", ""latitude"": 45.6, ""longitude"": 24.6}"
+anthropic/claude-opus-4.8,no-CoT,45.6,24.6,78.831,RO,True,,stop,0.00503,856,30,0,2.13,"{""country"": ""RO"", ""latitude"": 45.6, ""longitude"": 24.6}"
+moonshotai/kimi-k2.6,CoT,45.6,24.62,80.369,RO,True,,stop,0.014263488,872,4087,4023,185.8,"{""reasoning"": ""European-style warning sign for a sharp left curve, right-hand traffic, dense mixed mountain forest, and concrete roadside barrier are characteristic of a Carpathian mountain pass in Romania."", ""country"": ""RO"", ""latitude"": 45.6, ""longitude"": 24.62}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),45.583125,24.618333,80.546,RO,True,,stop,0.002151,1230,34,0,1.29,"{""country"": ""RO"", ""latitude"": 45.583125, ""longitude"": 24.618333}"
+minimax/minimax-m3,CoT,45.58,24.62,80.735,RO,True,,stop,0.00096486,1033,597,503,28.42,"{""reasoning"": ""European-style triangular double-bend warning sign with red border, solid white edge line, right-hand traffic, and dense mixed beech/conifer forest on steep slopes strongly indicate the Carpathian Mountains, most likely Romania (e.g., Transfăgărășan or similar high-altitude scenic road)."", ""country"": ""RO"", ""latitude"": 45.58, ""longitude"": 24.62}"
+google/gemini-3.5-flash,CoT (effort=low),45.5583,24.6156,80.864,RO,True,,stop,0.0043785,1311,268,202,9.79,"{""reasoning"": ""The concrete safety barrier, road markings, and distinctive warning sign style on a thin metal pole are characteristic of Romanian mountain passes, specifically in the Carpathian Mountains."", ""country"": ""RO"", ""latitude"": 45.5583, ""longitude"": 24.6156}"
+google/gemini-3.1-pro-preview,CoT,45.35,24.62,88.924,RO,True,,stop,0.006476,1312,321,243,15.66,"{
+  ""reasoning"": ""The lush mountainous terrain, solid white road lines, and European-style red-bordered warning sign strongly suggest a mountain pass in Eastern Europe, likely the Romanian Carpathians."",
+  ""country"": ""RO"",
+  ""latitude"": 45.3500,
+  ""longitude"": 24.6200
+}"
+openai/gpt-5.5,no-CoT,45.3572,24.6307,89.317,RO,True,,stop,0.004275,717,23,0,7.87,"{""country"":""RO"",""latitude"":45.3572,""longitude"":24.6307}"
+openai/gpt-5.5,CoT,45.3578,24.6326,89.422,RO,True,,stop,0.01894,794,499,407,19.59,"{""reasoning"":""Narrow right-hand-driving mountain road with European red-triangle warning signage, white edge lines but no centerline, and dense beech/conifer Carpathian forest strongly suggest rural Romania. The concrete roadside wall and winding forested valley resemble roads around the Transfăgărășan/Vidraru area."",""country"":""RO"",""latitude"":45.3578,""longitude"":24.6326}"
+minimax/minimax-m3,no-CoT,45.5,25.5,149.789,RO,True,,stop,0.00025152,944,22,0,3.62,"{""country"": ""RO"", ""latitude"": 45.5, ""longitude"": 25.5}{""country"": ""RO"", ""latitude"": 45.5, ""longitude"": 25.5}"
+x-ai/grok-4.3,no-CoT,45.35,25.52,154.909,RO,True,,stop,0.0007734,736,22,0,13.48,"{""country"": ""RO"", ""latitude"": 45.35, ""longitude"": 25.52}"
+mistralai/mistral-medium-3-5,no-CoT,46.1512,14.3055,719.924,SI,True,,stop,0.0014685,824,31,0,1.18,"{""country"": ""SI"", ""latitude"": 46.1512, ""longitude"": 14.3055}"
+qwen/qwen3.5-27b,no-CoT,47.6269,13.0453,832.314,AT,True,,stop,0.0002425,618,44,0,4.24,"```json
+{
+  ""country"": ""AT"",
+  ""latitude"": 47.6269,
+  ""longitude"": 13.0453
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,47.53978729248047,12.98783016204834,834.767,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,47.54604721069336,12.985784530639648,835.042,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,47.35289001464844,12.443456649780273,871.89,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,46.5623,12.1456,886.733,IT,True,,stop,0.00011752,618,31,0,1.69,"{""country"": ""IT"", ""latitude"": 46.5623, ""longitude"": 12.1456}"
+qwen/qwen3.5-122b-a10b,no-CoT,46.0819,11.9495,901.575,IT,True,,stop,0.00022516,618,31,0,12.94,"{""country"": ""IT"", ""latitude"": 46.0819, ""longitude"": 11.9495}"
+xiaomi/mimo-v2.5,CoT,47.2603,11.4039,948.426,AT,True,,stop,0.0005419176,931,1564,1494,16.39,"{""reasoning"": ""Right-hand traffic, lush Alpine vegetation, and standard European triangular warning sign with slippery road symbol point to a mountainous region in Central Europe, most likely Austria."", ""country"": ""AT"", ""latitude"": 47.2603, ""longitude"": 11.4039}"
+qwen/qwen3.6-35b-a3b,no-CoT,46.5289,11.2341,956.32,IT,True,,stop,0.00012355,617,31,0,23.58,"{""country"": ""IT"", ""latitude"": 46.5289, ""longitude"": 11.2341}"
+qwen/qwen3.6-27b,no-CoT,46.3157,11.1289,964.274,IT,True,,stop,0.0002846,618,31,0,8.95,"{""country"": ""IT"", ""latitude"": 46.3157, ""longitude"": 11.1289}"
+qwen/qwen3.5-397b-a17b,no-CoT,46.0892,11.1245,965.147,IT,True,,stop,0.0004818,617,31,0,2.01,"{""country"": ""IT"", ""latitude"": 46.0892, ""longitude"": 11.1245}"
+qwen/qwen3.5-9b,no-CoT,45.2265,6.8453,1305.071,FR,True,,stop,6.63e-05,618,30,0,9.63,"{""country"": ""FR"", ""latitude"": 45.2265, ""longitude"": 6.8453}"
+x-ai/grok-4.3,CoT,45.35,6.65,1318.28,FR,True,,stop,0.002844,820,862,789,13.57,"{""reasoning"": ""Right-hand traffic (signage and road markings on right, driver POV), EU-style red-bordered curve warning sign, dense temperate montane forest with concrete retaining wall indicate western/central Europe; winding narrow asphalt road matches Alpine foothills."", ""country"": ""FR"", ""latitude"": 45.35, ""longitude"": 6.65}"
+xiaomi/mimo-v2.5,no-CoT,44.85,6.32,1352.53,FR,True,,stop,0.0001002176,852,26,0,1.88,"{""country"": ""FR"", ""latitude"": 44.85, ""longitude"": 6.32}"
+google/gemma-4-31b-it,no-CoT,42.15,43.35,1625.946,GE,True,,stop,6.688e-05,416,32,0,10.89,"```json
+{""country"": ""GE"", ""latitude"": 42.15, ""longitude"": 43.35}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5583.201,,True,True,,,,,,7.45,
+mistralai/mistral-small-2603,no-CoT,35.6895,139.6917,8931.621,JP,True,,stop,0.0001428,824,32,0,4.71,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.63,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.46,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.16,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.36,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,2.22,

@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,21.469950825343,-71.131968567748,0.0,TC,True,,,,,,,,"Cockburn Town, None, None, TC"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,22.43927001953125,-71.78816986083984,127.267,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,22.478221893310547,-71.83399963378906,133.454,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,22.563880920410156,-71.92498016357422,146.556,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,25.142597198486328,-76.08470916748047,649.945,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,25.293373107910156,-76.23482513427734,672.171,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),25.0243,-77.3125,744.762,BS,True,,stop,0.004986,1308,336,254,9.58,"```json
+{""reasoning"": ""The architectural style of the houses with concrete boundary walls, red roofs, and shutters, combined with the sandy soil, flat terrain, and tropical vegetation, is highly characteristic of the Bahamas, specifically New Providence island."", ""country"": ""BS"", ""latitude"": 25.0243, ""longitude"": -77.3125}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,25.0653,-77.3219,747.917,BS,True,,stop,0.00011304,586,31,0,8.05,"{""country"": ""BS"", ""latitude"": 25.0653, ""longitude"": -77.3219}"
+x-ai/grok-4.3,no-CoT,25.034,-77.355,748.993,BS,True,,stop,0.0007334,704,22,0,0.74,"{""country"": ""BS"", ""latitude"": 25.034, ""longitude"": -77.355}"
+qwen/qwen3.6-35b-a3b,no-CoT,25.0443,-77.3504,749.18,BS,True,,stop,0.00011875,585,31,0,2.73,"{""country"": ""BS"", ""latitude"": 25.0443, ""longitude"": -77.3504}"
+qwen/qwen3.5-27b,no-CoT,25.0657,-77.343,749.761,BS,True,,stop,0.0002185,586,36,0,5.64,"```json
+{""country"": ""BS"", ""latitude"": 25.0657, ""longitude"": -77.3430}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,25.0657,-77.3431,749.77,BS,True,,stop,0.0003332,585,31,0,1.87,"{""country"": ""BS"", ""latitude"": 25.0657, ""longitude"": -77.3431}"
+qwen/qwen3.5-397b-a17b,no-CoT,25.0657,-77.3431,749.77,BS,True,,stop,0.00043188,585,31,0,2.01,"{""country"": ""BS"", ""latitude"": 25.0657, ""longitude"": -77.3431}"
+mistralai/mistral-medium-3-5,no-CoT,25.0478,-77.3554,749.812,BS,True,,stop,0.0014115,786,31,0,2.55,"{""country"": ""BS"", ""latitude"": 25.0478, ""longitude"": -77.3554}"
+qwen/qwen3.6-27b,no-CoT,25.0581,-77.3518,750.087,BS,True,,stop,0.0002279,585,31,0,8.35,"{""country"": ""BS"", ""latitude"": 25.0581, ""longitude"": -77.3518}"
+x-ai/grok-4.3,CoT,25.034,-77.396,752.549,BS,True,,stop,0.002189,788,616,532,4.78,"{""reasoning"": ""Caribbean/Bermuda-style pastel houses with red roofs + red trim, white picket gate, beige concrete-block wall, dry sandy verge and overhead lines under bright subtropical sky point to a British Overseas Territory or former colony in the West Indies; left-side driving implied by road layout."", ""country"": ""BS"", ""latitude"": 25.034, ""longitude"": -77.396}"
+xiaomi/mimo-v2.5,CoT,25.034,-77.396,752.549,BS,True,,stop,0.0003996776,899,1072,1004,11.21,"{""reasoning"": ""The colonial-style house with red roof and white walls, combined with sandy soil and tropical vegetation, strongly indicates a residential area in the Caribbean, likely the Bahamas."", ""country"": ""BS"", ""latitude"": 25.034, ""longitude"": -77.396}"
+google/gemini-3.1-pro-preview,CoT,25.0343,-77.3963,752.592,BS,True,,stop,0.00661,1307,333,252,11.62,"{
+  ""reasoning"": ""The white sandy soil, flat terrain, and tropical climate strongly suggest a coral island. The architectural style of the houses and the walled compounds are characteristic of residential areas in the Bahamas."",
+  ""country"": ""BS"",
+  ""latitude"": 25.0343,
+  ""longitude"": -77.3963
+}"
+google/gemini-3.1-pro-preview,no-CoT,25.0343,-77.3963,752.592,BS,True,,stop,0.004598,1225,179,144,16.48,"```json
+{""country"": ""BS"", ""latitude"": 25.0343, ""longitude"": -77.3963}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,25.661149978637695,-79.2845687866211,952.345,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,12.1847,-68.9831,1057.432,CW,True,,stop,0.00056106,995,270,185,14.25,"{""reasoning"": ""Caribbean Dutch colonial architecture (whitewashed walls with red roof and shutters), limestone/coral sand ground, tropical vegetation, and overhead utility lines are highly characteristic of Curaçao. The residential suburban layout with concrete block and picket fencing matches neighborhoods around Willemstad."", ""country"": ""CW"", ""latitude"": 12.1847, ""longitude"": -68.9831}"
+google/gemini-3.5-flash,CoT (effort=high),19.2815,-81.2684,1084.004,KY,True,,stop,0.0146955,1307,1415,1328,13.35,"```json
+{""reasoning"": ""The flat terrain, sandy soil, tropical vegetation, and distinct Caribbean-style concrete architecture with decorative shutters and boundary walls strongly indicate the Cayman Islands. The utility pole style and left-hand driving environment further support this location on Grand Cayman."", ""country"": ""KY"", ""latitude"": 19.2815, ""longitude"": -81.2684}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),19.2812,-81.3015,1087.373,KY,True,,stop,0.0155235,1307,1507,1440,18.7,"{""reasoning"": ""The flat terrain, white sandy soil, Caribbean-style architecture with concrete boundary walls and colorful shutters, and wooden utility poles are highly characteristic of the Cayman Islands."", ""country"": ""KY"", ""latitude"": 19.2812, ""longitude"": -81.3015}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),17.118542,-61.801235,1091.877,AG,True,,stop,0.00219,1226,39,0,1.15,"```json
+{""country"": ""AG"", ""latitude"": 17.118542, ""longitude"": -61.801235}
+```"
+qwen/qwen3.5-9b,no-CoT,32.535556,-64.738889,1383.056,BM,True,,stop,6.385e-05,586,35,0,10.68,"{""country"": ""BM"", ""latitude"": 32.535556, ""longitude"": -64.738889}"
+anthropic/claude-opus-4.8,no-CoT,13.1132,-59.5988,1535.873,BB,True,,stop,0.00489,818,32,0,9.15,"{""country"": ""BB"", ""latitude"": 13.1132, ""longitude"": -59.5988}"
+openai/gpt-5.5,no-CoT,13.1176,-59.5841,1536.808,BB,True,,stop,0.00411,678,24,0,7.61,"{""country"":""BB"",""latitude"":13.1176,""longitude"":-59.5841}"
+anthropic/claude-opus-4.8,CoT,13.15,-59.55,1537.44,BB,True,,stop,0.00697,949,89,0,10.43,"{""reasoning"": ""Tropical Caribbean suburban housing with red roofs, concrete walls, and dry grass; architecture and vegetation strongly resemble Barbados."", ""country"": ""BB"", ""latitude"": 13.15, ""longitude"": -59.55}"
+google/gemma-4-31b-it,no-CoT,13.15,-59.55,1537.44,BB,True,,stop,6.188e-05,404,32,0,20.41,"```json
+{""country"": ""BB"", ""latitude"": 13.15, ""longitude"": -59.55}
+```"
+openai/gpt-5.5,CoT,13.0975,-59.5268,1543.047,BB,True,,stop,0.010645,755,229,151,14.3,"{""reasoning"":""Caribbean-style walled suburban homes with coral-limestone/sandy shoulders, tropical vegetation, and left-side-road Commonwealth road layout strongly fit Barbados. The flat dry coastal-residential setting is typical of Christ Church/St. Philip suburbs on the island."",""country"":""BB"",""latitude"":13.0975,""longitude"":-59.5268}"
+moonshotai/kimi-k2.6,CoT,13.08,-59.54,1543.15,BB,True,,stop,0.008907696,834,2518,2443,55.27,"{""reasoning"": ""Red-roofed bungalow with red shutters behind a concrete panel wall, sandy soil, dry tropical grass, and British Caribbean suburban architecture indicate Barbados, a left-hand drive island with widespread Street View coverage matching this fisheye perspective."", ""country"": ""BB"", ""latitude"": 13.08, ""longitude"": -59.54}"
+xiaomi/mimo-v2.5,no-CoT,10.5,-61.3,1608.753,TT,True,,stop,9.54576e-05,820,25,0,8.32,"{""country"": ""TT"", ""latitude"": 10.5, ""longitude"": -61.3}"
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,3789.704,US,True,,stop,0.0001371,786,32,0,3.16,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8060.005,unknown,True,,stop,5.148e-05,404,23,0,8.02,"{""country"": ""unknown"", ""latitude"": 0.0, ""longitude"": 0.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.3,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.44,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.8,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,7.3,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.76,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.75,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.26,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.28,

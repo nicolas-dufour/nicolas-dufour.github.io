@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,17.856472100002712,-94.5632075,0.0,MX,True,,,,,,,,"Las Lomas, Minatitlan, Veracruz, MX"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,17.811355590820312,-94.6051025390625,6.696,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,17.81354522705078,-94.60770416259766,6.706,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,17.903181076049805,-94.63835144042969,9.498,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,20.6,-89.0,658.87,MX,True,,stop,0.004204,1226,146,117,3.22,"```json
+{""country"": ""MX"", ""latitude"": 20.6, ""longitude"": -89.0}
+```"
+x-ai/grok-4.3,CoT,10.05,-83.95,1436.178,CR,True,,stop,0.003159,788,1004,922,21.47,"{
+  ""reasoning"": ""Tropical broadleaf + palm vegetation, right-hand traffic with solid yellow center line + white edge line, simple overhead wires, and overcast equatorial sky narrow it to rural Latin America; single yellow centerline and road profile match Costa Rica secondary roads."",
+  ""country"": ""CR"",
+  ""latitude"": 10.05,
+  ""longitude"": -83.95
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,21.130769729614258,-77.92313385009766,1780.831,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,18.239059448242188,-76.9507064819336,1861.836,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,18.18437385559082,-76.92401123046875,1864.818,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),8.95,-75.65,2270.249,CO,True,,stop,0.0137055,1307,1305,1238,12.91,"{""reasoning"": ""The road features distinctive concrete drainage gutters (cunetas) and a solid yellow center line typical of Colombian rural highways, set in a flat tropical landscape with palms characteristic of the Caribbean region."", ""country"": ""CO"", ""latitude"": 8.95, ""longitude"": -75.65}"
+anthropic/claude-opus-4.8,CoT,9.3,-75.4,2276.811,CO,True,,stop,0.00712,949,95,0,10.11,"{""reasoning"": ""Tropical lowland vegetation with palms, narrow paved rural road with yellow center line, driving on right—consistent with rural Latin America, likely Colombia/Central America."", ""country"": ""CO"", ""latitude"": 9.3, ""longitude"": -75.4}"
+anthropic/claude-opus-4.8,no-CoT,9.3,-75.4,2276.811,CO,True,,stop,0.00484,818,30,0,4.29,"{""country"": ""CO"", ""latitude"": 9.3, ""longitude"": -75.4}"
+google/gemini-3.5-flash,CoT (effort=medium),9.3,-75.4,2276.811,CO,True,,stop,0.0086025,1307,738,675,6.32,"{""reasoning"": ""The road features a solid yellow center line with concrete side gutters (cunetas) typical of Colombia, set in a flat tropical landscape with palm trees characteristic of the Caribbean region."", ""country"": ""CO"", ""latitude"": 9.3, ""longitude"": -75.4}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),9.124512,-75.384125,2287.201,CO,True,,stop,0.0021795,1225,38,0,14.24,"```json
+{""country"": ""CO"", ""latitude"": 9.124512, ""longitude"": -75.384125}
+```"
+google/gemini-3.5-flash,CoT (effort=low),9.1245,-75.3821,2287.399,CO,True,,stop,0.004518,1308,284,205,5.22,"{""reasoning"": ""The road features a solid yellow center line with concrete curbs on both sides, typical of Colombian rural paved roads. The tropical vegetation, including palm trees and dense green foliage under an overcast sky, is highly characteristic of northern Colombia."", ""country"": ""CO"", ""latitude"": 9.1245, ""longitude"": -75.3821}"
+openai/gpt-5.5,CoT,-0.3107,-79.1946,2628.144,EC,True,,stop,0.015985,755,407,321,46.76,"{""reasoning"":""Tropical Latin American rural road with right-side driving, single yellow centerline, concrete drainage curbs, and lush palm/banana-like vegetation fits coastal/lowland Ecuador more than neighboring countries. The flat humid landscape is most consistent with the Santo Domingo/Los Ríos area."",""country"":""EC"",""latitude"":-0.3107,""longitude"":-79.1946}"
+google/gemma-4-31b-it,no-CoT,4.5709,-74.4802,2637.167,CO,True,,stop,6.308e-05,404,35,0,4.17,"```json
+{""country"": ""CO"", ""latitude"": 4.5709, ""longitude"": -74.4802}
+```"
+google/gemini-3.1-pro-preview,CoT,4.15,-73.05,2793.747,CO,True,,stop,0.006312,1308,308,231,11.33,"{
+  ""reasoning"": ""The solid single yellow center line and tropical vegetation with palm trees strongly suggest a location in Latin America, particularly Colombia. The flat terrain and specific flora are characteristic of the Llanos region."",
+  ""country"": ""CO"",
+  ""latitude"": 4.15,
+  ""longitude"": -73.05
+}"
+openai/gpt-5.5,no-CoT,-15.2387,-47.8679,6302.735,BR,True,,stop,0.00414,678,25,0,1.68,"{""country"":""BR"",""latitude"":-15.2387,""longitude"":-47.8679}"
+qwen/qwen3.6-35b-a3b,no-CoT,-15.7939,-47.8828,6336.087,BR,True,,stop,0.000185,585,31,0,1.57,"{""country"": ""BR"", ""latitude"": -15.7939, ""longitude"": -47.8828}"
+x-ai/grok-4.3,no-CoT,-15.7942,-47.8825,6336.132,BR,True,,stop,0.0007384,704,24,0,1.33,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8825}"
+moonshotai/kimi-k2.6,CoT,-19.0,-48.0,6531.398,BR,True,,stop,0.015968556,834,4584,4510,175.78,"{""reasoning"": ""Single yellow centerline with continuous concrete curbs, tropical broadleaf vegetation and palms, and reddish lateritic soil on a rural road are hallmark features of Brazilian rural road infrastructure in the Cerrado/Atlantic Forest transition zone."", ""country"": ""BR"", ""latitude"": -19.0, ""longitude"": -48.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,6946.987,BR,True,,stop,0.0002499,585,31,0,7.75,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+mistralai/mistral-small-2603,no-CoT,60.3936,5.3245,8816.563,NO,True,,stop,0.000169875,786,30,0,1.75,"{""country"": ""NO"", ""latitude"": 60.3936, ""longitude"": 5.3245}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10490.458,,True,True,,,,,,6.49,
+qwen/qwen3.6-27b,no-CoT,14.5995,120.9842,14703.612,PH,True,,stop,0.0002299,585,32,0,9.98,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+qwen/qwen3.5-27b,no-CoT,14.5794,120.9833,14705.17,PH,True,,stop,0.00022707,585,32,0,1.43,"{""country"": ""PH"", ""latitude"": 14.5794, ""longitude"": 120.9833}"
+mistralai/mistral-medium-3-5,no-CoT,10.3157,123.8854,14758.349,PH,True,,stop,0.001419,786,32,0,1.11,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+xiaomi/mimo-v2.5,CoT,16.48,101.82,15796.607,TH,True,,stop,0.0001871576,899,313,245,4.04,"{""reasoning"": ""Right-hand traffic, tropical rural vegetation (palms and broadleaf trees typical of northeastern Thailand), and rural road marking style consistent with Thai countryside roads are decisive clues."", ""country"": ""TH"", ""latitude"": 16.48, ""longitude"": 101.82}"
+minimax/minimax-m3,CoT,14.5,101.0,16033.043,TH,True,,stop,0.00103098,995,683,769,11.73,"{""reasoning"": ""The solid yellow center line combined with yellow-painted concrete curbs is highly characteristic of Thailand's rural road standards. The tropical vegetation (coconut palms, dense broadleaf trees suggesting orchards or rubber plantations) and flat terrain indicate the central or eastern Thai plains during the rainy season."", ""country"": ""TH"", ""latitude"": 14.5, ""longitude"": 101.0}"
+qwen/qwen3.5-35b-a3b,no-CoT,13.7563,100.5018,16130.863,TH,True,,stop,0.00018575,585,32,0,8.49,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-397b-a17b,no-CoT,13.7563,100.5018,16130.863,TH,True,,stop,0.0004662,585,32,0,16.68,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-9b,no-CoT,13.7563,100.5018,16130.863,TH,True,,stop,6.34e-05,586,32,0,5.41,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+xiaomi/mimo-v2.5,no-CoT,13.7563,100.5018,16130.863,TH,True,,stop,9.74176e-05,820,32,0,1.9,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,10.21,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,13.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.39,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,15.73,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.31,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.29,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.26,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.35,

@@ -1,0 +1,78 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.176590426487,50.184820638949,0.0,IR,True,,,,,,,,"Langarud, None, Gilan, IR"
+google/gemini-3.5-flash,CoT (effort=low),37.2245,50.0021,17.038,IR,True,,stop,0.003528,1272,180,108,3.56,"{""reasoning"": ""The architecture of the villas on the left, the humid overcast climate, and the specific style of streetlights and concrete median barriers are highly characteristic of the Caspian Sea coast in northern Iran."", ""country"": ""IR"", ""latitude"": 37.2245, ""longitude"": 50.0021}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.2154,49.9872,18.028,IR,True,,stop,0.0020985,1189,35,0,1.92,"```json
+{""country"": ""IR"", ""latitude"": 37.2154, ""longitude"": 49.9872}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),37.2625,50.0042,18.629,IR,True,,stop,0.0052995,1271,377,303,10.45,"{""reasoning"": ""The humid, overcast climate, distinctive architecture with pitched roofs, and concrete median barriers are highly characteristic of the Caspian Sea coast in northern Iran, specifically along Road 22 in Gilan Province."", ""country"": ""IR"", ""latitude"": 37.2625, ""longitude"": 50.0042}"
+google/gemini-3.1-pro-preview,no-CoT,37.2808,49.5928,53.681,IR,True,,stop,0.0028,1190,35,0,2.61,"```json
+{""country"": ""IR"", ""latitude"": 37.2808, ""longitude"": 49.5928}
+```"
+moonshotai/kimi-k2.6,no-CoT,37.28,49.5833,54.484,IR,True,,stop,0.000293292,603,25,0,5.39,"{""country"": ""IR"", ""latitude"": 37.2800, ""longitude"": 49.5833}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,36.898475646972656,50.7905158996582,62.021,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,36.88528060913086,50.81122970581055,64.352,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),36.816,50.873,73.095,IR,True,,stop,0.0078465,1271,660,592,11.43,"{""reasoning"": ""The humid, overcast climate, distinctive 'Roman facade' architecture on the left, and typical streetlights and concrete utility poles are characteristic of the Caspian Sea coast in northern Iran."", ""country"": ""IR"", ""latitude"": 36.816, ""longitude"": 50.873}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,36.74771499633789,50.94035720825195,82.343,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,36.6833,51.3167,114.588,IR,True,,stop,0.005784,1272,270,195,10.92,"{
+  ""reasoning"": ""The distinct curved double-arm streetlights, concrete median, and building styles with pitched roofs are characteristic of the Caspian Sea coastal region in northern Iran."",
+  ""country"": ""IR"",
+  ""latitude"": 36.6833,
+  ""longitude"": 51.3167
+}"
+moonshotai/kimi-k2.6,CoT,36.5,52.2,194.472,IR,True,,stop,0.014436855,681,3888,4399,34.7,"{""reasoning"": ""The flat-roofed residential architecture with decorative parapets, Iranian-style dual-arm streetlights, and divided highway on an overcast day are characteristic of northern Iran's Mazandaran province."", ""country"": ""IR"", ""latitude"": 36.5, ""longitude"": 52.2}"
+google/gemma-4-31b-it,no-CoT,35.6892,51.389,197.377,IR,True,,stop,6.378e-05,406,36,0,7.47,"```json
+{""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.3890}
+```"
+x-ai/grok-4.3,no-CoT,41.723,44.792,685.253,GE,True,,stop,0.0005934,592,22,0,0.98,"{""country"": ""GE"", ""latitude"": 41.723, ""longitude"": 44.792}"
+openai/gpt-5.5,CoT,34.5436,69.2075,1736.041,AF,True,,stop,0.019995,621,563,470,41.59,"{""reasoning"":""Right-hand traffic on a divided urban road rules out most of South Asia, while the dusty concrete shopfronts, unfinished rebar buildings, hazy arid climate, and Persian/Pashto-style signage feel characteristic of Kabul. The wide arterial with median streetlights matches Kabul outskirts rather than greener or wealthier neighboring countries."",""country"":""AF"",""latitude"":34.5436,""longitude"":69.2075}"
+minimax/minimax-m3,no-CoT,40.765,29.94,1790.716,TR,True,,stop,0.00022248,752,23,0,5.44,"{""country"": ""TR"", ""latitude"": 40.765, ""longitude"": 29.940}"
+minimax/minimax-m3,CoT,40.15,28.45,1910.862,TR,True,,stop,0.00076746,843,480,386,14.03,"{""reasoning"": ""The flat-roofed concrete buildings, Turkish-style street lamps, yellow diamond traffic sign, white license plates, right-hand traffic, and semi-arid vegetation all point to a suburban area in western Turkey, likely in the Marmara region. The wide divided highway and modest commercial-residential development suggest a smaller city outskirts."", ""country"": ""TR"", ""latitude"": 40.15, ""longitude"": 28.45}"
+mistralai/mistral-small-2603,no-CoT,55.7558,37.6173,2270.944,RU,True,,stop,0.000142875,634,32,0,3.23,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,31.334880828857422,75.52037811279297,2409.205,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,31.330223083496094,75.53046417236328,2410.288,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,46.77,23.62,2425.498,RO,True,,stop,0.0025565,676,819,746,16.17,"{
+  ""reasoning"": ""Right-hand traffic with European-style utility poles, double-lamp streetlights, and post-Soviet concrete/brick architecture with red-tiled roofs; overcast temperate climate and sparse vegetation point to Eastern Europe."",
+  ""country"": ""RO"",
+  ""latitude"": 46.77,
+  ""longitude"": 23.62
+}"
+qwen/qwen3.5-27b,no-CoT,49.839722,23.957778,2520.236,UA,True,,stop,0.0002145,474,48,0,3.43,"```json
+{
+  ""country"": ""UA"",
+  ""latitude"": 49.839722,
+  ""longitude"": 23.957778
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,29.66246223449707,77.01858520507812,2616.294,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,41.3275,19.8187,2641.178,AL,True,,stop,0.0011835,634,31,0,1.94,"{""country"": ""AL"", ""latitude"": 41.3275, ""longitude"": 19.8187}"
+qwen/qwen3.5-122b-a10b,no-CoT,26.8467,75.8015,2662.883,IN,True,,stop,0.0002163,473,31,0,1.55,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 75.8015}"
+qwen/qwen3.6-35b-a3b,no-CoT,26.8467,80.9462,3102.257,IN,True,,stop,0.0001444,474,31,0,4.93,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+qwen/qwen3.5-9b,no-CoT,27.2696,83.5787,3308.478,IN,True,,stop,8.816e-05,473,31,0,4.92,"{""country"": ""IN"", ""latitude"": 27.2696, ""longitude"": 83.5787}"
+qwen/qwen3.5-397b-a17b,CoT,27.64,84.36,3357.807,NP,True,,stop,0.01392465,553,4573,1,151.91,"{
+""reasoning"": ""The image shows a left-hand traffic environment with flat terrain, hazy sky, and a mix of concrete multi-story buildings (with rooftop water tanks) and corrugated metal sheds, which is characteristic of the Terai region in Nepal. The tall, curved streetlights and concrete utility poles along a wide, paved highway (likely the Mahendra Highway) further point to this specific area."",
+""country"": ""NP"",
+""latitude"": 27.64,
+""longitude"": 84.36
+}"
+openai/gpt-5.5,no-CoT,27.7172,85.324,3438.504,NP,True,,stop,0.00341,544,23,0,2.18,"{""country"":""NP"",""latitude"":27.7172,""longitude"":85.3240}"
+qwen/qwen3.5-35b-a3b,no-CoT,27.7172,85.324,3438.504,NP,True,,stop,0.000162225,473,31,0,1.54,"{""country"": ""NP"", ""latitude"": 27.7172, ""longitude"": 85.3240}"
+qwen/qwen3.6-27b,no-CoT,27.7172,85.324,3438.504,NP,True,,stop,0.0001589,473,31,0,24.53,"{""country"": ""NP"", ""latitude"": 27.7172, ""longitude"": 85.3240}"
+mistralai/mistral-small-2603,CoT,53.4808,-2.2426,4360.771,GB,True,,stop,0.0011238,716,1694,1842,12.54,"{""reasoning"": ""Left-hand traffic, UK license plate format with blue section and Union Jack, British terraced housing architecture, and road signs indicate the United Kingdom."", ""country"": ""GB"", ""latitude"": 53.4808, ""longitude"": -2.2426}"
+anthropic/claude-opus-4.8,CoT,4.0511,9.7679,5517.965,CM,True,,stop,0.00676,797,111,0,9.55,"{""reasoning"": ""Lush tropical lowland vegetation, low concrete buildings with shops, right-hand traffic, and overcast humid sky suggest equatorial West Africa, consistent with coastal Cameroon/Douala area."", ""country"": ""CM"", ""latitude"": 4.0511, ""longitude"": 9.7679}"
+anthropic/claude-opus-4.8,no-CoT,4.0511,9.7679,5517.965,CM,True,,stop,0.00413,666,32,0,19.83,"{""country"": ""CM"", ""latitude"": 4.0511, ""longitude"": 9.7679}"
+xiaomi/mimo-v2.5,CoT,39.08,117.27,5732.664,CN,True,,stop,0.0001630776,787,283,217,6.2,"{""reasoning"": ""Right-hand driving matches China, and the peri-urban concrete architecture, streetlight style, and small roadside shops are typical of northern China's suburban areas."", ""country"": ""CN"", ""latitude"": 39.08, ""longitude"": 117.27}"
+xiaomi/mimo-v2.5,no-CoT,30.25,120.15,6371.643,CN,True,,stop,8.06176e-05,708,28,0,8.95,"{""country"": ""CN"", ""latitude"": 30.25, ""longitude"": 120.15}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6596.498,,True,True,,,,,,0.34,
+qwen/qwen3.6-35b-a3b,CoT,14.25,121.1,7377.091,PH,True,,stop,0.0065331526,553,6676,6579,34.82,"```json
+{
+  ""reasoning"": ""The image shows left-hand traffic, white license plates, and architecture typical of the Philippines (concrete buildings with red/orange corrugated metal roofs). The tall, curved streetlights and messy overhead wires are also characteristic of Philippine provincial roads."",
+  ""country"": ""PH"",
+  ""latitude"": 14.25,
+  ""longitude"": 121.10
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-6.1751,106.865,7591.921,ID,True,,stop,0.00028845,473,30,0,17.52,"{""country"": ""ID"", ""latitude"": -6.1751, ""longitude"": 106.865}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.26,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.2,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.2,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,

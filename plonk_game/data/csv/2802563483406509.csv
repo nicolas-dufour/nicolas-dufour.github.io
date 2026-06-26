@@ -1,0 +1,199 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,51.476516908451,21.652104472745,0.0,PL,True,,,,,,,,"Policzna, Powiat zwolenski, Masovian Voivodeship, PL"
+google/gemini-3.1-pro-preview,CoT,51.5,21.5,10.85,PL,True,,stop,0.005616,1272,256,183,10.56,"{
+  ""reasoning"": ""The white block house with a simple pitched roof and the metal fencing are highly characteristic of rural Poland. The flat landscape and vegetation further support a location in the Polish countryside."",
+  ""country"": ""PL"",
+  ""latitude"": 51.5,
+  ""longitude"": 21.5
+}"
+anthropic/claude-opus-4.8,no-CoT,51.8,22.3,57.384,PL,True,,stop,0.00408,666,30,0,5.88,"{""country"": ""PL"", ""latitude"": 51.8, ""longitude"": 22.3}"
+minimax/minimax-m3,CoT,51.85,22.35,63.574,PL,True,,stop,0.00067386,843,402,325,11.5,"{""reasoning"": ""Single-story whitewashed farmhouses with simple gabled roofs, wooden utility poles, flat agricultural terrain, and bare deciduous trees are highly characteristic of rural villages in central-eastern Poland. The architectural style and road layout strongly match the Polish countryside."", ""country"": ""PL"", ""latitude"": 51.85, ""longitude"": 22.35}"
+openai/gpt-5.5,no-CoT,52.0832,21.5178,68.09,PL,True,,stop,0.00341,544,23,0,2.17,"{""country"":""PL"",""latitude"":52.0832,""longitude"":21.5178}"
+qwen/qwen3.5-9b,no-CoT,51.9503,20.8474,76.479,PL,True,,stop,5.205e-05,474,31,0,3.18,"{""country"": ""PL"", ""latitude"": 51.9503, ""longitude"": 20.8474}"
+moonshotai/kimi-k2.6,CoT,52.15,21.35,77.714,PL,True,,stop,0.00881392,682,2468,2408,55.61,"{""reasoning"": ""The white silicate-brick house, metal mesh fence, wooden utility pole, and straight narrow rural asphalt road are all classic features of the Polish countryside."", ""country"": ""PL"", ""latitude"": 52.15, ""longitude"": 21.35}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),52.184321,21.543219,79.059,PL,True,,stop,0.0021345,1189,39,0,8.1,"```json
+{""country"": ""PL"", ""latitude"": 52.184321, ""longitude"": 21.543219}
+```"
+anthropic/claude-opus-4.8,CoT,52.1,22.3,82.415,PL,True,,stop,0.006335,797,94,0,10.92,"{""reasoning"": ""Flat rural landscape with autumn deciduous trees, modest plastered single-story house, mesh fencing, and narrow paved road typical of eastern Poland countryside."", ""country"": ""PL"", ""latitude"": 52.1, ""longitude"": 22.3}"
+google/gemini-3.5-flash,CoT (effort=medium),51.5123,22.8912,85.872,PL,True,,stop,0.0077835,1271,653,583,13.07,"{""reasoning"": ""The flat landscape, concrete utility poles, architecture of the white brick house, and autumn vegetation are characteristic of rural Poland, supported by the red car hood visible on the dashboard."", ""country"": ""PL"", ""latitude"": 51.5123, ""longitude"": 22.8912}"
+google/gemini-3.5-flash,CoT (effort=low),52.1542,22.3125,87.972,PL,True,,stop,0.004833,1272,325,257,15.91,"```json
+{""reasoning"": ""The white silicate brick house, metal fencing, flat terrain, and autumn foliage are highly characteristic of rural Poland, particularly in the eastern plains."", ""country"": ""PL"", ""latitude"": 52.1542, ""longitude"": 22.3125}
+```"
+google/gemini-3.5-flash,CoT (effort=high),52.1543,22.4821,94.525,PL,True,,stop,0.007425,1272,613,555,4.38,"{""reasoning"": ""The white silicate brick house, metal fencing, flat terrain, and autumn vegetation are highly characteristic of rural eastern Poland."", ""country"": ""PL"", ""latitude"": 52.1543, ""longitude"": 22.4821}"
+google/gemma-4-31b-it,no-CoT,52.2297,21.0122,94.581,PL,True,,stop,6.378e-05,406,36,0,4.74,"```json
+{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}
+```"
+mistralai/mistral-medium-3-5,no-CoT,52.2297,21.0122,94.581,PL,True,,stop,0.0011835,634,31,0,1.07,"{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+qwen/qwen3.6-27b,no-CoT,52.2297,21.0122,94.581,PL,True,,stop,0.0001943,473,31,0,9.75,"{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+qwen/qwen3.6-35b-a3b,no-CoT,52.2297,21.0122,94.581,PL,True,,stop,0.00010195,473,31,0,2.76,"{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+x-ai/grok-4.3,no-CoT,52.2298,21.0118,94.604,PL,True,,stop,0.0005984,592,24,0,1.78,"{""country"": ""PL"", ""latitude"": 52.2298, ""longitude"": 21.0118}"
+xiaomi/mimo-v2.5,no-CoT,52.23,20.78,102.991,PL,True,,stop,8.03376e-05,708,27,0,1.72,"{""country"": ""PL"", ""latitude"": 52.23, ""longitude"": 20.78}"
+openai/gpt-5.5,CoT,52.0817,20.4479,106.729,PL,True,,stop,0.011595,621,283,195,22.89,"{""reasoning"":""Flat rural Central/Eastern European village with right-hand driving, unmarked narrow asphalt road, metal picket fences, brick/plaster houses and deciduous roadside trees strongly suggests Poland. The architecture and landscape fit the Mazovian/Łódź lowlands rather than the Baltics or Balkans."",""country"":""PL"",""latitude"":52.0817,""longitude"":20.4479}"
+x-ai/grok-4.3,CoT,51.35,19.85,125.766,PL,True,,stop,0.002429,676,768,693,7.38,"{""reasoning"": ""Right-hand traffic, Eastern European rural architecture (white-rendered house with metal roof, mesh fencing), utility poles, autumnal deciduous trees/flat terrain, and red-car dashboard match rural Poland. No other region fits all visual markers simultaneously."", ""country"": ""PL"", ""latitude"": 51.35, ""longitude"": 19.85}"
+minimax/minimax-m3,no-CoT,52.0,20.0,127.784,PL,True,,stop,0.00019176,752,23,0,5.17,"{""country"": ""PL"", ""latitude"": 52.0, ""longitude"": 20.0}"
+qwen/qwen3.5-27b,no-CoT,51.7592,19.4559,154.846,PL,True,,stop,0.000140595,473,31,0,3.88,"{""country"": ""PL"", ""latitude"": 51.7592, ""longitude"": 19.4559}"
+moonshotai/kimi-k2.6,no-CoT,51.8,19.4,159.519,PL,True,,stop,0.00061429,603,23,0,2.21,"{""country"": ""PL"", ""latitude"": 51.8, ""longitude"": 19.4}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,49.96654510498047,21.16741371154785,171.332,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,52.1123,19.2345,180.659,PL,True,,stop,0.002798,1189,35,0,2.63,"```json
+{""country"": ""PL"", ""latitude"": 52.1123, ""longitude"": 19.2345}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,49.87873840332031,21.159955978393555,181.016,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,51.773128509521484,18.986438751220703,186.934,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,52.05827331542969,18.919130325317383,198.865,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,53.30896759033203,19.16992950439453,264.328,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,49.71730041503906,18.841646194458008,278.56,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,52.7845,18.1234,281.323,PL,True,,stop,0.0108714,553,2941,2854,25.72,"{""reasoning"": ""The white brick rural house, green wire mesh fence, and overhead wooden utility poles are highly characteristic of the Polish countryside. The red Fiat 500 dashboard (a very popular car in Poland) and right-hand traffic further confirm this location."", ""country"": ""PL"", ""latitude"": 52.7845, ""longitude"": 18.1234}"
+qwen/qwen3.5-122b-a10b,no-CoT,51.1079,17.0385,323.362,PL,True,,stop,0.0002163,473,31,0,7.72,"{""country"": ""PL"", ""latitude"": 51.1079, ""longitude"": 17.0385}"
+qwen/qwen3.5-397b-a17b,no-CoT,51.2465,16.9235,329.247,PL,True,,stop,0.0003794,473,31,0,0.95,"{""country"": ""PL"", ""latitude"": 51.2465, ""longitude"": 16.9235}"
+qwen/qwen3.6-35b-a3b,CoT,47.4979,19.0402,480.873,HU,True,,stop,0.12672704785,553,131197,131072,857.04,"{""reasoning"": ""The image shows a rural road in Hungary, indicated by the flat landscape, the style of the white house with a grey roof, the wooden utility poles, and the row of tall poplar trees on the right. The red sign in the distance is a typical Hungarian town entry sign (white with red border/text). The car dashboard is red, consistent with a Fiat 500, a common car in Europe."", ""country"": ""HU"", ""latitude"": 47.4979, ""longitude"": 19.0402}"
+qwen/qwen3.5-35b-a3b,no-CoT,49.9876,14.2345,547.393,CZ,True,,stop,0.00017136,474,32,0,2.39,"{""country"": ""CZ"", ""latitude"": 49.9876, ""longitude"": 14.2345}"
+xiaomi/mimo-v2.5,CoT,49.82,14.31,549.167,CZ,True,,stop,0.0001823976,787,352,277,11.75,"{""reasoning"": ""Right-hand traffic, temperate autumn deciduous vegetation, and rural Central European (Slavic-style) brick housing indicate a Czech village; this matches the typical rural landscape of the Bohemian region."", ""country"": ""CZ"", ""latitude"": 49.82, ""longitude"": 14.31}"
+mistralai/mistral-small-2603,CoT,51.2456,-0.5886,1538.466,GB,True,,stop,0.00038244,716,570,620,4.86,"{""reasoning"": ""Left-hand traffic, UK license plate format, blue UK road sign with white arrow, red/white bollards, and suburban brick housing are definitive UK indicators."", ""country"": ""GB"", ""latitude"": 51.2456, ""longitude"": -0.5886}"
+google/gemma-4-31b-it,CoT,40.7128,-74.006,6935.241,US,True,,stop,0.00129293,494,2223,2176,8.83,"```json
+{""reasoning"": ""No image provided for analysis."", ""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.0060}
+```"
+mistralai/mistral-small-2603,no-CoT,39.7555,-86.1507,7702.72,US,True,,stop,0.0001137,634,31,0,0.97,"{""country"": ""US"", ""latitude"": 39.7555, ""longitude"": -86.1507}"
+google/gemma-4-26b-a4b-it,no-CoT,44.428,-110.5885,8406.589,,True,,length,0.00164254,406,4000,0,104.96,"Please own-thought
+```json
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5885 own- own-thought
+ own- own-thought
+{""country"": ""US"", ""latitude"": 44.428 own- own-thought
+{""country"": "" own-thought
+{""country"": ""US"", ""latitude"": 44.4-thought
+{""country"": ""US"", ""latitude"": -thought
+{""country-thought
+{""country"": ""US- own-thought
+{""country own-thought
+{""country"": ""US"", ""latitude"": 44 own- own-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.58----thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -11 own- own-thought
+{""country"": own-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"":-----thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.588-thought
+{""country"": ""--thought
+{""country"": ""US"", ""latitude-thought
+{""country"": ""US"", ""latitude"": 44.4-thought
+{""country-thought
+{""country"": ""US"",--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -11-thought--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.428 own--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.588-thought
+---thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude-----thought
+{""country"": ""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.58--thought
+{""country"": ""US"", ""---thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880----thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude--thought
+{""country"": ""US"", ""latitude"": --thought
+{""country"": ""US"", ""latitude-thought-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""-thought
+{""country"": ""--thought
+{""country"": ""US"", ""----thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.58--thought
+{""country"": ""US-thought
+{""country"": ""US"", ""-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880 own--thought
+{""country"": ""-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -1---thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.58-thought-thought--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.42--thought
+{""country"": ""US-thought
+{""country"": ""US"", ""latitude"": --thought
+{""country"": ""-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5---thought
+{""country-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.58-thought
+{""country"": ""US"", ""latitude"": 44.4280-thought
+{""country"": ""-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -1-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880-thought
+{""country"": ""US"", ""latitude"": 44.4280-thought-thought
+{""country"": ""US"", ""--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5-thought
+{""country"": ""US"", ""latitude"":-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"":--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.--thought
+{""country"": ""US-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.588-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""latitude"": 44.4280, ""longitude"": -11--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude-thought
+{""country"": ""US"", ""latitude"": -110.5880, ""latitude"": 44.4280, ""longitude"":--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""-thought
+{""country"": ""US"",-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.588---thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44-thought
+{""country"": ""US"", ""latitude"":--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"":--thought
+{""country"": ""US"", ""latitude"": 4-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110--thought
+{""country"": ""US"", ""latitude"":-thought
+{""country"": ""US"",-thought
+{""country"": ""US"",-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude--thought
+{""country-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.588--thought
+{""country"":-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""latitude"": 44.4280, ""-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""-thought
+{""country-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude-thought
+{""country"": ""US"", ""-thought
+{""country"":-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""---thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880,-thought
+{""country"": ""-thought
+{""country"": ""US"", ""latitude"": 44.4--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -11-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"":--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.-thought
+{""country"": ""US"", ""latitude-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""--thought
+{""country"": ""US-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"":---thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.58-thought
+{""country"": ""US--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880-thought
+{""country"": ""US"", ""latitude"":--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110---thought
+-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""-thought
+{""country"": ""-thought
+{""country"": ""US"", ""-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"":-thought
+{""country"": ""-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": --thought
+{""country"": ""US"", ""latitude-thought
+{""country"": ""US"", ""latitude"": 44-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -1-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"":-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.428--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280,-thought
+{""country"": ""US"", ""latitude--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""latitude"": 44.428-thought
+{""country"": ""US"", ""latitude"": -110.5880, ""longitude"": 44.4280, ""latitude"": 44.4280, ""longitude"": -110.58---thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880,-thought
+{""country"": ""US"",-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.58-thought
+-thought
+{""country"": ""US"",---thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"":-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44--thought
+{""country"": ""US"", ""latitude"": 44.42-thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.428--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5880, ""latitude"": 44.4-----thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.--thought
+{""country"": ""US"", ""latitude"": 44--thought
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -1--thought
+{""country"": ""US"", """
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.2,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.27,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.13,

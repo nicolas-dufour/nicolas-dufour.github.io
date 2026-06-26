@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,62.471208518153,6.3293620908966,0.0,NO,True,,,,,,,,"Langevag, Sula, More og Romsdal, NO"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,62.68409729003906,6.758372783660889,32.296,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,62.69717025756836,6.746722221374512,32.983,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,62.72471618652344,7.6445231437683105,72.967,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,60.35,5.35,241.549,NO,True,,stop,0.005076,1272,211,144,3.69,"{
+  ""reasoning"": ""The yellow center line combined with white edge lines is typical of Norway. The green license plate on the commercial truck confirms this is Norway."",
+  ""country"": ""NO"",
+  ""latitude"": 60.35,
+  ""longitude"": 5.35
+}"
+google/gemma-4-31b-it,no-CoT,60.3913,11.0899,342.727,NO,True,,stop,5.772e-05,408,36,0,3.46,"```json
+{""country"": ""NO"", ""latitude"": 60.3913, ""longitude"": 11.0899}
+```"
+google/gemini-3.5-flash,CoT (effort=high),59.345,5.312,351.932,NO,True,,stop,0.0087105,1271,756,691,6.82,"{""reasoning"": ""The yellow dashed center line combined with the green license plate on the Mercedes Sprinter van strongly indicates Norway, where green plates are used for commercial class 2 vehicles."", ""country"": ""NO"", ""latitude"": 59.345, ""longitude"": 5.312}"
+qwen/qwen3.5-9b,no-CoT,59.9502,10.3645,353.802,SE,True,,stop,5.205e-05,474,31,0,2.83,"{""country"": ""SE"", ""latitude"": 59.9502, ""longitude"": 10.3645}"
+x-ai/grok-4.3,CoT,59.85,10.55,368.894,NO,True,,stop,0.002884,676,950,869,13.1,"{
+  ""reasoning"": ""Right-hand traffic with oncoming vehicle on left of double yellow center line, yellow road markings, Mercedes commercial van, coniferous/mixed boreal vegetation and overcast northern light indicate Scandinavia; guardrail, lamp posts and asphalt style narrow to Norway."",
+  ""country"": ""NO"",
+  ""latitude"": 59.85,
+  ""longitude"": 10.55
+}"
+google/gemini-3.1-pro-preview,no-CoT,59.9139,10.7522,369.996,NO,True,,stop,0.00514,1190,230,195,3.74,"```json
+{""country"": ""NO"", ""latitude"": 59.9139, ""longitude"": 10.7522}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,59.9139,10.7522,369.996,NO,True,,stop,0.0002041,473,39,0,7.45,"{
+  ""country"": ""NO"",
+  ""latitude"": 59.9139,
+  ""longitude"": 10.7522
+}"
+qwen/qwen3.6-27b,no-CoT,59.9139,10.7522,369.996,NO,True,,stop,0.0001943,473,31,0,8.93,"{""country"": ""NO"", ""latitude"": 59.9139, ""longitude"": 10.7522}"
+x-ai/grok-4.3,no-CoT,59.85,10.8,377.25,NO,True,,stop,0.0005934,592,22,0,1.71,"{""country"": ""NO"", ""latitude"": 59.85, ""longitude"": 10.8}"
+openai/gpt-5.5,no-CoT,58.9706,5.7331,390.594,NO,True,,stop,0.00341,544,23,0,1.5,"{""country"":""NO"",""latitude"":58.9706,""longitude"":5.7331}"
+anthropic/claude-opus-4.8,no-CoT,58.97,5.7331,390.66,NO,True,,stop,0.00413,666,32,0,8.48,"{""country"": ""NO"", ""latitude"": 58.9700, ""longitude"": 5.7331}"
+anthropic/claude-opus-4.8,CoT,58.92,5.75,396.129,NO,True,,stop,0.006735,797,110,0,3.13,"{""reasoning"": ""Yellow center lines, right-hand traffic, overcast Nordic sky, coniferous/deciduous mix, and Norwegian-style guardrails and roadside vegetation suggest western Norway near Stavanger."", ""country"": ""NO"", ""latitude"": 58.92, ""longitude"": 5.75}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),58.8525,5.7311,403.695,NO,True,,stop,0.002091,1190,34,0,1.14,"```json
+{""country"": ""NO"", ""latitude"": 58.8525, ""longitude"": 5.7311}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),58.8524,5.7312,403.706,NO,True,,stop,0.0061905,1271,476,401,4.65,"{""reasoning"": ""The green license plate on the oncoming Mercedes-Benz Sprinter van is characteristic of class 2 commercial vehicles in Norway, which is further supported by the yellow center lines and typical Nordic vegetation and road infrastructure."", ""country"": ""NO"", ""latitude"": 58.8524, ""longitude"": 5.7312}"
+google/gemini-3.5-flash,CoT (effort=low),58.8525,5.7251,403.722,NO,True,,stop,0.0036795,1271,197,124,2.8,"{""reasoning"": ""The green license plate on the Mercedes-Benz Sprinter truck and the solid yellow center line on the road are characteristic of Norway. The vegetation and overcast climate further support a location in southwestern Norway."", ""country"": ""NO"", ""latitude"": 58.8525, ""longitude"": 5.7251}"
+openai/gpt-5.5,CoT,58.8506,5.7352,403.888,NO,True,,stop,0.010485,621,246,156,11.76,"{""reasoning"":""Right-hand traffic with a yellow centerline and white edge lines is characteristic of Norway, and the damp, overcast coniferous suburban landscape fits western/southwestern Norway. The road furniture, guardrails, and architecture suggest a semi-rural road near Stavanger/Sandnes rather than a larger city center."",""country"":""NO"",""latitude"":58.8506,""longitude"":5.7352}"
+minimax/minimax-m3,CoT,59.45,10.75,411.858,NO,True,,stop,0.00068466,843,411,333,12.91,"{""reasoning"": ""Right-hand driving with yellow center line and white edge markings, combined with Mercedes Sprinter van, Scandinavian-style tall street lamps, conifer forest vegetation, and overcast Nordic sky indicate Norway, likely on a motorway in the southeastern region."", ""country"": ""NO"", ""latitude"": 59.45, ""longitude"": 10.75}"
+qwen/qwen3.5-397b-a17b,no-CoT,59.3833,10.75,418.065,NO,True,,stop,0.00035748,473,29,0,15.21,"{""country"": ""NO"", ""latitude"": 59.3833, ""longitude"": 10.75}"
+qwen/qwen3.6-35b-a3b,no-CoT,59.3293,18.0686,723.126,SE,True,,stop,0.00010195,473,31,0,2.06,"{""country"": ""SE"", ""latitude"": 59.3293, ""longitude"": 18.0686}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,60.300682067871094,22.083087921142578,870.453,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,60.94709396362305,25.717424392700195,1031.65,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,61.05744934082031,25.85630989074707,1035.086,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,52.52,13.405,1182.88,DE,True,,stop,0.0011835,634,31,0,7.38,"{""country"": ""DE"", ""latitude"": 52.5200, ""longitude"": 13.4050}"
+qwen/qwen3.5-27b,no-CoT,53.3498,-6.2603,1253.04,IE,True,,stop,0.00019251,473,30,0,8.48,"{""country"": ""IE"", ""latitude"": 53.3498, ""longitude"": -6.2603}"
+qwen/qwen3.5-35b-a3b,no-CoT,53.3498,-6.2603,1253.04,IE,True,,stop,0.0001158625,473,30,0,7.57,"{""country"": ""IE"", ""latitude"": 53.3498, ""longitude"": -6.2603}"
+xiaomi/mimo-v2.5,no-CoT,53.3498,-6.2603,1253.04,IE,True,,stop,8.11776e-05,708,30,0,7.3,"{""country"": ""IE"", ""latitude"": 53.3498, ""longitude"": -6.2603}"
+xiaomi/mimo-v2.5,CoT,53.34,-6.3,1255.333,IE,True,,stop,0.0001412376,787,205,126,6.78,"{""reasoning"": ""The Mercedes-Benz Sprinter van drives on the left, indicating left-hand traffic, while the yellow road markings and specific guardrail style strongly point to Ireland. The landscape's vegetation and overcast sky are consistent with the Irish climate."", ""country"": ""IE"", ""latitude"": 53.34, ""longitude"": -6.30}"
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,7121.263,US,True,,stop,0.000142875,634,32,0,1.59,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,13.06,
+moonshotai/kimi-k2.6,CoT,,,,,False,,stop,0.0139698,203,4061,4060,55.98,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,9.44,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.22,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.17,

@@ -1,0 +1,78 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-43.94189469261582,169.29683693510066,0.0,NZ,True,,,,,,,,"Wanaka, Queenstown-Lakes District, Otago, NZ"
+google/gemini-3.1-pro-preview,CoT,-44.05,169.35,12.751,NZ,True,,stop,0.006432,1272,324,234,6.11,"{
+  ""reasoning"": ""The red and white reflector posts, left-hand driving, and presence of tree ferns alongside beech forest strongly indicate New Zealand. The mountainous terrain and dense native bush are characteristic of the South Island's West Coast or Haast Pass region."",
+  ""country"": ""NZ"",
+  ""latitude"": -44.05,
+  ""longitude"": 169.35
+}"
+google/gemini-3.1-pro-preview,no-CoT,-44.05,169.35,12.751,NZ,True,,stop,0.00772,1190,445,413,13.28,"```json
+{""country"": ""NZ"", ""latitude"": -44.05, ""longitude"": 169.35}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-43.9855,169.1482,12.846,NZ,True,,stop,0.0060465,1271,460,380,11.06,"{""reasoning"": ""The presence of native tree ferns and beech forest, combined with left-hand driving and distinctive New Zealand style road guide posts, indicates the South Island of New Zealand, likely along State Highway 6 near Haast Pass."", ""country"": ""NZ"", ""latitude"": -43.9855, ""longitude"": 169.1482}"
+google/gemini-3.5-flash,CoT (effort=low),-44.1052,169.1245,22.795,NZ,True,,stop,0.0049755,1271,341,266,5.28,"{""reasoning"": ""The presence of native tree ferns, southern beech forest, and distinctive white road guide posts with red reflectors indicates the South Island of New Zealand, likely along State Highway 6 near Haast Pass."", ""country"": ""NZ"", ""latitude"": -44.1052, ""longitude"": 169.1245}"
+google/gemini-3.5-flash,CoT (effort=high),-44.1075,169.1234,23.052,NZ,True,,stop,0.0123465,1271,1160,1071,15.85,"{""reasoning"": ""The lush temperate rainforest with prominent tree ferns, southern beech trees, mountainous terrain, left-hand driving, and white road edge lines with standard New Zealand delineator posts point to the South Island of New Zealand, likely along State Highway 6 near Haast Pass."", ""country"": ""NZ"", ""latitude"": -44.1075, ""longitude"": 169.1234}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-43.996726989746094,169.01539611816406,23.334,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-44.01493453979492,169.01181030273438,24.21,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-43.8,169.0,28.55,NZ,True,,stop,0.01255032,682,2976,3108,27.9,"{""reasoning"": ""Dense temperate rainforest with prominent tree ferns and tall podocarp canopy alongside a rural highway with wooden roadside marker posts is characteristic of New Zealand's South Island West Coast."", ""country"": ""NZ"", ""latitude"": -43.8, ""longitude"": 169.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-43.73662185668945,169.83079528808594,48.528,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,-43.6215,170.1432,76.72,NZ,True,,stop,0.0001898,474,32,0,5.62,"{""country"": ""NZ"", ""latitude"": -43.6215, ""longitude"": 170.1432}"
+qwen/qwen3.5-397b-a17b,CoT,-43.2,170.08,103.856,NZ,True,,stop,0.0146698,554,3998,3583,51.34,"{""reasoning"": ""The image shows a left-hand traffic road with distinctive white (left) and red (right) reflective marker posts, which is standard for New Zealand. The lush vegetation featuring large tree ferns and dense native bush, combined with the mountainous backdrop, strongly indicates the West Coast of New Zealand's South Island, likely on State Highway 6."", ""country"": ""NZ"", ""latitude"": -43.20, ""longitude"": 170.08}"
+anthropic/claude-opus-4.8,no-CoT,-44.6,168.0,126.554,NZ,True,,stop,0.004105,666,31,0,8.36,"{""country"": ""NZ"", ""latitude"": -44.6, ""longitude"": 168.0}"
+qwen/qwen3.5-9b,no-CoT,-45.0225,168.6628,130.26,NZ,True,,stop,5.22e-05,474,32,0,10.61,"{""country"": ""NZ"", ""latitude"": -45.0225, ""longitude"": 168.6628}"
+mistralai/mistral-medium-3-5,no-CoT,-45.0312,168.6626,131.158,NZ,True,,stop,0.001191,634,32,0,1.16,"{""country"": ""NZ"", ""latitude"": -45.0312, ""longitude"": 168.6626}"
+moonshotai/kimi-k2.6,no-CoT,-43.2,171.4,188.445,NZ,True,,stop,0.000292932,603,23,0,20.55,"{""country"": ""NZ"", ""latitude"": -43.2, ""longitude"": 171.4}"
+openai/gpt-5.5,no-CoT,-42.8296,171.5668,221.224,NZ,True,,stop,0.00344,544,24,0,1.72,"{""country"":""NZ"",""latitude"":-42.8296,""longitude"":171.5668}"
+qwen/qwen3.5-35b-a3b,no-CoT,-42.4512,171.2893,231.421,NZ,True,,stop,0.000173025,473,37,0,2.82,"{
+""country"": ""NZ"",
+""latitude"": -42.4512,
+""longitude"": 171.2893
+}"
+anthropic/claude-opus-4.8,CoT,-42.5,171.5,239.934,NZ,True,,stop,0.00631,797,93,0,3.13,"{""reasoning"": ""Lush temperate rainforest with tree ferns, mountainous terrain, and left-side driving suggest New Zealand's South Island, likely a West Coast highway."", ""country"": ""NZ"", ""latitude"": -42.5, ""longitude"": 171.5}"
+minimax/minimax-m3,CoT,-42.55,172.05,271.419,NZ,True,,stop,0.00066186,843,392,313,14.27,"{""reasoning"": ""Native tree ferns (punga/silver fern) on the left, lush temperate rainforest, mountainous alpine backdrop, left-hand traffic, and standard NZ rural road markers are decisive — classic South Island New Zealand bush highway, likely an alpine pass."", ""country"": ""NZ"", ""latitude"": -42.55, ""longitude"": 172.05}"
+google/gemma-4-31b-it,no-CoT,-43.535,172.632,271.716,NZ,True,,stop,7.084e-05,406,35,0,2.17,"```json
+{""country"": ""NZ"", ""latitude"": -43.535, ""longitude"": 172.632}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-42.1152,171.5784,275.025,NZ,True,,stop,0.0020625,1189,31,0,8.03,"{""country"": ""NZ"", ""latitude"": -42.1152, ""longitude"": 171.5784}"
+minimax/minimax-m3,no-CoT,-41.2,172.8,418.546,NZ,True,,stop,0.00019176,752,23,0,6.63,"{""country"": ""NZ"", ""latitude"": -41.2, ""longitude"": 172.8}"
+qwen/qwen3.6-27b,no-CoT,-41.2865,173.2897,440.29,NZ,True,,stop,0.0001963,473,32,0,8.81,"{""country"": ""NZ"", ""latitude"": -41.2865, ""longitude"": 173.2897}"
+google/gemma-4-26b-a4b-it,no-CoT,-41.2864,173.6667,463.629,NZ,True,,stop,6.014e-05,406,44,0,3.71,"{"" than-thought
+```json
+{""country"": ""NZ"", ""latitude"": -41.2864, ""longitude"": 173.6667}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-41.109580993652344,173.94851684570312,494.323,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,-40.9067,174.1234,520.272,NZ,True,,stop,0.0002085,474,45,0,4.65,"```json
+{
+  ""country"": ""NZ"",
+  ""latitude"": -40.9067,
+  ""longitude"": 174.1234
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-40.98113250732422,174.2198028564453,520.865,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-40.8975715637207,174.20999145507812,526.371,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,-41.2865,174.7762,536.688,NZ,True,,stop,0.00010295,473,32,0,3.12,"{""country"": ""NZ"", ""latitude"": -41.2865, ""longitude"": 174.7762}"
+x-ai/grok-4.3,CoT,-41.25,174.75,537.257,NZ,True,,stop,0.002104,676,638,568,13.02,"{
+  ""reasoning"": ""Lush temperate rainforest with prominent tree ferns (ponga), native NZ bush, left-side driving orientation, and distant mountains match New Zealand; no other country combines these exact visual markers."",
+  ""country"": ""NZ"",
+  ""latitude"": -41.25,
+  ""longitude"": 174.75
+}"
+x-ai/grok-4.3,no-CoT,-41.15,174.85,550.555,NZ,True,,stop,0.0005934,592,22,0,1.05,"{""country"": ""NZ"", ""latitude"": -41.15, ""longitude"": 174.85}"
+xiaomi/mimo-v2.5,no-CoT,-39.15,174.05,663.353,NZ,True,,stop,8.06176e-05,708,28,0,8.57,"{""country"": ""NZ"", ""latitude"": -39.15, ""longitude"": 174.05}"
+qwen/qwen3.6-35b-a3b,CoT,-37.2,175.9,933.682,NZ,True,,stop,0.00737774635,553,7551,7459,33.31,"```json
+{
+    ""reasoning"": ""The image shows left-hand traffic, distinctive New Zealand-style delineator posts (white posts with red reflectors), and lush native vegetation including large ferns and broadleaf trees, which are characteristic of the North Island of New Zealand."",
+    ""country"": ""NZ"",
+    ""latitude"": -37.2,
+    ""longitude"": 175.9
+}
+```"
+xiaomi/mimo-v2.5,CoT,-36.85,175.65,953.951,NZ,True,,stop,0.0004422376,787,1280,1201,22.0,"{""reasoning"": ""The image displays distinctive black-and-white delineator posts and white edge lines characteristic of New Zealand roads, alongside lush vegetation featuring tree ferns (ponga) and hilly terrain typical of the North Island's native bush."", ""country"": ""NZ"", ""latitude"": -36.85, ""longitude"": 175.65}"
+openai/gpt-5.5,CoT,-42.0426,145.8209,1914.478,AU,True,,stop,0.030255,621,905,817,29.41,"{""reasoning"":""Left-side driving with Australian-style white guideposts/reflectors and white center markings, plus eucalyptus/tree-fern temperate rainforest and mountainous terrain point strongly to Tasmania. The scene best matches the Lyell Highway/West Coast rainforest corridor rather than New Zealand due to the visible eucalypt canopy."",""country"":""AU"",""latitude"":-42.0426,""longitude"":145.8209}"
+mistralai/mistral-small-2603,CoT,36.0,138.0,9434.133,JP,True,,stop,0.00039144,716,585,656,11.11,"{""reasoning"": ""Left-hand traffic and mountainous Japanese Alps terrain with cedar-like vegetation."", ""country"": ""JP"", ""latitude"": 36.0, ""longitude"": 138.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.2865,174.7762,9492.769,NZ,True,,stop,0.000383,473,32,0,8.36,"{""country"": ""NZ"", ""latitude"": 41.2865, ""longitude"": 174.7762}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4194,11382.385,US,True,,stop,0.0001143,634,32,0,3.47,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4194}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.31,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.18,

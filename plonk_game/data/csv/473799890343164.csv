@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,42.418234442721,59.768759826953,0.0,UZ,True,,,,,,,,"Nukus, None, Karakalpakstan, UZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,42.19000244140625,59.44325637817383,36.887,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,42.179588317871094,59.43951416015625,37.913,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,41.5,60.5,118.662,UZ,True,,stop,0.004105,666,31,0,2.24,"{""country"": ""UZ"", ""latitude"": 41.5, ""longitude"": 60.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.381245,61.672341,195.228,UZ,True,,stop,0.0021345,1189,39,0,8.99,"```json
+{""country"": ""UZ"", ""latitude"": 41.381245, ""longitude"": 61.672341}
+```"
+google/gemini-3.5-flash,CoT (effort=low),41.3512,62.1845,232.517,UZ,True,,stop,0.0063795,1271,497,423,12.26,"{""reasoning"": ""The flat desert landscape with sparse saxaul-like vegetation and a parallel newly constructed highway is highly characteristic of the A380 highway running through the Kyzylkum Desert in Uzbekistan."", ""country"": ""UZ"", ""latitude"": 41.3512, ""longitude"": 62.1845}"
+google/gemini-3.5-flash,CoT (effort=medium),41.0524,62.4152,266.974,UZ,True,,stop,0.0079275,1271,669,592,12.38,"{""reasoning"": ""The flat, sandy desert landscape with sparse saxaul vegetation and the ongoing dual-carriageway construction of the A380 highway are highly characteristic of the Kyzylkum Desert in Uzbekistan."", ""country"": ""UZ"", ""latitude"": 41.0524, ""longitude"": 62.4152}"
+google/gemini-3.5-flash,CoT (effort=high),40.85,62.25,270.035,UZ,True,,stop,0.0122475,1271,1149,1061,9.71,"```json
+{""reasoning"": ""The flat, arid desert landscape with sparse shrubs, combined with the characteristic dual-carriageway construction (one side concrete, one side newly paved asphalt), is highly indicative of the A380 highway through the Kyzylkum Desert in Uzbekistan."", ""country"": ""UZ"", ""latitude"": 40.85, ""longitude"": 62.25}
+```"
+google/gemini-3.1-pro-preview,no-CoT,40.5123,62.1456,290.041,UZ,True,,stop,0.002798,1189,35,0,2.7,"```json
+{""country"": ""UZ"", ""latitude"": 40.5123, ""longitude"": 62.1456}
+```"
+anthropic/claude-opus-4.8,CoT,39.5,59.5,325.276,TM,True,,stop,0.007135,797,126,0,4.72,"{""reasoning"": ""Flat desert steppe with sparse low shrubs, sandy soil, and a divided highway under construction suggests Central Asian desert; right-hand traffic and the arid Karakum/Kyzylkum landscape point to Turkmenistan/Uzbekistan."", ""country"": ""TM"", ""latitude"": 39.5, ""longitude"": 59.5}"
+google/gemini-3.1-pro-preview,CoT,40.5123,63.4567,373.232,UZ,True,,stop,0.005844,1272,275,189,4.86,"{
+  ""reasoning"": ""The flat, arid landscape with sparse shrub vegetation and a divided highway suggests a desert region in Central Asia. The road conditions and environment are consistent with major routes through the Kyzylkum Desert in Uzbekistan."",
+  ""country"": ""UZ"",
+  ""latitude"": 40.5123,
+  ""longitude"": 63.4567
+}"
+openai/gpt-5.5,CoT,40.185,63.162,376.785,UZ,True,,stop,0.014805,621,390,303,8.84,"{""reasoning"":""Flat arid desert with sparse shrubs and a wide, poorly marked right-hand-driving highway under construction fits Central Asian desert roads, especially Uzbekistan's long intercity routes. The road surface/shoulder style and landscape are most consistent with the Kyzylkum-area highway between Bukhara and Khiva."",""country"":""UZ"",""latitude"":40.185,""longitude"":63.162}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.56644058227539,60.27729034423828,541.228,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,45.0,68.0,720.768,KZ,True,,stop,6.478e-05,406,30,0,3.7,"```json
+{""country"": ""KZ"", ""latitude"": 45.0, ""longitude"": 68.0}
+```"
+moonshotai/kimi-k2.6,CoT,48.5,55.0,771.422,KZ,True,,stop,0.082365255,681,22757,22162,227.66,"{""reasoning"": ""The old concrete Soviet highway running parallel to a new asphalt road through a flat sandy desert with sparse scrub matches Kazakhstan’s M-32/Aktobe–Atyrau corridor, and the right-hand traffic with post-Soviet road signage confirms Central Asia."", ""country"": ""KZ"", ""latitude"": 48.5, ""longitude"": 55.0}"
+qwen/qwen3.6-35b-a3b,no-CoT,32.6542,54.1873,1191.332,IR,True,,stop,0.00010195,473,31,0,10.21,"{""country"": ""IR"", ""latitude"": 32.6542, ""longitude"": 54.1873}"
+mistralai/mistral-medium-3-5,no-CoT,32.4279,53.688,1232.992,IR,True,,stop,0.0011835,634,31,0,0.91,"{""country"": ""IR"", ""latitude"": 32.4279, ""longitude"": 53.6880}"
+openai/gpt-5.5,no-CoT,32.4762,44.2279,1756.986,IQ,True,,stop,0.00341,544,23,0,3.57,"{""country"":""IQ"",""latitude"":32.4762,""longitude"":44.2279}"
+qwen/qwen3.5-122b-a10b,no-CoT,24.5247,54.5208,2047.244,AE,True,,stop,0.0002355,473,39,0,1.14,"{
+  ""country"": ""AE"",
+  ""latitude"": 24.5247,
+  ""longitude"": 54.5208
+}"
+x-ai/grok-4.3,CoT,24.85,44.92,2380.761,SA,True,,stop,0.0021965,676,675,592,11.18,"{
+  ""reasoning"": ""Arid desert landscape with sparse low shrubs, sandy/gravel shoulders, distant low dunes, clear blue sky and straight asphalt highway with right-hand traffic all point to the Arabian Peninsula interior; the distant black/white sign and road style match Saudi highway construction."",
+  ""country"": ""SA"",
+  ""latitude"": 24.85,
+  ""longitude"": 44.92
+}"
+qwen/qwen3.6-27b,no-CoT,29.9793,31.2106,2892.094,EG,True,,stop,0.0001943,473,31,0,9.48,"{""country"": ""EG"", ""latitude"": 29.9793, ""longitude"": 31.2106}"
+qwen/qwen3.5-27b,no-CoT,29.7099,31.0438,2922.865,EG,True,,stop,0.0002067,473,31,0,23.65,"{""country"": ""EG"", ""latitude"": 29.7099, ""longitude"": 31.0438}"
+x-ai/grok-4.3,no-CoT,27.85,-12.95,6605.151,MA,True,,stop,0.0005934,592,22,0,1.1,"{""country"": ""MA"", ""latitude"": 27.85, ""longitude"": -12.95}"
+xiaomi/mimo-v2.5,CoT,-21.3,133.8,10363.232,AU,True,,stop,0.0005931576,787,1819,1723,29.08,"{""reasoning"": ""The reddish-orange soil, sparse scrub vegetation, and wide dirt median separating the two carriageways are characteristic of the Australian Outback. The vehicle is driving on the left, consistent with Australian traffic laws, and the flat desert terrain strongly suggests a major highway in the Northern Territory, likely the Stuart Highway."", ""country"": ""AU"", ""latitude"": -21.3, ""longitude"": 133.8}"
+minimax/minimax-m3,CoT,-23.5,135.0,10622.589,AU,True,,stop,0.00094782,845,627,672,17.93,"{""reasoning"": ""Extremely flat arid terrain with sparse low scrubby vegetation on sandy/ochre soil, bright high-altitude cirrus clouds, and a wide divided highway with no signage are highly characteristic of the Australian Outback. The camera mount visible in the top right corner and road quality further support a remote Australian highway, likely along the Stuart Highway corridor in the Northern Territory."", ""country"": ""AU"", ""latitude"": -23.5, ""longitude"": 135.0}"
+mistralai/mistral-small-2603,no-CoT,36.7783,-119.4179,11208.448,US,True,,stop,0.0001143,634,32,0,3.15,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+google/gemma-4-26b-a4b-it,no-CoT,35.0,-105.0,11268.233,US,True,,stop,5.294e-05,406,26,0,1.18,"{""country"": ""US"", ""latitude"": 35.0, ""longitude"": -105.0}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.0844,-114.6297,11378.368,US,True,,stop,9.836e-05,474,32,0,1.98,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -114.6297}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.7219,-117.3512,11432.487,US,True,,stop,0.000260505,473,32,0,3.23,"{""country"": ""US"", ""latitude"": 34.7219, ""longitude"": -117.3512}"
+xiaomi/mimo-v2.5,no-CoT,34.5,-117.3,11456.963,US,True,,stop,8.00576e-05,708,26,0,1.32,"{""country"": ""US"", ""latitude"": 34.5, ""longitude"": -117.3}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,33.38045120239258,-115.29566192626953,11571.64,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,32.7157,-116.7819,11653.158,US,True,,stop,8.841e-05,473,32,0,9.24,"{""country"": ""US"", ""latitude"": 32.7157, ""longitude"": -116.7819}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,26.86837387084961,-112.99024200439453,12275.032,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,26.77975845336914,-112.93954467773438,12284.335,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.73,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.34,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.8,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.82,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.09,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.13,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.31,

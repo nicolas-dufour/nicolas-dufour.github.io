@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-39.458170644717,-71.827155666583,0.0,CL,True,,,,,,,,"Pucon, Provincia de Cautin, Araucania, CL"
+openai/gpt-5.5,no-CoT,-39.2658,-71.9684,24.597,CL,True,,stop,0.00414,678,25,0,2.87,"{""country"":""CL"",""latitude"":-39.2658,""longitude"":-71.9684}"
+qwen/qwen3.5-27b,no-CoT,-39.5833,-72.0667,24.815,CL,True,,stop,0.000182715,585,44,0,7.75,"```json
+{
+  ""country"": ""CL"",
+  ""latitude"": -39.5833,
+  ""longitude"": -72.0667
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-39.3847,-71.5489,25.259,CL,True,,stop,0.0004626,585,31,0,2.23,"{""country"": ""CL"", ""latitude"": -39.3847, ""longitude"": -71.5489}"
+openai/gpt-5.5,CoT,-39.6175,-71.5008,33.123,AR,True,,stop,0.018115,755,478,393,44.44,"{""reasoning"":""The dense southern beech/Andean temperate forest, gravel park road, and snow-capped volcanic cone are characteristic of northern Patagonia around Volcán Lanín. The scene most closely matches access roads in Lanín National Park near Lago Tromen on the Argentine side."",""country"":""AR"",""latitude"":-39.6175,""longitude"":-71.5008}"
+google/gemini-3.1-pro-preview,no-CoT,-39.8123,-71.5432,46.28,AR,True,,stop,0.0049,1226,204,169,3.97,"```json
+{""country"": ""AR"", ""latitude"": -39.8123, ""longitude"": -71.5432}
+```"
+google/gemini-3.1-pro-preview,CoT,-38.885,-71.162,85.73,AR,True,,stop,0.00834,1308,477,355,7.04,"{
+  ""reasoning"": ""The presence of Nothofagus trees and what appear to be Araucaria (monkey puzzle) trees on the distant hill strongly indicates the Patagonian Andes, specifically the Araucanía region of Chile or Neuquén province in Argentina. The dry, dusty dirt road and landscape are characteristic of the eastern slopes in Argentina, such as near Villa Pehuenia or Lanin National Park."",
+  ""country"": ""AR"",
+  ""latitude"": -38.885,
+  ""longitude"": -71.162
+}"
+anthropic/claude-opus-4.8,no-CoT,-38.692,-71.583,87.762,CL,True,,stop,0.00484,818,30,0,14.71,"{""country"": ""CL"", ""latitude"": -38.692, ""longitude"": -71.583}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-40.158333,-71.350556,87.856,AR,True,,stop,0.00219,1226,39,0,1.17,"```json
+{""country"": ""AR"", ""latitude"": -40.158333, ""longitude"": -71.350556}
+```"
+anthropic/claude-opus-4.8,CoT,-38.69,-71.5,89.964,CL,True,,stop,0.00712,949,95,0,2.77,"{""reasoning"": ""Nothofagus forest with dead trees and a snow-capped volcano on a gravel road suggests Andean Patagonia/Araucanía region of Chile or Argentina."", ""country"": ""CL"", ""latitude"": -38.69, ""longitude"": -71.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-40.32149124145508,-71.90409851074219,96.221,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-40.6583,-71.4522,137.21,AR,True,,stop,0.00522,1308,362,276,9.55,"{""reasoning"": ""The presence of Nothofagus (Southern Beech) forest with characteristic dead white trees indicates the Andean-Patagonian region of southern South America. The gravel road and mountainous terrain are highly typical of the national parks in Neuquén Province, Argentina."", ""country"": ""AR"", ""latitude"": -40.6583, ""longitude"": -71.4522}"
+minimax/minimax-m3,no-CoT,-40.75,-71.65,144.433,AR,True,,stop,0.00049122,919,228,264,11.96,"{""country"": ""AR"", ""latitude"": -40.75, ""longitude"": -71.65}"
+x-ai/grok-4.3,CoT,-41.15,-71.65,188.722,AR,True,,stop,0.0021165,788,587,525,17.81,"{""reasoning"": ""Patagonian Nothofagus forest with dead snags, gravel road, and Andean topography point to southern South America; no left-side driving or other regional markers visible."", ""country"": ""AR"", ""latitude"": -41.15, ""longitude"": -71.65}"
+x-ai/grok-4.3,no-CoT,-41.15,-71.55,189.585,AR,True,,stop,0.0007334,704,22,0,0.84,"{""country"": ""AR"", ""latitude"": -41.15, ""longitude"": -71.55}"
+google/gemma-4-31b-it,no-CoT,-41.1333,-71.3167,191.23,AR,True,,stop,7.096e-05,404,36,0,8.42,"```json
+{""country"": ""AR"", ""latitude"": -41.1333, ""longitude"": -71.3167}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-41.1333,-71.3167,191.23,AR,True,,stop,0.0014115,786,31,0,2.06,"{""country"": ""AR"", ""latitude"": -41.1333, ""longitude"": -71.3167}"
+xiaomi/mimo-v2.5,no-CoT,-41.1335,-71.3103,191.375,AR,True,,stop,9.71376e-05,820,31,0,2.5,"{""country"": ""AR"", ""latitude"": -41.1335, ""longitude"": -71.3103}"
+qwen/qwen3.6-35b-a3b,no-CoT,-41.1234,-72.5678,195.529,CL,True,,stop,0.0001668,586,31,0,9.24,"{""country"": ""CL"", ""latitude"": -41.1234, ""longitude"": -72.5678}"
+google/gemini-3.5-flash,CoT (effort=medium),-41.2483,-71.6254,199.786,AR,True,,stop,0.006678,1308,524,447,10.53,"{""reasoning"": ""The dense Nothofagus (Southern Beech) forest with characteristic bleached dead trees and gravel road is highly indicative of the Patagonian Andes, specifically within the Nahuel Huapi National Park region of Argentina."", ""country"": ""AR"", ""latitude"": -41.2483, ""longitude"": -71.6254}"
+google/gemini-3.5-flash,CoT (effort=high),-41.254,-71.642,200.302,AR,True,,stop,0.0109155,1307,995,917,15.29,"{""reasoning"": ""The dense Nothofagus (southern beech) forest, characteristic dead white trees, and narrow gravel road are highly indicative of the Andean-Patagonian forest in southern Argentina, likely within Nahuel Huapi National Park."", ""country"": ""AR"", ""latitude"": -41.254, ""longitude"": -71.642}"
+qwen/qwen3.5-122b-a10b,no-CoT,-41.1639,-72.6342,201.633,CL,True,,stop,0.0003588,585,39,0,3.57,"{
+  ""country"": ""CL"",
+  ""latitude"": -41.1639,
+  ""longitude"": -72.6342
+}"
+moonshotai/kimi-k2.6,no-CoT,-41.2,-72.5,201.904,CL,True,,stop,0.00033858,755,23,0,1.76,"{""country"": ""CL"", ""latitude"": -41.2, ""longitude"": -72.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,-41.3892,-72.4567,221.233,CL,True,,stop,0.00011304,586,31,0,2.26,"{""country"": ""CL"", ""latitude"": -41.3892, ""longitude"": -72.4567}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-41.86565399169922,-72.24018859863281,269.956,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-41.95,-71.55,278.062,AR,True,,stop,0.00060786,995,309,224,9.43,"{""reasoning"": ""The gravel road through Patagonian lenga beech (Nothofagus pumilio) forest with characteristic dead standing trees, rocky terrain, and Andes foothills vegetation strongly indicates Argentine Patagonia, likely near El Bolsón or Lago Puelo in Río Negro/Chubut."", ""country"": ""AR"", ""latitude"": -41.95, ""longitude"": -71.55}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-42.17876052856445,-72.35624694824219,305.773,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-42.9167,-72.7167,391.702,CL,True,,stop,0.010825056,834,3084,3003,86.5,"{""reasoning"": ""Dense Patagonian temperate rainforest dominated by southern beech (Nothofagus), standing dead silver snags, and coarse volcanic gravel road without markings is characteristic of the remote Carretera Austral near Chaitén in Chilean Patagonia."", ""country"": ""CL"", ""latitude"": -42.9167, ""longitude"": -72.7167}"
+qwen/qwen3.5-9b,no-CoT,-43.5086,-71.9936,450.6,AR,True,,stop,6.325e-05,586,31,0,4.19,"{""country"": ""AR"", ""latitude"": -43.5086, ""longitude"": -71.9936}"
+xiaomi/mimo-v2.5,CoT,-42.9,171.5,8862.78,NZ,True,,stop,0.0004374776,899,1207,1144,12.24,"{""reasoning"": ""Gravel road in a volcanic, mountainous region with lush greenery and dead white-barked trees, typical of New Zealand's South Island landscapes."", ""country"": ""NZ"", ""latitude"": -42.9, ""longitude"": 171.5}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,10019.935,US,True,,stop,0.0001371,786,32,0,10.81,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+google/gemma-4-26b-a4b-it,no-CoT,44.35,-110.55,10093.593,US,True,,stop,5.548e-05,404,33,0,9.3,"```json
+{""country"": ""US"", ""latitude"": 44.35, ""longitude"": -110.55}
+```"
+qwen/qwen3.6-27b,no-CoT,42.7833,0.1833,11661.169,ES,True,,stop,0.0002259,585,30,0,9.31,"{""country"": ""ES"", ""latitude"": 42.7833, ""longitude"": 0.1833}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,44.29008102416992,8.298563957214355,12278.819,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,40.29765319824219,15.584489822387695,12521.487,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,40.24486541748047,15.688711166381836,12525.652,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.27,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.8,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.28,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.11,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.15,

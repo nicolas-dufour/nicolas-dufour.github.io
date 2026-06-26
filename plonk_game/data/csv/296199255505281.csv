@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.630556545518,-122.91017476045,0.0,US,True,,,,,,,,"Lebanon, Linn County, Oregon, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,44.84741973876953,-123.10511016845703,28.61,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,44.91633224487305,-123.0912857055664,34.845,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,44.9333,-123.0333,35.038,US,True,,stop,0.006168,1272,302,217,4.35,"{
+  ""reasoning"": ""The dashed yellow center line and solid white edge lines indicate North America. The green mile marker and the lush, overcast environment with tall trees and agricultural fields strongly suggest the Pacific Northwest, likely Oregon."",
+  ""country"": ""US"",
+  ""latitude"": 44.9333,
+  ""longitude"": -123.0333
+}"
+openai/gpt-5.5,no-CoT,44.9425,-123.0351,36.06,US,True,,stop,0.00344,544,24,0,1.34,"{""country"":""US"",""latitude"":44.9425,""longitude"":-123.0351}"
+google/gemini-3.5-flash,CoT (effort=medium),44.9251,-123.1243,36.855,US,True,,stop,0.0064425,1271,504,423,5.51,"{""reasoning"": ""The dashed yellow center line and solid white edge lines indicate North America, while the vertical green mile marker and damp, overcast climate with large deciduous trees are highly characteristic of the Pacific Northwest, particularly the Willamette Valley in Oregon."", ""country"": ""US"", ""latitude"": 44.9251, ""longitude"": -123.1243}"
+anthropic/claude-opus-4.8,CoT,44.95,-123.05,37.195,US,True,,stop,0.00651,797,101,0,15.95,"{""reasoning"": ""Wide rural highway with yellow center line, right-hand driving, overcast sky, and lush deciduous trees suggest Pacific Northwest US, likely Oregon's Willamette Valley."", ""country"": ""US"", ""latitude"": 44.95, ""longitude"": -123.05}"
+google/gemini-3.5-flash,CoT (effort=low),44.9582,-123.0315,37.669,US,True,,stop,0.004455,1272,283,201,9.41,"{""reasoning"": ""The road markings with a dashed yellow center line and solid white edge lines, combined with the vertical green mile marker and Pacific Northwest vegetation (Douglas firs and bigleaf maples), indicate western Oregon or Washington in the United States."", ""country"": ""US"", ""latitude"": 44.9582, ""longitude"": -123.0315}"
+anthropic/claude-opus-4.8,no-CoT,45.0,-123.0,41.687,US,True,,stop,0.004055,666,29,0,8.91,"{""country"": ""US"", ""latitude"": 45.0, ""longitude"": -123.0}"
+google/gemini-3.1-pro-preview,no-CoT,45.0123,-123.1456,46.331,US,True,,stop,0.005608,1190,269,233,4.76,"```json
+{""country"": ""US"", ""latitude"": 45.0123, ""longitude"": -123.1456}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),45.1234,-123.0123,55.389,US,True,,stop,0.0021075,1189,36,0,1.47,"```json
+{""country"": ""US"", ""latitude"": 45.1234, ""longitude"": -123.0123}
+```"
+openai/gpt-5.5,CoT,45.1856,-122.7984,62.343,US,True,,stop,0.013185,621,336,256,22.1,"{""reasoning"":""Right-side driving with US-style yellow centerlines/white edge lines and small green milepost markers point to the United States. The wet overcast climate, flat farmland, and dense deciduous roadside vegetation are most consistent with Oregon’s Willamette Valley."",""country"":""US"",""latitude"":45.1856,""longitude"":-122.7984}"
+x-ai/grok-4.3,CoT,45.35,-122.85,80.138,US,True,,stop,0.0019015,676,557,485,10.69,"{""reasoning"": ""Yellow dashed center line + white edge lines, right-hand traffic, green US-style highway signs, and temperate autumn foliage indicate rural US two-lane highway. Overcast PNW-like sky and vegetation narrow to western Oregon/Washington."", ""country"": ""US"", ""latitude"": 45.35, ""longitude"": -122.85}"
+google/gemma-4-31b-it,no-CoT,45.523062,-122.676482,100.924,US,True,,stop,6.918e-05,406,41,0,9.55,"```json
+{""country"": ""US"", ""latitude"": 45.523062, ""longitude"": -122.676482}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,46.079498291015625,-122.55347442626953,163.508,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),48.4562,-122.4125,427.089,US,True,,stop,0.0095565,1271,850,761,14.75,"{""reasoning"": ""The dashed yellow center line, wide paved shoulders, and specific green mile marker style indicate a highway in the United States. The flat agricultural valley paired with large deciduous trees (likely cottonwoods) under an overcast sky strongly points to the Pacific Northwest, specifically western Washington."", ""country"": ""US"", ""latitude"": 48.4562, ""longitude"": -122.4125}"
+minimax/minimax-m3,no-CoT,44.5,-89.5,2628.078,US,True,,stop,0.00028602,767,95,95,4.14,"{""country"": ""US"", ""latitude"": 44.5, ""longitude"": -89.5}"
+qwen/qwen3.5-9b,no-CoT,39.7392,-86.2582,3042.006,US,True,,stop,5.205e-05,474,31,0,8.5,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -86.2582}"
+mistralai/mistral-small-2603,no-CoT,39.7817,-86.1458,3049.09,US,True,,stop,0.000142125,634,31,0,1.43,"{""country"": ""US"", ""latitude"": 39.7817, ""longitude"": -86.1458}"
+moonshotai/kimi-k2.6,CoT,40.0,-85.0,3130.424,US,True,,stop,0.008241588,682,2338,2276,61.96,"{""reasoning"": ""Yellow dashed center lines with solid white edge lines, green highway route markers, and flat rural farmland bordered by autumn deciduous trees are classic indicators of the US Midwest."", ""country"": ""US"", ""latitude"": 40.0, ""longitude"": -85.0}"
+xiaomi/mimo-v2.5,no-CoT,33.75,-84.4,3494.305,US,True,,stop,8.00576e-05,708,26,0,3.2,"{""country"": ""US"", ""latitude"": 33.75, ""longitude"": -84.4}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,34.91062545776367,-81.13843536376953,3685.437,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,33.99053192138672,-81.1695327758789,3734.88,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,33.98310089111328,-81.14720916748047,3737.069,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,40.1234,-76.5678,3787.841,US,True,,stop,0.000314,473,39,0,2.4,"{
+  ""country"": ""US"",
+  ""latitude"": 40.1234,
+  ""longitude"": -76.5678
+}"
+x-ai/grok-4.3,no-CoT,38.85,-77.05,3807.654,US,True,,stop,0.0005934,592,22,0,1.02,"{""country"": ""US"", ""latitude"": 38.85, ""longitude"": -77.05}"
+xiaomi/mimo-v2.5,CoT,38.95,-76.85,3818.71,US,True,,stop,0.0001387176,787,196,109,9.13,"{""reasoning"": ""The image shows right-hand traffic with standard North American road markings, including a dashed yellow center line and white shoulder lines, typical of the United States. The flat terrain, deciduous trees showing fall colors, and agricultural fields suggest the Midwest or Mid-Atlantic region."", ""country"": ""US"", ""latitude"": 38.95, ""longitude"": -76.85}"
+qwen/qwen3.5-27b,no-CoT,41.7645,-73.9812,3919.228,US,True,,stop,0.00023764,474,44,0,4.1,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 41.7645,
+  ""longitude"": -73.9812
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,40.7128,-74.006,3961.681,US,True,,stop,0.00036108,473,30,0,8.91,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+moonshotai/kimi-k2.6,no-CoT,36.5,-76.2,3990.809,US,True,,stop,0.000269712,603,23,0,8.16,"{""country"": ""US"", ""latitude"": 36.5, ""longitude"": -76.2}"
+qwen/qwen3.6-27b,no-CoT,41.5868,-72.6851,4026.471,US,True,,stop,0.0001943,473,31,0,13.56,"{""country"": ""US"", ""latitude"": 41.5868, ""longitude"": -72.6851}"
+mistralai/mistral-medium-3-5,no-CoT,42.3601,-71.0589,4119.006,US,True,,stop,0.0011835,634,31,0,7.31,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.5-35b-a3b,no-CoT,42.3601,-71.0589,4119.006,US,True,,stop,0.000157,473,31,0,0.59,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.6-35b-a3b,no-CoT,42.3601,-71.0589,4119.006,US,True,,stop,0.00010195,473,31,0,1.35,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+minimax/minimax-m3,CoT,56.12,9.05,7945.772,DK,True,,stop,0.00147426,843,1069,991,26.99,"{""reasoning"": ""Yellow dashed center line markings combined with green roadside delineator posts (kantpæle) on a wide rural primary road through flat deciduous farmland are characteristic of Danish road infrastructure. The right-hand driving and rural landscape match Jutland."", ""country"": ""DK"", ""latitude"": 56.12, ""longitude"": 9.05}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12536.855,,True,True,,,,,,22.34,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.69,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.53,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,13.0,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.23,

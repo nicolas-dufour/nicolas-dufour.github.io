@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-9.8513037467337,33.882958079078,0.0,MW,True,,,,,,,,"Karonga, Karonga District, Northern Region, MW"
+anthropic/claude-opus-4.8,CoT,-13.9,34.3,452.475,MW,True,,stop,0.006335,797,94,0,9.74,"{""reasoning"": ""Flat dry savanna with scattered villages, single tarmac road, left-side driving, sub-Saharan African vegetation suggests rural Malawi/Zambia region."", ""country"": ""MW"", ""latitude"": -13.9, ""longitude"": 34.3}"
+anthropic/claude-opus-4.8,no-CoT,-13.9833,34.2667,461.349,MW,True,,stop,0.00413,666,32,0,2.8,"{""country"": ""MW"", ""latitude"": -13.9833, ""longitude"": 34.2667}"
+openai/gpt-5.5,no-CoT,-3.3869,36.6829,782.448,TZ,True,,stop,0.00344,544,24,0,1.76,"{""country"":""TZ"",""latitude"":-3.3869,""longitude"":36.6829}"
+qwen/qwen3.5-9b,no-CoT,-15.8267,28.5286,882.087,ZW,True,,stop,5.205e-05,474,31,0,4.17,"{""country"": ""ZW"", ""latitude"": -15.8267, ""longitude"": 28.5286}"
+google/gemini-3.5-flash,CoT (effort=high),-2.2834,37.8251,947.553,KE,True,,stop,0.0123825,1271,1164,1091,13.08,"```json
+{""reasoning"": ""The flat, semi-arid landscape with scattered acacia trees, simple tin-roofed dwellings, and wooden utility poles is highly characteristic of rural East Africa, particularly Kenya."", ""country"": ""KE"", ""latitude"": -2.2834, ""longitude"": 37.8251}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-0.5214,34.4512,1039.34,KE,True,,stop,0.005942,1189,297,263,5.1,"```json
+{""country"": ""KE"", ""latitude"": -0.5214, ""longitude"": 34.4512}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),2.283542,32.894311,1353.768,UG,True,,stop,0.002127,1190,38,0,1.17,"```json
+{""country"": ""UG"", ""latitude"": 2.283542, ""longitude"": 32.894311}
+```"
+google/gemini-3.5-flash,CoT (effort=low),2.8251,32.7543,1415.084,UG,True,,stop,0.00513,1272,358,297,15.35,"{""reasoning"": ""The flat savanna landscape, dry grass, simple metal-roofed dwellings, and paved road without markings are highly characteristic of northern Uganda."", ""country"": ""UG"", ""latitude"": 2.8251, ""longitude"": 32.7543}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-19.38869857788086,23.726940155029297,1521.585,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,-22.5,27.1,1581.188,BW,True,,stop,0.00036402,767,160,171,7.45,"{""country"": ""BW"", ""latitude"": -22.5, ""longitude"": 27.1}"
+openai/gpt-5.5,CoT,-19.9832,23.4316,1589.372,BW,True,,stop,0.011025,621,264,182,13.98,"{""reasoning"":""Flat semi-arid savanna with sandy shoulders, sparse acacia-like vegetation, low rural compounds, and an unmarked paved road strongly suggest rural Botswana rather than denser neighboring countries. The left-side driving context and landscape fit the Maun/northern Botswana area."",""country"":""BW"",""latitude"":-19.9832,""longitude"":23.4316}"
+moonshotai/kimi-k2.6,CoT,-22.5,26.8,1596.04,BW,True,,stop,0.017367255,681,4702,5086,41.17,"{""reasoning"": ""RHD vehicle (wiper position) indicates left-hand traffic, while the flat savanna, scattered acacia trees, and simple metal-roof rural houses match the typical roadside scenery of Botswana."", ""country"": ""BW"", ""latitude"": -22.5, ""longitude"": 26.8}"
+minimax/minimax-m3,CoT,-22.8,27.3,1601.216,BW,True,,stop,0.00079026,843,499,414,10.44,"{""reasoning"": ""Left-hand driving, semi-arid Kalahari-type vegetation with sparse acacia trees, sandy soil, corrugated metal-roofed roadside market structures, and well-maintained two-lane paved road suggest a rural secondary road in Botswana, likely in the eastern part of the country."", ""country"": ""BW"", ""latitude"": -22.8, ""longitude"": 27.3}"
+qwen/qwen3.5-397b-a17b,CoT,-22.15,25.6,1627.933,BW,True,,stop,0.0148331,553,4170,3661,282.48,"{
+""reasoning"": ""The image shows a left-hand traffic environment with a flat, savanna landscape featuring scattered Acacia trees (likely Camel Thorn) and simple rural structures with corrugated iron roofs, which is characteristic of Botswana. The straight, paved road with gravel shoulders and no center line is typical of the Trans-Kalahari Highway (A3) or similar rural arteries in the Central District."",
+""country"": ""BW"",
+""latitude"": -22.15,
+""longitude"": 25.60
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-19.89805793762207,21.587757110595703,1728.615,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-19.666074752807617,21.133634567260742,1750.519,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,-24.5,27.0,1784.392,ZA,True,,stop,0.00051219,602,23,0,8.2,"{""country"": ""ZA"", ""latitude"": -24.5, ""longitude"": 27.0}"
+xiaomi/mimo-v2.5,CoT,-25.5,27.0,1885.516,ZA,True,,stop,0.0005402376,787,1630,1553,17.73,"{
+  ""reasoning"": ""The vehicle is driving on the left side of the road, and the flat, dry savanna landscape with scattered trees and simple metal-roofed buildings is characteristic of rural areas in southern Africa."",
+  ""country"": ""ZA"",
+  ""latitude"": -25.5,
+  ""longitude"": 27.0
+}"
+x-ai/grok-4.3,CoT,-19.25,18.1,1992.189,NA,True,,stop,0.002239,676,692,613,6.01,"{""reasoning"": ""Savanna vegetation (acacia-like trees, dry grass), corrugated-metal roofs on sparse buildings, empty paved road with gravel shoulders, and intense blue sky point to semi-arid southern Africa; right-side driving position and vehicle reflections consistent with Namibia/Botswana."", ""country"": ""NA"", ""latitude"": -19.25, ""longitude"": 18.1}"
+x-ai/grok-4.3,no-CoT,-19.256,17.728,2026.637,NA,True,,stop,0.0005934,592,22,0,1.0,"{""country"": ""NA"", ""latitude"": -19.256, ""longitude"": 17.728}"
+google/gemma-4-31b-it,no-CoT,9.145,38.758,2180.12,ET,True,,stop,6.598e-05,406,33,0,2.54,"```json
+{""country"": ""ET"", ""latitude"": 9.145, ""longitude"": 38.758}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3905.295,,True,True,,,,,,7.22,
+mistralai/mistral-medium-3-5,no-CoT,17.385,78.4867,5760.64,IN,True,,stop,0.0011835,634,31,0,0.97,"{""country"": ""IN"", ""latitude"": 17.3850, ""longitude"": 78.4867}"
+google/gemini-3.1-pro-preview,CoT,14.105,-15.523,6065.02,SN,True,,stop,0.007486,1271,412,330,12.59,"{
+  ""reasoning"": ""The black, shiny car hood and camera smudges are characteristic of Google Street View coverage in Senegal. The flat, semi-arid landscape with scattered trees and simple rural architecture further supports this location."",
+  ""country"": ""SN"",
+  ""latitude"": 14.105,
+  ""longitude"": -15.523
+}"
+google/gemini-3.5-flash,CoT (effort=medium),15.348,-15.479,6116.271,SN,True,,stop,0.0204105,1271,2056,1980,16.2,"{""reasoning"": ""The flat, dry Sahelian landscape with sandy soil, simple tin-roofed dwellings, and the characteristic black car hood of the Google Street View vehicle strongly point to rural Senegal, likely along the N3 highway."", ""country"": ""SN"", ""latitude"": 15.348, ""longitude"": -15.479}"
+qwen/qwen3.5-122b-a10b,no-CoT,16.8211,103.1771,8173.323,TH,True,,stop,0.0002916,473,32,0,1.64,"{""country"": ""TH"", ""latitude"": 16.8211, ""longitude"": 103.1771}"
+qwen/qwen3.6-35b-a3b,CoT,-31.65,116.55,8745.32,AU,True,,stop,0.0040543906,553,4108,4001,50.6,"```json
+{
+  ""reasoning"": ""The left-hand traffic, dry grassy landscape with scattered eucalyptus trees, and simple rural architecture with corrugated iron roofs strongly suggest a rural area in Western Australia, likely the Wheatbelt region. The road style and signage are consistent with Australian country roads."",
+  ""country"": ""AU"",
+  ""latitude"": -31.65,
+  ""longitude"": 116.55
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,-23.7,133.8,10559.978,AU,True,,stop,8.00576e-05,708,26,0,1.0,"{""country"": ""AU"", ""latitude"": -23.7, ""longitude"": 133.8}"
+qwen/qwen3.6-35b-a3b,no-CoT,-23.698,133.883,10568.26,AU,True,,stop,0.00010095,473,30,0,2.28,"{""country"": ""AU"", ""latitude"": -23.698, ""longitude"": 133.883}"
+qwen/qwen3.5-35b-a3b,no-CoT,-16.9186,139.4653,11312.624,AU,True,,stop,0.00015825,473,32,0,6.68,"{""country"": ""AU"", ""latitude"": -16.9186, ""longitude"": 139.4653}"
+qwen/qwen3.5-397b-a17b,no-CoT,-17.4567,142.8934,11649.18,AU,True,,stop,0.00036828,473,32,0,3.47,"{""country"": ""AU"", ""latitude"": -17.4567, ""longitude"": 142.8934}"
+qwen/qwen3.6-27b,no-CoT,-33.8688,151.2093,11816.888,AU,True,,stop,0.0001963,473,32,0,14.35,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+qwen/qwen3.5-27b,no-CoT,-27.6345,153.0123,12255.299,AU,True,,stop,0.00019683,473,32,0,2.34,"{""country"": ""AU"", ""latitude"": -27.6345, ""longitude"": 153.0123}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,16.179468154907227,-88.85883331298828,13790.131,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,14.19489860534668,-92.27851867675781,14151.742,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,15.038787841796875,-93.69279479980469,14305.821,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,38.5816,-121.4944,15988.743,US,True,,stop,0.000142875,634,32,0,1.34,"{""country"": ""US"", ""latitude"": 38.5816, ""longitude"": -121.4944}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.17,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.22,

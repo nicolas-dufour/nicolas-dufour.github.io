@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,39.161012247881,63.553952095451,0.0,TM,True,,,,,,,,"Farap, None, Lebap, TM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.97517395019531,62.875370025634766,144.454,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,37.514644622802734,62.73954772949219,196.362,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,37.47286605834961,62.77227783203125,199.715,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,42.3417,68.2447,530.138,KZ,True,,stop,0.000290232,603,26,0,1.96,"{""country"": ""KZ"", ""latitude"": 42.3417, ""longitude"": 68.2447}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.6892,51.389,1140.361,IR,True,,stop,0.000157,473,31,0,2.27,"{""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.3890}"
+google/gemini-3.1-pro-preview,no-CoT,43.35,76.85,1203.364,KZ,True,,stop,0.00275,1189,31,0,2.46,"```json
+{""country"": ""KZ"", ""latitude"": 43.35, ""longitude"": 76.85}
+```"
+anthropic/claude-opus-4.8,no-CoT,43.25,76.9,1203.787,KZ,True,,stop,0.004105,666,31,0,4.18,"{""country"": ""KZ"", ""latitude"": 43.25, ""longitude"": 76.9}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.4125,77.0122,1217.989,KZ,True,,stop,0.0021,1190,35,0,7.48,"```json
+{""country"": ""KZ"", ""latitude"": 43.4125, ""longitude"": 77.0122}
+```"
+google/gemini-3.1-pro-preview,CoT,50.5,60.0,1291.211,KZ,True,,stop,0.007522,1271,415,349,7.26,"{
+  ""reasoning"": ""The vast, flat steppe landscape, road infrastructure, and vehicle types are characteristic of the Eurasian steppe, particularly in Kazakhstan or southern Russia."",
+  ""country"": ""KZ"",
+  ""latitude"": 50.5,
+  ""longitude"": 60.0
+}"
+anthropic/claude-opus-4.8,CoT,50.2,57.2,1325.094,KZ,True,,stop,0.006585,797,104,0,9.59,"{""reasoning"": ""Flat steppe terrain with green fields and reddish soil, simple guardrails, right-hand traffic on a worn rural highway - characteristic of Kazakhstan/southern Russia steppe."", ""country"": ""KZ"", ""latitude"": 50.2, ""longitude"": 57.2}"
+google/gemini-3.5-flash,CoT (effort=medium),50.4512,72.5234,1438.696,KZ,True,,stop,0.0077385,1271,648,568,22.32,"{""reasoning"": ""The extremely flat steppe landscape, wide divided highway with a central guardrail, and the presence of a Toyota Land Cruiser Prado strongly suggest the highways of central Kazakhstan, such as the M-36 between Astana and Karaganda."", ""country"": ""KZ"", ""latitude"": 50.4512, ""longitude"": 72.5234}"
+google/gemini-3.5-flash,CoT (effort=low),50.5521,72.9145,1463.218,KZ,True,,stop,0.0043365,1271,270,197,3.64,"{""reasoning"": ""The extremely flat steppe landscape, wide straight highway with modern guardrails, and the silver Toyota SUV are highly characteristic of the main highways in Kazakhstan, particularly the route between Astana and Karaganda."", ""country"": ""KZ"", ""latitude"": 50.5521, ""longitude"": 72.9145}"
+openai/gpt-5.5,no-CoT,46.3498,48.0396,1493.792,RU,True,,stop,0.00341,544,23,0,2.6,"{""country"":""RU"",""latitude"":46.3498,""longitude"":48.0396}"
+google/gemini-3.5-flash,CoT (effort=high),51.4523,71.9874,1515.169,KZ,True,,stop,0.0135075,1271,1289,1212,17.1,"{""reasoning"": ""The extremely flat, treeless steppe landscape combined with the silver Toyota Land Cruiser Prado and the style of the metal guardrail strongly points to a major highway in Kazakhstan, likely in the northern or central steppe region."", ""country"": ""KZ"", ""latitude"": 51.4523, ""longitude"": 71.9874}"
+moonshotai/kimi-k2.6,CoT,47.2,42.0,1954.017,RU,True,,stop,0.012718008,682,3648,3580,90.81,"{""reasoning"": ""White metal guardrail and wide unpaved shoulder alongside a single paved lane are classic features of Russian regional highways; flat agricultural steppe landscape and post-Soviet vehicle fleet point to southern Russia."", ""country"": ""RU"", ""latitude"": 47.2, ""longitude"": 42.0}"
+minimax/minimax-m3,CoT,48.5,42.3,1986.128,RU,True,,stop,0.00076662,845,476,488,8.62,"{""reasoning"": ""Flat treeless steppe landscape, Lada-style Soviet-era vehicles, right-hand driving, metal guardrail style, and hazy sky all point to a rural highway in the southern Russian or northern Kazakh steppe region."", ""country"": ""RU"", ""latitude"": 48.5, ""longitude"": 42.3}"
+minimax/minimax-m3,no-CoT,47.0,40.0,2091.487,RU,True,,stop,0.00037002,767,165,179,13.15,"{""country"": ""RU"", ""latitude"": 47.0, ""longitude"": 40.0}{""country"": ""RU"", ""latitude"": 47.0, ""longitude"": 40.0}"
+openai/gpt-5.5,CoT,47.186,39.784,2112.953,RU,True,,stop,0.021645,621,618,516,16.01,"{""reasoning"":""Flat, treeless agricultural steppe with right-side driving, Soviet-style road construction/guardrails and vehicle mix point to the ex-USSR; the open black-soil plains and highway appearance are most consistent with rural southern Russia/Rostov Oblast. Lack of signage makes this uncertain, but the terrain and roadscape fit the M4/Rostov steppe region best."",""country"":""RU"",""latitude"":47.186,""longitude"":39.784}"
+qwen/qwen3.5-122b-a10b,no-CoT,45.0328,39.0147,2117.757,RU,True,,stop,0.000314,473,39,0,2.28,"{
+  ""country"": ""RU"",
+  ""latitude"": 45.0328,
+  ""longitude"": 39.0147
+}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,2655.235,RU,True,,stop,7.124e-05,406,36,0,9.47,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+x-ai/grok-4.3,CoT,49.15,32.55,2686.807,UA,True,,stop,0.0021865,676,671,608,5.29,"{""reasoning"": ""Flat open agricultural plain with green fields, right-hand traffic (guardrail on left), European-style metal roadside barriers, and hazy clear-sky lighting point to rural Eastern Europe steppe zone."", ""country"": ""UA"", ""latitude"": 49.15, ""longitude"": 32.55}"
+qwen/qwen3.6-27b,no-CoT,30.0444,31.2357,3107.389,EG,True,,stop,0.0001943,473,31,0,16.38,"{""country"": ""EG"", ""latitude"": 30.0444, ""longitude"": 31.2357}"
+x-ai/grok-4.3,no-CoT,44.85,26.35,3109.99,RO,True,,stop,0.0005934,592,22,0,0.84,"{""country"": ""RO"", ""latitude"": 44.85, ""longitude"": 26.35}"
+xiaomi/mimo-v2.5,CoT,47.3,19.0,3667.924,HU,True,,stop,0.0004674376,787,1370,1318,13.51,"{""reasoning"": ""Flat agricultural landscape with right-hand traffic and European-style highway guardrail, indicative of the Hungarian Plain."", ""country"": ""HU"", ""latitude"": 47.3, ""longitude"": 19.0}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7761.28,,True,True,,,,,,8.62,
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,10146.59,US,True,,stop,0.0001137,634,31,0,4.07,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.0060}"
+qwen/qwen3.5-27b,no-CoT,41.2565,-95.9345,10834.992,US,True,,stop,0.000140595,473,31,0,12.87,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -95.9345}"
+qwen/qwen3.5-9b,no-CoT,39.0619,-96.0254,11071.789,US,True,,stop,5.205e-05,474,31,0,5.0,"{""country"": ""US"", ""latitude"": 39.0619, ""longitude"": -96.0254}"
+qwen/qwen3.5-35b-a3b,no-CoT,36.1627,-86.7816,11104.396,US,True,,stop,9.736e-05,474,31,0,8.04,"{""country"": ""US"", ""latitude"": 36.1627, ""longitude"": -86.7816}"
+mistralai/mistral-medium-3-5,no-CoT,37.0902,-95.7129,11274.861,US,True,,stop,0.0011835,634,31,0,1.08,"{""country"": ""US"", ""latitude"": 37.0902, ""longitude"": -95.7129}"
+qwen/qwen3.5-397b-a17b,no-CoT,36.7783,-119.4179,11565.536,US,True,,stop,0.00036828,473,32,0,2.48,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+xiaomi/mimo-v2.5,no-CoT,33.5,-101.5,11790.062,US,True,,stop,8.00576e-05,708,26,0,2.08,"{""country"": ""US"", ""latitude"": 33.5, ""longitude"": -101.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,33.91822814941406,-107.91796112060547,11841.723,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,31.846410751342773,-106.4503402709961,12052.179,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,30.946687698364258,-104.42518615722656,12120.94,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,8.03,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.41,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.17,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.27,

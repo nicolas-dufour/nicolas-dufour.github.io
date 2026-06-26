@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,18.285570891285005,109.45068712138,0.0,CN,True,,,,,,,,"Fenghuang, None, Hainan, CN"
+google/gemini-3.5-flash,CoT (effort=high),18.2845,109.4462,0.488,CN,True,,stop,0.015804,1272,1544,1469,16.12,"{""reasoning"": ""The tropical coastal road lined with layered Terminalia mantaly trees, coconut palms on the beach side, and right-hand traffic matches Sanyawan Road in Sanya, Hainan, China."", ""country"": ""CN"", ""latitude"": 18.2845, ""longitude"": 109.4462}"
+google/gemini-3.5-flash,CoT (effort=low),18.2728,109.4682,2.331,CN,True,,stop,0.0048225,1271,324,246,4.26,"{""reasoning"": ""The tropical coastal road lined with Terminalia mantaly trees, coconut palms on the left, red Chinese lanterns, and right-hand traffic points to Sanyawan Road in Sanya, Hainan, China."", ""country"": ""CN"", ""latitude"": 18.2728, ""longitude"": 109.4682}"
+google/gemini-3.5-flash,CoT (effort=medium),18.2885,109.4241,2.826,CN,True,,stop,0.0092325,1271,814,730,7.87,"{""reasoning"": ""The tropical coastal road with right-hand traffic, distinctive layered Terminalia mantaly trees, coconut palms bordering a beach on the left, and red Chinese-style decorative lanterns indicates Sanyawan Road in Sanya, Hainan, China."", ""country"": ""CN"", ""latitude"": 18.2885, ""longitude"": 109.4241}"
+google/gemini-3.1-pro-preview,no-CoT,18.265,109.485,4.285,CN,True,,stop,0.005476,1190,258,224,11.49,"```json
+{""country"": ""CN"", ""latitude"": 18.265, ""longitude"": 109.485}
+```"
+google/gemini-3.1-pro-preview,CoT,18.2528,109.5119,7.42,CN,True,,stop,0.005112,1272,214,130,10.09,"{
+  ""reasoning"": ""Right-hand traffic, double yellow lines, and blue license plates indicate China. The tropical vegetation, palm trees, and coastal setting strongly suggest a southern location like Sanya, Hainan."",
+  ""country"": ""CN"",
+  ""latitude"": 18.2528,
+  ""longitude"": 109.5119
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,18.41429328918457,109.30816650390625,20.764,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,18.30961036682129,109.69876861572266,26.327,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,18.322046279907227,109.7093505859375,27.606,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),20.056412,110.248531,213.995,CN,True,,stop,0.002145,1190,40,0,3.63,"```json
+{""country"": ""CN"", ""latitude"": 20.056412, ""longitude"": 110.248531}
+```"
+anthropic/claude-opus-4.8,CoT,16.0544,108.2466,279.128,VN,True,,stop,0.00656,797,103,0,11.62,"{""reasoning"": ""Tropical coastal road with terminalia trees, motorbikes, right-side driving, and a beachfront promenade typical of central Vietnam, likely Da Nang's coastal boulevard."", ""country"": ""VN"", ""latitude"": 16.0544, ""longitude"": 108.2466}"
+x-ai/grok-4.3,CoT,16.054,108.245,279.245,VN,True,,stop,0.0031565,676,1059,988,23.09,"{""reasoning"": ""Right-hand traffic (center line left of driver), coastal boulevard with sea/palms left and modern SE Asian buildings right, distinctive tropical tree species and red-yellow signage point to Vietnam; distant lattice tower matches Da Nang waterfront."", ""country"": ""VN"", ""latitude"": 16.054, ""longitude"": 108.245}"
+anthropic/claude-opus-4.8,no-CoT,16.0544,108.2422,279.342,VN,True,,stop,0.00413,666,32,0,9.25,"{""country"": ""VN"", ""latitude"": 16.0544, ""longitude"": 108.2422}"
+qwen/qwen3.5-27b,no-CoT,22.5431,114.0579,674.148,CN,True,,stop,0.000142155,473,32,0,10.69,"{""country"": ""CN"", ""latitude"": 22.5431, ""longitude"": 114.0579}"
+moonshotai/kimi-k2.6,no-CoT,10.7769,106.7009,885.751,VN,True,,stop,0.000270072,603,25,0,8.14,"{""country"": ""VN"", ""latitude"": 10.7769, ""longitude"": 106.7009}"
+qwen/qwen3.5-397b-a17b,no-CoT,10.7769,106.7009,885.751,VN,True,,stop,0.00036828,473,32,0,2.13,"{""country"": ""VN"", ""latitude"": 10.7769, ""longitude"": 106.7009}"
+x-ai/grok-4.3,no-CoT,10.7769,106.6957,885.938,VN,True,,stop,0.0005984,592,24,0,0.97,"{""country"": ""VN"", ""latitude"": 10.7769, ""longitude"": 106.6957}"
+qwen/qwen3.5-397b-a17b,CoT,10.3465,107.0845,918.791,VN,True,,stop,0.0126102,553,3424,3344,27.45,"{""reasoning"": ""Right-hand traffic, Vietnamese motorbikes, red vertical banners with yellow text, and distinctive Terminalia mantaly trees lining the road, characteristic of Vo Thi Sau street in Vung Tau, Vietnam."", ""country"": ""VN"", ""latitude"": 10.3465, ""longitude"": 107.0845}"
+xiaomi/mimo-v2.5,CoT,25.03,102.72,1022.427,CN,True,,stop,0.0004327176,787,1246,1144,21.64,"{""reasoning"": ""The image features right-hand traffic, modern urban architecture, and specific road markings (double yellow lines) characteristic of China. The distinct Delonix regia (Phoenix) trees lining the wide boulevard, combined with the clear blue sky and suburban development style, are highly indicative of a city in Southern China, such as Kunming."", ""country"": ""CN"", ""latitude"": 25.03, ""longitude"": 102.72}"
+qwen/qwen3.5-122b-a10b,no-CoT,13.7563,100.5018,1080.58,TH,True,,stop,0.0002916,473,32,0,8.41,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.6-35b-a3b,no-CoT,13.7563,100.5018,1080.58,TH,True,,stop,0.00010295,473,32,0,9.26,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+xiaomi/mimo-v2.5,no-CoT,13.7563,100.5018,1080.58,TH,True,,stop,8.17376e-05,708,32,0,3.65,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-35b-a3b,no-CoT,12.9234,100.8765,1094.462,TH,True,,stop,0.00015825,473,32,0,6.82,"{""country"": ""TH"", ""latitude"": 12.9234, ""longitude"": 100.8765}"
+minimax/minimax-m3,no-CoT,22.6273,120.3014,1228.688,TW,True,,stop,0.00034602,767,145,150,11.28,"{""country"": ""TW"", ""latitude"": 22.6273, ""longitude"": 120.3014}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,22.856605529785156,120.31482696533203,1239.389,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,23.028348922729492,120.28301239013672,1243.737,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,14.5995,120.9842,1296.1,PH,True,,stop,0.0001963,473,32,0,24.01,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,23.913196563720703,120.60082244873047,1314.331,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,7.0,100.5,1585.646,TH,True,,stop,5.205e-05,474,31,0,4.4,"{""country"": ""TH"", ""latitude"": 7.0000, ""longitude"": 100.5000}"
+qwen/qwen3.6-35b-a3b,CoT,7.8804,98.3923,1663.841,TH,True,,stop,0.0124675096,553,12824,12714,127.28,"```json
+{
+  ""reasoning"": ""The image shows left-hand traffic with a tuk-tuk and scooters, typical of Thailand. The distinctive Delonix regia (Royal Poinciana) trees lining the wide road and the red vertical banner are characteristic of Phuket Town, specifically Rat-U-Thit 200 Pi Road."",
+  ""country"": ""TH"",
+  ""latitude"": 7.8804,
+  ""longitude"": 98.3923
+}
+```"
+openai/gpt-5.5,no-CoT,1.2895,103.8557,1986.072,SG,True,,stop,0.00341,544,23,0,8.29,"{""country"":""SG"",""latitude"":1.2895,""longitude"":103.8557}"
+openai/gpt-5.5,CoT,1.2536,103.8191,1991.108,SG,True,,stop,0.020985,621,596,516,14.92,"{""reasoning"":""Left-side traffic, tropical boulevard with Singapore-style road markings/curbs and the distinctive Sentosa attractions visible, including the former Sentosa Merlion/Tiger Sky Tower area. The waterfront road and resort landscaping strongly indicate Beach View on Sentosa Island, Singapore."",""country"":""SG"",""latitude"":1.2536,""longitude"":103.8191}"
+minimax/minimax-m3,CoT,33.5902,130.4017,2689.0,JP,True,,stop,0.00063822,845,369,375,7.47,"{""reasoning"": ""Left-hand traffic with Japanese-style vehicles, cherry blossom trees, tropical/subtropical lush vegetation, and the wide tree-lined boulevard with characteristic Japanese road infrastructure point to a major city in Kyushu, Japan, most likely Fukuoka."", ""country"": ""JP"", ""latitude"": 33.5902, ""longitude"": 130.4017}{""reasoning"": ""Left-hand traffic with Japanese-style vehicles, cherry blossom trees, tropical/subtropical lush vegetation, and the wide tree-lined boulevard with characteristic Japanese road infrastructure point to a major city in Kyushu, Japan, most likely Fukuoka."", ""country"": ""JP"", ""latitude"": 33.5902, ""longitude"": 130.4017}"
+google/gemma-4-31b-it,no-CoT,-6.2088,106.8456,2738.602,ID,True,,stop,0.00107797,4806,35,0,9.65,"```json
+{""country"": ""ID"", ""latitude"": -6.2088, ""longitude"": 106.8456}
+```"
+moonshotai/kimi-k2.6,CoT,-8.69,115.26,3066.559,ID,True,,stop,0.024795648,682,7188,7117,255.31,"{""reasoning"": ""East-facing tropical coastal road with beach on the left, morning sun position consistent with northbound travel, distinctive horizontal Ketapang trees, Indonesian underbone motorcycle, and resort architecture strongly indicate Sanur, Bali."", ""country"": ""ID"", ""latitude"": -8.69, ""longitude"": 115.26}"
+mistralai/mistral-medium-3-5,no-CoT,35.6895,139.6917,3543.476,JP,True,,stop,0.001191,634,32,0,0.88,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+mistralai/mistral-small-2603,CoT,51.2389,-0.5665,9745.186,GB,True,,stop,0.0005838,716,794,859,12.88,"{""reasoning"": ""Driving on the left side of the road, UK-style license plates, and typical rural road markings indicate the United Kingdom."", ""country"": ""GB"", ""latitude"": 51.2389, ""longitude"": -0.5665}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12057.1,,True,True,,,,,,7.47,
+mistralai/mistral-small-2603,no-CoT,34.0522,-118.2437,12311.658,US,True,,stop,0.0001143,634,32,0,3.3,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.11,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.18,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.35,

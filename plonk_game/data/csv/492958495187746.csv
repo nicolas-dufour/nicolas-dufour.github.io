@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,11.574810994571,43.159492317606,0.0,DJ,True,,,,,,,,"Djibouti, None, Djibouti, DJ"
+google/gemini-3.5-flash,CoT (effort=high),11.585,43.148,1.688,DJ,True,,stop,0.0242355,1271,2481,2410,25.98,"```json
+{""reasoning"": ""The white-painted basalt stone wall, blue gates, dry climate, and the specific Google Street View car with a fender mirror are characteristic of Djibouti City, Djibouti."", ""country"": ""DJ"", ""latitude"": 11.585, ""longitude"": 43.148}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),11.547125,43.148556,3.301,DJ,True,,stop,0.002136,1190,39,0,1.22,"```json
+{""country"": ""DJ"", ""latitude"": 11.547125, ""longitude"": 43.148556}
+```"
+xiaomi/mimo-v2.5,CoT,30.0444,31.2357,2394.572,EG,True,,stop,0.0001319976,787,172,87,3.66,"```json
+{""reasoning"": ""The image shows a road with black and white curb markings typical of Egypt. The vegetation includes palm trees, and the environment appears arid with sand. A distinctive Egyptian license plate is visible on a distant red vehicle."", ""country"": ""EG"", ""latitude"": 30.0444, ""longitude"": 31.2357}
+```"
+qwen/qwen3.5-27b,no-CoT,30.0444,31.2357,2394.572,EG,True,,stop,0.000140595,473,31,0,0.97,"{""country"": ""EG"", ""latitude"": 30.0444, ""longitude"": 31.2357}"
+x-ai/grok-4.3,CoT,31.85,35.0,2404.604,IL,True,,stop,0.002864,676,942,858,7.13,"{
+  ""reasoning"": ""Arabic script on blue left-side structure, right-hand traffic (LHD vehicle), red/white curb striping, arid climate with dry soil and distinctive roadside trees/vegetation, Hesco-style barrier wall all point to Middle East; most consistent with Israel."",
+  ""country"": ""IL"",
+  ""latitude"": 31.85,
+  ""longitude"": 35.0
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,32.149864196777344,34.77450180053711,2443.523,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,32.197269439697266,34.770774841308594,2448.529,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,34.758819580078125,32.40121841430664,2798.044,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,35.013519287109375,10.282166481018066,4215.411,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,35.03296661376953,10.24481201171875,4219.438,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,36.81897,10.16579,4327.721,TN,True,,stop,0.00019188,474,33,0,5.81,"{""country"": ""TN"", ""latitude"": 36.81897, ""longitude"": 10.16579}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,35.383094787597656,8.705265045166016,4360.41,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,36.7335,3.0864,4879.129,DZ,True,,stop,0.00341,544,23,0,1.63,"{""country"":""DZ"",""latitude"":36.7335,""longitude"":3.0864}"
+openai/gpt-5.5,CoT,36.7253,3.0756,4879.627,DZ,True,,stop,0.017805,621,490,411,54.5,"{""reasoning"":""Right-hand traffic, red-and-white painted curbs, arid Mediterranean vegetation, concrete perimeter walls, and French/North African urban road furniture point strongly to Algeria. The wide walled boulevard looks most consistent with an Algiers suburban/industrial edge."",""country"":""DZ"",""latitude"":36.7253,""longitude"":3.0756}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4935.732,,True,True,,,,,,18.99,
+anthropic/claude-opus-4.8,CoT,35.7,0.63,5037.406,DZ,True,,stop,0.006135,797,86,0,3.48,"{""reasoning"": ""Red-white painted curbs, eucalyptus trees, North African industrial roadside and Arabic-style walls suggest coastal Algeria."", ""country"": ""DZ"", ""latitude"": 35.7, ""longitude"": 0.63}"
+anthropic/claude-opus-4.8,no-CoT,35.7,-0.63,5143.791,DZ,True,,stop,0.004105,666,31,0,2.75,"{""country"": ""DZ"", ""latitude"": 35.7, ""longitude"": -0.63}"
+qwen/qwen3.5-35b-a3b,no-CoT,34.0209,-6.6372,5612.732,MA,True,,stop,0.00015575,473,30,0,1.05,"{""country"": ""MA"", ""latitude"": 34.0209, ""longitude"": -6.6372}"
+minimax/minimax-m3,CoT,34.05,-6.78,5626.283,MA,True,,stop,0.00088026,843,574,504,20.83,"{""reasoning"": ""Red and white painted curbs are highly characteristic of Morocco, combined with eucalyptus trees, Mediterranean climate, low-rise suburban architecture with decorative stone walls, and the flat terrain typical of Morocco's Atlantic coastal plains."", ""country"": ""MA"", ""latitude"": 34.05, ""longitude"": -6.78}"
+x-ai/grok-4.3,no-CoT,33.984,-6.849,5630.687,MA,True,,stop,0.0005934,592,22,0,0.81,"{""country"": ""MA"", ""latitude"": 33.984, ""longitude"": -6.849}"
+google/gemma-4-31b-it,no-CoT,33.5731,-7.5898,5686.642,MA,True,,stop,5.737e-05,408,35,0,9.01,"```json
+{""country"": ""MA"", ""latitude"": 33.5731, ""longitude"": -7.5898}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,33.5731,-7.5898,5686.642,MA,True,,stop,0.000255605,473,30,0,8.77,"{""country"": ""MA"", ""latitude"": 33.5731, ""longitude"": -7.5898}"
+qwen/qwen3.5-9b,no-CoT,33.5731,-7.5898,5686.642,MA,True,,stop,8.791e-05,473,30,0,1.03,"{""country"": ""MA"", ""latitude"": 33.5731, ""longitude"": -7.5898}"
+qwen/qwen3.6-27b,no-CoT,33.5731,-7.5898,5686.642,MA,True,,stop,0.0001923,473,30,0,11.79,"{""country"": ""MA"", ""latitude"": 33.5731, ""longitude"": -7.5898}"
+qwen/qwen3.6-35b-a3b,no-CoT,33.5731,-7.5898,5686.642,MA,True,,stop,0.00010095,473,30,0,2.81,"{""country"": ""MA"", ""latitude"": 33.5731, ""longitude"": -7.5898}"
+mistralai/mistral-medium-3-5,no-CoT,33.5954,-7.6184,5689.782,MA,True,,stop,0.001176,634,30,0,1.36,"{""country"": ""MA"", ""latitude"": 33.5954, ""longitude"": -7.6184}"
+moonshotai/kimi-k2.6,CoT,33.5364,-7.6759,5693.499,MA,True,,stop,0.020450448,682,5911,5845,180.88,"{""reasoning"": ""The alternating black-and-white and red-and-white block-painted curbs, French-style road markings, low white-walled buildings, and arid Mediterranean vegetation are distinctive of Morocco."", ""country"": ""MA"", ""latitude"": 33.5364, ""longitude"": -7.6759}"
+xiaomi/mimo-v2.5,no-CoT,18.0858,-15.9785,6373.288,MR,True,,stop,8.14576e-05,708,31,0,1.37,"{""country"": ""MR"", ""latitude"": 18.0858, ""longitude"": -15.9785}"
+google/gemini-3.5-flash,CoT (effort=low),14.7315,-17.4532,6553.71,SN,True,,stop,0.0047415,1271,315,239,4.38,"{""reasoning"": ""The white vehicle with a fender mirror, red-and-white painted curbs, sandy roadsides, and distinctive blue gates are characteristic of Senegal. The architecture and vegetation suggest a location in or near Dakar."", ""country"": ""SN"", ""latitude"": 14.7315, ""longitude"": -17.4532}"
+google/gemini-3.1-pro-preview,CoT,14.7428,-17.4635,6554.709,SN,True,,stop,0.0108,1272,688,595,9.08,"{
+  ""reasoning"": ""The silver mirror on the right fender of the Google car is a distinct meta-clue for Senegal. The red and white painted curbs and dry, Sahelian environment further support this location, likely near a military or official compound in Dakar."",
+  ""country"": ""SN"",
+  ""latitude"": 14.7428,
+  ""longitude"": -17.4635
+}"
+google/gemini-3.1-pro-preview,no-CoT,14.7167,-17.4676,6555.391,SN,True,,stop,0.004432,1190,171,136,3.32,"```json
+{""country"": ""SN"", ""latitude"": 14.7167, ""longitude"": -17.4676}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),14.7452,-17.4851,6557.001,SN,True,,stop,0.0100605,1271,906,823,15.23,"```json
+{""reasoning"": ""The white vehicle with a right-fender mirror, sandy roadsides, red-and-white painted curbs, and distinctive blue gates are characteristic of Senegal, specifically around the Dakar peninsula near military or official zones."", ""country"": ""SN"", ""latitude"": 14.7452, ""longitude"": -17.4851}
+```"
+mistralai/mistral-small-2603,no-CoT,33.749,-84.388,12525.023,US,True,,stop,0.000142125,634,31,0,1.46,"{""country"": ""US"", ""latitude"": 33.7490, ""longitude"": -84.3880}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,12.85,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.29,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.6,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.54,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.17,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.71,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.43,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.32,

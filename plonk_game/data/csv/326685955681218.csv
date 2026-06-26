@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,61.132875105338,-146.38494879693,0.0,US,True,,,,,,,,"Valdez, Valdez-Cordova Census Area, Alaska, US"
+google/gemini-3.1-pro-preview,no-CoT,61.132,-146.365,1.075,US,True,,stop,0.005858,1225,284,250,19.22,"```json
+{""country"": ""US"", ""latitude"": 61.132, ""longitude"": -146.365}
+```"
+google/gemini-3.1-pro-preview,CoT,61.1305,-146.3612,1.302,US,True,,stop,0.006682,1307,339,259,12.16,"{
+  ""reasoning"": ""The double yellow lines and green highway sign indicate North America. The sign for 'Mineral Creek' combined with the steep, snowy mountainous terrain strongly points to Valdez, Alaska."",
+  ""country"": ""US"",
+  ""latitude"": 61.1305,
+  ""longitude"": -146.3612
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),61.1312,-146.3545,1.645,US,True,,stop,0.0021615,1225,36,0,3.0,"```json
+{""country"": ""US"", ""latitude"": 61.1312, ""longitude"": -146.3545}
+```"
+anthropic/claude-opus-4.8,CoT,61.115,-146.35,2.734,US,True,,stop,0.00687,949,85,0,9.28,"{""reasoning"": ""Green 'Mineral Creek' road sign and snowy boreal mountain terrain match the Richardson Highway near Valdez, Alaska."", ""country"": ""US"", ""latitude"": 61.115, ""longitude"": -146.35}"
+google/gemini-3.5-flash,CoT (effort=low),61.1291,-146.2935,4.927,US,True,,stop,0.00495,1308,332,252,9.67,"{""reasoning"": ""The green sign reads 'Mineral Creek' and the road features double yellow lines, characteristic of North America. This location is on the Richardson Highway (AK-4) just outside Valdez, Alaska, crossing near Mineral Creek."", ""country"": ""US"", ""latitude"": 61.1291, ""longitude"": -146.2935}"
+x-ai/grok-4.3,CoT,61.006,-146.366,14.145,US,True,,stop,0.0026115,788,785,722,12.97,"{""reasoning"": ""Green US-style highway sign for 'Mineral Creek', right-side driving with double-yellow center line, heavy snowbanks and fog-covered steep forested mountains indicate Pacific Northwest/Alaska USA highway."", ""country"": ""US"", ""latitude"": 61.006, ""longitude"": -146.366}"
+openai/gpt-5.5,CoT,61.185,-145.742,34.97,US,True,,stop,0.037555,755,1126,1034,32.69,"{""reasoning"":""The double yellow centerline and green creek-name sign indicate a US road, and the extreme snowbanks with steep, sparsely forested mountains strongly fit Alaska's Richardson Highway/Thompson Pass area. The visible sign reads “MIDEAST CREEK,” a named creek consistent with that Valdez-area mountain corridor."",""country"":""US"",""latitude"":61.185,""longitude"":-145.742}"
+anthropic/claude-opus-4.8,no-CoT,61.7833,-144.45,125.686,US,True,,stop,0.00484,818,30,0,2.15,"{""country"": ""US"", ""latitude"": 61.7833, ""longitude"": -144.45}"
+mistralai/mistral-medium-3-5,no-CoT,61.5833,-149.0,148.094,US,True,,stop,0.0013965,786,29,0,1.5,"{""country"": ""US"", ""latitude"": 61.5833, ""longitude"": -149.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,61.42788314819336,-149.3214111328125,160.278,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,60.485,-149.771,197.23,US,True,,stop,0.021743856,834,6270,6196,223.81,"{""reasoning"": ""The US-style green highway sign reading 'Mineral Creek', heavy plowed snow berms, steep snow-covered boreal mountains, and left-hand drive on a two-lane highway indicate Alaska's Seward Highway corridor in winter."", ""country"": ""US"", ""latitude"": 60.485, ""longitude"": -149.771}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,62.047359466552734,-151.86744689941406,307.24,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,62.0476188659668,-152.0228729248047,315.011,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),55.9883,-129.7755,1115.752,CA,True,,stop,0.0281325,1307,2908,2820,27.27,"```json
+{""reasoning"": ""The green 'Mineral Creek' sign and the blue avalanche info sign are located on Highway 37A (Bear Pass) near Stewart, British Columbia, a region famous for its extremely high snowfall and steep avalanche-prone mountain walls."", ""country"": ""CA"", ""latitude"": 55.9883, ""longitude"": -129.7755}
+```"
+mistralai/mistral-small-2603,no-CoT,47.6062,-122.3321,2142.264,US,True,,stop,0.0001371,786,32,0,10.79,"{""country"": ""US"", ""latitude"": 47.6062, ""longitude"": -122.3321}"
+minimax/minimax-m3,CoT,49.63,-114.43,2353.723,CA,True,,stop,0.00131826,995,901,821,24.75,"{""reasoning"": ""Yellow centerline markings indicate North America; the green 'Mineral Creek' highway sign with a Ukrainian flag (likely marking a Ukrainian heritage site) and the Rocky Mountain foothills terrain with sedimentary cliffs are characteristic of southern Alberta's Crowsnest Pass region."", ""country"": ""CA"", ""latitude"": 49.63, ""longitude"": -114.43}"
+google/gemma-4-31b-it,no-CoT,44.4385,-111.1234,2951.353,US,True,,stop,6.388e-05,404,37,0,5.03,"```json
+{""country"": ""US"", ""latitude"": 44.4385, ""longitude"": -111.1234}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,44.4285,-110.5885,2978.771,US,True,,stop,5.708e-05,404,37,0,1.22,"```json
+{""country"": ""US"", ""latitude"": 44.4285, ""longitude"": -110.5885}
+```"
+google/gemini-3.5-flash,CoT (effort=high),37.8083,-107.6741,3718.149,US,True,,stop,0.0366735,1307,3857,3776,24.51,"```json
+{""reasoning"": ""The green 'Mineral Creek' sign and the blue 'WINTER INFO' sign are characteristic of Colorado state highways, specifically US-550 just south of Silverton near the Mineral Creek bridge."", ""country"": ""US"", ""latitude"": 37.8083, ""longitude"": -107.6741}
+```"
+xiaomi/mimo-v2.5,no-CoT,41.75,-79.55,4842.025,US,True,,stop,9.60176e-05,820,27,0,2.58,"{""country"": ""US"", ""latitude"": 41.75, ""longitude"": -79.55}"
+openai/gpt-5.5,no-CoT,42.1526,-78.7439,4850.886,US,True,,stop,0.00411,678,24,0,7.79,"{""country"":""US"",""latitude"":42.1526,""longitude"":-78.7439}"
+x-ai/grok-4.3,no-CoT,42.109,-78.435,4871.059,US,True,,stop,0.0007334,704,22,0,0.96,"{""country"": ""US"", ""latitude"": 42.109, ""longitude"": -78.435}"
+qwen/qwen3.5-9b,no-CoT,44.9776,-73.2244,4905.464,US,True,,stop,6.325e-05,586,31,0,4.71,"{""country"": ""US"", ""latitude"": 44.9776, ""longitude"": -73.2244}"
+qwen/qwen3.6-35b-a3b,no-CoT,44.2897,-73.9542,4924.631,US,True,,stop,0.00011875,585,31,0,2.43,"{""country"": ""US"", ""latitude"": 44.2897, ""longitude"": -73.9542}"
+xiaomi/mimo-v2.5,CoT,41.06,-79.03,4928.714,US,True,,stop,0.0001538376,899,194,105,8.94,"{""reasoning"": ""The green sign reading 'Mineral Creek' with a yellow square route marker below (specifically '36') identifies this as Pennsylvania Route 36 near Mineral Creek in Jefferson County. The snowy, mountainous terrain and road style are consistent with rural Pennsylvania in winter."", ""country"": ""US"", ""latitude"": 41.06, ""longitude"": -79.03}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.90768051147461,-72.98185729980469,5007.648,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,44.2619,-71.4128,5059.787,US,True,,stop,0.000162435,585,31,0,2.09,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -71.4128}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.159324645996094,-71.52397155761719,5062.632,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,44.2663,-71.3014,5065.214,US,True,,stop,0.0002279,585,31,0,19.46,"{""country"": ""US"", ""latitude"": 44.2663, ""longitude"": -71.3014}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,44.15439224243164,-71.42732238769531,5068.082,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,41.2897,-75.5632,5093.841,US,True,,stop,0.00034185,585,31,0,16.29,"{""country"": ""US"", ""latitude"": 41.2897, ""longitude"": -75.5632}"
+qwen/qwen3.5-122b-a10b,no-CoT,37.5407,-81.0051,5128.856,US,True,,stop,0.00021684,586,31,0,6.43,"{""country"": ""US"", ""latitude"": 37.5407, ""longitude"": -81.0051}"
+qwen/qwen3.5-35b-a3b,no-CoT,40.7128,-74.006,5226.182,US,True,,stop,0.0001340625,585,30,0,0.83,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.37,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.59,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.38,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.63,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.15,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.26,

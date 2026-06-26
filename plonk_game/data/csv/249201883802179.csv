@@ -1,0 +1,81 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-13.418220736659876,23.902430755600808,0.0,ZM,True,,,,,,,,"Kabompo, None, North-Western, ZM"
+google/gemini-3.1-pro-preview,CoT,-15.5,23.5,235.503,ZM,True,,stop,0.005474,1285,242,172,12.87,"{
+  ""reasoning"": ""The pale sandy road and dry, scrubby woodland vegetation are highly characteristic of the Kalahari sands region in southern Africa, particularly western Zambia or eastern Angola."",
+  ""country"": ""ZM"",
+  ""latitude"": -15.5,
+  ""longitude"": 23.5
+}"
+anthropic/claude-opus-4.8,no-CoT,-13.5,26.5,281.05,ZM,True,,stop,0.005625,970,31,0,2.79,"{""country"": ""ZM"", ""latitude"": -13.5, ""longitude"": 26.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-13.08556842803955,27.30449104309082,370.068,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-13.246030807495117,27.40984535217285,379.975,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-13.079894065856934,27.401193618774414,380.55,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-15.0,27.5,425.799,ZM,True,,stop,0.007905,1101,96,0,3.64,"{""reasoning"": ""Sandy track through miombo woodland with dry-season mixed foliage typical of south-central African savanna; vegetation and soil match Zambia/Zimbabwe bush."", ""country"": ""ZM"", ""latitude"": -15.0, ""longitude"": 27.5}"
+google/gemini-3.5-flash,CoT (effort=low),-18.0123,24.4567,514.27,BW,True,,stop,0.0046365,1285,301,231,21.84,"{""reasoning"": ""The deep, light-colored sandy track and dry deciduous woodland vegetation are highly characteristic of the Kalahari sand-dominated landscapes in northern Botswana, such as Chobe National Park."", ""country"": ""BW"", ""latitude"": -18.0123, ""longitude"": 24.4567}"
+google/gemini-3.5-flash,CoT (effort=high),-18.25,24.35,539.397,BW,True,,stop,0.013485,1286,1284,1211,8.89,"{""reasoning"": ""The extremely sandy, light-colored track and the surrounding dry savanna woodland (resembling Miombo or teak forest) are highly characteristic of the Kalahari basin, particularly in northern Botswana near Chobe National Park."", ""country"": ""BW"", ""latitude"": -18.25, ""longitude"": 24.35}"
+mistralai/mistral-small-2603,CoT,-15.5,28.5,546.445,ZM,True,,stop,0.0004872,1020,557,618,12.69,"{""reasoning"": ""Left-hand traffic and African savanna vegetation with reddish soil indicate Southern Africa; miombo woodland is characteristic of Zambia."", ""country"": ""ZM"", ""latitude"": -15.5, ""longitude"": 28.5}"
+google/gemini-3.5-flash,CoT (effort=medium),-18.625,24.152,579.581,BW,True,,stop,0.0153105,1285,1487,1419,13.42,"{""reasoning"": ""The deep, light-colored sandy track combined with dry-deciduous woodland vegetation is highly characteristic of northern Botswana, particularly around the Chobe and Okavango regions."", ""country"": ""BW"", ""latitude"": -18.625, ""longitude"": 24.152}"
+google/gemini-3.1-pro-preview,no-CoT,-18.6532,24.1654,582.781,BW,True,,stop,0.002826,1203,35,0,9.15,"```json
+{""country"": ""BW"", ""latitude"": -18.6532, ""longitude"": 24.1654}
+```"
+openai/gpt-5.5,CoT,-19.2357,23.4162,648.95,BW,True,,stop,0.01375,890,310,229,17.09,"{""reasoning"":""A pale sandy single-track road through dry mopane/acacia woodland strongly suggests the Kalahari/Okavango safari-road environment of northern Botswana. The lack of markings/signage and flat dry bushland fit Moremi/Chobe-type protected areas best."",""country"":""BW"",""latitude"":-19.2357,""longitude"":23.4162}"
+openai/gpt-5.5,no-CoT,-19.2586,23.6321,650.06,BW,True,,stop,0.004785,813,24,0,2.77,"{""country"":""BW"",""latitude"":-19.2586,""longitude"":23.6321}"
+moonshotai/kimi-k2.6,CoT,-19.25,23.45,650.257,BW,True,,stop,0.013268124,986,3782,3723,182.0,"{""reasoning"": ""Pale, almost white Kalahari sand road and dry deciduous miombo/mopane bushland are hallmarks of northern Botswana's game reserves."", ""country"": ""BW"", ""latitude"": -19.25, ""longitude"": 23.45}"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.6289,31.0567,1454.998,ZA,True,,stop,0.0001535625,697,31,0,2.43,"{""country"": ""ZA"", ""latitude"": -24.6289, ""longitude"": 31.0567}"
+moonshotai/kimi-k2.6,no-CoT,-18.5,36.5,1459.838,MZ,True,,stop,0.000400428,907,23,0,8.25,"{""country"": ""MZ"", ""latitude"": -18.5, ""longitude"": 36.5}"
+x-ai/grok-4.3,CoT,-1.35,35.15,1825.662,KE,True,,stop,0.0021715,900,553,488,5.68,"{""reasoning"": ""Tropical dry forest/savanna vegetation with sandy unpaved road and clear dry-season foliage matches rural African bush; no signage/vehicles but typical of game-reserve tracks in East Africa."", ""country"": ""KE"", ""latitude"": -1.35, ""longitude"": 35.15}"
+xiaomi/mimo-v2.5,CoT,-16.086,46.813,2480.019,MG,True,,stop,0.0010531976,1011,3350,3263,50.59,"{""reasoning"": ""The sandy track and dry deciduous forest vegetation with sparse foliage are characteristic of the western dry forests of Madagascar, most likely within the Ankarafantsika National Park. The soil color and tree species match the unique biome found in this specific nature reserve."", ""country"": ""MG"", ""latitude"": -16.086, ""longitude"": 46.813}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3026.402,,True,True,,,,,,7.7,
+qwen/qwen3.6-35b-a3b,no-CoT,15.42,73.92,6367.146,IN,True,,stop,0.00337361375,695,3379,3352,18.18,"{""country"": ""IN"", ""latitude"": 15.42, ""longitude"": 73.92}"
+xiaomi/mimo-v2.5,no-CoT,11.5,76.5,6428.373,IN,True,,stop,0.0001111376,932,25,0,2.44,"{""country"": ""IN"", ""latitude"": 11.5, ""longitude"": 76.5}"
+google/gemma-4-31b-it,no-CoT,-12.45,-41.23,7037.685,BR,True,,stop,6.532e-05,404,32,0,6.51,"```json
+{""country"": ""BR"", ""latitude"": -12.45, ""longitude"": -41.23}
+```"
+qwen/qwen3.5-9b,no-CoT,21.2514,78.7906,7123.947,IN,True,,stop,7.445e-05,698,31,0,9.92,"{""country"": ""IN"", ""latitude"": 21.2514, ""longitude"": 78.7906}"
+qwen/qwen3.5-397b-a17b,CoT,22.268,80.615,7343.253,IN,True,,stop,0.00560795,777,1498,1393,44.5,"{
+""reasoning"": ""The image shows a sandy, unpaved track winding through a dry deciduous forest with vegetation (likely Sal and Teak mix) characteristic of Central India. The perspective from a vehicle on such a track is highly indicative of a safari in a tiger reserve in Madhya Pradesh, India."",
+""country"": ""IN"",
+""latitude"": 22.268,
+""longitude"": 80.615
+}"
+minimax/minimax-m3,no-CoT,-7.5,-45.0,7541.875,BR,True,,stop,0.00031368,1056,23,0,9.49,"{""country"": ""BR"", ""latitude"": -7.5, ""longitude"": -45.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,22.6239,86.6244,7917.347,IN,True,,stop,0.0003027,697,39,0,8.14,"{
+  ""country"": ""IN"",
+  ""latitude"": 22.6239,
+  ""longitude"": 86.6244
+}"
+qwen/qwen3.5-27b,no-CoT,-14.235,-51.925,8146.935,BR,True,,stop,0.0002625,698,44,0,16.91,"```json
+{
+  ""country"": ""BR"",
+  ""latitude"": -14.2350,
+  ""longitude"": -51.9250
+}
+```"
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.929,8147.36,BR,True,,stop,0.0002615,697,31,0,19.17,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9290}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,18.159690856933594,93.93224334716797,8441.522,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,-16.35,-56.75,8614.437,BR,True,,stop,0.0008859,816,27,0,7.72,"{
+  ""country"": ""BR"",
+  ""latitude"": -16.35,
+  ""longitude"": -56.75
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,18.539278030395508,96.9419937133789,8755.63,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,18.010570526123047,97.20875549316406,8763.867,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,14.3521,101.8976,9122.444,TH,True,,stop,0.0005334,697,32,0,8.57,"{""country"": ""TH"", ""latitude"": 14.3521, ""longitude"": 101.8976}"
+mistralai/mistral-medium-3-5,no-CoT,-3.119,-60.0217,9270.498,BR,True,,stop,0.0016245,938,29,0,10.04,"{""country"": ""BR"", ""latitude"": -3.119, ""longitude"": -60.0217}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),13.458333,104.241667,9339.004,KH,True,,stop,0.002166,1204,40,0,7.78,"```json
+{""country"": ""KH"", ""latitude"": 13.458333, ""longitude"": 104.241667}
+```"
+qwen/qwen3.6-35b-a3b,CoT,28.05,-81.65,12212.94,US,True,,stop,0.0027893424,777,2760,2644,36.68,"```json
+{
+  ""reasoning"": ""The decisive clues are the distinctively white, sandy unpaved road and the surrounding vegetation, which appears to be Florida scrub (a mix of scrub oaks and pines), characteristic of central Florida. The bright blue sky with cumulus clouds and the specific mix of deciduous and evergreen trees strongly point to this region."",
+  ""country"": ""US"",
+  ""latitude"": 28.05,
+  ""longitude"": -81.65
+}
+```"
+minimax/minimax-m3,CoT,19.5,-88.7,12838.435,MX,True,,stop,0.00051786,1147,196,103,7.98,"{""reasoning"": ""Sandy pale-soil road cutting through low deciduous tropical dry forest with characteristic Yucatan flora (acacias, palms, broadleaf shrubs) under a hot, humid sky strongly suggests the Yucatán Peninsula's interior rural roads. No signage or vehicles visible, but vegetation and soil composition are diagnostic of Mexico's Yucatán region."", ""country"": ""MX"", ""latitude"": 19.5, ""longitude"": -88.7}"
+mistralai/mistral-small-2603,no-CoT,33.8361,-117.9186,15550.399,US,True,,stop,0.0001599,938,32,0,4.94,"{""country"": ""US"", ""latitude"": 33.8361, ""longitude"": -117.9186}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,

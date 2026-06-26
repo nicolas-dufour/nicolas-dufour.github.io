@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,46.568026070383,48.857230633035,0.0,RU,True,,,,,,,,"Marfino, None, Astrakhan, RU"
+openai/gpt-5.5,CoT,46.1875,53.3812,349.57,KZ,True,,stop,0.012165,621,302,218,15.18,"{""reasoning"":""Flat, treeless snowy steppe with rough unpaved oilfield/service roads and distant industrial towers strongly suggests the Caspian oil region of western Kazakhstan. The bleak semi-arid terrain and winter conditions fit the Atyrau/Tengiz area better than European Russia."",""country"":""KZ"",""latitude"":46.1875,""longitude"":53.3812}"
+x-ai/grok-4.3,no-CoT,43.65,51.15,370.978,KZ,True,,stop,0.0005934,592,22,0,7.0,"{""country"": ""KZ"", ""latitude"": 43.65, ""longitude"": 51.15}"
+minimax/minimax-m3,CoT,50.5,52.0,494.566,KZ,True,,stop,0.00046266,843,226,151,13.32,"{""reasoning"": ""Flat steppe landscape with patches of snow, unpaved dirt road, and distant industrial infrastructure (likely oil/gas facility) strongly suggest the Kazakh steppe. Low sun angle and cold haze indicate winter in a continental climate."", ""country"": ""KZ"", ""latitude"": 50.5, ""longitude"": 52.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,49.337799072265625,40.60408020019531,686.961,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,50.25318908691406,58.45232009887695,817.306,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,50.28717041015625,58.88806915283203,846.819,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,50.308692932128906,58.93070602416992,850.581,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,56.4333,58.5167,1281.951,RU,True,,stop,0.00018772,474,31,0,11.97,"{""country"": ""RU"", ""latitude"": 56.4333, ""longitude"": 58.5167}"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,1284.31,RU,True,,stop,0.001191,634,32,0,1.28,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+mistralai/mistral-small-2603,no-CoT,55.7558,37.6173,1284.31,RU,True,,stop,0.0001143,634,32,0,3.51,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-35b-a3b,no-CoT,55.7558,37.6173,1284.31,RU,True,,stop,0.00015839,473,31,0,5.66,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+anthropic/claude-opus-4.8,CoT,48.0,66.0,1300.114,KZ,True,,stop,0.006135,797,86,0,4.5,"{""reasoning"": ""Flat treeless steppe with patchy snow, dirt road, and water tower suggests Central Asian/Kazakh steppe in early spring."", ""country"": ""KZ"", ""latitude"": 48.0, ""longitude"": 66.0}"
+anthropic/claude-opus-4.8,no-CoT,48.0196,66.9237,1368.839,KZ,True,,stop,0.004155,666,33,0,9.2,"{""country"": ""KZ"", ""latitude"": 48.0196, ""longitude"": 66.9237}"
+google/gemini-3.1-pro-preview,no-CoT,48.0196,66.9237,1368.839,KZ,True,,stop,0.002798,1189,35,0,314.91,"```json
+{""country"": ""KZ"", ""latitude"": 48.0196, ""longitude"": 66.9237}
+```"
+google/gemma-4-31b-it,no-CoT,48.5,68.2,1463.894,KZ,True,,stop,6.138e-05,406,30,0,3.82,"```json
+{""country"": ""KZ"", ""latitude"": 48.5, ""longitude"": 68.2}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,45.845027923583984,28.49462127685547,1564.68,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,32.6542,51.6789,1565.632,IR,True,,stop,0.00010195,473,31,0,7.98,"{""country"": ""IR"", ""latitude"": 32.6542, ""longitude"": 51.6789}"
+google/gemini-3.1-pro-preview,CoT,51.1,71.4,1717.389,KZ,True,,stop,0.005782,1271,270,193,11.72,"{
+  ""reasoning"": ""The flat, desolate steppe landscape with patchy snow and a distant water tower strongly suggests rural Kazakhstan or southern Russia. The older vehicle kicking up dust on the dirt road is consistent with this region."",
+  ""country"": ""KZ"",
+  ""latitude"": 51.1,
+  ""longitude"": 71.4
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),51.1283,71.4305,1719.949,KZ,True,,stop,0.0021,1190,35,0,1.54,"```json
+{""country"": ""KZ"", ""latitude"": 51.1283, ""longitude"": 71.4305}
+```"
+google/gemini-3.5-flash,CoT (effort=low),51.1282,71.4307,1719.961,KZ,True,,stop,0.0036795,1271,197,128,9.86,"{""reasoning"": ""The vast, flat steppe landscape with patches of snow, a dusty unpaved road, and a distant Soviet-style sedan suggest the northern or central plains of Kazakhstan."", ""country"": ""KZ"", ""latitude"": 51.1282, ""longitude"": 71.4307}"
+openai/gpt-5.5,no-CoT,51.1694,71.4491,1721.897,KZ,True,,stop,0.00344,544,24,0,1.47,"{""country"":""KZ"",""latitude"":51.1694,""longitude"":71.4491}"
+google/gemini-3.5-flash,CoT (effort=medium),51.5234,71.9876,1764.852,KZ,True,,stop,0.0052185,1271,368,299,9.93,"{""reasoning"": ""The extremely flat, barren steppe landscape with patches of snow, low sun, and wide dirt road is highly characteristic of the northern Kazakh plains during early spring or late autumn."", ""country"": ""KZ"", ""latitude"": 51.5234, ""longitude"": 71.9876}"
+google/gemini-3.5-flash,CoT (effort=high),51.35,72.85,1821.221,KZ,True,,stop,0.0091875,1271,809,731,9.4,"{""reasoning"": ""The flat, barren steppe landscape with patches of snow, low sun, and a dusty unpaved road is highly characteristic of northern or central Kazakhstan during the shoulder seasons. The distant structure and vehicle type further support this Eurasian steppe location."", ""country"": ""KZ"", ""latitude"": 51.35, ""longitude"": 72.85}"
+xiaomi/mimo-v2.5,no-CoT,55.0,73.0,1925.011,RU,True,,stop,7.97776e-05,708,25,0,1.54,"{""country"": ""RU"", ""latitude"": 55.0, ""longitude"": 73.0}"
+qwen/qwen3.6-27b,no-CoT,43.25,76.95,2230.672,KZ,True,,stop,0.000225509,474,28,0,19.43,"{""country"": ""KZ"", ""latitude"": 43.25, ""longitude"": 76.95}"
+xiaomi/mimo-v2.5,CoT,61.3,73.5,2272.474,RU,True,,stop,0.0001272376,787,155,69,2.41,"```json
+{
+  ""reasoning"": ""The dark, rich soil visible in the rutted road, combined with the vast, flat terrain and distant industrial structures resembling oil extraction facilities, strongly suggests the West Siberian plain, likely near the Ural Federal District."",
+  ""country"": ""RU"",
+  ""latitude"": 61.3,
+  ""longitude"": 73.5
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,49.37736511230469,16.63555335998535,2400.32,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,67.45,64.85,2498.002,RU,True,,stop,0.002299,676,716,647,12.99,"{""reasoning"": ""Flat, arid steppe/tundra with patchy snow, dirt road with multiple tire tracks, distant radio tower + low industrial buildings, and bright low-angle sun are characteristic of remote Siberian Russia in winter/early spring."", ""country"": ""RU"", ""latitude"": 67.45, ""longitude"": 64.85}"
+moonshotai/kimi-k2.6,CoT,66.5,75.0,2691.952,RU,True,,stop,0.009364248,682,2677,2608,150.26,"{""reasoning"": ""Flat permafrost tundra with deeply rutted unpaved roads and distant industrial infrastructure is characteristic of Russia's West Siberian Arctic, particularly the Yamalo-Nenets oil and gas region."", ""country"": ""RU"", ""latitude"": 66.5, ""longitude"": 75.0}"
+qwen/qwen3.5-9b,no-CoT,43.8256,87.6168,3021.561,CN,True,,stop,5.205e-05,474,31,0,5.13,"{""country"": ""CN"", ""latitude"": 43.8256, ""longitude"": 87.6168}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7017.167,,True,True,,,,,,12.79,
+qwen/qwen3.5-397b-a17b,no-CoT,47.052,-109.634,9396.527,US,True,,stop,0.0003758,473,30,0,8.96,"{""country"": ""US"", ""latitude"": 47.052, ""longitude"": -109.634}"
+qwen/qwen3.5-27b,no-CoT,32.5114,-106.4531,10879.581,US,True,,stop,0.00019683,473,32,0,1.54,"{""country"": ""US"", ""latitude"": 32.5114, ""longitude"": -106.4531}"
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.27,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.43,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,16.48,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.32,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.3,

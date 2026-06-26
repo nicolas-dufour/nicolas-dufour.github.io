@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-39.255246000666,-68.822456101048,0.0,AR,True,,,,,,,,"Senillosa, None, Neuquen, AR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-39.016029357910156,-68.81387329101562,26.61,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),-39.3125,-69.2144,34.329,AR,True,,stop,0.0090615,1307,789,705,12.9,"{""reasoning"": ""The arid landscape with flat-topped mesetas in the background, combined with a row of planted windbreak trees along the road, is highly characteristic of the Patagonian region in Argentina, specifically along routes like RN 237."", ""country"": ""AR"", ""latitude"": -39.3125, ""longitude"": -69.2144}"
+anthropic/claude-opus-4.8,CoT,-38.95,-68.5,43.889,AR,True,,stop,0.00702,949,91,0,10.01,"{""reasoning"": ""Arid steppe landscape with scrub vegetation, distant low plateau, and two-lane highway with yellow warning signs typical of Argentine Patagonia."", ""country"": ""AR"", ""latitude"": -38.95, ""longitude"": -68.5}"
+anthropic/claude-opus-4.8,no-CoT,-38.9516,-68.0591,74.018,AR,True,,stop,0.00489,818,32,0,3.14,"{""country"": ""AR"", ""latitude"": -38.9516, ""longitude"": -68.0591}"
+google/gemini-3.1-pro-preview,CoT,-39.0,-68.0,76.41,AR,True,,stop,0.005446,1307,236,162,11.77,"{
+  ""reasoning"": ""The arid landscape with a line of trees acting as a windbreak, combined with the road markings and right-hand driving, strongly suggests the Patagonian region of Argentina."",
+  ""country"": ""AR"",
+  ""latitude"": -39.0,
+  ""longitude"": -68.0
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-38.9852,-69.9821,104.448,AR,True,,stop,0.002154,1226,35,0,2.63,"```json
+{""country"": ""AR"", ""latitude"": -38.9852, ""longitude"": -69.9821}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-39.0333,-67.5833,109.674,AR,True,,stop,0.00287,1225,35,0,5.57,"```json
+{""country"": ""AR"", ""latitude"": -39.0333, ""longitude"": -67.5833}
+```"
+x-ai/grok-4.3,no-CoT,-38.95,-67.55,114.924,AR,True,,stop,0.0007334,704,22,0,1.67,"{""country"": ""AR"", ""latitude"": -38.95, ""longitude"": -67.55}"
+google/gemini-3.5-flash,CoT (effort=low),-40.1234,-70.1234,147.341,AR,True,,stop,0.0042195,1307,251,168,3.21,"{""reasoning"": ""The arid landscape with low scrub, sandy soil, planted windbreak trees on the left, and long straight road is highly characteristic of the Patagonian steppe in Argentina, specifically along Ruta Nacional 237 in Neuquén Province."", ""country"": ""AR"", ""latitude"": -40.1234, ""longitude"": -70.1234}"
+openai/gpt-5.5,no-CoT,-39.2676,-65.9641,246.082,AR,True,,stop,0.00414,678,25,0,1.32,"{""country"":""AR"",""latitude"":-39.2676,""longitude"":-65.9641}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-42.509883880615234,-70.06713104248047,376.71,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-42.57308578491211,-70.1033935546875,384.294,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-35.4712,-69.5846,426.119,AR,True,,stop,0.017815,755,468,375,19.33,"{""reasoning"":""White dashed center lines with right-side driving and yellow diamond warning signs fit Argentina; the arid scrubland with poplar/irrigated roadside trees and low Patagonian/Andean foothills points to Mendoza/Neuquén along Ruta 40. Best estimate is rural southern Mendoza near Malargüe."",""country"":""AR"",""latitude"":-35.4712,""longitude"":-69.5846}"
+qwen/qwen3.5-122b-a10b,no-CoT,-38.5236,-62.1453,583.464,AR,True,,stop,0.00021684,586,31,0,7.42,"{""country"": ""AR"", ""latitude"": -38.5236, ""longitude"": -62.1453}"
+google/gemini-3.5-flash,CoT (effort=high),-44.45,-66.15,618.492,AR,True,,stop,0.0123915,1307,1159,1088,10.21,"{""reasoning"": ""The vast, arid steppe landscape with wide gravel shoulders, low shrubs, and a windbreak of planted trees is highly characteristic of the Patagonian region in Argentina, particularly along National Route 3."", ""country"": ""AR"", ""latitude"": -44.45, ""longitude"": -66.15}"
+x-ai/grok-4.3,CoT,-34.8,-62.3,761.634,AR,True,,stop,0.003074,788,970,910,8.87,"{""reasoning"": ""Right-hand traffic confirmed by approaching vehicle positioned left of center; arid flat terrain, brown soil, sparse dry grass, and scattered trees match the Argentine Pampas."", ""country"": ""AR"", ""latitude"": -34.8, ""longitude"": -62.3}"
+moonshotai/kimi-k2.6,CoT,-46.5,-70.0,811.247,AR,True,,stop,0.019127016,834,5514,5436,234.91,"{""reasoning"": ""The semi-arid Patagonian steppe landscape with wide gravel shoulders, dashed white centerline, yellow diamond warning signs, and sparse low shrubs matches the style of Argentine Ruta 40; right-hand traffic rules out Australia/South Africa."", ""country"": ""AR"", ""latitude"": -46.5, ""longitude"": -70.0}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8201.246,,True,True,,,,,,19.17,
+mistralai/mistral-small-2603,no-CoT,40.0376,-75.5196,8843.181,US,True,,stop,0.0001365,786,31,0,2.33,"{""country"": ""US"", ""latitude"": 40.0376, ""longitude"": -75.5196}"
+mistralai/mistral-medium-3-5,no-CoT,35.0844,-106.6504,9133.391,US,True,,stop,0.001419,786,32,0,1.17,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -106.6504}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.687,-105.932,9161.382,US,True,,stop,0.00018375,585,30,0,1.11,"{""country"": ""US"", ""latitude"": 35.687, ""longitude"": -105.932}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.687,-106.012,9164.79,US,True,,stop,0.0001340625,585,30,0,1.75,"{""country"": ""US"", ""latitude"": 35.687, ""longitude"": -106.012}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,35.55048370361328,-106.56503295898438,9175.184,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,35.34864807128906,-107.34175872802734,9189.446,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,35.592647552490234,-107.6329116821289,9225.99,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,43.0731,-107.2903,9939.192,US,True,,stop,0.0004502,585,32,0,7.89,"{""country"": ""US"", ""latitude"": 43.0731, ""longitude"": -107.2903}"
+qwen/qwen3.6-27b,no-CoT,-33.8569,150.7345,10923.274,AU,True,,stop,0.0002782,586,32,0,305.29,"{""country"": ""AU"", ""latitude"": -33.8569, ""longitude"": 150.7345}"
+xiaomi/mimo-v2.5,no-CoT,-31.5,148.5,11254.087,AU,True,,stop,9.57376e-05,820,26,0,2.01,"{""country"": ""AU"", ""latitude"": -31.5, ""longitude"": 148.5}"
+qwen/qwen3.5-27b,no-CoT,-34.6037,138.5833,11332.508,AU,True,,stop,0.00022707,585,32,0,3.11,"{""country"": ""AU"", ""latitude"": -34.6037, ""longitude"": 138.5833}"
+minimax/minimax-m3,CoT,-31.45,136.7,11722.655,AU,True,,stop,0.00079266,995,463,386,16.09,"{""reasoning"": ""Left-side driving on a sealed two-lane outback highway with wide shoulders, eucalyptus/mulga trees, reddish arid soil, and flat stony plains under a vast sky are characteristic of the Australian Stuart Highway corridor through northern South Australia."", ""country"": ""AU"", ""latitude"": -31.45, ""longitude"": 136.7}"
+qwen/qwen3.5-9b,no-CoT,-25.2769,133.7237,12466.774,AU,True,,stop,6.34e-05,586,32,0,9.19,"{""country"": ""AU"", ""latitude"": -25.2769, ""longitude"": 133.7237}"
+xiaomi/mimo-v2.5,CoT,-19.9,134.5,13004.311,AU,True,,stop,0.0002255176,899,450,372,5.77,"{""reasoning"": ""The right-hand traffic, flat red-soil landscape, and distinctive eucalyptus trees strongly indicate a rural highway in the Australian Outback. The yellow diamond road signs and general infrastructure are consistent with the Northern Territory."", ""country"": ""AU"", ""latitude"": -19.9, ""longitude"": 134.5}"
+google/gemma-4-31b-it,no-CoT,45.2833,68.2833,16465.791,KZ,True,,stop,6.692e-05,404,36,0,2.68,"```json
+{""country"": ""KZ"", ""latitude"": 45.2833, ""longitude"": 68.2833}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.77,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.39,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.8,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.5,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.26,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.08,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.26,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.18,

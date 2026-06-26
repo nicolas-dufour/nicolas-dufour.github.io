@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,49.13444500000001,131.62822805555555,0.0,RU,True,,,,,,,,"Kul'dur, None, Jewish Autonomous Oblast, RU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,48.910213470458984,131.65896606445312,25.034,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,48.890647888183594,131.65879821777344,27.201,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,48.70260238647461,131.84176635742188,50.49,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,47.5,134.5,279.472,RU,True,,stop,0.00702,949,91,0,9.41,"{""reasoning"": ""Wide dirt forest road with mixed birch and conifer boreal forest, typical of the Russian Far East taiga where Street View coverage exists on remote roads."", ""country"": ""RU"", ""latitude"": 47.5, ""longitude"": 134.5}"
+anthropic/claude-opus-4.8,no-CoT,51.5,134.5,332.758,RU,True,,stop,0.00484,818,30,0,2.45,"{""country"": ""RU"", ""latitude"": 51.5, ""longitude"": 134.5}"
+google/gemini-3.1-pro-preview,no-CoT,43.9876,133.2345,585.293,RU,True,,stop,0.002882,1225,36,0,8.96,"```json
+{""country"": ""RU"", ""latitude"": 43.9876, ""longitude"": 133.2345}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),46.823415,142.987654,882.729,RU,True,,stop,0.0021975,1225,40,0,331.67,"```json
+{""country"": ""RU"", ""latitude"": 46.823415, ""longitude"": 142.987654}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),54.7235,59.1243,4784.85,RU,True,,stop,0.0100515,1307,899,822,13.98,"```json
+{""reasoning"": ""The dense mixed forest with prominent birch trees and ferns, combined with a wide unpaved dirt road and a distant rolling hill, is highly characteristic of the southern Ural region in Russia."", ""country"": ""RU"", ""latitude"": 54.7235, ""longitude"": 59.1243}
+```"
+google/gemini-3.5-flash,CoT (effort=low),56.5432,40.3215,5724.93,RU,True,,stop,0.0039405,1307,220,156,3.11,"{""reasoning"": ""The unpaved dirt road surrounded by dense birch and mixed temperate forest is highly characteristic of rural Russia, particularly in the western or Ural regions."", ""country"": ""RU"", ""latitude"": 56.5432, ""longitude"": 40.3215}"
+google/gemini-3.5-flash,CoT (effort=high),61.6543,33.6548,5726.814,RU,True,,stop,0.0112575,1307,1033,954,16.26,"{""reasoning"": ""The dense mixed forest with prominent birch trees, ferns, and a sandy dirt road pointing towards distant rolling hills is highly characteristic of the boreal/temperate transition zone in Northwestern Russia, such as the Republic of Karelia."", ""country"": ""RU"", ""latitude"": 61.6543, ""longitude"": 33.6548}"
+xiaomi/mimo-v2.5,CoT,55.75,37.62,5912.842,RU,True,,stop,0.0001555176,899,200,110,18.06,"```json
+{""reasoning"": ""The reddish unpaved soil and dense deciduous forest, likely consisting of birch or poplar species, strongly resemble rural landscapes in Eastern Europe or Russia. The specific quality of light and vegetation suggests a location in European Russia, west of the Urals."", ""country"": ""RU"", ""latitude"": 55.75, ""longitude"": 37.62}
+```"
+google/gemini-3.1-pro-preview,CoT,59.0,33.0,5926.292,RU,True,,stop,0.00493,1307,193,130,10.74,"{
+  ""reasoning"": ""The dirt road, birch and pine forest, and camera quality are highly characteristic of rural Street View coverage in western Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 59.0,
+  ""longitude"": 33.0
+}"
+x-ai/grok-4.3,CoT,62.15,25.85,6022.178,FI,True,,stop,0.0018565,788,483,418,10.08,"{
+  ""reasoning"": ""Gravel road with parallel tire tracks through dense mixed boreal forest featuring white-barked birch trees indicates northern Europe; bright midday sun and vegetation match Fennoscandia."",
+  ""country"": ""FI"",
+  ""latitude"": 62.15,
+  ""longitude"": 25.85
+}"
+google/gemma-4-31b-it,no-CoT,-23.4567,133.8901,8074.889,AU,True,,stop,5.148e-05,262,37,0,9.93,"```json
+{""country"": ""AU"", ""latitude"": -23.4567, ""longitude"": 133.8901}
+```"
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,8642.681,US,True,,stop,0.0001365,786,31,0,5.2,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+qwen/qwen3.5-122b-a10b,no-CoT,42.5833,-2.4167,8875.187,ES,True,,stop,0.0002667,585,38,0,7.64,"{
+  ""country"": ""ES"",
+  ""latitude"": 42.5833,
+  ""longitude"": -2.4167
+}"
+minimax/minimax-m3,CoT,-32.15,151.45,9249.465,AU,True,,stop,0.00068226,995,371,285,21.14,"{""reasoning"": ""Unpaved red-soil gravel road flanked by dense eucalyptus forest with characteristic Australian bushland undergrowth (likely lantana), reddish lateritic soil, and distant low hills strongly indicate rural eastern Australia, most likely the Hunter Valley or New England Tablelands region of NSW."", ""country"": ""AU"", ""latitude"": -32.15, ""longitude"": 151.45}"
+qwen/qwen3.5-27b,no-CoT,-33.4958,150.3089,9372.401,AU,True,,stop,0.00026936,586,45,0,14.42,"```json
+{
+  ""country"": ""AU"",
+  ""latitude"": -33.4958,
+  ""longitude"": 150.3089
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.8688,151.2093,9430.848,AU,True,,stop,0.00011975,585,32,0,3.8,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+qwen/qwen3.5-35b-a3b,no-CoT,-35.2897,148.4562,9533.778,AU,True,,stop,0.00018625,585,32,0,7.2,"{""country"": ""AU"", ""latitude"": -35.2897, ""longitude"": 148.4562}"
+openai/gpt-5.5,no-CoT,-37.1695,146.4211,9706.829,AU,True,,stop,0.00411,678,24,0,2.27,"{""country"":""AU"",""latitude"":-37.1695,""longitude"":146.4211}"
+qwen/qwen3.5-9b,no-CoT,40.4406,-74.7024,9725.553,US,True,,stop,0.0001072,585,31,0,2.05,"{""country"": ""US"", ""latitude"": 40.4406, ""longitude"": -74.7024}"
+qwen/qwen3.5-397b-a17b,no-CoT,-37.5,145.2,9725.778,AU,True,,stop,0.0004446,585,26,0,2.5,"{""country"": ""AU"", ""latitude"": -37.5, ""longitude"": 145.2}"
+x-ai/grok-4.3,no-CoT,-37.85,145.35,9766.269,AU,True,,stop,0.0007334,704,22,0,7.26,"{""country"": ""AU"", ""latitude"": -37.85, ""longitude"": 145.35}"
+xiaomi/mimo-v2.5,no-CoT,35.5,-83.5,9985.204,US,True,,stop,9.54576e-05,820,25,0,1.0,"{""country"": ""US"", ""latitude"": 35.5, ""longitude"": -83.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,35.419708251953125,-82.04828643798828,10042.104,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-41.15,147.8,10163.387,AU,True,,stop,0.007380396,834,2082,2012,69.67,"{""reasoning"": ""The pale-barked eucalyptus/gum trees and dry sclerophyll undergrowth flanking a wide red-brown dirt road are unmistakably characteristic of southeastern Australian bush, most likely Tasmania or eastern Victoria."", ""country"": ""AU"", ""latitude"": -41.15, ""longitude"": 147.8}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,33.6935920715332,-81.45703887939453,10240.659,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,33.65324020385742,-81.29251098632812,10250.281,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-42.7246,147.8442,10336.198,AU,True,,stop,0.016735,755,432,350,18.76,"{""reasoning"":""The unsealed road through dense dry eucalyptus forest with hilly temperate terrain strongly suggests rural Australia, especially Tasmania/Victoria rather than Europe or Russia. The lush sclerophyll understorey and pale gravel forest road are most consistent with eastern Tasmania forest roads."",""country"":""AU"",""latitude"":-42.7246,""longitude"":147.8442}"
+google/gemma-4-26b-a4b-it,no-CoT,-12.5342,-52.2185,15929.975,BR,True,,stop,5.468e-05,404,31,0,1.71,"{""country"": ""BR"", ""latitude"": -12.5342, ""longitude"": -52.2185}"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,17166.212,BR,True,,stop,0.0014115,786,31,0,1.18,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.6333,17166.212,BR,True,,stop,0.0002279,585,31,0,15.28,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+moonshotai/kimi-k2.6,no-CoT,-25.5,-49.0,17386.492,BR,True,,stop,0.0007196,752,25,0,5.38,"{""country"": ""BR"", ""latitude"": -25.5, ""longitude"": -49.0}"
+minimax/minimax-m3,no-CoT,-28.5,-49.5,17718.627,BR,True,,stop,0.00024012,906,22,0,2.94,"{""country"": ""BR"", ""latitude"": -28.5, ""longitude"": -49.5}{""country"": ""BR"", ""latitude"": -28.5, ""longitude"": -49.5}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,18.65,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.47,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.44,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.24,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.59,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.22,

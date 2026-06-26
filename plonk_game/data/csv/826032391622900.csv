@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,35.609569345099,128.36921672357,0.0,KR,True,,,,,,,,"Changnyeong, None, Gyeongsangnam-do, KR"
+anthropic/claude-opus-4.8,no-CoT,35.3421,128.4567,30.778,KR,True,,stop,0.00413,666,32,0,25.03,"{""country"": ""KR"", ""latitude"": 35.3421, ""longitude"": 128.4567}"
+anthropic/claude-opus-4.8,CoT,35.85,127.9,50.086,KR,True,,stop,0.006235,797,90,0,25.21,"{""reasoning"": ""Textured concrete rural road with stone retaining walls, hazy hills, and vegetation typical of South Korean mountain villages; road markings style matches Korea."", ""country"": ""KR"", ""latitude"": 35.85, ""longitude"": 127.9}"
+google/gemini-3.1-pro-preview,no-CoT,35.335,127.73,65.443,KR,True,,stop,0.004586,1189,184,151,4.02,"```json
+{""country"": ""KR"", ""latitude"": 35.335, ""longitude"": 127.73}
+```"
+x-ai/grok-4.3,no-CoT,35.172,128.992,74.528,KR,True,,stop,0.0005934,592,22,0,0.88,"{""country"": ""KR"", ""latitude"": 35.172, ""longitude"": 128.992}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,36.27139663696289,128.1157989501953,77.047,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.29581069946289,128.22720336914062,77.37,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,35.3333,127.5555,79.835,KR,True,,stop,0.005638,1271,258,163,4.75,"{
+  ""reasoning"": ""The grooved concrete road on a steep incline, yellow dashed center line, and blue edge line are highly characteristic of South Korea. The traditional dark tiled roofs in the background and the style of the stone retaining wall further confirm a rural Korean setting."",
+  ""country"": ""KR"",
+  ""latitude"": 35.3333,
+  ""longitude"": 127.5555
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),35.264215,127.584122,80.831,KR,True,,stop,0.0021435,1189,40,0,8.21,"```json
+{""country"": ""KR"", ""latitude"": 35.264215, ""longitude"": 127.584122}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,36.41716766357422,128.28372192382812,90.129,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,36.439048767089844,128.3789520263672,92.238,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,34.7812,127.9568,99.442,KR,True,,stop,0.016305,621,440,359,16.84,"{""reasoning"":""Right-hand traffic with Korean-style yellow center/white edge markings, grooved concrete rural lane, stone retaining walls, and hilly coastal village architecture strongly indicate South Korea. The blue roadside trail marking and island-like terrain fit the southern coast/Namhae area."",""country"":""KR"",""latitude"":34.7812,""longitude"":127.9568}"
+openai/gpt-5.5,no-CoT,34.7254,128.0432,102.684,KR,True,,stop,0.00341,544,23,0,3.16,"{""country"":""KR"",""latitude"":34.7254,""longitude"":128.0432}"
+qwen/qwen3.5-122b-a10b,no-CoT,36.4912,127.9521,104.96,KR,True,,stop,0.00018954,473,32,0,7.03,"{""country"": ""KR"", ""latitude"": 36.4912, ""longitude"": 127.9521}"
+moonshotai/kimi-k2.6,CoT,36.75,128.25,127.261,KR,True,,stop,0.012745368,682,3656,3588,73.65,"{""reasoning"": ""Blue edge line on a steep mountain road with transverse traction grooves, plus large rounded stone retaining walls and traditional Korean temple roofing visible in the misty background, are characteristic of rural South Korea."", ""country"": ""KR"", ""latitude"": 36.75, ""longitude"": 128.25}"
+google/gemini-3.5-flash,CoT (effort=medium),36.7621,127.9843,132.729,KR,True,,stop,0.0059295,1271,447,374,11.06,"{""reasoning"": ""The grooved concrete road, yellow center line, and blue bicycle path line are highly characteristic of mountainous rural roads in South Korea, supported by the traditional tiled roof architecture in the background."", ""country"": ""KR"", ""latitude"": 36.7621, ""longitude"": 127.9843}"
+google/gemma-4-31b-it,no-CoT,36.54,127.42,134.093,KR,True,,stop,6.598e-05,406,33,0,9.32,"```json
+{""country"": ""KR"", ""latitude"": 36.54, ""longitude"": 127.42}
+```"
+qwen/qwen3.5-9b,no-CoT,36.5439,126.5547,193.349,KR,True,,stop,8.841e-05,473,32,0,7.49,"{""country"": ""KR"", ""latitude"": 36.5439, ""longitude"": 126.5547}"
+google/gemini-3.5-flash,CoT (effort=high),37.3505,127.9512,197.157,KR,True,,stop,0.0116445,1271,1082,1009,14.48,"```json
+{""reasoning"": ""The grooved concrete road with a blue bicycle path line, yellow center line, and rounded stone retaining wall are highly characteristic of rural mountainous areas in South Korea."", ""country"": ""KR"", ""latitude"": 37.3505, ""longitude"": 127.9512}
+```"
+qwen/qwen3.5-27b,no-CoT,37.3955,127.9755,201.68,KR,True,,stop,0.00024024,474,45,0,5.05,"```json
+{
+  ""country"": ""KR"",
+  ""latitude"": 37.3955,
+  ""longitude"": 127.9755
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,37.277122497558594,129.31240844726562,203.712,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,37.42,127.85,206.588,KR,True,,stop,0.002084,676,630,565,11.33,"{""reasoning"": ""Blue edge line + yellow dashed center markings, large-boulder retaining wall, dark-tiled roofs and pine-covered hills are diagnostic of rural South Korea; right-side driving implied by road layout."", ""country"": ""KR"", ""latitude"": 37.42, ""longitude"": 127.85}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,37.31639099121094,129.4522247314453,213.069,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,37.3756,127.3921,214.92,KR,True,,stop,9.836e-05,474,32,0,1.98,"{""country"": ""KR"", ""latitude"": 37.3756, ""longitude"": 127.3921}"
+google/gemini-3.5-flash,CoT (effort=low),37.5821,128.3115,219.396,KR,True,,stop,0.003987,1272,231,163,2.59,"{""reasoning"": ""The grooved concrete road with a blue edge line and yellow center line is highly characteristic of rural South Korea, as is the stone retaining wall and mountainous terrain."", ""country"": ""KR"", ""latitude"": 37.5821, ""longitude"": 128.3115}"
+minimax/minimax-m3,CoT,37.55,127.45,230.847,KR,True,,stop,0.00065706,843,388,302,19.37,"{""reasoning"": ""The grooved concrete road surface with parallel lines, blue painted edge lane, and yellow center markings are characteristic of rural South Korea. Combined with the large rounded stone retaining wall, traditional Korean dark-tiled roof architecture, and lush mountainous temperate vegetation, this is clearly rural South Korea."", ""country"": ""KR"", ""latitude"": 37.55, ""longitude"": 127.45}"
+qwen/qwen3.6-27b,no-CoT,37.4563,127.135,233.077,KR,True,,stop,0.0001963,473,32,0,8.89,"{""country"": ""KR"", ""latitude"": 37.4563, ""longitude"": 127.1350}"
+qwen/qwen3.6-35b-a3b,no-CoT,37.4562,127.1234,233.559,KR,True,,stop,0.000146,474,32,0,3.12,"{""country"": ""KR"", ""latitude"": 37.4562, ""longitude"": 127.1234}"
+mistralai/mistral-medium-3-5,no-CoT,37.5584,126.9932,249.098,KR,True,,stop,0.001191,634,32,0,1.11,"{""country"": ""KR"", ""latitude"": 37.5584, ""longitude"": 126.9932}"
+qwen/qwen3.5-397b-a17b,no-CoT,37.5665,126.978,250.548,KR,True,,stop,0.0003322,473,31,0,2.17,"{""country"": ""KR"", ""latitude"": 37.5665, ""longitude"": 126.978}"
+xiaomi/mimo-v2.5,no-CoT,30.15,118.15,1130.027,CN,True,,stop,8.06176e-05,708,28,0,1.13,"{""country"": ""CN"", ""latitude"": 30.15, ""longitude"": 118.15}"
+xiaomi/mimo-v2.5,CoT,26.5,118.0,1413.04,CN,True,,stop,0.0003971576,787,1119,1048,17.55,"{""reasoning"": ""The large boulder stone wall and traditional tiled-roof building indicate a rural mountainous region in China, with road markings including a yellow center line and blue edge line typical of Chinese roads."", ""country"": ""CN"", ""latitude"": 26.5, ""longitude"": 118.0}"
+mistralai/mistral-small-2603,no-CoT,55.9486,-3.1995,8852.091,GB,True,,stop,0.0001131,634,30,0,10.22,"{""country"": ""GB"", ""latitude"": 55.9486, ""longitude"": -3.1995}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,13377.674,,True,True,,,,,,0.18,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.34,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.37,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.07,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.5,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.08,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.22,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.21,

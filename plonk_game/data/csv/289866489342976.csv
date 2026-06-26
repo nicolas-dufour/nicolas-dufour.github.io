@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,32.868196183418,3.7350667248493,0.0,DZ,True,,,,,,,,"Berriane, None, Ghardaia, DZ"
+google/gemini-3.5-flash,CoT (effort=high),35.035,9.485,582.39,TN,True,,stop,0.0122205,1271,1146,1072,15.8,"```json
+{""reasoning"": ""The distinct cyan sky tint is characteristic of Generation 2 Google Street View coverage in Tunisia, and the arid landscape with scattered olive trees and low hills matches the central region of the country."", ""country"": ""TN"", ""latitude"": 35.035, ""longitude"": 9.485}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,31.042682647705078,-4.501545429229736,802.903,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,31.634675979614258,-6.175562858581543,941.659,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,31.599639892578125,-6.187414646148682,943.511,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,31.7412,35.7265,2997.799,JO,True,,stop,0.00341,544,23,0,1.36,"{""country"":""JO"",""latitude"":31.7412,""longitude"":35.7265}"
+openai/gpt-5.5,CoT,30.6348,35.6342,3014.979,JO,True,,stop,0.014625,621,384,302,9.29,"{""reasoning"":""Arid rocky scrubland, low desert hills, and a wide unmarked asphalt road fit the Middle Eastern desert highway environment, most consistent with Jordan. The sparse vegetation and pale limestone/gravel terrain point to the interior south/central Jordan rather than coastal or urban areas."",""country"":""JO"",""latitude"":30.6348,""longitude"":35.6342}"
+mistralai/mistral-small-2603,no-CoT,68.4344,14.5738,4014.715,NO,True,,stop,0.0001137,634,31,0,2.82,"{""country"": ""NO"", ""latitude"": 68.4344, ""longitude"": 14.5738}"
+google/gemma-4-31b-it,no-CoT,45.0,65.0,5336.05,KZ,True,,stop,6.478e-05,406,30,0,2.6,"```json
+{""country"": ""KZ"", ""latitude"": 45.0, ""longitude"": 65.0}
+```"
+anthropic/claude-opus-4.8,CoT,40.1,64.5,5386.73,UZ,True,,stop,0.006685,797,108,0,3.49,"{""reasoning"": ""Arid steppe/desert with low scrub vegetation, sandy soil, and flat terrain suggests Central Asian semi-desert, likely along a roadside in Uzbekistan or Turkmenistan."", ""country"": ""UZ"", ""latitude"": 40.1, ""longitude"": 64.5}"
+anthropic/claude-opus-4.8,no-CoT,40.1,64.5,5386.73,UZ,True,,stop,0.004105,666,31,0,2.31,"{""country"": ""UZ"", ""latitude"": 40.1, ""longitude"": 64.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,48.0,68.0,5521.752,KZ,True,,stop,0.00228345195,471,2287,2256,19.42,"{""country"": ""KZ"", ""latitude"": 48.0, ""longitude"": 68.0}"
+x-ai/grok-4.3,CoT,48.3,68.7,5569.195,KZ,True,,stop,0.001959,676,580,511,5.73,"{""reasoning"": ""Arid, treeless landscape with low rolling hills, sparse low shrubs, dirt berms, overhead power lines and empty asphalt road points to Central Asian steppe/desert fringe; no other signage or vehicles visible."", ""country"": ""KZ"", ""latitude"": 48.3, ""longitude"": 68.7}"
+moonshotai/kimi-k2.6,CoT,48.5,71.5,5770.768,KZ,True,,stop,0.009292,680,2201,2425,54.68,"{""reasoning"": ""Flat arid steppe with sparse scrub vegetation and wide paved highway is characteristic of the Kazakh steppe; lack of fencing and low rolling stony hills match rural Karaganda region."", ""country"": ""KZ"", ""latitude"": 48.5, ""longitude"": 71.5}"
+google/gemini-3.1-pro-preview,CoT,43.15,70.15,5776.627,KZ,True,,stop,0.00733,1271,399,320,13.11,"{
+  ""reasoning"": ""The arid landscape with low rolling hills and sparse vegetation is typical of Central Asia. The greenish tint in the sky is a common camera artifact in older Street View coverage found in countries like Kazakhstan."",
+  ""country"": ""KZ"",
+  ""latitude"": 43.15,
+  ""longitude"": 70.15
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),40.312541,72.154822,6013.278,KG,True,,stop,0.002136,1190,39,0,7.6,"```json
+{""country"": ""KG"", ""latitude"": 40.312541, ""longitude"": 72.154822}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),42.4625,76.1153,6267.148,KG,True,,stop,0.0075225,1271,624,551,5.8,"{""reasoning"": ""The arid, rolling brown hills combined with lines of green scrub vegetation along a wide, paved road are highly characteristic of the semi-desert landscapes of Kyrgyzstan, particularly near Balykchy."", ""country"": ""KG"", ""latitude"": 42.4625, ""longitude"": 76.1153}"
+x-ai/grok-4.3,no-CoT,43.25,76.85,6300.763,KZ,True,,stop,0.0005934,592,22,0,6.98,"{""country"": ""KZ"", ""latitude"": 43.25, ""longitude"": 76.85}"
+xiaomi/mimo-v2.5,CoT,45.5,82.5,6658.536,CN,True,,stop,0.0001345176,787,181,101,2.56,"{""reasoning"": ""The arid landscape with sparse scrub vegetation, low hills, and the style of the power lines are characteristic of semi-desert regions in Central Asia or Western China. The road markings and general terrain strongly suggest the Dzungarian Basin area."", ""country"": ""CN"", ""latitude"": 45.5, ""longitude"": 82.5}"
+google/gemini-3.1-pro-preview,no-CoT,42.815,89.185,7262.06,CN,True,,stop,0.002774,1189,33,0,8.78,"```json
+{""country"": ""CN"", ""latitude"": 42.815, ""longitude"": 89.185}
+```"
+google/gemini-3.5-flash,CoT (effort=low),46.5012,105.2541,8211.29,MN,True,,stop,0.003978,1272,230,157,2.67,"```json
+{""reasoning"": ""The arid landscape with low, barren hills and sparse green vegetation, combined with a distinct greenish camera tint, is highly characteristic of Google Street View coverage in Mongolia."", ""country"": ""MN"", ""latitude"": 46.5012, ""longitude"": 105.2541}
+```"
+minimax/minimax-m3,CoT,46.8,106.5,8275.165,MN,True,,stop,0.00056622,845,309,284,13.45,"{""reasoning"": ""Arid steppe landscape with sparse low shrubs, rolling barren hills, dusty/sandy ground, and visible utility poles suggest a Central Asian semi-arid region, most likely Mongolia. The greenish color cast and image quality are consistent with older film photography common in post-Soviet/Mongolian countryside."", ""country"": ""MN"", ""latitude"": 46.8, ""longitude"": 106.5}"
+qwen/qwen3.6-27b,no-CoT,35.0,-106.0,9503.972,US,True,,stop,0.0001843,473,26,0,14.94,"{""country"": ""US"", ""latitude"": 35.0, ""longitude"": -106.0}"
+mistralai/mistral-medium-3-5,no-CoT,35.0844,-106.6504,9545.083,US,True,,stop,0.001191,634,32,0,1.32,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -106.6504}"
+qwen/qwen3.5-397b-a17b,no-CoT,35.0,-110.0,9788.658,US,True,,stop,0.00034668,473,26,0,2.36,"{""country"": ""US"", ""latitude"": 35.0, ""longitude"": -110.0}"
+xiaomi/mimo-v2.5,no-CoT,34.5,-112.5,9998.608,US,True,,stop,8.00576e-05,708,26,0,1.45,"{""country"": ""US"", ""latitude"": 34.5, ""longitude"": -112.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,36.1699,-115.1398,10052.967,US,True,,stop,0.00017136,474,32,0,3.47,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.5-9b,no-CoT,36.1667,-115.1667,10054.984,US,True,,stop,8.841e-05,473,32,0,1.71,"{""country"": ""US"", ""latitude"": 36.1667, ""longitude"": -115.1667}"
+qwen/qwen3.5-27b,no-CoT,36.0544,-115.1728,10063.849,US,True,,stop,0.00024024,474,45,0,12.98,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 36.0544,
+  ""longitude"": -115.1728
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,32.97077560424805,-113.2646484375,10163.99,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,34.38169860839844,-115.54510498046875,10214.973,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,32.77969741821289,-114.24658203125,10246.509,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,34.0522,-118.2437,10419.797,US,True,,stop,0.0002187,473,32,0,2.26,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.39,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,12.87,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,10.23,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.41,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.23,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.29,

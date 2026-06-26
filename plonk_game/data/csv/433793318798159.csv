@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,69.18232979546619,35.25062443924663,0.0,RU,True,,,,,,,,"Teriberka, None, Murmansk, RU"
+google/gemini-3.1-pro-preview,CoT,69.1523,35.1245,6.002,RU,True,,stop,0.007232,1312,384,287,12.04,"{
+  ""reasoning"": ""The rocky, treeless tundra landscape with low vegetation and purple fireweed strongly indicates a high-latitude subarctic environment. The unpaved road and specific rock formations are characteristic of the Kola Peninsula in northern Russia, likely on the route to Teriberka."",
+  ""country"": ""RU"",
+  ""latitude"": 69.1523,
+  ""longitude"": 35.1245
+}"
+google/gemini-3.5-flash,CoT (effort=medium),69.1025,35.1052,10.58,RU,True,,stop,0.0070695,1311,567,489,10.85,"{""reasoning"": ""The glaciated rocky terrain of the Baltic Shield, subarctic vegetation including fireweed, and wide sandy dirt road are highly characteristic of the Kola Peninsula in northern Russia, specifically the road leading to Teriberka."", ""country"": ""RU"", ""latitude"": 69.1025, ""longitude"": 35.1052}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),69.183333,35.683333,17.1,RU,True,,stop,0.0021945,1229,39,0,15.07,"```json
+{""country"": ""RU"", ""latitude"": 69.183333, ""longitude"": 35.683333}
+```"
+google/gemini-3.1-pro-preview,no-CoT,69.1833,34.8167,17.148,RU,True,,stop,0.002878,1229,35,0,8.53,"```json
+{""country"": ""RU"", ""latitude"": 69.1833, ""longitude"": 34.8167}
+```"
+google/gemini-3.5-flash,CoT (effort=high),69.025,35.012,19.89,RU,True,,stop,0.0122625,1311,1144,1060,16.15,"```json
+{""reasoning"": ""The sub-arctic tundra landscape with dark glaciated metamorphic rocks of the Baltic Shield, unpaved wide road, and blooming fireweed strongly points to the Kola Peninsula in northern Russia, specifically the road to Teriberka."", ""country"": ""RU"", ""latitude"": 69.025, ""longitude"": 35.012}
+```"
+google/gemini-3.5-flash,CoT (effort=low),68.8542,35.0415,37.424,RU,True,,stop,0.0041895,1311,247,165,10.53,"{""reasoning"": ""The barren, rocky subarctic landscape with glaciated dark bedrock, low tundra vegetation, and blooming fireweed along a wide dirt road is highly characteristic of the Kola Peninsula in northern Russia, specifically the road leading to Teriberka."", ""country"": ""RU"", ""latitude"": 68.8542, ""longitude"": 35.0415}"
+openai/gpt-5.5,no-CoT,69.15,33.42,72.483,RU,True,,stop,0.004275,717,23,0,1.97,"{""country"":""RU"",""latitude"":69.1500,""longitude"":33.4200}"
+anthropic/claude-opus-4.8,CoT,69.5,31.5,151.291,RU,True,,stop,0.00746,987,101,0,10.41,"{""reasoning"": ""Treeless tundra with fireweed, bare rock outcrops, gravel road and overcast Arctic sky suggest far-northern Russia (Kola Peninsula/Murmansk region)."", ""country"": ""RU"", ""latitude"": 69.5, ""longitude"": 31.5}"
+anthropic/claude-opus-4.8,no-CoT,70.0833,28.2,290.466,NO,True,,stop,0.005055,856,31,0,2.69,"{""country"": ""NO"", ""latitude"": 70.0833, ""longitude"": 28.2}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,69.88938903808594,21.627155303955078,534.273,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,69.1234,20.1234,597.125,NO,True,,stop,6.848e-05,416,36,0,8.75,"```json
+{""country"": ""NO"", ""latitude"": 69.1234, ""longitude"": 20.1234}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,69.7245,18.9876,635.624,NO,True,,stop,0.0004042,617,31,0,7.99,"{""country"": ""NO"", ""latitude"": 69.7245, ""longitude"": 18.9876}"
+qwen/qwen3.6-35b-a3b,no-CoT,69.6498,18.9562,637.214,NO,True,,stop,0.00012938315,617,31,0,8.21,"{""country"": ""NO"", ""latitude"": 69.6498, ""longitude"": 18.9562}"
+xiaomi/mimo-v2.5,CoT,69.1,18.5,661.204,NO,True,,stop,0.0004643576,931,1287,1230,13.78,"{""reasoning"": ""The unpaved mountain road with pink fireweed flowers and rocky, overcast terrain indicates a northern European location, likely Norway."", ""country"": ""NO"", ""latitude"": 69.1, ""longitude"": 18.5}"
+xiaomi/mimo-v2.5,no-CoT,68.45,17.43,718.081,NO,True,,stop,0.0001004976,852,27,0,7.26,"{""country"": ""NO"", ""latitude"": 68.45, ""longitude"": 17.43}"
+x-ai/grok-4.3,CoT,64.85,-18.35,2296.546,IS,True,,stop,0.001974,820,514,453,4.36,"{""reasoning"": ""Barren rocky hills, unpaved road, overcast sky and fireweed (Chamaenerion) point to subarctic volcanic terrain; typical Icelandic highland landscape."", ""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -18.35}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,65.29070281982422,-21.76694107055664,2397.811,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,64.785,-21.05,2403.885,IS,True,,stop,0.0007734,736,22,0,0.81,"{""country"": ""IS"", ""latitude"": 64.785, ""longitude"": -21.05}"
+qwen/qwen3.5-27b,no-CoT,64.0833,-20.35,2424.367,IS,True,,stop,0.000188955,617,44,0,2.93,"```json
+{
+  ""country"": ""IS"",
+  ""latitude"": 64.0833,
+  ""longitude"": -20.3500
+}
+```"
+mistralai/mistral-medium-3-5,no-CoT,64.2645,-21.6215,2460.658,IS,True,,stop,0.0014685,824,31,0,7.63,"{""country"": ""IS"", ""latitude"": 64.2645, ""longitude"": -21.6215}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,65.46426391601562,-23.832481384277344,2463.978,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,64.1466,-21.9426,2480.972,IS,True,,stop,0.0002375,617,31,0,10.4,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.9426}"
+minimax/minimax-m3,CoT,69.45,-53.55,3181.973,GL,True,,stop,0.00110646,1033,715,628,19.54,"{""reasoning"": ""Treeless subarctic tundra landscape with rounded bare mountains, fireweed flowers, gravel road, exposed rocky outcrops, and what appears to be mining infrastructure in the valley strongly suggests western Greenland's mining regions (e.g., Maarmorilik/Black Angel area)."", ""country"": ""GL"", ""latitude"": 69.45, ""longitude"": -53.55}"
+moonshotai/kimi-k2.6,CoT,67.05,-50.65,3276.627,GL,True,,stop,0.013172148,872,3772,3697,148.81,"{""reasoning"": ""Barren, glaciated rocky terrain with low subarctic vegetation and wide unpaved road is characteristic of Greenland's ice-free margins; the rounded hills and complete absence of trees point toward the Kangerlussuaq area."", ""country"": ""GL"", ""latitude"": 67.05, ""longitude"": -50.65}"
+openai/gpt-5.5,CoT,67.0342,-50.6198,3276.901,GL,True,,stop,0.01822,794,475,386,21.4,"{""reasoning"":""Barren glaciated rock, tundra vegetation with fireweed, overcast Arctic climate, and a wide unpaved gravel road strongly suggest western Greenland rather than a temperate Nordic road network. The landscape matches the Kangerlussuaq area’s rocky dirt roads leading inland toward the ice sheet."",""country"":""GL"",""latitude"":67.0342,""longitude"":-50.6198}"
+qwen/qwen3.5-122b-a10b,no-CoT,66.6359,-52.9161,3379.474,GL,True,,stop,0.00022516,618,31,0,13.26,"{""country"": ""GL"", ""latitude"": 66.6359, ""longitude"": -52.9161}"
+qwen/qwen3.5-35b-a3b,no-CoT,63.7489,-68.5123,4090.005,CA,True,,stop,0.00012355,617,31,0,2.08,"{""country"": ""CA"", ""latitude"": 63.7489, ""longitude"": -68.5123}"
+qwen/qwen3.5-9b,no-CoT,62.6667,-68.75,4195.671,CA,True,,stop,6.615e-05,618,29,0,4.89,"{""country"": ""CA"", ""latitude"": 62.6667, ""longitude"": -68.75}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,53.6422233581543,-57.92853927612305,4689.895,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,44.88152313232422,-53.92257308959961,5387.936,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,40.04544448852539,-51.645931243896484,5778.419,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8131.504,,True,True,,,,,,13.32,
+mistralai/mistral-small-2603,no-CoT,-39.815,-73.242,14815.953,CL,True,,stop,0.000141,824,29,0,2.11,"{""country"": ""CL"", ""latitude"": -39.815, ""longitude"": -73.242}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.64,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.25,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,19.18,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.51,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.7,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.41,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.47,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.37,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.19,

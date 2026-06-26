@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,26.969001028337,100.0611078431,0.0,CN,True,,,,,,,,"Lijiang, None, Yunnan, CN"
+qwen/qwen3.5-27b,no-CoT,26.8764,100.2348,20.064,CN,True,,stop,0.000142155,473,32,0,1.11,"{""country"": ""CN"", ""latitude"": 26.8764, ""longitude"": 100.2348}"
+xiaomi/mimo-v2.5,no-CoT,27.5,100.5,73.274,CN,True,,stop,8.00576e-05,708,26,0,2.24,"{""country"": ""CN"", ""latitude"": 27.5, ""longitude"": 100.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),25.6065,100.2675,152.894,CN,True,,stop,0.0021075,1189,36,0,7.86,"```json
+{""country"": ""CN"", ""latitude"": 25.6065, ""longitude"": 100.2675}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,28.65,101.7,246.813,CN,True,,stop,0.000152,473,27,0,1.04,"{""country"": ""CN"", ""latitude"": 28.65, ""longitude"": 101.7}"
+qwen/qwen3.5-35b-a3b,no-CoT,25.8342,102.8356,303.767,CN,True,,stop,9.836e-05,474,32,0,8.09,"{""country"": ""CN"", ""latitude"": 25.8342, ""longitude"": 102.8356}"
+google/gemini-3.5-flash,CoT (effort=low),25.0433,102.7091,340.391,CN,True,,stop,0.005094,1272,354,266,9.46,"{""reasoning"": ""The truck's rear plate/marking starts with a Chinese character, and the windshield sticker is a Chinese inspection decal. The mountainous, misty, and lush green landscape with solar-powered streetlights is highly characteristic of southern China, particularly Yunnan or Sichuan provinces."", ""country"": ""CN"", ""latitude"": 25.0433, ""longitude"": 102.7091}"
+google/gemini-3.1-pro-preview,no-CoT,25.04,102.71,340.695,CN,True,,stop,0.002764,1190,32,0,2.2,"```json
+{""country"": ""CN"", ""latitude"": 25.04, ""longitude"": 102.71}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),24.35,102.54,382.779,CN,True,,stop,0.0079005,1271,666,590,11.77,"{""reasoning"": ""The truck in front has a registration starting with '云F' (Yunnan, Yuxi) painted on its rear, and the mountainous, lush terrain with solar-powered streetlights is highly characteristic of southern China."", ""country"": ""CN"", ""latitude"": 24.35, ""longitude"": 102.54}"
+minimax/minimax-m3,CoT,27.35,105.62,551.549,CN,True,,stop,0.00079986,843,507,428,19.77,"{""reasoning"": ""Right-hand driving, yellow dashed center lines, Chinese-style trucks, rural cornfields, misty subtropical mountains, and Chinese street lamp design all point to a rural highway in southwestern China, most likely Guizhou or northern Yunnan/Sichuan."", ""country"": ""CN"", ""latitude"": 27.35, ""longitude"": 105.62}"
+xiaomi/mimo-v2.5,CoT,24.48,105.19,583.498,CN,True,,stop,0.0001958376,787,400,337,11.03,"{""reasoning"": ""Right-hand traffic, Chinese characters on the truck's rear, and subtropical hilly rural landscape with maize crops point to rural southern China."", ""country"": ""CN"", ""latitude"": 24.48, ""longitude"": 105.19}"
+minimax/minimax-m3,no-CoT,26.85,106.71,659.328,CN,True,,stop,0.00039882,767,189,211,6.24,"{""country"": ""CN"", ""latitude"": 26.85, ""longitude"": 106.71}"
+google/gemini-3.1-pro-preview,CoT,26.5833,106.7167,662.026,CN,True,,stop,0.005592,1272,254,165,21.68,"{
+  ""reasoning"": ""The Chinese characters on the truck and windshield sticker, right-hand driving, and yellow dashed center line indicate China. The lush, hilly terrain with low clouds suggests a southern or southwestern province like Guizhou or Yunnan."",
+  ""country"": ""CN"",
+  ""latitude"": 26.5833,
+  ""longitude"": 106.7167
+}"
+moonshotai/kimi-k2.6,CoT,26.55,106.75,665.67,CN,True,,stop,0.012266568,682,3516,3445,66.85,"{""reasoning"": ""The blue-based street lamp, windshield inspection sticker, and right-hand traffic with Chinese-brand trucks indicate China; the misty mountainous terrain with cornfields and rural white-walled houses points to Guizhou province."", ""country"": ""CN"", ""latitude"": 26.55, ""longitude"": 106.75}"
+anthropic/claude-opus-4.8,no-CoT,23.5,105.5,669.236,CN,True,,stop,0.00408,666,30,0,8.76,"{""country"": ""CN"", ""latitude"": 23.5, ""longitude"": 105.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,29.8567,106.5432,710.452,CN,True,,stop,0.0004995,474,32,0,4.48,"{""country"": ""CN"", ""latitude"": 29.8567, ""longitude"": 106.5432}"
+qwen/qwen3.6-27b,no-CoT,28.2282,109.6311,953.122,CN,True,,stop,0.00029925,473,32,0,7.23,"{""country"": ""CN"", ""latitude"": 28.2282, ""longitude"": 109.6311}"
+qwen/qwen3.5-9b,no-CoT,24.505,113.235,1346.986,CN,True,,stop,5.19e-05,474,30,0,9.46,"{""country"": ""CN"", ""latitude"": 24.505, ""longitude"": 113.235}"
+google/gemini-3.5-flash,CoT (effort=high),30.62,118.98,1885.245,CN,True,,stop,0.0087735,1271,763,687,5.66,"{""reasoning"": ""The truck ahead displays a Chinese license plate starting with '皖P' (Xuancheng, Anhui Province), and the mountainous, lush green landscape with solar-powered streetlights is highly characteristic of southern Anhui."", ""country"": ""CN"", ""latitude"": 30.62, ""longitude"": 118.98}"
+mistralai/mistral-medium-3-5,no-CoT,18.5204,73.8567,2839.794,IN,True,,stop,0.0011835,634,31,0,7.24,"{""country"": ""IN"", ""latitude"": 18.5204, ""longitude"": 73.8567}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,5.865331172943115,116.1237564086914,2897.98,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,8.170767784118652,125.06090545654297,3361.505,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-43.26332092285156,170.18118286132812,10582.437,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11003.562,,True,True,,,,,,16.77,
+mistralai/mistral-small-2603,no-CoT,39.7817,-86.1461,12564.93,US,True,,stop,0.0001137,634,31,0,1.41,"{""country"": ""US"", ""latitude"": 39.7817, ""longitude"": -86.1461}"
+anthropic/claude-opus-4.8,CoT,16.75,-93.1,14950.468,MX,True,,stop,0.00676,797,111,0,4.54,"{""reasoning"": ""Lush green hills with low cloud cover, two-lane highway with yellow center line, Latin American truck styling and plate format suggest mountainous tropical region; vegetation and terrain match southern Mexico/Central America highway."", ""country"": ""MX"", ""latitude"": 16.75, ""longitude"": -93.1}"
+x-ai/grok-4.3,no-CoT,6.25,-75.58,16291.607,CO,True,,stop,0.0005934,592,22,0,0.85,"{""country"": ""CO"", ""latitude"": 6.25, ""longitude"": -75.58}"
+x-ai/grok-4.3,CoT,6.23,-75.58,16293.814,CO,True,,stop,0.003419,676,1164,1085,16.32,"{""reasoning"": ""Right-hand traffic with yellow center lines, white edge lines, misty tropical hills with banana/plantain crops, and fleet plate 'SER J 2365' on the box truck point to a Colombian Andean highway; red Sinotruk cab is common there."", ""country"": ""CO"", ""latitude"": 6.23, ""longitude"": -75.58}"
+openai/gpt-5.5,CoT,4.9521,-75.6358,16435.577,CO,True,,stop,0.016365,621,442,378,44.92,"{""reasoning"":""Right-hand traffic with yellow centerline and the trucks appear to have Colombian-style yellow license plates; the lush, cloudy Andean mountain road and Spanish commercial markings fit rural Colombia."",""country"":""CO"",""latitude"":4.9521,""longitude"":-75.6358}"
+openai/gpt-5.5,no-CoT,4.6646,-74.3058,16445.824,CO,True,,stop,0.00344,544,24,0,1.44,"{""country"":""CO"",""latitude"":4.6646,""longitude"":-74.3058}"
+google/gemma-4-31b-it,no-CoT,4.6097,-74.0817,16447.671,CO,True,,stop,6.338e-05,406,35,0,5.14,"```json
+{""country"": ""CO"", ""latitude"": 4.6097, ""longitude"": -74.0817}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,16653.882,BR,True,,stop,0.00018772,474,31,0,6.46,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-26.882003784179688,-48.94228744506836,16949.9,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-27.323041915893555,-49.12993240356445,16974.222,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-27.315086364746094,-49.14463806152344,16975.567,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,13.29,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.32,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.39,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,2.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.24,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.08,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.19,

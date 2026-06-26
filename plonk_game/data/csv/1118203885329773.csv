@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-29.921227842149,17.882561306726,0.0,ZA,True,,,,,,,,"Springbok, Namakwa District Municipality, Northern Cape, ZA"
+openai/gpt-5.5,CoT,-29.7456,17.8998,19.6,ZA,True,,stop,0.027675,621,819,739,20.49,"{""reasoning"":""Left-side placement of the warning sign and yellow edge lines match southern African left-driving highways, especially South Africa/Namibia. The arid rocky Namaqualand-style mountains and scrub vegetation most strongly suggest the N7 area in Northern Cape, South Africa."",""country"":""ZA"",""latitude"":-29.7456,""longitude"":17.8998}"
+google/gemini-3.1-pro-preview,CoT,-29.6667,17.8833,28.302,ZA,True,,stop,0.005494,1271,246,167,10.44,"{
+  ""reasoning"": ""Driving on the left with yellow edge lines and a red triangular warning sign strongly indicates South Africa. The arid, rocky, mountainous terrain is characteristic of the Northern Cape province."",
+  ""country"": ""ZA"",
+  ""latitude"": -29.6667,
+  ""longitude"": 17.8833
+}"
+anthropic/claude-opus-4.8,no-CoT,-29.6667,17.8833,28.302,ZA,True,,stop,0.004155,666,33,0,8.44,"{""country"": ""ZA"", ""latitude"": -29.6667, ""longitude"": 17.8833}"
+google/gemini-3.1-pro-preview,no-CoT,-29.66,17.88,29.048,ZA,True,,stop,0.005018,1189,220,189,10.77,"```json
+{""country"": ""ZA"", ""latitude"": -29.66, ""longitude"": 17.88}
+```"
+anthropic/claude-opus-4.8,CoT,-29.6,18.0,37.475,ZA,True,,stop,0.00626,797,91,0,9.8,"{""reasoning"": ""Left-side driving, yellow edge lines, arid rocky mountains and scrub vegetation match the Northern Cape Namaqualand region of South Africa."", ""country"": ""ZA"", ""latitude"": -29.6, ""longitude"": 18.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-30.43990135192871,18.36201286315918,73.825,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-29.2543,17.8742,74.163,ZA,True,,stop,0.003915,1272,223,142,8.69,"{""reasoning"": ""The road features yellow outer shoulder lines and a white dashed center line, characteristic of South Africa. The extremely arid, rocky, and mountainous terrain is typical of the Northern Cape province near the Namibian border along the N7 highway."", ""country"": ""ZA"", ""latitude"": -29.2543, ""longitude"": 17.8742}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-29.2458,17.8742,75.109,ZA,True,,stop,0.0020985,1189,35,0,7.83,"```json
+{""country"": ""ZA"", ""latitude"": -29.2458, ""longitude"": 17.8742}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-30.48868179321289,18.33883285522461,76.837,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-30.561723709106445,18.27723503112793,80.682,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-29.0125,17.7112,102.399,ZA,True,,stop,0.0151995,1271,1477,1394,11.57,"{""reasoning"": ""The extremely arid, rocky mountain landscape combined with left-hand traffic, yellow outer road lines, and a white-dashed center line is characteristic of the Northern Cape in South Africa, specifically along the N7 highway near the Namibian border."", ""country"": ""ZA"", ""latitude"": -29.0125, ""longitude"": 17.7112}"
+google/gemini-3.5-flash,CoT (effort=medium),-28.9542,17.7431,108.373,ZA,True,,stop,0.0071985,1271,588,500,12.35,"{""reasoning"": ""The road features yellow outer lines and a white dashed center line with left-hand traffic, characteristic of Southern Africa. The extremely arid, rocky, and mountainous terrain strongly points to the Northern Cape region of South Africa near the Namibian border along the N7 highway."", ""country"": ""ZA"", ""latitude"": -28.9542, ""longitude"": 17.7431}"
+x-ai/grok-4.3,CoT,-28.75,17.3,141.95,ZA,True,,stop,0.003159,676,1060,985,10.63,"{""reasoning"": ""Red triangular T-junction warning sign + continuous yellow edge lines + white dashed center line indicate left-hand traffic and SADC road standards; arid rocky mountains, sparse Karoo-type scrub and sandy soil match Northern Cape/Namibia border region."", ""country"": ""ZA"", ""latitude"": -28.75, ""longitude"": 17.3}"
+openai/gpt-5.5,no-CoT,-32.2427,18.9842,278.634,ZA,True,,stop,0.00344,544,24,0,1.52,"{""country"":""ZA"",""latitude"":-32.2427,""longitude"":18.9842}"
+qwen/qwen3.6-35b-a3b,no-CoT,-30.5597,20.9842,306.283,ZA,True,,stop,0.00010195,473,31,0,9.13,"{""country"": ""ZA"", ""latitude"": -30.5597, ""longitude"": 20.9842}"
+x-ai/grok-4.3,no-CoT,-28.75,20.85,315.744,ZA,True,,stop,0.0005934,592,22,0,0.84,"{""country"": ""ZA"", ""latitude"": -28.75, ""longitude"": 20.85}"
+minimax/minimax-m3,CoT,-32.5,20.0,350.369,ZA,True,,stop,0.00084186,843,542,471,14.69,"{""reasoning"": ""Left-hand driving with yellow shoulder line and white dashed center line indicates South Africa; arid mountainous terrain with sparse vegetation and reddish-brown rocky hills matches the Western Cape Karoo region, likely along a national highway."", ""country"": ""ZA"", ""latitude"": -32.5, ""longitude"": 20.0}"
+qwen/qwen3.6-27b,no-CoT,-32.2968,20.6567,373.503,ZA,True,,stop,0.0001943,473,31,0,19.66,"{""country"": ""ZA"", ""latitude"": -32.2968, ""longitude"": 20.6567}"
+qwen/qwen3.5-122b-a10b,no-CoT,-29.0469,21.8569,396.763,ZA,True,,stop,0.0002163,473,31,0,0.98,"{""country"": ""ZA"", ""latitude"": -29.0469, ""longitude"": 21.8569}"
+moonshotai/kimi-k2.6,no-CoT,-32.3,21.5,434.189,ZA,True,,stop,0.00051219,602,23,0,8.33,"{""country"": ""ZA"", ""latitude"": -32.3, ""longitude"": 21.5}"
+minimax/minimax-m3,no-CoT,-33.5,20.2,454.289,ZA,True,,stop,0.00030882,767,114,118,3.23,"{""country"": ""ZA"", ""latitude"": -33.5, ""longitude"": 20.2}"
+moonshotai/kimi-k2.6,CoT,-32.2,22.0,466.864,ZA,True,,stop,0.022576968,682,6535,6471,366.95,"{""reasoning"": ""The triangular crossroads sign follows SADC standards used in South Africa. Yellow left-edge road lines and arid Karoo scrubland with rocky hills confirm the Western Cape interior."", ""country"": ""ZA"", ""latitude"": -32.2, ""longitude"": 22.0}"
+google/gemma-4-31b-it,no-CoT,-24.5,16.2,625.325,NA,True,,stop,6.884e-05,406,30,0,2.32,"```json
+{""country"": ""NA"", ""latitude"": -24.5, ""longitude"": 16.2}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3828.196,,True,True,,,,,,14.01,
+qwen/qwen3.5-397b-a17b,CoT,36.462,22.935,7400.299,GR,True,,stop,0.0247062,553,6784,6682,170.21,"{""reasoning"": ""The solid yellow edge line combined with a dashed white center line is characteristic of Greek national roads, and the arid, rocky landscape with low scrub vegetation is typical of the Laconia region (Peloponnese). The red triangular warning sign (side road on left) follows the European Vienna Convention style used in Greece."", ""country"": ""GR"", ""latitude"": 36.462, ""longitude"": 22.935}"
+xiaomi/mimo-v2.5,CoT,-24.5,-69.5,8444.594,CL,True,,stop,0.0001972376,787,405,323,5.0,"{""reasoning"": ""The arid, rocky landscape with sparse vegetation and the style of the triangular road sign suggest a South American desert region, likely northern Chile. The road's straight layout and clear sky align with the Pan-American Highway in the Atacama Desert area."", ""country"": ""CL"", ""latitude"": -24.5, ""longitude"": -69.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,36.184417724609375,-114.652587890625,15580.837,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,36.197471618652344,-114.67228698730469,15582.725,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,36.0158,-115.1729,15625.755,US,True,,stop,0.00029445,473,32,0,7.4,"{""country"": ""US"", ""latitude"": 36.0158, ""longitude"": -115.1729}"
+qwen/qwen3.5-27b,no-CoT,36.0544,-115.1728,15626.12,US,True,,stop,0.0002085,474,45,0,3.06,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 36.0544,
+  ""longitude"": -115.1728
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.07723617553711,-115.18572235107422,15627.496,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,35.8,-115.5,15652.984,US,True,,stop,8.00576e-05,708,26,0,2.31,"{""country"": ""US"", ""latitude"": 35.8, ""longitude"": -115.5}"
+qwen/qwen3.5-9b,no-CoT,36.1126,-115.6259,15667.236,US,True,,stop,5.22e-05,474,32,0,6.14,"{""country"": ""US"", ""latitude"": 36.1126, ""longitude"": -115.6259}"
+qwen/qwen3.5-35b-a3b,no-CoT,34.2689,-116.0892,15688.823,US,True,,stop,0.000164025,473,32,0,1.14,"{""country"": ""US"", ""latitude"": 34.2689, ""longitude"": -116.0892}"
+mistralai/mistral-medium-3-5,no-CoT,36.2426,-116.8148,15774.727,US,True,,stop,0.001191,634,32,0,1.89,"{""country"": ""US"", ""latitude"": 36.2426, ""longitude"": -116.8148}"
+mistralai/mistral-small-2603,no-CoT,36.5785,-118.292,15908.837,US,True,,stop,0.0001137,634,31,0,4.09,"{""country"": ""US"", ""latitude"": 36.5785, ""longitude"": -118.292}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.77,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.52,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.62,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.28,

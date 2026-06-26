@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,39.769831853802,98.287045347384,0.0,CN,True,,,,,,,,"Jiayuguan, None, Gansu Sheng, CN"
+openai/gpt-5.5,CoT,43.8009,87.6177,990.636,CN,True,,stop,0.020755,755,566,479,35.61,"{""reasoning"":""Chinese road signs and right-side traffic indicate China; the bilingual-looking green street signs, dry northwestern urban setting, decorative red-knot poles, and architecture are consistent with Urumqi in Xinjiang. The scene most likely sits in central Urumqi near Xinhua/urban commercial streets."",""country"":""CN"",""latitude"":43.8009,""longitude"":87.6177}"
+qwen/qwen3.6-35b-a3b,no-CoT,43.8174,87.6168,991.428,CN,True,,stop,0.00011875,585,31,0,2.22,"{""country"": ""CN"", ""latitude"": 43.8174, ""longitude"": 87.6168}"
+x-ai/grok-4.3,CoT,43.825,87.616,991.822,CN,True,,stop,0.002239,788,636,555,11.81,"{
+  ""reasoning"": ""Chinese characters on multiple signs, red decorative knot on pole, right-hand traffic, modern glass-facade architecture and vegetation/road style all indicate China; arid climate and building design narrow to a northern/western city such as Urumqi."",
+  ""country"": ""CN"",
+  ""latitude"": 43.825,
+  ""longitude"": 87.616
+}"
+x-ai/grok-4.3,no-CoT,43.832,87.616,992.131,CN,True,,stop,0.0007334,704,22,0,7.49,"{""country"": ""CN"", ""latitude"": 43.832, ""longitude"": 87.616}"
+google/gemini-3.5-flash,CoT (effort=low),34.2634,108.9486,1126.104,CN,True,,stop,0.004374,1308,268,198,9.09,"{""reasoning"": ""The presence of a red Chinese knot decoration on the utility pole, blue license plates on the vehicles, and typical Chinese urban architecture and street design indicate a location in China."", ""country"": ""CN"", ""latitude"": 34.2634, ""longitude"": 108.9486}"
+mistralai/mistral-medium-3-5,no-CoT,30.5928,104.0668,1147.026,CN,True,,stop,0.001419,786,32,0,1.11,"{""country"": ""CN"", ""latitude"": 30.5928, ""longitude"": 104.0668}"
+xiaomi/mimo-v2.5,no-CoT,30.5728,104.0668,1149.032,CN,True,,stop,9.74176e-05,820,32,0,2.39,"{""country"": ""CN"", ""latitude"": 30.5728, ""longitude"": 104.0668}"
+qwen/qwen3.5-27b,no-CoT,40.7825,111.9636,1164.502,CN,True,,stop,0.00022707,585,32,0,3.92,"{""country"": ""CN"", ""latitude"": 40.7825, ""longitude"": 111.9636}"
+minimax/minimax-m3,no-CoT,37.87,112.55,1252.183,CN,True,,stop,0.00047202,919,212,260,11.65,"{""country"": ""CN"", ""latitude"": 37.87, ""longitude"": 112.55}"
+qwen/qwen3.5-122b-a10b,no-CoT,40.7033,114.9975,1420.099,CN,True,,stop,0.0002715,585,40,0,8.85,"{
+  ""country"": ""CN"",
+  ""latitude"": 40.7033,
+  ""longitude"": 114.9975
+}"
+google/gemini-3.1-pro-preview,CoT,34.7462,113.6254,1465.433,CN,True,,stop,0.00576,1308,262,181,11.13,"{
+  ""reasoning"": ""Blue license plates, horizontal traffic lights, and the red Chinese knot decoration on the street pole strongly indicate China. The architecture and street layout are typical of a modern Chinese city."",
+  ""country"": ""CN"",
+  ""latitude"": 34.7462,
+  ""longitude"": 113.6254
+}"
+google/gemini-3.5-flash,CoT (effort=high),34.7568,113.6632,1467.981,CN,True,,stop,0.0107175,1307,973,909,7.59,"{""reasoning"": ""The presence of a red Chinese knot on the lamppost, blue license plates, and distinctive Chinese street signs and architecture clearly indicate China."", ""country"": ""CN"", ""latitude"": 34.7568, ""longitude"": 113.6632}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,37.61421203613281,115.6631851196289,1524.498,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,37.66104507446289,115.73651123046875,1529.466,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.41620635986328,116.07329559326172,1539.774,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,39.93165588378906,116.39630889892578,1543.365,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,39.90265655517578,116.39779663085938,1543.785,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,39.91,116.4,1543.897,CN,True,,stop,0.008704476,834,2460,2380,133.86,"{""reasoning"": ""The red Chinese-knot street ornament, blue-and-white vehicle license plates, and green pedestrian countdown signal are unmistakably Chinese; the wide boulevards, modern glass facade, and distant hilly backdrop point to a major northern city such as Beijing."", ""country"": ""CN"", ""latitude"": 39.910, ""longitude"": 116.400}"
+google/gemini-3.1-pro-preview,no-CoT,39.9042,116.4074,1544.585,CN,True,,stop,0.002882,1225,36,0,24.54,"```json
+{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),39.9042,116.4074,1544.585,CN,True,,stop,0.002163,1226,36,0,1.6,"```json
+{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}
+```"
+google/gemma-4-31b-it,no-CoT,39.9042,116.4074,1544.585,CN,True,,stop,7.136e-05,404,37,0,3.05,"```json
+{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}
+```"
+moonshotai/kimi-k2.6,no-CoT,39.9042,116.4074,1544.585,CN,True,,stop,0.00032922,755,25,0,1.61,"{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}"
+openai/gpt-5.5,no-CoT,39.9042,116.4074,1544.585,CN,True,,stop,0.00408,678,23,0,1.25,"{""country"":""CN"",""latitude"":39.9042,""longitude"":116.4074}"
+qwen/qwen3.5-35b-a3b,no-CoT,39.9042,116.4074,1544.585,CN,True,,stop,0.0002228125,585,32,0,2.43,"{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}"
+qwen/qwen3.6-27b,no-CoT,39.9042,116.4074,1544.585,CN,True,,stop,0.0002299,585,32,0,17.83,"{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}"
+qwen/qwen3.5-9b,no-CoT,40.8215,116.9024,1580.116,CN,True,,stop,6.34e-05,586,32,0,6.83,"{""country"": ""CN"", ""latitude"": 40.8215, ""longitude"": 116.9024}"
+minimax/minimax-m3,CoT,38.31,116.84,1607.637,CN,True,,stop,0.00083826,995,501,427,26.28,"{""reasoning"": ""Red Chinese knot on lamppost and Chinese characters on signage confirm China. The modern building with distinctive curved wave-style roof, wide boulevard, and temperate vegetation suggest a mid-sized city in northern China, likely Hebei province."", ""country"": ""CN"", ""latitude"": 38.31, ""longitude"": 116.84}"
+xiaomi/mimo-v2.5,CoT,36.7,117.0,1666.391,CN,True,,stop,0.0005441576,899,1588,1529,16.32,"{""reasoning"": ""Blue license plates with Chinese characters and right-hand traffic indicate China; red decorative lanterns on poles are typical of Chinese urban areas."", ""country"": ""CN"", ""latitude"": 36.7, ""longitude"": 117.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.33128356933594,117.1112060546875,1688.607,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),38.9145,121.6142,2002.609,CN,True,,stop,0.0129405,1307,1220,1133,9.93,"{""reasoning"": ""The image features a red Chinese knot decoration on the utility pole, blue license plates on the vehicles, and distinctive Chinese street signage and architecture, indicating a location in China. The hilly terrain in the background suggests a city like Dalian in Liaoning province."", ""country"": ""CN"", ""latitude"": 38.9145, ""longitude"": 121.6142}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.8057,123.4315,2121.329,CN,True,,stop,0.0003917,585,32,0,1.52,"{""country"": ""CN"", ""latitude"": 41.8057, ""longitude"": 123.4315}"
+anthropic/claude-opus-4.8,CoT,43.88,125.32,2275.363,CN,True,,stop,0.00707,949,93,0,10.53,"{""reasoning"": ""Chinese knot decorative lampposts and Chinese signage, glass-fronted mid-rise buildings, right-side driving—typical of a northern Chinese city street."", ""country"": ""CN"", ""latitude"": 43.88, ""longitude"": 125.32}"
+anthropic/claude-opus-4.8,no-CoT,43.8171,125.3235,2275.385,CN,True,,stop,0.00489,818,32,0,8.6,"{""country"": ""CN"", ""latitude"": 43.8171, ""longitude"": 125.3235}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10714.795,,True,True,,,,,,13.73,
+mistralai/mistral-small-2603,no-CoT,34.0522,-118.2437,10989.438,US,True,,stop,0.000171375,786,32,0,1.96,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.46,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.31,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.23,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.24,

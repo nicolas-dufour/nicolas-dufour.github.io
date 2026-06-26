@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,36.986085876888,50.55635907718,0.0,IR,True,,,,,,,,"Ramsar, None, Mazandaran, IR"
+google/gemini-3.1-pro-preview,CoT,36.8166,50.8733,33.903,IR,True,,stop,0.006994,1271,371,268,12.33,"{
+  ""reasoning"": ""The presence of Iranian domestic vehicles like the Peugeot Pars and Saipa Pride, along with the blue-striped license plate, identifies the country as Iran. The wet climate, green vegetation, and pitched roofs strongly indicate the northern Caspian Sea coastal region, such as Gilan or Mazandaran."",
+  ""country"": ""IR"",
+  ""latitude"": 36.8166,
+  ""longitude"": 50.8733
+}"
+google/gemini-3.5-flash,CoT (effort=high),36.8162,50.8734,33.935,IR,True,,stop,0.0088455,1271,771,698,13.91,"{""reasoning"": ""The presence of Saipa Pride and Peugeot vehicles, blue-and-white painted curbs, and the rainy, lush green environment with slanted roofs point to the Caspian Sea region of northern Iran."", ""country"": ""IR"", ""latitude"": 36.8162, ""longitude"": 50.8734}"
+google/gemini-3.5-flash,CoT (effort=low),37.2185,50.0024,55.51,IR,True,,stop,0.004392,1272,276,209,2.98,"{""reasoning"": ""The presence of multiple Saipa Pride vehicles, distinctive Iranian license plates, and the wet, green coastal plain environment points to northern Iran along the Caspian Sea highway."", ""country"": ""IR"", ""latitude"": 37.2185, ""longitude"": 50.0024}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,36.52206802368164,51.31755447387695,85.212,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,36.559593200683594,51.3884391784668,87.986,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,36.55324172973633,51.3994026184082,89.192,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,37.2697,49.589,91.375,IR,True,,stop,0.00341,544,23,0,1.45,"{""country"":""IR"",""latitude"":37.2697,""longitude"":49.5890}"
+google/gemini-3.1-pro-preview,no-CoT,37.2761,49.5886,91.653,IR,True,,stop,0.0028,1190,35,0,2.38,"```json
+{""country"": ""IR"", ""latitude"": 37.2761, ""longitude"": 49.5886}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.2761,49.5886,91.653,IR,True,,stop,0.0021,1190,35,0,7.31,"```json
+{""country"": ""IR"", ""latitude"": 37.2761, ""longitude"": 49.5886}
+```"
+anthropic/claude-opus-4.8,CoT,37.28,49.59,91.688,IR,True,,stop,0.006635,797,106,0,9.5,"{""reasoning"": ""Rainy, lush green roadside with Caspian-style architecture and Persian signage suggests northern Iran (Gilan/Mazandaran). Right-side driving and older Iranian-style sedans support this."", ""country"": ""IR"", ""latitude"": 37.28, ""longitude"": 49.59}"
+google/gemini-3.5-flash,CoT (effort=medium),37.2765,49.5874,91.768,IR,True,,stop,0.0067845,1271,542,472,12.98,"{""reasoning"": ""The presence of Saipa Pride vehicles, blue-and-white painted curbs, and distinctive northern Iranian architecture under a rainy, overcast sky indicates the Caspian Sea region of Iran."", ""country"": ""IR"", ""latitude"": 37.2765, ""longitude"": 49.5874}"
+openai/gpt-5.5,CoT,37.2808,49.5832,92.283,IR,True,,stop,0.010755,621,255,176,30.99,"{""reasoning"":""Right-hand traffic, Persian-script shop signs, and blue-white painted road dividers point strongly to Iran. The wet humid climate, lush roadside vegetation, and low-rise urban strip fit the Caspian north, especially around Rasht in Gilan Province."",""country"":""IR"",""latitude"":37.2808,""longitude"":49.5832}"
+moonshotai/kimi-k2.6,no-CoT,37.2809,49.5832,92.287,IR,True,,stop,0.000296532,603,25,0,2.65,"{""country"": ""IR"", ""latitude"": 37.2809, ""longitude"": 49.5832}"
+moonshotai/kimi-k2.6,CoT,37.2865,49.5835,92.482,IR,True,,stop,0.009428148,682,2687,2599,59.36,"{""reasoning"": ""The dark Peugeot 405/Saipa-style sedan and Iranian license-plate shape are highly specific to Iran, while the multi-crossarm utility poles, Persian-script signage, and rainy, lush-green climate match the Caspian Sea region of Gilan or Mazandaran."", ""country"": ""IR"", ""latitude"": 37.2865, ""longitude"": 49.5835}"
+minimax/minimax-m3,CoT,37.28,49.58,92.517,IR,True,,stop,0.00073026,843,449,360,12.48,"{""reasoning"": ""Right-hand traffic, Peugeot 405 (ubiquitous in Iran), characteristic red/maroon apartment block architecture, green Caspian coastal vegetation under rainy/overcast skies, and Persian-style signage strongly indicate northern Iran (Gilan or Mazandaran province) along the Caspian Sea coast."", ""country"": ""IR"", ""latitude"": 37.28, ""longitude"": 49.58}"
+mistralai/mistral-medium-3-5,no-CoT,35.7153,51.4055,160.466,IR,True,,stop,0.0011835,634,31,0,7.39,"{""country"": ""IR"", ""latitude"": 35.7153, ""longitude"": 51.4055}"
+xiaomi/mimo-v2.5,no-CoT,40.4935,49.8595,394.658,TR,True,,stop,8.14576e-05,708,31,0,1.6,"{""country"": ""TR"", ""latitude"": 40.4935, ""longitude"": 49.8595}"
+qwen/qwen3.5-35b-a3b,no-CoT,40.2069,44.509,635.729,AM,True,,stop,0.00010195,473,31,0,2.6,"{""country"": ""AM"", ""latitude"": 40.2069, ""longitude"": 44.5090}"
+qwen/qwen3.6-27b,no-CoT,41.7151,44.8271,720.206,GE,True,,stop,0.0001943,473,31,0,8.49,"{""country"": ""GE"", ""latitude"": 41.7151, ""longitude"": 44.8271}"
+xiaomi/mimo-v2.5,CoT,41.726,44.765,724.713,GE,True,,stop,0.0010058776,787,3293,3187,35.61,"{""reasoning"": ""The white license plate with a red vertical band on the left, along with the older Mercedes W124 model, strongly indicates the country is Georgia. The wide avenue with concrete dividers, overhead wires, and post-Soviet apartment architecture with mixed-use retail (green pharmacy cross) points to the Mukhiani district in Tbilisi."", ""country"": ""GE"", ""latitude"": 41.726, ""longitude"": 44.765}"
+anthropic/claude-opus-4.8,no-CoT,41.085,39.75,1037.671,TR,True,,stop,0.00413,666,32,0,10.65,"{""country"": ""TR"", ""latitude"": 41.0850, ""longitude"": 39.7500}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.7654,30.4012,1790.274,TR,True,,stop,0.0003322,473,31,0,8.6,"{""country"": ""TR"", ""latitude"": 40.7654, ""longitude"": 30.4012}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.55097198486328,30.171566009521484,1796.515,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.94858169555664,29.843595504760742,1824.791,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,39.35255432128906,29.716569900512695,1836.531,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,40.188,29.061,1897.012,TR,True,,stop,0.0005934,592,22,0,0.87,"{""country"": ""TR"", ""latitude"": 40.188, ""longitude"": 29.061}"
+google/gemma-4-31b-it,no-CoT,40.1919,29.061,1897.042,TR,True,,stop,6.718e-05,406,36,0,9.73,"```json
+{""country"": ""TR"", ""latitude"": 40.1919, ""longitude"": 29.0610}
+```"
+minimax/minimax-m3,no-CoT,41.0,29.0,1910.322,TR,True,,stop,0.00041442,767,202,227,10.15,"{""country"": ""TR"", ""latitude"": 41.0, ""longitude"": 29.0}{""country"": ""TR"", ""latitude"": 41.0, ""longitude"": 29.0}"
+x-ai/grok-4.3,CoT,40.985,28.783,1928.238,TR,True,,stop,0.002924,676,966,889,13.39,"{
+  ""reasoning"": ""Right-hand traffic, OTEL signage, European-style plates, concrete/brick apartment blocks with external wiring, and overcast Balkan/Anatolian vegetation point to Turkey; black sedan and road furniture match typical Turkish provincial highway."",
+  ""country"": ""TR"",
+  ""latitude"": 40.985,
+  ""longitude"": 28.783
+}"
+qwen/qwen3.5-27b,no-CoT,38.4237,27.1428,2060.436,TR,True,,stop,0.000140595,473,31,0,0.94,"{""country"": ""TR"", ""latitude"": 38.4237, ""longitude"": 27.1428}"
+qwen/qwen3.5-122b-a10b,no-CoT,34.0837,74.7973,2210.967,IN,True,,stop,0.00018772,474,31,0,6.75,"{""country"": ""IN"", ""latitude"": 34.0837, ""longitude"": 74.7973}"
+qwen/qwen3.6-35b-a3b,no-CoT,9.0192,38.7525,3329.332,ET,True,,stop,0.00010095,473,30,0,8.78,"{""country"": ""ET"", ""latitude"": 9.0192, ""longitude"": 38.7525}"
+qwen/qwen3.5-9b,no-CoT,27.3171,88.6065,3712.58,IN,True,,stop,8.816e-05,473,31,0,1.19,"{""country"": ""IN"", ""latitude"": 27.3171, ""longitude"": 88.6065}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6616.522,,True,True,,,,,,6.44,
+mistralai/mistral-small-2603,no-CoT,14.5995,120.9842,7311.953,PH,True,,stop,0.0001143,634,32,0,9.43,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,13.05,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.72,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.54,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.81,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.11,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.14,

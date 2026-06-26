@@ -1,0 +1,76 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,36.115448570044,-80.601083144997,0.0,US,True,,,,,,,,"Yadkinville, Yadkin County, North Carolina, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,36.16834259033203,-80.72167205810547,12.323,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,36.1539421081543,-80.74337005615234,13.476,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,36.04304122924805,-80.8088150024414,20.331,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,35.2,-80.8,103.367,US,True,,stop,9.54576e-05,820,25,0,2.85,"{""country"": ""US"", ""latitude"": 35.2, ""longitude"": -80.8}"
+anthropic/claude-opus-4.8,no-CoT,36.5,-79.5,107.53,US,True,,stop,0.004815,818,29,0,2.1,"{""country"": ""US"", ""latitude"": 36.5, ""longitude"": -79.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,37.52876281738281,-80.45661926269531,157.679,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,37.4,-79.8,159.67,US,True,,stop,0.012194496,834,3483,3410,80.42,"{""reasoning"": ""Yellow left-edge line with white dashed lane dividers is characteristic of a US divided highway; dense deciduous forest, rolling green terrain, and W-beam guardrails fit the Appalachian/Mid-Atlantic region."", ""country"": ""US"", ""latitude"": 37.4000, ""longitude"": -79.8000}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,37.68461990356445,-80.43779754638672,175.087,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,37.81161117553711,-80.52882385253906,188.714,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,36.5,-78.5,193.061,US,True,,stop,0.007245,949,100,0,10.03,"{""reasoning"": ""Right-hand traffic, wide divided highway with grassy median and guardrails, lush deciduous forest and overcast sky typical of the US Southeast/Mid-Atlantic interstate."", ""country"": ""US"", ""latitude"": 36.5, ""longitude"": -78.5}"
+x-ai/grok-4.3,CoT,38.95,-78.3,374.818,US,True,,stop,0.002354,788,682,616,9.83,"{
+  ""reasoning"": ""US-style W-beam guardrails, yellow center + white edge lines, right-hand traffic, and lush eastern deciduous forest on a divided rural highway indicate eastern United States."",
+  ""country"": ""US"",
+  ""latitude"": 38.95,
+  ""longitude"": -78.3
+}"
+x-ai/grok-4.3,no-CoT,38.85,-77.3,421.008,US,True,,stop,0.0007334,704,22,0,1.01,"{""country"": ""US"", ""latitude"": 38.85, ""longitude"": -77.3}"
+google/gemma-4-31b-it,no-CoT,38.8951,-77.0364,440.842,US,True,,stop,6.348e-05,404,36,0,4.19,"```json
+{""country"": ""US"", ""latitude"": 38.8951, ""longitude"": -77.0364}
+```"
+google/gemini-3.5-flash,CoT (effort=low),40.1234,-80.2345,446.815,US,True,,stop,0.0035445,1307,176,100,9.39,"{""reasoning"": ""The yellow line on the left edge and white line on the right indicate a divided highway with right-hand traffic, while the lush deciduous forest and guardrail style are highly characteristic of the eastern United States."", ""country"": ""US"", ""latitude"": 40.1234, ""longitude"": -80.2345}"
+google/gemini-3.1-pro-preview,CoT,39.5,-83.5,454.354,US,True,,stop,0.005604,1308,249,176,4.38,"{
+  ""reasoning"": ""The yellow left edge line and white dashed lane dividers indicate a divided highway in North America. The lush deciduous vegetation and relatively flat terrain suggest the Eastern or Midwestern United States."",
+  ""country"": ""US"",
+  ""latitude"": 39.5,
+  ""longitude"": -83.5
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),38.2458,-85.1234,465.349,US,True,,stop,0.002154,1226,35,0,1.14,"```json
+{""country"": ""US"", ""latitude"": 38.2458, ""longitude"": -85.1234}
+```"
+google/gemini-3.5-flash,CoT (effort=high),38.6521,-84.8512,469.557,US,True,,stop,0.007452,1308,610,521,4.11,"{""reasoning"": ""The divided highway with a yellow left shoulder line, white right shoulder line, and standard W-beam guardrails with wooden posts is characteristic of the United States. The lush deciduous forest and rolling terrain suggest a location in the eastern US, likely along an Interstate in Kentucky."", ""country"": ""US"", ""latitude"": 38.6521, ""longitude"": -84.8512}"
+google/gemini-3.1-pro-preview,no-CoT,38.5,-85.0,470.725,US,True,,stop,0.0028,1226,29,0,14.5,"```json
+{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -85.0}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),39.55,-83.85,476.64,US,True,,stop,0.0068835,1307,547,474,5.55,"{""reasoning"": ""The divided highway with a yellow left line, white right line, standard US W-beam guardrails, and lush deciduous forest indicate a location in the midwestern United States, likely along an interstate in Ohio."", ""country"": ""US"", ""latitude"": 39.55, ""longitude"": -83.85}"
+moonshotai/kimi-k2.6,no-CoT,37.5,-86.0,504.62,US,True,,stop,0.00033426,755,23,0,1.86,"{""country"": ""US"", ""latitude"": 37.5, ""longitude"": -86.0}"
+qwen/qwen3.6-35b-a3b,CoT,40.4173,-82.9071,518.929,US,True,,stop,0.0039225,665,3005,2761,67.54,"```json
+{
+  ""reasoning"": ""The solid yellow line on the left edge and solid white line on the right edge of a multi-lane road (indicated by the dashed white center line) are standard US highway markings for a divided highway. The W-beam guardrails and dense deciduous vegetation are consistent with the American Midwest."",
+  ""country"": ""US"",
+  ""latitude"": 40.4173,
+  ""longitude"": -82.9071
+}
+```"
+qwen/qwen3.5-9b,no-CoT,40.4406,-77.0365,572.686,US,True,,stop,0.0001072,585,31,0,3.94,"{""country"": ""US"", ""latitude"": 40.4406, ""longitude"": -77.0365}"
+qwen/qwen3.5-397b-a17b,CoT,40.9456,-77.8932,586.384,US,True,,stop,0.0088796,665,2453,2320,91.47,"{""reasoning"": ""The image shows a divided highway with right-hand traffic, indicated by the yellow line on the left edge (near the median guardrail) and white line on the right shoulder, which is standard for US Interstates. The W-beam guardrails, wide grassy verges, and dense temperate deciduous forest are characteristic of rural highways in the Northeastern or Mid-Atlantic United States, particularly Pennsylvania."", ""country"": ""US"", ""latitude"": 40.9456, ""longitude"": -77.8932}"
+qwen/qwen3.5-122b-a10b,no-CoT,39.7392,-75.5398,599.33,US,True,,stop,0.0002499,585,31,0,1.18,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -75.5398}"
+xiaomi/mimo-v2.5,CoT,40.75,-84.5,617.016,US,True,,stop,0.0001700776,899,252,177,3.2,"{""reasoning"": ""The divided highway with metal guardrails, English-style road markings, and lush green deciduous vegetation under overcast skies strongly suggests a temperate region in the United States, likely in the Midwest or East Coast."", ""country"": ""US"", ""latitude"": 40.75, ""longitude"": -84.5}"
+mistralai/mistral-small-2603,no-CoT,40.0,-75.0,653.244,US,True,,stop,0.0001329,786,25,0,18.54,"{""country"": ""US"", ""latitude"": 40.0, ""longitude"": -75.0}"
+minimax/minimax-m3,CoT,42.15,-76.85,744.735,US,True,,stop,0.00061026,995,311,238,8.39,"{""reasoning"": ""Right-hand traffic on a divided highway with W-beam guardrails, dashed white lane markings, solid yellow left edge line, and lush deciduous forest under overcast skies strongly indicates a rural interstate in the northeastern United States."", ""country"": ""US"", ""latitude"": 42.15, ""longitude"": -76.85}"
+qwen/qwen3.5-27b,no-CoT,40.7128,-74.006,768.662,US,True,,stop,0.0002475,585,30,0,1.5,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+qwen/qwen3.5-35b-a3b,no-CoT,40.7128,-74.006,768.662,US,True,,stop,0.00011204,586,30,0,1.88,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.7128,-74.006,768.662,US,True,,stop,0.00043188,585,31,0,1.93,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.0060}"
+openai/gpt-5.5,no-CoT,42.7356,-76.6599,809.984,US,True,,stop,0.00411,678,24,0,2.18,"{""country"":""US"",""latitude"":42.7356,""longitude"":-76.6599}"
+openai/gpt-5.5,CoT,43.0925,-75.3228,897.519,US,True,,stop,0.013555,755,326,241,16.66,"{""reasoning"":""Right-hand divided highway with US-style white/yellow edge markings, rumble strip shoulder, W-beam guardrails, and lush temperate deciduous vegetation point to the eastern United States. The broad, tree-lined interstate/parkway scenery most closely fits upstate New York."",""country"":""US"",""latitude"":43.0925,""longitude"":-75.3228}"
+minimax/minimax-m3,no-CoT,41.8,-72.5,942.701,US,True,,stop,0.00033762,919,100,101,2.48,"{""country"": ""US"", ""latitude"": 41.8, ""longitude"": -72.5}"
+qwen/qwen3.6-27b,no-CoT,42.3601,-71.0589,1074.657,US,True,,stop,0.0002279,585,31,0,18.03,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+mistralai/mistral-medium-3-5,no-CoT,39.8283,-98.5795,1625.967,US,True,,stop,0.0014115,786,31,0,2.83,"{""country"": ""US"", ""latitude"": 39.8283, ""longitude"": -98.5795}"
+google/gemma-4-26b-a4b-it,no-CoT,39.7392,-104.99,2169.709,US,True,,stop,8.468e-05,404,106,0,10.24,"{"" than de-
+
+```json
+ own
+{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -10 own- own
+{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.990 own
+ own
+ own-
+{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.99}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,39.7392,-104.9903,2169.735,US,True,,stop,0.00011975,585,32,0,2.86,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+mistralai/mistral-small-2603,CoT,8.25,99.5,15081.863,TH,True,,stop,0.000612,868,803,938,6.73,"{""reasoning"": ""Left-hand traffic and dense tropical vegetation indicate Southeast Asia; road style and markings suggest Thailand"", ""country"": ""TH"", ""latitude"": 8.25, ""longitude"": 99.5}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.42,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.2,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.28,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.1,

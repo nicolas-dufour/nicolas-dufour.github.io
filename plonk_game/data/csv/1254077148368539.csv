@@ -1,0 +1,78 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-32.093598274724,18.824529813595,0.0,ZA,True,,,,,,,,"Clanwilliam, West Coast District Municipality, Western Cape, ZA"
+google/gemini-3.5-flash,CoT (effort=low),-32.1234,18.8912,7.1,ZA,True,,stop,0.0038955,1271,221,147,24.48,"{""reasoning"": ""The yellow outer road line on the left indicates left-hand drive, and the arid, shrubby landscape with flat-topped mountains is highly characteristic of the Karoo region in South Africa."", ""country"": ""ZA"", ""latitude"": -32.1234, ""longitude"": 18.8912}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-32.183333,18.883333,11.411,ZA,True,,stop,0.002136,1190,39,0,7.6,"```json
+{""country"": ""ZA"", ""latitude"": -32.183333, ""longitude"": 18.883333}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-31.926895141601562,18.77974510192871,19.011,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-31.919824600219727,18.772472381591797,19.936,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-32.08523941040039,18.612018585205078,20.042,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-32.35,18.95,30.857,ZA,True,,stop,0.0125535,1271,1183,1105,8.96,"{""reasoning"": ""The yellow outer road lines and left-hand driving indicate South Africa. The green agricultural valley on the right alongside dry hills on the left is highly characteristic of the Olifants River valley along the N7 highway in the Western Cape."", ""country"": ""ZA"", ""latitude"": -32.35, ""longitude"": 18.95}"
+google/gemini-3.5-flash,CoT (effort=medium),-31.8241,18.6842,32.761,ZA,True,,stop,0.0059025,1271,444,360,7.97,"```json
+{""reasoning"": ""The road features solid yellow shoulder lines on both sides, characteristic of South Africa, while the arid shrubland, reddish soil, and flat-topped mountains point to the Karoo region of the Western/Northern Cape."", ""country"": ""ZA"", ""latitude"": -31.8241, ""longitude"": 18.6842}
+```"
+anthropic/claude-opus-4.8,CoT,-32.0,19.5,64.508,ZA,True,,stop,0.006685,797,108,0,19.12,"{""reasoning"": ""Arid Karoo-like landscape with reddish soil, sparse scrub, flat-topped hills, and yellow-edged road with left-side driving strongly indicates South Africa's Western/Northern Cape."", ""country"": ""ZA"", ""latitude"": -32.0, ""longitude"": 19.5}"
+google/gemini-3.1-pro-preview,no-CoT,-32.5,19.5,77.929,ZA,True,,stop,0.006374,1189,333,304,33.85,"```json
+{""country"": ""ZA"", ""latitude"": -32.5, ""longitude"": 19.5}
+```"
+minimax/minimax-m3,no-CoT,-32.5,19.5,77.929,ZA,True,,stop,0.00019176,752,23,0,5.12,"{""country"": ""ZA"", ""latitude"": -32.5, ""longitude"": 19.5}"
+anthropic/claude-opus-4.8,no-CoT,-32.3,19.8,94.613,ZA,True,,stop,0.004105,666,31,0,2.03,"{""country"": ""ZA"", ""latitude"": -32.3, ""longitude"": 19.8}"
+x-ai/grok-4.3,no-CoT,-33.15,19.45,131.261,ZA,True,,stop,0.0005934,592,22,0,6.97,"{""country"": ""ZA"", ""latitude"": -33.15, ""longitude"": 19.45}"
+moonshotai/kimi-k2.6,CoT,-33.0,20.0,149.321,ZA,True,,stop,0.061452198,682,16946,16866,471.39,"{""reasoning"": ""The semi-arid succulent scrub on vivid red-orange soil alongside flat-topped dolerite mesas is a signature of South Africa's Great Karoo; the yellow center-line, white edge markings, and wooden pole infrastructure match South African rural highway standards."", ""country"": ""ZA"", ""latitude"": -33.0, ""longitude"": 20.0}"
+openai/gpt-5.5,no-CoT,-33.1012,20.0328,159.261,ZA,True,,stop,0.00344,544,24,0,1.18,"{""country"":""ZA"",""latitude"":-33.1012,""longitude"":20.0328}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-33.214168548583984,19.92396354675293,161.614,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,-32.35,20.55,164.798,ZA,True,,stop,0.0005413576,787,1634,1540,24.05,"{""reasoning"": ""The road features a solid yellow line on the left shoulder and a white lane divider, which is the standard marking for left-side driving on national highways in South Africa. The landscape consists of semi-arid scrubland and distinctive flat-topped mountains (mesas) typical of the Great Karoo region."", ""country"": ""ZA"", ""latitude"": -32.35, ""longitude"": 20.55}"
+xiaomi/mimo-v2.5,no-CoT,-33.5,19.5,168.647,ZA,True,,stop,7.97776e-05,708,25,0,4.74,"{""country"": ""ZA"", ""latitude"": -33.5, ""longitude"": 19.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-33.129676818847656,20.145536422729492,169.059,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,-32.3,20.8,187.292,ZA,True,,stop,0.002549,676,816,743,9.35,"{""reasoning"": ""Left-hand traffic (yellow edge line left of driver, white dashed center line to right) + arid Karoo-like terrain, red soil, sparse shrub, distant green patches, and pole style point to South Africa (ZA)."", ""country"": ""ZA"", ""latitude"": -32.3, ""longitude"": 20.8}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-33.235145568847656,20.34783935546875,190.903,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,-33.9245,18.8562,203.608,ZA,True,,stop,5.614e-05,406,34,0,1.49,"Please own own {""country"": ""ZA"", ""latitude"": -33.9245, ""longitude"": 18.8562}"
+mistralai/mistral-medium-3-5,no-CoT,-33.9249,18.4241,207.026,ZA,True,,stop,0.0011835,634,31,0,7.09,"{""country"": ""ZA"", ""latitude"": -33.9249, ""longitude"": 18.4241}"
+google/gemma-4-31b-it,no-CoT,-32.45,21.12,219.419,ZA,True,,stop,6.016e-05,408,32,0,1.09,"```json
+{""country"": ""ZA"", ""latitude"": -32.45, ""longitude"": 21.12}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-33.2156,20.8743,228.881,ZA,True,,stop,0.000258055,473,31,0,11.68,"{""country"": ""ZA"", ""latitude"": -33.2156, ""longitude"": 20.8743}"
+openai/gpt-5.5,CoT,-33.1512,20.9694,232.757,ZA,True,,stop,0.016125,621,434,357,10.24,"{""reasoning"":""Left-side driving with South African yellow edge/shoulder lines and dry Karoo scrubland point to South Africa. The arid plains, low mountains, and sparse roadside infrastructure are characteristic of the Western Cape Karoo around Laingsburg."",""country"":""ZA"",""latitude"":-33.1512,""longitude"":20.9694}"
+google/gemini-3.1-pro-preview,CoT,-32.5123,21.5432,259.715,ZA,True,,stop,0.006154,1271,301,221,11.26,"{
+  ""reasoning"": ""Driving on the left with a yellow left edge line is characteristic of South Africa. The arid landscape with reddish soil and flat-topped hills strongly suggests the Karoo region."",
+  ""country"": ""ZA"",
+  ""latitude"": -32.5123,
+  ""longitude"": 21.5432
+}"
+moonshotai/kimi-k2.6,no-CoT,-33.38,21.85,317.059,ZA,True,,stop,0.00051939,602,25,0,15.97,"{""country"": ""ZA"", ""latitude"": -33.3800, ""longitude"": 21.8500}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.2845,21.9763,323.295,ZA,True,,stop,0.00010195,473,31,0,8.17,"{""country"": ""ZA"", ""latitude"": -33.2845, ""longitude"": 21.9763}"
+qwen/qwen3.5-122b-a10b,CoT,-32.45,22.6,357.148,ZA,True,,stop,0.0085956,553,2617,2508,24.33,"{
+""reasoning"": ""The image shows a vehicle driving on the left side of the road with a solid yellow center line and yellow edge lines, which is a distinctive road marking style for South African national roads (indicating no overtaking). The arid landscape, reddish soil, and scrubby vegetation (Karoo biome) strongly point to the Great Karoo region."",
+""country"": ""ZA"",
+""latitude"": -32.45,
+""longitude"": 22.6
+}"
+minimax/minimax-m3,CoT,-32.45,22.85,380.513,ZA,True,,stop,0.00065106,843,383,315,11.88,"{""reasoning"": ""Left-hand traffic (yellow line on left), wooden utility poles, arid Karoo-like scrubland with flat-topped hills and reddish soil are highly characteristic of rural South Africa's Karoo region."", ""country"": ""ZA"", ""latitude"": -32.45, ""longitude"": 22.85}"
+qwen/qwen3.5-122b-a10b,no-CoT,-32.2968,26.4194,714.865,ZA,True,,stop,0.0002884,473,31,0,2.08,"{""country"": ""ZA"", ""latitude"": -32.2968, ""longitude"": 26.4194}"
+qwen/qwen3.6-27b,no-CoT,-32.2968,26.4194,714.865,ZA,True,,stop,0.000235019,474,31,0,1.82,"{""country"": ""ZA"", ""latitude"": -32.2968, ""longitude"": 26.4194}"
+qwen/qwen3.5-397b-a17b,CoT,32.3712,19.8845,7169.023,ZA,True,,stop,0.0139494,553,3796,3689,67.84,"{""reasoning"": ""The presence of solid yellow edge lines on both sides of the road combined with the vehicle's position on the left side indicates a South African National Road where driving is on the left. The arid, scrubby terrain with rolling brown hills and distant mountains is characteristic of the Western Cape/Northern Cape region, specifically along the N1 highway."", ""country"": ""ZA"", ""latitude"": 32.3712, ""longitude"": 19.8845}"
+mistralai/mistral-small-2603,CoT,44.5,65.5,9738.609,KZ,True,,stop,0.00036864,716,547,579,4.57,"{""reasoning"": ""Cyrillic script on road sign indicates a post-Soviet country, arid steppe terrain with sparse vegetation and mountains in the distance points to Kazakhstan."", ""country"": ""KZ"", ""latitude"": 44.5, ""longitude"": 65.5}"
+qwen/qwen3.6-35b-a3b,CoT,34.45,-111.65,15449.418,US,True,,stop,0.01481789335,553,15259,15154,58.08,"```json
+{
+  ""reasoning"": ""The image shows a right-hand traffic road with a solid yellow center line, typical of the USA. The reddish-orange soil, scrubby vegetation (likely pinyon-juniper), and high-altitude clear blue sky strongly suggest the American Southwest, specifically Arizona near Flagstaff."",
+  ""country"": ""US"",
+  ""latitude"": 34.45,
+  ""longitude"": -111.65
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,36.1699,-115.1398,15793.082,US,True,,stop,9.836e-05,474,32,0,2.41,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.5-9b,no-CoT,34.5001,-117.2758,15958.158,US,True,,stop,8.841e-05,473,32,0,5.36,"{""country"": ""US"", ""latitude"": 34.5001, ""longitude"": -117.2758}"
+qwen/qwen3.5-27b,no-CoT,36.0544,-118.2167,16065.838,US,True,,stop,0.00024024,474,45,0,6.1,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 36.0544,
+  ""longitude"": -118.2167
+}
+```"
+mistralai/mistral-small-2603,no-CoT,36.5323,-118.2921,16078.146,US,True,,stop,0.000142875,634,32,0,2.73,"{""country"": ""US"", ""latitude"": 36.5323, ""longitude"": -118.2921}"
+google/gemma-4-31b-it,CoT,37.7749,-122.4194,16452.032,US,True,,stop,0.00113893,494,1943,1882,32.97,"```json
+{""reasoning"": ""No image was provided for analysis; providing a placeholder coordinate to comply with the strict output format."", ""country"": ""US"", ""latitude"": 37.7749, ""longitude"": -122.4194}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,2.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.38,

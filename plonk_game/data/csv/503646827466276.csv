@@ -1,0 +1,76 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,46.195008404915,27.548300874797,0.0,RO,True,,,,,,,,"Ivesti, Comuna Ivesti, Vaslui, RO"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,46.474510192871094,27.14190101623535,44.039,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,46.47651290893555,27.143138885498047,44.129,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,46.540279388427734,27.159255981445312,48.631,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,45.4333,28.8333,130.733,RO,True,,stop,5.908e-05,404,42,0,1.07,"Please own estimate is:
+
+```json
+{""country"": ""RO"", ""latitude"": 45.4333, ""longitude"": 28.8333}
+```"
+minimax/minimax-m3,CoT,44.55,26.45,202.031,RO,True,,stop,0.00080466,995,473,396,24.47,"{""reasoning"": ""Blue European-style rectangular directional sign, flat steppe-like terrain with sparse deciduous bushes and snow cover, and right-hand driving with simple two-lane road layout are characteristic of Romania's Bărăgan Plain or similar southeastern European lowland."", ""country"": ""RO"", ""latitude"": 44.55, ""longitude"": 26.45}"
+anthropic/claude-opus-4.8,CoT,46.5,24.5,236.405,RO,True,,stop,0.006995,949,90,0,2.98,"{""reasoning"": ""Snowy winter landscape with bare deciduous trees, blue highway directional sign on a hill, right-hand traffic typical of continental Eastern Europe."", ""country"": ""RO"", ""latitude"": 46.5, ""longitude"": 24.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,46.7712,23.6236,307.215,RO,True,,stop,0.0002691,585,39,0,8.27,"{
+  ""country"": ""RO"",
+  ""latitude"": 46.7712,
+  ""longitude"": 23.6236
+}"
+google/gemini-3.1-pro-preview,no-CoT,43.21405,27.91473,332.729,BG,True,,stop,0.002896,1226,37,0,18.86,"```json
+{""country"": ""BG"", ""latitude"": 43.21405, ""longitude"": 27.91473}
+```"
+x-ai/grok-4.3,no-CoT,45.85,23.25,334.044,RO,True,,stop,0.0007334,704,22,0,0.92,"{""country"": ""RO"", ""latitude"": 45.85, ""longitude"": 23.25}"
+google/gemini-3.5-flash,CoT (effort=low),49.2583,25.6142,370.037,UA,True,,stop,0.0045,1308,282,215,9.28,"{""reasoning"": ""The blue roadside sign structure and winter Google Street View coverage are highly characteristic of Ukraine, particularly regional or oblast boundaries in the western or central part of the country."", ""country"": ""UA"", ""latitude"": 49.2583, ""longitude"": 25.6142}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.4125,24.6203,386.064,BG,True,,stop,0.002154,1226,35,0,7.53,"```json
+{""country"": ""BG"", ""latitude"": 43.4125, ""longitude"": 24.6203}
+```"
+google/gemini-3.1-pro-preview,CoT,42.7339,25.4858,418.177,BG,True,,stop,0.00517,1307,213,141,4.78,"{
+  ""reasoning"": ""The blue road sign on the left and the winter landscape suggest Eastern Europe. The specific style of the sign is commonly found in Bulgaria."",
+  ""country"": ""BG"",
+  ""latitude"": 42.7339,
+  ""longitude"": 25.4858
+}"
+google/gemini-3.5-flash,CoT (effort=medium),49.8012,24.8954,446.87,UA,True,,stop,0.0090345,1307,786,721,13.83,"```json
+{""reasoning"": ""The blue roadside sign structure and winter landscape are highly characteristic of regional entry markers in Ukraine, particularly in the western oblasts."", ""country"": ""UA"", ""latitude"": 49.8012, ""longitude"": 24.8954}
+```"
+xiaomi/mimo-v2.5,CoT,50.1,31.2,511.658,UA,True,,stop,0.0011231976,899,3656,3558,41.27,"{
+  ""reasoning"": ""The driving side is right, and the landscape features deciduous trees and rolling hills covered in snow, typical of a continental winter climate. The most distinctive clue is the large blue sign structure with vertical panels on the left, which matches the style of information or distance signage found on major highways in Ukraine."",
+  ""country"": ""UA"",
+  ""latitude"": 50.1,
+  ""longitude"": 31.2
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,42.63492202758789,23.39537239074707,515.12,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,42.625450134277344,23.410110473632812,515.2,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,44.8206,20.4622,572.73,RS,True,,stop,0.0014115,786,31,0,1.14,"{""country"": ""RS"", ""latitude"": 44.8206, ""longitude"": 20.4622}"
+google/gemini-3.5-flash,CoT (effort=high),49.5883,34.5514,643.779,UA,True,,stop,0.0109065,1307,994,935,11.64,"{""reasoning"": ""The winter dashcam footage, distinctive blue metal-framed roadside sign, and rolling snowy landscape are highly characteristic of Ukraine."", ""country"": ""UA"", ""latitude"": 49.5883, ""longitude"": 34.5514}"
+qwen/qwen3.6-35b-a3b,no-CoT,51.1079,22.5681,657.134,PL,True,,stop,0.00011875,585,31,0,9.07,"{""country"": ""PL"", ""latitude"": 51.1079, ""longitude"": 22.5681}"
+openai/gpt-5.5,CoT,44.0836,18.3532,757.945,BA,True,,stop,0.012955,755,306,235,13.56,"{""reasoning"":""Right-hand driving, blue-backed directional signage and Balkan-style rural road markings point to the former Yugoslavia. Snowy deciduous hills and modest road infrastructure make central Bosnia and Herzegovina the most likely fit."",""country"":""BA"",""latitude"":44.0836,""longitude"":18.3532}"
+anthropic/claude-opus-4.8,no-CoT,44.2,17.9,787.289,BA,True,,stop,0.00484,818,30,0,2.65,"{""country"": ""BA"", ""latitude"": 44.2, ""longitude"": 17.9}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,45.815765380859375,15.996119499206543,892.439,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,51.1079,17.0385,944.332,PL,True,,stop,0.0002279,585,31,0,2.83,"{""country"": ""PL"", ""latitude"": 51.1079, ""longitude"": 17.0385}"
+xiaomi/mimo-v2.5,no-CoT,55.75,37.62,1272.382,RU,True,,stop,9.60176e-05,820,27,0,2.19,"{""country"": ""RU"", ""latitude"": 55.75, ""longitude"": 37.62}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,1272.79,RU,True,,stop,6.692e-05,404,36,0,2.57,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+qwen/qwen3.5-27b,no-CoT,55.7558,37.6173,1272.79,RU,True,,stop,0.00026676,586,44,0,3.12,"```json
+{
+  ""country"": ""RU"",
+  ""latitude"": 55.7558,
+  ""longitude"": 37.6173
+}
+```"
+x-ai/grok-4.3,CoT,55.8,37.9,1287.535,RU,True,,stop,0.0024165,788,707,638,5.22,"{""reasoning"": ""Right-hand traffic (white edge line visible on left of lane), blue European-style directional sign on left, rural winter landscape with snow-covered ground and leafless deciduous trees point to Russia or neighboring Eastern Europe."", ""country"": ""RU"", ""latitude"": 55.8, ""longitude"": 37.9}"
+openai/gpt-5.5,no-CoT,53.2784,50.2067,1798.403,RU,True,,stop,0.00408,678,23,0,2.47,"{""country"":""RU"",""latitude"":53.2784,""longitude"":50.2067}"
+qwen/qwen3.5-9b,no-CoT,43.6047,1.4442,2066.593,FR,True,,stop,6.31e-05,586,30,0,3.73,"{""country"": ""FR"", ""latitude"": 43.6047, ""longitude"": 1.4442}"
+qwen/qwen3.5-35b-a3b,no-CoT,42.3601,-71.0589,7318.019,US,True,,stop,0.0001353625,585,31,0,1.77,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,7622.686,US,True,,stop,0.0001359,786,30,0,3.16,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.2565,-96.0387,8802.379,US,True,,stop,0.00043188,585,31,0,8.14,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -96.0387}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.86,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.54,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.07,
+moonshotai/kimi-k2.6,CoT,,,,,False,,error,0,1675,2697,2697,489.65,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.64,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.2,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.23,

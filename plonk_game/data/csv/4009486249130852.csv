@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,17.14136159384,77.708541880479,0.0,IN,True,,,,,,,,"Tandur, Rangareddi, Telangana, IN"
+openai/gpt-5.5,no-CoT,17.4369,78.2812,69.112,IN,True,,stop,0.00408,678,23,0,1.49,"{""country"":""IN"",""latitude"":17.4369,""longitude"":78.2812}"
+qwen/qwen3.5-397b-a17b,no-CoT,17.4523,78.3842,79.63,IN,True,,stop,0.00030069,585,31,0,2.48,"{""country"": ""IN"", ""latitude"": 17.4523, ""longitude"": 78.3842}"
+x-ai/grok-4.3,no-CoT,17.385,78.486,86.886,IN,True,,stop,0.0007459,704,27,0,0.74,"{
+  ""country"": ""IN"",
+  ""latitude"": 17.385,
+  ""longitude"": 78.486
+}"
+qwen/qwen3.5-122b-a10b,no-CoT,17.385044,78.486671,86.956,IN,True,,stop,0.0002418,586,43,0,8.64,"{
+  ""country"": ""IN"",
+  ""latitude"": 17.385044,
+  ""longitude"": 78.486671
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,17.385044,78.486671,86.956,IN,True,,stop,0.0001405625,585,35,0,0.65,"{""country"": ""IN"", ""latitude"": 17.385044, ""longitude"": 78.486671}"
+qwen/qwen3.6-35b-a3b,no-CoT,17.385044,78.486671,86.956,IN,True,,stop,0.00019,585,35,0,1.15,"{""country"": ""IN"", ""latitude"": 17.385044, ""longitude"": 78.486671}"
+google/gemma-4-31b-it,no-CoT,17.385,78.4867,86.957,IN,True,,stop,6.692e-05,404,36,0,2.63,"```json
+{""country"": ""IN"", ""latitude"": 17.3850, ""longitude"": 78.4867}
+```"
+minimax/minimax-m3,no-CoT,17.385,78.4867,86.957,IN,True,,stop,0.00024252,906,24,0,2.55,"{""country"": ""IN"", ""latitude"": 17.3850, ""longitude"": 78.4867}{""country"": ""IN"", ""latitude"": 17.3850, ""longitude"": 78.4867}"
+google/gemini-3.1-pro-preview,no-CoT,17.5,78.5,92.999,IN,True,,stop,0.005378,1225,244,215,4.26,"```json
+{""country"": ""IN"", ""latitude"": 17.5, ""longitude"": 78.5}
+```"
+x-ai/grok-4.3,CoT,17.42,78.55,94.562,IN,True,,stop,0.002569,788,768,673,7.25,"{
+  ""reasoning"": ""Left-hand traffic with oncoming vehicle positioned accordingly, red laterite soil verges, distinctive Indian-style utility poles with trident cross-arms, lattice transmission towers, and dry-deciduous vegetation all indicate India; the straight, multi-lane divided highway with faded white markings matches NH sections in the Deccan plateau."",
+  ""country"": ""IN"",
+  ""latitude"": 17.42,
+  ""longitude"": 78.55
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,16.76502799987793,79.08492279052734,152.258,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,16.683048248291016,79.18916320800781,165.555,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,16.670270919799805,79.2170181274414,168.818,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,16.395044326782227,79.46090698242188,204.191,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,15.23,76.78,234.524,IN,True,,stop,0.009385416,834,2667,2564,66.04,"{""reasoning"": ""Left-hand traffic, concrete utility poles with wooden cross-arms, and dry scrub over reddish lateritic soil alongside a two-lane highway are distinctive of rural South India, specifically the Deccan Plateau in Karnataka or Andhra Pradesh. The lattice transmission towers, hazy sky, and overall highway infrastructure are most consistent with an Indian National Highway in interior Karnataka."", ""country"": ""IN"", ""latitude"": 15.2300, ""longitude"": 76.7800}"
+google/gemini-3.1-pro-preview,CoT,14.5,77.5,294.552,IN,True,,stop,0.00612,1308,292,220,307.5,"{
+  ""reasoning"": ""Left-hand driving and the distinctive trident-shaped utility poles strongly indicate India. The reddish soil and vegetation suggest a southern or central state like Karnataka or Andhra Pradesh."",
+  ""country"": ""IN"",
+  ""latitude"": 14.5,
+  ""longitude"": 77.5
+}"
+moonshotai/kimi-k2.6,no-CoT,14.5,77.5,294.552,IN,True,,stop,0.030060495,753,8195,9039,83.61,"{""country"": ""IN"", ""latitude"": 14.5000, ""longitude"": 77.5000}"
+openai/gpt-5.5,CoT,14.235,77.51,323.871,IN,True,,stop,0.017725,755,465,380,27.78,"{""reasoning"":""Left-side driving on a divided highway, Indian-style concrete utility poles, lane markings, dry red-soil rural landscape and tropical vegetation strongly suggest southern India. The flat semi-arid scenery fits the Karnataka/Andhra corridor, likely around the Anantapur–Bengaluru highway area."",""country"":""IN"",""latitude"":14.235,""longitude"":77.51}"
+minimax/minimax-m3,CoT,14.4,75.9,361.059,IN,True,,stop,0.00100146,995,637,561,26.19,"{""reasoning"": ""Left-hand traffic, distinctive Indian-style electric poles with three-pronged tops, red laterite soil on the shoulder, dry deciduous vegetation including roadside eucalyptus, and flat Deccan plateau terrain strongly indicate a rural highway in Karnataka, India."", ""country"": ""IN"", ""latitude"": 14.4, ""longitude"": 75.9}"
+xiaomi/mimo-v2.5,CoT,15.885,74.503,369.179,IN,True,,stop,0.0003557176,899,915,826,15.35,"{""reasoning"": ""Driving on the left, reddish soil, acacia-style vegetation, and standard Indian road markings and power line infrastructure point to the Deccan Plateau region. The silver hatchback and rural highway setting are consistent with a National Highway in Karnataka or neighboring states."", ""country"": ""IN"", ""latitude"": 15.885, ""longitude"": 74.503}"
+google/gemini-3.5-flash,CoT (effort=medium),13.4521,77.5324,410.662,IN,True,,stop,0.0064155,1307,495,423,11.65,"{""reasoning"": ""The trident-shaped concrete utility poles, left-hand traffic, reddish soil, and distinctive metal lattice towers are highly characteristic of rural highways in southern India, particularly Karnataka or Andhra Pradesh."", ""country"": ""IN"", ""latitude"": 13.4521, ""longitude"": 77.5324}"
+google/gemini-3.5-flash,CoT (effort=low),13.3524,77.5836,421.526,IN,True,,stop,0.003879,1308,213,143,8.85,"{""reasoning"": ""The left-hand driving, distinctive concrete utility poles with trident-like tops, lattice metal towers, and reddish soil are characteristic of southern India, particularly Karnataka or Andhra Pradesh."", ""country"": ""IN"", ""latitude"": 13.3524, ""longitude"": 77.5836}"
+google/gemini-3.5-flash,CoT (effort=high),13.305,77.102,431.517,IN,True,,stop,0.0082245,1307,696,632,13.23,"{""reasoning"": ""The trident-shaped concrete utility poles and metal lattice towers are highly characteristic of southern India, specifically Karnataka, combined with left-hand traffic and reddish soil."", ""country"": ""IN"", ""latitude"": 13.305, ""longitude"": 77.102}"
+qwen/qwen3.6-27b,no-CoT,21.1458,79.0882,468.253,IN,True,,stop,0.0002279,585,31,0,17.83,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+mistralai/mistral-medium-3-5,no-CoT,13.0827,80.2707,528.474,IN,True,,stop,0.0014115,786,31,0,1.05,"{""country"": ""IN"", ""latitude"": 13.0827, ""longitude"": 80.2707}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),12.4258,76.7125,535.163,IN,True,,stop,0.0021525,1225,35,0,8.22,"```json
+{""country"": ""IN"", ""latitude"": 12.4258, ""longitude"": 76.7125}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,12.382338523864746,76.7419662475586,539.282,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,12.35395622253418,76.74614715576172,542.294,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,19.076,72.8777,553.985,IN,True,,stop,9.68576e-05,820,30,0,2.5,"{""country"": ""IN"", ""latitude"": 19.076, ""longitude"": 72.8777}"
+anthropic/claude-opus-4.8,CoT,22.0,85.5,978.564,IN,True,,stop,0.00697,949,89,0,3.02,"{""reasoning"": ""Left-hand traffic, divided highway with red lateritic soil, concrete utility poles and palm trees suggest rural India, likely eastern plateau region."", ""country"": ""IN"", ""latitude"": 22.0, ""longitude"": 85.5}"
+anthropic/claude-opus-4.8,no-CoT,22.3,85.3,979.674,IN,True,,stop,0.00484,818,30,0,2.19,"{""country"": ""IN"", ""latitude"": 22.3, ""longitude"": 85.3}"
+qwen/qwen3.5-9b,no-CoT,22.5726,88.3639,1266.828,IN,True,,stop,0.0001072,585,31,0,2.16,"{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 88.3639}"
+mistralai/mistral-small-2603,no-CoT,28.6358,77.2245,1279.08,IN,True,,stop,0.0001365,786,31,0,3.83,"{""country"": ""IN"", ""latitude"": 28.6358, ""longitude"": 77.2245}"
+qwen/qwen3.5-27b,no-CoT,22.8246,88.3648,1279.681,IN,True,,stop,0.0002345,586,44,0,9.04,"```json
+{
+  ""country"": ""IN"",
+  ""latitude"": 22.8246,
+  ""longitude"": 88.3648
+}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8702.391,,True,True,,,,,,13.07,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.58,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,18.42,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.28,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.49,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.09,

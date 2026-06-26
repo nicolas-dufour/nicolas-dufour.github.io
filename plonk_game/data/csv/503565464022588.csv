@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,42.674147515207,-80.331330680093,0.0,CA,True,,,,,,,,"Norfolk County, None, Ontario, CA"
+google/gemini-3.5-flash,CoT (effort=low),42.6125,-80.4512,11.963,CA,True,,stop,0.004527,1272,291,217,2.9,"{""reasoning"": ""The single yellow center line and white edge line indicate North America, while the flat terrain, deciduous trees, and wooden posts along the water are highly characteristic of lakeside roads in southern Ontario, Canada."", ""country"": ""CA"", ""latitude"": 42.6125, ""longitude"": -80.4512}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,42.79151916503906,-80.50660705566406,19.372,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,42.744102478027344,-80.58536529541016,22.166,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,42.98889923095703,-80.10681915283203,39.498,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),42.8452,-79.6248,60.736,CA,True,,stop,0.0085215,1271,735,649,12.87,"{""reasoning"": ""The road markings with a single solid yellow center line, deciduous vegetation, flat terrain, and proximity to a large body of water suggest a lakeside road in the Great Lakes region of North America, likely on the northern shore of Lake Erie in Ontario, Canada."", ""country"": ""CA"", ""latitude"": 42.8452, ""longitude"": -79.6248}"
+google/gemini-3.1-pro-preview,no-CoT,43.265,-79.871,75.625,CA,True,,stop,0.002774,1189,33,0,8.68,"```json
+{""country"": ""CA"", ""latitude"": 43.265, ""longitude"": -79.871}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.284125,-79.801234,80.374,CA,True,,stop,0.002136,1190,39,0,7.48,"```json
+{""country"": ""CA"", ""latitude"": 43.284125, ""longitude"": -79.801234}
+```"
+xiaomi/mimo-v2.5,no-CoT,43.05,-79.05,112.485,US,True,,stop,8.03376e-05,708,27,0,3.24,"{""country"": ""US"", ""latitude"": 43.05, ""longitude"": -79.05}"
+minimax/minimax-m3,no-CoT,43.6,-79.7,114.99,CA,True,,stop,0.00033162,767,133,144,4.22,"{""country"": ""CA"", ""latitude"": 43.6, ""longitude"": -79.7}"
+google/gemma-4-31b-it,no-CoT,43.615,-79.64,118.704,US,True,,stop,6.598e-05,406,33,0,9.03,"```json
+{""country"": ""US"", ""latitude"": 43.615, ""longitude"": -79.64}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.693267822265625,-79.58637237548828,128.412,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.00026321411133,-80.06231689453125,149.053,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,42.5,-82.5,178.591,US,True,,stop,0.0001770776,787,333,251,10.82,"{""reasoning"": ""The road has a yellow center line and white edge line, indicating right-hand traffic. The lush green vegetation, wooden fence posts, and North American-style architecture suggest a temperate region in the United States or Canada, likely near the Great Lakes area."", ""country"": ""US"", ""latitude"": 42.5, ""longitude"": -82.5}"
+openai/gpt-5.5,CoT,42.3436,-82.5362,184.427,CA,True,,stop,0.015375,621,409,326,34.37,"{""reasoning"":""Right-side driving with North American yellow centerline/white edge markings and Ontario-like suburban-rural road design point to Canada. The flat, lush shoreline landscape with drainage ditches and lakeside homes is most consistent with southern Ontario near Lake St. Clair/Lake Erie."",""country"":""CA"",""latitude"":42.3436,""longitude"":-82.5362}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,44.38325119018555,-80.50869750976562,190.581,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,42.35,-82.95,217.637,US,True,,stop,0.0023865,676,751,674,5.86,"{
+  ""reasoning"": ""Right-side driving with US-style yellow center line + white edge lines, North American SUV, deciduous trees and lake vista point to Great Lakes region of US/Canada; no non-English text or left-side traffic rules."",
+  ""country"": ""US"",
+  ""latitude"": 42.35,
+  ""longitude"": -82.95
+}"
+openai/gpt-5.5,no-CoT,42.2639,-82.9934,223.052,CA,True,,stop,0.00344,544,24,0,8.12,"{""country"":""CA"",""latitude"":42.2639,""longitude"":-82.9934}"
+google/gemini-3.1-pro-preview,CoT,43.95,-78.15,226.425,CA,True,,stop,0.007188,1272,387,308,7.87,"{
+  ""reasoning"": ""The solid single yellow center line and white edge line are characteristic of Canadian roads, particularly in Ontario. The lush temperate vegetation and proximity to a large body of water suggest the Great Lakes region."",
+  ""country"": ""CA"",
+  ""latitude"": 43.95,
+  ""longitude"": -78.15
+}"
+google/gemini-3.5-flash,CoT (effort=high),44.2055,-76.6123,345.139,CA,True,,stop,0.0102675,1271,929,862,8.1,"{""reasoning"": ""The single solid yellow center line, flat terrain, deciduous trees, and proximity to a large body of water are characteristic of a lakeside road in Ontario, Canada."", ""country"": ""CA"", ""latitude"": 44.2055, ""longitude"": -76.6123}"
+qwen/qwen3.6-27b,no-CoT,44.26637,-76.54428,353.132,US,True,,stop,0.00025728,474,33,0,12.26,"{""country"": ""US"", ""latitude"": 44.26637, ""longitude"": -76.54428}"
+x-ai/grok-4.3,no-CoT,45.4023,-75.7048,478.185,CA,True,,stop,0.0005984,592,24,0,0.96,"{""country"": ""CA"", ""latitude"": 45.4023, ""longitude"": -75.7048}"
+qwen/qwen3.6-35b-a3b,no-CoT,45.4215,-75.6972,479.962,CA,True,,stop,0.0001444,474,31,0,8.96,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -75.6972}"
+anthropic/claude-opus-4.8,CoT,45.43,-73.85,601.546,CA,True,,stop,0.006085,797,84,0,9.93,"{""reasoning"": ""Right-side driving, North American road markings, deciduous trees and rural lakeside setting typical of southern Quebec along a river/lake shore."", ""country"": ""CA"", ""latitude"": 45.43, ""longitude"": -73.85}"
+qwen/qwen3.5-27b,no-CoT,44.558889,-73.265556,605.939,US,True,,stop,0.00024804,474,48,0,9.28,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 44.558889,
+  ""longitude"": -73.265556
+}
+```"
+anthropic/claude-opus-4.8,no-CoT,45.4215,-73.6256,616.593,CA,True,,stop,0.00413,666,32,0,2.76,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -73.6256}"
+qwen/qwen3.5-9b,no-CoT,44.9776,-73.2244,624.727,US,True,,stop,5.205e-05,474,31,0,2.66,"{""country"": ""US"", ""latitude"": 44.9776, ""longitude"": -73.2244}"
+moonshotai/kimi-k2.6,no-CoT,45.5,-73.5,629.308,CA,True,,stop,0.000283212,603,23,0,1.74,"{""country"": ""CA"", ""latitude"": 45.5, ""longitude"": -73.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,45.9876,-73.1234,681.082,CA,True,,stop,0.00036468,473,31,0,1.94,"{""country"": ""CA"", ""latitude"": 45.9876, ""longitude"": -73.1234}"
+qwen/qwen3.5-122b-a10b,no-CoT,43.0731,-89.4012,740.07,US,True,,stop,0.0002163,473,31,0,1.91,"{""country"": ""US"", ""latitude"": 43.0731, ""longitude"": -89.4012}"
+qwen/qwen3.5-35b-a3b,no-CoT,43.073056,-89.401944,740.131,US,True,,stop,0.00010595,473,35,0,1.99,"{""country"": ""US"", ""latitude"": 43.073056, ""longitude"": -89.401944}"
+moonshotai/kimi-k2.6,CoT,46.9183,-70.9417,877.519,CA,True,,stop,0.008169588,682,2319,2237,61.24,"{""reasoning"": ""Right-hand traffic with North American road markings (yellow centerline, white edge line), rural temperate deciduous forest, wooden post fencing along a marshy verge, and a raised bungalow with a front porch match the St. Lawrence River lowlands in Quebec."", ""country"": ""CA"", ""latitude"": 46.9183, ""longitude"": -70.9417}"
+mistralai/mistral-medium-3-5,no-CoT,42.0,-93.5,1083.886,US,True,,stop,0.0011385,634,25,0,0.94,"{""country"": ""US"", ""latitude"": 42.0, ""longitude"": -93.5}"
+minimax/minimax-m3,CoT,48.15,-97.05,1436.121,US,True,,stop,0.00082506,843,528,444,18.57,"{""reasoning"": ""Flat Great Plains/Red River Valley terrain, yellow center line road markings (North American style), large deciduous cottonwood trees, very flat horizon, brick architecture, and rural small-town character with modern street lamp suggest a small town in the northern US Midwest or southern Manitoba."", ""country"": ""US"", ""latitude"": 48.15, ""longitude"": -97.05}"
+mistralai/mistral-small-2603,no-CoT,34.0522,-118.2437,3410.109,US,True,,stop,0.0001143,634,32,0,2.37,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9218.836,,True,True,,,,,,19.01,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.78,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.25,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.52,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.29,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.24,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.33,

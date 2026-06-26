@@ -1,0 +1,78 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,56.792218448787,105.77234304406,0.0,RU,True,,,,,,,,"Ust'-Kut, None, Irkutsk, RU"
+google/gemini-3.5-flash,no-CoT (effort=minimal),52.743125,103.654128,470.237,RU,True,,stop,0.0021435,1189,40,0,1.68,"```json
+{""country"": ""RU"", ""latitude"": 52.743125, ""longitude"": 103.654128}
+```"
+google/gemini-3.5-flash,CoT (effort=low),52.287,104.281,510.079,RU,True,,stop,0.004122,1272,246,162,2.64,"{""reasoning"": ""The Cyrillic signs for 'СТО' and 'Автозапчасти', the yellow-bordered pedestrian crossing sign, and the concrete utility poles are characteristic of Russia. The hilly terrain with birch trees suggests a location in southern Siberia or the Urals."", ""country"": ""RU"", ""latitude"": 52.287, ""longitude"": 104.281}"
+google/gemini-3.1-pro-preview,CoT,52.28,104.28,510.857,RU,True,,stop,0.006564,1272,335,252,6.24,"{
+  ""reasoning"": ""The yellow-bordered pedestrian crossing sign and Cyrillic text on the billboards clearly indicate Russia. The bare birch trees, muddy road, and hilly terrain suggest a region in Siberia or the Russian Far East."",
+  ""country"": ""RU"",
+  ""latitude"": 52.28,
+  ""longitude"": 104.28
+}"
+x-ai/grok-4.3,no-CoT,51.85,104.85,552.782,RU,True,,stop,0.0005934,592,22,0,0.9,"{""country"": ""RU"", ""latitude"": 51.85, ""longitude"": 104.85}"
+qwen/qwen3.5-122b-a10b,no-CoT,51.7748,107.4897,568.892,RU,True,,stop,0.0001898,474,32,0,7.86,"{""country"": ""RU"", ""latitude"": 51.7748, ""longitude"": 107.4897}"
+qwen/qwen3.5-397b-a17b,CoT,56.015,92.85,798.565,RU,True,,stop,0.0146091,553,4106,3800,453.31,"{
+""reasoning"": ""The image features a Cyrillic advertisement board on the lattice tower, a standard Russian blue-square pedestrian crossing sign, and ubiquitous concrete utility poles, set against a backdrop of birch trees and hills characteristic of the Krasnoyarsk region in Siberia."",
+""country"": ""RU"",
+""latitude"": 56.015,
+""longitude"": 92.850
+}"
+google/gemini-3.1-pro-preview,no-CoT,53.7166,91.4166,969.687,RU,True,,stop,0.0028,1190,35,0,2.18,"```json
+{""country"": ""RU"", ""latitude"": 53.7166, ""longitude"": 91.4166}
+```"
+anthropic/claude-opus-4.8,CoT,53.75,91.27,976.693,RU,True,,stop,0.00616,797,87,0,3.6,"{""reasoning"": ""Cyrillic signage, birch trees, muddy roads and concrete utility poles with hilly terrain suggest a small town in Siberian Russia."", ""country"": ""RU"", ""latitude"": 53.75, ""longitude"": 91.27}"
+anthropic/claude-opus-4.8,no-CoT,53.7557,87.1099,1225.035,RU,True,,stop,0.00413,666,32,0,8.58,"{""country"": ""RU"", ""latitude"": 53.7557, ""longitude"": 87.1099}"
+xiaomi/mimo-v2.5,CoT,55.33,86.08,1228.919,RU,True,,stop,0.0006805176,787,2131,2051,25.09,"{""reasoning"": ""Cyrillic signage ('АЗС') and the specific blue square pedestrian crossing sign design confirm Russia; the concrete utility poles, panel buildings, and hilly terrain are typical of regional cities in the Urals or Siberia."", ""country"": ""RU"", ""latitude"": 55.33, ""longitude"": 86.08}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,55.4794807434082,85.96198272705078,1231.711,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,55.4527587890625,85.68719482421875,1249.21,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,43.1155,131.8855,2383.387,RU,True,,stop,0.0046644286,553,4740,4606,190.01,"```json
+{
+  ""reasoning"": ""The concrete street lamp post and the blue square pedestrian crossing sign (Sign 5.19.1/5.19.2) are characteristic of Russia. The Cyrillic text on the banners attached to the lattice tower on the right confirms a Russian-speaking location. The hilly terrain and bare deciduous trees suggest a location in the Russian Far East or Siberia during late autumn or early spring."",
+  ""country"": ""RU"",
+  ""latitude"": 43.1155,
+  ""longitude"": 131.8855
+}
+```"
+minimax/minimax-m3,no-CoT,56.85,60.6,2698.313,RU,True,,stop,0.00022248,752,23,0,5.98,"{""country"": ""RU"", ""latitude"": 56.85, ""longitude"": 60.6}"
+xiaomi/mimo-v2.5,no-CoT,56.85,60.6,2698.313,RU,True,,stop,8.00576e-05,708,26,0,3.66,"{""country"": ""RU"", ""latitude"": 56.85, ""longitude"": 60.6}"
+minimax/minimax-m3,CoT,58.29,59.74,2698.327,RU,True,,stop,0.00064746,843,380,298,14.12,"{""reasoning"": ""Cyrillic advertising signage, birch forest vegetation with spring thaw mud, wooden utility poles, hilly taiga terrain, and Soviet-era concrete bridge structure strongly indicate the Ural region of Russia, likely an industrial/mining town in Sverdlovsk Oblast."", ""country"": ""RU"", ""latitude"": 58.29, ""longitude"": 59.74}"
+qwen/qwen3.6-27b,no-CoT,56.838,60.6057,2698.422,RU,True,,stop,0.000235019,474,31,0,12.68,"{""country"": ""RU"", ""latitude"": 56.8380, ""longitude"": 60.6057}"
+moonshotai/kimi-k2.6,no-CoT,56.8333,60.5833,2699.88,RU,True,,stop,0.000290052,603,25,0,1.89,"{""country"": ""RU"", ""latitude"": 56.8333, ""longitude"": 60.5833}"
+x-ai/grok-4.3,CoT,55.12,61.45,2716.828,RU,True,,stop,0.002354,676,738,657,7.72,"{
+  ""reasoning"": ""Cyrillic text on the tall advertising pillar and the blue/yellow Russian-style road sign, combined with right-side driving, muddy unpaved verge, birch-dominated bare woodland, and utilitarian concrete/metal infrastructure, pinpoint a provincial Russian setting."",
+  ""country"": ""RU"",
+  ""latitude"": 55.12,
+  ""longitude"": 61.45
+}"
+moonshotai/kimi-k2.6,CoT,56.0,60.0,2765.407,RU,True,,stop,0.027486855,681,7513,8361,76.41,"{""reasoning"": ""The blue road sign with yellow text matches Russian federal route markers, while the Cyrillic posters on the lattice tower, Soviet-era wooden utility poles, mixed birch-coniferous forest on rolling hills, and muddy spring road conditions are characteristic of rural Russia in the Ural or Siberian regions."", ""country"": ""RU"", ""latitude"": 56.0000, ""longitude"": 60.0000}"
+openai/gpt-5.5,no-CoT,55.9136,59.9452,2772.057,RU,True,,stop,0.00341,544,23,0,2.6,"{""country"":""RU"",""latitude"":55.9136,""longitude"":59.9452}"
+google/gemini-3.5-flash,CoT (effort=medium),55.1711,59.6702,2819.086,RU,True,,stop,0.0063975,1271,499,407,8.38,"{""reasoning"": ""The Cyrillic signs for 'СТО' (service station) and 'Автозапчасти' (auto parts), along with the standard Russian pedestrian crossing sign, concrete utility poles, and hilly, birch-forested terrain, point to a town in the Ural Mountains region of Russia."", ""country"": ""RU"", ""latitude"": 55.1711, ""longitude"": 59.6702}"
+openai/gpt-5.5,CoT,55.1778,59.6506,2819.945,RU,True,,stop,0.015465,621,412,324,15.21,"{""reasoning"":""Cyrillic roadside advertising, Russian-style yellow-bordered pedestrian crossing sign, right-side traffic infrastructure, and long white license plates point to Russia. The birch forest, muddy industrial roadside, and hilly Ural-like terrain suggest an industrial town around Zlatoust in Chelyabinsk Oblast."",""country"":""RU"",""latitude"":55.1778,""longitude"":59.6506}"
+google/gemini-3.5-flash,CoT (effort=high),54.9912,57.6845,2943.05,RU,True,,stop,0.009873,1272,885,808,12.06,"{""reasoning"": ""The Cyrillic signs for 'СТО' and 'Автозапчасти' combined with the hilly, forested terrain and birch trees indicate a location in Russia, likely in the Ural Mountains region along a major highway."", ""country"": ""RU"", ""latitude"": 54.9912, ""longitude"": 57.6845}"
+qwen/qwen3.5-397b-a17b,no-CoT,53.0412,158.6456,3319.284,RU,True,,stop,0.0003357,473,32,0,1.92,"{""country"": ""RU"", ""latitude"": 53.0412, ""longitude"": 158.6456}"
+qwen/qwen3.5-27b,no-CoT,55.7961,49.1089,3397.201,RU,True,,stop,0.0002065,474,44,0,10.18,"```json
+{
+  ""country"": ""RU"",
+  ""latitude"": 55.7961,
+  ""longitude"": 49.1089
+}
+```"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,4032.125,RU,True,,stop,7.124e-05,406,36,0,2.8,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,4032.125,RU,True,,stop,0.001191,634,32,0,7.07,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.6-35b-a3b,no-CoT,55.7558,37.6173,4032.125,RU,True,,stop,0.000157,473,31,0,0.76,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,61.05314636230469,31.80341148376465,4042.444,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,55.0,37.61,4076.035,,True,,stop,5.974e-05,406,43,0,1.67,"{""country"": ""RU"", ""latitude"": 55 own 55.7558, ""longitude"": 37.61 own 127.5858}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,54.190975189208984,37.229888916015625,4144.645,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,54.03851318359375,37.3175163269043,4149.013,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,54.03963851928711,37.303558349609375,4149.711,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,59.9343,30.7771,4150.951,RU,True,,stop,5.205e-05,474,31,0,4.98,"{""country"": ""RU"", ""latitude"": 59.9343, ""longitude"": 30.7771}"
+qwen/qwen3.5-35b-a3b,no-CoT,59.9342,30.3351,4172.411,RU,True,,stop,0.0001865625,473,31,0,1.14,"{""country"": ""RU"", ""latitude"": 59.9342, ""longitude"": 30.3351}"
+mistralai/mistral-small-2603,CoT,52.35,10.05,5672.759,DE,True,,stop,0.0005748,716,779,890,7.57,"{""reasoning"": ""EU license plate on the vehicle and German-style mandatory straight road sign indicate this is in Germany."", ""country"": ""DE"", ""latitude"": 52.35, ""longitude"": 10.05}"
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,9173.003,US,True,,stop,0.0001131,634,30,0,1.2,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.29,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.62,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.19,

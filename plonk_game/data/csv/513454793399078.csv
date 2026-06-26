@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,2.269186546895,25.144973991749,0.0,CD,True,,,,,,,,"Buta, None, Eastern Province, CD"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,2.4849259853363037,24.322248458862305,94.5,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,2.8092081546783447,23.078031539916992,237.329,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,2.8316454887390137,23.02444839477539,243.719,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,0.4887,30.3899,615.715,UG,True,,stop,0.018645,621,518,437,21.8,"{""reasoning"":""Dense equatorial rainforest with a narrow red laterite road and the visible safari/Google vehicle hood strongly suggests an East African national-park forest road. The combination of lush tropical vegetation and red soil is most consistent with western Uganda, especially Kibale Forest National Park."",""country"":""UG"",""latitude"":0.4887,""longitude"":30.3899}"
+anthropic/claude-opus-4.8,CoT,3.5,13.0,1355.642,CM,True,,stop,0.006085,797,84,0,10.43,"{""reasoning"": ""Red laterite dirt road through dense tropical rainforest, typical of Central/West African equatorial regions like Cameroon or Gabon."", ""country"": ""CM"", ""latitude"": 3.5, ""longitude"": 13.0}"
+minimax/minimax-m3,CoT,-0.45,12.75,1410.737,GA,True,,stop,0.00065106,843,383,292,9.73,"{""reasoning"": ""Red laterite dirt road through dense tropical rainforest with tall emergent trees and vines is highly characteristic of equatorial Central Africa (Congo Basin), typical of logging roads or park tracks in Gabon/Republic of Congo. The vehicle snorkel/hood and well-graded laterite suggest a remote concession or reserve road."", ""country"": ""GA"", ""latitude"": -0.45, ""longitude"": 12.75}"
+anthropic/claude-opus-4.8,no-CoT,3.85,12.5,1414.96,CM,True,,stop,0.00408,666,30,0,2.58,"{""country"": ""CM"", ""latitude"": 3.85, ""longitude"": 12.5}"
+moonshotai/kimi-k2.6,CoT,-0.75,12.25,1472.348,GA,True,,stop,0.009448,680,2240,2476,65.49,"{""reasoning"": ""The vivid red-orange laterite dirt road cutting through dense tropical lowland rainforest is characteristic of the Congo Basin, and the remote unpaved track with no signage or built structures strongly suggests interior Gabon."", ""country"": ""GA"", ""latitude"": -0.75, ""longitude"": 12.25}"
+minimax/minimax-m3,no-CoT,0.5,12.0,1474.351,GA,True,,stop,0.00042042,767,207,255,7.43,"{""country"": ""GA"", ""latitude"": 0.5, ""longitude"": 12.0}"
+moonshotai/kimi-k2.6,no-CoT,-0.5,12.0,1493.426,GA,True,,stop,0.00051219,602,23,0,5.07,"{""country"": ""GA"", ""latitude"": -0.5, ""longitude"": 12.0}"
+xiaomi/mimo-v2.5,CoT,4.2,10.0,1694.918,CM,True,,stop,0.0001574776,787,263,195,3.42,"{""reasoning"": ""The red laterite dirt road and dense, lush tropical rainforest vegetation are hallmarks of the Congo Basin rainforest belt, with soil and plant life typical of Cameroon's rural interior."", ""country"": ""CM"", ""latitude"": 4.2, ""longitude"": 10.0}"
+google/gemini-3.1-pro-preview,CoT,6.5123,-1.5432,2995.42,GH,True,,stop,0.004846,1271,192,107,23.12,"{
+  ""reasoning"": ""The white car hood with a black scoop is a distinct meta clue for the Google Street View car in Ghana. The red dirt road and dense tropical vegetation suggest a forested region in the southern part of the country."",
+  ""country"": ""GH"",
+  ""latitude"": 6.5123,
+  ""longitude"": -1.5432
+}"
+openai/gpt-5.5,no-CoT,5.3302,-1.7178,2999.331,GH,True,,stop,0.00344,544,24,0,1.7,"{""country"":""GH"",""latitude"":5.3302,""longitude"":-1.7178}"
+google/gemini-3.1-pro-preview,no-CoT,5.6543,-2.4532,3083.903,GH,True,,stop,0.006868,1190,374,341,5.94,"```json
+{""country"": ""GH"", ""latitude"": 5.6543, ""longitude"": -2.4532}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),5.2685,-2.6312,3099.394,GH,True,,stop,0.0144975,1271,1399,1313,12.35,"{""reasoning"": ""The image shows a dense tropical rainforest with a red laterite dirt road, viewed from a white Google Street View vehicle with a black hood scoop. This combination of extremely lush wet evergreen forest and vehicle type is highly characteristic of the Ankasa Conservation Area in southwestern Ghana."", ""country"": ""GH"", ""latitude"": 5.2685, ""longitude"": -2.6312}"
+qwen/qwen3.6-35b-a3b,CoT,7.6,-10.1,3947.373,GN,True,,stop,0.0040505296,553,4104,4000,45.21,"```json
+{
+  ""reasoning"": ""The vibrant red laterite soil is a hallmark of the forest regions in West Africa, particularly Guinea. The dense, humid tropical vegetation and the tall, pale tree trunk (likely a Ceiba or similar species) further support a location in the Upper Guinean forest zone."",
+  ""country"": ""GN"",
+  ""latitude"": 7.6,
+  ""longitude"": -10.1
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,-3.7172,-38.5433,7109.121,BR,True,,stop,0.00015575,473,30,0,1.03,"{""country"": ""BR"", ""latitude"": -3.7172, ""longitude"": -38.5433}"
+google/gemma-4-26b-a4b-it,no-CoT,-15.7942,-47.8822,8266.42,BR,True,,stop,5.494e-05,406,31,0,2.51,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}"
+qwen/qwen3.5-9b,no-CoT,-1.8312,-51.4692,8529.354,BR,True,,stop,5.19e-05,474,30,0,10.05,"{""country"": ""BR"", ""latitude"": -1.8312, ""longitude"": -51.4692}"
+qwen/qwen3.5-397b-a17b,no-CoT,-3.7219,-52.3486,8637.744,BR,True,,stop,0.00028845,473,30,0,9.0,"{""country"": ""BR"", ""latitude"": -3.7219, ""longitude"": -52.3486}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-14.423256874084473,-54.552940368652344,8963.103,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),13.743889,107.001111,9068.231,KH,True,,stop,0.0021435,1189,40,0,30.71,"```json
+{""country"": ""KH"", ""latitude"": 13.743889, ""longitude"": 107.001111}
+```"
+google/gemini-3.5-flash,CoT (effort=low),13.7335,107.0124,9069.456,KH,True,,stop,0.0056055,1271,411,338,5.24,"{""reasoning"": ""The red dirt road, dense tropical jungle, and the characteristic white vehicle hood with a black air scoop point to rural Cambodia, likely in the forested eastern provinces like Ratanakiri."", ""country"": ""KH"", ""latitude"": 13.7335, ""longitude"": 107.0124}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-16.561264038085938,-56.27211380004883,9166.352,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-16.033647537231445,-57.127464294433594,9252.76,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,-3.456,-58.234,9288.549,BR,True,,stop,0.0094458,553,2545,2475,19.69,"{""reasoning"": ""The distinct bright red laterite soil combined with dense, tall tropical rainforest vegetation is highly characteristic of the Amazon region in Brazil, particularly in states like Pará or Amazonas."", ""country"": ""BR"", ""latitude"": -3.456, ""longitude"": -58.234}"
+x-ai/grok-4.3,CoT,-3.465,-60.382,9526.758,BR,True,,stop,0.001859,676,540,474,12.35,"{
+  ""reasoning"": ""Red laterite dirt road + extremely dense equatorial rainforest canopy with no signs/buildings/traffic indicates remote Amazon basin; vehicle hood and foliage match typical Brazil interior tracks."",
+  ""country"": ""BR"",
+  ""latitude"": -3.465,
+  ""longitude"": -60.382
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,-3.119027,-61.620814,9662.477,BR,True,,stop,0.000167625,473,34,0,8.14,"{""country"": ""BR"", ""latitude"": -3.119027, ""longitude"": -61.620814}"
+x-ai/grok-4.3,no-CoT,-3.4653,-62.2156,9730.082,BR,True,,stop,0.0005984,592,24,0,6.96,"{""country"": ""BR"", ""latitude"": -3.4653, ""longitude"": -62.2156}"
+google/gemma-4-31b-it,no-CoT,-3.4653,-62.2159,9730.115,BR,True,,stop,6.678e-05,406,35,0,2.49,"```json
+{""country"": ""BR"", ""latitude"": -3.4653, ""longitude"": -62.2159}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-3.4653,-62.2159,9730.115,BR,True,,stop,0.001176,634,30,0,1.49,"{""country"": ""BR"", ""latitude"": -3.4653, ""longitude"": -62.2159}"
+qwen/qwen3.5-122b-a10b,no-CoT,-3.4653,-62.2159,9730.115,BR,True,,stop,0.00018564,474,30,0,5.52,"{""country"": ""BR"", ""latitude"": -3.4653, ""longitude"": -62.2159}"
+qwen/qwen3.6-27b,no-CoT,-3.4653,-62.2159,9730.115,BR,True,,stop,0.0001923,473,30,0,15.07,"{""country"": ""BR"", ""latitude"": -3.4653, ""longitude"": -62.2159}"
+google/gemini-3.5-flash,CoT (effort=high),-6.15,-62.15,9735.777,BR,True,,stop,0.028485,1272,2953,2879,17.53,"{""reasoning"": ""The dense, flat equatorial rainforest combined with the reddish clay road and the white Toyota Hilux camera car with a black hood scoop is characteristic of the middle section of the BR-319 highway in the Brazilian Amazon."", ""country"": ""BR"", ""latitude"": -6.15, ""longitude"": -62.15}"
+qwen/qwen3.5-27b,no-CoT,-10.8903,-68.6681,10471.337,BR,True,,stop,0.00023764,474,44,0,4.54,"```json
+{
+  ""country"": ""BR"",
+  ""latitude"": -10.8903,
+  ""longitude"": -68.6681
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,1.5,-75.5,11183.143,CO,True,,stop,7.94976e-05,708,24,0,3.76,"{""country"": ""CO"", ""latitude"": 1.5, ""longitude"": -75.5}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4188,14453.853,US,True,,stop,0.000142875,634,32,0,1.97,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4188}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.11,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.33,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.15,

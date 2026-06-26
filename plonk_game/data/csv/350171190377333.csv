@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-16.646747116302127,-40.756308542297226,0.0,BR,True,,,,,,,,"Joaima, Joaima, Minas Gerais, BR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-16.76934051513672,-40.875831604003906,18.651,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-16.85031509399414,-40.9137077331543,28.165,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-16.401607513427734,-41.069881439208984,43.133,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-17.8542,-41.5018,155.863,BR,True,,stop,0.009648,1308,854,786,5.78,"{""reasoning"": ""The cobblestone street, white-painted palm tree trunks, red clay tile roofs, and rolling green hills are highly characteristic of rural areas in Minas Gerais, Brazil."", ""country"": ""BR"", ""latitude"": -17.8542, ""longitude"": -41.5018}"
+google/gemini-3.1-pro-preview,CoT,-14.866,-40.839,198.208,BR,True,,stop,0.005902,1307,274,185,11.01,"{
+  ""reasoning"": ""Cobblestone streets, red tile roofs, blue water tanks, and white-painted palm tree trunks are highly characteristic of Brazil. The hilly, semi-arid yet green landscape suggests the interior of the Northeast region or Minas Gerais."",
+  ""country"": ""BR"",
+  ""latitude"": -14.866,
+  ""longitude"": -40.839
+}"
+moonshotai/kimi-k2.6,no-CoT,-15.5,-43.0,271.531,BR,True,,stop,0.00075869,755,23,0,8.75,"{""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -43.0}"
+google/gemini-3.1-pro-preview,no-CoT,-14.0,-41.0,295.463,BR,True,,stop,0.004346,1225,158,129,4.07,"```json
+{""country"": ""BR"", ""latitude"": -14.0, ""longitude"": -41.0}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-13.5832,-40.2345,345.224,BR,True,,stop,0.0060555,1307,455,381,11.02,"{""reasoning"": ""The cobblestone road, houses with orange tiled roofs and blue water tanks, painted white palm tree trunks, and rolling green hills are highly characteristic of rural towns in Bahia or Minas Gerais, Brazil."", ""country"": ""BR"", ""latitude"": -13.5832, ""longitude"": -40.2345}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-19.006656646728516,-42.92710494995117,348.788,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-19.108428955078125,-42.989158630371094,361.592,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-13.2542,-39.6854,394.382,BR,True,,stop,0.002154,1226,35,0,7.98,"```json
+{""country"": ""BR"", ""latitude"": -13.2542, ""longitude"": -39.6854}
+```"
+openai/gpt-5.5,no-CoT,-19.7684,-43.1632,430.232,BR,True,,stop,0.00414,678,25,0,1.5,"{""country"":""BR"",""latitude"":-19.7684,""longitude"":-43.1632}"
+google/gemini-3.5-flash,CoT (effort=low),-12.5241,-39.6852,472.679,BR,True,,stop,0.0043995,1307,271,199,24.4,"{""reasoning"": ""The cobblestone street, houses with red-tiled roofs, palm trees with white-painted trunks, and rolling green hills are highly characteristic of rural Northeast Brazil, particularly in Bahia."", ""country"": ""BR"", ""latitude"": -12.5241, ""longitude"": -39.6852}"
+minimax/minimax-m3,CoT,-20.55,-42.62,476.374,BR,True,,stop,0.00070746,995,392,308,9.61,"{""reasoning"": ""White-painted royal palm trees lining the street, cobblestone (paralelepípedo) paving, small houses with orange-clay tile roofs, rolling green hills, and overcast tropical weather are characteristic of small interior towns in Minas Gerais, Brazil."", ""country"": ""BR"", ""latitude"": -20.55, ""longitude"": -42.62}"
+x-ai/grok-4.3,no-CoT,-20.315,-43.105,477.178,BR,True,,stop,0.0007334,704,22,0,0.97,"{""country"": ""BR"", ""latitude"": -20.315, ""longitude"": -43.105}"
+moonshotai/kimi-k2.6,CoT,-19.85,-43.95,490.481,BR,True,,stop,0.0130484,832,3104,3421,112.19,"{""reasoning"": ""White-painted palm tree trunks, simple red-tiled homes, and Portuguese-style road signage (yellow diamond warning signs and red octagonal stop signs) are hallmark features of rural Brazil."", ""country"": ""BR"", ""latitude"": -19.85, ""longitude"": -43.95}"
+qwen/qwen3.5-397b-a17b,no-CoT,-19.8765,-43.9456,492.289,BR,True,,stop,0.00034185,585,31,0,15.94,"{""country"": ""BR"", ""latitude"": -19.8765, ""longitude"": -43.9456}"
+qwen/qwen3.6-35b-a3b,no-CoT,-19.9167,-43.9333,494.651,BR,True,,stop,0.00011875,585,31,0,2.91,"{""country"": ""BR"", ""latitude"": -19.9167, ""longitude"": -43.9333}"
+x-ai/grok-4.3,CoT,-19.872,-44.612,542.513,BR,True,,stop,0.0020215,788,549,473,5.72,"{
+  ""reasoning"": ""Tropical royal palms, red-tiled roofs on pastel houses, cobblestone street, hilly cerrado landscape and blue water tank are quintessentially Brazilian; no other country matches this combination of vegetation, architecture and road style."",
+  ""country"": ""BR"",
+  ""latitude"": -19.872,
+  ""longitude"": -44.612
+}"
+qwen/qwen3.6-35b-a3b,CoT,-21.13,-43.27,564.275,BR,True,,stop,0.0060975395,665,6206,6114,230.26,"```json
+{
+  ""reasoning"": ""The cobblestone road surface (calçamento), palm trees with white-painted trunks (a distinct Brazilian practice), and the tiled-roof architecture on rolling green hills strongly indicate a rural town in Minas Gerais, Brazil."",
+  ""country"": ""BR"",
+  ""latitude"": -21.13,
+  ""longitude"": -43.27
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-20.376789093017578,-44.56317901611328,577.121,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-21.2,-44.0,610.46,BR,True,,stop,0.00484,818,30,0,8.88,"{""country"": ""BR"", ""latitude"": -21.2, ""longitude"": -44.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,-21.7845,-43.4512,637.47,BR,True,,stop,0.00021684,586,31,0,6.41,"{""country"": ""BR"", ""latitude"": -21.7845, ""longitude"": -43.4512}"
+anthropic/claude-opus-4.8,CoT,-21.2,-44.5,641.315,BR,True,,stop,0.00702,949,91,0,10.3,"{""reasoning"": ""Rural Brazilian hill town with palm trees, whitewashed tree trunks, cobblestone road, and Minas Gerais-style terrain and architecture."", ""country"": ""BR"", ""latitude"": -21.2, ""longitude"": -44.5}"
+minimax/minimax-m3,no-CoT,-21.55,-45.43,733.63,BR,True,,stop,0.00055314,919,254,304,6.1,"{""country"": ""BR"", ""latitude"": -21.55, ""longitude"": -45.43}"
+xiaomi/mimo-v2.5,CoT,-20.45,-46.52,740.145,BR,True,,stop,0.0002417576,899,508,423,6.01,"{""reasoning"": ""Portuguese-language road signage, white-painted palm tree trunks, right-hand driving, and cobblestone rural roads are characteristic of small towns in southeastern Brazil's interior. The hilly, dry tropical landscape matches the Minas Gerais region."", ""country"": ""BR"", ""latitude"": -20.45, ""longitude"": -46.52}"
+google/gemma-4-31b-it,no-CoT,-15.7801,-47.8919,767.908,BR,True,,stop,0.00010953,404,35,0,9.28,"```json
+{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.8919}
+```"
+qwen/qwen3.5-397b-a17b,CoT,-20.7333,-47.19,815.724,BR,True,,stop,0.0141282,665,3827,3718,163.73,"{""reasoning"": ""The image displays a cobblestone road (paralelepídos) and tropical palm trees characteristic of Brazil, alongside simple houses with terracotta tile roofs and water tanks on the roof. The right-hand traffic and lush, hilly green landscape further confirm a location in the Brazilian interior, likely São Paulo or Minas Gerais state."", ""country"": ""BR"", ""latitude"": -20.7333, ""longitude"": -47.1900}"
+qwen/qwen3.5-9b,no-CoT,-21.5366,-46.8256,837.85,BR,True,,stop,6.325e-05,586,31,0,5.2,"{""country"": ""BR"", ""latitude"": -21.5366, ""longitude"": -46.8256}"
+qwen/qwen3.5-27b,no-CoT,-21.1704,-47.8103,896.204,BR,True,,stop,0.00022491,585,31,0,2.51,"{""country"": ""BR"", ""latitude"": -21.1704, ""longitude"": -47.8103}"
+qwen/qwen3.5-35b-a3b,no-CoT,-22.4167,-46.9167,909.884,BR,True,,stop,0.0001353625,585,31,0,1.81,"{""country"": ""BR"", ""latitude"": -22.4167, ""longitude"": -46.9167}"
+mistralai/mistral-small-2603,no-CoT,-22.903,-47.061,958.39,BR,True,,stop,0.0001353,786,29,0,4.12,"{""country"": ""BR"", ""latitude"": -22.903, ""longitude"": -47.061}"
+mistralai/mistral-medium-3-5,no-CoT,-22.9068,-47.0608,958.677,BR,True,,stop,0.0014115,786,31,0,2.01,"{""country"": ""BR"", ""latitude"": -22.9068, ""longitude"": -47.0608}"
+openai/gpt-5.5,CoT,-8.8906,-36.4931,978.352,BR,True,,stop,0.019855,755,536,442,44.6,"{""reasoning"":""Cobblestone residential road, red-tile houses, yellow Brazilian-style warning signage, right-side driving context, and white-painted palm trunks strongly suggest rural Brazil. The rolling green-brown hills and humid tropical/agreste look fit the interior of Pernambuco/Minas Gerais; I estimate the Garanhuns area."",""country"":""BR"",""latitude"":-8.8906,""longitude"":-36.4931}"
+xiaomi/mimo-v2.5,no-CoT,-14.235,-55.255,1576.53,BR,True,,stop,9.65776e-05,820,29,0,3.05,"{""country"": ""BR"", ""latitude"": -14.235, ""longitude"": -55.255}"
+qwen/qwen3.6-27b,no-CoT,4.6097,-75.6989,4509.262,CO,True,,stop,0.0002259,585,30,0,24.34,"{""country"": ""CO"", ""latitude"": 4.6097, ""longitude"": -75.6989}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4833.539,,True,True,,,,,,1.81,
+mistralai/mistral-small-2603,CoT,21.4164,-157.7818,13416.361,US,True,,stop,0.0005262,868,660,699,6.38,"{""reasoning"": ""US-style road markings and vehicle types combined with tropical palm trees and hilly terrain indicate Hawaii. The specific infrastructure matches Hawaiian road design."", ""country"": ""US"", ""latitude"": 21.4164, ""longitude"": -157.7818}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.8,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,

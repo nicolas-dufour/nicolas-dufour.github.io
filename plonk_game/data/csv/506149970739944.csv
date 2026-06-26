@@ -1,0 +1,77 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-31.980929984356,-52.010381867754,0.0,BR,True,,,,,,,,"Rio Grande, Rio Grande, Rio Grande do Sul, BR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-31.72449493408203,-51.616859436035156,46.846,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-31.664443969726562,-51.670345306396484,47.651,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-31.71875762939453,-51.606842041015625,47.986,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-30.5,-52.5,171.124,BR,True,,stop,0.00106116,786,739,645,23.11,"{""reasoning"": ""Yellow dashed center line indicates a country using yellow markings (USA, Brazil, Argentina, Uruguay). The uniform pine/eucalyptus plantation on the right and native trees on the left, combined with the flat Pampas-like terrain and rural highway style, are highly characteristic of southern Brazil (Rio Grande do Sul) or Uruguay."", ""country"": ""BR"", ""latitude"": -30.5, ""longitude"": -52.5}"
+qwen/qwen3.6-35b-a3b,CoT,-29.92,-53.01,248.196,BR,True,,stop,0.0028001987,521,2814,2696,14.01,"```json
+{
+    ""reasoning"": ""The yellow dashed center line indicates a country in the Americas (likely Brazil, Argentina, or Chile) where yellow separates opposing traffic. The landscape features flat terrain with grassy fields and distinct rows of coniferous trees (likely pine plantations) on the right, which is highly characteristic of the southern Brazilian state of Rio Grande do Sul."",
+    ""country"": ""BR"",
+    ""latitude"": -29.92,
+    ""longitude"": -53.01
+}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-34.0125,-53.8842,285.589,UY,True,,stop,0.0096075,1287,853,777,9.33,"{""reasoning"": ""The flat landscape with pine plantations, sandy soil, and a paved road with a dashed yellow center line and white edge lines is highly characteristic of eastern Uruguay, particularly along Ruta 9 in the Rocha Department."", ""country"": ""UY"", ""latitude"": -34.0125, ""longitude"": -53.8842}"
+moonshotai/kimi-k2.6,CoT,-33.75,-54.25,287.124,UY,True,,stop,0.01345168,623,3338,3864,268.68,"{""reasoning"": ""The flat rural highway with yellow center-line markings, dark asphalt, and dense commercial pine plantations on both sides is highly characteristic of the extensive forestry zones in eastern Uruguay, and the absence of mailboxes, frequent signage, or fencing distinguishes it from the similar-looking US Southeast."", ""country"": ""UY"", ""latitude"": -33.7500, ""longitude"": -54.2500}"
+google/gemini-3.1-pro-preview,CoT,-34.0521,-54.0134,296.494,UY,True,,stop,0.00609,1287,293,211,5.2,"{
+  ""reasoning"": ""The dashed yellow center line combined with solid white edge lines is typical of Uruguay. The flat landscape with pine plantations and the trident-style utility pole in the distance further confirm this location."",
+  ""country"": ""UY"",
+  ""latitude"": -34.0521,
+  ""longitude"": -54.0134
+}"
+qwen/qwen3.5-122b-a10b,CoT,-29.68,-53.8,307.652,BR,True,,stop,0.00520858,521,2439,2334,21.97,"{
+""reasoning"": ""The yellow dashed center line indicates a right-hand traffic country in the Americas (ruling out Europe/Asia where white is standard, and left-hand traffic countries). The dense pine plantation on the right and the grassy, flat terrain are highly characteristic of the forestry regions in Southern Brazil (Rio Grande do Sul or Santa Catarina)."",
+""country"": ""BR"",
+""latitude"": -29.68,
+""longitude"": -53.8
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-34.3821,-53.9125,320.331,UY,True,,stop,0.0021225,1205,35,0,8.03,"```json
+{""country"": ""UY"", ""latitude"": -34.3821, ""longitude"": -53.9125}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-34.1234,-54.3125,320.587,UY,True,,stop,0.0043425,1287,268,199,16.07,"{""reasoning"": ""The flat landscape with pine plantations, combined with the dashed yellow center line and white outer lines, is highly characteristic of rural Uruguay, particularly in the eastern departments like Rocha."", ""country"": ""UY"", ""latitude"": -34.1234, ""longitude"": -54.3125}"
+minimax/minimax-m3,no-CoT,-33.5,-55.0,326.652,UY,True,,stop,0.00017466,695,23,0,5.87,"{""country"": ""UY"", ""latitude"": -33.5, ""longitude"": -55.0}"
+anthropic/claude-opus-4.8,no-CoT,-32.3,-55.5,330.456,UY,True,,stop,0.003795,609,30,0,2.74,"{""country"": ""UY"", ""latitude"": -32.3, ""longitude"": -55.5}"
+anthropic/claude-opus-4.8,CoT,-32.5,-55.5,333.22,UY,True,,stop,0.00595,740,90,0,3.17,"{""reasoning"": ""Flat grassland with eucalyptus and pine plantations, yellow center line, rural two-lane road typical of Uruguay/southern Brazil pampas."", ""country"": ""UY"", ""latitude"": -32.5, ""longitude"": -55.5}"
+google/gemini-3.1-pro-preview,no-CoT,-34.6,-54.8,389.889,UY,True,,stop,0.00468,1206,189,160,3.92,"```json
+{""country"": ""UY"", ""latitude"": -34.6, ""longitude"": -54.8}
+```"
+openai/gpt-5.5,CoT,-32.2421,-56.3487,409.602,UY,True,,stop,0.012305,583,313,234,13.85,"{""reasoning"":""Right-hand traffic with yellow dashed centerline/white edge lines, flat pampas-like terrain, drainage ditches, and eucalyptus windbreak plantations strongly suggest rural Uruguay. The road style and landscape fit an inland national route in central-northern Uruguay."",""country"":""UY"",""latitude"":-32.2421,""longitude"":-56.3487}"
+openai/gpt-5.5,no-CoT,-34.1047,-56.2143,457.443,UY,True,,stop,0.00328,506,25,0,7.64,"{""country"":""UY"",""latitude"":-34.1047,""longitude"":-56.2143}"
+x-ai/grok-4.3,no-CoT,-34.85,-58.05,644.801,AR,True,,stop,0.0006878,560,22,0,1.11,"{""country"": ""AR"", ""latitude"": -34.85, ""longitude"": -58.05}"
+google/gemini-3.5-flash,CoT (effort=high),-28.2334,-57.9855,709.711,AR,True,,stop,0.0193455,1287,1935,1844,20.93,"```json
+{""reasoning"": ""The flat terrain, extensive pine plantations (Pinus taeda/elliottii), and asphalt road with a yellow dashed center line and white edge lines are highly characteristic of the Corrientes Province in northeastern Argentina, particularly along Route 118."", ""country"": ""AR"", ""latitude"": -28.2334, ""longitude"": -57.9855}
+```"
+google/gemma-4-31b-it,CoT,-25.428,-49.271,775.993,BR,True,,stop,0.00031617,495,648,584,30.25,"{""reasoning"": ""Yellow dashed center lines and white edge lines are characteristic of Brazilian roads; the dense pine plantations are highly typical of the southern states like Paraná."", ""country"": ""BR"", ""latitude"": -25.428, ""longitude"": -49.271}"
+qwen/qwen3.5-9b,no-CoT,-35.8766,-59.4322,809.876,AR,True,,stop,4.885e-05,442,31,0,10.67,"{""country"": ""AR"", ""latitude"": -35.8766, ""longitude"": -59.4322}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.2424,-47.9292,1051.322,BR,True,,stop,0.0001794,442,31,0,7.53,"{""country"": ""BR"", ""latitude"": -23.2424, ""longitude"": -47.9292}"
+google/gemma-4-31b-it,no-CoT,-23.5505,-46.6333,1075.962,BR,True,,stop,6.77e-05,410,36,0,2.85,"```json
+{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}
+```"
+qwen/qwen3.5-397b-a17b,CoT,-37.2845,-72.4123,1952.953,CL,True,,stop,0.00643725,521,2082,1,270.95,"{""reasoning"": ""The yellow dashed center line combined with white edge lines indicates a Right-Hand Traffic country, while the extensive Radiata Pine plantations and flat, dry grassy terrain are highly characteristic of the Biobío or Maule regions in Chile."", ""country"": ""CL"", ""latitude"": -37.2845, ""longitude"": -72.4123}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6507.896,,True,True,,,,,,7.8,
+mistralai/mistral-medium-3-5,no-CoT,35.7804,-78.6391,8029.748,US,True,,stop,0.001098,577,31,0,0.9,"{""country"": ""US"", ""latitude"": 35.7804, ""longitude"": -78.6391}"
+moonshotai/kimi-k2.6,no-CoT,33.5,-93.0,8453.054,US,True,,stop,0.000463455,545,23,0,16.08,"{""country"": ""US"", ""latitude"": 33.5, ""longitude"": -93.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.7219,-92.2896,8527.659,US,True,,stop,0.0003762,441,31,0,2.68,"{""country"": ""US"", ""latitude"": 34.7219, ""longitude"": -92.2896}"
+qwen/qwen3.6-35b-a3b,no-CoT,44.9778,-93.265,9518.277,US,True,,stop,9.615e-05,441,30,0,2.16,"{""country"": ""US"", ""latitude"": 44.9778, ""longitude"": -93.265}"
+xiaomi/mimo-v2.5,no-CoT,34.5,-118.5,10142.175,US,True,,stop,7.55776e-05,676,26,0,6.2,"{""country"": ""US"", ""latitude"": 34.5, ""longitude"": -118.5}"
+qwen/qwen3.5-27b,no-CoT,38.5816,-121.4944,10632.328,US,True,,stop,0.00018819,441,32,0,4.86,"{""country"": ""US"", ""latitude"": 38.5816, ""longitude"": -121.4944}"
+mistralai/mistral-small-2603,no-CoT,37.751,-122.447,10643.698,US,True,,stop,0.00010455,577,30,0,2.0,"{""country"": ""US"", ""latitude"": 37.751, ""longitude"": -122.447}"
+xiaomi/mimo-v2.5,CoT,41.8,-120.6,10787.971,US,True,,stop,0.0009252376,755,3021,2924,32.82,"```json
+{""reasoning"": ""The presence of yellow center lines and white edge lines indicates right-hand traffic, specifically following the manual on uniform traffic control devices standards of the United States. The landscape features Ponderosa pine trees and dry grassy undergrowth, characteristic of the high desert plateaus found in Northern California or Southern Oregon."", ""country"": ""US"", ""latitude"": 41.8, ""longitude"": -120.6}
+```"
+mistralai/mistral-small-2603,CoT,52.5,9.5,11121.01,DE,True,,stop,0.00039237,659,590,667,4.72,"{""reasoning"": ""Single yellow line down the middle of the road is characteristic of many European countries, and the lush temperate vegetation matches northern/central Europe."", ""country"": ""DE"", ""latitude"": 52.5, ""longitude"": 9.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-37.88565444946289,149.39759826660156,11935.511,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-37.870361328125,149.42074584960938,11936.46,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,-37.8136,144.9631,12057.216,AU,True,,stop,0.000204249,441,32,0,4.37,"{""country"": ""AU"", ""latitude"": -37.8136, ""longitude"": 144.9631}"
+x-ai/grok-4.3,CoT,-36.78,144.95,12168.445,AU,True,,stop,0.002194,644,690,599,14.07,"{
+  ""reasoning"": ""Yellow dashed center line + solid white edge lines, left-side driving orientation implied by markings, eucalyptus/pine savanna vegetation, wooden power poles, and empty two-lane asphalt road are diagnostic of rural Australia. No other country matches this exact combination of road markings, flora, and infrastructure."",
+  ""country"": ""AU"",
+  ""latitude"": -36.78,
+  ""longitude"": 144.95
+}"
+qwen/qwen3.6-27b,CoT,-36.5,146.0,12173.098,AU,True,,stop,0.012673769,521,5218,4652,310.2,"{""reasoning"": ""The yellow center line separating opposing traffic lanes indicates a location in Australia or North America, while the specific mix of Eucalyptus and pine-like vegetation along with the flat, open terrain strongly points to rural Australia."", ""country"": ""AU"", ""latitude"": -36.5, ""longitude"": 146.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-34.32152557373047,150.8964080810547,12262.953,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,-34.2456,150.7892,12274.318,AU,True,,stop,9.388e-05,442,32,0,2.2,"{""country"": ""AU"", ""latitude"": -34.2456, ""longitude"": 150.7892}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,5.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.11,

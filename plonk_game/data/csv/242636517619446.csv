@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,35.22517961822256,51.39701854272797,0.0,IR,True,,,,,,,,"Eqbaliyeh, None, Tehran, IR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,33.971702575683594,51.238765716552734,140.131,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,33.888240814208984,51.50641632080078,148.998,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,33.828914642333984,51.526214599609375,155.708,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,24.93,55.12,1199.22,AE,True,,stop,0.0002784376,899,639,572,15.44,"{""reasoning"": ""Desert landscape with sandy hills, wide highway, and clear sky typical of the Arabian Desert region in the UAE; coordinate aligns with Dubai’s desert highway corridors."", ""country"": ""AE"", ""latitude"": 24.93, ""longitude"": 55.12}"
+x-ai/grok-4.3,CoT,24.85,46.72,1237.943,SA,True,,stop,0.0025515,788,761,688,6.09,"{""reasoning"": ""Right-hand traffic (solid edge line on right of lane), blue rectangular highway sign, barren rocky-sand desert with distant low hills, clear arid sky, and asphalt markings match Saudi Arabian highways in the Najd or Eastern Province."", ""country"": ""SA"", ""latitude"": 24.85, ""longitude"": 46.72}"
+google/gemini-3.5-flash,CoT (effort=low),24.1254,49.1235,1253.512,SA,True,,stop,0.00486,1308,322,256,3.06,"{""reasoning"": ""The extremely arid desert landscape, high-quality multi-lane highway, and blue overhead/roadside signage are characteristic of major desert highways in Saudi Arabia."", ""country"": ""SA"", ""latitude"": 24.1254, ""longitude"": 49.1235}"
+moonshotai/kimi-k2.6,CoT,24.6,46.8,1261.358,SA,True,,stop,0.017298936,834,4973,4915,178.7,"{""reasoning"": ""Right-hand traffic on a paved highway through hyper-arid barren hills with distinctive blue road signage points to the Arabian Peninsula, specifically Saudi Arabia."", ""country"": ""SA"", ""latitude"": 24.6, ""longitude"": 46.8}"
+google/gemini-3.1-pro-preview,CoT,24.15,54.85,1275.605,AE,True,,stop,0.006514,1307,325,264,5.34,"{
+  ""reasoning"": ""Wide multi-lane highway with blue signage in a barren desert landscape strongly indicates the United Arab Emirates."",
+  ""country"": ""AE"",
+  ""latitude"": 24.15,
+  ""longitude"": 54.85
+}"
+xiaomi/mimo-v2.5,no-CoT,24.5,46.5,1282.156,SA,True,,stop,9.54576e-05,820,25,0,7.85,"{""country"": ""SA"", ""latitude"": 24.5, ""longitude"": 46.5}"
+google/gemini-3.1-pro-preview,no-CoT,24.0512,54.8123,1285.318,AE,True,,stop,0.00287,1225,35,0,2.8,"```json
+{""country"": ""AE"", ""latitude"": 24.0512, ""longitude"": 54.8123}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),23.611428,53.700556,1310.394,AE,True,,stop,0.0021885,1225,39,0,7.87,"```json
+{""country"": ""AE"", ""latitude"": 23.611428, ""longitude"": 53.700556}
+```"
+qwen/qwen3.6-27b,no-CoT,24.2,46.5,1313.469,SA,True,,stop,0.0002159,585,25,0,5.54,"{""country"": ""SA"", ""latitude"": 24.2, ""longitude"": 46.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,24.1286,46.6012,1317.489,SA,True,,stop,0.00011304,586,31,0,1.63,"{""country"": ""SA"", ""latitude"": 24.1286, ""longitude"": 46.6012}"
+google/gemma-4-31b-it,no-CoT,24.1234,46.5678,1319.165,SA,True,,stop,6.692e-05,404,36,0,5.73,"```json
+{""country"": ""SA"", ""latitude"": 24.1234, ""longitude"": 46.5678}
+```"
+x-ai/grok-4.3,no-CoT,24.471,44.612,1362.184,SA,True,,stop,0.0007334,704,22,0,1.73,"{""country"": ""SA"", ""latitude"": 24.471, ""longitude"": 44.612}"
+openai/gpt-5.5,CoT,23.2526,57.4198,1453.044,OM,True,,stop,0.019255,755,516,429,20.01,"{""reasoning"":""A wide right-driving desert motorway with blue direction signage, white lane markings, and barren rocky Hajar-style mountains strongly fits Oman rather than the Gulf cities or Levant. The arid terrain and highway design are most consistent with the Muscat–Nizwa/Ibri corridor in northern Oman."",""country"":""OM"",""latitude"":23.2526,""longitude"":57.4198}"
+mistralai/mistral-medium-3-5,no-CoT,23.585,58.337,1457.417,OM,True,,stop,0.0013965,786,29,0,2.59,"{""country"": ""OM"", ""latitude"": 23.585, ""longitude"": 58.337}"
+openai/gpt-5.5,no-CoT,23.2925,57.9178,1468.935,OM,True,,stop,0.00408,678,23,0,14.51,"{""country"":""OM"",""latitude"":23.2925,""longitude"":57.9178}"
+google/gemini-3.5-flash,CoT (effort=medium),23.4852,42.6123,1556.826,SA,True,,stop,0.0058215,1307,429,357,4.39,"{""reasoning"": ""The extremely arid desert landscape, high-quality multi-lane highway with standard white markings, and a blue overhead sign in the distance are characteristic of the major highway network in Saudi Arabia."", ""country"": ""SA"", ""latitude"": 23.4852, ""longitude"": 42.6123}"
+minimax/minimax-m3,CoT,29.45,31.85,1941.433,EG,True,,stop,0.00085386,995,514,440,20.88,"{""reasoning"": ""Extremely arid rocky desert terrain with light tan/beige hills, modern highway with paved shoulders, Arabic-style blue signage, and right-hand driving suggest an Egyptian desert highway (likely Eastern Desert between Cairo and Upper Egypt)."", ""country"": ""EG"", ""latitude"": 29.45, ""longitude"": 31.85}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,20.69192886352539,27.872764587402344,2807.141,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,20.691360473632812,27.080106735229492,2870.549,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,32.25630569458008,14.909682273864746,3371.056,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,40.5,90.5,3453.662,CN,True,,stop,0.00702,949,91,0,10.88,"{""reasoning"": ""Barren desert hills, wide modern highway with blue signage, driving on right—consistent with northwestern China (Xinjiang/Gansu) desert expressway."", ""country"": ""CN"", ""latitude"": 40.5, ""longitude"": 90.5}"
+anthropic/claude-opus-4.8,no-CoT,38.5,91.5,3558.113,CN,True,,stop,0.00484,818,30,0,2.14,"{""country"": ""CN"", ""latitude"": 38.5, ""longitude"": 91.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,40.1278,94.8356,3823.338,CN,True,,stop,0.0001668,586,31,0,3.4,"{""country"": ""CN"", ""latitude"": 40.1278, ""longitude"": 94.8356}"
+qwen/qwen3.5-122b-a10b,no-CoT,39.4122,95.5144,3890.189,CN,True,,stop,0.00021658,585,31,0,7.4,"{""country"": ""CN"", ""latitude"": 39.4122, ""longitude"": 95.5144}"
+qwen/qwen3.5-27b,no-CoT,40.4167,99.9167,4247.122,CN,True,,stop,0.00026676,586,44,0,1.24,"```json
+{
+  ""country"": ""CN"",
+  ""latitude"": 40.4167,
+  ""longitude"": 99.9167
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,28.6543,-10.5821,5800.766,MA,True,,stop,0.0003882,585,31,0,1.78,"{""country"": ""MA"", ""latitude"": 28.6543, ""longitude"": -10.5821}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6600.287,,True,True,,,,,,14.04,
+qwen/qwen3.5-9b,no-CoT,-23.0736,-69.0688,14164.039,CL,True,,stop,0.0001072,585,31,0,0.77,"{""country"": ""CL"", ""latitude"": -23.0736, ""longitude"": -69.0688}"
+google/gemini-3.5-flash,CoT (effort=high),-26.3812,-70.5621,14462.549,CL,True,,stop,0.0373575,1307,3933,3838,34.14,"```json
+{""reasoning"": ""The extremely arid, vegetation-free desert landscape with low beige hills is characteristic of the Atacama Desert in Chile. The divided highway with a solid yellow line on the left, white on the right, and a blue highway sign further confirms Route 5 in northern Chile."", ""country"": ""CL"", ""latitude"": -26.3812, ""longitude"": -70.5621}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.62,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.79,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.23,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.38,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.27,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,0.11,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.3,

@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,68.032884701068,19.835578523046,0.0,SE,True,,,,,,,,"Kiruna, Kiruna Kommun, Norrbotten, SE"
+google/gemini-3.5-flash,CoT (effort=high),68.15,19.45,20.628,SE,True,,stop,0.0109065,1271,1000,932,16.28,"{""reasoning"": ""The short dashed white edge lines and lack of a center line are characteristic of Swedish rural roads, while the mountain birch vegetation and distant snow-capped fells indicate northern Swedish Lapland."", ""country"": ""SE"", ""latitude"": 68.15, ""longitude"": 19.45}"
+google/gemini-3.5-flash,CoT (effort=low),68.2514,19.3821,30.705,SE,True,,stop,0.0037335,1271,203,136,3.41,"{""reasoning"": ""The short dashed white edge lines, low birch vegetation, and distant snowy mountains are characteristic of northern Sweden, specifically along the E10 highway in Lapland."", ""country"": ""SE"", ""latitude"": 68.2514, ""longitude"": 19.3821}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,68.13955688476562,19.132068634033203,31.512,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,68.08084869384766,19.01271629333496,34.605,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,68.07390594482422,19.002058029174805,34.938,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,68.315,19.052,45.093,SE,True,,stop,0.005686,1271,262,176,7.1,"{
+  ""reasoning"": ""The dashed white edge lines on the road are characteristic of Sweden. The barren landscape with low birch scrub and distant snow-capped mountains strongly suggests the far north of the country, likely near Kiruna or Abisko."",
+  ""country"": ""SE"",
+  ""latitude"": 68.315,
+  ""longitude"": 19.052
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,68.38087463378906,18.933034896850586,53.716,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,68.35,18.85,53.86,SE,True,,stop,0.00102906,843,698,617,25.1,"{""reasoning"": ""Right-hand driving, subarctic tundra landscape with stunted birch, snow-capped rounded Scandinavian fells, and European-style dashed road markings strongly indicate northern Swedish Lapland, likely along the E10 highway near Abisko/Björkliden."", ""country"": ""SE"", ""latitude"": 68.35, ""longitude"": 18.85}"
+google/gemini-3.1-pro-preview,no-CoT,68.35,18.85,53.86,SE,True,,stop,0.005126,1189,229,198,11.27,"```json
+{""country"": ""SE"", ""latitude"": 68.35, ""longitude"": 18.85}
+```"
+moonshotai/kimi-k2.6,CoT,68.35,18.82,54.803,SE,True,,stop,0.009451728,682,2695,2627,158.82,"{""reasoning"":""Subarctic birch-scrub tundra, distant snow-capped mountains, and Swedish-style white dashed edge markings on a remote paved highway are characteristic of Swedish Lapland, most likely along the E10 corridor near Abisko."",""country"":""SE"",""latitude"":68.35,""longitude"":18.82}"
+anthropic/claude-opus-4.8,no-CoT,68.35,18.82,54.803,SE,True,,stop,0.00408,666,30,0,8.61,"{""country"": ""SE"", ""latitude"": 68.35, ""longitude"": 18.82}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),68.3586,18.8308,55.08,SE,True,,stop,0.0020985,1189,35,0,30.56,"```json
+{""country"": ""SE"", ""latitude"": 68.3586, ""longitude"": 18.8308}
+```"
+anthropic/claude-opus-4.8,CoT,68.35,18.8,55.438,SE,True,,stop,0.00661,797,105,0,11.68,"{""reasoning"": ""Snow-capped fells, sparse birch tundra, and yellow center line markings indicate northern Scandinavia, likely Swedish/Norwegian Lapland near Abisko/Kiruna region."", ""country"": ""SE"", ""latitude"": 68.35, ""longitude"": 18.8}"
+minimax/minimax-m3,no-CoT,68.0,18.5,55.712,SE,True,,stop,0.00039282,767,184,216,10.96,"{""country"": ""SE"", ""latitude"": 68.0, ""longitude"": 18.5}"
+moonshotai/kimi-k2.6,no-CoT,68.5,18.3,81.822,SE,True,,stop,0.00061429,603,23,0,1.16,"{""country"": ""SE"", ""latitude"": 68.5, ""longitude"": 18.3}"
+google/gemma-4-31b-it,no-CoT,69.1234,20.1234,121.822,NO,True,,stop,6.378e-05,406,36,0,5.96,"```json
+{""country"": ""NO"", ""latitude"": 69.1234, ""longitude"": 20.1234}
+```"
+x-ai/grok-4.3,no-CoT,69.15,20.75,129.64,NO,True,,stop,0.0005934,592,22,0,7.01,"{""country"": ""NO"", ""latitude"": 69.15, ""longitude"": 20.75}"
+xiaomi/mimo-v2.5,no-CoT,69.1,18.5,130.472,NO,True,,stop,7.97776e-05,708,25,0,1.78,"{""country"": ""NO"", ""latitude"": 69.1, ""longitude"": 18.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,69.1583023071289,21.41252326965332,140.543,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,69.12577056884766,21.61802101135254,141.435,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,69.323,20.145,143.998,NO,True,,stop,0.00335,544,21,0,1.69,"{""country"":""NO"",""latitude"":69.323,""longitude"":20.145}"
+qwen/qwen3.5-9b,no-CoT,68.9667,17.3833,144.096,NO,True,,stop,5.205e-05,474,31,0,4.6,"{""country"": ""NO"", ""latitude"": 68.9667, ""longitude"": 17.3833}"
+mistralai/mistral-medium-3-5,no-CoT,69.5,20.5,165.313,NO,True,,stop,0.0011385,634,25,0,0.92,"{""country"": ""NO"", ""latitude"": 69.5, ""longitude"": 20.5}"
+qwen/qwen3.5-27b,no-CoT,69.6492,18.9675,183.067,NO,True,,stop,0.000140595,473,31,0,7.29,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9675}"
+qwen/qwen3.5-35b-a3b,no-CoT,69.6492,18.9631,183.101,NO,True,,stop,0.0001171625,473,31,0,2.12,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9631}"
+qwen/qwen3.5-122b-a10b,no-CoT,69.6492,18.9553,183.161,NO,True,,stop,0.00018772,474,31,0,5.5,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+qwen/qwen3.6-27b,no-CoT,69.6492,18.9553,183.161,NO,True,,stop,0.0001943,473,31,0,10.68,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+qwen/qwen3.6-35b-a3b,no-CoT,69.6496,18.9553,183.205,NO,True,,stop,0.000157,473,31,0,0.52,"{""country"": ""NO"", ""latitude"": 69.6496, ""longitude"": 18.9553}"
+xiaomi/mimo-v2.5,CoT,69.6,18.1,187.674,NO,True,,stop,0.0004707976,787,1382,1308,16.2,"{""reasoning"": ""The snow-capped mountains, sparse vegetation, and rural road with white dashed edge lines are typical of northern Scandinavia, particularly Norway. The overall scene strongly suggests a high-latitude location with right-hand traffic."", ""country"": ""NO"", ""latitude"": 69.6, ""longitude"": 18.1}"
+qwen/qwen3.5-397b-a17b,no-CoT,69.7245,18.9876,191.138,NO,True,,stop,0.00036468,473,31,0,1.97,"{""country"": ""NO"", ""latitude"": 69.7245, ""longitude"": 18.9876}"
+x-ai/grok-4.3,CoT,67.28,15.41,204.895,NO,True,,stop,0.002489,676,792,721,14.19,"{""reasoning"": ""Northern subarctic landscape with snow-capped peaks, leafless birch scrub, right-hand traffic European road markings and overhead power lines point to Scandinavia; exact match is typical Norwegian fjellveg north of the Arctic Circle."", ""country"": ""NO"", ""latitude"": 67.28, ""longitude"": 15.41}"
+openai/gpt-5.5,CoT,69.4672,23.2436,210.418,NO,True,,stop,0.019125,621,534,448,42.38,"{""reasoning"":""Arctic/subarctic birch scrub, snow-patched mountains, right-side driving and Norwegian-style dashed white edge markings with no visible centerline point to a rural road in northern Norway. The open Finnmark/Troms plateau landscape best fits the Alta–Kautokeino area."",""country"":""NO"",""latitude"":69.4672,""longitude"":23.2436}"
+google/gemini-3.5-flash,CoT (effort=medium),66.7352,16.1245,214.419,SE,True,,stop,0.0074775,1271,619,543,5.38,"```json
+{""reasoning"": ""The short dashed white edge lines on a narrow asphalt road, combined with subarctic birch vegetation and rounded, snow-capped mountains, are characteristic of northern Sweden near the Norwegian border."", ""country"": ""SE"", ""latitude"": 66.7352, ""longitude"": 16.1245}
+```"
+mistralai/mistral-small-2603,no-CoT,40.0028,-105.2628,7165.822,US,True,,stop,0.000142875,634,32,0,23.41,"{""country"": ""US"", ""latitude"": 40.0028, ""longitude"": -105.2628}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7716.663,,True,True,,,,,,25.75,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,22.19,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.35,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.12,

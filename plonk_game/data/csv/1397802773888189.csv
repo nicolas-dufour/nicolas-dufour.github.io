@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-29.1048895602,-52.250038675857,0.0,BR,True,,,,,,,,"Soledade, Soledade, Rio Grande do Sul, BR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-29.12712860107422,-51.86412048339844,37.571,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-29.12887954711914,-51.86392593383789,37.603,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-29.177623748779297,-51.87187576293945,37.607,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-29.2543,-51.5128,73.477,BR,True,,stop,0.0042735,1307,257,182,11.19,"{""reasoning"": ""The double yellow center lines with road studs, metal guardrail, rolling hills with eucalyptus plantations, and the style of the small blue building are highly characteristic of southern Brazil, particularly Rio Grande do Sul."", ""country"": ""BR"", ""latitude"": -29.2543, ""longitude"": -51.5128}"
+google/gemini-3.5-flash,CoT (effort=high),-29.1542,-51.4521,77.698,BR,True,,stop,0.0090165,1307,784,718,12.83,"{""reasoning"": ""The double yellow center lines with reflectors, smooth asphalt, and rolling hills covered in eucalyptus plantations are highly characteristic of southern Brazil, particularly Rio Grande do Sul."", ""country"": ""BR"", ""latitude"": -29.1542, ""longitude"": -51.4521}"
+openai/gpt-5.5,no-CoT,-29.3532,-51.4846,79.242,BR,True,,stop,0.00414,678,25,0,8.74,"{""country"":""BR"",""latitude"":-29.3532,""longitude"":-51.4846}"
+openai/gpt-5.5,CoT,-29.4217,-51.4678,83.659,BR,True,,stop,0.014035,755,342,257,15.39,"{""reasoning"":""Right-hand traffic with Brazilian-style double yellow centerlines/white edge lines and rural metal guardrails point to Brazil. The hilly, cool-climate eucalyptus/forest landscape and simple rural houses fit southern Brazil, especially the Serra Gaúcha area of Rio Grande do Sul."",""country"":""BR"",""latitude"":-29.4217,""longitude"":-51.4678}"
+qwen/qwen3.5-397b-a17b,CoT,-29.36,-50.82,141.631,BR,True,,stop,0.0105498,665,2833,2743,65.69,"{""reasoning"": ""The road features double solid yellow lines indicating right-side traffic, which is standard in Brazil. The landscape is dominated by dense pine plantations (Pinus) and rolling hills with simple rural architecture, a signature combination of the Serra region in Rio Grande do Sul, Southern Brazil."", ""country"": ""BR"", ""latitude"": -29.36, ""longitude"": -50.82}"
+anthropic/claude-opus-4.8,no-CoT,-27.8,-52.0,147.142,BR,True,,stop,0.00484,818,30,0,2.3,"{""country"": ""BR"", ""latitude"": -27.8, ""longitude"": -52.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-27.2845,-52.0312,203.551,BR,True,,stop,0.0021525,1225,35,0,28.75,"```json
+{""country"": ""BR"", ""latitude"": -27.2845, ""longitude"": -52.0312}
+```"
+anthropic/claude-opus-4.8,CoT,-27.2,-51.5,224.213,BR,True,,stop,0.007295,949,102,0,3.4,"{""reasoning"": ""Eucalyptus plantations, rolling hills, yellow center lines and right-hand traffic suggest southern Brazil (Santa Catarina/Rio Grande do Sul rural highway)."", ""country"": ""BR"", ""latitude"": -27.2, ""longitude"": -51.5}"
+minimax/minimax-m3,CoT,-27.8,-50.3,239.571,BR,True,,stop,0.00085062,997,508,529,14.61,"{""reasoning"": ""Double yellow center lines, metal W-beam guardrail, Araucaria forest on hillsides, red soil cuts, and rural architecture with blue metal roofs are all characteristic of the southern Brazilian highlands (planalto) in Santa Catarina or Paraná."", ""country"": ""BR"", ""latitude"": -27.8, ""longitude"": -50.3}"
+google/gemini-3.1-pro-preview,CoT,-27.5,-50.5,247.381,BR,True,,stop,0.005074,1307,205,140,4.06,"{
+  ""reasoning"": ""The double yellow center lines, white edge lines, and rolling hills with eucalyptus plantations are highly characteristic of rural highways in southern Brazil."",
+  ""country"": ""BR"",
+  ""latitude"": -27.5,
+  ""longitude"": -50.5
+}"
+minimax/minimax-m3,no-CoT,-27.5,-50.5,247.381,BR,True,,stop,0.00045762,919,200,229,9.73,"{""country"": ""BR"", ""latitude"": -27.5, ""longitude"": -50.5}"
+moonshotai/kimi-k2.6,no-CoT,-27.45,-50.35,261.678,BR,True,,stop,0.0007196,752,25,0,46.41,"{""country"": ""BR"", ""latitude"": -27.45, ""longitude"": -50.35}"
+qwen/qwen3.5-35b-a3b,no-CoT,-27.2186,-50.2984,283.885,BR,True,,stop,0.00011304,586,31,0,2.01,"{""country"": ""BR"", ""latitude"": -27.2186, ""longitude"": -50.2984}"
+google/gemini-3.5-flash,CoT (effort=medium),-27.6542,-49.6123,304.307,BR,True,,stop,0.0061725,1307,468,398,19.05,"{""reasoning"": ""The double yellow center lines with yellow road studs, the style of the guardrail, and the hilly landscape with eucalyptus plantations are highly characteristic of southern Brazil, particularly Santa Catarina."", ""country"": ""BR"", ""latitude"": -27.6542, ""longitude"": -49.6123}"
+qwen/qwen3.5-122b-a10b,no-CoT,-26.5736,-49.2253,409.444,BR,True,,stop,0.00021658,585,31,0,1.52,"{""country"": ""BR"", ""latitude"": -26.5736, ""longitude"": -49.2253}"
+moonshotai/kimi-k2.6,CoT,-25.3,-50.2,469.123,BR,True,,stop,0.009503316,834,2704,2641,72.89,"{""reasoning"": ""Red lateritic soil, eucalyptus plantations, and corten-steel guardrails alongside a paved highway with double-yellow center markings are characteristic of southern Brazil's plateau regions."", ""country"": ""BR"", ""latitude"": -25.300, ""longitude"": -50.200}"
+qwen/qwen3.5-397b-a17b,no-CoT,-25.4372,-49.2698,503.019,BR,True,,stop,0.00043188,585,31,0,3.2,"{""country"": ""BR"", ""latitude"": -25.4372, ""longitude"": -49.2698}"
+google/gemini-3.1-pro-preview,no-CoT,-25.4284,-49.2733,503.617,BR,True,,stop,0.00287,1225,35,0,8.89,"```json
+{""country"": ""BR"", ""latitude"": -25.4284, ""longitude"": -49.2733}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-25.4284,-49.2733,503.617,BR,True,,stop,0.0014115,786,31,0,2.29,"{""country"": ""BR"", ""latitude"": -25.4284, ""longitude"": -49.2733}"
+x-ai/grok-4.3,no-CoT,-25.4297,-49.2711,503.626,BR,True,,stop,0.0007384,704,24,0,1.84,"{""country"": ""BR"", ""latitude"": -25.4297, ""longitude"": -49.2711}"
+google/gemma-4-31b-it,no-CoT,-23.5505,-46.6333,833.259,BR,True,,stop,5.108e-05,262,36,0,15.76,"```json
+{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}
+```"
+qwen/qwen3.5-9b,no-CoT,-22.8567,-46.6483,891.992,BR,True,,stop,6.325e-05,586,31,0,10.05,"{""country"": ""BR"", ""latitude"": -22.8567, ""longitude"": -46.6483}"
+qwen/qwen3.6-27b,no-CoT,-33.5333,-70.6667,1814.559,CL,True,,stop,0.000243465,585,31,0,1.13,"{""country"": ""CL"", ""latitude"": -33.5333, ""longitude"": -70.6667}"
+qwen/qwen3.6-35b-a3b,no-CoT,-37.4689,-72.3512,2081.078,CL,True,,stop,0.00011875,585,31,0,2.66,"{""country"": ""CL"", ""latitude"": -37.4689, ""longitude"": -72.3512}"
+qwen/qwen3.5-27b,no-CoT,-37.475,-72.35,2081.219,CL,True,,stop,0.0002403,585,31,0,19.22,"{""country"": ""CL"", ""latitude"": -37.4750, ""longitude"": -72.3500}"
+x-ai/grok-4.3,CoT,9.92,-84.05,5518.945,CR,True,,stop,0.0039315,788,1313,1240,13.19,"{""reasoning"": ""Double yellow center lines + white right-edge line indicate right-hand traffic (Americas style); light-blue metal-roof house, eucalyptus/pine mix on hills, and guardrail/road profile match rural highlands of Costa Rica."", ""country"": ""CR"", ""latitude"": 9.92, ""longitude"": -84.05}"
+xiaomi/mimo-v2.5,no-CoT,9.95,-84.05,5521.603,CR,True,,stop,9.57376e-05,820,26,0,2.39,"{""country"": ""CR"", ""latitude"": 9.95, ""longitude"": -84.05}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6411.724,,True,True,,,,,,13.08,
+xiaomi/mimo-v2.5,CoT,19.512,-97.143,7239.292,MX,True,,stop,0.0003383576,899,853,756,9.74,"{""reasoning"": ""The landscape features lush, green pine-covered hills and roadside agave-like plants, characteristic of the temperate highlands in Mexico. The road infrastructure, including double yellow lines and standard metal guardrails, along with rural architectural styles like the bright blue house, strongly indicates a location in central or southern Mexico."", ""country"": ""MX"", ""latitude"": 19.512, ""longitude"": -97.143}"
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,9396.211,US,True,,stop,0.0001371,786,32,0,4.21,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,6.4465107917785645,116.54814147949219,17234.764,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,16.91181755065918,121.0467529296875,18496.509,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,37.26719284057617,117.93946838378906,18729.242,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,17.91,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,28.21,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.46,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.33,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.14,

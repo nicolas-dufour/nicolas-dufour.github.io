@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,32.286120616398,-107.62007282906,0.0,US,True,,,,,,,,"Deming, Luna County, New Mexico, US"
+google/gemini-3.1-pro-preview,CoT,32.2615,-107.7521,12.711,US,True,,stop,0.00906,1272,543,439,7.23,"{
+  ""reasoning"": ""The yellow left shoulder line, white dashed lane dividers, and right-hand traffic indicate a US interstate. The arid, flat landscape with sparse scrub and a parallel freight train strongly suggests a major east-west route in the Southwest, such as I-10 in New Mexico or Arizona."",
+  ""country"": ""US"",
+  ""latitude"": 32.2615,
+  ""longitude"": -107.7521
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,32.38933181762695,-107.88455200195312,27.37,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,32.39309310913086,-107.9129867553711,29.979,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,31.910686492919922,-107.4300308227539,45.423,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),32.2486,-108.1512,50.112,US,True,,stop,0.0101505,1271,916,838,9.76,"{""reasoning"": ""The flat, arid desert landscape, wide divided interstate highway with yellow left-shoulder markings, and a long intermodal freight train running parallel on the right are characteristic of Interstate 10 in southwestern New Mexico."", ""country"": ""US"", ""latitude"": 32.2486, ""longitude"": -108.1512}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,32.41326904296875,-108.16310119628906,52.934,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,32.1111946105957,-106.6661148071289,91.844,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,32.35,-108.71,102.666,US,True,,stop,0.013894848,682,3991,3921,101.15,"{""reasoning"": ""Flat desert interstate with right-hand traffic, yellow left edge line, white dashed lane markings, and a parallel freight railroad are characteristic of the southwestern US, specifically Interstate 10 in southern New Mexico or Arizona."", ""country"": ""US"", ""latitude"": 32.35, ""longitude"": -108.71}"
+qwen/qwen3.5-397b-a17b,CoT,31.862,-106.645,103.27,US,True,,stop,0.01952615,553,5492,5346,110.17,"{
+""reasoning"": ""The image shows a multi-lane highway (Interstate) in a flat, arid desert landscape with sparse scrub vegetation, characteristic of the Chihuahuan Desert in the US Southwest. The presence of a large warehouse-like building on the left (likely part of the Santa Teresa Industrial Park) and red/white construction barriers on the right (consistent with border wall construction south of I-10) points to Interstate 10 Eastbound near the New Mexico/Texas border, specifically near Santa Teresa, NM."",
+""country"": ""US"",
+""latitude"": 31.862,
+""longitude"": -106.645
+}"
+minimax/minimax-m3,CoT,31.17,-105.36,247.159,US,True,,stop,0.00071226,843,434,364,17.18,"{""reasoning"": ""Flat arid desert landscape with sparse scrub, parallel freight railroad on the left, American-style divided highway with right-hand driving, and clear blue sky typical of high desert in West Texas along Interstate 10."", ""country"": ""US"", ""latitude"": 31.17, ""longitude"": -105.36}"
+moonshotai/kimi-k2.6,no-CoT,35.0,-107.5,301.974,US,True,,stop,0.000292932,603,23,0,8.03,"{""country"": ""US"", ""latitude"": 35.0, ""longitude"": -107.5}"
+minimax/minimax-m3,no-CoT,32.3,-111.0,317.69,US,True,,stop,0.00022524,754,22,0,2.24,"{""country"": ""US"", ""latitude"": 32.3, ""longitude"": -111.0}"
+mistralai/mistral-medium-3-5,no-CoT,35.0844,-106.6504,323.825,US,True,,stop,0.001191,634,32,0,0.79,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -106.6504}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.0844,-106.6504,323.825,US,True,,stop,0.0001898,474,32,0,5.33,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -106.6504}"
+anthropic/claude-opus-4.8,CoT,32.5,-111.5,365.05,US,True,,stop,0.00651,797,101,0,3.28,"{""reasoning"": ""Flat arid desert scrubland with wide divided interstate, yellow left-edge line and right-side driving indicate southwestern US, likely Arizona/New Mexico along I-10/I-40."", ""country"": ""US"", ""latitude"": 32.5, ""longitude"": -111.5}"
+x-ai/grok-4.3,no-CoT,32.7767,-111.5549,372.871,US,True,,stop,0.0005984,592,24,0,7.52,"{""country"": ""US"", ""latitude"": 32.7767, ""longitude"": -111.5549}"
+google/gemini-3.5-flash,CoT (effort=high),34.9912,-110.0523,375.699,US,True,,stop,0.0169815,1271,1675,1583,17.9,"{""reasoning"": ""The image shows a divided highway with a yellow line on the left, indicating right-hand traffic, running parallel to a major railway line with a double-stack container train in a flat, arid desert landscape characteristic of the Southwestern United States, likely Interstate 40 in Arizona."", ""country"": ""US"", ""latitude"": 34.9912, ""longitude"": -110.0523}"
+anthropic/claude-opus-4.8,no-CoT,32.8,-111.6,377.389,US,True,,stop,0.004055,666,29,0,2.32,"{""country"": ""US"", ""latitude"": 32.8, ""longitude"": -111.6}"
+google/gemini-3.1-pro-preview,no-CoT,35.0526,-110.6543,416.453,US,True,,stop,0.002812,1190,36,0,1.85,"```json
+{""country"": ""US"", ""latitude"": 35.0526, ""longitude"": -110.6543}
+```"
+google/gemini-3.5-flash,CoT (effort=low),35.0125,-110.8452,425.416,US,True,,stop,0.004923,1272,335,260,3.2,"{""reasoning"": ""The flat, arid desert landscape, wide divided highway with US-style road markings, and a long intermodal freight train running parallel to the road point to Interstate 40 in northern Arizona."", ""country"": ""US"", ""latitude"": 35.0125, ""longitude"": -110.8452}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),35.1158,-111.0125,444.335,US,True,,stop,0.0021075,1189,36,0,8.07,"```json
+{""country"": ""US"", ""latitude"": 35.1158, ""longitude"": -111.0125}
+```"
+xiaomi/mimo-v2.5,no-CoT,34.8,-114.6,704.473,US,True,,stop,8.00576e-05,708,26,0,1.36,"{""country"": ""US"", ""latitude"": 34.8, ""longitude"": -114.6}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,34.87308120727539,-115.00712585449219,742.068,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,34.75,-115.25,758.268,US,True,,stop,0.0001459976,787,222,128,3.21,"{""reasoning"": ""The image shows a desert highway with US-standard road markings (solid yellow center line, white shoulder line), American-style vehicle models (SUVs, trucks), orange construction barrels typical of US DOT standards, and arid vegetation consistent with the Southwestern United States, likely along a major interstate."", ""country"": ""US"", ""latitude"": 34.75, ""longitude"": -115.25}"
+google/gemma-4-31b-it,no-CoT,35.2341,-115.1234,766.895,US,True,,stop,7.164e-05,406,37,0,8.26,"```json
+{""country"": ""US"", ""latitude"": 35.2341, ""longitude"": -115.1234}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,36.1069,-115.1739,813.944,US,True,,stop,0.00029445,473,32,0,9.44,"{""country"": ""US"", ""latitude"": 36.1069, ""longitude"": -115.1739}"
+qwen/qwen3.5-27b,no-CoT,36.1699,-115.1398,814.735,US,True,,stop,0.000142155,473,32,0,1.41,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.5-35b-a3b,no-CoT,36.1699,-115.1398,814.735,US,True,,stop,0.00010295,473,32,0,2.39,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.5-9b,no-CoT,36.1699,-115.1398,814.735,US,True,,stop,5.22e-05,474,32,0,9.03,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.6-27b,no-CoT,36.1699,-115.1398,814.735,US,True,,stop,0.0001963,473,32,0,10.0,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+openai/gpt-5.5,CoT,34.7595,-116.5721,873.849,US,True,,stop,0.019995,621,563,473,13.16,"{""reasoning"":""Right-side driving with US-style yellow left shoulder/white lane markings, plus a parallel double-stack freight train in flat Mojave Desert scrub, points strongly to Interstate 40 in southeastern California. The landscape and rail alignment best fit the Barstow–Needles corridor near Newberry Springs/Ludlow."",""country"":""US"",""latitude"":34.7595,""longitude"":-116.5721}"
+qwen/qwen3.6-35b-a3b,no-CoT,40.65,-113.6,1072.123,US,True,,stop,0.0039678132,471,4032,3999,16.73,"{""country"": ""US"", ""latitude"": 40.65, ""longitude"": -113.6}"
+openai/gpt-5.5,no-CoT,34.9089,-118.8934,1083.39,US,True,,stop,0.00344,544,24,0,1.55,"{""country"":""US"",""latitude"":34.9089,""longitude"":-118.8934}"
+qwen/qwen3.6-35b-a3b,CoT,40.8321,-115.7532,1194.902,US,True,,stop,0.00488160985,553,4965,4851,39.79,"```json
+{
+  ""reasoning"": ""The solid yellow line on the left shoulder and right-hand traffic confirm a North American location, likely the US West given the arid, flat sagebrush landscape and distant mountains. The specific combination of the straight highway, sparse vegetation, and clear blue sky points to a high-desert region like Nevada or Utah."",
+  ""country"": ""US"",
+  ""latitude"": 40.8321,
+  ""longitude"": -115.7532
+}
+```"
+mistralai/mistral-small-2603,no-CoT,69.6492,18.9553,7894.501,NO,True,,stop,0.0001137,634,31,0,6.99,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11656.243,,True,True,,,,,,1.71,
+x-ai/grok-4.3,CoT,24.85,46.72,13103.123,SA,True,,stop,0.002504,676,798,727,8.12,"{""reasoning"": ""Right-hand traffic (yellow center line left of lane), arid flat desert with sparse scrub, distant low mountains, and distinctive red/white barrier panels point to a Gulf highway; no left-side driving or European/US guardrails."", ""country"": ""SA"", ""latitude"": 24.85, ""longitude"": 46.72}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.14,

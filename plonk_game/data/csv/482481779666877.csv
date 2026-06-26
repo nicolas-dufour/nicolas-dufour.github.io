@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,21.632899453847,96.129785266391,0.0,MM,True,,,,,,,,"Kyaukse, None, Mandalay, MM"
+google/gemini-3.5-flash,no-CoT (effort=minimal),21.8542,96.0915,24.923,MM,True,,stop,0.002154,1226,35,0,7.48,"```json
+{""country"": ""MM"", ""latitude"": 21.8542, ""longitude"": 96.0915}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,21.088115692138672,95.80239868164062,69.419,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,21.044469833374023,95.7759780883789,74.993,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,20.5430908203125,96.1843490600586,121.313,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,19.7633,96.0785,207.958,MM,True,,stop,0.000275,586,31,0,15.35,"{""country"": ""MM"", ""latitude"": 19.7633, ""longitude"": 96.0785}"
+moonshotai/kimi-k2.6,no-CoT,16.8661,96.1951,530.088,MM,True,,stop,0.00064935,754,25,0,2.7,"{""country"": ""MM"", ""latitude"": 16.8661, ""longitude"": 96.1951}"
+qwen/qwen3.5-9b,no-CoT,23.685,89.997,669.301,BD,True,,stop,0.0001067,585,29,0,4.61,"{""country"": ""BD"", ""latitude"": 23.685, ""longitude"": 89.997}"
+qwen/qwen3.5-397b-a17b,no-CoT,16.85,102.15,825.798,TH,True,,stop,0.0004518,585,28,0,2.19,"{""country"": ""TH"", ""latitude"": 16.85, ""longitude"": 102.15}"
+xiaomi/mimo-v2.5,no-CoT,14.5,100.5,917.678,TH,True,,stop,9.57376e-05,820,26,0,11.02,"{""country"": ""TH"", ""latitude"": 14.5, ""longitude"": 100.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,14.35,100.55,934.849,TH,True,,stop,0.000162,586,28,0,2.51,"{""country"": ""TH"", ""latitude"": 14.35, ""longitude"": 100.55}"
+qwen/qwen3.5-27b,no-CoT,14.3583,100.5833,935.809,TH,True,,stop,0.0002365,586,45,0,6.22,"```json
+{
+  ""country"": ""TH"",
+  ""latitude"": 14.3583,
+  ""longitude"": 100.5833
+}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,14.5317,101.0461,945.029,TH,True,,stop,0.00021892,586,32,0,6.25,"{""country"": ""TH"", ""latitude"": 14.5317, ""longitude"": 101.0461}"
+google/gemini-3.5-flash,CoT (effort=low),12.9125,104.9051,1343.92,KH,True,,stop,0.0047235,1307,307,223,10.17,"```json
+{""reasoning"": ""The lush tropical vegetation with yellow-flowering trees, flat terrain, and the style of the cargo truck driving on the right side of the road are highly characteristic of rural Cambodia, likely along National Highway 6."", ""country"": ""KH"", ""latitude"": 12.9125, ""longitude"": 104.9051}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),12.7115,104.8852,1359.003,KH,True,,stop,0.0090525,1307,788,715,7.2,"{""reasoning"": ""The lush tropical vegetation, flat terrain, and the specific style of the covered cargo truck driving on the right are highly characteristic of Cambodia, particularly along major highways like National Road 6."", ""country"": ""KH"", ""latitude"": 12.7115, ""longitude"": 104.8852}"
+google/gemini-3.5-flash,CoT (effort=high),12.65,104.95,1368.788,KH,True,,stop,0.0110055,1307,1005,937,10.35,"{""reasoning"": ""The lush tropical vegetation, flat terrain, and right-hand traffic with a canvas-covered cargo truck are highly characteristic of Cambodia, particularly along major national highways like Highway 6."", ""country"": ""KH"", ""latitude"": 12.65, ""longitude"": 104.95}"
+google/gemini-3.1-pro-preview,CoT,12.5657,104.991,1378.736,KH,True,,stop,0.005004,1308,199,133,4.05,"{
+  ""reasoning"": ""Right-hand driving, tropical vegetation, and the style of the truck suggest Southeast Asia, specifically Cambodia."",
+  ""country"": ""KH"",
+  ""latitude"": 12.5657,
+  ""longitude"": 104.991
+}"
+google/gemini-3.1-pro-preview,no-CoT,12.5657,104.991,1378.736,KH,True,,stop,0.002872,1226,35,0,1.99,"```json
+{""country"": ""KH"", ""latitude"": 12.5657, ""longitude"": 104.991}
+```"
+moonshotai/kimi-k2.6,CoT,12.0,105.0,1426.849,KH,True,,stop,0.010772136,834,3075,3019,90.27,"{""reasoning"": ""Right-hand traffic and tropical roadside trees indicate mainland Southeast Asia; the canvas-covered truck and rural paved highway style match Cambodia's national roads."", ""country"": ""KH"", ""latitude"": 12.0, ""longitude"": 105.0}"
+xiaomi/mimo-v2.5,CoT,23.4537,80.0136,1666.539,IN,True,,stop,0.0001473976,899,171,97,9.9,"{""reasoning"": ""The red and white reflective tape on the truck bumper, the style of the covered truck, the vegetation, and the driving on the left side strongly suggest a rural highway in India."", ""country"": ""IN"", ""latitude"": 23.4537, ""longitude"": 80.0136}"
+x-ai/grok-4.3,CoT,21.15,79.1,1763.115,IN,True,,stop,0.0027115,788,825,751,14.73,"{
+  ""reasoning"": ""Left-hand traffic (oncoming vehicle visible to right of truck), tropical broadleaf trees with yellow blooms, rural two-lane asphalt road, and building styles indicate South Asia; image matches central India highway scenes."",
+  ""country"": ""IN"",
+  ""latitude"": 21.15,
+  ""longitude"": 79.1
+}"
+x-ai/grok-4.3,no-CoT,21.1458,79.0882,1764.374,IN,True,,stop,0.0007384,704,24,0,2.7,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+google/gemma-4-31b-it,no-CoT,24.5854,77.5712,1924.626,IN,True,,stop,6.692e-05,404,36,0,11.5,"```json
+{""country"": ""IN"", ""latitude"": 24.5854, ""longitude"": 77.5712}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,13.0827,80.2707,1930.917,IN,True,,stop,0.0001353625,585,31,0,1.23,"{""country"": ""IN"", ""latitude"": 13.0827, ""longitude"": 80.2707}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,12.9621000289917,80.22894287109375,1941.828,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,28.7041,77.1025,2066.656,IN,True,,stop,0.0014115,786,31,0,2.34,"{""country"": ""IN"", ""latitude"": 28.7041, ""longitude"": 77.1025}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,12.938106536865234,77.57064819335938,2191.996,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,12.937173843383789,77.56616973876953,2192.472,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,14.35,76.55,2220.816,IN,True,,stop,0.01092705,665,3557,1,102.41,"{
+""reasoning"": ""The image shows left-hand traffic on a road with distinct red laterite soil on the shoulders, characteristic of the Deccan Plateau in Southern India. The vegetation includes tropical trees with yellow flowers (likely Peltophorum or Cassia) and the truck's canvas cover and rear light configuration are typical of Indian commercial vehicles."",
+""country"": ""IN"",
+""latitude"": 14.35,
+""longitude"": 76.55
+}"
+openai/gpt-5.5,CoT,7.4863,80.3658,2309.551,LK,True,,stop,0.020275,755,550,481,19.73,"{""reasoning"":""Left-hand traffic with yellow rear license plates and tropical roadside vegetation strongly suggests Sri Lanka. The flat, lush semi-rural road environment is typical of the Kurunegala/central-western lowlands."",""country"":""LK"",""latitude"":7.4863,""longitude"":80.3658}"
+anthropic/claude-opus-4.8,CoT,-0.5,101.5,2529.165,ID,True,,stop,0.00712,949,95,0,3.5,"{""reasoning"": ""Tropical vegetation, right-hand traffic, worn two-lane road and roadside structures resemble rural Southeast Asia, likely Sumatra, Indonesia."", ""country"": ""ID"", ""latitude"": -0.5, ""longitude"": 101.5}"
+minimax/minimax-m3,CoT,16.35,121.12,2688.966,PH,True,,stop,0.00107262,997,693,785,10.74,"{""reasoning"": ""Right-hand traffic, lush tropical broadleaf vegetation, rural setting with low structures, and a vintage canvas-covered military cargo truck (likely Korean War-era surplus still in widespread use) strongly indicate a Southeast Asian developing country, most consistent with rural Philippines."", ""country"": ""PH"", ""latitude"": 16.35, ""longitude"": 121.12}"
+anthropic/claude-opus-4.8,no-CoT,-2.5,104.7,2840.725,ID,True,,stop,0.00484,818,30,0,4.77,"{""country"": ""ID"", ""latitude"": -2.5, ""longitude"": 104.7}"
+openai/gpt-5.5,no-CoT,-6.7924,39.2083,6960.929,TZ,True,,stop,0.00411,678,24,0,1.4,"{""country"":""TZ"",""latitude"":-6.7924,""longitude"":39.2083}"
+minimax/minimax-m3,no-CoT,-6.1629,35.7516,7265.525,TZ,True,,stop,0.00027324,906,24,0,2.66,"{""country"": ""TZ"", ""latitude"": -6.1629, ""longitude"": 35.7516}{""country"": ""TZ"", ""latitude"": -6.1629, ""longitude"": 35.7516}"
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,8480.953,FR,True,,stop,0.0001359,786,30,0,10.79,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10640.971,,True,True,,,,,,12.47,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,2.44,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.44,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.48,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.12,

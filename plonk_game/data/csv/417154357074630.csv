@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,7.392807861906799,-72.63125961391349,0.0,CO,True,,,,,,,,"Pamplona, None, Norte de Santander, CO"
+google/gemini-3.5-flash,CoT (effort=low),5.5325,-73.3614,222.03,CO,True,,stop,0.0043005,1271,266,202,9.89,"{""reasoning"": ""The double yellow center lines, concrete roadside drainage, yellow diamond warning signs, and high-altitude Andean grassy hills are highly characteristic of the Colombian Andes."", ""country"": ""CO"", ""latitude"": 5.5325, ""longitude"": -73.3614}"
+google/gemini-3.1-pro-preview,CoT,5.5321,-73.4812,227.214,CO,True,,stop,0.005868,1272,277,196,21.52,"{
+  ""reasoning"": ""The double yellow center lines, white edge lines, and concrete curbs are characteristic of highway infrastructure in the Andean regions of South America. The dry, mountainous terrain strongly suggests the Colombian Andes."",
+  ""country"": ""CO"",
+  ""latitude"": 5.5321,
+  ""longitude"": -73.4812
+}"
+google/gemini-3.1-pro-preview,no-CoT,5.06889,-73.56722,278.347,CO,True,,stop,0.00281,1189,36,0,2.87,"```json
+{""country"": ""CO"", ""latitude"": 5.06889, ""longitude"": -73.56722}
+```"
+google/gemma-4-31b-it,no-CoT,4.65,-74.12,346.574,CO,True,,stop,6.178e-05,406,31,0,4.08,"```json
+{""country"": ""CO"", ""latitude"": 4.65, ""longitude"": -74.12}
+```"
+google/gemma-4-31b-it,CoT,4.62,-74.12,349.515,CO,True,,stop,0.00031194,491,608,560,32.2,"{""reasoning"": ""The double yellow center lines and white edge lines are characteristic of road markings in the Americas, specifically Latin America. The mountainous terrain, soil color, and vegetation are highly indicative of the Colombian Andes."", ""country"": ""CO"", ""latitude"": 4.62, ""longitude"": -74.12}"
+qwen/qwen3.5-397b-a17b,CoT,6.334,-75.621,350.426,CO,True,,stop,0.0161071,553,4534,4404,283.29,"{
+""reasoning"": ""The double yellow center lines and right-hand traffic place this in the Americas, while the specific combination of concrete drainage curbs, smooth asphalt, and lush, treeless grassy hillsides is highly characteristic of the Antioquia region in the Colombian Andes."",
+""country"": ""CO"",
+""latitude"": 6.334,
+""longitude"": -75.621
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,1.9896230697631836,-76.76573944091797,755.48,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,1.9798085689544678,-76.7725601196289,756.808,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,1.9771697521209717,-76.7800064086914,757.542,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-0.3385,-78.1768,1057.011,EC,True,,stop,0.020475,621,579,485,18.81,"{""reasoning"":""Right-hand traffic with double yellow centerlines, white edge lines, yellow warning signage, concrete drainage gutters, and high grassy Andean terrain point most strongly to Ecuador’s mountain highways. The smooth, curving road through páramo-like hills is consistent with the Papallacta/Andean pass area east of Quito."",""country"":""EC"",""latitude"":-0.3385,""longitude"":-78.1768}"
+moonshotai/kimi-k2.6,no-CoT,-0.5,-78.5,1092.651,EC,True,,stop,0.000292932,603,23,0,1.7,"{""country"": ""EC"", ""latitude"": -0.5, ""longitude"": -78.5}"
+moonshotai/kimi-k2.6,CoT,-0.8,-78.4,1113.245,EC,True,,stop,0.0103068,680,2741,3067,105.66,"{""reasoning"": ""High-altitude grassland (paramo) vegetation, mountainous terrain, and road markings with double yellow center lines and concrete curbs are characteristic of the Ecuadorian Andes."", ""country"": ""EC"", ""latitude"": -0.8, ""longitude"": -78.4}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-0.864215,-78.612845,1132.766,EC,True,,stop,0.002127,1190,38,0,7.81,"```json
+{""country"": ""EC"", ""latitude"": -0.864215, ""longitude"": -78.612845}
+```"
+anthropic/claude-opus-4.8,no-CoT,-1.6,-78.65,1202.389,EC,True,,stop,0.00408,666,30,0,8.79,"{""country"": ""EC"", ""latitude"": -1.6, ""longitude"": -78.65}"
+google/gemini-3.5-flash,CoT (effort=medium),-1.6234,-78.6845,1206.682,EC,True,,stop,0.0066405,1271,526,462,8.3,"{""reasoning"": ""The double yellow center lines, concrete curbs, and yellow diamond warning signs in a high-altitude Andean grassland environment are highly characteristic of the Ecuadorian highlands."", ""country"": ""EC"", ""latitude"": -1.6234, ""longitude"": -78.6845}"
+anthropic/claude-opus-4.8,CoT,-1.65,-78.65,1207.021,EC,True,,stop,0.00616,797,87,0,2.99,"{""reasoning"": ""Mountainous Andean terrain with dry grassy slopes, double yellow center lines and right-side driving suggest highland Ecuador or Peru."", ""country"": ""EC"", ""latitude"": -1.65, ""longitude"": -78.65}"
+openai/gpt-5.5,no-CoT,-1.6587,-78.6519,1207.944,EC,True,,stop,0.00347,544,25,0,7.73,"{""country"":""EC"",""latitude"":-1.6587,""longitude"":-78.6519}"
+google/gemini-3.5-flash,CoT (effort=high),-3.3521,-79.1234,1395.151,EC,True,,stop,0.0086565,1271,750,687,21.0,"{""reasoning"": ""The double yellow center lines, yellow diamond sign, and high-altitude Andean grassy hills with modern concrete gutters are highly characteristic of the Ecuadorian highlands."", ""country"": ""EC"", ""latitude"": -3.3521, ""longitude"": -79.1234}"
+mistralai/mistral-small-2603,CoT,38.5,-101.5,4509.782,US,True,,stop,0.00037944,716,565,610,10.91,"{""reasoning"": ""Road markings indicate driving on the right; reddish soil and dry grassy hills are characteristic of the Great Plains in the central United States."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -101.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.1478,-118.1445,5521.817,US,True,,stop,0.0003357,473,32,0,6.2,"{""country"": ""US"", ""latitude"": 34.1478, ""longitude"": -118.1445}"
+qwen/qwen3.6-35b-a3b,no-CoT,34.0522,-118.2437,5526.358,US,True,,stop,0.0001071356,473,32,0,2.64,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+xiaomi/mimo-v2.5,no-CoT,34.08,-118.45,5545.163,US,True,,stop,8.06176e-05,708,28,0,2.88,"{""country"": ""US"", ""latitude"": 34.08, ""longitude"": -118.45}"
+qwen/qwen3.5-122b-a10b,no-CoT,34.2681,-118.5551,5561.844,US,True,,stop,0.00018954,473,32,0,8.4,"{""country"": ""US"", ""latitude"": 34.2681, ""longitude"": -118.5551}"
+qwen/qwen3.6-27b,no-CoT,34.4208,-118.5734,5569.671,US,True,,stop,0.00022688,473,32,0,13.21,"{""country"": ""US"", ""latitude"": 34.4208, ""longitude"": -118.5734}"
+mistralai/mistral-small-2603,no-CoT,36.5323,-118.2921,5636.511,US,True,,stop,0.000142875,634,32,0,9.14,"{""country"": ""US"", ""latitude"": 36.5323, ""longitude"": -118.2921}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,34.448143005371094,-119.75542449951172,5671.816,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,36.7783,-119.4179,5739.601,US,True,,stop,0.0001925,474,37,0,10.95,"```json
+{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}
+```"
+minimax/minimax-m3,CoT,35.45,-120.85,5804.515,US,True,,stop,0.00114906,843,798,718,19.29,"{""reasoning"": ""Double solid yellow center line indicates North American (US) road standard; right-hand driving; rolling coastal hills with golden-brown dry grass mixed with green patches and maritime haze are characteristic of California's Central Coast, likely Highway 1 in San Luis Obispo County."", ""country"": ""US"", ""latitude"": 35.45, ""longitude"": -120.85}"
+xiaomi/mimo-v2.5,CoT,35.82,-120.91,5824.156,US,True,,stop,0.0001574776,787,263,196,10.4,"{""reasoning"": ""US-standard double yellow center lines and white edge road markings, combined with dry grassy mountainous terrain typical of California's coastal regions, point to this location."", ""country"": ""US"", ""latitude"": 35.82, ""longitude"": -120.91}"
+qwen/qwen3.6-35b-a3b,CoT,35.65,-121.15,5837.742,US,True,,stop,0.0079482091,553,8142,8027,164.19,"```json
+{
+  ""reasoning"": ""The double yellow center lines and yellow diamond-shaped warning sign indicate right-hand traffic in the United States, specifically California given the dry, golden grassy hills and coastal sage scrub vegetation. The road infrastructure (concrete curbs, asphalt quality) and landscape are characteristic of the Central Coast, likely near San Simeon or Big Sur."",
+  ""country"": ""US"",
+  ""latitude"": 35.65,
+  ""longitude"": -121.15
+}
+```"
+x-ai/grok-4.3,CoT,36.25,-121.8,5915.902,US,True,,stop,0.002649,676,856,792,8.0,"{""reasoning"": ""US-style double solid yellow center line + white edge lines, yellow diamond warning sign, right-hand traffic, and arid grassy hills indicate California; concrete barrier and road geometry match coastal ranges."", ""country"": ""US"", ""latitude"": 36.25, ""longitude"": -121.8}"
+qwen/qwen3.5-35b-a3b,no-CoT,36.2721,-121.8045,5917.139,US,True,,stop,0.00010295,473,32,0,2.18,"{""country"": ""US"", ""latitude"": 36.2721, ""longitude"": -121.8045}"
+google/gemma-4-26b-a4b-it,no-CoT,36.5785,-11.0,6997.583,,True,,stop,6.414e-05,406,54,0,9.8,"{""- own_thought
+{""country"": ""US"", ""latitude"": 36.5785, ""longitude"": -11 own- own_thought
+{""country"": ""US"",-118.2921}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-41.23951721191406,175.28900146484375,12388.853,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-41.24894332885742,175.27114868164062,12390.158,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,-41.0333,174.8833,12426.091,NZ,True,,stop,5.22e-05,474,32,0,10.2,"{""country"": ""NZ"", ""latitude"": -41.0333, ""longitude"": 174.8833}"
+x-ai/grok-4.3,no-CoT,-41.295,174.78,12429.816,NZ,True,,stop,0.0007278,592,22,0,1.16,"{""country"": ""NZ"", ""latitude"": -41.295, ""longitude"": 174.78}"
+mistralai/mistral-medium-3-5,no-CoT,-41.2865,174.7762,12430.286,NZ,True,,stop,0.001191,634,32,0,13.61,"{""country"": ""NZ"", ""latitude"": -41.2865, ""longitude"": 174.7762}"
+minimax/minimax-m3,no-CoT,-41.2,174.0,12495.872,NZ,True,,stop,0.00022248,752,23,0,5.56,"{""country"": ""NZ"", ""latitude"": -41.2, ""longitude"": 174.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.15,

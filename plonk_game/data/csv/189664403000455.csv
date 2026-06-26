@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-10.606279614889,-36.975627732927,0.0,BR,True,,,,,,,,"Japaratuba, Japaratuba, Sergipe, BR"
+google/gemini-3.5-flash,CoT (effort=low),-10.1234,-36.8123,56.588,BR,True,,stop,0.0050745,1283,350,261,9.69,"{""reasoning"": ""The vehicles (such as the Chevrolet Onix), road markings, concrete median barrier, and green highway signage are characteristic of a duplicated federal highway in Brazil. The tropical vegetation and bamboo suggest a location in the northeastern region, likely along the BR-101 highway."", ""country"": ""BR"", ""latitude"": -10.1234, ""longitude"": -36.8123}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-9.540450096130371,-35.7278938293457,180.847,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-9.290300369262695,-35.57978057861328,211.62,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,-12.5,-38.5,268.172,BR,True,,stop,0.005996,1282,286,212,5.09,"{
+  ""reasoning"": ""The road markings, concrete barrier, and vehicle types are characteristic of Brazilian highways. The tropical yet somewhat dry vegetation suggests a region in northeastern or central Brazil, such as Bahia."",
+  ""country"": ""BR"",
+  ""latitude"": -12.5,
+  ""longitude"": -38.5
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-8.665055274963379,-35.46738052368164,271.898,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-12.9,-38.5,304.278,BR,True,,stop,0.00465,780,30,0,10.87,"{""country"": ""BR"", ""latitude"": -12.9, ""longitude"": -38.5}"
+google/gemini-3.5-flash,CoT (effort=high),-8.3542,-35.1825,318.404,BR,True,,stop,0.01023,1282,923,824,7.83,"{""reasoning"": ""The presence of a Hyundai HB20 (a car model highly specific to the Brazilian market) and a VW Voyage, combined with the tropical vegetation featuring bamboo, the green highway signage, and the concrete median barrier, strongly points to a duplicated federal highway in Brazil, likely the BR-101 in the Northeast region."", ""country"": ""BR"", ""latitude"": -8.3542, ""longitude"": -35.1825}"
+google/gemini-3.5-flash,CoT (effort=medium),-8.3542,-35.0315,328.89,BR,True,,stop,0.007134,1282,579,504,5.59,"{""reasoning"": ""The green highway signage, tropical vegetation with bamboo, and vehicle models like the Hyundai HB20 and VW Voyage strongly indicate a highway in Brazil, likely the BR-101 in the Northeast region."", ""country"": ""BR"", ""latitude"": -8.3542, ""longitude"": -35.0315}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-8.1854,-35.0312,343.448,BR,True,,stop,0.002106,1200,34,0,7.71,"```json
+{""country"": ""BR"", ""latitude"": -8.1854, ""longitude"": -35.0312}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-8.05,-35.0,357.461,BR,True,,stop,0.00486,1200,205,176,4.17,"```json
+{""country"": ""BR"", ""latitude"": -8.05, ""longitude"": -35.0}
+```"
+moonshotai/kimi-k2.6,no-CoT,-8.0,-34.9,368.583,BR,True,,stop,0.00077315,717,23,0,2.04," {""country"": ""BR"", ""latitude"": -8.0, ""longitude"": -34.9}"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7942,-47.8822,1313.594,BR,True,,stop,0.00042228,569,31,0,8.09,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}"
+moonshotai/kimi-k2.6,CoT,-15.2,-49.4,1439.749,BR,True,,stop,0.00829107,794,2154,2438,361.68,"{""reasoning"": ""The concrete Jersey barrier with small yellow reflectors, tropical Cerrado vegetation, and right-hand traffic on a Brazilian-style federal highway strongly indicate a road in Brazil's central-west region."", ""country"": ""BR"", ""latitude"": -15.2, ""longitude"": -49.4}"
+minimax/minimax-m3,CoT,-22.5,-43.1,1474.18,BR,True,,stop,0.00075006,957,437,361,16.67,"{""reasoning"": ""Right-hand traffic, tropical/subtropical lush vegetation, concrete median barrier style, and vehicle types (including the truck style) are characteristic of Brazilian federal highways such as the BR-101 or BR-116 in the southeast region."", ""country"": ""BR"", ""latitude"": -22.5, ""longitude"": -43.1}"
+x-ai/grok-4.3,no-CoT,-22.85,-43.25,1515.832,BR,True,,stop,0.0006934,672,22,0,0.81,"{""country"": ""BR"", ""latitude"": -22.85, ""longitude"": -43.25}"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,1766.199,BR,True,,stop,0.0013545,748,31,0,7.13,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,1766.199,BR,True,,stop,0.00021268,570,31,0,11.72,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-27b,no-CoT,-23.55052,-46.633308,1766.202,BR,True,,stop,0.0002365,570,47,0,3.47,"```json
+{
+  ""country"": ""BR"",
+  ""latitude"": -23.55052,
+  ""longitude"": -46.633308
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,9.908027648925781,-61.47541427612305,3541.882,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,10.007121086120605,-61.46725082397461,3548.201,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,13.1058,-59.5536,3627.852,BB,True,,stop,0.014595,717,367,292,27.35,"{""reasoning"":""Left-hand traffic with British-style lane markings, tropical dry Caribbean vegetation, and divided highway infrastructure strongly suggest Barbados rather than larger left-driving islands. The dry scrub and concrete median fit the ABC Highway/major roads around southern-central Barbados."",""country"":""BB"",""latitude"":13.1058,""longitude"":-59.5536}"
+openai/gpt-5.5,no-CoT,13.1506,-59.5451,3630.767,BB,True,,stop,0.00392,640,24,0,1.97,"{""country"":""BB"",""latitude"":13.1506,""longitude"":-59.5451}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4253.972,,True,True,,,,,,7.51,
+anthropic/claude-opus-4.8,CoT,18.15,-66.4,4544.583,PR,True,,stop,0.007005,911,98,0,3.11,"{""reasoning"": ""Dry tropical scrub vegetation, concrete median barrier, right-hand driving on a divided highway suggest Caribbean/Latin America, likely Puerto Rico interior."", ""country"": ""PR"", ""latitude"": 18.15, ""longitude"": -66.4}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,11.212760925292969,-74.12074279785156,4768.379,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,25.7617,-80.1918,6181.171,US,True,,stop,0.00012164555,569,31,0,8.99,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+qwen/qwen3.6-27b,no-CoT,20.6597,-103.3496,8041.973,MX,True,,stop,0.0002251,569,32,0,13.98,"{""country"": ""MX"", ""latitude"": 20.6597, ""longitude"": -103.3496}"
+x-ai/grok-4.3,CoT,8.95,38.75,8654.596,ET,True,,stop,0.004249,756,1456,1390,19.6,"{""reasoning"": ""Right-hand traffic (median barrier on left), tropical savanna vegetation with acacia-like trees, right-hand drive taxis, and highway design point to East Africa; Ethiopia matches all visual cues best."", ""country"": ""ET"", ""latitude"": 8.95, ""longitude"": 38.75}"
+mistralai/mistral-small-2603,no-CoT,38.5757,-121.478,10269.789,US,True,,stop,0.0001635,748,31,0,1.48,"{""country"": ""US"", ""latitude"": 38.5757, ""longitude"": -121.478}"
+qwen/qwen3.5-9b,no-CoT,13.7563,100.5018,15385.636,TH,True,,stop,6.18e-05,570,32,0,11.51,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+xiaomi/mimo-v2.5,no-CoT,14.5,100.5,15385.65,TH,True,,stop,9.34976e-05,804,26,0,2.15,"{""country"": ""TH"", ""latitude"": 14.5, ""longitude"": 100.5}"
+minimax/minimax-m3,no-CoT,14.2,100.5,15385.711,TH,True,,stop,0.00040062,881,162,185,12.39,"{""country"": ""TH"", ""latitude"": 14.2, ""longitude"": 100.5}"
+xiaomi/mimo-v2.5,CoT,14.369,100.574,15393.672,TH,True,,stop,0.0001804376,883,297,231,7.23,"{""reasoning"": ""The license plates appear to be yellow rectangular plates commonly found in Thailand, and the tropical vegetation and right-hand traffic align with a Thai highway setting."", ""country"": ""TH"", ""latitude"": 14.369, ""longitude"": 100.574}"
+qwen/qwen3.5-397b-a17b,CoT,14.553,101.198,15460.74,TH,True,,stop,0.01269285,649,4148,1,178.98,"{
+""reasoning"": ""The image shows left-hand traffic on a divided highway with white rear license plates, which is standard for Thailand. The vegetation is tropical dry forest (typical of the dry season in Northeast/Central Thailand), and the vehicles (Toyota Vios taxi, Honda City sedan, and large cab-over truck) are ubiquitous on Thai highways like Mittraphap Road (Highway 2)."",
+""country"": ""TH"",
+""latitude"": 14.553,
+""longitude"": 101.198
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,-27.4698,153.0251,15646.146,AU,True,,stop,0.0001118,570,32,0,1.77,"{""country"": ""AU"", ""latitude"": -27.4698, ""longitude"": 153.0251}"
+google/gemma-4-31b-it,no-CoT,14.5995,120.9842,17583.762,PH,True,,stop,6.576e-05,392,37,0,2.42,"```json
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,9.18,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.56,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.66,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,19.62,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,

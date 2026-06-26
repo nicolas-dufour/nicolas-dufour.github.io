@@ -1,0 +1,58 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,55.385506387738,58.012598062621,0.0,RU,True,,,,,,,,"Mesyagutovo, None, Bashkortostan, RU"
+google/gemini-3.1-pro-preview,no-CoT,54.738,55.972,148.551,RU,True,,stop,0.002848,1226,33,0,12.25,"```json
+{""country"": ""RU"", ""latitude"": 54.738, ""longitude"": 55.972}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),54.829444,55.351389,180.199,RU,True,,stop,0.00219,1226,39,0,1.43,"```json
+{""country"": ""RU"", ""latitude"": 54.829444, ""longitude"": 55.351389}
+```"
+anthropic/claude-opus-4.8,CoT,54.5,53.0,334.866,RU,True,,stop,0.00677,949,81,0,10.16,"{""reasoning"": ""Open rolling agricultural steppe with birch trees and metal guardrail, right-hand traffic, typical of rural Russia road."", ""country"": ""RU"", ""latitude"": 54.5, ""longitude"": 53.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,54.35629653930664,52.72408676147461,357.102,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,54.354976654052734,52.71628189086914,357.627,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,54.123,51.456,443.331,RU,True,,stop,0.00577,1307,263,194,11.52,"{
+  ""reasoning"": ""The black and white painted guardrail and the presence of birch trees alongside rolling green fields are highly characteristic of rural highways in Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 54.123,
+  ""longitude"": 51.456
+}"
+anthropic/claude-opus-4.8,no-CoT,54.5,50.0,520.839,RU,True,,stop,0.00484,818,30,0,8.32,"{""country"": ""RU"", ""latitude"": 54.5, ""longitude"": 50.0}"
+google/gemini-3.5-flash,CoT (effort=medium),53.5124,49.4128,593.241,RU,True,,stop,0.0056055,1307,405,342,3.92,"{""reasoning"": ""The black-and-white painted guardrail posts, birch trees, and vast agricultural landscape are highly characteristic of rural highways in western Russia."", ""country"": ""RU"", ""latitude"": 53.5124, ""longitude"": 49.4128}"
+google/gemini-3.5-flash,CoT (effort=low),54.3521,48.5124,618.141,RU,True,,stop,0.003906,1308,216,152,2.54,"{""reasoning"": ""The white guardrail with black-and-white painted posts, flat agricultural landscape, and birch trees are highly characteristic of rural highways in Russia."", ""country"": ""RU"", ""latitude"": 54.3521, ""longitude"": 48.5124}"
+google/gemini-3.5-flash,CoT (effort=high),53.2,44.9,883.487,RU,True,,stop,0.0090075,1307,783,728,7.24,"{""reasoning"": ""The black-and-white painted guardrail posts, birch trees, and vast agricultural landscape are highly characteristic of rural western Russia."", ""country"": ""RU"", ""latitude"": 53.2, ""longitude"": 44.9}"
+moonshotai/kimi-k2.6,CoT,52.8,45.0,894.376,RU,True,,stop,0.0112444,832,2653,2959,45.77,"{""reasoning"": ""White-and-dark striped roadside guardrails and flat steppe farmland with scattered deciduous trees are hallmarks of rural federal highways in European Russia."", ""country"": ""RU"", ""latitude"": 52.8, ""longitude"": 45.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,55.860191345214844,41.76227569580078,1019.287,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,50.981407165527344,42.509483337402344,1139.944,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,52.55,40.1,1209.542,RU,True,,stop,0.00078774,997,430,433,15.48,"{""reasoning"": ""Right-hand traffic, Russian-style white metal guardrails, flat agricultural steppe with birch trees and rolling green fields are highly characteristic of rural highways in central European Russia (e.g., the Black Earth/forest-steppe region)."", ""country"": ""RU"", ""latitude"": 52.55, ""longitude"": 40.10}"
+x-ai/grok-4.3,no-CoT,55.3,37.8,1273.635,RU,True,,stop,0.0007334,704,22,0,0.63,"{""country"": ""RU"", ""latitude"": 55.3, ""longitude"": 37.8}"
+qwen/qwen3.5-9b,no-CoT,55.7615,37.6238,1277.771,RU,True,,stop,0.0001072,585,31,0,9.27,"{""country"": ""RU"", ""latitude"": 55.7615, ""longitude"": 37.6238}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,1278.248,RU,True,,stop,0.00010997,406,35,0,10.87,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,1278.248,RU,True,,stop,0.001419,786,32,0,1.21,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-122b-a10b,no-CoT,55.7558,37.6173,1278.248,RU,True,,stop,0.00021684,586,31,0,7.13,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+openai/gpt-5.5,no-CoT,55.0481,37.4103,1302.642,RU,True,,stop,0.00408,678,23,0,3.17,"{""country"":""RU"",""latitude"":55.0481,""longitude"":37.4103}"
+openai/gpt-5.5,CoT,54.0865,37.5428,1317.189,RU,True,,stop,0.015985,755,407,317,10.5,"{""reasoning"":""Right-hand driving on a broad rural highway with white lane/edge markings and black-white painted guardrail elements is typical of Russia/Belarus, and the birch-lined rolling agricultural landscape strongly suggests western Russia. With no readable signs, a central-western Russian oblast such as Tula is the best fit."",""country"":""RU"",""latitude"":54.0865,""longitude"":37.5428}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,49.032859802246094,37.1099853515625,1581.457,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,50.1966667175293,27.470165252685547,2114.085,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,69.6492,18.9553,2482.782,NO,True,,stop,0.0001365,786,31,0,2.45,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+x-ai/grok-4.3,CoT,52.15,20.05,2488.924,PL,True,,stop,0.002369,788,688,611,11.93,"{""reasoning"": ""Right-hand traffic on undivided rural highway, European-style metal guardrail with black/white reflective bands, open rolling farmland with birch/poplar trees at dusk all point to temperate Eastern/Central Europe. No other continents match the combined road furniture + vegetation signature."", ""country"": ""PL"", ""latitude"": 52.15, ""longitude"": 20.05}"
+qwen/qwen3.6-27b,no-CoT,51.5,20.0,2521.619,PL,True,,stop,0.0002279,585,31,0,6.79,"{""country"": ""PL"", ""latitude"": 51.5000, ""longitude"": 20.0000}"
+qwen/qwen3.5-27b,no-CoT,52.3759,10.5425,3068.284,DE,True,,stop,0.00022491,585,31,0,1.41,"{""country"": ""DE"", ""latitude"": 52.3759, ""longitude"": 10.5425}"
+xiaomi/mimo-v2.5,CoT,49.72,2.28,3716.274,FR,True,,stop,0.0001913576,899,328,265,10.16,"{""reasoning"": ""Right-hand traffic with metal W-beam guardrails, temperate rural agricultural landscape with deciduous trees typical of Northern Europe, matching rural French countryside."", ""country"": ""FR"", ""latitude"": 49.72, ""longitude"": 2.28}"
+qwen/qwen3.5-35b-a3b,no-CoT,51.4823,-2.6741,3914.369,GB,True,,stop,0.0001405625,585,35,0,0.71,"{
+""country"": ""GB"",
+""latitude"": 51.4823,
+""longitude"": -2.6741
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.8781,-87.6298,8723.219,US,True,,stop,0.00011875,585,31,0,8.85,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+xiaomi/mimo-v2.5,no-CoT,39.8,-89.0,8979.029,US,True,,stop,9.54576e-05,820,25,0,1.39,"{""country"": ""US"", ""latitude"": 39.8, ""longitude"": -89.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.2033,-96.0989,8999.054,US,True,,stop,0.00043188,585,31,0,2.69,"{""country"": ""US"", ""latitude"": 41.2033, ""longitude"": -96.0989}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.32,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.38,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.2,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.41,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.76,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.44,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.24,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.19,

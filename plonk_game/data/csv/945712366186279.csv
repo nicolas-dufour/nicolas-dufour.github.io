@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,29.787337543436,-96.859256758411,0.0,US,True,,,,,,,,"Schulenburg, Fayette County, Texas, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,29.734827041625977,-96.7927474975586,8.678,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,29.751480102539062,-96.76930236816406,9.554,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,30.1664,-96.3972,61.297,US,True,,stop,0.012195,621,303,216,8.06,"{""reasoning"":""US-style rural mailboxes, right-side road layout, ranch fencing, and broad sandy unpaved county road point to the rural American South. The oak/pecan pasture landscape and pale sand-clay road surface are most consistent with east-central Texas near Brenham/Washington County."",""country"":""US"",""latitude"":30.1664,""longitude"":-96.3972}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),30.3184,-96.2845,80.914,US,True,,stop,0.0020985,1189,35,0,2.75,"```json
+{""country"": ""US"", ""latitude"": 30.3184, ""longitude"": -96.2845}
+```"
+google/gemini-3.1-pro-preview,no-CoT,30.5,-96.5,86.447,US,True,,stop,0.002726,1189,29,0,8.62,"```json
+{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -96.5}
+```"
+openai/gpt-5.5,no-CoT,30.2672,-97.7431,100.434,US,True,,stop,0.00344,544,24,0,1.49,"{""country"":""US"",""latitude"":30.2672,""longitude"":-97.7431}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,29.75679588317871,-97.95116424560547,105.443,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,29.755191802978516,-97.95526123046875,105.845,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,30.638,-98.412,176.657,US,True,,stop,0.0064866,553,1723,1625,23.31,"{""reasoning"": ""The standard rural mailbox on the right side of the road and the vehicle dashboard confirm right-hand traffic in the United States. The unpaved road with light reddish-tan gravel (likely limestone) and the specific deciduous tree vegetation (resembling Live Oaks) strongly suggest a rural area in Central Texas."", ""country"": ""US"", ""latitude"": 30.638, ""longitude"": -98.412}"
+anthropic/claude-opus-4.8,no-CoT,31.3,-95.6,206.96,US,True,,stop,0.004055,666,29,0,9.16,"{""country"": ""US"", ""latitude"": 31.3, ""longitude"": -95.6}"
+anthropic/claude-opus-4.8,CoT,31.3,-95.4,218.673,US,True,,stop,0.006335,797,94,0,18.88,"{""reasoning"": ""Sandy-orange dirt road, mailbox on post, oak/pecan trees and pasture fencing typical of rural East Texas/Deep South USA; right-side driving."", ""country"": ""US"", ""latitude"": 31.3, ""longitude"": -95.4}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,31.285690307617188,-95.35978698730469,219.953,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,31.81016731262207,-96.06613159179688,237.34,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),31.5582,-94.6514,288.707,US,True,,stop,0.003942,1272,226,152,2.7,"{""reasoning"": ""The light-colored sandy/limestone dirt road, lush green grass, deciduous trees, and typical American rural mailbox on the right indicate a location in the southern United States, likely East Texas."", ""country"": ""US"", ""latitude"": 31.5582, ""longitude"": -94.6514}"
+google/gemini-3.5-flash,CoT (effort=medium),31.5824,-94.6123,293.257,US,True,,stop,0.0049665,1271,340,269,4.14,"{""reasoning"": ""The light-colored sandy-clay dirt road, rural mailbox on the right, and mix of pine and deciduous trees are highly characteristic of the southern United States, particularly East Texas."", ""country"": ""US"", ""latitude"": 31.5824, ""longitude"": -94.6123}"
+google/gemini-3.1-pro-preview,CoT,31.6234,-94.6543,293.448,US,True,,stop,0.006526,1271,332,241,5.4,"{
+  ""reasoning"": ""The standard rural mailbox and vehicle dashboard indicate the United States. The sandy, light-colored dirt road and lush green vegetation with a mix of deciduous and evergreen trees are characteristic of the American South, such as East Texas or Louisiana."",
+  ""country"": ""US"",
+  ""latitude"": 31.6234,
+  ""longitude"": -94.6543
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,32.7767,-96.797,332.455,US,True,,stop,9.636e-05,474,30,0,2.56,"{""country"": ""US"", ""latitude"": 32.7767, ""longitude"": -96.797}"
+x-ai/grok-4.3,no-CoT,32.85,-96.8,340.599,US,True,,stop,0.0007278,592,22,0,2.0,"{""country"": ""US"", ""latitude"": 32.85, ""longitude"": -96.8}"
+xiaomi/mimo-v2.5,no-CoT,33.5,-96.5,414.227,US,True,,stop,7.97776e-05,708,25,0,2.81,"{""country"": ""US"", ""latitude"": 33.5, ""longitude"": -96.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,33.8121,-96.7699,447.613,US,True,,stop,0.0002884,473,31,0,1.1,"{""country"": ""US"", ""latitude"": 33.8121, ""longitude"": -96.7699}"
+minimax/minimax-m3,CoT,30.85,-91.5,527.754,US,True,,stop,0.00076542,845,475,497,15.77,"{""reasoning"": ""The orange/tan dirt road, lush deciduous vegetation, flat terrain, overcast sky, and rural fencing style are highly characteristic of the Deep South US, likely Louisiana or Mississippi. The specific soil color suggests iron-rich soils common in the Gulf Coastal Plain."", ""country"": ""US"", ""latitude"": 30.85, ""longitude"": -91.5}{""reasoning"": ""The orange/tan dirt road, lush deciduous vegetation, flat terrain, overcast sky, and rural fencing style are highly characteristic of the Deep South US, likely Louisiana or Mississippi. The specific soil color suggests iron-rich soils common in the Gulf Coastal Plain."", ""country"": ""US"", ""latitude"": 30.85, ""longitude"": -91.5}"
+qwen/qwen3.5-27b,no-CoT,30.2672,-91.1871,548.607,US,True,,stop,0.0002065,474,44,0,3.07,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 30.2672,
+  ""longitude"": -91.1871
+}
+```"
+qwen/qwen3.6-35b-a3b,CoT,35.4676,-97.5164,634.602,US,True,,stop,0.1266816811,553,131150,131070,995.13,"{""reasoning"": ""The standard rural mailbox on the right side of the road and the wide gravel road are characteristic of the American Midwest or South. The vegetation and fence style further support a rural US location."", ""country"": ""US"", ""latitude"": 35.4676, ""longitude"": -97.5164}"
+mistralai/mistral-medium-3-5,no-CoT,30.5,-90.0,664.208,US,True,,stop,0.0011385,634,25,0,7.86,"{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -90.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.7521,-92.2841,699.656,US,True,,stop,0.0003794,473,31,0,1.26,"{""country"": ""US"", ""latitude"": 34.7521, ""longitude"": -92.2841}"
+google/gemma-4-31b-it,no-CoT,32.45,-90.12,706.361,US,True,,stop,6.964e-05,406,32,0,2.0,"```json
+{""country"": ""US"", ""latitude"": 32.45, ""longitude"": -90.12}
+```"
+moonshotai/kimi-k2.6,no-CoT,32.5,-86.5,1030.46,US,True,,stop,0.00051219,602,23,0,3.39,"{""country"": ""US"", ""latitude"": 32.5, ""longitude"": -86.5}"
+x-ai/grok-4.3,CoT,32.65,-85.45,1129.985,US,True,,stop,0.002064,676,622,562,14.0,"{""reasoning"": ""Red clay dirt road, wooden ranch fencing, lush deciduous trees and overcast sky match rural southern US; right-side mailbox/sign and vehicle perspective confirm US road rules."", ""country"": ""US"", ""latitude"": 32.65, ""longitude"": -85.45}"
+minimax/minimax-m3,no-CoT,32.5,-84.5,1213.459,US,True,,stop,0.00034362,767,143,154,3.81,"{""country"": ""US"", ""latitude"": 32.5, ""longitude"": -84.5}"
+google/gemini-3.5-flash,CoT (effort=high),30.85,-83.95,1244.038,US,True,,stop,0.0081615,1271,695,631,8.77,"{""reasoning"": ""The sandy dirt road, rural mailbox on the right, and vegetation consisting of southern oaks and pines strongly indicate the southeastern United States, particularly southern Georgia or northern Florida."", ""country"": ""US"", ""latitude"": 30.85, ""longitude"": -83.95}"
+moonshotai/kimi-k2.6,CoT,32.6,-83.7,1289.196,US,True,,stop,0.006707268,682,1899,1822,46.15,"{""reasoning"": ""Red-orange clay dirt road, US-style rural mailbox on a wooden post, and left-hand drive dashboard confirm the rural American Deep South, while deciduous oak-pine canopy and split-rail fence style are most consistent with Georgia or Alabama."", ""country"": ""US"", ""latitude"": 32.6, ""longitude"": -83.7}"
+xiaomi/mimo-v2.5,CoT,39.8,-89.5,1299.283,US,True,,stop,0.0001552376,787,255,167,10.11,"```json
+{
+  ""reasoning"": ""The rural setting with a wide unpaved gravel road, green grassy fields, and large deciduous trees suggests the American Midwest. The style of the mailbox on the right and the vehicle dashboard view are consistent with US rural areas."",
+  ""country"": ""US"",
+  ""latitude"": 39.8,
+  ""longitude"": -89.5
+}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,34.0522,-81.0451,1564.103,US,True,,stop,5.494e-05,406,31,0,7.23,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -81.0451}"
+qwen/qwen3.5-9b,no-CoT,39.7391,-84.1991,1597.49,US,True,,stop,5.205e-05,474,31,0,5.28,"{""country"": ""US"", ""latitude"": 39.7391, ""longitude"": -84.1991}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.2271,-80.8431,1616.637,US,True,,stop,0.00010617035,473,31,0,0.84,"{""country"": ""US"", ""latitude"": 35.2271, ""longitude"": -80.8431}"
+qwen/qwen3.6-27b,no-CoT,39.9612,-82.9988,1692.827,US,True,,stop,0.0001943,473,31,0,9.07,"{""country"": ""US"", ""latitude"": 39.9612, ""longitude"": -82.9988}"
+mistralai/mistral-small-2603,no-CoT,38.9072,-77.0369,2076.697,US,True,,stop,0.000142125,634,31,0,2.14,"{""country"": ""US"", ""latitude"": 38.9072, ""longitude"": -77.0369}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.41,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,16.45,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,2.13,

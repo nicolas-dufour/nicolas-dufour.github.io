@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,66.061763983492,-19.029454841564,0.0,IS,True,,,,,,,,"Siglufjoerdur, None, Northeast, IS"
+google/gemini-3.1-pro-preview,no-CoT,65.5,-19.5,66.05,IS,True,,stop,0.004454,1225,167,138,6.29,"```json
+{""country"": ""IS"", ""latitude"": 65.5, ""longitude"": -19.5}
+```"
+anthropic/claude-opus-4.8,CoT,65.4,-19.5,76.662,IS,True,,stop,0.00682,949,83,0,3.2,"{""reasoning"": ""Treeless brown moorland hills, yellow-topped marker posts, and narrow paved road are characteristic of Iceland's countryside."", ""country"": ""IS"", ""latitude"": 65.4, ""longitude"": -19.5}"
+anthropic/claude-opus-4.8,no-CoT,65.4,-18.5,77.461,IS,True,,stop,0.00484,818,30,0,8.41,"{""country"": ""IS"", ""latitude"": 65.4, ""longitude"": -18.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,65.62265014648438,-17.40484619140625,88.595,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,65.65548706054688,-16.987823486328125,103.249,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,65.62442016601562,-16.76802635192871,113.81,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,64.9631,-19.0208,122.167,IS,True,,stop,0.000185,585,31,0,7.1,"{""country"": ""IS"", ""latitude"": 64.9631, ""longitude"": -19.0208}"
+qwen/qwen3.5-9b,no-CoT,64.9631,-19.0208,122.167,IS,True,,stop,6.325e-05,586,31,0,1.27,"{""country"": ""IS"", ""latitude"": 64.9631, ""longitude"": -19.0208}"
+xiaomi/mimo-v2.5,no-CoT,64.9,-19.0,129.189,IS,True,,stop,9.54576e-05,820,25,0,8.44,"{""country"": ""IS"", ""latitude"": 64.9, ""longitude"": -19.0}"
+x-ai/grok-4.3,CoT,64.85,-18.35,138.347,IS,True,,stop,0.001929,788,512,440,5.89,"{""reasoning"": ""Treeless brown-green volcanic moorland, yellow snow poles, dashed white center line on narrow asphalt road, and overcast northern sky match Iceland's interior highlands; no other country has this exact combination of terrain + road furniture."", ""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -18.35}"
+google/gemma-4-31b-it,no-CoT,64.8375,-18.4667,138.591,IS,True,,stop,7.096e-05,404,36,0,10.4,"```json
+{""country"": ""IS"", ""latitude"": 64.8375, ""longitude"": -18.4667}
+```"
+google/gemini-3.5-flash,CoT (effort=high),65.621,-16.132,140.656,IS,True,,stop,0.0076485,1307,632,578,12.04,"{""reasoning"": ""The treeless, volcanic landscape combined with the distinctive yellow snow poles along the roadside is characteristic of Iceland."", ""country"": ""IS"", ""latitude"": 65.621, ""longitude"": -16.132}"
+google/gemini-3.5-flash,CoT (effort=medium),65.6215,-16.1242,140.968,IS,True,,stop,0.0048585,1307,322,260,4.07,"```json
+{""reasoning"": ""The barren, treeless volcanic landscape combined with the distinctive yellow road delineator posts is highly characteristic of Iceland."", ""country"": ""IS"", ""latitude"": 65.6215, ""longitude"": -16.1242}
+```"
+moonshotai/kimi-k2.6,CoT,65.5,-16.2,143.37,IS,True,,stop,0.007376076,834,2082,2022,47.02,"{""reasoning"": ""Yellow roadside delineator poles and barren brown volcanic hills with zero trees are hallmarks of rural Iceland, especially the northern highlands along the Ring Road."", ""country"": ""IS"", ""latitude"": 65.5, ""longitude"": -16.2}"
+google/gemini-3.1-pro-preview,CoT,65.3,-15.5,182.437,IS,True,,stop,0.005542,1307,244,176,11.4,"{
+  ""reasoning"": ""The barren, treeless landscape and yellow road bollards are highly characteristic of Iceland. The dashed white center line and overall terrain confirm this location."",
+  ""country"": ""IS"",
+  ""latitude"": 65.3,
+  ""longitude"": -15.5
+}"
+qwen/qwen3.5-122b-a10b,no-CoT,64.5593,-17.4262,182.896,IS,True,,stop,0.00021658,585,31,0,2.14,"{""country"": ""IS"", ""latitude"": 64.5593, ""longitude"": -17.4262}"
+google/gemini-3.5-flash,CoT (effort=low),65.3821,-15.1234,193.874,IS,True,,stop,0.0038055,1307,205,148,3.03,"{""reasoning"": ""The barren, treeless volcanic landscape combined with the characteristic yellow road delineator posts is highly indicative of Iceland."", ""country"": ""IS"", ""latitude"": 65.3821, ""longitude"": -15.1234}"
+x-ai/grok-4.3,no-CoT,64.85,-22.45,207.598,IS,True,,stop,0.0007334,704,22,0,7.24,"{""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -22.45}"
+qwen/qwen3.6-27b,no-CoT,64.1466,-19.609,214.675,IS,True,,stop,0.0002279,585,31,0,9.71,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -19.6090}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),65.6832,-14.3821,215.336,IS,True,,stop,0.002154,1226,35,0,1.62,"```json
+{""country"": ""IS"", ""latitude"": 65.6832, ""longitude"": -14.3821}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,64.1466,-20.1122,218.896,IS,True,,stop,0.00011875,585,31,0,1.83,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -20.1122}"
+mistralai/mistral-medium-3-5,no-CoT,64.0,-21.0,247.184,IS,True,,stop,0.0013665,786,25,0,0.88,"{""country"": ""IS"", ""latitude"": 64.0, ""longitude"": -21.0}"
+qwen/qwen3.5-27b,no-CoT,64.1466,-21.9423,252.809,IS,True,,stop,0.0002345,586,44,0,14.51,"```json
+{
+  ""country"": ""IS"",
+  ""latitude"": 64.1466,
+  ""longitude"": -21.9423
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,64.3215,-14.8932,273.186,IS,True,,stop,0.0003882,585,31,0,2.29,"{""country"": ""IS"", ""latitude"": 64.3215, ""longitude"": -14.8932}"
+openai/gpt-5.5,no-CoT,62.1224,-7.1837,721.355,FO,True,,stop,0.00411,678,24,0,1.18,"{""country"":""FO"",""latitude"":62.1224,""longitude"":-7.1837}"
+openai/gpt-5.5,CoT,62.075,-6.86,737.352,FO,True,,stop,0.021445,755,589,504,17.38,"{""reasoning"":""Right-side driving with Nordic-style dashed centerline and yellow roadside/snow marker posts, plus treeless windswept brown moorland, strongly fits the Faroe Islands. The barren upland roadscape is most consistent with the Oyggjarvegur mountain road on Streymoy."",""country"":""FO"",""latitude"":62.075,""longitude"":-6.86}"
+minimax/minimax-m3,no-CoT,58.2,-4.8,1139.738,GB,True,,stop,0.00041682,919,166,189,6.27,"{""country"": ""GB"", ""latitude"": 58.2, ""longitude"": -4.8}"
+minimax/minimax-m3,CoT,58.35,-3.95,1154.56,GB,True,,stop,0.00142266,995,988,898,26.15,"{""reasoning"": ""Treeless rolling moorland with dark peat-colored hills, narrow two-lane road with yellow roadside markers, left-hand traffic, and Atlantic maritime sky are highly characteristic of the Scottish Highlands or Hebrides. The vegetation, soil color, and landscape morphology strongly suggest the Flow Country or northwestern Scotland peatland region."", ""country"": ""GB"", ""latitude"": 58.35, ""longitude"": -3.95}"
+xiaomi/mimo-v2.5,CoT,56.97,-3.42,1299.198,GB,True,,stop,0.0010333176,899,3335,3231,349.25,"```json
+{""reasoning"": ""The image displays a treeless, brownish heather moorland landscape with rolling hills, which is highly characteristic of the Scottish Highlands. Additionally, the vehicle appears to be driving on the left side of the road, and the presence of yellow snow marker poles along the verge confirms a location on a high-altitude road in Scotland."", ""country"": ""GB"", ""latitude"": 56.97, ""longitude"": -3.42}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,63.279541015625,-157.3465576171875,5242.453,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,60.092750549316406,-169.70028686523438,5780.236,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,60.001548767089844,-169.7598419189453,5790.883,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7499.489,,True,True,,,,,,0.21,
+mistralai/mistral-small-2603,no-CoT,-27.1121,-70.9264,11249.227,CL,True,,stop,0.0001365,786,31,0,3.5,"{""country"": ""CL"", ""latitude"": -27.1121, ""longitude"": -70.9264}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.85,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.13,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,2.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.29,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,2.27,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.26,

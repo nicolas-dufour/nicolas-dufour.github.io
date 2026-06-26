@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,41.162982090883,47.187051566181,0.0,AZ,True,,,,,,,,"Sheki, None, Shaki City, AZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,41.05847930908203,47.28299331665039,14.129,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.05607604980469,47.303707122802734,15.389,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.02878189086914,47.46533966064453,27.686,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,40.9815,47.8406,58.384,AZ,True,,stop,0.025575,621,749,658,17.18,"{""reasoning"":""The dry Caucasus foothill landscape, walled compounds with colored metal roofs, right-side driving road style, and sparse rural asphalt strongly fit northern Azerbaijan near the Greater Caucasus villages around Qabala/Sheki. The terrain and architecture suggest a foothill road rather than an urban Georgian or Central Asian setting."",""country"":""AZ"",""latitude"":40.9815,""longitude"":47.8406}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,41.018463134765625,46.43517303466797,65.027,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,40.8912,47.9275,69.074,AZ,True,,stop,0.00341,544,23,0,8.42,"{""country"":""AZ"",""latitude"":40.8912,""longitude"":47.9275}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,40.992332458496094,46.23457336425781,82.061,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,40.9167,48.3333,99.958,AZ,True,,stop,0.00036468,473,31,0,4.41,"{""country"": ""AZ"", ""latitude"": 40.9167, ""longitude"": 48.3333}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.36050796508789,45.716575622558594,124.856,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,40.12,44.48,256.146,AM,True,,stop,0.0001779176,787,336,273,3.79,"{""reasoning"": ""Right-hand traffic, dry hilly Mediterranean-like vegetation, and rural stone buildings with distinct colored roofs typical of the Caucasus region point to Armenia."", ""country"": ""AM"", ""latitude"": 40.12, ""longitude"": 44.48}"
+qwen/qwen3.6-27b,no-CoT,42.2619,43.6964,314.426,GE,True,,stop,0.0001943,473,31,0,13.85,"{""country"": ""GE"", ""latitude"": 42.2619, ""longitude"": 43.6964}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),42.5241,72.2314,2072.54,KG,True,,stop,0.0021,1190,35,0,1.46,"```json
+{""country"": ""KG"", ""latitude"": 42.5241, ""longitude"": 72.2314}
+```"
+google/gemini-3.5-flash,CoT (effort=low),42.4833,72.5167,2096.21,KG,True,,stop,0.0038325,1271,214,140,22.78,"{""reasoning"": ""The dry mountainous landscape, distinctive green and red metal-roofed houses with brick perimeter walls, and road quality are highly characteristic of rural Kyrgyzstan, particularly in the valleys near the Tian Shan range."", ""country"": ""KG"", ""latitude"": 42.4833, ""longitude"": 72.5167}"
+anthropic/claude-opus-4.8,CoT,42.5,73.5,2176.394,KG,True,,stop,0.00651,797,101,0,9.79,"{""reasoning"": ""Central Asian village with brick/plaster houses, colorful metal roofs, arid mountain foothills and dry vegetation typical of Kyrgyzstan or southern Kazakhstan."", ""country"": ""KG"", ""latitude"": 42.5, ""longitude"": 73.5}"
+google/gemini-3.1-pro-preview,CoT,42.5,74.0,2217.219,KG,True,,stop,0.007546,1271,417,337,6.86,"{
+  ""reasoning"": ""The visible white car part in the top right corner is a classic meta clue for Kyrgyzstan. The landscape with steep green hills and the style of the brick houses with colorful roofs further confirm this Central Asian location."",
+  ""country"": ""KG"",
+  ""latitude"": 42.5,
+  ""longitude"": 74.0
+}"
+x-ai/grok-4.3,no-CoT,42.648,74.072,2221.631,KG,True,,stop,0.0005934,592,22,0,1.0,"{""country"": ""KG"", ""latitude"": 42.648, ""longitude"": 74.072}"
+mistralai/mistral-medium-3-5,no-CoT,42.6535,74.4056,2248.758,KG,True,,stop,0.0011835,634,31,0,7.08,"{""country"": ""KG"", ""latitude"": 42.6535, ""longitude"": 74.4056}"
+moonshotai/kimi-k2.6,CoT,42.5,74.5,2258.028,KG,True,,stop,0.0118583,682,2929,3174,133.34,"{""reasoning"": ""Post-Soviet rural architecture with cinder-block walls and corrugated metal roofs, combined with semi-arid mountain-valley terrain and a worn asphalt road with gravel shoulders, is highly characteristic of Kyrgyzstan."", ""country"": ""KG"", ""latitude"": 42.5, ""longitude"": 74.5}"
+anthropic/claude-opus-4.8,no-CoT,42.4,74.5,2259.123,KG,True,,stop,0.00408,666,30,0,8.72,"{""country"": ""KG"", ""latitude"": 42.4, ""longitude"": 74.5}"
+qwen/qwen3.5-27b,no-CoT,42.8764,74.5698,2260.042,KG,True,,stop,0.00019467,473,31,0,2.61,"{""country"": ""KG"", ""latitude"": 42.8764, ""longitude"": 74.5698}"
+qwen/qwen3.5-122b-a10b,no-CoT,42.8746,74.5698,2260.058,KG,True,,stop,0.0002041,473,39,0,2.16,"{
+  ""country"": ""KG"",
+  ""latitude"": 42.8746,
+  ""longitude"": 74.5698
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,42.8746,74.5698,2260.058,KG,True,,stop,0.00010195,473,31,0,1.8,"{""country"": ""KG"", ""latitude"": 42.8746, ""longitude"": 74.5698}"
+xiaomi/mimo-v2.5,no-CoT,42.87,74.59,2261.739,KG,True,,stop,8.03376e-05,708,27,0,1.32,"{""country"": ""KG"", ""latitude"": 42.87, ""longitude"": 74.59}"
+google/gemma-4-31b-it,no-CoT,42.45,74.6,2266.733,KG,True,,stop,6.964e-05,406,32,0,2.44,"```json
+{""country"": ""KG"", ""latitude"": 42.45, ""longitude"": 74.60}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,42.6894,74.7617,2277.402,KG,True,,stop,9.736e-05,474,31,0,3.43,"{""country"": ""KG"", ""latitude"": 42.6894, ""longitude"": 74.7617}"
+google/gemini-3.1-pro-preview,no-CoT,42.6512,75.3215,2323.366,KG,True,,stop,0.00587,1189,291,256,11.88,"```json
+{""country"": ""KG"", ""latitude"": 42.6512, ""longitude"": 75.3215}
+```"
+minimax/minimax-m3,CoT,42.65,76.85,2447.725,KG,True,,stop,0.00073902,845,453,458,17.1,"{""reasoning"": ""Green-roofed rural buildings with stone walls, mountainous terrain with lush green slopes, and the road shoulder style suggest Central Asia, likely the Tian Shan foothills in Kyrgyzstan. The architecture and landscape are characteristic of villages in the Chuy Valley or Issyk-Kul region."", ""country"": ""KG"", ""latitude"": 42.65, ""longitude"": 76.85}"
+x-ai/grok-4.3,CoT,43.15,76.95,2450.334,KZ,True,,stop,0.002204,676,678,603,5.41,"{
+  ""reasoning"": ""Dry grassy hills, steep green mountainside, brick-walled houses with red/green metal roofs, and unpaved shoulders match rural Central Asian landscapes; no visible text or vehicles but overall scene consistent with ex-Soviet republics."",
+  ""country"": ""KZ"",
+  ""latitude"": 43.15,
+  ""longitude"": 76.95
+}"
+qwen/qwen3.5-9b,no-CoT,43.2489,77.0443,2456.993,KZ,True,,stop,8.841e-05,473,32,0,1.52,"{""country"": ""KZ"", ""latitude"": 43.2489, ""longitude"": 77.0443}"
+google/gemini-3.5-flash,CoT (effort=medium),42.1254,76.9843,2465.719,KG,True,,stop,0.0103665,1271,940,850,15.3,"```json
+{""reasoning"": ""The architecture of the houses with brick walls and colorful metal roofs, combined with the dry, grassy mountain foothills to the south (left) and flat terrain to the north, is highly characteristic of the south shore of Lake Issyk-Kul in Kyrgyzstan."", ""country"": ""KG"", ""latitude"": 42.1254, ""longitude"": 76.9843}
+```"
+google/gemini-3.5-flash,CoT (effort=high),42.125,76.985,2465.782,KG,True,,stop,0.0148665,1271,1440,1365,17.52,"{""reasoning"": ""The landscape features dry, grassy foothills on one side and typical Kyrgyz village houses with colorful metal roofs on the other. The white vehicle mirror visible in the corner is characteristic of the Google Street View car in Kyrgyzstan."", ""country"": ""KG"", ""latitude"": 42.125, ""longitude"": 76.985}"
+mistralai/mistral-small-2603,no-CoT,60.4561,8.2455,3394.931,NO,True,,stop,0.0001131,634,30,0,3.65,"{""country"": ""NO"", ""latitude"": 60.4561, ""longitude"": 8.2455}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.41,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,16.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.68,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.28,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.38,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.2,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.16,

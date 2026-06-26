@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,31.218772343911,-105.48142842197,0.0,US,True,,,,,,,,"Sierra Blanca, Hudspeth County, Texas, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,31.4448299407959,-105.62554168701172,28.622,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,31.447948455810547,-105.63745880126953,29.479,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,31.8685302734375,-106.7989501953125,144.251,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),32.1153,-108.1542,271.874,US,True,,stop,0.0021075,1189,36,0,7.9,"```json
+{""country"": ""US"", ""latitude"": 32.1153, ""longitude"": -108.1542}
+```"
+google/gemini-3.5-flash,CoT (effort=high),29.3986,-103.5124,276.921,US,True,,stop,0.0371955,1271,3921,3836,25.85,"```json
+{""reasoning"": ""The landscape shows Chihuahuan Desert vegetation (creosote bushes and desert grasses) with characteristic volcanic dome mountains in the background, highly indicative of the region around Big Bend National Park and the Christmas Mountains in West Texas."", ""country"": ""US"", ""latitude"": 29.3986, ""longitude"": -103.5124}
+```"
+google/gemini-3.5-flash,CoT (effort=low),29.2341,-103.5285,289.655,US,True,,stop,0.004419,1272,279,215,2.92,"{""reasoning"": ""The arid desert landscape with prominent creosote bushes and distant volcanic mountains is characteristic of the Chihuahuan Desert in West Texas, USA."", ""country"": ""US"", ""latitude"": 29.2341, ""longitude"": -103.5285}"
+google/gemini-3.5-flash,CoT (effort=medium),29.205,-103.515,292.98,US,True,,stop,0.0066675,1271,529,458,6.1,"{""reasoning"": ""The wide gravel road, dense creosote bush vegetation, and distinctive rounded desert mountains are highly characteristic of the Chihuahuan Desert in West Texas, specifically near Big Bend National Park."", ""country"": ""US"", ""latitude"": 29.205, ""longitude"": -103.515}"
+mistralai/mistral-medium-3-5,no-CoT,32.7767,-108.1667,306.79,US,True,,stop,0.001191,634,32,0,2.14,"{""country"": ""US"", ""latitude"": 32.7767, ""longitude"": -108.1667}"
+qwen/qwen3.6-27b,no-CoT,28.5384,-106.4172,311.396,MX,True,,stop,0.0001963,473,32,0,9.49,"{""country"": ""MX"", ""latitude"": 28.5384, ""longitude"": -106.4172}"
+google/gemini-3.1-pro-preview,no-CoT,32.0583,-109.2817,371.656,US,True,,stop,0.002812,1190,36,0,2.12,"```json
+{""country"": ""US"", ""latitude"": 32.0583, ""longitude"": -109.2817}
+```"
+anthropic/claude-opus-4.8,CoT,27.5,-105.0,416.131,MX,True,,stop,0.00636,797,95,0,9.78,"{""reasoning"": ""Arid desert scrubland with isolated volcanic mountains and a graded dirt road, typical of the Chihuahuan Desert in northern Mexico/southwestern US."", ""country"": ""MX"", ""latitude"": 27.5, ""longitude"": -105.0}"
+xiaomi/mimo-v2.5,no-CoT,32.5,-110.5,494.856,US,True,,stop,8.00576e-05,708,26,0,1.34,"{""country"": ""US"", ""latitude"": 32.5, ""longitude"": -110.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,26.732852935791016,-104.74183654785156,503.968,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,32.2217,-110.8319,518.154,US,True,,stop,8.841e-05,473,32,0,7.72,"{""country"": ""US"", ""latitude"": 32.2217, ""longitude"": -110.8319}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,27.14638900756836,-102.72740173339844,525.809,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,32.2217,-110.92,526.292,,True,,stop,5.494e-05,406,31,0,1.67,"{""country"": ""US"", ""latitude"": 32.2217, ""longitude"": -110.92 own}"
+anthropic/claude-opus-4.8,no-CoT,26.5,-104.5,533.328,MX,True,,stop,0.00408,666,30,0,8.97,"{""country"": ""MX"", ""latitude"": 26.5, ""longitude"": -104.5}"
+x-ai/grok-4.3,no-CoT,32.85,-113.45,772.514,US,True,,stop,0.0005934,592,22,0,7.07,"{""country"": ""US"", ""latitude"": 32.85, ""longitude"": -113.45}"
+qwen/qwen3.5-27b,no-CoT,32.7157,-114.5686,872.925,US,True,,stop,0.00024024,474,45,0,6.03,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 32.7157,
+  ""longitude"": -114.5686
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,32.5833,-114.75,887.707,US,True,,stop,0.0003287,473,30,0,1.96,"{""country"": ""US"", ""latitude"": 32.5833, ""longitude"": -114.75}"
+google/gemma-4-31b-it,no-CoT,32.45,-114.82,892.456,US,True,,stop,6.258e-05,406,33,0,11.89,"```json
+{""country"": ""US"", ""latitude"": 32.45, ""longitude"": -114.82}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,34.39207458496094,-114.60477447509766,922.332,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,34.9011,-114.5677,940.037,US,True,,stop,0.0001462776,787,223,123,9.51,"{""reasoning"": ""The landscape features arid scrubland with distinctive low, rounded mountains typical of the Basin and Range Province in the southwestern United States. The unpaved road, vegetation (creosote and dry grasses), and distant peaks strongly suggest the Mojave or Sonoran Desert region, specifically Arizona or southeastern California."", ""country"": ""US"", ""latitude"": 34.9011, ""longitude"": -114.5677}"
+qwen/qwen3.5-35b-a3b,no-CoT,32.8697,-115.3234,945.242,US,True,,stop,0.00017136,474,32,0,8.38,"{""country"": ""US"", ""latitude"": 32.8697, ""longitude"": -115.3234}"
+qwen/qwen3.5-122b-a10b,no-CoT,32.7235,-115.4928,958.673,US,True,,stop,0.0002916,473,32,0,7.64,"{""country"": ""US"", ""latitude"": 32.7235, ""longitude"": -115.4928}"
+x-ai/grok-4.3,CoT,34.85,-115.65,1029.651,US,True,,stop,0.002114,676,642,567,12.23,"{""reasoning"": ""Arid basin with creosote/jojoba scrub, dry-grass hummocks, and low granitic ranges under clear sky match Mojave/Sonoran Desert; unpaved graded road and vehicle interior consistent with US Southwest public lands."", ""country"": ""US"", ""latitude"": 34.85, ""longitude"": -115.65}"
+google/gemini-3.1-pro-preview,CoT,35.1425,-115.5123,1029.741,US,True,,stop,0.00618,1272,303,232,4.66,"{
+  ""reasoning"": ""The arid landscape, creosote bush vegetation, and mountain profiles are characteristic of the Mojave Desert in the southwestern United States."",
+  ""country"": ""US"",
+  ""latitude"": 35.1425,
+  ""longitude"": -115.5123
+}"
+moonshotai/kimi-k2.6,CoT,35.2,-115.8,1056.379,US,True,,stop,0.011452968,682,3277,3203,71.79,"{""reasoning"": ""The left-hand-drive dashboard, creosote scrubland, light-colored graded dirt road, and distant rounded Basin-and-Range desert mountains under a cloudless sky are classic indicators of the Mojave Desert in the American Southwest."", ""country"": ""US"", ""latitude"": 35.2, ""longitude"": -115.8}"
+qwen/qwen3.6-35b-a3b,no-CoT,34.019454,-116.41731,1069.864,US,True,,stop,0.0001508,474,35,0,2.98,"{""country"": ""US"", ""latitude"": 34.019454, ""longitude"": -116.41731}"
+minimax/minimax-m3,CoT,39.85,-116.75,1398.106,US,True,,stop,0.00081306,843,518,452,19.6,"{""reasoning"": ""Sagebrush high-desert vegetation, basin-and-range topography with multiple parallel mountain ranges, unpaved gravel road, and dry clear sky are classic Great Basin features pointing to central Nevada."", ""country"": ""US"", ""latitude"": 39.85, ""longitude"": -116.75}"
+mistralai/mistral-small-2603,no-CoT,-33.45,-70.6667,8065.495,CL,True,,stop,0.0001137,634,31,0,3.22,"{""country"": ""CL"", ""latitude"": -33.4500, ""longitude"": -70.6667}"
+openai/gpt-5.5,CoT,-21.0823,14.6637,14005.674,NA,True,,stop,0.012675,621,319,236,8.06,"{""reasoning"":""Arid gravel road through sparse thorn scrub with broad volcanic-looking mountains and no road markings strongly matches rural Namibia, especially the Damaraland/Brandberg area. The dry climate, open desert terrain, and safari-vehicle perspective are typical of Namibian backroads."",""country"":""NA"",""latitude"":-21.0823,""longitude"":14.6637}"
+openai/gpt-5.5,no-CoT,-23.7,16.1,14255.394,NA,True,,stop,0.00338,544,22,0,1.16,"{""country"":""NA"",""latitude"":-23.7,""longitude"":16.1}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,31.85,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,16.57,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.44,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.25,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.38,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,10.28,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.21,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.19,

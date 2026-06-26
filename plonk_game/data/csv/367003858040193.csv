@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,13.163933972675,109.28239279651,0.0,VN,True,,,,,,,,"Tuy Hoa, None, Phu Yen, VN"
+google/gemini-3.1-pro-preview,no-CoT,14.35,109.02,134.895,VN,True,,stop,0.004814,1225,197,165,10.73,"```json
+{""country"": ""VN"", ""latitude"": 14.35, ""longitude"": 109.02}
+```"
+anthropic/claude-opus-4.8,no-CoT,11.5,108.9,189.626,VN,True,,stop,0.00484,818,30,0,3.04,"{""country"": ""VN"", ""latitude"": 11.5, ""longitude"": 108.9}"
+anthropic/claude-opus-4.8,CoT,11.5,108.8,192.298,VN,True,,stop,0.00722,949,99,0,9.92,"{""reasoning"": ""Vietnamese signage 'TRAN NGUYEN' with no diacritics, tropical roadside shops, palms and laterite soil suggest rural central/south Vietnam highway."", ""country"": ""VN"", ""latitude"": 11.5, ""longitude"": 108.8}"
+google/gemini-3.1-pro-preview,CoT,15.0,108.8,210.686,VN,True,,stop,0.005602,1307,249,171,11.64,"{
+  ""reasoning"": ""The sign on the green building reads 'QUÁN CƠM THANH NGUYÊN', which is Vietnamese. The tropical vegetation and roadside architecture are typical of rural highways in Vietnam."",
+  ""country"": ""VN"",
+  ""latitude"": 15.0,
+  ""longitude"": 108.8
+}"
+openai/gpt-5.5,CoT,11.1546,108.6243,234.599,VN,True,,stop,0.013825,755,335,259,8.53,"{""reasoning"":""The storefront sign uses Vietnamese with diacritics, and the tropical roadside scene with right-hand traffic cues fits rural Vietnam. Dry sandy scrub with coconut palms suggests the south-central coastal belt, most likely around Bình Thuận/Ninh Thuận."",""country"":""VN"",""latitude"":11.1546,""longitude"":108.6243}"
+google/gemini-3.5-flash,CoT (effort=medium),11.1052,108.2104,256.873,VN,True,,stop,0.0110865,1307,1014,918,14.25,"```json
+{""reasoning"": ""The signage 'QUÁN CƠM TRÂM NGUYỄN' is in Vietnamese, and the roadside architecture, vegetation, and truck style are characteristic of Vietnam's National Route 1A (QL1A) in the south-central coast region."", ""country"": ""VN"", ""latitude"": 11.1052, ""longitude"": 108.2104}
+```"
+google/gemini-3.5-flash,CoT (effort=low),11.0523,108.2541,260.057,VN,True,,stop,0.0041205,1307,240,151,312.36,"```json
+{""reasoning"": ""The signage on the green building reads 'QUÁN CƠM TRÂM NGUYỄN', which is in Vietnamese, and the flat, tropical landscape with palm trees is characteristic of southern Vietnam along National Route 1A."", ""country"": ""VN"", ""latitude"": 11.0523, ""longitude"": 108.2541}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),15.483333,108.516667,270.777,VN,True,,stop,0.0021975,1225,40,0,2.02,"```json
+{""country"": ""VN"", ""latitude"": 15.483333, ""longitude"": 108.516667}
+```"
+google/gemini-3.5-flash,CoT (effort=high),10.882,107.985,290.327,VN,True,,stop,0.0129495,1307,1221,1126,15.36,"```json
+{""reasoning"": ""The sign 'QUÁN CƠM TRÂM NGUYỄN' is in Vietnamese, indicating a roadside diner. The flat terrain, sandy soil, and tropical vegetation suggest a location along National Route 1A in southern Vietnam, likely in Bình Thuận province."", ""country"": ""VN"", ""latitude"": 10.882, ""longitude"": 107.985}
+```"
+x-ai/grok-4.3,no-CoT,10.95,106.82,363.719,VN,True,,stop,0.0007334,704,22,0,0.84,"{""country"": ""VN"", ""latitude"": 10.95, ""longitude"": 106.82}"
+x-ai/grok-4.3,CoT,11.0523,106.6821,367.484,VN,True,,stop,0.002154,788,602,510,5.87,"{""reasoning"": ""Vietnamese script on green building ('QUÁN CƠM TRẦN HUYỀN', 'LỚN CƠM BÌNH DÂN') plus tropical palms, right-side driving, and architecture fix location to southern Vietnam; rural highway setting with vegetation matches Binh Duong province outskirts."", ""country"": ""VN"", ""latitude"": 11.0523, ""longitude"": 106.6821}"
+qwen/qwen3.5-35b-a3b,no-CoT,10.9123,106.6234,382.477,VN,True,,stop,0.00011404,586,32,0,2.25,"{""country"": ""VN"", ""latitude"": 10.9123, ""longitude"": 106.6234}"
+qwen/qwen3.5-27b,no-CoT,10.834722,106.690833,382.777,VN,True,,stop,0.00027976,586,49,0,1.9,"```json
+{
+  ""country"": ""VN"",
+  ""latitude"": 10.834722,
+  ""longitude"": 106.690833
+}
+```"
+qwen/qwen3.6-27b,no-CoT,10.7821,106.6778,387.813,VN,True,,stop,0.0002299,585,32,0,18.14,"{""country"": ""VN"", ""latitude"": 10.7821, ""longitude"": 106.6778}"
+google/gemma-4-31b-it,no-CoT,10.8231,106.6297,388.567,VN,True,,stop,5.148e-05,262,37,0,5.72,"```json
+{""country"": ""VN"", ""latitude"": 10.8231, ""longitude"": 106.6297}
+```"
+mistralai/mistral-medium-3-5,no-CoT,10.8231,106.6297,388.567,VN,True,,stop,0.001419,786,32,0,3.88,"{""country"": ""VN"", ""latitude"": 10.8231, ""longitude"": 106.6297}"
+xiaomi/mimo-v2.5,no-CoT,10.8231,106.6297,388.567,VN,True,,stop,9.74176e-05,820,32,0,2.63,"{""country"": ""VN"", ""latitude"": 10.8231, ""longitude"": 106.6297}"
+qwen/qwen3.5-9b,no-CoT,10.75,106.6833,389.837,VN,True,,stop,6.31e-05,586,30,0,3.1,"{""country"": ""VN"", ""latitude"": 10.75, ""longitude"": 106.6833}"
+qwen/qwen3.6-35b-a3b,no-CoT,10.7769,106.6486,390.534,VN,True,,stop,0.0001684,586,32,0,8.41,"{""country"": ""VN"", ""latitude"": 10.7769, ""longitude"": 106.6486}"
+moonshotai/kimi-k2.6,CoT,10.8,106.5,400.842,VN,True,,stop,0.013351536,834,3824,3764,107.02,"{""reasoning"": ""The green building clearly displays Vietnamese Latin script with diacritics characteristic of roadside repair shops, and the flat tropical scrub with coconut palms matches southern Vietnam."", ""country"": ""VN"", ""latitude"": 10.8, ""longitude"": 106.5}"
+xiaomi/mimo-v2.5,CoT,10.778,106.419,409.125,VN,True,,stop,0.0010223976,899,3296,3194,73.28,"{""reasoning"": ""The text on the green building 'HANG COM TAN BOUTEN' and 'Cua Hang Binh Dan' is Vietnamese. Search results for 'Quán cơm Tân Bouten' specifically place it in Mộc Hóa, Long An province, Vietnam, near the railway line visible in the foreground."", ""country"": ""VN"", ""latitude"": 10.778, ""longitude"": 106.419}"
+minimax/minimax-m3,no-CoT,10.35,106.35,446.973,VN,True,,stop,0.00044562,919,190,200,12.0,"{""country"": ""VN"", ""latitude"": 10.35, ""longitude"": 106.35}"
+qwen/qwen3.5-397b-a17b,no-CoT,10.0345,105.7892,515.578,VN,True,,stop,0.00034485,585,32,0,3.47,"{""country"": ""VN"", ""latitude"": 10.0345, ""longitude"": 105.7892}"
+openai/gpt-5.5,no-CoT,10.0452,105.7469,518.184,VN,True,,stop,0.00408,678,23,0,2.34,"{""country"":""VN"",""latitude"":10.0452,""longitude"":105.7469}"
+qwen/qwen3.5-122b-a10b,no-CoT,10.0628,105.6732,522.874,VN,True,,stop,0.0003364,585,32,0,2.69,"{""country"": ""VN"", ""latitude"": 10.0628, ""longitude"": 105.6732}"
+minimax/minimax-m3,CoT,9.7833,105.4667,560.486,VN,True,,stop,0.00078066,995,453,352,17.03,"{""reasoning"": ""Vietnamese script 'TRẦN NGUYÊN' on the green storefront ('Đại lý' = dealer/agency), tropical coconut palms, flat alluvial terrain, and rural low-rise architecture with metal roller-shutter shopfronts strongly indicate rural southern Vietnam, likely along a national highway in the Mekong Delta region."", ""country"": ""VN"", ""latitude"": 9.7833, ""longitude"": 105.4667}"
+moonshotai/kimi-k2.6,no-CoT,11.9416,79.8083,3200.137,IN,True,,stop,0.00064935,754,25,0,2.15,"{""country"": ""IN"", ""latitude"": 11.9416, ""longitude"": 79.8083}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,11.874152183532715,76.84526062011719,3521.645,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,8.552909851074219,76.8093490600586,3580.283,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,8.621750831604004,76.7486343383789,3585.361,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,10103.505,FR,True,,stop,0.0001359,786,30,0,25.5,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12093.171,,True,True,,,,,,16.49,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,14.283330917358398,-74.00570678710938,16941.688,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,10.460105895996094,-74.95222473144531,17346.96,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,10.424607276916504,-74.99230194091797,17350.065,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.11,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.38,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.23,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.21,

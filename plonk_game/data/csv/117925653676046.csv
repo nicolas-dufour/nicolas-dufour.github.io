@@ -1,0 +1,69 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,0.43370399783861,33.23388146438,0.0,UG,True,,,,,,,,"Jinja, Jinja District, Eastern Region, UG"
+xiaomi/mimo-v2.5,CoT,0.316,32.583,73.547,UG,True,,stop,0.0001580376,787,265,207,9.79,"{""reasoning"": ""Reddish laterite soil, tropical rural infrastructure, and East African vegetation/landscape are decisive clues pointing to Uganda."", ""country"": ""UG"", ""latitude"": 0.316, ""longitude"": 32.583}"
+minimax/minimax-m3,CoT,0.3163,32.5822,73.629,UG,True,,stop,0.00070026,843,424,348,11.98,"{""reasoning"": ""Red laterite soil, sparse tropical vegetation with acacia/eucalyptus, concrete block building with flat roof, and green metal electrical distribution boxes with palisade fencing are highly characteristic of rural East Africa, most likely Uganda."", ""country"": ""UG"", ""latitude"": 0.3163, ""longitude"": 32.5822}"
+anthropic/claude-opus-4.8,no-CoT,-0.5143,35.2698,249.721,KE,True,,stop,0.00413,666,32,0,15.09,"{""country"": ""KE"", ""latitude"": -0.5143, ""longitude"": 35.2698}"
+qwen/qwen3.6-35b-a3b,CoT,-0.35,36.1,330.395,KE,True,,stop,0.0027706081,553,2778,2670,19.48,"```json
+{
+    ""reasoning"": ""The distinctive red laterite soil, concrete utility poles typical of Kenya Power (KPLC), and the olive-green distribution transformer cabinet strongly point to Kenya. The concrete block construction of the building and the wire fencing on concrete posts are also characteristic of rural or semi-rural Kenyan infrastructure."",
+    ""country"": ""KE"",
+    ""latitude"": -0.35,
+    ""longitude"": 36.1
+}
+```"
+anthropic/claude-opus-4.8,CoT,-0.7167,36.4333,378.051,KE,True,,stop,0.006235,797,90,0,3.33,"{""reasoning"": ""Red lateritic soil, concrete-block house, electrical kiosk and scattered vegetation suggest highland East Africa, likely rural Kenya."", ""country"": ""KE"", ""latitude"": -0.7167, ""longitude"": 36.4333}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-0.6017473340034485,36.822689056396484,415.329,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-1.1,36.65,416.366,KE,True,,stop,0.007960788,682,2257,2198,56.55,"{""reasoning"": ""Vivid red laterite soil, tropical highland vegetation, and rural electrical infrastructure with spiked metal fencing are classic markers of the Kenyan highlands."", ""country"": ""KE"", ""latitude"": -1.1, ""longitude"": 36.65}"
+openai/gpt-5.5,CoT,-1.1037,36.6552,417.061,KE,True,,stop,0.011985,621,296,202,7.74,"{""reasoning"":""Red lateritic soil, highland vegetation, concrete utility poles, barbed-wire compound fencing, and green electrical cabinets are characteristic of rural Kenya, especially the Nairobi/Kiambu highlands. The semi-rural roadside setting and cultivated landscape best fit the outskirts of Limuru/Kiambu rather than arid lowland regions."",""country"":""KE"",""latitude"":-1.1037,""longitude"":36.6552}"
+google/gemini-3.5-flash,CoT (effort=high),-1.125,36.655,418.017,KE,True,,stop,0.008289,1272,709,647,12.2,"{""reasoning"": ""The reddish-brown soil, hilly green terrain, concrete fence posts, and wooden utility poles with green electrical cabinets are highly characteristic of the Kenyan highlands."", ""country"": ""KE"", ""latitude"": -1.125, ""longitude"": 36.655}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-0.6544284820556641,36.83642578125,418.452,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,-0.5142,36.9551,426.989,KE,True,,stop,0.00344,544,24,0,1.55,"{""country"":""KE"",""latitude"":-0.5142,""longitude"":36.9551}"
+google/gemini-3.5-flash,CoT (effort=medium),-1.1512,36.8244,436.395,KE,True,,stop,0.0048495,1271,327,266,7.68,"{""reasoning"": ""The red soil, concrete fence posts with angled tops, wooden utility poles, and green electrical boxes are highly characteristic of the Kenyan highlands."", ""country"": ""KE"", ""latitude"": -1.1512, ""longitude"": 36.8244}"
+minimax/minimax-m3,no-CoT,-1.2833,36.8167,441.754,KE,True,,stop,0.00019416,752,25,0,6.92,"{""country"": ""KE"", ""latitude"": -1.2833, ""longitude"": 36.8167}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-1.1935919523239136,36.86547088623047,442.481,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,-1.2921,36.8219,442.698,KE,True,,stop,0.00067285,603,25,0,15.65," {""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+qwen/qwen3.5-27b,no-CoT,-1.2921,36.8219,442.698,KE,True,,stop,0.0002045,474,43,0,3.85,"```json
+{
+  ""country"": ""KE"",
+  ""latitude"": -1.2921,
+  ""longitude"": 36.8219
+}
+```"
+google/gemini-3.1-pro-preview,CoT,-1.15,36.95,449.154,KE,True,,stop,0.006346,1271,317,246,5.86,"{
+  ""reasoning"": ""The prominent red soil, vegetation, and wooden utility poles strongly suggest East Africa. The green electrical boxes and concrete fencing posts are characteristic of infrastructure in Kenya."",
+  ""country"": ""KE"",
+  ""latitude"": -1.15,
+  ""longitude"": 36.95
+}"
+qwen/qwen3.5-122b-a10b,CoT,-1.15,36.95,449.154,KE,True,,stop,0.0075236,553,2282,2194,18.76,"{""reasoning"": ""The distinctive red laterite soil, combined with the specific style of wooden utility poles and green electrical cabinets (likely Kenya Power), strongly points to the Kenyan highlands. The vegetation and simple concrete block architecture are also characteristic of rural or peri-urban areas in Central Kenya."", ""country"": ""KE"", ""latitude"": -1.15, ""longitude"": 36.95}"
+google/gemini-3.5-flash,CoT (effort=low),-1.1512,36.9614,450.372,KE,True,,stop,0.0034725,1271,174,113,9.0,"{""reasoning"": ""The red soil, lush green vegetation, wooden utility poles, and style of the fenced electrical substation are highly characteristic of the Kenyan highlands."", ""country"": ""KE"", ""latitude"": -1.1512, ""longitude"": 36.9614}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-0.1512,37.3075,457.608,KE,True,,stop,0.0020895,1189,34,0,1.36,"```json
+{""country"": ""KE"", ""latitude"": -0.1512, ""longitude"": 37.3075}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,-0.0917,37.5329,481.582,KE,True,,stop,0.00018538,473,30,0,1.4,"{""country"": ""KE"", ""latitude"": -0.0917, ""longitude"": 37.5329}"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.0236,37.9062,522.016,KE,True,,stop,0.0001428,474,30,0,9.25,"{""country"": ""KE"", ""latitude"": -0.0236, ""longitude"": 37.9062}"
+google/gemini-3.1-pro-preview,no-CoT,-25.7478676,28.2292712,2960.454,ZA,True,,stop,0.00287,1189,41,0,9.21,"```json
+{""country"": ""ZA"", ""latitude"": -25.7478676, ""longitude"": 28.2292712}
+```"
+x-ai/grok-4.3,no-CoT,-25.746,28.188,2961.058,ZA,True,,stop,0.0007278,592,22,0,0.91,"{""country"": ""ZA"", ""latitude"": -25.746, ""longitude"": 28.188}"
+x-ai/grok-4.3,CoT,-26.15,28.05,3007.82,ZA,True,,stop,0.001989,676,592,509,12.22,"{""reasoning"": ""Red lateritic soil, wooden utility poles with overhead lines, green portable toilets behind security fencing, and sparse savanna-style vegetation/buildings indicate rural Southern/East Africa. No left/right traffic or readable text, but overall scene matches South African highveld or peri-urban townships."", ""country"": ""ZA"", ""latitude"": -26.15, ""longitude"": 28.05}"
+qwen/qwen3.6-27b,CoT,-29.05,30.35,3292.741,ZA,True,,stop,0.01102185,553,3990,3921,100.89,"{""reasoning"": ""The distinctive red laterite soil, wooden utility poles, and the specific green municipal electricity box are characteristic of rural KwaZulu-Natal, South Africa."", ""country"": ""ZA"", ""latitude"": -29.05, ""longitude"": 30.35}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3695.718,unknown,True,,stop,5.174e-05,406,23,0,1.73,"{""country"": ""unknown"", ""latitude"": 0.0, ""longitude"": 0.0}"
+mistralai/mistral-small-2603,CoT,12.5,-1.5,4057.698,BF,True,,stop,0.00051744,716,795,873,12.71,"{""reasoning"": ""Yellow building with corrugated metal roof, Toyota-style utility truck, unpaved road, and semi-arid savanna vegetation are characteristic of rural West Africa, specifically Burkina Faso."", ""country"": ""BF"", ""latitude"": 12.5, ""longitude"": -1.5}"
+qwen/qwen3.6-27b,no-CoT,39.3999,-8.2245,6035.039,PT,True,,stop,0.0002382,474,30,0,4.86,"{""country"": ""PT"", ""latitude"": 39.3999, ""longitude"": -8.2245}"
+mistralai/mistral-small-2603,no-CoT,55.7558,37.6173,6164.279,RU,True,,stop,0.000142875,634,32,0,1.79,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+google/gemma-4-26b-a4b-it,CoT,-18.927,-43.935,8675.172,BR,True,,stop,0.00039708,492,864,808,17.96,"{""reasoning"": ""The reddish soil and vegetation are characteristic of tropical or subtropical regions, such as parts of Brazil."", ""country"": ""BR"", ""latitude"": -18.927, ""longitude"": -43.935}"
+qwen/qwen3.5-397b-a17b,CoT,-19.92,-43.93,8683.791,BR,True,,stop,0.009345,553,2517,2460,21.13,"{""reasoning"": ""The distinct red laterite soil and concrete fence posts are characteristic of rural Brazil, particularly the state of Minas Gerais."", ""country"": ""BR"", ""latitude"": -19.92, ""longitude"": -43.93}"
+google/gemma-4-31b-it,CoT,-18.52,-44.55,8736.189,BR,True,,stop,0.00030074,491,580,523,19.12,"{""reasoning"": ""The reddish-brown laterite soil and tropical vegetation are highly characteristic of Brazil, particularly in the Minas Gerais or São Paulo regions. The simple concrete construction and utility pole style are common in rural Brazilian landscapes."", ""country"": ""BR"", ""latitude"": -18.52, ""longitude"": -44.55}"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,8995.089,BR,True,,stop,0.0011835,634,31,0,7.78,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-35b-a3b,no-CoT,-23.5505,-46.6333,8995.089,BR,True,,stop,0.0001865625,473,31,0,7.42,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5505,-46.6333,8995.089,BR,True,,stop,0.00036468,473,31,0,8.3,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-9b,no-CoT,-23.5505,-46.6333,8995.089,BR,True,,stop,5.205e-05,474,31,0,5.23,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+google/gemma-4-31b-it,no-CoT,-15.7942,-47.8828,9070.64,BR,True,,stop,7.124e-05,406,36,0,2.82,"```json
+{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8828}
+```"
+xiaomi/mimo-v2.5,no-CoT,-15.78,-47.93,9075.606,BR,True,,stop,8.03376e-05,708,27,0,4.47,"{""country"": ""BR"", ""latitude"": -15.78, ""longitude"": -47.93}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,15.707412719726562,-86.82705688476562,13198.316,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,14.159904479980469,-89.13736724853516,13471.182,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,14.62335205078125,-90.55723571777344,13613.257,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,

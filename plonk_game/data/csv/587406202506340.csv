@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-15.965168494681429,168.2425239793714,0.0,VU,True,,,,,,,,"Saratamata, None, Penama, VU"
+anthropic/claude-opus-4.8,no-CoT,-15.5167,167.1833,123.846,VU,True,,stop,0.00413,666,32,0,9.09,"{""country"": ""VU"", ""latitude"": -15.5167, ""longitude"": 167.1833}"
+anthropic/claude-opus-4.8,CoT,-15.5,167.17,125.906,VU,True,,stop,0.00691,797,117,0,9.79,"{""reasoning"": ""Tropical rainforest with tree ferns and dense jungle along a light coral/limestone dirt road, suggesting a Pacific island interior. Vegetation and soil resemble Vanuatu/Solomon Islands tropical highlands."", ""country"": ""VU"", ""latitude"": -15.5, ""longitude"": 167.17}"
+google/gemini-3.1-pro-preview,CoT,-15.4167,166.8833,157.77,VU,True,,stop,0.006624,1272,340,269,5.92,"{
+  ""reasoning"": ""The lush tropical vegetation with large tree ferns and the specific beige vehicle hood are classic indicators of Google Street View coverage in Vanuatu."",
+  ""country"": ""VU"",
+  ""latitude"": -15.4167,
+  ""longitude"": 166.8833
+}"
+moonshotai/kimi-k2.6,CoT,-9.58,160.12,1130.918,SB,True,,stop,0.020621628,682,5959,5888,282.53,"{""reasoning"": ""Light-colored unpaved coral/lime road through dense tropical rainforest with large ferns is typical of rural Melanesian islands; off-road vehicle hood matches utility 4x4s common in the Solomon Islands."", ""country"": ""SB"", ""latitude"": -9.58, ""longitude"": 160.12}"
+minimax/minimax-m3,no-CoT,-8.1,159.1,1323.471,SB,True,,stop,0.00055962,767,323,381,12.68,"{""country"": ""SB"", ""latitude"": -8.1, ""longitude"": 159.1}"
+openai/gpt-5.5,CoT,-19.0524,-169.8297,2348.848,NU,True,,stop,0.018915,621,527,447,13.91,"{""reasoning"":""A narrow white coral-limestone gravel track through dense humid tropical island vegetation strongly fits Niue’s many bush roads. The lack of markings/signage and the safari-style vehicle hood are consistent with remote small-island Street View coverage rather than mainland roads."",""country"":""NU"",""latitude"":-19.0524,""longitude"":-169.8297}"
+qwen/qwen3.5-27b,no-CoT,-16.9186,145.7781,2396.847,AU,True,,stop,0.00019683,473,32,0,3.38,"{""country"": ""AU"", ""latitude"": -16.9186, ""longitude"": 145.7781}"
+qwen/qwen3.5-122b-a10b,no-CoT,-16.9203,145.771,2397.6,AU,True,,stop,0.0002041,473,39,0,1.89,"{
+  ""country"": ""AU"",
+  ""latitude"": -16.9203,
+  ""longitude"": 145.771
+}"
+x-ai/grok-4.3,no-CoT,-16.85,145.65,2410.585,AU,True,,stop,0.0005934,592,22,0,1.37,"{""country"": ""AU"", ""latitude"": -16.85, ""longitude"": 145.65}"
+moonshotai/kimi-k2.6,no-CoT,-6.5,147.0,2541.511,PG,True,,stop,0.00066485,603,23,0,2.89," {""country"": ""PG"", ""latitude"": -6.5, ""longitude"": 147.0}"
+qwen/qwen3.5-35b-a3b,no-CoT,-37.8234,177.6123,2598.414,NZ,True,,stop,0.0001878125,473,32,0,7.27,"{""country"": ""NZ"", ""latitude"": -37.8234, ""longitude"": 177.6123}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-6.596956729888916,145.962646484375,2640.106,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-6.576730251312256,145.94754028320312,2642.572,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,-40.9254,174.8859,2848.2,NZ,True,,stop,0.00015825,473,32,0,0.69,"{""country"": ""NZ"", ""latitude"": -40.9254, ""longitude"": 174.8859}"
+qwen/qwen3.6-27b,no-CoT,-41.2863,174.7762,2884.686,NZ,True,,stop,0.0001963,473,32,0,13.6,"{""country"": ""NZ"", ""latitude"": -41.2863, ""longitude"": 174.7762}"
+openai/gpt-5.5,no-CoT,13.3947,144.6589,4168.897,GU,True,,stop,0.00341,544,23,0,1.59,"{""country"":""GU"",""latitude"":13.3947,""longitude"":144.6589}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,4.2403244972229,102.77530670166016,7539.514,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,3.4132,101.7894,7613.209,MY,True,,stop,5.205e-05,474,31,0,14.25,"{""country"": ""MY"", ""latitude"": 3.4132, ""longitude"": 101.7894}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,20.22431755065918,107.83879089355469,7726.224,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,5.3830790519714355,100.19579315185547,7851.17,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,6.178170204162598,99.76447296142578,7925.207,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,12.9716,77.5946,10468.794,IN,True,,stop,0.0011835,634,31,0,7.33,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.5-397b-a17b,CoT,10.3145,-84.8123,12115.981,CR,True,,stop,0.0057261,553,1568,1491,54.47,"{
+""reasoning"": ""The presence of large tree ferns and dense, misty vegetation indicates a tropical cloud forest environment, while the tan 4x4 vehicle hood on a white gravel road is a signature visual cue for rural Costa Rica, particularly the Monteverde region."",
+""country"": ""CR"",
+""latitude"": 10.3145,
+""longitude"": -84.8123
+}"
+x-ai/grok-4.3,CoT,10.275,-84.795,12116.798,CR,True,,stop,0.002009,676,600,535,5.24,"{""reasoning"": ""Dense tree-fern cloud-forest vegetation, light reddish dirt track and beige 4x4 hood indicate a tropical highland dirt road; most consistent with Costa Rican cloud-forest reserves."", ""country"": ""CR"", ""latitude"": 10.275, ""longitude"": -84.795}"
+google/gemma-4-31b-it,no-CoT,10.1234,-84.1234,12184.34,CR,True,,stop,6.718e-05,406,36,0,3.66,"```json
+{""country"": ""CR"", ""latitude"": 10.1234, ""longitude"": -84.1234}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,9.7489,-83.7534,12214.002,CR,True,,stop,0.00028845,473,30,0,4.84,"{""country"": ""CR"", ""latitude"": 9.7489, ""longitude"": -83.7534}"
+google/gemini-3.5-flash,CoT (effort=low),-21.2583,47.4212,12349.372,MG,True,,stop,0.0043005,1271,266,198,4.63,"{""reasoning"": ""The beige vehicle hood and lush tropical rainforest with prominent tree ferns are highly characteristic of Google Street View coverage in Madagascar, particularly around national parks like Ranomafana."", ""country"": ""MG"", ""latitude"": -21.2583, ""longitude"": 47.4212}"
+google/gemini-3.1-pro-preview,no-CoT,-18.9333,48.4167,12374.718,MG,True,,stop,0.005306,1189,244,209,16.44,"```json
+{""country"": ""MG"", ""latitude"": -18.9333, ""longitude"": 48.4167}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-15.4378,49.9842,12391.697,MG,True,,stop,0.0020985,1189,35,0,23.82,"```json
+{""country"": ""MG"", ""latitude"": -15.4378, ""longitude"": 49.9842}
+```"
+xiaomi/mimo-v2.5,CoT,-2.5,-76.5,12614.317,EC,True,,stop,0.0001291976,787,162,93,17.42,"{""reasoning"": ""The dense tropical vegetation with large ferns and the reddish-white dirt road are characteristic of the Amazon region. The specific soil color and plant types suggest a location in the western Amazon basin."", ""country"": ""EC"", ""latitude"": -2.5, ""longitude"": -76.5}"
+xiaomi/mimo-v2.5,no-CoT,1.5,-76.5,12750.002,CO,True,,stop,7.94976e-05,708,24,0,1.11,"{""country"": ""CO"", ""latitude"": 1.5, ""longitude"": -76.5}"
+mistralai/mistral-small-2603,no-CoT,-22.9068,-47.0626,14233.053,BR,True,,stop,0.000142125,634,31,0,2.2,"{""country"": ""BR"", ""latitude"": -22.9068, ""longitude"": -47.0626}"
+minimax/minimax-m3,CoT,15.35,-61.35,14717.834,DM,True,,stop,0.00127986,843,907,805,30.48,"{""reasoning"": ""Dominant large tree ferns (Cyathea) combined with extremely lush tropical cloud forest, misty mountain conditions, and a remote unpaved road suggest a Caribbean volcanic island interior. The tan 4x4 (likely a rental Dacia Duster or similar) on a rainforest track is highly characteristic of Dominica's interior mountain roads through primary rainforest."", ""country"": ""DM"", ""latitude"": 15.35, ""longitude"": -61.35}"
+google/gemini-3.5-flash,CoT (effort=high),-1.045,29.77,15079.43,UG,True,,stop,0.022356,1272,2272,2200,20.26,"```json
+{""reasoning"": ""The beige Toyota Land Cruiser hood combined with the dense tropical cloud forest containing prominent tree ferns points to the Ruhija road passing through Bwindi Impenetrable National Park in Uganda."", ""country"": ""UG"", ""latitude"": -1.045, ""longitude"": 29.77}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-1.045,29.701,15086.419,UG,True,,stop,0.0131385,1271,1248,1163,17.64,"```json
+{""reasoning"": ""The beige vehicle hood with black latches is characteristic of the Google Street View vehicle used in Uganda's national parks. The lush tropical highland rainforest with abundant tree ferns and misty conditions strongly points to Bwindi Impenetrable National Park."", ""country"": ""UG"", ""latitude"": -1.045, ""longitude"": 29.701}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,17820.519,,True,True,,,,,,2.42,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.15,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.32,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.22,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.73,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.19,

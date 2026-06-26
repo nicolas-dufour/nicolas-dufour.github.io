@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,38.678895326196,20.643597081866,0.0,GR,True,,,,,,,,"Nidri, Lefkada, Ionian Islands, GR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.57497787475586,20.71147346496582,12.973,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.5723762512207,20.707992553710938,13.099,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.652320861816406,21.483055114746094,72.943,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,38.4215,21.6321,90.6,GR,True,,stop,7.096e-05,404,36,0,9.98,"```json
+{""country"": ""GR"", ""latitude"": 38.4215, ""longitude"": 21.6321}
+```"
+qwen/qwen3.5-9b,no-CoT,38.2543,21.6289,97.916,GR,True,,stop,6.325e-05,586,31,0,2.33,"{""country"": ""GR"", ""latitude"": 38.2543, ""longitude"": 21.6289}"
+qwen/qwen3.6-27b,no-CoT,39.1833,21.6333,102.344,GR,True,,stop,0.0002279,585,31,0,17.49,"{""country"": ""GR"", ""latitude"": 39.1833, ""longitude"": 21.6333}"
+x-ai/grok-4.3,CoT,39.74,20.85,119.322,GR,True,,stop,0.002424,788,710,624,7.09,"{""reasoning"": ""Right-side driving (LHD vehicle), European blue/white direction sign, Mediterranean maquis vegetation + rocky limestone mountains, cracked asphalt with white edge lines point to Balkans/Greece. Winding mountain road geometry and flora match Greek interior (e.g., near Ioannina or Pindus)."", ""country"": ""GR"", ""latitude"": 39.74, ""longitude"": 20.85}"
+qwen/qwen3.5-122b-a10b,no-CoT,39.7386,20.9214,120.24,GR,True,,stop,0.00021684,586,31,0,6.47,"{""country"": ""GR"", ""latitude"": 39.7386, ""longitude"": 20.9214}"
+openai/gpt-5.5,CoT,39.6805,19.7142,137.19,GR,True,,stop,0.012775,755,300,214,7.65,"{""reasoning"":""Mediterranean limestone mountains with dense olive/fig vegetation, cypress-like trees, narrow cracked asphalt and white Greek-style road edge/center markings point strongly to rural Greece. The lush Ionian-island landscape most closely fits Corfu near the Paleokastritsa/Lakones hills."",""country"":""GR"",""latitude"":39.6805,""longitude"":19.7142}"
+openai/gpt-5.5,no-CoT,39.7785,19.8036,142.072,GR,True,,stop,0.00408,678,23,0,1.72,"{""country"":""GR"",""latitude"":39.7785,""longitude"":19.8036}"
+google/gemini-3.5-flash,CoT (effort=high),38.15,22.15,143.817,GR,True,,stop,0.0085305,1307,730,668,6.63,"{""reasoning"": ""The double solid white center lines, Mediterranean vegetation including fig and cypress trees, and the blue chevron sign on a winding mountain road are highly characteristic of Greece."", ""country"": ""GR"", ""latitude"": 38.15, ""longitude"": 22.15}"
+qwen/qwen3.5-35b-a3b,no-CoT,39.8234,21.4567,145.249,GR,True,,stop,0.0001353625,585,31,0,7.15,"{""country"": ""GR"", ""latitude"": 39.8234, ""longitude"": 21.4567}"
+google/gemini-3.5-flash,CoT (effort=low),38.0352,22.1654,150.763,GR,True,,stop,0.004329,1308,263,193,2.64,"{""reasoning"": ""The dry limestone mountains, Mediterranean vegetation including a fig tree, double white center lines, and a blue-and-white chevron sign are highly characteristic of mountainous regions in Greece."", ""country"": ""GR"", ""latitude"": 38.0352, ""longitude"": 22.1654}"
+anthropic/claude-opus-4.8,CoT,38.55,22.45,157.597,GR,True,,stop,0.00727,949,101,0,9.57,"{""reasoning"": ""Rugged limestone mountains, Mediterranean scrub vegetation, worn rural asphalt with faded center line, and right-hand driving suggest mainland Greece's mountainous interior."", ""country"": ""GR"", ""latitude"": 38.55, ""longitude"": 22.45}"
+google/gemini-3.5-flash,CoT (effort=medium),38.5124,22.4853,161.12,GR,True,,stop,0.0059295,1307,441,370,12.64,"{""reasoning"": ""The double solid white center lines, Mediterranean vegetation including fig and cypress trees, limestone mountains, and the blue-and-white chevron sign in the distance are highly characteristic of Greece."", ""country"": ""GR"", ""latitude"": 38.5124, ""longitude"": 22.4853}"
+google/gemini-3.1-pro-preview,CoT,38.5333,22.5,162.117,GR,True,,stop,0.005962,1307,279,196,10.92,"{
+  ""reasoning"": ""The double solid white center lines and blue-and-white chevron sign are highly characteristic of Greece. The rugged, rocky mountains and Mediterranean vegetation further support a location in the Greek mountainous regions."",
+  ""country"": ""GR"",
+  ""latitude"": 38.5333,
+  ""longitude"": 22.5000
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),38.0342,22.3156,162.458,GR,True,,stop,0.002154,1226,35,0,7.29,"```json
+{""country"": ""GR"", ""latitude"": 38.0342, ""longitude"": 22.3156}
+```"
+anthropic/claude-opus-4.8,no-CoT,38.5,22.5,162.566,GR,True,,stop,0.00484,818,30,0,2.11,"{""country"": ""GR"", ""latitude"": 38.5, ""longitude"": 22.5}"
+x-ai/grok-4.3,no-CoT,38.05,22.35,164.385,GR,True,,stop,0.0007334,704,22,0,0.86,"{""country"": ""GR"", ""latitude"": 38.05, ""longitude"": 22.35}"
+minimax/minimax-m3,no-CoT,38.48,22.65,175.802,GR,True,,stop,0.00024012,906,22,0,8.72,"{""country"": ""GR"", ""latitude"": 38.48, ""longitude"": 22.65}{""country"": ""GR"", ""latitude"": 38.48, ""longitude"": 22.65}"
+google/gemini-3.1-pro-preview,no-CoT,37.8012,22.4156,182.956,GR,True,,stop,0.00412,1226,139,104,9.47,"```json
+{""country"": ""GR"", ""latitude"": 37.8012, ""longitude"": 22.4156}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,37.8245,22.6189,196.912,GR,True,,stop,0.00034185,585,31,0,2.96,"{""country"": ""GR"", ""latitude"": 37.8245, ""longitude"": 22.6189}"
+moonshotai/kimi-k2.6,CoT,37.2,22.3,219.405,GR,True,,stop,0.011489976,834,3277,3204,164.64,"{""reasoning"": ""The dry limestone mountain with sparse scrub and mixed Mediterranean forest, combined with cracked asphalt, double white center lines, and the distant blue-white curve signage, is characteristic of rural mountain roads in the Greek Peloponnese."", ""country"": ""GR"", ""latitude"": 37.2, ""longitude"": 22.3}"
+mistralai/mistral-medium-3-5,no-CoT,37.9838,23.7275,279.862,GR,True,,stop,0.0014115,786,31,0,1.26,"{""country"": ""GR"", ""latitude"": 37.9838, ""longitude"": 23.7275}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,38.880313873291016,25.770536422729492,444.925,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,42.95,19.15,491.252,ME,True,,stop,0.00130746,995,892,807,32.07,"{""reasoning"": ""The karst limestone mountain with exposed gray scree slopes and lush Mediterranean/Dinaric vegetation is highly characteristic of the Balkans; the road style, worn asphalt with white edge lines, and small reflective road sign suggest a secondary mountain road in Montenegro's Dinaric Alps region."", ""country"": ""ME"", ""latitude"": 42.95, ""longitude"": 19.15}"
+qwen/qwen3.5-27b,no-CoT,35.4833,24.85,515.151,GR,True,,stop,0.00026676,586,44,0,3.14,"```json
+{
+  ""country"": ""GR"",
+  ""latitude"": 35.4833,
+  ""longitude"": 24.8500
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,43.255,17.055,591.213,HR,True,,stop,9.65776e-05,820,29,0,5.59,"{""country"": ""HR"", ""latitude"": 43.255, ""longitude"": 17.055}"
+xiaomi/mimo-v2.5,CoT,44.85,15.25,818.691,HR,True,,stop,0.0003753176,899,985,919,11.02,"{""reasoning"": ""The lush mountainous terrain with dense green vegetation and standard European curve signage suggests a Balkan region, likely Croatia, with right-hand traffic inferred from road markings."", ""country"": ""HR"", ""latitude"": 44.85, ""longitude"": 15.25}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,36.38489532470703,30.099512100219727,871.476,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,36.43085861206055,30.28822898864746,885.676,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,42.5833,0.3,1766.03,ES,True,,stop,0.00018,585,27,0,1.12,"{""country"": ""ES"", ""latitude"": 42.5833, ""longitude"": 0.3}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4789.019,,True,True,,,,,,25.64,
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,10717.528,US,True,,stop,0.0001371,786,32,0,10.94,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.15,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,2.92,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.84,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.15,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.36,

@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,43.886535914619,-100.79166412851,0.0,US,True,,,,,,,,"Murdo, Jones County, South Dakota, US"
+qwen/qwen3.5-9b,no-CoT,43.8756,-100.6428,11.993,US,True,,stop,6.34e-05,586,32,0,2.98,"{""country"": ""US"", ""latitude"": 43.8756, ""longitude"": -100.6428}"
+google/gemini-3.1-pro-preview,CoT,43.85,-100.5,23.731,US,True,,stop,0.005338,1307,227,143,13.32,"{
+  ""reasoning"": ""The yellow left edge line, white dashed center line, and concrete road surface indicate a divided highway in the United States. The rolling, grassy plains are characteristic of the Great Plains region, likely South Dakota or Nebraska."",
+  ""country"": ""US"",
+  ""latitude"": 43.85,
+  ""longitude"": -100.5
+}"
+google/gemini-3.1-pro-preview,no-CoT,43.8521,-100.4812,25.181,US,True,,stop,0.004682,1225,186,150,10.79,"```json
+{""country"": ""US"", ""latitude"": 43.8521, ""longitude"": -100.4812}
+```"
+google/gemini-3.5-flash,CoT (effort=high),43.84,-100.3,39.755,US,True,,stop,0.0155865,1307,1514,1456,10.86,"{""reasoning"": ""The concrete divided highway with asphalt shoulders, rolling grassy hills, and open plains are highly characteristic of Interstate 90 in South Dakota."", ""country"": ""US"", ""latitude"": 43.84, ""longitude"": -100.3}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,43.71104049682617,-101.46819305419922,57.697,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),43.9512,-101.5124,58.174,US,True,,stop,0.004959,1308,333,255,9.65,"{""reasoning"": ""The concrete divided highway with a yellow left line and white right line, combined with rolling grassy plains and vast open sky, is highly characteristic of the US Great Plains, specifically Interstate 90 in South Dakota."", ""country"": ""US"", ""latitude"": 43.9512, ""longitude"": -101.5124}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.73307800292969,-101.56040954589844,64.003,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.733192443847656,-101.57610321044922,65.214,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,43.5,-102.0,106.231,US,True,,stop,6.492e-05,404,31,0,2.29,"```json
+{""country"": ""US"", ""latitude"": 43.5, ""longitude"": -102.0}
+```"
+qwen/qwen3.6-35b-a3b,CoT,44.428056,-103.231944,203.763,US,True,,stop,0.1268310095,665,131286,131072,979.96,"{
+  ""reasoning"": ""The image shows a divided highway with yellow lines on the left and white lines on the right, indicating right-hand traffic typical of the US. The landscape is flat, grassy prairie with rolling hills, characteristic of the Great Plains. The white triangle sign on the left is a 'Yield' sign, but its orientation (pointing up) is unusual for a standard US yield sign (which points down), suggesting it might be a specific local sign or a 'Yield' sign for a merging lane seen from a distance where the shape is ambiguous, or perhaps a 'Yield' sign in a country that drives on the right but has different signage, but the road markings strongly point to the US. The vegetation and terrain are very consistent with the US Midwest/Great Plains."",
+  ""country"": ""US"",
+  ""latitude"": 44.428056,
+  ""longitude"": -103.231944
+}"
+mistralai/mistral-medium-3-5,no-CoT,46.5,-100.0,297.147,US,True,,stop,0.001374,786,26,0,1.06,"{""country"": ""US"", ""latitude"": 46.5, ""longitude"": -100.0}"
+anthropic/claude-opus-4.8,no-CoT,45.9,-103.5,309.222,US,True,,stop,0.004815,818,29,0,2.3,"{""country"": ""US"", ""latitude"": 45.9, ""longitude"": -103.5}"
+google/gemini-3.5-flash,CoT (effort=medium),41.1245,-101.7152,316.311,US,True,,stop,0.0069825,1307,558,474,12.08,"{""reasoning"": ""The divided highway with concrete pavement, yellow left shoulder line, and white right shoulder line is characteristic of a US Interstate. The vast, flat to gently rolling grassy plains suggest the Great Plains region, specifically along Interstate 80 in Nebraska."", ""country"": ""US"", ""latitude"": 41.1245, ""longitude"": -101.7152}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.1512,-102.1234,323.133,US,True,,stop,0.0021615,1225,36,0,8.66,"```json
+{""country"": ""US"", ""latitude"": 41.1512, ""longitude"": -102.1234}
+```"
+openai/gpt-5.5,no-CoT,46.8425,-100.7712,328.692,US,True,,stop,0.00411,678,24,0,1.52,"{""country"":""US"",""latitude"":46.8425,""longitude"":-100.7712}"
+qwen/qwen3.6-27b,no-CoT,46.8772,-100.4459,333.64,US,True,,stop,0.0002299,585,32,0,14.18,"{""country"": ""US"", ""latitude"": 46.8772, ""longitude"": -100.4459}"
+qwen/qwen3.6-35b-a3b,no-CoT,46.8721,-101.4532,335.973,US,True,,stop,0.00011975,585,32,0,1.27,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -101.4532}"
+xiaomi/mimo-v2.5,CoT,40.85,-100.12,342.123,US,True,,stop,0.0001703576,899,253,181,11.34,"{""reasoning"": ""The wide, straight highway through expansive flat farmland, right-hand traffic, and road markings are characteristic of the North American Great Plains, specifically the US interstate system."", ""country"": ""US"", ""latitude"": 40.8500, ""longitude"": -100.1200}"
+xiaomi/mimo-v2.5,no-CoT,41.5,-103.5,345.523,US,True,,stop,9.57376e-05,820,26,0,1.39,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -103.5}"
+moonshotai/kimi-k2.6,no-CoT,47.0,-100.5,346.948,US,True,,stop,0.00064215,754,23,0,2.06,"{""country"": ""US"", ""latitude"": 47.0, ""longitude"": -100.5}"
+qwen/qwen3.5-27b,no-CoT,45.5231,-104.8803,370.78,US,True,,stop,0.0002523,585,32,0,9.79,"{""country"": ""US"", ""latitude"": 45.5231, ""longitude"": -104.8803}"
+qwen/qwen3.5-397b-a17b,no-CoT,47.0528,-102.6385,380.359,US,True,,stop,0.00043548,585,32,0,8.93,"{""country"": ""US"", ""latitude"": 47.0528, ""longitude"": -102.6385}"
+x-ai/grok-4.3,CoT,47.3,-100.4,380.78,US,True,,stop,0.0037465,788,1239,1171,17.39,"{""reasoning"": ""US-style road markings (yellow center line left, white edge line right) + vast flat prairie farmland with distant farm buildings indicate Great Plains; open shortgrass steppe and clear skies point to central North Dakota."", ""country"": ""US"", ""latitude"": 47.3, ""longitude"": -100.4}"
+mistralai/mistral-small-2603,no-CoT,40.7128,-103.0061,397.087,US,True,,stop,0.0001371,786,32,0,2.5,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -103.0061}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,46.55158996582031,-104.57865905761719,419.189,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,47.5,-103.2,443.149,US,True,,stop,0.007145,949,96,0,3.06,"{""reasoning"": ""Wide open grassland plains with gentle hills, US-style highway markings (yellow left line, white right), divided rural highway typical of Great Plains states like Montana/North Dakota."", ""country"": ""US"", ""latitude"": 47.5, ""longitude"": -103.2}"
+qwen/qwen3.5-122b-a10b,no-CoT,47.9253,-101.7521,455.186,US,True,,stop,0.00021866,585,32,0,0.99,"{""country"": ""US"", ""latitude"": 47.9253, ""longitude"": -101.7521}"
+x-ai/grok-4.3,no-CoT,39.8283,-98.5795,486.978,US,True,,stop,0.0007384,704,24,0,0.81,"{""country"": ""US"", ""latitude"": 39.8283, ""longitude"": -98.5795}"
+minimax/minimax-m3,CoT,39.3,-100.0,514.224,US,True,,stop,0.00088386,995,539,447,44.36,"{""reasoning"": ""Extremely flat-to-rolling prairie/agricultural landscape with green wheat/alfalfa fields, dashed white center line with solid yellow left edge line (US highway standard), and right-hand traffic strongly indicate the Great Plains of the United States, most likely western Kansas or Nebraska along a rural state/US highway."", ""country"": ""US"", ""latitude"": 39.3, ""longitude"": -100.0}"
+qwen/qwen3.5-397b-a17b,CoT,39.05,-100.5,538.346,US,True,,stop,0.0302286,665,8286,8157,214.72,"{
+""reasoning"": ""The image shows a concrete divided highway with standard US road markings (white dashed center, solid white shoulder, yellow line on the far left road) and a MUTCD-style Yield sign, situated in a flat, treeless grassland landscape characteristic of the US Great Plains. The presence of white grain bins in the distance and the specific vegetation (short grass prairie) strongly points to Western Kansas, likely along Interstate 70."",
+""country"": ""US"",
+""latitude"": 39.05,
+""longitude"": -100.5
+}"
+moonshotai/kimi-k2.6,CoT,39.0,-99.0,563.467,US,True,,stop,0.016030116,834,4602,4534,221.41,"{""reasoning"": ""Straight divided highway through flat prairie with US-standard yellow left-edge and white dashed lane markings, plus rural yield signage, indicates the US Great Plains; the treeless expanse best matches western Kansas."", ""country"": ""US"", ""latitude"": 39.0, ""longitude"": -99.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,49.01096725463867,-105.4529037475586,672.169,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,49.035274505615234,-105.68641662597656,684.02,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,47.5,-108.5,720.498,US,True,,stop,0.00041322,919,163,184,4.76,"{""country"": ""US"", ""latitude"": 47.5, ""longitude"": -108.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,50.0321,-104.6123,742.075,CA,True,,stop,0.0002228125,585,32,0,1.53,"{""country"": ""CA"", ""latitude"": 50.0321, ""longitude"": -104.6123}"
+openai/gpt-5.5,CoT,50.4021,-106.2147,832.005,CA,True,,stop,0.017335,755,452,369,17.78,"{""reasoning"":""A divided right-hand-driving prairie highway with yellow left shoulder line, white lane markings, broad grassy median, and vast flat agricultural fields strongly fits the Canadian Prairies. The open rolling grassland and road style are most consistent with Saskatchewan along the Trans-Canada Highway."",""country"":""CA"",""latitude"":50.4021,""longitude"":-106.2147}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10869.911,,True,True,,,,,,7.55,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.26,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.28,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.11,

@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.891030234421,68.664496023798,0.0,TJ,True,,,,,,,,"Qurghonteppa, None, Khatlon, TJ"
+google/gemini-3.5-flash,CoT (effort=high),38.0251,69.3312,60.323,TJ,True,,stop,0.0235425,1307,2398,2308,22.73,"```json
+{""reasoning"": ""The presence of a silver Opel Astra caravan (the most common car in Tajikistan), Soviet-style utility poles, and the dry, hilly landscape suggest Tajikistan. The roadside portrait and local attire further confirm a rural location in the Khatlon region of Tajikistan."", ""country"": ""TJ"", ""latitude"": 38.0251, ""longitude"": 69.3312}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),38.481234,68.791567,66.561,TJ,True,,stop,0.00219,1226,39,0,1.98,"```json
+{""country"": ""TJ"", ""latitude"": 38.481234, ""longitude"": 68.791567}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,37.48805236816406,68.07936096191406,68.255,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,38.523,68.541,71.095,TJ,True,,stop,0.006276,1308,305,218,5.61,"{
+  ""reasoning"": ""The portrait on the billboard is typical of those depicting the President of Tajikistan, Emomali Rahmon. The architecture, clothing of the pedestrians, and mountainous landscape strongly suggest a rural or semi-urban area in Tajikistan."",
+  ""country"": ""TJ"",
+  ""latitude"": 38.523,
+  ""longitude"": 68.541
+}"
+google/gemini-3.5-flash,CoT (effort=medium),38.525,68.545,71.263,TJ,True,,stop,0.0093675,1307,823,735,14.15,"```json
+{""reasoning"": ""The portrait on the green sign, the rural architecture with whitewashed walls and slate roofs, the utility poles, and the specific vehicle models (like the Opel Astra) are highly characteristic of rural Tajikistan, particularly along the main highways in the western valleys."", ""country"": ""TJ"", ""latitude"": 38.525, ""longitude"": 68.545}
+```"
+openai/gpt-5.5,no-CoT,38.535,68.779,72.302,TJ,True,,stop,0.00402,678,21,0,2.44,"{""country"":""TJ"",""latitude"":38.535,""longitude"":68.779}"
+google/gemini-3.1-pro-preview,no-CoT,38.5357,68.779,72.379,TJ,True,,stop,0.00484,1226,199,164,3.75,"```json
+{""country"": ""TJ"", ""latitude"": 38.5357, ""longitude"": 68.7790}
+```"
+anthropic/claude-opus-4.8,CoT,38.55,68.78,73.966,TJ,True,,stop,0.007345,949,104,0,3.39,"{""reasoning"": ""Dusty Central Asian roadside village with portrait billboard (common in Tajikistan honoring president/leaders), low single-story buildings, traditional male attire, and arid mountainous backdrop."", ""country"": ""TJ"", ""latitude"": 38.55, ""longitude"": 68.78}"
+qwen/qwen3.5-122b-a10b,no-CoT,38.5598,68.7738,74.974,TJ,True,,stop,0.00021892,586,32,0,7.05,"{""country"": ""TJ"", ""latitude"": 38.5598, ""longitude"": 68.7738}"
+anthropic/claude-opus-4.8,no-CoT,38.5598,68.787,75.13,TJ,True,,stop,0.004915,818,33,0,2.41,"{""country"": ""TJ"", ""latitude"": 38.5598, ""longitude"": 68.7870}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.006103515625,67.76614379882812,79.803,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,38.5526,69.0224,79.931,TJ,True,,stop,0.0219,774,601,516,41.09,"{""reasoning"":""Right-side driving, Soviet-style utility poles/road infrastructure, white plates, and Cyrillic-looking signage point to ex-Soviet Central Asia; the arid foothill setting with Islamic green signage and rugged villages best fits Tajikistan near the Dushanbe/Vahdat valley."",""country"":""TJ"",""latitude"":38.5526,""longitude"":69.0224}"
+google/gemini-3.5-flash,CoT (effort=low),37.9145,69.7812,98.012,TJ,True,,stop,0.0052725,1307,368,295,4.59,"{""reasoning"": ""The portrait sign on the left with a green background, the post-Soviet rural architecture, and the clothing of the pedestrians are highly characteristic of rural Tajikistan, particularly in the Khatlon region."", ""country"": ""TJ"", ""latitude"": 37.9145, ""longitude"": 69.7812}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,37.009281158447266,68.50675964355469,99.03,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,38.5696,69.8612,128.914,TJ,True,,stop,6.34e-05,586,32,0,14.03,"{""country"": ""TJ"", ""latitude"": 38.5696, ""longitude"": 69.8612}"
+qwen/qwen3.6-35b-a3b,CoT,36.7285,67.1146,188.407,AF,True,,stop,0.0058697405,665,5970,5858,30.77,"```json
+{
+  ""reasoning"": ""The image features a portrait of a man on a billboard, typical of Afghanistan, along with a white Toyota sedan and a military truck, common vehicles in the region. The people are wearing shalwar kameez, and the landscape is arid with mountains in the background, consistent with northern Afghanistan."",
+  ""country"": ""AF"",
+  ""latitude"": 36.7285,
+  ""longitude"": 67.1146
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,39.7684,68.2531,211.773,TJ,True,,stop,0.00011404,586,32,0,1.37,"{""country"": ""TJ"", ""latitude"": 39.7684, ""longitude"": 68.2531}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,39.61778259277344,69.8214340209961,216.63,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,39.65016555786133,69.78069305419922,218.229,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,39.73093795776367,69.82276916503906,227.872,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,39.85,70.9,291.361,TJ,True,,stop,0.0028115,788,865,783,13.82,"{
+  ""reasoning"": ""Portrait billboard of Emomali Rahmon + Cyrillic signage, right-hand traffic, chapan-style clothing, arid mountain valley with unpaved roads and Soviet-era utility poles identify Tajikistan; scene matches outskirts of a Fergana-valley town."",
+  ""country"": ""TJ"",
+  ""latitude"": 39.85,
+  ""longitude"": 70.9
+}"
+google/gemma-4-31b-it,no-CoT,34.557,69.172,373.51,AF,True,,stop,6.612e-05,404,34,0,3.22,"```json
+{""country"": ""AF"", ""latitude"": 34.557, ""longitude"": 69.172}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,34.5553,69.2075,374.099,AF,True,,stop,0.00034185,585,31,0,5.7,"{""country"": ""AF"", ""latitude"": 34.5553, ""longitude"": 69.2075}"
+qwen/qwen3.6-35b-a3b,no-CoT,34.5307,69.1724,376.418,AF,True,,stop,0.000185,585,31,0,7.04,"{""country"": ""AF"", ""latitude"": 34.5307, ""longitude"": 69.1724}"
+qwen/qwen3.5-397b-a17b,CoT,34.52,69.18,377.682,AF,True,,stop,0.0098226,665,2631,2542,35.57,"{""reasoning"": ""Right-hand traffic and a white Toyota Corolla (common in Afghanistan) are visible, alongside a man wearing a traditional shalwar kameez and vest. The green roadside poster featuring a portrait is characteristic of political or religious imagery found frequently in Afghanistan."", ""country"": ""AF"", ""latitude"": 34.5200, ""longitude"": 69.1800}"
+x-ai/grok-4.3,no-CoT,40.927,72.989,501.871,KG,True,,stop,0.0007334,704,22,0,8.13,"{""country"": ""KG"", ""latitude"": 40.927, ""longitude"": 72.989}"
+qwen/qwen3.6-27b,no-CoT,42.8747,74.5886,747.177,KG,True,,stop,0.0002279,585,31,0,19.61,"{""country"": ""KG"", ""latitude"": 42.8747, ""longitude"": 74.5886}"
+google/gemma-4-26b-a4b-it,no-CoT,28.6139,77.209,1300.735,IN,True,,stop,5.468e-05,404,31,0,1.16,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+xiaomi/mimo-v2.5,CoT,40.4566,49.975,1632.915,AZ,True,,stop,0.0001767976,899,276,165,3.8,"```json
+{""reasoning"": ""The billboard on the left features a portrait of Heydar Aliyev, the former president of Azerbaijan, written in the Azerbaijani language (Latin script). The semi-rural architecture and terrain, along with the driving on the right side of the road, are consistent with a location in the suburbs of Baku or surrounding regions in Azerbaijan."", ""country"": ""AZ"", ""latitude"": 40.4566, ""longitude"": 49.9750}
+```"
+moonshotai/kimi-k2.6,no-CoT,40.4093,49.8671,1641.67,AZ,True,,stop,0.0003168,755,25,0,1.64,"{""country"": ""AZ"", ""latitude"": 40.4093, ""longitude"": 49.8671}"
+mistralai/mistral-medium-3-5,no-CoT,32.6539,51.666,1646.333,IR,True,,stop,0.0014115,786,31,0,1.59,"{""country"": ""IR"", ""latitude"": 32.6539, ""longitude"": 51.6660}"
+moonshotai/kimi-k2.6,CoT,40.5,47.5,1842.199,AZ,True,,stop,0.012537756,834,3590,3504,107.27,"{""reasoning"": ""The roadside billboard showing a soldier's portrait on a green background is a distinctive Azerbaijani martyr (şəhid) memorial common throughout the countryside, while the left-hand drive vehicles, post-Soviet rural architecture, and flat terrain with distant mountains match the Republic of Azerbaijan."", ""country"": ""AZ"", ""latitude"": 40.5, ""longitude"": 47.5}"
+xiaomi/mimo-v2.5,no-CoT,40.0412,46.9836,1884.885,AZ,True,,stop,9.71376e-05,820,31,0,1.42,"{""country"": ""AZ"", ""latitude"": 40.0412, ""longitude"": 46.9836}"
+minimax/minimax-m3,no-CoT,41.65,44.85,2070.769,GE,True,,stop,0.00040122,919,153,167,11.53,"{""country"": ""GE"", ""latitude"": 41.65, ""longitude"": 44.85}"
+minimax/minimax-m3,CoT,42.15,44.05,2140.835,GE,True,,stop,0.00088902,997,540,591,9.09,"{""reasoning"": ""The portrait memorial billboard style is highly characteristic of Georgian roads (honoring fallen soldiers), combined with a Lada car, right-hand traffic, Caucasus mountain backdrop, and post-Soviet infrastructure including overhead power lines."", ""country"": ""GE"", ""latitude"": 42.15, ""longitude"": 44.05}{""reasoning"": ""The portrait memorial billboard style is highly characteristic of Georgian roads (honoring fallen soldiers), combined with a Lada car, right-hand traffic, Caucasus mountain backdrop, and post-Soviet infrastructure including overhead power lines."", ""country"": ""GE"", ""latitude"": 42.15, ""longitude"": 44.05}"
+mistralai/mistral-small-2603,no-CoT,49.8396,24.0297,3751.931,UA,True,,stop,0.000170625,786,31,0,7.57,"{""country"": ""UA"", ""latitude"": 49.8396, ""longitude"": 24.0297}"
+qwen/qwen3.5-27b,no-CoT,39.0338,125.7548,4887.921,KP,True,,stop,0.00022707,585,32,0,1.79,"{""country"": ""KP"", ""latitude"": 39.0338, ""longitude"": 125.7548}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.74,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.34,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.44,

@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,47.139085100393,81.171282880839,0.0,KZ,True,,,,,,,,"Urzhar, None, East Kazakhstan, KZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.67559814453125,75.1261215209961,491.074,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,43.3527,77.4679,511.063,KZ,True,,stop,0.021375,621,609,516,55.54,"{""reasoning"":""Right-hand traffic with ex-Soviet style road markings, long white license plates, concrete curbs, and simple curved streetlights point to a post-Soviet Central Asian road. The dry steppe vegetation with poplars and low rolling terrain is most consistent with Kazakhstan, likely in the Almaty region."",""country"":""KZ"",""latitude"":43.3527,""longitude"":77.4679}"
+qwen/qwen3.5-9b,no-CoT,43.2486,77.0242,540.889,KZ,True,,stop,5.22e-05,474,32,0,9.68,"{""country"": ""KZ"", ""latitude"": 43.2486, ""longitude"": 77.0242}"
+xiaomi/mimo-v2.5,CoT,43.25,76.94,544.744,KZ,True,,stop,0.0010921176,787,3601,3526,56.15,"{""reasoning"": ""The distinctive white transverse rumble strips (speed reduction markings) on the road are a standard feature in Kazakhstan, alongside the blue rectangular road signage and poplar trees typical of the region's outskirts."", ""country"": ""KZ"", ""latitude"": 43.25, ""longitude"": 76.94}"
+x-ai/grok-4.3,no-CoT,43.25,76.9,546.654,KZ,True,,stop,0.0005934,592,22,0,0.81,"{""country"": ""KZ"", ""latitude"": 43.25, ""longitude"": 76.9}"
+google/gemma-4-31b-it,no-CoT,43.222,76.888,549.741,KZ,True,,stop,7.044e-05,406,34,0,8.1,"```json
+{""country"": ""KZ"", ""latitude"": 43.222, ""longitude"": 76.888}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.253170013427734,76.1725845336914,582.953,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.24761962890625,76.09358978271484,587.588,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,49.5,72.0,726.592,KZ,True,,stop,0.022447368,682,6496,6418,365.68,"{""reasoning"": ""Post-Soviet road markings including wide pedestrian crossing bars and painted yield triangles, combined with a dry steppe landscape, scattered deciduous windbreaks, and a white commercial van driving on the right, indicate a rural highway in Kazakhstan."", ""country"": ""KZ"", ""latitude"": 49.5, ""longitude"": 72.0}"
+x-ai/grok-4.3,CoT,43.65,51.15,2361.019,KZ,True,,stop,0.002764,676,902,826,7.89,"{
+  ""reasoning"": ""Right-hand traffic with European-style dashed center lines, solid edge lines, and triangular arrow markings; steppe-like vegetation, poplar trees, dry grass, and lamp/pole architecture typical of Eastern Europe/Central Asia."",
+  ""country"": ""KZ"",
+  ""latitude"": 43.65,
+  ""longitude"": 51.15
+}"
+qwen/qwen3.5-27b,no-CoT,55.7961,49.1089,2393.029,RU,True,,stop,0.00021684,474,36,0,12.81,"```json
+{""country"": ""RU"", ""latitude"": 55.7961, ""longitude"": 49.1089}
+```"
+google/gemini-3.1-pro-preview,no-CoT,51.5333,46.0167,2567.64,RU,True,,stop,0.002798,1189,35,0,9.36,"```json
+{""country"": ""RU"", ""latitude"": 51.5333, ""longitude"": 46.0167}
+```"
+minimax/minimax-m3,CoT,47.95,45.45,2658.615,RU,True,,stop,0.00077466,843,486,385,20.16,"{""reasoning"": ""Decisive clues: chevron rumble-strip road markings before intersection (distinctively Russian), tall Soviet-style curved-arm streetlights, right-hand traffic with cab-over light truck (likely GAZelle), dry steppe vegetation and yellowish grass indicating southern continental Russia/Kazakhstan steppe, flat terrain, and Cyrillic-style blue directional signs in distance."", ""country"": ""RU"", ""latitude"": 47.95, ""longitude"": 45.45}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,49.88439178466797,42.4966926574707,2833.194,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,47.8,41.5,2949.809,RU,True,,stop,0.006735,797,110,0,3.34,"{""reasoning"": ""Concrete utility poles, steppe vegetation, and road markings typical of southern Russia/Ukraine rural highways; right-hand traffic and dry grassland suggest the Rostov/Volgograd steppe region."", ""country"": ""RU"", ""latitude"": 47.8, ""longitude"": 41.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,49.23508071899414,40.98677444458008,2952.9,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),47.5231,40.1245,3057.215,RU,True,,stop,0.0062445,1271,482,394,13.21,"{""reasoning"": ""The concrete utility poles, blue bus stop shelter, and specific transverse rumble strip road markings are highly characteristic of regional roads in Russia. The dry, steppe-like vegetation and flat terrain suggest a location in southwestern Russia, such as the Rostov or Volgograd regions."", ""country"": ""RU"", ""latitude"": 47.5231, ""longitude"": 40.1245}"
+anthropic/claude-opus-4.8,no-CoT,47.2,40.1,3068.259,RU,True,,stop,0.00408,666,30,0,9.02,"{""country"": ""RU"", ""latitude"": 47.2, ""longitude"": 40.1}"
+google/gemini-3.5-flash,CoT (effort=low),47.25,39.75,3092.293,RU,True,,stop,0.0039765,1271,230,164,3.05,"{""reasoning"": ""The concrete utility poles, road markings (including rumble strips), flat steppe-like terrain, and the style of the oncoming light truck are highly characteristic of southern Russia or Ukraine."", ""country"": ""RU"", ""latitude"": 47.25, ""longitude"": 39.75}"
+google/gemini-3.1-pro-preview,CoT,47.2313,39.715,3095.391,RU,True,,stop,0.005638,1271,258,178,4.62,"{
+  ""reasoning"": ""The concrete utility poles, road markings including the specific pedestrian crossing style, and landscape strongly suggest Russia. The vegetation and flat terrain point towards southern Russia, such as the Rostov region."",
+  ""country"": ""RU"",
+  ""latitude"": 47.2313,
+  ""longitude"": 39.715
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,55.7558,37.6173,3108.066,RU,True,,stop,0.0001444,474,31,0,9.74,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),48.4512,39.0215,3111.875,UA,True,,stop,0.0021,1190,35,0,1.49,"```json
+{""country"": ""UA"", ""latitude"": 48.4512, ""longitude"": 39.0215}
+```"
+mistralai/mistral-medium-3-5,no-CoT,47.128,39.414,3120.381,RU,True,,stop,0.001176,634,30,0,1.15,"{""country"": ""RU"", ""latitude"": 47.128, ""longitude"": 39.414}"
+openai/gpt-5.5,no-CoT,48.5167,35.0833,3391.407,UA,True,,stop,0.00341,544,23,0,1.94,"{""country"":""UA"",""latitude"":48.5167,""longitude"":35.0833}"
+qwen/qwen3.5-35b-a3b,no-CoT,48.4651,35.0423,3395.823,UA,True,,stop,0.0001171625,473,31,0,1.64,"{""country"": ""UA"", ""latitude"": 48.4651, ""longitude"": 35.0423}"
+google/gemini-3.5-flash,CoT (effort=high),49.589,34.551,3399.468,UA,True,,stop,0.0105645,1271,962,882,21.26,"```json
+{""reasoning"": ""The concrete utility poles with curved metal arms, blue bus stop shelter, and specific rumble strip road markings are characteristic of Ukraine and Russia, with the dry steppe-like vegetation pointing to a southern or eastern region."", ""country"": ""UA"", ""latitude"": 49.589, ""longitude"": 34.551}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,49.915870666503906,31.591211318969727,3596.89,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,43.65,4.63,5742.817,FR,True,,stop,8.00576e-05,708,26,0,3.44,"{""country"": ""FR"", ""latitude"": 43.65, ""longitude"": 4.63}"
+qwen/qwen3.6-27b,no-CoT,44.8378,-0.5792,6018.146,FR,True,,stop,0.0001923,473,30,0,12.25,"{""country"": ""FR"", ""latitude"": 44.8378, ""longitude"": -0.5792}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.4168,-3.7038,6512.351,ES,True,,stop,0.00025467,473,30,0,2.54,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+qwen/qwen3.5-122b-a10b,no-CoT,40.3093,-3.6969,6519.157,ES,True,,stop,0.00018564,474,30,0,6.23,"{""country"": ""ES"", ""latitude"": 40.3093, ""longitude"": -3.6969}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9341.19,,True,,stop,5.254e-05,406,25,0,7.94,"{""country--"": ""unknown"", ""latitude"": 0.0, ""longitude"": 0.0}"
+mistralai/mistral-small-2603,no-CoT,40.0028,-105.2517,10304.49,US,True,,stop,0.000142875,634,32,0,2.53,"{""country"": ""US"", ""latitude"": 40.0028, ""longitude"": -105.2517}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.56,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.44,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,15.56,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.25,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.35,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.12,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.16,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.25,

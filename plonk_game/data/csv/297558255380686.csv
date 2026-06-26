@@ -1,0 +1,72 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,3.6889514415773,39.000361298848,0.0,KE,True,,,,,,,,"Moyale, None, Marsabit, KE"
+qwen/qwen3.5-397b-a17b,CoT,3.28,38.48,73.508,KE,True,,stop,0.0082674,665,2199,2113,20.7,"{""reasoning"": ""The reddish laterite soil and the flat-topped acacia tree on the right are characteristic of the East African savanna, specifically Kenya. The scrubby vegetation and lack of dense forest suggest a semi-arid region like the area surrounding Tsavo National Parks."", ""country"": ""KE"", ""latitude"": 3.28, ""longitude"": 38.48}"
+openai/gpt-5.5,CoT,0.5958,37.5624,379.237,KE,True,,stop,0.019015,755,508,421,13.15,"{""reasoning"":""The red laterite dirt road, dry acacia/umbrella-thorn savanna, and flat semi-arid bushland strongly suggest East Africa, especially Kenya's northern safari/reserve regions. With no signage or vehicles, the best fit is the Samburu/Isiolo area of Kenya."",""country"":""KE"",""latitude"":0.5958,""longitude"":37.5624}"
+minimax/minimax-m3,CoT,0.75,37.15,386.078,KE,True,,stop,0.00084546,995,507,398,11.37,"{""reasoning"": ""Red laterite/murram road and orange-red soil combined with acacia thorn-bush vegetation and semi-arid savanna landscape are highly characteristic of northern Kenya (e.g., Laikipia/Samburu/Borena transition zones). The scattered flat-topped acacias, dry scrub, and cumulus cloud patterns typical of East African equatorial semi-arid bushland further support this localization."", ""country"": ""KE"", ""latitude"": 0.75, ""longitude"": 37.15}"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.0234,37.9012,430.485,KE,True,,stop,0.00011775,585,30,0,1.56,"{""country"": ""KE"", ""latitude"": -0.0234, ""longitude"": 37.9012}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,7.149544715881348,36.374961853027344,482.191,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,7.231213092803955,36.39305114746094,488.27,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,7.213871955871582,36.36116027832031,488.819,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,-0.5,37.5,494.732,KE,True,,stop,0.005874,666,3588,3174,31.71,"{""reasoning"": ""The distinctive red lateritic soil of the unpaved road and the presence of acacia-like trees in a semi-arid savanna landscape are characteristic of rural East Africa, particularly Kenya. The vegetation and sky suggest a tropical highland climate."", ""country"": ""KE"", ""latitude"": -0.5, ""longitude"": 37.5}"
+qwen/qwen3.5-9b,no-CoT,-1.2833,36.8167,603.805,KE,True,,stop,6.31e-05,586,30,0,3.67,"{""country"": ""KE"", ""latitude"": -1.2833, ""longitude"": 36.8167}"
+google/gemma-4-31b-it,no-CoT,-1.286389,36.816667,604.122,KE,True,,stop,5.228e-05,262,39,0,10.31,"```json
+{""country"": ""KE"", ""latitude"": -1.286389, ""longitude"": 36.816667}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-1.2921,36.8219,604.47,KE,True,,stop,0.001404,786,30,0,1.05,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+moonshotai/kimi-k2.6,no-CoT,-1.2921,36.8219,604.47,KE,True,,stop,0.000333,755,25,0,1.75,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+qwen/qwen3.5-122b-a10b,no-CoT,-1.2921,36.8219,604.47,KE,True,,stop,0.0003556,585,38,0,2.41,"{
+  ""country"": ""KE"",
+  ""latitude"": -1.2921,
+  ""longitude"": 36.8219
+}"
+xiaomi/mimo-v2.5,no-CoT,-1.2921,36.8219,604.47,KE,True,,stop,9.68576e-05,820,30,0,1.9,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+x-ai/grok-4.3,CoT,-1.85,37.25,645.894,KE,True,,stop,0.0019915,788,537,465,13.34,"{
+  ""reasoning"": ""Red laterite dirt road + sparse acacia/thornbush savanna vegetation under bright tropical sky with cumulus clouds is characteristic of East African plains; no other region matches all visual elements simultaneously."",
+  ""country"": ""KE"",
+  ""latitude"": -1.85,
+  ""longitude"": 37.25
+}"
+x-ai/grok-4.3,no-CoT,-1.85,37.25,645.894,KE,True,,stop,0.0007334,704,22,0,0.83,"{""country"": ""KE"", ""latitude"": -1.85, ""longitude"": 37.25}"
+openai/gpt-5.5,no-CoT,-2.3254,40.1168,680.178,KE,True,,stop,0.00411,678,24,0,7.85,"{""country"":""KE"",""latitude"":-2.3254,""longitude"":40.1168}"
+google/gemini-3.1-pro-preview,CoT,-2.5,38.0,697.102,KE,True,,stop,0.005292,1308,223,158,4.3,"{
+  ""reasoning"": ""The reddish dirt road and dry savanna vegetation with acacia trees strongly suggest East Africa. The landscape and soil color are highly characteristic of rural Kenya."",
+  ""country"": ""KE"",
+  ""latitude"": -2.5,
+  ""longitude"": 38.0
+}"
+moonshotai/kimi-k2.6,CoT,-1.406,35.185,707.641,KE,True,,stop,0.007844076,834,2207,2127,60.3,"{""reasoning"": ""The vivid red laterite dirt road and flat acacia savanna with dry-season scrub are classic indicators of East African bush, specifically matching the communal pastoral lands and low-traffic tracks found in southwestern Kenya near the Maasai Mara or Narok regions."", ""country"": ""KE"", ""latitude"": -1.406, ""longitude"": 35.185}"
+minimax/minimax-m3,no-CoT,-1.4066,35.0112,719.434,KE,True,,stop,0.00023616,904,25,0,1.1,"{""country"": ""KE"", ""latitude"": -1.4066, ""longitude"": 35.0112}"
+anthropic/claude-opus-4.8,CoT,-2.8,38.4,724.617,KE,True,,stop,0.007195,949,98,0,9.96,"{""reasoning"": ""Red lateritic dirt road with acacia trees and dense scrub bushland under tropical cloud-dotted sky, typical of East African savanna in Kenya's Tsavo region."", ""country"": ""KE"", ""latitude"": -2.8, ""longitude"": 38.4}"
+anthropic/claude-opus-4.8,no-CoT,-2.85,38.3,731.252,KE,True,,stop,0.00484,818,30,0,8.67,"{""country"": ""KE"", ""latitude"": -2.85, ""longitude"": 38.3}"
+google/gemini-3.1-pro-preview,no-CoT,-3.0,38.5,745.853,KE,True,,stop,0.00413,1225,140,112,15.16,"```json
+{""country"": ""KE"", ""latitude"": -3.0, ""longitude"": 38.5}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-3.05,38.65,750.348,KE,True,,stop,0.0121395,1307,1131,1060,16.24,"```json
+{""reasoning"": ""The reddish-orange laterite soil, flat-topped acacia trees, and dry scrub vegetation are highly characteristic of the East African savanna, particularly in southern Kenya near Tsavo."", ""country"": ""KE"", ""latitude"": -3.05, ""longitude"": 38.65}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-3.2183,38.5842,769.442,KE,True,,stop,0.0021435,1225,34,0,2.03,"```json
+{""country"": ""KE"", ""latitude"": -3.2183, ""longitude"": 38.5842}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-3.2514,38.7812,772.116,KE,True,,stop,0.004239,1308,253,182,3.46,"{""reasoning"": ""The reddish-orange dirt road, flat terrain, and semi-arid acacia scrub vegetation under a bright, cloudy sky are highly characteristic of southern Kenya, particularly near Tsavo National Park."", ""country"": ""KE"", ""latitude"": -3.2514, ""longitude"": 38.7812}"
+google/gemini-3.5-flash,CoT (effort=medium),-3.2512,38.5834,773.099,KE,True,,stop,0.0066855,1307,525,456,6.06,"{""reasoning"": ""The reddish-orange dirt road, flat savanna landscape with acacia-like scrub, and tropical cumulus clouds are highly characteristic of southern Kenya, particularly near Tsavo National Park."", ""country"": ""KE"", ""latitude"": -3.2512, ""longitude"": 38.5834}"
+qwen/qwen3.5-397b-a17b,no-CoT,-3.2156,37.8945,777.524,KE,True,,stop,0.00042828,585,30,0,3.59,"{""country"": ""KE"", ""latitude"": -3.2156, ""longitude"": 37.8945}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-3.250321626663208,36.83988571166992,808.1,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,CoT,-2.3333,34.8333,814.183,TZ,True,,stop,0.0004776,868,579,590,6.1,"{""reasoning"": ""Reddish soil and savanna vegetation are characteristic of East African regions like Tanzania's Serengeti, with flat terrain and dry grassland indicating a semi-arid climate typical of the area."", ""country"": ""TZ"", ""latitude"": -2.3333, ""longitude"": 34.8333}"
+xiaomi/mimo-v2.5,CoT,-2.5,34.8,831.565,TZ,True,,stop,0.0002977576,899,708,657,8.25,"{""reasoning"": ""Reddish soil and savanna vegetation typical of East African landscapes, suggesting a rural area in Tanzania."", ""country"": ""TZ"", ""latitude"": -2.5, ""longitude"": 34.8}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-4.101235389709473,39.10065841674805,866.301,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-4.213027000427246,39.21180725097656,878.974,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,-6.1659,35.7516,1153.652,TZ,True,,stop,0.0002325,586,43,0,2.7,"```json
+{
+  ""country"": ""TZ"",
+  ""latitude"": -6.1659,
+  ""longitude"": 35.7516
+}
+```"
+qwen/qwen3.6-27b,no-CoT,-18.5,32.5,2567.987,MZ,True,,stop,0.0002159,585,25,0,8.85,"{""country"": ""MZ"", ""latitude"": -18.5, ""longitude"": 32.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.7461,28.2293,3472.813,ZA,True,,stop,0.0002215625,585,31,0,1.11,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.2293}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4352.918,,True,True,,,,,,0.62,
+mistralai/mistral-small-2603,no-CoT,-33.9249,18.4241,4706.52,ZA,True,,stop,0.0001365,786,31,0,3.41,"{""country"": ""ZA"", ""latitude"": -33.9249, ""longitude"": 18.4241}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.15,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.23,

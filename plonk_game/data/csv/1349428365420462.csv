@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,67.10900297767,25.075104510271,0.0,FI,True,,,,,,,,"Kittilae, Tunturi-Lappi, Lapland, FI"
+qwen/qwen3.5-122b-a10b,no-CoT,67.0123,25.4567,19.726,FI,True,,stop,0.00021658,585,31,0,0.85,"{""country"": ""FI"", ""latitude"": 67.0123, ""longitude"": 25.4567}"
+minimax/minimax-m3,CoT,67.4,26.1,54.666,FI,True,,stop,0.00075906,995,435,367,13.18,"{""reasoning"": ""Flat boreal spruce forest with heavy snow, very low sun angle suggesting high latitude, right-hand driving, and rural highway with no markings point to Finnish Lapland along the E75 corridor."", ""country"": ""FI"", ""latitude"": 67.4, ""longitude"": 26.1}"
+minimax/minimax-m3,no-CoT,66.5,25.7,73.038,FI,True,,stop,0.00039882,919,151,152,5.33,"{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 25.7}"
+google/gemini-3.5-flash,CoT (effort=medium),66.5039,25.7294,73.13,FI,True,,stop,0.0061815,1307,469,407,11.22,"{""reasoning"": ""The snowy pine forest, low winter sun, and characteristic road delineator post are highly indicative of northern Finland during winter Street View coverage."", ""country"": ""FI"", ""latitude"": 66.5039, ""longitude"": 25.7294}"
+qwen/qwen3.6-35b-a3b,no-CoT,67.85,26.1,93.24,FI,True,,stop,0.0001588,586,26,0,2.8,"{""country"": ""FI"", ""latitude"": 67.85, ""longitude"": 26.1}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),65.8486,25.1214,140.165,FI,True,,stop,0.0021525,1225,35,0,8.11,"```json
+{""country"": ""FI"", ""latitude"": 65.8486, ""longitude"": 25.1214}
+```"
+anthropic/claude-opus-4.8,CoT,65.8,25.5,146.772,FI,True,,stop,0.006895,949,86,0,3.66,"{""reasoning"": ""Snowy boreal forest with low sun and right-hand driving suggests northern Scandinavia, likely Finnish/Swedish Lapland."", ""country"": ""FI"", ""latitude"": 65.8, ""longitude"": 25.5}"
+google/gemini-3.5-flash,CoT (effort=high),65.8512,26.6584,156.505,FI,True,,stop,0.0070995,1307,571,507,5.35,"{""reasoning"": ""The dense coniferous forest, snowy road conditions, and low winter sun are highly characteristic of northern Finland, where extensive winter Google Street View coverage exists."", ""country"": ""FI"", ""latitude"": 65.8512, ""longitude"": 26.6584}"
+anthropic/claude-opus-4.8,no-CoT,65.5,26.5,189.894,FI,True,,stop,0.00484,818,30,0,9.35,"{""country"": ""FI"", ""latitude"": 65.5, ""longitude"": 26.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,65.77680206298828,27.86478614807129,193.13,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,65.75730895996094,27.926057815551758,196.571,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),65.2341,25.8124,211.09,FI,True,,stop,0.003582,1308,180,121,2.74,"{""reasoning"": ""The snowy pine forest, flat terrain, and white side-marker posts are highly characteristic of winter coverage in northern Finland."", ""country"": ""FI"", ""latitude"": 65.2341, ""longitude"": 25.8124}"
+qwen/qwen3.5-397b-a17b,no-CoT,65.0123,25.4682,233.815,FI,True,,stop,0.0003882,585,31,0,3.26,"{""country"": ""FI"", ""latitude"": 65.0123, ""longitude"": 25.4682}"
+google/gemini-3.1-pro-preview,CoT,65.0121,25.4651,233.827,FI,True,,stop,0.005832,1308,268,183,4.98,"{
+  ""reasoning"": ""The flat, snow-covered landscape with dense coniferous forests and the white roadside bollard strongly suggest a Nordic country, likely Finland. The low sun angle and twilight sky indicate a high latitude during winter."",
+  ""country"": ""FI"",
+  ""latitude"": 65.0121,
+  ""longitude"": 25.4651
+}"
+openai/gpt-5.5,CoT,65.0123,25.7134,234.912,FI,True,,stop,0.013105,755,311,235,15.67,"{""reasoning"":""Snow-covered right-side-driving rural road through flat boreal conifer forest with Nordic winter marker poles and Finnish-looking roadside houses strongly suggests rural Finland. The flat terrain and heavy snow fit central/northern Finland, likely around the Oulu region."",""country"":""FI"",""latitude"":65.0123,""longitude"":25.7134}"
+qwen/qwen3.5-9b,no-CoT,64.9631,25.6462,240.001,FI,True,,stop,6.325e-05,586,31,0,1.71,"{""country"": ""FI"", ""latitude"": 64.9631, ""longitude"": 25.6462}"
+mistralai/mistral-medium-3-5,no-CoT,64.8388,25.2817,252.608,FI,True,,stop,0.0014115,786,31,0,1.01,"{""country"": ""FI"", ""latitude"": 64.8388, ""longitude"": 25.2817}"
+google/gemma-4-31b-it,no-CoT,64.5,25.0,290.128,FI,True,,stop,6.108e-05,404,30,0,3.77,"```json
+{""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 25.0}
+```"
+xiaomi/mimo-v2.5,no-CoT,64.5,25.5,290.752,FI,True,,stop,9.54576e-05,820,25,0,3.29,"{""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 25.5}"
+google/gemini-3.1-pro-preview,no-CoT,64.5,26.5,297.267,FI,True,,stop,0.0028,1226,29,0,2.21,"```json
+{""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 26.5}
+```"
+moonshotai/kimi-k2.6,CoT,64.5,27.0,303.045,FI,True,,stop,0.009840276,834,2800,2738,135.57,"{""reasoning"": ""Dense snow-laden boreal forest and prolonged winter twilight indicate a high-latitude Nordic location; the rural road alignment and Nordic house style are consistent with central Finland."", ""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 27.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,64.27593231201172,25.499496459960938,315.62,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,64.82098388671875,29.441699981689453,322.082,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,64.0,26.0,348.305,FI,True,,stop,0.000153075,585,25,0,7.58,"{""country"": ""FI"", ""latitude"": 64.0, ""longitude"": 26.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,64.37133026123047,29.487503051757812,364.923,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,63.5,26.0,403.585,FI,True,,stop,0.0002159,585,25,0,7.99,"{""country"": ""FI"", ""latitude"": 63.5, ""longitude"": 26.0}"
+openai/gpt-5.5,no-CoT,63.2154,27.7481,450.488,FI,True,,stop,0.00408,678,23,0,1.58,"{""country"":""FI"",""latitude"":63.2154,""longitude"":27.7481}"
+xiaomi/mimo-v2.5,CoT,62.5,25.5,512.889,FI,True,,stop,0.0004013576,899,1078,1017,17.73,"{""reasoning"": ""The heavy snow, dense coniferous forest, and Nordic-style house, combined with right-hand traffic, strongly suggest a rural road in Finland."", ""country"": ""FI"", ""latitude"": 62.5, ""longitude"": 25.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,62.381187438964844,26.237276077270508,528.569,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,61.9245,25.7312,577.336,FI,True,,stop,0.00018415,585,31,0,11.81,"{""country"": ""FI"", ""latitude"": 61.9245, ""longitude"": 25.7312}"
+x-ai/grok-4.3,CoT,61.85,25.75,585.659,FI,True,,stop,0.002164,788,606,535,10.82,"{
+  ""reasoning"": ""Boreal conifer/birch forest under deep snow, Nordic wooden house, plowed two-lane road at twilight, and car POV all point to rural southern/central Finland in winter."",
+  ""country"": ""FI"",
+  ""latitude"": 61.85,
+  ""longitude"": 25.75
+}"
+x-ai/grok-4.3,no-CoT,61.85,25.75,585.659,FI,True,,stop,0.0008678,704,22,0,1.1,"{""country"": ""FI"", ""latitude"": 61.85, ""longitude"": 25.75}"
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,7389.351,US,True,,stop,0.0001365,786,31,0,3.76,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7713.678,NO own thought,True,,stop,5.948e-05,404,43,0,14.27,"``` ownthought
+Please provide the image you are referring to. You own thought
+{""country"": ""NO own thought"", ""latitude"": 0.0, ""longitude"": 0.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.61,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,36.85,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.44,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.7,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.27,

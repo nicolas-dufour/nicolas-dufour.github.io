@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,38.582027731215,54.357094294628,0.0,TM,True,,,,,,,,"Gumdag, None, Balkan, TM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.6566047668457,54.60279846191406,22.9,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.658775329589844,54.60430145263672,23.11,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.75425720214844,54.5896110534668,27.826,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,39.5,59.0,413.716,TM,True,,stop,0.00095742,845,635,695,10.47,"{""reasoning"": ""Soviet-style concrete utility poles, extremely flat barren steppe-desert landscape with light tan sand, worn two-lane asphalt road stretching to the horizon, and a Soviet-era vehicle dashboard all strongly indicate a Central Asian location, most likely Turkmenistan's Karakum Desert."", ""country"": ""TM"", ""latitude"": 39.5, ""longitude"": 59.0}"
+google/gemini-3.1-pro-preview,CoT,43.5,53.5,551.548,KZ,True,,stop,0.006648,1272,342,269,11.34,"{
+  ""reasoning"": ""The extremely flat, arid steppe landscape and the style of the utility poles strongly suggest Central Asia. The degraded paved road and general environment are characteristic of western or central Kazakhstan."",
+  ""country"": ""KZ"",
+  ""latitude"": 43.5,
+  ""longitude"": 53.5
+}"
+google/gemini-3.1-pro-preview,no-CoT,43.8561,53.1522,595.026,KZ,True,,stop,0.002798,1189,35,0,3.46,"```json
+{""country"": ""KZ"", ""latitude"": 43.8561, ""longitude"": 53.1522}
+```"
+google/gemini-3.5-flash,CoT (effort=high),44.5231,54.4824,660.699,KZ,True,,stop,0.0132645,1271,1262,1187,17.0,"```json
+{""reasoning"": ""The extremely flat, arid desert landscape with salt-tinged soil, cracked asphalt road, and distant utility poles is highly characteristic of the Ustyurt Plateau in western Kazakhstan."", ""country"": ""KZ"", ""latitude"": 44.5231, ""longitude"": 54.4824}
+```"
+qwen/qwen3.5-9b,no-CoT,32.5398,53.6881,674.578,IR,True,,stop,5.205e-05,474,31,0,2.99,"{""country"": ""IR"", ""latitude"": 32.5398, ""longitude"": 53.6881}"
+mistralai/mistral-medium-3-5,no-CoT,32.4279,53.688,686.976,IR,True,,stop,0.0011835,634,31,0,6.88,"{""country"": ""IR"", ""latitude"": 32.4279, ""longitude"": 53.6880}"
+google/gemini-3.5-flash,CoT (effort=low),45.2345,54.1234,739.973,KZ,True,,stop,0.003969,1272,229,166,17.81,"{""reasoning"": ""The extremely flat, arid steppe landscape with cracked asphalt and distant utility poles is highly characteristic of western Kazakhstan, particularly the Mangystau Region."", ""country"": ""KZ"", ""latitude"": 45.2345, ""longitude"": 54.1234}"
+minimax/minimax-m3,no-CoT,45.5,55.0,771.066,KZ,True,,stop,0.00019452,754,22,0,8.99,"{""country"": ""KZ"", ""latitude"": 45.5, ""longitude"": 55.0}{""country"": ""KZ"", ""latitude"": 45.5, ""longitude"": 55.0}"
+anthropic/claude-opus-4.8,no-CoT,45.0,60.0,852.815,KZ,True,,stop,0.004105,666,31,0,2.38,"{""country"": ""KZ"", ""latitude"": 45.0, ""longitude"": 60.0}"
+google/gemini-3.5-flash,CoT (effort=medium),46.8521,53.9844,920.091,KZ,True,,stop,0.0075405,1271,626,554,13.1,"{""reasoning"": ""The extremely flat, arid desert landscape with cracked asphalt and Soviet-style utility poles is characteristic of western Kazakhstan, particularly the Atyrau or Mangystau regions near the Caspian Depression."", ""country"": ""KZ"", ""latitude"": 46.8521, ""longitude"": 53.9844}"
+anthropic/claude-opus-4.8,CoT,45.5,60.5,920.808,KZ,True,,stop,0.006535,797,102,0,3.11,"{""reasoning"": ""Flat barren desert steppe with degraded asphalt road and sparse power lines suggests Central Asian arid plain, likely Kazakhstan or Uzbekistan near the Aral region."", ""country"": ""KZ"", ""latitude"": 45.5, ""longitude"": 60.5}"
+moonshotai/kimi-k2.6,CoT,45.0,63.0,1010.178,KZ,True,,stop,0.012588048,682,3610,3545,89.78,"{""reasoning"": ""The desolate cracked asphalt road through a completely flat sandy desert with sparse scrub and simple utility poles is characteristic of the Kazakh desert steppe near the dried Aral Sea basin."", ""country"": ""KZ"", ""latitude"": 45.0, ""longitude"": 63.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,31.0156,47.7831,1032.846,IQ,True,,stop,0.0002884,473,31,0,7.64,"{""country"": ""IQ"", ""latitude"": 31.0156, ""longitude"": 47.7831}"
+google/gemma-4-31b-it,no-CoT,44.5,68.0,1309.874,KZ,True,,stop,6.884e-05,406,30,0,1.83,"```json
+{""country"": ""KZ"", ""latitude"": 44.5, ""longitude"": 68.0}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,45.5,68.0,1361.268,KZ,True,,stop,0.0018307497,471,1818,1790,7.81,"{""country"": ""KZ"", ""latitude"": 45.5, ""longitude"": 68.0}"
+x-ai/grok-4.3,CoT,24.4539,54.3773,1570.977,AE,True,,stop,0.002184,676,670,601,6.27,"{""reasoning"": ""Flat arid desert with sparse low scrub, straight cracked asphalt highway with edge lines, lattice transmission towers, and clear sky match Arabian Peninsula highways; right-side driving position and vehicle styling consistent with GCC countries."", ""country"": ""AE"", ""latitude"": 24.4539, ""longitude"": 54.3773}"
+qwen/qwen3.5-397b-a17b,no-CoT,24.7136,46.6753,1703.249,SA,True,,stop,0.00036468,473,31,0,10.38,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+x-ai/grok-4.3,no-CoT,24.7136,46.6753,1703.249,SA,True,,stop,0.0005984,592,24,0,0.82,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+qwen/qwen3.5-397b-a17b,CoT,26.4263,42.8838,1724.473,SA,True,,stop,0.0135642,553,3689,3607,31.87,"{""reasoning"": ""The flat, arid landscape with sparse scrub vegetation and a straight, worn asphalt road lacking center markings is characteristic of the Arabian Peninsula, particularly Saudi Arabia. The utility poles and implied right-hand traffic further support this location."", ""country"": ""SA"", ""latitude"": 26.4263, ""longitude"": 42.8838}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),31.854211,37.152344,1728.933,JO,True,,stop,0.002136,1190,39,0,7.55,"```json
+{""country"": ""JO"", ""latitude"": 31.854211, ""longitude"": 37.152344}
+```"
+openai/gpt-5.5,CoT,31.8425,36.8321,1755.719,JO,True,,stop,0.011265,621,272,181,6.77,"{""reasoning"":""Flat, pale stony desert with sparse scrub and an old narrow asphalt road with white edge lines and utility poles fits the eastern Jordanian desert more than Gulf states, whose roads are typically newer and wider. The arid limestone terrain and right-side driving context point to a remote road near Azraq/Safawi."",""country"":""JO"",""latitude"":31.8425,""longitude"":36.8321}"
+openai/gpt-5.5,no-CoT,31.6135,36.3378,1808.931,JO,True,,stop,0.00341,544,23,0,2.35,"{""country"":""JO"",""latitude"":31.6135,""longitude"":36.3378}"
+qwen/qwen3.5-35b-a3b,no-CoT,24.1567,45.2345,1820.494,SA,True,,stop,9.736e-05,474,31,0,1.49,"{""country"": ""SA"", ""latitude"": 24.1567, ""longitude"": 45.2345}"
+moonshotai/kimi-k2.6,no-CoT,44.5,76.0,1910.731,KZ,True,,stop,0.00051579,602,24,0,25.21,"{""country"": ""KZ"", ""latitude"": 44.5, ""longitude"": 76.0}"
+xiaomi/mimo-v2.5,CoT,47.9,106.8,4285.41,MN,True,,stop,0.0001364776,787,188,112,2.91,"{""reasoning"": ""The image shows a flat, arid steppe landscape with sparse, low scrub vegetation, a single paved road, and simple wooden utility poles, features characteristic of the Central Asian steppe, most likely in Mongolia."", ""country"": ""MN"", ""latitude"": 47.9, ""longitude"": 106.8}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6994.262,,True,True,,,,,,12.56,
+qwen/qwen3.6-35b-a3b,CoT,-32.0,128.0,10926.744,AU,True,,stop,0.00713095,553,7048,6639,160.47,"{""reasoning"": ""The vehicle is positioned in the left lane (indicated by the proximity of the left road edge and utility poles), suggesting left-hand traffic. The extremely flat, arid landscape with pale soil and sparse vegetation is characteristic of the Australian Outback, specifically the Nullarbor Plain along the Eyre Highway."", ""country"": ""AU"", ""latitude"": -32.0, ""longitude"": 128.0}"
+qwen/qwen3.6-27b,no-CoT,-25.0,135.0,10956.314,AU,True,,stop,0.0001843,473,26,0,11.91,"{""country"": ""AU"", ""latitude"": -25.0, ""longitude"": 135.0}"
+qwen/qwen3.5-27b,no-CoT,36.5684,-117.0731,11612.582,US,True,,stop,0.0002085,474,45,0,9.52,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 36.5684,
+  ""longitude"": -117.0731
+}
+```"
+mistralai/mistral-small-2603,no-CoT,36.5323,-118.2921,11628.747,US,True,,stop,0.0001143,634,32,0,5.76,"{""country"": ""US"", ""latitude"": 36.5323, ""longitude"": -118.2921}"
+xiaomi/mimo-v2.5,no-CoT,32.5,-103.5,11786.342,US,True,,stop,8.00576e-05,708,26,0,9.36,"{""country"": ""US"", ""latitude"": 32.5, ""longitude"": -103.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,11.826830863952637,-70.16398620605469,11987.413,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,12.4089937210083,-71.48030090332031,12035.621,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,12.38103199005127,-71.65595245361328,12050.657,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.22,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.06,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.15,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.07,

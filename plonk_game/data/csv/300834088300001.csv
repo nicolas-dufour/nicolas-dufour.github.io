@@ -1,0 +1,75 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,8.56673911434377,17.86189841514683,0.0,TD,True,,,,,,,,"Moissala, None, Mandoul, TD"
+xiaomi/mimo-v2.5,no-CoT,10.5,7.5,1156.334,NG,True,,stop,9.51776e-05,820,24,0,1.4,"{""country"": ""NG"", ""latitude"": 10.5, ""longitude"": 7.5}"
+qwen/qwen3.6-35b-a3b,CoT,20.5,29.5,1822.847,ZW,True,,stop,0.0090743705,665,9290,9183,49.53,"```json
+{
+  ""reasoning"": ""The distinctive red lateritic soil, scattered Acacia-like trees, and the palm frond (likely Hyphaene) in the top right corner strongly suggest a savanna environment in Southern Africa, specifically Zimbabwe or Zambia. The presence of a Sansevieria-like plant on the left further supports this region."",
+  ""country"": ""ZW"",
+  ""latitude"": 20.5,
+  ""longitude"": 29.5
+}
+```"
+moonshotai/kimi-k2.6,CoT,9.5,-1.0,2073.675,GH,True,,stop,0.014613516,834,4193,4130,252.02,"{""reasoning"": ""Red laterite dirt road through flat Sudanian savanna with scattered trees, dry-season vegetation, and a glimpse of traditional thatched roofing are characteristic of rural West Africa."", ""country"": ""GH"", ""latitude"": 9.5, ""longitude"": -1.0}"
+anthropic/claude-opus-4.8,CoT,11.5,-1.5,2144.405,BF,True,,stop,0.00707,949,93,0,3.05,"{""reasoning"": ""Red lateritic dirt road, sparse savanna woodland with fan palms (Borassus) and dry grass, typical West African Sahelian/Sudanian zone."", ""country"": ""BF"", ""latitude"": 11.5, ""longitude"": -1.5}"
+minimax/minimax-m3,no-CoT,12.3,-1.5,2156.924,BF,True,,stop,0.00042882,919,176,194,15.86,"{""country"": ""BF"", ""latitude"": 12.3, ""longitude"": -1.5}"
+minimax/minimax-m3,CoT,12.4,-1.5,2158.732,BF,True,,stop,0.00080826,995,476,396,17.99,"{""reasoning"": ""Red lateritic soil, dry savanna vegetation with scattered trees including a palm, cleared/burned land edges, and tropical dry-season haze are highly characteristic of the West African Sudano-Sahelian belt, most consistent with Burkina Faso or northern Ghana."", ""country"": ""BF"", ""latitude"": 12.4, ""longitude"": -1.5}"
+x-ai/grok-4.3,CoT,12.35,-1.52,2159.965,BF,True,,stop,0.001689,788,416,334,3.77,"{""reasoning"": ""Red laterite dirt road, scattered acacia-like savanna trees, fan palm frond, and arid Sahelian landscape with clear blue sky point to West Africa; no road markings, left-side driving clues, or other regional indicators narrow it to Burkina Faso savanna."", ""country"": ""BF"", ""latitude"": 12.35, ""longitude"": -1.52}"
+qwen/qwen3.5-27b,no-CoT,12.3654,-1.5234,2160.608,BF,True,,stop,0.0002325,586,43,0,11.72,"```json
+{
+  ""country"": ""BF"",
+  ""latitude"": 12.3654,
+  ""longitude"": -1.5234
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,12.3714,-1.5247,2160.856,BF,True,,stop,0.00033885,585,30,0,3.94,"{""country"": ""BF"", ""latitude"": 12.3714, ""longitude"": -1.5247}"
+xiaomi/mimo-v2.5,CoT,10.25,-1.78,2162.446,GH,True,,stop,0.0004450376,899,1234,1142,14.36,"{""reasoning"": ""The distinct reddish-brown laterite soil and the combination of scattered broadleaf trees (likely Shea trees) with a fan palm (Borassus aethiopum) on the right are characteristic of the Sudanian Savanna zone in West Africa, most likely in Northern Ghana."", ""country"": ""GH"", ""latitude"": 10.25, ""longitude"": -1.78}"
+openai/gpt-5.5,no-CoT,12.2383,-1.5616,2162.447,BF,True,,stop,0.00411,678,24,0,1.3,"{""country"":""BF"",""latitude"":12.2383,""longitude"":-1.5616}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,11.429084777832031,-1.861387014389038,2182.585,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,2196.036,,True,True,,,,,,0.88,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,12.14622974395752,-2.836239814758301,2297.955,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,11.5,-3.5,2360.949,BF,True,,stop,0.00484,818,30,0,8.8,"{""country"": ""BF"", ""latitude"": 11.5, ""longitude"": -3.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,12.29482650756836,-3.5849666595458984,2380.828,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,-6.35,34.85,2509.56,TZ,True,,stop,0.00011375,585,26,0,3.6,"{""country"": ""TZ"", ""latitude"": -6.35, ""longitude"": 34.85}"
+qwen/qwen3.5-122b-a10b,no-CoT,14.7167,-5.5408,2636.83,ML,True,,stop,0.0002475,585,30,0,8.95,"{""country"": ""ML"", ""latitude"": 14.7167, ""longitude"": -5.5408}"
+moonshotai/kimi-k2.6,no-CoT,-13.5,28.0,2696.912,ZM,True,,stop,0.0009455,755,23,0,17.7,"{""country"": ""ZM"", ""latitude"": -13.5, ""longitude"": 28.0}"
+qwen/qwen3.5-9b,no-CoT,12.6392,-8.0029,2861.497,ML,True,,stop,0.00010695,585,30,0,0.86,"{""country"": ""ML"", ""latitude"": 12.6392, ""longitude"": -8.0029}"
+qwen/qwen3.5-397b-a17b,CoT,-15.4167,28.2833,2903.485,ZM,True,,stop,0.0130201,665,3636,3356,126.08,"{
+""reasoning"": ""The distinctive red laterite soil combined with dry deciduous woodland (Miombo) and a fan palm (likely Hyphaene) strongly points to Southern Africa, specifically Zambia or Zimbabwe. The vehicle's position on the left side of the road aligns with traffic laws in this region."",
+""country"": ""ZM"",
+""latitude"": -15.4167,
+""longitude"": 28.2833
+}"
+x-ai/grok-4.3,no-CoT,-19.85,23.75,3224.878,BW,True,,stop,0.0007334,704,22,0,13.41,"{""country"": ""BW"", ""latitude"": -19.85, ""longitude"": 23.75}"
+openai/gpt-5.5,CoT,13.7632,-13.6678,3484.825,SN,True,,stop,0.019405,755,521,431,14.47,"{""reasoning"":""The flat, dry West African savanna with red lateritic dirt road, scattered acacia/shea-like trees and palm vegetation strongly suggests rural Sahelian Senegal/Gambia region. With no signage or road infrastructure, the best fit is inland southeastern Senegal around Tambacounda where this landscape is common."",""country"":""SN"",""latitude"":13.7632,""longitude"":-13.6678}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),12.7452,-14.2831,3540.846,SN,True,,stop,0.002154,1226,35,0,1.38,"```json
+{""country"": ""SN"", ""latitude"": 12.7452, ""longitude"": -14.2831}
+```"
+google/gemma-4-31b-it,no-CoT,14.441,-14.716,3605.66,SN,True,,stop,6.612e-05,404,34,0,3.74,"```json
+{""country"": ""SN"", ""latitude"": 14.441, ""longitude"": -14.716}
+```"
+google/gemini-3.1-pro-preview,CoT,13.8521,-15.5134,3684.082,SN,True,,stop,0.006084,1308,289,219,11.46,"{
+  ""reasoning"": ""The reddish laterite soil, savanna vegetation with scattered trees and palms, and the visible white car hood strongly indicate rural Senegal."",
+  ""country"": ""SN"",
+  ""latitude"": 13.8521,
+  ""longitude"": -15.5134
+}"
+google/gemini-3.5-flash,CoT (effort=high),12.8532,-16.1245,3740.861,SN,True,,stop,0.0116805,1307,1080,995,12.42,"```json
+{""reasoning"": ""The reddish-brown dirt road, dry savanna vegetation, and the presence of a Borassus palm (Ronnier) on the right are highly characteristic of the Casamance region in southern Senegal during the dry season."", ""country"": ""SN"", ""latitude"": 12.8532, ""longitude"": -16.1245}
+```"
+google/gemini-3.1-pro-preview,no-CoT,14.1523,-16.0481,3744.799,SN,True,,stop,0.002872,1226,35,0,2.08,"```json
+{""country"": ""SN"", ""latitude"": 14.1523, ""longitude"": -16.0481}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),14.2584,-16.4215,3786.039,SN,True,,stop,0.008568,1308,734,659,5.59,"{""reasoning"": ""The reddish dirt road, flat savanna landscape, and distinctive Borassus fan palms are highly characteristic of the rural Sahelian-Sudanian zone in Senegal, captured by the white Google Street View vehicle."", ""country"": ""SN"", ""latitude"": 14.2584, ""longitude"": -16.4215}"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.6892,28.3456,3868.668,ZA,True,,stop,0.00011304,586,31,0,8.25,"{""country"": ""ZA"", ""latitude"": -24.6892, ""longitude"": 28.3456}"
+mistralai/mistral-medium-3-5,no-CoT,-25.7479,27.8528,3965.682,ZA,True,,stop,0.0014115,786,31,0,0.96,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 27.8528}"
+mistralai/mistral-small-2603,no-CoT,-12.9714,-38.5014,6669.26,BR,True,,stop,0.0001365,786,31,0,3.69,"{""country"": ""BR"", ""latitude"": -12.9714, ""longitude"": -38.5014}"
+qwen/qwen3.6-27b,no-CoT,21.1458,79.0882,6688.84,IN,True,,stop,0.000275,586,31,0,8.82,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,21.014421463012695,94.74823760986328,8313.027,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,21.03767967224121,94.76953887939453,8315.077,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,17.53346061706543,100.00950622558594,8895.277,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),13.4582,103.9215,9364.544,KH,True,,stop,0.0035625,1307,178,111,24.0,"{""reasoning"": ""The flat landscape, reddish-brown dirt road, dry climate, and presence of Palmyra palms are highly characteristic of rural Cambodia, particularly in the northern plains."", ""country"": ""KH"", ""latitude"": 13.4582, ""longitude"": 103.9215}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.38,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.1,

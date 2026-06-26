@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.923357618419,41.29573188936,0.0,TR,True,,,,,,,,"Besiri, None, Batman, TR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,37.89812469482422,41.63275909423828,29.7,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,37.90006637573242,41.6424446105957,30.527,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.95383071899414,41.6958122253418,35.249,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,38.0,43.35,180.293,TR,True,,stop,0.001374,786,26,0,7.56,"{""country"": ""TR"", ""latitude"": 38.0, ""longitude"": 43.35}"
+openai/gpt-5.5,CoT,38.4938,43.3749,192.413,TR,True,,stop,0.014635,755,362,289,42.47,"{""reasoning"":""Right-hand traffic, Turkish-style white plates/road furniture, and visible Turkish flags/signage point to Turkey; the arid highland setting with distant mountains and broad urban boulevard is most consistent with eastern Turkey, likely Van."",""country"":""TR"",""latitude"":38.4938,""longitude"":43.3749}"
+google/gemini-3.5-flash,CoT (effort=low),38.6748,39.2225,199.275,TR,True,,stop,0.003744,1308,198,141,9.84,"{""reasoning"": ""The overhead gantry, distinct utility poles, dry landscape, and building architecture are characteristic of highways in Turkey."", ""country"": ""TR"", ""latitude"": 38.6748, ""longitude"": 39.2225}"
+google/gemini-3.5-flash,CoT (effort=high),38.355,38.33,263.763,TR,True,,stop,0.0114825,1307,1058,989,8.77,"{""reasoning"": ""The lattice utility poles, overhead camera gantry, and Renault Symbol vehicle are highly characteristic of Turkey. The dry, mountainous landscape and building styles suggest a location in the Anatolian region."", ""country"": ""TR"", ""latitude"": 38.355, ""longitude"": 38.33}"
+anthropic/claude-opus-4.8,no-CoT,37.7648,38.2786,265.505,TR,True,,stop,0.00489,818,32,0,2.3,"{""country"": ""TR"", ""latitude"": 37.7648, ""longitude"": 38.2786}"
+anthropic/claude-opus-4.8,CoT,37.75,38.28,265.523,TR,True,,stop,0.006995,949,90,0,3.12,"{""reasoning"": ""Turkish-style signage and architecture, arid mountainous backdrop typical of southeastern Anatolia, concrete apartment blocks and roadside layout."", ""country"": ""TR"", ""latitude"": 37.75, ""longitude"": 38.28}"
+openai/gpt-5.5,no-CoT,38.3558,38.3096,265.532,TR,True,,stop,0.00408,678,23,0,1.42,"{""country"":""TR"",""latitude"":38.3558,""longitude"":38.3096}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.758333,38.276389,265.759,TR,True,,stop,0.00219,1226,39,0,7.45,"```json
+{""country"": ""TR"", ""latitude"": 37.758333, ""longitude"": 38.276389}
+```"
+moonshotai/kimi-k2.6,CoT,37.056,37.385,358.233,TR,True,,stop,0.0066684,832,1509,1660,45.26,"{""reasoning"": ""Right-hand traffic, Turkish-style overhead gantry with enforcement cameras/sensors, flat-roof concrete apartment blocks common in Anatolia, semi-arid vegetation, and power-pole designs indicate Turkey."", ""country"": ""TR"", ""latitude"": 37.056, ""longitude"": 37.385}"
+minimax/minimax-m3,CoT,39.75,37.02,422.31,TR,True,,stop,0.00078702,997,455,485,16.59,"{""reasoning"": ""Right-side driving, dry semi-arid landscape with distant mountains, concrete mid-rise buildings with flat roofs, Turkish-style pedestrian overpass and electrical poles with multiple crossbars, and the overall urban infrastructure are all highly characteristic of a provincial city in central Anatolia, Turkey."", ""country"": ""TR"", ""latitude"": 39.75, ""longitude"": 37.02}"
+qwen/qwen3.5-35b-a3b,no-CoT,38.7342,35.4912,514.192,TR,True,,stop,0.00011875,585,31,0,1.53,"{""country"": ""TR"", ""latitude"": 38.7342, ""longitude"": 35.4912}"
+qwen/qwen3.5-397b-a17b,no-CoT,38.7431,35.4914,514.318,TR,True,,stop,0.00034185,585,31,0,2.85,"{""country"": ""TR"", ""latitude"": 38.7431, ""longitude"": 35.4914}"
+google/gemini-3.1-pro-preview,no-CoT,38.7205,35.4826,514.713,TR,True,,stop,0.00502,1226,214,179,20.42,"```json
+{""country"": ""TR"", ""latitude"": 38.7205, ""longitude"": 35.4826}
+```"
+google/gemini-3.1-pro-preview,CoT,38.7312,35.4789,515.2,TR,True,,stop,0.005374,1307,230,156,11.34,"{
+  ""reasoning"": ""The concrete utility poles with metal crossbars, the style of the speed camera gantry, and the general architecture and arid landscape strongly indicate Turkey."",
+  ""country"": ""TR"",
+  ""latitude"": 38.7312,
+  ""longitude"": 35.4789
+}"
+google/gemma-4-31b-it,no-CoT,37.8713,35.2433,531.011,TR,True,,stop,5.108e-05,262,36,0,11.34,"```json
+{""country"": ""TR"", ""latitude"": 37.8713, ""longitude"": 35.2433}
+```"
+x-ai/grok-4.3,no-CoT,38.6195,34.7158,579.474,TR,True,,stop,0.0007509,704,29,0,1.86,"{
+  ""country"": ""TR"",
+  ""latitude"": 38.6195,
+  ""longitude"": 34.7158
+}"
+qwen/qwen3.5-27b,no-CoT,33.3152,44.3661,582.641,IQ,True,,stop,0.0002499,585,31,0,1.72,"{""country"": ""IQ"", ""latitude"": 33.3152, ""longitude"": 44.3661}"
+x-ai/grok-4.3,CoT,39.85,32.65,778.006,TR,True,,stop,0.0022815,788,653,589,13.51,"{""reasoning"": ""Right-hand traffic, Turkish-style gantry/signage, red petrol station sign, white hatchback, unfinished concrete apartments with distant mountains and arid vegetation point to central Anatolia, Turkey."", ""country"": ""TR"", ""latitude"": 39.85, ""longitude"": 32.65}"
+xiaomi/mimo-v2.5,no-CoT,40.4093,49.8671,788.537,AZ,True,,stop,9.71376e-05,820,31,0,1.41,"{""country"": ""AZ"", ""latitude"": 40.4093, ""longitude"": 49.8671}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,37.788631439208984,31.141483306884766,891.173,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,35.6892,51.389,931.761,IR,True,,stop,0.000185,585,31,0,7.51,"{""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.3890}"
+xiaomi/mimo-v2.5,CoT,35.42,51.38,940.891,IR,True,,stop,0.0002157176,899,415,331,5.38,"{""reasoning"": ""The Arabic (Farsi) script on the left-side traffic sign, right-hand traffic, arid semi-urban landscape, and regional utility pole/architecture styles point to Iran. This terrain matches the outskirts of a central Iranian city like near Tehran."", ""country"": ""IR"", ""latitude"": 35.42, ""longitude"": 51.38}"
+qwen/qwen3.6-27b,no-CoT,36.8969,30.7133,941.093,TR,True,,stop,0.0002279,585,31,0,7.97,"{""country"": ""TR"", ""latitude"": 36.8969, ""longitude"": 30.7133}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,37.776756286621094,30.29319953918457,965.617,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),37.7215,30.2844,966.874,TR,True,,stop,0.0081705,1307,690,622,6.94,"{""reasoning"": ""The architecture, lattice utility poles, road gantry with speed cameras, and dry mountainous landscape are highly characteristic of Turkey, specifically the Mediterranean/Aegean hinterland."", ""country"": ""TR"", ""latitude"": 37.7215, ""longitude"": 30.2844}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,37.483009338378906,29.688220977783203,1021.698,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,38.4232,27.1428,1237.216,TR,True,,stop,0.0001072,585,31,0,1.28,"{""country"": ""TR"", ""latitude"": 38.4232, ""longitude"": 27.1428}"
+qwen/qwen3.5-122b-a10b,no-CoT,38.4192,27.1287,1238.458,TR,True,,stop,0.00021658,585,31,0,7.18,"{""country"": ""TR"", ""latitude"": 38.4192, ""longitude"": 27.1287}"
+mistralai/mistral-small-2603,no-CoT,55.7558,37.6173,2001.815,RU,True,,stop,0.0001371,786,32,0,5.14,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.64,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,16.81,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,16.69,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.64,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.1,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.19,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.15,

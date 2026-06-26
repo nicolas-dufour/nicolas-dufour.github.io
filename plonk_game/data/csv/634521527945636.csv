@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,42.887261251524,-100.56793217302,0.0,US,True,,,,,,,,"Valentine, Cherry County, Nebraska, US"
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.7854,-103.4412,252.912,US,True,,stop,0.0021615,1225,36,0,1.63,"```json
+{""country"": ""US"", ""latitude"": 43.7854, ""longitude"": -103.4412}
+```"
+google/gemini-3.5-flash,CoT (effort=low),43.8752,-103.4415,256.883,US,True,,stop,0.004518,1308,284,208,3.15,"{""reasoning"": ""The road markings with a yellow left line and white right line with shoulder rumble strips are characteristic of a US highway. The rolling hills covered in pine trees strongly resemble the Black Hills region of South Dakota."", ""country"": ""US"", ""latitude"": 43.8752, ""longitude"": -103.4415}"
+google/gemini-3.1-pro-preview,no-CoT,43.8561,-103.4636,257.637,US,True,,stop,0.002884,1226,36,0,13.81,"```json
+{""country"": ""US"", ""latitude"": 43.8561, ""longitude"": -103.4636}
+```"
+moonshotai/kimi-k2.6,CoT,43.88,-103.45,257.724,US,True,,stop,0.011856096,834,3388,3318,63.58,"{""reasoning"": ""Standard US highway markings with yellow centerline, white fog line, and ribbed shoulder rumble strips combined with rolling grass hills and dense ponderosa pine forest point to the Black Hills in western South Dakota."", ""country"": ""US"", ""latitude"": 43.88, ""longitude"": -103.45}"
+openai/gpt-5.5,no-CoT,43.8791,-103.4591,258.348,US,True,,stop,0.00411,678,24,0,1.7,"{""country"":""US"",""latitude"":43.8791,""longitude"":-103.4591}"
+google/gemini-3.5-flash,CoT (effort=high),43.925,-103.455,260.19,US,True,,stop,0.013293,1308,1259,1173,17.02,"```json
+{""reasoning"": ""The road markings (solid white line with rumble strips on the right, yellow center line) and driving side indicate North America. The vegetation consisting of ponderosa pines and grassy hills is highly characteristic of the Black Hills region in South Dakota."", ""country"": ""US"", ""latitude"": 43.925, ""longitude"": -103.455}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),43.8542,-103.5235,261.959,US,True,,stop,0.0056145,1307,406,336,11.22,"{""reasoning"": ""The yellow dashed center line, wide paved shoulders with rumble strips, and ponderosa pine-covered rolling hills are highly characteristic of the Black Hills region in western South Dakota."", ""country"": ""US"", ""latitude"": 43.8542, ""longitude"": -103.5235}"
+openai/gpt-5.5,CoT,44.0476,-103.5072,269.999,US,True,,stop,0.015445,755,389,314,15.77,"{""reasoning"":""Right-side driving with US-style yellow centerlines, white edge rumble strips, and wide paved shoulders point to the United States. The rolling grassland with dense ponderosa pine hills strongly resembles the Black Hills region of South Dakota."",""country"":""US"",""latitude"":44.0476,""longitude"":-103.5072}"
+qwen/qwen3.6-35b-a3b,no-CoT,44.428,-103.231,274.288,US,True,,stop,0.00011975,585,32,0,1.84,"{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -103.2310}"
+anthropic/claude-opus-4.8,no-CoT,44.0805,-103.6,278.265,US,True,,stop,0.00484,818,30,0,2.83,"{""country"": ""US"", ""latitude"": 44.0805, ""longitude"": -103.6}"
+google/gemma-4-31b-it,no-CoT,44.35,-103.5,286.614,US,True,,stop,6.936e-05,404,32,0,8.75,"```json
+{""country"": ""US"", ""latitude"": 44.35, ""longitude"": -103.5}
+```"
+google/gemini-3.1-pro-preview,CoT,44.415,-103.523,292.174,US,True,,stop,0.005854,1307,270,188,24.93,"{
+  ""reasoning"": ""The yellow left edge line and white right edge line on a divided highway indicate North America. The rolling green hills and pine trees strongly resemble the landscape of the Black Hills region in South Dakota."",
+  ""country"": ""US"",
+  ""latitude"": 44.415,
+  ""longitude"": -103.523
+}"
+moonshotai/kimi-k2.6,no-CoT,44.5,-103.5,296.159,US,True,,stop,0.00031428,755,23,0,16.96,"{""country"": ""US"", ""latitude"": 44.5, ""longitude"": -103.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,44.2619,-103.8228,303.472,US,True,,stop,0.0002715,585,40,0,2.32,"{
+  ""country"": ""US"",
+  ""latitude"": 44.2619,
+  ""longitude"": -103.8228
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,39.7391,-104.9903,508.745,US,True,,stop,0.00011404,586,32,0,1.3,"{""country"": ""US"", ""latitude"": 39.7391, ""longitude"": -104.9903}"
+qwen/qwen3.5-9b,no-CoT,44.8567,-93.4244,612.802,US,True,,stop,6.325e-05,586,31,0,4.94,"{""country"": ""US"", ""latitude"": 44.8567, ""longitude"": -93.4244}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,39.196468353271484,-94.91854095458984,626.558,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,39.21262741088867,-94.86453247070312,628.772,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,39.57265853881836,-94.36067962646484,636.344,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,38.85,-94.8,660.578,US,True,,stop,0.0007334,704,22,0,0.83,"{""country"": ""US"", ""latitude"": 38.85, ""longitude"": -94.8}"
+mistralai/mistral-medium-3-5,no-CoT,44.5,-110.5,817.853,US,True,,stop,0.001374,786,26,0,2.08,"{""country"": ""US"", ""latitude"": 44.5, ""longitude"": -110.5}"
+google/gemma-4-26b-a4b-it,no-CoT,44.428,-110.5885,823.561,US,True,,stop,5.828e-05,404,40,0,2.14,"{"" than the cloudy sky above.
+
+{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5885}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,46.18296813964844,-90.12932586669922,903.988,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,35.2,-97.1,905.507,US,True,,stop,0.001934,788,514,446,5.89,"{""reasoning"": ""Right-hand traffic with US-standard yellow center line + white edge line + milled rumble strip on shoulder; rural rolling terrain with mixed deciduous/pine forest and overcast sky typical of US South/Midwest."", ""country"": ""US"", ""latitude"": 35.2, ""longitude"": -97.1}"
+minimax/minimax-m3,CoT,45.45,-89.55,922.937,US,True,,stop,0.00078186,995,454,378,14.33,"{""reasoning"": ""Double yellow center line with white edge line and wide paved shoulder indicate right-hand-drive US highway; flat glacial terrain with sandy soil patches, mixed pine/deciduous forest, and grassy median strongly suggest northern Wisconsin or Michigan UP."", ""country"": ""US"", ""latitude"": 45.45, ""longitude"": -89.55}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,46.22365188598633,-89.86262512207031,924.823,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,37.0,-92.5,948.679,US,True,,stop,0.007045,949,92,0,3.62,"{""reasoning"": ""US-style divided highway with yellow centerline, rumble strips, pine forest and rolling hills suggesting a forested region like the Ozarks or southern Appalachians."", ""country"": ""US"", ""latitude"": 37.0, ""longitude"": -92.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.898250579833984,-86.45535278320312,1144.427,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,36.1627,-86.7816,1396.308,US,True,,stop,0.00043188,585,31,0,8.93,"{""country"": ""US"", ""latitude"": 36.1627, ""longitude"": -86.7816}"
+qwen/qwen3.5-397b-a17b,CoT,33.836,-87.285,1530.96,US,True,,stop,0.01546644,665,4211,4111,102.13,"{
+""reasoning"": ""The image shows a 4-lane undivided highway (double yellow center lines, white dashed lines for opposing lanes) with right-hand traffic, typical of the rural Southeastern United States. The rolling green hills and dense pine/hardwood forest vegetation are characteristic of Alabama or Georgia."",
+""country"": ""US"",
+""latitude"": 33.836,
+""longitude"": -87.285
+}"
+qwen/qwen3.5-27b,no-CoT,36.0895,-82.5515,1716.156,US,True,,stop,0.0002345,586,44,0,14.17,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 36.0895,
+  ""longitude"": -82.5515
+}
+```"
+qwen/qwen3.6-35b-a3b,CoT,33.749,-84.388,1734.285,US,True,,stop,0.126744137,665,131196,131071,1030.73,"{""reasoning"": ""The image shows a two-lane road with a double yellow center line, indicating traffic moves on the right side of the road, typical of the US. The vegetation consists of mixed pine and deciduous trees on rolling hills, and the reddish-brown soil visible in the cut on the left is characteristic of the Southeastern United States, particularly Georgia. The road markings and general landscape strongly suggest a rural highway in Georgia."", ""country"": ""US"", ""latitude"": 33.749, ""longitude"": -84.388}"
+xiaomi/mimo-v2.5,no-CoT,33.5,-84.5,1744.626,US,True,,stop,9.54576e-05,820,25,0,3.43,"{""country"": ""US"", ""latitude"": 33.5, ""longitude"": -84.5}"
+xiaomi/mimo-v2.5,CoT,35.3215,-80.7456,1899.705,US,True,,stop,0.0001490776,899,177,91,68.15,"{""reasoning"": ""The double yellow line and rumble strip configuration are standard for the United States, specifically resembling highway designs in North Carolina, while the lush, rolling green terrain with pine-hardwood forests points to the southeastern US Piedmont or foothills region."", ""country"": ""US"", ""latitude"": 35.3215, ""longitude"": -80.7456}"
+minimax/minimax-m3,no-CoT,30.4,-84.3,2001.81,US,True,,stop,0.00023736,904,23,0,3.46,"{""country"": ""US"", ""latitude"": 30.4, ""longitude"": -84.3}"
+qwen/qwen3.6-27b,no-CoT,44.2619,-72.5973,2247.518,US,True,,stop,0.00034695,585,31,0,12.98,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -72.5973}"
+mistralai/mistral-small-2603,no-CoT,60.3893,5.3217,6726.285,NO,True,,stop,0.0001359,786,30,0,4.9,"{""country"": ""NO"", ""latitude"": 60.3893, ""longitude"": 5.3217}"
+mistralai/mistral-small-2603,CoT,56.8796,24.6032,7801.554,LV,True,,stop,0.00050064,868,765,835,14.84,"{""reasoning"": ""The road markings (solid white line on left, dashed on right) indicate driving on the right side typical of Europe, and the mixed coniferous/deciduous forest suggests a temperate Northern/Central European climate."", ""country"": ""LV"", ""latitude"": 56.8796, ""longitude"": 24.6032}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.2,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,

@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-0.60139081935256,36.377967491273,0.0,KE,True,,,,,,,,"Naivasha, None, Nakuru, KE"
+google/gemini-3.1-pro-preview,no-CoT,-0.65,36.35,6.236,KE,True,,stop,0.00497,1225,210,180,10.26,"```json
+{""country"": ""KE"", ""latitude"": -0.65, ""longitude"": 36.35}
+```"
+google/gemini-3.1-pro-preview,CoT,-0.7166,36.4333,14.211,KE,True,,stop,0.005614,1307,250,163,11.15,"{
+  ""reasoning"": ""Left-hand driving, yellow rear license plates, and reflective tape on the vans are characteristic of Kenyan matatus. The flat, green landscape and utility pole design further support a location on a major highway in Kenya."",
+  ""country"": ""KE"",
+  ""latitude"": -0.7166,
+  ""longitude"": 36.4333
+}"
+anthropic/claude-opus-4.8,no-CoT,-0.5,36.5,17.641,KE,True,,stop,0.00484,818,30,0,8.5,"{""country"": ""KE"", ""latitude"": -0.5, ""longitude"": 36.5}"
+moonshotai/kimi-k2.6,no-CoT,-0.5,36.5,17.641,KE,True,,stop,0.00032616,755,23,0,1.78,"{""country"": ""KE"", ""latitude"": -0.5, ""longitude"": 36.5}"
+google/gemini-3.5-flash,CoT (effort=low),-0.4231,36.3152,21.018,KE,True,,stop,0.0046065,1307,294,219,3.37,"{""reasoning"": ""The left-hand driving, white Toyota HiAce minivans (matatus) with yellow rear license plates, and the characteristic wooden utility poles indicate Kenya, likely along the A104 highway."", ""country"": ""KE"", ""latitude"": -0.4231, ""longitude"": 36.3152}"
+moonshotai/kimi-k2.6,CoT,-0.85,36.4,27.752,KE,True,,stop,0.01262112,832,3122,3392,258.58,"{""reasoning"": ""The two brightly decorated minivans (matatus) with yellow rear license plates, left-hand driving direction, savanna grassland, and distant Rift Valley escarpment are strongly characteristic of Kenya."", ""country"": ""KE"", ""latitude"": -0.85, ""longitude"": 36.4}"
+anthropic/claude-opus-4.8,CoT,-0.4,36.0,47.62,KE,True,,stop,0.00727,949,101,0,9.95,"{""reasoning"": ""Left-hand traffic with colorful matatu minibuses and roof racks on a wide rural highway, with distant escarpment hills and green farmland typical of Kenya's Rift Valley region."", ""country"": ""KE"", ""latitude"": -0.4, ""longitude"": 36.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-0.254167,36.071389,51.505,KE,True,,stop,0.002181,1226,38,0,7.7,"```json
+{""country"": ""KE"", ""latitude"": -0.254167, ""longitude"": 36.071389}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-1.0155786275863647,36.60285186767578,52.405,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-1.0467088222503662,36.615482330322266,56.119,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),-1.1254,36.1235,64.773,KE,True,,stop,0.0096555,1307,855,780,11.67,"```json
+{""reasoning"": ""The white minibuses with yellow markings and rear plates are characteristic of Kenyan matatus, driving on the left on a paved highway with T-shaped utility poles typical of East Africa."", ""country"": ""KE"", ""latitude"": -1.1254, ""longitude"": 36.1235}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-1.1523,36.1482,66.371,KE,True,,stop,0.013122,1308,1240,1170,14.08,"{""reasoning"": ""The concrete utility poles, flat savanna landscape, and Toyota HiAce minibuses (matatus) driving on the left indicate Kenya, likely along a major highway like the B3."", ""country"": ""KE"", ""latitude"": -1.1523, ""longitude"": 36.1482}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-1.5765727758407593,36.69747543334961,114.105,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-3.3665,36.8821,312.527,TZ,True,,stop,0.017845,755,469,391,18.95,"{""reasoning"":""Left-hand traffic with public minibus vans bearing yellow rear plates and colorful dala-dala style markings point strongly to Tanzania. The lush highland roadside, open fields, and distant volcanic terrain fit the Arusha–Moshi corridor in northern Tanzania."",""country"":""TZ"",""latitude"":-3.3665,""longitude"":36.8821}"
+openai/gpt-5.5,no-CoT,-29.0852,26.1596,3347.727,ZA,True,,stop,0.00411,678,24,0,2.17,"{""country"":""ZA"",""latitude"":-29.0852,""longitude"":26.1596}"
+qwen/qwen3.5-27b,no-CoT,-30.5594,22.9375,3620.736,ZA,True,,stop,0.0002619,585,36,0,17.48,"```json
+{""country"": ""ZA"", ""latitude"": -30.5594, ""longitude"": 22.9375}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4045.522,,True,True,,,,,,0.22,
+minimax/minimax-m3,CoT,52.4,55.6,6160.678,RU,True,,stop,0.00075186,995,429,346,13.39,"{""reasoning"": ""Russian-style GAZelle vans driving on the right, wooden utility poles with multiple crossarms typical of post-Soviet infrastructure, flat steppe/grassland terrain with distant low hills and mixed forest patches, and rural two-lane highway setting consistent with southern Russia steppe region."", ""country"": ""RU"", ""latitude"": 52.4, ""longitude"": 55.6}"
+minimax/minimax-m3,no-CoT,55.5,37.5,6239.024,RU,True,,stop,0.00023736,904,23,0,3.64,"{""country"": ""RU"", ""latitude"": 55.5, ""longitude"": 37.5}"
+xiaomi/mimo-v2.5,no-CoT,55.75,37.62,6267.001,RU,True,,stop,9.60176e-05,820,27,0,1.43,"{""country"": ""RU"", ""latitude"": 55.75, ""longitude"": 37.62}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,6267.641,RU,True,,stop,6.692e-05,404,36,0,9.21,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,6267.641,RU,True,,stop,0.001419,786,32,0,0.98,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-9b,no-CoT,55.7615,37.6259,6268.289,RU,True,,stop,0.0001072,585,31,0,4.39,"{""country"": ""RU"", ""latitude"": 55.7615, ""longitude"": 37.6259}"
+mistralai/mistral-small-2603,CoT,50.5,65.5,6316.057,KZ,True,,stop,0.00037284,868,552,591,4.86,"{""reasoning"": ""The flat grassy steppe terrain combined with the distinctive road infrastructure style (white bollards/poles) and overall road design points decisively to central Kazakhstan."", ""country"": ""KZ"", ""latitude"": 50.5, ""longitude"": 65.5}"
+qwen/qwen3.6-27b,CoT,52.6,0.2,6804.059,GB,True,,stop,0.01734975,665,6315,6211,366.99,"{""reasoning"": ""The image shows left-hand traffic with yellow rear license plates, which is characteristic of the UK and Ireland. The flat, green landscape and concrete utility poles are very typical of the rural Fens region in East Anglia, UK, or the Irish Midlands. The specific style of the concrete pole and the road surface strongly suggest the UK, likely Norfolk or Cambridgeshire."", ""country"": ""GB"", ""latitude"": 52.6, ""longitude"": 0.2}"
+qwen/qwen3.5-35b-a3b,no-CoT,55.9533,-3.1883,7225.862,GB,True,,stop,0.00011775,585,30,0,8.01,"{""country"": ""GB"", ""latitude"": 55.9533, ""longitude"": -3.1883}"
+qwen/qwen3.5-122b-a10b,no-CoT,51.7615,107.5846,8782.257,RU,True,,stop,0.00021866,585,32,0,1.46,"{""country"": ""RU"", ""latitude"": 51.7615, ""longitude"": 107.5846}"
+qwen/qwen3.6-27b,no-CoT,-15.7975,-47.8919,9376.265,BR,True,,stop,0.0002279,585,31,0,11.98,"{""country"": ""BR"", ""latitude"": -15.7975, ""longitude"": -47.8919}"
+xiaomi/mimo-v2.5,CoT,-23.32,-51.18,9731.716,BR,True,,stop,0.0008132376,899,2549,2451,30.7,"```json
+{""reasoning"": ""The distinctive reddish soil (terra roxa) on the road shoulder is characteristic of agricultural regions in southern Brazil, and the concrete T-shaped utility pole is a standard infrastructure element found throughout the country. Additionally, the Volkswagen Kombi vans ahead are iconic utility vehicles frequently seen on rural Brazilian highways."", ""country"": ""BR"", ""latitude"": -23.32, ""longitude"": -51.18}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-16.651195526123047,128.95721435546875,10263.115,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-16.74212646484375,129.0508575439453,10272.851,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,-34.6037,-58.3816,10404.918,AR,True,,stop,0.0007384,704,24,0,1.21,"{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-16.77033042907715,138.68545532226562,11297.239,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,43.15,141.85,11302.052,JP,True,,stop,0.003509,788,1144,1065,17.93,"{
+  ""reasoning"": ""Right-hand traffic (centerline visible on left side of frame) with white compact vans bearing typical Japanese rear markings/lights; open grassy plain with distant mountains, wooden utility poles, and rural two-lane asphalt road match rural Hokkaido."",
+  ""country"": ""JP"",
+  ""latitude"": 43.15,
+  ""longitude"": 141.85
+}"
+qwen/qwen3.6-35b-a3b,CoT,-37.8136,144.9631,11586.71,AU,True,,stop,0.002643875,665,2628,2525,67.89,"{""reasoning"": ""The image shows left-hand traffic with yellow rear license plates, typical of Australia, New Zealand, or the UK. The concrete utility pole with a single cross-arm, the flat green landscape with distant hills, and the specific style of the white utility vans strongly suggest rural Australia, likely in a state like Victoria or New South Wales."", ""country"": ""AU"", ""latitude"": -37.8136, ""longitude"": 144.9631}"
+qwen/qwen3.5-397b-a17b,CoT,17.9345,-77.1189,12508.419,JM,True,,stop,0.0081018,665,2153,2047,23.4,"{""reasoning"": ""The image features white Toyota Hiace vans with colorful rear artwork and yellow rear license plates, which are iconic markers of Jamaican public transport ('route taxis'). The vehicles are driving on the left side of the road, consistent with Jamaican traffic laws, and the flat, tropical landscape with distant mountains suggests the southern plains of the island."", ""country"": ""JM"", ""latitude"": 17.9345, ""longitude"": -77.1189}"
+qwen/qwen3.5-397b-a17b,no-CoT,-27.4698,153.0251,12581.189,AU,True,,stop,0.000303625,585,32,0,3.68,"{""country"": ""AU"", ""latitude"": -27.4698, ""longitude"": 153.0251}"
+mistralai/mistral-small-2603,no-CoT,39.7817,-86.1458,12768.114,US,True,,stop,0.000170625,786,31,0,2.32,"{""country"": ""US"", ""latitude"": 39.7817, ""longitude"": -86.1458}"
+qwen/qwen3.6-35b-a3b,no-CoT,44.9778,-93.265,13043.556,US,True,,stop,0.00018375,585,30,0,1.68,"{""country"": ""US"", ""latitude"": 44.9778, ""longitude"": -93.265}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.23,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.18,

@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-21.456145398701,23.81752357961,0.0,BW,True,,,,,,,,"Rakops, None, Central, BW"
+google/gemini-3.5-flash,CoT (effort=medium),-21.3524,23.6512,20.726,BW,True,,stop,0.0061005,1271,466,388,4.69,"{""reasoning"": ""The flat landscape with light-colored sandy tracks, dry yellowish grass, and low acacia-like shrubs is highly characteristic of the Kalahari region in Botswana, where extensive Google Street View coverage exists on rural sandy roads."", ""country"": ""BW"", ""latitude"": -21.3524, ""longitude"": 23.6512}"
+google/gemini-3.5-flash,CoT (effort=high),-21.35,23.62,23.611,BW,True,,stop,0.0076575,1271,639,563,7.01,"{""reasoning"": ""The flat landscape with pale, sandy soil, dry grass, and low thorny acacia shrubs is highly characteristic of the Kalahari region in Botswana. The clear blue sky and dirt track match typical Google Street View coverage in rural Botswana."", ""country"": ""BW"", ""latitude"": -21.35, ""longitude"": 23.62}"
+x-ai/grok-4.3,CoT,-21.15,23.85,34.208,BW,True,,stop,0.001979,676,588,503,17.88,"{
+  ""reasoning"": ""Flat arid savanna with sandy two-track road, dry grasses, thorny shrubs and scattered low trees under deep blue sky with small cumulus is diagnostic of southern African Kalahari or bushveld; no other continent matches the vegetation and road style so precisely."",
+  ""country"": ""BW"",
+  ""latitude"": -21.15,
+  ""longitude"": 23.85
+}"
+google/gemini-3.1-pro-preview,no-CoT,-21.1567,23.5412,43.91,BW,True,,stop,0.0028,1190,35,0,12.48,"```json
+{""country"": ""BW"", ""latitude"": -21.1567, ""longitude"": 23.5412}
+```"
+moonshotai/kimi-k2.6,CoT,-21.9,23.4,65.553,BW,True,,stop,0.006544728,682,1845,1786,35.01,"{""reasoning"": ""Light grey sandy track with grass median, flat scrubland of thorny bushes and dry grasses under deep blue sky matches Botswana's Kalahari."", ""country"": ""BW"", ""latitude"": -21.9, ""longitude"": 23.4}"
+google/gemini-3.1-pro-preview,CoT,-21.5,24.5,70.786,BW,True,,stop,0.004836,1272,191,126,3.16,"{
+  ""reasoning"": ""The flat terrain, white sandy double-track road, and dry scrub vegetation are highly characteristic of the Kalahari region in Botswana."",
+  ""country"": ""BW"",
+  ""latitude"": -21.5,
+  ""longitude"": 24.5
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,-20.5,23.5,111.312,BW,True,,stop,0.0003112,473,25,0,2.41,"{""country"": ""BW"", ""latitude"": -20.5, ""longitude"": 23.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-20.544450759887695,24.288799285888672,112.563,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-22.5,24.0,117.586,BW,True,,stop,0.00408,666,30,0,9.1,"{""country"": ""BW"", ""latitude"": -22.5, ""longitude"": 24.0}"
+minimax/minimax-m3,CoT,-22.5,23.5,120.601,BW,True,,stop,0.00072066,843,441,360,15.63,"{""reasoning"": ""Sandy two-track road through arid thornveld with acacia-like scrub and dry golden grass under deep blue sky with cumulus clouds is highly characteristic of southern African Kalahari-type savanna, most likely Botswana's Central Kalahari or fringe areas."", ""country"": ""BW"", ""latitude"": -22.5, ""longitude"": 23.5}"
+openai/gpt-5.5,CoT,-21.8432,22.7146,121.842,BW,True,,stop,0.010725,621,254,165,6.71,"{""reasoning"":""The pale sandy two-track road through flat, semi-arid thornbush/grass savanna is characteristic of the Kalahari, especially rural Botswana. The sparse acacia-like shrubs, dry grasses, and very flat terrain point most strongly to the Ghanzi/Central Kalahari region."",""country"":""BW"",""latitude"":-21.8432,""longitude"":22.7146}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-20.325464248657227,24.04318618774414,127.893,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-20.282285690307617,24.04183578491211,132.592,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-22.5,24.5,135.738,BW,True,,stop,0.00616,797,87,0,9.45,"{""reasoning"": ""Sandy two-track through Kalahari-type savanna with acacia scrub and pale sandy soil, characteristic of central Botswana's bushland."", ""country"": ""BW"", ""latitude"": -22.5, ""longitude"": 24.5}"
+google/gemma-4-31b-it,no-CoT,-22.5,23.0,143.452,BW,True,,stop,0.00010643,406,29,0,2.65,"```json
+{""country"": ""BW"", ""latitude"": -22.5, ""longitude"": 23.0}
+```"
+openai/gpt-5.5,no-CoT,-20.1043,23.6741,151.056,BW,True,,stop,0.00344,544,24,0,1.91,"{""country"":""BW"",""latitude"":-20.1043,""longitude"":23.6741}"
+google/gemini-3.5-flash,CoT (effort=low),-21.8542,22.4015,152.888,BW,True,,stop,0.003375,1272,163,91,2.23,"```json
+{""reasoning"": ""The flat landscape with pale sandy soil, dry yellowish grass, and low thorny shrubs under a clear blue sky is highly characteristic of the Kalahari region in Botswana."", ""country"": ""BW"", ""latitude"": -21.8542, ""longitude"": 22.4015}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-19.9833,23.4333,168.577,BW,True,,stop,0.0020985,1189,35,0,13.27,"```json
+{""country"": ""BW"", ""latitude"": -19.9833, ""longitude"": 23.4333}
+```"
+xiaomi/mimo-v2.5,CoT,-22.0,22.0,197.238,BW,True,,stop,0.0002479176,787,586,495,12.79,"{""reasoning"": ""The savanna-like landscape with dry grass, sparse bushes, and a straight dirt track is typical of Botswana's semi-arid regions, and the road style/vegetation align with Kalahari-influenced areas. Latitude/longitude estimates match Botswana’s central-northern terrain."", ""country"": ""BW"", ""latitude"": -22.0, ""longitude"": 22.0}"
+x-ai/grok-4.3,no-CoT,-19.2,18.1,646.721,NA,True,,stop,0.0005934,592,22,0,13.8,"{""country"": ""NA"", ""latitude"": -19.2, ""longitude"": 18.1}"
+qwen/qwen3.6-35b-a3b,no-CoT,-25.7479,28.1804,652.075,ZA,True,,stop,0.000157,473,31,0,7.15,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 28.1804}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.7461,28.2293,655.336,ZA,True,,stop,0.0001171625,473,31,0,1.76,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.2293}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-20.089309692382812,16.253276824951172,800.884,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,-25.4829,31.0917,866.304,ZA,True,,stop,0.00018772,474,31,0,6.48,"{""country"": ""ZA"", ""latitude"": -25.4829, ""longitude"": 31.0917}"
+qwen/qwen3.5-9b,no-CoT,-29.4525,25.1622,899.317,ZA,True,,stop,5.205e-05,474,31,0,4.53,"{""country"": ""ZA"", ""latitude"": -29.4525, ""longitude"": 25.1622}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-19.60276222229004,14.896793365478516,951.36,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-19.616666793823242,14.821805000305176,958.61,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3517.295,,True,True,,,,,,22.31,
+mistralai/mistral-medium-3-5,no-CoT,-15.5,-55.0,8254.62,BR,True,,stop,0.0011385,634,25,0,0.73,"{""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -55.0}"
+qwen/qwen3.6-27b,no-CoT,-31.0,136.0,10727.767,AU,True,,stop,0.0001843,473,26,0,8.09,"{""country"": ""AU"", ""latitude"": -31.0, ""longitude"": 136.0}"
+qwen/qwen3.5-27b,no-CoT,-25.2744,133.7751,10845.098,AU,True,,stop,0.0002499,473,45,0,3.23,"```json
+{
+  ""country"": ""AU"",
+  ""latitude"": -25.2744,
+  ""longitude"": 133.7751
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,28.8,-97.0,14059.993,US,True,,stop,7.97776e-05,708,25,0,1.46,"{""country"": ""US"", ""latitude"": 28.8, ""longitude"": -97.0}"
+mistralai/mistral-small-2603,no-CoT,38.3396,-120.4346,16125.62,US,True,,stop,0.0001143,634,32,0,8.93,"{""country"": ""US"", ""latitude"": 38.3396, ""longitude"": -120.4346}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,2.49,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.37,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.41,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,13.58,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.38,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.29,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,2.27,

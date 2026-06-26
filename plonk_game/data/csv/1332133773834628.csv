@@ -1,0 +1,70 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-27.679796046075,28.918296648494,0.0,ZA,True,,,,,,,,"Vrede, Thabo Mofutsanyana District Municipality, Orange Free State, ZA"
+google/gemini-3.5-flash,CoT (effort=low),-27.8512,29.1234,27.758,ZA,True,,stop,0.0055965,1271,410,338,9.93,"{""reasoning"": ""The dry, rolling grassy hills, left-hand traffic, and road markings with yellow outer shoulder lines are characteristic of South Africa, specifically the Free State province along the N3 highway."", ""country"": ""ZA"", ""latitude"": -27.8512, ""longitude"": 29.1234}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-28.2451,29.0124,63.535,ZA,True,,stop,0.0021,1190,35,0,1.71,"```json
+{""country"": ""ZA"", ""latitude"": -28.2451, ""longitude"": 29.0124}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-26.737598419189453,29.15395736694336,107.328,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-26.701589584350586,29.149845123291016,111.156,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-26.699432373046875,28.60911750793457,113.219,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-28.085,27.155,179.067,ZA,True,,stop,0.0111135,1271,1023,949,9.37,"```json
+{""reasoning"": ""The road markings with yellow shoulder lines on both sides and a dashed white center line are characteristic of South Africa, while the dry, golden rolling grassland landscape indicates the Free State province."", ""country"": ""ZA"", ""latitude"": -28.085, ""longitude"": 27.155}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-28.25,27.21,179.352,ZA,True,,stop,0.0134085,1271,1278,1192,17.07,"```json
+{""reasoning"": ""The dry, flat golden grassland landscape is highly characteristic of the South African Highveld (Free State). The road markings, including the yellow left-shoulder line and the painted median island with yellow lines, confirm South Africa where driving is on the left."", ""country"": ""ZA"", ""latitude"": -28.25, ""longitude"": 27.21}
+```"
+anthropic/claude-opus-4.8,CoT,-27.5,27.0,190.101,ZA,True,,stop,0.00616,797,87,0,16.23,"{""reasoning"": ""Dry golden highveld grassland, left-side driving, sun high to the north, and wide two-lane highway suggest South Africa's interior plateau."", ""country"": ""ZA"", ""latitude"": -27.5, ""longitude"": 27.0}"
+anthropic/claude-opus-4.8,no-CoT,-28.7,26.5,262.748,ZA,True,,stop,0.004105,666,31,0,8.5,"{""country"": ""ZA"", ""latitude"": -28.7, ""longitude"": 26.5}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4356.896,,True,True,,,,,,25.79,
+qwen/qwen3.5-9b,no-CoT,44.0582,-101.0903,15241.303,US,True,,stop,5.22e-05,474,32,0,3.55,"{""country"": ""US"", ""latitude"": 44.0582, ""longitude"": -101.0903}"
+x-ai/grok-4.3,no-CoT,41.15,-102.95,15417.507,US,True,,stop,0.0005934,592,22,0,1.74,"{""country"": ""US"", ""latitude"": 41.15, ""longitude"": -102.95}"
+x-ai/grok-4.3,CoT,41.15,-103.0,15421.686,US,True,,stop,0.0022265,676,687,614,6.16,"{
+  ""reasoning"": ""US-style double yellow center lines + right-hand traffic, barren high-plains grassland with distant mesas, and clear midday sun match the American West; no other country fits all road markings and landscape simultaneously."",
+  ""country"": ""US"",
+  ""latitude"": 41.15,
+  ""longitude"": -103.0
+}"
+xiaomi/mimo-v2.5,CoT,35.17,-103.73,15488.219,US,True,,stop,0.0004430776,787,1283,1207,20.06,"{""reasoning"": ""Double yellow lines indicate right-hand traffic typical of the United States, and the flat, arid landscape with distant mesas is characteristic of the American Southwest, specifically along Interstate 40 in New Mexico."", ""country"": ""US"", ""latitude"": 35.17, ""longitude"": -103.73}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.2033,-104.802,15571.687,US,True,,stop,0.00029445,473,32,0,2.58,"{""country"": ""US"", ""latitude"": 41.2033, ""longitude"": -104.8020}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.2565,-104.8197,15572.664,US,True,,stop,0.00015825,473,32,0,6.73,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -104.8197}"
+qwen/qwen3.5-27b,no-CoT,41.2234,-104.8219,15573.159,US,True,,stop,0.00023244,474,42,0,1.16,"```json
+{
+""country"": ""US"",
+""latitude"": 41.2234,
+""longitude"": -104.8219
+}
+```"
+moonshotai/kimi-k2.6,no-CoT,41.0,-104.8,15573.362,US,True,,stop,0.000263232,603,23,0,7.91,"{""country"": ""US"", ""latitude"": 41.0, ""longitude"": -104.8}"
+qwen/qwen3.6-27b,no-CoT,41.14,-104.82,15573.773,US,True,,stop,0.0001963,473,32,0,13.63,"{""country"": ""US"", ""latitude"": 41.1400, ""longitude"": -104.8200}"
+google/gemini-3.1-pro-preview,no-CoT,41.1402,-104.8202,15573.788,US,True,,stop,0.00281,1189,36,0,2.68,"```json
+{""country"": ""US"", ""latitude"": 41.1402, ""longitude"": -104.8202}
+```"
+openai/gpt-5.5,no-CoT,41.5505,-106.1152,15677.059,US,True,,stop,0.00344,544,24,0,7.47,"{""country"":""US"",""latitude"":41.5505,""longitude"":-106.1152}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.687,-106.023,15697.915,US,True,,stop,0.0001158625,473,30,0,7.08,"{""country"": ""US"", ""latitude"": 35.687, ""longitude"": -106.023}"
+google/gemini-3.1-pro-preview,CoT,41.75,-106.55,15710.449,US,True,,stop,0.006418,1271,323,237,11.6,"{
+  ""reasoning"": ""The wide divided highway with yellow inner lines and white dashed lines is characteristic of the US Interstate system. The arid, rolling, treeless landscape strongly suggests the high plains of Wyoming, such as along Interstate 80."",
+  ""country"": ""US"",
+  ""latitude"": 41.75,
+  ""longitude"": -106.55
+}"
+moonshotai/kimi-k2.6,CoT,41.72,-107.15,15760.271,US,True,,stop,0.008014608,682,2277,2209,346.49,"{""reasoning"": ""Right-hand traffic on a divided highway with American-style shoulder rumble strips and a conventional semi-truck, combined with treeless rolling semi-arid grassland, matches Interstate 80 through Wyoming."", ""country"": ""US"", ""latitude"": 41.72, ""longitude"": -107.15}"
+openai/gpt-5.5,CoT,42.2739,-107.5206,15782.365,US,True,,stop,0.012975,621,329,237,17.76,"{""reasoning"":""Right-hand traffic with US-style double yellow centerlines and white edge lines points to North America, while the vast treeless dry grassland and rolling high-desert terrain are characteristic of rural Wyoming. The straight two-lane highway, sparse fencing, and brown semi-arid plains fit central/southern Wyoming best."",""country"":""US"",""latitude"":42.2739,""longitude"":-107.5206}"
+minimax/minimax-m3,CoT,43.15,-108.25,15825.883,US,True,,stop,0.00104826,843,714,609,35.2,"{""reasoning"": ""Double yellow center line indicates US right-hand driving. Vast, flat high-desert steppe with tan/brown bunchgrass, no trees, rolling low hills to horizon, and intense high-altitude sun are characteristic of the Wyoming high plains/sagebrush steppe, likely along a US highway such as US-287 or US-26 between Riverton and Shoshoni."", ""country"": ""US"", ""latitude"": 43.15, ""longitude"": -108.25}"
+minimax/minimax-m3,no-CoT,39.5,-111.0,16113.836,US,True,,stop,0.00019452,754,22,0,8.45,"{""country"": ""US"", ""latitude"": 39.5, ""longitude"": -111.0}{""country"": ""US"", ""latitude"": 39.5, ""longitude"": -111.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,46.729553,-117.000168,16372.733,US,True,,stop,0.00019812,474,36,0,5.72,"{""country"": ""US"", ""latitude"": 46.729553, ""longitude"": -117.000168}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,37.435752868652344,-113.69661712646484,16374.046,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,36.1699,-115.1398,16516.06,US,True,,stop,0.0001143,634,32,0,7.48,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,38.45230484008789,-116.16089630126953,16572.257,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,37.86936569213867,-116.23162841796875,16588.912,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,45.8,-119.5,16590.391,US,True,,stop,6.518e-05,406,31,0,2.71,"```json
+{""country"": ""US"", ""latitude"": 45.8, ""longitude"": -119.5}
+```"
+xiaomi/mimo-v2.5,no-CoT,39.5,-117.5,16662.999,US,True,,stop,8.00576e-05,708,26,0,2.8,"{""country"": ""US"", ""latitude"": 39.5, ""longitude"": -117.5}"
+mistralai/mistral-medium-3-5,no-CoT,37.2982,-120.4422,16965.284,US,True,,stop,0.001191,634,32,0,7.33,"{""country"": ""US"", ""latitude"": 37.2982, ""longitude"": -120.4422}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.72,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.56,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.53,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.15,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.39,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.15,

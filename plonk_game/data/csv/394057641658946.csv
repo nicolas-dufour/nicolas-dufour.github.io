@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,64.408577385527,55.191328070674,0.0,RU,True,,,,,,,,"Nizhniy Odes, None, Komi Republic, RU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,64.07341003417969,54.69829559326172,44.233,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,64.27790069580078,54.01259231567383,58.58,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,64.17463684082031,53.979774475097656,63.966,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,64.605,47.85,351.827,RU,True,,stop,6.28e-05,586,28,0,3.44,"{""country"": ""RU"", ""latitude"": 64.605, ""longitude"": 47.85}"
+openai/gpt-5.5,CoT,61.676,50.812,375.395,RU,True,,stop,0.013795,755,334,246,9.75,"{""reasoning"":""Rural northern Russian scene with right-side driving, unpaved village roads, wooden izba-style houses with painted window frames, birch/conifer taiga vegetation and Soviet-style utility poles. The flat forested landscape and architecture most suggest a village in the Komi/Vologda northern European Russia region."",""country"":""RU"",""latitude"":61.676,""longitude"":50.812}"
+google/gemini-3.1-pro-preview,no-CoT,61.666667,50.816667,376.118,RU,True,,stop,0.002918,1225,39,0,8.79,"```json
+{""country"": ""RU"", ""latitude"": 61.666667, ""longitude"": 50.816667}
+```"
+openai/gpt-5.5,no-CoT,61.6658,50.8122,376.329,RU,True,,stop,0.00408,678,23,0,7.73,"{""country"":""RU"",""latitude"":61.6658,""longitude"":50.8122}"
+qwen/qwen3.6-27b,no-CoT,61.527,50.933,385.798,RU,True,,stop,0.0002279,585,31,0,13.23,"{""country"": ""RU"", ""latitude"": 61.5270, ""longitude"": 50.9330}"
+qwen/qwen3.5-27b,no-CoT,60.8953,60.6619,479.959,RU,True,,stop,0.00024596,586,36,0,18.77,"```json
+{""country"": ""RU"", ""latitude"": 60.8953, ""longitude"": 60.6619}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,61.7856,46.3214,532.423,RU,True,,stop,0.00043188,585,31,0,8.88,"{""country"": ""RU"", ""latitude"": 61.7856, ""longitude"": 46.3214}"
+anthropic/claude-opus-4.8,CoT,61.5,46.5,544.879,RU,True,,stop,0.006695,949,78,0,3.64,"{""reasoning"": ""Wooden rural houses, dirt roads, boreal vegetation, and overcast sky typical of northern Russian villages."", ""country"": ""RU"", ""latitude"": 61.5, ""longitude"": 46.5}"
+anthropic/claude-opus-4.8,no-CoT,61.5,46.0,565.346,RU,True,,stop,0.00484,818,30,0,2.44,"{""country"": ""RU"", ""latitude"": 61.5, ""longitude"": 46.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,60.428428649902344,63.28509521484375,606.999,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,61.7,42.8,691.683,RU,True,,stop,0.00080706,995,475,388,13.19,"{""reasoning"": ""Traditional Russian wooden village house with carved window frames (nalichniki), unpaved dirt road junction, dense spruce-birch taiga forest, concrete utility poles, and a dashcam mount indicating a Russian vehicle all point to a rural village in northern European Russia's taiga zone."", ""country"": ""RU"", ""latitude"": 61.7, ""longitude"": 42.8}"
+google/gemini-3.1-pro-preview,CoT,62.5,41.5,711.083,RU,True,,stop,0.005134,1307,210,147,3.6,"{
+  ""reasoning"": ""The traditional wooden house architecture, unpaved roads, and boreal forest vegetation strongly indicate a rural area in northern Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 62.5,
+  ""longitude"": 41.5
+}"
+qwen/qwen3.5-122b-a10b,no-CoT,62.8456,40.2345,757.012,RU,True,,stop,0.0003332,585,31,0,1.8,"{""country"": ""RU"", ""latitude"": 62.8456, ""longitude"": 40.2345}"
+google/gemini-3.5-flash,CoT (effort=high),62.5342,40.1234,774.742,RU,True,,stop,0.0096825,1307,858,784,7.27,"{""reasoning"": ""The typical Russian wooden architecture (izba), birch and pine forest, Soviet-style concrete utility poles, and a Rozhnovsky water tower in the background strongly indicate rural Northern European Russia."", ""country"": ""RU"", ""latitude"": 62.5342, ""longitude"": 40.1234}"
+google/gemini-3.5-flash,CoT (effort=medium),62.5341,40.1234,774.746,RU,True,,stop,0.0055335,1307,397,328,10.58,"{""reasoning"": ""The wooden architecture of the house, concrete utility poles, and dense birch/pine forest are characteristic of northern Russia, particularly the Arkhangelsk or Karelia regions."", ""country"": ""RU"", ""latitude"": 62.5341, ""longitude"": 40.1234}"
+xiaomi/mimo-v2.5,no-CoT,56.85,60.6,889.963,RU,True,,stop,9.57376e-05,820,26,0,8.18,"{""country"": ""RU"", ""latitude"": 56.85, ""longitude"": 60.6}"
+moonshotai/kimi-k2.6,CoT,62.05,36.12,986.306,RU,True,,stop,0.010746396,834,3061,3000,73.71,"{""reasoning"": ""Traditional Russian rural wooden house with white window trim and corrugated metal roof beside an unpaved intersection, surrounded by flat boreal taiga forest and Soviet-style utility poles."", ""country"": ""RU"", ""latitude"": 62.05, ""longitude"": 36.12}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,61.47676086425781,73.881591796875,995.633,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),62.145231,35.621458,1005.911,RU,True,,stop,0.0021885,1225,39,0,18.25,"```json
+{""country"": ""RU"", ""latitude"": 62.145231, ""longitude"": 35.621458}
+```"
+google/gemini-3.5-flash,CoT (effort=low),62.1543,34.2811,1069.675,RU,True,,stop,0.0040935,1307,237,171,3.72,"{""reasoning"": ""The wooden architecture with white-trimmed windows, concrete utility poles, and dense birch/pine forest under an overcast sky are highly characteristic of rural northwestern Russia."", ""country"": ""RU"", ""latitude"": 62.1543, ""longitude"": 34.2811}"
+minimax/minimax-m3,no-CoT,61.8,34.4,1079.801,RU,True,,stop,0.00034722,919,108,107,3.97,"{""country"": ""RU"", ""latitude"": 61.8, ""longitude"": 34.4}"
+x-ai/grok-4.3,no-CoT,61.85,34.35,1079.885,RU,True,,stop,0.0007334,704,22,0,0.85,"{""country"": ""RU"", ""latitude"": 61.85, ""longitude"": 34.35}"
+x-ai/grok-4.3,CoT,61.85,34.3,1082.275,RU,True,,stop,0.0020365,788,555,483,17.21,"{""reasoning"": ""Boreal taiga forest, unpaved dirt roads, weathered wooden rural houses with metal roofs, and Soviet-era radio/comms towers are characteristic of northern Russia; right-hand drive viewpoint and dashcam style further support this region."", ""country"": ""RU"", ""latitude"": 61.85, ""longitude"": 34.3}"
+xiaomi/mimo-v2.5,CoT,58.48,33.63,1312.659,RU,True,,stop,0.0003982776,899,1067,971,19.21,"{""reasoning"": ""The rural landscape features traditional Russian wooden architecture (an 'izba' style house), a mix of birch and pine trees, and sandy soil, which are characteristic of northern European Russia. A red and white telecommunications tower and the car's dashboard (consistent with a Lada) further confirm this geographical region."", ""country"": ""RU"", ""latitude"": 58.48, ""longitude"": 33.63}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,58.7176628112793,32.804229736328125,1333.752,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,60.15,30.25,1363.413,RU,True,,stop,0.00018,585,27,0,3.5,"{""country"": ""RU"", ""latitude"": 60.15, ""longitude"": 30.25}"
+qwen/qwen3.5-35b-a3b,no-CoT,59.8923,30.3156,1375.258,RU,True,,stop,0.0001353625,585,31,0,1.36,"{""country"": ""RU"", ""latitude"": 59.8923, ""longitude"": 30.3156}"
+mistralai/mistral-medium-3-5,no-CoT,60.0,30.0,1383.914,RU,True,,stop,0.001374,786,26,0,3.56,"{""country"": ""RU"", ""latitude"": 60.0, ""longitude"": 30.0}"
+google/gemma-4-31b-it,no-CoT,62.1522,105.3189,2452.745,RU,True,,stop,0.00019423,406,37,0,0.84,"```json
+{""country"": ""RU"", ""latitude"": 62.1522, ""longitude"": 105.3189}
+```"
+mistralai/mistral-small-2603,no-CoT,51.5074,-0.1278,3425.764,GB,True,,stop,0.0001359,786,30,0,7.48,"{""country"": ""GB"", ""latitude"": 51.5074, ""longitude"": -0.1278}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8420.251,,True,True,,,,,,20.16,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,9.3,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.12,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.5,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.66,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.11,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.37,

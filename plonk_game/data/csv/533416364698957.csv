@@ -1,0 +1,56 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,24.374050233726,35.267565458,0.0,EG,True,,,,,,,,"Marsa Alam, None, Red Sea, EG"
+openai/gpt-5.5,CoT,24.4567,35.1632,14.004,EG,True,,stop,0.012045,621,298,228,8.12,"{""reasoning"":""Arid sandy desert with sparse scrub directly meeting a turquoise coral-reef coastline strongly suggests the Red Sea coast. The undeveloped flat shore and reef lagoon fit Egypt's southern Red Sea/Marsa Alam area best."",""country"":""EG"",""latitude"":24.4567,""longitude"":35.1632}"
+google/gemini-3.1-pro-preview,no-CoT,24.9533,34.8822,75.266,EG,True,,stop,0.002798,1189,35,0,9.01,"```json
+{""country"": ""EG"", ""latitude"": 24.9533, ""longitude"": 34.8822}
+```"
+anthropic/claude-opus-4.8,CoT,25.07,34.9,85.831,EG,True,,stop,0.00626,797,91,0,11.85,"{""reasoning"": ""Arid sandy coastal flat with sparse desert scrub and a turquoise reef line suggests Red Sea coast of Egypt near Marsa Alam."", ""country"": ""EG"", ""latitude"": 25.07, ""longitude"": 34.9}"
+google/gemini-3.1-pro-preview,CoT,25.0667,34.8833,86.246,EG,True,,stop,0.005434,1271,241,160,4.61,"{
+  ""reasoning"": ""The arid, sandy coastal terrain with sparse vegetation and clear blue water with reef-like color variations strongly suggests the Red Sea coast. The landscape is typical of the eastern coast of Egypt."",
+  ""country"": ""EG"",
+  ""latitude"": 25.0667,
+  ""longitude"": 34.8833
+}"
+moonshotai/kimi-k2.6,CoT,25.0,34.75,87.056,EG,True,,stop,0.011524,680,2759,3001,56.38,"{""reasoning"":""Hyper-arid sandy coastal plain with sparse gray scrub and a prominent fringing coral reef indicated by the sharp turquoise-to-dark-blue water transition are classic features of the Egyptian Red Sea coastline."",""country"":""EG"",""latitude"":25.0,""longitude"":34.75}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),25.433333,34.683333,131.702,EG,True,,stop,0.002136,1190,39,0,2.9,"```json
+{""country"": ""EG"", ""latitude"": 25.433333, ""longitude"": 34.683333}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),25.4312,34.6625,132.445,EG,True,,stop,0.0064155,1271,501,428,12.2,"{""reasoning"": ""The arid desert landscape directly adjacent to a turquoise reef and deep blue sea is highly characteristic of the Egyptian Red Sea coast, specifically along the coastal highway between Hurghada and Marsa Alam."", ""country"": ""EG"", ""latitude"": 25.4312, ""longitude"": 34.6625}"
+google/gemini-3.5-flash,CoT (effort=high),25.4312,34.6514,132.965,EG,True,,stop,0.0060375,1271,459,376,4.54,"{""reasoning"": ""The arid desert landscape immediately adjacent to a shallow fringing reef and deep blue sea is highly characteristic of the Red Sea coast in Egypt. The sparse, low-lying halophytic vegetation and sandy terrain match the coastal region near Marsa Alam."", ""country"": ""EG"", ""latitude"": 25.4312, ""longitude"": 34.6514}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,25.215362548828125,34.21806335449219,141.332,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,25.211606979370117,34.16718292236328,144.954,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,25.6021,34.6109,151.745,EG,True,,stop,0.00341,544,23,0,2.36,"{""country"":""EG"",""latitude"":25.6021,""longitude"":34.6109}"
+anthropic/claude-opus-4.8,no-CoT,25.6,34.6,152.018,EG,True,,stop,0.00408,666,30,0,2.46,"{""country"": ""EG"", ""latitude"": 25.6, ""longitude"": 34.6}"
+google/gemini-3.5-flash,CoT (effort=low),26.2583,34.2154,234.695,EG,True,,stop,0.003114,1272,134,64,9.05,"{""reasoning"": ""The arid desert landscape meeting a shallow turquoise reef under a clear blue sky is highly characteristic of the Egyptian Red Sea coast, specifically along the coastal highway south of Hurghada."", ""country"": ""EG"", ""latitude"": 26.2583, ""longitude"": 34.2154}"
+google/gemma-4-31b-it,no-CoT,28.5,33.5,491.358,EG,True,,stop,6.378e-05,406,36,0,15.35,"```json
+{""country"": ""EG"", ""latitude"": 28.5000, ""longitude"": 33.5000}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,29.749990463256836,33.138797760009766,633.807,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,19.999,56.25,2212.021,OM,True,,stop,0.001161,634,28,0,1.35,"{""country"": ""OM"", ""latitude"": 19.999, ""longitude"": 56.25}"
+xiaomi/mimo-v2.5,CoT,22.6816,59.5276,2477.36,OM,True,,stop,0.0001490776,787,233,130,3.13,"{""reasoning"": ""The image shows a coastal desert landscape with dry, sandy soil, sparse scrub vegetation, and a clear blue sky typical of arid coastal regions like the Red Sea coast or the Persian Gulf. Without specific man-made structures, license plates, or signage, the estimation relies on the distinct terrain and vegetation common to the Arabian Peninsula."", ""country"": ""OM"", ""latitude"": 22.6816, ""longitude"": 59.5276}"
+qwen/qwen3.5-122b-a10b,no-CoT,30.4278,-9.755,4466.423,MA,True,,stop,0.00018356,474,29,0,15.26,"{""country"": ""MA"", ""latitude"": 30.4278, ""longitude"": -9.755}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,28.43263816833496,-13.958674430847168,4890.147,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,27.497623443603516,-14.03637981414795,4910.541,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,27.590938568115234,-14.119776725769043,4917.33,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,-22.95,14.45,5721.826,NA,True,,stop,0.0018415,676,533,461,11.43,"{""reasoning"": ""Arid sandy coastal desert with sparse low shrubs, pale track, and clear turquoise shallows under cloudless sky match the Namib Desert shoreline; no other region combines this exact vegetation, soil, and ocean color so consistently."", ""country"": ""NA"", ""latitude"": -22.95, ""longitude"": 14.45}"
+x-ai/grok-4.3,no-CoT,-22.205,113.875,9939.91,AU,True,,stop,0.0005934,592,22,0,0.78,"{""country"": ""AU"", ""latitude"": -22.205, ""longitude"": 113.875}"
+qwen/qwen3.5-27b,no-CoT,-21.0833,114.8167,9971.172,AU,True,,stop,0.0001925,474,37,0,9.12,"```json
+{""country"": ""AU"", ""latitude"": -21.0833, ""longitude"": 114.8167}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-25.3444,113.7322,10084.243,AU,True,,stop,0.0003357,473,32,0,3.14,"{""country"": ""AU"", ""latitude"": -25.3444, ""longitude"": 113.7322}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.9234,113.6789,10108.517,AU,True,,stop,0.00015825,473,32,0,0.57,"{""country"": ""AU"", ""latitude"": -25.9234, ""longitude"": 113.6789}"
+qwen/qwen3.6-35b-a3b,no-CoT,-25.9167,113.7167,10111.555,AU,True,,stop,0.00010295,473,32,0,2.19,"{""country"": ""AU"", ""latitude"": -25.9167, ""longitude"": 113.7167}"
+qwen/qwen3.6-27b,no-CoT,-20.7376,116.8139,10140.697,AU,True,,stop,0.0001963,473,32,0,5.21,"{""country"": ""AU"", ""latitude"": -20.7376, ""longitude"": 116.8139}"
+xiaomi/mimo-v2.5,no-CoT,-20.2833,118.5833,10285.507,AU,True,,stop,8.17376e-05,708,32,0,1.0,"{""country"": ""AU"", ""latitude"": -20.2833, ""longitude"": 118.5833}"
+mistralai/mistral-small-2603,no-CoT,33.6846,-116.231,12890.261,US,True,,stop,0.0001137,634,31,0,6.66,"{""country"": ""US"", ""latitude"": 33.6846, ""longitude"": -116.231}"
+minimax/minimax-m3,CoT,28.92,-113.55,13215.527,MX,True,,stop,0.00066426,843,394,300,10.92,"{""reasoning"": ""Arid coastal desert with sparse halophytic shrubs, sandy pale terrain, and a shallow turquoise lagoon behind a reef barrier strongly resemble the Sea of Cortez coastline in Baja California, Mexico. No infrastructure, signage, or vehicles are present, but the vegetation type and reef-flat morphology are characteristic of Bahía de los Ángeles region."", ""country"": ""MX"", ""latitude"": 28.92, ""longitude"": -113.55}"
+qwen/qwen3.5-9b,no-CoT,-28.395,153.42,13905.116,AU,True,,stop,5.175e-05,474,29,0,4.21,"{""country"": ""AU"", ""latitude"": -28.395, ""longitude"": 153.42}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.21,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.19,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,315.8,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.2,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.19,

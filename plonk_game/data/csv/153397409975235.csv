@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,64.147366510551,-20.321892385822,0.0,IS,True,,,,,,,,"Vestmannaeyjar, None, South, IS"
+anthropic/claude-opus-4.8,CoT,64.05,-20.3,10.879,IS,True,,stop,0.006385,797,96,0,3.04,"{""reasoning"": ""Treeless tundra-like landscape with distant flat-topped basalt mountains, sparse vegetation and yellow-topped marker posts typical of Icelandic rural roads."", ""country"": ""IS"", ""latitude"": 64.05, ""longitude"": -20.3}"
+qwen/qwen3.5-397b-a17b,no-CoT,64.1234,-20.5678,12.223,IS,True,,stop,0.00036468,473,31,0,1.84,"{""country"": ""IS"", ""latitude"": 64.1234, ""longitude"": -20.5678}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),63.9852,-20.4215,18.671,IS,True,,stop,0.0020985,1189,35,0,9.12,"```json
+{""country"": ""IS"", ""latitude"": 63.9852, ""longitude"": -20.4215}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),63.9512,-20.4123,22.252,IS,True,,stop,0.0056955,1271,421,351,5.04,"{""reasoning"": ""The landscape features low, flat-topped volcanic mountains, sparse yellowish-green vegetation, dark volcanic soil, and a yellow road marker characteristic of Iceland's rural roads."", ""country"": ""IS"", ""latitude"": 63.9512, ""longitude"": -20.4123}"
+x-ai/grok-4.3,CoT,64.15,-19.85,22.882,IS,True,,stop,0.0025315,676,809,721,10.15,"{
+  ""reasoning"": ""Right-hand traffic (yellow center line on left of asphalt, oncoming lane to left) + barren volcanic plain with brown tussock grass, dark soil, distant low mountains and overcast sky match Iceland's interior/southern highlands; no other country fits all visual markers simultaneously."",
+  ""country"": ""IS"",
+  ""latitude"": 64.15,
+  ""longitude"": -19.85
+}"
+openai/gpt-5.5,no-CoT,64.0955,-20.7792,22.931,IS,True,,stop,0.00344,544,24,0,1.41,"{""country"":""IS"",""latitude"":64.0955,""longitude"":-20.7792}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,63.931640625,-20.36313819885254,24.071,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,63.980865478515625,-20.65604591369629,24.634,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,63.92885971069336,-20.501609802246094,25.824,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,64.06497192382812,-20.984548568725586,33.457,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,63.85,-20.15,34.111,IS,True,,stop,0.00564608785,553,5757,5631,49.64,"```json
+{
+  ""reasoning"": ""The image shows a left-hand traffic road with a white rear license plate, ruling out the UK (yellow rear plates). The barren, mossy landscape with no trees, dark volcanic soil, and dramatic cloudy sky is highly characteristic of Iceland. The road style (narrow asphalt with gravel shoulders) and the vehicle (likely a Toyota Hilux/Land Cruiser common in Iceland) further support this."",
+  ""country"": ""IS"",
+  ""latitude"": 63.85,
+  ""longitude"": -20.15
+}
+```"
+google/gemini-3.5-flash,CoT (effort=low),63.9852,-20.9415,35.114,IS,True,,stop,0.003744,1272,204,148,8.58,"{""reasoning"": ""The barren volcanic landscape, lack of trees, and distinctive yellow roadside bollards are characteristic of rural Iceland."", ""country"": ""IS"", ""latitude"": 63.9852, ""longitude"": -20.9415}"
+google/gemini-3.1-pro-preview,no-CoT,63.8333,-20.5,35.986,IS,True,,stop,0.004214,1189,153,121,15.18,"```json
+{""country"": ""IS"", ""latitude"": 63.8333, ""longitude"": -20.5}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,64.0793228149414,-21.119192123413086,39.439,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,63.95,-21.05,41.676,IS,True,,stop,0.005424,1272,240,175,5.06,"{
+  ""reasoning"": ""The barren landscape with dark volcanic soil, flat-topped mountains, and the yellow road bollard strongly indicate Iceland."",
+  ""country"": ""IS"",
+  ""latitude"": 63.95,
+  ""longitude"": -21.05
+}"
+openai/gpt-5.5,CoT,63.7645,-20.3472,42.591,IS,True,,stop,0.013155,621,335,255,10.12,"{""reasoning"":""Treeless volcanic farmland, dark lava/gravel soil, low mountains, and Icelandic-style yellow roadside delineator posts strongly indicate rural Iceland. The narrow right-driving paved road and South Coast-like landscape fit the area around Hella/Hvolsvöllur."",""country"":""IS"",""latitude"":63.7645,""longitude"":-20.3472}"
+qwen/qwen3.5-9b,no-CoT,64.5354,-20.3444,43.161,IS,True,,stop,5.205e-05,474,31,0,9.06,"{""country"": ""IS"", ""latitude"": 64.5354, ""longitude"": -20.3444}"
+google/gemini-3.5-flash,CoT (effort=high),63.75,-20.22,44.464,IS,True,,stop,0.0109335,1271,1003,934,8.78,"{""reasoning"": ""The yellow road bollard, dark volcanic soil, treeless grassy plains, and distinctive flat-topped basalt mountains are highly characteristic of the Icelandic landscape, particularly along the southern ring road."", ""country"": ""IS"", ""latitude"": 63.75, ""longitude"": -20.22}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,64.15587615966797,-21.282093048095703,46.56,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,64.1466,-21.3,47.426,IS,True,,stop,0.004105,666,31,0,9.37,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.3}"
+xiaomi/mimo-v2.5,no-CoT,64.15,-19.05,61.668,IS,True,,stop,8.03376e-05,708,27,0,7.33,"{""country"": ""IS"", ""latitude"": 64.15, ""longitude"": -19.05}"
+moonshotai/kimi-k2.6,CoT,63.95,-21.8,75.196,IS,True,,stop,0.009855288,682,2813,2741,78.03,"{""reasoning"": ""Dark volcanic gravel, mossy barren plains, and distinctive yellow roadside markers are hallmarks of Iceland, and the flat-topped distant mountains match the southwestern Icelandic landscape near the Reykjanes peninsula or Ring Road."", ""country"": ""IS"", ""latitude"": 63.95, ""longitude"": -21.8}"
+mistralai/mistral-medium-3-5,no-CoT,64.1466,-21.9426,78.583,IS,True,,stop,0.0011835,634,31,0,7.18,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.9426}"
+qwen/qwen3.5-122b-a10b,no-CoT,64.1466,-21.9426,78.583,IS,True,,stop,0.0002163,473,31,0,7.32,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.9426}"
+qwen/qwen3.5-27b,no-CoT,64.1466,-21.9426,78.583,IS,True,,stop,0.0002163,473,31,0,2.04,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.9426}"
+qwen/qwen3.6-27b,no-CoT,64.1466,-21.9426,78.583,IS,True,,stop,0.0001943,473,31,0,10.03,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.9426}"
+qwen/qwen3.6-35b-a3b,no-CoT,64.1466,-21.9426,78.583,IS,True,,stop,0.00010617035,473,31,0,7.95,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.9426}"
+google/gemma-4-26b-a4b-it,no-CoT,64.0,-21.9426,80.476,,True,,stop,5.374e-05,406,28,0,1.19,"{""country"": ""IS"", ""latitude"": 64. own, ""longitude"": -21.9426}"
+moonshotai/kimi-k2.6,no-CoT,64.8,-19.3,87.542,IS,True,,stop,0.000272952,603,23,0,2.5,"{""country"": ""IS"", ""latitude"": 64.8, ""longitude"": -19.3}"
+google/gemma-4-31b-it,no-CoT,64.5,-18.5,96.133,IS,True,,stop,6.478e-05,406,30,0,2.4,"```json
+{""country"": ""IS"", ""latitude"": 64.5, ""longitude"": -18.5}
+```"
+minimax/minimax-m3,no-CoT,64.9631,-19.0208,109.955,IS,True,,stop,0.00019056,752,25,0,1.12,"{""country"": ""IS"", ""latitude"": 64.9631, ""longitude"": -19.0208}"
+qwen/qwen3.5-35b-a3b,no-CoT,64.9631,-19.0208,109.955,IS,True,,stop,9.736e-05,474,31,0,2.5,"{""country"": ""IS"", ""latitude"": 64.9631, ""longitude"": -19.0208}"
+xiaomi/mimo-v2.5,CoT,65.02,-18.47,131.239,IS,True,,stop,0.0001689576,787,304,224,4.06,"{""reasoning"": ""The volcanic dark soil, sparse tundra-style vegetation, rural right-hand traffic road, and overcast maritime landscape are all characteristic of Iceland's countryside. The distant low mountains and rugged open terrain align with Iceland's interior rural regions."", ""country"": ""IS"", ""latitude"": 65.02, ""longitude"": -18.47}"
+x-ai/grok-4.3,no-CoT,64.85,-22.65,136.097,IS,True,,stop,0.0007278,592,22,0,0.81,"{""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -22.65}"
+minimax/minimax-m3,CoT,65.6,-17.0,225.09,IS,True,,stop,0.00087186,843,567,477,13.35,"{""reasoning"": ""Barren moss-and-grass tundra with no trees, dark volcanic ash soil patches along the roadside, and distinctive flat-topped (tuya) table mountains in the background are classic indicators of northern Iceland's volcanic interior, while right-hand driving and yellow roadside markers are consistent with Icelandic road infrastructure."", ""country"": ""IS"", ""latitude"": 65.6, ""longitude"": -17.0}"
+qwen/qwen3.5-397b-a17b,CoT,41.135,-104.823,5718.758,US,True,,stop,0.006987,553,1862,1764,20.26,"{""reasoning"": ""The vehicle is driving on the right side of the road with a yellow delineator post visible on the left edge, indicating right-hand traffic typical of the US; the landscape features flat, sagebrush-covered plains with distant mesas under a high-altitude sky, characteristic of the American High Plains, specifically Wyoming."", ""country"": ""US"", ""latitude"": 41.135, ""longitude"": -104.823}"
+mistralai/mistral-small-2603,no-CoT,36.5,-118.1,6760.703,US,True,,stop,0.0001107,634,26,0,2.85,"{""country"": ""US"", ""latitude"": 36.5, ""longitude"": -118.1}"
+mistralai/mistral-small-2603,CoT,-31.5,130.0,15844.03,AU,True,,stop,0.0004932,716,643,709,6.56,"{""reasoning"": ""Left-hand traffic and arid shrubland with low hills are decisive clues matching Australia's Nullarbor Plain region."", ""country"": ""AU"", ""latitude"": -31.5, ""longitude"": 130.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.19,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,

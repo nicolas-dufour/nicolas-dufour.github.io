@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,56.742970386816,15.471895119444,0.0,SE,True,,,,,,,,"Emmaboda, Emmaboda Kommun, Kalmar, SE"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,57.21231460571289,15.06069564819336,57.832,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,CoT,56.05,12.75,184.362,SE,True,,stop,0.000486,868,593,638,5.62,"{""reasoning"": ""Right-hand traffic, European-style blue parking sign with white 'P', and coniferous forest indicate Northern/Central Europe; Scandinavian road infrastructure and vegetation strongly suggest Sweden."", ""country"": ""SE"", ""latitude"": 56.05, ""longitude"": 12.75}"
+moonshotai/kimi-k2.6,CoT,59.0,15.0,252.515,SE,True,,stop,0.011857896,834,3386,3321,121.97,"{""reasoning"": ""White road-edge posts with dark tops and dense boreal spruce forest lining a paved-shoulder highway are classic Swedish rural features, confirmed by the blue European parking sign and right-hand traffic."", ""country"": ""SE"", ""latitude"": 59.0, ""longitude"": 15.0}"
+moonshotai/kimi-k2.6,no-CoT,59.0,15.0,252.515,SE,True,,stop,0.00033858,755,23,0,1.55,"{""country"": ""SE"", ""latitude"": 59.0, ""longitude"": 15.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,59.8806266784668,13.403824806213379,369.166,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,59.8820686340332,13.401656150817871,369.358,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,60.15,15.2,379.174,SE,True,,stop,0.002014,788,546,470,6.16,"{""reasoning"": ""Boreal conifer/birch forest, blue EU-style parking sign, right-hand traffic with standard dashed white center lines and skid-marked asphalt point to Scandinavia; dense spruce stands and overcast northern sky narrow to central Sweden or southern Finland."", ""country"": ""SE"", ""latitude"": 60.15, ""longitude"": 15.2}"
+anthropic/claude-opus-4.8,CoT,60.2,15.5,384.408,SE,True,,stop,0.00707,949,93,0,3.8,"{""reasoning"": ""Boreal spruce/birch forest, flat terrain, right-hand traffic, and Nordic-style P parking sign with white roadside posts suggest central Sweden."", ""country"": ""SE"", ""latitude"": 60.2, ""longitude"": 15.5}"
+minimax/minimax-m3,CoT,60.3,13.5,411.715,SE,True,,stop,0.00097026,995,611,527,15.79,"{""reasoning"": ""Dense spruce forest, right-hand driving, European blue parking sign, white reflective roadside posts, and overcast Nordic sky strongly indicate a Swedish highway in the boreal forest belt. The flat forested terrain and road design match central Swedish routes through Värmland/Dalarna."", ""country"": ""SE"", ""latitude"": 60.3, ""longitude"": 13.5}"
+google/gemini-3.5-flash,CoT (effort=low),60.3821,16.8145,412.054,SE,True,,stop,0.004491,1308,281,217,3.15,"{""reasoning"": ""The reddish asphalt shoulder, short dashed white edge lines, and dense coniferous and birch forest are highly characteristic of Sweden, particularly on major national roads."", ""country"": ""SE"", ""latitude"": 60.3821, ""longitude"": 16.8145}"
+google/gemini-3.1-pro-preview,CoT,60.5,15.5,417.766,SE,True,,stop,0.005686,1307,256,190,17.32,"{
+  ""reasoning"": ""The combination of dense coniferous forest, dashed white edge lines on the road, and white bollards with black bands strongly points to Sweden."",
+  ""country"": ""SE"",
+  ""latitude"": 60.5,
+  ""longitude"": 15.5
+}"
+google/gemini-3.5-flash,CoT (effort=medium),60.5523,14.3124,428.839,SE,True,,stop,0.0079275,1307,663,596,13.42,"{""reasoning"": ""The dashed white edge lines and center lines are highly characteristic of Swedish road markings, and the dense spruce and birch forest indicates a location in central or northern Sweden."", ""country"": ""SE"", ""latitude"": 60.5523, ""longitude"": 14.3124}"
+qwen/qwen3.5-397b-a17b,CoT,60.66,15.18,435.879,SE,True,,stop,0.0085266,665,2271,2197,34.44,"{""reasoning"": ""The white road edge posts (vägkantstolpe) and dashed center line markings are characteristic of Swedish roads, while the dense mixed coniferous/boreal forest confirms a Scandinavian location."", ""country"": ""SE"", ""latitude"": 60.66, ""longitude"": 15.18}"
+google/gemini-3.5-flash,CoT (effort=high),61.65,15.12,546.002,SE,True,,stop,0.0098445,1307,876,821,8.6,"{""reasoning"": ""The white dashed edge lines, dense coniferous forest, and reddish asphalt shoulder are highly characteristic of Sweden's highway network."", ""country"": ""SE"", ""latitude"": 61.65, ""longitude"": 15.12}"
+qwen/qwen3.6-35b-a3b,no-CoT,61.4987,23.7615,708.484,FI,True,,stop,0.00011875,585,31,0,1.72,"{""country"": ""FI"", ""latitude"": 61.4987, ""longitude"": 23.7615}"
+qwen/qwen3.6-35b-a3b,CoT,61.4985,23.7632,708.533,FI,True,,stop,0.005381324,665,5464,5354,46.66,"```json
+{
+  ""reasoning"": ""The dense mix of pine and birch trees, the specific style of white delineator posts, and the blue square 'P' parking sign are characteristic of rural roads in Finland. The right-hand traffic and road markings further confirm a Northern European location, likely Finland given the vegetation and infrastructure style."",
+  ""country"": ""FI"",
+  ""latitude"": 61.4985,
+  ""longitude"": 23.7632
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,61.5,24.0,717.671,FI,True,,stop,9.54576e-05,820,25,0,2.53,"{""country"": ""FI"", ""latitude"": 61.5, ""longitude"": 24.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),61.2542,24.8511,733.7,FI,True,,stop,0.0021525,1225,35,0,1.73,"```json
+{""country"": ""FI"", ""latitude"": 61.2542, ""longitude"": 24.8511}
+```"
+anthropic/claude-opus-4.8,no-CoT,61.5,24.5,737.158,FI,True,,stop,0.00484,818,30,0,2.14,"{""country"": ""FI"", ""latitude"": 61.5, ""longitude"": 24.5}"
+openai/gpt-5.5,no-CoT,61.45,25.67,781.469,FI,True,,stop,0.00402,678,21,0,2.27,"{""country"":""FI"",""latitude"":61.45,""longitude"":25.67}"
+qwen/qwen3.5-122b-a10b,no-CoT,61.4851,25.7429,786.916,FI,True,,stop,0.0002691,585,39,0,1.16,"{
+  ""country"": ""FI"",
+  ""latitude"": 61.4851,
+  ""longitude"": 25.7429
+}"
+x-ai/grok-4.3,no-CoT,61.85,25.75,812.522,FI,True,,stop,0.0007334,704,22,0,0.87,"{""country"": ""FI"", ""latitude"": 61.85, ""longitude"": 25.75}"
+google/gemma-4-31b-it,no-CoT,62.15,25.3,816.909,FI,True,,stop,6.532e-05,404,32,0,2.5,"```json
+{""country"": ""FI"", ""latitude"": 62.15, ""longitude"": 25.30}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,61.9245,25.7832,819.168,FI,True,,stop,0.00011875,585,31,0,1.89,"{""country"": ""FI"", ""latitude"": 61.9245, ""longitude"": 25.7832}"
+minimax/minimax-m3,no-CoT,62.0,25.7,821.298,FI,True,,stop,0.00023736,904,23,0,4.28,"{""country"": ""FI"", ""latitude"": 62.0, ""longitude"": 25.7}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,62.15781784057617,25.74269676208496,834.518,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,62.2414,25.7208,839.866,FI,True,,stop,0.003998,1225,129,94,15.27,"```json
+{""country"": ""FI"", ""latitude"": 62.2414, ""longitude"": 25.7208}
+```"
+openai/gpt-5.5,CoT,62.2423,25.7478,840.972,FI,True,,stop,0.018025,755,475,395,23.6,"{""reasoning"":""Right-hand traffic with Finnish-style white delineator posts with black tops, blue parking sign, and flat boreal conifer/birch forest strongly indicate rural Finland. The roadscape fits central Finland on a main highway through forest near Jyväskylä."",""country"":""FI"",""latitude"":62.2423,""longitude"":25.7478}"
+xiaomi/mimo-v2.5,CoT,49.5,10.5,870.484,DE,True,,stop,0.0001807176,899,290,214,18.9,"{""reasoning"": ""Right-hand traffic, EU-standard blue parking sign, and dense temperate coniferous forest typical of rural Germany (Central Europe) are decisive clues. This is a rural Bundesstraße in a forested region of Germany."", ""country"": ""DE"", ""latitude"": 49.5, ""longitude"": 10.5}"
+qwen/qwen3.5-9b,no-CoT,62.9167,26.4833,919.476,FI,True,,stop,6.325e-05,586,31,0,10.07,"{""country"": ""FI"", ""latitude"": 62.9167, ""longitude"": 26.4833}"
+qwen/qwen3.6-27b,no-CoT,63.5,26.5,965.646,FI,True,,stop,0.0002159,585,25,0,15.2,"{""country"": ""FI"", ""latitude"": 63.5, ""longitude"": 26.5}"
+qwen/qwen3.5-27b,no-CoT,63.982,25.748,980.924,FI,True,,stop,0.0002403,585,31,0,13.13,"{""country"": ""FI"", ""latitude"": 63.9820, ""longitude"": 25.7480}"
+qwen/qwen3.5-397b-a17b,no-CoT,64.1234,26.5678,1018.811,FI,True,,stop,0.00034185,585,31,0,9.84,"{""country"": ""FI"", ""latitude"": 64.1234, ""longitude"": 26.5678}"
+mistralai/mistral-medium-3-5,no-CoT,64.8384,25.1826,1040.464,FI,True,,stop,0.0014115,786,31,0,1.43,"{""country"": ""FI"", ""latitude"": 64.8384, ""longitude"": 25.1826}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,63.20441436767578,29.795867919921875,1068.761,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,63.26116943359375,29.834674835205078,1074.025,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6459.792,,True,True,,,,,,6.67,
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,7912.258,US,True,,stop,0.0001365,786,31,0,4.21,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.33,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.28,

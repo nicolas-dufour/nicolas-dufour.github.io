@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-7.1481106082856,110.06959663555,0.0,ID,True,,,,,,,,"Weleri, None, Central Java, ID"
+google/gemini-3.1-pro-preview,CoT,-7.1502,110.1405,7.826,ID,True,,stop,0.008976,1308,530,445,14.54,"{
+  ""reasoning"": ""The concrete road surface and lush tropical vegetation are typical of Southeast Asia. The camera's position on the left side of the solid white center line indicates left-hand traffic, strongly pointing to Indonesia."",
+  ""country"": ""ID"",
+  ""latitude"": -7.1502,
+  ""longitude"": 110.1405
+}"
+google/gemma-4-31b-it,no-CoT,-6.2088,106.8456,371.058,ID,True,,stop,5.108e-05,262,36,0,4.42,"```json
+{""country"": ""ID"", ""latitude"": -6.2088, ""longitude"": 106.8456}
+```"
+xiaomi/mimo-v2.5,CoT,-6.7,106.5,397.162,ID,True,,stop,0.0002672376,899,599,527,6.6,"{""reasoning"": ""Dense tropical rainforest (banana plants, lush greenery) and a two-lane road with guardrail match Indonesian rural road infrastructure; lush, humid vegetation confirms Southeast Asia (Indonesia)."", ""country"": ""ID"", ""latitude"": -6.7, ""longitude"": 106.5}"
+moonshotai/kimi-k2.6,no-CoT,1.3548,103.7765,1175.348,SG,True,,stop,0.00076669,755,25,0,7.98,"{""country"": ""SG"", ""latitude"": 1.3548, ""longitude"": 103.7765}"
+x-ai/grok-4.3,CoT,-0.35,101.7,1196.994,ID,True,,stop,0.002359,788,684,616,9.65,"{
+  ""reasoning"": ""Dense tropical jungle with abundant banana/plantain plants, right-side metal guardrail, and center-line road marking point to rural SE Asia; motorcycle and road style match Indonesia."",
+  ""country"": ""ID"",
+  ""latitude"": -0.35,
+  ""longitude"": 101.7
+}"
+x-ai/grok-4.3,no-CoT,-0.789,100.362,1287.777,ID,True,,stop,0.0007334,704,22,0,0.79,"{""country"": ""ID"", ""latitude"": -0.789, ""longitude"": 100.362}"
+qwen/qwen3.5-35b-a3b,no-CoT,3.1234,101.6543,1475.349,MY,True,,stop,0.0002215625,585,31,0,7.43,"{""country"": ""MY"", ""latitude"": 3.1234, ""longitude"": 101.6543}"
+qwen/qwen3.6-35b-a3b,CoT,4.15,101.05,1606.297,MY,True,,stop,0.004068584,665,4104,4001,60.47,"```json
+{
+  ""reasoning"": ""The image shows a left-hand traffic road (inferred from the vehicle position and white center line) in a tropical environment with banana trees and palms, characteristic of Southeast Asia. The solid white center line and asphalt road surface are consistent with rural roads in Malaysia."",
+  ""country"": ""MY"",
+  ""latitude"": 4.15,
+  ""longitude"": 101.05
+}
+```"
+moonshotai/kimi-k2.6,CoT,4.5,101.4,1613.441,MY,True,,stop,0.016734636,834,4808,4716,214.76,"{""reasoning"": ""Dense tropical dipterocarp rainforest with wild banana plants and tall hardwood trees is characteristic of the Malay Peninsula or Borneo. The paved two-lane road with a simple white center line and metal W-beam guardrail on a forested hillside matches Malaysian rural highway standards in Pahang or Perak states."", ""country"": ""MY"", ""latitude"": 4.5, ""longitude"": 101.4}"
+minimax/minimax-m3,CoT,5.42,117.75,1636.855,MY,True,,stop,0.00126102,997,850,904,14.19,"{""reasoning"": ""Dense tropical rainforest with banana/plantain trees, well-paved road with left-hand traffic indicated by lane marking position, and W-beam metal guardrail style are highly characteristic of rural Sabah, Malaysia (Borneo), likely along a road into a conservation area like Danum Valley."", ""country"": ""MY"", ""latitude"": 5.42, ""longitude"": 117.75}{""reasoning"": ""Dense tropical rainforest with banana/plantain trees, well-paved road with left-hand traffic indicated by lane marking position, and W-beam metal guardrail style are highly characteristic of rural Sabah, Malaysia (Borneo), likely along a road into a conservation area like Danum Valley."", ""country"": ""MY"", ""latitude"": 5.42, ""longitude"": 117.75}"
+google/gemini-3.5-flash,CoT (effort=high),7.9512,125.2485,2377.181,PH,True,,stop,0.0105465,1307,954,887,14.67,"{""reasoning"": ""The concrete road with a white center line, standard metal guardrail, and extremely lush tropical vegetation including banana plants is highly characteristic of rural roads in the Philippines."", ""country"": ""PH"", ""latitude"": 7.9512, ""longitude"": 125.2485}"
+xiaomi/mimo-v2.5,no-CoT,10.3157,123.8854,2472.008,PH,True,,stop,9.74176e-05,820,32,0,1.79,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+anthropic/claude-opus-4.8,CoT,10.5,124.8,2551.508,PH,True,,stop,0.00697,949,89,0,3.57,"{""reasoning"": ""Lush tropical rainforest vegetation with banana plants, concrete road with white edge line and metal guardrail typical of rural Philippines provincial roads."", ""country"": ""PH"", ""latitude"": 10.5, ""longitude"": 124.8}"
+qwen/qwen3.5-397b-a17b,no-CoT,13.7563,100.5018,2553.146,TH,True,,stop,0.00043548,585,32,0,4.27,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-9b,no-CoT,13.7563,100.5018,2553.146,TH,True,,stop,6.34e-05,586,32,0,11.84,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.6-27b,no-CoT,13.7563,100.5018,2553.146,TH,True,,stop,0.0002299,585,32,0,18.23,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.6-35b-a3b,no-CoT,13.7563,100.5018,2553.146,TH,True,,stop,0.00011975,585,32,0,8.27,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-397b-a17b,CoT,14.523,101.445,2590.665,TH,True,,stop,0.008087,665,2180,2106,51.06,"{""reasoning"": ""The dense tropical vegetation including banana plants and the concrete road surface are characteristic of rural Thailand. The likely presence of a motorcycle on the left side suggests left-hand traffic, consistent with Thailand."", ""country"": ""TH"", ""latitude"": 14.523, ""longitude"": 101.445}"
+google/gemini-3.1-pro-preview,no-CoT,13.9382,121.6145,2668.513,PH,True,,stop,0.002884,1226,36,0,1.94,"```json
+{""country"": ""PH"", ""latitude"": 13.9382, ""longitude"": 121.6145}
+```"
+openai/gpt-5.5,no-CoT,14.1312,121.2634,2669.115,PH,True,,stop,0.00408,678,23,0,2.49,"{""country"":""PH"",""latitude"":14.1312,""longitude"":121.2634}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),14.1254,121.3218,2671.536,PH,True,,stop,0.0021615,1225,36,0,37.07,"```json
+{""country"": ""PH"", ""latitude"": 14.1254, ""longitude"": 121.3218}
+```"
+google/gemini-3.5-flash,CoT (effort=low),14.1254,121.4382,2677.529,PH,True,,stop,0.0035985,1307,182,113,3.07,"{""reasoning"": ""The concrete road surface, white center line, metal guardrail style, and lush tropical vegetation (including banana plants) are highly characteristic of rural highways in the Philippines."", ""country"": ""PH"", ""latitude"": 14.1254, ""longitude"": 121.4382}"
+anthropic/claude-opus-4.8,no-CoT,13.2,123.5,2705.499,PH,True,,stop,0.00484,818,30,0,8.97,"{""country"": ""PH"", ""latitude"": 13.2, ""longitude"": 123.5}"
+google/gemini-3.5-flash,CoT (effort=medium),14.6125,121.4512,2725.839,PH,True,,stop,0.0075405,1307,620,543,6.36,"{""reasoning"": ""The concrete road with a solid white center line, metal guardrails, and dense tropical vegetation including banana palms is highly characteristic of rural highways in the Philippines, particularly in lush mountainous regions like Quezon or Rizal."", ""country"": ""PH"", ""latitude"": 14.6125, ""longitude"": 121.4512}"
+qwen/qwen3.5-122b-a10b,no-CoT,16.8219,100.2659,2875.119,TH,True,,stop,0.00021892,586,32,0,5.97,"{""country"": ""TH"", ""latitude"": 16.8219, ""longitude"": 100.2659}"
+openai/gpt-5.5,CoT,22.2565,113.9308,3296.591,HK,True,,stop,0.021955,755,606,516,27.73,"{""reasoning"":""The dense tropical/subtropical vegetation, left-side driving implied by the centerline position, narrow concrete road, and metal guardrail are most consistent with rural Hong Kong/Lantau country roads rather than mainland SE Asia. The lush forested terrain and road style point to Lantau Island country park roads."",""country"":""HK"",""latitude"":22.2565,""longitude"":113.9308}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,8.141523361206055,81.05817413330078,3637.873,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,9.209537506103516,76.81790161132812,4108.667,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,9.231374740600586,76.79911041259766,4111.566,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,9.543848991394043,76.74087524414062,4132.214,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,9.940879821777344,76.88428497314453,4137.279,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,9.95703125,76.88760375976562,4137.742,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,10.3285,76.3178,4211.926,IN,True,,stop,0.000162435,585,31,0,1.69,"{""country"": ""IN"", ""latitude"": 10.3285, ""longitude"": 76.3178}"
+google/gemma-4-26b-a4b-it,no-CoT,12.9716,77.5946,4227.83,IN,True,,stop,5.468e-05,404,31,0,2.65,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+mistralai/mistral-small-2603,CoT,47.5,-121.5,13405.372,US,True,,stop,0.000459,868,548,633,4.94,"{""reasoning"": ""Dense evergreen forest and right-hand traffic indicate the Pacific Northwest region of the United States."", ""country"": ""US"", ""latitude"": 47.5, ""longitude"": -121.5}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4188,13747.788,US,True,,stop,0.0001371,786,32,0,3.54,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4188}"
+minimax/minimax-m3,no-CoT,-22.7,-46.5,15829.778,BR,True,,stop,0.0002604,904,23,0,2.06,"{""country"": ""BR"", ""latitude"": -22.7, ""longitude"": -46.5}"
+mistralai/mistral-medium-3-5,no-CoT,18.1833,-66.0833,18719.231,PR,True,,stop,0.0014115,786,31,0,2.01,"{""country"": ""PR"", ""latitude"": 18.1833, ""longitude"": -66.0833}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.15,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.23,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.26,

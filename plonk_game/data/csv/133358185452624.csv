@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,47.109901445279,14.027760213041,0.0,AT,True,,,,,,,,"St. Ruprecht-Falkendorf, Politischer Bezirk Murau, Styria, AT"
+google/gemini-3.5-flash,CoT (effort=high),47.1152,14.0285,0.592,AT,True,,stop,0.0181875,1307,1803,1710,20.75,"```json
+{""reasoning"": ""The narrow-gauge railway track with wooden sleepers, the distinctive red-and-white striped whistle post, and the alpine landscape with a traditional wooden hay barn (Stadel) point to a scenic railway line in Austria, likely the Murtalbahn in Styria."", ""country"": ""AT"", ""latitude"": 47.1152, ""longitude"": 14.0285}
+```"
+google/gemini-3.1-pro-preview,no-CoT,47.123,14.156,9.813,AT,True,,stop,0.005188,1226,228,195,10.03,"```json
+{""country"": ""AT"", ""latitude"": 47.123, ""longitude"": 14.156}
+```"
+google/gemini-3.1-pro-preview,CoT,47.15,14.15,10.266,AT,True,,stop,0.006456,1308,320,236,5.43,"{
+  ""reasoning"": ""The lush alpine landscape, narrow-gauge railway, and red-and-white snow pole strongly suggest a location in the Austrian Alps, possibly along a heritage railway line like the Murtalbahn."",
+  ""country"": ""AT"",
+  ""latitude"": 47.1500,
+  ""longitude"": 14.1500
+}"
+openai/gpt-5.5,CoT,47.1136,14.1718,10.908,AT,True,,stop,0.021805,755,601,516,53.16,"{""reasoning"":""Alpine meadows, conifer forests, and a non-electrified narrow-gauge railway with red-white Austrian-style posts point to a heritage/branch railway in rural Austria. The rolling green Styrian/Mur valley landscape best fits the Murtalbahn area near Murau."",""country"":""AT"",""latitude"":47.1136,""longitude"":14.1718}"
+anthropic/claude-opus-4.8,CoT,47.13,13.8,17.378,AT,True,,stop,0.00722,949,99,0,10.02,"{""reasoning"": ""Narrow-gauge railway through alpine green valley with steam smoke, conifer forests and hay barn typical of Austrian Alps (e.g. Murtalbahn in Styria)."", ""country"": ""AT"", ""latitude"": 47.13, ""longitude"": 13.8}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),47.131254,13.712485,23.973,AT,True,,stop,0.00219,1226,39,0,7.45,"```json
+{""country"": ""AT"", ""latitude"": 47.131254, ""longitude"": 13.712485}
+```"
+anthropic/claude-opus-4.8,no-CoT,47.08,13.65,28.789,AT,True,,stop,0.00484,818,30,0,3.35,"{""country"": ""AT"", ""latitude"": 47.08, ""longitude"": 13.65}"
+x-ai/grok-4.3,CoT,47.35,13.75,33.95,AT,True,,stop,0.001984,788,534,461,4.13,"{
+  ""reasoning"": ""Alpine valley with lush meadows, mixed forest, wooden shed, and red/white railway markers match Austrian countryside; single-track gravel line with orange posts is typical of regional ÖBB lines in the Alps."",
+  ""country"": ""AT"",
+  ""latitude"": 47.35,
+  ""longitude"": 13.75
+}"
+qwen/qwen3.5-122b-a10b,no-CoT,47.3667,14.2833,34.461,AT,True,,stop,0.00021684,586,31,0,12.93,"{""country"": ""AT"", ""latitude"": 47.3667, ""longitude"": 14.2833}"
+openai/gpt-5.5,no-CoT,47.4066,13.7832,37.803,AT,True,,stop,0.00408,678,23,0,1.47,"{""country"":""AT"",""latitude"":47.4066,""longitude"":13.7832}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,47.36653518676758,13.63856029510498,40.959,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,47.40716552734375,13.68691635131836,41.883,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,47.41352081298828,13.679030418395996,42.806,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,47.35,13.5,47.966,AT,True,,stop,6.148e-05,404,31,0,14.61,"```json
+{""country"": ""AT"", ""latitude"": 47.35, ""longitude"": 13.5}
+```"
+xiaomi/mimo-v2.5,no-CoT,47.45,13.15,76.253,AT,True,,stop,9.60176e-05,820,27,0,9.16,"{""country"": ""AT"", ""latitude"": 47.45, ""longitude"": 13.15}"
+x-ai/grok-4.3,no-CoT,47.35,15.05,81.673,AT,True,,stop,0.0007334,704,22,0,1.76,"{""country"": ""AT"", ""latitude"": 47.35, ""longitude"": 15.05}"
+qwen/qwen3.5-27b,no-CoT,47.6297,13.0453,93.886,AT,True,,stop,0.00022491,585,31,0,2.58,"{""country"": ""AT"", ""latitude"": 47.6297, ""longitude"": 13.0453}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,47.74359893798828,15.105143547058105,107.395,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),47.2851,12.5748,111.49,AT,True,,stop,0.0055875,1307,403,329,10.89,"{""reasoning"": ""The narrow-gauge railway, alpine meadows, traditional wooden hay barn, and forested mountains are highly characteristic of the Austrian Alps, specifically the Pinzgau region along the Pinzgauer Lokalbahn."", ""country"": ""AT"", ""latitude"": 47.2851, ""longitude"": 12.5748}"
+moonshotai/kimi-k2.6,CoT,47.283,12.483,118.289,AT,True,,stop,0.013478796,834,3856,3793,72.89,"{""reasoning"": ""Rustic single-track railway through a misty Alpine meadow with traditional wooden barn and red-white Austrian track markers fits the Pinzgau valley narrow-gauge lines in Salzburg."", ""country"": ""AT"", ""latitude"": 47.283, ""longitude"": 12.483}"
+google/gemini-3.5-flash,CoT (effort=low),47.2812,12.4156,123.288,AT,True,,stop,0.0041655,1307,245,169,11.61,"{""reasoning"": ""The narrow-gauge railway, alpine landscape with wooden barns, and red-and-white striped track marker are highly characteristic of the Austrian Alps, specifically valleys like the Pinzgau or Zillertal."", ""country"": ""AT"", ""latitude"": 47.2812, ""longitude"": 12.4156}"
+qwen/qwen3.5-9b,no-CoT,47.1167,12.3833,124.443,AT,True,,stop,6.325e-05,586,31,0,5.12,"{""country"": ""AT"", ""latitude"": 47.1167, ""longitude"": 12.3833}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,47.70563888549805,15.58980655670166,134.927,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,47.720909118652344,15.589612007141113,135.741,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,47.385,11.768,173.288,AT,True,,stop,0.0007689976,899,2391,2261,33.22,"{""reasoning"": ""The image displays classic Alpine characteristics: a single railway track running through lush green meadows with a distinctive wooden hay barn ('Heustadel') typical of the Austrian Tyrol region, backed by misty, forested mountains. The infrastructure, including the track style and small signal post, along with the vegetation, strongly suggests the Zillertalbahn (Zillertal Railway) in Austria, specifically the section running through the valley floor near Stans."", ""country"": ""AT"", ""latitude"": 47.385, ""longitude"": 11.768}"
+qwen/qwen3.5-397b-a17b,no-CoT,47.2856,11.4231,197.75,AT,True,,stop,0.0004626,585,31,0,9.08,"{""country"": ""AT"", ""latitude"": 47.2856, ""longitude"": 11.4231}"
+mistralai/mistral-medium-3-5,no-CoT,49.5986,15.8292,307.057,CZ,True,,stop,0.001419,786,32,0,1.26,"{""country"": ""CZ"", ""latitude"": 49.5986, ""longitude"": 15.8292}"
+minimax/minimax-m3,CoT,47.41,9.85,316.997,AT,True,,stop,0.00077706,995,450,370,23.59,"{""reasoning"": ""Single-track alpine railway with red/white marker poles cutting through lush green meadows and mixed forest typical of the Northern Alps. The vegetation, rolling hills, and railway infrastructure style strongly indicate the Bregenzerwald region in Vorarlberg, Austria."", ""country"": ""AT"", ""latitude"": 47.41, ""longitude"": 9.85}"
+qwen/qwen3.6-35b-a3b,no-CoT,46.8182,8.2275,441.248,CH,True,,stop,0.00011775,585,30,0,3.92,"{""country"": ""CH"", ""latitude"": 46.8182, ""longitude"": 8.2275}"
+qwen/qwen3.5-35b-a3b,no-CoT,46.8234,8.2156,442.085,CH,True,,stop,0.00019464,586,30,0,3.29,"{""country"": ""CH"", ""latitude"": 46.8234, ""longitude"": 8.2156}"
+qwen/qwen3.6-27b,no-CoT,46.5759,7.9421,466.531,CH,True,,stop,0.0002259,585,30,0,9.13,"{""country"": ""CH"", ""latitude"": 46.5759, ""longitude"": 7.9421}"
+google/gemma-4-26b-a4b-it,no-CoT,47.5597,7.6391,483.89,DE,True,,stop,5.628e-05,404,35,0,1.53,"```json
+{""country"": ""DE"", ""latitude"": 47.5597, ""longitude"": 7.6391}
+```"
+mistralai/mistral-small-2603,no-CoT,57.4573,-4.2526,1684.229,GB,True,,stop,0.000169875,786,30,0,8.78,"{""country"": ""GB"", ""latitude"": 57.4573, ""longitude"": -4.2526}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,12.96,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.47,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.0,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,8.5,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.22,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.87,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.82,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.2,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.54,

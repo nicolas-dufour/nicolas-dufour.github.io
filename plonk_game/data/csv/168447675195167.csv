@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,59.68213767077,70.050696871556,0.0,RU,True,,,,,,,,"Gornopravdinsk, None, Khanty-Mansiyskiy Avtonomnyy Okrug, RU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,60.943424224853516,73.1206283569336,219.626,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,60.89567565917969,73.23741912841797,221.438,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,60.9619140625,73.2267074584961,225.403,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,61.25,73.4,253.116,RU,True,,stop,0.0005934,592,22,0,1.83,"{""country"": ""RU"", ""latitude"": 61.25, ""longitude"": 73.4}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),61.2542,73.3962,253.278,RU,True,,stop,0.0021,1190,35,0,1.16,"```json
+{""country"": ""RU"", ""latitude"": 61.2542, ""longitude"": 73.3962}
+```"
+openai/gpt-5.5,CoT,61.2557,73.4172,254.223,RU,True,,stop,0.013305,621,340,262,16.56,"{""reasoning"":""Right-hand traffic, white lane markings, rough wide shoulders and white Russian-style plates point to Russia. The flat, foggy boreal taiga with swampy verges is most consistent with the West Siberian/Khanty-Mansi region."",""country"":""RU"",""latitude"":61.2557,""longitude"":73.4172}"
+anthropic/claude-opus-4.8,CoT,60.5,76.0,342.028,RU,True,,stop,0.006335,797,94,0,4.25,"{""reasoning"": ""Foggy taiga forest, wide worn asphalt road with muddy shoulders typical of Russian Siberian highways, right-hand traffic and boreal vegetation."", ""country"": ""RU"", ""latitude"": 60.5, ""longitude"": 76.0}"
+openai/gpt-5.5,no-CoT,57.1524,65.5272,385.221,RU,True,,stop,0.00341,544,23,0,1.44,"{""country"":""RU"",""latitude"":57.1524,""longitude"":65.5272}"
+anthropic/claude-opus-4.8,no-CoT,60.123456,60.654321,525.791,RU,True,,stop,0.00413,666,32,0,8.92,"{""country"": ""RU"", ""latitude"": 60.123456, ""longitude"": 60.654321}"
+minimax/minimax-m3,no-CoT,60.0,60.0,562.043,RU,True,,stop,0.00032682,767,129,128,5.24,"{""country"": ""RU"", ""latitude"": 60.0, ""longitude"": 60.0}"
+minimax/minimax-m3,CoT,63.2,51.8,1041.554,RU,True,,stop,0.00077622,845,484,451,9.38,"{""reasoning"": ""Boreal taiga forest (spruce/birch), heavy fog, right-hand traffic, muddy sand-strewn shoulder, and European-style vans indicate a federal highway through the northern Russian taiga, most likely the R-21 or M-7 corridor in the Komi Republic."", ""country"": ""RU"", ""latitude"": 63.2, ""longitude"": 51.8}{""reasoning"": ""Boreal taiga forest (spruce/birch), heavy fog, right-hand traffic, muddy sand-strewn shoulder, and European-style vans indicate a federal highway through the northern Russian taiga, most likely the R-21 or M-7 corridor in the Komi Republic."", ""country"": ""RU"", ""latitude"": 63.2, ""longitude"": 51.8}"
+xiaomi/mimo-v2.5,no-CoT,62.0,90.0,1106.299,RU,True,,stop,7.97776e-05,708,25,0,2.75,"{""country"": ""RU"", ""latitude"": 62.0, ""longitude"": 90.0}"
+google/gemma-4-31b-it,no-CoT,62.15,105.32,1901.562,RU,True,,stop,7.004e-05,406,33,0,8.9,"```json
+{""country"": ""RU"", ""latitude"": 62.15, ""longitude"": 105.32}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),62.548,34.125,1929.633,RU,True,,stop,0.0056505,1271,416,346,4.26,"{""reasoning"": ""The dense fog, taiga forest with tall conifers, and roadside Gazelle-style vans on a worn asphalt road with dirt shoulders are highly characteristic of northern Russia, particularly Karelia."", ""country"": ""RU"", ""latitude"": 62.548, ""longitude"": 34.125}"
+google/gemini-3.5-flash,CoT (effort=low),61.524,34.341,1934.982,RU,True,,stop,0.0040215,1271,235,166,9.73,"{""reasoning"": ""The dense coniferous forest, heavy fog, road markings, and roadside vans (resembling GAZelles) are highly characteristic of northern European Russia, particularly the Karelia or Leningrad regions."", ""country"": ""RU"", ""latitude"": 61.524, ""longitude"": 34.341}"
+google/gemini-3.1-pro-preview,no-CoT,55.7558,37.6173,1953.798,RU,True,,stop,0.0028,1190,35,0,8.39,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,1953.798,RU,True,,stop,0.001191,634,32,0,7.2,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+moonshotai/kimi-k2.6,no-CoT,55.7558,37.6173,1953.798,RU,True,,stop,0.00051939,602,25,0,2.15,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+google/gemini-3.5-flash,CoT (effort=high),62.5,33.5,1962.111,RU,True,,stop,0.007245,1272,593,520,4.48,"{""reasoning"": ""The presence of a GAZelle van parked on the right, the dense coniferous forest, and the flat, foggy landscape are highly characteristic of northern Russia, particularly along major highways like the R-21 in Karelia."", ""country"": ""RU"", ""latitude"": 62.5, ""longitude"": 33.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,67.43692779541016,30.944869995117188,2074.288,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,67.4290542602539,30.270648956298828,2102.866,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,59.5,31.5,2139.185,RU,True,,stop,0.005628,1272,257,180,4.96,"{
+  ""reasoning"": ""The dashed white center line, European-style vans, and boreal forest vegetation strongly suggest a northern European or Russian highway. The overall atmosphere and road quality are typical of Russian intercity routes."",
+  ""country"": ""RU"",
+  ""latitude"": 59.5,
+  ""longitude"": 31.5
+}"
+qwen/qwen3.5-397b-a17b,CoT,60.214,30.198,2186.141,RU,True,,stop,0.009201,553,2477,2389,19.41,"{""reasoning"": ""The dense coniferous forest (taiga) and heavy fog indicate a northern latitude, while right-hand traffic and the specific style of the road surface and utility vans on the gravel shoulder are characteristic of Russian federal highways in the Leningrad Oblast."", ""country"": ""RU"", ""latitude"": 60.214, ""longitude"": 30.198}"
+qwen/qwen3.5-27b,no-CoT,64.0256,26.7263,2275.751,FI,True,,stop,0.000140595,473,31,0,1.16,"{""country"": ""FI"", ""latitude"": 64.0256, ""longitude"": 26.7263}"
+qwen/qwen3.6-27b,no-CoT,64.13,26.52,2284.107,FI,True,,stop,0.0001943,473,31,0,12.0,"{""country"": ""FI"", ""latitude"": 64.1300, ""longitude"": 26.5200}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,64.43762969970703,25.18559455871582,2343.216,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,62.9167,25.7667,2343.436,FI,True,,stop,5.205e-05,474,31,0,3.27,"{""country"": ""FI"", ""latitude"": 62.9167, ""longitude"": 25.7667}"
+qwen/qwen3.6-35b-a3b,CoT,62.2414,25.7473,2360.393,FI,True,,stop,0.00762871135,553,7811,7698,98.87,"```json
+{
+  ""reasoning"": ""The image shows a foggy, two-lane road with white dashed center lines and right-hand traffic, flanked by dense, tall coniferous forests (likely Scots Pine) typical of Northern Europe. The white license plates on the work vans and the specific style of the road shoulders point strongly to Finland."",
+  ""country"": ""FI"",
+  ""latitude"": 62.2414,
+  ""longitude"": 25.7473
+}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,60.1699,24.0,2514.297,,True,,stop,6.414e-05,406,54,0,9.14,"{""country"": ""FI"", ""latitude"": 60.1699, own, "" own, ""longitude"": 24. own, ""longitude"": 2 own, own, ""longitude"": 24.9389}"
+x-ai/grok-4.3,CoT,64.25,19.3,2625.652,SE,True,,stop,0.0022065,676,679,616,9.64,"{""reasoning"": ""Right-hand traffic (center dashed line positioned left of camera), European van shapes, boreal pine forest and heavy fog point to Scandinavia; road markings/shoulder match Swedish rural highways."", ""country"": ""SE"", ""latitude"": 64.25, ""longitude"": 19.3}"
+qwen/qwen3.5-122b-a10b,no-CoT,62.5333,15.8167,2843.881,SE,True,,stop,0.0002884,473,31,0,1.58,"{""country"": ""SE"", ""latitude"": 62.5333, ""longitude"": 15.8167}"
+xiaomi/mimo-v2.5,CoT,62.45,129.72,3109.236,RU,True,,stop,0.0003324776,787,888,811,10.28,"{""reasoning"": ""The image shows a coniferous taiga landscape and a white van that appears to be a GAZelle, both of which are characteristic of rural Russia, particularly in the Siberian or Far Eastern regions."", ""country"": ""RU"", ""latitude"": 62.45, ""longitude"": 129.72}"
+mistralai/mistral-small-2603,CoT,52.52,13.405,3487.028,DE,True,,stop,0.0004866,716,632,639,11.34,"{""reasoning"": ""Right-hand traffic, EU-style license plate with blue section, and truck design indicate Europe; coniferous trees and overcast sky suggest northern Europe."", ""country"": ""DE"", ""latitude"": 52.5200, ""longitude"": 13.4050}"
+qwen/qwen3.5-35b-a3b,no-CoT,56.7234,-111.8923,7070.249,CA,True,,stop,0.0001184625,473,32,0,0.86,"{""country"": ""CA"", ""latitude"": 56.7234, ""longitude"": -111.8923}"
+qwen/qwen3.6-35b-a3b,no-CoT,56.1234,-106.5678,7134.631,CA,True,,stop,0.00010295,473,32,0,2.15,"{""country"": ""CA"", ""latitude"": 56.1234, ""longitude"": -106.5678}"
+qwen/qwen3.5-397b-a17b,no-CoT,53.5461,-113.4938,7420.703,CA,True,,stop,0.00036828,473,32,0,1.86,"{""country"": ""CA"", ""latitude"": 53.5461, ""longitude"": -113.4938}"
+mistralai/mistral-small-2603,no-CoT,39.7637,-86.1577,8743.604,US,True,,stop,0.0001137,634,31,0,2.59,"{""country"": ""US"", ""latitude"": 39.7637, ""longitude"": -86.1577}"
+moonshotai/kimi-k2.6,CoT,-25.31,-48.85,14024.816,BR,True,,stop,0.0178092,680,4825,5210,163.63,"{""reasoning"": ""The white dashed center line and right-hand traffic placement are consistent with Brazil, while the heavy mountain fog and tall, slender forest silhouette match the Serra do Mar region of Paraná state."", ""country"": ""BR"", ""latitude"": -25.31, ""longitude"": -48.85}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.2,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.13,

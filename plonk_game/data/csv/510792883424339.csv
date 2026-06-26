@@ -1,0 +1,56 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,34.178964230902,-1.2244689345012,0.0,DZ,True,,,,,,,,"Sebdou, None, Tlemcen, DZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,34.216270446777344,-0.46736857295036316,69.754,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,34.07010269165039,-0.37064436078071594,79.521,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,34.064144134521484,-0.3611350357532501,80.491,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,31.0,-4.5,468.042,MA,True,,stop,0.00727,949,101,0,3.06,"{""reasoning"": ""Flat arid desert steppe with sparse scrub, reddish-tan soil shoulders, right-hand driving on a lone two-lane highway suggest Moroccan/North African desert plains."", ""country"": ""MA"", ""latitude"": 31.0, ""longitude"": -4.5}"
+moonshotai/kimi-k2.6,no-CoT,31.5,-6.0,536.354,MA,True,,stop,0.00032238,755,23,0,5.2,"{""country"": ""MA"", ""latitude"": 31.5, ""longitude"": -6.0}"
+anthropic/claude-opus-4.8,no-CoT,28.5,-10.5,1083.033,MA,True,,stop,0.00484,818,30,0,10.02,"{""country"": ""MA"", ""latitude"": 28.5, ""longitude"": -10.5}"
+google/gemini-3.5-flash,CoT (effort=high),27.45,-13.15,1361.075,MA,True,,stop,0.0104115,1307,939,878,13.74,"{""reasoning"": ""The flat desert landscape, reddish-brown dirt shoulders, and white dashed road markings are highly characteristic of the N1 highway in Morocco and Western Sahara."", ""country"": ""MA"", ""latitude"": 27.45, ""longitude"": -13.15}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),27.1251,-13.1625,1383.728,MA,True,,stop,0.0021525,1225,35,0,1.89,"```json
+{""country"": ""MA"", ""latitude"": 27.1251, ""longitude"": -13.1625}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),25.4823,-14.5654,1607.18,EH,True,,stop,0.0064605,1307,500,439,7.56,"{""reasoning"": ""The extremely flat desert landscape, reddish-brown gravel shoulders, and road markings are characteristic of the N1 highway in Western Sahara."", ""country"": ""EH"", ""latitude"": 25.4823, ""longitude"": -14.5654}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3802.669,,True,True,,,,,,15.53,
+openai/gpt-5.5,CoT,46.7125,53.8421,4758.994,KZ,True,,stop,0.011665,755,263,186,12.94,"{""reasoning"":""Flat arid steppe, right-hand traffic road markings, and sparse Soviet-style highway signage strongly suggest a rural highway in western Kazakhstan. The reddish gravel shoulders and vast semi-desert landscape fit the Atyrau/Mangystau region."",""country"":""KZ"",""latitude"":46.7125,""longitude"":53.8421}"
+mistralai/mistral-medium-3-5,CoT,48.0,66.0,5650.752,KZ,True,,stop,0.022182,868,2784,2912,34.54,"{""reasoning"": ""Flat steppe terrain with sparse grass, reddish soil, right-hand traffic (sign on road's right), and Cyrillic signage context suggest Central Asia. Kazakhstan's vast steppe highways match the landscape and infrastructure."", ""country"": ""KZ"", ""latitude"": 48.0, ""longitude"": 66.0}"
+openai/gpt-5.5,no-CoT,44.8152,65.4826,5681.596,KZ,True,,stop,0.00411,678,24,0,1.71,"{""country"":""KZ"",""latitude"":44.8152,""longitude"":65.4826}"
+google/gemma-4-26b-a4b-it,CoT,48.0,68.0,5796.876,KZ,True,,stop,0.00072605,489,1685,1622,32.07,"{""reasoning"": ""The extremely flat, arid steppe landscape and the blue rectangular road sign are highly characteristic of the central Kazakh steppe."", ""country"": ""KZ"", ""latitude"": 48.0, ""longitude"": 68.0}"
+google/gemma-4-31b-it,CoT,47.5,68.0,5808.172,KZ,True,,stop,0.00035607,489,750,686,45.22,"{""reasoning"": ""The vast, flat steppe landscape, reddish-brown soil, and the specific style of the blue road sign are highly characteristic of the Kazakh Steppe in Kazakhstan."", ""country"": ""KZ"", ""latitude"": 47.5, ""longitude"": 68.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,-29.0469,25.1372,7556.731,ZA,True,,stop,0.00021684,586,31,0,7.45,"{""country"": ""ZA"", ""latitude"": -29.0469, ""longitude"": 25.1372}"
+google/gemma-4-31b-it,no-CoT,47.25,103.5,8267.116,MN,True,,stop,6.936e-05,404,32,0,2.45,"```json
+{""country"": ""MN"", ""latitude"": 47.25, ""longitude"": 103.5}
+```"
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,8676.262,US,True,,stop,0.0001365,786,31,0,2.18,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+xiaomi/mimo-v2.5,CoT,43.8,111.9,9020.349,CN,True,,stop,0.0001493576,899,178,84,12.3,"{""reasoning"": ""The image shows a paved road with white markings and reddish soil shoulders in a flat, arid steppe landscape, characteristic of the Inner Mongolia region in China. The overall terrain, vegetation, and sky suggest a location within the vast grasslands or semi-desert areas typical of northern China or Mongolia."", ""country"": ""CN"", ""latitude"": 43.8, ""longitude"": 111.9}"
+qwen/qwen3.5-9b,no-CoT,-22.8569,-68.1468,9493.463,AR,True,,stop,6.325e-05,586,31,0,10.81,"{""country"": ""AR"", ""latitude"": -22.8569, ""longitude"": -68.1468}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-21.411418914794922,-69.68473815917969,9512.095,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-23.518844604492188,-68.71290588378906,9585.14,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-44.98419189453125,-67.37258911132812,11034.613,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-48.5125,-66.7188,11248.228,AR,True,,stop,0.0042465,1307,254,183,9.08,"{""reasoning"": ""The flat, arid steppe landscape with low scrub vegetation and reddish-brown gravel shoulders is highly characteristic of the Patagonian region in southern Argentina, specifically along National Route 3."", ""country"": ""AR"", ""latitude"": -48.5125, ""longitude"": -66.7188}"
+x-ai/grok-4.3,no-CoT,-49.3,-68.9,11427.158,AR,True,,stop,0.0007334,704,22,0,7.15,"{""country"": ""AR"", ""latitude"": -49.3, ""longitude"": -68.9}"
+google/gemini-3.1-pro-preview,CoT,-50.215,-68.542,11470.113,AR,True,,stop,0.005482,1307,239,162,4.66,"{
+  ""reasoning"": ""The flat, arid steppe landscape with sparse vegetation and reddish soil is characteristic of Patagonia. The road markings with white dashed center lines and solid edge lines align with Argentine highways."",
+  ""country"": ""AR"",
+  ""latitude"": -50.215,
+  ""longitude"": -68.542
+}"
+google/gemini-3.1-pro-preview,no-CoT,-50.25,-69.25,11512.123,AR,True,,stop,0.002824,1226,31,0,2.71,"```json
+{""country"": ""AR"", ""latitude"": -50.25, ""longitude"": -69.25}
+```"
+qwen/qwen3.5-397b-a17b,CoT,-21.45,119.45,14093.386,AU,True,,stop,0.0189882,665,5177,5075,76.27,"{""reasoning"": ""The image displays a flat, arid landscape with distinctive red soil and sparse scrub vegetation, characteristic of the Australian Outback. The road markings (white dashed center line), the blue rectangular sign on the left side of the road, and the implied left-hand traffic flow strongly point to a major highway in Western Australia or the Northern Territory."", ""country"": ""AU"", ""latitude"": -21.45, ""longitude"": 119.45}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.3456,131.0234,15345.066,AU,True,,stop,0.0001366625,585,32,0,0.85,"{""country"": ""AU"", ""latitude"": -25.3456, ""longitude"": 131.0234}"
+xiaomi/mimo-v2.5,no-CoT,-31.5,128.5,15356.23,AU,True,,stop,9.57376e-05,820,26,0,3.43,"{""country"": ""AU"", ""latitude"": -31.5, ""longitude"": 128.5}"
+moonshotai/kimi-k2.6,CoT,-31.65,129.0,15406.42,AU,True,,stop,0.0066407,834,1786,1728,97.94,"{""reasoning"": ""Red dirt shoulders, flat scrubland, left-side signage, and Australian-style power poles indicate an outback highway in Western Australia or South Australia."", ""country"": ""AU"", ""latitude"": -31.65, ""longitude"": 129.0}"
+qwen/qwen3.6-35b-a3b,CoT,-32.8,129.2,15461.274,AU,True,,stop,0.0053639495,665,5446,5358,212.29,"{""reasoning"": ""The flat, arid landscape with distinctive red soil and sparse scrub vegetation is characteristic of the Australian Outback, specifically the Nullarbor Plain. The left-hand traffic (indicated by the camera position and sign placement) and white road markings further support this location in Australia."", ""country"": ""AU"", ""latitude"": -32.8, ""longitude"": 129.2}"
+mistralai/mistral-small-2603,CoT,-31.5,130.5,15537.129,AU,True,,stop,0.00110304,868,1769,1930,18.85,"{""reasoning"": ""Red soil and sparse vegetation typical of Australia's Nullarbor Plain, combined with straight road design and likely road signage style."", ""country"": ""AU"", ""latitude"": -31.5, ""longitude"": 130.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,-26.5,133.0,15577.264,AU,True,,stop,0.0001193985,585,26,0,7.72,"{""country"": ""AU"", ""latitude"": -26.5, ""longitude"": 133.0}"
+qwen/qwen3.5-27b,no-CoT,-25.2744,133.7751,15594.991,AU,True,,stop,0.00022707,585,32,0,2.07,"{""country"": ""AU"", ""latitude"": -25.2744, ""longitude"": 133.7751}"
+x-ai/grok-4.3,CoT,-31.25,131.6,15628.631,AU,True,,stop,0.0021265,788,591,516,5.8,"{""reasoning"": ""Flat arid red-soil landscape with sparse scrub, well-marked asphalt highway and distant small black sign match Australian outback (Eyre Hwy / Nullarbor region); right-hand traffic implied by road layout and typical RHT markings absent."", ""country"": ""AU"", ""latitude"": -31.25, ""longitude"": 131.6}"
+minimax/minimax-m3,no-CoT,-30.5,132.0,15639.712,AU,True,,stop,0.00026808,904,23,0,6.49,"{""country"": ""AU"", ""latitude"": -30.5, ""longitude"": 132.0}"
+qwen/qwen3.6-27b,no-CoT,-25.0,135.0,15695.245,AU,True,,stop,0.0002275,585,26,0,4.52,"{""country"": ""AU"", ""latitude"": -25.0, ""longitude"": 135.0}"
+mistralai/mistral-medium-3-5,no-CoT,-30.0,135.0,15896.348,AU,True,,stop,0.001374,786,26,0,0.85,"{""country"": ""AU"", ""latitude"": -30.0, ""longitude"": 135.0}"
+minimax/minimax-m3,CoT,-31.5,136.8,16109.696,AU,True,,stop,0.00085902,997,515,555,10.31,"{""reasoning"": ""The distinctive red/orange gravel road shoulders, red soil, extremely flat arid landscape with sparse low scrub, and the style of the sealed outback highway are highly characteristic of remote Australian Outback roads, likely in South Australia or the Northern Territory."", ""country"": ""AU"", ""latitude"": -31.5, ""longitude"": 136.8}{""reasoning"": ""The distinctive red/orange gravel road shoulders, red soil, extremely flat arid landscape with sparse low scrub, and the style of the sealed outback highway are highly characteristic of remote Australian Outback roads, likely in South Australia or the Northern Territory."", ""country"": ""AU"", ""latitude"": -31.5, ""longitude"": 136.8}"
+qwen/qwen3.5-397b-a17b,no-CoT,-31.9505,141.4335,16545.785,AU,True,,stop,0.00058275,585,32,0,2.16,"{""country"": ""AU"", ""latitude"": -31.9505, ""longitude"": 141.4335}"
+qwen/qwen3.5-122b-a10b,CoT,,,,,False,,stop,0.0164292,665,5051,5051,42.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.31,

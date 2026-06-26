@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,15.245491801689226,-88.55819655207355,0.0,HN,True,,,,,,,,"Sula, None, Santa Barbara, HN"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,15.186655044555664,-88.51966094970703,7.739,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,15.132795333862305,-88.62378692626953,14.373,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,15.128986358642578,-88.62820434570312,14.976,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),15.4832,-88.9125,46.279,GT,True,,stop,0.005436,1308,386,308,4.06,"```json
+{""reasoning"": ""The lush tropical vegetation, hilly terrain, concrete utility poles, and the specific vehicle hood shape visible at the bottom of the frame are characteristic of rural Guatemala, particularly in the Izabal department."", ""country"": ""GT"", ""latitude"": 15.4832, ""longitude"": -88.9125}
+```"
+minimax/minimax-m3,CoT,14.85,-88.75,48.561,HN,True,,stop,0.00076266,995,438,359,13.36,"{""reasoning"": ""Right-hand traffic, dense tropical rainforest vegetation with banana plants, mountainous terrain, rural highway with no lane markings, and white minibuses strongly suggest a rural Central American location, most consistent with western Honduras along the CA-13 or interior highways."", ""country"": ""HN"", ""latitude"": 14.85, ""longitude"": -88.75}"
+google/gemini-3.1-pro-preview,no-CoT,15.6321,-88.9145,57.502,GT,True,,stop,0.00587,1225,285,250,5.18,"```json
+{""country"": ""GT"", ""latitude"": 15.6321, ""longitude"": -88.9145}
+```"
+x-ai/grok-4.3,no-CoT,15.3167,-88.0167,58.62,HN,True,,stop,0.0007384,704,24,0,0.91,"{""country"": ""HN"", ""latitude"": 15.3167, ""longitude"": -88.0167}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),15.6421,-89.0124,65.687,GT,True,,stop,0.0021525,1225,35,0,1.65,"```json
+{""country"": ""GT"", ""latitude"": 15.6421, ""longitude"": -89.0124}
+```"
+google/gemini-3.1-pro-preview,CoT,15.4823,-89.5123,105.634,GT,True,,stop,0.006454,1307,320,235,12.22,"{
+  ""reasoning"": ""The lush tropical vegetation, hilly terrain, and right-hand driving suggest Central America. The distinct shield-shaped reflection on the windshield is a known Google Street View car meta-clue for Guatemala."",
+  ""country"": ""GT"",
+  ""latitude"": 15.4823,
+  ""longitude"": -89.5123
+}"
+minimax/minimax-m3,no-CoT,14.83,-91.52,321.394,GT,True,,stop,0.00024012,906,22,0,2.63,"{""country"": ""GT"", ""latitude"": 14.83, ""longitude"": -91.52}{""country"": ""GT"", ""latitude"": 14.83, ""longitude"": -91.52}"
+anthropic/claude-opus-4.8,CoT,17.5,-93.0,536.059,MX,True,,stop,0.00722,949,99,0,3.16,"{""reasoning"": ""Tropical lush vegetation with banana plants and palms, forested hills, right-side driving on rural highway suggest Central America/Mexico, likely Veracruz/Chiapas region."", ""country"": ""MX"", ""latitude"": 17.5, ""longitude"": -93.0}"
+anthropic/claude-opus-4.8,no-CoT,17.5,-93.0,536.059,MX,True,,stop,0.00484,818,30,0,1.98,"{""country"": ""MX"", ""latitude"": 17.5, ""longitude"": -93.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,10.0234,-84.8123,708.686,CR,True,,stop,0.0002499,585,31,0,8.47,"{""country"": ""CR"", ""latitude"": 10.0234, ""longitude"": -84.8123}"
+google/gemma-4-31b-it,no-CoT,10.1234,-84.1234,745.422,CR,True,,stop,6.348e-05,404,36,0,19.37,"```json
+{""country"": ""CR"", ""latitude"": 10.1234, ""longitude"": -84.1234}
+```"
+x-ai/grok-4.3,CoT,10.05,-84.15,749.875,CR,True,,stop,0.002544,788,758,685,20.42,"{""reasoning"": ""Tropical vegetation (banana plants, palms, dense broadleaf forest) + hilly terrain + overcast sky + right-hand traffic on unmarked asphalt road point to rural Central America; small concrete building and utility poles match Costa Rican countryside."", ""country"": ""CR"", ""latitude"": 10.05, ""longitude"": -84.15}"
+qwen/qwen3.6-35b-a3b,no-CoT,9.9342,-84.0821,764.559,CR,True,,stop,0.00011775,585,30,0,7.85,"{""country"": ""CR"", ""latitude"": 9.9342, ""longitude"": -84.0821}"
+qwen/qwen3.5-397b-a17b,CoT,18.216,-77.433,1229.571,JM,True,,stop,0.012663,665,3420,3354,26.43,"{""reasoning"": ""Left-hand traffic combined with tropical vegetation (banana plants, palms), Caribbean-style concrete roadside structures, and white minibus/coaster vehicles strongly indicates Jamaica."", ""country"": ""JM"", ""latitude"": 18.216, ""longitude"": -77.433}"
+qwen/qwen3.5-397b-a17b,no-CoT,18.1234,-77.3456,1236.118,JM,True,,stop,0.0003882,585,31,0,8.02,"{""country"": ""JM"", ""latitude"": 18.1234, ""longitude"": -77.3456}"
+qwen/qwen3.5-35b-a3b,no-CoT,18.1096,-77.2975,1240.714,JM,True,,stop,0.000196425,585,36,0,3.08,"{
+""country"": ""JM"",
+""latitude"": 18.1096,
+""longitude"": -77.2975
+}"
+google/gemini-3.5-flash,CoT (effort=high),6.3542,-75.1234,1767.947,CO,True,,stop,0.0198435,1307,1987,1896,15.79,"{""reasoning"": ""The image shows a tropical, mountainous landscape with lush green vegetation, banana trees, and concrete utility poles. The vehicles are driving on the right side of the road, which is consistent with Colombia, and the road style and simple roadside architecture are typical of rural Colombian departments like Antioquia."", ""country"": ""CO"", ""latitude"": 6.3542, ""longitude"": -75.1234}"
+google/gemini-3.5-flash,CoT (effort=medium),5.2054,-74.7382,1877.937,CO,True,,stop,0.0092685,1307,812,740,21.07,"{""reasoning"": ""The lush tropical vegetation, concrete utility poles, and hilly terrain are characteristic of Colombia, supported by the reflection of a Renault logo on the windshield, a highly popular car brand in the country."", ""country"": ""CO"", ""latitude"": 5.2054, ""longitude"": -74.7382}"
+moonshotai/kimi-k2.6,CoT,19.1,-70.8,1933.569,DO,True,,stop,0.012637656,834,3614,3546,162.6,"{""reasoning"": ""Tropical mountainous terrain with banana palms and lush vegetation combined with simple concrete-block buildings with metal roofs and right-hand traffic on an unmarked rural asphalt road is characteristic of rural Dominican Republic."", ""country"": ""DO"", ""latitude"": 19.1000, ""longitude"": -70.8000}"
+openai/gpt-5.5,no-CoT,10.2935,-61.4548,2987.967,TT,True,,stop,0.00411,678,24,0,8.07,"{""country"":""TT"",""latitude"":10.2935,""longitude"":-61.4548}"
+openai/gpt-5.5,CoT,11.2158,-60.7046,3045.79,TT,True,,stop,0.016045,755,409,337,16.86,"{""reasoning"":""Tropical Caribbean vegetation, hilly terrain, narrow unmarked asphalt roads, and apparent left-side driving point strongly to Trinidad and Tobago. The lush rural hills and road style are especially consistent with Tobago’s interior roads."",""country"":""TT"",""latitude"":11.2158,""longitude"":-60.7046}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,4162.588,US,True,,stop,0.000171375,786,32,0,1.87,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+qwen/qwen3.5-9b,no-CoT,-1.8456,-47.9234,4855.955,BR,True,,stop,6.31e-05,586,30,0,10.7,"{""country"": ""BR"", ""latitude"": -1.8456, ""longitude"": -47.9234}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9852.865,,True,True,,,,,,12.68,
+qwen/qwen3.5-27b,no-CoT,14.5995,120.9842,15372.067,PH,True,,stop,0.0002427,585,32,0,12.36,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+qwen/qwen3.6-27b,no-CoT,14.5995,120.9842,15372.067,PH,True,,stop,0.0002299,585,32,0,13.23,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+mistralai/mistral-medium-3-5,no-CoT,10.3157,123.8854,15448.935,PH,True,,stop,0.001419,786,32,0,0.94,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+xiaomi/mimo-v2.5,no-CoT,10.3157,123.8854,15448.935,PH,True,,stop,9.74176e-05,820,32,0,9.72,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+moonshotai/kimi-k2.6,no-CoT,-2.5,120.5,16529.453,ID,True,,stop,0.00064215,754,23,0,2.97,"{""country"": ""ID"", ""latitude"": -2.5, ""longitude"": 120.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,8.556343078613281,105.69639587402344,16937.434,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,8.877551078796387,98.36213684082031,17226.443,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,8.521035194396973,98.3452377319336,17265.061,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,8.34,98.52,17278.97,TH,True,,stop,0.0006166776,899,1847,1768,21.04,"{""reasoning"": ""The tropical vegetation, including banana plants, combined with left-hand traffic and specific concrete utility pole styles, strongly points to rural Thailand. The vehicle types, such as the pickup truck and white commuter van, are ubiquitous in this region."", ""country"": ""TH"", ""latitude"": 8.34, ""longitude"": 98.52}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.28,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.91,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.3,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.3,

@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,20.178627385168,-96.890825712563,0.0,MX,True,,,,,,,,"Cementeras del Pital, San Rafael, Veracruz, MX"
+qwen/qwen3.6-27b,no-CoT,19.4326,-99.1332,248.823,MX,True,,stop,0.0001943,473,31,0,17.0,"{""country"": ""MX"", ""latitude"": 19.4326, ""longitude"": -99.1332}"
+anthropic/claude-opus-4.8,no-CoT,17.9869,-94.5611,345.426,MX,True,,stop,0.00413,666,32,0,2.33,"{""country"": ""MX"", ""latitude"": 17.9869, ""longitude"": -94.5611}"
+anthropic/claude-opus-4.8,CoT,17.95,-92.9,487.121,MX,True,,stop,0.00661,797,105,0,3.21,"{""reasoning"": ""Banana plantation, tropical lowland vegetation, simple concrete buildings and rural two-lane road suggest tropical Latin America, likely southern Mexico (Tabasco/Chiapas region)."", ""country"": ""MX"", ""latitude"": 17.95, ""longitude"": -92.9}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,19.553054809570312,-102.1806869506836,557.532,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,18.678760528564453,-103.8116683959961,744.582,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,18.70649528503418,-103.82347106933594,745.045,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,14.6,-91.5,843.599,GT,True,,stop,0.000283212,603,23,0,8.26,"{""country"": ""GT"", ""latitude"": 14.6, ""longitude"": -91.5}"
+moonshotai/kimi-k2.6,CoT,12.34,-86.68,1394.703,NI,True,,stop,0.018310068,682,5282,5197,223.69,"{""reasoning"": ""Flat tropical road lined with banana plantations and dense mature trees, combined with simple light-colored concrete-block rural architecture and wooden utility poles with crossbars, is characteristic of Central America's Pacific lowlands; the specific road marking style and humid flat terrain best match Nicaragua's Pan-American Highway corridor."", ""country"": ""NI"", ""latitude"": 12.34, ""longitude"": -86.68}"
+qwen/qwen3.5-397b-a17b,no-CoT,25.7617,-80.1918,1816.988,US,True,,stop,0.0003794,473,31,0,1.58,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+google/gemini-3.1-pro-preview,CoT,10.0,-74.0,2701.066,CO,True,,stop,0.005986,1271,287,216,5.21,"{
+  ""reasoning"": ""The dashed yellow center line and tropical vegetation suggest a Latin American country. The yellow and black striped pole on the right is a distinct feature commonly found in Colombia."",
+  ""country"": ""CO"",
+  ""latitude"": 10.0,
+  ""longitude"": -74.0
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-1.0245,-79.4612,3027.312,EC,True,,stop,0.0020895,1189,34,0,8.08,"```json
+{""country"": ""EC"", ""latitude"": -1.0245, ""longitude"": -79.4612}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-1.55,-79.53,3068.974,EC,True,,stop,0.0094305,1271,836,775,6.86,"{""reasoning"": ""The flat tropical landscape with extensive banana plantations and a yellow dashed center line is highly characteristic of the coastal lowlands of Ecuador, particularly in Los Ríos province."", ""country"": ""EC"", ""latitude"": -1.55, ""longitude"": -79.53}"
+google/gemini-3.5-flash,CoT (effort=medium),-1.5542,-79.5321,3069.205,EC,True,,stop,0.0054075,1271,389,323,4.24,"{""reasoning"": ""The flat tropical landscape with extensive banana plantations and a yellow dashed center line is highly characteristic of the coastal lowlands of Ecuador, particularly in the Los Ríos province."", ""country"": ""EC"", ""latitude"": -1.5542, ""longitude"": -79.5321}"
+google/gemini-3.5-flash,CoT (effort=low),-1.7854,-79.5242,3090.249,EC,True,,stop,0.003843,1272,215,143,8.62,"{""reasoning"": ""The flat terrain, extensive banana plantations on the left, tropical vegetation, and road markings are highly characteristic of the coastal lowlands of Ecuador, particularly in the Los Ríos or El Oro provinces."", ""country"": ""EC"", ""latitude"": -1.7854, ""longitude"": -79.5242}"
+google/gemini-3.1-pro-preview,no-CoT,-2.15,-79.6,3117.737,EC,True,,stop,0.002726,1189,29,0,3.54,"```json
+{""country"": ""EC"", ""latitude"": -2.15, ""longitude"": -79.6}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,7300.105,BR,True,,stop,0.0011835,634,31,0,2.18,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,7300.105,BR,True,,stop,0.0002163,473,31,0,1.08,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+mistralai/mistral-small-2603,no-CoT,37.0194,-8.5305,8534.657,PT,True,,stop,0.0001131,634,30,0,5.13,"{""country"": ""PT"", ""latitude"": 37.0194, ""longitude"": -8.5305}"
+openai/gpt-5.5,CoT,6.7365,-1.4928,10308.537,GH,True,,stop,0.015315,621,407,325,10.34,"{""reasoning"":""Tropical West African roadside vegetation, simple concrete buildings, utility poles, and a two-lane right-driving road with yellow center markings point most strongly to rural Ghana. The lush, flat-to-gently rolling landscape fits the southern/central Ghana corridor around Kumasi."",""country"":""GH"",""latitude"":6.7365,""longitude"":-1.4928}"
+openai/gpt-5.5,no-CoT,5.8072,-0.1568,10483.237,GH,True,,stop,0.00344,544,24,0,7.97,"{""country"":""GH"",""latitude"":5.8072,""longitude"":-0.1568}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10726.531,,True,True,,,,,,6.89,
+google/gemma-4-31b-it,no-CoT,14.5995,120.9842,14349.982,PH,True,,stop,6.418e-05,406,37,0,14.52,"```json
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}
+```"
+qwen/qwen3.5-27b,no-CoT,22.5726,88.3639,15227.279,IN,True,,stop,0.0002163,473,31,0,7.93,"{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 88.3639}"
+x-ai/grok-4.3,no-CoT,21.1458,79.0882,15399.267,IN,True,,stop,0.0005984,592,24,0,0.93,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+minimax/minimax-m3,CoT,10.45,106.18,15775.751,VN,True,,stop,0.00066306,843,393,318,12.88,"{""reasoning"": ""Yellow center line markings, right-hand traffic, tropical banana cultivation, concrete utility poles with multiple wire crossbars, flat lowland terrain, and modest rural architecture are highly characteristic of southern Vietnam (Mekong Delta region)."", ""country"": ""VN"", ""latitude"": 10.45, ""longitude"": 106.18}"
+qwen/qwen3.5-9b,no-CoT,17.385,78.4569,15807.457,IN,True,,stop,5.19e-05,474,30,0,3.95,"{""country"": ""IN"", ""latitude"": 17.385, ""longitude"": 78.4569}"
+minimax/minimax-m3,no-CoT,10.05,105.75,15839.484,VN,True,,stop,0.00040482,767,194,234,9.1,"{""country"": ""VN"", ""latitude"": 10.05, ""longitude"": 105.75}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,17.314908981323242,82.87684631347656,15845.919,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,15.3,75.7,15987.809,IN,True,,stop,7.97776e-05,708,25,0,2.46,"{""country"": ""IN"", ""latitude"": 15.3, ""longitude"": 75.7}"
+qwen/qwen3.6-35b-a3b,no-CoT,12.9716,77.5946,16279.918,IN,True,,stop,0.00010195,473,31,0,2.03,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.5-35b-a3b,no-CoT,13.0827,80.2707,16303.586,IN,True,,stop,0.000162225,473,31,0,1.4,"{""country"": ""IN"", ""latitude"": 13.0827, ""longitude"": 80.2707}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,11.508257865905762,77.974609375,16447.153,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,11.05,77.0,16478.858,IN,True,,stop,0.0021165,676,643,573,5.42,"{""reasoning"": ""Left-hand traffic with oncoming car positioned accordingly, yellow dashed center line, banana plantation, utility poles, hazy tropical sky and small yellow building all point to rural South India; vegetation and road style exclude Africa/SE Asia."", ""country"": ""IN"", ""latitude"": 11.05, ""longitude"": 77.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,11.177472114562988,77.79352569580078,16480.261,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,7.8,80.5,16890.938,LK,True,,stop,0.0001552376,787,255,196,50.58,"{""reasoning"": ""Left-hand vehicle traffic, tropical dense vegetation, and small roadside building architecture point to Sri Lanka, a country with this road and landscape profile."", ""country"": ""LK"", ""latitude"": 7.8, ""longitude"": 80.5}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.5,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,25.29,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.74,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.22,

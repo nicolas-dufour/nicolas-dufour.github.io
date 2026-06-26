@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,65.622719211552,-16.884384249965,0.0,IS,True,,,,,,,,"Laugar, None, Northeast, IS"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,65.46747589111328,-16.83004379272461,17.443,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,65.05,-16.5,66.134,IS,True,,stop,0.00641,797,97,0,9.63,"{""reasoning"": ""Volcanic lava fields with sparse low vegetation, yellow-topped marker posts, and Icelandic-style yellow warning signs under overcast skies indicate Iceland."", ""country"": ""IS"", ""latitude"": 65.05, ""longitude"": -16.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,64.9631,-19.0208,123.436,IS,True,,stop,0.000157,473,31,0,2.5,"{""country"": ""IS"", ""latitude"": 64.9631, ""longitude"": -19.0208}"
+google/gemma-4-31b-it,no-CoT,64.8375,-19.0208,132.388,IS,True,,stop,5.772e-05,408,36,0,14.63,"```json
+{""country"": ""IS"", ""latitude"": 64.8375, ""longitude"": -19.0208}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,64.1466,-20.1103,223.824,IS,True,,stop,0.00010195,473,31,0,1.84,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -20.1103}"
+google/gemini-3.5-flash,CoT (effort=medium),63.6835,-18.1524,223.909,IS,True,,stop,0.0063705,1271,496,432,26.35,"{""reasoning"": ""The yellow warning signs with red borders, yellow roadside posts, double white center lines, and barren volcanic lava field landscape are highly characteristic of Iceland."", ""country"": ""IS"", ""latitude"": 63.6835, ""longitude"": -18.1524}"
+minimax/minimax-m3,no-CoT,63.9,-19.5,228.154,IS,True,,stop,0.00028962,767,98,94,3.76,"{""country"": ""IS"", ""latitude"": 63.9, ""longitude"": -19.5}"
+qwen/qwen3.5-9b,no-CoT,64.0672,-20.3056,236.719,IS,True,,stop,5.205e-05,474,31,0,11.84,"{""country"": ""IS"", ""latitude"": 64.0672, ""longitude"": -20.3056}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,64.45294189453125,-21.117259979248047,237.359,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,64.0784,-20.4397,240.172,IS,True,,stop,0.00018746,473,31,0,2.63,"{""country"": ""IS"", ""latitude"": 64.0784, ""longitude"": -20.4397}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,64.4118423461914,-21.136220932006836,240.755,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,64.25894927978516,-20.857322692871094,240.773,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,64.023,-20.456,245.259,IS,True,,stop,0.002789,676,912,841,8.03,"{""reasoning"": ""Barren volcanic rock/moss landscape + yellow-backed triangular warning sign (Icelandic style) + right-side driving with European markings identify Iceland; photo matches typical lava-field roads on Route 1 or F-roads."", ""country"": ""IS"", ""latitude"": 64.023, ""longitude"": -20.456}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,64.4229507446289,-21.425607681274414,251.431,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,64.1234,-21.5678,276.823,IS,True,,stop,0.00036468,473,31,0,4.01,"{""country"": ""IS"", ""latitude"": 64.1234, ""longitude"": -21.5678}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),64.1419,-21.7483,282.399,IS,True,,stop,0.0021,1190,35,0,1.12,"```json
+{""country"": ""IS"", ""latitude"": 64.1419, ""longitude"": -21.7483}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,64.07270812988281,-21.711143493652344,285.781,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,64.1466,-21.9426,289.577,IS,True,,stop,0.0001805,474,31,0,9.28,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.9426}"
+qwen/qwen3.6-27b,no-CoT,64.1466,-21.9426,289.577,IS,True,,stop,0.0001943,473,31,0,9.4,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.9426}"
+anthropic/claude-opus-4.8,no-CoT,64.0,-21.9,298.017,IS,True,,stop,0.00408,666,30,0,1.9,"{""country"": ""IS"", ""latitude"": 64.0, ""longitude"": -21.9}"
+google/gemini-3.1-pro-preview,no-CoT,63.9,-22.0,308.91,IS,True,,stop,0.004108,1190,144,115,10.15,"```json
+{""country"": ""IS"", ""latitude"": 63.9, ""longitude"": -22.0}
+```"
+moonshotai/kimi-k2.6,no-CoT,64.015,-22.245,310.131,IS,True,,stop,0.00051219,602,23,0,2.46,"{""country"": ""IS"", ""latitude"": 64.015, ""longitude"": -22.245}"
+google/gemini-3.5-flash,CoT (effort=high),63.8412,-22.1985,320.546,IS,True,,stop,0.0094395,1271,837,772,6.67,"{""reasoning"": ""The yellow road markers, yellow-background warning signs, and distinctive volcanic lava field landscape are highly characteristic of Iceland, specifically the Reykjanes Peninsula."", ""country"": ""IS"", ""latitude"": 63.8412, ""longitude"": -22.1985}"
+x-ai/grok-4.3,no-CoT,64.036,-22.605,322.809,IS,True,,stop,0.0005934,592,22,0,0.75,"{""country"": ""IS"", ""latitude"": 64.036, ""longitude"": -22.605}"
+google/gemini-3.5-flash,CoT (effort=low),63.8412,-22.2715,323.273,IS,True,,stop,0.004293,1272,265,199,3.24,"{""reasoning"": ""The volcanic lava field landscape, yellow-backed road signs, and distinctive yellow cylindrical bollards are characteristic of Iceland, specifically resembling the Reykjanes Peninsula."", ""country"": ""IS"", ""latitude"": 63.8412, ""longitude"": -22.2715}"
+mistralai/mistral-medium-3-5,no-CoT,63.9948,-22.5859,324.753,IS,True,,stop,0.0011835,634,31,0,1.17,"{""country"": ""IS"", ""latitude"": 63.9948, ""longitude"": -22.5859}"
+openai/gpt-5.5,no-CoT,63.8845,-22.4262,326.059,IS,True,,stop,0.00344,544,24,0,1.98,"{""country"":""IS"",""latitude"":63.8845,""longitude"":-22.4262}"
+moonshotai/kimi-k2.6,CoT,63.8792,-22.4458,327.176,IS,True,,stop,0.011243988,682,3217,3137,180.93,"{""reasoning"": ""The yellow signpost bases paired with Nordic-style triangular warning and circular speed-limit signs are distinctive of Iceland, while the flat, dark volcanic lava fields with sparse moss match the Reykjanes Peninsula near Keflavík/Grindavík."", ""country"": ""IS"", ""latitude"": 63.8792, ""longitude"": -22.4458}"
+google/gemini-3.1-pro-preview,CoT,63.8812,-22.4531,327.315,IS,True,,stop,0.00588,1272,278,196,4.44,"{
+  ""reasoning"": ""The yellow center lines, yellow bollards, and yellow warning signs with red borders are characteristic of Iceland. The barren volcanic landscape with dark lava rocks strongly suggests the Reykjanes peninsula."",
+  ""country"": ""IS"",
+  ""latitude"": 63.8812,
+  ""longitude"": -22.4531
+}"
+openai/gpt-5.5,CoT,63.8721,-22.4556,328.044,IS,True,,stop,0.012255,621,305,223,9.04,"{""reasoning"":""Yellow-red Icelandic warning signs, yellow roadside marker posts, right-side driving and treeless black lava-field terrain point strongly to Iceland, likely the Reykjanes Peninsula. The barren volcanic landscape and low coastal hills resemble roads around Grindavík/Blue Lagoon."",""country"":""IS"",""latitude"":63.8721,""longitude"":-22.4556}"
+minimax/minimax-m3,CoT,63.85,-22.45,329.38,IS,True,,stop,0.00055626,843,304,215,16.73,"{""reasoning"": ""Volcanic lava fields, barren mossy terrain, Icelandic-style triangular warning signs with red border and yellow diamond priority sign, overcast Nordic weather, and right-hand traffic on a rural highway all strongly indicate Iceland, likely on the Reykjanes peninsula where lava fields border Route 41/425."", ""country"": ""IS"", ""latitude"": 63.85, ""longitude"": -22.45}"
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,5965.028,US,True,,stop,0.0001143,634,32,0,3.35,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7420.824,,True,True,,,,,,19.44,
+xiaomi/mimo-v2.5,CoT,20.736,-156.243,9818.967,US,True,,stop,0.0011677176,787,3871,3775,49.49,"{""reasoning"": ""The double yellow road lines and yellow diamond bicycle warning sign indicate a location in the United States. The distinctive terrain featuring dark, blocky lava rock mixed with reddish volcanic soil is highly characteristic of the high-altitude volcanic slopes on Maui, Hawaii, likely the road leading up Haleakala."", ""country"": ""US"", ""latitude"": 20.736, ""longitude"": -156.243}"
+xiaomi/mimo-v2.5,no-CoT,19.6399,-155.5053,9915.434,US,True,,stop,8.17376e-05,708,32,0,1.17,"{""country"": ""US"", ""latitude"": 19.6399, ""longitude"": -155.5053}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.88,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.19,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,16.6,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.17,

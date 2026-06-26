@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,9.2635667835063,5.5942867011725,0.0,NG,True,,,,,,,,"Kutigi, None, Niger, NG"
+google/gemma-4-26b-a4b-it,CoT,10.5,7.5,249.963,NG,True,,stop,0.00072845,489,1691,1616,25.63,"{""reasoning"": ""The reddish soil and scrubby, green savanna vegetation are highly characteristic of the West African Guinea Savanna, and the vehicle interior suggests a left-hand drive setup."", ""country"": ""NG"", ""latitude"": 10.5, ""longitude"": 7.5}"
+moonshotai/kimi-k2.6,CoT,11.0,7.5,284.239,NG,True,,stop,0.0226003,834,5452,6121,109.81,"{""reasoning"": ""Red laterite dirt road through flat Sudanian savanna with dry-season scrub, broad-leaved trees, and pale hazy sky typical of Harmattan dust strongly indicates rural West Africa during the dry season."", ""country"": ""NG"", ""latitude"": 11.0, ""longitude"": 7.5}"
+anthropic/claude-opus-4.8,CoT,11.5,-1.5,814.743,BF,True,,stop,0.00672,949,79,0,9.4,"{""reasoning"": ""Dry savanna woodland with reddish dirt road and dusty haze suggests West African Sudanian savanna in dry season."", ""country"": ""BF"", ""latitude"": 11.5, ""longitude"": -1.5}"
+anthropic/claude-opus-4.8,no-CoT,11.5,-1.5,814.743,BF,True,,stop,0.00484,818,30,0,8.65,"{""country"": ""BF"", ""latitude"": 11.5, ""longitude"": -1.5}"
+x-ai/grok-4.3,CoT,11.85,-1.65,842.415,BF,True,,stop,0.0025315,788,753,681,13.8,"{""reasoning"": ""Red laterite dirt road + dense dry-deciduous/savanna woodland with broadleaf trees under clear tropical sky points to southern or West Africa; no other region matches the soil color, vegetation structure and road type simultaneously."", ""country"": ""BF"", ""latitude"": 11.85, ""longitude"": -1.65}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,1201.916,,True,True,,,,,,0.61,
+moonshotai/kimi-k2.6,no-CoT,13.5,-7.5,1502.645,ML,True,,stop,0.00080925,755,23,0,4.84," {""country"": ""ML"", ""latitude"": 13.5, ""longitude"": -7.5}"
+x-ai/grok-4.3,no-CoT,12.65,-8.0,1530.731,ML,True,,stop,0.0007334,704,22,0,1.37,"{""country"": ""ML"", ""latitude"": 12.65, ""longitude"": -8.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),12.6125,-12.3241,1990.775,SN,True,,stop,0.0021525,1225,35,0,1.44,"```json
+{""country"": ""SN"", ""latitude"": 12.6125, ""longitude"": -12.3241}
+```"
+google/gemini-3.5-flash,CoT (effort=low),13.2541,-12.5684,2029.076,SN,True,,stop,0.0043545,1307,266,197,4.18,"{""reasoning"": ""The reddish-brown dirt road, dry savanna vegetation, and hazy blue sky are highly characteristic of the Sahelian and Sudanian savanna zones in West Africa, particularly Senegal."", ""country"": ""SN"", ""latitude"": 13.2541, ""longitude"": -12.5684}"
+google/gemini-3.1-pro-preview,CoT,13.7667,-13.6667,2156.545,SN,True,,stop,0.005734,1307,260,176,4.75,"{
+  ""reasoning"": ""The reddish dirt road, dry savanna vegetation, and hazy sky are characteristic of West Africa during the dry season. The visible white car part in the corner is consistent with Street View coverage in Senegal."",
+  ""country"": ""SN"",
+  ""latitude"": 13.7667,
+  ""longitude"": -13.6667
+}"
+google/gemini-3.5-flash,CoT (effort=medium),13.7685,-13.6672,2156.637,SN,True,,stop,0.0108885,1307,992,919,12.04,"```json
+{""reasoning"": ""The reddish-brown dirt road, dry tropical savanna vegetation, and flat terrain are highly characteristic of the Sudanian savanna zone in West Africa, particularly in eastern Senegal."", ""country"": ""SN"", ""latitude"": 13.7685, ""longitude"": -13.6672}
+```"
+openai/gpt-5.5,CoT,12.8897,-14.9504,2277.024,SN,True,,stop,0.016555,755,426,338,17.45,"{""reasoning"":""The unpaved laterite/sandy road through dry tropical savanna with low broadleaf trees is characteristic of rural West Africa, especially Senegal/Casamance. Lack of road markings or signage makes this uncertain, but the vegetation and road surface best fit southern Senegal rather than southern/eastern Africa."",""country"":""SN"",""latitude"":12.8897,""longitude"":-14.9504}"
+google/gemini-3.1-pro-preview,no-CoT,12.85321,-15.54213,2340.008,SN,True,,stop,0.002894,1225,37,0,20.87,"```json
+{""country"": ""SN"", ""latitude"": 12.85321, ""longitude"": -15.54213}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,7.565492153167725,36.81074142456055,3437.864,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,7.537056922912598,36.82313537597656,3439.523,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,4.770753860473633,36.730098724365234,3470.778,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,CoT,-14.5,28.5,3655.378,ZM,True,,stop,0.0090084,665,2732,2647,23.97,"{""reasoning"": ""The deep red laterite soil and the specific dry deciduous woodland vegetation (likely Miombo) are highly characteristic of Southern Africa, particularly Zambia or Zimbabwe. The unpaved road and lack of infrastructure suggest a rural area or a park access road in this region."", ""country"": ""ZM"", ""latitude"": -14.5, ""longitude"": 28.5}"
+qwen/qwen3.5-397b-a17b,CoT,-16.1234,27.8901,3740.448,ZM,True,,stop,0.005077625,665,1968,1920,92.8,"{""reasoning"": ""The distinct reddish-brown laterite soil of the unpaved road and the surrounding dry deciduous savanna woodland (resembling Miombo woodland) are highly characteristic of the Zambezian region in Southern Africa. The vehicle frame visible on the right suggests a right-hand drive vehicle, consistent with left-hand traffic countries like Zambia where such roads are ubiquitous."", ""country"": ""ZM"", ""latitude"": -16.1234, ""longitude"": 27.8901}"
+qwen/qwen3.5-35b-a3b,CoT,-1.3667,38.0,3778.923,KE,True,,stop,0.008764425,665,4786,4698,28.35,"{
+""reasoning"": ""The image features a distinct red lateritic soil road, which is highly characteristic of rural Kenya and Tanzania. The vegetation consists of scrubby, deciduous trees and bushes typical of the East African savanna or dry woodland, further pointing to this region."",
+""country"": ""KE"",
+""latitude"": -1.3667,
+""longitude"": 38.0
+}"
+qwen/qwen3.6-35b-a3b,CoT,-6.5,37.5,3946.067,TZ,True,,stop,0.0050052,666,3045,2793,36.89,"```json
+{
+    ""reasoning"": ""The distinctive red lateritic soil and the dry deciduous vegetation (resembling Miombo woodlands or Acacia savanna) are characteristic of rural Tanzania. The visible car interior on the right side suggests a Right-Hand Drive vehicle, consistent with driving on the left side of the road in Tanzania."",
+    ""country"": ""TZ"",
+    ""latitude"": -6.5,
+    ""longitude"": 37.5
+}
+```"
+openai/gpt-5.5,no-CoT,-21.9365,24.7542,4050.106,BW,True,,stop,0.00411,678,24,0,1.73,"{""country"":""BW"",""latitude"":-21.9365,""longitude"":24.7542}"
+qwen/qwen3.6-35b-a3b,no-CoT,-25.7479,28.1804,4596.285,ZA,True,,stop,0.000185,585,31,0,1.07,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 28.1804}"
+qwen/qwen3.5-122b-a10b,no-CoT,-25.7461,28.2293,4598.934,ZA,True,,stop,0.00021684,586,31,0,12.88,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.2293}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.7461,28.2293,4598.934,ZA,True,,stop,0.00011304,586,31,0,3.4,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.2293}"
+xiaomi/mimo-v2.5,CoT,-24.5,30.5,4625.526,ZA,True,,stop,0.0004243176,899,1160,1095,18.79,"{""reasoning"": ""Decisive clues include the reddish unpaved soil and acacia-type trees typical of African savanna vegetation, suggesting a dry, rural region in Southern Africa."", ""country"": ""ZA"", ""latitude"": -24.5, ""longitude"": 30.5}"
+minimax/minimax-m3,no-CoT,-10.5,-45.0,6013.055,BR,True,,stop,0.00023736,904,23,0,5.6,"{""country"": ""BR"", ""latitude"": -10.5, ""longitude"": -45.0}"
+google/gemini-3.5-flash,CoT (effort=high),-11.5,-46.5,6204.662,BR,True,,stop,0.0217605,1307,2200,2127,18.93,"```json
+{""reasoning"": ""The red clay road, dry tropical savanna vegetation (Cerrado), and high-overhead sun are highly characteristic of the interior of Brazil, particularly the transition zone between Bahia and Tocantins."", ""country"": ""BR"", ""latitude"": -11.5, ""longitude"": -46.5}
+```"
+qwen/qwen3.5-9b,no-CoT,-10.7919,-48.4886,6384.012,BR,True,,stop,6.325e-05,586,31,0,5.63,"{""country"": ""BR"", ""latitude"": -10.7919, ""longitude"": -48.4886}"
+minimax/minimax-m3,CoT,-15.5,-48.2,6532.795,BR,True,,stop,0.00050706,943,238,170,12.02,"{""reasoning"": ""Reddish-orange lateritic soil and cerrado-type vegetation (low twisted trees and shrubs) are highly characteristic of central Brazil's interior plateau, typical of states like Goiás, Minas Gerais, or Tocantins."", ""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -48.2}"
+qwen/qwen3.5-27b,no-CoT,-14.235,-51.9253,6860.28,BR,True,,stop,0.000160875,585,30,0,2.48,"{""country"": ""BR"", ""latitude"": -14.235, ""longitude"": -51.9253}"
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.9253,6860.28,BR,True,,stop,0.0002375,585,31,0,5.69,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9253}"
+google/gemma-4-31b-it,no-CoT,-12.5,-55.0,7117.27,BR,True,,stop,6.108e-05,404,30,0,6.14,"```json
+{""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -55.0}
+```"
+mistralai/mistral-medium-3-5,no-CoT,18.5204,73.8567,7401.55,IN,True,,stop,0.0014115,786,31,0,2.22,"{""country"": ""IN"", ""latitude"": 18.5204, ""longitude"": 73.8567}"
+xiaomi/mimo-v2.5,no-CoT,20.5,78.5,7877.675,IN,True,,stop,9.54576e-05,820,25,0,4.16,"{""country"": ""IN"", ""latitude"": 20.5, ""longitude"": 78.5}"
+qwen/qwen3.6-27b,CoT,23.75,81.5,8167.474,IN,True,,stop,0.0100427,665,4936,1,202.62,"{""reasoning"": ""The reddish-brown laterite soil and dry deciduous vegetation (likely Acacia/Khair and Teak) are characteristic of the forest regions in Madhya Pradesh, India."", ""country"": ""IN"", ""latitude"": 23.75, ""longitude"": 81.5}"
+mistralai/mistral-small-2603,CoT,35.4607,-83.4986,9330.202,US,True,,stop,0.00045504,868,689,751,12.49,"{""reasoning"": ""Dense coniferous forest with reddish soil suggests iron-rich temperate forest; vehicle and road style consistent with rural southeastern United States."", ""country"": ""US"", ""latitude"": 35.4607, ""longitude"": -83.4986}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,12509.615,US,True,,stop,0.000171375,786,32,0,3.57,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-16.024999618530273,128.9586639404297,13841.677,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-15.491037368774414,129.40115356445312,13888.547,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-14.287013053894043,129.58641052246094,13906.142,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,-18.2871,133.6453,14334.25,AU,True,,stop,0.0003917,585,32,0,3.48,"{""country"": ""AU"", ""latitude"": -18.2871, ""longitude"": 133.6453}"
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,

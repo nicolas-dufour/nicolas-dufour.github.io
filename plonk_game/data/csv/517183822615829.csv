@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,33.029634790711,-113.0233918631,0.0,US,True,,,,,,,,"Gila Bend, Maricopa County, Arizona, US"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,33.01514434814453,-111.58212280273438,134.381,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),32.1452,-111.2584,192.391,US,True,,stop,0.004221,1272,257,188,9.25,"{""reasoning"": ""The arid landscape with columnar cacti on the hillsides and standard North American road markings (double yellow center lines) indicates the Sonoran Desert, likely in southern Arizona."", ""country"": ""US"", ""latitude"": 32.1452, ""longitude"": -111.2584}"
+google/gemini-3.1-pro-preview,no-CoT,32.154,-111.231,194.102,US,True,,stop,0.006544,1190,347,313,12.14,"```json
+{""country"": ""US"", ""latitude"": 32.154, ""longitude"": -111.231}
+```"
+google/gemini-3.1-pro-preview,CoT,32.25,-111.15,195.663,US,True,,stop,0.005614,1271,256,179,31.07,"{
+  ""reasoning"": ""Double yellow center lines and white edge lines indicate North America. The presence of saguaro cacti on the hillside points specifically to the Sonoran Desert region, likely southern Arizona."",
+  ""country"": ""US"",
+  ""latitude"": 32.25,
+  ""longitude"": -111.15
+}"
+xiaomi/mimo-v2.5,CoT,32.226,-111.15,196.88,US,True,,stop,0.0010078376,787,3300,3209,35.18,"```json
+{
+  ""reasoning"": ""The landscape features distinctive Saguaro cacti, which are endemic to the Sonoran Desert, while the double yellow road lines and right-hand traffic confirm the location is within the United States, specifically Southern Arizona."",
+  ""country"": ""US"",
+  ""latitude"": 32.226,
+  ""longitude"": -111.15
+}
+```"
+moonshotai/kimi-k2.6,CoT,32.3,-111.1,197.477,US,True,,stop,0.012991428,682,3730,3669,187.95,"{""reasoning"": ""Tall saguaro cacti and Sonoran Desert scrub are diagnostic of southern Arizona; road markings and driving side match U.S. standards."", ""country"": ""US"", ""latitude"": 32.3000, ""longitude"": -111.1000}"
+x-ai/grok-4.3,CoT,32.15,-111.05,209.154,US,True,,stop,0.0016515,676,457,396,10.99,"{""reasoning"": ""US-style double yellow center line + white edge lines indicate right-hand traffic; visible saguaro cacti and Sonoran Desert scrub on rocky hills pinpoint the American Southwest."", ""country"": ""US"", ""latitude"": 32.15, ""longitude"": -111.05}"
+minimax/minimax-m3,no-CoT,32.2,-111.0,210.767,US,True,,stop,0.00029922,767,106,113,9.92,"{""country"": ""US"", ""latitude"": 32.2, ""longitude"": -111.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,32.2226,-110.9747,211.802,US,True,,stop,0.00036828,473,32,0,2.69,"{""country"": ""US"", ""latitude"": 32.2226, ""longitude"": -110.9747}"
+qwen/qwen3.5-27b,no-CoT,32.2217,-110.9265,215.941,US,True,,stop,0.0002187,473,32,0,18.22,"{""country"": ""US"", ""latitude"": 32.2217, ""longitude"": -110.9265}"
+qwen/qwen3.6-27b,no-CoT,32.2217,-110.9265,215.941,US,True,,stop,0.00025805,474,32,0,1.39,"{""country"": ""US"", ""latitude"": 32.2217, ""longitude"": -110.9265}"
+qwen/qwen3.5-35b-a3b,no-CoT,32.2217,-110.9264,215.95,US,True,,stop,0.00015825,473,32,0,0.64,"{""country"": ""US"", ""latitude"": 32.2217, ""longitude"": -110.9264}"
+xiaomi/mimo-v2.5,no-CoT,32.35,-110.85,216.971,US,True,,stop,8.06176e-05,708,28,0,2.32,"{""country"": ""US"", ""latitude"": 32.35, ""longitude"": -110.85}"
+qwen/qwen3.5-122b-a10b,no-CoT,32.4812,-110.7581,220.433,US,True,,stop,0.0001898,474,32,0,12.99,"{""country"": ""US"", ""latitude"": 32.4812, ""longitude"": -110.7581}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,31.90848731994629,-111.03462982177734,224.382,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,32.0566,-110.7051,242.744,US,True,,stop,5.22e-05,474,32,0,3.94,"{""country"": ""US"", ""latitude"": 32.0566, ""longitude"": -110.7051}"
+google/gemma-4-31b-it,no-CoT,32.1234,-110.5678,251.18,US,True,,stop,0.00019501,408,37,0,0.86,"```json
+{""country"": ""US"", ""latitude"": 32.1234, ""longitude"": -110.5678}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,31.77062225341797,-110.64717102050781,263.367,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,32.85,-110.05,278.184,US,True,,stop,0.00679280485,553,6945,6842,104.69,"{""reasoning"": ""The double yellow center lines indicate driving on the right, typical of North America. The presence of tall, columnar cacti (likely Saguaro or Organ Pipe) on the arid, scrubby hillsides strongly points to the Sonoran Desert region of Arizona or Northern Mexico. The road markings and landscape are consistent with rural Arizona highways."", ""country"": ""US"", ""latitude"": 32.85, ""longitude"": -110.05}"
+minimax/minimax-m3,CoT,32.05,-110.25,281.861,US,True,,stop,0.00099342,845,665,694,16.5,"{""reasoning"": ""Double yellow center line indicates US road; saguaro cacti visible on the right, desert scrub vegetation, and characteristic Sonoran Desert mountain skyline in the background strongly suggest southern Arizona, likely along a rural highway east of Tucson."", ""country"": ""US"", ""latitude"": 32.05, ""longitude"": -110.25}{""reasoning"": ""Double yellow center line indicates US road; saguaro cacti visible on the right, desert scrub vegetation, and characteristic Sonoran Desert mountain skyline in the background strongly suggest southern Arizona, likely along a rural highway east of Tucson."", ""country"": ""US"", ""latitude"": 32.05, ""longitude"": -110.25}"
+x-ai/grok-4.3,no-CoT,30.85,-110.95,311.459,MX,True,,stop,0.0005934,592,22,0,7.42,"{""country"": ""MX"", ""latitude"": 30.85, ""longitude"": -110.95}"
+openai/gpt-5.5,no-CoT,32.7462,-116.4586,322.29,US,True,,stop,0.00344,544,24,0,1.22,"{""country"":""US"",""latitude"":32.7462,""longitude"":-116.4586}"
+mistralai/mistral-medium-3-5,no-CoT,32.7767,-117.217,392.49,US,True,,stop,0.0011835,634,31,0,1.99,"{""country"": ""US"", ""latitude"": 32.7767, ""longitude"": -117.217}"
+openai/gpt-5.5,CoT,29.7423,-114.7458,400.414,MX,True,,stop,0.014235,621,371,282,8.96,"{""reasoning"":""Narrow right-driving two-lane road with US-style double yellow lines but minimal shoulders, plus arid cactus/desert scrub and low mountains strongly matches Baja California highways in Mexico. The landscape is especially consistent with the Cataviña/Valle de los Cirios stretch of Federal Highway 1."",""country"":""MX"",""latitude"":29.7423,""longitude"":-114.7458}"
+google/gemini-3.5-flash,CoT (effort=high),29.725,-114.715,400.998,MX,True,,stop,0.0082515,1271,705,635,7.11,"{""reasoning"": ""The presence of columnar cacti (likely Cardon) on arid, rocky hills alongside a narrow paved road with double yellow lines strongly indicates Federal Highway 1 in Baja California, Mexico."", ""country"": ""MX"", ""latitude"": 29.725, ""longitude"": -114.715}"
+qwen/qwen3.5-397b-a17b,CoT,29.12,-114.38,453.509,MX,True,,stop,0.011001,553,2977,2872,25.17,"{""reasoning"": ""The double yellow center line and right-side traffic indicate a country like the US or Mexico. The distinctive tall, thin, branching vegetation on the right hillside resembles the Boojum tree (Fouquieria columnaris, or Ocotillo), which is endemic to Baja California, Mexico, suggesting this is a rural road in that region."", ""country"": ""MX"", ""latitude"": 29.12, ""longitude"": -114.38}"
+google/gemini-3.5-flash,CoT (effort=medium),29.4562,-110.1234,483.569,MX,True,,stop,0.0071265,1271,580,510,6.11,"{""reasoning"": ""The arid landscape with columnar cacti, dry grass, and rocky hills combined with the double yellow center lines indicates the Sonoran Desert region, most likely in Sonora, Mexico."", ""country"": ""MX"", ""latitude"": 29.4562, ""longitude"": -110.1234}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),29.183456,-110.456789,492.511,MX,True,,stop,0.0021435,1189,40,0,32.26,"```json
+{""country"": ""MX"", ""latitude"": 29.183456, ""longitude"": -110.456789}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,34.0522,-118.2437,496.935,US,True,,stop,0.00010295,473,32,0,2.51,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+anthropic/claude-opus-4.8,CoT,28.5,-110.5,558.347,MX,True,,stop,0.006435,797,98,0,5.31,"{""reasoning"": ""Arid scrubland with cardón/saguaro-like cacti and yellow center lines on a rural two-lane highway, suggesting northwestern Mexico's Sonoran desert."", ""country"": ""MX"", ""latitude"": 28.5, ""longitude"": -110.5}"
+moonshotai/kimi-k2.6,no-CoT,26.5,-111.5,740.771,MX,True,,stop,0.00066485,603,23,0,18.82," {""country"": ""MX"", ""latitude"": 26.5, ""longitude"": -111.5}"
+anthropic/claude-opus-4.8,no-CoT,26.5,-108.5,846.977,MX,True,,stop,0.00408,666,30,0,2.53,"{""country"": ""MX"", ""latitude"": 26.5, ""longitude"": -108.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,21.580810546875,-102.96627044677734,1612.956,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,21.12995147705078,-102.16523742675781,1702.444,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,21.111080169677734,-102.14791870117188,1705.2,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,CoT,9.9,-84.1,3920.069,CR,True,,stop,0.0005364,716,715,827,6.0,"{""reasoning"": ""Lush tropical vegetation and rolling hills suggest a humid subtropical region; road style and markings are generic but consistent with well-maintained rural roads in Central America."", ""country"": ""CR"", ""latitude"": 9.9, ""longitude"": -84.1}"
+mistralai/mistral-small-2603,no-CoT,60.3913,5.3221,8217.88,NO,True,,stop,0.000141375,634,30,0,1.95,"{""country"": ""NO"", ""latitude"": 60.3913, ""longitude"": 5.3221}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12135.963,,True,True,,,,,,1.53,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.15,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.67,

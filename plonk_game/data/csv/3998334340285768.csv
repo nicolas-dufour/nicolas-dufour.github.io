@@ -1,0 +1,70 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,35.197310347517,-88.473284063647,0.0,US,True,,,,,,,,"Adamsville, McNairy County, Tennessee, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,33.84691619873047,-88.32428741455078,150.776,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,33.53828811645508,-89.11608123779297,193.678,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,33.5,-89.0,194.827,US,True,,stop,0.00051219,602,23,0,3.19,"{""country"": ""US"", ""latitude"": 33.5, ""longitude"": -89.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,33.5097541809082,-89.16160583496094,197.999,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,32.5,-89.5,314.551,US,True,,stop,0.00621,797,89,0,9.45,"{""reasoning"": ""Pine-dominated mixed forest, humid summer cumulus clouds, and overgrown roadside vegetation typical of the southeastern US coastal plain."", ""country"": ""US"", ""latitude"": 32.5, ""longitude"": -89.5}"
+anthropic/claude-opus-4.8,no-CoT,32.5,-89.5,314.551,US,True,,stop,0.004055,666,29,0,9.94,"{""country"": ""US"", ""latitude"": 32.5, ""longitude"": -89.5}"
+google/gemini-3.1-pro-preview,CoT,32.5,-86.5,350.926,US,True,,stop,0.00606,1272,293,228,10.66,"{
+  ""reasoning"": ""The presence of tall southern pine trees, lush green vegetation, and the style of the paved road strongly indicate the Southeastern United States."",
+  ""country"": ""US"",
+  ""latitude"": 32.5,
+  ""longitude"": -86.5
+}"
+xiaomi/mimo-v2.5,no-CoT,33.75,-84.4,406.548,US,True,,stop,8.03376e-05,708,27,0,3.9,"{""country"": ""US"", ""latitude"": 33.75, ""longitude"": -84.40}"
+qwen/qwen3.5-122b-a10b,no-CoT,33.749,-84.388,407.604,US,True,,stop,0.0002041,473,39,0,1.5,"{
+  ""country"": ""US"",
+  ""latitude"": 33.7490,
+  ""longitude"": -84.3880
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,33.749,-84.388,407.604,US,True,,stop,0.0003252,473,29,0,1.2,"{""country"": ""US"", ""latitude"": 33.749, ""longitude"": -84.388}"
+google/gemini-3.1-pro-preview,no-CoT,33.8567,-84.2134,417.699,US,True,,stop,0.0028,1190,35,0,9.21,"```json
+{""country"": ""US"", ""latitude"": 33.8567, ""longitude"": -84.2134}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),33.8452,-84.1235,425.875,US,True,,stop,0.0020985,1189,35,0,8.99,"```json
+{""country"": ""US"", ""latitude"": 33.8452, ""longitude"": -84.1235}
+```"
+qwen/qwen3.5-397b-a17b,CoT,33.05,-84.55,432.875,US,True,,stop,0.0085458,553,2295,2186,17.73,"{
+""reasoning"": ""The image displays a dense treeline dominated by tall Loblolly Pines (Pinus taeda) mixed with deciduous hardwoods and lush green undergrowth, which is highly characteristic of the Southeastern United States (particularly Georgia or Alabama). The rural asphalt road edge and overhead distribution power lines are consistent with infrastructure found in this region."",
+""country"": ""US"",
+""latitude"": 33.05,
+""longitude"": -84.55
+}"
+google/gemini-3.5-flash,CoT (effort=low),33.2485,-84.1254,454.643,US,True,,stop,0.003591,1272,187,117,2.62,"{""reasoning"": ""The combination of tall loblolly pines, deciduous undergrowth, coarse asphalt road, and humid summer sky is highly characteristic of the southeastern United States, particularly Georgia or Alabama."", ""country"": ""US"", ""latitude"": 33.2485, ""longitude"": -84.1254}"
+moonshotai/kimi-k2.6,CoT,31.5,-86.2,462.137,US,True,,stop,0.007924428,682,2256,2175,72.97,"{""reasoning"": ""Dense loblolly pine forest edge and humid subtropical vegetation with North American rural road and power-line infrastructure are characteristic of the Gulf Coastal Plain in the southeastern United States. The sandy road shoulder and flat terrain specifically suggest the Deep South, likely Alabama or Georgia."", ""country"": ""US"", ""latitude"": 31.5, ""longitude"": -86.2}"
+minimax/minimax-m3,no-CoT,32.5,-84.0,510.4,US,True,,stop,0.00027762,767,88,83,3.12,"{""country"": ""US"", ""latitude"": 32.5, ""longitude"": -84.0}"
+google/gemini-3.5-flash,CoT (effort=high),33.2485,-83.4412,510.803,US,True,,stop,0.0061545,1271,472,409,26.89,"{""reasoning"": ""The presence of tall, straight loblolly pines alongside lush deciduous vegetation and a humid summer sky is highly characteristic of the southeastern United States."", ""country"": ""US"", ""latitude"": 33.2485, ""longitude"": -83.4412}"
+x-ai/grok-4.3,no-CoT,32.85,-83.65,515.376,US,True,,stop,0.0005934,592,22,0,7.02,"{""country"": ""US"", ""latitude"": 32.85, ""longitude"": -83.65}"
+x-ai/grok-4.3,CoT,32.65,-83.75,519.662,US,True,,stop,0.0018215,676,525,439,5.76,"{""reasoning"": ""Southeastern US piney-woods landscape (loblolly/longleaf pines in managed rows, lush summer understory, asphalt rural shoulder) plus overhead utility lines and classic cumulus sky point to US South; no left-side driving, non-metric plates or non-Latin script visible."", ""country"": ""US"", ""latitude"": 32.65, ""longitude"": -83.75}"
+openai/gpt-5.5,CoT,32.6078,-83.6382,530.958,US,True,,stop,0.008685,621,186,103,12.03,"{""reasoning"":""Flat humid subtropical roadside with loblolly pine plantation, grassy drainage verge, and overhead utility lines is characteristic of the rural southeastern United States coastal plain. With no distinctive signage or markings, the best fit is a rural road in central Georgia/Alabama pine country."",""country"":""US"",""latitude"":32.6078,""longitude"":-83.6382}"
+mistralai/mistral-medium-3-5,no-CoT,30.4518,-87.2169,540.562,US,True,,stop,0.0011835,634,31,0,2.31,"{""country"": ""US"", ""latitude"": 30.4518, ""longitude"": -87.2169}"
+google/gemini-3.5-flash,CoT (effort=medium),32.5412,-83.4512,549.624,US,True,,stop,0.0058215,1271,435,368,12.89,"{""reasoning"": ""The presence of loblolly pines, lush green deciduous undergrowth, and a humid subtropical summer sky strongly indicates the southeastern United States, particularly Georgia or Alabama."", ""country"": ""US"", ""latitude"": 32.5412, ""longitude"": -83.4512}"
+minimax/minimax-m3,CoT,31.46,-92.41,553.485,US,True,,stop,0.00062706,843,363,276,19.63,"{""reasoning"": ""Tall loblolly/longleaf pine forest mixed with hardwoods and a grassy meadow suggests the southeastern US pine belt (Gulf Coast states). Overhead utility lines, gravel road shoulder, humid subtropical cumulus clouds, and flat terrain are all consistent with rural Louisiana or Mississippi."", ""country"": ""US"", ""latitude"": 31.46, ""longitude"": -92.41}"
+openai/gpt-5.5,no-CoT,31.1423,-83.2456,663.163,US,True,,stop,0.00344,544,24,0,1.81,"{""country"":""US"",""latitude"":31.1423,""longitude"":-83.2456}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,33.89167022705078,-81.23077392578125,678.868,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,33.974281311035156,-81.19912719726562,679.481,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,33.968692779541016,-81.1992416381836,679.617,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,35.2271,-80.8431,693.03,US,True,,stop,0.0001943,473,31,0,15.39,"{""country"": ""US"", ""latitude"": 35.2271, ""longitude"": -80.8431}"
+qwen/qwen3.5-9b,no-CoT,35.2247,-80.8414,693.193,US,True,,stop,8.816e-05,473,31,0,1.18,"{""country"": ""US"", ""latitude"": 35.2247, ""longitude"": -80.8414}"
+google/gemma-4-31b-it,no-CoT,41.8781,-87.6298,746.472,US,True,,stop,6.718e-05,406,36,0,3.25,"```json
+{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}
+```"
+xiaomi/mimo-v2.5,CoT,32.0853,-81.0998,764.98,US,True,,stop,0.0001286376,787,160,83,8.91,"{""reasoning"": ""The landscape features a mix of pine and deciduous trees typical of the Southeastern United States, combined with a distinct power line infrastructure and roadside grass, suggesting a rural area in the American South."", ""country"": ""US"", ""latitude"": 32.0853, ""longitude"": -81.0998}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.2271,-79.8431,783.801,US,True,,stop,0.0024658842,471,2476,2445,10.2,"{""country"": ""US"", ""latitude"": 35.2271, ""longitude"": -79.8431}"
+qwen/qwen3.5-35b-a3b,no-CoT,32.7767,-96.797,812.943,US,True,,stop,0.00016776,474,30,0,2.14,"{""country"": ""US"", ""latitude"": 32.7767, ""longitude"": -96.797}"
+qwen/qwen3.5-27b,no-CoT,42.3601,-71.0589,1702.197,US,True,,stop,0.0002065,474,44,0,10.25,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 42.3601,
+  ""longitude"": -71.0589
+}
+```"
+mistralai/mistral-small-2603,no-CoT,-15.7801,-47.9292,7099.085,BR,True,,stop,0.0001137,634,31,0,8.06,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9868.823,,True,True,,,,,,6.77,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,12.51,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.97,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.4,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.38,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.52,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.35,

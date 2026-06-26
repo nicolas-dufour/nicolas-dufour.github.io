@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,59.302995156189,56.869707025621,0.0,RU,True,,,,,,,,"Berezniki, None, Perm, RU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,57.74141311645508,59.1572265625,218.587,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,56.85,60.6,349.9,RU,True,,stop,8.00576e-05,708,26,0,6.59,"{""country"": ""RU"", ""latitude"": 56.85, ""longitude"": 60.6}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,63.400604248046875,55.83519744873047,458.943,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,61.215,48.467,509.457,RU,True,,stop,6.298e-05,406,34,0,4.47,"```json
+{""country"": ""RU"", ""latitude"": 61.215, ""longitude"": 48.467}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,62.84403991699219,45.24501037597656,737.266,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,56.3241,44.1127,823.33,RU,True,,stop,0.00341,544,23,0,3.09,"{""country"":""RU"",""latitude"":56.3241,""longitude"":44.1127}"
+anthropic/claude-opus-4.8,no-CoT,61.25,40.5,925.416,RU,True,,stop,0.00408,666,30,0,2.37,"{""country"": ""RU"", ""latitude"": 61.25, ""longitude"": 40.5}"
+minimax/minimax-m3,CoT,59.8,40.2,938.465,RU,True,,stop,0.00087066,843,566,490,13.84,"{""reasoning"": ""Russian-style road signs (yellow diamond pedestrian crossing, blue square warning signs, circular speed limit), flat taiga terrain with birch forests, low winter sun angle indicating high latitude, and right-hand driving all point to northern European Russia."", ""country"": ""RU"", ""latitude"": 59.8, ""longitude"": 40.2}"
+google/gemini-3.5-flash,CoT (effort=low),59.22,39.89,962.456,RU,True,,stop,0.0039945,1271,232,165,3.75,"{""reasoning"": ""The yellow backing boards on the road signs, the snowy winter landscape with birch trees, and the wet asphalt road are highly characteristic of Russia, particularly in the western or central regions."", ""country"": ""RU"", ""latitude"": 59.22, ""longitude"": 39.89}"
+google/gemini-3.5-flash,CoT (effort=medium),59.22,39.89,962.456,RU,True,,stop,0.0081075,1271,689,627,12.39,"{""reasoning"": ""The yellow-backed road signs, flat birch-forested landscape, and snowy winter conditions are highly characteristic of Russia, particularly the northern or western regions."", ""country"": ""RU"", ""latitude"": 59.22, ""longitude"": 39.89}"
+openai/gpt-5.5,CoT,59.1712,39.8896,963.235,RU,True,,stop,0.016245,621,438,353,10.42,"{""reasoning"":""Snowy birch forest, right-hand traffic, double white center lines, and Russian-style fluorescent yellow-bordered pedestrian/speed signs point strongly to rural northwestern/central Russia. The flat taiga-like terrain and winter road conditions fit the Vologda/Yaroslavl region best."",""country"":""RU"",""latitude"":59.1712,""longitude"":39.8896}"
+google/gemini-3.5-flash,CoT (effort=high),59.2251,38.4521,1043.368,RU,True,,stop,0.0100335,1271,903,833,14.41,"```json
+{""reasoning"": ""The snowy birch forest landscape, right-hand traffic, and distinctive road signs with yellow backing boards are highly characteristic of a federal highway in western Russia."", ""country"": ""RU"", ""latitude"": 59.2251, ""longitude"": 38.4521}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,61.02128219604492,75.53797149658203,1046.571,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,61.02133560180664,75.54143524169922,1046.758,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,55.0,73.3,1096.565,RU,True,,stop,0.0001527176,787,246,181,3.83,"{""reasoning"": ""Cyrillic-script Russian traffic signs, snow-covered terrain with Siberian birch trees, and right-hand driving all point to a Russian Siberian road location."", ""country"": ""RU"", ""latitude"": 55.0, ""longitude"": 73.3}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),56.1291,38.1834,1160.054,RU,True,,stop,0.0020985,1189,35,0,23.03,"```json
+{""country"": ""RU"", ""latitude"": 56.1291, ""longitude"": 38.1834}
+```"
+google/gemma-4-31b-it,CoT,56.1234,37.8901,1176.751,RU,True,,stop,0.00034938,492,846,781,32.76,"```json
+{""reasoning"": ""Yellow background on road signs is a standard winter visibility measure in Russia. The presence of birch forests and flat, snowy terrain is highly characteristic of the Russian landscape."", ""country"": ""RU"", ""latitude"": 56.1234, ""longitude"": 37.8901}
+```"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,1210.0,RU,True,,stop,0.001191,634,32,0,1.13,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-122b-a10b,no-CoT,55.7558,37.6173,1210.0,RU,True,,stop,0.0002041,473,39,0,3.43,"{
+  ""country"": ""RU"",
+  ""latitude"": 55.7558,
+  ""longitude"": 37.6173
+}"
+anthropic/claude-opus-4.8,CoT,61.78,34.35,1255.064,RU,True,,stop,0.00631,797,93,0,9.57,"{""reasoning"": ""Birch and conifer forest with snowbanks, Russian-style yellow pedestrian crossing signs and right-hand traffic indicate northern Russia in late winter."", ""country"": ""RU"", ""latitude"": 61.78, ""longitude"": 34.35}"
+moonshotai/kimi-k2.6,CoT,56.5,36.0,1266.113,RU,True,,stop,0.026834598,682,7330,7251,539.74,"{""reasoning"": ""Yellow Russian road sign assembly and right-hand traffic on a melting snow highway through birch forest identifies this as a federal road in European Russia during early spring. The infrastructure style, vehicle type, and road condition match the central Russian mixed forest zone."", ""country"": ""RU"", ""latitude"": 56.5000, ""longitude"": 36.0000}"
+moonshotai/kimi-k2.6,no-CoT,59.9343,30.3351,1483.861,RU,True,,stop,0.000286812,603,25,0,6.41,"{""country"": ""RU"", ""latitude"": 59.9343, ""longitude"": 30.3351}"
+minimax/minimax-m3,no-CoT,59.95,30.3,1485.524,RU,True,,stop,0.00022248,752,23,0,6.21,"{""country"": ""RU"", ""latitude"": 59.95, ""longitude"": 30.3}"
+google/gemini-3.1-pro-preview,no-CoT,60.0,30.0,1501.171,RU,True,,stop,0.002728,1190,29,0,2.97,"```json
+{""country"": ""RU"", ""latitude"": 60.0, ""longitude"": 30.0}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,60.09431457519531,28.976802825927734,1555.686,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,63.1254,26.8932,1643.621,FI,True,,stop,0.01470665,553,4115,4001,100.56,"{""reasoning"": ""The image features right-hand traffic with distinctive yellow-background temporary road signs (a 'No Overtaking' sign on the left and a stack of speed limit/keep right/road work signs on the right), which is characteristic of Finland. The flat terrain, birch forest, and low sun angle further confirm a high-latitude Nordic location, specifically the Finnish countryside."", ""country"": ""FI"", ""latitude"": 63.1254, ""longitude"": 26.8932}"
+qwen/qwen3.5-9b,no-CoT,62.9167,25.75,1701.132,FI,True,,stop,5.175e-05,474,29,0,5.27,"{""country"": ""FI"", ""latitude"": 62.9167, ""longitude"": 25.75}"
+google/gemini-3.1-pro-preview,CoT,62.2426,25.7473,1703.559,FI,True,,stop,0.005602,1271,255,180,10.73,"{
+  ""reasoning"": ""The yellow background on the speed limit signs with red borders is characteristic of Finland or Sweden. The flat, snowy landscape with birch trees strongly suggests Finland."",
+  ""country"": ""FI"",
+  ""latitude"": 62.2426,
+  ""longitude"": 25.7473
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,65.0123,25.4789,1727.195,FI,True,,stop,0.00036468,473,31,0,8.85,"{""country"": ""FI"", ""latitude"": 65.0123, ""longitude"": 25.4789}"
+qwen/qwen3.6-35b-a3b,no-CoT,67.85,26.1,1766.64,FI,True,,stop,0.00010617035,473,31,0,7.53,"{""country"": ""FI"", ""latitude"": 67.8500, ""longitude"": 26.1000}"
+mistralai/mistral-small-2603,no-CoT,60.1699,24.9384,1774.517,FI,True,,stop,0.000142125,634,31,0,2.86,"{""country"": ""FI"", ""latitude"": 60.1699, ""longitude"": 24.9384}"
+qwen/qwen3.5-27b,no-CoT,60.1695,24.9354,1774.689,FI,True,,stop,0.0001905,474,36,0,9.19,"```json
+{""country"": ""FI"", ""latitude"": 60.1695, ""longitude"": 24.9354}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,60.1695,24.9354,1774.689,FI,True,,stop,0.00010195,473,31,0,2.02,"{""country"": ""FI"", ""latitude"": 60.1695, ""longitude"": 24.9354}"
+x-ai/grok-4.3,CoT,61.45,23.85,1810.528,FI,True,,stop,0.0024615,676,781,708,7.73,"{""reasoning"": ""Nordic winter scene with bare birch forest, snow banks, wet asphalt, right-hand traffic, and distinctive yellow/black Finnish-style warning signs (triangular + circular) point to Finland; sun angle and vegetation exclude more northern latitudes."", ""country"": ""FI"", ""latitude"": 61.45, ""longitude"": 23.85}"
+x-ai/grok-4.3,no-CoT,61.45,23.85,1810.528,FI,True,,stop,0.0007278,592,22,0,1.05,"{""country"": ""FI"", ""latitude"": 61.45, ""longitude"": 23.85}"
+qwen/qwen3.6-27b,no-CoT,61.4991,23.7871,1813.167,FI,True,,stop,0.0002414,474,31,0,3.16,"{""country"": ""FI"", ""latitude"": 61.4991, ""longitude"": 23.7871}"
+qwen/qwen3.6-35b-a3b,CoT,61.4916,23.7668,1814.339,FI,True,,stop,0.0048381736,553,4920,4805,20.22,"```json
+{
+  ""reasoning"": ""The yellow bus stop sign on the left and the yellow background of the regulatory signs on the right (speed limit 70, no overtaking) are characteristic of Finnish road signage, particularly for temporary or specific local regulations, combined with the right-hand traffic, white license plates, and boreal forest vegetation with snow."",
+  ""country"": ""FI"",
+  ""latitude"": 61.4916,
+  ""longitude"": 23.7668
+}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,60.3913,5.3221,2807.827,,True,,stop,5.694e-05,406,36,0,8.65,"{""country"": ""NO"", ""latitude"": 60.3913, own, ""longitude own, ""longitude"": 5.3221}"
+mistralai/mistral-small-2603,CoT,33.5,-112.1,9645.691,US,True,,stop,0.00040704,716,611,664,10.82,"{""reasoning"": ""Right-hand traffic, green highway sign style, and arid desert terrain point to the southwestern United States."", ""country"": ""US"", ""latitude"": 33.5, ""longitude"": -112.1}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.15,
+qwen/qwen3.5-122b-a10b,CoT,,,,,False,,stop,0.01191242,553,5658,5658,31.04,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,

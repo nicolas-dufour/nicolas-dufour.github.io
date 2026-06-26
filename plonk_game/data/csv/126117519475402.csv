@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,16.771178409919,96.029820993047,0.0,MM,True,,,,,,,,"Kanbe, None, Yangon, MM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,16.698362350463867,94.98005676269531,112.077,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,16.90512466430664,94.91737365722656,119.328,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,18.519790649414062,95.44232177734375,204.159,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,17.051116943359375,98.50069427490234,264.702,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,16.8211,100.2553,449.833,TH,True,,stop,0.0002523,585,32,0,9.72,"{""country"": ""TH"", ""latitude"": 16.8211, ""longitude"": 100.2553}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,16.527585983276367,100.2774887084961,453.319,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,14.85,100.45,518.886,TH,True,,stop,0.0007334,704,22,0,1.82,"{""country"": ""TH"", ""latitude"": 14.85, ""longitude"": 100.45}"
+x-ai/grok-4.3,CoT,14.85,100.48,521.812,TH,True,,stop,0.001889,788,496,436,10.43,"{""reasoning"": ""RHD side-mirror visible on right edge + motorcycle traffic + tropical scrub/trees/power-line style indicate Thailand; flat rural plain with distant hill matches central plains."", ""country"": ""TH"", ""latitude"": 14.85, ""longitude"": 100.48}"
+qwen/qwen3.5-35b-a3b,no-CoT,14.3521,100.5689,555.62,TH,True,,stop,0.0001366625,585,32,0,1.67,"{""country"": ""TH"", ""latitude"": 14.3521, ""longitude"": 100.5689}"
+qwen/qwen3.6-35b-a3b,no-CoT,14.35,100.6,558.651,TH,True,,stop,0.00018,585,27,0,1.99,"{""country"": ""TH"", ""latitude"": 14.35, ""longitude"": 100.6}"
+google/gemma-4-26b-a4b-it,no-CoT,13.7563,100.5018,585.187,TH,True,,stop,5.508e-05,404,32,0,1.31,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+mistralai/mistral-medium-3-5,no-CoT,13.7563,100.5018,585.187,TH,True,,stop,0.001419,786,32,0,1.09,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-9b,no-CoT,13.7563,100.5018,585.187,TH,True,,stop,6.34e-05,586,32,0,4.28,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+anthropic/claude-opus-4.8,CoT,14.5,101.0,589.037,TH,True,,stop,0.00702,949,91,0,9.54,"{""reasoning"": ""Tropical flat rural landscape with concrete utility poles, motorbike, and left-side driving suggests Southeast Asia, likely Thailand's countryside."", ""country"": ""TH"", ""latitude"": 14.5, ""longitude"": 101.0}"
+anthropic/claude-opus-4.8,no-CoT,14.5,101.2,608.451,TH,True,,stop,0.00484,818,30,0,9.34,"{""country"": ""TH"", ""latitude"": 14.5, ""longitude"": 101.2}"
+qwen/qwen3.5-27b,no-CoT,14.5234,101.2345,610.716,TH,True,,stop,0.000163995,585,32,0,11.26,"{""country"": ""TH"", ""latitude"": 14.5234, ""longitude"": 101.2345}"
+qwen/qwen3.5-397b-a17b,no-CoT,14.5208,101.3892,625.983,TH,True,,stop,0.00034485,585,32,0,4.53,"{""country"": ""TH"", ""latitude"": 14.5208, ""longitude"": 101.3892}"
+google/gemma-4-31b-it,no-CoT,14.215,101.35,636.944,TH,True,,stop,6.388e-05,404,37,0,10.8,"```json
+{""country"": ""TH"", ""latitude"": 14.2150, ""longitude"": 101.3500}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,15.326102256774902,102.60603332519531,720.828,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),13.3521,103.8562,922.178,KH,True,,stop,0.005004,1308,338,273,16.12,"{""reasoning"": ""The flat landscape, tropical vegetation, and distinctive concrete utility poles with metal brackets on the right side of the road are highly characteristic of rural Cambodia."", ""country"": ""KH"", ""latitude"": 13.3521, ""longitude"": 103.8562}"
+google/gemini-3.1-pro-preview,CoT,24.0,90.0,1019.963,BD,True,,stop,0.006912,1308,358,287,5.15,"{
+  ""reasoning"": ""The flat, lush green landscape and the distinct black smudge/mirror in the top right corner of the image are classic indicators of Google Street View coverage in Bangladesh."",
+  ""country"": ""BD"",
+  ""latitude"": 24.0,
+  ""longitude"": 90.0
+}"
+google/gemini-3.1-pro-preview,no-CoT,24.0,90.0,1019.963,BD,True,,stop,0.005968,1226,293,264,4.95,"```json
+{""country"": ""BD"", ""latitude"": 24.0, ""longitude"": 90.0}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),24.3565,90.1234,1043.408,BD,True,,stop,0.0071625,1307,578,507,5.7,"{""reasoning"": ""The flat landscape, lush green vegetation with white Saccharum spontaneum (Kashful) grass, and distinctive concrete utility poles with metal brackets are highly characteristic of rural Bangladesh."", ""country"": ""BD"", ""latitude"": 24.3565, ""longitude"": 90.1234}"
+moonshotai/kimi-k2.6,CoT,12.2847,104.8234,1069.647,KH,True,,stop,0.0087324,832,2025,2390,50.13,"{""reasoning"": ""Tropical rural road with concrete utility poles running along the right shoulder, flat green terrain with scattered young trees, and a lone motorbike are characteristic of Cambodia's central lowland provincial roads."", ""country"": ""KH"", ""latitude"": 12.2847, ""longitude"": 104.8234}"
+google/gemini-3.5-flash,CoT (effort=high),11.6521,104.7543,1098.911,KH,True,,stop,0.0170985,1307,1682,1620,19.71,"{""reasoning"": ""The flat tropical landscape, right-hand traffic, and distinctive square concrete utility poles with metal brackets are highly characteristic of rural Cambodia."", ""country"": ""KH"", ""latitude"": 11.6521, ""longitude"": 104.7543}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),11.521432,104.985412,1127.956,KH,True,,stop,0.002199,1226,40,0,7.43,"```json
+{""country"": ""KH"", ""latitude"": 11.521432, ""longitude"": 104.985412}
+```"
+qwen/qwen3.6-27b,no-CoT,21.0278,105.8342,1134.427,VN,True,,stop,0.0002299,585,32,0,9.34,"{""country"": ""VN"", ""latitude"": 21.0278, ""longitude"": 105.8342}"
+openai/gpt-5.5,CoT,10.085,105.632,1276.6,VN,True,,stop,0.015805,755,401,325,11.03,"{""reasoning"":""Flat tropical farmland, right-side travel by motorbikes, unmarked narrow asphalt road and dense roadside utility wiring strongly suggest rural southern Vietnam/Mekong Delta. The vegetation and road infrastructure fit the outskirts of Can Tho rather than Thailand or Cambodia."",""country"":""VN"",""latitude"":10.085,""longitude"":105.632}"
+openai/gpt-5.5,no-CoT,10.7845,106.9592,1354.461,VN,True,,stop,0.00408,678,23,0,1.26,"{""country"":""VN"",""latitude"":10.7845,""longitude"":106.9592}"
+xiaomi/mimo-v2.5,no-CoT,23.5,80.5,1783.885,IN,True,,stop,9.54576e-05,820,25,0,1.14,"{""country"": ""IN"", ""latitude"": 23.5, ""longitude"": 80.5}"
+xiaomi/mimo-v2.5,CoT,27.5,81.0,1951.217,IN,True,,stop,0.0004573576,899,1278,1212,20.56,"{""reasoning"": ""Left-hand traffic and the rural landscape with concrete utility poles and green fields are indicative of northern India. The flat terrain and vegetation suggest the Indo-Gangetic Plain region."", ""country"": ""IN"", ""latitude"": 27.5, ""longitude"": 81.0}"
+minimax/minimax-m3,CoT,45.38,20.51,7568.541,RS,True,,stop,0.00094182,997,584,607,11.05,"{""reasoning"": ""Flat Pannonian-style terrain with rural road, characteristic concrete utility poles with multiple crossarms and dense wiring typical of Serbia/Romania, right-hand traffic with a scooter in distance, and lush deciduous vegetation on a clear summer day point to northern Serbia (Vojvodina)."", ""country"": ""RS"", ""latitude"": 45.38, ""longitude"": 20.51}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.69,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.17,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.16,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.3,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.53,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.43,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.26,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,0.12,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.22,

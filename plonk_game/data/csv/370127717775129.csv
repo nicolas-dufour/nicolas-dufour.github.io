@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-6.3473433333333,146.24577,0.0,PG,True,,,,,,,,"Kainantu, None, Eastern Highlands, PG"
+google/gemini-3.5-flash,CoT (effort=medium),-6.548,146.608,45.822,PG,True,,stop,0.0074145,1307,606,533,6.33,"{""reasoning"": ""The left-hand traffic, tropical vegetation, flat valley with distant mountains, and Melanesian passengers in the modified Hyundai truck strongly indicate Papua New Guinea, likely along the Highlands Highway in the Markham Valley."", ""country"": ""PG"", ""latitude"": -6.548, ""longitude"": 146.608}"
+google/gemini-3.5-flash,CoT (effort=high),-6.5481,146.6124,46.253,PG,True,,stop,0.0124095,1307,1161,1084,21.43,"{""reasoning"": ""The tropical vegetation, flat valley terrain with distant mountains, left-hand traffic, and a Hyundai PMV truck carrying passengers with Melanesian features strongly indicate the Markham Valley along the Highlands Highway in Papua New Guinea."", ""country"": ""PG"", ""latitude"": -6.5481, ""longitude"": 146.6124}"
+google/gemini-3.1-pro-preview,no-CoT,-6.5632,146.6125,47.095,PG,True,,stop,0.005224,1226,231,196,10.76,"```json
+{""country"": ""PG"", ""latitude"": -6.5632, ""longitude"": 146.6125}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-6.5432,146.7211,56.857,PG,True,,stop,0.005922,1308,440,363,10.5,"{""reasoning"": ""The tropical vegetation, left-hand traffic, Toyota Land Cruiser camera car hood ornament, and the passenger-carrying light truck (PMV) are highly characteristic of Papua New Guinea, specifically along the Highlands Highway."", ""country"": ""PG"", ""latitude"": -6.5432, ""longitude"": 146.7211}"
+anthropic/claude-opus-4.8,CoT,-6.65,146.7,60.423,PG,True,,stop,0.00722,949,99,0,10.98,"{""reasoning"": ""Tropical lowland vegetation, PMV passenger truck, mountains in distance, and left-side driving suggest Papua New Guinea, likely the Markham Valley road near Lae."", ""country"": ""PG"", ""latitude"": -6.65, ""longitude"": 146.7}"
+moonshotai/kimi-k2.6,no-CoT,-6.7,146.8,72.709,PG,True,,stop,0.005737716,754,1609,1585,42.37,"{""country"": ""PG"", ""latitude"": -6.7, ""longitude"": 146.8}"
+moonshotai/kimi-k2.6,CoT,-6.65,146.85,74.759,PG,True,,stop,0.020144736,834,5813,5738,216.88,"{""reasoning"": ""The canvas-roof truck packed with passengers is a classic Papua New Guinea PMV, and the combination of left-hand traffic road geometry, tropical lowland vegetation, and distant inland mountains matches the Highlands Highway corridor in Morobe Province."", ""country"": ""PG"", ""latitude"": -6.65, ""longitude"": 146.85}"
+google/gemini-3.1-pro-preview,CoT,-6.721,146.984,91.528,PG,True,,stop,0.006214,1307,300,210,18.71,"{
+  ""reasoning"": ""The tropical landscape, left-hand driving, and the use of a flatbed truck for passenger transport strongly suggest Papua New Guinea. The white bridge railings and general road conditions are typical of the coastal or lowland highway routes in the country."",
+  ""country"": ""PG"",
+  ""latitude"": -6.721,
+  ""longitude"": 146.984
+}"
+minimax/minimax-m3,no-CoT,-6.0,147.0,91.891,PG,True,,stop,0.00036162,919,120,128,3.89,"{""country"": ""PG"", ""latitude"": -6.0, ""longitude"": 147.0}"
+minimax/minimax-m3,CoT,-6.7,147.0,92.09,PG,True,,stop,0.00103026,995,661,575,18.53,"{""reasoning"": ""Left-hand traffic with Toyota pickup carrying passengers in the open bed (a classic PNG PMV style), tropical lowland vegetation with palms, simple asphalt road with timber guardrails, and mountain backdrop all strongly indicate Papua New Guinea, likely along the Highlands Highway near the Markham Valley."", ""country"": ""PG"", ""latitude"": -6.7, ""longitude"": 147.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-7.039416790008545,146.78953552246094,97.613,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-6.0833,145.3833,99.757,PG,True,,stop,0.00489,818,32,0,2.82,"{""country"": ""PG"", ""latitude"": -6.0833, ""longitude"": 145.3833}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-7.093827724456787,146.82264709472656,104.633,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-7.134382247924805,146.78717041015625,105.986,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-9.4285,160.0547,1558.808,SB,True,,stop,0.0021525,1225,35,0,1.55,"```json
+{""country"": ""SB"", ""latitude"": -9.4285, ""longitude"": 160.0547}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,-14.285,129.467,2035.086,,True,,stop,5.468e-05,404,31,0,13.89,"{""country own"": ""unknown"", ""latitude"": -14.285, ""longitude"": 129.467}"
+x-ai/grok-4.3,no-CoT,8.228,124.245,2928.718,PH,True,,stop,0.0007334,704,22,0,6.99,"{""country"": ""PH"", ""latitude"": 8.228, ""longitude"": 124.245}"
+mistralai/mistral-medium-3-5,no-CoT,10.3157,123.8854,3092.518,PH,True,,stop,0.001419,786,32,0,7.49,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+qwen/qwen3.5-27b,no-CoT,10.3157,123.8854,3092.518,PH,True,,stop,0.00022707,585,32,0,14.1,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+xiaomi/mimo-v2.5,no-CoT,10.3157,123.8854,3092.518,PH,True,,stop,9.74176e-05,820,32,0,1.2,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+qwen/qwen3.5-9b,no-CoT,10.0833,123.0833,3149.366,PH,True,,stop,6.34e-05,586,32,0,2.07,"{""country"": ""PH"", ""latitude"": 10.0833, ""longitude"": 123.0833}"
+qwen/qwen3.5-122b-a10b,no-CoT,10.7202,122.5621,3236.538,PH,True,,stop,0.0002353,585,40,0,2.58,"{
+  ""country"": ""PH"",
+  ""latitude"": 10.7202,
+  ""longitude"": 122.5621
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,14.5995,121.0801,3622.944,PH,True,,stop,0.00018625,585,32,0,7.21,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 121.0801}"
+qwen/qwen3.6-27b,no-CoT,14.5995,121.0315,3627.05,PH,True,,stop,0.0002299,585,32,0,22.64,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 121.0315}"
+google/gemma-4-31b-it,no-CoT,14.5995,120.9842,3631.05,PH,True,,stop,6.388e-05,404,37,0,3.7,"```json
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,14.5995,120.9842,3631.05,PH,True,,stop,0.00011975,585,32,0,9.83,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+qwen/qwen3.5-397b-a17b,no-CoT,-17.7333,178.0667,3676.816,FJ,True,,stop,0.00043908,585,33,0,5.0,"{""country"": ""FJ"", ""latitude"": -17.7333, ""longitude"": 178.0667}"
+xiaomi/mimo-v2.5,CoT,15.92,121.15,3709.797,PH,True,,stop,0.0002098376,899,394,310,4.78,"{""reasoning"": ""The tropical vegetation (palm trees, dense lush greenery) with mountainous backdrop, right-hand driving, and the style of the utility truck with Philippine-style license plate point to the Philippines, specifically a rural mountainous area in Luzon."", ""country"": ""PH"", ""latitude"": 15.92, ""longitude"": 121.15}"
+x-ai/grok-4.3,CoT,-6.85,107.95,4229.353,ID,True,,stop,0.003024,788,950,866,13.83,"{""reasoning"": ""Left-hand traffic (oncoming vehicle on right side of road, truck parked on left), tropical palms/vegetation, distant mountains, Hino truck with canopy, Toyota emblem, and rural asphalt road with metal guardrail point to Indonesia (or nearby left-driving SE Asian country)."", ""country"": ""ID"", ""latitude"": -6.85, ""longitude"": 107.95}"
+mistralai/mistral-small-2603,no-CoT,28.6357,77.2245,8336.308,IN,True,,stop,0.0001365,786,31,0,1.44,"{""country"": ""IN"", ""latitude"": 28.6357, ""longitude"": 77.2245}"
+openai/gpt-5.5,CoT,-20.1615,57.5768,9626.479,MU,True,,stop,0.020545,755,559,476,49.85,"{""reasoning"":""Left-side driving, tropical sugarcane-like roadside vegetation, UK-style yellow rear plate, and volcanic mountain backdrop point strongly to Mauritius. The rural asphalt road and white bridge railings fit inland/north-central Mauritius near the Moka/Pamplemousses cane fields."",""country"":""MU"",""latitude"":-20.1615,""longitude"":57.5768}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,9.6629638671875,-84.50312042236328,14419.573,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,9.47706413269043,-84.18909454345703,14453.893,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,10.084579467773438,-84.17180633544922,14455.91,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,6.7601,-58.1756,17317.186,GY,True,,stop,0.00411,678,24,0,2.6,"{""country"":""GY"",""latitude"":6.7601,""longitude"":-58.1756}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.95,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.26,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.45,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.26,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.46,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.66,

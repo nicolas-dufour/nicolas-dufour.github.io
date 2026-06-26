@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-24.99889046097553,33.82187415064579,0.0,MZ,True,,,,,,,,"Xai-Xai, Xai-Xai District, Gaza, MZ"
+anthropic/claude-opus-4.8,no-CoT,-25.0,33.6,22.36,MZ,True,,stop,0.004865,818,31,0,2.98,"{""country"": ""MZ"", ""latitude"": -25.0, ""longitude"": 33.6}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-25.476444244384766,33.604000091552734,57.446,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-25.489614486694336,33.620521545410156,58.203,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-25.71830940246582,33.35795211791992,92.586,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-24.0125,35.2854,184.271,MZ,True,,stop,0.005364,1308,378,298,9.64,"{""reasoning"": ""The road features yellow outer edge lines and a white dashed center line with left-hand traffic, characteristic of Southern Africa. The lush, tropical green vegetation and rolling terrain strongly suggest coastal or southern Mozambique along the EN1 highway."", ""country"": ""MZ"", ""latitude"": -24.0125, ""longitude"": 35.2854}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-23.858333,35.347222,199.826,MZ,True,,stop,0.00219,1226,39,0,7.36,"```json
+{""country"": ""MZ"", ""latitude"": -23.858333, ""longitude"": 35.347222}
+```"
+anthropic/claude-opus-4.8,CoT,-23.865,35.383,202.172,MZ,True,,stop,0.00722,949,99,0,9.17,"{""reasoning"": ""Tropical coastal scrub vegetation, sandy soil, simple two-lane road with yellow edge lines and left-hand driving suggest southern Mozambique near Inhambane."", ""country"": ""MZ"", ""latitude"": -23.865, ""longitude"": 35.383}"
+google/gemini-3.1-pro-preview,no-CoT,-23.865,35.383,202.172,MZ,True,,stop,0.002846,1225,33,0,2.98,"```json
+{""country"": ""MZ"", ""latitude"": -23.865, ""longitude"": 35.383}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-23.5124,35.3458,226.245,MZ,True,,stop,0.0117075,1307,1083,1010,15.35,"```json
+{""reasoning"": ""The lush tropical vegetation, sandy roadside soil, concrete-lined drainage ditch, and left-hand traffic are highly characteristic of the rehabilitated EN1 highway in coastal Mozambique."", ""country"": ""MZ"", ""latitude"": -23.5124, ""longitude"": 35.3458}
+```"
+google/gemini-3.1-pro-preview,CoT,-28.5,32.0,429.263,ZA,True,,stop,0.006144,1308,294,215,11.02,"{
+  ""reasoning"": ""Driving on the left with a solid yellow line on the left edge of the road is characteristic of South Africa. The lush, rolling green landscape suggests the eastern coastal region, such as KwaZulu-Natal."",
+  ""country"": ""ZA"",
+  ""latitude"": -28.5,
+  ""longitude"": 32.0
+}"
+x-ai/grok-4.3,CoT,-28.75,30.85,510.691,ZA,True,,stop,0.0025815,788,773,700,12.83,"{""reasoning"": ""Left-hand traffic (oncoming car positioned right of center line), yellow edge/center markings, wooden utility poles, tropical savanna scrub and flat terrain under high sun indicate rural left-driving region in southern/eastern Africa or Australia."", ""country"": ""ZA"", ""latitude"": -28.75, ""longitude"": 30.85}"
+moonshotai/kimi-k2.6,CoT,-10.5,39.8,1731.234,TZ,True,,stop,0.044971596,834,13063,12992,510.44,"{""reasoning"": ""Tropical coastal scrub and sandy soils alongside a straight, paved rural road with wooden utility poles match the Tanzanian coast, and the vehicle's position left of the road center indicates left-hand traffic consistent with Tanzania."", ""country"": ""TZ"", ""latitude"": -10.5, ""longitude"": 39.8}"
+google/gemini-3.5-flash,CoT (effort=high),-7.7152,39.0124,1999.321,TZ,True,,stop,0.0185205,1307,1840,1752,19.43,"```json
+{""reasoning"": ""The road features white outer edge lines and a dashed white center line with left-hand traffic, characteristic of Tanzania. The lush tropical vegetation, rolling terrain, and concrete-lined drainage ditch suggest the coastal T7 highway south of Dar es Salaam."", ""country"": ""TZ"", ""latitude"": -7.7152, ""longitude"": 39.0124}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4576.131,,True,True,,,,,,0.19,
+xiaomi/mimo-v2.5,CoT,6.81,3.82,4801.192,NG,True,,stop,0.0001899576,899,323,257,5.59,"{""reasoning"": ""The road uses left-hand traffic, the tropical savanna landscape with reddish laterite soil and West African-style roadside vegetation, plus rural highway infrastructure, point to Nigeria."", ""country"": ""NG"", ""latitude"": 6.81, ""longitude"": 3.82}"
+minimax/minimax-m3,no-CoT,6.5244,3.3792,4809.942,NG,True,,stop,0.00034722,919,108,107,3.74,"{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+minimax/minimax-m3,CoT,5.65,-4.45,5360.141,CI,True,,stop,0.00081546,995,482,396,15.47,"{""reasoning"": ""Tropical forest vegetation (banana/cassava plants), reddish lateritic soil typical of West Africa, French-style road infrastructure with right-hand driving, flat-to-rolling terrain with cleared forest patches, and concrete/wooden utility poles characteristic of Côte d'Ivoire's southern agricultural zone."", ""country"": ""CI"", ""latitude"": 5.65, ""longitude"": -4.45}"
+qwen/qwen3.5-122b-a10b,no-CoT,-10.1523,-37.8142,7691.633,BR,True,,stop,0.00021684,586,31,0,6.38,"{""country"": ""BR"", ""latitude"": -10.1523, ""longitude"": -37.8142}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-6.766321659088135,-36.71194076538086,7731.379,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-7.334651947021484,-37.37314987182617,7772.187,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,-23.4567,-46.789,8040.582,BR,True,,stop,0.000185625,585,30,0,1.82,"{""country"": ""BR"", ""latitude"": -23.4567, ""longitude"": -46.789}"
+mistralai/mistral-medium-3-5,no-CoT,-3.7172,-38.5431,8057.054,BR,True,,stop,0.001404,786,30,0,0.98,"{""country"": ""BR"", ""latitude"": -3.7172, ""longitude"": -38.5431}"
+mistralai/mistral-small-2603,no-CoT,45.4384,12.3268,8128.975,IT,True,,stop,0.000170625,786,31,0,7.92,"{""country"": ""IT"", ""latitude"": 45.4384, ""longitude"": 12.3268}"
+qwen/qwen3.5-9b,no-CoT,-10.7956,-42.8456,8169.905,BR,True,,stop,6.325e-05,586,31,0,10.57,"{""country"": ""BR"", ""latitude"": -10.7956, ""longitude"": -42.8456}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-11.676630020141602,-43.84092330932617,8231.525,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,-15.7939,-47.8828,8457.883,BR,True,,stop,0.00011875,585,31,0,9.07,"{""country"": ""BR"", ""latitude"": -15.7939, ""longitude"": -47.8828}"
+xiaomi/mimo-v2.5,no-CoT,-12.5,-46.5,8461.99,BR,True,,stop,9.54576e-05,820,25,0,1.59,"{""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -46.5}"
+google/gemma-4-31b-it,no-CoT,-15.7801,-47.9292,8463.058,BR,True,,stop,5.748e-05,406,36,0,1.97,"```json
+{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7801,-47.9292,8463.058,BR,True,,stop,0.0003882,585,31,0,2.23,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+x-ai/grok-4.3,no-CoT,-16.464,-49.109,8550.345,BR,True,,stop,0.0007334,704,22,0,1.81,"{""country"": ""BR"", ""latitude"": -16.464, ""longitude"": -49.109}"
+qwen/qwen3.5-27b,no-CoT,-14.235,-51.925,8925.209,BR,True,,stop,0.000159315,585,29,0,1.25,"{""country"": ""BR"", ""latitude"": -14.235, ""longitude"": -51.925}"
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.9253,8925.239,BR,True,,stop,0.0002279,585,31,0,14.7,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9253}"
+openai/gpt-5.5,CoT,13.1235,-59.4822,10946.347,BB,True,,stop,0.015025,755,375,295,39.87,"{""reasoning"":""Left-side driving with British-style white lane markings, tropical scrubby vegetation, rolling low limestone terrain, and rural utility poles strongly suggest Barbados rather than a larger mountainous Caribbean island. The broad rural road and landscape fit the St Philip/Christ Church interior area."",""country"":""BB"",""latitude"":13.1235,""longitude"":-59.4822}"
+openai/gpt-5.5,no-CoT,13.1837,-59.5144,10952.241,BB,True,,stop,0.00411,678,24,0,1.74,"{""country"":""BB"",""latitude"":13.1837,""longitude"":-59.5144}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.23,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.31,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.41,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.4,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.37,

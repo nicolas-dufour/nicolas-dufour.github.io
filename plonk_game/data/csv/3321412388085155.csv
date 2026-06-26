@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-20.954277783959,140.9015277748,0.0,AU,True,,,,,,,,"Cloncurry, Cloncurry, Queensland, AU"
+anthropic/claude-opus-4.8,CoT,-20.95429,140.90153,0.001,AU,True,,stop,0.00732,949,103,0,9.99,"{""reasoning"": ""Outback Australian road with red soil, spinifex/dry grass, sparse eucalypts; overlay GPS reads 20.95S 140.90E, near Mount Isa, Queensland."", ""country"": ""AU"", ""latitude"": -20.95429, ""longitude"": 140.90153}"
+google/gemini-3.1-pro-preview,CoT,-20.95429,140.90153,0.001,AU,True,,stop,0.00529,1307,223,127,3.85,"{
+  ""reasoning"": ""The image contains a text overlay at the bottom left with the exact GPS coordinates: -20.95429S 140.90153E, which points to a location in Queensland, Australia."",
+  ""country"": ""AU"",
+  ""latitude"": -20.95429,
+  ""longitude"": 140.90153
+}"
+google/gemini-3.5-flash,CoT (effort=low),-20.95429,140.90153,0.001,AU,True,,stop,0.0040665,1307,234,149,3.55,"{""reasoning"": ""The telemetry overlay at the bottom left of the image explicitly provides the GPS coordinates: -20.95429S, 140.90153E, which is located in Queensland, Australia."", ""country"": ""AU"", ""latitude"": -20.95429, ""longitude"": 140.90153}"
+openai/gpt-5.5,CoT,-20.95429,140.90153,0.001,AU,True,,stop,0.008395,755,154,85,4.19,"{""reasoning"":""The dashcam overlay itself shows coordinates around 20.95429S, 140.90153E, and the arid left-driving outback highway with eucalyptus scrub matches inland Queensland, Australia."",""country"":""AU"",""latitude"":-20.95429,""longitude"":140.90153}"
+qwen/qwen3.5-397b-a17b,CoT,-20.95429,140.90153,0.001,AU,True,,stop,0.0130518,665,3528,3421,28.69,"{""reasoning"": ""The image contains a data overlay at the bottom explicitly listing the coordinates '20.95429S 140.90153E', and the visual evidence of red soil, sparse eucalypt vegetation, and left-hand traffic confirms this is a rural road in Queensland, Australia."", ""country"": ""AU"", ""latitude"": -20.95429, ""longitude"": 140.90153}"
+qwen/qwen3.6-27b,CoT,-20.954285,140.901535,0.001,AU,True,,stop,0.004593785,665,1834,1476,35.2,"```json
+{
+    ""reasoning"": ""The image contains explicit GPS coordinates in the bottom-left metadata overlay (-20.954285, 140.901535), which places it in the Northern Territory of Australia. This is confirmed by the left-hand traffic road markings and the dry, flat landscape with Eucalyptus trees typical of the region during the dry season (August)."",
+    ""country"": ""AU"",
+    ""latitude"": -20.954285,
+    ""longitude"": 140.901535
+}
+```"
+xiaomi/mimo-v2.5,CoT,-20.954285,140.901535,0.001,AU,True,,stop,0.0002271976,899,456,351,14.3,"{""reasoning"": ""The metadata embedded in the bottom left corner of the image explicitly displays GPS coordinates (-20.954285, 140.901535). The landscape features characteristic red soil and sparse eucalyptus-like vegetation typical of the Australian outback in Queensland."", ""country"": ""AU"", ""latitude"": -20.954285, ""longitude"": 140.901535}"
+anthropic/claude-opus-4.8,no-CoT,-20.95429,140.90153,0.001,AU,True,,stop,0.00489,818,32,0,2.51,"{""country"": ""AU"", ""latitude"": -20.95429, ""longitude"": 140.90153}"
+google/gemini-3.1-pro-preview,no-CoT,-20.95429,140.90153,0.001,AU,True,,stop,0.004466,1225,168,130,3.53,"```json
+{""country"": ""AU"", ""latitude"": -20.95429, ""longitude"": 140.90153}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-20.95429,140.90153,0.001,AU,True,,stop,0.002181,1226,38,0,1.41,"```json
+{""country"": ""AU"", ""latitude"": -20.95429, ""longitude"": 140.90153}
+```"
+xiaomi/mimo-v2.5,no-CoT,-20.954285,140.901531,0.001,AU,True,,stop,9.85376e-05,820,36,0,2.73,"{""country"": ""AU"", ""latitude"": -20.954285, ""longitude"": 140.901531}"
+google/gemini-3.5-flash,CoT (effort=medium),-20.95429,140.90153,0.001,AU,True,,stop,0.0059655,1307,445,380,10.41,"{""reasoning"": ""The exact coordinates are printed in the telemetry watermark at the bottom left of the image, placing this on a highway in Queensland, Australia."", ""country"": ""AU"", ""latitude"": -20.95429, ""longitude"": 140.90153}"
+google/gemini-3.5-flash,CoT (effort=high),-20.95429,140.90153,0.001,AU,True,,stop,0.006804,1308,538,479,3.41,"{""reasoning"": ""The image contains embedded GPS coordinates in the bottom-left watermark, indicating a location in Queensland, Australia."", ""country"": ""AU"", ""latitude"": -20.95429, ""longitude"": 140.90153}"
+moonshotai/kimi-k2.6,CoT,-20.954295,140.901535,0.002,AU,True,,stop,0.010885356,834,3095,3008,94.91,"{""reasoning"": ""GPS coordinates (-20.954295, 140.901535) are visibly stamped in the image overlay, placing this on a remote sealed highway in outback Queensland, Australia; the red soil, sparse dry woodland, and white road edge markings confirm an Australian Outback location."", ""country"": ""AU"", ""latitude"": -20.954295, ""longitude"": 140.901535}"
+x-ai/grok-4.3,CoT,-20.954296,140.90153,0.002,AU,True,,stop,0.0016815,788,413,344,11.14,"{""reasoning"": ""Embedded EXIF/metadata shows coords -20.954296 140.90153E; arid eucalypt/acacia scrub, red soil, left-side driving and road markings confirm Australian outback."", ""country"": ""AU"", ""latitude"": -20.954296, ""longitude"": 140.90153}"
+google/gemma-4-31b-it,no-CoT,-20.954295,140.901536,0.002,AU,True,,stop,5.308e-05,262,41,0,13.89,"```json
+{""country"": ""AU"", ""latitude"": -20.954295, ""longitude"": 140.901536}
+```"
+moonshotai/kimi-k2.6,no-CoT,-20.954295,140.901535,0.002,AU,True,,stop,0.0007276,752,27,0,11.57,"{""country"": ""AU"", ""latitude"": -20.954295, ""longitude"": 140.901535}"
+qwen/qwen3.5-122b-a10b,no-CoT,-20.954295,140.901535,0.002,AU,True,,stop,0.00022724,586,36,0,13.6,"{""country"": ""AU"", ""latitude"": -20.954295, ""longitude"": 140.901535}"
+qwen/qwen3.5-27b,no-CoT,-20.954295,140.901535,0.002,AU,True,,stop,0.00023571,585,36,0,3.61,"{""country"": ""AU"", ""latitude"": -20.954295, ""longitude"": 140.901535}"
+qwen/qwen3.5-35b-a3b,no-CoT,-20.954295,140.901535,0.002,AU,True,,stop,0.0002278125,585,36,0,7.74,"{""country"": ""AU"", ""latitude"": -20.954295, ""longitude"": 140.901535}"
+qwen/qwen3.5-397b-a17b,no-CoT,-20.954295,140.901535,0.002,AU,True,,stop,0.0004806,585,36,0,8.8,"{""country"": ""AU"", ""latitude"": -20.954295, ""longitude"": 140.901535}"
+qwen/qwen3.5-9b,no-CoT,-20.954295,140.901535,0.002,AU,True,,stop,0.00010845,585,36,0,1.45,"{""country"": ""AU"", ""latitude"": -20.954295, ""longitude"": 140.901535}"
+qwen/qwen3.6-27b,no-CoT,-20.954295,140.901535,0.002,AU,True,,stop,0.0002379,585,36,0,10.19,"{""country"": ""AU"", ""latitude"": -20.954295, ""longitude"": 140.901535}"
+qwen/qwen3.6-35b-a3b,no-CoT,-20.954295,140.901535,0.002,AU,True,,stop,0.000129051,585,36,0,2.08,"{""country"": ""AU"", ""latitude"": -20.954295, ""longitude"": 140.901535}"
+minimax/minimax-m3,CoT,-20.9543,140.9015,0.004,AU,True,,stop,0.00075666,995,433,328,19.13,"{""reasoning"": ""Arid outback landscape with eucalyptus trees, red soil, and dry golden grass indicates Australian Outback. Left-side driving markings and highway style match Australia. Image metadata shows coordinates ~20.95°S, 140.90°E, placing this near Cloncurry in the Gulf Country of Queensland, likely on the Flinders or Barkly Highway."", ""country"": ""AU"", ""latitude"": -20.9543, ""longitude"": 140.9015}"
+openai/gpt-5.5,no-CoT,-20.9543,140.9015,0.004,AU,True,,stop,0.00411,678,24,0,1.61,"{""country"":""AU"",""latitude"":-20.9543,""longitude"":140.9015}"
+x-ai/grok-4.3,no-CoT,-20.9543,140.9015,0.004,AU,True,,stop,0.0007384,704,24,0,7.62,"{""country"": ""AU"", ""latitude"": -20.9543, ""longitude"": 140.9015}"
+google/gemma-4-26b-a4b-it,no-CoT,-20.9542,140.9015,0.009,AU,True,,stop,3.645e-05,404,37,0,19.98,"```json
+{""country"": ""AU"", ""latitude"": -20.9542, ""longitude"": 140.9015}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-20.97183609008789,140.90933227539062,2.114,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,-20.9543,140.0015,93.46,AU,True,,stop,0.00035874,919,92,77,10.53,"{""country"": ""AU"", ""latitude"": -20.9543, ""longitude"": 140.0015}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-19.646684646606445,139.8803253173828,180.227,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-20.076194763183594,138.89266967773438,230.867,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-19.949167251586914,138.78135681152344,247.552,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-19.929542541503906,138.6953125,256.557,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-23.5,133.5,812.585,AU,True,,stop,0.001374,786,26,0,1.86,"{""country"": ""AU"", ""latitude"": -23.5, ""longitude"": 133.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-26.961828231811523,145.92491149902344,840.468,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,CoT,-30.7465,121.4691,2223.565,AU,True,,stop,0.00053124,868,816,869,6.4,"{""reasoning"": ""Left-hand traffic rules out most countries; semi-arid landscape with reddish soil and possible eucalyptus trees strongly indicate Australia."", ""country"": ""AU"", ""latitude"": -30.7465, ""longitude"": 121.4691}"
+qwen/qwen3.6-35b-a3b,CoT,20.95429,140.90153,4660.02,AU,True,,stop,0.00308306375,665,3083,2937,19.9,"```json
+{
+  ""reasoning"": ""The image displays a left-hand traffic road with standard Australian white line markings, traversing a flat, arid landscape with red soil and scattered eucalyptus trees characteristic of the Australian Outback. The embedded metadata in the bottom left corner explicitly provides GPS coordinates (20.95429S, 140.90153E) which correspond to the Barkly Highway in Queensland, Australia."",
+  ""country"": ""AU"",
+  ""latitude"": 20.95429,
+  ""longitude"": 140.90153
+}
+```"
+google/gemma-4-31b-it,CoT,13.7563,100.5018,5861.977,TH,True,,stop,0.00114994,492,1894,1835,13.49,"```json
+{""reasoning"": ""The presence of Thai script on signage and right-hand drive traffic indicates this location."", ""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}
+```"
+mistralai/mistral-small-2603,no-CoT,38.5,-121.5,12077.83,US,True,,stop,0.000166875,786,26,0,1.48,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -121.5}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,2.15,

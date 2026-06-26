@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,31.61331241794,-89.252189197072,0.0,US,True,,,,,,,,"Ellisville, Jones County, Mississippi, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,31.752676010131836,-89.12185668945312,19.805,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,32.40501403808594,-88.52266693115234,111.719,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,30.4518,-89.1218,129.75,US,True,,stop,0.0011835,634,31,0,0.96,"{""country"": ""US"", ""latitude"": 30.4518, ""longitude"": -89.1218}"
+xiaomi/mimo-v2.5,no-CoT,33.5,-84.5,492.245,US,True,,stop,7.97776e-05,708,25,0,0.94,"{""country"": ""US"", ""latitude"": 33.5, ""longitude"": -84.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,33.00988006591797,-84.21253967285156,498.353,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,32.2157,-83.8582,513.45,US,True,,stop,8.816e-05,473,31,0,0.95,"{""country"": ""US"", ""latitude"": 32.2157, ""longitude"": -83.8582}"
+x-ai/grok-4.3,no-CoT,33.85,-84.35,521.556,US,True,,stop,0.0005934,592,22,0,1.04,"{""country"": ""US"", ""latitude"": 33.85, ""longitude"": -84.35}"
+xiaomi/mimo-v2.5,CoT,33.8,-83.5,590.452,US,True,,stop,0.0003957576,787,1114,1046,12.02,"{""reasoning"": ""Double yellow road lines and wooden telephone poles indicate right-hand traffic and rural American infrastructure. Lush green fields and pine trees suggest a temperate climate in the Southeastern United States."", ""country"": ""US"", ""latitude"": 33.8, ""longitude"": -83.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,33.8426,-80.8542,823.448,US,True,,stop,0.0002041,473,39,0,1.57,"{
+  ""country"": ""US"",
+  ""latitude"": 33.8426,
+  ""longitude"": -80.8542
+}"
+google/gemini-3.1-pro-preview,no-CoT,35.2271,-80.8431,877.361,US,True,,stop,0.0028,1190,35,0,9.87,"```json
+{""country"": ""US"", ""latitude"": 35.2271, ""longitude"": -80.8431}
+```"
+google/gemma-4-31b-it,no-CoT,35.2275,-80.8433,877.363,US,True,,stop,5.772e-05,408,36,0,8.01,"```json
+{""country"": ""US"", ""latitude"": 35.2275, ""longitude"": -80.8433}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,39.7392,-86.1349,946.232,US,True,,stop,0.00010195,473,31,0,5.88,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -86.1349}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.7212,-78.8945,1061.021,US,True,,stop,0.000157,473,31,0,0.85,"{""country"": ""US"", ""latitude"": 35.7212, ""longitude"": -78.8945}"
+qwen/qwen3.5-397b-a17b,no-CoT,35.7796,-78.6382,1084.88,US,True,,stop,0.0003322,473,31,0,2.04,"{""country"": ""US"", ""latitude"": 35.7796, ""longitude"": -78.6382}"
+google/gemini-3.1-pro-preview,CoT,35.5,-78.5,1085.21,US,True,,stop,0.004858,1271,193,112,10.82,"{
+  ""reasoning"": ""Double yellow center lines, white edge lines, and wooden utility poles indicate the United States. The mix of pine and deciduous trees in a flat, rural landscape strongly suggests the southeastern US, such as North Carolina."",
+  ""country"": ""US"",
+  ""latitude"": 35.5,
+  ""longitude"": -78.5
+}"
+moonshotai/kimi-k2.6,no-CoT,35.5,-78.5,1085.21,US,True,,stop,0.0005752,600,25,0,17.89,"{""country"": ""US"", ""latitude"": 35.5, ""longitude"": -78.5}"
+google/gemini-3.5-flash,CoT (effort=low),35.4521,-77.5124,1167.893,US,True,,stop,0.0038595,1271,217,144,17.26,"{""reasoning"": ""The double yellow center lines, wooden utility poles, flat agricultural landscape, and mix of pine and deciduous trees are characteristic of the rural southeastern United States, particularly the coastal plain of North Carolina."", ""country"": ""US"", ""latitude"": 35.4521, ""longitude"": -77.5124}"
+google/gemini-3.5-flash,CoT (effort=medium),35.8245,-77.6482,1169.907,US,True,,stop,0.0051015,1271,355,283,10.99,"{""reasoning"": ""The flat terrain, loblolly pine trees, wooden utility poles, and double yellow road lines are highly characteristic of the rural coastal plain in the southeastern United States, particularly North Carolina."", ""country"": ""US"", ""latitude"": 35.8245, ""longitude"": -77.6482}"
+google/gemini-3.5-flash,CoT (effort=high),35.5812,-77.4521,1177.596,US,True,,stop,0.0114285,1271,1058,963,10.81,"```json
+{""reasoning"": ""The double yellow center lines, wooden utility poles, and green street name sign indicate a rural location in the United States. The flat terrain, mix of pine and deciduous trees, and lush green vegetation are highly characteristic of the coastal plain in the southeastern US, particularly North Carolina."", ""country"": ""US"", ""latitude"": 35.5812, ""longitude"": -77.4521}
+```"
+moonshotai/kimi-k2.6,CoT,35.442,-77.386,1178.44,US,True,,stop,0.006663348,682,1883,1821,49.94,"{""reasoning"": ""Wooden utility poles with cross-arms, double-yellow road markings, and flat farmland mixed with loblolly pines are characteristic of the rural US Southeast coastal plain."", ""country"": ""US"", ""latitude"": 35.442, ""longitude"": -77.386}"
+x-ai/grok-4.3,CoT,35.807,-77.379,1192.061,US,True,,stop,0.001939,676,572,505,5.13,"{""reasoning"": ""US right-side driving with double yellow center lines + white edge line, English 'BETHEL' street sign, wooden utility poles, pine/hardwood mix and open fields typical of rural Southeast US."", ""country"": ""US"", ""latitude"": 35.807, ""longitude"": -77.379}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),36.5241,-76.8512,1264.685,US,True,,stop,0.0021,1190,35,0,1.47,"```json
+{""country"": ""US"", ""latitude"": 36.5241, ""longitude"": -76.8512}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,39.20124053955078,-77.28076171875,1372.326,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,39.282039642333984,-76.94108581542969,1401.605,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,38.4892,-76.0716,1420.463,US,True,,stop,0.016365,621,442,363,13.97,"{""reasoning"":""The double yellow centerline, white edge markings, wooden utility poles, and rural humid vegetation point to the eastern United States. The visible green road sign appears to read “Bestpitch…”, matching Bestpitch Ferry Road on Maryland’s flat Eastern Shore."",""country"":""US"",""latitude"":38.4892,""longitude"":-76.0716}"
+openai/gpt-5.5,no-CoT,38.3558,-75.5812,1451.353,US,True,,stop,0.00344,544,24,0,2.5,"{""country"":""US"",""latitude"":38.3558,""longitude"":-75.5812}"
+anthropic/claude-opus-4.8,no-CoT,38.6,-75.6,1462.422,US,True,,stop,0.004055,666,29,0,15.31,"{""country"": ""US"", ""latitude"": 38.6, ""longitude"": -75.6}"
+anthropic/claude-opus-4.8,CoT,38.65,-75.6,1465.035,US,True,,stop,0.006635,797,106,0,3.17,"{""reasoning"": ""Rural two-lane road with yellow center line, wooden utility poles, and flat farmland with mixed pine/deciduous trees typical of the US Mid-Atlantic coastal plain (Delmarva region)."", ""country"": ""US"", ""latitude"": 38.65, ""longitude"": -75.6}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,40.55678176879883,-75.82453918457031,1560.423,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,41.5941,-73.6811,1773.811,US,True,,stop,0.0002067,473,31,0,16.33,"{""country"": ""US"", ""latitude"": 41.5941, ""longitude"": -73.6811}"
+qwen/qwen3.6-27b,no-CoT,41.5941,-73.6811,1773.811,US,True,,stop,0.0001943,473,31,0,9.74,"{""country"": ""US"", ""latitude"": 41.5941, ""longitude"": -73.6811}"
+minimax/minimax-m3,CoT,46.05,-66.45,2529.157,CA,True,,stop,0.00088146,843,575,495,24.48,"{""reasoning"": ""Yellow double center line, right-hand driving, wooden utility poles, lush deciduous and pine vegetation on flat farmland with cumulus clouds, and a green North American street sign visible on the right indicate a rural road in Eastern Canada, most likely New Brunswick."", ""country"": ""CA"", ""latitude"": 46.05, ""longitude"": -66.45}"
+mistralai/mistral-small-2603,no-CoT,-22.901,-47.06,7543.166,BR,True,,stop,0.0001137,634,31,0,4.41,"{""country"": ""BR"", ""latitude"": -22.9010, ""longitude"": -47.0600}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9936.731,,True,True,,,,,,6.93,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.4,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.79,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,3.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.32,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.2,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.11,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.38,

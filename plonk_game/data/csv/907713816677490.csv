@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,42.212954026636,-109.21929696036,0.0,US,True,,,,,,,,"North Rock Springs, Sweetwater County, Wyoming, US"
+google/gemini-3.5-flash,CoT (effort=high),42.25,-109.45,19.436,US,True,,stop,0.0078915,1271,665,602,6.87,"{""reasoning"": ""The double yellow center lines, white shoulder line with rumble strips, and vast sagebrush steppe landscape are highly characteristic of the high plains of Wyoming, USA."", ""country"": ""US"", ""latitude"": 42.25, ""longitude"": -109.45}"
+google/gemini-3.5-flash,CoT (effort=medium),42.1145,-109.4321,20.676,US,True,,stop,0.0063165,1271,490,418,5.0,"{""reasoning"": ""The double yellow center lines and paved shoulder with rumble strips indicate North America, while the vast, flat sagebrush plains are highly characteristic of the high desert basins in Wyoming, USA."", ""country"": ""US"", ""latitude"": 42.1145, ""longitude"": -109.4321}"
+google/gemini-3.5-flash,CoT (effort=low),42.1532,-108.7421,39.876,US,True,,stop,0.0045255,1271,291,220,4.03,"{""reasoning"": ""The double yellow center line and wide paved shoulders are characteristic of US highways, while the vast, flat sagebrush-steppe landscape is highly typical of Wyoming's high plains."", ""country"": ""US"", ""latitude"": 42.1532, ""longitude"": -108.7421}"
+x-ai/grok-4.3,no-CoT,41.75,-108.85,59.848,US,True,,stop,0.0007278,592,22,0,0.87,"{""country"": ""US"", ""latitude"": 41.75, ""longitude"": -108.85}"
+google/gemini-3.1-pro-preview,no-CoT,41.6528,-108.7183,74.813,US,True,,stop,0.00281,1189,36,0,3.28,"```json
+{""country"": ""US"", ""latitude"": 41.6528, ""longitude"": -108.7183}
+```"
+xiaomi/mimo-v2.5,CoT,41.53,-109.43,77.919,US,True,,stop,0.0002003176,787,416,329,11.01,"{""reasoning"": ""The road features double yellow center lines and white edge lines, which are standard for the United States, and the vast, flat landscape covered in sagebrush is highly characteristic of the Intermountain West, specifically the high desert plateaus found in states like Wyoming."", ""country"": ""US"", ""latitude"": 41.53, ""longitude"": -109.43}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.98258972167969,-110.27074432373047,90.454,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,41.96375274658203,-110.31945037841797,94.918,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.96552276611328,-110.32197570800781,95.059,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.7854,-108.1235,102.272,US,True,,stop,0.002109,1190,36,0,1.61,"```json
+{""country"": ""US"", ""latitude"": 41.7854, ""longitude"": -108.1235}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,41.2565,-109.5501,109.838,US,True,,stop,0.000146,474,32,0,11.0,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -109.5501}"
+openai/gpt-5.5,no-CoT,42.4102,-107.8195,117.172,US,True,,stop,0.00344,544,24,0,2.21,"{""country"":""US"",""latitude"":42.4102,""longitude"":-107.8195}"
+minimax/minimax-m3,no-CoT,41.0,-109.0,136.101,US,True,,stop,0.00019452,754,22,0,16.86,"{""country"": ""US"", ""latitude"": 41.0, ""longitude"": -109.0}{""country"": ""US"", ""latitude"": 41.0, ""longitude"": -109.0}"
+openai/gpt-5.5,CoT,42.2036,-107.5578,136.848,US,True,,stop,0.010455,621,245,167,7.69,"{""reasoning"":""Right-side driving with US-style double yellow centerlines and white edge lines indicates the United States; the vast treeless sagebrush steppe, arid high-plains terrain, and long straight rural highway are characteristic of central/southern Wyoming."",""country"":""US"",""latitude"":42.2036,""longitude"":-107.5578}"
+google/gemini-3.1-pro-preview,CoT,42.5,-107.5,144.832,US,True,,stop,0.005278,1271,228,147,11.08,"{
+  ""reasoning"": ""Double yellow center lines and white edge lines indicate North America. The flat, arid landscape with sagebrush and wide open skies is highly characteristic of the high plains in the western United States, such as Wyoming."",
+  ""country"": ""US"",
+  ""latitude"": 42.5,
+  ""longitude"": -107.5
+}"
+moonshotai/kimi-k2.6,CoT,42.5,-107.5,144.832,US,True,,stop,0.010512108,682,3003,2937,171.25,"{""reasoning"": ""Standard US road markings with double yellow lines and paved shoulders, combined with flat sagebrush steppe and a completely featureless horizon, are characteristic of the remote basins in central Wyoming."", ""country"": ""US"", ""latitude"": 42.5, ""longitude"": -107.5}"
+anthropic/claude-opus-4.8,CoT,41.8,-107.5,149.291,US,True,,stop,0.006185,797,88,0,3.06,"{""reasoning"": ""Yellow center line, sagebrush high-desert plain, and straight two-lane highway indicate the American Great Basin/Wyoming-Nevada region."", ""country"": ""US"", ""latitude"": 41.8, ""longitude"": -107.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.2033,-107.9411,154.471,US,True,,stop,0.0004995,474,32,0,10.23,"{""country"": ""US"", ""latitude"": 41.2033, ""longitude"": -107.9411}"
+anthropic/claude-opus-4.8,no-CoT,41.5,-107.5,162.969,US,True,,stop,0.004055,666,29,0,2.79,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -107.5}"
+xiaomi/mimo-v2.5,no-CoT,41.5,-107.5,162.969,US,True,,stop,8.00576e-05,708,26,0,1.23,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -107.5}"
+qwen/qwen3.5-9b,no-CoT,41.8781,-111.754,212.58,US,True,,stop,5.205e-05,474,31,0,2.67,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -111.754}"
+qwen/qwen3.6-27b,no-CoT,44.428,-108.566,251.906,US,True,,stop,0.0001963,473,32,0,11.6,"{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -108.5660}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.8781,-104.2973,408.077,US,True,,stop,0.00010295,473,32,0,1.87,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -104.2973}"
+mistralai/mistral-small-2603,no-CoT,40.0,-105.0,430.632,US,True,,stop,0.0001107,634,26,0,3.47,"{""country"": ""US"", ""latitude"": 40.0, ""longitude"": -105.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,38.36690139770508,-108.49249267578125,432.076,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,44.4267,-104.4508,457.491,US,True,,stop,0.000149955,473,37,0,1.32,"```json
+{""country"": ""US"", ""latitude"": 44.4267, ""longitude"": -104.4508}
+```"
+google/gemma-4-31b-it,no-CoT,41.25,-115.12,501.109,US,True,,stop,7.004e-05,406,33,0,3.79,"```json
+{""country"": ""US"", ""latitude"": 41.25, ""longitude"": -115.12}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,43.615,-116.2023,589.448,US,True,,stop,0.00018954,473,32,0,2.9,"{""country"": ""US"", ""latitude"": 43.6150, ""longitude"": -116.2023}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,36.68209457397461,-109.3581771850586,615.119,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,39.5,-116.0,644.868,US,True,,stop,0.00098826,843,664,577,17.09,"{""reasoning"": ""Two-lane highway with double yellow centerline (right-hand traffic), perfectly flat high desert with uniform sagebrush steppe vegetation, high-altitude cumulus clouds, and no signage or buildings — classic Great Basin terrain typical of central Nevada rural highways like US-93 or US-6."", ""country"": ""US"", ""latitude"": 39.5, ""longitude"": -116.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,36.61772155761719,-106.74390411376953,657.414,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,40.75,-117.8,732.733,US,True,,stop,0.001829,676,528,463,11.56,"{""reasoning"": ""US-style double yellow center line + white edge lines, right-hand traffic, sagebrush steppe on flat arid plain indicate western US Great Basin; no other region matches all markings + vegetation simultaneously."", ""country"": ""US"", ""latitude"": 40.75, ""longitude"": -117.8}"
+mistralai/mistral-medium-3-5,no-CoT,43.5,-100.0,764.57,US,True,,stop,0.001146,634,26,0,0.98,"{""country"": ""US"", ""latitude"": 43.5, ""longitude"": -100.0}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11576.683,,True,True,,,,,,13.52,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.65,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,9.34,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.94,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.3,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.42,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.09,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.32,

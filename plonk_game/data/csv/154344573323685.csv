@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,54.53779047433,-8.1394909067076,0.0,IE,True,,,,,,,,"Ballyshannon, County Donegal, Ulster, IE"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,54.27067947387695,-8.1212739944458,29.725,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,54.26842498779297,-8.11782169342041,29.985,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,54.22909927368164,-8.075976371765137,34.57,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),53.8125,-8.4532,83.193,IE,True,,stop,0.0109515,1271,1005,927,14.58,"```json
+{""reasoning"": ""The yellow dashed edge line on the left combined with left-hand driving is highly characteristic of the Republic of Ireland, further supported by the rolling green landscape and typical rural Irish bungalows in the distance."", ""country"": ""IE"", ""latitude"": 53.8125, ""longitude"": -8.4532}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),53.9625,-7.2154,87.726,IE,True,,stop,0.0082965,1271,710,644,12.59,"{""reasoning"": ""The yellow dashed edge line on the left side of the road combined with left-hand driving and rolling green hills is highly characteristic of a national road in Ireland."", ""country"": ""IE"", ""latitude"": 53.9625, ""longitude"": -7.2154}"
+google/gemini-3.5-flash,CoT (effort=low),53.725,-7.35,103.989,IE,True,,stop,0.003843,1272,215,149,8.48,"{""reasoning"": ""The yellow dashed edge line on the left side of the road combined with left-hand traffic and lush green rolling hills is highly characteristic of national roads in the Republic of Ireland."", ""country"": ""IE"", ""latitude"": 53.725, ""longitude"": -7.35}"
+mistralai/mistral-medium-3-5,no-CoT,53.5,-8.0,115.756,IE,True,,stop,0.001131,634,24,0,1.97,"{""country"": ""IE"", ""latitude"": 53.5, ""longitude"": -8.0}"
+x-ai/grok-4.3,no-CoT,54.85,-6.35,120.123,GB,True,,stop,0.0005934,592,22,0,6.9,"{""country"": ""GB"", ""latitude"": 54.85, ""longitude"": -6.35}"
+minimax/minimax-m3,CoT,53.42,-8.05,124.43,IE,True,,stop,0.00100386,843,677,595,16.69,"{""reasoning"": ""Left-hand driving, lush green rolling hills with hedgerows, characteristic Irish road markings, and the bright green pastoral landscape all strongly indicate rural Ireland. The flat-to-gently-undulating terrain with distant low hills is typical of the Irish midlands/west."", ""country"": ""IE"", ""latitude"": 53.42, ""longitude"": -8.05}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),53.9956,-6.4125,127.322,IE,True,,stop,0.0020895,1189,34,0,2.74,"```json
+{""country"": ""IE"", ""latitude"": 53.9956, ""longitude"": -6.4125}
+```"
+anthropic/claude-opus-4.8,CoT,53.4,-8.5,128.695,IE,True,,stop,0.005885,797,76,0,9.32,"{""reasoning"": ""Left-hand traffic, yellow edge lines, green rolling hills and bungalows typical of rural Ireland."", ""country"": ""IE"", ""latitude"": 53.4, ""longitude"": -8.5}"
+anthropic/claude-opus-4.8,no-CoT,53.4,-8.5,128.695,IE,True,,stop,0.00408,666,30,0,2.62,"{""country"": ""IE"", ""latitude"": 53.4, ""longitude"": -8.5}"
+xiaomi/mimo-v2.5,CoT,53.32,-7.48,142.127,IE,True,,stop,0.0001681176,787,301,232,3.95,"{""reasoning"": ""Left-hand traffic, distinctive yellow road markings, and lush rolling rural landscape are definitive clues pointing to the Republic of Ireland, with rural midlands/countryside terrain matching this scene."", ""country"": ""IE"", ""latitude"": 53.32, ""longitude"": -7.48}"
+qwen/qwen3.5-397b-a17b,no-CoT,53.2719,-7.6906,143.799,IE,True,,stop,0.00036108,473,30,0,3.42,"{""country"": ""IE"", ""latitude"": 53.2719, ""longitude"": -7.6906}"
+qwen/qwen3.5-122b-a10b,no-CoT,53.123456,-8.765432,162.541,IE,True,,stop,0.00019396,474,34,0,13.41,"{""country"": ""IE"", ""latitude"": 53.123456, ""longitude"": -8.765432}"
+google/gemini-3.1-pro-preview,CoT,53.0,-8.0,171.24,IE,True,,stop,0.004752,1272,184,114,10.24,"{
+  ""reasoning"": ""The dashed yellow line on the edge of the road and driving on the left are distinct features of roads in Ireland. The green, rolling landscape further supports this."",
+  ""country"": ""IE"",
+  ""latitude"": 53.0,
+  ""longitude"": -8.0
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,53.3498,-6.2603,180.475,IE,True,,stop,0.0001158625,473,30,0,6.74,"{""country"": ""IE"", ""latitude"": 53.3498, ""longitude"": -6.2603}"
+qwen/qwen3.6-35b-a3b,no-CoT,53.3498,-6.2603,180.475,IE,True,,stop,0.00010095,473,30,0,8.42,"{""country"": ""IE"", ""latitude"": 53.3498, ""longitude"": -6.2603}"
+xiaomi/mimo-v2.5,no-CoT,53.35,-6.25,180.919,IE,True,,stop,8.00576e-05,708,26,0,7.79,"{""country"": ""IE"", ""latitude"": 53.35, ""longitude"": -6.25}"
+qwen/qwen3.5-27b,no-CoT,53.271667,-6.355556,182.957,IE,True,,stop,0.00024544,474,47,0,7.9,"```json
+{
+  ""country"": ""IE"",
+  ""latitude"": 53.271667,
+  ""longitude"": -6.355556
+}
+```"
+openai/gpt-5.5,no-CoT,52.6523,-8.7036,212.934,IE,True,,stop,0.00344,544,24,0,1.4,"{""country"":""IE"",""latitude"":52.6523,""longitude"":-8.7036}"
+qwen/qwen3.5-9b,no-CoT,54.8566,-4.7544,220.37,GB,True,,stop,5.19e-05,474,30,0,4.53,"{""country"": ""GB"", ""latitude"": 54.8566, ""longitude"": -4.7544}"
+google/gemini-3.1-pro-preview,no-CoT,52.5,-8.0,226.779,IE,True,,stop,0.00412,1190,145,117,9.86,"```json
+{""country"": ""IE"", ""latitude"": 52.5, ""longitude"": -8.0}
+```"
+moonshotai/kimi-k2.6,CoT,52.15,-8.65,267.662,IE,True,,stop,0.024267348,682,7025,6967,260.29,"{""reasoning"": ""Right-hand drive travel on the left past rolling green hills, stone walls, and bare deciduous trees under a mild maritime sky matches rural Ireland."", ""country"": ""IE"", ""latitude"": 52.15, ""longitude"": -8.65}"
+openai/gpt-5.5,CoT,52.0615,-8.6542,277.465,IE,True,,stop,0.014895,621,393,310,13.17,"{""reasoning"":""Left-side driving with Ireland-style continuous yellow edge lines and white lane markings on a rural dual carriageway strongly indicates the Republic of Ireland. The lush rolling fields, hedgerows, and low-density roadside buildings fit southern Ireland, likely near Cork/Limerick road corridors."",""country"":""IE"",""latitude"":52.0615,""longitude"":-8.6542}"
+google/gemma-4-31b-it,no-CoT,54.5,-3.2,318.764,GB,True,,stop,4.968e-05,272,29,0,2.95,"```json
+{""country"": ""GB"", ""latitude"": 54.5, ""longitude"": -3.2}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,55.4580078125,-3.4042978286743164,318.807,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,55.36692428588867,-3.2823803424835205,323.483,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,55.39591598510742,-3.1977784633636475,329.47,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,55.9533,-3.1883,350.992,GB,True,,stop,0.0001923,473,30,0,28.68,"{""country"": ""GB"", ""latitude"": 55.9533, ""longitude"": -3.1883}"
+x-ai/grok-4.3,CoT,40.25,-77.85,5245.161,US,True,,stop,0.0053415,676,1933,1859,17.74,"{
+  ""reasoning"": ""Yellow dashed center line on left of view + solid white right edge line indicates right-hand traffic (US-style markings); rolling green hills, leafless deciduous trees and rural power lines match temperate US countryside."",
+  ""country"": ""US"",
+  ""latitude"": 40.25,
+  ""longitude"": -77.85
+}"
+mistralai/mistral-small-2603,no-CoT,39.7817,-86.1458,5797.028,US,True,,stop,0.0001137,634,31,0,1.12,"{""country"": ""US"", ""latitude"": 39.7817, ""longitude"": -86.1458}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.22,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.28,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.13,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.08,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.11,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.2,

@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,35.073635705548334,25.33296166417823,0.0,GR,True,,,,,,,,"Arkalochori, Nomos Irakleiou, Crete, GR"
+google/gemini-3.5-flash,CoT (effort=medium),37.9512,23.8524,346.236,GR,True,,stop,0.0097275,1271,869,800,7.47,"{""reasoning"": ""The combination of Mediterranean pine vegetation, yellow curbs indicating no parking, standard European STOP sign, and blue directional signs is highly characteristic of Greece, particularly the Attica region."", ""country"": ""GR"", ""latitude"": 37.9512, ""longitude"": 23.8524}"
+openai/gpt-5.5,no-CoT,37.9493,23.8134,347.388,GR,True,,stop,0.00341,544,23,0,1.7,"{""country"":""GR"",""latitude"":37.9493,""longitude"":23.8134}"
+x-ai/grok-4.3,CoT,37.98,23.75,352.754,GR,True,,stop,0.003309,676,1120,1038,11.44,"{""reasoning"": ""Right-side traffic (stop sign + no-entry sign on right), European-style blue directional signs, red octagonal STOP + red/white regulatory plates, yellow curb markings, and Mediterranean pine/scrub vegetation indicate southern Europe; lens flare and clear-sky lighting consistent with the region."", ""country"": ""GR"", ""latitude"": 37.98, ""longitude"": 23.75}"
+x-ai/grok-4.3,no-CoT,37.9753,23.7365,352.763,GR,True,,stop,0.0005984,592,24,0,1.02,"{""country"": ""GR"", ""latitude"": 37.9753, ""longitude"": 23.7365}"
+anthropic/claude-opus-4.8,CoT,38.0,23.8,353.029,GR,True,,stop,0.00636,797,95,0,18.43,"{""reasoning"": ""Blue directional signs and STOP markings with no-entry sign suggest a Mediterranean European country; the pine vegetation, dry terrain, and sign style point to Greece."", ""country"": ""GR"", ""latitude"": 38.0, ""longitude"": 23.8}"
+google/gemini-3.1-pro-preview,CoT,37.9838,23.7275,353.949,GR,True,,stop,0.005544,1272,250,171,6.2,"{
+  ""reasoning"": ""The yellow painted curbs, Mediterranean vegetation, and style of the blue directional signs are highly characteristic of Greece. The STOP sign and road markings further support a Southern European location."",
+  ""country"": ""GR"",
+  ""latitude"": 37.9838,
+  ""longitude"": 23.7275
+}"
+google/gemini-3.5-flash,CoT (effort=low),37.9838,23.7275,353.949,GR,True,,stop,0.0041655,1271,251,187,3.51,"{""reasoning"": ""The blue directional signs in the background, Mediterranean pine vegetation, yellow-painted curbs, and standard European STOP sign layout are highly characteristic of Greece."", ""country"": ""GR"", ""latitude"": 37.9838, ""longitude"": 23.7275}"
+google/gemini-3.1-pro-preview,no-CoT,37.9838,23.7275,353.949,GR,True,,stop,0.0028,1190,35,0,2.13,"```json
+{""country"": ""GR"", ""latitude"": 37.9838, ""longitude"": 23.7275}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.9838,23.7275,353.949,GR,True,,stop,0.0021,1190,35,0,7.72,"```json
+{""country"": ""GR"", ""latitude"": 37.9838, ""longitude"": 23.7275}
+```"
+moonshotai/kimi-k2.6,no-CoT,37.9838,23.7275,353.949,GR,True,,stop,0.00062229,603,25,0,13.55,"{""country"": ""GR"", ""latitude"": 37.9838, ""longitude"": 23.7275}"
+google/gemini-3.5-flash,CoT (effort=high),38.098,23.812,362.662,GR,True,,stop,0.012438,1272,1170,1108,18.19,"{""reasoning"": ""The Mediterranean pine vegetation, yellow-painted curbs indicating parking restrictions, right-hand traffic, and Greek-style blue directional signs point to Greece."", ""country"": ""GR"", ""latitude"": 38.098, ""longitude"": 23.812}"
+anthropic/claude-opus-4.8,no-CoT,38.1,23.8,363.269,GR,True,,stop,0.00408,666,30,0,2.46,"{""country"": ""GR"", ""latitude"": 38.1, ""longitude"": 23.8}"
+openai/gpt-5.5,CoT,35.1346,33.3972,733.43,CY,True,,stop,0.013965,621,362,290,15.37,"{""reasoning"":""English STOP signage with left-side road layout cues, yellow-painted curbs, and Mediterranean pine vegetation strongly suggest Cyprus. The flat forested park-like road environment is most consistent with the Nicosia/Athalassa area."",""country"":""CY"",""latitude"":35.1346,""longitude"":33.3972}"
+qwen/qwen3.5-397b-a17b,CoT,31.776,35.173,983.479,IL,True,,stop,0.0287036,553,8133,7383,679.32,"{""reasoning"": ""The image features right-hand traffic, yellow-painted curbs (indicating no parking, common in Israel), and a circular 'No Trucks' sign below a standard 'STOP' sign, which aligns with Israeli road signage conventions. The dry, hilly terrain with pine trees and the blue hospital sign ('H') in the distance strongly suggest the area around Hadassah Medical Center in Jerusalem."", ""country"": ""IL"", ""latitude"": 31.776, ""longitude"": 35.173}"
+xiaomi/mimo-v2.5,CoT,39.9,-3.0,2545.477,ES,True,,stop,0.0003655176,787,1006,919,11.59,"{""reasoning"": ""The red octagonal STOP sign, the specific circular 'no heavy vehicles' symbol below it, and the yellow-painted curbs are distinctive features of Spanish road infrastructure. The dry, sun-drenched landscape with Mediterranean-style cypress and pine trees further confirms a location within Spain."", ""country"": ""ES"", ""latitude"": 39.9, ""longitude"": -3.0}"
+qwen/qwen3.6-35b-a3b,CoT,40.4637,-3.6891,2607.769,ES,True,,stop,0.12672318685,553,131193,131072,1082.68,"{""reasoning"": ""The decisive clues are the yellow painted curb (common in Spain for no-parking zones), the 'STOP' sign accompanied by a 'No goods vehicles' prohibition sign (red circle with truck), and the blue 'One Way' sign pointing left, all consistent with Spanish traffic regulations. The pine vegetation and bright sun suggest a location in Spain, likely near Madrid given the mix of urban infrastructure and forest."", ""country"": ""ES"", ""latitude"": 40.4637, ""longitude"": -3.6891}"
+mistralai/mistral-medium-3-5,no-CoT,40.4168,-3.7038,2608.658,ES,True,,stop,0.001176,634,30,0,0.91,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+qwen/qwen3.5-9b,no-CoT,40.4168,-3.7038,2608.658,ES,True,,stop,5.19e-05,474,30,0,2.89,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+minimax/minimax-m3,CoT,40.65,-4.15,2648.044,ES,True,,stop,0.00073422,845,449,470,7.9,"{""reasoning"": ""Blue directional signs with white text are characteristic of Spanish autovía signage, combined with pine forest vegetation typical of inland Spain. The stop sign and road markings are in English standard but the infrastructure style (blue highway signs, roundabout layout) clearly indicates Spain."", ""country"": ""ES"", ""latitude"": 40.65, ""longitude"": -4.15}{""reasoning"": ""Blue directional signs with white text are characteristic of Spanish autovía signage, combined with pine forest vegetation typical of inland Spain. The stop sign and road markings are in English standard but the infrastructure style (blue highway signs, roundabout layout) clearly indicates Spain."", ""country"": ""ES"", ""latitude"": 40.65, ""longitude"": -4.15}"
+moonshotai/kimi-k2.6,CoT,36.45,-5.8,2801.101,ES,True,,stop,0.0322848,680,8846,9915,274.3,"{""reasoning"": ""The octagonal English STOP sign paired with a European-style circular prohibition sign below it indicates right-hand traffic in a Mediterranean European country, while the yellow-painted no-parking curbs, prominent road-painted STOP, and dry Mediterranean pine forest vegetation are characteristic of southern Spain."", ""country"": ""ES"", ""latitude"": 36.4500, ""longitude"": -5.8000}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.951534271240234,-7.714015007019043,2955.18,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,37.34601974487305,-7.840462684631348,2971.715,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,37.375389099121094,-7.872463703155518,2974.233,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4702.773,,True,True,,,,,,9.46,
+mistralai/mistral-small-2603,no-CoT,40.0759,-74.2199,8292.095,US,True,,stop,0.0001137,634,31,0,9.42,"{""country"": ""US"", ""latitude"": 40.0759, ""longitude"": -74.2199}"
+minimax/minimax-m3,no-CoT,39.0,-77.0,8556.622,US,True,,stop,0.00019176,752,23,0,6.53,"{""country"": ""US"", ""latitude"": 39.0, ""longitude"": -77.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,39.0438,-77.4874,8588.335,US,True,,stop,0.00029145,473,31,0,8.22,"{""country"": ""US"", ""latitude"": 39.0438, ""longitude"": -77.4874}"
+mistralai/mistral-small-2603,CoT,40.5,-85.5,9036.259,US,True,,stop,0.0004014,716,490,533,10.22,"{""reasoning"": ""Right-hand traffic, US-style license plate and road markings, stop sign design, and vegetation indicate a location in the United States."", ""country"": ""US"", ""latitude"": 40.5, ""longitude"": -85.5}"
+qwen/qwen3.5-27b,no-CoT,33.749,-84.388,9435.856,US,True,,stop,0.0002065,474,44,0,2.85,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 33.7490,
+  ""longitude"": -84.3880
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,33.749,-84.388,9435.856,US,True,,stop,0.0001145625,473,29,0,0.7,"{""country"": ""US"", ""latitude"": 33.749, ""longitude"": -84.388}"
+xiaomi/mimo-v2.5,no-CoT,33.749,-84.388,9435.856,US,True,,stop,8.08976e-05,708,29,0,9.03,"{""country"": ""US"", ""latitude"": 33.749, ""longitude"": -84.388}"
+qwen/qwen3.5-122b-a10b,no-CoT,34.1341,-118.3531,11443.032,US,True,,stop,0.0002187,473,32,0,2.12,"{""country"": ""US"", ""latitude"": 34.1341, ""longitude"": -118.3531}"
+google/gemma-4-31b-it,no-CoT,34.0522,-118.2437,11445.914,US,True,,stop,7.164e-05,406,37,0,1.72,"```json
+{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}
+```"
+qwen/qwen3.6-27b,no-CoT,34.0522,-118.2437,11445.914,US,True,,stop,0.00025805,474,32,0,12.73,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+qwen/qwen3.6-35b-a3b,no-CoT,34.0522,-118.2437,11445.914,US,True,,stop,0.00010295,473,32,0,2.68,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,34.08435821533203,-118.44853210449219,11452.197,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,34.077335357666016,-118.45136260986328,11453.005,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,33.99081039428711,-118.27742004394531,11453.381,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.16,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.4,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.21,

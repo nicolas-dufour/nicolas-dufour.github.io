@@ -1,0 +1,69 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,41.783997139331,12.854971295506,0.0,IT,True,,,,,,,,"Colle Spina, Citta metropolitana di Roma Capitale, Latium, IT"
+google/gemini-3.5-flash,CoT (effort=high),41.795,12.858,1.249,IT,True,,stop,0.0356205,1307,3740,3648,32.53,"{""reasoning"": ""The kilometer marker on the central barrier reads 'IX' over '580', indicating kilometer 580.9 on the Italian Autostrada A1. This section south of Rome near San Cesareo features three lanes and hilly terrain, matching the lush cuttings and the Fiat vehicle."", ""country"": ""IT"", ""latitude"": 41.795, ""longitude"": 12.858}"
+google/gemini-3.5-flash,CoT (effort=medium),41.795,12.85,1.291,IT,True,,stop,0.0175845,1307,1736,1650,18.36,"{""reasoning"": ""The vehicle models (including a Fiat 500L), European license plates, and the specific style of the Autostrada kilometer marker ('A1 580') on the central concrete barrier place this on the A1 highway south of Rome, Italy."", ""country"": ""IT"", ""latitude"": 41.795, ""longitude"": 12.85}"
+google/gemini-3.1-pro-preview,CoT,41.8215,12.6543,17.148,IT,True,,stop,0.008136,1308,460,367,12.18,"{
+  ""reasoning"": ""The European license plates with blue bands on both sides, the Fiat 500, and the specific style of the concrete barrier and kilometer marker strongly indicate an Italian Autostrada. The lush, hilly terrain suggests central or northern Italy."",
+  ""country"": ""IT"",
+  ""latitude"": 41.8215,
+  ""longitude"": 12.6543
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.9835,12.6124,29.923,IT,True,,stop,0.002154,1226,35,0,7.79,"```json
+{""country"": ""IT"", ""latitude"": 41.9835, ""longitude"": 12.6124}
+```"
+google/gemini-3.1-pro-preview,no-CoT,41.8902,12.4922,32.291,IT,True,,stop,0.002872,1226,35,0,8.16,"```json
+{""country"": ""IT"", ""latitude"": 41.8902, ""longitude"": 12.4922}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,41.8902,12.4922,32.291,IT,True,,stop,0.00043188,585,31,0,9.17,"{""country"": ""IT"", ""latitude"": 41.8902, ""longitude"": 12.4922}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,42.11592102050781,12.77782154083252,37.456,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,42.149261474609375,12.829344749450684,40.671,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,42.1634407043457,12.810684204101562,42.351,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,42.2245,12.5482,55.152,IT,True,,stop,0.036715,755,1098,1012,24.58,"{""reasoning"":""Green motorway direction signs, EU-style white plates, right-hand traffic, and the white/black Italian roadside delineators point strongly to an Italian autostrada. The lush hilly cuttings and apparent km marker fit the A1 north of Rome around the Sabina/Soratte area."",""country"":""IT"",""latitude"":42.2245,""longitude"":12.5482}"
+google/gemini-3.5-flash,CoT (effort=low),42.6125,12.2358,105.301,IT,True,,stop,0.005292,1308,370,284,3.6,"{""reasoning"": ""The vehicle models (specifically the Fiat 500X), European license plates with double blue bands, concrete central barrier with typical Italian autostrada kilometer signage, and lush hilly terrain indicate a highway in Italy, likely the A1 Autostrada."", ""country"": ""IT"", ""latitude"": 42.6125, ""longitude"": 12.2358}"
+moonshotai/kimi-k2.6,CoT,42.7,12.1,119.317,IT,True,,stop,0.014060376,834,4030,3968,217.63,"{""reasoning"": ""A Fiat 500 driving on the right in a motorway cutting with green directional signage, concrete barriers, and Mediterranean vegetation is unmistakably an Italian autostrada."", ""country"": ""IT"", ""latitude"": 42.7, ""longitude"": 12.1}"
+moonshotai/kimi-k2.6,no-CoT,43.8,11.2,261.688,IT,True,,stop,0.00064215,754,23,0,3.86,"{""country"": ""IT"", ""latitude"": 43.8, ""longitude"": 11.2}"
+anthropic/claude-opus-4.8,CoT,45.76,4.84,780.175,FR,True,,stop,0.006895,949,86,0,3.09,"{""reasoning"": ""European highway with right-hand traffic, Fiat 500X, lush green cuttings and overcast summer sky suggesting France/Northern Italy."", ""country"": ""FR"", ""latitude"": 45.76, ""longitude"": 4.84}"
+x-ai/grok-4.3,CoT,47.15,2.35,1023.721,FR,True,,stop,0.002639,788,796,729,6.91,"{
+  ""reasoning"": ""Right-hand traffic with EU-style vehicles, dashed lane markings, concrete Jersey barrier, and blue overhead signage indicate continental Europe; lush hilly terrain and vegetation match French motorway cuttings."",
+  ""country"": ""FR"",
+  ""latitude"": 47.15,
+  ""longitude"": 2.35
+}"
+x-ai/grok-4.3,no-CoT,48.85,2.35,1134.713,FR,True,,stop,0.0008678,704,22,0,0.78,"{""country"": ""FR"", ""latitude"": 48.85, ""longitude"": 2.35}"
+mistralai/mistral-medium-3-5,no-CoT,48.8566,2.3522,1135.06,FR,True,,stop,0.001404,786,30,0,7.55,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,1135.06,FR,True,,stop,0.000169875,786,30,0,1.96,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+qwen/qwen3.5-122b-a10b,no-CoT,48.8566,2.3522,1135.06,FR,True,,stop,0.0003556,585,38,0,6.54,"{
+  ""country"": ""FR"",
+  ""latitude"": 48.8566,
+  ""longitude"": 2.3522
+}"
+minimax/minimax-m3,no-CoT,47.3,0.7,1140.026,FR,True,,stop,0.00043602,919,182,201,5.87,"{""country"": ""FR"", ""latitude"": 47.3, ""longitude"": 0.7}"
+openai/gpt-5.5,no-CoT,48.9506,2.0021,1161.442,FR,True,,stop,0.00408,678,23,0,1.53,"{""country"":""FR"",""latitude"":48.9506,""longitude"":2.0021}"
+anthropic/claude-opus-4.8,no-CoT,47.2184,-1.5536,1289.865,FR,True,,stop,0.00489,818,32,0,2.26,"{""country"": ""FR"", ""latitude"": 47.2184, ""longitude"": -1.5536}"
+minimax/minimax-m3,CoT,51.15,1.05,1375.737,GB,True,,stop,0.00094266,995,588,507,18.24,"{""reasoning"": ""Vehicles driving on the left (Fiat 500 and coach visible), lush green rolling hills forming a motorway cutting, European-style concrete barriers and lane markings, and the overall landscape style all strongly indicate a British motorway in southeast England, likely Kent."", ""country"": ""GB"", ""latitude"": 51.15, ""longitude"": 1.05}"
+google/gemma-4-26b-a4b-it,no-CoT,40.4167,-3.7033,1393.565,ES,True,,stop,5.708e-05,404,37,0,1.52,"Please own the own/location: {""country"": ""ES"", ""latitude"": 40.4167, ""longitude"": -3.7033}"
+google/gemma-4-31b-it,no-CoT,40.4168,-3.7038,1393.604,ES,True,,stop,7.056e-05,404,35,0,2.12,"```json
+{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,51.4215,-0.1892,1459.114,GB,True,,stop,0.00011775,585,30,0,1.6,"{""country"": ""GB"", ""latitude"": 51.4215, ""longitude"": -0.1892}"
+qwen/qwen3.5-27b,no-CoT,51.5074,-0.1278,1462.409,GB,True,,stop,0.00022275,585,30,0,10.48,"{""country"": ""GB"", ""latitude"": 51.5074, ""longitude"": -0.1278}"
+qwen/qwen3.6-35b-a3b,no-CoT,51.5074,-0.1278,1462.409,GB,True,,stop,0.0001232595,585,30,0,1.93,"{""country"": ""GB"", ""latitude"": 51.5074, ""longitude"": -0.1278}"
+qwen/qwen3.5-9b,no-CoT,51.4526,-0.9734,1502.283,GB,True,,stop,6.31e-05,586,30,0,11.63,"{""country"": ""GB"", ""latitude"": 51.4526, ""longitude"": -0.9734}"
+qwen/qwen3.6-27b,no-CoT,51.4545,-0.9781,1502.668,GB,True,,stop,0.00028795,586,30,0,12.79,"{""country"": ""GB"", ""latitude"": 51.4545, ""longitude"": -0.9781}"
+xiaomi/mimo-v2.5,no-CoT,51.45,-2.58,1589.379,GB,True,,stop,9.57376e-05,820,26,0,7.92,"{""country"": ""GB"", ""latitude"": 51.45, ""longitude"": -2.58}"
+xiaomi/mimo-v2.5,CoT,52.5,-1.5,1606.188,GB,True,,stop,0.0003971576,899,1063,1001,67.98,"{
+  ""reasoning"": ""The vehicles drive on the left, and the Mini Cooper has a UK-style yellow rear license plate, indicating the United Kingdom."",
+  ""country"": ""GB"",
+  ""latitude"": 52.5,
+  ""longitude"": -1.5
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.35463333129883,140.92152404785156,9670.123,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.33390808105469,140.92440795898438,9672.135,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.804969787597656,139.64724731445312,9742.332,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,8.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.45,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,15.75,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.14,

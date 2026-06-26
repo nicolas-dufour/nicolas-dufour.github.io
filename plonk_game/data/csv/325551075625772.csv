@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,19.470636913191,-155.88899943729,0.0,US,True,,,,,,,,"Honaunau-Napoopoo, Hawaii County, Hawaii, US"
+google/gemini-3.5-flash,no-CoT (effort=minimal),19.4832,-155.9015,1.915,US,True,,stop,0.0021075,1189,36,0,22.41,"```json
+{""country"": ""US"", ""latitude"": 19.4832, ""longitude"": -155.9015}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,19.47015953063965,-155.85928344726562,3.116,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,19.433149337768555,-155.80870056152344,9.395,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,19.5836,-155.9669,14.981,US,True,,stop,0.00344,544,24,0,1.64,"{""country"":""US"",""latitude"":19.5836,""longitude"":-155.9669}"
+google/gemini-3.5-flash,CoT (effort=low),19.6385,-155.9241,19.024,US,True,,stop,0.004014,1272,234,166,17.93,"{""reasoning"": ""The double yellow center lines, white edge lines, and wooden utility poles indicate the United States, while the lush tropical vegetation and palm trees point specifically to Hawaii."", ""country"": ""US"", ""latitude"": 19.6385, ""longitude"": -155.9241}"
+qwen/qwen3.5-122b-a10b,no-CoT,19.6394,-155.9969,21.908,US,True,,stop,0.0002916,473,32,0,8.46,"{""country"": ""US"", ""latitude"": 19.6394, ""longitude"": -155.9969}"
+qwen/qwen3.5-35b-a3b,no-CoT,19.7423,-155.9969,32.253,US,True,,stop,9.836e-05,474,32,0,1.41,"{""country"": ""US"", ""latitude"": 19.7423, ""longitude"": -155.9969}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,19.49034881591797,-155.56956481933594,33.558,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,19.8968,-155.5828,57.213,US,True,,stop,0.001191,634,32,0,1.41,"{""country"": ""US"", ""latitude"": 19.8968, ""longitude"": -155.5828}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,19.717897415161133,-155.21775817871094,75.5,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,19.54,-155.15,77.84,US,True,,stop,0.006619968,682,1867,1809,41.27,"{""reasoning"": ""US-standard road markings, crossarm utility poles, and dense tropical vegetation on dark volcanic slopes are characteristic of the Big Island, Hawaii."", ""country"": ""US"", ""latitude"": 19.5400, ""longitude"": -155.1500}"
+moonshotai/kimi-k2.6,no-CoT,19.55,-155.1,83.165,US,True,,stop,0.007333848,602,2081,2057,71.75,"{""country"": ""US"", ""latitude"": 19.55, ""longitude"": -155.1}"
+x-ai/grok-4.3,no-CoT,19.55,-155.1,83.165,US,True,,stop,0.0005934,592,22,0,7.31,"{""country"": ""US"", ""latitude"": 19.55, ""longitude"": -155.1}"
+qwen/qwen3.5-397b-a17b,no-CoT,19.35,-155.05,89.007,US,True,,stop,0.00035388,473,28,0,2.18,"{""country"": ""US"", ""latitude"": 19.35, ""longitude"": -155.05}"
+x-ai/grok-4.3,CoT,19.72,-155.08,89.167,US,True,,stop,0.0020715,676,625,551,5.48,"{""reasoning"": ""US-style double yellow center line + white edge lines, wooden utility poles with crossarms, right-hand driving, and lush tropical palms/jungle indicate Hawaii; overcast wet road and vegetation match windward Big Island or east Maui."", ""country"": ""US"", ""latitude"": 19.72, ""longitude"": -155.08}"
+google/gemini-3.1-pro-preview,CoT,19.81,-155.11,89.886,US,True,,stop,0.005842,1271,275,198,5.92,"{
+  ""reasoning"": ""The double yellow center lines and white edge lines indicate a US road system. The lush tropical vegetation, including palm trees, combined with the US road markings strongly points to Hawaii."",
+  ""country"": ""US"",
+  ""latitude"": 19.81,
+  ""longitude"": -155.11
+}"
+openai/gpt-5.5,CoT,19.8156,-155.0954,91.534,US,True,,stop,0.014715,621,387,299,18.37,"{""reasoning"":""Tropical wet vegetation, US-style right-hand road markings with double yellow centerlines and wooden utility poles strongly suggest rural Hawaii. The lush, rainy setting and narrow road fit the Big Island’s Hilo/Hamakua coast, especially around the Old Mamalahoa/Pepeekeo scenic area."",""country"":""US"",""latitude"":19.8156,""longitude"":-155.0954}"
+google/gemini-3.5-flash,CoT (effort=high),19.8412,-155.0925,93.029,US,True,,stop,0.0106275,1271,969,900,14.32,"{""reasoning"": ""The lush tropical vegetation, double yellow road markings, and wooden utility poles strongly indicate a wet tropical region of the United States, most characteristically the island of Hawaii."", ""country"": ""US"", ""latitude"": 19.8412, ""longitude"": -155.0925}"
+google/gemini-3.5-flash,CoT (effort=medium),19.8968,-155.1234,93.116,US,True,,stop,0.0070905,1271,576,505,11.75,"{""reasoning"": ""The double yellow center lines and white edge lines indicate North American road standards, while the lush tropical vegetation, palm trees, and specific utility pole design point to Hawaii, USA."", ""country"": ""US"", ""latitude"": 19.8968, ""longitude"": -155.1234}"
+anthropic/claude-opus-4.8,no-CoT,19.5,-154.95,98.486,US,True,,stop,0.004055,666,29,0,2.11,"{""country"": ""US"", ""latitude"": 19.5, ""longitude"": -154.95}"
+google/gemini-3.1-pro-preview,no-CoT,19.53,-154.95,98.644,US,True,,stop,0.005018,1189,220,188,4.51,"```json
+{""country"": ""US"", ""latitude"": 19.53, ""longitude"": -154.95}
+```"
+anthropic/claude-opus-4.8,CoT,19.49,-154.92,101.603,US,True,,stop,0.00641,797,97,0,4.24,"{""reasoning"": ""Lush tropical vegetation with palms, yellow center line on right-hand driving road, overcast sky, and yellow guard posts suggest rural Hawaii, likely Big Island."", ""country"": ""US"", ""latitude"": 19.49, ""longitude"": -154.92}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,19.517709732055664,-154.82681274414062,111.462,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,19.518953323364258,-154.7478790283203,119.733,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,20.7934,-156.3319,154.181,US,True,,stop,0.00024024,474,45,0,8.35,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 20.7934,
+  ""longitude"": -156.3319
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,20.7983,-156.3311,154.676,US,True,,stop,0.00010295,473,32,0,2.35,"{""country"": ""US"", ""latitude"": 20.7983, ""longitude"": -156.3311}"
+qwen/qwen3.5-9b,no-CoT,20.7984,-156.3319,154.711,US,True,,stop,5.22e-05,474,32,0,6.61,"{""country"": ""US"", ""latitude"": 20.7984, ""longitude"": -156.3319}"
+xiaomi/mimo-v2.5,no-CoT,10.3157,123.8854,8612.891,PH,True,,stop,8.17376e-05,708,32,0,1.46,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+google/gemma-4-31b-it,no-CoT,14.5995,120.9842,8768.855,PH,True,,stop,5.288e-05,272,37,0,10.08,"```json
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}
+```"
+qwen/qwen3.6-27b,no-CoT,14.5995,120.9842,8768.855,PH,True,,stop,0.0001963,473,32,0,14.39,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+xiaomi/mimo-v2.5,CoT,10.8,106.7,10370.868,VN,True,,stop,0.0001591576,787,269,202,9.76,"{""reasoning"": ""The tropical vegetation including palm trees, concrete utility poles with multiple crossarms, right-hand traffic with yellow center lines, and overall rural Southeast Asian landscape strongly suggest southern Vietnam."", ""country"": ""VN"", ""latitude"": 10.8, ""longitude"": 106.7}"
+minimax/minimax-m3,no-CoT,9.5,99.0,11208.548,TH,True,,stop,0.00027162,767,83,80,2.66,"{""country"": ""TH"", ""latitude"": 9.5, ""longitude"": 99.0}"
+minimax/minimax-m3,CoT,8.85,99.15,11220.369,TH,True,,stop,0.00091626,843,604,527,24.77,"{""reasoning"": ""Double yellow center line with right-hand driving, wooden utility poles with multiple crossarms, coconut palms, lush tropical vegetation, and yellow roadside delineator posts are classic indicators of rural Thailand, likely along Highway 4 in the southern peninsula."", ""country"": ""TH"", ""latitude"": 8.85, ""longitude"": 99.15}"
+mistralai/mistral-small-2603,no-CoT,-22.9035,-47.0616,12698.986,BR,True,,stop,0.0001137,634,31,0,1.04,"{""country"": ""BR"", ""latitude"": -22.9035, ""longitude"": -47.0616}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,16610.213,,True,True,,,,,,0.17,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,22.2,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,13.05,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.24,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.4,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.46,

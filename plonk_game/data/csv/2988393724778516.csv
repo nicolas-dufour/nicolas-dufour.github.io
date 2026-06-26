@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-26.575199837371,-69.96262527613,0.0,CL,True,,,,,,,,"Diego de Almagro, Provincia de Chanaral, Atacama, CL"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-27.286540985107422,-69.60394287109375,86.722,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,-27.35,-70.12,87.554,CL,True,,stop,6.188e-05,404,32,0,11.09,"```json
+{""country"": ""CL"", ""latitude"": -27.35, ""longitude"": -70.12}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-27.34117317199707,-69.61727142333984,91.793,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-27.411989212036133,-69.57864379882812,100.524,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-25.4125,-69.8458,129.812,CL,True,,stop,0.0021525,1225,35,0,8.8,"```json
+{""country"": ""CL"", ""latitude"": -25.4125, ""longitude"": -69.8458}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-25.4125,-69.8123,130.156,CL,True,,stop,0.004131,1308,241,170,2.64,"```json
+{""reasoning"": ""The extremely arid desert landscape, white road markings, and concrete utility poles are highly characteristic of the Atacama Desert along Ruta 5 in northern Chile."", ""country"": ""CL"", ""latitude"": -25.4125, ""longitude"": -69.8123}
+```"
+anthropic/claude-opus-4.8,CoT,-24.5,-69.5,235.373,CL,True,,stop,0.006995,949,90,0,9.36,"{""reasoning"": ""Arid desert plain with distant barren mountains, concrete utility poles, and right-hand traffic strongly suggests Chile's Atacama region along a highway."", ""country"": ""CL"", ""latitude"": -24.5, ""longitude"": -69.5}"
+openai/gpt-5.5,no-CoT,-24.5632,-69.0724,240.883,CL,True,,stop,0.00414,678,25,0,1.43,"{""country"":""CL"",""latitude"":-24.5632,""longitude"":-69.0724}"
+google/gemini-3.5-flash,CoT (effort=medium),-24.3821,-69.8914,243.966,CL,True,,stop,0.0094305,1307,830,755,13.82,"```json
+{""reasoning"": ""The extremely arid desert landscape, smooth asphalt road with white markings, and distinctive concrete utility poles are highly characteristic of the Atacama Desert in northern Chile along Ruta 5."", ""country"": ""CL"", ""latitude"": -24.3821, ""longitude"": -69.8914}
+```"
+openai/gpt-5.5,CoT,-23.6412,-69.7854,326.733,CL,True,,stop,0.016225,755,415,327,9.85,"{""reasoning"":""The extremely barren Atacama-style desert, white Chilean road markings, right-side driving, and utility poles along a long straight paved highway point to northern Chile. The landscape best matches the Pan-American/Ruta 5 corridor in the Antofagasta–Atacama desert region."",""country"":""CL"",""latitude"":-23.6412,""longitude"":-69.7854}"
+google/gemini-3.1-pro-preview,no-CoT,-23.65,-70.35,327.597,CL,True,,stop,0.002822,1225,31,0,3.06,"```json
+{""country"": ""CL"", ""latitude"": -23.65, ""longitude"": -70.35}
+```"
+google/gemini-3.1-pro-preview,CoT,-23.5512,-69.9123,336.292,CL,True,,stop,0.006636,1308,335,243,11.59,"{
+  ""reasoning"": ""The extremely arid desert landscape with distant mountains is characteristic of the Atacama Desert. The road markings with solid white edge lines and dashed white center lines, along with the style of utility poles, are typical for highways in northern Chile."",
+  ""country"": ""CL"",
+  ""latitude"": -23.5512,
+  ""longitude"": -69.9123
+}"
+moonshotai/kimi-k2.6,CoT,-23.5,-69.5,345.107,CL,True,,stop,0.025177536,834,7274,7191,271.94,"{""reasoning"": ""White dashed center line and solid edge markings on a hyper-arid, flat desert highway with distant barren mountains and utility poles are characteristic of Chile's Atacama Desert (Ruta 5), and the absence of yellow center lines rules out North America and Argentina."", ""country"": ""CL"", ""latitude"": -23.5, ""longitude"": -69.5}"
+anthropic/claude-opus-4.8,no-CoT,-23.5,-69.5,345.107,CL,True,,stop,0.00484,818,30,0,8.91,"{""country"": ""CL"", ""latitude"": -23.5, ""longitude"": -69.5}"
+x-ai/grok-4.3,no-CoT,-22.4505,-69.5523,460.519,CL,True,,stop,0.0007384,704,24,0,0.83,"{""country"": ""CL"", ""latitude"": -22.4505, ""longitude"": -69.5523}"
+mistralai/mistral-small-2603,no-CoT,-22.45,-68.92,470.666,CL,True,,stop,0.0001341,786,27,0,0.9,"{""country"": ""CL"", ""latitude"": -22.45, ""longitude"": -68.92}"
+x-ai/grok-4.3,CoT,-22.35,-69.55,471.672,CL,True,,stop,0.0028665,788,887,804,7.56,"{
+  ""reasoning"": ""White dashed center line (not yellow) rules out North America; right-side driving + arid rocky desert with distant mountains + metal power poles matches Atacama Desert on Chile's Ruta 5. Landscape, road markings and pole style pinpoint northern Chile."",
+  ""country"": ""CL"",
+  ""latitude"": -22.35,
+  ""longitude"": -69.55
+}"
+minimax/minimax-m3,CoT,-19.55,-69.85,781.251,CL,True,,stop,0.00078066,995,453,370,12.68,"{""reasoning"": ""Extremely arid flat desert with sandy/gravel terrain, wooden utility poles, distant coastal mountains on the left, and a straight highway with right-hand traffic strongly indicate the Atacama Desert along Chile's Ruta 5 (Pan-American Highway) in the Tarapacá region."", ""country"": ""CL"", ""latitude"": -19.55, ""longitude"": -69.85}"
+google/gemini-3.5-flash,CoT (effort=high),-17.25,-70.95,1041.889,PE,True,,stop,0.0161175,1307,1573,1507,18.29,"{""reasoning"": ""The extremely arid, vegetation-free desert landscape combined with concrete utility poles and road markings is characteristic of the Pan-American Highway (PE-1S) in southern Peru."", ""country"": ""PE"", ""latitude"": -17.25, ""longitude"": -70.95}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,27.51652717590332,-113.07930755615234,7577.08,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,29.56326675415039,-113.5206069946289,7776.93,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,35.0844,-106.6504,7866.764,US,True,,stop,0.001419,786,32,0,1.29,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -106.6504}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8023.336,,True,True,,,,,,6.71,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,34.17914962768555,-114.88442993164062,8248.795,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,35.7089,-115.1542,8393.324,US,True,,stop,0.00021892,586,32,0,12.55,"{""country"": ""US"", ""latitude"": 35.7089, ""longitude"": -115.1542}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.9234,-115.2891,8419.307,US,True,,stop,0.000189225,585,32,0,3.96,"{""country"": ""US"", ""latitude"": 35.9234, ""longitude"": -115.2891}"
+qwen/qwen3.5-397b-a17b,no-CoT,36.0167,-115.1667,8419.92,US,True,,stop,0.00043548,585,32,0,2.75,"{""country"": ""US"", ""latitude"": 36.0167, ""longitude"": -115.1667}"
+qwen/qwen3.5-9b,no-CoT,36.1667,-115.1333,8430.565,US,True,,stop,6.34e-05,586,32,0,3.64,"{""country"": ""US"", ""latitude"": 36.1667, ""longitude"": -115.1333}"
+qwen/qwen3.5-27b,no-CoT,36.1699,-115.1398,8431.216,US,True,,stop,0.0002427,585,32,0,15.97,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.6-27b,no-CoT,36.1699,-115.1398,8431.216,US,True,,stop,0.00026272,585,32,0,17.12,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.6-35b-a3b,no-CoT,36.1699,-115.1398,8431.216,US,True,,stop,0.00018625,585,32,0,1.22,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+minimax/minimax-m3,no-CoT,38.5,-114.8,8608.544,US,True,,stop,0.00045042,919,194,232,13.08,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -114.8}"
+xiaomi/mimo-v2.5,no-CoT,38.9,-117.0,8767.453,US,True,,stop,9.57376e-05,820,26,0,1.29,"{""country"": ""US"", ""latitude"": 38.9, ""longitude"": -117.0}"
+xiaomi/mimo-v2.5,CoT,41.83,93.79,17762.646,CN,True,,stop,0.0004685576,899,1318,1219,14.1,"{""reasoning"": ""The landscape features a flat, arid desert with distant eroded mountains and sparse scrub, highly characteristic of the Gobi Desert in Northwest China. The paved highway with specific white lane markings and the style of the utility poles running parallel to the road align with infrastructure standards found in China's Xinjiang or Gansu provinces."", ""country"": ""CN"", ""latitude"": 41.83, ""longitude"": 93.79}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,15.61,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.3,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.33,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.11,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.35,

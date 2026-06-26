@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-43.079526315734,-71.464714484296,0.0,AR,True,,,,,,,,"Trevelin, None, Chubut, AR"
+anthropic/claude-opus-4.8,CoT,-42.909,-71.317,22.447,AR,True,,stop,0.007195,949,98,0,4.22,"{""reasoning"": ""Spanish signage, conifers and Patagonian-style architecture with murals suggest Argentine Patagonia, likely a town like San Carlos de Bariloche or Esquel region."", ""country"": ""AR"", ""latitude"": -42.909, ""longitude"": -71.317}"
+google/gemini-3.5-flash,CoT (effort=high),-42.9025,-71.3187,22.989,AR,True,,stop,0.0373665,1307,3934,3837,32.21,"```json
+{""reasoning"": ""The architecture, distinctive tall pine trees, and the Malvinas-themed mural on the wall are highly characteristic of the Andean Patagonian region of Argentina. The green streetlights and street layout strongly point to a town in this region, most likely Esquel or Trevelin."", ""country"": ""AR"", ""latitude"": -42.9025, ""longitude"": -71.3187}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-42.9043,-71.3134,23.046,AR,True,,stop,0.005463,1308,389,305,10.43,"```json
+{""reasoning"": ""The architectural style with pitched roofs, the presence of tall conifers, the yellow-painted curb, and the overall dry but temperate climate strongly point to the Patagonian region of Argentina, specifically a town like Esquel."", ""country"": ""AR"", ""latitude"": -42.9043, ""longitude"": -71.3134}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-42.9025,-71.3132,23.224,AR,True,,stop,0.0143625,1307,1378,1279,17.41,"```json
+{""reasoning"": ""The image features a mural of the Falkland Islands (Islas Malvinas) painted with the Argentine flag, indicating Argentina. The Patagonian architecture, wide streets, and specific conifer trees point to a town in the southern Andes foothills, most likely Esquel or El Bolsón."", ""country"": ""AR"", ""latitude"": -42.9025, ""longitude"": -71.3132}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-42.61138916015625,-72.1884536743164,78.683,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-42.194908142089844,-72.2430191040039,117.17,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-41.9665,-71.5339,123.893,AR,True,,stop,0.022015,755,608,516,23.32,"{""reasoning"":""The storefront sign appears to be Argentina’s La Anónima supermarket chain, common in Patagonia, with right-side driving, yellow curbs, Andean-style low buildings, conifers, and dry Patagonian town vegetation. The setting most closely matches El Bolsón/Río Negro rather than a larger city."",""country"":""AR"",""latitude"":-41.9665,""longitude"":-71.5339}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-41.394927978515625,-71.34153747558594,187.593,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-41.37678527832031,-71.3438491821289,189.597,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-41.1342,-71.3085,216.694,AR,True,,stop,0.0021525,1225,35,0,23.21,"```json
+{""country"": ""AR"", ""latitude"": -41.1342, ""longitude"": -71.3085}
+```"
+google/gemini-3.1-pro-preview,CoT,-41.1335,-71.3103,216.763,AR,True,,stop,0.00702,1308,367,279,5.59,"{
+  ""reasoning"": ""The architecture, vegetation (including conifers), and yellow curbs strongly suggest the Patagonian region of Argentina. The general street layout and building styles are characteristic of towns like Bariloche or San Martin de los Andes."",
+  ""country"": ""AR"",
+  ""latitude"": -41.1335,
+  ""longitude"": -71.3103
+}"
+openai/gpt-5.5,no-CoT,-41.1335,-71.3103,216.763,AR,True,,stop,0.00414,678,25,0,1.7,"{""country"":""AR"",""latitude"":-41.1335,""longitude"":-71.3103}"
+moonshotai/kimi-k2.6,CoT,-41.1335,-71.3083,216.773,AR,True,,stop,0.012571776,834,3596,3495,321.63,"{""reasoning"": ""Tall Araucaria-like evergreens and temperate vegetation point to Patagonian Argentina/Chile, while right-hand traffic, Spanish signage on a corner supermarket, concrete-block walls with murals, and the specific style of green street lamps and power poles are characteristic of Argentine Andean towns in the Neuquén/Río Negro Lake District region."", ""country"": ""AR"", ""latitude"": -41.1335, ""longitude"": -71.3083}"
+moonshotai/kimi-k2.6,no-CoT,-41.1334,-71.3103,216.774,AR,True,,stop,0.00064935,754,25,0,2.63,"{""country"": ""AR"", ""latitude"": -41.1334, ""longitude"": -71.3103}"
+anthropic/claude-opus-4.8,no-CoT,-41.133,-71.31,216.82,AR,True,,stop,0.00484,818,30,0,9.3,"{""country"": ""AR"", ""latitude"": -41.133, ""longitude"": -71.31}"
+google/gemini-3.1-pro-preview,no-CoT,-40.1583,-71.3533,324.957,AR,True,,stop,0.004694,1225,187,152,33.22,"```json
+{""country"": ""AR"", ""latitude"": -40.1583, ""longitude"": -71.3533}
+```"
+minimax/minimax-m3,no-CoT,-39.28,-72.23,427.309,CL,True,,stop,0.00048042,919,219,240,8.91,"{""country"": ""CL"", ""latitude"": -39.28, ""longitude"": -72.23}"
+google/gemma-4-31b-it,no-CoT,-38.9521,-68.2432,532.519,AR,True,,stop,0.00010953,404,35,0,9.25,"```json
+{""country"": ""AR"", ""latitude"": -38.9521, ""longitude"": -68.2432}
+```"
+qwen/qwen3.5-397b-a17b,CoT,-38.2564,-71.8662,537.373,CL,True,,stop,0.032151,665,8820,8693,173.38,"{
+""reasoning"": ""The 'BALU' sign identifies a Supermercado Balu, a chain found in Chile's Araucanía region, specifically in Curacautin. The distinctive mural of a tree with a face on the corner wall, combined with the Araucaria tree and yellow curbs, confirms the location at the intersection of Manuel Montt and Pedro de Valdivia in Curacautin."",
+""country"": ""CL"",
+""latitude"": -38.2564,
+""longitude"": -71.8662
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-37.56987380981445,-71.33113098144531,612.75,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,-36.8201,-73.0451,708.894,CL,True,,stop,0.00023348,586,39,0,13.82,"{
+  ""country"": ""CL"",
+  ""latitude"": -36.8201,
+  ""longitude"": -73.0451
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-36.229522705078125,-71.39226531982422,761.711,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,-33.566,-71.466,1057.856,CL,True,,stop,0.0039877981,583,4034,4001,20.13,"{""country"": ""CL"", ""latitude"": -33.566, ""longitude"": -71.466}"
+minimax/minimax-m3,CoT,-34.65,-58.73,1444.221,AR,True,,stop,0.00100506,995,640,548,20.58,"{""reasoning"": ""The 'MAXI KIOSCO' signage (Spanish term extremely common in Argentina) and the 'BALI' storefront, combined with the suburban Argentine architecture, tree-lined wide avenue with overhead power lines, wooden utility poles, and street mural style strongly indicate a suburb in Buenos Aires province, Argentina."", ""country"": ""AR"", ""latitude"": -34.6500, ""longitude"": -58.7300}"
+x-ai/grok-4.3,CoT,-34.712,-58.453,1457.697,AR,True,,stop,0.002599,788,780,722,9.17,"{""reasoning"": ""Spanish-language storefront signage (BALU), South American suburban architecture/murals, right-side driving (yellow curb line), and vegetation/sky match Argentina."", ""country"": ""AR"", ""latitude"": -34.712, ""longitude"": -58.453}"
+google/gemma-4-26b-a4b-it,no-CoT,-34.6037,-58.3816,1470.733,AR,True,,stop,5.468e-05,404,31,0,2.07,"{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}"
+mistralai/mistral-medium-3-5,no-CoT,-34.6037,-58.3816,1470.733,AR,True,,stop,0.0014115,786,31,0,7.33,"{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}"
+qwen/qwen3.5-35b-a3b,no-CoT,-34.6037,-58.3816,1470.733,AR,True,,stop,0.00012675,585,39,0,8.85,"{
+  ""country"": ""AR"",
+  ""latitude"": -34.6037,
+  ""longitude"": -58.3816
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,-34.6037,-58.3816,1470.733,AR,True,,stop,0.00034185,585,31,0,9.37,"{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}"
+x-ai/grok-4.3,no-CoT,-34.9205,-57.9538,1475.428,AR,True,,stop,0.0007384,704,24,0,0.88,"{""country"": ""AR"", ""latitude"": -34.9205, ""longitude"": -57.9538}"
+qwen/qwen3.5-9b,no-CoT,-34.8236,-57.1182,1539.726,AR,True,,stop,0.0001072,585,31,0,3.13,"{""country"": ""AR"", ""latitude"": -34.8236, ""longitude"": -57.1182}"
+mistralai/mistral-small-2603,CoT,-25.7479,28.2293,8816.051,ZA,True,,stop,0.0003972,868,445,485,10.47,"{""reasoning"": ""Driving on the left side of the road, South African license plate style, English signage, and typical South African vegetation and architecture."", ""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 28.2293}"
+qwen/qwen3.5-27b,no-CoT,44.7866,20.4481,13332.099,RS,True,,stop,0.000162435,585,31,0,2.19,"{""country"": ""RS"", ""latitude"": 44.7866, ""longitude"": 20.4481}"
+xiaomi/mimo-v2.5,no-CoT,44.4268,26.1025,13693.394,RO,True,,stop,9.71376e-05,820,31,0,2.4,"{""country"": ""RO"", ""latitude"": 44.4268, ""longitude"": 26.1025}"
+xiaomi/mimo-v2.5,CoT,45.9,24.9,13693.694,RO,True,,stop,0.0004847976,899,1376,1310,13.62,"{""reasoning"": ""The sign 'BALU' and architectural style with single-story buildings suggest Eastern Europe, likely Romania, with coniferous trees and right-hand traffic consistent with the region."", ""country"": ""RO"", ""latitude"": 45.9, ""longitude"": 24.9}"
+qwen/qwen3.6-27b,no-CoT,44.4379,26.0989,13693.766,RO,True,,stop,0.0002279,585,31,0,10.69,"{""country"": ""RO"", ""latitude"": 44.4379, ""longitude"": 26.0989}"
+qwen/qwen3.6-35b-a3b,CoT,45.1506,26.8306,13783.226,RO,True,,stop,0.00738575,665,7286,6582,112.38,"{""reasoning"": ""The green building with 'BALU' and 'Patiserie' signage, combined with the distinctive tree mural on the adjacent wall, identifies the location as Strada Zorilor in Buzău, Romania. The vehicle and road markings are consistent with Romanian infrastructure."", ""country"": ""RO"", ""latitude"": 45.1506, ""longitude"": 26.8306}"
+mistralai/mistral-small-2603,no-CoT,-7.7868,110.3636,14355.984,ID,True,,stop,0.0001365,786,31,0,10.43,"{""country"": ""ID"", ""latitude"": -7.7868, ""longitude"": 110.3636}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.34,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.18,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.23,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.15,

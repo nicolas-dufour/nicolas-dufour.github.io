@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-36.890932075633,-72.335311599408,0.0,CL,True,,,,,,,,"Bulnes, Provincia de Nuble, Biobio, CL"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-36.6125,-72.1158,36.62,CL,True,,stop,0.0020985,1189,35,0,13.24,"```json
+{""country"": ""CL"", ""latitude"": -36.6125, ""longitude"": -72.1158}
+```"
+openai/gpt-5.5,no-CoT,-37.3405,-72.4012,50.33,CL,True,,stop,0.00347,544,25,0,7.53,"{""country"":""CL"",""latitude"":-37.3405,""longitude"":-72.4012}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-37.792293548583984,-71.58643341064453,120.117,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-35.43,-71.65,173.707,CL,True,,stop,0.00646,797,99,0,10.25,"{""reasoning"": ""Flat green landscape with pampas grass, poplars, and overcast sky suggests central Chile or Argentine pampas; the highway interchange greenery and vegetation fit central Chile."", ""country"": ""CL"", ""latitude"": -35.43, ""longitude"": -71.65}"
+anthropic/claude-opus-4.8,no-CoT,-35.4264,-71.6553,173.914,CL,True,,stop,0.00413,666,32,0,2.1,"{""country"": ""CL"", ""latitude"": -35.4264, ""longitude"": -71.6553}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-38.86695861816406,-72.50054168701172,220.202,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-38.964019775390625,-72.54098510742188,231.221,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,-33.4569,-70.6483,411.462,CL,True,,stop,0.0001865625,473,31,0,1.44,"{""country"": ""CL"", ""latitude"": -33.4569, ""longitude"": -70.6483}"
+google/gemma-4-31b-it,no-CoT,-33.4489,-70.6693,411.584,CL,True,,stop,6.718e-05,406,36,0,8.93,"```json
+{""country"": ""CL"", ""latitude"": -33.4489, ""longitude"": -70.6693}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-33.4489,-70.6693,411.584,CL,True,,stop,0.0011835,634,31,0,2.37,"{""country"": ""CL"", ""latitude"": -33.4489, ""longitude"": -70.6693}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.4489,-70.6693,411.584,CL,True,,stop,0.0001444,474,31,0,2.39,"{""country"": ""CL"", ""latitude"": -33.4489, ""longitude"": -70.6693}"
+x-ai/grok-4.3,no-CoT,-33.45,-70.65,412.119,CL,True,,stop,0.0005934,592,22,0,1.85,"{""country"": ""CL"", ""latitude"": -33.45, ""longitude"": -70.65}"
+qwen/qwen3.5-122b-a10b,no-CoT,-33.3833,-70.6167,420.152,CL,True,,stop,0.00018746,473,31,0,1.09,"{""country"": ""CL"", ""latitude"": -33.3833, ""longitude"": -70.6167}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-41.13499450683594,-73.20491027832031,477.853,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-41.16386032104492,-73.28922271728516,482.21,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,-35.0,-60.0,1129.31,AR,True,,stop,0.005188,1190,234,205,16.93,"```json
+{""country"": ""AR"", ""latitude"": -35.0, ""longitude"": -60.0}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-34.4821,-58.7412,1255.442,AR,True,,stop,0.0036,1272,188,126,306.13,"{""reasoning"": ""The presence of pampas grass, flat terrain, wooden roadside posts, and typical highway infrastructure indicates the Pampas region of Argentina."", ""country"": ""AR"", ""latitude"": -34.4821, ""longitude"": -58.7412}"
+google/gemini-3.5-flash,CoT (effort=medium),-34.3852,-58.7491,1257.8,AR,True,,stop,0.0056685,1271,418,344,6.23,"{""reasoning"": ""The presence of native Pampas grass (Cortaderia selloana), flat terrain, and characteristic highway infrastructure with wooden posts suggests the Pampas region of Argentina, likely in the Buenos Aires Province."", ""country"": ""AR"", ""latitude"": -34.3852, ""longitude"": -58.7491}"
+google/gemini-3.5-flash,CoT (effort=high),-34.825,-58.535,1263.538,AR,True,,stop,0.0098175,1271,879,808,14.61,"{""reasoning"": ""The flat landscape with planted Pampas grass, short wooden barrier posts, and the style of the highway embankment are highly characteristic of the Pampas region in Argentina, particularly around Buenos Aires province."", ""country"": ""AR"", ""latitude"": -34.825, ""longitude"": -58.535}"
+qwen/qwen3.5-9b,no-CoT,-34.5736,-58.4244,1280.559,AR,True,,stop,5.205e-05,474,31,0,3.23,"{""country"": ""AR"", ""latitude"": -34.5736, ""longitude"": -58.4244}"
+qwen/qwen3.5-27b,no-CoT,-34.6037,-58.3816,1283.438,AR,True,,stop,0.00021684,474,36,0,16.91,"```json
+{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}
+```"
+google/gemini-3.1-pro-preview,CoT,-35.5,-58.0,1294.397,AR,True,,stop,0.005844,1272,275,193,4.26,"{
+  ""reasoning"": ""The presence of pampas grass, eucalyptus trees, and the style of wooden bollards strongly suggest the Pampas region of Argentina. The road markings and general landscape are consistent with highway interchanges in Buenos Aires province."",
+  ""country"": ""AR"",
+  ""latitude"": -35.5,
+  ""longitude"": -58.0
+}"
+moonshotai/kimi-k2.6,CoT,-35.5,-58.0,1294.397,AR,True,,stop,0.009422748,682,2693,2614,136.3,"{""reasoning"": ""Wild pampas grass (Cortaderia selloana) in flat temperate grassland alongside a paved highway with a W-beam guardrail on an embankment is highly characteristic of the Argentine Pampas, specifically Buenos Aires Province."", ""country"": ""AR"", ""latitude"": -35.5, ""longitude"": -58.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,3.387641191482544,-76.54881286621094,4499.996,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,-37.7833,175.2833,9195.568,NZ,True,,stop,0.000383,473,32,0,8.75,"{""country"": ""NZ"", ""latitude"": -37.7833, ""longitude"": 175.2833}"
+xiaomi/mimo-v2.5,CoT,-37.78,175.28,9196.028,NZ,True,,stop,0.0003786776,787,1053,976,11.27,"{""reasoning"": ""The wooden post-and-rail fencing and green pastures with scattered trees in an overcast climate are characteristic of rural New Zealand. The lack of other identifiers suggests a common agricultural region like the Waikato."", ""country"": ""NZ"", ""latitude"": -37.78, ""longitude"": 175.28}"
+xiaomi/mimo-v2.5,no-CoT,37.3861,-122.0839,9713.614,US,True,,stop,8.17376e-05,708,32,0,1.34,"{""country"": ""US"", ""latitude"": 37.3861, ""longitude"": -122.0839}"
+google/gemma-4-26b-a4b-it,no-CoT,45.0,-120.0,10285.442,US,True,,stop,9.094e-05,406,121,0,4.14,"Please own assumption own-thought
+thought
+Please provide the image you own-thought
+{""country"": ""US"", ""latitude"": 45.5 own-thought
+{""country"": ""US"", ""latitude"": own-thought
+{""country"": ""US"", own-thought
+{""country"": ""US"", ""latitude"": 45.0, ""longitude"": -1 own-thought
+{""country"": ""US"", own-thought
+{""country"": ""US"", ""latitude"": 45.0, ""longitude"": -120.0}"
+openai/gpt-5.5,CoT,34.0209,-6.8416,10395.788,MA,True,,stop,0.014325,621,374,288,16.91,"{""reasoning"":""Right-hand driving with European-style white road markings, landscaped roadside embankments, eucalyptus/ornamental plantings, and short dark bollards are most consistent with urban/suburban Morocco. The lush green winter vegetation and highway landscaping point most likely to the Rabat–Salé area."",""country"":""MA"",""latitude"":34.0209,""longitude"":-6.8416}"
+x-ai/grok-4.3,CoT,-37.799,144.845,10874.051,AU,True,,stop,0.001829,676,528,455,3.98,"{""reasoning"": ""Left-side driving (road markings/curb), wooden bollards, eucalyptus-style trees, overcast sky and guardrail style point to suburban Australia/NZ; image matches typical Google Street View of Melbourne western suburbs parkland."", ""country"": ""AU"", ""latitude"": -37.799, ""longitude"": 144.845}"
+qwen/qwen3.6-27b,no-CoT,41.3874,2.1686,11529.143,ES,True,,stop,0.0001923,473,30,0,18.12,"{""country"": ""ES"", ""latitude"": 41.3874, ""longitude"": 2.1686}"
+mistralai/mistral-small-2603,no-CoT,51.5074,-0.1278,12067.52,GB,True,,stop,0.000141375,634,30,0,7.84,"{""country"": ""GB"", ""latitude"": 51.5074, ""longitude"": -0.1278}"
+minimax/minimax-m3,CoT,50.12,14.58,12861.044,CZ,True,,stop,0.00097386,843,652,565,16.81,"{""reasoning"": ""Wide European-style road with grassy embankments, panelák-style apartment blocks visible in the middle distance, and a tall transmission tower on the right skyline strongly suggest the outskirts of Prague (likely Žižkov TV Tower visible), with characteristic Central European roadside landscaping and wooden bollards."", ""country"": ""CZ"", ""latitude"": 50.12, ""longitude"": 14.58}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.83,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,9.38,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.39,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.58,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.23,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.2,

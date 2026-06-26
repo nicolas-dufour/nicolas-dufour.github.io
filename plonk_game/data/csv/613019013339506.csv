@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,21.66762743420709,110.63336826868849,0.0,CN,True,,,,,,,,"Dongshan, None, Guangdong, CN"
+google/gemini-3.1-pro-preview,CoT,20.02,110.32,186.079,CN,True,,stop,0.006022,1271,290,198,4.96,"{
+  ""reasoning"": ""The blue license plate on the RV, right-hand traffic, and the style of the three-wheeled vehicle strongly suggest China. The presence of palm trees and lush vegetation indicates a southern, tropical or subtropical location like Hainan."",
+  ""country"": ""CN"",
+  ""latitude"": 20.0200,
+  ""longitude"": 110.3200
+}"
+google/gemini-3.5-flash,CoT (effort=low),22.817,108.366,266.058,CN,True,,stop,0.005265,1272,373,290,3.49,"{""reasoning"": ""The presence of a blue Chinese license plate on the parked sedan, a typical Chinese electric tricycle, a local RV, and characteristic white roadside fencing indicates China. The lush vegetation and palm trees suggest a southern city like Nanning in Guangxi province."", ""country"": ""CN"", ""latitude"": 22.817, ""longitude"": 108.366}"
+google/gemini-3.5-flash,CoT (effort=medium),22.817,108.366,266.058,CN,True,,stop,0.0094035,1271,833,751,13.01,"{""reasoning"": ""The concrete road with central dashed markings, white decorative roadside fencing, and a Chinese-style electric tricycle indicate China. The presence of prominent palm trees alongside deciduous trees suggests a subtropical location in southern China, such as Guangxi or Guangdong province."", ""country"": ""CN"", ""latitude"": 22.817, ""longitude"": 108.366}"
+google/gemini-3.5-flash,CoT (effort=high),22.817,108.366,266.058,CN,True,,stop,0.0134175,1271,1279,1199,15.39,"{""reasoning"": ""The concrete road with joints, the distinctive white arched municipal fence on the right, and the blue license plates indicate China. The combination of palm trees and lush deciduous trees suggests a subtropical climate in southern China, likely Guangxi province."", ""country"": ""CN"", ""latitude"": 22.817, ""longitude"": 108.366}"
+xiaomi/mimo-v2.5,CoT,23.03,113.32,315.093,CN,True,,stop,0.0001507576,787,239,119,19.72,"{""reasoning"": ""The presence of a distinct three-wheeled auto-rickshaw (likely a motorized tricycle or similar utility vehicle often seen in China), combined with the blue license plate on the white sedan to the left (standard Chinese format), and the right-hand traffic flow, strongly suggests a location in China. The vegetation, including palm trees and leafy banyan-like trees, points towards a southern or subtropical region."", ""country"": ""CN"", ""latitude"": 23.03, ""longitude"": 113.32}"
+xiaomi/mimo-v2.5,no-CoT,23.13,113.26,315.2,CN,True,,stop,8.06176e-05,708,28,0,1.33,"{""country"": ""CN"", ""latitude"": 23.13, ""longitude"": 113.26}"
+openai/gpt-5.5,CoT,23.1167,113.3194,319.711,CN,True,,stop,0.012075,621,299,225,9.21,"{""reasoning"":""Right-side driving with Chinese-style blue/green license plates, manicured roadside fencing, and humid subtropical landscaping with palms strongly indicate an urban park/avenue in southern China. The vegetation and road environment fit Guangzhou particularly well."",""country"":""CN"",""latitude"":23.1167,""longitude"":113.3194}"
+google/gemini-3.1-pro-preview,no-CoT,22.5431,114.0579,365.972,CN,True,,stop,0.00281,1189,36,0,8.75,"```json
+{""country"": ""CN"", ""latitude"": 22.5431, ""longitude"": 114.0579}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),22.5431,114.0579,365.972,CN,True,,stop,0.002109,1190,36,0,7.82,"```json
+{""country"": ""CN"", ""latitude"": 22.5431, ""longitude"": 114.0579}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,22.5432,114.0579,365.975,CN,True,,stop,9.836e-05,474,32,0,1.31,"{""country"": ""CN"", ""latitude"": 22.5432, ""longitude"": 114.0579}"
+minimax/minimax-m3,CoT,25.04,102.71,891.298,CN,True,,stop,0.00100422,845,674,655,11.99,"{""reasoning"": ""Tropical/subtropical vegetation (palms, broadleaf trees) with persistent haze, white metal median railings, three-wheeled canopy auto-rickshaw, right-hand traffic, and RV tourism strongly suggest Kunming, Yunnan, China."", ""country"": ""CN"", ""latitude"": 25.04, ""longitude"": 102.71}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,15.339439392089844,100.99174499511719,1235.767,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,13.795316696166992,100.63982391357422,1372.584,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,13.7866792678833,100.6102294921875,1375.626,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,39.9042,116.4074,2100.205,CN,True,,stop,0.00036828,473,32,0,2.11,"{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}"
+openai/gpt-5.5,no-CoT,39.9149,116.3907,2100.934,CN,True,,stop,0.00341,544,23,0,1.17,"{""country"":""CN"",""latitude"":39.9149,""longitude"":116.3907}"
+qwen/qwen3.6-27b,no-CoT,28.5355,77.391,3421.558,IN,True,,stop,0.0001943,473,31,0,13.59,"{""country"": ""IN"", ""latitude"": 28.5355, ""longitude"": 77.3910}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,28.6557559967041,77.33692932128906,3428.06,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,28.650928497314453,77.32402038574219,3429.264,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,28.613,77.23,3438.006,IN,True,,stop,0.00954,680,2263,2480,57.57,"{""reasoning"": ""The enclosed three-wheeled auto-rickshaw and distinctive white ornamental concrete sidewalk fencing are hallmarks of India, specifically the broad, tree-lined avenues in New Delhi's Lutyens' zone. The tropical vegetation, vehicle types, and hazy winter sky align with a North Indian city."", ""country"": ""IN"", ""latitude"": 28.613, ""longitude"": 77.23}"
+qwen/qwen3.6-35b-a3b,no-CoT,28.5825,77.225,3438.181,IN,True,,stop,0.0039716742,471,4036,4000,23.15,"{""country"": ""IN"", ""latitude"": 28.5825, ""longitude"": 77.2250}"
+anthropic/claude-opus-4.8,CoT,28.6139,77.209,3440.057,IN,True,,stop,0.006235,797,90,0,4.48,"{""reasoning"": ""Auto-rickshaw, hazy polluted air, left-hand traffic, and wide tree-lined avenue typical of New Delhi's central government district."", ""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+anthropic/claude-opus-4.8,no-CoT,28.6139,77.209,3440.057,IN,True,,stop,0.00413,666,32,0,16.75,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+google/gemma-4-26b-a4b-it,no-CoT,28.6139,77.209,3440.057,IN,True,,stop,5.854e-05,406,40,0,13.83,"Please own-thought
+thought
+{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+google/gemma-4-31b-it,no-CoT,28.6139,77.209,3440.057,IN,True,,stop,6.378e-05,406,36,0,10.44,"```json
+{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,28.6139,77.209,3440.057,IN,True,,stop,0.00018564,474,30,0,5.99,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+x-ai/grok-4.3,no-CoT,28.6139,77.209,3440.057,IN,True,,stop,0.0005984,592,24,0,1.24,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+qwen/qwen3.5-27b,no-CoT,28.5677,77.1025,3449.945,IN,True,,stop,0.0002065,474,44,0,8.69,"```json
+{
+  ""country"": ""IN"",
+  ""latitude"": 28.5677,
+  ""longitude"": 77.1025
+}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,28.4125919342041,77.03516387939453,3455.0,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,12.97,77.59,3630.046,IN,True,,stop,0.0037715,676,1305,1241,12.49,"{""reasoning"": ""Auto-rickshaw, palm-lined avenue, hazy subtropical light and right-hand traffic with oncoming vehicles on left side of frame point to South or Southeast Asia; most consistent match is India."", ""country"": ""IN"", ""latitude"": 12.97, ""longitude"": 77.59}"
+mistralai/mistral-medium-3-5,no-CoT,33.6844,73.0479,3909.229,PK,True,,stop,0.0011835,634,31,0,1.26,"{""country"": ""PK"", ""latitude"": 33.6844, ""longitude"": 73.0479}"
+qwen/qwen3.5-9b,no-CoT,19.076,72.8777,3936.77,IN,True,,stop,5.205e-05,474,31,0,3.32,"{""country"": ""IN"", ""latitude"": 19.0760, ""longitude"": 72.8777}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.45,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.61,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,9.25,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.62,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,12.29,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.33,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,13.29,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.31,

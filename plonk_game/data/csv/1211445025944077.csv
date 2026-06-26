@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,7.4174369395501,80.61028059262,0.0,LK,True,,,,,,,,"Kandy, None, Central, LK"
+moonshotai/kimi-k2.6,no-CoT,7.2,80.7,26.124,LK,True,,stop,0.00066485,603,23,0,1.01," {""country"": ""LK"", ""latitude"": 7.2, ""longitude"": 80.7}"
+moonshotai/kimi-k2.6,CoT,7.25,80.42,28.054,LK,True,,stop,0.022289508,682,6453,6382,261.57,"{""reasoning"": ""The truck is driving in the left lane on a left-hand-traffic road, surrounded by dense tropical hillside forest with coconut palms, and the rigid truck body with rooftop railing is typical of Sri Lankan highways."", ""country"": ""LK"", ""latitude"": 7.25, ""longitude"": 80.42}"
+google/gemini-3.1-pro-preview,CoT,7.05,80.25,56.998,LK,True,,stop,0.005592,1272,254,187,11.64,"{
+  ""reasoning"": ""Driving on the left, tropical vegetation, double white center lines, and a yellow rear license plate on the truck strongly indicate Sri Lanka."",
+  ""country"": ""LK"",
+  ""latitude"": 7.05,
+  ""longitude"": 80.25
+}"
+google/gemini-3.1-pro-preview,no-CoT,6.85,80.15,80.995,LK,True,,stop,0.004612,1190,186,156,3.41,"```json
+{""country"": ""LK"", ""latitude"": 6.85, ""longitude"": 80.15}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,6.49009895324707,80.58114624023438,103.165,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,6.459921836853027,80.61280822753906,106.471,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,10.1271,76.25,565.983,IN,True,,stop,0.0051798721,553,5274,5185,49.83,"```json
+{
+  ""reasoning"": ""The image shows left-hand traffic, tropical vegetation with coconut palms, and a truck with a yellow rear license plate (indicative of commercial vehicles in India), pointing to a location in Kerala, India."",
+  ""country"": ""IN"",
+  ""latitude"": 10.1271,
+  ""longitude"": 76.25
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,7.8804,98.3923,1960.207,TH,True,,stop,0.0001158625,473,30,0,0.75,"{""country"": ""TH"", ""latitude"": 7.8804, ""longitude"": 98.3923}"
+qwen/qwen3.5-397b-a17b,no-CoT,8.088,98.395,1960.756,TH,True,,stop,0.00028245,473,28,0,3.52,"{""country"": ""TH"", ""latitude"": 8.088, ""longitude"": 98.395}"
+qwen/qwen3.6-27b,no-CoT,8.5069,98.4482,1967.912,TH,True,,stop,0.00024768,474,30,0,0.77,"{""country"": ""TH"", ""latitude"": 8.5069, ""longitude"": 98.4482}"
+minimax/minimax-m3,CoT,8.45,98.53,1976.664,TH,True,,stop,0.00079266,843,501,400,14.41,"{""reasoning"": ""Left-hand traffic with a box-body truck typical of Southeast Asia, tropical mountainous jungle with coconut palms, and metal W-beam guardrail strongly suggest southern Thailand's Andaman coast region (Phang Nga/Krabi). The dense rainforest on steep hills and the road infrastructure match the highways between Phuket, Phang Nga, and Krabi."", ""country"": ""TH"", ""latitude"": 8.45, ""longitude"": 98.53}"
+qwen/qwen3.5-27b,no-CoT,8.542,98.872,2014.633,TH,True,,stop,0.000135915,473,28,0,7.99,"{""country"": ""TH"", ""latitude"": 8.542, ""longitude"": 98.872}"
+mistralai/mistral-medium-3-5,no-CoT,8.0,99.0,2027.232,TH,True,,stop,0.001131,634,24,0,7.4,"{""country"": ""TH"", ""latitude"": 8.0, ""longitude"": 99.0}"
+qwen/qwen3.5-397b-a17b,CoT,9.15,99.3,2065.25,TH,True,,stop,0.0072282,553,1929,1843,17.63,"{""reasoning"": ""The vehicle is driving on the left side of the road (left-hand traffic), and the dense tropical vegetation including coconut palms and lush hills strongly suggests a Southeast Asian location. The style of the box truck with vertical locking bars and a roof rack is characteristic of Thailand."", ""country"": ""TH"", ""latitude"": 9.15, ""longitude"": 99.30}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,5.032141208648682,99.47148132324219,2101.442,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,5.4164,100.2,2175.79,MY,True,,stop,0.004105,666,31,0,2.56,"{""country"": ""MY"", ""latitude"": 5.4164, ""longitude"": 100.2}"
+openai/gpt-5.5,no-CoT,5.3857,100.2592,2182.708,MY,True,,stop,0.00341,544,23,0,1.28,"{""country"":""MY"",""latitude"":5.3857,""longitude"":100.2592}"
+minimax/minimax-m3,no-CoT,6.2,100.4,2188.99,MY,True,,stop,0.00026322,767,76,76,5.54,"{""country"": ""MY"", ""latitude"": 6.2, ""longitude"": 100.4}"
+qwen/qwen3.5-9b,no-CoT,7.0132,100.501,2194.512,TH,True,,stop,5.19e-05,474,30,0,2.78,"{""country"": ""TH"", ""latitude"": 7.0132, ""longitude"": 100.501}"
+qwen/qwen3.5-122b-a10b,no-CoT,12.8264,99.9707,2201.833,TH,True,,stop,0.00018772,474,31,0,5.34,"{""country"": ""TH"", ""latitude"": 12.8264, ""longitude"": 99.9707}"
+google/gemini-3.5-flash,CoT (effort=medium),5.6952,101.3254,2296.098,MY,True,,stop,0.0103035,1271,933,855,14.81,"```json
+{""reasoning"": ""The lush tropical rainforest, mountainous terrain, left-hand traffic, and white dashed center line are highly characteristic of federal highways in Malaysia, particularly Route 4 (East-West Highway)."", ""country"": ""MY"", ""latitude"": 5.6952, ""longitude"": 101.3254}
+```"
+google/gemini-3.5-flash,CoT (effort=low),5.4251,101.3382,2300.792,MY,True,,stop,0.0040305,1271,236,163,3.35,"{""reasoning"": ""The image shows left-hand traffic on a well-maintained asphalt road with tropical vegetation and mountainous terrain, highly characteristic of the East-West Highway (Route 4) in northern Malaysia."", ""country"": ""MY"", ""latitude"": 5.4251, ""longitude"": 101.3382}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),5.4241,101.4482,2312.9,MY,True,,stop,0.0020985,1189,35,0,26.18,"```json
+{""country"": ""MY"", ""latitude"": 5.4241, ""longitude"": 101.4482}
+```"
+google/gemini-3.5-flash,CoT (effort=high),5.7025,101.5122,2316.573,MY,True,,stop,0.01197,1272,1118,1032,7.31,"```json
+{""reasoning"": ""The left-hand traffic, lush tropical rainforest vegetation, and well-maintained asphalt road with white dashed markings are highly characteristic of Malaysia, specifically the mountainous East-West Highway (Route 4) in the north of the peninsula."", ""country"": ""MY"", ""latitude"": 5.7025, ""longitude"": 101.5122}
+```"
+anthropic/claude-opus-4.8,CoT,4.5,101.5,2332.551,MY,True,,stop,0.00636,797,95,0,3.3,"{""reasoning"": ""Tropical lush vegetation with coconut palms and forested hills, left-hand traffic on a well-paved highway suggests Southeast Asia, most likely Malaysia."", ""country"": ""MY"", ""latitude"": 4.5, ""longitude"": 101.5}"
+mistralai/mistral-small-2603,CoT,3.15,101.65,2376.753,MY,True,,stop,0.0004776,716,617,738,4.92,"{""reasoning"": ""Left-hand traffic, tropical vegetation, and modern infrastructure point to Malaysia."", ""country"": ""MY"", ""latitude"": 3.15, ""longitude"": 101.65}"
+x-ai/grok-4.3,no-CoT,4.35,101.95,2384.452,MY,True,,stop,0.0005934,592,22,0,0.77,"{""country"": ""MY"", ""latitude"": 4.35, ""longitude"": 101.95}"
+x-ai/grok-4.3,CoT,3.85,101.92,2390.701,MY,True,,stop,0.0022065,676,679,616,13.36,"{""reasoning"": ""Tropical palm trees + dense rainforest hills, metal guardrail, white dashed lane lines and box truck style indicate left-side driving in SE Asia; most consistent with Malaysian peninsula roads."", ""country"": ""MY"", ""latitude"": 3.85, ""longitude"": 101.92}"
+qwen/qwen3.6-35b-a3b,no-CoT,12.5684,102.1897,2430.278,TH,True,,stop,0.00010295,473,32,0,3.01,"{""country"": ""TH"", ""latitude"": 12.5684, ""longitude"": 102.1897}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,5.905169486999512,102.6887435913086,2443.952,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-4.479803085327148,55.39484786987305,3094.819,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-4.6908,55.4716,3097.203,SC,True,,stop,0.016155,621,435,343,10.64,"{""reasoning"":""Tropical left-hand-driving road with white center markings, metal guardrails, dense palms/banana vegetation, and steep granitic-looking hills best fit the Seychelles, especially Mahé’s lush coastal/interior roads. The scene lacks urban density and matches the narrow winding roads around Mahé rather than Mauritius or Sri Lanka."",""country"":""SC"",""latitude"":-4.6908,""longitude"":55.4716}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-4.395846366882324,55.32862854003906,3097.507,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,14.5995,120.9842,4471.913,PH,True,,stop,6.418e-05,406,37,0,11.36,"```json
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}
+```"
+xiaomi/mimo-v2.5,no-CoT,9.8,124.2,4796.552,PH,True,,stop,7.97776e-05,708,25,0,2.53,"{""country"": ""PH"", ""latitude"": 9.8, ""longitude"": 124.2}"
+mistralai/mistral-small-2603,no-CoT,43.6109,3.8772,8372.609,FR,True,,stop,0.0001131,634,30,0,1.3,"{""country"": ""FR"", ""latitude"": 43.6109, ""longitude"": 3.8772}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8972.269,,True,True,,,,,,7.06,
+xiaomi/mimo-v2.5,CoT,-2.8,-51.9,14733.191,BR,True,,stop,0.0002302776,787,523,451,12.33,"{""reasoning"": ""Dense tropical rainforest with coconut palms signals an Amazonian region; right-hand traffic (truck positioned in left lane) and highway guardrail style match northern Brazil's infrastructure, pointing to Pará state."", ""country"": ""BR"", ""latitude"": -2.8, ""longitude"": -51.9}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.35,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.14,

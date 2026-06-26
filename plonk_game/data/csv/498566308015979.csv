@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.710352690559,65.570445658532,0.0,KZ,True,,,,,,,,"Tasboget, None, Qyzylorda, KZ"
+x-ai/grok-4.3,CoT,44.85,65.42,19.548,KZ,True,,stop,0.0020365,788,555,481,11.85,"{""reasoning"": ""White-painted tree trunks, arid Central Asian steppe vegetation, Cyrillic road sign on blue panel, right-hand traffic and pole/lamp styles all point to a Kazakh highway; the sign text and layout match the Kyzylorda region."", ""country"": ""KZ"", ""latitude"": 44.85, ""longitude"": 65.42}"
+x-ai/grok-4.3,no-CoT,43.602,68.478,262.639,KZ,True,,stop,0.0007334,704,22,0,1.81,"{""country"": ""KZ"", ""latitude"": 43.602, ""longitude"": 68.478}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.3775,64.5764,379.289,UZ,True,,stop,0.00034185,585,31,0,5.04,"{""country"": ""UZ"", ""latitude"": 41.3775, ""longitude"": 64.5764}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.3111,64.5903,386.281,UZ,True,,stop,0.00011875,585,31,0,1.4,"{""country"": ""UZ"", ""latitude"": 41.3111, ""longitude"": 64.5903}"
+qwen/qwen3.5-9b,no-CoT,41.3116,69.2401,481.399,UZ,True,,stop,6.325e-05,586,31,0,8.64,"{""country"": ""UZ"", ""latitude"": 41.3116, ""longitude"": 69.2401}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.3115,69.2401,481.408,UZ,True,,stop,0.000187425,585,31,0,7.74,"{""country"": ""UZ"", ""latitude"": 41.3115, ""longitude"": 69.2401}"
+google/gemma-4-31b-it,no-CoT,41.3111,69.2403,481.453,UZ,True,,stop,6.348e-05,404,36,0,5.1,"```json
+{""country"": ""UZ"", ""latitude"": 41.3111, ""longitude"": 69.2403}
+```"
+mistralai/mistral-medium-3-5,no-CoT,41.2995,69.2401,482.473,UZ,True,,stop,0.001419,786,32,0,2.03,"{""country"": ""UZ"", ""latitude"": 41.2995, ""longitude"": 69.2401}"
+google/gemini-3.5-flash,CoT (effort=low),40.1154,65.3521,511.249,UZ,True,,stop,0.0046515,1307,299,220,11.32,"{""reasoning"": ""The teal-painted bases of the lampposts, white-painted tree trunks, flat arid landscape, and the Isuzu-style bus are highly characteristic of Uzbekistan, specifically along major highways like the M37."", ""country"": ""UZ"", ""latitude"": 40.1154, ""longitude"": 65.3521}"
+anthropic/claude-opus-4.8,CoT,40.1,65.4,512.838,UZ,True,,stop,0.00712,949,95,0,10.12,"{""reasoning"": ""Arid Central Asian landscape with whitewashed tree trunks, blue billboard, and modern road suggests Uzbekistan/Turkmenistan rural highway."", ""country"": ""UZ"", ""latitude"": 40.1, ""longitude"": 65.4}"
+google/gemini-3.5-flash,CoT (effort=high),40.0125,64.3986,531.159,UZ,True,,stop,0.0154605,1307,1500,1420,10.8,"```json
+{""reasoning"": ""The flat, arid landscape with white-painted tree trunks and distinctive blue-and-white streetlights is highly characteristic of Uzbekistan's highways, particularly in the Bukhara or Khorezm regions."", ""country"": ""UZ"", ""latitude"": 40.0125, ""longitude"": 64.3986}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),40.0021,64.3814,532.555,UZ,True,,stop,0.0077475,1307,643,568,12.13,"{""reasoning"": ""The flat, arid landscape, white-painted tree trunks, and distinctive turquoise-and-white streetlights are characteristic of Uzbekistan. The white Isuzu bus ahead is also extremely common in the country."", ""country"": ""UZ"", ""latitude"": 40.0021, ""longitude"": 64.3814}"
+google/gemini-3.1-pro-preview,CoT,41.55,60.63,532.948,UZ,True,,stop,0.006838,1307,352,268,12.17,"{
+  ""reasoning"": ""The white-painted tree trunks, Cyrillic-style billboard, and flat arid landscape strongly suggest a former Soviet Central Asian country. The specific curved streetlights with teal bases are characteristic of road infrastructure in Uzbekistan."",
+  ""country"": ""UZ"",
+  ""latitude"": 41.55,
+  ""longitude"": 60.63
+}"
+google/gemini-3.1-pro-preview,no-CoT,41.55,60.63,532.948,UZ,True,,stop,0.006064,1226,301,270,4.54,"```json
+{""country"": ""UZ"", ""latitude"": 41.55, ""longitude"": 60.63}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.534211,60.621456,534.665,UZ,True,,stop,0.00219,1226,39,0,7.71,"```json
+{""country"": ""UZ"", ""latitude"": 41.534211, ""longitude"": 60.621456}
+```"
+anthropic/claude-opus-4.8,no-CoT,40.1167,67.8333,543.462,UZ,True,,stop,0.004915,818,33,0,9.19,"{""country"": ""UZ"", ""latitude"": 40.1167, ""longitude"": 67.8333}"
+moonshotai/kimi-k2.6,CoT,39.65,64.75,566.723,UZ,True,,stop,0.008424036,834,2378,2316,71.01,"{""reasoning"":""The blue Cyrillic road sign, systematically whitewashed tree trunks along a flat arid highway, and post-Soviet road infrastructure are hallmark features of Uzbekistan's intercity highways."",""country"":""UZ"",""latitude"":39.65,""longitude"":64.75}"
+openai/gpt-5.5,no-CoT,39.6542,66.9597,573.728,UZ,True,,stop,0.00408,678,23,0,1.23,"{""country"":""UZ"",""latitude"":39.6542,""longitude"":66.9597}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,42.44749069213867,72.10903930664062,583.479,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,39.4,65.2,591.274,UZ,True,,stop,0.006852636,754,1929,1905,79.43,"{""country"": ""UZ"", ""latitude"": 39.4, ""longitude"": 65.2}"
+openai/gpt-5.5,CoT,40.7485,72.2812,702.809,UZ,True,,stop,0.017545,755,459,375,40.34,"{""reasoning"":""The arid Central Asian roadside, white-painted tree trunks, turquoise/white lamp posts, and blue highway signage with likely Uzbek/Cyrillic styling point strongly to Uzbekistan. Flat irrigated terrain with poplars suggests the Fergana Valley rather than mountainous or desert regions."",""country"":""UZ"",""latitude"":40.7485,""longitude"":72.2812}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.88755416870117,64.20213317871094,877.41,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,43.15,76.45,887.635,KZ,True,,stop,0.00088746,995,542,448,19.44,"{""reasoning"": ""Blue Cyrillic directional sign, poplar trees with whitewashed trunks lining the road (typical Central Asian practice), flat semi-arid steppe landscape, right-hand traffic, and Soviet-era street lamp style all point to southern Kazakhstan. The minibus ahead and overall road infrastructure are characteristic of highways in the Almaty region."", ""country"": ""KZ"", ""latitude"": 43.15, ""longitude"": 76.45}"
+minimax/minimax-m3,no-CoT,43.25,76.95,924.083,KZ,True,,stop,0.00035802,919,117,121,6.09,"{""country"": ""KZ"", ""latitude"": 43.25, ""longitude"": 76.95}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.161808013916016,77.75684356689453,989.893,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,37.354774475097656,58.793704986572266,995.215,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.15664291381836,77.83065032958984,995.838,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,37.08420181274414,57.61840057373047,1078.589,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,39.75,76.85,1078.688,CN,True,,stop,9.60176e-05,820,27,0,7.8,"{""country"": ""CN"", ""latitude"": 39.75, ""longitude"": 76.85}"
+qwen/qwen3.6-27b,no-CoT,43.827,87.617,1752.807,CN,True,,stop,0.0002239,585,29,0,32.49,"{""country"": ""CN"", ""latitude"": 43.827, ""longitude"": 87.617}"
+qwen/qwen3.5-27b,no-CoT,43.8256,87.6169,1752.828,CN,True,,stop,0.000162435,585,31,0,1.21,"{""country"": ""CN"", ""latitude"": 43.8256, ""longitude"": 87.6169}"
+qwen/qwen3.5-122b-a10b,no-CoT,42.9167,87.6167,1774.65,CN,True,,stop,0.00021684,586,31,0,6.05,"{""country"": ""CN"", ""latitude"": 42.9167, ""longitude"": 87.6167}"
+google/gemma-4-26b-a4b-it,no-CoT,48.4647,35.0,2356.79,,True,,stop,5.388e-05,404,29,0,7.71,"{""country"": ""UA"", ""latitude"": 48.4647, ""longitude"": 35.0 own}"
+xiaomi/mimo-v2.5,CoT,40.1,94.8,2440.107,CN,True,,stop,0.0005615176,899,1650,1577,19.99,"{""reasoning"": ""The blue Chinese signage and right-hand traffic, combined with the characteristic whitewashed poplar trees and arid landscape, are highly indicative of the Xinjiang or Gansu regions in northwestern China."", ""country"": ""CN"", ""latitude"": 40.1, ""longitude"": 94.8}"
+mistralai/mistral-small-2603,no-CoT,39.7817,-86.1461,10203.687,US,True,,stop,0.0001365,786,31,0,1.1,"{""country"": ""US"", ""latitude"": 39.7817, ""longitude"": -86.1461}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,13.3,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.58,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.57,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.12,

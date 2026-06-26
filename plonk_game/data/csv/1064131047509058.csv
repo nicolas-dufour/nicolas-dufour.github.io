@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,47.898617154545,12.176085441077,0.0,DE,True,,,,,,,,"Prutting, Upper Bavaria, Bavaria, DE"
+google/gemini-3.5-flash,CoT (effort=high),47.8625,12.1833,4.052,DE,True,,stop,0.0065055,1271,511,436,10.26,"{""reasoning"": ""The architectural style of the white house with dark wooden gables and a tiled roof, combined with the rolling green hills and coniferous forests, is highly characteristic of the Alpine foothills in Upper Bavaria, Germany."", ""country"": ""DE"", ""latitude"": 47.8625, ""longitude"": 12.1833}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,47.9173583984375,12.251993179321289,6.029,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,47.913753509521484,12.254792213439941,6.103,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,47.85,12.0,14.202,DE,True,,stop,0.006285,797,92,0,3.85,"{""reasoning"": ""Alpine foothill rural landscape with white plastered house, red tile roof, dark conifer forest, and roadside marker posts typical of southern Germany/Austria."", ""country"": ""DE"", ""latitude"": 47.85, ""longitude"": 12.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,48.053340911865234,12.214786529541016,17.444,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),47.8521,11.6483,39.702,DE,True,,stop,0.0046695,1271,307,226,3.75,"{""reasoning"": ""The architecture of the alpine-style house with a white facade and gabled roof, combined with the rolling green hills, coniferous forests, and distinctive white roadside delineators, strongly points to the Alpine foothills of southern Bavaria, Germany."", ""country"": ""DE"", ""latitude"": 47.8521, ""longitude"": 11.6483}"
+minimax/minimax-m3,CoT,47.85,11.55,47.008,DE,True,,stop,0.00089142,845,580,602,16.4,"{""reasoning"": ""The white-walled house with steep pitched roof, rolling green Alpine foothills, mixed conifer/deciduous forest, and small white roadside delineator posts (German Leitpfosten) are highly characteristic of the Bavarian Voralpenland in southern Germany."", ""country"": ""DE"", ""latitude"": 47.85, ""longitude"": 11.55}"
+google/gemma-4-26b-a4b-it,no-CoT,47.85,11.55,47.008,DE,True,,stop,6.334e-05,406,52,0,2.26,"Please own-label: {""country"": ""DE"", ""latitude"": 47.850 own-label: {""country"": ""DE"", ""latitude"": 47.85, ""longitude"": 11.55}}"
+google/gemini-3.1-pro-preview,no-CoT,47.8123,11.5432,48.186,DE,True,,stop,0.004154,1189,148,113,3.81,"```json
+{""country"": ""DE"", ""latitude"": 47.8123, ""longitude"": 11.5432}
+```"
+google/gemini-3.1-pro-preview,CoT,47.8,11.5,51.628,DE,True,,stop,0.005362,1271,235,143,10.78,"{
+  ""reasoning"": ""The architectural style of the white house with a pitched roof and wooden elements is typical of southern Germany or Austria. The white delineator posts with black markings and the surrounding coniferous forest landscape further support a location in the Alpine foothills of Bavaria."",
+  ""country"": ""DE"",
+  ""latitude"": 47.8000,
+  ""longitude"": 11.5000
+}"
+google/gemma-4-31b-it,no-CoT,48.1234,11.5678,51.693,DE,True,,stop,5.772e-05,408,36,0,1.68,"```json
+{""country"": ""DE"", ""latitude"": 48.1234, ""longitude"": 11.5678}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),47.845211,11.423154,56.473,DE,True,,stop,0.002136,1190,39,0,7.33,"```json
+{""country"": ""DE"", ""latitude"": 47.845211, ""longitude"": 11.423154}
+```"
+google/gemini-3.5-flash,CoT (effort=low),47.8542,11.4215,56.495,DE,True,,stop,0.004086,1272,242,160,2.92,"```json
+{""reasoning"": ""The architectural style of the house with its gabled roof and white plaster walls, combined with the rolling green hills, coniferous forests, and specific style of roadside delineator posts, strongly indicates southern Bavaria in Germany."", ""country"": ""DE"", ""latitude"": 47.8542, ""longitude"": 11.4215}
+```"
+moonshotai/kimi-k2.6,CoT,47.65,11.35,67.639,DE,True,,stop,0.00828,680,1948,2059,47.06,"{""reasoning"": ""The white plastered farmhouse with a reddish tiled roof and dark window frames, combined with the narrow rural asphalt road, small roadside delineator posts, and rolling green meadows backed by coniferous forests, are classic features of the Bavarian Alpine foothills (Voralpenland) in southern Germany."", ""country"": ""DE"", ""latitude"": 47.65, ""longitude"": 11.35}"
+qwen/qwen3.6-35b-a3b,no-CoT,47.8912,11.2345,70.205,DE,True,,stop,0.00010617035,473,31,0,1.74,"{""country"": ""DE"", ""latitude"": 47.8912, ""longitude"": 11.2345}"
+qwen/qwen3.5-35b-a3b,no-CoT,47.8423,11.2156,71.916,DE,True,,stop,0.00010195,473,31,0,1.36,"{""country"": ""DE"", ""latitude"": 47.8423, ""longitude"": 11.2156}"
+qwen/qwen3.5-397b-a17b,no-CoT,47.8234,10.9876,89.059,DE,True,,stop,0.00029145,473,31,0,7.65,"{""country"": ""DE"", ""latitude"": 47.8234, ""longitude"": 10.9876}"
+qwen/qwen3.5-9b,no-CoT,48.0566,10.8985,96.706,DE,True,,stop,5.205e-05,474,31,0,1.13,"{""country"": ""DE"", ""latitude"": 48.0566, ""longitude"": 10.8985}"
+anthropic/claude-opus-4.8,no-CoT,47.9,13.5,98.695,AT,True,,stop,0.00408,666,30,0,1.86,"{""country"": ""AT"", ""latitude"": 47.9, ""longitude"": 13.5}"
+qwen/qwen3.5-27b,no-CoT,48.7833,11.5833,107.687,DE,True,,stop,0.00019467,473,31,0,3.6,"{""country"": ""DE"", ""latitude"": 48.7833, ""longitude"": 11.5833}"
+qwen/qwen3.5-122b-a10b,no-CoT,47.8123,10.5678,120.379,DE,True,,stop,0.0002355,473,39,0,8.41,"{
+  ""country"": ""DE"",
+  ""latitude"": 47.8123,
+  ""longitude"": 10.5678
+}"
+openai/gpt-5.5,no-CoT,48.0372,13.8526,125.762,AT,True,,stop,0.00341,544,23,0,2.02,"{""country"":""AT"",""latitude"":48.0372,""longitude"":13.8526}"
+x-ai/grok-4.3,CoT,47.682,10.458,130.589,DE,True,,stop,0.0018165,676,523,425,4.74,"{
+  ""reasoning"": ""Bavarian/Austrian alpine-foothill farmhouse architecture (white walls, steep tiled roof, brown shutters), mixed deciduous-conifer forest on rolling hills, and rural two-lane asphalt road with no markings match southern Germany or western Austria; temperate spring/fall vegetation and clear-sky lighting further narrow to pre-Alpine zone."",
+  ""country"": ""DE"",
+  ""latitude"": 47.682,
+  ""longitude"": 10.458
+}"
+xiaomi/mimo-v2.5,no-CoT,48.5,10.5,141.075,DE,True,,stop,7.97776e-05,708,25,0,1.13,"{""country"": ""DE"", ""latitude"": 48.5, ""longitude"": 10.5}"
+qwen/qwen3.6-27b,no-CoT,47.5456,14.5508,181.915,AT,True,,stop,0.0001943,473,31,0,8.6,"{""country"": ""AT"", ""latitude"": 47.5456, ""longitude"": 14.5508}"
+xiaomi/mimo-v2.5,CoT,47.6,9.5,202.803,DE,True,,stop,0.0001630776,787,283,173,11.22,"{""reasoning"": ""The narrow, unmarked asphalt road flanked by grass verges, the white plastered house with a red-tiled gable roof, and the mix of deciduous and coniferous trees suggest a rural area in Central Europe. The style of the road bollard (white with a black top) is characteristic of Germany, indicating a location near a forest in a German-speaking region."", ""country"": ""DE"", ""latitude"": 47.6, ""longitude"": 9.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,47.39057922363281,9.239703178405762,227.101,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,48.805,9.255,238.202,DE,True,,stop,0.001161,634,28,0,2.45,"{""country"": ""DE"", ""latitude"": 48.805, ""longitude"": 9.255}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,47.30084991455078,8.842294692993164,258.628,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,47.29288101196289,8.80955696105957,261.246,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,48.312,8.215,297.653,DE,True,,stop,0.0005934,592,22,0,0.76,"{""country"": ""DE"", ""latitude"": 48.312, ""longitude"": 8.215}"
+openai/gpt-5.5,CoT,46.3568,15.4542,301.448,SI,True,,stop,0.012435,621,311,221,8.02,"{""reasoning"":""Rural Central European right-driving road with Slovenian-style white/black roadside delineator posts, red-tile stucco farmhouses, and rolling forested hills typical of eastern Slovenia/Styria borderlands. The landscape and architecture most closely fit the countryside around Pohorje/Slovenske Konjice."",""country"":""SI"",""latitude"":46.3568,""longitude"":15.4542}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.36,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.65,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.7,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.35,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,22.01,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.23,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,6.35,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.2,

@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,27.0439161391,100.06904234088,0.0,CN,True,,,,,,,,"Xiaqiaotou, None, Yunnan, CN"
+google/gemini-3.1-pro-preview,CoT,26.87,100.05,19.43,CN,True,,stop,0.006442,1271,325,242,5.4,"{
+  ""reasoning"": ""The sign reads 'Jinsha River Sightseeing Cruise Dock' in Simplified Chinese, placing the location along the Jinsha River in China. The mountainous terrain and climate suggest the Yunnan or Sichuan province border region."",
+  ""country"": ""CN"",
+  ""latitude"": 26.87,
+  ""longitude"": 100.05
+}"
+openai/gpt-5.5,CoT,26.894,99.955,20.14,CN,True,,stop,0.013995,621,363,278,21.61,"{""reasoning"":""Chinese signage explicitly mentions a 'Jinsha River sightseeing boat docking point,' and the mountainous, rainy Yunnan-style town setting fits the Jinsha River tourism area around Shigu/First Bend of the Yangtze. Vehicles drive on the right and the road/signage style is mainland China."",""country"":""CN"",""latitude"":26.894,""longitude"":99.955}"
+qwen/qwen3.5-122b-a10b,no-CoT,26.8667,100.1167,20.264,CN,True,,stop,0.0002187,473,32,0,3.48,"{""country"": ""CN"", ""latitude"": 26.8667, ""longitude"": 100.1167}"
+google/gemini-3.5-flash,CoT (effort=high),26.873,99.962,21.766,CN,True,,stop,0.0124455,1271,1171,1081,9.58,"```json
+{""reasoning"": ""The large blue sign on the right reads '金沙江观光游船停靠点' (Jinsha River Sightseeing Boat Stop), and the mountainous, lush landscape is highly characteristic of Shigu Town along the Jinsha River in Yunnan, China."", ""country"": ""CN"", ""latitude"": 26.873, ""longitude"": 99.962}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),26.873,99.961,21.814,CN,True,,stop,0.0094305,1271,836,754,7.14,"{""reasoning"": ""The blue sign written in Chinese characters translates to 'Jinsha River Sightseeing Boat Docking Point'. The mountainous, misty terrain and local architecture place this along the Jinsha River in Yunnan Province, specifically near the tourist area of Shigu Town."", ""country"": ""CN"", ""latitude"": 26.873, ""longitude"": 99.961}"
+google/gemini-3.5-flash,CoT (effort=low),26.8725,99.9612,21.853,CN,True,,stop,0.004689,1272,309,217,3.03,"{""reasoning"": ""The blue sign in simplified Chinese mentions 'Jinsha River Sightseeing Boat Docking Point' (金沙江观光游船停靠点). The mountainous, misty landscape and architecture are characteristic of Yunnan province near the Jinsha River (Yangtze), likely near Shigu Town."", ""country"": ""CN"", ""latitude"": 26.8725, ""longitude"": 99.9612}"
+google/gemini-3.1-pro-preview,no-CoT,26.872,99.958,22.058,CN,True,,stop,0.005932,1190,296,263,15.07,"```json
+{""country"": ""CN"", ""latitude"": 26.872, ""longitude"": 99.958}
+```"
+moonshotai/kimi-k2.6,CoT,26.873,99.948,22.475,CN,True,,stop,0.009866988,682,2824,2735,157.87,"{""reasoning"": ""Blue road sign reads '金沙江观光游船停靠点' (Jinsha River sightseeing cruise boat docking point), placing this in China; lush subtropical mountain valley with low-hanging clouds matches the Jinsha River valley in northwestern Yunnan near the First Bend of the Yangtze."", ""country"": ""CN"", ""latitude"": 26.873, ""longitude"": 99.948}"
+mistralai/mistral-medium-3-5,no-CoT,26.8817,100.2234,23.651,CN,True,,stop,0.001191,634,32,0,2.01,"{""country"": ""CN"", ""latitude"": 26.8817, ""longitude"": 100.2234}"
+qwen/qwen3.5-397b-a17b,no-CoT,26.8833,100.2333,24.166,CN,True,,stop,0.00029445,473,32,0,3.07,"{""country"": ""CN"", ""latitude"": 26.8833, ""longitude"": 100.2333}"
+minimax/minimax-m3,CoT,26.83,99.95,26.553,CN,True,,stop,0.00076662,845,476,393,13.72,"{""reasoning"": ""Blue sign reads '金沙江观光游船停靠点' (Jinsha River sightseeing boat dock) in simplified Chinese, with right-hand traffic and misty mountainous terrain typical of the Jinsha River valley; the town layout, building style, and cruise-tourism signage point to Shigu Town at the First Bend of the Yangtze in Yulong County, Lijiang, Yunnan."", ""country"": ""CN"", ""latitude"": 26.83, ""longitude"": 99.95}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),27.243512,100.224156,26.984,CN,True,,stop,0.002145,1190,40,0,1.47,"```json
+{""country"": ""CN"", ""latitude"": 27.243512, ""longitude"": 100.224156}
+```"
+qwen/qwen3.6-27b,no-CoT,27.5833,100.4167,69.116,CN,True,,stop,0.0001963,473,32,0,8.78,"{""country"": ""CN"", ""latitude"": 27.5833, ""longitude"": 100.4167}"
+qwen/qwen3.5-9b,no-CoT,27.8566,100.3356,94.116,CN,True,,stop,5.22e-05,474,32,0,3.18,"{""country"": ""CN"", ""latitude"": 27.8566, ""longitude"": 100.3356}"
+anthropic/claude-opus-4.8,no-CoT,27.8333,99.7,95.031,CN,True,,stop,0.004105,666,31,0,9.23,"{""country"": ""CN"", ""latitude"": 27.8333, ""longitude"": 99.7}"
+anthropic/claude-opus-4.8,CoT,27.85,99.7,96.748,CN,True,,stop,0.00681,797,113,0,9.41,"{""reasoning"": ""Chinese signage mentions 金沙江 (Jinsha River) sightseeing boat dock, with mountainous terrain and right-side driving typical of southwest China near the Jinsha River in Yunnan/Sichuan."", ""country"": ""CN"", ""latitude"": 27.85, ""longitude"": 99.7}"
+qwen/qwen3.5-27b,no-CoT,27.8167,100.75,109.089,CN,True,,stop,0.00019251,473,30,0,4.36,"{""country"": ""CN"", ""latitude"": 27.8167, ""longitude"": 100.75}"
+qwen/qwen3.5-35b-a3b,no-CoT,28.356,100.123,145.994,CN,True,,stop,9.636e-05,474,30,0,2.37,"{""country"": ""CN"", ""latitude"": 28.356, ""longitude"": 100.123}"
+google/gemma-4-31b-it,no-CoT,27.5,101.5,150.245,CN,True,,stop,5.597e-05,408,31,0,7.88,"```json
+{""country"": ""CN"", ""latitude"": 27.5, ""longitude"": 101.5}
+```"
+xiaomi/mimo-v2.5,CoT,27.32,101.61,155.483,CN,True,,stop,0.0001748376,787,325,227,4.15,"{""reasoning"": ""The large blue sign with Chinese text references the Jinsha River (Golden Sand River, upper Yangtze River), and the mountainous, overcast southwestern Chinese rural townscape narrows this to a riverfront town in China's Liangshan area. Vehicles drive on the right, consistent with Chinese road norms."", ""country"": ""CN"", ""latitude"": 27.32, ""longitude"": 101.61}"
+x-ai/grok-4.3,CoT,26.58,101.72,171.769,CN,True,,stop,0.002524,676,806,729,40.36,"{
+  ""reasoning"": ""Blue sign with Chinese text explicitly names Jinsha River (金沙江) sightseeing boat dock; right-side driving, vehicle types, architecture, and steep green mountains confirm inland China (Yunnan/Sichuan border region)."",
+  ""country"": ""CN"",
+  ""latitude"": 26.58,
+  ""longitude"": 101.72
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,28.45,100.97,179.737,CN,True,,stop,0.0001032746,473,28,0,1.34,"{""country"": ""CN"", ""latitude"": 28.45, ""longitude"": 100.97}"
+x-ai/grok-4.3,no-CoT,28.184,105.437,543.823,CN,True,,stop,0.0005934,592,22,0,0.92,"{""country"": ""CN"", ""latitude"": 28.184, ""longitude"": 105.437}"
+openai/gpt-5.5,no-CoT,30.8765,103.6152,548.226,CN,True,,stop,0.00341,544,23,0,1.75,"{""country"":""CN"",""latitude"":30.8765,""longitude"":103.6152}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,27.517972946166992,89.40505981445312,1054.878,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,34.2667,108.9,1164.597,,True,,stop,5.814e-05,406,39,0,14.55,"{""country"": ""CN"", ""latitude"": 34.2667, ""longitude"": 108.9 own-108.9500}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,27.143415451049805,88.07875061035156,1186.552,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,29.063919067382812,86.48008728027344,1351.46,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,22.565855026245117,112.64381408691406,1362.516,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,22.675060272216797,112.88665771484375,1380.496,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,22.94049835205078,113.24097442626953,1402.796,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.34,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.54,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.15,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.64,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.27,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.4,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.21,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,7.63,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.17,
+xiaomi/mimo-v2.5,no-CoT,,,,,False,,,,,,,8.11,

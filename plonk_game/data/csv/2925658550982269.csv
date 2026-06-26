@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,31.9054775,54.371646861111,0.0,IR,True,,,,,,,,"Yazd, None, Yazd, IR"
+x-ai/grok-4.3,CoT,31.9015,54.3682,0.549,IR,True,,stop,0.002074,676,626,557,12.52,"{""reasoning"": ""Persian/Farsi signage, adobe architecture with windcatcher, badgir-style tower, Kia Pride sedan, and arid bazaar entrance confirm Iran; style and details match Yazd old town bazaar."", ""country"": ""IR"", ""latitude"": 31.9015, ""longitude"": 54.3682}"
+openai/gpt-5.5,CoT,31.8974,54.3677,0.972,IR,True,,stop,0.015105,621,400,328,35.64,"{""reasoning"":""Persian script signage and desert adobe architecture with a traditional windcatcher strongly indicate Yazd, Iran; the sign and building match the Yazd Water Museum/Kolahdoozha House near Amir Chakhmaq Square."",""country"":""IR"",""latitude"":31.8974,""longitude"":54.3677}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),31.8974,54.3676,0.976,IR,True,,stop,0.0021,1190,35,0,13.45,"```json
+{""country"": ""IR"", ""latitude"": 31.8974, ""longitude"": 54.3676}
+```"
+anthropic/claude-opus-4.8,CoT,31.8974,54.3675,0.98,IR,True,,stop,0.00671,797,109,0,9.97,"{""reasoning"": ""Persian script on the blue sign, a windcatcher (badgir) tower typical of central Iran, and Iranian-made Kia Pride (Saipa) cars point to a desert city in Iran like Yazd."", ""country"": ""IR"", ""latitude"": 31.8974, ""longitude"": 54.3675}"
+anthropic/claude-opus-4.8,no-CoT,31.8974,54.3675,0.98,IR,True,,stop,0.00413,666,32,0,2.3,"{""country"": ""IR"", ""latitude"": 31.8974, ""longitude"": 54.3675}"
+moonshotai/kimi-k2.6,CoT,31.8976,54.3575,1.597,IR,True,,stop,0.009688068,682,2763,2684,64.38,"{""reasoning"": ""The prominent Persian script on blue signage, traditional mud-brick architecture with a windcatcher (badgir), and Iranian-manufactured vehicles confirm this is Iran, specifically the desert city of Yazd renowned for such historic structures."", ""country"": ""IR"", ""latitude"": 31.8976, ""longitude"": 54.3575}"
+google/gemini-3.1-pro-preview,CoT,31.8974,54.3569,1.657,IR,True,,stop,0.005232,1272,224,133,4.04,"{
+  ""reasoning"": ""The traditional mud-brick architecture with a windcatcher (badgir) and Persian script on the sign strongly indicate Iran. The prevalence of this specific architectural style and the SAIPA Pride car point to the historical city of Yazd."",
+  ""country"": ""IR"",
+  ""latitude"": 31.8974,
+  ""longitude"": 54.3569
+}"
+google/gemini-3.5-flash,CoT (effort=low),31.8974,54.3569,1.657,IR,True,,stop,0.003357,1272,161,90,10.29,"{""reasoning"": ""The traditional mud-brick architecture with a windcatcher (badgir) and the Saipa Saba (Kia Pride) car strongly indicate Iran, specifically the desert city of Yazd."", ""country"": ""IR"", ""latitude"": 31.8974, ""longitude"": 54.3569}"
+minimax/minimax-m3,CoT,31.8974,54.3569,1.657,IR,True,,stop,0.00084186,843,542,452,14.98,"{""reasoning"": ""Distinctive Persian windcatcher (badgir) tower, mud-brick architecture, Persian/Farsi script on signage, Kia Pride car (ubiquitous in Iran), woman in chador, and arid desert environment all point to central Iran, most likely Yazd's historic old city."", ""country"": ""IR"", ""latitude"": 31.8974, ""longitude"": 54.3569}"
+google/gemini-3.1-pro-preview,no-CoT,31.8974,54.3569,1.657,IR,True,,stop,0.004324,1190,162,127,9.22,"```json
+{""country"": ""IR"", ""latitude"": 31.8974, ""longitude"": 54.3569}
+```"
+openai/gpt-5.5,no-CoT,31.8974,54.3569,1.657,IR,True,,stop,0.00341,544,23,0,1.36,"{""country"":""IR"",""latitude"":31.8974,""longitude"":54.3569}"
+google/gemini-3.5-flash,CoT (effort=high),32.2252,54.0138,49.0,IR,True,,stop,0.0226785,1271,2308,2224,16.18,"{""reasoning"": ""The traditional mud-brick architecture with a windcatcher (badgir), the Persian signage advertising local handicrafts, and the Saipa Pride car place this location in Yazd Province, Iran, specifically near the historical caravanserai complex in Meybod."", ""country"": ""IR"", ""latitude"": 32.2252, ""longitude"": 54.0138}"
+google/gemini-3.5-flash,CoT (effort=medium),32.2254,54.0138,49.016,IR,True,,stop,0.0113565,1271,1050,953,8.19,"```json
+{""reasoning"": ""The image features traditional Persian desert architecture with a prominent windcatcher (badgir) and a Saipa Pride car, which is extremely common in Iran. The Persian signage and women wearing black chadors further confirm the location as Yazd Province, specifically near the historical sites of Meybod."", ""country"": ""IR"", ""latitude"": 32.2254, ""longitude"": 54.0138}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,32.2972,53.8606,64.919,IR,True,,stop,0.0003322,473,31,0,9.07,"{""country"": ""IR"", ""latitude"": 32.2972, ""longitude"": 53.8606}"
+qwen/qwen3.5-35b-a3b,no-CoT,32.6347,53.8644,94.071,IR,True,,stop,9.736e-05,474,31,0,2.69,"{""country"": ""IR"", ""latitude"": 32.6347, ""longitude"": 53.8644}"
+qwen/qwen3.5-9b,no-CoT,32.6544,53.6891,105.129,IR,True,,stop,5.205e-05,474,31,0,10.07,"{""country"": ""IR"", ""latitude"": 32.6544, ""longitude"": 53.6891}"
+qwen/qwen3.5-122b-a10b,no-CoT,32.7167,51.7333,263.833,IR,True,,stop,0.000314,473,39,0,2.01,"{
+  ""country"": ""IR"",
+  ""latitude"": 32.7167,
+  ""longitude"": 51.7333
+}"
+qwen/qwen3.5-27b,no-CoT,32.6546,51.6805,266.344,IR,True,,stop,0.00023764,474,44,0,1.83,"```json
+{
+  ""country"": ""IR"",
+  ""latitude"": 32.6546,
+  ""longitude"": 51.6805
+}
+```"
+qwen/qwen3.6-27b,no-CoT,32.6546,51.668,267.46,IR,True,,stop,0.0001943,473,31,0,9.32,"{""country"": ""IR"", ""latitude"": 32.6546, ""longitude"": 51.6680}"
+qwen/qwen3.6-35b-a3b,no-CoT,32.6546,51.6672,267.531,IR,True,,stop,0.00010195,473,31,0,2.44,"{""country"": ""IR"", ""latitude"": 32.6546, ""longitude"": 51.6672}"
+mistralai/mistral-medium-3-5,no-CoT,32.6539,51.666,267.615,IR,True,,stop,0.001176,634,30,0,5.79,"{""country"": ""IR"", ""latitude"": 32.6539, ""longitude"": 51.666}"
+google/gemma-4-31b-it,no-CoT,32.785,51.675,271.539,IR,True,,stop,6.638e-05,406,34,0,5.02,"```json
+{""country"": ""IR"", ""latitude"": 32.785, ""longitude"": 51.675}
+```"
+x-ai/grok-4.3,no-CoT,29.615,52.542,308.904,IR,True,,stop,0.0005934,592,22,0,7.08,"{""country"": ""IR"", ""latitude"": 29.615, ""longitude"": 52.542}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,33.93240737915039,51.94083023071289,319.79,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,33.9875,51.4452,357.971,IR,True,,stop,0.0001532776,787,248,145,3.13,"{""reasoning"": ""The distinct windcatcher (badgir) tower and mud-brick architecture with blue tile detailing are highly characteristic of traditional buildings in the Kashan region of Iran. Additionally, the blue license plates on the older Peugeot and the Daewoo Tico confirm the location as Iran, where right-hand traffic is standard."", ""country"": ""IR"", ""latitude"": 33.9875, ""longitude"": 51.4452}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,34.492671966552734,51.82997512817383,372.377,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,35.555030822753906,51.58378219604492,480.722,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,36.4065,54.9865,503.674,IR,True,,stop,8.14576e-05,708,31,0,1.55,"{""country"": ""IR"", ""latitude"": 36.4065, ""longitude"": 54.9865}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,25.295961380004883,51.57635498046875,783.872,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,25.292287826538086,51.57148361206055,784.422,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,24.603515625,53.78645324707031,813.957,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6711.951,,True,True,,,,,,6.78,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.31,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.72,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.78,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.24,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.32,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,12.75,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.28,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,18.5,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.39,

@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,6.5174925206962,35.09935085284,0.0,ET,True,,,,,,,,"Mizan Teferi, None, Southern Nations, Nationalities, and People's Region, ET"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,7.335438251495361,36.97391128540039,226.025,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,7.3631391525268555,37.00762939453125,230.67,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,7.383733749389648,37.19038009643555,250.094,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,7.0943,37.5708,280.311,ET,True,,stop,0.00408,678,23,0,1.77,"{""country"":""ET"",""latitude"":7.0943,""longitude"":37.5708}"
+anthropic/claude-opus-4.8,no-CoT,5.6,37.5,284.376,ET,True,,stop,0.00484,818,30,0,8.87,"{""country"": ""ET"", ""latitude"": 5.6, ""longitude"": 37.5}"
+openai/gpt-5.5,CoT,5.4642,37.4928,289.437,ET,True,,stop,0.016585,755,427,335,19.7,"{""reasoning"":""The semi-arid acacia scrub, reddish roadside soil, hazy Rift Valley escarpment, and narrow unmarked paved rural road are most consistent with southern Ethiopia around the Konso/Arba Minch region. The landscape lacks urban signage but matches Ethiopian highland-to-rift transition terrain more than neighboring countries."",""country"":""ET"",""latitude"":5.4642,""longitude"":37.4928}"
+xiaomi/mimo-v2.5,no-CoT,8.5,38.5,434.885,ET,True,,stop,9.51776e-05,820,24,0,2.83,"{""country"": ""ET"", ""latitude"": 8.5, ""longitude"": 38.5}"
+anthropic/claude-opus-4.8,CoT,0.5,36.0,676.533,KE,True,,stop,0.007045,949,92,0,9.67,"{""reasoning"": ""Acacia scrubland with distant escarpment, fresh asphalt road in construction with red soil shoulders, typical of East African Rift Valley region in Kenya."", ""country"": ""KE"", ""latitude"": 0.5, ""longitude"": 36.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),0.4582,36.0315,681.652,KE,True,,stop,0.002145,1226,34,0,8.54,"```json
+{""country"": ""KE"", ""latitude"": 0.4582, ""longitude"": 36.0315}
+```"
+google/gemini-3.5-flash,CoT (effort=high),0.4521,36.0215,682.155,KE,True,,stop,0.0147585,1307,1422,1346,13.46,"```json
+{""reasoning"": ""The prominent flat-topped escarpment in the background, combined with the semi-arid acacia vegetation and narrow paved road, is highly characteristic of the Great Rift Valley in Kenya."", ""country"": ""KE"", ""latitude"": 0.4521, ""longitude"": 36.0215}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),0.4512,36.0215,682.254,KE,True,,stop,0.0163245,1307,1596,1515,20.31,"```json
+{""reasoning"": ""The flat-topped escarpment in the background and the acacia-dominated shrubland are highly characteristic of the Great Rift Valley in Kenya, with the narrow paved road suggesting a secondary route in this region."", ""country"": ""KE"", ""latitude"": 0.4512, ""longitude"": 36.0215}
+```"
+qwen/qwen3.6-27b,CoT,0.05,37.05,751.014,KE,True,,stop,0.01807065,665,6582,6484,102.79,"{""reasoning"": ""The landscape features savanna vegetation with acacia-like trees and distant hazy mountains (likely the Aberdare Range), characteristic of the Laikipia region in Kenya. The road appears to be a rural paved highway with recent earthworks on the shoulders, and the colorful fabric on the dashboard is a common cultural item in East Africa."", ""country"": ""KE"", ""latitude"": 0.05, ""longitude"": 37.05}"
+qwen/qwen3.5-27b,no-CoT,-0.1521,37.3084,781.082,KE,True,,stop,0.0002475,585,30,0,4.22,"{""country"": ""KE"", ""latitude"": -0.1521, ""longitude"": 37.3084}"
+google/gemini-3.5-flash,CoT (effort=low),-0.4521,36.2312,785.095,KE,True,,stop,0.004338,1308,264,195,3.06,"{""reasoning"": ""The vehicle's hood features a colorful string decoration characteristic of the Google Street View car in Kenya, and the lush, hilly landscape with acacia trees suggests the Rift Valley region."", ""country"": ""KE"", ""latitude"": -0.4521, ""longitude"": 36.2312}"
+qwen/qwen3.6-27b,no-CoT,-0.15,37.45,785.934,KE,True,,stop,0.0002259,585,30,0,15.25,"{""country"": ""KE"", ""latitude"": -0.1500, ""longitude"": 37.4500}"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.0234,37.9012,790.969,KE,True,,stop,0.0001232595,585,30,0,1.48,"{""country"": ""KE"", ""latitude"": -0.0234, ""longitude"": 37.9012}"
+qwen/qwen3.5-9b,no-CoT,-0.2926,37.2786,794.922,KE,True,,stop,6.31e-05,586,30,0,5.72,"{""country"": ""KE"", ""latitude"": -0.2926, ""longitude"": 37.2786}"
+qwen/qwen3.6-35b-a3b,CoT,-0.4167,36.95,797.927,KE,True,,stop,0.00327418325,665,3281,3172,26.24,"```json
+{
+  ""reasoning"": ""The colorful beaded curtain/decoration on the dashboard is a hallmark of Kenyan matatus (minibuses), and the reddish-brown laterite soil combined with acacia-like vegetation and the hazy mountain backdrop (likely the Aberdare Range) strongly points to the Kenyan highlands."",
+  ""country"": ""KE"",
+  ""latitude"": -0.4167,
+  ""longitude"": 36.95
+}
+```"
+xiaomi/mimo-v2.5,CoT,-0.42,37.01,800.021,KE,True,,stop,0.0006413176,899,1935,1847,28.16,"{
+  ""reasoning"": ""The landscape features distinct acacia trees and red soil typical of the Kenyan savanna, while the decorative beadwork on the vehicle's hood is a strong cultural marker of the region. The left-hand driving and road style further confirm East Africa."",
+  ""country"": ""KE"",
+  ""latitude"": -0.42,
+  ""longitude"": 37.01
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,-0.5234,37.1234,814.495,KE,True,,stop,0.00018375,585,30,0,7.55,"{""country"": ""KE"", ""latitude"": -0.5234, ""longitude"": 37.1234}"
+x-ai/grok-4.3,CoT,-0.85,36.75,839.46,KE,True,,stop,0.0020765,788,571,502,14.08,"{""reasoning"": ""Savanna vegetation (acacia-like trees, scrub), red soil, distant mountains and unpaved verges match East African Rift Valley; right-hand roadside cable and left-hand driving position visible from cabin confirm Kenya."", ""country"": ""KE"", ""latitude"": -0.85, ""longitude"": 36.75}"
+google/gemini-3.1-pro-preview,CoT,-1.05,36.25,851.102,KE,True,,stop,0.006984,1308,364,286,33.95,"{
+  ""reasoning"": ""The savanna vegetation, flat-topped escarpment in the distance, and the colorful braided cord on the dashboard strongly suggest a safari or rural route in Kenya's Great Rift Valley."",
+  ""country"": ""KE"",
+  ""latitude"": -1.05,
+  ""longitude"": 36.25
+}"
+google/gemma-4-31b-it,no-CoT,-1.286389,36.816667,888.44,KE,True,,stop,6.812e-05,404,39,0,2.77,"```json
+{""country"": ""KE"", ""latitude"": -1.286389, ""longitude"": 36.816667}
+```"
+moonshotai/kimi-k2.6,no-CoT,-1.2921,36.8219,889.185,KE,True,,stop,0.00064935,754,25,0,22.77,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+minimax/minimax-m3,CoT,-1.85,36.78,948.942,KE,True,,stop,0.00087342,997,527,512,318.18,"{""reasoning"": ""Red murram soil shoulders, acacia-dominated savanna vegetation, and the escarpment/mountain backdrop are classic indicators of southern Kenya. The overcast sky suggests a rainy-season shot in a semi-arid region, consistent with the Kajiado/Athi River or southern Rift Valley belt."", ""country"": ""KE"", ""latitude"": -1.85, ""longitude"": 36.78}{""reasoning"": ""Red murram soil shoulders, acacia-dominated savanna vegetation, and the escarpment/mountain backdrop are classic indicators of southern Kenya. The overcast sky suggests a rainy-season shot in a semi-arid region, consistent with the Kajiado/Athi River or southern Rift Valley belt."", ""country"": ""KE"", ""latitude"": -1.85, ""longitude"": 36.78}"
+x-ai/grok-4.3,no-CoT,-1.85,36.85,950.5,KE,True,,stop,0.0007334,704,22,0,7.03,"{""country"": ""KE"", ""latitude"": -1.85, ""longitude"": 36.85}"
+moonshotai/kimi-k2.6,CoT,-3.35,36.0,1101.761,TZ,True,,stop,0.013908015,833,3705,3919,57.7,"{""reasoning"": ""Acacia savanna with red lateritic soil and a distant flat-topped escarpment are characteristic of northern Tanzania safari routes; the narrow paved road with high dirt shoulders and safari vehicle dashboard decoration match the Arusha/Monduli region."", ""country"": ""TZ"", ""latitude"": -3.35, ""longitude"": 36.0}"
+mistralai/mistral-medium-3-5,no-CoT,-3.3764,36.6857,1114.157,TZ,True,,stop,0.0014115,786,31,0,0.93,"{""country"": ""TZ"", ""latitude"": -3.3764, ""longitude"": 36.6857}"
+qwen/qwen3.5-122b-a10b,no-CoT,-3.3869,36.683,1115.262,TZ,True,,stop,0.0002451,585,29,0,2.42,"{""country"": ""TZ"", ""latitude"": -3.3869, ""longitude"": 36.683}"
+qwen/qwen3.5-397b-a17b,no-CoT,-3.3869,36.7528,1116.51,TZ,True,,stop,0.00042828,585,30,0,7.69,"{""country"": ""TZ"", ""latitude"": -3.3869, ""longitude"": 36.7528}"
+minimax/minimax-m3,no-CoT,-3.5,36.0,1118.373,TZ,True,,stop,0.00041562,919,165,183,3.61,"{""country"": ""TZ"", ""latitude"": -3.5, ""longitude"": 36.0}"
+qwen/qwen3.5-397b-a17b,CoT,-3.15,38.25,1130.447,KE,True,,stop,0.0082278,665,2188,2075,21.55,"{""reasoning"": ""The red laterite soil on the road shoulders and acacia-like scrub vegetation are characteristic of the East African savannah, while the colorful fabric wrapped around the windshield wiper is a distinctive cultural marker common in Kenya. The distant blue mountains suggest a location along a major highway like the Mombasa-Nairobi route (A109) near the Tsavo region or Chyulu Hills."", ""country"": ""KE"", ""latitude"": -3.15, ""longitude"": 38.25}"
+google/gemini-3.1-pro-preview,no-CoT,-24.5,30.5,3484.815,ZA,True,,stop,0.002798,1225,29,0,29.99,"```json
+{""country"": ""ZA"", ""latitude"": -24.5, ""longitude"": 30.5}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3961.079,,True,True,,,,,,6.66,
+mistralai/mistral-small-2603,no-CoT,27.5937,88.4467,6079.553,IN,True,,stop,0.000170625,786,31,0,7.78,"{""country"": ""IN"", ""latitude"": 27.5937, ""longitude"": 88.4467}"
+mistralai/mistral-small-2603,CoT,4.4767,101.3856,7335.571,MY,True,,stop,0.00032004,868,464,496,7.13,"{""reasoning"": ""The dense tropical vegetation and rolling hills suggest a Southeast Asian location, while the road style and markings are consistent with countries like Malaysia or Indonesia."", ""country"": ""MY"", ""latitude"": 4.4767, ""longitude"": 101.3856}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,16.75851821899414,-62.12433624267578,10561.86,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,16.78542709350586,-62.15279769897461,10564.423,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,17.179527282714844,-64.73814392089844,10829.454,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.12,

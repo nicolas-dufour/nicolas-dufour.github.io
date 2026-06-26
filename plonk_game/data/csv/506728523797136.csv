@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,52.242687712192,21.261324323272,0.0,PL,True,,,,,,,,"Sulejowek, Powiat minski, Masovian Voivodeship, PL"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,52.23598098754883,21.24940299987793,1.102,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,52.23920822143555,21.234407424926758,1.873,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,52.2176,21.1549,7.766,PL,True,,stop,0.019885,755,537,439,13.27,"{""reasoning"":""Polish-language roadside advertising (e.g. pomóc/pomoc drogowa style signs), right-hand traffic, European lane markings, and red-white roadside posts point strongly to Poland. The flat sandy roadside, pine forest, and suburban apartment blocks fit the Warsaw/Otwock forested suburbs, especially Wawer/Anin style arterials."",""country"":""PL"",""latitude"":52.2176,""longitude"":21.1549}"
+google/gemini-3.5-flash,CoT (effort=low),52.1125,21.2638,14.477,PL,True,,stop,0.0046515,1307,299,225,4.16,"{""reasoning"": ""The yellow sign on the left contains the Polish word 'POKOJE' (rooms), and the pine forest vegetation, sandy soil, road markings, and apartment architecture are highly characteristic of Poland."", ""country"": ""PL"", ""latitude"": 52.1125, ""longitude"": 21.2638}"
+google/gemini-3.1-pro-preview,CoT,52.105,21.261,15.31,PL,True,,stop,0.006262,1307,304,221,11.28,"{
+  ""reasoning"": ""The yellow sign on the left reads 'POKOJE', which is Polish for 'rooms', indicating a location in Poland. The pine trees and residential architecture are typical of Polish suburbs or tourist towns."",
+  ""country"": ""PL"",
+  ""latitude"": 52.105,
+  ""longitude"": 21.261
+}"
+google/gemma-4-26b-a4b-it,no-CoT,52.22967,21.01222,17.025,PL,True,,stop,5.548e-05,404,33,0,23.07,"{""country"": ""PL"", ""latitude"": 52.22967, ""longitude"": 21.01222}"
+google/gemini-3.1-pro-preview,no-CoT,52.2297,21.0122,17.026,PL,True,,stop,0.00287,1225,35,0,9.35,"```json
+{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}
+```"
+google/gemma-4-31b-it,no-CoT,52.2297,21.0122,17.026,PL,True,,stop,6.692e-05,404,36,0,5.15,"```json
+{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}
+```"
+mistralai/mistral-medium-3-5,no-CoT,52.2297,21.0122,17.026,PL,True,,stop,0.0014115,786,31,0,1.33,"{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+qwen/qwen3.5-27b,no-CoT,52.2297,21.0122,17.026,PL,True,,stop,0.000162435,585,31,0,1.12,"{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+qwen/qwen3.5-35b-a3b,no-CoT,52.2297,21.0122,17.026,PL,True,,stop,0.00011304,586,31,0,1.67,"{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+qwen/qwen3.5-397b-a17b,no-CoT,52.2297,21.0122,17.026,PL,True,,stop,0.0003882,585,31,0,2.46,"{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+qwen/qwen3.6-27b,no-CoT,52.2297,21.0122,17.026,PL,True,,stop,0.0002279,585,31,0,5.49,"{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+qwen/qwen3.6-35b-a3b,no-CoT,52.2297,21.0122,17.026,PL,True,,stop,0.000185,585,31,0,1.01,"{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+x-ai/grok-4.3,no-CoT,52.229,21.0067,17.406,PL,True,,stop,0.0007359,704,23,0,0.8,"{""country"": ""PL"", ""latitude"": 52.229, ""longitude"": 21.0067}"
+openai/gpt-5.5,no-CoT,52.1716,21.0288,17.707,PL,True,,stop,0.00408,678,23,0,2.33,"{""country"":""PL"",""latitude"":52.1716,""longitude"":21.0288}"
+moonshotai/kimi-k2.6,CoT,52.15,21.05,17.711,PL,True,,stop,0.009497916,834,2692,2625,147.49,"{""reasoning"": ""Black-and-white striped roadside bollards and Polish-format road markings, combined with post-communist apartment architecture and temperate pine-deciduous forest, are characteristic of suburban Poland near Warsaw."", ""country"": ""PL"", ""latitude"": 52.15, ""longitude"": 21.05}"
+x-ai/grok-4.3,CoT,52.15,21.05,17.711,PL,True,,stop,0.002584,788,774,685,12.74,"{
+  ""reasoning"": ""Right-hand traffic, Polish-language 'PROMO 24 CENY NISKO' billboard, red-white LIDL-style sign, pine forest + panel-block architecture, and typical Polish road markings/fencing indicate Poland; straight suburban arterial road with mixed conifers matches outskirts of Warsaw."",
+  ""country"": ""PL"",
+  ""latitude"": 52.15,
+  ""longitude"": 21.05
+}"
+qwen/qwen3.5-9b,no-CoT,52.2345,20.9876,18.661,PL,True,,stop,6.325e-05,586,31,0,4.08,"{""country"": ""PL"", ""latitude"": 52.2345, ""longitude"": 20.9876}"
+anthropic/claude-opus-4.8,CoT,52.13,21.05,19.093,PL,True,,stop,0.00697,949,89,0,3.32,"{""reasoning"": ""Polish text on yellow sign ('SPRZEDAJ' style advert), pine forest, modern pink apartment building suggest a Polish suburban road."", ""country"": ""PL"", ""latitude"": 52.13, ""longitude"": 21.05}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,52.143768310546875,20.992319107055664,21.382,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,52.0975,21.0488,21.696,PL,True,,stop,0.00489,818,32,0,9.81,"{""country"": ""PL"", ""latitude"": 52.0975, ""longitude"": 21.0488}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),52.118342,20.718451,39.512,PL,True,,stop,0.0021885,1225,39,0,7.67,"```json
+{""country"": ""PL"", ""latitude"": 52.118342, ""longitude"": 20.718451}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,53.1235,23.1658,161.464,PL,True,,stop,0.00023322,585,39,0,22.6,"{
+  ""country"": ""PL"",
+  ""latitude"": 53.1235,
+  ""longitude"": 23.1658
+}"
+google/gemini-3.5-flash,CoT (effort=high),54.3781,19.4185,267.13,PL,True,,stop,0.0177825,1307,1758,1672,12.3,"```json
+{""reasoning"": ""The pine forest, road markings, and signs (specifically the yellow 'POKOJE' sign on the left) are highly characteristic of the Polish Baltic coast, likely along the DW501 road near Krynica Morska."", ""country"": ""PL"", ""latitude"": 54.3781, ""longitude"": 19.4185}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),54.3285,19.1142,272.302,PL,True,,stop,0.0213915,1307,2159,2074,16.0,"```json
+{""reasoning"": ""The yellow sign with 'POKOJE' and a Polish-format phone number, combined with the flat pine-forested landscape and modern coastal-style apartment building, indicates a resort town along the Baltic coast of Poland."", ""country"": ""PL"", ""latitude"": 54.3285, ""longitude"": 19.1142}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,54.40264129638672,18.49395751953125,302.387,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,54.40679168701172,18.485057830810547,303.107,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,52.462257385253906,13.637292861938477,518.144,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,44.4268,26.0561,938.061,RO,True,,stop,9.71376e-05,820,31,0,1.16,"{""country"": ""RO"", ""latitude"": 44.4268, ""longitude"": 26.0561}"
+minimax/minimax-m3,CoT,55.75,37.62,1134.892,RU,True,,stop,0.00151866,995,1068,988,44.6,"{""reasoning"": ""The Soviet-era pink apartment block with characteristic balconies, right-hand driving with European-style dashed white road markings, pharmacy-style red sign on the right, and the yellow Cyrillic-style billboard all point to suburban Russia, likely in the Moscow region."", ""country"": ""RU"", ""latitude"": 55.75, ""longitude"": 37.62}"
+xiaomi/mimo-v2.5,CoT,45.764,4.8357,1393.336,FR,True,,stop,0.0001510376,899,184,89,9.77,"{""reasoning"": ""The road features standard European markings and the red-lettered 'DANS MON COIN' sign suggests a French-speaking region with French-style license plates (white front, yellow rear, though only front clearly visible or standard white/white), and the architecture and vegetation point towards central or southern France."", ""country"": ""FR"", ""latitude"": 45.764, ""longitude"": 4.8357}"
+mistralai/mistral-small-2603,no-CoT,34.0522,-118.2437,9644.83,US,True,,stop,0.0001371,786,32,0,9.57,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.37,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.27,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.44,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.84,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.99,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.12,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.31,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.19,

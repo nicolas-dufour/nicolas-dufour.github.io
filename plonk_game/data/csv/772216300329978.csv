@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,63.069428756151,29.835528604926,0.0,FI,True,,,,,,,,"Lieksa, Pielisen Karjala, North Karelia, FI"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,62.97292709350586,27.887786865234375,98.834,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,62.963096618652344,27.832670211791992,101.736,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),62.5833,27.4667,131.869,FI,True,,stop,0.0071265,1307,574,507,8.09,"{""reasoning"": ""The well-graded gravel road passing through a dense mixed forest of birch and pine is highly characteristic of rural Finland, particularly in the central or eastern lake regions."", ""country"": ""FI"", ""latitude"": 62.5833, ""longitude"": 27.4667}"
+minimax/minimax-m3,CoT,64.5,28.5,172.059,FI,True,,stop,0.00055026,995,261,174,17.97,"{""reasoning"": ""Gravel forest road with prominent birch and spruce trees in a boreal/taiga landscape, lush summer undergrowth, and well-maintained unpaved surface typical of Nordic countries' vast forest road networks. No signage visible, but the vegetation mix and road style strongly suggest rural Finland."", ""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 28.5}"
+google/gemini-3.5-flash,CoT (effort=high),62.45,26.12,201.225,FI,True,,stop,0.0088815,1307,769,713,8.11,"{""reasoning"": ""The dense mixed forest of birch and conifers alongside a well-maintained gravel road is highly characteristic of the boreal landscape in Finland."", ""country"": ""FI"", ""latitude"": 62.45, ""longitude"": 26.12}"
+google/gemini-3.1-pro-preview,CoT,62.5,26.0,205.032,FI,True,,stop,0.004906,1307,191,126,5.04,"{
+  ""reasoning"": ""The dense mixed forest with birch and spruce trees alongside a well-maintained dirt road is highly characteristic of the boreal forests in Finland."",
+  ""country"": ""FI"",
+  ""latitude"": 62.5,
+  ""longitude"": 26.0
+}"
+moonshotai/kimi-k2.6,CoT,62.5,26.0,205.032,FI,True,,stop,0.007931916,834,2242,2165,50.91,"{""reasoning"": ""Dense mixed boreal forest of birch and conifer with a light-gravel forestry road matches the classic 'metsäautotie' landscape of inland Finland; absence of alpine terrain or swampy lowlands points to central Finnish Lakeland."", ""country"": ""FI"", ""latitude"": 62.5, ""longitude"": 26.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,62.5,26.0,205.032,FI,True,,stop,0.000441,585,25,0,8.67,"{""country"": ""FI"", ""latitude"": 62.5, ""longitude"": 26.0}"
+qwen/qwen3.5-9b,no-CoT,62.9167,25.75,206.955,FI,True,,stop,6.295e-05,586,29,0,11.18,"{""country"": ""FI"", ""latitude"": 62.9167, ""longitude"": 25.75}"
+google/gemini-3.5-flash,CoT (effort=low),62.1542,26.2834,208.216,FI,True,,stop,0.003537,1308,175,110,8.59,"```json
+{""reasoning"": ""The dense mixed forest of birch and conifers along a well-maintained gravel road is highly characteristic of the boreal landscape in Finland."", ""country"": ""FI"", ""latitude"": 62.1542, ""longitude"": 26.2834}
+```"
+qwen/qwen3.5-27b,no-CoT,63.9318,25.7481,224.268,FI,True,,stop,0.000162435,585,31,0,17.66,"{""country"": ""FI"", ""latitude"": 63.9318, ""longitude"": 25.7481}"
+openai/gpt-5.5,no-CoT,62.3921,25.6784,224.735,FI,True,,stop,0.00408,678,23,0,8.53,"{""country"":""FI"",""latitude"":62.3921,""longitude"":25.6784}"
+x-ai/grok-4.3,no-CoT,62.3,25.7,227.652,FI,True,,stop,0.0007334,704,22,0,1.0,"{""country"": ""FI"", ""latitude"": 62.3, ""longitude"": 25.7}"
+google/gemini-3.1-pro-preview,no-CoT,62.2426,25.7473,228.1,FI,True,,stop,0.002872,1226,35,0,34.32,"```json
+{""country"": ""FI"", ""latitude"": 62.2426, ""longitude"": 25.7473}
+```"
+anthropic/claude-opus-4.8,CoT,62.5,25.5,229.337,FI,True,,stop,0.006995,949,90,0,10.19,"{""reasoning"": ""Gravel forest road with birch and spruce boreal forest typical of Nordic Scandinavia, lush summer growth suggests central Finland or Sweden."", ""country"": ""FI"", ""latitude"": 62.5, ""longitude"": 25.5}"
+anthropic/claude-opus-4.8,no-CoT,62.5,25.5,229.337,FI,True,,stop,0.00484,818,30,0,2.31,"{""country"": ""FI"", ""latitude"": 62.5, ""longitude"": 25.5}"
+openai/gpt-5.5,CoT,62.2416,25.7209,229.382,FI,True,,stop,0.012415,755,288,213,7.9,"{""reasoning"":""Boreal mixed birch-pine forest, pale unpaved gravel road, and gently rolling terrain strongly suggest rural Finland or nearby Nordic forest country. With no signage or vehicles, central Finland is the best fit among similar regions."",""country"":""FI"",""latitude"":62.2416,""longitude"":25.7209}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),61.8542,25.4389,263.261,FI,True,,stop,0.002154,1226,35,0,1.29,"```json
+{""country"": ""FI"", ""latitude"": 61.8542, ""longitude"": 25.4389}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,59.9343,30.3351,349.614,RU,True,,stop,0.00019644,586,31,0,3.22,"{""country"": ""RU"", ""latitude"": 59.9343, ""longitude"": 30.3351}"
+qwen/qwen3.6-27b,no-CoT,61.52401,23.80454,355.79,FI,True,,stop,0.0002319,585,33,0,10.74,"{""country"": ""FI"", ""latitude"": 61.52401, ""longitude"": 23.80454}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,61.461727142333984,23.845600128173828,357.619,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,60.43168640136719,24.277677536010742,413.961,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,60.45511245727539,24.127994537353516,417.652,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,60.35240936279297,24.03399658203125,429.516,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,62.385,17.305,641.937,SE,True,,stop,0.0017665,788,447,376,11.65,"{""reasoning"": ""Dense birch-dominated boreal/mixed forest, unpaved single-track road, lush summer undergrowth, and lack of any infrastructure/signage point to rural Fennoscandia; right-hand driving norm and vegetation match Sweden/Finland."", ""country"": ""SE"", ""latitude"": 62.385, ""longitude"": 17.305}"
+qwen/qwen3.5-122b-a10b,no-CoT,63.8284,15.6021,710.956,SE,True,,stop,0.00021684,586,31,0,19.79,"{""country"": ""SE"", ""latitude"": 63.8284, ""longitude"": 15.6021}"
+qwen/qwen3.6-35b-a3b,no-CoT,62.5,15.0,755.389,SE,True,,stop,0.00011275,585,25,0,3.3,"{""country"": ""SE"", ""latitude"": 62.5, ""longitude"": 15.0}"
+mistralai/mistral-medium-3-5,no-CoT,56.0,92.0,3444.269,RU,True,,stop,0.001374,786,26,0,1.06,"{""country"": ""RU"", ""latitude"": 56.0, ""longitude"": 92.0}"
+xiaomi/mimo-v2.5,CoT,51.6,86.0,3469.444,RU,True,,stop,0.0006043576,899,1803,1723,26.37,"{""reasoning"": ""The environment depicts a dense taiga forest with a mix of birch and coniferous trees, alongside an unpaved gravel road cutting through hilly terrain, which is highly characteristic of the Altai Mountains or Siberian regions in Russia."", ""country"": ""RU"", ""latitude"": 51.6, ""longitude"": 86.0}"
+google/gemma-4-31b-it,no-CoT,61.215,103.848,3636.717,RU,True,,stop,7.056e-05,404,35,0,9.16,"```json
+{""country"": ""RU"", ""latitude"": 61.215, ""longitude"": 103.848}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7435.177,,True,,stop,5.148e-05,404,23,0,7.96,"{""country"": ""unknown"", ""latitude"": 0.0, ""longitude"": 0. own}"
+xiaomi/mimo-v2.5,no-CoT,46.85,-121.75,7537.821,US,True,,stop,9.62976e-05,820,28,0,7.86,"{""country"": ""US"", ""latitude"": 46.85, ""longitude"": -121.75}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4781,8537.822,US,True,,stop,0.0001371,786,32,0,3.65,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4781}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.24,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.36,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.93,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.98,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.09,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.17,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.35,

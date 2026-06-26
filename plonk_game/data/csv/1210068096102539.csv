@@ -1,0 +1,70 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,51.498419568832,128.19846982278,0.0,RU,True,,,,,,,,"Svobodnyy, None, Amur, RU"
+google/gemini-3.5-flash,no-CoT (effort=minimal),51.824512,127.912345,41.283,RU,True,,stop,0.0021975,1225,40,0,1.51,"```json
+{""country"": ""RU"", ""latitude"": 51.824512, ""longitude"": 127.912345}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),50.9125,128.4512,67.488,RU,True,,stop,0.0070005,1307,560,477,5.49,"{""reasoning"": ""The flat, snowy landscape with sparse, low deciduous vegetation under a clear blue sky, combined with the modern divided highway design and guardrails, is highly characteristic of the R297 'Amur' Highway in Russia during winter."", ""country"": ""RU"", ""latitude"": 50.9125, ""longitude"": 128.4512}"
+google/gemma-4-31b-it,no-CoT,62.15,105.33,1810.088,RU,True,,stop,6.976e-05,404,33,0,9.25,"```json
+{""country"": ""RU"", ""latitude"": 62.15, ""longitude"": 105.33}
+```"
+openai/gpt-5.5,no-CoT,55.0423,82.9408,2981.558,RU,True,,stop,0.00408,678,23,0,2.41,"{""country"":""RU"",""latitude"":55.0423,""longitude"":82.9408}"
+minimax/minimax-m3,no-CoT,64.5,76.0,3276.762,RU,True,,stop,0.00042162,919,170,183,4.34,"{""country"": ""RU"", ""latitude"": 64.5, ""longitude"": 76.0}"
+minimax/minimax-m3,CoT,65.6,72.5,3441.415,RU,True,,stop,0.00086346,995,522,445,22.67,"{""reasoning"": ""Flat tundra/steppe landscape with sparse low vegetation and patchy snow, combined with right-hand traffic, standard Russian-style guardrails, and modern divided highway construction, strongly suggests western Siberia or Yamalo-Nenets region in Russia."", ""country"": ""RU"", ""latitude"": 65.6, ""longitude"": 72.5}"
+qwen/qwen3.5-397b-a17b,CoT,68.9245,70.6132,3531.778,RU,True,,stop,0.0076301,665,2096,1981,78.01,"{""reasoning"": ""The image shows a straight, modern asphalt highway traversing a flat, treeless tundra landscape with low scrub vegetation and snow, characteristic of the Yamal Peninsula in Russia. The right-hand traffic and white edge line markings are consistent with Russian road standards on divided highways like the Salekhard–Sabetta route."", ""country"": ""RU"", ""latitude"": 68.9245, ""longitude"": 70.6132}"
+google/gemini-3.1-pro-preview,no-CoT,55.0,73.0,3596.447,RU,True,,stop,0.002798,1225,29,0,9.25,"```json
+{""country"": ""RU"", ""latitude"": 55.0, ""longitude"": 73.0}
+```"
+google/gemini-3.5-flash,CoT (effort=high),55.3125,69.5214,3796.079,RU,True,,stop,0.0101955,1307,915,843,14.34,"{""reasoning"": ""The flat, snowy steppe landscape combined with the wide, well-maintained highway and standard Russian guardrails strongly points to a federal highway in southern Siberia, likely the R254."", ""country"": ""RU"", ""latitude"": 55.3125, ""longitude"": 69.5214}"
+openai/gpt-5.5,CoT,51.7806,70.8892,3850.441,KZ,True,,stop,0.013615,755,328,243,30.14,"{""reasoning"":""Flat snowy steppe landscape, right-hand divided highway with blue guardrails and sparse birch-like shelterbelts matches northern Kazakhstan roads, especially around Astana/Kokshetau. The broad modern expressway and winter conditions point to the Astana–Shchuchinsk corridor."",""country"":""KZ"",""latitude"":51.7806,""longitude"":70.8892}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,56.671913146972656,61.68125534057617,4202.918,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,56.641258239746094,61.66084671020508,4205.319,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,54.98665237426758,53.200927734375,4762.057,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,55.0,49.0,4995.908,RU,True,,stop,0.00484,818,30,0,10.4,"{""country"": ""RU"", ""latitude"": 55.0, ""longitude"": 49.0}"
+google/gemini-3.5-flash,CoT (effort=low),53.5245,49.4128,5056.199,RU,True,,stop,0.004014,1308,228,161,8.9,"{""reasoning"": ""The wide asphalt highway with snowy shoulders, flat terrain, and sparse winter vegetation under a clear blue sky is highly characteristic of federal highways in central or southern Russia."", ""country"": ""RU"", ""latitude"": 53.5245, ""longitude"": 49.4128}"
+google/gemini-3.1-pro-preview,CoT,51.5333,46.0167,5369.065,RU,True,,stop,0.00595,1307,278,188,12.01,"{
+  ""reasoning"": ""The wide, flat highway with snow, sparse vegetation, and specific guardrail style are highly characteristic of rural Russian highways in winter. The vast, featureless landscape suggests a region like the steppes of southern or central Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 51.5333,
+  ""longitude"": 46.0167
+}"
+anthropic/claude-opus-4.8,CoT,51.5,46.0,5372.106,RU,True,,stop,0.006845,949,84,0,3.42,"{""reasoning"": ""Flat steppe with snow patches, divided highway, sparse low vegetation suggesting Russian/Kazakh continental plain in winter."", ""country"": ""RU"", ""latitude"": 51.5, ""longitude"": 46.0}"
+x-ai/grok-4.3,CoT,55.85,37.95,5531.865,RU,True,,stop,0.0033765,788,1091,1015,10.25,"{
+  ""reasoning"": ""Right-hand traffic confirmed by center line on left of view and guardrail on right shoulder; flat open snowy steppe with leafless scrub, clear winter sky and distant small rectangular sign are characteristic of Russian federal highways."",
+  ""country"": ""RU"",
+  ""latitude"": 55.85,
+  ""longitude"": 37.95
+}"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,5554.876,RU,True,,stop,0.001419,786,32,0,0.89,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+moonshotai/kimi-k2.6,no-CoT,55.7558,37.6173,5554.876,RU,True,,stop,0.0007276,752,27,0,12.49,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+moonshotai/kimi-k2.6,CoT,51.3,40.2,5711.564,RU,True,,stop,0.023094396,834,6678,6608,616.01,"{""reasoning"": ""Flat snowy steppe with a modern divided highway, metal guardrails, right-hand traffic, and sparse brush is characteristic of a Russian federal highway such as the M4 in southern Russia during winter."", ""country"": ""RU"", ""latitude"": 51.3000, ""longitude"": 40.2000}"
+qwen/qwen3.5-35b-a3b,no-CoT,56.1234,-110.5678,6891.676,CA,True,,stop,0.00018625,585,32,0,7.15,"{""country"": ""CA"", ""latitude"": 56.1234, ""longitude"": -110.5678}"
+qwen/qwen3.6-35b-a3b,no-CoT,53.726667,-113.433333,6991.422,CA,True,,stop,0.00012375,585,36,0,8.5,"{""country"": ""CA"", ""latitude"": 53.726667, ""longitude"": -113.433333}"
+qwen/qwen3.5-27b,no-CoT,53.5461,-113.4938,7004.796,CA,True,,stop,0.0002365,586,45,0,4.56,"```json
+{
+  ""country"": ""CA"",
+  ""latitude"": 53.5461,
+  ""longitude"": -113.4938
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,53.5461,-113.4938,7004.796,CA,True,,stop,0.0004502,585,32,0,1.87,"{""country"": ""CA"", ""latitude"": 53.5461, ""longitude"": -113.4938}"
+qwen/qwen3.5-122b-a10b,no-CoT,53.4372,-113.4906,7014.476,CA,True,,stop,0.000362,585,40,0,1.99,"{
+  ""country"": ""CA"",
+  ""latitude"": 53.4372,
+  ""longitude"": -113.4906
+}"
+qwen/qwen3.5-9b,no-CoT,56.13,-106.35,7044.086,CA,True,,stop,6.28e-05,586,28,0,7.35,"{""country"": ""CA"", ""latitude"": 56.13, ""longitude"": -106.35}"
+qwen/qwen3.6-27b,no-CoT,53.9333,-106.0667,7256.291,CA,True,,stop,0.0004662,585,32,0,1.07,"{""country"": ""CA"", ""latitude"": 53.9333, ""longitude"": -106.0667}"
+xiaomi/mimo-v2.5,CoT,49.84,-101.05,7824.355,CA,True,,stop,0.0002806776,899,647,556,7.98,"{""reasoning"": ""The flat terrain, dormant reddish-brown shrubs, and snow-covered ground are characteristic of the Canadian Prairies in winter. The double yellow center lines, right-hand traffic, and highway signage style are consistent with a major route like the Trans-Canada Highway in Manitoba."", ""country"": ""CA"", ""latitude"": 49.84, ""longitude"": -101.05}"
+x-ai/grok-4.3,no-CoT,49.9,-97.2,7952.105,CA,True,,stop,0.0007334,704,22,0,0.8,"{""country"": ""CA"", ""latitude"": 49.9, ""longitude"": -97.2}"
+xiaomi/mimo-v2.5,no-CoT,41.5,-100.5,8654.23,US,True,,stop,9.57376e-05,820,26,0,8.68,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -100.5}"
+mistralai/mistral-small-2603,no-CoT,40.0,-103.0,8697.315,US,True,,stop,0.000166875,786,26,0,1.66,"{""country"": ""US"", ""latitude"": 40.0, ""longitude"": -103.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,47.46950912475586,-70.21565246582031,8871.13,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,46.71687316894531,-64.44969177246094,9027.321,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,44.453365325927734,-74.63448333740234,9122.23,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12525.195,,True,True,,,,,,6.77,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,9.31,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,17.81,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.18,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.52,

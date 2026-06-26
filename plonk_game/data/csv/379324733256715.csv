@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,28.586388045125,77.087601323564,0.0,IN,True,,,,,,,,"Nangloi Jat, West Delhi, NCT, IN"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,28.519861221313477,77.13329315185547,8.639,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,28.52813148498535,77.14839172363281,8.787,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,28.5672,77.2076,11.91,IN,True,,stop,0.014715,621,387,305,9.37,"{""reasoning"":""Left-side traffic with Indian-style white plates, scooters, black-and-white kerbs, hazy urban flyover and road furniture strongly indicate a major Indian city. The smoggy, flat, dense setting and divider/streetlight style are most consistent with Delhi NCR."",""country"":""IN"",""latitude"":28.5672,""longitude"":77.2076}"
+qwen/qwen3.5-27b,no-CoT,28.5677,77.21,12.131,IN,True,,stop,0.00021684,474,36,0,2.5,"```json
+{""country"": ""IN"", ""latitude"": 28.5677, ""longitude"": 77.2100}
+```"
+anthropic/claude-opus-4.8,CoT,28.6139,77.209,12.24,IN,True,,stop,0.006335,797,94,0,3.9,"{""reasoning"": ""Left-hand traffic with motorcycles, hazy polluted air, Indian-style flyover with planted median and black-white striped barriers typical of Delhi NCR."", ""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+google/gemini-3.1-pro-preview,CoT,28.6139,77.209,12.24,IN,True,,stop,0.006096,1272,296,218,4.8,"{
+  ""reasoning"": ""Left-hand driving, vehicle models like the Maruti Suzuki Swift, black and white painted curbs, and heavy smog strongly indicate a major city in India, likely Delhi."",
+  ""country"": ""IN"",
+  ""latitude"": 28.6139,
+  ""longitude"": 77.2090
+}"
+xiaomi/mimo-v2.5,CoT,28.6139,77.209,12.24,IN,True,,stop,0.0001594376,787,270,200,6.84,"{""reasoning"": ""Left-hand traffic, Indian-style license plates, and Devanagari script on signage confirm India; urban infrastructure and vegetation match North India's climate and urban landscape."", ""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+anthropic/claude-opus-4.8,no-CoT,28.6139,77.209,12.24,IN,True,,stop,0.00413,666,32,0,2.63,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+google/gemini-3.1-pro-preview,no-CoT,28.6139,77.209,12.24,IN,True,,stop,0.0028,1190,35,0,8.46,"```json
+{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,28.6139,77.209,12.24,IN,True,,stop,5.654e-05,406,35,0,2.85,"{"" than own"": {""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+google/gemma-4-31b-it,no-CoT,28.6139,77.209,12.24,IN,True,,stop,7.124e-05,406,36,0,7.68,"```json
+{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}
+```"
+mistralai/mistral-medium-3-5,no-CoT,28.6139,77.209,12.24,IN,True,,stop,0.001176,634,30,0,1.06,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+openai/gpt-5.5,no-CoT,28.6139,77.209,12.24,IN,True,,stop,0.00341,544,23,0,7.95,"{""country"":""IN"",""latitude"":28.6139,""longitude"":77.2090}"
+qwen/qwen3.5-122b-a10b,no-CoT,28.6139,77.209,12.24,IN,True,,stop,0.00018564,474,30,0,5.06,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+qwen/qwen3.5-397b-a17b,no-CoT,28.6139,77.209,12.24,IN,True,,stop,0.0003287,473,30,0,2.89,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+qwen/qwen3.5-9b,no-CoT,28.6139,77.209,12.24,IN,True,,stop,5.19e-05,474,30,0,10.1,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+qwen/qwen3.6-27b,no-CoT,28.6139,77.209,12.24,IN,True,,stop,0.0001943,473,31,0,7.86,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+qwen/qwen3.6-35b-a3b,no-CoT,28.6139,77.209,12.24,IN,True,,stop,0.00010095,473,30,0,9.3,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+x-ai/grok-4.3,no-CoT,28.6139,77.209,12.24,IN,True,,stop,0.0005984,592,24,0,3.62,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+xiaomi/mimo-v2.5,no-CoT,28.6139,77.209,12.24,IN,True,,stop,8.11776e-05,708,30,0,7.66,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),28.6289,77.2152,13.323,IN,True,,stop,0.0021,1190,35,0,1.25,"```json
+{""country"": ""IN"", ""latitude"": 28.6289, ""longitude"": 77.2152}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,28.723970413208008,77.10626220703125,15.406,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,28.65,77.25,17.358,IN,True,,stop,0.006408468,682,1802,1727,43.77,"{""reasoning"": ""Left-hand traffic with Maruti Suzuki Swift and two-wheelers typical of India; black-and-white striped concrete barriers, hazy North Indian winter smog, and telecom tower styles confirm this is a flyover in Delhi NCR."", ""country"": ""IN"", ""latitude"": 28.65, ""longitude"": 77.25}"
+google/gemini-3.5-flash,CoT (effort=medium),28.6012,77.2851,19.353,IN,True,,stop,0.0099615,1271,895,815,8.03,"{""reasoning"": ""The image shows left-hand traffic, black-and-white painted curbs, Maruti Suzuki vehicles, and a blue curved structure characteristic of Delhi Metro stations amidst heavy winter smog, pointing to the Delhi National Capital Region in India."", ""country"": ""IN"", ""latitude"": 28.6012, ""longitude"": 77.2851}"
+minimax/minimax-m3,CoT,28.62,77.29,20.109,IN,True,,stop,0.00080226,843,509,433,14.17,"{""reasoning"": ""Left-hand driving, black-and-white striped Indian-style road barriers, Maruti Suzuki Swift (common Indian car), dense telecom towers, hazy dusty atmosphere, and low-rise Indian architecture all point to the Delhi NCR region in North India."", ""country"": ""IN"", ""latitude"": 28.62, ""longitude"": 77.29}"
+x-ai/grok-4.3,CoT,28.567,77.318,22.601,IN,True,,stop,0.002509,676,800,725,12.95,"{""reasoning"": ""Left-hand traffic with median barrier/planters on right, ubiquitous scooters, white compact cars, SBI signage, cell towers, hazy North Indian sky and road infrastructure all point to India; image matches typical NCR expressway/flyover scenes."", ""country"": ""IN"", ""latitude"": 28.567, ""longitude"": 77.318}"
+google/gemini-3.5-flash,CoT (effort=low),28.5703,77.3218,22.939,IN,True,,stop,0.004095,1272,243,161,9.55,"```json
+{""reasoning"": ""The left-hand traffic, Maruti Suzuki vehicles, black-and-white painted curbs, distinctive cell towers, and hazy atmosphere are highly characteristic of an urban flyover in the Delhi National Capital Region of India."", ""country"": ""IN"", ""latitude"": 28.5703, ""longitude"": 77.3218}
+```"
+google/gemini-3.5-flash,CoT (effort=high),28.5703,77.3218,22.939,IN,True,,stop,0.0125895,1271,1187,1103,9.59,"{""reasoning"": ""The image shows left-hand traffic with Maruti Suzuki vehicles, black-and-white striped curbs, and distinctive cell towers, all highly characteristic of India. The heavy smog and flat terrain strongly point to the Delhi National Capital Region (NCR)."", ""country"": ""IN"", ""latitude"": 28.5703, ""longitude"": 77.3218}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,28.699535369873047,77.3514633178711,28.659,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,28.701683044433594,77.35205078125,28.816,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,28.5355,77.391,30.166,IN,True,,stop,9.636e-05,474,30,0,4.17,"{""country"": ""IN"", ""latitude"": 28.5355, ""longitude"": 77.391}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,24.192602157592773,79.63907623291016,550.664,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,55.7558,37.6173,4338.308,RU,True,,stop,0.0001143,634,32,0,0.95,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.34,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,21.99,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.11,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,7.86,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,9.31,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.15,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.42,

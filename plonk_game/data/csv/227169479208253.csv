@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,59.114160000426,6.2059509981939,0.0,NO,True,,,,,,,,"Hjelmelandsvagen, Hjelmeland, Rogaland, NO"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,59.46254348754883,6.319355010986328,39.27,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,59.49874496459961,6.317568778991699,43.231,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,59.502357482910156,6.318952560424805,43.639,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),58.8231,6.7482,44.873,NO,True,,stop,0.00711,1272,578,517,4.29,"{""reasoning"": ""The solid yellow center line combined with the lush green valley, steep forested mountains, and low-hanging clouds is highly characteristic of Norway."", ""country"": ""NO"", ""latitude"": 58.8231, ""longitude"": 6.7482}"
+google/gemini-3.5-flash,CoT (effort=low),58.7125,6.5432,48.679,NO,True,,stop,0.0038775,1271,219,155,3.19,"{""reasoning"": ""The yellow center line combined with white outer edge lines, lush green mountainous terrain, and low-hanging clouds are highly characteristic of western or southern Norway."", ""country"": ""NO"", ""latitude"": 58.7125, ""longitude"": 6.5432}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),58.6833,6.5167,51.126,NO,True,,stop,0.0020895,1189,34,0,8.04,"```json
+{""country"": ""NO"", ""latitude"": 58.6833, ""longitude"": 6.5167}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),58.6632,6.7185,58.152,NO,True,,stop,0.0058305,1271,436,368,12.01,"{""reasoning"": ""The yellow center line combined with white outer lines on a well-paved road in a lush, mountainous, and misty valley is highly characteristic of southern or western Norway."", ""country"": ""NO"", ""latitude"": 58.6632, ""longitude"": 6.7185}"
+google/gemini-3.1-pro-preview,no-CoT,60.5,6.5,154.973,NO,True,,stop,0.004478,1189,175,147,26.77,"```json
+{""country"": ""NO"", ""latitude"": 60.5, ""longitude"": 6.5}
+```"
+minimax/minimax-m3,no-CoT,60.5,7.0,160.365,NO,True,,stop,0.00033762,767,138,151,12.55,"{""country"": ""NO"", ""latitude"": 60.5, ""longitude"": 7.0}"
+anthropic/claude-opus-4.8,CoT,60.5,7.2,163.813,NO,True,,stop,0.00596,797,79,0,9.45,"{""reasoning"": ""Lush green valley with steep forested mountains, low cloud cover, yellow center line and wire fences typical of rural Norway."", ""country"": ""NO"", ""latitude"": 60.5, ""longitude"": 7.2}"
+openai/gpt-5.5,CoT,60.8756,6.7624,198.29,NO,True,,stop,0.017085,621,466,378,34.71,"{""reasoning"":""The single yellow centerline with white edge lines and right-side traffic road style strongly points to Norway, and the wet, lush steep-sided glacial valley with fenced pastures matches western Norwegian fjord country. The scenery is especially consistent with valleys around Nærøydalen/Voss in Vestland."",""country"":""NO"",""latitude"":60.8756,""longitude"":6.7624}"
+anthropic/claude-opus-4.8,no-CoT,60.9,6.8,201.301,NO,True,,stop,0.00408,666,30,0,2.25,"{""country"": ""NO"", ""latitude"": 60.9, ""longitude"": 6.8}"
+google/gemini-3.1-pro-preview,CoT,61.0,6.5,210.329,NO,True,,stop,0.004774,1271,186,115,25.06,"{
+  ""reasoning"": ""The dashed yellow center line combined with solid white edge lines is highly characteristic of roads in Norway. The mountainous, green landscape with low clouds further supports a Norwegian location."",
+  ""country"": ""NO"",
+  ""latitude"": 61.0,
+  ""longitude"": 6.5
+}"
+openai/gpt-5.5,no-CoT,61.3587,7.1529,254.989,NO,True,,stop,0.00341,544,23,0,1.2,"{""country"":""NO"",""latitude"":61.3587,""longitude"":7.1529}"
+xiaomi/mimo-v2.5,no-CoT,61.45,6.8,261.787,NO,True,,stop,7.97776e-05,708,25,0,7.3,"{""country"": ""NO"", ""latitude"": 61.45, ""longitude"": 6.8}"
+moonshotai/kimi-k2.6,no-CoT,61.5,6.5,265.787,NO,True,,stop,0.000272952,603,23,0,2.2,"{""country"": ""NO"", ""latitude"": 61.5, ""longitude"": 6.5}"
+minimax/minimax-m3,CoT,61.85,6.55,304.794,NO,True,,stop,0.00070302,845,423,418,9.29,"{""reasoning"": ""Solid yellow center line markings indicate Norway, combined with a wide U-shaped glacial valley flanked by steep forested mountains, lush green pastures with wooden fence posts, and low maritime cloud cover characteristic of Western Norway's fjord regions."", ""country"": ""NO"", ""latitude"": 61.85, ""longitude"": 6.55}{""reasoning"": ""Solid yellow center line markings indicate Norway, combined with a wide U-shaped glacial valley flanked by steep forested mountains, lush green pastures with wooden fence posts, and low maritime cloud cover characteristic of Western Norway's fjord regions."", ""country"": ""NO"", ""latitude"": 61.85, ""longitude"": 6.55}"
+x-ai/grok-4.3,no-CoT,61.85,7.25,309.532,NO,True,,stop,0.0005934,592,22,0,7.39,"{""country"": ""NO"", ""latitude"": 61.85, ""longitude"": 7.25}"
+google/gemma-4-31b-it,no-CoT,62.1234,7.5678,342.741,NO,True,,stop,6.338e-05,406,35,0,4.72,"```json
+{""country"": ""NO"", ""latitude"": 62.1234, ""longitude"": 7.5678}
+```"
+qwen/qwen3.5-9b,no-CoT,56.4725,-4.3214,688.587,GB,True,,stop,5.19e-05,474,30,0,4.2,"{""country"": ""GB"", ""latitude"": 56.4725, ""longitude"": -4.3214}"
+mistralai/mistral-small-2603,CoT,51.945,-2.068,950.633,GB,True,,stop,0.000597,716,816,828,6.66,"{""reasoning"": ""Left-hand traffic, UK-style road markings and bollards, rolling Cotswolds hills, and overcast UK weather indicate this is in Gloucestershire, England."", ""country"": ""GB"", ""latitude"": 51.945, ""longitude"": -2.068}"
+qwen/qwen3.5-35b-a3b,no-CoT,42.5987,-0.6342,1895.781,ES,True,,stop,0.00010095,473,30,0,2.33,"{""country"": ""ES"", ""latitude"": 42.5987, ""longitude"": -0.6342}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6595.504,,True,True,,,,,,0.69,
+qwen/qwen3.6-35b-a3b,CoT,50.0,-119.5,6927.466,CA,True,,stop,0.1266971251,553,131166,131073,1043.14,"{
+  ""reasoning"": ""The solid yellow center line indicates right-hand traffic in North America (US or Canada). The lush green vegetation, steep forested mountains, and low-hanging clouds are characteristic of the Pacific Northwest, specifically the Okanagan Valley in British Columbia."",
+  ""country"": ""CA"",
+  ""latitude"": 50.0,
+  ""longitude"": -119.5
+}"
+x-ai/grok-4.3,CoT,47.55,-121.55,7238.424,US,True,,stop,0.002254,676,698,630,20.06,"{""reasoning"": ""Right-side driving (US-style yellow center + white edge lines), lush temperate conifer/deciduous forest, steep U-shaped valley with low cloud, no visible signage or vehicles; classic Pacific Northwest appearance."", ""country"": ""US"", ""latitude"": 47.55, ""longitude"": -121.55}"
+qwen/qwen3.6-27b,no-CoT,44.428,-122.168,7571.105,US,True,,stop,0.0001963,473,32,0,13.08,"{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -122.1680}"
+qwen/qwen3.5-397b-a17b,CoT,-0.9345,-78.6123,9801.35,EC,True,,stop,0.0224421,553,6344,6080,348.28,"{""reasoning"": ""The single solid yellow center line combined with white edge lines on both sides indicates a Right-Hand Traffic country, likely in Latin America (specifically the Andes) rather than the US (which typically uses yellow left edges). The lush green high-altitude pasture, wooden fence posts, and misty mountainous terrain are characteristic of the Ecuadorian Sierra, specifically the Pan-American Highway."", ""country"": ""EC"", ""latitude"": -0.9345, ""longitude"": -78.6123}"
+xiaomi/mimo-v2.5,CoT,-46.435,-72.05,13716.508,CL,True,,stop,0.0002008776,787,418,319,12.1,"```json
+{""reasoning"": ""The yellow center line indicates a country that drives on the right, most likely in the Americas, while the dramatic, steep green mountains and overcast, misty conditions strongly suggest the Chilean fjord regions. The specific road surface and landscape are characteristic of the Carretera Austral in southern Chile."", ""country"": ""CL"", ""latitude"": -46.435, ""longitude"": -72.05}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-43.23235321044922,170.45889282226562,17947.325,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-43.888519287109375,169.49868774414062,17977.31,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-43.9046516418457,169.49993896484375,17978.941,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,-44.3892,168.8456,18001.05,NZ,True,,stop,0.00036828,473,32,0,2.92,"{""country"": ""NZ"", ""latitude"": -44.3892, ""longitude"": 168.8456}"
+qwen/qwen3.5-27b,no-CoT,-44.3333,169.1667,18008.114,NZ,True,,stop,0.00019683,473,32,0,1.74,"{""country"": ""NZ"", ""latitude"": -44.3333, ""longitude"": 169.1667}"
+moonshotai/kimi-k2.6,CoT,-44.85,168.05,18013.46,NZ,True,,stop,0.009939888,682,2842,2761,212.33,"{""reasoning"": ""Yellow center line with white edge markings matches New Zealand road standards, while the steep temperate rainforest mountains, lush green valley floor, wooden fence posts, and misty overcast conditions are characteristic of Fiordland or the West Coast on New Zealand's South Island."", ""country"": ""NZ"", ""latitude"": -44.85, ""longitude"": 168.05}"
+qwen/qwen3.6-35b-a3b,no-CoT,-44.0321,170.1234,18014.692,NZ,True,,stop,0.00010295,473,32,0,2.83,"{""country"": ""NZ"", ""latitude"": -44.0321, ""longitude"": 170.1234}"
+mistralai/mistral-medium-3-5,no-CoT,-45.0312,168.3427,18042.62,NZ,True,,stop,0.001191,634,32,0,6.97,"{""country"": ""NZ"", ""latitude"": -45.0312, ""longitude"": 168.3427}"
+qwen/qwen3.5-122b-a10b,no-CoT,-43.5321,172.6362,18051.058,NZ,True,,stop,0.0002916,473,32,0,1.14,"{""country"": ""NZ"", ""latitude"": -43.5321, ""longitude"": 172.6362}"
+mistralai/mistral-small-2603,no-CoT,-45.8742,170.5036,18208.891,NZ,True,,stop,0.0001143,634,32,0,9.2,"{""country"": ""NZ"", ""latitude"": -45.8742, ""longitude"": 170.5036}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.28,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.24,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.09,

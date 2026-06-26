@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,13.894860906846,99.152357087705,0.0,TH,True,,,,,,,,"Sai Yok, None, Kanchanaburi, TH"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,13.880828857421875,99.21366882324219,6.8,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,13.87725830078125,99.22314453125,7.888,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,14.0215,99.5321,43.331,TH,True,,stop,0.008052,1272,459,363,7.53,"{
+  ""reasoning"": ""The presence of the Thai national flag and a yellow royal flag on the left, combined with square utility poles and a dashed yellow center line, strongly indicates Thailand. The tropical vegetation and mountainous background suggest a rural highway, likely in the western or southern provinces."",
+  ""country"": ""TH"",
+  ""latitude"": 14.0215,
+  ""longitude"": 99.5321
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,14.402761459350586,99.82977294921875,92.327,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,14.95,99.2,117.438,TH,True,,stop,0.006385,797,96,0,3.32,"{""reasoning"": ""Left-hand traffic, tropical vegetation with palms, mountainous backdrop, and Thai-style roadside signage with concrete utility poles suggest rural Thailand."", ""country"": ""TH"", ""latitude"": 14.95, ""longitude"": 99.2}"
+mistralai/mistral-medium-3-5,no-CoT,13.7563,100.5018,146.516,TH,True,,stop,0.001191,634,32,0,0.96,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+anthropic/claude-opus-4.8,no-CoT,15.2,99.5,149.87,TH,True,,stop,0.00408,666,30,0,9.4,"{""country"": ""TH"", ""latitude"": 15.2, ""longitude"": 99.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,14.35,100.5,153.882,TH,True,,stop,0.000138,474,27,0,3.29,"{""country"": ""TH"", ""latitude"": 14.35, ""longitude"": 100.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),12.4831,99.5214,161.985,TH,True,,stop,0.0020985,1189,35,0,1.54,"```json
+{""country"": ""TH"", ""latitude"": 12.4831, ""longitude"": 99.5214}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,14.3562,101.0234,208.178,TH,True,,stop,9.836e-05,474,32,0,8.35,"{""country"": ""TH"", ""latitude"": 14.3562, ""longitude"": 101.0234}"
+qwen/qwen3.5-9b,no-CoT,12.9345,100.9234,219.31,TH,True,,stop,5.22e-05,474,32,0,4.76,"{""country"": ""TH"", ""latitude"": 12.9345, ""longitude"": 100.9234}"
+x-ai/grok-4.3,no-CoT,14.583,101.383,252.297,TH,True,,stop,0.0005934,592,22,0,1.41,"{""country"": ""TH"", ""latitude"": 14.583, ""longitude"": 101.383}"
+qwen/qwen3.5-122b-a10b,no-CoT,16.819,100.204,344.142,TH,True,,stop,0.00018564,474,30,0,11.62,"{""country"": ""TH"", ""latitude"": 16.819, ""longitude"": 100.204}"
+google/gemini-3.1-pro-preview,no-CoT,10.5,99.0,377.854,TH,True,,stop,0.0052,1190,235,206,17.3,"```json
+{""country"": ""TH"", ""latitude"": 10.5, ""longitude"": 99.0}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,9.629890441894531,99.6186752319336,476.951,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,18.25,99.12,484.282,TH,True,,stop,6.558e-05,406,32,0,11.41,"```json
+{""country"": ""TH"", ""latitude"": 18.25, ""longitude"": 99.12}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,9.498478889465332,99.69771575927734,492.447,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,9.431295394897461,99.91603088378906,503.241,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,18.5,98.7,514.34,TH,True,,stop,0.007806888,682,2212,2157,50.36,"{""reasoning"": ""The Thai national flag visible on the left and the distinctive Provincial Electricity Authority concrete utility poles with multiple crossbars are definitive for Thailand."", ""country"": ""TH"", ""latitude"": 18.5, ""longitude"": 98.7}"
+moonshotai/kimi-k2.6,no-CoT,18.7,98.9,534.985,TH,True,,stop,0.00051219,602,23,0,3.21,"{""country"": ""TH"", ""latitude"": 18.7, ""longitude"": 98.9}"
+minimax/minimax-m3,no-CoT,18.7833,99.0333,543.718,TH,True,,stop,0.00044802,767,230,259,11.68,"{""country"": ""TH"", ""latitude"": 18.7833, ""longitude"": 99.0333}"
+qwen/qwen3.5-27b,no-CoT,18.7883,98.9853,544.417,TH,True,,stop,0.0002163,473,31,0,2.6,"{""country"": ""TH"", ""latitude"": 18.7883, ""longitude"": 98.9853}"
+qwen/qwen3.5-397b-a17b,no-CoT,18.7883,98.9853,544.417,TH,True,,stop,0.00036468,473,31,0,8.79,"{""country"": ""TH"", ""latitude"": 18.7883, ""longitude"": 98.9853}"
+qwen/qwen3.6-27b,no-CoT,18.7883,98.9853,544.417,TH,True,,stop,0.0001943,473,31,0,24.76,"{""country"": ""TH"", ""latitude"": 18.7883, ""longitude"": 98.9853}"
+xiaomi/mimo-v2.5,no-CoT,18.7883,98.9853,544.417,TH,True,,stop,8.14576e-05,708,31,0,1.95,"{""country"": ""TH"", ""latitude"": 18.7883, ""longitude"": 98.9853}"
+google/gemini-3.5-flash,CoT (effort=high),8.9125,98.6542,556.666,TH,True,,stop,0.0079545,1271,672,601,5.86,"{""reasoning"": ""The Thai national flag and yellow royal flag on the left, combined with left-hand driving, concrete utility poles, and tropical mountainous terrain, indicate Thailand, likely in the southern region."", ""country"": ""TH"", ""latitude"": 8.9125, ""longitude"": 98.6542}"
+minimax/minimax-m3,CoT,8.85,99.15,560.963,TH,True,,stop,0.00080466,843,511,421,24.09,"{""reasoning"": ""Thai national flag (red-white-blue) and yellow royal flag visible on the left confirm Thailand; left-side driving with yellow center line markings, tropical royal palms, dense tropical forest, and karst-like mountains in the background are characteristic of southern Thailand, likely the Surat Thani/Krabi region."", ""country"": ""TH"", ""latitude"": 8.85, ""longitude"": 99.15}"
+x-ai/grok-4.3,CoT,8.85,98.65,563.628,TH,True,,stop,0.0019065,676,559,478,4.8,"{
+  ""reasoning"": ""Thai national flag visible on left plus yellow Buddhist flag, left-side driving, tropical palms/vegetation, and mountain backdrop confirm Thailand; rural 2-lane highway with yellow dashed center line and orange roadside signs matches typical southern Thai provincial road."",
+  ""country"": ""TH"",
+  ""latitude"": 8.85,
+  ""longitude"": 98.65
+}"
+google/gemini-3.5-flash,CoT (effort=medium),8.5241,98.6123,600.097,TH,True,,stop,0.0059835,1271,453,376,4.53,"{""reasoning"": ""The presence of the Thai national flag and a yellow royal flag on the left, combined with left-hand traffic, concrete utility poles, and tropical vegetation with distant hills, indicates Thailand, likely in the southern peninsula."", ""country"": ""TH"", ""latitude"": 8.5241, ""longitude"": 98.6123}"
+openai/gpt-5.5,no-CoT,19.3012,98.4406,605.919,TH,True,,stop,0.00341,544,23,0,1.38,"{""country"":""TH"",""latitude"":19.3012,""longitude"":98.4406}"
+google/gemini-3.5-flash,CoT (effort=low),8.4375,98.6889,608.932,TH,True,,stop,0.004185,1272,253,184,9.0,"{""reasoning"": ""The presence of the Thai national flag and yellow royal flag on the left, combined with concrete utility poles, left-hand driving, and tropical vegetation with mountains, indicates Thailand."", ""country"": ""TH"", ""latitude"": 8.4375, ""longitude"": 98.6889}"
+openai/gpt-5.5,CoT,19.3457,99.8264,610.342,TH,True,,stop,0.012885,621,326,252,22.28,"{""reasoning"":""The left-side driving, yellow centerline, tropical vegetation, and roadside Thai tricolor plus yellow royal flags point strongly to rural Thailand. Mountainous lush terrain suggests northern Thailand, likely around Chiang Rai/Chiang Mai foothills."",""country"":""TH"",""latitude"":19.3457,""longitude"":99.8264}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10995.215,,True,True,,,,,,19.82,
+mistralai/mistral-small-2603,no-CoT,-22.9035,-47.0617,16322.108,BR,True,,stop,0.0001137,634,31,0,1.2,"{""country"": ""BR"", ""latitude"": -22.9035, ""longitude"": -47.0617}"
+xiaomi/mimo-v2.5,CoT,9.93,-83.92,17344.289,CR,True,,stop,0.0009910376,787,3240,3133,34.59,"{""reasoning"": ""The flag visible on the left matches the Costa Rican national flag (blue-white-red-white-blue) and is accompanied by a yellow religious banner common in the region; combined with the Spanish 'Se Vende' and orange 'Peligro' signs, right-hand traffic, tropical Royal Palms, and mountainous terrain, this points to the Central Valley of Costa Rica."", ""country"": ""CR"", ""latitude"": 9.93, ""longitude"": -83.92}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,9.27,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.18,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.08,

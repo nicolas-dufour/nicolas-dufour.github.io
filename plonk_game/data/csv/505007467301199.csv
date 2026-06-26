@@ -1,0 +1,76 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,30.780812068049,-92.19010099608,0.0,US,True,,,,,,,,"Ville Platte, Evangeline Parish, Louisiana, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,30.887544631958008,-92.1900405883789,11.868,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,30.89319610595703,-92.1924057006836,12.498,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,30.77013397216797,-92.00816345214844,17.422,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,30.2266,-92.0156,63.853,US,True,,stop,0.00011804,586,36,0,1.06,"```json
+{""country"": ""US"", ""latitude"": 30.2266, ""longitude"": -92.0156}
+```"
+moonshotai/kimi-k2.6,CoT,30.226,-92.686,77.866,US,True,,stop,0.013293576,834,3811,3746,173.41,"{""reasoning"": ""Standard yellow MUTCD diamond warning sign, right-hand traffic, flat rural divided highway with lush green vegetation and wooden utility poles are characteristic of the US Gulf Coast, particularly Louisiana."", ""country"": ""US"", ""latitude"": 30.226, ""longitude"": -92.686}"
+moonshotai/kimi-k2.6,no-CoT,30.5,-91.0,118.061,US,True,,stop,0.00035046,755,23,0,2.68,"{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -91.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,33.61897659301758,-90.4917221069336,353.726,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,33.684722900390625,-90.55191802978516,357.764,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,34.8,-92.3,447.031,US,True,,stop,0.0021565,788,603,519,7.26,"{
+  ""reasoning"": ""Right-hand traffic with solid yellow center line + white dashed lane markers, US-style yellow diamond warning sign, and metal W-beam guardrail indicate North America; flat rural highway bordered by dense deciduous forest and open grassy fields matches the US South/Midwest."",
+  ""country"": ""US"",
+  ""latitude"": 34.8,
+  ""longitude"": -92.3
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),34.7825,-91.3542,451.771,US,True,,stop,0.002154,1226,35,0,1.12,"```json
+{""country"": ""US"", ""latitude"": 34.7825, ""longitude"": -91.3542}
+```"
+mistralai/mistral-medium-3-5,no-CoT,30.4518,-87.2169,477.27,US,True,,stop,0.0014115,786,31,0,1.1,"{""country"": ""US"", ""latitude"": 30.4518, ""longitude"": -87.2169}"
+google/gemma-4-31b-it,no-CoT,32.8,-96.8,490.074,US,True,,stop,6.108e-05,404,30,0,5.98,"```json
+{""country"": ""US"", ""latitude"": 32.8, ""longitude"": -96.8}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,35.1234,-90.5678,506.019,US,True,,stop,0.00034185,585,31,0,3.79,"{""country"": ""US"", ""latitude"": 35.1234, ""longitude"": -90.5678}"
+google/gemini-3.1-pro-preview,no-CoT,35.5,-90.0,562.928,US,True,,stop,0.0028,1226,29,0,2.48,"```json
+{""country"": ""US"", ""latitude"": 35.5, ""longitude"": -90.0}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,33.430931091308594,-85.97362518310547,655.324,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,30.5,-84.5,736.231,US,True,,stop,9.54576e-05,820,25,0,1.3,"{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -84.5}"
+minimax/minimax-m3,no-CoT,30.5,-84.3,755.337,US,True,,stop,0.00024012,906,22,0,2.1,"{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -84.3}{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -84.3}"
+x-ai/grok-4.3,no-CoT,37.0902,-95.7129,773.022,US,True,,stop,0.0007384,704,24,0,0.78,"{""country"": ""US"", ""latitude"": 37.0902, ""longitude"": -95.7129}"
+xiaomi/mimo-v2.5,CoT,32.85,-83.65,838.807,US,True,,stop,0.0001697976,899,251,161,3.35,"{""reasoning"": ""The road markings (solid yellow left line, dashed white right lines) and right-hand traffic indicate a standard US highway. The vegetation (green deciduous trees and grass), flat terrain, W-beam guardrails, and yellow diamond sign style strongly point to the southeastern United States."", ""country"": ""US"", ""latitude"": 32.85, ""longitude"": -83.65}"
+anthropic/claude-opus-4.8,CoT,30.5,-83.0,879.526,US,True,,stop,0.00687,949,85,0,9.78,"{""reasoning"": ""Yellow left edge line, wide grassy median with crossover, US-style highway and yellow diamond sign suggest rural southeastern US interstate."", ""country"": ""US"", ""latitude"": 30.5, ""longitude"": -83.0}"
+google/gemini-3.1-pro-preview,CoT,38.5,-88.9,909.391,US,True,,stop,0.005364,1308,229,144,3.75,"{
+  ""reasoning"": ""The yellow left edge line, dashed white lane dividers, and yellow diamond warning sign strongly indicate a divided highway in the United States. The flat, green landscape with deciduous trees and wide grassy median is typical of the Midwest or South."",
+  ""country"": ""US"",
+  ""latitude"": 38.5,
+  ""longitude"": -88.9
+}"
+anthropic/claude-opus-4.8,no-CoT,30.5,-82.5,927.29,US,True,,stop,0.004815,818,29,0,2.13,"{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -82.5}"
+minimax/minimax-m3,CoT,31.6,-82.1,963.752,US,True,,stop,0.00083742,997,497,503,16.67,"{""reasoning"": ""Right-hand traffic with American-style yellow edge line, white dashed lane dividers, yellow diamond warning sign, flat coastal-plain terrain, dense pine/hardwood forest, and wooden guardrails/utility poles are characteristic of the US southeastern coastal plain, likely Georgia or the Carolinas."", ""country"": ""US"", ""latitude"": 31.6, ""longitude"": -82.1}"
+qwen/qwen3.5-9b,no-CoT,39.7391,-84.1911,1231.561,US,True,,stop,6.325e-05,586,31,0,4.21,"{""country"": ""US"", ""latitude"": 39.7391, ""longitude"": -84.1911}"
+google/gemini-3.5-flash,CoT (effort=high),35.5012,-77.5234,1461.1,US,True,,stop,0.0087465,1307,754,674,6.73,"{""reasoning"": ""The yellow diamond warning sign, yellow left shoulder line, and white right shoulder line indicate a divided highway in the United States. The flat terrain with dense green deciduous forests suggests a location in the eastern US, likely North Carolina."", ""country"": ""US"", ""latitude"": 35.5012, ""longitude"": -77.5234}"
+google/gemini-3.5-flash,CoT (effort=medium),35.8254,-77.0215,1515.053,US,True,,stop,0.0059745,1307,446,368,11.58,"```json
+{""reasoning"": ""The flat terrain, dense green deciduous vegetation, wide grassy median, and yellow diamond warning sign are highly characteristic of a divided highway in the eastern United States, particularly in the coastal plain region."", ""country"": ""US"", ""latitude"": 35.8254, ""longitude"": -77.0215}
+```"
+google/gemini-3.5-flash,CoT (effort=low),35.8542,-77.0215,1516.013,US,True,,stop,0.004023,1308,229,144,8.86,"{""reasoning"": ""The road markings with a yellow left shoulder line and white right shoulder line, along with the yellow diamond warning sign, indicate the United States. The flat, lush green landscape with dense deciduous trees suggests a location in the eastern US, likely North Carolina."", ""country"": ""US"", ""latitude"": 35.8542, ""longitude"": -77.0215}"
+qwen/qwen3.6-35b-a3b,no-CoT,39.7392,-104.9903,1527.81,US,True,,stop,0.00011975,585,32,0,3.68,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+mistralai/mistral-small-2603,no-CoT,40.0028,-105.2621,1563.945,US,True,,stop,0.000171375,786,32,0,1.18,"{""country"": ""US"", ""latitude"": 40.0028, ""longitude"": -105.2621}"
+google/gemma-4-26b-a4b-it,no-CoT,38.8977,-77.0365,1647.946,US,True,,stop,5.668e-05,404,36,0,8.02,"```json
+{""country"": ""US"", ""latitude"": 38.8977, ""longitude"": -77.0365}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,40.0583,-76.3055,1766.407,US,True,,stop,0.0002691,585,39,0,1.35,"{
+  ""country"": ""US"",
+  ""latitude"": 40.0583,
+  ""longitude"": -76.3055
+}"
+qwen/qwen3.5-27b,no-CoT,41.523611,-73.955833,2019.609,US,True,,stop,0.00027716,586,48,0,1.83,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 41.523611,
+  ""longitude"": -73.955833
+}
+```"
+openai/gpt-5.5,CoT,45.3186,-75.0879,2194.335,CA,True,,stop,0.022045,755,609,515,21.22,"{""reasoning"":""The right-hand divided highway with yellow left shoulder line, white lane markings, North American yellow diamond warning signs, and flat lush temperate farmland/woodlots strongly suggest rural eastern Canada. The roadscape best matches Ontario/Quebec-style 400-series/Autoroute corridors, especially Highway 417/401 in eastern Ontario."",""country"":""CA"",""latitude"":45.3186,""longitude"":-75.0879}"
+qwen/qwen3.6-27b,no-CoT,44.2663,-72.5896,2277.545,US,True,,stop,0.0002279,585,31,0,13.1,"{""country"": ""US"", ""latitude"": 44.2663, ""longitude"": -72.5896}"
+openai/gpt-5.5,no-CoT,45.4173,-73.1928,2315.067,CA,True,,stop,0.00411,678,24,0,1.44,"{""country"":""CA"",""latitude"":45.4173,""longitude"":-73.1928}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.26,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.47,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,13.02,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.2,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,

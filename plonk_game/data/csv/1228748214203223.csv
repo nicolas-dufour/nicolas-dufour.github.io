@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,43.693832289606426,42.67860013104239,0.0,RU,True,,,,,,,,"Kislovodsk, None, Stavropol'skiy, RU"
+google/gemma-4-31b-it,no-CoT,42.35,43.45,162.051,GE,True,,stop,6.936e-05,404,32,0,3.89,"```json
+{""country"": ""GE"", ""latitude"": 42.35, ""longitude"": 43.45}
+```"
+google/gemini-3.1-pro-preview,CoT,43.65,40.25,195.381,RU,True,,stop,0.00522,1308,217,138,10.96,"{
+  ""reasoning"": ""The black and white painted concrete barriers and the dashcam timestamp style are highly characteristic of Russia. The mountainous terrain with lush green vegetation and rocky cliffs strongly suggests the Caucasus region in southern Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 43.65,
+  ""longitude"": 40.25
+}"
+google/gemini-3.1-pro-preview,no-CoT,43.65,40.25,195.381,RU,True,,stop,0.002822,1225,31,0,2.77,"```json
+{""country"": ""RU"", ""latitude"": 43.65, ""longitude"": 40.25}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),42.6183,44.6211,197.804,GE,True,,stop,0.0021525,1225,35,0,2.11,"```json
+{""country"": ""GE"", ""latitude"": 42.6183, ""longitude"": 44.6211}
+```"
+google/gemini-3.5-flash,CoT (effort=low),44.1525,40.1922,205.555,RU,True,,stop,0.0051555,1307,355,286,4.09,"{""reasoning"": ""The black-and-white painted roadside barriers, lush deciduous mountain forests, and reddish rocky cliffs are highly characteristic of the Caucasus region, specifically the Western Caucasus in Russia."", ""country"": ""RU"", ""latitude"": 44.1525, ""longitude"": 40.1922}"
+google/gemini-3.5-flash,CoT (effort=high),44.165,40.191,205.977,RU,True,,stop,0.014112,1308,1350,1274,15.48,"```json
+{""reasoning"": ""The distinctive reddish-pink granite cliffs on the right and black-and-white painted road barriers on the left are characteristic of the road through the Granite Canyon in Adygea, Russia."", ""country"": ""RU"", ""latitude"": 44.165, ""longitude"": 40.191}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),44.2512,40.1843,208.994,RU,True,,stop,0.0070815,1307,569,490,12.51,"{""reasoning"": ""The black-and-white painted roadside barriers, lush deciduous mountain forests, and reddish rocky cliffs are highly characteristic of the Caucasus region, specifically the mountainous roads of Adygea or Krasnodar Krai in Russia."", ""country"": ""RU"", ""latitude"": 44.2512, ""longitude"": 40.1843}"
+x-ai/grok-4.3,CoT,41.85,44.75,265.729,GE,True,,stop,0.002549,788,760,681,14.33,"{""reasoning"": ""Right-hand traffic (oncoming vehicle in left lane), concrete Jersey barriers + metal guardrail, arid rocky cliff with scrub/evergreen mix, and Eastern-European dashcam timestamp overlay point to Balkans/Caucasus; terrain and vegetation best match central Georgia."", ""country"": ""GE"", ""latitude"": 41.85, ""longitude"": 44.75}"
+openai/gpt-5.5,CoT,40.7689,44.9086,373.446,AM,True,,stop,0.013435,755,322,242,15.25,"{""reasoning"":""Mountainous, forested Caucasus scenery with right-hand traffic, Soviet-style road geometry/guardrails and white edge markings points most strongly to Armenia. The lush canyon road and rock cuts resemble the M4 corridor through Dilijan National Park toward Ijevan."",""country"":""AM"",""latitude"":40.7689,""longitude"":44.9086}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,40.826663970947266,40.29677200317383,374.21,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,40.81119155883789,40.06667709350586,385.901,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,39.565,46.063,538.308,AM,True,,stop,0.00402,678,21,0,3.11,"{""country"":""AM"",""latitude"":39.565,""longitude"":46.063}"
+google/gemma-4-26b-a4b-it,no-CoT,45.55,25.85,1345.208,,True,,stop,5.588e-05,404,34,0,1.88,"```json
+{""country"": ""RO"", ""latitude"": 45.550 own, ""longitude"": 25.85}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,42.50758743286133,24.71035385131836,1461.895,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,45.35,24.32,1463.827,RO,True,,stop,0.015779376,834,4526,4437,214.0,"{""reasoning"": ""The reddish-brown weathered flysch cliff and dense mixed Carpathian forest are hallmarks of the Southern Carpathians in Romania, while the right-hand traffic road markings, white edge lines, and low metal guardrail style match Romanian DN mountain roads like those in the Olt valley."", ""country"": ""RO"", ""latitude"": 45.3500, ""longitude"": 24.3200}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,42.49995422363281,24.6785831451416,1464.616,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,45.5,24.0,1489.054,RO,True,,stop,0.00030996,755,23,0,14.53,"{""country"": ""RO"", ""latitude"": 45.5, ""longitude"": 24.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,42.38822937011719,24.28896141052246,1498.428,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,45.15,23.35,1539.792,RO,True,,stop,0.0007334,704,22,0,1.32,"{""country"": ""RO"", ""latitude"": 45.15, ""longitude"": 23.35}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.16939926147461,21.98594093322754,1667.597,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,43.8516,19.6511,1843.022,RS,True,,stop,0.0014115,786,31,0,2.02,"{""country"": ""RS"", ""latitude"": 43.8516, ""longitude"": 19.6511}"
+xiaomi/mimo-v2.5,CoT,42.4465,18.7734,1940.019,ME,True,,stop,7.68488e-05,899,264,147,49.78,"{""reasoning"": ""The image shows a two-lane mountain road with white edge lines and dashed center lines, driving on the right. The vegetation (deciduous and coniferous mix), reddish rocky cliff, and general road style strongly resemble the Dinaric Alps, specifically within the Balkans or potentially parts of Italy or Greece, but the specific rock coloration and road markings lean towards Montenegro."", ""country"": ""ME"", ""latitude"": 42.4465, ""longitude"": 18.7734}"
+qwen/qwen3.5-122b-a10b,no-CoT,41.2995,69.2401,2184.401,UZ,True,,stop,0.00021658,585,31,0,2.31,"{""country"": ""UZ"", ""latitude"": 41.2995, ""longitude"": 69.2401}"
+minimax/minimax-m3,CoT,59.4835,6.5125,2995.04,NO,True,,stop,0.00097866,995,618,527,24.27,"{""reasoning"": ""Reddish sandstone cliff face on right with lush green deciduous forest, right-hand drive vehicle, European-style mountain road with retaining wall on left, and the characteristic geological features all point to a Norwegian fjord/mountain region, likely along Route 13 through Suldal or similar western Norway mountain pass."", ""country"": ""NO"", ""latitude"": 59.4835, ""longitude"": 6.5125}"
+xiaomi/mimo-v2.5,no-CoT,43.95,3.57,3107.836,FR,True,,stop,9.57376e-05,820,26,0,1.62,"{""country"": ""FR"", ""latitude"": 43.95, ""longitude"": 3.57}"
+qwen/qwen3.6-27b,no-CoT,42.6057,1.9653,3271.606,ES,True,,stop,0.0002259,585,30,0,21.57,"{""country"": ""ES"", ""latitude"": 42.6057, ""longitude"": 1.9653}"
+anthropic/claude-opus-4.8,no-CoT,42.5634,1.6789,3295.43,AD,True,,stop,0.00489,818,32,0,9.53,"{""country"": ""AD"", ""latitude"": 42.5634, ""longitude"": 1.6789}"
+anthropic/claude-opus-4.8,CoT,42.5462,1.5734,3304.26,AD,True,,stop,0.00727,949,101,0,9.81,"{""reasoning"": ""Mountainous Pyrenees-style terrain with rocky road cut, right-side driving, European guardrail and road markings suggest Andorra/Spanish Pyrenees valley road."", ""country"": ""AD"", ""latitude"": 42.5462, ""longitude"": 1.5734}"
+minimax/minimax-m3,no-CoT,42.55,1.55,3305.978,AD,True,,stop,0.00067842,919,384,412,7.93,"{""country"": ""AD"", ""latitude"": 42.55, ""longitude"": 1.55}"
+qwen/qwen3.6-35b-a3b,no-CoT,42.5462,1.5211,3308.368,FR,True,,stop,0.00011775,585,30,0,3.96,"{""country"": ""FR"", ""latitude"": 42.5462, ""longitude"": 1.5211}"
+qwen/qwen3.5-35b-a3b,no-CoT,42.5982,-0.1234,3435.688,ES,True,,stop,0.0001340625,585,30,0,0.61,"{""country"": ""ES"", ""latitude"": 42.5982, ""longitude"": -0.1234}"
+qwen/qwen3.5-9b,no-CoT,42.5833,-3.6167,3708.925,ES,True,,stop,6.31e-05,586,30,0,6.12,"{""country"": ""ES"", ""latitude"": 42.5833, ""longitude"": -3.6167}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.1234,-3.5678,3797.793,ES,True,,stop,0.000459,585,30,0,17.79,"{""country"": ""ES"", ""latitude"": 40.1234, ""longitude"": -3.5678}"
+qwen/qwen3.5-27b,no-CoT,30.9756,102.8234,5379.981,CN,True,,stop,0.00026936,586,45,0,10.81,"```json
+{
+  ""country"": ""CN"",
+  ""latitude"": 30.9756,
+  ""longitude"": 102.8234
+}
+```"
+mistralai/mistral-small-2603,no-CoT,29.553,103.753,5541.804,CN,True,,stop,0.0001359,786,30,0,1.09,"{""country"": ""CN"", ""latitude"": 29.553, ""longitude"": 103.753}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.18,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,13.0,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.36,

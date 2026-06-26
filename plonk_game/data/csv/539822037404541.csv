@@ -1,0 +1,76 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,24.696480658185,68.734742296307,0.0,PK,True,,,,,,,,"Badin, None, Sindh, PK"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,24.72104835510254,68.66948699951172,7.135,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,24.728559494018555,68.67317199707031,7.17,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,24.99795913696289,68.69371032714844,33.778,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,CoT,25.8234,68.5123,127.289,PK,True,,stop,0.00155818,665,666,562,5.28,"{""reasoning"": ""The landscape features a flat, unpaved road flanked by water bodies and specific vegetation (likely Acacia or Prosopis species) typical of the arid/semi-arid regions of South Asia, particularly the Indus River basin in Pakistan. The hazy sky and general terrain strongly suggest the Sindh province."", ""country"": ""PK"", ""latitude"": 25.8234, ""longitude"": 68.5123}"
+anthropic/claude-opus-4.8,CoT,27.5,68.5,312.617,PK,True,,stop,0.007195,949,98,0,3.25,"{""reasoning"": ""Flat dirt track between waterlogged fields/canals with acacia/kikar trees and hazy sky typical of rural Pakistani/Indian Punjab-Sindh plains."", ""country"": ""PK"", ""latitude"": 27.5, ""longitude"": 68.5}"
+anthropic/claude-opus-4.8,no-CoT,27.5,68.5,312.617,PK,True,,stop,0.00484,818,30,0,3.75,"{""country"": ""PK"", ""latitude"": 27.5, ""longitude"": 68.5}"
+qwen/qwen3.6-35b-a3b,CoT,27.2,71.2,371.798,IN,True,,stop,0.0061438715,665,6254,6159,234.07,"{""reasoning"": ""The reddish soil, unpaved service road running parallel to a canal, and the line of drought-resistant trees (likely Acacia or Prosopis) are characteristic of the Indira Gandhi Canal region in Rajasthan, India. The hazy sky and dry vegetation further support this arid/semi-arid location."", ""country"": ""IN"", ""latitude"": 27.2, ""longitude"": 71.2}"
+qwen/qwen3.6-35b-a3b,no-CoT,27.5,71.5,416.413,IN,True,,stop,0.0039839371,583,4030,4001,19.53,"{""country"": ""IN"", ""latitude"": 27.5, ""longitude"": 71.5}"
+google/gemini-3.1-pro-preview,no-CoT,28.4211,70.3125,442.874,PK,True,,stop,0.00287,1225,35,0,2.73,"```json
+{""country"": ""PK"", ""latitude"": 28.4211, ""longitude"": 70.3125}
+```"
+minimax/minimax-m3,CoT,27.15,72.35,452.886,IN,True,,stop,0.00093906,995,585,509,16.22,"{""reasoning"": ""Flat arid terrain with irrigation canal alongside a dirt road, Prosopis juliflora (mesquite/angrezi babool) trees, and dusty hazy atmosphere are highly characteristic of the Thar Desert fringe in western Rajasthan, India."", ""country"": ""IN"", ""latitude"": 27.15, ""longitude"": 72.35}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,29.36612319946289,70.17815399169922,538.544,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,29.3544,71.6914,594.929,PK,True,,stop,0.0003168,755,25,0,1.84,"{""country"": ""PK"", ""latitude"": 29.3544, ""longitude"": 71.6914}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),30.1575,71.5249,666.681,PK,True,,stop,0.0021525,1225,35,0,1.52,"```json
+{""country"": ""PK"", ""latitude"": 30.1575, ""longitude"": 71.5249}
+```"
+mistralai/mistral-medium-3-5,no-CoT,22.5,75.0,683.426,IN,True,,stop,0.0013665,786,25,0,0.89,"{""country"": ""IN"", ""latitude"": 22.5, ""longitude"": 75.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,30.3753,71.5249,688.698,PK,True,,stop,0.00034185,585,31,0,7.78,"{""country"": ""PK"", ""latitude"": 30.3753, ""longitude"": 71.5249}"
+google/gemma-4-31b-it,no-CoT,30.1234,72.4567,706.355,PK,True,,stop,6.692e-05,404,36,0,9.62,"```json
+{""country"": ""PK"", ""latitude"": 30.1234, ""longitude"": 72.4567}
+```"
+mistralai/mistral-medium-3-5,CoT,25.2138,75.8648,721.018,IN,True,,stop,0.020067,868,2502,2546,30.7,"{""reasoning"": ""Dirt road with acacia-like trees and riverine vegetation suggests rural Indian subcontinent; overcast sky and soil color align with Rajasthan's Chambal River region."", ""country"": ""IN"", ""latitude"": 25.2138, ""longitude"": 75.8648}"
+openai/gpt-5.5,no-CoT,30.1625,72.6905,722.227,PK,True,,stop,0.00408,678,23,0,1.54,"{""country"":""PK"",""latitude"":30.1625,""longitude"":72.6905}"
+qwen/qwen3.5-27b,no-CoT,30.1556,72.8261,728.905,PK,True,,stop,0.0002345,586,44,0,5.92,"```json
+{
+  ""country"": ""PK"",
+  ""latitude"": 30.1556,
+  ""longitude"": 72.8261
+}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,26.8467,75.8012,746.754,IN,True,,stop,0.00021658,585,31,0,0.97,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 75.8012}"
+qwen/qwen3.5-35b-a3b,no-CoT,26.9124,75.7873,747.622,IN,True,,stop,0.000187425,585,31,0,1.76,"{""country"": ""IN"", ""latitude"": 26.9124, ""longitude"": 75.7873}"
+google/gemini-3.1-pro-preview,CoT,31.15,73.15,838.295,PK,True,,stop,0.00547,1307,238,166,11.04,"{
+  ""reasoning"": ""The flat terrain, dirt road alongside a canal, and Acacia-like trees strongly suggest the canal networks of the Punjab or Sindh regions in the Indian subcontinent."",
+  ""country"": ""PK"",
+  ""latitude"": 31.15,
+  ""longitude"": 73.15
+}"
+moonshotai/kimi-k2.6,CoT,31.0,73.5,842.824,PK,True,,stop,0.0071302,832,1939,2149,71.59,"{""reasoning"": ""Raised unpaved road flanked by calm irrigation channels and scattered acacia scrub on a featureless flat plain is characteristic of the canal-irrigated Indus basin in Pakistan's Punjab province."", ""country"": ""PK"", ""latitude"": 31.0, ""longitude"": 73.5}"
+google/gemini-3.5-flash,CoT (effort=medium),29.3512,75.5243,848.317,IN,True,,stop,0.0058935,1307,437,365,11.64,"{""reasoning"": ""The dirt road running alongside an irrigation canal lined with Prosopis juliflora trees under a hazy sky is highly characteristic of the semi-arid plains of northwestern India, particularly Haryana or Rajasthan."", ""country"": ""IN"", ""latitude"": 29.3512, ""longitude"": 75.5243}"
+google/gemini-3.5-flash,CoT (effort=high),31.418,73.079,860.187,PK,True,,stop,0.009045,1308,787,714,6.18,"{""reasoning"": ""The flat terrain, dirt road running parallel to an irrigation canal, and characteristic acacia-like trees (Kikar/Mesquite) are highly indicative of the agricultural plains of the Punjab region in Pakistan."", ""country"": ""PK"", ""latitude"": 31.418, ""longitude"": 73.079}"
+qwen/qwen3.5-397b-a17b,CoT,31.42,73.1,861.399,PK,True,,stop,0.0094374,665,2524,2440,27.52,"{
+""reasoning"": ""The flat alluvial terrain featuring a dirt road running alongside an irrigation canal and Acacia trees is highly characteristic of the Punjab province in Pakistan, supported by the hazy sky typical of the region's winter climate."",
+""country"": ""PK"",
+""latitude"": 31.42,
+""longitude"": 73.10
+}"
+google/gemini-3.5-flash,CoT (effort=low),31.3521,73.4152,870.808,PK,True,,stop,0.0035535,1307,177,117,9.48,"{""reasoning"": ""The flat terrain, canal irrigation system, and Acacia-like trees are highly characteristic of the rural plains of Punjab, Pakistan."", ""country"": ""PK"", ""latitude"": 31.3521, ""longitude"": 73.4152}"
+minimax/minimax-m3,no-CoT,28.5,77.2,941.58,IN,True,,stop,0.00026808,904,23,0,5.65,"{""country"": ""IN"", ""latitude"": 28.5, ""longitude"": 77.2}"
+mistralai/mistral-small-2603,no-CoT,28.6139,77.209,947.742,IN,True,,stop,0.0001359,786,30,0,8.68,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,30.756412506103516,61.814300537109375,957.663,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,29.35,76.95,963.886,IN,True,,stop,0.0022406,788,556,481,27.09,"{""reasoning"": ""Unpaved dirt road running parallel to a canal/river with dry brown scrub, acacia/neem-style trees, and hazy South Asian sky/atmosphere; no vehicles or signs but layout and vegetation match northern Indian plains canal banks."", ""country"": ""IN"", ""latitude"": 29.35, ""longitude"": 76.95}"
+x-ai/grok-4.3,no-CoT,26.85,80.92,1242.88,IN,True,,stop,0.0008678,704,22,0,0.97,"{""country"": ""IN"", ""latitude"": 26.85, ""longitude"": 80.92}"
+qwen/qwen3.5-9b,no-CoT,26.8467,80.9462,1245.398,IN,True,,stop,6.325e-05,586,31,0,10.88,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+qwen/qwen3.6-27b,no-CoT,26.8467,80.9462,1245.398,IN,True,,stop,0.0002279,585,31,0,8.45,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+xiaomi/mimo-v2.5,no-CoT,26.85,80.95,1245.824,IN,True,,stop,9.60176e-05,820,27,0,2.95,"{""country"": ""IN"", ""latitude"": 26.85, ""longitude"": 80.95}"
+openai/gpt-5.5,CoT,24.8465,55.3628,1349.64,AE,True,,stop,0.018025,755,475,384,13.44,"{""reasoning"":""Flat arid landscape with gravel tracks, ghaf/mesquite-like trees and artificial-looking lakes/canals on both sides strongly resembles the desert wetland roads around Dubai’s Al Qudra Lakes. Lack of road markings or signage makes it uncertain, but the vegetation and managed water bodies fit the UAE best."",""country"":""AE"",""latitude"":24.8465,""longitude"":55.3628}"
+qwen/qwen3.6-27b,CoT,30.85,30.95,3761.771,EG,True,,stop,0.011756301,666,3648,3199,56.89,"```json
+{
+""reasoning"": ""The flat topography, unpaved rural road running parallel to a canal, and the presence of Acacia trees (likely Acacia nilotica) are characteristic of the Nile Delta region in Egypt."",
+""country"": ""EG"",
+""latitude"": 30.85,
+""longitude"": 30.95
+}
+```"
+xiaomi/mimo-v2.5,CoT,14.2,33.5,3861.148,SD,True,,stop,0.0001714776,899,257,155,10.36,"{""reasoning"": ""The image depicts a dirt road flanked by canals and lined with trees (likely Acacia or Tamarisk), characteristic of the irrigated agricultural landscapes in the Nile Valley or similar regions in Sudan. The specific layout of the canals and the arid, flat terrain with this vegetation profile strongly points to the Gezira Scheme in Sudan."", ""country"": ""SD"", ""latitude"": 14.2, ""longitude"": 33.5}"
+mistralai/mistral-small-2603,CoT,12.8797,121.7855,5702.052,PH,True,,stop,0.00053544,868,823,907,12.59,"{""reasoning"": ""Coastal vegetation and sandy soil suggest a tropical coastal region; bollard style and road appearance are common in Southeast Asia."", ""country"": ""PH"", ""latitude"": 12.8797, ""longitude"": 121.7855}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7868.242,,True,True,,,,,,9.93,
+google/gemma-4-31b-it,CoT,40.7128,-74.006,11786.29,US,True,,stop,0.00128534,492,2210,2153,8.98,"```json
+{""reasoning"": ""No image provided; providing a default coordinate as per the instruction to always commit."", ""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.0060}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-6.718705177307129,-79.6860122680664,16105.633,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.09,

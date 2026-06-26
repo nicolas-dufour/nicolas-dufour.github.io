@@ -1,0 +1,76 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,45.178921366564,-0.53698300439518,0.0,FR,True,,,,,,,,"Saint-Christoly-de-Blaye, Departement de la Gironde, Aquitaine, FR"
+google/gemini-3.1-pro-preview,no-CoT,45.165,-0.502,3.149,FR,True,,stop,0.007718,1189,445,413,16.93,"```json
+{""country"": ""FR"", ""latitude"": 45.165, ""longitude"": -0.502}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.31671142578125,-0.3141064941883087,23.22,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,45.37287521362305,-0.3431641161441803,26.365,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,45.3733024597168,-0.340456485748291,26.526,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,44.8378,-0.5792,38.076,FR,True,,stop,0.001176,634,30,0,1.33,"{""country"": ""FR"", ""latitude"": 44.8378, ""longitude"": -0.5792}"
+qwen/qwen3.5-35b-a3b,no-CoT,44.6234,-0.6789,62.774,FR,True,,stop,0.0001158625,473,30,0,0.74,"{""country"": ""FR"", ""latitude"": 44.6234, ""longitude"": -0.6789}"
+qwen/qwen3.5-9b,no-CoT,45.7536,-0.6253,64.271,FR,True,,stop,5.19e-05,474,30,0,6.41,"{""country"": ""FR"", ""latitude"": 45.7536, ""longitude"": -0.6253}"
+x-ai/grok-4.3,CoT,44.57,-0.08,76.689,FR,True,,stop,0.0024606,676,700,629,6.81,"{""reasoning"": ""French-language directional signs for Saint-André-du-Bois and Sauveterre-de-Guyenne, right-side driving, European bollards and road markings, rural Gironde vegetation and architecture identify the location as SW France."", ""country"": ""FR"", ""latitude"": 44.57, ""longitude"": -0.08}"
+openai/gpt-5.5,CoT,45.2764,0.5489,85.727,FR,True,,stop,0.014835,621,391,303,10.71,"{""reasoning"":""French-style white directional signs with black text and a yellow departmental-road plaque, plus right-side driving and the red 'sens interdit' sign point strongly to rural France. The wooded, gently rolling landscape and tile-roof farm building fit Nouvelle-Aquitaine/Dordogne more than drier Mediterranean regions."",""country"":""FR"",""latitude"":45.2764,""longitude"":0.5489}"
+moonshotai/kimi-k2.6,CoT,44.65,0.5,100.63,FR,True,,stop,0.017622855,681,4773,5091,51.14,"{""reasoning"": ""French road signage with yellow-band destination panels and white departmental route markers is decisive. The rural rolling hills, deciduous forest, and farm architecture are characteristic of southwestern France."", ""country"": ""FR"", ""latitude"": 44.65, ""longitude"": 0.5}"
+google/gemini-3.1-pro-preview,CoT,44.065,-0.285,125.457,FR,True,,stop,0.009862,1271,610,521,30.26,"{
+  ""reasoning"": ""The directional signs point to Lencouacq, Saint-Justin, Roquefort, and Saint-Gor, which are communes in the Landes department of southwestern France. The road markings and sign styles confirm this is France."",
+  ""country"": ""FR"",
+  ""latitude"": 44.065,
+  ""longitude"": -0.285
+}"
+anthropic/claude-opus-4.8,CoT,44.05,-0.6,125.629,FR,True,,stop,0.00606,797,83,0,9.7,"{""reasoning"": ""French-style directional signage and white road markings, with rural deciduous/pine landscape typical of the Landes/Gascony region in southwest France."", ""country"": ""FR"", ""latitude"": 44.05, ""longitude"": -0.6}"
+google/gemini-3.5-flash,CoT (effort=high),44.0545,-0.224,127.46,FR,True,,stop,0.037242,1272,3926,3836,29.93,"{""reasoning"": ""The road signs indicate French departmental roads (D-roads) in the Landes department, specifically pointing towards Lencouacq, Saint-Gor, Roquefort, and Saint-Justin. This intersection is located on the D626 just east of Saint-Gor."", ""country"": ""FR"", ""latitude"": 44.0545, ""longitude"": -0.224}"
+anthropic/claude-opus-4.8,no-CoT,44.0,-0.5,131.123,FR,True,,stop,0.00408,666,30,0,2.4,"{""country"": ""FR"", ""latitude"": 44.0, ""longitude"": -0.5}"
+qwen/qwen3.6-35b-a3b,CoT,46.35,-1.15,138.628,FR,True,,stop,0.00231597535,553,2307,2190,131.22,"```json
+{
+  ""reasoning"": ""The image features classic French road infrastructure, including white rectangular town entry signs with black text, a yellow departmental road sign (D-roads), and white bollards lining the road edge. The vegetation and architecture (tiled roof, stucco walls) are consistent with rural Western France, likely the Vendée or Charentes-Maritime region."",
+  ""country"": ""FR"",
+  ""latitude"": 46.35,
+  ""longitude"": -1.15
+}
+```"
+minimax/minimax-m3,CoT,43.85,-0.35,148.511,FR,True,,stop,0.00066942,845,395,398,14.18,"{""reasoning"": ""French-style white directional signs with black text, terracotta-tile roof architecture typical of Gascony, right-hand driving on a rural D-road with white edge lines, and lush deciduous vegetation under a clear blue sky all point to southwestern France (Landes/Gers region)."", ""country"": ""FR"", ""latitude"": 43.85, ""longitude"": -0.35}"
+google/gemini-3.5-flash,CoT (effort=medium),43.7952,-0.3915,154.295,FR,True,,stop,0.0144975,1271,1399,1303,15.19,"```json
+{""reasoning"": ""The road signs feature the yellow cartouche of a French Departmental road (D-road) pointing towards Saint-Sever and Grenade-sur-l'Adour in the Landes department of southwestern France, characterized by flat terrain, deciduous trees, and low-pitched tiled roofs."", ""country"": ""FR"", ""latitude"": 43.7952, ""longitude"": -0.3915}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,45.515560150146484,1.4115654230117798,156.805,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),43.7612,-0.4251,157.893,FR,True,,stop,0.0052005,1271,366,301,3.78,"{""reasoning"": ""The road signs indicate directions to Grenade-sur-l'Adour and Saint-Sever, which are located in the Landes department of southwestern France."", ""country"": ""FR"", ""latitude"": 43.7612, ""longitude"": -0.4251}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,45.50907516479492,1.4727765321731567,161.298,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,45.11605453491211,1.5498137474060059,163.8,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.641254,-1.312458,181.735,FR,True,,stop,0.0021255,1189,38,0,1.47,"```json
+{""country"": ""FR"", ""latitude"": 43.641254, ""longitude"": -1.312458}
+```"
+moonshotai/kimi-k2.6,no-CoT,43.5,-1.0,190.283,FR,True,,stop,0.00061429,603,23,0,8.63,"{""country"": ""FR"", ""latitude"": 43.5, ""longitude"": -1.0}"
+qwen/qwen3.5-397b-a17b,CoT,44.8165,1.8365,190.92,FR,True,,stop,0.02133885,553,9027,8915,157.72,"{
+""reasoning"": ""The image features white delineator posts (jalons) and road signage typical of rural France, specifically a directional sign with a yellow header (indicating a departmental road number like D41) pointing towards 'Saint-Céré'. The architecture (tiled roof) and vegetation are consistent with the Lot department in the Occitanie region."",
+""country"": ""FR"",
+""latitude"": 44.8165,
+""longitude"": 1.8365
+}"
+openai/gpt-5.5,no-CoT,43.3469,-0.5972,203.768,FR,True,,stop,0.00344,544,24,0,1.51,"{""country"":""FR"",""latitude"":43.3469,""longitude"":-0.5972}"
+qwen/qwen3.6-27b,no-CoT,46.5833,1.3333,212.933,FR,True,,stop,0.000231849,474,30,0,1.42,"{""country"": ""FR"", ""latitude"": 46.5833, ""longitude"": 1.3333}"
+xiaomi/mimo-v2.5,CoT,43.332,-1.407,216.738,FR,True,,stop,0.0016451176,787,5576,5481,114.78,"```json
+{""reasoning"": ""The distinctive yellow background of the town entry sign is unique to the Basque Country in southwestern France, and the white directional sign points to 'Bayonne' and 'Cambo', identifying the road as the D932 entering the village of Itxassou."", ""country"": ""FR"", ""latitude"": 43.332, ""longitude"": -1.407}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,46.85,1.25,231.438,FR,True,,stop,0.000245805,473,26,0,2.7,"{""country"": ""FR"", ""latitude"": 46.85, ""longitude"": 1.25}"
+minimax/minimax-m3,no-CoT,43.6047,1.4442,235.402,FR,True,,stop,0.00019416,752,25,0,5.05,"{""country"": ""FR"", ""latitude"": 43.6047, ""longitude"": 1.4442}"
+qwen/qwen3.6-35b-a3b,no-CoT,47.2345,-1.5678,241.937,FR,True,,stop,0.00015575,473,30,0,0.61,"{""country"": ""FR"", ""latitude"": 47.2345, ""longitude"": -1.5678}"
+x-ai/grok-4.3,no-CoT,47.289,-1.552,247.272,FR,True,,stop,0.0005934,592,22,0,0.8,"{""country"": ""FR"", ""latitude"": 47.289, ""longitude"": -1.552}"
+qwen/qwen3.5-27b,no-CoT,47.3289,-1.5432,251.267,FR,True,,stop,0.000139035,473,30,0,1.27,"{""country"": ""FR"", ""latitude"": 47.3289, ""longitude"": -1.5432}"
+google/gemma-4-31b-it,CoT,44.142,3.135,312.435,FR,True,,stop,0.00033799,492,797,639,19.88,"{""reasoning"": ""French directional signs mentioning 'Sévérac' and 'La Roqueste' combined with red-tiled roofs and rural landscape pinpoint the Aveyron department in southern France."", ""country"": ""FR"", ""latitude"": 44.142, ""longitude"": 3.135}"
+qwen/qwen3.5-122b-a10b,no-CoT,47.9029,1.8384,353.159,FR,True,,stop,0.0002331,473,38,0,8.27,"{
+  ""country"": ""FR"",
+  ""latitude"": 47.9029,
+  ""longitude"": 1.8384
+}"
+mistralai/mistral-small-2603,CoT,48.5,-1.5,376.473,FR,True,,stop,0.00040944,716,615,683,5.04,"{""reasoning"": ""Right-hand traffic combined with European-style triangular warning signs and blue circular mandatory direction signs indicate Western Europe. The lush green rolling hills and temperate climate point to regions like Brittany or Normandy in France."", ""country"": ""FR"", ""latitude"": 48.5, ""longitude"": -1.5}"
+xiaomi/mimo-v2.5,no-CoT,43.65,3.85,387.63,FR,True,,stop,8.00576e-05,708,26,0,3.96,"{""country"": ""FR"", ""latitude"": 43.65, ""longitude"": 3.85}"
+google/gemma-4-31b-it,no-CoT,48.45,-3.12,413.382,FR,True,,stop,6.924e-05,406,31,0,2.28,"```json
+{""country"": ""FR"", ""latitude"": 48.45, ""longitude"": -3.12}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5023.945,,True,True,,,,,,14.74,
+mistralai/mistral-small-2603,no-CoT,38.9339,-77.1774,6124.531,US,True,,stop,0.0001137,634,31,0,2.36,"{""country"": ""US"", ""latitude"": 38.9339, ""longitude"": -77.1774}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.13,
+qwen/qwen3.5-122b-a10b,CoT,,,,,False,,stop,0.011002,553,3369,3369,29.98,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.23,

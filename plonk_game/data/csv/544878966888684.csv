@@ -1,0 +1,75 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,20.396737828542,56.701415298789,0.0,OM,True,,,,,,,,"Hayma', None, Al Wusta, OM"
+x-ai/grok-4.3,CoT,24.386,54.583,494.14,AE,True,,stop,0.002004,676,598,533,6.32,"{""reasoning"": ""Flat, barren sandy desert with no vegetation, hazy blue sky, straight multi-lane asphalt highway with minimal markings and distant power lines match Arabian Peninsula highways; right-side driving implied by road layout."", ""country"": ""AE"", ""latitude"": 24.386, ""longitude"": 54.583}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,23.585203170776367,50.824378967285156,701.918,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,23.993009567260742,50.958194732666016,713.673,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,25.0681,51.2746,761.099,QA,True,,stop,0.00341,544,23,0,1.35,"{""country"":""QA"",""latitude"":25.0681,""longitude"":51.2746}"
+openai/gpt-5.5,CoT,25.3156,51.1132,791.625,QA,True,,stop,0.012855,621,325,248,8.23,"{""reasoning"":""Flat, featureless Gulf desert with right-side driving and wide dark asphalt/graded sandy shoulders strongly suggests Qatar rather than North Africa or Australia. The extremely low relief and barren limestone-sand landscape fit the open highways west of Doha toward Dukhan."",""country"":""QA"",""latitude"":25.3156,""longitude"":51.1132}"
+qwen/qwen3.5-397b-a17b,CoT,23.2451,46.7219,1077.43,SA,True,,stop,0.00877475,553,2438,2303,73.84,"{
+""reasoning"": ""The white dashed center line combined with right-hand traffic eliminates the US (yellow lines) and left-hand traffic nations, pointing towards the Middle East or Europe. The completely flat, barren, sandy terrain with zero vegetation and intense blue sky is characteristic of the highways in central Saudi Arabia, likely south of Riyadh."",
+""country"": ""SA"",
+""latitude"": 23.2451,
+""longitude"": 46.7219
+}"
+moonshotai/kimi-k2.6,CoT,24.6,46.8,1118.947,SA,True,,stop,0.011507148,682,3296,3230,175.08,"{""reasoning"": ""Flat, arid desert highway with beige sand, dashed white center line, and featureless terrain under a hazy blue sky is characteristic of Saudi Arabia's vast interior desert road network."", ""country"": ""SA"", ""latitude"": 24.6, ""longitude"": 46.8}"
+google/gemma-4-31b-it,no-CoT,24.1234,46.5678,1121.707,SA,True,,stop,6.378e-05,406,36,0,4.19,"```json
+{""country"": ""SA"", ""latitude"": 24.1234, ""longitude"": 46.5678}
+```"
+qwen/qwen3.6-35b-a3b,CoT,24.7136,46.6753,1135.467,SA,True,,stop,0.0043574791,553,4422,4327,15.26,"```json
+{
+  ""reasoning"": ""The vast, flat, arid desert landscape with light brown sandy soil and a straight paved road is highly characteristic of the Arabian Peninsula, specifically Saudi Arabia. The clear blue sky and lack of vegetation further support this location."",
+  ""country"": ""SA"",
+  ""latitude"": 24.7136,
+  ""longitude"": 46.6753
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,24.7136,46.6753,1135.467,SA,True,,stop,0.00025701,473,31,0,1.41,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+x-ai/grok-4.3,no-CoT,24.7136,46.6753,1135.467,SA,True,,stop,0.0007328,592,24,0,1.16,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+google/gemma-4-31b-it,CoT,23.85,46.21,1146.459,SA,True,,stop,0.00038963,492,961,850,23.55,"```json
+{""reasoning"": ""The image shows an extremely flat, arid desert landscape with a paved highway and light-colored soil, which is highly characteristic of the interior regions of Saudi Arabia."", ""country"": ""SA"", ""latitude"": 23.85, ""longitude"": 46.21}
+```"
+anthropic/claude-opus-4.8,no-CoT,24.5,46.0,1190.118,SA,True,,stop,0.00408,666,30,0,9.32,"{""country"": ""SA"", ""latitude"": 24.5, ""longitude"": 46.0}"
+moonshotai/kimi-k2.6,no-CoT,24.5,45.0,1285.54,SA,True,,stop,0.00061429,603,23,0,14.84,"{""country"": ""SA"", ""latitude"": 24.5, ""longitude"": 45.0}"
+anthropic/claude-opus-4.8,CoT,26.5,45.0,1372.065,SA,True,,stop,0.006735,797,110,0,10.02,"{""reasoning"": ""Flat sandy desert plain with sparse gravel and a straight highway under a clear sky, typical of Arabian Peninsula desert; piles of sand along roadside suggest road maintenance in Saudi Arabia."", ""country"": ""SA"", ""latitude"": 26.5, ""longitude"": 45.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,28.828689575195312,38.43375015258789,2067.446,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,39.5,59.0,2135.485,TM,True,,stop,0.00019176,752,23,0,4.67,"{""country"": ""TM"", ""latitude"": 39.5, ""longitude"": 59.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,30.747617721557617,36.05754470825195,2362.998,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,30.920724868774414,35.82627487182617,2391.044,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,30.93060874938965,35.803550720214844,2393.471,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),23.2514,32.1258,2553.517,EG,True,,stop,0.0047055,1271,311,244,9.9,"{""reasoning"": ""The extremely flat, barren sandy desert landscape and straight asphalt highway are characteristic of the Western Desert in Egypt, specifically the road between Aswan and Abu Simbel."", ""country"": ""EG"", ""latitude"": 23.2514, ""longitude"": 32.1258}"
+google/gemini-3.5-flash,CoT (effort=medium),23.1234,32.1056,2555.025,EG,True,,stop,0.0056055,1271,411,342,6.54,"{""reasoning"": ""The extremely flat, featureless desert landscape with a straight asphalt road is highly characteristic of the Western Desert in Egypt, specifically the highway between Aswan and Abu Simbel."", ""country"": ""EG"", ""latitude"": 23.1234, ""longitude"": 32.1056}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),28.234167,30.754444,2763.066,EG,True,,stop,0.002136,1190,39,0,7.77,"```json
+{""country"": ""EG"", ""latitude"": 28.234167, ""longitude"": 30.754444}
+```"
+google/gemini-3.1-pro-preview,no-CoT,29.5,29.5,2914.394,EG,True,,stop,0.002726,1189,29,0,2.4,"```json
+{""country"": ""EG"", ""latitude"": 29.5, ""longitude"": 29.5}
+```"
+google/gemini-3.5-flash,CoT (effort=high),28.5231,29.1245,2925.714,EG,True,,stop,0.009594,1272,854,790,11.85,"{""reasoning"": ""The extremely flat, pale sandy desert landscape and asphalt road are characteristic of the Western Desert in Egypt, specifically along the highway connecting the oases."", ""country"": ""EG"", ""latitude"": 28.5231, ""longitude"": 29.1245}"
+google/gemini-3.1-pro-preview,CoT,28.5,29.0,2937.105,EG,True,,stop,0.006036,1272,291,220,22.42,"{
+  ""reasoning"": ""The extremely flat, barren sandy desert and the style of the paved road with a dashed white center line are characteristic of desert highways in North Africa, particularly Egypt."",
+  ""country"": ""EG"",
+  ""latitude"": 28.5,
+  ""longitude"": 29.0
+}"
+qwen/qwen3.6-27b,no-CoT,40.15,85.5,3503.775,CN,True,,stop,0.00023488,474,26,0,0.83,"{""country"": ""CN"", ""latitude"": 40.15, ""longitude"": 85.5}"
+minimax/minimax-m3,CoT,50.2,70.1,3517.651,KZ,True,,stop,0.00064866,843,381,313,8.91,"{""reasoning"": ""Flat arid steppe landscape with white roadside delineator posts typical of post-Soviet highway design, bright clear sky with scattered cumulus, and completely treeless terrain strongly indicate the Kazakh steppe."", ""country"": ""KZ"", ""latitude"": 50.2, ""longitude"": 70.1}"
+xiaomi/mimo-v2.5,no-CoT,39.0,90.0,3790.627,CN,True,,stop,7.97776e-05,708,25,0,2.95,"{""country"": ""CN"", ""latitude"": 39.0, ""longitude"": 90.0}"
+xiaomi/mimo-v2.5,CoT,28.5,19.0,3904.263,LY,True,,stop,0.0001874376,787,370,270,11.16,"{""reasoning"": ""The image shows a vast, flat desert landscape with a straight paved road, minimal vegetation, and no visible signage or distinctive architecture, which are typical of arid regions in North Africa or Central Asia. The lack of human-made structures and the clear sky suggest a remote desert area, likely in a country with extensive desert terrain such as Libya."", ""country"": ""LY"", ""latitude"": 28.5, ""longitude"": 19.0}"
+qwen/qwen3.6-27b,CoT,36.02,93.18,3942.919,CN,True,,stop,0.01476608,554,4559,3918,311.4,"{""reasoning"": ""The image displays a straight, paved highway stretching through an extremely flat, arid, and barren landscape under a bright blue sky, which is characteristic of the Qinghai-Tibet Highway (G109) in the Qaidam Basin region of Qinghai, China. The sun's position (top left) suggests a midday shot facing roughly East (towards Xining/Golmud), consistent with the highway's orientation in this area."", ""country"": ""CN"", ""latitude"": 36.02, ""longitude"": 93.18}"
+qwen/qwen3.5-27b,no-CoT,40.4583,96.5217,4369.268,CN,True,,stop,0.0002065,474,44,0,11.32,"```json
+{
+  ""country"": ""CN"",
+  ""latitude"": 40.4583,
+  ""longitude"": 96.5217
+}
+```"
+qwen/qwen3.5-9b,no-CoT,39.6,100.2,4642.609,CN,True,,stop,5.22e-05,474,32,0,4.94,"{""country"": ""CN"", ""latitude"": 39.6000, ""longitude"": 100.2000}"
+qwen/qwen3.6-35b-a3b,no-CoT,27.5,2.0,5571.774,DZ,True,,stop,9.595e-05,473,25,0,3.05,"{""country"": ""DZ"", ""latitude"": 27.5, ""longitude"": 2.0}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.2345,112.5678,5704.303,CN,True,,stop,0.00010295,473,32,0,8.3,"{""country"": ""CN"", ""latitude"": 41.2345, ""longitude"": 112.5678}"
+mistralai/mistral-small-2603,CoT,37.5,-5.5,6228.713,ES,True,,stop,0.00068784,716,1079,1174,13.76,"{""reasoning"": ""Triangular 'Give Way' sign with red border and right-hand road markings indicate a European country driving on the right; flat, arid terrain suggests southern Spain."", ""country"": ""ES"", ""latitude"": 37.5, ""longitude"": -5.5}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6563.899,,True,True,,,,,,19.47,
+mistralai/mistral-medium-3-5,no-CoT,35.0844,-106.6504,13600.451,US,True,,stop,0.001191,634,32,0,2.22,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -106.6504}"
+mistralai/mistral-small-2603,no-CoT,36.1699,-115.1398,13666.872,US,True,,stop,0.000142875,634,32,0,1.07,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.5-122b-a10b,no-CoT,34.8526,-116.5453,13830.352,US,True,,stop,0.0002187,473,32,0,2.0,"{""country"": ""US"", ""latitude"": 34.8526, ""longitude"": -116.5453}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.19,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,

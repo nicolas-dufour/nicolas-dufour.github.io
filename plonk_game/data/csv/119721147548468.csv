@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,41.24337817902181,81.16535383936738,0.0,CN,True,,,,,,,,"Qarqi, None, Xinjiang Uygur Zizhiqu, CN"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9270.164,,True,True,,,,,,13.07,
+mistralai/mistral-medium-3-5,no-CoT,42.3601,-71.0589,10309.581,US,True,,stop,0.0014115,786,31,0,1.91,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.5-27b,no-CoT,42.3601,-71.0589,10309.581,US,True,,stop,0.00026676,586,44,0,1.64,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 42.3601,
+  ""longitude"": -71.0589
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,42.3601,-71.0589,10309.581,US,True,,stop,0.00011875,585,31,0,3.49,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.5-9b,no-CoT,42.3601,-71.0589,10309.581,US,True,,stop,6.325e-05,586,31,0,2.08,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+xiaomi/mimo-v2.5,no-CoT,42.3601,-71.0589,10309.581,US,True,,stop,9.71376e-05,820,31,0,1.0,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+openai/gpt-5.5,no-CoT,42.3545,-71.5432,10324.013,US,True,,stop,0.00411,678,24,0,1.16,"{""country"":""US"",""latitude"":42.3545,""longitude"":-71.5432}"
+anthropic/claude-opus-4.8,no-CoT,42.9,-76.0,10382.832,US,True,,stop,0.004815,818,29,0,9.75,"{""country"": ""US"", ""latitude"": 42.9, ""longitude"": -76.0}"
+x-ai/grok-4.3,no-CoT,41.85,-72.65,10407.73,US,True,,stop,0.0007334,704,22,0,6.81,"{""country"": ""US"", ""latitude"": 41.85, ""longitude"": -72.65}"
+xiaomi/mimo-v2.5,CoT,42.5,-76.0,10425.366,US,True,,stop,0.0004201176,899,1145,1082,65.82,"{""reasoning"": ""The 'SPEED LIMIT 70' sign is characteristic of US highways, and the autumn foliage with deciduous trees points to the northeastern United States."", ""country"": ""US"", ""latitude"": 42.5, ""longitude"": -76.0}"
+qwen/qwen3.6-27b,no-CoT,41.5834,-73.9712,10471.377,US,True,,stop,0.0002279,585,31,0,9.64,"{""country"": ""US"", ""latitude"": 41.5834, ""longitude"": -73.9712}"
+anthropic/claude-opus-4.8,CoT,41.2,-74.3,10520.48,US,True,,stop,0.00697,949,89,0,10.09,"{""reasoning"": ""US-style 'SPEED LIMIT 70' sign, right-hand traffic, fall foliage and deciduous forest suggest northeastern US interstate."", ""country"": ""US"", ""latitude"": 41.2, ""longitude"": -74.3}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),42.8152,-84.5125,10558.487,US,True,,stop,0.002154,1226,35,0,7.37,"```json
+{""country"": ""US"", ""latitude"": 42.8152, ""longitude"": -84.5125}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,40.7589,-73.9851,10558.696,US,True,,stop,0.000185,585,31,0,7.81,"{""country"": ""US"", ""latitude"": 40.7589, ""longitude"": -73.9851}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.7589,-74.0256,10559.777,US,True,,stop,0.0004466,585,31,0,2.38,"{""country"": ""US"", ""latitude"": 40.7589, ""longitude"": -74.0256}"
+google/gemma-4-31b-it,no-CoT,40.7128,-74.006,10564.116,US,True,,stop,6.692e-05,404,36,0,3.17,"```json
+{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.0060}
+```"
+google/gemini-3.1-pro-preview,CoT,42.7325,-84.5555,10568.176,US,True,,stop,0.005784,1308,264,181,307.18,"{
+  ""reasoning"": ""The standard US 'SPEED LIMIT 70' sign, yellow left edge line, and flat terrain with autumn deciduous trees strongly suggest a northern or midwestern US state like Michigan or Ohio."",
+  ""country"": ""US"",
+  ""latitude"": 42.7325,
+  ""longitude"": -84.5555
+}"
+google/gemini-3.1-pro-preview,no-CoT,42.3314,-83.0458,10587.687,US,True,,stop,0.00287,1225,35,0,2.47,"```json
+{""country"": ""US"", ""latitude"": 42.3314, ""longitude"": -83.0458}
+```"
+minimax/minimax-m3,CoT,42.3,-83.5,10598.671,US,True,,stop,0.00136026,995,936,843,24.0,"{""reasoning"": ""70 mph speed limit sign (US MUTCD style), right-hand driving, concrete Jersey barrier median, deciduous forest in autumn colors, flat terrain, and American-market vehicles all point to the US Midwest. The combination of flat forested terrain and interstate highway design is highly characteristic of southern Michigan or northern Ohio/Indiana."", ""country"": ""US"", ""latitude"": 42.30, ""longitude"": -83.50}"
+google/gemini-3.5-flash,CoT (effort=low),42.2415,-83.6182,10606.981,US,True,,stop,0.0064605,1307,500,431,4.83,"{""reasoning"": ""The 'SPEED LIMIT 70' sign style, concrete median barrier, and autumn foliage are characteristic of a major interstate highway in the Midwestern United States, likely Michigan."", ""country"": ""US"", ""latitude"": 42.2415, ""longitude"": -83.6182}"
+google/gemini-3.5-flash,CoT (effort=high),42.2815,-84.0522,10609.6,US,True,,stop,0.0152625,1307,1478,1405,17.92,"{""reasoning"": ""The 'SPEED LIMIT 70' sign in the standard US MUTCD style, combined with the vibrant autumn foliage and flat terrain, indicates a highway in the US Midwest, likely Michigan."", ""country"": ""US"", ""latitude"": 42.2815, ""longitude"": -84.0522}"
+google/gemini-3.5-flash,CoT (effort=medium),42.2815,-84.0552,10609.648,US,True,,stop,0.0088455,1307,765,684,8.08,"{""reasoning"": ""The 'SPEED LIMIT 70' sign in the standard US MUTCD style, combined with the flat terrain, concrete median barrier, and vibrant autumn foliage, strongly points to an interstate highway in the US Midwest, likely Michigan."", ""country"": ""US"", ""latitude"": 42.2815, ""longitude"": -84.0552}"
+qwen/qwen3.5-122b-a10b,no-CoT,40.0531,-75.1892,10664.928,US,True,,stop,0.00021684,586,31,0,6.47,"{""country"": ""US"", ""latitude"": 40.0531, ""longitude"": -75.1892}"
+mistralai/mistral-small-2603,no-CoT,40.0036,-75.2556,10671.886,US,True,,stop,0.0001365,786,31,0,4.27,"{""country"": ""US"", ""latitude"": 40.0036, ""longitude"": -75.2556}"
+openai/gpt-5.5,CoT,41.2456,-81.3069,10674.326,US,True,,stop,0.021925,755,605,516,48.55,"{""reasoning"":""US-style right-hand interstate with black-on-white “SPEED LIMIT 70” sign, wide concrete median, and autumn deciduous woodland point to a northeastern/Midwestern US tollway; the flat wooded 3-lane freeway is most consistent with the Ohio Turnpike/I-80 corridor."",""country"":""US"",""latitude"":41.2456,""longitude"":-81.3069}"
+x-ai/grok-4.3,CoT,40.25,-76.85,10685.378,US,True,,stop,0.002149,788,600,528,11.52,"{""reasoning"": ""US-style rectangular 'SPEED LIMIT 70' sign (MUTCD), right-side yellow edge line, right-hand traffic, and deciduous autumn foliage on a divided multi-lane freeway indicate the northeastern or mid-Atlantic United States."", ""country"": ""US"", ""latitude"": 40.25, ""longitude"": -76.85}"
+moonshotai/kimi-k2.6,CoT,41.0,-82.5,10722.977,US,True,,stop,0.012741516,834,3639,3572,147.79,"{""reasoning"": ""The white rectangular 'SPEED LIMIT 70' sign follows US MUTCD standards (mph), confirming the USA; autumn foliage and flat rural Interstate corridor point to the Midwestern United States."", ""country"": ""US"", ""latitude"": 41.0, ""longitude"": -82.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,41.42450714111328,-85.66354370117188,10727.654,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.399330139160156,-85.67259979248047,10730.542,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.23823547363281,-85.6043701171875,10747.201,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,38.8419303894043,-77.10879516601562,10841.853,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.67343521118164,-77.2773666381836,10863.93,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.66682052612305,-77.2690658569336,10864.435,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.18,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.59,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.85,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.55,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.57,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.34,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.4,

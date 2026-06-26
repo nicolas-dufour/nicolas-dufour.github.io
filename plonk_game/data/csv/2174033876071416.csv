@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,42.282614893474,-8.6268671185014,0.0,ES,True,,,,,,,,"Redondela, Provincia de Pontevedra, Galicia, ES"
+google/gemini-3.5-flash,CoT (effort=high),42.3521,-8.6432,7.842,ES,True,,stop,0.0117975,1271,1099,1032,8.82,"{""reasoning"": ""The lush green vegetation with eucalyptus trees, combined with the blue-and-white chevron sign and Spanish-style road infrastructure, indicates a location in Galicia, Spain."", ""country"": ""ES"", ""latitude"": 42.3521, ""longitude"": -8.6432}"
+moonshotai/kimi-k2.6,CoT,42.75,-8.35,56.709,ES,True,,stop,0.013588848,682,3908,3833,162.07,"{""reasoning"": ""The black-and-white rectangular chevron sign indicating a curve, combined with the white guardrail delineators topped in black, are distinctive of Spanish road infrastructure; the lush green hilly forest matches the humid Atlantic landscape of Galicia."", ""country"": ""ES"", ""latitude"": 42.75, ""longitude"": -8.35}"
+google/gemma-4-31b-it,no-CoT,42.85,-8.55,63.404,ES,True,,stop,6.518e-05,406,31,0,8.99,"```json
+{""country"": ""ES"", ""latitude"": 42.85, ""longitude"": -8.55}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,42.84531021118164,-8.444785118103027,64.321,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,42.811973571777344,-8.3070650100708,64.429,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,42.8528938293457,-8.446236610412598,65.115,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),42.8805,-8.5456,66.814,ES,True,,stop,0.003978,1272,230,165,8.83,"{""reasoning"": ""The blue and white chevron sign, road markings, curved streetlights, and lush green vegetation with eucalyptus trees are highly characteristic of northern Spain, particularly Galicia."", ""country"": ""ES"", ""latitude"": 42.8805, ""longitude"": -8.5456}"
+google/gemini-3.5-flash,CoT (effort=medium),42.8805,-8.5456,66.814,ES,True,,stop,0.0153345,1271,1492,1418,17.46,"```json
+{""reasoning"": ""The lush green landscape with eucalyptus and pine trees, combined with the Spanish-style delineator post on the left and the blue utility box, points to Galicia in northwestern Spain."", ""country"": ""ES"", ""latitude"": 42.8805, ""longitude"": -8.5456}
+```"
+google/gemini-3.1-pro-preview,CoT,43.215,-8.234,108.526,ES,True,,stop,0.00666,1272,343,263,11.38,"{
+  ""reasoning"": ""The black-and-white chevron signs, road markings, and curved streetlights are typical of Spain. The lush green vegetation with eucalyptus trees strongly suggests the northern region, such as Galicia."",
+  ""country"": ""ES"",
+  ""latitude"": 43.215,
+  ""longitude"": -8.234
+}"
+google/gemini-3.1-pro-preview,no-CoT,43.3183,-8.3116,118.0,ES,True,,stop,0.002788,1190,34,0,8.53,"```json
+{""country"": ""ES"", ""latitude"": 43.3183, ""longitude"": -8.3116}
+```"
+anthropic/claude-opus-4.8,no-CoT,43.3623,-8.4115,121.333,ES,True,,stop,0.00413,666,32,0,2.02,"{""country"": ""ES"", ""latitude"": 43.3623, ""longitude"": -8.4115}"
+anthropic/claude-opus-4.8,CoT,43.35,-7.85,134.542,ES,True,,stop,0.006585,797,104,0,13.43,"{""reasoning"": ""Eucalyptus and pine mix, lush green vegetation, European-style chevron signs and guardrails, driving on right - consistent with northern Spain (Galicia/Asturias) coastal hills."", ""country"": ""ES"", ""latitude"": 43.35, ""longitude"": -7.85}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.3581,-4.0452,392.289,ES,True,,stop,0.0020895,1189,34,0,7.95,"```json
+{""country"": ""ES"", ""latitude"": 43.3581, ""longitude"": -4.0452}
+```"
+xiaomi/mimo-v2.5,no-CoT,38.75,-9.15,395.288,PT,True,,stop,8.00576e-05,708,26,0,2.06,"{""country"": ""PT"", ""latitude"": 38.75, ""longitude"": -9.15}"
+openai/gpt-5.5,no-CoT,38.7223,-9.4197,401.518,PT,True,,stop,0.00344,544,24,0,3.07,"{""country"":""PT"",""latitude"":38.7223,""longitude"":-9.4197}"
+qwen/qwen3.6-35b-a3b,no-CoT,43.321,-2.987,474.287,ES,True,,stop,9.895e-05,473,28,0,2.76,"{""country"": ""ES"", ""latitude"": 43.321, ""longitude"": -2.987}"
+minimax/minimax-m3,CoT,41.85,2.45,914.988,ES,True,,stop,0.00059346,843,335,262,17.44,"{""reasoning"": ""Red/white chevron warning sign, right-hand traffic, Mediterranean pine vegetation, and modern European street lamp design strongly indicate Spain. The lush green hillsides with pine trees suggest a region like Catalonia or northern Spain."", ""country"": ""ES"", ""latitude"": 41.85, ""longitude"": 2.45}"
+qwen/qwen3.5-35b-a3b,no-CoT,51.4545,-2.5892,1117.455,GB,True,,stop,9.636e-05,474,30,0,1.16,"{""country"": ""GB"", ""latitude"": 51.4545, ""longitude"": -2.5892}"
+x-ai/grok-4.3,no-CoT,48.85,2.35,1122.059,FR,True,,stop,0.0005934,592,22,0,7.09,"{""country"": ""FR"", ""latitude"": 48.85, ""longitude"": 2.35}"
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,1122.625,FR,True,,stop,0.0001131,634,30,0,8.94,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+x-ai/grok-4.3,CoT,51.75,-2.55,1148.134,GB,True,,stop,0.003254,676,1098,1027,15.56,"{""reasoning"": ""Left-hand traffic (curve chevrons placed on right verge), UK-style guardrail reflectors, white road markings, and temperate broadleaf forest point to rural UK; blue utility cabinet and lamp style match British highways."", ""country"": ""GB"", ""latitude"": 51.75, ""longitude"": -2.55}"
+xiaomi/mimo-v2.5,CoT,52.95,-6.45,1197.18,IE,True,,stop,0.0001238776,787,143,61,8.45,"{""reasoning"": ""The chevron alignment sign and distinctive Irish bollards and lamp posts indicate the Republic of Ireland. The lush, green, hilly terrain and the specific style of the road markings are consistent with a rural Irish road, likely near the coast."", ""country"": ""IE"", ""latitude"": 52.95, ""longitude"": -6.45}"
+qwen/qwen3.5-27b,no-CoT,53.3478,-6.2651,1242.784,IE,True,,stop,0.00019251,473,30,0,2.61,"{""country"": ""IE"", ""latitude"": 53.3478, ""longitude"": -6.2651}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.552284240722656,9.331048965454102,1485.316,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,37.7586,-25.5569,1523.753,PT,True,,stop,0.014775,621,389,303,16.88,"{""reasoning"":""Right-hand driving with European-style white lane markings, black-white chevrons, and Portuguese/Azorean roadside delineators amid very lush Atlantic vegetation and eucalyptus point strongly to the Azores. The road environment and vegetation best fit São Miguel Island near Ponta Delgada/Lagoa."",""country"":""PT"",""latitude"":37.7586,""longitude"":-25.5569}"
+qwen/qwen3.5-397b-a17b,no-CoT,51.2277,6.7735,1532.673,DE,True,,stop,0.00028845,473,30,0,10.45,"{""country"": ""DE"", ""latitude"": 51.2277, ""longitude"": 6.7735}"
+qwen/qwen3.6-27b,no-CoT,51.1657,10.4515,1749.729,DE,True,,stop,0.0001943,473,31,0,15.55,"{""country"": ""DE"", ""latitude"": 51.1657, ""longitude"": 10.4515}"
+qwen/qwen3.5-122b-a10b,no-CoT,59.9139,10.7522,2362.805,NO,True,,stop,0.0002355,473,39,0,2.39,"{
+  ""country"": ""NO"",
+  ""latitude"": 59.9139,
+  ""longitude"": 10.7522
+}"
+qwen/qwen3.5-9b,no-CoT,60.4512,24.7551,3017.072,FI,True,,stop,5.205e-05,474,31,0,9.48,"{""country"": ""FI"", ""latitude"": 60.4512, ""longitude"": 24.7551}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,32.695865631103516,35.02541732788086,3949.677,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,32.69705581665039,35.02650451660156,3949.703,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,5.0,13.405,4682.629,,True,,stop,6.014e-05,406,44,0,1.3,"{"" than-thought
+{""country"": ""DE"", ""latitude"": 5 own- own"": 52.5200, ""longitude"": 13.4050}"
+mistralai/mistral-medium-3-5,no-CoT,-36.8485,174.7633,19344.743,NZ,True,,stop,0.001191,634,32,0,1.01,"{""country"": ""NZ"", ""latitude"": -36.8485, ""longitude"": 174.7633}"
+minimax/minimax-m3,no-CoT,-41.0,175.0,19681.699,NZ,True,,stop,0.00019452,754,22,0,2.46,"{""country"": ""NZ"", ""latitude"": -41.0, ""longitude"": 175.0}{""country"": ""NZ"", ""latitude"": -41.0, ""longitude"": 175.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.17,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,23.28,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.97,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,13.2,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.43,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.19,

@@ -1,0 +1,76 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,15.983197409131,74.508536430187,0.0,IN,True,,,,,,,,"Belgaum, Belgaum, Karnataka, IN"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,16.02303123474121,74.40249633789062,12.169,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,16.298065185546875,74.38232421875,37.517,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,16.303102493286133,74.38545989990234,37.923,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,15.3647,74.4977,68.784,IN,True,,stop,0.0001108,570,31,0,1.59,"{""country"": ""IN"", ""latitude"": 15.3647, ""longitude"": 74.4977}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),15.9835,73.8182,73.794,IN,True,,stop,0.002115,1200,35,0,1.96,"```json
+{""country"": ""IN"", ""latitude"": 15.9835, ""longitude"": 73.8182}
+```"
+openai/gpt-5.5,no-CoT,15.3825,74.0389,83.602,IN,True,,stop,0.00389,640,23,0,1.51,"{""country"":""IN"",""latitude"":15.3825,""longitude"":74.0389}"
+moonshotai/kimi-k2.6,CoT,15.4,74.0,84.67,IN,True,,stop,0.011167524,796,3184,3115,86.31,"{""reasoning"": ""Devanagari script visible on signage, left-hand traffic with Indian NH-style black-and-yellow bollards, and tropical monsoon vegetation with red lateritic soil typical of India's western Konkan coast."", ""country"": ""IN"", ""latitude"": 15.4, ""longitude"": 74.0}"
+anthropic/claude-opus-4.8,no-CoT,16.705,74.2433,85.104,IN,True,,stop,0.0047,780,32,0,2.48,"{""country"": ""IN"", ""latitude"": 16.7050, ""longitude"": 74.2433}"
+qwen/qwen3.5-397b-a17b,no-CoT,15.31,74.12,85.64,IN,True,,stop,0.0004226,569,27,0,1.0,"{""country"": ""IN"", ""latitude"": 15.31, ""longitude"": 74.12}"
+google/gemini-3.1-pro-preview,CoT,16.7,74.2,86.236,IN,True,,stop,0.006478,1283,326,254,5.16,"{
+  ""reasoning"": ""The Indian Oil gas station logo, black and yellow painted curbs, and lush green hilly terrain strongly indicate a highway in western or southern India, likely Maharashtra or Karnataka."",
+  ""country"": ""IN"",
+  ""latitude"": 16.7,
+  ""longitude"": 74.2
+}"
+qwen/qwen3.5-122b-a10b,no-CoT,15.2993,74.124,86.477,IN,True,,stop,0.0002619,569,38,0,8.19,"{
+  ""country"": ""IN"",
+  ""latitude"": 15.2993,
+  ""longitude"": 74.124
+}"
+google/gemini-3.1-pro-preview,no-CoT,16.8523,74.2518,100.445,IN,True,,stop,0.00282,1200,35,0,2.63,"```json
+{""country"": ""IN"", ""latitude"": 16.8523, ""longitude"": 74.2518}
+```"
+openai/gpt-5.5,CoT,14.7895,74.3128,134.382,IN,True,,stop,0.018045,717,482,391,12.16,"{""reasoning"":""Left-side driving infrastructure, black-yellow Indian roadside bollards/kerbs, fuel-station styling, tropical monsoon vegetation with laterite soil and low Western Ghats hills point to coastal western India. The lush palms, red-roof buildings and terrain are most consistent with the Goa/coastal Karnataka NH66 corridor."",""country"":""IN"",""latitude"":14.7895,""longitude"":74.3128}"
+google/gemini-3.5-flash,CoT (effort=low),16.8432,73.5241,142.022,IN,True,,stop,0.0045345,1283,290,211,9.24,"{""reasoning"": ""The Indian Oil gas station logo, left-hand driving, lush green hilly landscape with red soil, and Devanagari script on the signage indicate a highway in western India, likely NH 66 in Maharashtra."", ""country"": ""IN"", ""latitude"": 16.8432, ""longitude"": 73.5241}"
+google/gemini-3.5-flash,CoT (effort=medium),16.8542,73.5264,142.666,IN,True,,stop,0.006432,1282,501,415,6.63,"{""reasoning"": ""The Indian Oil gas station logo on the left and the 'JK Super Cement' advertisement on the right confirm India. The lush green landscape, palm trees, and reddish laterite soil are highly characteristic of the Konkan region along National Highway 66."", ""country"": ""IN"", ""latitude"": 16.8542, ""longitude"": 73.5264}"
+google/gemini-3.5-flash,CoT (effort=high),16.8521,73.5243,142.672,IN,True,,stop,0.012345,1282,1158,1080,15.71,"{""reasoning"": ""The Indian Oil gas station, JK Super Cement signage, left-hand traffic, and distinctive red laterite soil with lush green hills point to the Konkan region along National Highway 66 in Maharashtra, India."", ""country"": ""IN"", ""latitude"": 16.8521, ""longitude"": 73.5243}"
+anthropic/claude-opus-4.8,CoT,16.99,73.3,170.695,IN,True,,stop,0.006905,911,94,0,3.06,"{""reasoning"": ""Devanagari/Marathi signage, divided highway with black-and-yellow bollards, palm trees and monsoon clouds suggest coastal Maharashtra, India."", ""country"": ""IN"", ""latitude"": 16.99, ""longitude"": 73.30}"
+minimax/minimax-m3,no-CoT,13.35,74.75,293.948,IN,True,,stop,0.00034662,881,117,111,3.98,"{""country"": ""IN"", ""latitude"": 13.3500, ""longitude"": 74.7500}"
+google/gemma-4-26b-a4b-it,no-CoT,18.5594,73.8567,294.702,IN,True,,stop,5.832e-05,392,44,0,8.46,"Please provide own-location-based-location-estimate:
+{""country"": ""IN"", ""latitude"": 18.5594, ""longitude"": 73.8567}"
+minimax/minimax-m3,CoT,13.05,75.1,332.311,IN,True,,stop,0.00087366,957,540,451,21.76,"{""reasoning"": ""Kannada-script signage on the left billboard, Indian-style yellow/black bollards, left-hand driving, laterite red soil, coconut palms, and Western Ghats foothills all point to coastal Karnataka along a national highway (likely NH-66 or NH-75 near Mangalore/Udupi)."", ""country"": ""IN"", ""latitude"": 13.05, ""longitude"": 75.10}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,12.84496021270752,76.37386322021484,402.633,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,12.9716,77.5946,471.703,IN,True,,stop,0.00018858,394,36,0,0.99,"```json
+{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}
+```"
+mistralai/mistral-medium-3-5,no-CoT,12.9716,77.5946,471.703,IN,True,,stop,0.0013545,748,31,0,9.36,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.6-35b-a3b,no-CoT,12.9716,77.5946,471.703,IN,True,,stop,0.0001636,570,31,0,8.72,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,11.280610084533691,76.70121002197266,574.051,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,11.263081550598145,76.72002410888672,576.669,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,11.0168,76.9558,612.316,IN,True,,stop,0.00010448,569,31,0,10.82,"{""country"": ""IN"", ""latitude"": 11.0168, ""longitude"": 76.9558}"
+qwen/qwen3.6-27b,no-CoT,11.0168,76.9558,612.316,IN,True,,stop,0.0002231,569,31,0,14.9,"{""country"": ""IN"", ""latitude"": 11.0168, ""longitude"": 76.9558}"
+x-ai/grok-4.3,no-CoT,10.85,76.65,615.956,IN,True,,stop,0.0006934,672,22,0,1.21,"{""country"": ""IN"", ""latitude"": 10.85, ""longitude"": 76.65}"
+xiaomi/mimo-v2.5,no-CoT,5.31,100.48,3071.333,MY,True,,stop,9.37776e-05,804,27,0,1.92,"{""country"": ""MY"", ""latitude"": 5.31, ""longitude"": 100.48}"
+qwen/qwen3.5-27b,no-CoT,-0.0236,37.9062,4391.988,KE,True,,stop,0.00026,570,43,0,3.52,"```json
+{
+  ""country"": ""KE"",
+  ""latitude"": -0.0236,
+  ""longitude"": 37.9062
+}
+```"
+x-ai/grok-4.3,CoT,-25.521,32.685,6464.769,MZ,True,,stop,0.003119,756,1004,921,9.12,"{
+  ""reasoning"": ""Portuguese-language fuel station signage ('COMBUSTIVEIS'), left-hand traffic, black-yellow bollards, palm trees and lush tropical vegetation on rolling hills point to Mozambique; cloudy coastal savanna landscape matches the EN1 corridor north of Maputo."",
+  ""country"": ""MZ"",
+  ""latitude"": -25.521,
+  ""longitude"": 32.685
+}"
+mistralai/mistral-small-2603,no-CoT,-22.9035,-47.0614,13877.671,BR,True,,stop,0.0001308,748,31,0,1.04,"{""country"": ""BR"", ""latitude"": -22.9035, ""longitude"": -47.0614}"
+xiaomi/mimo-v2.5,CoT,4.14,-73.63,15857.13,CO,True,,stop,0.0007426776,883,2305,2240,22.93,"{
+  ""reasoning"": ""The Ecopetrol gas station sign in Spanish and tropical vegetation with palm trees indicate Colombia, likely in the eastern plains region."",
+  ""country"": ""CO"",
+  ""latitude"": 4.14,
+  ""longitude"": -73.63
+}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.52,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,2.62,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.73,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.11,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,2.23,

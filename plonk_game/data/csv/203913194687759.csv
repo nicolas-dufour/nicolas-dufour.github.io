@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,45.008092858501,142.29601299631,0.0,JP,True,,,,,,,,"Makubetsu, None, Hokkaido, JP"
+google/gemini-3.1-pro-preview,CoT,43.7654,142.4832,138.979,JP,True,,stop,0.005952,1308,278,188,6.36,"{
+  ""reasoning"": ""The downward-pointing arrow signs over the road edge (snow poles) and the specific style of utility poles strongly indicate Hokkaido, Japan. The lush green vegetation with large broad leaves is also typical of the region in summer."",
+  ""country"": ""JP"",
+  ""latitude"": 43.7654,
+  ""longitude"": 142.4832
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.74006271362305,142.95184326171875,150.324,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.73212432861328,142.9281005859375,150.513,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,43.63479232788086,142.8209228515625,158.31,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,43.5,142.5,168.477,JP,True,,stop,0.004492,1226,170,140,3.14,"```json
+{""country"": ""JP"", ""latitude"": 43.5, ""longitude"": 142.5}
+```"
+openai/gpt-5.5,no-CoT,43.4215,142.3512,176.476,JP,True,,stop,0.00408,678,23,0,7.56,"{""country"":""JP"",""latitude"":43.4215,""longitude"":142.3512}"
+anthropic/claude-opus-4.8,no-CoT,43.2,142.4,201.222,JP,True,,stop,0.00484,818,30,0,8.52,"{""country"": ""JP"", ""latitude"": 43.2, ""longitude"": 142.4}"
+anthropic/claude-opus-4.8,CoT,43.2,142.5,201.709,JP,True,,stop,0.00682,949,83,0,3.85,"{""reasoning"": ""Left-hand traffic, Japanese road markings, lush green hills with butterbur vegetation typical of Hokkaido rural highways."", ""country"": ""JP"", ""latitude"": 43.2, ""longitude"": 142.5}"
+moonshotai/kimi-k2.6,CoT,43.15,142.05,207.543,JP,True,,stop,0.010297656,834,2935,2856,77.67,"{""reasoning"": ""Japanese road infrastructure including corrugated-metal guardrails, wooden utility poles with multiple crossarms, and green directional road signs confirm left-hand traffic in Japan; dense mixed temperate forest with large-leaf understory vegetation matches rural Hokkaido in midsummer."", ""country"": ""JP"", ""latitude"": 43.15, ""longitude"": 142.05}"
+openai/gpt-5.5,CoT,43.1458,142.4726,207.557,JP,True,,stop,0.014755,755,366,294,10.12,"{""reasoning"":""Left-hand traffic with Japanese-style lane markings, utility poles, blue road signs, and snow-country roadside poles point to rural Japan. The cool lush forested hills and wide road layout are most consistent with Hokkaido."",""country"":""JP"",""latitude"":43.1458,""longitude"":142.4726}"
+x-ai/grok-4.3,CoT,43.12,141.65,216.196,JP,True,,stop,0.0036265,788,1191,1114,15.48,"{""reasoning"": ""Right-hand traffic (solid edge line visible on right, dashed center line), blue rectangular signs, overhead power lines on lattice poles, and dense temperate deciduous forest match rural Japan. Road geometry and vegetation consistent with secondary highways in Hokkaido or northern Honshu."", ""country"": ""JP"", ""latitude"": 43.12, ""longitude"": 141.65}"
+moonshotai/kimi-k2.6,no-CoT,43.0384,141.935,220.913,JP,True,,stop,0.0003249,755,25,0,1.95,"{""country"": ""JP"", ""latitude"": 43.0384, ""longitude"": 141.9350}"
+google/gemini-3.5-flash,CoT (effort=medium),43.0532,141.5121,226.225,JP,True,,stop,0.0059385,1307,442,376,5.16,"{""reasoning"": ""The left-hand driving, concrete utility poles, and lush roadside vegetation featuring giant butterbur (Fuki) are highly characteristic of Hokkaido, Japan."", ""country"": ""JP"", ""latitude"": 43.0532, ""longitude"": 141.5121}"
+x-ai/grok-4.3,no-CoT,43.07,141.35,228.383,JP,True,,stop,0.0007334,704,22,0,0.86,"{""country"": ""JP"", ""latitude"": 43.07, ""longitude"": 141.35}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.1254,141.1523,228.414,JP,True,,stop,0.0021615,1225,36,0,39.96,"```json
+{""country"": ""JP"", ""latitude"": 43.1254, ""longitude"": 141.1523}
+```"
+google/gemini-3.5-flash,CoT (effort=low),42.9542,141.3451,240.718,JP,True,,stop,0.0041025,1307,238,171,10.14,"{""reasoning"": ""The concrete utility poles, left-hand driving, and distinctive large-leafed vegetation (Fuki/giant butterbur) strongly indicate Hokkaido, Japan."", ""country"": ""JP"", ""latitude"": 42.9542, ""longitude"": 141.3451}"
+google/gemini-3.5-flash,CoT (effort=high),43.0542,140.8125,247.515,JP,True,,stop,0.008847,1308,765,689,12.5,"{""reasoning"": ""The lush vegetation with large-leafed giant butterbur (Fuki), concrete utility poles, left-hand traffic, and blue overhead road signs in the distance are highly characteristic of Hokkaido, Japan."", ""country"": ""JP"", ""latitude"": 43.0542, ""longitude"": 140.8125}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.324928283691406,145.36056518554688,253.961,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,44.59792709350586,145.5164031982422,258.12,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,39.49039077758789,140.50735473632812,630.91,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,36.5423,138.2156,1001.741,JP,True,,stop,0.00022707,585,32,0,1.68,"{""country"": ""JP"", ""latitude"": 36.5423, ""longitude"": 138.2156}"
+qwen/qwen3.6-27b,no-CoT,36.5614,137.0864,1036.026,JP,True,,stop,0.00028992,586,32,0,13.31,"{""country"": ""JP"", ""latitude"": 36.5614, ""longitude"": 137.0864}"
+google/gemma-4-31b-it,no-CoT,35.6895,139.6917,1059.261,JP,True,,stop,6.732e-05,404,37,0,8.77,"```json
+{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,35.6895,139.6917,1059.261,JP,True,,stop,0.000362,585,40,0,8.97,"{
+  ""country"": ""JP"",
+  ""latitude"": 35.6895,
+  ""longitude"": 139.6917
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,35.6895,139.6917,1059.261,JP,True,,stop,0.0004662,585,32,0,3.68,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+qwen/qwen3.5-9b,no-CoT,35.6895,139.6917,1059.261,JP,True,,stop,6.34e-05,586,32,0,6.22,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+mistralai/mistral-medium-3-5,no-CoT,35.0,136.0,1234.347,JP,True,,stop,0.001374,786,26,0,5.81,"{""country"": ""JP"", ""latitude"": 35.0, ""longitude"": 136.0}"
+qwen/qwen3.5-397b-a17b,CoT,35.0521,135.8043,1236.341,JP,True,,stop,0.01107105,665,3605,1,225.74,"{
+""reasoning"": ""The presence of concrete utility poles, left-hand traffic, and standard blue rectangular overhead road signs strongly indicates Japan. The temperate, lush vegetation including large-leafed plants (likely Japanese butterbur) on the roadside bank is characteristic of rural Japanese summers."",
+""country"": ""JP"",
+""latitude"": 35.0521,
+""longitude"": 135.8043
+}"
+mistralai/mistral-small-2603,CoT,45.85,-123.2,6899.204,US,True,,stop,0.0007332,868,1005,1127,14.65,"{""reasoning"": ""The dense evergreen forest and rural road design with US-standard markings indicate the Pacific Northwest region of the United States, specifically Oregon's Coast Range area."", ""country"": ""US"", ""latitude"": 45.85, ""longitude"": -123.2}"
+qwen/qwen3.6-35b-a3b,no-CoT,37.7749,-122.4194,7512.183,US,True,,stop,0.00011975,585,32,0,3.43,"{""country"": ""US"", ""latitude"": 37.7749, ""longitude"": -122.4194}"
+xiaomi/mimo-v2.5,no-CoT,50.1167,8.6833,8529.213,DE,True,,stop,9.68576e-05,820,30,0,2.44,"{""country"": ""DE"", ""latitude"": 50.1167, ""longitude"": 8.6833}"
+minimax/minimax-m3,CoT,51.82,-2.72,8738.631,GB,True,,stop,0.00074622,997,421,419,8.01,"{""reasoning"": ""Left-side driving, blue primary route sign, Armco guardrails, and lush green rolling hills indicate a rural A-road in the UK, likely in the western England/Welsh borders region."", ""country"": ""GB"", ""latitude"": 51.82, ""longitude"": -2.72}"
+minimax/minimax-m3,no-CoT,47.3952,8.4915,8794.542,CH,True,,stop,0.00023616,904,25,0,5.0,"{""country"": ""CH"", ""latitude"": 47.3952, ""longitude"": 8.4915}"
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,8876.988,FR,True,,stop,0.000169875,786,30,0,2.63,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+xiaomi/mimo-v2.5,CoT,46.32,2.6,9118.558,FR,True,,stop,0.0001538376,899,194,98,2.58,"{""reasoning"": ""The road markings (solid white edge lines and dashed center lines), the style of the guardrails and utility poles, and the lush, temperate vegetation are characteristic of rural roads in Western Europe, specifically France. The terrain and road curvature suggest a location in a hilly region like the Massif Central or nearby areas."", ""country"": ""FR"", ""latitude"": 46.32, ""longitude"": 2.6}"
+qwen/qwen3.5-35b-a3b,no-CoT,38.9072,-77.0369,9888.862,US,True,,stop,0.0002215625,585,31,0,1.35,"{""country"": ""US"", ""latitude"": 38.9072, ""longitude"": -77.0369}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,13789.535,,True,True,,,,,,13.27,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.27,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.31,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.18,

@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,7.5890193082391,134.59116552062,0.0,PW,True,,,,,,,,"Ngardmau, None, Ngardmau, PW"
+qwen/qwen3.5-397b-a17b,no-CoT,10.3157,123.8854,1214.227,PH,True,,stop,0.000399,473,32,0,8.13,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+qwen/qwen3.5-27b,no-CoT,14.1275,121.1789,1634.298,PH,True,,stop,0.00021944,474,37,0,4.46,"```json
+{""country"": ""PH"", ""latitude"": 14.1275, ""longitude"": 121.1789}
+```"
+qwen/qwen3.5-9b,no-CoT,14.5995,120.9842,1675.915,PH,True,,stop,5.22e-05,474,32,0,5.79,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+x-ai/grok-4.3,CoT,-8.275,115.166,2783.367,ID,True,,stop,0.0022715,676,705,642,15.22,"{""reasoning"": ""Dense broadleaf tropical rainforest/jungle foliage, muddy unpaved track, and simple handmade English tourist sign are characteristic of popular waterfall trails in Bali; no contradictory infrastructure or vegetation."", ""country"": ""ID"", ""latitude"": -8.275, ""longitude"": 115.166}"
+minimax/minimax-m3,CoT,-8.5753,115.2871,2794.124,ID,True,,stop,0.00079542,845,500,480,11.74,"{""reasoning"": ""The distinctive red wooden arrow sign with yellow 'WATERFALL' text, combined with lush tropical rainforest vegetation (banana plants, tropical hardwoods), a stone-paved jungle path, and rocky riverbank are characteristic of tourist-marked waterfalls in Bali, Indonesia, likely in the Gianyar/Ubud region."", ""country"": ""ID"", ""latitude"": -8.5753, ""longitude"": 115.2871}"
+xiaomi/mimo-v2.5,no-CoT,-17.8,146.0,3088.652,AU,True,,stop,8.00576e-05,708,26,0,2.96,"{""country"": ""AU"", ""latitude"": -17.8, ""longitude"": 146.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-15.78901481628418,151.6895294189453,3209.79,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,-18.1833,177.6833,5528.809,FJ,True,,stop,0.006838,1271,358,269,6.11,"{
+  ""reasoning"": ""The lush tropical vegetation and hand-painted English 'WATERFALL' sign suggest a tourist-friendly tropical location such as Fiji or Samoa. The rocky stream bed and specific sign style are consistent with waterfall trails in Fiji."",
+  ""country"": ""FJ"",
+  ""latitude"": -18.1833,
+  ""longitude"": 177.6833
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-16.7914,179.9839,5679.625,FJ,True,,stop,0.002064,1190,31,0,13.84,"{""country"": ""FJ"", ""latitude"": -16.7914, ""longitude"": 179.9839}"
+google/gemini-3.1-pro-preview,no-CoT,-16.826,-179.888,5693.614,FJ,True,,stop,0.005404,1190,252,218,11.29,"```json
+{""country"": ""FJ"", ""latitude"": -16.826, ""longitude"": -179.888}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-16.653486251831055,-178.77572631835938,5793.497,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-16.30524253845215,-177.85784912109375,5867.601,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-13.926,-171.747,6386.062,WS,True,,stop,0.00408,666,30,0,8.82,"{""country"": ""WS"", ""latitude"": -13.926, ""longitude"": -171.747}"
+google/gemini-3.5-flash,CoT (effort=medium),-14.0183,-171.7431,6389.748,WS,True,,stop,0.0211305,1271,2136,2063,23.0,"```json
+{""reasoning"": ""The rustic hand-painted English sign, lush tropical vegetation, and dark volcanic riverbed point to a Pacific island like Samoa, where local communities manage waterfall trails."", ""country"": ""WS"", ""latitude"": -14.0183, ""longitude"": -171.7431}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-14.0172,-171.7383,6390.199,WS,True,,stop,0.0240195,1271,2457,2381,21.76,"```json
+{""reasoning"": ""The hand-painted English sign, lush tropical rainforest vegetation, and dark volcanic basalt riverbed are characteristic of the Pacific Islands, specifically Samoa near the Togitogiga Waterfall."", ""country"": ""WS"", ""latitude"": -14.0172, ""longitude"": -171.7383}
+```"
+anthropic/claude-opus-4.8,CoT,-13.92,-171.5,6411.116,WS,True,,stop,0.006435,797,98,0,9.11,"{""reasoning"": ""Tropical rainforest with English 'WATERFALL' sign, volcanic dark soil, and lush vegetation suggest a Pacific island tourist trail, likely Samoa."", ""country"": ""WS"", ""latitude"": -13.92, ""longitude"": -171.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,21.3069,-157.8583,7381.329,US,True,,stop,0.000146,474,32,0,2.88,"{""country"": ""US"", ""latitude"": 21.3069, ""longitude"": -157.8583}"
+qwen/qwen3.6-27b,no-CoT,20.7984,-156.3319,7539.207,US,True,,stop,0.0001963,473,32,0,23.61,"{""country"": ""US"", ""latitude"": 20.7984, ""longitude"": -156.3319}"
+moonshotai/kimi-k2.6,CoT,20.85,-156.15,7558.124,US,True,,stop,0.022832928,682,6613,6542,329.84,"{""reasoning"": ""Hand-painted red English waterfall sign nailed to a tree beside a muddy, rocky tropical trail with dense ferns and broadleaf canopy matches the informal roadside waterfall attractions common along the Hana Highway in Maui, Hawaii."", ""country"": ""US"", ""latitude"": 20.85, ""longitude"": -156.15}"
+qwen/qwen3.6-35b-a3b,CoT,20.785,-156.055,7567.99,US,True,,stop,0.00593373235,553,6055,5924,111.74,"```json
+{
+  ""reasoning"": ""The lush tropical vegetation, including ferns and broad-leafed trees (likely Ohia or similar native species), combined with the smooth-barked tree (likely Eucalyptus, common in Hawaii) and the rocky, unpaved track, strongly suggests a location in Hawaii, likely along the Road to Hana. The English signage pointing to a waterfall is typical for tourist trails in this region."",
+  ""country"": ""US"",
+  ""latitude"": 20.785,
+  ""longitude"": -156.055
+}
+```"
+google/gemma-4-31b-it,no-CoT,-20.2333,57.5,8970.198,MU,True,,stop,7.124e-05,406,36,0,8.54,"```json
+{""country"": ""MU"", ""latitude"": -20.2333, ""longitude"": 57.5000}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,14911.073,,True,True,,,,,,0.92,
+x-ai/grok-4.3,no-CoT,10.305,-84.795,15222.322,CR,True,,stop,0.0005934,592,22,0,0.96,"{""country"": ""CR"", ""latitude"": 10.305, ""longitude"": -84.795}"
+minimax/minimax-m3,no-CoT,10.47,-84.7,15224.677,CR,True,,stop,0.00028962,767,98,91,3.52,"{""country"": ""CR"", ""latitude"": 10.47, ""longitude"": -84.70}"
+openai/gpt-5.5,no-CoT,9.3892,-84.1358,15328.286,CR,True,,stop,0.00344,544,24,0,1.54,"{""country"":""CR"",""latitude"":9.3892,""longitude"":-84.1358}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,9.95322036743164,-83.6717300415039,15350.752,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,9.7489,-83.7534,15351.474,CR,True,,stop,0.00051939,602,25,0,35.29,"{""country"": ""CR"", ""latitude"": 9.7489, ""longitude"": -83.7534}"
+qwen/qwen3.5-122b-a10b,no-CoT,9.7489,-83.7534,15351.474,CR,True,,stop,0.00018564,474,30,0,6.26,"{""country"": ""CR"", ""latitude"": 9.7489, ""longitude"": -83.7534}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,10.07204818725586,-83.41154479980469,15371.628,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,9.5914,-83.4636,15387.562,CR,True,,stop,0.001176,634,30,0,1.02,"{""country"": ""CR"", ""latitude"": 9.5914, ""longitude"": -83.4636}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,8.977299690246582,-82.26465606689453,15535.376,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,18.1485,-76.3552,15573.874,JM,True,,stop,0.0108501,553,3032,3023,101.33,"{
+""reasoning"": ""The hand-painted wooden sign with a red background and yellow block lettering is highly characteristic of rural Jamaica, utilizing the national colors. The lush tropical vegetation and rocky riverbed path are consistent with the trail leading to Reach Falls in Portland Parish."",
+""country"": ""JM"",
+""latitude"": 18.1485,
+""longitude"": -76.3552
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,18.4655,-66.1057,16334.302,US,True,,stop,0.0001171625,473,31,0,0.65,"{""country"": ""US"", ""latitude"": 18.4655, ""longitude"": -66.1057}"
+xiaomi/mimo-v2.5,CoT,15.354,-61.3503,16917.757,DM,True,,stop,0.0001692376,787,305,188,5.52,"{""reasoning"": ""The red arrow-shaped sign pointing to a 'WATERFALL' with its specific typography and style is characteristic of signage found in Dominica, particularly in the rainforest areas like the Waitukubuli National Trail or near Trafalgar Falls. The lush tropical rainforest vegetation, muddy terrain, and lack of specific infrastructure or road markings further point towards the Nature Island of the Caribbean."", ""country"": ""DM"", ""latitude"": 15.3540, ""longitude"": -61.3503}"
+openai/gpt-5.5,CoT,15.3189,-61.3436,16921.347,DM,True,,stop,0.019005,621,530,440,19.19,"{""reasoning"":""The lush tropical rainforest setting and simple English 'WATERFALL' trail sign strongly suggest an English-speaking Caribbean island, with Dominica especially likely due to its dense volcanic rainforest and many signed waterfall trails. The muddy rocky track and vegetation fit the Morne Trois Pitons/Trafalgar Falls area."",""country"":""DM"",""latitude"":15.3189,""longitude"":-61.3436}"
+google/gemini-3.5-flash,CoT (effort=low),15.3281,-61.3244,16921.715,DM,True,,stop,0.003969,1272,229,166,8.98,"{""reasoning"": ""The English 'WATERFALL' sign in a lush, tropical volcanic environment with a rocky riverbed is highly characteristic of Caribbean islands like Dominica."", ""country"": ""DM"", ""latitude"": 15.3281, ""longitude"": -61.3244}"
+mistralai/mistral-small-2603,no-CoT,-22.9068,-47.0614,18302.692,BR,True,,stop,0.0001137,634,31,0,9.73,"{""country"": ""BR"", ""latitude"": -22.9068, ""longitude"": -47.0614}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.41,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.69,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.34,

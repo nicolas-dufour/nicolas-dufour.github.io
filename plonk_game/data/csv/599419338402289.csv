@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,56.062838126635214,-121.84977081780812,0.0,CA,True,,,,,,,,"Chetwynd, None, British Columbia, CA"
+google/gemini-3.5-flash,CoT (effort=medium),56.2515,-121.3012,39.926,CA,True,,stop,0.01125,1272,1038,958,15.09,"```json
+{""reasoning"": ""The landscape, boreal forest, wide river valley, and massive road embankment construction are characteristic of the Highway 29 realignment along the Peace River near the Site C reservoir in British Columbia, Canada."", ""country"": ""CA"", ""latitude"": 56.2515, ""longitude"": -121.3012}
+```"
+google/gemini-3.5-flash,CoT (effort=high),56.2715,-121.2425,44.179,CA,True,,stop,0.023454,1272,2394,2308,14.75,"```json
+{""reasoning"": ""The image shows a wide river valley with boreal forest and a massive gravel embankment on the left, characteristic of the Highway 29 realignment project along the Peace River in British Columbia, Canada, to accommodate the Site C reservoir."", ""country"": ""CA"", ""latitude"": 56.2715, ""longitude"": -121.2425}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),56.2311,-120.8918,62.218,CA,True,,stop,0.002109,1190,36,0,1.5,"```json
+{""country"": ""CA"", ""latitude"": 56.2311, ""longitude"": -120.8918}
+```"
+anthropic/claude-opus-4.8,CoT,56.24,-120.85,64.979,CA,True,,stop,0.006685,797,108,0,16.88,"{""reasoning"": ""Boreal forested hills with spruce, a wide river beside the highway, right-hand traffic, and yellow center line suggest northern British Columbia/Yukon along a river like the Peace or near a highway following a large river."", ""country"": ""CA"", ""latitude"": 56.24, ""longitude"": -120.85}"
+anthropic/claude-opus-4.8,no-CoT,56.247,-120.85,65.214,CA,True,,stop,0.00408,666,30,0,2.24,"{""country"": ""CA"", ""latitude"": 56.247, ""longitude"": -120.85}"
+google/gemini-3.5-flash,CoT (effort=low),56.1425,-120.6852,72.76,CA,True,,stop,0.0043635,1271,273,204,9.52,"{""reasoning"": ""The wide river valley, coniferous forested hills, and road layout are highly characteristic of northern British Columbia, Canada, specifically along the Peace River near Fort St. John."", ""country"": ""CA"", ""latitude"": 56.1425, ""longitude"": -120.6852}"
+google/gemini-3.1-pro-preview,CoT,56.145,-120.682,72.989,CA,True,,stop,0.005986,1271,287,209,5.11,"{
+  ""reasoning"": ""The boreal forest, wide river, and rolling hills suggest a northern North American landscape. The road infrastructure and scenery are consistent with the Peace River valley in northern British Columbia."",
+  ""country"": ""CA"",
+  ""latitude"": 56.145,
+  ""longitude"": -120.682
+}"
+google/gemini-3.1-pro-preview,no-CoT,56.1538,-120.6751,73.534,CA,True,,stop,0.002812,1190,36,0,8.57,"```json
+{""country"": ""CA"", ""latitude"": 56.1538, ""longitude"": -120.6751}
+```"
+moonshotai/kimi-k2.6,no-CoT,56.538,-120.072,121.738,CA,True,,stop,0.000272952,603,23,0,8.61,"{""country"": ""CA"", ""latitude"": 56.538, ""longitude"": -120.072}"
+qwen/qwen3.5-397b-a17b,CoT,55.22,-117.29,301.038,CA,True,,stop,0.0227434,553,6261,6182,94.43,"{""reasoning"": ""Right-hand traffic and North American vehicle styles indicate a location in Canada or the US, while the boreal forest, wide river valley, and road infrastructure strongly match Highway 2 along the Peace River in Alberta, Canada."", ""country"": ""CA"", ""latitude"": 55.22, ""longitude"": -117.29}"
+qwen/qwen3.6-35b-a3b,no-CoT,53.7456,-119.2341,307.123,CA,True,,stop,0.00010295,473,32,0,4.21,"{""country"": ""CA"", ""latitude"": 53.7456, ""longitude"": -119.2341}"
+xiaomi/mimo-v2.5,CoT,54.095,-125.92,339.024,CA,True,,stop,0.0010097976,787,3307,3216,82.97,"{""reasoning"": ""The combination of yellow center road markings, right-hand traffic, and boreal vegetation is characteristic of Western Canada. The specific terrain, featuring a large concrete retaining wall adjacent to the Endako River on Highway 16, identifies the location near Fraser Lake, British Columbia."", ""country"": ""CA"", ""latitude"": 54.095, ""longitude"": -125.920}"
+qwen/qwen3.5-397b-a17b,no-CoT,54.7265,-127.1053,363.51,CA,True,,stop,0.000399,473,32,0,8.92,"{""country"": ""CA"", ""latitude"": 54.7265, ""longitude"": -127.1053}"
+moonshotai/kimi-k2.6,CoT,59.5,-125.75,446.524,CA,True,,stop,0.020415528,682,5903,5828,246.11,"{""reasoning"": ""North American highway markings (yellow centerline, white fog line), conventional-hood truck, wooden crossarm utility pole, and boreal conifer forest in a wide rocky river valley are characteristic of the Alaska Highway in northern British Columbia."", ""country"": ""CA"", ""latitude"": 59.5, ""longitude"": -125.75}"
+mistralai/mistral-medium-3-5,no-CoT,53.5444,-113.4909,603.952,CA,True,,stop,0.001191,634,32,0,0.88,"{""country"": ""CA"", ""latitude"": 53.5444, ""longitude"": -113.4909}"
+xiaomi/mimo-v2.5,no-CoT,50.6745,-120.3273,607.571,CA,True,,stop,8.17376e-05,708,32,0,3.15,"{""country"": ""CA"", ""latitude"": 50.6745, ""longitude"": -120.3273}"
+x-ai/grok-4.3,CoT,50.966,-118.195,615.897,CA,True,,stop,0.0022465,676,695,624,14.46,"{""reasoning"": ""Right-hand traffic, dam embankment on left with reservoir on right, pine-covered hills and clear northern sky indicate a large hydroelectric reservoir road in interior British Columbia; visual match to the Columbia River valley downstream of Revelstoke Dam."", ""country"": ""CA"", ""latitude"": 50.966, ""longitude"": -118.195}"
+google/gemma-4-31b-it,no-CoT,53.5214,-113.0125,632.488,CA,True,,stop,0.00011056,406,36,0,8.87,"```json
+{""country"": ""CA"", ""latitude"": 53.5214, ""longitude"": -113.0125}
+```"
+qwen/qwen3.5-9b,no-CoT,52.2667,-114.0333,660.457,CA,True,,stop,5.22e-05,474,32,0,2.84,"{""country"": ""CA"", ""latitude"": 52.2667, ""longitude"": -114.0333}"
+qwen/qwen3.5-122b-a10b,no-CoT,51.2683,-115.4025,681.056,CA,True,,stop,0.00020618,473,40,0,1.72,"{
+  ""country"": ""CA"",
+  ""latitude"": 51.2683,
+  ""longitude"": -115.4025
+}"
+qwen/qwen3.5-27b,no-CoT,51.0534,-115.3903,701.02,CA,True,,stop,0.00019683,473,32,0,15.35,"{""country"": ""CA"", ""latitude"": 51.0534, ""longitude"": -115.3903}"
+qwen/qwen3.6-27b,no-CoT,51.0447,-114.0719,757.609,CA,True,,stop,0.0001963,473,32,0,11.46,"{""country"": ""CA"", ""latitude"": 51.0447, ""longitude"": -114.0719}"
+x-ai/grok-4.3,no-CoT,49.702,-114.215,872.23,CA,True,,stop,0.0005934,592,22,0,0.92,"{""country"": ""CA"", ""latitude"": 49.702, ""longitude"": -114.215}"
+qwen/qwen3.5-35b-a3b,no-CoT,60.7234,-135.3456,939.151,CA,True,,stop,0.00017136,474,32,0,1.97,"{""country"": ""CA"", ""latitude"": 60.7234, ""longitude"": -135.3456}"
+minimax/minimax-m3,CoT,61.18,-135.18,955.976,CA,True,,stop,0.00080466,843,511,434,21.58,"{""reasoning"": ""Boreal forest on rolling hills, large northern lake/river alongside a well-graded paved highway, right-hand traffic, and gravel embankment are characteristic of the Klondike Highway along Lake Laberge in Yukon Territory, Canada."", ""country"": ""CA"", ""latitude"": 61.18, ""longitude"": -135.18}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,61.723140716552734,-135.97360229492188,1023.276,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,62.45,-135.95,1066.823,CA,True,,stop,0.00046722,767,246,291,6.44,"{""country"": ""CA"", ""latitude"": 62.45, ""longitude"": -135.95}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,63.25653076171875,-136.5249481201172,1143.601,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,63.273597717285156,-136.80999755859375,1156.093,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,64.005,-140.0,1331.722,US,True,,stop,0.0057165511,553,5830,5749,59.57,"{""reasoning"": ""The large grey embankment on the left is the tailings dam for the Pogo Mine, and the body of water on the right is the Tanana River, placing this on the Alaska Highway just east of Delta Junction, Alaska."", ""country"": ""US"", ""latitude"": 64.005, ""longitude"": -140.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,40.273681640625,-107.293212890625,2051.621,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,39.93647384643555,-107.26297760009766,2086.42,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,39.9309196472168,-107.24633026123047,2087.596,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,62.5352,113.9618,5975.535,RU,True,,stop,0.00341,544,23,0,2.18,"{""country"":""RU"",""latitude"":62.5352,""longitude"":113.9618}"
+mistralai/mistral-small-2603,no-CoT,60.3764,5.2787,6261.858,NO,True,,stop,0.0001131,634,30,0,2.98,"{""country"": ""NO"", ""latitude"": 60.3764, ""longitude"": 5.2787}"
+mistralai/mistral-small-2603,CoT,53.15,-4.1,6612.687,GB,True,,stop,0.000684,716,961,1056,14.57,"{""reasoning"": ""Left-hand traffic and UK-style road infrastructure indicate this is in the United Kingdom, with rolling green hills typical of rural Wales or Northern England."", ""country"": ""GB"", ""latitude"": 53.15, ""longitude"": -4.1}"
+openai/gpt-5.5,CoT,56.8785,105.4652,6759.437,RU,True,,stop,0.020985,621,596,516,42.65,"{""reasoning"":""Right-hand traffic, Russian-style road markings/shoulders and utility poles, plus a broad Siberian river bordered by taiga-covered hills point strongly to rural Russia. The landscape most closely fits roads along the Yenisei/Lena river valleys in Siberia."",""country"":""RU"",""latitude"":56.8785,""longitude"":105.4652}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11912.726,,True,True,,,,,,6.97,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.26,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.23,

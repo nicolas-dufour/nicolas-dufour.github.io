@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-30.241500005845,145.93555555403,0.0,AU,True,,,,,,,,"Bourke, Bourke, New South Wales, AU"
+anthropic/claude-opus-4.8,CoT,-30.24152,145.93558,0.003,AU,True,,stop,0.006895,949,86,0,5.07,"{""reasoning"": ""Overlay GPS reads -30.24152S 145.93558E, matching the red-soil outback scrub of western New South Wales, Australia."", ""country"": ""AU"", ""latitude"": -30.24152, ""longitude"": 145.93558}"
+google/gemini-3.1-pro-preview,CoT,-30.24152,145.93558,0.003,AU,True,,stop,0.00607,1307,288,186,26.12,"{
+  ""reasoning"": ""The image contains a text overlay in the bottom left corner that explicitly provides the GPS coordinates: -30.24152S, 145.93558E. The landscape and road markings are also consistent with outback Australia."",
+  ""country"": ""AU"",
+  ""latitude"": -30.24152,
+  ""longitude"": 145.93558
+}"
+google/gemini-3.5-flash,CoT (effort=low),-30.24152,145.93558,0.003,AU,True,,stop,0.003843,1308,209,152,2.28,"{""reasoning"": ""The telemetry overlay at the bottom left of the image explicitly provides the GPS coordinates of the location."", ""country"": ""AU"", ""latitude"": -30.24152, ""longitude"": 145.93558}"
+moonshotai/kimi-k2.6,CoT,-30.24152,145.93558,0.003,AU,True,,stop,0.006301656,834,1756,1688,39.13,"{""reasoning"": ""GPS telemetry burned into the image frame reads -30.24152S 145.93558E, while the red earth, flat plains, and scattered gum trees confirm inland Australia."", ""country"": ""AU"", ""latitude"": -30.24152, ""longitude"": 145.93558}"
+x-ai/grok-4.3,CoT,-30.24152,145.93558,0.003,AU,True,,stop,0.001654,788,402,337,9.84,"{""reasoning"": ""Image footer metadata explicitly lists -30.24152S 145.93558E; arid red-soil outback, eucalypts and left-side driving confirm NSW Australia."", ""country"": ""AU"", ""latitude"": -30.24152, ""longitude"": 145.93558}"
+anthropic/claude-opus-4.8,no-CoT,-30.24152,145.93558,0.003,AU,True,,stop,0.00489,818,32,0,2.58,"{""country"": ""AU"", ""latitude"": -30.24152, ""longitude"": 145.93558}"
+google/gemini-3.1-pro-preview,no-CoT,-30.24152,145.93558,0.003,AU,True,,stop,0.004864,1226,201,163,3.22,"```json
+{""country"": ""AU"", ""latitude"": -30.24152, ""longitude"": 145.93558}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-30.24152,145.93558,0.003,AU,True,,stop,0.002181,1226,38,0,1.24,"```json
+{""country"": ""AU"", ""latitude"": -30.24152, ""longitude"": 145.93558}
+```"
+google/gemma-4-31b-it,no-CoT,-30.24152,145.93558,0.003,AU,True,,stop,0.00011174,406,38,0,9.94,"```json
+{""country"": ""AU"", ""latitude"": -30.24152, ""longitude"": 145.93558}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-30.24152,145.93558,0.003,AU,True,,stop,0.001434,786,34,0,7.54,"{""country"": ""AU"", ""latitude"": -30.24152, ""longitude"": 145.93558}"
+google/gemini-3.5-flash,CoT (effort=medium),-30.24152,145.93558,0.003,AU,True,,stop,0.0063165,1307,484,394,10.25,"{""reasoning"": ""The telemetry overlay at the bottom left of the image explicitly provides the GPS coordinates of -30.24152S, 145.93558E, which corresponds to a rural highway in New South Wales, Australia."", ""country"": ""AU"", ""latitude"": -30.24152, ""longitude"": 145.93558}"
+google/gemini-3.5-flash,CoT (effort=high),-30.24152,145.93558,0.003,AU,True,,stop,0.0067395,1307,531,470,26.75,"{""reasoning"": ""The image contains embedded GPS coordinates in the bottom-left watermark, indicating a location in New South Wales, Australia."", ""country"": ""AU"", ""latitude"": -30.24152, ""longitude"": 145.93558}"
+minimax/minimax-m3,CoT,-30.241525,145.935588,0.004,AU,True,,stop,0.00073626,995,416,326,11.01,"{""reasoning"": ""The red-orange soil, flat arid outback landscape with sparse eucalyptus-like trees, left-hand driving road markings, and the embedded GPS watermark showing coordinates -30.241525, 145.935588 all confirm this is a remote outback road in far western New South Wales, Australia."", ""country"": ""AU"", ""latitude"": -30.241525, ""longitude"": 145.935588}"
+openai/gpt-5.5,CoT,-30.241525,145.935588,0.004,AU,True,,stop,0.009655,755,196,112,11.22,"{""reasoning"":""The road scene shows flat arid Australian outback with red soil, sparse eucalyptus, left-side driving road markings, and the image overlay itself indicates coordinates near -30.241525, 145.935588. These clues place it in rural New South Wales, Australia."",""country"":""AU"",""latitude"":-30.241525,""longitude"":145.935588}"
+xiaomi/mimo-v2.5,CoT,-30.241523,145.935586,0.004,AU,True,,stop,0.0003593576,899,928,855,10.55,"{""reasoning"": ""The metadata in the image provides precise coordinates, and the left-hand traffic with arid, reddish soil and sparse vegetation is consistent with rural Australia."", ""country"": ""AU"", ""latitude"": -30.241523, ""longitude"": 145.935586}"
+openai/gpt-5.5,no-CoT,-30.241525,145.935588,0.004,AU,True,,stop,0.00411,678,24,0,8.16,"{""country"":""AU"",""latitude"":-30.241525,""longitude"":145.935588}"
+qwen/qwen3.5-122b-a10b,no-CoT,-30.241525,145.935585,0.004,AU,True,,stop,0.0003748,585,44,0,13.88,"{
+  ""country"": ""AU"",
+  ""latitude"": -30.241525,
+  ""longitude"": 145.935585
+}"
+qwen/qwen3.5-27b,no-CoT,-30.241525,145.93558,0.004,AU,True,,stop,0.0002425,586,48,0,9.39,"```json
+{
+  ""country"": ""AU"",
+  ""latitude"": -30.241525,
+  ""longitude"": 145.93558
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,-30.241528,145.93558,0.004,AU,True,,stop,0.0001405625,585,35,0,0.73,"{""country"": ""AU"", ""latitude"": -30.241528, ""longitude"": 145.93558}"
+qwen/qwen3.6-27b,no-CoT,-30.241525,145.93558,0.004,AU,True,,stop,0.0002359,585,35,0,13.59,"{""country"": ""AU"", ""latitude"": -30.241525, ""longitude"": 145.93558}"
+qwen/qwen3.6-35b-a3b,no-CoT,-30.241525,145.93558,0.004,AU,True,,stop,0.00116444185,583,1109,1070,12.6,"{""country"": ""AU"", ""latitude"": -30.241525, ""longitude"": 145.93558}"
+x-ai/grok-4.3,no-CoT,-30.2415,145.9356,0.004,AU,True,,stop,0.0007384,704,24,0,1.04,"{""country"": ""AU"", ""latitude"": -30.2415, ""longitude"": 145.9356}"
+xiaomi/mimo-v2.5,no-CoT,-30.241525,145.93558,0.004,AU,True,,stop,9.82576e-05,820,35,0,1.68,"{""country"": ""AU"", ""latitude"": -30.241525, ""longitude"": 145.93558}"
+google/gemma-4-26b-a4b-it,no-CoT,-30.2415,145.9355,0.005,AU,True,,stop,5.908e-05,404,42,0,1.7,"- ownthought
+```json
+{""country"": ""AU"", ""latitude"": -30.2415, ""longitude"": 145.9355}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-30.241925,145.93558,0.047,AU,True,,stop,0.0004022,585,35,0,2.18,"{""country"": ""AU"", ""latitude"": -30.241925, ""longitude"": 145.93558}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-30.244895935058594,146.05023193359375,11.022,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-30.253864288330078,146.0691680908203,12.908,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-27.228069305419922,137.38156127929688,898.487,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-22.73003578186035,134.86256408691406,1381.414,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-21.489307403564453,135.9158172607422,1395.836,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-22.913414001464844,134.35853576660156,1409.02,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,-24.1525,115.9356,3033.795,AU,True,,stop,6.34e-05,586,32,0,4.63,"{""country"": ""AU"", ""latitude"": -24.1525, ""longitude"": 115.9356}"
+mistralai/mistral-small-2603,no-CoT,38.5,-98.5,14149.467,US,True,,stop,0.0001329,786,25,0,3.46,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -98.5}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.82,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.7,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.21,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.29,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.35,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.2,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.41,

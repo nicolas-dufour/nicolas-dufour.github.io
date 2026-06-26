@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,60.13479780000005,-129.57186949997222,0.0,CA,True,,,,,,,,"Watson Lake, None, Yukon, CA"
+google/gemini-3.5-flash,CoT (effort=low),60.3152,-133.4211,213.464,CA,True,,stop,0.003978,1272,230,157,8.98,"{""reasoning"": ""The dashed yellow center line and solid white edge lines indicate North America, while the dense boreal forest, low northern sun, and fireweed wildflowers are highly characteristic of the Yukon Territory in Canada."", ""country"": ""CA"", ""latitude"": 60.3152, ""longitude"": -133.4211}"
+google/gemini-3.5-flash,CoT (effort=high),60.4521,-133.4482,216.461,CA,True,,stop,0.0109965,1271,1010,940,13.93,"{""reasoning"": ""The boreal forest vegetation with prominent fireweed, wide cleared shoulders, and yellow dashed center line indicates a northern North American highway, most likely the Alaska Highway in the Yukon."", ""country"": ""CA"", ""latitude"": 60.4521, ""longitude"": -133.4482}"
+google/gemini-3.1-pro-preview,CoT,60.7128,-135.0493,307.318,CA,True,,stop,0.006202,1271,305,225,12.23,"{
+  ""reasoning"": ""The dashed yellow center line and solid white edge lines indicate North America. The boreal forest landscape with fireweed along the roadside strongly suggests a northern highway in Canada or Alaska."",
+  ""country"": ""CA"",
+  ""latitude"": 60.7128,
+  ""longitude"": -135.0493
+}"
+x-ai/grok-4.3,CoT,60.72,-135.05,307.491,CA,True,,stop,0.002144,676,654,583,5.82,"{
+  ""reasoning"": ""North American road markings (yellow center dashes + solid white edge lines), right-side driving, boreal/taiga forest with fireweed, empty straight asphalt highway typical of Yukon/Alaska Highway corridor."",
+  ""country"": ""CA"",
+  ""latitude"": 60.72,
+  ""longitude"": -135.05
+}"
+anthropic/claude-opus-4.8,no-CoT,60.7212,-135.0568,307.878,CA,True,,stop,0.00413,666,32,0,9.93,"{""country"": ""CA"", ""latitude"": 60.7212, ""longitude"": -135.0568}"
+anthropic/claude-opus-4.8,CoT,60.7,-135.1,309.804,CA,True,,stop,0.006235,797,90,0,3.25,"{""reasoning"": ""Boreal spruce forest with fireweed along a wide rural highway, low sun angle suggesting high latitude; yellow center line indicates North America driving on right."", ""country"": ""CA"", ""latitude"": 60.7, ""longitude"": -135.1}"
+google/gemini-3.5-flash,CoT (effort=medium),60.9833,-137.5167,444.06,CA,True,,stop,0.0058395,1271,437,360,4.4,"{""reasoning"": ""The yellow dashed center line and solid white edge lines indicate North America, while the dense boreal forest with black spruce and birch is characteristic of the far north, likely along the Alaska Highway in Yukon, Canada."", ""country"": ""CA"", ""latitude"": 60.9833, ""longitude"": -137.5167}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),61.2548,-120.6254,502.148,CA,True,,stop,0.0021075,1189,36,0,7.67,"```json
+{""country"": ""CA"", ""latitude"": 61.2548, ""longitude"": -120.6254}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,61.927101135253906,-140.52198791503906,621.596,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,61.96922302246094,-140.57473754882812,625.404,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,62.82473373413086,-141.1145477294922,680.64,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,61.93632125854492,-141.69126892089844,681.49,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,53.6545,-122.7124,831.35,CA,True,,stop,0.00344,544,24,0,1.29,"{""country"":""CA"",""latitude"":53.6545,""longitude"":-122.7124}"
+xiaomi/mimo-v2.5,CoT,55.5,-118.5,832.233,CA,True,,stop,0.0001555176,787,256,193,3.13,"{""reasoning"": ""Coniferous boreal forest and straight two-lane road with yellow center line indicate northern Canada; sun angle suggests high latitude in boreal region."", ""country"": ""CA"", ""latitude"": 55.5, ""longitude"": -118.5}"
+qwen/qwen3.5-9b,no-CoT,62.4566,-114.0726,864.628,CA,True,,stop,5.22e-05,474,32,0,10.44,"{""country"": ""CA"", ""latitude"": 62.4566, ""longitude"": -114.0726}"
+qwen/qwen3.6-27b,no-CoT,61.0139,-145.4894,872.843,CA,True,,stop,0.0001963,473,32,0,10.59,"{""country"": ""CA"", ""latitude"": 61.0139, ""longitude"": -145.4894}"
+qwen/qwen3.5-122b-a10b,no-CoT,68.4167,-133.7333,942.025,CA,True,,stop,0.0002916,473,32,0,1.49,"{""country"": ""CA"", ""latitude"": 68.4167, ""longitude"": -133.7333}"
+qwen/qwen3.5-397b-a17b,no-CoT,53.7285,-116.5769,1059.231,CA,True,,stop,0.000383,473,32,0,3.68,"{""country"": ""CA"", ""latitude"": 53.7285, ""longitude"": -116.5769}"
+google/gemini-3.1-pro-preview,no-CoT,63.5,-149.0,1081.588,US,True,,stop,0.00526,1190,240,210,14.0,"```json
+{""country"": ""US"", ""latitude"": 63.5, ""longitude"": -149.0}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,64.7885513305664,-148.73060607910156,1106.535,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,56.7,-111.4,1120.701,CA,True,,stop,8.00576e-05,708,26,0,2.24,"{""country"": ""CA"", ""latitude"": 56.7, ""longitude"": -111.4}"
+qwen/qwen3.5-35b-a3b,no-CoT,56.1234,-110.5678,1196.332,CA,True,,stop,9.836e-05,474,32,0,1.43,"{""country"": ""CA"", ""latitude"": 56.1234, ""longitude"": -110.5678}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,65.6264877319336,-150.48666381835938,1215.005,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,53.5444,-113.4909,1216.882,CA,True,,stop,0.001191,634,32,0,0.93,"{""country"": ""CA"", ""latitude"": 53.5444, ""longitude"": -113.4909}"
+qwen/qwen3.6-35b-a3b,no-CoT,56.1234,-106.5678,1413.835,CA,True,,stop,0.00015825,473,32,0,6.88,"{""country"": ""CA"", ""latitude"": 56.1234, ""longitude"": -106.5678}"
+google/gemma-4-31b-it,no-CoT,56.1234,-106.5432,1415.183,CA,True,,stop,6.418e-05,406,37,0,10.19,"```json
+{""country"": ""CA"", ""latitude"": 56.1234, ""longitude"": -106.5432}
+```"
+qwen/qwen3.5-27b,no-CoT,54.5639,-100.0067,1860.008,CA,True,,stop,0.00024024,474,45,0,4.21,"```json
+{
+  ""country"": ""CA"",
+  ""latitude"": 54.5639,
+  ""longitude"": -100.0067
+}
+```"
+x-ai/grok-4.3,no-CoT,54.8,-98.5,1929.595,CA,True,,stop,0.0005934,592,22,0,1.1,"{""country"": ""CA"", ""latitude"": 54.8, ""longitude"": -98.5}"
+moonshotai/kimi-k2.6,CoT,49.0,-85.0,3055.12,CA,True,,stop,0.013083768,682,3757,3692,72.2,"{""reasoning"": ""Yellow centerline with white edge lines is standard North American road marking, and the flat, extremely straight paved highway through mixed boreal forest with fireweed is characteristic of remote northern Ontario."", ""country"": ""CA"", ""latitude"": 49.0, ""longitude"": -85.0}"
+minimax/minimax-m3,CoT,68.0,27.0,5641.606,FI,True,,stop,0.00067026,843,399,321,17.93,"{""reasoning"": ""Flat boreal taiga landscape with right-hand traffic, yellow center-line markings, and white edge lines on a long straight two-lane highway — characteristic of Finnish Lapland. Low sun angle and spruce/birch forest confirm high northern latitude."", ""country"": ""FI"", ""latitude"": 68.0, ""longitude"": 27.0}"
+openai/gpt-5.5,CoT,67.5234,26.6318,5688.844,FI,True,,stop,0.016665,621,452,370,73.25,"{""reasoning"":""Flat boreal taiga, right-hand driving, and the yellow center/white edge road markings match rural Finland rather than neighboring Sweden/Norway. The sparse northern forest and low sun suggest Lapland, likely along a straight highway near Sodankylä/Ivalo."",""country"":""FI"",""latitude"":67.5234,""longitude"":26.6318}"
+mistralai/mistral-small-2603,no-CoT,60.3894,5.3216,6063.35,NO,True,,stop,0.000141375,634,30,0,7.87,"{""country"": ""NO"", ""latitude"": 60.3894, ""longitude"": 5.3216}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12064.107,,True,True,,,,,,6.47,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,12.69,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.23,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.07,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.2,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.15,

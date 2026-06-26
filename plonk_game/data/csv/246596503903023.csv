@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-30.782284948755,-64.307994207673,0.0,AR,True,,,,,,,,"La Granja, None, Cordoba, AR"
+google/gemini-3.1-pro-preview,CoT,-31.5,-64.5,81.872,AR,True,,stop,0.005266,1271,227,151,4.42,"{
+  ""reasoning"": ""The landscape with rolling hills, green shrubs, and dirt road is characteristic of central Argentina. The wooden utility poles with a single crossbar are also typical for rural areas in this region."",
+  ""country"": ""AR"",
+  ""latitude"": -31.5,
+  ""longitude"": -64.5
+}"
+google/gemini-3.1-pro-preview,no-CoT,-31.5,-64.5,81.872,AR,True,,stop,0.002726,1189,29,0,9.36,"```json
+{""country"": ""AR"", ""latitude"": -31.5, ""longitude"": -64.5}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-31.6542,-64.5211,99.048,AR,True,,stop,0.0064605,1271,506,434,4.9,"{""reasoning"": ""The rolling green hills, semi-arid vegetation with bunchgrass, dirt road, and characteristic wooden T-pole utility lines are highly indicative of the Sierras de Córdoba region in Argentina."", ""country"": ""AR"", ""latitude"": -31.6542, ""longitude"": -64.5211}"
+google/gemini-3.5-flash,CoT (effort=high),-31.6542,-64.5481,99.605,AR,True,,stop,0.0079365,1271,670,605,13.05,"{""reasoning"": ""The rolling green hills, sandy dirt road, and distinctive T-shaped wooden utility poles are highly characteristic of the Sierras de Córdoba region in Argentina."", ""country"": ""AR"", ""latitude"": -31.6542, ""longitude"": -64.5481}"
+google/gemini-3.5-flash,CoT (effort=low),-31.6542,-64.6891,103.504,AR,True,,stop,0.0037965,1271,210,143,2.94,"{""reasoning"": ""The rolling green hills, wooden utility poles with crossbars, and wire fencing along a dirt road are highly characteristic of the Sierras de Córdoba region in Argentina."", ""country"": ""AR"", ""latitude"": -31.6542, ""longitude"": -64.6891}"
+moonshotai/kimi-k2.6,CoT,-31.85,-64.9,131.37,AR,True,,stop,0.011934828,682,3419,3356,86.79,"{""reasoning"": ""Pampas grass and scrub-covered rolling hills alongside unpaved road and simple wire fencing are characteristic of the Sierras de Córdoba region in central Argentina."", ""country"": ""AR"", ""latitude"": -31.85, ""longitude"": -64.9}"
+anthropic/claude-opus-4.8,no-CoT,-32.0,-65.0,150.494,AR,True,,stop,0.00408,666,30,0,8.44,"{""country"": ""AR"", ""latitude"": -32.0, ""longitude"": -65.0}"
+anthropic/claude-opus-4.8,CoT,-32.3,-65.0,181.055,AR,True,,stop,0.00631,797,93,0,3.28,"{""reasoning"": ""Dry rural dirt road with shrubby hills, grassland, and wooden power poles resembling the Sierras of central Argentina (Córdoba/San Luis region)."", ""country"": ""AR"", ""latitude"": -32.3, ""longitude"": -65.0}"
+openai/gpt-5.5,no-CoT,-32.8216,-64.9587,234.95,AR,True,,stop,0.00347,544,25,0,8.65,"{""country"":""AR"",""latitude"":-32.8216,""longitude"":-64.9587}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-32.3768424987793,-62.662227630615234,236.091,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-32.9145,-64.9821,245.49,AR,True,,stop,0.0021,1190,35,0,1.64,"```json
+{""country"": ""AR"", ""latitude"": -32.9145, ""longitude"": -64.9821}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-34.60442352294922,-58.45498275756836,693.034,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,-34.6037,-58.3816,698.419,AR,True,,stop,6.718e-05,406,36,0,4.02,"```json
+{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-34.512630462646484,-58.06682205200195,716.339,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,-35.8947,-58.4679,785.474,AR,True,,stop,5.205e-05,474,31,0,9.74,"{""country"": ""AR"", ""latitude"": -35.8947, ""longitude"": -58.4679}"
+minimax/minimax-m3,CoT,-37.5,-60.5,824.889,AR,True,,stop,0.00058938,843,306,293,13.65,"{""reasoning"": ""Dirt rural road, rolling hills with sparse shrubs and possible yatay palms, wooden fence posts and timber utility poles, and dry grassland typical of the Argentine Pampas/Espinal transition zone suggest rural Buenos Aires province or Entre Ríos, Argentina."", ""country"": ""AR"", ""latitude"": -37.5, ""longitude"": -60.5}"
+minimax/minimax-m3,no-CoT,-34.2,-54.3,1012.059,UY,True,,stop,0.00039522,767,186,197,5.45,"{""country"": ""UY"", ""latitude"": -34.2, ""longitude"": -54.3}"
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.6333,1921.358,BR,True,,stop,0.00029655,473,31,0,1.23,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-397b-a17b,no-CoT,-34.0522,18.4232,7547.351,ZA,True,,stop,0.0003322,473,31,0,8.09,"{""country"": ""ZA"", ""latitude"": -34.0522, ""longitude"": 18.4232}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7576.023,,True,True,,,,,,13.1,
+xiaomi/mimo-v2.5,CoT,-34.3,19.2,7602.176,ZA,True,,stop,0.0002980376,787,765,699,9.14,"{""reasoning"": ""The image shows left-hand traffic, characteristic sandy soil, and dense scrub vegetation known as fynbos, which are hallmark features of the Western Cape province in South Africa."", ""country"": ""ZA"", ""latitude"": -34.3, ""longitude"": 19.2}"
+mistralai/mistral-medium-3-5,no-CoT,30.2672,-97.7431,7652.704,US,True,,stop,0.0011835,634,31,0,1.07,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+qwen/qwen3.5-27b,no-CoT,30.2672,-97.7431,7652.704,US,True,,stop,0.00019467,473,31,0,1.65,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+qwen/qwen3.5-35b-a3b,no-CoT,-33.9245,20.1832,7701.837,ZA,True,,stop,0.00015839,473,31,0,9.23,"{""country"": ""ZA"", ""latitude"": -33.9245, ""longitude"": 20.1832}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.8925,20.1768,7702.738,ZA,True,,stop,0.00010617035,473,31,0,2.97,"{""country"": ""ZA"", ""latitude"": -33.8925, ""longitude"": 20.1768}"
+openai/gpt-5.5,CoT,-34.145,20.436,7713.202,ZA,True,,stop,0.014955,621,395,315,17.15,"{""reasoning"":""The dry gravel farm road, wire fencing, wooden utility poles, and fynbos-like scrubby rolling hills strongly suggest rural Western Cape, South Africa. The landscape and climate look most consistent with the Overberg/Swellendam area rather than tropical or European countryside."",""country"":""ZA"",""latitude"":-34.145,""longitude"":20.436}"
+x-ai/grok-4.3,no-CoT,-33.85,22.05,7862.299,ZA,True,,stop,0.0005934,592,22,0,1.29,"{""country"": ""ZA"", ""latitude"": -33.85, ""longitude"": 22.05}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-33.811553955078125,24.254512786865234,8048.358,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,-33.15,24.85,8130.183,ZA,True,,stop,0.0017765,676,507,431,10.77,"{""reasoning"": ""Rural dirt road with wooden power poles, wire fencing on right, rolling green shrub/veld hills, and left-side ditch match South African countryside (Eastern/Western Cape transition); no other region fits all vegetation, infrastructure, and terrain clues simultaneously."", ""country"": ""ZA"", ""latitude"": -33.15, ""longitude"": 24.85}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-33.503173828125,26.28475570678711,8232.11,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,-33.5,26.5,8250.094,ZA,True,,stop,7.97776e-05,708,25,0,1.36,"{""country"": ""ZA"", ""latitude"": -33.5, ""longitude"": 26.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-33.550106048583984,26.743934631347656,8267.759,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,-32.156789,26.890123,8350.433,ZA,True,,stop,0.00019604,474,35,0,6.83,"{""country"": ""ZA"", ""latitude"": -32.156789, ""longitude"": 26.890123}"
+mistralai/mistral-small-2603,no-CoT,54.6667,-5.75,11020.536,GB,True,,stop,0.0001119,634,28,0,1.03,"{""country"": ""GB"", ""latitude"": 54.6667, ""longitude"": -5.75}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.24,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.25,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.85,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.61,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,13.02,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.69,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.23,

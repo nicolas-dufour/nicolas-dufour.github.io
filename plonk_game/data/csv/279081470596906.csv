@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-45.036480082592,168.99946720574,0.0,NZ,True,,,,,,,,"Arrowtown, Queenstown-Lakes District, Otago, NZ"
+google/gemini-3.1-pro-preview,CoT,-45.023,169.012,1.794,NZ,True,,stop,0.00631,1271,314,227,5.44,"{
+  ""reasoning"": ""Left-hand driving, yellow/black chevron signs, and white delineator posts with a red band strongly indicate New Zealand. The dry, rocky, mountainous terrain is characteristic of the South Island, likely Central Otago."",
+  ""country"": ""NZ"",
+  ""latitude"": -45.023,
+  ""longitude"": 169.012
+}"
+google/gemini-3.5-flash,CoT (effort=high),-45.042,169.025,2.098,NZ,True,,stop,0.0134175,1271,1279,1198,12.86,"{""reasoning"": ""The left-hand traffic, distinctive schist rock cliffs, dry tussock-covered mountains, and New Zealand-style road markings and chevrons indicate the Kawarau Gorge (State Highway 6) in Otago, New Zealand."", ""country"": ""NZ"", ""latitude"": -45.042, ""longitude"": 169.025}"
+google/gemini-3.5-flash,CoT (effort=medium),-45.0381,169.0352,2.813,NZ,True,,stop,0.0099435,1271,893,801,13.59,"```json
+{""reasoning"": ""Left-hand driving, white road markings, and guide posts with red bands indicate New Zealand. The rugged schist rock cliffs and dry mountainous terrain are characteristic of the Kawarau Gorge (State Highway 6) in the Otago region of the South Island."", ""country"": ""NZ"", ""latitude"": -45.0381, ""longitude"": 169.0352}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-45.0142,169.0211,3.005,NZ,True,,stop,0.0042375,1271,259,174,9.17,"{""reasoning"": ""The left-hand driving, white edge lines, and distinctive white guide posts with red reflectors indicate New Zealand. The dry, rocky gorge landscape and mountainous background are characteristic of State Highway 6 in the Kawarau Gorge on the South Island."", ""country"": ""NZ"", ""latitude"": -45.0142, ""longitude"": 169.0211}"
+google/gemini-3.1-pro-preview,no-CoT,-45.005,169.065,6.228,NZ,True,,stop,0.005654,1189,273,239,4.32,"```json
+{""country"": ""NZ"", ""latitude"": -45.005, ""longitude"": 169.065}
+```"
+openai/gpt-5.5,CoT,-45.0346,169.1052,8.311,NZ,True,,stop,0.021225,621,604,516,18.13,"{""reasoning"":""Left-hand traffic, NZ-style white edge/dashed markings and yellow-black chevrons point to New Zealand; the schist rock cut, alpine dry landscape and guardrailed highway closely match South Island Otago roads around the Kawarau Gorge/Nevis Bluff near Queenstown-Cromwell."",""country"":""NZ"",""latitude"":-45.0346,""longitude"":169.1052}"
+anthropic/claude-opus-4.8,CoT,-45.02,168.85,11.888,NZ,True,,stop,0.00646,797,99,0,3.42,"{""reasoning"": ""Left-hand driving, dry tussock-covered mountains and rocky cut, marker posts typical of New Zealand's Southern Alps highways near Queenstown/Central Otago."", ""country"": ""NZ"", ""latitude"": -45.02, ""longitude"": 168.85}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-44.9912,168.8345,13.911,NZ,True,,stop,0.002109,1190,36,0,1.5,"```json
+{""country"": ""NZ"", ""latitude"": -44.9912, ""longitude"": 168.8345}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-45.09389877319336,168.82550048828125,15.081,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-45.11246871948242,168.8189697265625,16.501,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-44.919830322265625,168.77252197265625,22.066,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,-44.9876,168.7234,22.372,NZ,True,,stop,0.00036828,473,32,0,2.98,"{""country"": ""NZ"", ""latitude"": -44.9876, ""longitude"": 168.7234}"
+x-ai/grok-4.3,no-CoT,-45.017,168.666,26.297,NZ,True,,stop,0.0005934,592,22,0,0.93,"{""country"": ""NZ"", ""latitude"": -45.017, ""longitude"": 168.666}"
+qwen/qwen3.5-9b,no-CoT,-45.0312,168.6606,26.635,NZ,True,,stop,5.22e-05,474,32,0,2.44,"{""country"": ""NZ"", ""latitude"": -45.0312, ""longitude"": 168.6606}"
+openai/gpt-5.5,no-CoT,-45.0174,168.6562,27.061,NZ,True,,stop,0.00344,544,24,0,1.5,"{""country"":""NZ"",""latitude"":-45.0174,""longitude"":168.6562}"
+anthropic/claude-opus-4.8,no-CoT,-44.9,169.3,28.094,NZ,True,,stop,0.004105,666,31,0,8.74,"{""country"": ""NZ"", ""latitude"": -44.9, ""longitude"": 169.3}"
+qwen/qwen3.6-27b,no-CoT,-45.1234,169.5678,45.658,NZ,True,,stop,0.0001963,473,32,0,11.17,"{""country"": ""NZ"", ""latitude"": -45.1234, ""longitude"": 169.5678}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-44.71305847167969,168.619384765625,46.801,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-44.648963928222656,168.73580932617188,47.842,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,-44.5833,169.1667,52.09,NZ,True,,stop,6.418e-05,406,37,0,4.39,"```json
+{""country"": ""NZ"", ""latitude"": -44.5833, ""longitude"": 169.1667}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,-44.5321,169.1456,57.258,NZ,True,,stop,0.00018954,473,32,0,8.1,"{""country"": ""NZ"", ""latitude"": -44.5321, ""longitude"": 169.1456}"
+moonshotai/kimi-k2.6,CoT,-44.53,169.57,72.106,NZ,True,,stop,0.010112,680,2406,2765,35.9,"{""reasoning"": ""Left-hand traffic, white edge posts with red reflectors, yellow curve-warning signage, and dry tussock-covered alpine terrain with rocky road cuts are characteristic of New Zealand's South Island high-country highways."", ""country"": ""NZ"", ""latitude"": -44.53, ""longitude"": 169.57}"
+minimax/minimax-m3,CoT,-44.55,169.65,74.574,NZ,True,,stop,0.00065586,843,387,312,17.09,"{""reasoning"": ""Left-hand traffic, yellow chevron warning signs, rocky alpine outcrops with golden tussock grass and rugged mountains are highly characteristic of New Zealand's South Island, most likely along State Highway 8 near the Lindis Pass."", ""country"": ""NZ"", ""latitude"": -44.55, ""longitude"": 169.65}"
+qwen/qwen3.5-27b,no-CoT,-44.3333,169.1667,79.3,NZ,True,,stop,0.0002187,473,32,0,1.94,"{""country"": ""NZ"", ""latitude"": -44.3333, ""longitude"": 169.1667}"
+mistralai/mistral-medium-3-5,no-CoT,-44.4,169.8,94.918,NZ,True,,stop,0.001146,634,26,0,7.13,"{""country"": ""NZ"", ""latitude"": -44.4, ""longitude"": 169.8}"
+qwen/qwen3.5-35b-a3b,no-CoT,-43.5321,170.1892,192.222,NZ,True,,stop,0.00015825,473,32,0,1.19,"{""country"": ""NZ"", ""latitude"": -43.5321, ""longitude"": 170.1892}"
+xiaomi/mimo-v2.5,CoT,-43.5,171.0,233.572,NZ,True,,stop,0.0004033176,787,1141,1077,12.52,"{""reasoning"": ""Driving on the left (New Zealand's norm), rocky mountainous terrain with gray rock typical of South Island, and road style match New Zealand's highways."", ""country"": ""NZ"", ""latitude"": -43.5, ""longitude"": 171.0}"
+qwen/qwen3.6-35b-a3b,no-CoT,-43.5289,172.6361,334.478,NZ,True,,stop,0.0001071356,473,32,0,1.91,"{""country"": ""NZ"", ""latitude"": -43.5289, ""longitude"": 172.6361}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-42.70167922973633,171.77935791015625,342.098,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,39.7392,-105.0,12730.024,US,True,,stop,8.17376e-05,708,32,0,2.52,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -105.0000}"
+mistralai/mistral-small-2603,no-CoT,62.4736,6.1736,17787.314,NO,True,,stop,0.0001131,634,30,0,5.94,"{""country"": ""NO"", ""latitude"": 62.4736, ""longitude"": 6.1736}"
+x-ai/grok-4.3,CoT,45.35,6.72,18628.853,FR,True,,stop,0.0031765,676,1067,982,8.33,"{""reasoning"": ""Right-hand traffic (oncoming vehicle visible to the left of the travel lane), European-style dashed lane markings + red/white guardrail reflectors, yellow/black chevron warning signs, and steep rock-cut road in a mountainous setting with alpine terrain/vegetation point to western/central Europe."", ""country"": ""FR"", ""latitude"": 45.35, ""longitude"": 6.72}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.33,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.58,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.22,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.36,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,9.46,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.33,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.26,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.44,

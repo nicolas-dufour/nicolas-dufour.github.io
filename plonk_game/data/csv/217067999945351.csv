@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-23.716630356522,-65.456411073239,0.0,AR,True,,,,,,,,"Maimara, None, Jujuy, AR"
+google/gemini-3.1-pro-preview,no-CoT,-23.7416,-65.4925,4.605,AR,True,,stop,0.002798,1189,35,0,10.88,"```json
+{""country"": ""AR"", ""latitude"": -23.7416, ""longitude"": -65.4925}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-23.7412,-65.4951,4.793,AR,True,,stop,0.0051735,1271,363,290,3.76,"{""reasoning"": ""The multi-colored mineral layers in the arid mountains, sparse shrub vegetation, and gravelly terrain are highly characteristic of the Quebrada de Humahuaca region in Jujuy, Argentina."", ""country"": ""AR"", ""latitude"": -23.7412, ""longitude"": -65.4951}"
+openai/gpt-5.5,CoT,-23.7462,-65.4994,5.474,AR,True,,stop,0.010335,621,241,149,12.7,"{""reasoning"":""The arid high-altitude Andean valley with multicolored sedimentary hills and sparse scrub strongly matches the Quebrada de Humahuaca/Purmamarca landscape in Jujuy. The distinctive red, beige, and green banded mountains are characteristic of the Cerro de los Siete Colores area."",""country"":""AR"",""latitude"":-23.7462,""longitude"":-65.4994}"
+google/gemini-3.5-flash,CoT (effort=high),-23.625,-65.412,11.148,AR,True,,stop,0.0076125,1271,634,559,5.36,"{""reasoning"": ""The colorful, layered mineral patterns on the arid mountains are highly characteristic of the Quebrada de Humahuaca, specifically the 'Paleta del Pintor' near Maimará in Jujuy, Argentina."", ""country"": ""AR"", ""latitude"": -23.625, ""longitude"": -65.412}"
+minimax/minimax-m3,CoT,-23.62,-65.41,11.738,AR,True,,stop,0.00077466,843,486,402,19.83,"{""reasoning"": ""Colorful stratified sedimentary mountains with reddish/pink/cream layers and sparse arid vegetation are highly characteristic of the Quebrada de Humahuaca region in northwestern Argentina, likely near the Paleta del Pintor or Cerro de los Siete Colores formations in Jujuy Province."", ""country"": ""AR"", ""latitude"": -23.62, ""longitude"": -65.41}"
+google/gemini-3.5-flash,CoT (effort=low),-23.6215,-65.4012,11.98,AR,True,,stop,0.0033555,1271,161,97,11.61,"{""reasoning"": ""The colorful, layered mineral mountains and arid valley vegetation are highly characteristic of the Quebrada de Humahuaca in Jujuy Province, Argentina."", ""country"": ""AR"", ""latitude"": -23.6215, ""longitude"": -65.4012}"
+anthropic/claude-opus-4.8,CoT,-23.62,-65.35,15.261,AR,True,,stop,0.00636,797,95,0,2.92,"{""reasoning"": ""Colorful layered arid mountains with sparse scrub and dry riverbed strongly resemble the Quebrada de Humahuaca region in Jujuy, Argentina."", ""country"": ""AR"", ""latitude"": -23.62, ""longitude"": -65.35}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-23.578333,-65.398611,16.466,AR,True,,stop,0.002136,1190,39,0,11.53,"```json
+{""country"": ""AR"", ""latitude"": -23.578333, ""longitude"": -65.398611}
+```"
+google/gemini-3.1-pro-preview,CoT,-23.577,-65.395,16.739,AR,True,,stop,0.006108,1272,297,222,4.8,"{
+  ""reasoning"": ""The arid landscape with colorful, stratified mountains and sparse scrub vegetation is highly characteristic of the Quebrada de Humahuaca region in the Andes of northern Argentina."",
+  ""country"": ""AR"",
+  ""latitude"": -23.577,
+  ""longitude"": -65.395
+}"
+openai/gpt-5.5,no-CoT,-23.577,-65.392,16.855,AR,True,,stop,0.00341,544,23,0,1.35,"{""country"":""AR"",""latitude"":-23.577,""longitude"":-65.392}"
+anthropic/claude-opus-4.8,no-CoT,-23.5806,-65.349,18.668,AR,True,,stop,0.00413,666,32,0,2.92,"{""country"": ""AR"", ""latitude"": -23.5806, ""longitude"": -65.3490}"
+moonshotai/kimi-k2.6,CoT,-23.55,-65.35,21.466,AR,True,,stop,0.006105348,682,1723,1639,33.5,"{""reasoning"": ""Arid Andean valley with distinct horizontally stratified red-and-gray mountains matches the Quebrada de Humahuaca in Jujuy, Argentina; the dry braided wash, high-altitude sparse scrub, and gravel roadside are typical of this UNESCO-listed gorge along RN9."", ""country"": ""AR"", ""latitude"": -23.55, ""longitude"": -65.35}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-23.179189682006836,-65.38338470458984,60.223,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-23.14471435546875,-65.37352752685547,64.154,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,-24.15,-65.95,69.561,AR,True,,stop,0.0003182,473,27,0,2.11,"{""country"": ""AR"", ""latitude"": -24.15, ""longitude"": -65.95}"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.467,-65.312,84.715,AR,True,,stop,0.00016596,474,29,0,2.66,"{""country"": ""AR"", ""latitude"": -24.467, ""longitude"": -65.312}"
+x-ai/grok-4.3,no-CoT,-23.648,-66.312,87.459,AR,True,,stop,0.0005934,592,22,0,6.95,"{""country"": ""AR"", ""latitude"": -23.648, ""longitude"": -66.312}"
+qwen/qwen3.5-122b-a10b,no-CoT,-24.3823,-66.0251,93.88,AR,True,,stop,0.0002163,473,31,0,2.25,"{""country"": ""AR"", ""latitude"": -24.3823, ""longitude"": -66.0251}"
+google/gemma-4-31b-it,no-CoT,-24.2133,-66.85,151.989,AR,True,,stop,7.124e-05,406,36,0,3.37,"```json
+{""country"": ""AR"", ""latitude"": -24.2133, ""longitude"": -66.8500}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-22.320173263549805,-65.63927459716797,156.403,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-21.755979537963867,-65.76880645751953,220.355,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,-24.5,-67.5,224.96,AR,True,,stop,0.0001495,473,25,0,7.35,"{""country"": ""AR"", ""latitude"": -24.5, ""longitude"": -67.5}"
+qwen/qwen3.5-9b,no-CoT,-22.9264,-68.0569,279.691,AR,True,,stop,5.205e-05,474,31,0,10.22,"{""country"": ""AR"", ""latitude"": -22.9264, ""longitude"": -68.0569}"
+xiaomi/mimo-v2.5,CoT,-22.908,-68.199,294.138,CL,True,,stop,0.0004181576,787,1194,1129,18.59,"{""reasoning"": ""The arid desert landscape with layered, multicolored eroded mountains and sparse vegetation is characteristic of the Atacama Desert region in Chile."", ""country"": ""CL"", ""latitude"": -22.908, ""longitude"": -68.199}"
+x-ai/grok-4.3,CoT,-22.91,-68.2,294.165,CL,True,,stop,0.002444,676,774,712,6.16,"{""reasoning"": ""Colorful stratified sedimentary mountains, arid high-desert foreground with sparse shrubs and sandy flats, plus utility pole, match the Andean Precordillera in the Atacama region."", ""country"": ""CL"", ""latitude"": -22.91, ""longitude"": -68.2}"
+mistralai/mistral-small-2603,no-CoT,-22.5,-68.9,377.259,CL,True,,stop,0.0001101,634,25,0,10.82,"{""country"": ""CL"", ""latitude"": -22.5, ""longitude"": -68.9}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-20.24456214904785,-66.34851837158203,396.879,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,-27.0792,-68.9256,511.048,CL,True,,stop,0.0001943,473,31,0,5.35,"{""country"": ""CL"", ""latitude"": -27.0792, ""longitude"": -68.9256}"
+qwen/qwen3.5-27b,no-CoT,-27.0688,-70.15,600.92,CL,True,,stop,0.0002067,473,31,0,16.24,"{""country"": ""CL"", ""latitude"": -27.0688, ""longitude"": -70.1500}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-17.35425567626953,-67.38312530517578,735.321,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-16.4,-71.5,1029.359,PE,True,,stop,0.0011385,634,25,0,1.21,"{""country"": ""PE"", ""latitude"": -16.4, ""longitude"": -71.5}"
+xiaomi/mimo-v2.5,no-CoT,36.5,-117.0,8604.376,US,True,,stop,8.00576e-05,708,26,0,7.8,"{""country"": ""US"", ""latitude"": 36.5, ""longitude"": -117.0}"
+google/gemma-4-26b-a4b-it,no-CoT,9.0,38.75,11847.761,ET,True,,stop,5.534e-05,406,32,0,1.5,"{""-45.0 own {""country"": ""ET"", ""latitude"": 9.0, ""longitude"": 38.75}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.98,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.41,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,16.14,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,3.27,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,13.11,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.54,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.35,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.21,

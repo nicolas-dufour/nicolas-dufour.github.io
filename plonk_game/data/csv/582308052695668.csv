@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,47.852058709304,27.787386419667,0.0,MD,True,,,,,,,,"Balti, None, Balti, MD"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,47.840354919433594,27.205123901367188,43.471,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,48.09679412841797,26.94611167907715,68.282,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,48.096866607666016,26.94291114807129,68.504,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,47.3157,28.7684,94.712,MD,True,,stop,0.01616,736,416,333,11.02,"{""reasoning"":""Right-hand driving with European white road markings, worn post-Soviet road infrastructure, and the rolling leafless orchard/steppe landscape point most strongly to rural Moldova. The road sign backs and broad patched carriageway are typical of Moldovan national roads in the central hills."",""country"":""MD"",""latitude"":47.3157,""longitude"":28.7684}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),47.9125,30.2142,181.093,UA,True,,stop,0.002115,1200,35,0,24.18,"```json
+{""country"": ""UA"", ""latitude"": 47.9125, ""longitude"": 30.2142}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),48.5124,30.1245,188.181,UA,True,,stop,0.0116445,1283,1080,1002,13.97,"```json
+{""reasoning"": ""The landscape with rolling hills, bare deciduous trees planted in rows along the road, and the specific style of road markings and signage are highly characteristic of the rural highway network in Ukraine during winter."", ""country"": ""UA"", ""latitude"": 48.5124, ""longitude"": 30.1245}
+```"
+google/gemini-3.1-pro-preview,no-CoT,48.5,31.2,263.075,UA,True,,stop,0.00275,1201,29,0,8.58,"```json
+{""country"": ""UA"", ""latitude"": 48.5, ""longitude"": 31.2}
+```"
+google/gemini-3.5-flash,CoT (effort=high),48.4512,32.0543,323.429,UA,True,,stop,0.014964,1282,1449,1359,17.95,"{""reasoning"": ""The landscape features rolling hills, agricultural fields, and characteristic roadside shelterbelts of deciduous trees typical of the Ukrainian steppe. The road markings and the white rectangular sign with a diagonal line (end of settlement) on the left side of the road are consistent with Ukrainian road infrastructure."", ""country"": ""UA"", ""latitude"": 48.4512, ""longitude"": 32.0543}"
+google/gemini-3.5-flash,CoT (effort=low),47.9562,32.1245,323.462,UA,True,,stop,0.004875,1282,328,260,10.41,"{""reasoning"": ""The flat landscape with bare winter deciduous trees, road markings, and the style of the roadside sign are highly characteristic of Ukraine, particularly the central or southern steppe region."", ""country"": ""UA"", ""latitude"": 47.9562, ""longitude"": 32.1245}"
+mistralai/mistral-medium-3-5,no-CoT,44.43965,26.10626,400.909,RO,True,,stop,0.001398,767,33,0,1.05,"{""country"": ""RO"", ""latitude"": 44.43965, ""longitude"": 26.10626}"
+moonshotai/kimi-k2.6,CoT,48.5,33.5,429.566,UA,True,,stop,0.021004515,813,5681,6493,214.41,"{""reasoning"":""Rolling winter steppe with bare deciduous trees and a green directional road sign beside a two-lane highway matches post-Soviet Eastern European infrastructure; road condition and right-hand traffic are consistent with rural Ukraine."",""country"":""UA"",""latitude"":48.5,""longitude"":33.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,49.91730499267578,21.818891525268555,492.942,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,49.42985534667969,34.36746597290039,514.108,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,43.4,25.6,523.395,BG,True,,stop,0.007025,930,95,0,6.48,"{""reasoning"": ""Winter rural landscape with rolling hills, bare deciduous trees and dry grass, European-style road markings and chevron sign typical of Eastern Europe/Balkans."", ""country"": ""BG"", ""latitude"": 43.4, ""longitude"": 25.6}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,49.44159698486328,34.504844665527344,523.981,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,43.2,26.0,535.656,BG,True,,stop,0.004745,799,30,0,9.63,"{""country"": ""BG"", ""latitude"": 43.2, ""longitude"": 26.0}"
+openai/gpt-5.5,no-CoT,42.9876,27.3721,541.871,BG,True,,stop,0.003985,659,23,0,2.55,"{""country"":""BG"",""latitude"":42.9876,""longitude"":27.3721}"
+minimax/minimax-m3,CoT,47.9,20.35,554.51,HU,True,,stop,0.00085212,978,514,535,11.05,"{""reasoning"": ""Green European-style directional road sign, right-hand traffic with white lane markings, bare deciduous trees and orchards on rolling hills under an overcast sky, rural secondary road typical of the Hungarian countryside in late autumn (November 2020 timestamp)."", ""country"": ""HU"", ""latitude"": 47.9, ""longitude"": 20.35}{""reasoning"": ""Green European-style directional road sign, right-hand traffic with white lane markings, bare deciduous trees and orchards on rolling hills under an overcast sky, rural secondary road typical of the Hungarian countryside in late autumn (November 2020 timestamp)."", ""country"": ""HU"", ""latitude"": 47.9, ""longitude"": 20.35}"
+minimax/minimax-m3,no-CoT,42.7,25.0,612.886,BG,True,,stop,0.00026238,885,23,0,1.81,"{""country"": ""BG"", ""latitude"": 42.7, ""longitude"": 25.0}"
+moonshotai/kimi-k2.6,no-CoT,42.5,25.5,621.466,BG,True,,stop,0.000308304,736,23,0,2.57,"{""country"": ""BG"", ""latitude"": 42.5, ""longitude"": 25.5}"
+x-ai/grok-4.3,CoT,51.85,20.35,693.632,PL,True,,stop,0.002799,772,868,800,19.08,"{""reasoning"": ""Right-hand traffic, white dashed center line + solid edge line, European-style rectangular warning sign on left, bare deciduous trees + rolling farmland under overcast February sky all point to rural Central/Eastern Europe."", ""country"": ""PL"", ""latitude"": 51.85, ""longitude"": 20.35}"
+mistralai/mistral-small-2603,CoT,51.0,36.5,720.17,RU,True,,stop,0.00045795,849,551,570,4.98,"{""reasoning"": ""Cyrillic script on the road sign and typical Russian road infrastructure indicate Eastern Europe/Russia, with flat terrain and overcast sky suggesting central Russia."", ""country"": ""RU"", ""latitude"": 51.0, ""longitude"": 36.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,49.1951,16.6068,836.023,CZ,True,,stop,0.00021476,570,32,0,5.72,"{""country"": ""CZ"", ""latitude"": 49.1951, ""longitude"": 16.6068}"
+google/gemini-3.1-pro-preview,CoT,48.5,40.0,907.45,RU,True,,stop,0.006718,1283,346,269,5.18,"{
+  ""reasoning"": ""The cross-bracing on the back of the road sign is a strong indicator of Russia or Ukraine. The winter landscape without snow and the road markings suggest a southern region in European Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 48.5,
+  ""longitude"": 40.0
+}"
+x-ai/grok-4.3,no-CoT,49.85,14.35,1006.491,CZ,True,,stop,0.0007134,688,22,0,0.76,"{""country"": ""CZ"", ""latitude"": 49.85, ""longitude"": 14.35}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,1106.47,RU,True,,stop,6.536e-05,392,36,0,3.34,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+qwen/qwen3.5-27b,no-CoT,51.050278,10.633056,1286.66,DE,True,,stop,0.0002385,570,48,0,3.09,"```json
+{
+  ""country"": ""DE"",
+  ""latitude"": 51.050278,
+  ""longitude"": 10.633056
+}
+```"
+qwen/qwen3.6-35b-a3b,CoT,46.2276,2.2137,1937.393,FR,True,,stop,0.1267319053,649,131186,131072,958.94,"{
+  ""reasoning"": ""The green rectangular sign on the left is a standard French directional sign (panneau de direction) typically found on highways or major roads, indicating the location is likely France. The road markings, including the solid white edge line and dashed center line, along with the right-hand traffic flow, are consistent with French road standards."",
+  ""country"": ""FR"",
+  ""latitude"": 46.2276,
+  ""longitude"": 2.2137
+}"
+qwen/qwen3.6-27b,no-CoT,51.5074,-0.1278,2036.067,GB,True,,stop,0.0002211,569,30,0,10.24,"{""country"": ""GB"", ""latitude"": 51.5074, ""longitude"": -0.1278}"
+qwen/qwen3.5-9b,no-CoT,43.5669,1.4641,2087.75,FR,True,,stop,6.15e-05,570,30,0,3.42,"{""country"": ""FR"", ""latitude"": 43.5669, ""longitude"": 1.4641}"
+qwen/qwen3.6-35b-a3b,no-CoT,40.4168,-3.7038,2624.458,ES,True,,stop,0.0001206803,569,30,0,1.73,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+qwen/qwen3.5-397b-a17b,CoT,38.567,-8.123,3055.594,PT,True,,stop,0.0175936,649,4945,4511,211.57,"{
+""reasoning"": ""The reddish soil, low stone walls, and sparse deciduous trees (likely cork oaks) are characteristic of the Alentejo region in Portugal. The road markings and sign style are consistent with Portuguese national roads."",
+""country"": ""PT"",
+""latitude"": 38.567,
+""longitude"": -8.123
+}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5958.104,,True,True,,,,,,0.7,
+qwen/qwen3.5-397b-a17b,no-CoT,39.0438,-77.4874,7866.817,US,True,,stop,0.00042228,569,31,0,3.61,"{""country"": ""US"", ""latitude"": 39.0438, ""longitude"": -77.4874}"
+xiaomi/mimo-v2.5,CoT,39.75,-86.25,8305.854,US,True,,stop,0.0006670776,883,2035,1973,22.09,"{""reasoning"": ""Green highway sign and road markings are characteristic of US interstate highways, with the flat landscape and bare trees suggesting a temperate region in winter."", ""country"": ""US"", ""latitude"": 39.75, ""longitude"": -86.25}"
+mistralai/mistral-small-2603,no-CoT,38.5,-90.2,8626.396,US,True,,stop,0.00013005,767,25,0,3.1,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -90.2}"
+qwen/qwen3.5-35b-a3b,no-CoT,39.7391,-104.9903,9218.522,US,True,,stop,0.00011735,569,32,0,2.02,"{""country"": ""US"", ""latitude"": 39.7391, ""longitude"": -104.9903}"
+xiaomi/mimo-v2.5,no-CoT,35.2226,-97.4395,9296.276,US,True,,stop,9.48976e-05,804,31,0,2.7,"{""country"": ""US"", ""latitude"": 35.2226, ""longitude"": -97.4395}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.15,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.2,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.35,

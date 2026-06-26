@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,26.47774112108,80.334918761376,0.0,IN,True,,,,,,,,"Nawabganj, Kanpur, Uttar Pradesh, IN"
+anthropic/claude-opus-4.8,CoT,26.8467,80.9462,73.3,IN,True,,stop,0.006385,797,96,0,9.99,"{""reasoning"": ""Green-yellow CNG auto-rickshaws, e-rickshaws, left-side driving and Hindi signage indicate North India, likely Uttar Pradesh."", ""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+anthropic/claude-opus-4.8,no-CoT,26.8467,80.9462,73.3,IN,True,,stop,0.00413,666,32,0,9.09,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,28.42694854736328,77.51219177246094,352.9,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,28.42180824279785,77.50291442871094,353.278,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,28.788082122802734,77.51555633544922,378.304,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,28.5494,77.2501,381.566,IN,True,,stop,0.0002065,474,44,0,20.59,"```json
+{
+  ""country"": ""IN"",
+  ""latitude"": 28.5494,
+  ""longitude"": 77.2501
+}
+```"
+openai/gpt-5.5,no-CoT,28.5672,77.2136,385.61,IN,True,,stop,0.00341,544,23,0,9.05,"{""country"":""IN"",""latitude"":28.5672,""longitude"":77.2136}"
+google/gemini-3.1-pro-preview,CoT,28.6139,77.209,389.067,IN,True,,stop,0.005124,1272,215,133,3.8,"{
+  ""reasoning"": ""The green and yellow CNG auto-rickshaws and Hindi text on the advertisements strongly indicate a city in India, most likely New Delhi where this color scheme for CNG vehicles is standard."",
+  ""country"": ""IN"",
+  ""latitude"": 28.6139,
+  ""longitude"": 77.2090
+}"
+google/gemini-3.5-flash,CoT (effort=low),28.6139,77.209,389.067,IN,True,,stop,0.003474,1272,174,104,14.89,"```json
+{""reasoning"": ""The green and yellow auto-rickshaws with 'CNG' markings, left-hand traffic, and Hindi signage are characteristic of Delhi, India."", ""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}
+```"
+moonshotai/kimi-k2.6,CoT,28.6139,77.209,389.067,IN,True,,stop,0.008853408,682,2518,2451,53.66,"{""reasoning"": ""Green-and-yellow CNG auto-rickshaws are emblematic of Delhi, and left-hand traffic with mixed two-wheelers, cars, and cycle-rickshaws confirms India."", ""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+openai/gpt-5.5,CoT,28.6139,77.209,389.067,IN,True,,stop,0.011715,621,287,209,16.41,"{""reasoning"":""Green-and-yellow CNG auto-rickshaws, left-side traffic, English/Hindi-style urban signage, and the leafy divided avenue are characteristic of Delhi. The road environment and vehicle mix point most strongly to central New Delhi rather than another Indian city."",""country"":""IN"",""latitude"":28.6139,""longitude"":77.209}"
+x-ai/grok-4.3,CoT,28.6139,77.209,389.067,IN,True,,stop,0.001929,676,568,502,4.55,"{""reasoning"": ""Three-wheeled auto-rickshaws with yellow-green livery, left-side driving, brick wall + subtropical roadside vegetation, and English signage (Cambridge) are diagnostic of urban India."", ""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+google/gemini-3.1-pro-preview,no-CoT,28.6139,77.209,389.067,IN,True,,stop,0.0028,1190,35,0,2.28,"```json
+{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),28.6139,77.209,389.067,IN,True,,stop,0.0021,1190,35,0,1.11,"```json
+{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}
+```"
+google/gemma-4-31b-it,no-CoT,28.6139,77.209,389.067,IN,True,,stop,5.772e-05,408,36,0,1.82,"```json
+{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}
+```"
+mistralai/mistral-medium-3-5,no-CoT,28.6139,77.209,389.067,IN,True,,stop,0.001176,634,30,0,7.76,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+mistralai/mistral-small-2603,no-CoT,28.6139,77.209,389.067,IN,True,,stop,0.0001131,634,30,0,3.35,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+qwen/qwen3.5-122b-a10b,no-CoT,28.6139,77.209,389.067,IN,True,,stop,0.00018564,474,30,0,6.51,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+qwen/qwen3.5-35b-a3b,no-CoT,28.6139,77.209,389.067,IN,True,,stop,9.636e-05,474,30,0,7.8,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+qwen/qwen3.5-397b-a17b,no-CoT,28.6139,77.209,389.067,IN,True,,stop,0.0003918,473,30,0,9.49,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+qwen/qwen3.5-9b,no-CoT,28.6139,77.209,389.067,IN,True,,stop,5.19e-05,474,30,0,9.5,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+qwen/qwen3.6-27b,no-CoT,28.6139,77.209,389.067,IN,True,,stop,0.0001943,473,31,0,13.19,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+qwen/qwen3.6-35b-a3b,no-CoT,28.6139,77.209,389.067,IN,True,,stop,0.00010095,473,30,0,1.54,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+x-ai/grok-4.3,no-CoT,28.6139,77.209,389.067,IN,True,,stop,0.0005984,592,24,0,0.72,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+xiaomi/mimo-v2.5,no-CoT,28.6139,77.209,389.067,IN,True,,stop,8.11776e-05,708,30,0,1.61,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+minimax/minimax-m3,CoT,28.65,77.22,390.637,IN,True,,stop,0.00084546,843,545,462,14.35,"{""reasoning"": ""Green-and-yellow CNG auto-rickshaws with yellow canopies are distinctive of Delhi/NCR, India; left-hand traffic and the hazy North Indian winter atmosphere confirm. The brick boundary walls, road signage style, and visible McDonald's logo support a Delhi urban location."", ""country"": ""IN"", ""latitude"": 28.65, ""longitude"": 77.22}"
+google/gemini-3.5-flash,CoT (effort=high),28.6862,77.2218,392.96,IN,True,,stop,0.0092865,1271,820,742,12.51,"{""reasoning"": ""The green and yellow CNG auto-rickshaws, left-hand traffic, and English/Hindi signage (including an ad for 'Cambridge English Speaking Institute' near a metro station) strongly indicate Delhi, India."", ""country"": ""IN"", ""latitude"": 28.6862, ""longitude"": 77.2218}"
+xiaomi/mimo-v2.5,CoT,28.5748,77.0537,398.79,IN,True,,stop,0.0004621176,787,1351,1260,13.26,"{""reasoning"": ""The green and yellow 'CNG' auto-rickshaw is characteristic of Delhi's public transport, and the text 'AMBIGARH' on the rickshaw in front points to a specific locality in the Dwarka district of South West Delhi."", ""country"": ""IN"", ""latitude"": 28.5748, ""longitude"": 77.0537}"
+google/gemini-3.5-flash,CoT (effort=medium),25.6125,85.1224,487.83,IN,True,,stop,0.0075135,1271,623,543,11.94,"{""reasoning"": ""The green-and-yellow CNG auto-rickshaws, blue e-rickshaw, and left-hand traffic are characteristic of northern India, while the advertisement for 'Cambridge English Speaking' points to Patna, Bihar."", ""country"": ""IN"", ""latitude"": 25.6125, ""longitude"": 85.1224}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,14.184651374816895,77.82303619384766,1391.66,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,12.954978942871094,77.58649444580078,1530.763,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,12.951150894165039,77.58654022216797,1531.18,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.48,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,15.84,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,7.46,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.28,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,9.22,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.27,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.22,

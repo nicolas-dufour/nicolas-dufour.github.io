@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,51.601117010917,-111.79302656663,0.0,CA,True,,,,,,,,"Hanna, None, Alberta, CA"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,51.1619987487793,-109.93366241455078,137.964,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,51.13618469238281,-109.88946533203125,141.892,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,51.0112419128418,-109.66943359375,161.528,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),50.1412,-111.8954,162.494,CA,True,,stop,0.0021615,1225,36,0,313.0,"```json
+{""country"": ""CA"", ""latitude"": 50.1412, ""longitude"": -111.8954}
+```"
+openai/gpt-5.5,no-CoT,50.8352,-113.9441,172.322,CA,True,,stop,0.00411,678,24,0,1.56,"{""country"":""CA"",""latitude"":50.8352,""longitude"":-113.9441}"
+google/gemini-3.5-flash,CoT (effort=medium),50.4283,-106.3125,404.844,CA,True,,stop,0.0077385,1307,642,568,5.64,"{""reasoning"": ""The extremely flat prairie landscape, wide asphalt highway with North American road markings, and vast open sky are highly characteristic of the Canadian Prairies, specifically southern Saskatchewan along the Trans-Canada Highway."", ""country"": ""CA"", ""latitude"": 50.4283, ""longitude"": -106.3125}"
+anthropic/claude-opus-4.8,CoT,50.45,-105.5,458.192,CA,True,,stop,0.007195,949,98,0,4.0,"{""reasoning"": ""Flat prairie grassland with wide two-lane highway, yellow center dashes, right-hand driving suggest North American Great Plains, likely Canadian prairies or northern US plains."", ""country"": ""CA"", ""latitude"": 50.45, ""longitude"": -105.5}"
+anthropic/claude-opus-4.8,no-CoT,50.45,-105.5,458.192,CA,True,,stop,0.00484,818,30,0,9.48,"{""country"": ""CA"", ""latitude"": 50.45, ""longitude"": -105.5}"
+google/gemini-3.5-flash,CoT (effort=low),50.4125,-104.6111,519.348,CA,True,,stop,0.003933,1308,219,147,8.97,"{""reasoning"": ""The extremely flat prairie landscape, straight two-lane highway with wide shoulders, and vast sky are characteristic of the Great Plains of North America, specifically the Canadian Prairies in Saskatchewan."", ""country"": ""CA"", ""latitude"": 50.4125, ""longitude"": -104.6111}"
+openai/gpt-5.5,CoT,50.7506,-104.1023,544.143,CA,True,,stop,0.018325,755,485,400,14.93,"{""reasoning"":""The right-side driving road with dashed yellow centerline/white edge lines and vast flat fenced prairie with grain-elevator-like structures strongly indicate the Canadian Prairies, especially Saskatchewan. The treeless agricultural landscape and road style fit rural Saskatchewan more than neighboring provinces or the US plains."",""country"":""CA"",""latitude"":50.7506,""longitude"":-104.1023}"
+google/gemini-3.5-flash,CoT (effort=high),49.6512,-104.2045,577.189,CA,True,,stop,0.0092955,1307,815,733,14.68,"```json
+{""reasoning"": ""The extremely flat prairie landscape, two-lane paved highway with yellow dashed center lines and white shoulder lines, and vast open sky are characteristic of the Great Plains of North America, specifically southern Saskatchewan, Canada."", ""country"": ""CA"", ""latitude"": 49.6512, ""longitude"": -104.2045}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,48.509063720703125,-104.90508270263672,599.624,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,47.769813537597656,-104.70340728759766,664.031,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,46.8721,-103.7829,783.225,US,True,,stop,0.00011404,586,32,0,3.15,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -103.7829}"
+qwen/qwen3.5-122b-a10b,no-CoT,47.9253,-101.7242,829.682,US,True,,stop,0.00021892,586,32,0,6.33,"{""country"": ""US"", ""latitude"": 47.9253, ""longitude"": -101.7242}"
+qwen/qwen3.5-397b-a17b,no-CoT,46.8797,-102.7879,837.43,US,True,,stop,0.0004502,585,32,0,8.79,"{""country"": ""US"", ""latitude"": 46.8797, ""longitude"": -102.7879}"
+qwen/qwen3.6-35b-a3b,no-CoT,46.8721,-101.4158,917.409,US,True,,stop,0.0001684,586,32,0,8.63,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -101.4158}"
+qwen/qwen3.6-27b,no-CoT,46.8772,-100.4459,975.369,US,True,,stop,0.0002299,585,32,0,11.91,"{""country"": ""US"", ""latitude"": 46.8772, ""longitude"": -100.4459}"
+google/gemini-3.1-pro-preview,no-CoT,43.8561,-101.6234,1146.875,US,True,,stop,0.002884,1226,36,0,2.34,"```json
+{""country"": ""US"", ""latitude"": 43.8561, ""longitude"": -101.6234}
+```"
+google/gemini-3.1-pro-preview,CoT,44.3667,-100.3333,1169.911,US,True,,stop,0.005412,1308,233,151,3.72,"{
+  ""reasoning"": ""The dashed yellow center line and solid white edge lines indicate North America. The extremely flat, open grassland landscape is characteristic of the Great Plains region in the US or Canadian Prairies."",
+  ""country"": ""US"",
+  ""latitude"": 44.3667,
+  ""longitude"": -100.3333
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,42.35652542114258,-102.30348205566406,1252.731,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,41.1456,-104.8203,1278.357,US,True,,stop,0.0002365,586,45,0,3.43,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 41.1456,
+  ""longitude"": -104.8203
+}
+```"
+google/gemma-4-31b-it,no-CoT,41.0,-103.0,1356.386,US,True,,stop,6.492e-05,404,31,0,8.31,"```json
+{""country"": ""US"", ""latitude"": 41.0, ""longitude"": -103.0}
+```"
+qwen/qwen3.5-9b,no-CoT,44.923,-93.425,1543.171,US,True,,stop,6.295e-05,586,29,0,9.81,"{""country"": ""US"", ""latitude"": 44.923, ""longitude"": -93.425}"
+minimax/minimax-m3,CoT,38.65,-102.35,1616.376,US,True,,stop,0.00105906,995,685,599,19.61,"{""reasoning"": ""Right-hand driving, wide grassy median typical of US rural highways, flat semi-arid grassland with treeless horizon, and golden dry prairie grass strongly indicate the High Plains of eastern Colorado or western Kansas. Distant grain-elevator/water-tower silhouettes reinforce a Great Plains setting."", ""country"": ""US"", ""latitude"": 38.65, ""longitude"": -102.35}"
+moonshotai/kimi-k2.6,CoT,39.3,-100.1,1639.609,US,True,,stop,0.01370862,834,3267,3746,69.1,"{""reasoning"": ""Endless flat prairie, straight two-lane asphalt road with white edge lines and rural fencing under a vast sky are definitive of the North American Great Plains."", ""country"": ""US"", ""latitude"": 39.3, ""longitude"": -100.1}"
+xiaomi/mimo-v2.5,no-CoT,38.5,-100.5,1701.223,US,True,,stop,9.57376e-05,820,26,0,1.52,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -100.5}"
+x-ai/grok-4.3,CoT,38.2,-99.8,1759.239,US,True,,stop,0.001859,788,484,422,4.11,"{""reasoning"": ""US-style dashed yellow centerline + solid white edge lines on empty two-lane asphalt; perfectly flat open shortgrass prairie with distant silos/towers under big sunset sky indicates Great Plains."", ""country"": ""US"", ""latitude"": 38.2, ""longitude"": -99.8}"
+x-ai/grok-4.3,no-CoT,36.8,-101.9,1821.14,US,True,,stop,0.0007334,704,22,0,7.28,"{""country"": ""US"", ""latitude"": 36.8, ""longitude"": -101.9}"
+mistralai/mistral-medium-3-5,no-CoT,37.0,-100.0,1869.968,US,True,,stop,0.001374,786,26,0,2.0,"{""country"": ""US"", ""latitude"": 37.0, ""longitude"": -100.0}"
+xiaomi/mimo-v2.5,CoT,49.0,32.0,8314.25,UA,True,,stop,0.0007317576,899,2258,2193,327.5,"{""reasoning"": ""The expansive flat, grassy terrain with no trees and the white dashed center line on the road are typical of the Eurasian Steppe, particularly in rural Ukraine."", ""country"": ""UA"", ""latitude"": 49.0, ""longitude"": 32.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.0,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,15.73,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,3.18,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.33,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.7,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.25,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,13.22,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.27,

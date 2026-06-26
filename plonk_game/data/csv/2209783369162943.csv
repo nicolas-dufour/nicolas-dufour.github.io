@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,9.1161470577685,15.796129702747,0.0,TD,True,,,,,,,,"Kelo, None, Tandjile, TD"
+xiaomi/mimo-v2.5,no-CoT,9.0579,7.4891,912.11,NG,True,,stop,8.08976e-05,708,29,0,1.88,"{""country"": ""NG"", ""latitude"": 9.0579, ""longitude"": 7.4891}"
+moonshotai/kimi-k2.6,CoT,11.5,-0.5,1802.067,BF,True,,stop,0.022797108,682,6594,6526,212.5,"{""reasoning"": ""Borassus palms and red lateritic soil in dry Sudanian savanna are classic for West Africa, and the right-hand traffic with simple dashed road markings point to Burkina Faso."", ""country"": ""BF"", ""latitude"": 11.5, ""longitude"": -0.5}"
+minimax/minimax-m3,CoT,9.4,-1.0,1843.412,GH,True,,stop,0.00056106,843,308,217,18.19,"{""reasoning"": ""Vehicles drive on the left, and the landscape features reddish lateritic soil, dry savanna grasses, large mango-like trees, and palm trees characteristic of West African savanna. These clues strongly point to northern Ghana, likely along a highway such as the N10 or N11 in the Northern Region."", ""country"": ""GH"", ""latitude"": 9.4, ""longitude"": -1.0}"
+xiaomi/mimo-v2.5,CoT,9.65,-1.15,1859.871,GH,True,,stop,0.0008510376,787,2740,2656,75.87,"{""reasoning"": ""Left-hand traffic in West Africa uniquely identifies Ghana (or Gambia). The red laterite soil, dry tall grass, Borassus fan palm on the left, and large mango trees on the right are characteristic of the Guinea Savanna zone in Northern Ghana."", ""country"": ""GH"", ""latitude"": 9.65, ""longitude"": -1.15}"
+qwen/qwen3.5-397b-a17b,no-CoT,12.3714,-1.5197,1925.475,BF,True,,stop,0.000255605,473,30,0,2.1,"{""country"": ""BF"", ""latitude"": 12.3714, ""longitude"": -1.5197}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,2021.492,,True,True,,,,,,6.57,
+anthropic/claude-opus-4.8,CoT,11.8,-2.5,2022.297,BF,True,,stop,0.00646,797,99,0,9.36,"{""reasoning"": ""Dry savanna with mango and palm trees, red laterite soil, mud-brick hut, right-hand traffic suggests West African Sahel zone like Burkina Faso or Mali."", ""country"": ""BF"", ""latitude"": 11.8, ""longitude"": -2.5}"
+anthropic/claude-opus-4.8,no-CoT,11.5,-3.5,2127.091,BF,True,,stop,0.00408,666,30,0,2.92,"{""country"": ""BF"", ""latitude"": 11.5, ""longitude"": -3.5}"
+x-ai/grok-4.3,CoT,-0.35,37.15,2588.357,KE,True,,stop,0.003164,676,1062,979,14.73,"{""reasoning"": ""Left-hand traffic (oncoming car positioned right of center line), red laterite soil verge, acacia/savanna trees + palms, dry grass and small corrugated-roof hut indicate East African countryside. Kenya matches all cues (KE left-hand traffic, vegetation, soil)."", ""country"": ""KE"", ""latitude"": -0.35, ""longitude"": 37.15}"
+qwen/qwen3.5-9b,no-CoT,12.2393,-8.0927,2632.312,ML,True,,stop,8.791e-05,473,30,0,2.9,"{""country"": ""ML"", ""latitude"": 12.2393, ""longitude"": -8.0927}"
+qwen/qwen3.5-122b-a10b,no-CoT,-6.1628,35.7516,2788.819,TZ,True,,stop,0.00018538,473,30,0,35.32,"{""country"": ""TZ"", ""latitude"": -6.1628, ""longitude"": 35.7516}"
+qwen/qwen3.5-27b,no-CoT,-6.163,35.7516,2788.833,TZ,True,,stop,0.0002045,474,43,0,2.46,"```json
+{
+  ""country"": ""TZ"",
+  ""latitude"": -6.1630,
+  ""longitude"": 35.7516
+}
+```"
+qwen/qwen3.6-27b,no-CoT,-6.1659,35.7516,2789.029,TZ,True,,stop,0.0001923,473,30,0,6.81,"{""country"": ""TZ"", ""latitude"": -6.1659, ""longitude"": 35.7516}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,13.150924682617188,-10.052997589111328,2854.117,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,13.492759704589844,-10.698861122131348,2927.88,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,13.215867042541504,-11.456918716430664,3006.017,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,10.72365665435791,-12.479270935058594,3101.165,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,-6.792,39.208,3139.988,TZ,True,,stop,0.0005934,592,22,0,7.21,"{""country"": ""TZ"", ""latitude"": -6.792, ""longitude"": 39.208}"
+qwen/qwen3.6-35b-a3b,no-CoT,-6.7924,39.2083,3140.04,TZ,True,,stop,0.00010095,473,30,0,7.38,"{""country"": ""TZ"", ""latitude"": -6.7924, ""longitude"": 39.2083}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,10.618922233581543,-13.142658233642578,3173.532,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,10.693758964538574,-13.18820571899414,3178.579,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),12.7345,-14.4821,3328.138,SN,True,,stop,0.0020985,1189,35,0,8.19,"```json
+{""country"": ""SN"", ""latitude"": 12.7345, ""longitude"": -14.4821}
+```"
+google/gemma-4-31b-it,no-CoT,14.692,-14.452,3345.9,SN,True,,stop,6.638e-05,406,34,0,2.75,"```json
+{""country"": ""SN"", ""latitude"": 14.692, ""longitude"": -14.452}
+```"
+google/gemini-3.5-flash,CoT (effort=low),12.7834,-15.5211,3440.932,SN,True,,stop,0.005004,1272,344,265,3.73,"{""reasoning"": ""The presence of a black hood-mounted antenna on a right-hand driving road, combined with flat terrain, dry grass, reddish soil, and lush mango trees, strongly indicates the Casamance region of southern Senegal."", ""country"": ""SN"", ""latitude"": 12.7834, ""longitude"": -15.5211}"
+google/gemini-3.1-pro-preview,CoT,12.8543,-15.5432,3443.824,SN,True,,stop,0.005338,1271,233,155,10.88,"{
+  ""reasoning"": ""The visible car antenna is characteristic of Google Street View coverage in Senegal. The dry savanna landscape with reddish soil and mango trees points to the southern part of the country."",
+  ""country"": ""SN"",
+  ""latitude"": 12.8543,
+  ""longitude"": -15.5432
+}"
+google/gemini-3.1-pro-preview,no-CoT,12.88,-15.55,3444.744,SN,True,,stop,0.00431,1189,161,130,9.87,"```json
+{""country"": ""SN"", ""latitude"": 12.88, ""longitude"": -15.55}
+```"
+openai/gpt-5.5,CoT,13.3127,-15.8849,3484.311,GM,True,,stop,0.020385,621,576,506,16.63,"{""reasoning"":""Flat dry savanna with red laterite shoulders, tropical palms/mango trees, and right-hand traffic strongly suggest rural Senegambia; the road style and vegetation fit The Gambia's South Bank Road."",""country"":""GM"",""latitude"":13.3127,""longitude"":-15.8849}"
+google/gemini-3.5-flash,CoT (effort=high),12.5542,-16.1235,3504.71,SN,True,,stop,0.0097905,1271,876,799,15.11,"{""reasoning"": ""The long black antenna on the front of the vehicle, right-hand traffic, red soil, and vegetation featuring mango and palmyra palm trees are highly characteristic of the Casamance region in southern Senegal."", ""country"": ""SN"", ""latitude"": 12.5542, ""longitude"": -16.1235}"
+google/gemini-3.5-flash,CoT (effort=medium),12.5481,-16.1254,3504.881,SN,True,,stop,0.0086205,1271,746,659,7.62,"```json
+{""reasoning"": ""The lush mango trees, palmyra palms, dry yellow grass, and reddish soil are characteristic of the Casamance region in southern Senegal. The Google Street View car antenna on the hood and right-hand driving confirm this location."", ""country"": ""SN"", ""latitude"": 12.5481, ""longitude"": -16.1254}
+```"
+openai/gpt-5.5,no-CoT,13.3772,-16.6576,3568.213,GM,True,,stop,0.00344,544,24,0,8.02,"{""country"":""GM"",""latitude"":13.3772,""longitude"":-16.6576}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.7461,28.2293,4103.233,ZA,True,,stop,0.00010195,473,31,0,1.65,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.2293}"
+mistralai/mistral-medium-3-5,no-CoT,17.385,78.4867,6820.439,IN,True,,stop,0.0011835,634,31,0,1.07,"{""country"": ""IN"", ""latitude"": 17.3850, ""longitude"": 78.4867}"
+mistralai/mistral-small-2603,no-CoT,33.749,-84.388,10371.771,US,True,,stop,0.000142125,634,31,0,3.04,"{""country"": ""US"", ""latitude"": 33.7490, ""longitude"": -84.3880}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.94,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.37,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,18.7,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.07,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,13.02,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,10.53,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.43,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.34,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.19,

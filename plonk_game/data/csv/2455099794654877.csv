@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-10.356365308160264,32.40065793524226,0.0,ZM,True,,,,,,,,"Isoka, None, Northern, ZM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-12.848773002624512,30.470848083496094,347.828,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-12.866909980773926,30.495033264160156,347.855,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-13.2,30.4,383.924,ZM,True,,stop,0.011606508,682,3323,3272,69.46,"{""reasoning"": ""Right-side vehicle mirror indicates left-hand traffic; dry miombo savanna with dirt road shoulders matches rural Zambia."", ""country"": ""ZM"", ""latitude"": -13.2, ""longitude"": 30.4}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-13.161046981811523,29.846641540527344,417.786,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-13.5,28.5,549.749,ZM,True,,stop,0.006185,797,88,0,3.95,"{""reasoning"": ""Dry savanna woodland (miombo) with scattered trees, flat terrain, and a worn tarmac road typical of central Zambia during dry season."", ""country"": ""ZM"", ""latitude"": -13.5, ""longitude"": 28.5}"
+qwen/qwen3.5-27b,no-CoT,-6.2225,35.7519,589.24,TZ,True,,stop,0.00023504,474,43,0,3.45,"```json
+{
+  ""country"": ""TZ"",
+  ""latitude"": -6.2225,
+  ""longitude"": 35.7519
+}
+```"
+anthropic/claude-opus-4.8,no-CoT,-13.5,27.5,637.466,ZM,True,,stop,0.004105,666,31,0,2.45,"{""country"": ""ZM"", ""latitude"": -13.5, ""longitude"": 27.5}"
+openai/gpt-5.5,CoT,-15.5086,29.1584,672.001,ZM,True,,stop,0.016455,621,445,355,11.99,"{""reasoning"":""The dry miombo/savanna vegetation, left-side-driving road context, and unmarked rural asphalt with dusty shoulders are most consistent with rural Zambia rather than better-marked Botswana or South Africa. The low hills and arid roadside fit the Lusaka-to-Luangwa/Lower Zambezi corridor."",""country"":""ZM"",""latitude"":-15.5086,""longitude"":29.1584}"
+openai/gpt-5.5,no-CoT,-15.323,28.145,719.517,ZM,True,,stop,0.00338,544,22,0,2.52,"{""country"":""ZM"",""latitude"":-15.323,""longitude"":28.145}"
+qwen/qwen3.5-9b,no-CoT,-17.5336,31.0333,811.579,ZW,True,,stop,5.205e-05,474,31,0,9.7,"{""country"": ""ZW"", ""latitude"": -17.5336, ""longitude"": 31.0333}"
+google/gemini-3.5-flash,CoT (effort=low),-14.9833,25.1502,939.674,ZM,True,,stop,0.0041835,1271,253,183,11.16,"{""reasoning"": ""The dry savanna landscape with scattered miombo-like trees and sandy soil under a clear blue sky is highly characteristic of the Zambian interior, particularly along the M9 highway."", ""country"": ""ZM"", ""latitude"": -14.9833, ""longitude"": 25.1502}"
+xiaomi/mimo-v2.5,no-CoT,-1.2921,36.8219,1120.066,KE,True,,stop,8.11776e-05,708,30,0,4.09,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+xiaomi/mimo-v2.5,CoT,-1.2,36.9,1133.064,KE,True,,stop,0.0003397576,787,914,847,16.77,"{""reasoning"": ""The dry East African savanna with acacia-like trees, left-hand driving consistent with Kenya's traffic rules, and the rural paved highway match the landscape around central Kenya near Nairobi."", ""country"": ""KE"", ""latitude"": -1.2, ""longitude"": 36.9}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-3.26173734664917,40.14638137817383,1163.072,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-19.123,26.345,1171.871,BW,True,,stop,0.0118425,1271,1104,1033,21.48,"```json
+{""reasoning"": ""The dry savanna vegetation, flat terrain, and lack of road markings on a paved road, combined with a white vehicle hood, are highly characteristic of rural northern Botswana."", ""country"": ""BW"", ""latitude"": -19.123, ""longitude"": 26.345}
+```"
+x-ai/grok-4.3,no-CoT,-21.4241,25.6778,1424.589,BW,True,,stop,0.0005984,592,24,0,22.39,"{""country"": ""BW"", ""latitude"": -21.4241, ""longitude"": 25.6778}"
+minimax/minimax-m3,CoT,-23.85,31.45,1503.801,ZA,True,,stop,0.00144306,843,1043,947,39.0,"{""reasoning"": ""Dry mopane/acacia bushveld vegetation, flat terrain with reddish soil, left-hand traffic on a paved rural road with white edge and yellow center lines, and clear dry-season sky all point to a game reserve or remote rural road in the northern South African bushveld, likely the Limpopo/Mpumalanga region."", ""country"": ""ZA"", ""latitude"": -23.85, ""longitude"": 31.45}"
+qwen/qwen3.6-27b,no-CoT,-24.0735,29.0467,1566.073,ZA,True,,stop,0.0001943,473,31,0,8.7,"{""country"": ""ZA"", ""latitude"": -24.0735, ""longitude"": 29.0467}"
+google/gemini-3.1-pro-preview,no-CoT,-24.75,31.5,1603.325,ZA,True,,stop,0.002738,1189,30,0,3.75,"```json
+{""country"": ""ZA"", ""latitude"": -24.75, ""longitude"": 31.5}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-15.7125,46.3142,1619.885,MG,True,,stop,0.0021,1190,35,0,1.84,"```json
+{""country"": ""MG"", ""latitude"": -15.7125, ""longitude"": 46.3142}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.6416,25.8479,1732.848,ZA,True,,stop,0.00016956,474,31,0,1.89,"{""country"": ""ZA"", ""latitude"": -24.6416, ""longitude"": 25.8479}"
+qwen/qwen3.5-122b-a10b,no-CoT,-25.7461,28.1881,1767.816,ZA,True,,stop,0.0002884,473,31,0,8.29,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.1881}"
+qwen/qwen3.6-35b-a3b,no-CoT,-25.7479,28.1804,1768.212,ZA,True,,stop,0.00010617035,473,31,0,1.55,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 28.1804}"
+x-ai/grok-4.3,CoT,-19.25,18.65,1776.853,NA,True,,stop,0.002434,676,770,680,12.55,"{
+  ""reasoning"": ""Right-hand-drive vehicle (mirror visible on right of frame) + left-side driving, combined with acacia savanna, dry grass, and red soil under clear subtropical sky, points to Southern Africa. Generic two-lane asphalt road with no signage narrows to Namibia/Botswana corridor."",
+  ""country"": ""NA"",
+  ""latitude"": -19.25,
+  ""longitude"": 18.65
+}"
+mistralai/mistral-medium-3-5,no-CoT,-25.7479,27.8546,1777.144,ZA,True,,stop,0.0011835,634,31,0,1.01,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 27.8546}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3763.171,,True,True,,,,,,20.16,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,22.44231414794922,70.07032012939453,5490.695,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,22.87312889099121,71.81175994873047,5662.199,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),13.985,-14.152,5803.723,SN,True,,stop,0.0154335,1271,1503,1424,18.57,"{""reasoning"": ""The dry savanna landscape with sparse, characteristic West African trees and a paved road without markings is highly indicative of eastern Senegal during the dry season. The white car hood visible at the bottom matches the Google Street View vehicle used in Senegal."", ""country"": ""SN"", ""latitude"": 13.985, ""longitude"": -14.152}"
+google/gemini-3.1-pro-preview,CoT,14.5,-14.5,5862.168,SN,True,,stop,0.005458,1271,243,176,10.77,"{
+  ""reasoning"": ""The dry savanna landscape and the visible black suction cup mount on the right side of the windshield are characteristic of Google Street View coverage in Senegal."",
+  ""country"": ""SN"",
+  ""latitude"": 14.5,
+  ""longitude"": -14.5
+}"
+google/gemma-4-31b-it,no-CoT,-15.7801,-47.9292,8673.284,BR,True,,stop,6.378e-05,406,36,0,12.84,"```json
+{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}
+```"
+mistralai/mistral-small-2603,no-CoT,-33.8688,151.2093,11904.805,AU,True,,stop,0.0001143,634,32,0,2.99,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+qwen/qwen3.5-397b-a17b,no-CoT,-19.8765,146.7891,12088.651,AU,True,,stop,0.0003357,473,32,0,8.91,"{""country"": ""AU"", ""latitude"": -19.8765, ""longitude"": 146.7891}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.16,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.61,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,3.25,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,31.26,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,13.23,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.19,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.2,

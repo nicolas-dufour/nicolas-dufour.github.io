@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-34.206981693172,139.95475421965,0.0,AU,True,,,,,,,,"Waikerie, Loxton Waikerie, South Australia, AU"
+x-ai/grok-4.3,no-CoT,-34.2805,138.9023,97.085,AU,True,,stop,0.0007384,704,24,0,1.85,"{""country"": ""AU"", ""latitude"": -34.2805, ""longitude"": 138.9023}"
+qwen/qwen3.5-35b-a3b,no-CoT,-34.2456,138.5678,127.586,AU,True,,stop,0.00011975,585,32,0,3.36,"{""country"": ""AU"", ""latitude"": -34.2456, ""longitude"": 138.5678}"
+qwen/qwen3.5-122b-a10b,no-CoT,-34.9285,138.6007,147.674,AU,True,,stop,0.0003364,585,32,0,8.26,"{""country"": ""AU"", ""latitude"": -34.9285, ""longitude"": 138.6007}"
+qwen/qwen3.5-397b-a17b,no-CoT,-34.9285,138.6007,147.674,AU,True,,stop,0.00043548,585,32,0,2.2,"{""country"": ""AU"", ""latitude"": -34.9285, ""longitude"": 138.6007}"
+qwen/qwen3.5-9b,no-CoT,-34.9285,138.6007,147.674,AU,True,,stop,6.34e-05,586,32,0,4.58,"{""country"": ""AU"", ""latitude"": -34.9285, ""longitude"": 138.6007}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-35.1805419921875,138.5410919189453,168.588,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,-34.2,138.1,170.569,AU,True,,stop,0.0022215,788,629,556,14.7,"{""reasoning"": ""Left-hand traffic (solid edge line on left, typical AU highway markings), red dirt shoulder, eucalypt scrub and yellow flowering bushes match Australian rural vegetation/soil; overcast sky and power poles consistent with southern Australian highway."", ""country"": ""AU"", ""latitude"": -34.2, ""longitude"": 138.1}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-34.804901123046875,137.88766479492188,200.736,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-35.53272247314453,138.0114288330078,230.562,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-35.550296783447266,138.0049285888672,232.255,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-33.5,137.5,239.917,AU,True,,stop,0.00484,818,30,0,2.59,"{""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 137.5}"
+minimax/minimax-m3,CoT,-37.2,140.8,341.443,AU,True,,stop,0.00110142,997,717,813,13.87,"{""reasoning"": ""Solid white left edge line, dashed lane dividers, sealed shoulders, and left-hand traffic indicate Australia. Yellow gorse-like shrubs, eucalyptus, flat cleared pastoral terrain, overcast maritime climate, and reddish verge soil are characteristic of southeastern South Australia or western Victoria."", ""country"": ""AU"", ""latitude"": -37.2, ""longitude"": 140.8}{""reasoning"": ""Solid white left edge line, dashed lane dividers, sealed shoulders, and left-hand traffic indicate Australia. Yellow gorse-like shrubs, eucalyptus, flat cleared pastoral terrain, overcast maritime climate, and reddish verge soil are characteristic of southeastern South Australia or western Victoria."", ""country"": ""AU"", ""latitude"": -37.2, ""longitude"": 140.8}"
+minimax/minimax-m3,no-CoT,-34.5,135.5,410.206,AU,True,,stop,0.00041442,919,164,186,11.52,"{""country"": ""AU"", ""latitude"": -34.5, ""longitude"": 135.5}"
+qwen/qwen3.6-27b,no-CoT,-37.524,143.951,515.371,AU,True,,stop,0.0002299,585,32,0,13.61,"{""country"": ""AU"", ""latitude"": -37.5240, ""longitude"": 143.9510}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.8688,151.2093,1037.189,AU,True,,stop,0.00011975,585,32,0,9.49,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+anthropic/claude-opus-4.8,CoT,-33.5,123.5,1519.872,AU,True,,stop,0.00722,949,99,0,3.46,"{""reasoning"": ""Left-hand traffic, sandy reddish soil, dry scrubland with cypress and yellow-flowering shrubs under overcast sky suggests rural Western/South Australia highway."", ""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 123.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-33.14615249633789,121.56438446044922,1703.511,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-32.9537353515625,121.4675064086914,1715.916,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,-32.3,117.1,2131.264,AU,True,,stop,0.0124506,665,3361,3272,27.76,"{""reasoning"": ""The image shows left-hand traffic with standard white road markings (solid edge, dashed center), combined with distinct reddish laterite soil and vegetation featuring yellow flowering wattles (Acacia) and eucalypts, which strongly points to the Wheatbelt region of Western Australia."", ""country"": ""AU"", ""latitude"": -32.3, ""longitude"": 117.1}"
+xiaomi/mimo-v2.5,no-CoT,-34.9285,116.5448,2140.131,AU,True,,stop,9.74176e-05,820,32,0,1.72,"{""country"": ""AU"", ""latitude"": -34.9285, ""longitude"": 116.5448}"
+xiaomi/mimo-v2.5,CoT,-34.5,116.5,2148.535,AU,True,,stop,0.0003996776,899,1072,1017,18.52,"{""reasoning"": ""Left-hand traffic, reddish soil, and yellow-flowering wattle vegetation are highly characteristic of rural Australia."", ""country"": ""AU"", ""latitude"": -34.5, ""longitude"": 116.5}"
+qwen/qwen3.6-35b-a3b,CoT,-32.15,116.85,2157.767,AU,True,,stop,0.01565834075,665,16111,15999,251.84,"```json
+{
+  ""reasoning"": ""The image shows a left-hand traffic road with distinctive red soil on the shoulder, which is characteristic of Western Australia. The vegetation includes scrubby bushes and what appears to be gorse (yellow flowers), common in the Australian bush, along with planted windbreak trees like cypress or pine."",
+  ""country"": ""AU"",
+  ""latitude"": -32.15,
+  ""longitude"": 116.85
+}
+```"
+google/gemma-4-31b-it,no-CoT,-31.5,115.8,2270.893,AU,True,,stop,4.908e-05,262,31,0,5.16,"```json
+{""country"": ""AU"", ""latitude"": -31.5, ""longitude"": 115.8}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-30.3512,115.4523,2337.122,AU,True,,stop,0.0083955,1307,715,644,6.36,"{""reasoning"": ""The left-hand driving, wide asphalt road with sandy red shoulders, and distinctive yellow-flowering acacia vegetation are highly characteristic of Western Australia, specifically along the Brand Highway."", ""country"": ""AU"", ""latitude"": -30.3512, ""longitude"": 115.4523}"
+google/gemini-3.1-pro-preview,CoT,-30.1234,115.4567,2344.245,AU,True,,stop,0.006454,1307,320,240,18.01,"{
+  ""reasoning"": ""Left-hand driving, white road markings, reddish sandy soil, and scrubby vegetation with yellow flowering bushes (likely Acacia) strongly suggest a rural highway in Western Australia."",
+  ""country"": ""AU"",
+  ""latitude"": -30.1234,
+  ""longitude"": 115.4567
+}"
+moonshotai/kimi-k2.6,CoT,-30.5,115.3,2346.317,AU,True,,stop,0.011708676,834,3337,3258,82.22,"{""reasoning"": ""Left-hand traffic with continuous white left-edge road markings, vivid red gravel shoulders, and low acacia/wattle scrub are characteristic of rural Western Australia; the flat, overcast scene matches a major Wheatbelt or Mid West highway such as Brand Highway."", ""country"": ""AU"", ""latitude"": -30.5, ""longitude"": 115.3}"
+google/gemini-3.5-flash,CoT (effort=high),-29.5231,115.1245,2395.602,AU,True,,stop,0.0107265,1307,974,901,9.87,"{""reasoning"": ""The combination of left-hand traffic, reddish-orange sandy soil on the shoulder, and yellow-flowering acacia shrubs strongly points to rural Western Australia, likely along the Brand Highway."", ""country"": ""AU"", ""latitude"": -29.5231, ""longitude"": 115.1245}"
+google/gemini-3.5-flash,CoT (effort=low),-29.2541,114.9582,2420.68,AU,True,,stop,0.004032,1308,230,161,9.11,"{""reasoning"": ""The left-hand driving, white road markings, reddish sandy soil, and native vegetation including yellow wattle shrubs strongly indicate Western Australia, likely along the Brand Highway."", ""country"": ""AU"", ""latitude"": -29.2541, ""longitude"": 114.9582}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-28.8125,114.7153,2459.698,AU,True,,stop,0.0021615,1225,36,0,1.53,"```json
+{""country"": ""AU"", ""latitude"": -28.8125, ""longitude"": 114.7153}
+```"
+moonshotai/kimi-k2.6,no-CoT,-33.8,25.3,9841.489,ZA,True,,stop,0.0007196,752,25,0,9.28,"{""country"": ""ZA"", ""latitude"": -33.8, ""longitude"": 25.3}"
+google/gemini-3.1-pro-preview,no-CoT,-33.8521,18.6543,10285.746,ZA,True,,stop,0.002872,1226,35,0,2.27,"```json
+{""country"": ""ZA"", ""latitude"": -33.8521, ""longitude"": 18.6543}
+```"
+mistralai/mistral-small-2603,no-CoT,38.5816,-121.4944,12957.921,US,True,,stop,0.000171375,786,32,0,1.7,"{""country"": ""US"", ""latitude"": 38.5816, ""longitude"": -121.4944}"
+mistralai/mistral-small-2603,CoT,54.55,24.75,14618.842,LT,True,,stop,0.0004254,868,492,525,4.87,"{""reasoning"": ""The decisive clue is the vehicle's license plate displaying the country code 'LT' (Lithuania) with EU blue star section, indicating this is Lithuania."", ""country"": ""LT"", ""latitude"": 54.55, ""longitude"": 24.75}"
+google/gemma-4-26b-a4b-it,no-CoT,37.3892,-5.9845,16939.619,ES,True,,stop,5.588e-05,404,34,0,8.41,"Please own the own {""country"": ""ES"", ""latitude"": 37.3892, ""longitude"": -5.9845}"
+qwen/qwen3.5-27b,no-CoT,37.8833,-6.0167,16945.617,ES,True,,stop,0.00024336,586,35,0,0.89,"```json
+{""country"": ""ES"", ""latitude"": 37.8833, ""longitude"": -6.0167}
+```"
+mistralai/mistral-medium-3-5,no-CoT,38.7667,-7.5,17077.603,PT,True,,stop,0.0013815,786,27,0,7.56,"{""country"": ""PT"", ""latitude"": 38.7667, ""longitude"": -7.5}"
+openai/gpt-5.5,CoT,37.1187,-8.2204,17135.319,PT,True,,stop,0.021775,755,600,516,17.47,"{""reasoning"":""Mediterranean vegetation with pines/cypress, sandy shoulders, wet asphalt and European-style white lane markings on a rural divided road point most strongly to southern Portugal. The flat terrain and scrubby Algarve/Alentejo roadside feel suggest the N125/A22 corridor area."",""country"":""PT"",""latitude"":37.1187,""longitude"":-8.2204}"
+openai/gpt-5.5,no-CoT,37.0713,-8.4756,17157.628,PT,True,,stop,0.00411,678,24,0,1.61,"{""country"":""PT"",""latitude"":37.0713,""longitude"":-8.4756}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.23,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.13,

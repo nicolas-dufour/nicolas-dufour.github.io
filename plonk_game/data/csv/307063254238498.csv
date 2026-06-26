@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,16.751483886151,77.98792796532,0.0,IN,True,,,,,,,,"Mahbubnagar, Mahbubnagar, Telangana, IN"
+openai/gpt-5.5,CoT,17.4308,78.3656,85.54,IN,True,,stop,0.013855,755,336,247,9.3,"{""reasoning"":""Black-and-yellow auto rickshaws, yellow commercial plates, left-side traffic, and the dry tropical urban residential setting point strongly to India, especially Hyderabad/Telangana. The rocky scrubby roadside and apartment style are typical of Hyderabad’s western suburbs around Gachibowli/Manikonda."",""country"":""IN"",""latitude"":17.4308,""longitude"":78.3656}"
+google/gemini-3.1-pro-preview,no-CoT,17.45,78.35,86.681,IN,True,,stop,0.00448,1226,169,138,3.37,"```json
+{""country"": ""IN"", ""latitude"": 17.45, ""longitude"": 78.35}
+```"
+anthropic/claude-opus-4.8,CoT,17.385,78.486,88.121,IN,True,,stop,0.00697,949,89,0,9.67,"{""reasoning"": ""Yellow auto-rickshaws, left-hand traffic, dusty road, and architecture typical of suburban India, likely Telangana/Andhra region."", ""country"": ""IN"", ""latitude"": 17.385, ""longitude"": 78.486}"
+x-ai/grok-4.3,no-CoT,17.385,78.4864,88.147,IN,True,,stop,0.0007359,704,23,0,7.0,"{""country"": ""IN"", ""latitude"": 17.385, ""longitude"": 78.4864}"
+anthropic/claude-opus-4.8,no-CoT,17.385,78.4867,88.166,IN,True,,stop,0.004865,818,31,0,3.05,"{""country"": ""IN"", ""latitude"": 17.385, ""longitude"": 78.4867}"
+qwen/qwen3.6-35b-a3b,no-CoT,17.385044,78.486671,88.168,IN,True,,stop,0.00012808575,585,35,0,3.24,"{""country"": ""IN"", ""latitude"": 17.385044, ""longitude"": 78.486671}"
+openai/gpt-5.5,no-CoT,17.4579,78.3666,88.259,IN,True,,stop,0.00408,678,23,0,2.17,"{""country"":""IN"",""latitude"":17.4579,""longitude"":78.3666}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),17.4483,78.3915,88.562,IN,True,,stop,0.002154,1226,35,0,7.77,"```json
+{""country"": ""IN"", ""latitude"": 17.4483, ""longitude"": 78.3915}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,17.4239,78.4738,90.869,IN,True,,stop,0.000301175,585,31,0,9.83,"{""country"": ""IN"", ""latitude"": 17.4239, ""longitude"": 78.4738}"
+google/gemini-3.5-flash,CoT (effort=medium),17.4483,78.5685,99.049,IN,True,,stop,0.0066495,1307,521,445,6.09,"{""reasoning"": ""The yellow-and-black auto-rickshaw, left-hand driving, typical concrete building architecture, and Telugu-like script on the building sign indicate a location in Telangana or Andhra Pradesh, India."", ""country"": ""IN"", ""latitude"": 17.4483, ""longitude"": 78.5685}"
+google/gemini-3.5-flash,CoT (effort=high),17.4483,78.6804,106.863,IN,True,,stop,0.0093765,1307,824,750,6.57,"{""reasoning"": ""The presence of a yellow-and-black auto-rickshaw, typical Indian concrete architecture with shop shutters, and Telugu script on the building indicates a location in Telangana or Andhra Pradesh, India."", ""country"": ""IN"", ""latitude"": 17.4483, ""longitude"": 78.6804}"
+x-ai/grok-4.3,CoT,16.5062,80.648,284.723,IN,True,,stop,0.002629,788,792,714,8.55,"{""reasoning"": ""Yellow-black auto-rickshaw, left-hand traffic (vehicles on left of road), white multi-story concrete buildings with balconies, tropical trees and dirt verges are diagnostic of India. Potholed asphalt road and clothing styles further narrow to South Asia."", ""country"": ""IN"", ""latitude"": 16.5062, ""longitude"": 80.648}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,13.178025245666504,77.94781494140625,397.374,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,13.171573638916016,77.92868041992188,398.119,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,13.153078079223633,77.90532684326172,400.223,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,13.0827,77.5946,410.133,IN,True,,stop,6.325e-05,586,31,0,3.13,"{""country"": ""IN"", ""latitude"": 13.0827, ""longitude"": 77.5946}"
+google/gemini-3.5-flash,CoT (effort=low),13.0524,77.6123,413.294,IN,True,,stop,0.004059,1308,233,162,3.24,"{""reasoning"": ""The presence of a yellow auto-rickshaw, a Maruti Suzuki Swift Dzire, left-hand traffic, and typical South Indian architecture and vegetation indicates a location in southern India."", ""country"": ""IN"", ""latitude"": 13.0524, ""longitude"": 77.6123}"
+google/gemini-3.1-pro-preview,CoT,13.0,77.6,419.223,IN,True,,stop,0.005004,1308,199,124,4.37,"{
+  ""reasoning"": ""The presence of auto-rickshaws and the general architecture strongly indicate India. The rounded script on the red sign on the building suggests a southern Indian state like Karnataka or Telangana."",
+  ""country"": ""IN"",
+  ""latitude"": 13.0,
+  ""longitude"": 77.6
+}"
+moonshotai/kimi-k2.6,CoT,12.9716,77.5946,422.423,IN,True,,stop,0.007027956,834,1975,1903,52.2,"{""reasoning"": ""The yellow-and-black auto-rickshaw, left-hand traffic, and tropical vegetation with South Asian concrete architecture are definitive for India; the semi-urban road and vehicle mix suggest a suburb in South India."", ""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+google/gemma-4-31b-it,no-CoT,12.9716,77.5946,422.423,IN,True,,stop,5.748e-05,406,36,0,8.13,"```json
+{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}
+```"
+mistralai/mistral-medium-3-5,no-CoT,12.9716,77.5946,422.423,IN,True,,stop,0.0014115,786,31,0,0.89,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.5-27b,no-CoT,12.9716,77.5946,422.423,IN,True,,stop,0.00022491,585,31,0,21.29,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.5-35b-a3b,no-CoT,12.9716,77.5946,422.423,IN,True,,stop,0.00011875,585,31,0,7.86,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+xiaomi/mimo-v2.5,no-CoT,12.9716,77.5946,422.423,IN,True,,stop,9.71376e-05,820,31,0,1.41,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.5-122b-a10b,no-CoT,13.0827,80.2707,475.982,IN,True,,stop,0.00021658,585,31,0,2.07,"{""country"": ""IN"", ""latitude"": 13.0827, ""longitude"": 80.2707}"
+minimax/minimax-m3,CoT,12.33,76.62,513.207,IN,True,,stop,0.00086346,995,522,438,20.51,"{""reasoning"": ""The yellow-black auto-rickshaw is the classic Bajaj design ubiquitous in India, vehicles drive on the left, the Maruti Suzuki car and local signboard text appear to be in Kannada script, and the tropical vegetation plus architecture match a small town in Karnataka."", ""country"": ""IN"", ""latitude"": 12.33, ""longitude"": 76.62}"
+xiaomi/mimo-v2.5,CoT,12.31,76.64,514.729,IN,True,,stop,0.0006480376,899,1959,1881,23.25,"```json
+{""reasoning"": ""The presence of yellow and black auto-rickshaws and left-hand traffic confirms India, while the distinctive red soil and lush vegetation are characteristic of the Karnataka region in the Deccan Plateau."", ""country"": ""IN"", ""latitude"": 12.31, ""longitude"": 76.64}
+```"
+qwen/qwen3.6-27b,no-CoT,11.0168,76.9558,647.318,IN,True,,stop,0.0002279,585,31,0,3.76,"{""country"": ""IN"", ""latitude"": 11.0168, ""longitude"": 76.9558}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,25.8729305267334,82.032958984375,1097.157,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,25.963123321533203,81.8031234741211,1097.619,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,26.618610382080078,81.369140625,1151.259,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,22.5726,88.3637,1263.962,IN,True,,stop,5.468e-05,404,31,0,1.2,"{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 88.3637}"
+mistralai/mistral-small-2603,no-CoT,43.2568,5.4474,7338.8,FR,True,,stop,0.0001359,786,30,0,2.2,"{""country"": ""FR"", ""latitude"": 43.2568, ""longitude"": 5.4474}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.55,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.62,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.35,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.6,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.92,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,9.24,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,2.1,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,6.44,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.38,

@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.345717611227,7.0297688367897,0.0,IT,True,,,,,,,,"Pietraporzio, Provincia di Cuneo, Piedmont, IT"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,44.7136344909668,6.827991962432861,43.926,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,44.71405792236328,6.828360557556152,43.959,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,44.93856430053711,6.900308132171631,66.712,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,45.525,6.575,135.928,FR,True,,stop,0.0011030376,899,3584,3478,46.26,"{""reasoning"": ""The image displays a winding mountain road with a distinct stone retaining wall, European-style crash barriers, and right-hand traffic, which strongly indicates a location in the European Alps. The architectural style of the distant house and the specific construction of the stone wall are highly characteristic of the Savoie region in the French Alps, likely within the Tarentaise Valley."", ""country"": ""FR"", ""latitude"": 45.525, ""longitude"": 6.575}"
+x-ai/grok-4.3,CoT,45.74,7.32,156.705,IT,True,,stop,0.002314,788,666,581,12.04,"{""reasoning"": ""Right-hand traffic, European hatchback, triangular warning sign, stone retaining wall + metal guardrail, and snow-capped peaks with leafless deciduous trees point to the western Alps in winter; the specific valley morphology and building style match the Aosta Valley / lower Val d'Aosta."", ""country"": ""IT"", ""latitude"": 45.74, ""longitude"": 7.32}"
+google/gemini-3.1-pro-preview,CoT,45.75,7.35,158.162,IT,True,,stop,0.00493,1307,193,121,9.98,"{
+  ""reasoning"": ""The mountainous terrain, stone retaining wall, and European license plate suggest the Alps. The specific style of the guardrail and road markings are consistent with northern Italy."",
+  ""country"": ""IT"",
+  ""latitude"": 45.75,
+  ""longitude"": 7.35
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,45.8324,7.6453,172.228,IT,True,,stop,0.00011204,586,30,0,1.39,"{""country"": ""IT"", ""latitude"": 45.8324, ""longitude"": 7.6453}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,46.2647819519043,8.689496994018555,249.754,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,46.50022506713867,8.37888240814209,261.676,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,46.589881896972656,8.53624439239502,275.796,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,46.3077,9.3981,286.11,CH,True,,stop,0.00408,678,23,0,1.37,"{""country"":""CH"",""latitude"":46.3077,""longitude"":9.3981}"
+openai/gpt-5.5,CoT,46.3365,9.5778,297.729,CH,True,,stop,0.021565,755,593,516,62.38,"{""reasoning"":""Right-hand traffic, European red-bordered yield signage, white road markings, and alpine stone retaining walls point to the Swiss/Italian Alps; the dry-stone walls and narrow snowy valley look especially like Switzerland’s Graubünden/Bregaglia region."",""country"":""CH"",""latitude"":46.3365,""longitude"":9.5778}"
+qwen/qwen3.5-9b,no-CoT,46.1565,9.9042,301.912,IT,True,,stop,6.31e-05,586,30,0,5.32,"{""country"": ""IT"", ""latitude"": 46.1565, ""longitude"": 9.9042}"
+qwen/qwen3.6-35b-a3b,no-CoT,46.52,9.96,332.717,CH,True,,stop,0.0001652,586,30,0,3.66,"{""country"": ""CH"", ""latitude"": 46.5200, ""longitude"": 9.9600}"
+google/gemma-4-31b-it,no-CoT,46.1234,10.4567,333.237,IT,True,,stop,0.00019326,406,36,0,1.53,"```json
+{""country"": ""IT"", ""latitude"": 46.1234, ""longitude"": 10.4567}
+```"
+anthropic/claude-opus-4.8,no-CoT,46.2515,10.3543,335.393,IT,True,,stop,0.00489,818,32,0,9.47,"{""country"": ""IT"", ""latitude"": 46.2515, ""longitude"": 10.3543}"
+anthropic/claude-opus-4.8,CoT,46.32,10.32,338.091,IT,True,,stop,0.00747,949,109,0,3.38,"{""reasoning"": ""Alpine mountain valley with snow, stone retaining wall and Italian-style guardrails, right-hand traffic; architecture and terrain suggest northern Italian Alps (Valtellina/Lombardy region)."", ""country"": ""IT"", ""latitude"": 46.32, ""longitude"": 10.32}"
+google/gemini-3.1-pro-preview,no-CoT,46.3144,10.3458,339.235,IT,True,,stop,0.00287,1225,35,0,10.72,"```json
+{""country"": ""IT"", ""latitude"": 46.3144, ""longitude"": 10.3458}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),46.483125,10.361254,352.231,IT,True,,stop,0.00219,1226,39,0,7.32,"```json
+{""country"": ""IT"", ""latitude"": 46.483125, ""longitude"": 10.361254}
+```"
+google/gemini-3.5-flash,CoT (effort=low),46.4825,10.3711,352.753,IT,True,,stop,0.004932,1308,330,251,3.56,"```json
+{""reasoning"": ""The stone retaining wall, metal guardrail design, and alpine mountain terrain with light snow cover are characteristic of the Italian Alps, specifically in the Trentino-Alto Adige or Lombardy regions."", ""country"": ""IT"", ""latitude"": 46.4825, ""longitude"": 10.3711}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,46.3892,10.5214,354.951,IT,True,,stop,0.000301175,585,31,0,17.07,"{""country"": ""IT"", ""latitude"": 46.3892, ""longitude"": 10.5214}"
+mistralai/mistral-medium-3-5,no-CoT,46.0,11.0,361.455,IT,True,,stop,0.0013665,786,25,0,0.78,"{""country"": ""IT"", ""latitude"": 46.0, ""longitude"": 11.0}"
+google/gemini-3.5-flash,CoT (effort=medium),46.6283,10.5412,373.228,IT,True,,stop,0.0092955,1307,815,746,6.77,"{""reasoning"": ""The alpine landscape with snow-capped peaks, stone retaining wall, and European road infrastructure (guardrails, road markings) points to the Alps, likely in northern Italy."", ""country"": ""IT"", ""latitude"": 46.6283, ""longitude"": 10.5412}"
+qwen/qwen3.5-122b-a10b,no-CoT,46.0742,11.1453,375.272,IT,True,,stop,0.0003332,585,31,0,8.2,"{""country"": ""IT"", ""latitude"": 46.0742, ""longitude"": 11.1453}"
+minimax/minimax-m3,CoT,46.33,10.92,375.612,IT,True,,stop,0.00081426,995,481,405,18.99,"{""reasoning"": ""Alpine valley with right-hand driving, European yield sign, Italian-style stone retaining walls, wooden utility poles, and snow-capped peaks with bare deciduous trees strongly indicate the Italian Alps (Trentino-Alto Adige region)."", ""country"": ""IT"", ""latitude"": 46.33, ""longitude"": 10.92}"
+x-ai/grok-4.3,no-CoT,46.139,11.118,377.039,IT,True,,stop,0.0007334,704,22,0,0.84,"{""country"": ""IT"", ""latitude"": 46.139, ""longitude"": 11.118}"
+qwen/qwen3.6-27b,no-CoT,46.3381,11.1492,390.734,IT,True,,stop,0.0002279,585,31,0,8.59,"{""country"": ""IT"", ""latitude"": 46.3381, ""longitude"": 11.1492}"
+google/gemini-3.5-flash,CoT (effort=high),46.6215,10.8542,390.983,IT,True,,stop,0.0105825,1307,958,885,15.86,"```json
+{""reasoning"": ""The alpine landscape with a characteristic stone retaining wall, steel guardrails, and snowy peaks in the background strongly points to the Italian Alps, specifically the South Tyrol region."", ""country"": ""IT"", ""latitude"": 46.6215, ""longitude"": 10.8542}
+```"
+minimax/minimax-m3,no-CoT,46.41,11.24,400.943,IT,True,,stop,0.00042882,919,176,203,3.7,"{""country"": ""IT"", ""latitude"": 46.41, ""longitude"": 11.24}"
+moonshotai/kimi-k2.6,CoT,46.6,11.2,410.477,IT,True,,stop,0.017742816,834,5108,5044,192.65,"{""reasoning"": ""Alpine valley with tall mortared-stone retaining walls, standard European yield sign, right-hand traffic, and winter snow cover matches a busy valley road in the Italian Alps."", ""country"": ""IT"", ""latitude"": 46.6, ""longitude"": 11.2}"
+qwen/qwen3.5-27b,no-CoT,46.3897,11.9234,444.63,IT,True,,stop,0.000162435,585,31,0,3.15,"{""country"": ""IT"", ""latitude"": 46.3897, ""longitude"": 11.9234}"
+xiaomi/mimo-v2.5,no-CoT,61.2,7.0,1874.112,NO,True,,stop,9.51776e-05,820,24,0,4.54,"{""country"": ""NO"", ""latitude"": 61.2, ""longitude"": 7.0}"
+mistralai/mistral-small-2603,no-CoT,69.6492,18.9553,2892.596,NO,True,,stop,0.0001365,786,31,0,3.55,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+google/gemma-4-26b-a4b-it,no-CoT,-48.8584,11.0,10371.03,,True,,stop,5.788e-05,404,39,0,8.24,"{""country"": ""AT"", ""latitude"":-48.8584, ""longitude"":11.--11--11.5533}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.37,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.15,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.09,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.23,

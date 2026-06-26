@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-28.230993917326,28.901911861464,0.0,ZA,True,,,,,,,,"Harrismith, Thabo Mofutsanyana District Municipality, Orange Free State, ZA"
+anthropic/claude-opus-4.8,CoT,-27.5,28.5,90.376,ZA,True,,stop,0.006845,949,84,0,2.86,"{""reasoning"": ""Dry grassland farmland with gravel road and powerlines, Mercedes hood emblem; resembles South African highveld agricultural region."", ""country"": ""ZA"", ""latitude"": -27.5, ""longitude"": 28.5}"
+google/gemini-3.1-pro-preview,no-CoT,-27.1234,28.5678,127.477,ZA,True,,stop,0.002872,1226,35,0,2.03,"```json
+{""country"": ""ZA"", ""latitude"": -27.1234, ""longitude"": 28.5678}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-27.1234,29.3456,130.679,ZA,True,,stop,0.002154,1226,35,0,1.53,"```json
+{""country"": ""ZA"", ""latitude"": -27.1234, ""longitude"": 29.3456}
+```"
+anthropic/claude-opus-4.8,no-CoT,-27.5,27.8,135.424,ZA,True,,stop,0.004865,818,31,0,3.66,"{""country"": ""ZA"", ""latitude"": -27.5, ""longitude"": 27.8}"
+google/gemini-3.5-flash,CoT (effort=high),-27.9833,27.4167,148.252,ZA,True,,stop,0.0098985,1307,882,802,11.11,"```json
+{""reasoning"": ""The flat, dry grassland (Highveld) and the distinctive railway electrification masts running parallel to the dirt road are highly characteristic of rural South Africa, particularly the Free State province during the dry winter months."", ""country"": ""ZA"", ""latitude"": -27.9833, ""longitude"": 27.4167}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-27.8521,27.4153,151.858,ZA,True,,stop,0.0074235,1307,607,527,6.1,"{""reasoning"": ""The dry, yellowish-brown Highveld grass, flat terrain, and electrified railway line running parallel to the dirt road are highly characteristic of the Free State province in South Africa, captured by a white Mercedes-Benz camera car."", ""country"": ""ZA"", ""latitude"": -27.8521, ""longitude"": 27.4153}"
+google/gemini-3.1-pro-preview,CoT,-27.5521,27.4819,158.663,ZA,True,,stop,0.00636,1308,312,225,11.18,"{
+  ""reasoning"": ""The dry winter grass, flat landscape, and specific railway electrification masts strongly suggest the Highveld region of South Africa. The visible Mercedes hood ornament is a known feature of certain Google Street View coverage in this area."",
+  ""country"": ""ZA"",
+  ""latitude"": -27.5521,
+  ""longitude"": 27.4819
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-28.316165924072266,27.252864837646484,161.766,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-28.1056,27.2479,162.733,ZA,True,,stop,0.013585,755,327,252,15.38,"{""reasoning"":""The dry highveld grassland, gravel farm road, and utility/rail-style poles strongly suggest rural South Africa, especially the Free State interior. The visible Mercedes hood ornament is also a common clue from South African Street View coverage."",""country"":""ZA"",""latitude"":-28.1056,""longitude"":27.2479}"
+moonshotai/kimi-k2.6,CoT,-27.0,28.0,163.194,ZA,True,,stop,0.010405836,834,2960,2885,84.43,"{""reasoning"": ""The dry golden Highveld grassland, wooden power-line poles, and straight gravel road through flat terrain are classic of rural South Africa in winter; the Mercedes-Benz hood ornament visible at the bottom is also typical of the region."", ""country"": ""ZA"", ""latitude"": -27.0, ""longitude"": 28.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-28.12819480895996,27.205766677856445,166.639,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-27.8512,27.1534,176.72,ZA,True,,stop,0.0037245,1307,196,128,9.75,"{""reasoning"": ""The flat, dry grassland landscape combined with the distinctive railway electrification poles on the left is highly characteristic of the Highveld region in South Africa, particularly the Free State."", ""country"": ""ZA"", ""latitude"": -27.8512, ""longitude"": 27.1534}"
+openai/gpt-5.5,no-CoT,-26.4803,29.2387,197.489,ZA,True,,stop,0.00411,678,24,0,14.04,"{""country"":""ZA"",""latitude"":-26.4803,""longitude"":29.2387}"
+moonshotai/kimi-k2.6,no-CoT,-26.5,28.0,212.083,ZA,True,,stop,0.00064215,754,23,0,3.39,"{""country"": ""ZA"", ""latitude"": -26.5, ""longitude"": 28.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-29.52692985534668,27.185049057006836,220.696,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-29.17508316040039,26.661888122558594,242.378,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,-28.45,26.35,250.928,ZA,True,,stop,0.0139966,665,3915,3877,128.86,"{
+""reasoning"": ""The wide grey gravel road flanked by tall, dry golden grass and simple wooden utility poles is highly characteristic of the rural Free State province in South Africa. The flat, expansive horizon and the presence of a Mercedes-Benz hood ornament (a common vehicle for farmers in the region) further support this identification."",
+""country"": ""ZA"",
+""latitude"": -28.45,
+""longitude"": 26.35
+}"
+google/gemma-4-31b-it,no-CoT,-26.1234,27.8912,254.785,ZA,True,,stop,6.348e-05,404,36,0,4.52,"```json
+{""country"": ""ZA"", ""latitude"": -26.1234, ""longitude"": 27.8912}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,-29.0469,26.2172,277.258,ZA,True,,stop,0.00021684,586,31,0,10.05,"{""country"": ""ZA"", ""latitude"": -29.0469, ""longitude"": 26.2172}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-30.310991287231445,26.891254425048828,302.522,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-30.340131759643555,26.862211227416992,306.797,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,-30.55,22.9,635.968,ZA,True,,stop,0.0001588,586,26,0,4.01,"{""country"": ""ZA"", ""latitude"": -30.55, ""longitude"": 22.9}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4395.332,,True,True,,,,,,7.08,
+x-ai/grok-4.3,no-CoT,-34.85,-58.05,8007.832,AR,True,,stop,0.0008678,704,22,0,2.19,"{""country"": ""AR"", ""latitude"": -34.85, ""longitude"": -58.05}"
+qwen/qwen3.6-27b,no-CoT,-37.8333,-63.1833,8300.006,AR,True,,stop,0.000243465,585,31,0,7.89,"{""country"": ""AR"", ""latitude"": -37.8333, ""longitude"": -63.1833}"
+mistralai/mistral-medium-3-5,no-CoT,40.2105,-3.7858,8325.945,ES,True,,stop,0.001404,786,30,0,7.63,"{""country"": ""ES"", ""latitude"": 40.2105, ""longitude"": -3.7858}"
+minimax/minimax-m3,no-CoT,-38.0,-68.0,8673.972,AR,True,,stop,0.00027084,906,22,0,2.57,"{""country"": ""AR"", ""latitude"": -38.0, ""longitude"": -68.0}{""country"": ""AR"", ""latitude"": -38.0, ""longitude"": -68.0}"
+mistralai/mistral-small-2603,no-CoT,53.4213,14.5601,9184.561,PL,True,,stop,0.000170625,786,31,0,3.04,"{""country"": ""PL"", ""latitude"": 53.4213, ""longitude"": 14.5601}"
+minimax/minimax-m3,CoT,51.5,55.0,9226.096,RU,True,,stop,0.00073866,995,418,347,15.9,"{""reasoning"": ""Vast flat steppe with tall golden dry grasses, unpaved gravel road, and simple wooden utility poles are highly characteristic of the Eurasian steppe belt, most consistent with rural southern Russia or northern Kazakhstan."", ""country"": ""RU"", ""latitude"": 51.5, ""longitude"": 55.0}"
+x-ai/grok-4.3,CoT,-33.15,138.25,9916.57,AU,True,,stop,0.002334,788,674,613,6.02,"{""reasoning"": ""Flat arid landscape, tall dry grass/reeds, dirt road with distant lattice power poles, and Mercedes hood ornament point to rural outback Australia rather than Africa or Americas."", ""country"": ""AU"", ""latitude"": -33.15, ""longitude"": 138.25}"
+qwen/qwen3.5-397b-a17b,no-CoT,46.8721,-100.7837,15219.667,US,True,,stop,0.00043548,585,32,0,2.29,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -100.7837}"
+xiaomi/mimo-v2.5,no-CoT,38.5,-100.5,15241.06,US,True,,stop,9.57376e-05,820,26,0,7.63,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -100.5}"
+xiaomi/mimo-v2.5,CoT,42.5,-106.0,15688.209,US,True,,stop,0.0003557176,899,915,852,23.55,"{""reasoning"": ""The dry, golden vegetation and flat terrain are typical of the North American Great Plains; wooden utility poles and unpaved road suggest a rural US location."", ""country"": ""US"", ""latitude"": 42.5, ""longitude"": -106.0}"
+qwen/qwen3.5-9b,no-CoT,35.2272,-106.3186,15745.403,US,True,,stop,0.00010745,585,32,0,7.12,"{""country"": ""US"", ""latitude"": 35.2272, ""longitude"": -106.3186}"
+qwen/qwen3.5-27b,no-CoT,44.4267,-109.8231,15957.919,US,True,,stop,0.0002365,586,45,0,9.24,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 44.4267,
+  ""longitude"": -109.8231
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,46.8721,-119.5432,16584.333,US,True,,stop,0.00019824,586,32,0,2.34,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -119.5432}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.49,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.35,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,2.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.3,

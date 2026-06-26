@@ -1,0 +1,69 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,43.901244247249,76.302455600536,0.0,KZ,True,,,,,,,,"Kapshagay, None, Almaty Oblysy, KZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.131805419921875,75.5425033569336,149.509,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,45.61491394042969,75.19947814941406,209.504,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,45.655921936035156,75.16657257080078,214.718,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,41.5,63.2,1102.182,UZ,True,,stop,0.00103266,995,663,563,19.51,"{""reasoning"": ""Flat barren sandy desert, right-hand driving, Toyota Land Cruiser with rear spare tire cover (very common in Central Asia), Soviet-era asphalt road with white edge markings, and overcast sky suggest the Karakum/Kyzylkum desert region. The terrain and road style strongly indicate Uzbekistan's inter-city highway across the Kyzylkum Desert."", ""country"": ""UZ"", ""latitude"": 41.5, ""longitude"": 63.2}"
+mistralai/mistral-medium-3-5,no-CoT,41.5,60.5,1316.48,UZ,True,,stop,0.001374,786,26,0,0.96,"{""country"": ""UZ"", ""latitude"": 41.5, ""longitude"": 60.5}"
+openai/gpt-5.5,CoT,44.0486,54.7652,1718.58,KZ,True,,stop,0.015175,755,380,290,9.81,"{""reasoning"":""Flat arid steppe/desert, right-hand traffic, Soviet-style rough two-lane asphalt with white center marking and sparse infrastructure strongly suggest western Kazakhstan/Mangystau rather than the Gulf. The vehicle/road condition and barren Caspian-region landscape fit the highway near Beineu/Aktau."",""country"":""KZ"",""latitude"":44.0486,""longitude"":54.7652}"
+google/gemini-3.1-pro-preview,CoT,43.5,53.5,1827.79,KZ,True,,stop,0.00624,1308,302,231,4.86,"{
+  ""reasoning"": ""The flat, barren desert landscape and overcast sky are characteristic of the arid steppes in western Kazakhstan. The road markings and vehicle type are consistent with this region."",
+  ""country"": ""KZ"",
+  ""latitude"": 43.5,
+  ""longitude"": 53.5
+}"
+anthropic/claude-opus-4.8,CoT,44.0,52.5,1898.848,KZ,True,,stop,0.00717,949,97,0,2.97,"{""reasoning"": ""Flat sandy desert with sparse low dunes, two-lane road, overcast sky, driving on right — consistent with Kazakhstan's Mangystau/western desert regions."", ""country"": ""KZ"", ""latitude"": 44.0, ""longitude"": 52.5}"
+anthropic/claude-opus-4.8,no-CoT,43.65,51.15,2011.818,KZ,True,,stop,0.004865,818,31,0,2.23,"{""country"": ""KZ"", ""latitude"": 43.65, ""longitude"": 51.15}"
+google/gemini-3.1-pro-preview,no-CoT,44.5833,104.1667,2210.144,MN,True,,stop,0.002882,1225,36,0,8.12,"```json
+{""country"": ""MN"", ""latitude"": 44.5833, ""longitude"": 104.1667}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),45.3124,109.4562,2610.727,MN,True,,stop,0.0083055,1307,705,621,12.55,"{""reasoning"": ""The flat, arid desert landscape under an overcast sky, combined with the paved road and the specific silver hood of the Nissan X-Trail camera vehicle, strongly indicates the Gobi Desert region of Mongolia along the A0401 highway."", ""country"": ""MN"", ""latitude"": 45.3124, ""longitude"": 109.4562}"
+google/gemini-3.5-flash,CoT (effort=low),44.8521,109.6142,2631.02,MN,True,,stop,0.0047235,1307,307,234,10.57,"{""reasoning"": ""The flat, arid desert landscape combined with the paved highway and a black Toyota Land Cruiser is highly characteristic of the Gobi Desert region in southern Mongolia, specifically along the AH3 highway."", ""country"": ""MN"", ""latitude"": 44.8521, ""longitude"": 109.6142}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),44.583333,110.116667,2675.309,MN,True,,stop,0.0021975,1225,40,0,7.86,"```json
+{""country"": ""MN"", ""latitude"": 44.583333, ""longitude"": 110.116667}
+```"
+google/gemini-3.5-flash,CoT (effort=high),44.3125,110.9125,2743.026,MN,True,,stop,0.0119235,1307,1107,1023,14.48,"```json
+{""reasoning"": ""The flat, arid desert landscape combined with the silver camera car hood and the black Toyota Land Cruiser ahead is characteristic of the paved highways in the Gobi region of Mongolia, specifically the A0301 road."", ""country"": ""MN"", ""latitude"": 44.3125, ""longitude"": 110.9125}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,24.5217,54.5183,2923.834,AE,True,,stop,0.00023322,585,39,0,0.87,"{
+  ""country"": ""AE"",
+  ""latitude"": 24.5217,
+  ""longitude"": 54.5183
+}"
+qwen/qwen3.5-27b,no-CoT,24.2173,54.3191,2963.005,SA,True,,stop,0.0002345,586,44,0,14.43,"```json
+{
+  ""country"": ""SA"",
+  ""latitude"": 24.2173,
+  ""longitude"": 54.3191
+}
+```"
+openai/gpt-5.5,no-CoT,25.1544,51.2736,3075.864,QA,True,,stop,0.00408,678,23,0,7.45,"{""country"":""QA"",""latitude"":25.1544,""longitude"":51.2736}"
+qwen/qwen3.5-9b,no-CoT,26.0086,46.6958,3322.308,SA,True,,stop,6.325e-05,586,31,0,4.9,"{""country"": ""SA"", ""latitude"": 26.0086, ""longitude"": 46.6958}"
+moonshotai/kimi-k2.6,CoT,24.5621,47.4289,3385.423,SA,True,,stop,0.011839536,834,3374,3312,143.89,"{""reasoning"": ""Featureless flat sand desert, right-hand traffic, white license plate, and Toyota Land Cruiser are hallmarks of eastern Saudi Arabia's desert highway network."", ""country"": ""SA"", ""latitude"": 24.5621, ""longitude"": 47.4289}"
+qwen/qwen3.5-397b-a17b,no-CoT,24.7136,46.6753,3425.885,SA,True,,stop,0.0003882,585,31,0,2.12,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+x-ai/grok-4.3,no-CoT,24.7136,46.6753,3425.885,SA,True,,stop,0.0007384,704,24,0,7.31,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+xiaomi/mimo-v2.5,no-CoT,24.5,46.5,3455.281,SA,True,,stop,9.54576e-05,820,25,0,1.35,"{""country"": ""SA"", ""latitude"": 24.5, ""longitude"": 46.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,24.5234,45.6789,3511.352,SA,True,,stop,0.00011875,585,31,0,2.08,"{""country"": ""SA"", ""latitude"": 24.5234, ""longitude"": 45.6789}"
+x-ai/grok-4.3,CoT,24.85,44.92,3539.783,SA,True,,stop,0.001999,788,540,467,10.84,"{""reasoning"": ""Right-hand traffic (SUV on right side of road with center line to its left), extreme arid desert with sand berms and minimal vegetation, hazy overcast sky, and paved highway with gravel shoulders point to the Arabian Peninsula interior."", ""country"": ""SA"", ""latitude"": 24.85, ""longitude"": 44.92}"
+qwen/qwen3.6-27b,no-CoT,23.8859,45.0792,3604.559,SA,True,,stop,0.0002279,585,31,0,15.05,"{""country"": ""SA"", ""latitude"": 23.8859, ""longitude"": 45.0792}"
+xiaomi/mimo-v2.5,CoT,29.92,31.78,4193.057,EG,True,,stop,0.0007465976,899,2311,2201,25.25,"```json
+{""reasoning"": ""The flat, barren desert landscape combined with a paved two-lane road, right-hand traffic, and a Toyota Land Cruiser (a ubiquitous vehicle in the region) strongly suggests the Arabian Peninsula or North Africa. The specific atmospheric haze and the road surface characteristics are most typical of the Eastern Desert in Egypt, likely along the highway connecting Cairo to Ain Sokhna."", ""country"": ""EG"", ""latitude"": 29.92, ""longitude"": 31.78}
+```"
+mistralai/mistral-small-2603,no-CoT,28.0339,9.5345,6090.817,DZ,True,,stop,0.0001365,786,31,0,1.9,"{""country"": ""DZ"", ""latitude"": 28.0339, ""longitude"": 9.5345}"
+google/gemma-4-31b-it,no-CoT,32.5,4.2,6225.886,DZ,True,,stop,6.816e-05,404,29,0,2.1,"```json
+{""country"": ""DZ"", ""latitude"": 32.5, ""longitude"": 4.2}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8915.176,,True,True,,,,,,7.56,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-20.384817123413086,13.84244155883789,9556.387,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-21.131450653076172,14.140289306640625,9600.412,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,-28.4567,21.1234,9807.999,ZA,True,,stop,0.00012422475,585,31,0,8.06,"{""country"": ""ZA"", ""latitude"": -28.4567, ""longitude"": 21.1234}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-9.900077819824219,-48.87700653076172,13552.626,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.88,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.6,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.34,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,9.3,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.82,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.59,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.82,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.21,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.29,

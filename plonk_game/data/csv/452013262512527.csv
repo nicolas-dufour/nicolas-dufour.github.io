@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.962667234155,140.86838720125,0.0,JP,True,,,,,,,,"Watari, None, Miyagi, JP"
+google/gemini-3.5-flash,CoT (effort=medium),37.6542,140.9215,34.616,JP,True,,stop,0.0077025,1271,644,570,6.72,"{""reasoning"": ""The left-hand driving, green highway sign, concrete utility poles, and green plastic center delineators are characteristic of a two-lane expressway in Japan, with vegetation suggesting northern Honshu."", ""country"": ""JP"", ""latitude"": 37.6542, ""longitude"": 140.9215}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.168121337890625,140.56097412109375,35.301,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.29505920410156,140.60789489746094,43.419,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.54988098144531,140.92364501953125,46.156,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.5421,140.8952,46.824,JP,True,,stop,0.002109,1190,36,0,2.44,"```json
+{""country"": ""JP"", ""latitude"": 37.5421, ""longitude"": 140.8952}
+```"
+google/gemini-3.5-flash,CoT (effort=high),37.5321,140.9543,48.469,JP,True,,stop,0.0079725,1271,674,606,6.37,"{""reasoning"": ""The left-hand driving, green highway signage, distinctive green delineator posts on a yellow center line, and Japanese cedar trees indicate a rural expressway in Japan."", ""country"": ""JP"", ""latitude"": 37.5321, ""longitude"": 140.9543}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,37.482330322265625,140.97010803222656,54.155,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,37.47752380371094,140.9818115234375,54.86,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),37.5482,140.4053,61.493,JP,True,,stop,0.0047415,1271,315,241,3.82,"{""reasoning"": ""The left-hand driving, distinctive green delineator posts on the yellow center line, guardrail style, and utility poles are characteristic of a Japanese expressway, with vegetation suggesting northern Honshu."", ""country"": ""JP"", ""latitude"": 37.5482, ""longitude"": 140.4053}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,37.88338088989258,140.03639221191406,73.509,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,37.2,140.6,88.041,JP,True,,stop,0.00611,797,85,0,2.83,"{""reasoning"": ""Left-hand traffic, Japanese-style highway signage and guardrails, with deciduous forest suggesting rural Honshu in early spring."", ""country"": ""JP"", ""latitude"": 37.2, ""longitude"": 140.6}"
+google/gemini-3.1-pro-preview,no-CoT,37.45,140.05,91.831,JP,True,,stop,0.004946,1189,214,182,10.77,"```json
+{""country"": ""JP"", ""latitude"": 37.45, ""longitude"": 140.05}
+```"
+google/gemini-3.1-pro-preview,CoT,37.5,140.0,92.08,JP,True,,stop,0.003562,1271,85,0,10.13,"{
+  ""reasoning"": ""Left-hand driving, green highway signs, and specific road markings (solid white edge line, dashed center line with orange/yellow accents) strongly indicate Japan. The vegetation and terrain suggest a central or northern Honshu expressway."",
+  ""country"": ""JP"",
+  ""latitude"": 37.5,
+  ""longitude"": 140.0
+}"
+anthropic/claude-opus-4.8,no-CoT,37.2,140.4,94.315,JP,True,,stop,0.00408,666,30,0,3.97,"{""country"": ""JP"", ""latitude"": 37.2, ""longitude"": 140.4}"
+moonshotai/kimi-k2.6,CoT,36.4,140.4,178.646,JP,True,,stop,0.013132,680,3161,3501,62.53,"{""reasoning"": ""Left-hand traffic, Japanese-style corrugated guardrails, multi-arm utility poles, and a green expressway sign are definitive for Japan. The flat rural landscape with mixed evergreen-deciduous forest matches the Kanto or southern Tohoku region."", ""country"": ""JP"", ""latitude"": 36.4, ""longitude"": 140.4}"
+minimax/minimax-m3,CoT,36.45,139.85,190.852,JP,True,,stop,0.00071706,843,438,363,17.41,"{""reasoning"": ""Left-hand traffic, orange edge lines, green reflective markers on W-beam guardrails, and Japanese cedar/conifer vegetation with utility poles are all highly characteristic of a rural Japanese national expressway in the northern Kanto plain."", ""country"": ""JP"", ""latitude"": 36.45, ""longitude"": 139.85}"
+xiaomi/mimo-v2.5,CoT,36.25,140.35,195.909,JP,True,,stop,0.0005133576,787,1534,1473,15.48,"{""reasoning"": ""Left-hand traffic and yellow road markings with black markers are characteristic of Japanese highways, and the mixed temperate vegetation matches rural Japan."", ""country"": ""JP"", ""latitude"": 36.25, ""longitude"": 140.35}"
+openai/gpt-5.5,CoT,36.0668,140.2146,218.655,JP,True,,stop,0.012915,621,327,240,9.54,"{""reasoning"":""Left-side driving, orange centerline/white edge markings, metal guardrails, and green expressway signage strongly match rural Japan. The flat-to-gently rolling landscape with mixed woodland and utility poles suggests an expressway segment in the Kanto region, likely Ibaraki/Chiba outskirts."",""country"":""JP"",""latitude"":36.0668,""longitude"":140.2146}"
+openai/gpt-5.5,no-CoT,36.0401,140.2093,221.645,JP,True,,stop,0.00341,544,23,0,7.92,"{""country"":""JP"",""latitude"":36.0401,""longitude"":140.2093}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.7219,139.7321,268.891,JP,True,,stop,0.00010295,473,32,0,2.96,"{""country"": ""JP"", ""latitude"": 35.7219, ""longitude"": 139.7321}"
+x-ai/grok-4.3,no-CoT,35.6812,139.7671,271.962,JP,True,,stop,0.0005984,592,24,0,0.69,"{""country"": ""JP"", ""latitude"": 35.6812, ""longitude"": 139.7671}"
+google/gemma-4-26b-a4b-it,no-CoT,35.6895,139.6917,273.597,JP,True,,stop,5.534e-05,406,32,0,7.83,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+google/gemma-4-31b-it,no-CoT,35.6895,139.6917,273.597,JP,True,,stop,6.758e-05,406,37,0,2.32,"```json
+{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}
+```"
+mistralai/mistral-medium-3-5,no-CoT,35.6895,139.6917,273.597,JP,True,,stop,0.001191,634,32,0,2.13,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.6895,139.6917,273.597,JP,True,,stop,0.00018954,473,32,0,7.08,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+qwen/qwen3.5-397b-a17b,no-CoT,35.6895,139.6917,273.597,JP,True,,stop,0.00036828,473,32,0,2.78,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+qwen/qwen3.5-9b,no-CoT,35.6895,139.6917,273.597,JP,True,,stop,5.22e-05,474,32,0,3.25,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+qwen/qwen3.5-27b,no-CoT,35.4067,139.4283,311.863,JP,True,,stop,0.0001925,474,37,0,2.72,"```json
+{""country"": ""JP"", ""latitude"": 35.4067, ""longitude"": 139.4283}
+```"
+x-ai/grok-4.3,CoT,35.35,139.15,328.458,JP,True,,stop,0.002019,676,604,522,4.85,"{
+  ""reasoning"": ""Left-hand traffic with white center line on left of view, yellow edge line on right, green overhead gantry sign, metal guardrail style, and vegetation/terrain match Japanese expressway; overcast sky and utility poles typical of Honshu."",
+  ""country"": ""JP"",
+  ""latitude"": 35.35,
+  ""longitude"": 139.15
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,36.2048,136.4512,437.812,JP,True,,stop,0.000154,474,37,0,2.52,"```json
+{""country"": ""JP"", ""latitude"": 36.2048, ""longitude"": 136.4512}
+```"
+qwen/qwen3.6-27b,no-CoT,35.1815,136.9066,469.812,JP,True,,stop,0.0001963,473,32,0,14.82,"{""country"": ""JP"", ""latitude"": 35.1815, ""longitude"": 136.9066}"
+xiaomi/mimo-v2.5,no-CoT,35.1815,136.9066,469.812,JP,True,,stop,8.17376e-05,708,32,0,7.36,"{""country"": ""JP"", ""latitude"": 35.1815, ""longitude"": 136.9066}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,13.23,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,13.05,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.51,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.42,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.37,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.38,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,6.36,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.3,

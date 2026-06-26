@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,40.507499061681,-3.4405463934403,0.0,ES,True,,,,,,,,"Daganzo de Arriba, Provincia de Madrid, Madrid, ES"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,40.52490234375,-3.308814287185669,11.303,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,40.28070831298828,-2.758808135986328,63.001,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,40.292396545410156,-2.7003235816955566,67.09,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,39.85,-4.35,106.37,ES,True,,stop,0.0005934,592,22,0,0.73,"{""country"": ""ES"", ""latitude"": 39.85, ""longitude"": -4.35}"
+google/gemini-3.5-flash,CoT (effort=medium),39.4251,-3.2114,121.931,ES,True,,stop,0.0067665,1271,540,469,5.93,"{""reasoning"": ""The dry, grassy landscape with sparse Mediterranean scrub, combined with the highway infrastructure and right-hand driving, strongly suggests the interior plains of Spain, such as Castilla-La Mancha."", ""country"": ""ES"", ""latitude"": 39.4251, ""longitude"": -3.2114}"
+google/gemini-3.5-flash,CoT (effort=high),39.6512,-2.2485,139.11,ES,True,,stop,0.0157035,1271,1533,1445,12.89,"{""reasoning"": ""The dry, semi-arid landscape with rolling hills and scrubby vegetation, combined with a dual-carriageway highway having white lines on both edges (typical of European autovías), strongly points to central Spain, likely heading east on the A-3."", ""country"": ""ES"", ""latitude"": 39.6512, ""longitude"": -2.2485}"
+moonshotai/kimi-k2.6,CoT,39.2,-3.6,146.023,ES,True,,stop,0.026962668,682,7812,7740,271.7,"{""reasoning"": ""Dry Mediterranean scrub on a roadside embankment, flat interior plateau, and European-style highway markings with white dashed centerlines are characteristic of the autovías in central Spain, likely Castilla-La Mancha."", ""country"": ""ES"", ""latitude"": 39.2, ""longitude"": -3.6}"
+moonshotai/kimi-k2.6,no-CoT,37.25,-6.95,472.656,ES,True,,stop,0.0005752,600,25,0,9.36,"{""country"": ""ES"", ""latitude"": 37.25, ""longitude"": -6.95}"
+openai/gpt-5.5,no-CoT,41.4432,2.1911,484.0,ES,True,,stop,0.00341,544,23,0,2.49,"{""country"":""ES"",""latitude"":41.4432,""longitude"":2.1911}"
+openai/gpt-5.5,CoT,43.5147,4.4269,730.54,FR,True,,stop,0.015435,621,411,328,29.75,"{""reasoning"":""Right-hand driving with European white lane markings on a flat coastal wetland road, with reeds/dunes and dry Mediterranean vegetation, strongly suggests the Camargue area of southern France. The causeway-like road and landscape fit roads approaching Saintes-Maries-de-la-Mer."",""country"":""FR"",""latitude"":43.5147,""longitude"":4.4269}"
+xiaomi/mimo-v2.5,CoT,53.82,-2.97,1480.701,GB,True,,stop,0.0001429176,787,211,138,9.92,"```json
+{
+  ""reasoning"": ""The road markings and vegetation suggest the UK, while the flat coastal terrain and low sun position point towards the Fylde Coast in North West England."",
+  ""country"": ""GB"",
+  ""latitude"": 53.82,
+  ""longitude"": -2.97
+}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4517.653,,True,True,,,,,,12.96,
+qwen/qwen3.6-27b,no-CoT,41.8781,-87.6298,6738.303,US,True,,stop,0.0001943,473,31,0,7.45,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.5-27b,no-CoT,35.4676,-97.5164,7845.496,US,True,,stop,0.0002067,473,31,0,18.37,"{""country"": ""US"", ""latitude"": 35.4676, ""longitude"": -97.5164}"
+qwen/qwen3.5-35b-a3b,no-CoT,32.7767,-96.797,7971.179,US,True,,stop,9.636e-05,474,30,0,1.65,"{""country"": ""US"", ""latitude"": 32.7767, ""longitude"": -96.797}"
+google/gemini-3.1-pro-preview,CoT,35.5,-99.5,7987.024,US,True,,stop,0.00811,1271,464,374,20.46,"{
+  ""reasoning"": ""The image shows a multi-lane highway with right-hand traffic, solid white edge lines, and dashed lane dividers typical of North America. The dry, scrubby landscape and bright sun suggest a semi-arid region like the southern or central United States."",
+  ""country"": ""US"",
+  ""latitude"": 35.5,
+  ""longitude"": -99.5
+}"
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,8077.877,US,True,,stop,0.0001137,634,31,0,3.29,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+qwen/qwen3.5-397b-a17b,no-CoT,39.7392,-104.9903,8078.416,US,True,,stop,0.00036828,473,32,0,1.74,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemini-3.1-pro-preview,no-CoT,35.1234,-100.5678,8089.363,US,True,,stop,0.002812,1190,36,0,8.63,"```json
+{""country"": ""US"", ""latitude"": 35.1234, ""longitude"": -100.5678}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,35.2271,-101.8313,8172.661,US,True,,stop,0.0002916,473,32,0,3.42,"{""country"": ""US"", ""latitude"": 35.2271, ""longitude"": -101.8313}"
+google/gemini-3.5-flash,CoT (effort=low),-28.2833,27.0167,8269.849,ZA,True,,stop,0.004482,1272,286,217,9.63,"{""reasoning"": ""The dry, grassy landscape, wide asphalt highway with typical South African road markings, and left-hand driving indicate the N1 highway in the Free State, South Africa."", ""country"": ""ZA"", ""latitude"": -28.2833, ""longitude"": 27.0167}"
+anthropic/claude-opus-4.8,no-CoT,35.1872,-103.7,8307.877,US,True,,stop,0.00408,666,30,0,9.25,"{""country"": ""US"", ""latitude"": 35.1872, ""longitude"": -103.7})"
+xiaomi/mimo-v2.5,no-CoT,32.35,-101.45,8344.571,US,True,,stop,8.06176e-05,708,28,0,7.34,"{""country"": ""US"", ""latitude"": 32.35, ""longitude"": -101.45}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-28.2305,29.1254,8349.575,ZA,True,,stop,0.0020985,1189,35,0,1.27,"```json
+{""country"": ""ZA"", ""latitude"": -28.2305, ""longitude"": 29.1254}
+```"
+anthropic/claude-opus-4.8,CoT,35.0,-106.5,8516.981,US,True,,stop,0.00621,797,89,0,10.08,"{""reasoning"": ""Wide divided highway with right-hand driving, arid scrubland and dry grasses suggest American Southwest interstate, likely New Mexico/Arizona."", ""country"": ""US"", ""latitude"": 35.0, ""longitude"": -106.5}"
+mistralai/mistral-medium-3-5,no-CoT,35.0844,-106.6504,8521.315,US,True,,stop,0.001191,634,32,0,1.03,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -106.6504}"
+x-ai/grok-4.3,CoT,32.85,-105.45,8598.041,US,True,,stop,0.0024115,676,761,693,6.25,"{
+  ""reasoning"": ""Right-hand traffic (oncoming vehicle left of center line), US-style asphalt highway with shoulder striping, arid scrub vegetation and distant transmission towers point to southwestern US desert highway."",
+  ""country"": ""US"",
+  ""latitude"": 32.85,
+  ""longitude"": -105.45
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,33.00095748901367,-110.58688354492188,8946.397,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,36.169941,-115.13983,9006.922,US,True,,stop,0.0001508,474,35,0,4.15,"{""country"": ""US"", ""latitude"": 36.169941, ""longitude"": -115.13983}"
+minimax/minimax-m3,no-CoT,32.1,-110.8,9028.962,US,True,,stop,0.00046122,767,241,257,9.04,"{""country"": ""US"", ""latitude"": 32.1, ""longitude"": -110.8}{""country"": ""US"", ""latitude"": 32.1, ""longitude"": -110.8}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,32.20289993286133,-111.05155944824219,9038.565,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,32.2059326171875,-111.05855560302734,9038.818,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,35.2275,-117.6451,9240.958,US,True,,stop,7.164e-05,406,37,0,1.7,"```json
+{""country"": ""US"", ""latitude"": 35.2275, ""longitude"": -117.6451}
+```"
+minimax/minimax-m3,CoT,29.15,-110.85,9255.818,MX,True,,stop,0.00097026,843,649,572,23.1,"{""reasoning"": ""Arid Sonoran-style desert with sparse low scrub, reddish sandy soil, flat terrain to distant low mountains, right-hand traffic on a divided highway with white edge lines — characteristic of a major highway crossing northern Mexico's Sonoran Desert."", ""country"": ""MX"", ""latitude"": 29.15, ""longitude"": -110.85}"
+qwen/qwen3.5-9b,no-CoT,35.6895,139.6917,10742.43,JP,True,,stop,5.22e-05,474,32,0,2.48,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,312.71,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.95,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.47,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.49,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.11,

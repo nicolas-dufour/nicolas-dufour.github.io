@@ -1,0 +1,77 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.910664677786,23.82998225324,0.0,RO,True,,,,,,,,"Sinesti, Comuna Sinesti, Valcea, RO"
+google/gemini-3.5-flash,no-CoT (effort=minimal),44.8125,23.3142,42.092,RO,True,,stop,0.0021255,1207,35,0,7.51,"```json
+{""country"": ""RO"", ""latitude"": 44.8125, ""longitude"": 23.3142}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,44.90740966796875,23.040189743041992,62.198,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,45.98,24.15,121.497,RO,True,,stop,0.010839456,929,3073,3014,130.83,"{""reasoning"": ""Bright yellow guardrails and triangular white road markings are iconic of Romanian rural roads. Deciduous vegetation and rural architecture confirm an Eastern European temperate location."", ""country"": ""RO"", ""latitude"": 45.98, ""longitude"": 24.15}"
+x-ai/grok-4.3,CoT,45.75,25.22,143.236,RO,True,,stop,0.0025365,852,723,651,12.92,"{
+  ""reasoning"": ""Right-side driving, wooden utility poles with overhead wires, metal guardrail style, cracked asphalt rural road, and deciduous vegetation point to Eastern Europe; bright midday sun and hilly terrain narrow to Balkans."",
+  ""country"": ""RO"",
+  ""latitude"": 45.75,
+  ""longitude"": 25.22
+}"
+mistralai/mistral-medium-3-5,no-CoT,44.43965,26.10626,187.446,RO,True,,stop,0.001569,881,33,0,1.41,"{""country"": ""RO"", ""latitude"": 44.43965, ""longitude"": 26.10626}"
+google/gemini-3.1-pro-preview,CoT,43.0,24.0,212.892,BG,True,,stop,0.006164,1288,299,233,5.34,"{
+  ""reasoning"": ""The yellow guardrail and the specific visible car hood are strong indicators of Bulgaria. The landscape and vegetation are consistent with the Balkan region."",
+  ""country"": ""BG"",
+  ""latitude"": 43.0,
+  ""longitude"": 24.0
+}"
+openai/gpt-5.5,no-CoT,43.9847,21.2564,228.758,RS,True,,stop,0.004465,755,23,0,2.67,"{""country"":""RS"",""latitude"":43.9847,""longitude"":21.2564}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.452674865722656,26.806262969970703,240.744,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,44.0165,20.9124,251.963,RS,True,,stop,0.00085694,850,25,0,2.43,"{""country"": ""RS"", ""latitude"": 44.0165, ""longitude"": 20.9124}"
+google/gemini-3.1-pro-preview,no-CoT,42.7339,25.2345,266.976,BG,True,,stop,0.004056,1206,137,102,3.71,"```json
+{""country"": ""BG"", ""latitude"": 42.7339, ""longitude"": 25.2345}
+```"
+google/gemini-3.5-flash,CoT (effort=high),46.1523,26.8945,275.729,RO,True,,stop,0.009285,1288,817,744,13.65,"{""reasoning"": ""The yellow-painted metal guardrail, worn asphalt road, and lush deciduous vegetation are highly characteristic of rural Romania. The rolling hills and utility poles further support a location in the Romanian countryside."", ""country"": ""RO"", ""latitude"": 46.1523, ""longitude"": 26.8945}"
+google/gemini-3.5-flash,CoT (effort=medium),46.5382,26.6125,281.759,RO,True,,stop,0.00636,1288,492,429,4.89,"{""reasoning"": ""The yellow guardrail on the left side of the road, the temperate deciduous vegetation, and the road quality are highly characteristic of rural Romania."", ""country"": ""RO"", ""latitude"": 46.5382, ""longitude"": 26.6125}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,44.435997009277344,27.510732650756836,295.77,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),46.1583,27.2341,299.21,RO,True,,stop,0.0036795,1289,194,128,9.03,"{""reasoning"": ""The yellow-painted metal guardrail on the left side of the road, combined with the temperate vegetation and road quality, is highly characteristic of rural Romania."", ""country"": ""RO"", ""latitude"": 46.1583, ""longitude"": 27.2341}"
+minimax/minimax-m3,CoT,43.88,20.35,299.27,RS,True,,stop,0.00093156,1090,555,474,23.7,"{""reasoning"": ""Yellow metal guardrails on both sides of the road are highly characteristic of rural roads in Serbia/former Yugoslavia. Wooden utility pole style with multiple crossbars, right-hand traffic, and small rural building architecture combined with rolling forested hills support a western Serbia location."", ""country"": ""RS"", ""latitude"": 43.88, ""longitude"": 20.35}"
+x-ai/grok-4.3,no-CoT,42.15,24.75,315.799,BG,True,,stop,0.0008134,768,22,0,0.79,"{""country"": ""BG"", ""latitude"": 42.15, ""longitude"": 24.75}"
+openai/gpt-5.5,CoT,42.0107,21.9714,355.619,MK,True,,stop,0.01529,832,371,278,10.17,"{""reasoning"":""Rural Balkan right-side road with unmarked narrow asphalt, yellow-painted guardrails, overhead utility lines, and black-white roadside concrete/curb elements point most strongly to the former Yugoslav region, especially North Macedonia. The dry-summer temperate vegetation and low rolling hills fit the central/northeastern Macedonian countryside."",""country"":""MK"",""latitude"":42.0107,""longitude"":21.9714}"
+anthropic/claude-opus-4.8,CoT,47.2,28.4,434.807,MD,True,,stop,0.007595,1044,95,0,3.93,"{""reasoning"": ""Rural Eastern European landscape with worn asphalt, low concrete-block house, lush deciduous trees, and gentle hills typical of Moldova/Romania countryside."", ""country"": ""MD"", ""latitude"": 47.2, ""longitude"": 28.4}"
+anthropic/claude-opus-4.8,no-CoT,47.2,28.5,441.082,MD,True,,stop,0.005315,913,30,0,2.35,"{""country"": ""MD"", ""latitude"": 47.2, ""longitude"": 28.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,48.733272552490234,20.62822914123535,489.809,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,49.22786331176758,21.996828079223633,499.682,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,49.233360290527344,22.002405166625977,500.151,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,51.66,39.19,1357.735,RU,True,,stop,0.0006362776,979,1877,1786,20.24,"```json
+{
+  ""reasoning"": ""The yellow bridge railings and concrete utility poles are characteristic infrastructure features found throughout Russia. Additionally, the temperate deciduous vegetation and the style of the rural road and house architecture strongly suggest a location in the Central Federal District of Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 51.66,
+  ""longitude"": 39.19
+}
+```"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,1547.194,RU,True,,stop,6.549e-05,393,36,0,8.98,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+qwen/qwen3.6-27b,no-CoT,44.8378,-0.5792,1916.139,FR,True,,stop,0.0002499,665,30,0,11.18,"{""country"": ""FR"", ""latitude"": 44.8378, ""longitude"": -0.5792}"
+minimax/minimax-m3,no-CoT,40.2,-8.5,2680.818,PT,True,,stop,0.00054132,1014,246,288,5.75,"{""country"": ""PT"", ""latitude"": 40.2, ""longitude"": -8.5}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5517.672,,True,True,,,,,,0.19,
+qwen/qwen3.5-35b-a3b,no-CoT,42.3601,-71.0589,7167.929,US,True,,stop,0.00012424,666,31,0,7.41,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.7128,-74.006,7473.684,US,True,,stop,0.0004282,665,31,0,1.11,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.0060}"
+qwen/qwen3.5-9b,no-CoT,40.4406,-74.4071,7519.101,US,True,,stop,0.0001208,665,31,0,7.33,"{""country"": ""US"", ""latitude"": 40.4406, ""longitude"": -74.4071}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.2271,-80.8431,8327.237,US,True,,stop,0.000205,665,31,0,7.16,"{""country"": ""US"", ""latitude"": 35.2271, ""longitude"": -80.8431}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.8421,-82.5515,8387.917,US,True,,stop,0.0003908,665,39,0,8.15,"{
+  ""country"": ""US"",
+  ""latitude"": 35.8421,
+  ""longitude"": -82.5515
+}"
+qwen/qwen3.5-27b,no-CoT,41.5236,-93.6315,8571.391,US,True,,stop,0.0002545,666,44,0,5.07,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 41.5236,
+  ""longitude"": -93.6315
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,35.2,-89.9,8892.832,US,True,,stop,0.0001066576,900,25,0,3.89,"{""country"": ""US"", ""latitude"": 35.2, ""longitude"": -89.9}"
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4196,10220.086,US,True,,stop,0.00015135,881,32,0,5.0,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4196}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.11,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.42,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.34,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.12,

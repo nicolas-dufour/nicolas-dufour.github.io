@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,43.853113785818,-108.18888951933,0.0,US,True,,,,,,,,"Thermopolis, Hot Springs County, Wyoming, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,44.96525192260742,-107.63031005859375,131.382,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,45.02042007446289,-107.46429443359375,141.975,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.245689392089844,-107.58428955078125,162.088,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,42.85,-106.3,189.114,US,True,,stop,0.007656408,682,2168,2094,48.17,"{""reasoning"": ""Standard U.S. road markings (yellow dashed centerline, white edge lines) with right-hand traffic, wooden power poles, and rolling sagebrush-steppe terrain under a stormy sky are characteristic of Wyoming's High Plains."", ""country"": ""US"", ""latitude"": 42.85, ""longitude"": -106.3}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,41.57050704956055,-108.51609802246094,255.218,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,41.563072204589844,-108.45195007324219,255.546,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.50126266479492,-108.53349304199219,263.026,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,44.3,-103.5,377.794,US,True,,stop,0.004055,666,29,0,2.43,"{""country"": ""US"", ""latitude"": 44.3, ""longitude"": -103.5}"
+google/gemini-3.1-pro-preview,CoT,41.14,-104.8202,408.94,US,True,,stop,0.003804,1272,105,0,18.85,"{
+  ""reasoning"": ""The image shows a paved road with a dashed yellow center line and solid white edge lines, typical of North America. The arid, rolling landscape with sparse vegetation and wooden utility poles suggests the Great Plains or high desert region of the United States, likely somewhere like Wyoming, Colorado, or New Mexico."",
+  ""country"": ""US"",
+  ""latitude"": 41.1400,
+  ""longitude"": -104.8202
+}"
+qwen/qwen3.5-27b,no-CoT,41.1456,-104.8019,409.487,US,True,,stop,0.000142155,473,32,0,1.55,"{""country"": ""US"", ""latitude"": 41.1456, ""longitude"": -104.8019}"
+google/gemini-3.1-pro-preview,no-CoT,41.0,-105.0,411.214,US,True,,stop,0.005282,1189,242,212,11.0,"```json
+{""country"": ""US"", ""latitude"": 41.0, ""longitude"": -105.0}
+```"
+x-ai/grok-4.3,no-CoT,41.85,-103.65,431.778,US,True,,stop,0.0005934,592,22,0,1.79,"{""country"": ""US"", ""latitude"": 41.85, ""longitude"": -103.65}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.1403,-104.1451,448.124,US,True,,stop,0.0021075,1189,36,0,1.85,"```json
+{""country"": ""US"", ""latitude"": 41.1403, ""longitude"": -104.1451}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,46.8059,-101.4231,622.195,US,True,,stop,0.0002916,473,32,0,1.38,"{""country"": ""US"", ""latitude"": 46.8059, ""longitude"": -101.4231}"
+google/gemini-3.5-flash,CoT (effort=high),42.3512,-100.5314,643.462,US,True,,stop,0.0076035,1271,633,570,5.92,"{""reasoning"": ""The rolling grassy dunes and road markings with a dashed yellow center line are highly characteristic of the Nebraska Sandhills region in the United States."", ""country"": ""US"", ""latitude"": 42.3512, ""longitude"": -100.5314}"
+google/gemini-3.5-flash,CoT (effort=medium),42.25,-100.55,645.508,US,True,,stop,0.0058845,1271,442,378,4.18,"{""reasoning"": ""The yellow dashed center line and white edge lines indicate North America, while the rolling, grassy dunes and wooden utility poles are highly characteristic of the Nebraska Sandhills."", ""country"": ""US"", ""latitude"": 42.25, ""longitude"": -100.55}"
+google/gemini-3.5-flash,CoT (effort=low),42.1524,-100.5182,651.524,US,True,,stop,0.0038775,1271,219,147,9.38,"{""reasoning"": ""The rolling grassy hills, wooden utility poles, and road markings with a dashed yellow center line and solid white edge lines are highly characteristic of the Nebraska Sandhills in the United States."", ""country"": ""US"", ""latitude"": 42.1524, ""longitude"": -100.5182}"
+anthropic/claude-opus-4.8,CoT,41.9,-100.5,662.801,US,True,,stop,0.006185,797,88,0,9.46,"{""reasoning"": ""Wide rural highway with yellow center line and grassy sandhills suggests US Great Plains, likely Nebraska Sandhills region; driving on right side."", ""country"": ""US"", ""latitude"": 41.9, ""longitude"": -100.5}"
+minimax/minimax-m3,CoT,37.35,-112.15,796.445,US,True,,stop,0.00078186,843,492,416,16.64,"{""reasoning"": ""Double yellow center line with right-hand traffic, sagebrush/sand dune vegetation, flat arid terrain with tall transmission towers, and dramatic open sky are highly characteristic of the US Southwest high desert, specifically southern Utah along US-89."", ""country"": ""US"", ""latitude"": 37.35, ""longitude"": -112.15}"
+xiaomi/mimo-v2.5,CoT,37.0,-115.0,954.807,US,True,,stop,0.0004433576,787,1284,1212,13.42,"{
+  ""reasoning"": ""The right-hand traffic with yellow center line is characteristic of the United States, and the arid scrub terrain with utility poles suggests a desert region in the southwestern US."",
+  ""country"": ""US"",
+  ""latitude"": 37.0,
+  ""longitude"": -115.0
+}"
+mistralai/mistral-medium-3-5,no-CoT,35.0844,-106.6504,983.887,US,True,,stop,0.001191,634,32,0,1.2,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -106.6504}"
+qwen/qwen3.5-397b-a17b,no-CoT,35.0,-105.0,1021.589,US,True,,stop,0.00034668,473,26,0,2.27,"{""country"": ""US"", ""latitude"": 35.0, ""longitude"": -105.0}"
+qwen/qwen3.6-27b,no-CoT,41.14,-96.21,1026.302,US,True,,stop,0.0001943,473,31,0,6.36,"{""country"": ""US"", ""latitude"": 41.1400, ""longitude"": -96.2100}"
+google/gemma-4-31b-it,no-CoT,35.223,-101.791,1104.548,US,True,,stop,6.338e-05,406,35,0,6.68,"```json
+{""country"": ""US"", ""latitude"": 35.223, ""longitude"": -101.791}
+```"
+x-ai/grok-4.3,CoT,34.9,-115.7,1185.368,US,True,,stop,0.0019965,676,595,513,11.14,"{""reasoning"": ""Arid sandy hills/scrub, US-style yellow center + white edge lines, transmission towers, and empty two-lane asphalt point to Southwest US desert highway (likely I-15 or I-40 corridor). Dramatic blue monsoon sky narrows to Mojave or Sonoran Desert."", ""country"": ""US"", ""latitude"": 34.9, ""longitude"": -115.7}"
+qwen/qwen3.5-9b,no-CoT,36.7378,-119.7871,1260.25,US,True,,stop,5.22e-05,474,32,0,10.02,"{""country"": ""US"", ""latitude"": 36.7378, ""longitude"": -119.7871}"
+xiaomi/mimo-v2.5,no-CoT,34.5,-117.5,1311.854,US,True,,stop,8.00576e-05,708,26,0,7.65,"{""country"": ""US"", ""latitude"": 34.5, ""longitude"": -117.5}"
+openai/gpt-5.5,no-CoT,32.1046,-103.1932,1377.094,US,True,,stop,0.00344,544,24,0,7.69,"{""country"":""US"",""latitude"":32.1046,""longitude"":-103.1932}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.8781,-87.6298,1685.461,US,True,,stop,9.736e-05,474,31,0,1.93,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.8781,-87.6298,1685.461,US,True,,stop,0.00010195,473,31,0,9.69,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+openai/gpt-5.5,CoT,35.7048,-75.4936,2915.253,US,True,,stop,0.011955,621,295,221,6.74,"{""reasoning"":""Right-side driving with US-style yellow centerline/white edge lines and wooden utility poles points to North America. The flat sandy dune landscape and barrier-island road are most consistent with NC Highway 12 on the Outer Banks."",""country"":""US"",""latitude"":35.7048,""longitude"":-75.4936}"
+mistralai/mistral-small-2603,no-CoT,69.6492,18.9553,6685.371,NO,True,,stop,0.0001137,634,31,0,2.99,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11454.036,,True,True,,,,,,0.27,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.56,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,13.09,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.86,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,16.34,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,10.35,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.65,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.28,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.21,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.48,

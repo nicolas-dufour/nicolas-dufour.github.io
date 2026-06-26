@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.402291157908,1.522973735687,0.0,FR,True,,,,,,,,"Lalbenque, Departement du Lot, Midi-Pyrenees, FR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,44.445068359375,1.654261827468872,11.46,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,44.36437225341797,1.3620414733886719,13.466,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,44.36100769042969,1.3327282667160034,15.8,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,43.45,1.35,106.792,FR,True,,stop,0.0005534,560,22,0,0.93,"{""country"": ""FR"", ""latitude"": 43.45, ""longitude"": 1.35}"
+google/gemini-3.5-flash,CoT (effort=high),44.3125,3.2456,137.316,FR,True,,stop,0.0105165,1287,954,870,8.68,"```json
+{""reasoning"": ""The highway design, including the green crash cushion at the exit gore, European road markings, and the hilly, deciduous landscape, strongly points to a French autoroute, likely the A75 in the Massif Central region."", ""country"": ""FR"", ""latitude"": 44.3125, ""longitude"": 3.2456}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,45.5832633972168,2.1604597568511963,140.56,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,45.36965560913086,3.3383350372314453,178.948,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,45.5,3.2,179.756,FR,True,,stop,0.00573,1287,263,189,4.17,"{
+  ""reasoning"": ""The blue keep-right sign and the green and white gore bollard are characteristic of French highways. The hilly, temperate landscape with bare trees suggests central or southern France in winter."",
+  ""country"": ""FR"",
+  ""latitude"": 45.5,
+  ""longitude"": 3.2
+}"
+moonshotai/kimi-k2.6,CoT,43.65,3.8833,206.411,FR,True,,stop,0.01217862,625,3502,3414,170.21,"{""reasoning"": ""The green square sign with a white diagonal arrow in the highway gore is the distinctive French autoroute exit (sortie) marker, while the dry limestone hills with sparse garrigue scrub, right-hand traffic, and W-beam guardrails are characteristic of a southern French A-road."", ""country"": ""FR"", ""latitude"": 43.65, ""longitude"": 3.8833}"
+anthropic/claude-opus-4.8,no-CoT,45.5,4.5,264.139,FR,True,,stop,0.003795,609,30,0,8.28,"{""country"": ""FR"", ""latitude"": 45.5, ""longitude"": 4.5}"
+qwen/qwen3.5-9b,no-CoT,45.75,4.85,301.138,FR,True,,stop,4.81e-05,442,26,0,9.98,"{""country"": ""FR"", ""latitude"": 45.75, ""longitude"": 4.85}"
+google/gemini-3.5-flash,CoT (effort=low),47.2512,4.4123,387.846,FR,True,,stop,0.0049995,1287,341,269,10.5,"{""reasoning"": ""The highway design, including the green-and-white gore attenuator, road markings, and rolling hilly landscape with deciduous trees, is highly characteristic of a French Route Nationale or Autoroute."", ""country"": ""FR"", ""latitude"": 47.2512, ""longitude"": 4.4123}"
+google/gemini-3.5-flash,CoT (effort=medium),41.5234,-1.4521,401.287,ES,True,,stop,0.0074745,1287,616,549,6.16,"```json
+{""reasoning"": ""The green chevron-patterned gore nose (hito de vértice) and dry, hilly Mediterranean landscape are highly characteristic of Spanish autovías."", ""country"": ""ES"", ""latitude"": 41.5234, ""longitude"": -1.4521}
+```"
+google/gemini-3.1-pro-preview,no-CoT,47.322,5.041,423.715,FR,True,,stop,0.002794,1205,32,0,2.4,"```json
+{""country"": ""FR"", ""latitude"": 47.322, ""longitude"": 5.041}
+```"
+xiaomi/mimo-v2.5,no-CoT,42.0,-3.5,486.807,ES,True,,stop,7.50176e-05,676,24,0,2.88,"{""country"": ""ES"", ""latitude"": 42.0, ""longitude"": -3.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,48.88809585571289,2.916355848312378,509.989,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,40.45,-3.72,614.825,ES,True,,stop,0.0019915,644,609,545,10.6,"{""reasoning"": ""Right-hand traffic with EU-style white dashed road markings, green chevron curve sign, and blue directional signage; dry Mediterranean hills/scrub vegetation under clear skies point to southern Europe."", ""country"": ""ES"", ""latitude"": 40.45, ""longitude"": -3.72}"
+xiaomi/mimo-v2.5,CoT,40.4168,-3.7038,616.62,ES,True,,stop,0.0001345176,755,197,109,3.83,"{""reasoning"": ""The image shows a highway with a red-bordered triangular warning sign typical of European countries, specifically Spain, along with white lane markings and guardrails consistent with Spanish road infrastructure. The dry, hilly terrain and vegetation also align with the Iberian Peninsula."", ""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+mistralai/mistral-medium-3-5,no-CoT,40.4168,-3.7038,616.62,ES,True,,stop,0.0010905,577,30,0,2.86,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+qwen/qwen3.5-35b-a3b,no-CoT,40.4168,-3.7038,616.62,ES,True,,stop,0.00014943,441,30,0,13.77,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.4168,-3.7038,616.62,ES,True,,stop,0.0003726,441,30,0,1.83,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+qwen/qwen3.6-35b-a3b,no-CoT,40.4168,-3.7038,616.62,ES,True,,stop,0.0001364,442,30,0,3.75,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+minimax/minimax-m3,no-CoT,39.5,-3.2,670.327,ES,True,,stop,0.00036852,710,178,195,5.39,"{""country"": ""ES"", ""latitude"": 39.5, ""longitude"": -3.2}"
+minimax/minimax-m3,CoT,37.92,-1.78,771.834,ES,True,,stop,0.00078996,786,513,443,20.24,"{""reasoning"": ""Yellow rear license plate on the vehicle ahead (Spain uses yellow rear plates), right-hand driving, Mediterranean scrubland on rolling hills, and highway tunnel/exit infrastructure typical of southeastern Spanish autovías."", ""country"": ""ES"", ""latitude"": 37.92, ""longitude"": -1.78}"
+qwen/qwen3.5-27b,no-CoT,51.1657,10.4515,1003.847,DE,True,,stop,0.0001971,441,31,0,12.18,"{""country"": ""DE"", ""latitude"": 51.1657, ""longitude"": 10.4515}"
+openai/gpt-5.5,CoT,45.2176,15.2798,1087.686,HR,True,,stop,0.012605,583,323,237,59.32,"{""reasoning"":""Right-hand European motorway with Croatian-style green exit signage/black-white chevrons and guardrails, set in dry karstic hilly terrain typical of inland Croatia. The landscape and road geometry most closely fit the A1/A6 motorway area around Ogulin/Bosiljevo."",""country"":""HR"",""latitude"":45.2176,""longitude"":15.2798}"
+openai/gpt-5.5,no-CoT,45.174,15.386,1096.03,HR,True,,stop,0.00316,506,21,0,1.22,"{""country"":""HR"",""latitude"":45.174,""longitude"":15.386}"
+google/gemma-4-31b-it,no-CoT,52.52,13.405,1254.852,DE,True,,stop,5.108e-05,262,36,0,3.04,"```json
+{""country"": ""DE"", ""latitude"": 52.5200, ""longitude"": 13.4050}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.1982,23.6125,1772.457,BG,True,,stop,0.002124,1206,35,0,7.93,"```json
+{""country"": ""BG"", ""latitude"": 43.1982, ""longitude"": 23.6125}
+```"
+anthropic/claude-opus-4.8,CoT,42.7,24.5,1855.203,BG,True,,stop,0.005925,740,89,0,3.38,"{""reasoning"": ""Highway with European style markings, chevron-marked gore area, dry winter vegetation and rolling hills suggest Balkan region, likely Bulgaria."", ""country"": ""BG"", ""latitude"": 42.7, ""longitude"": 24.5}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4939.607,,True,True,,,,,,19.58,
+qwen/qwen3.6-27b,no-CoT,39.9612,-75.1651,6100.919,US,True,,stop,0.000225787,442,31,0,1.27,"{""country"": ""US"", ""latitude"": 39.9612, ""longitude"": -75.1651}"
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,8125.339,US,True,,stop,0.00010575,577,32,0,8.13,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+qwen/qwen3.5-122b-a10b,no-CoT,36.4919,127.5057,9505.97,KR,True,,stop,0.00018148,442,32,0,6.61,"{""country"": ""KR"", ""latitude"": 36.4919, ""longitude"": 127.5057}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.22,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,9.31,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.62,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.29,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.23,

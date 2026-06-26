@@ -1,0 +1,70 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-34.763586108182,150.42293892202,0.0,AU,True,,,,,,,,"Kangaroo Valley, Shoalhaven Shire, New South Wales, AU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-34.919342041015625,150.45504760742188,17.565,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,-34.5,150.5,30.146,AU,True,,stop,0.0002043,473,26,0,2.41,"{""country"": ""AU"", ""latitude"": -34.5, ""longitude"": 150.5}"
+openai/gpt-5.5,no-CoT,-35.0636,150.6452,39.033,AU,True,,stop,0.00344,544,24,0,1.98,"{""country"":""AU"",""latitude"":-35.0636,""longitude"":150.6452}"
+qwen/qwen3.5-397b-a17b,CoT,-35.2,150.5,49.032,AU,True,,stop,0.0131286,553,3683,3201,117.28,"{""reasoning"": ""The tall, straight Eucalyptus trees (likely Blackbutt or Spotted Gum) and dry sclerophyll undergrowth are characteristic of the Australian East Coast, specifically New South Wales. The rural asphalt road with a white edge line and left-hand traffic orientation confirms the location."", ""country"": ""AU"", ""latitude"": -35.2, ""longitude"": 150.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-34.014366149902344,150.6359405517578,85.571,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-34.12,151.05,91.803,AU,True,,stop,0.0074399,682,1698,1920,40.54,"{""reasoning"": ""Dense native forest of tall eucalyptus trees with distinctive white-barked gum trunks and a narrow paved road with concrete edging is characteristic of the Sydney basin region in New South Wales, Australia."", ""country"": ""AU"", ""latitude"": -34.12, ""longitude"": 151.05}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-33.78562927246094,150.34327697753906,108.99,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-33.78007125854492,150.37945556640625,109.435,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-33.7152,150.3119,117.021,AU,True,,stop,0.003249,1272,149,85,8.95,"{""reasoning"": ""The tall eucalyptus trees and dense wet sclerophyll forest are highly characteristic of southeastern Australia, particularly the coastal and mountainous regions of New South Wales."", ""country"": ""AU"", ""latitude"": -33.7152, ""longitude"": 150.3119}"
+xiaomi/mimo-v2.5,CoT,-33.71,150.3,117.697,AU,True,,stop,0.0001851976,787,362,286,11.45,"{""reasoning"": ""The image shows a rural asphalt road surrounded by tall eucalyptus trees, which is characteristic of Australian bushland. The lighting, vegetation density, and road style strongly suggest a location in southeastern Australia."", ""country"": ""AU"", ""latitude"": -33.71, ""longitude"": 150.3}"
+qwen/qwen3.5-35b-a3b,no-CoT,-33.8923,151.2145,121.117,AU,True,,stop,0.00010295,473,32,0,7.77,"{""country"": ""AU"", ""latitude"": -33.8923, ""longitude"": 151.2145}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.8688,151.2093,122.942,AU,True,,stop,0.00010295,473,32,0,15.24,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+qwen/qwen3.5-9b,no-CoT,-33.8688,151.2094,122.948,AU,True,,stop,5.22e-05,474,32,0,3.62,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2094}"
+google/gemini-3.5-flash,CoT (effort=high),-33.6542,150.4381,123.366,AU,True,,stop,0.0058395,1271,437,372,11.62,"{""reasoning"": ""The tall, slender eucalyptus trees and dense forest undergrowth are highly characteristic of eastern Australia, particularly the wet sclerophyll forests of New South Wales."", ""country"": ""AU"", ""latitude"": -33.6542, ""longitude"": 150.4381}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-33.6524,150.6812,125.82,AU,True,,stop,0.0021075,1189,36,0,1.83,"```json
+{""country"": ""AU"", ""latitude"": -33.6524, ""longitude"": 150.6812}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-33.75056,151.08444,128.001,AU,True,,stop,0.001206,634,34,0,1.01,"{""country"": ""AU"", ""latitude"": -33.75056, ""longitude"": 151.08444}"
+google/gemini-3.1-pro-preview,no-CoT,-33.6,150.3,129.878,AU,True,,stop,0.00382,1190,120,90,2.52,"```json
+{""country"": ""AU"", ""latitude"": -33.6, ""longitude"": 150.3}
+```"
+openai/gpt-5.5,CoT,-33.6598,151.1506,139.788,AU,True,,stop,0.014025,621,364,278,15.86,"{""reasoning"":""The tall eucalyptus forest, dry leaf litter, left-side-style narrow unmarked sealed road and temperate bushland strongly indicate southeastern Australia. This looks most like a minor road through NSW coastal/near-Sydney national park bushland, especially Ku-ring-gai/Blue Mountains style terrain."",""country"":""AU"",""latitude"":-33.6598,""longitude"":151.1506}"
+moonshotai/kimi-k2.6,no-CoT,-33.5,150.3,140.959,AU,True,,stop,0.000269712,603,23,0,2.76,"{""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 150.3}"
+google/gemini-3.1-pro-preview,CoT,-33.5,150.2,141.995,AU,True,,stop,0.005232,1272,224,145,3.83,"{
+  ""reasoning"": ""The tall trees with light-colored bark are characteristic of Eucalyptus forests, strongly pointing to Australia. The unlined paved road and dense temperate vegetation suggest a rural area in New South Wales or Victoria."",
+  ""country"": ""AU"",
+  ""latitude"": -33.5,
+  ""longitude"": 150.2
+}"
+qwen/qwen3.6-27b,no-CoT,-37.5661,147.0534,434.224,AU,True,,stop,0.00022688,473,32,0,18.48,"{""country"": ""AU"", ""latitude"": -37.5661, ""longitude"": 147.0534}"
+google/gemini-3.5-flash,CoT (effort=medium),-37.6825,145.7543,529.716,AU,True,,stop,0.0054615,1271,395,327,10.85,"{""reasoning"": ""The presence of tall eucalyptus trees forming a dense canopy over a paved rural road is highly characteristic of the wet sclerophyll forests of southeastern Australia, particularly in Victoria."", ""country"": ""AU"", ""latitude"": -37.6825, ""longitude"": 145.7543}"
+x-ai/grok-4.3,CoT,-37.55,145.55,535.963,AU,True,,stop,0.0016565,676,459,387,5.95,"{""reasoning"": ""Tall straight-barked Eucalyptus (likely E. regnans or E. delegatensis) lining a narrow unmarked asphalt rural road indicate wet sclerophyll forest in SE Australia; left-side driving and road style consistent with Victoria."", ""country"": ""AU"", ""latitude"": -37.55, ""longitude"": 145.55}"
+anthropic/claude-opus-4.8,CoT,-37.5,145.5,536.577,AU,True,,stop,0.00591,797,77,0,15.65,"{""reasoning"": ""Dense eucalyptus forest along a narrow rural sealed road, characteristic of southeastern Australian highlands."", ""country"": ""AU"", ""latitude"": -37.5, ""longitude"": 145.5}"
+anthropic/claude-opus-4.8,no-CoT,-37.5,145.5,536.577,AU,True,,stop,0.00408,666,30,0,2.5,"{""country"": ""AU"", ""latitude"": -37.5, ""longitude"": 145.5}"
+minimax/minimax-m3,CoT,-37.65,145.52,544.406,AU,True,,stop,0.00062706,843,363,292,10.61,"{""reasoning"": ""Tall eucalyptus (gum) trees with characteristic bark and dry sclerophyll forest understory, narrow sealed rural road, and left-side driving conventions strongly indicate rural southeastern Australia, likely Victoria or southern NSW."", ""country"": ""AU"", ""latitude"": -37.65, ""longitude"": 145.52}"
+minimax/minimax-m3,no-CoT,-37.7,145.4,556.258,AU,True,,stop,0.00022248,752,23,0,5.35,"{""country"": ""AU"", ""latitude"": -37.7, ""longitude"": 145.4}"
+qwen/qwen3.6-27b,CoT,-37.8085,145.4382,560.436,AU,True,,stop,0.0082302,554,2520,2276,69.28,"```json
+{
+""reasoning"": ""The image features a paved rural road flanked by tall, straight-trunked Eucalyptus trees with smooth, pale bark (likely Mountain Ash or Messmate), which is characteristic of the temperate rainforests and wet sclerophyll forests of Victoria, Australia. The road layout and vegetation density strongly suggest the Dandenong Ranges Scenic Drive or a similar route in the Yarra Ranges."",
+""country"": ""AU"",
+""latitude"": -37.8085,
+""longitude"": 145.4382
+}
+```"
+qwen/qwen3.6-35b-a3b,CoT,-37.85,145.35,569.421,AU,True,,stop,0.12670002085,553,131169,131070,605.29,"{""reasoning"": ""The image features tall Eucalyptus trees with peeling bark, characteristic of the Australian bush, particularly in the Dandenong Ranges or similar forested areas of Victoria. The road is a narrow, unmarked bitumen road with gravel shoulders, typical of rural Australian forest roads."", ""country"": ""AU"", ""latitude"": -37.85, ""longitude"": 145.35}"
+x-ai/grok-4.3,no-CoT,-37.85,145.35,569.421,AU,True,,stop,0.0005934,592,22,0,1.86,"{""country"": ""AU"", ""latitude"": -37.85, ""longitude"": 145.35}"
+qwen/qwen3.5-122b-a10b,no-CoT,-37.8136,145.2631,573.335,AU,True,,stop,0.00020618,473,40,0,7.78,"{
+  ""country"": ""AU"",
+  ""latitude"": -37.8136,
+  ""longitude"": 145.2631
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,-37.8136,145.1355,582.589,AU,True,,stop,0.00029445,473,32,0,10.04,"{""country"": ""AU"", ""latitude"": -37.8136, ""longitude"": 145.1355}"
+google/gemma-4-31b-it,no-CoT,-37.8136,144.9631,595.212,AU,True,,stop,6.758e-05,406,37,0,3.34,"```json
+{""country"": ""AU"", ""latitude"": -37.8136, ""longitude"": 144.9631}
+```"
+xiaomi/mimo-v2.5,no-CoT,-37.8136,144.9631,595.212,AU,True,,stop,8.17376e-05,708,32,0,3.04,"{""country"": ""AU"", ""latitude"": -37.8136, ""longitude"": 144.9631}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-43.17573547363281,146.82150268554688,985.577,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-43.190345764160156,146.8245849609375,987.024,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,22.5726,88.3638,9134.731,IN,True,,stop,8.414e-05,406,104,0,5.52,"{"" than own- own_thought
+{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": own_ own- own_thought
+{""country"": ""IN"", "" own_thought
+{""country"": ""IN"", ""latitude"": 22.5726, own- own_thought
+{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 88.3638}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4194,12061.507,US,True,,stop,0.0001143,634,32,0,9.41,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4194}"
+mistralai/mistral-small-2603,CoT,-2.3333,34.8333,12159.054,TZ,True,,stop,0.0006048,716,829,888,7.5,"{""reasoning"": ""Reddish soil and dry savanna vegetation with acacia-like trees indicate East African savanna; unpaved rural road and utility pole style consistent with Tanzania's Serengeti region."", ""country"": ""TZ"", ""latitude"": -2.3333, ""longitude"": 34.8333}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.23,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.76,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.26,

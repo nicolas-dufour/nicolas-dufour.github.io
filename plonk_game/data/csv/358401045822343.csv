@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,38.2142806644744,40.99924417681022,0.0,TR,True,,,,,,,,"Silvan, None, Diyarbakir, TR"
+google/gemini-3.5-flash,CoT (effort=low),36.9512,34.1245,621.698,TR,True,,stop,0.004221,1308,251,192,2.79,"{""reasoning"": ""The rocky limestone terrain with reddish terra rossa soil and sparse Mediterranean shrubs is highly characteristic of the Taurus Mountains in southern Turkey."", ""country"": ""TR"", ""latitude"": 36.9512, ""longitude"": 34.1245}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),36.812456,32.845123,735.631,TR,True,,stop,0.00219,1226,39,0,1.69,"```json
+{""country"": ""TR"", ""latitude"": 36.812456, ""longitude"": 32.845123}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),36.9235,32.1142,795.799,TR,True,,stop,0.0061995,1307,471,412,10.94,"{""reasoning"": ""The karst limestone landscape with reddish terra rossa soil and sparse Mediterranean scrub is highly characteristic of the Taurus Mountains in southern Turkey."", ""country"": ""TR"", ""latitude"": 36.9235, ""longitude"": 32.1142}"
+qwen/qwen3.5-35b-a3b,no-CoT,34.9234,32.8765,812.046,CY,True,,stop,0.000185,585,31,0,1.99,"{""country"": ""CY"", ""latitude"": 34.9234, ""longitude"": 32.8765}"
+google/gemini-3.1-pro-preview,CoT,36.5512,32.0431,812.279,TR,True,,stop,0.006744,1308,344,255,6.09,"{
+  ""reasoning"": ""The arid, rocky karst landscape with sparse vegetation and reddish soil is highly characteristic of the Mediterranean region, particularly southern Turkey or the Levant. The narrow paved road and general topography suggest a rural area in the Taurus Mountains region."",
+  ""country"": ""TR"",
+  ""latitude"": 36.5512,
+  ""longitude"": 32.0431
+}"
+moonshotai/kimi-k2.6,CoT,34.75,32.8,827.649,CY,True,,stop,0.016847496,834,4841,4764,231.86,"{""reasoning"": ""Arid rocky Mediterranean hills with low scrub vegetation and unmarked asphalt road cutting through limestone terrain match rural Cyprus; the reddish-brown rock outcrops and clear blue sky are characteristic of the island's interior foothills near the Troodos range."", ""country"": ""CY"", ""latitude"": 34.75, ""longitude"": 32.8}"
+anthropic/claude-opus-4.8,no-CoT,37.1,31.5,844.966,TR,True,,stop,0.00484,818,30,0,3.87,"{""country"": ""TR"", ""latitude"": 37.1, ""longitude"": 31.5}"
+anthropic/claude-opus-4.8,CoT,37.05,31.5,846.074,TR,True,,stop,0.00742,949,107,0,9.68,"{""reasoning"": ""Rocky karst terrain with sparse shrubs, reddish soil, and fresh asphalt in arid Mediterranean climate suggests inland Anatolian/Taurus mountains of southern Turkey."", ""country"": ""TR"", ""latitude"": 37.05, ""longitude"": 31.5}"
+x-ai/grok-4.3,CoT,36.85,31.45,855.187,TR,True,,stop,0.002109,788,584,514,5.17,"{""reasoning"": ""Arid limestone hills, sparse maquis scrub, reddish soil patches and empty winding asphalt road under deep blue sky match eastern Mediterranean landscapes; left-hand-drive viewpoint and road style point to Turkey rather than Greece or Levant."", ""country"": ""TR"", ""latitude"": 36.85, ""longitude"": 31.45}"
+google/gemini-3.5-flash,CoT (effort=high),32.0154,35.2697,863.696,PS,True,,stop,0.0092865,1307,814,749,13.85,"{""reasoning"": ""The landscape features prominent limestone karst formations, reddish terra rossa soil, and sparse Mediterranean scrub, highly characteristic of the Judean Hills and West Bank region."", ""country"": ""PS"", ""latitude"": 32.0154, ""longitude"": 35.2697}"
+openai/gpt-5.5,no-CoT,31.9466,35.2184,872.735,PS,True,,stop,0.00408,678,23,0,1.44,"{""country"":""PS"",""latitude"":31.9466,""longitude"":35.2184}"
+minimax/minimax-m3,no-CoT,31.95,35.15,876.182,PS,True,,stop,0.00043242,919,179,207,5.21,"{""country"": ""PS"", ""latitude"": 31.95, ""longitude"": 35.15}"
+qwen/qwen3.5-9b,no-CoT,31.7569,35.0969,896.582,IL,True,,stop,6.325e-05,586,31,0,8.91,"{""country"": ""IL"", ""latitude"": 31.7569, ""longitude"": 35.0969}"
+openai/gpt-5.5,CoT,31.6508,35.1196,905.028,PS,True,,stop,0.012235,755,282,204,7.8,"{""reasoning"":""Arid limestone hills with sparse olive groves and a narrow unmarked asphalt rural road strongly fit the West Bank/Palestinian hill country landscape. The dry Mediterranean terrain and rocky terracing are most consistent with the Hebron–Bethlehem area."",""country"":""PS"",""latitude"":31.6508,""longitude"":35.1196}"
+moonshotai/kimi-k2.6,no-CoT,31.5,34.8,936.139,IL,True,,stop,0.00064215,754,23,0,8.08,"{""country"": ""IL"", ""latitude"": 31.5, ""longitude"": 34.8}"
+qwen/qwen3.5-27b,no-CoT,31.2542,35.0731,944.062,IL,True,,stop,0.0002499,585,31,0,3.07,"{""country"": ""IL"", ""latitude"": 31.2542, ""longitude"": 35.0731}"
+x-ai/grok-4.3,no-CoT,37.85,28.65,1081.558,TR,True,,stop,0.0007334,704,22,0,0.75,"{""country"": ""TR"", ""latitude"": 37.85, ""longitude"": 28.65}"
+google/gemma-4-31b-it,no-CoT,35.2341,24.1234,1537.787,GR,True,,stop,6.692e-05,404,36,0,20.83,"```json
+{""country"": ""GR"", ""latitude"": 35.2341, ""longitude"": 24.1234}
+```"
+xiaomi/mimo-v2.5,CoT,36.7,22.9,1603.838,GR,True,,stop,0.0004847976,899,1376,1319,21.09,"{""reasoning"": ""The arid, rocky landscape with sparse olive-like vegetation and limestone geology is characteristic of the Mediterranean region, particularly Greece."", ""country"": ""GR"", ""latitude"": 36.7, ""longitude"": 22.9}"
+xiaomi/mimo-v2.5,no-CoT,23.5,56.5,2199.485,OM,True,,stop,9.54576e-05,820,25,0,7.29,"{""country"": ""OM"", ""latitude"": 23.5, ""longitude"": 56.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,23.4567,57.1234,2243.081,OM,True,,stop,0.00034185,585,31,0,4.51,"{""country"": ""OM"", ""latitude"": 23.4567, ""longitude"": 57.1234}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,20.924230575561523,53.945556640625,2288.845,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,17.0543,54.3215,2687.152,OM,True,,stop,0.00287,1225,35,0,8.99,"```json
+{""country"": ""OM"", ""latitude"": 17.0543, ""longitude"": 54.3215}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,25.16990852355957,69.27603912353516,3025.575,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,24.95781135559082,70.0314712524414,3101.237,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,24.936012268066406,70.1588363647461,3113.11,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,11.949708938598633,54.15529251098633,3198.726,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,11.90715217590332,54.17435836791992,3203.89,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,31.6486,2.5766,3551.602,DZ,True,,stop,0.00021684,586,31,0,12.09,"{""country"": ""DZ"", ""latitude"": 31.6486, ""longitude"": 2.5766}"
+qwen/qwen3.6-27b,no-CoT,39.4699,-0.3763,3554.415,ES,True,,stop,0.0002259,585,30,0,12.11,"{""country"": ""ES"", ""latitude"": 39.4699, ""longitude"": -0.3763}"
+mistralai/mistral-medium-3-5,no-CoT,37.7749,-3.4534,3857.302,ES,True,,stop,0.001404,786,30,0,1.91,"{""country"": ""ES"", ""latitude"": 37.7749, ""longitude"": -3.4534}"
+minimax/minimax-m3,CoT,36.96,-4.55,3974.933,ES,True,,stop,0.00100386,995,639,544,34.59,"{""reasoning"": ""Narrow unmarked paved road through light-colored limestone/karst terrain with sparse Mediterranean scrub (olive-like trees) under a clear blue sky strongly indicates a Mediterranean karst region. The pale rocky outcrops and vegetation pattern are highly characteristic of inland Andalusia, southern Spain, possibly the Antequera/El Torcal area."", ""country"": ""ES"", ""latitude"": 36.96, ""longitude"": -4.55}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5963.488,,True,True,,,,,,0.27,
+qwen/qwen3.6-35b-a3b,no-CoT,-30.5598,20.9876,7924.268,ZA,True,,stop,0.00012422475,585,31,0,0.87,"{""country"": ""ZA"", ""latitude"": -30.5598, ""longitude"": 20.9876}"
+mistralai/mistral-small-2603,no-CoT,-33.8688,151.2093,13872.503,AU,True,,stop,0.0001371,786,32,0,3.5,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.25,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.76,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.22,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,

@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,31.236043860653,-99.737121658951,0.0,US,True,,,,,,,,"Eden, Concho County, Texas, US"
+google/gemini-3.1-pro-preview,CoT,31.5,-100.0,38.528,US,True,,stop,0.005662,1307,254,174,11.41,"{
+  ""reasoning"": ""The dashed yellow center line, solid white edge lines, and flat scrubby landscape strongly suggest the United States. The green highway sign on the right has the distinct shape of a Texas state highway shield."",
+  ""country"": ""US"",
+  ""latitude"": 31.5,
+  ""longitude"": -100.0
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,31.078693389892578,-99.21514129638672,52.661,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,31.074159622192383,-99.2109603881836,53.206,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,31.059696197509766,-99.13257598876953,60.781,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,31.9686,-99.9018,82.936,US,True,,stop,5.108e-05,262,36,0,10.18,"```json
+{""country"": ""US"", ""latitude"": 31.9686, ""longitude"": -99.9018}
+```"
+google/gemini-3.5-flash,CoT (effort=high),30.4561,-99.7512,86.736,US,True,,stop,0.0110055,1307,1005,920,8.07,"```json
+{""reasoning"": ""The coarse chip-seal road with wide paved shoulders, flat terrain, and scrubby mesquite vegetation are highly characteristic of rural Texas. The green vertical sign on the right is typical of Texas highway mile markers or guide signs."", ""country"": ""US"", ""latitude"": 30.4561, ""longitude"": -99.7512}
+```"
+qwen/qwen3.5-27b,no-CoT,31.997778,-99.955556,87.19,US,True,,stop,0.00027716,586,48,0,6.94,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 31.997778,
+  ""longitude"": -99.955556
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,30.887954711914062,-100.77668762207031,106.315,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,30.50100326538086,-98.97156524658203,109.631,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,32.35,-99.75,123.872,US,True,,stop,9.60176e-05,820,27,0,2.28,"{""country"": ""US"", ""latitude"": 32.35, ""longitude"": -99.75}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,31.00727081298828,-101.01482391357422,124.257,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,32.45,-99.75,134.991,US,True,,stop,0.0007026376,899,2154,2051,21.87,"{""reasoning"": ""The green 'Tow Away Zone State Law' sign features a design style (symbol and text layout) specific to the Texas Department of Transportation (TxDOT). The flat terrain, mesquite and scrub oak vegetation, barbed wire fencing, and wide cloudy sky are highly characteristic of the rural Cross Timbers or Rolling Plains region of Texas."", ""country"": ""US"", ""latitude"": 32.45, ""longitude"": -99.75}"
+google/gemma-4-26b-a4b-it,no-CoT,30.2672,-97.7433,218.871,US,True,,stop,6.588e-05,404,59,0,3.13,"``` own-thought
+``` own-thought
+{""country"": ""US"", ""latitude"": 30. own-thought
+{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7433}"
+qwen/qwen3.5-9b,no-CoT,30.1234,-97.7456,227.102,US,True,,stop,6.325e-05,586,31,0,2.91,"{""country"": ""US"", ""latitude"": 30.1234, ""longitude"": -97.7456}"
+moonshotai/kimi-k2.6,CoT,29.0,-98.5,275.636,US,True,,stop,0.0127924,832,3040,3404,46.57,"{""reasoning"": ""Standard US MUTCD green guide sign, yellow center line, and white edge markings confirm the United States; flat rural prairie with scattered oak trees and barbed-wire fencing is characteristic of south-central Texas."", ""country"": ""US"", ""latitude"": 29.0, ""longitude"": -98.5}"
+openai/gpt-5.5,no-CoT,28.8794,-98.5312,286.591,US,True,,stop,0.00411,678,24,0,2.32,"{""country"":""US"",""latitude"":28.8794,""longitude"":-98.5312}"
+google/gemini-3.1-pro-preview,no-CoT,29.0123,-98.1234,291.93,US,True,,stop,0.005702,1225,271,236,11.55,"```json
+{""country"": ""US"", ""latitude"": 29.0123, ""longitude"": -98.1234}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),28.5214,-99.8432,302.028,US,True,,stop,0.0065415,1307,509,441,4.8,"{""reasoning"": ""The flat terrain, mesquite vegetation, wide paved shoulders, and style of the green roadside sign are highly characteristic of rural Texas, particularly the southern or western regions."", ""country"": ""US"", ""latitude"": 28.5214, ""longitude"": -99.8432}"
+anthropic/claude-opus-4.8,CoT,28.7,-98.2,318.494,US,True,,stop,0.006795,949,82,0,4.3,"{""reasoning"": ""Flat brushland with mesquite trees, wide rural two-lane highway, green US-style sign, and dry grass suggest South Texas."", ""country"": ""US"", ""latitude"": 28.7, ""longitude"": -98.2}"
+anthropic/claude-opus-4.8,no-CoT,28.7041,-98.1234,321.588,US,True,,stop,0.004865,818,31,0,3.52,"{""country"": ""US"", ""latitude"": 28.7041, ""longitude"": -98.1234}"
+qwen/qwen3.6-35b-a3b,no-CoT,32.7767,-96.797,325.868,US,True,,stop,0.00011775,585,30,0,1.7,"{""country"": ""US"", ""latitude"": 32.7767, ""longitude"": -96.797}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),28.4512,-98.1805,344.123,US,True,,stop,0.002154,1226,35,0,7.85,"```json
+{""country"": ""US"", ""latitude"": 28.4512, ""longitude"": -98.1805}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,33.7891,-101.8552,346.44,US,True,,stop,0.0003917,585,32,0,1.32,"{""country"": ""US"", ""latitude"": 33.7891, ""longitude"": -101.8552}"
+minimax/minimax-m3,CoT,34.35,-100.25,349.557,US,True,,stop,0.00070506,995,390,307,18.08,"{""reasoning"": ""Flat prairie landscape with mesquite trees, big cumulus clouds, right-hand driving, US-style highway with yellow center line and white edge lines, green highway guide sign on right, gravel shoulders - all classic features of the southern Great Plains in north Texas or Oklahoma."", ""country"": ""US"", ""latitude"": 34.35, ""longitude"": -100.25}"
+openai/gpt-5.5,CoT,28.3247,-98.1126,359.679,US,True,,stop,0.014095,755,344,242,15.93,"{""reasoning"":""Right-hand traffic with US-style yellow centerline/white edge lines and green highway signage indicate the United States, while the flat ranchland, mesquite brush, wire fencing, and wide chipseal rural highway strongly suggest South Texas. The landscape is most consistent with the brush country around George West/Alice/Cotulla rather than wetter eastern or hillier central Texas."",""country"":""US"",""latitude"":28.3247,""longitude"":-98.1126}"
+google/gemini-3.5-flash,CoT (effort=low),27.8542,-98.5831,392.255,US,True,,stop,0.004293,1308,259,192,2.78,"{""reasoning"": ""The flat landscape with mesquite-like brush, wide paved shoulders, and a green vertical reference marker sign on the right are highly characteristic of rural South Texas."", ""country"": ""US"", ""latitude"": 27.8542, ""longitude"": -98.5831}"
+x-ai/grok-4.3,CoT,27.85,-98.15,406.595,US,True,,stop,0.001844,788,478,401,10.9,"{""reasoning"": ""Right-hand traffic with US-style yellow center/white edge lines, green highway sign, flat brush country with mesquite-like trees and overcast sky indicate rural South Texas. Road and vegetation match US 281/77 corridor north of Falfurrias."", ""country"": ""US"", ""latitude"": 27.85, ""longitude"": -98.15}"
+x-ai/grok-4.3,no-CoT,28.05,-97.45,417.537,US,True,,stop,0.0007334,704,22,0,0.81,"{""country"": ""US"", ""latitude"": 28.05, ""longitude"": -97.45}"
+mistralai/mistral-medium-3-5,no-CoT,29.95,-95.5,429.998,US,True,,stop,0.001374,786,26,0,0.86,"{""country"": ""US"", ""latitude"": 29.95, ""longitude"": -95.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,29.7604,-95.3698,449.411,US,True,,stop,0.0001353625,585,31,0,0.74,"{""country"": ""US"", ""latitude"": 29.7604, ""longitude"": -95.3698}"
+qwen/qwen3.5-122b-a10b,no-CoT,28.4813,-96.1342,463.131,US,True,,stop,0.0003332,585,31,0,1.7,"{""country"": ""US"", ""latitude"": 28.4813, ""longitude"": -96.1342}"
+qwen/qwen3.6-27b,no-CoT,39.8283,-98.5795,961.114,US,True,,stop,0.0002279,585,31,0,13.26,"{""country"": ""US"", ""latitude"": 39.8283, ""longitude"": -98.5795}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.66,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.58,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.75,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.27,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,7.64,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.36,

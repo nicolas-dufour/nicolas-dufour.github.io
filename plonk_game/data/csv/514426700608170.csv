@@ -1,0 +1,77 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-14.077483100001018,-67.8616134,0.0,BO,True,,,,,,,,"Rurrenabaque, None, El Beni, BO"
+qwen/qwen3.5-397b-a17b,no-CoT,-10.5,-63.5,618.639,BR,True,,stop,0.00048845,729,25,0,9.98,"{""country"": ""BR"", ""latitude"": -10.5, ""longitude"": -63.5}"
+moonshotai/kimi-k2.6,CoT,-7.2,-55.5,1551.499,BR,True,,stop,0.00938285,1003,2147,2580,92.4,"{""reasoning"": ""The deep-red lateritic mud, tropical palm-dotted grassland, and humid forest edge are classic of the Brazilian Amazon/Cerrado transition zone where unpaved rural tracks like this are widespread."", ""country"": ""BR"", ""latitude"": -7.2, ""longitude"": -55.5}"
+moonshotai/kimi-k2.6,no-CoT,1.5,-75.5,1925.738,CO,True,,stop,0.000367524,926,23,0,1.86,"{""country"": ""CO"", ""latitude"": 1.5, ""longitude"": -75.5}"
+qwen/qwen3.5-9b,no-CoT,-10.7894,-49.3956,2037.52,BR,True,,stop,7.765e-05,730,31,0,6.85,"{""country"": ""BR"", ""latitude"": -10.7894, ""longitude"": -49.3956}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,3.6873888969421387,-76.70307922363281,2202.901,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,4.966026782989502,-74.44676208496094,2238.695,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,5.305844306945801,-73.67123413085938,2248.616,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,-23.5505,-46.6333,2465.87,BR,True,,stop,0.0001332,730,31,0,7.66,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+google/gemini-3.1-pro-preview,no-CoT,8.0,-76.0,2613.993,CO,True,,stop,0.004418,1225,164,136,10.18,"```json
+{""country"": ""CO"", ""latitude"": 8.0, ""longitude"": -76.0}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),8.6254,-76.5182,2699.083,CO,True,,stop,0.0021,1226,29,0,1.52,"{""country"": ""CO"", ""latitude"": 8.6254, ""longitude"": -76.5182}"
+google/gemini-3.5-flash,CoT (effort=high),8.508,-77.278,2717.813,CO,True,,stop,0.0094035,1307,827,748,12.81,"```json
+{""reasoning"": ""The muddy trail, tropical pasture environment with palm trees, and groups of people carrying backpacks are highly characteristic of the migrant route through the Darién Gap, likely near the starting point in Acandí, Colombia."", ""country"": ""CO"", ""latitude"": 8.508, ""longitude"": -77.278}
+```"
+openai/gpt-5.5,CoT,8.5872,-83.4268,3049.697,CR,True,,stop,0.014475,909,331,245,15.67,"{""reasoning"":""The muddy unpaved track through dense humid tropical vegetation and oil-palm/pasture landscape strongly fits the wet lowlands of Costa Rica. With no signage or road infrastructure, the best match is the Osa/Golfo Dulce region where palm plantations and rainforest edges are common."",""country"":""CR"",""latitude"":8.5872,""longitude"":-83.4268}"
+openai/gpt-5.5,no-CoT,10.4295,-83.7032,3236.979,CR,True,,stop,0.00488,832,24,0,1.58,"{""country"":""CR"",""latitude"":10.4295,""longitude"":-83.7032}"
+qwen/qwen3.6-35b-a3b,no-CoT,-3.71722,-38.54347,3415.35,BR,True,,stop,0.00014135,729,32,0,9.35,"{""country"": ""BR"", ""latitude"": -3.71722, ""longitude"": -38.54347}"
+minimax/minimax-m3,no-CoT,-8.05,-34.88,3657.407,BR,True,,stop,0.00028866,1075,23,0,5.49,"{""country"": ""BR"", ""latitude"": -8.05, ""longitude"": -34.88}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-7.847786903381348,-34.85607147216797,3665.279,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),6.3106,-10.7969,6690.573,LR,True,,stop,0.004203,1308,249,178,9.12,"{""reasoning"": ""The extremely muddy dirt track, tropical vegetation including palm trees, and the appearance of the local people suggest a rural, high-rainfall tropical region typical of West Africa, such as Liberia."", ""country"": ""LR"", ""latitude"": 6.3106, ""longitude"": -10.7969}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7623.519,,True,True,,,,,,7.8,
+qwen/qwen3.5-397b-a17b,CoT,6.5512,-1.4533,7675.568,GH,True,,stop,0.006630015,809,2579,2454,258.46,"{
+""reasoning"": ""The deep red lateritic soil, lush tropical vegetation including palm trees and broad-leaf shrubs (resembling young cocoa or kola plants), and the demographic appearance of the pedestrians strongly indicate a rural West African setting, most characteristic of Ghana's agricultural regions."",
+""country"": ""GH"",
+""latitude"": 6.5512,
+""longitude"": -1.4533
+}"
+xiaomi/mimo-v2.5,no-CoT,6.45,3.4,8184.199,NG,True,,stop,0.0001156176,964,25,0,11.13,"{""country"": ""NG"", ""latitude"": 6.45, ""longitude"": 3.40}"
+google/gemini-3.5-flash,CoT (effort=medium),6.5244,5.8984,8451.17,NG,True,,stop,0.0063885,1307,492,424,5.63,"{""reasoning"": ""The muddy track, tropical vegetation including oil palms, and the appearance of the local people suggest a rural setting in the tropical rainforest belt of West Africa, most likely southern Nigeria."", ""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 5.8984}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,1.1899490356445312,11.51980972290039,8895.607,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,0.6975268125534058,11.688080787658691,8900.038,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-1.5,23.0,10059.873,CD,True,,stop,0.00815,1120,102,0,3.57,"{""reasoning"": ""Muddy rural track, tropical lush vegetation with oil palms, people walking in a forested agricultural landscape suggest equatorial Central Africa, likely Democratic Republic of Congo."", ""country"": ""CD"", ""latitude"": -1.5, ""longitude"": 23.0}"
+anthropic/claude-opus-4.8,no-CoT,-1.5,24.0,10167.676,CD,True,,stop,0.005695,989,30,0,2.9,"{""country"": ""CD"", ""latitude"": -1.5, ""longitude"": 24.0}"
+qwen/qwen3.6-27b,no-CoT,11.0168,76.9558,16184.705,IN,True,,stop,0.0002711,729,31,0,16.88,"{""country"": ""IN"", ""latitude"": 11.0168, ""longitude"": 76.9558}"
+mistralai/mistral-small-2603,no-CoT,6.9271,79.8612,16401.736,LK,True,,stop,0.00016215,957,31,0,11.32,"{""country"": ""LK"", ""latitude"": 6.9271, ""longitude"": 79.8612}"
+qwen/qwen3.5-27b,no-CoT,11.9416,79.8083,16507.034,IN,True,,stop,0.0002705,730,44,0,13.63,"```json
+{
+  ""country"": ""IN"",
+  ""latitude"": 11.9416,
+  ""longitude"": 79.8083
+}
+```"
+mistralai/mistral-medium-3-5,no-CoT,22.5726,88.3639,17338.22,IN,True,,stop,0.001668,957,31,0,1.25,"{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 88.3639}"
+minimax/minimax-m3,CoT,-5.05,105.15,17752.782,ID,True,,stop,0.00069192,1168,333,332,14.76,"{""reasoning"": ""Muddy unpaved road with deep ruts, water hyacinth in flooded ditches, tropical vegetation including coconut palms and large taro-like leaves, and the rural setting with people walking carrying loads strongly indicate rural Sumatra, Indonesia."", ""country"": ""ID"", ""latitude"": -5.05, ""longitude"": 105.15}"
+x-ai/grok-4.3,CoT,-0.85,102.3,18032.904,ID,True,,stop,0.0024615,916,661,594,12.66,"{""reasoning"": ""Tropical oil-palm plantation vegetation, bamboo/wooden roadside post, muddy unpaved track with standing water, and rural workers carrying loads point to a wet-season agricultural area in equatorial Southeast Asia."", ""country"": ""ID"", ""latitude"": -0.85, ""longitude"": 102.3}"
+x-ai/grok-4.3,no-CoT,-0.789,102.345,18041.315,ID,True,,stop,0.0008934,832,22,0,0.91,"{""country"": ""ID"", ""latitude"": -0.789, ""longitude"": 102.345}"
+google/gemini-3.1-pro-preview,CoT,0.5,101.5,18104.769,ID,True,,stop,0.005278,1307,222,148,4.44,"{
+  ""reasoning"": ""Lush tropical vegetation, palm trees, and a muddy dirt road suggest a rural equatorial region. The general landscape is consistent with areas in Southeast Asia such as Sumatra, Indonesia."",
+  ""country"": ""ID"",
+  ""latitude"": 0.5,
+  ""longitude"": 101.5
+}"
+google/gemma-4-31b-it,no-CoT,-0.7893,113.9213,18350.357,ID,True,,stop,6.835e-05,415,36,0,10.04,"```json
+{""country"": ""ID"", ""latitude"": -0.7893, ""longitude"": 113.9213}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,-0.7893,113.9213,18350.357,ID,True,,stop,0.0003123,729,39,0,2.77,"{
+  ""country"": ""ID"",
+  ""latitude"": -0.7893,
+  ""longitude"": 113.9213
+}"
+xiaomi/mimo-v2.5,CoT,16.45,97.62,18435.899,MM,True,,stop,0.0009196376,1043,2857,2759,35.31,"{""reasoning"": ""The image features a deep reddish-brown mud track, characteristic of laterite soil common in Southeast Asia during the monsoon season, flanked by dense tropical vegetation including palm trees and what appears to be a wet paddy field on the left; the rural infrastructure and distant figures are consistent with village paths in Myanmar."", ""country"": ""MM"", ""latitude"": 16.45, ""longitude"": 97.62}"
+qwen/qwen3.6-35b-a3b,CoT,12.65,108.15,19555.354,VN,True,,stop,0.00174335,809,1622,1573,28.49,"```json
+{
+  ""reasoning"": ""The reddish-brown laterite soil and deep mud ruts are characteristic of the Central Highlands (Tay Nguyen) region in Vietnam. The lush tropical vegetation, including palm trees in the distance, combined with people carrying large woven baskets on their backs (likely harvesting coffee or fruit), strongly points to a rural agricultural setting in this specific part of Vietnam."",
+  ""country"": ""VN"",
+  ""latitude"": 12.65,
+  ""longitude"": 108.15
+}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.2,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,28.65,

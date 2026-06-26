@@ -1,0 +1,79 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,18.41235923494241,122.21913570477992,0.0,PH,True,,,,,,,,"Santa Ana, Province of Cagayan, Cagayan Valley, PH"
+google/gemma-4-31b-it,no-CoT,14.5995,120.9842,443.934,PH,True,,stop,6.732e-05,404,37,0,2.6,"```json
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}
+```"
+openai/gpt-5.5,CoT,10.3738,123.8406,910.715,PH,True,,stop,0.011785,851,251,179,14.68,"{""reasoning"":""Narrow unmarked concrete mountain road through dense tropical vegetation with red lateritic cutbanks is very characteristic of rural Philippines upland roads. The road surface style and humid hilly landscape fit central Philippines better than neighboring countries."",""country"":""PH"",""latitude"":10.3738,""longitude"":123.8406}"
+google/gemini-3.1-pro-preview,no-CoT,10.3157,123.8854,917.99,PH,True,,stop,0.006238,1229,315,279,6.16,"```json
+{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}
+```"
+google/gemini-3.1-pro-preview,CoT,9.0123,125.5432,1105.044,PH,True,,stop,0.007074,1311,371,290,6.07,"{
+  ""reasoning"": ""The concrete road with a central seam, lush tropical vegetation, and distinct reddish soil are highly characteristic of rural roads in the Philippines, particularly in regions like Mindanao or the Visayas."",
+  ""country"": ""PH"",
+  ""latitude"": 9.0123,
+  ""longitude"": 125.5432
+}"
+moonshotai/kimi-k2.6,no-CoT,28.2,119.5,1123.071,CN,True,,stop,0.0008995,850,23,0,2.1," {""country"": ""CN"", ""latitude"": 28.2, ""longitude"": 119.5}"
+google/gemini-3.5-flash,CoT (effort=high),8.4521,124.9874,1147.169,PH,True,,stop,0.0143325,1311,1374,1295,16.02,"```json
+{""reasoning"": ""The wet concrete road with a central joint, lush tropical vegetation, and prominent reddish-brown laterite soil on the hillside are highly characteristic of rural mountainous regions in the Philippines, such as Mindanao."", ""country"": ""PH"", ""latitude"": 8.4521, ""longitude"": 124.9874}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,25.8342,113.2891,1234.995,CN,True,,stop,0.00012524,666,32,0,2.19,"{""country"": ""CN"", ""latitude"": 25.8342, ""longitude"": 113.2891}"
+openai/gpt-5.5,no-CoT,22.8765,108.3421,1526.0,CN,True,,stop,0.00456,774,23,0,7.61,"{""country"":""CN"",""latitude"":22.8765,""longitude"":108.3421}"
+qwen/qwen3.6-35b-a3b,CoT,11.95,108.45,1642.008,VN,True,,stop,0.00389875,745,3787,3669,52.2,"```json
+{
+    ""reasoning"": ""The small white sign positioned on the right shoulder indicates right-hand traffic, which points towards Vietnam rather than left-hand traffic neighbors like Thailand. The distinctive red laterite soil exposed on the hillside cut, combined with the dense tropical vegetation and winding rural road, is highly characteristic of the Central Highlands region (Tay Nguyen) in Vietnam."",
+    ""country"": ""VN"",
+    ""latitude"": 11.95,
+    ""longitude"": 108.45
+}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),20.1542,102.2451,2104.059,LA,True,,stop,0.0180135,1311,1783,1689,15.38,"```json
+{""reasoning"": ""The image shows a wet, winding road through lush tropical hills with highly weathered red clay soil (oxisol) on the cut slope. The dense vegetation, wet climate, right-hand driving, and road style are highly characteristic of northern Laos during the rainy season."", ""country"": ""LA"", ""latitude"": 20.1542, ""longitude"": 102.2451}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),19.8562,102.1425,2113.943,LA,True,,stop,0.002169,1230,36,0,7.36,"```json
+{""country"": ""LA"", ""latitude"": 19.8562, ""longitude"": 102.1425}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,21.063459396362305,102.0639877319336,2128.473,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,21.071449279785156,102.06253814697266,2128.692,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,19.576828002929688,101.23382568359375,2208.826,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,19.5,100.0,2338.181,TH,True,,stop,0.0004167576,979,1093,1034,11.61,"{""reasoning"": ""The reddish soil and dense tropical vegetation indicate a humid subtropical region, and the apparent left-hand driving is consistent with Thailand."", ""country"": ""TH"", ""latitude"": 19.5, ""longitude"": 100.0}"
+xiaomi/mimo-v2.5,no-CoT,18.8,99.0,2445.551,TH,True,,stop,0.0001066576,900,25,0,3.78,"{""country"": ""TH"", ""latitude"": 18.8, ""longitude"": 99.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,18.7883,98.9853,2447.16,TH,True,,stop,0.00047988,665,31,0,2.42,"{""country"": ""TH"", ""latitude"": 18.7883, ""longitude"": 98.9853}"
+qwen/qwen3.5-397b-a17b,CoT,19.2345,98.8567,2458.72,TH,True,,stop,0.0072991,745,1990,1922,72.41,"{
+""reasoning"": ""The distinct red laterite soil exposed on the roadside embankment, combined with dense tropical vegetation and the vehicle's position on the left side of the road (indicating left-hand traffic), strongly points to a rural mountain road in Northern Thailand."",
+""country"": ""TH"",
+""latitude"": 19.2345,
+""longitude"": 98.8567
+}"
+anthropic/claude-opus-4.8,no-CoT,4.2105,101.9758,2708.44,MY,True,,stop,0.005365,913,32,0,9.26,"{""country"": ""MY"", ""latitude"": 4.2105, ""longitude"": 101.9758}"
+anthropic/claude-opus-4.8,CoT,3.5,102.0,2754.832,MY,True,,stop,0.00807,1044,114,0,5.38,"{""reasoning"": ""Red lateritic soil cut-banks, dense tropical green vegetation, narrow concrete rural road, and humid overcast climate suggest interior Southeast Asia, likely rural Malaysia/Indonesia hilly area."", ""country"": ""MY"", ""latitude"": 3.5, ""longitude"": 102.0}"
+x-ai/grok-4.3,CoT,6.95,80.45,4693.668,LK,True,,stop,0.002669,868,768,703,6.99,"{""reasoning"": ""Lush tropical vegetation + reddish laterite soil on roadside cut, wet paved rural road with small regulatory sign on right, and left-side driving orientation point to hilly tropical region in South Asia."", ""country"": ""LK"", ""latitude"": 6.95, ""longitude"": 80.45}"
+google/gemini-3.5-flash,CoT (effort=low),-18.9333,48.2167,9081.403,MG,True,,stop,0.006315,1312,483,410,10.86,"```json
+{""reasoning"": ""The combination of lush tropical vegetation, highly characteristic reddish-brown clay soil, and a wet, narrow paved road suggests a tropical highland region, most likely eastern Madagascar."", ""country"": ""MG"", ""latitude"": -18.9333, ""longitude"": 48.2167}
+```"
+moonshotai/kimi-k2.6,CoT,-19.75,47.2,9214.834,MG,True,,stop,0.024187716,929,6976,6898,267.88,"{""reasoning"": ""The vivid red lateritic cut slopes combined with dense tropical highland vegetation are signature features of Madagascar’s central highlands, and the left-side windshield wiper mount indicates a left-hand-drive vehicle used in this right-hand-traffic country."", ""country"": ""MG"", ""latitude"": -19.7500, ""longitude"": 47.2000}"
+mistralai/mistral-small-2603,no-CoT,36.1699,-115.1398,11464.645,US,True,,stop,0.0001891875,881,32,0,2.98,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,13386.625,,True,True,,,,,,22.83,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,17.882160186767578,-72.72700500488281,15661.205,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,18.26080322265625,-65.78362274169922,15844.517,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,8.592650413513184,-83.38076782226562,15903.367,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-12.55,-41.4,18143.864,BR,True,,stop,0.00136752,1092,915,996,21.65,"{""reasoning"": ""The intensely red laterite soil exposed in the roadside embankments combined with dense tropical/subtropical vegetation and a narrow rural road strongly suggests the interior of northeastern Brazil (Chapada Diamantina region), where terra roxa and similar red soils are iconic."", ""country"": ""BR"", ""latitude"": -12.55, ""longitude"": -41.40}{""reasoning"": ""The intensely red laterite soil exposed in the roadside embankments combined with dense tropical/subtropical vegetation and a narrow rural road strongly suggests the interior of northeastern Brazil (Chapada Diamantina region), where terra roxa and similar red soils are iconic."", ""country"": ""BR"", ""latitude"": -12.55, ""longitude"": -41.40}"
+qwen/qwen3.5-27b,no-CoT,-22.9068,-43.1729,18416.174,BR,True,,stop,0.0002545,666,44,0,14.45,"```json
+{
+  ""country"": ""BR"",
+  ""latitude"": -22.9068,
+  ""longitude"": -43.1729
+}
+```"
+qwen/qwen3.6-27b,no-CoT,-22.9068,-43.1729,18416.174,BR,True,,stop,0.0002519,665,31,0,18.29,"{""country"": ""BR"", ""latitude"": -22.9068, ""longitude"": -43.1729}"
+x-ai/grok-4.3,no-CoT,-22.95,-43.25,18422.481,BR,True,,stop,0.0008334,784,22,0,7.07,"{""country"": ""BR"", ""latitude"": -22.95, ""longitude"": -43.25}"
+minimax/minimax-m3,no-CoT,-22.5,-44.5,18559.461,BR,True,,stop,0.00026586,999,23,0,6.4,"{""country"": ""BR"", ""latitude"": -22.5, ""longitude"": -44.5}"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,18725.094,BR,True,,stop,0.001554,881,31,0,1.08,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,18725.094,BR,True,,stop,0.0003652,665,31,0,8.3,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-9b,no-CoT,-23.5505,-46.6333,18725.094,BR,True,,stop,0.0001208,665,31,0,7.16,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-35b-a3b,no-CoT,-23.5505,-46.6333,18725.094,BR,True,,stop,0.000205,665,31,0,1.55,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.16,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.23,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,

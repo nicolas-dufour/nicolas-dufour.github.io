@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,52.562867883851,-7.1660440410989,0.0,IE,True,,,,,,,,"Thomastown, Kilkenny, Leinster, IE"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,52.86085510253906,-7.80825662612915,54.493,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,53.2,-7.1,70.984,IE,True,,stop,0.011847456,834,3379,3309,70.27,"{""reasoning"": ""Left-hand traffic and the white rear license plate on the car ahead point to Ireland rather than the UK, while the lush hedgerows, overcast sky, and dark roadside soil match rural Irish scenery."", ""country"": ""IE"", ""latitude"": 53.2, ""longitude"": -7.1}"
+x-ai/grok-4.3,CoT,53.15,-7.85,79.818,IE,True,,stop,0.002619,788,788,705,5.87,"{
+  ""reasoning"": ""Left-side driving position of the distant red car, white/yellow road markings, wooden utility poles, and dense hedgerows under overcast skies are diagnostic of rural Ireland/UK; lush temperate vegetation and absence of other signage narrow it to Ireland."",
+  ""country"": ""IE"",
+  ""latitude"": 53.15,
+  ""longitude"": -7.85
+}"
+openai/gpt-5.5,no-CoT,53.2387,-7.6142,80.937,IE,True,,stop,0.00411,678,24,0,2.63,"{""country"":""IE"",""latitude"":53.2387,""longitude"":-7.6142}"
+x-ai/grok-4.3,no-CoT,52.3,-8.3,82.246,IE,True,,stop,0.0007334,704,22,0,1.74,"{""country"": ""IE"", ""latitude"": 52.3, ""longitude"": -8.3}"
+google/gemini-3.1-pro-preview,CoT,53.3,-7.5,84.966,IE,True,,stop,0.005206,1307,216,150,11.61,"{
+  ""reasoning"": ""Driving on the left with dashed yellow edge lines is highly characteristic of Ireland. The lush green rural landscape and overcast sky further support this location."",
+  ""country"": ""IE"",
+  ""latitude"": 53.3,
+  ""longitude"": -7.5
+}"
+qwen/qwen3.5-27b,no-CoT,53.1354,-8.0231,85.82,IE,True,,stop,0.0002325,586,43,0,9.06,"```json
+{
+  ""country"": ""IE"",
+  ""latitude"": 53.1354,
+  ""longitude"": -8.0231
+}
+```"
+google/gemini-3.5-flash,CoT (effort=low),53.35,-7.5,90.338,IE,True,,stop,0.003384,1308,158,84,2.16,"```json
+{""reasoning"": ""The road features left-hand traffic and yellow dashed edge lines, which are characteristic of the Republic of Ireland. The lush green hedges, flat terrain, and overcast sky further support a rural Irish location."", ""country"": ""IE"", ""latitude"": 53.35, ""longitude"": -7.5}
+```"
+qwen/qwen3.5-9b,no-CoT,53.1456,-8.1339,91.769,IE,True,,stop,0.00010695,585,30,0,9.33,"{""country"": ""IE"", ""latitude"": 53.1456, ""longitude"": -8.1339}"
+google/gemini-3.5-flash,CoT (effort=high),53.425,-7.342,96.585,IE,True,,stop,0.0078285,1307,652,590,5.49,"{""reasoning"": ""The left-hand traffic combined with the yellow dashed edge lines on the road and lush green hedgerows is highly characteristic of the Republic of Ireland."", ""country"": ""IE"", ""latitude"": 53.425, ""longitude"": -7.342}"
+xiaomi/mimo-v2.5,no-CoT,53.3,-6.3,100.436,IE,True,,stop,9.51776e-05,820,24,0,2.85,"{""country"": ""IE"", ""latitude"": 53.3, ""longitude"": -6.3}"
+google/gemini-3.1-pro-preview,no-CoT,53.3241,-7.9832,100.81,IE,True,,stop,0.005692,1226,270,236,10.71,"```json
+{""country"": ""IE"", ""latitude"": 53.3241, ""longitude"": -7.9832}
+```"
+qwen/qwen3.6-27b,no-CoT,53.2707,-6.2215,101.02,IE,True,,stop,0.00025732,585,30,0,15.04,"{""country"": ""IE"", ""latitude"": 53.2707, ""longitude"": -6.2215}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),53.3498,-7.9812,103.141,IE,True,,stop,0.0021435,1225,34,0,1.7,"```json
+{""country"": ""IE"", ""latitude"": 53.3498, ""longitude"": -7.9812}
+```"
+openai/gpt-5.5,CoT,53.5012,-7.3386,104.974,IE,True,,stop,0.012985,755,307,229,20.33,"{""reasoning"":""Left-side driving with Irish-style yellow edge line, white rear plate, hedgerows, and lush overcast rural landscape strongly indicate Ireland. The flat midlands scenery suggests a rural road in central Ireland rather than the hillier west or north."",""country"":""IE"",""latitude"":53.5012,""longitude"":-7.3386}"
+google/gemma-4-31b-it,no-CoT,53.3498,-6.2603,106.478,IE,True,,stop,6.308e-05,404,35,0,19.27,"```json
+{""country"": ""IE"", ""latitude"": 53.3498, ""longitude"": -6.2603}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),53.5324,-7.1234,107.845,IE,True,,stop,0.0069555,1307,555,495,11.43,"{""reasoning"": ""The yellow dashed edge lines and left-hand traffic are highly characteristic of Ireland, along with the lush green hedges and overcast sky."", ""country"": ""IE"", ""latitude"": 53.5324, ""longitude"": -7.1234}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,53.57901382446289,-6.857893466949463,114.85,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,53.5,-8.0,118.186,IE,True,,stop,0.00084546,995,507,424,19.54,"{""reasoning"": ""Left-hand driving with hedgerow-lined narrow rural road, overcast grey sky, lush green pastoral landscape, and white edge line markings (no yellow center lines) strongly indicate Ireland or the UK. The gently rolling terrain and hedgerow style suggest rural Ireland."", ""country"": ""IE"", ""latitude"": 53.5, ""longitude"": -8.0}"
+mistralai/mistral-medium-3-5,no-CoT,53.5,-8.0,118.186,IE,True,,stop,0.001359,786,24,0,7.28,"{""country"": ""IE"", ""latitude"": 53.5, ""longitude"": -8.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,53.1234,-8.7654,124.185,IE,True,,stop,0.00033,585,30,0,1.26,"{""country"": ""IE"", ""latitude"": 53.1234, ""longitude"": -8.7654}"
+anthropic/claude-opus-4.8,CoT,53.4,-8.5,128.993,IE,True,,stop,0.00662,949,75,0,7.09,"{""reasoning"": ""Left-hand driving, yellow edge lines, hedgerows and overcast sky typical of rural Ireland."", ""country"": ""IE"", ""latitude"": 53.4, ""longitude"": -8.5}"
+anthropic/claude-opus-4.8,no-CoT,53.4,-8.5,128.993,IE,True,,stop,0.00484,818,30,0,15.76,"{""country"": ""IE"", ""latitude"": 53.4, ""longitude"": -8.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,53.3498,-8.6297,131.409,IE,True,,stop,0.00011204,586,30,0,2.33,"{""country"": ""IE"", ""latitude"": 53.3498, ""longitude"": -8.6297}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,53.120243072509766,-9.001045227050781,137.947,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,53.2719,-9.0489,148.829,IE,True,,stop,0.00029835,585,30,0,1.36,"{""country"": ""IE"", ""latitude"": 53.2719, ""longitude"": -9.0489}"
+qwen/qwen3.6-35b-a3b,no-CoT,53.3498,-9.0565,153.918,IE,True,,stop,0.00011775,585,30,0,2.78,"{""country"": ""IE"", ""latitude"": 53.3498, ""longitude"": -9.0565}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,53.469581604003906,-9.194546699523926,169.039,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,53.47125244140625,-9.20313549041748,169.609,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,53.450958251953125,-9.256514549255371,171.206,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,53.2128,-1.8539,363.567,GB,True,,stop,0.0007701176,899,2395,2291,32.92,"{""reasoning"": ""The image shows left-hand traffic, yellow rear license plates on the vehicle ahead, and double yellow lines at the road junction, which are distinctively British road markings. The lush green hedgerows, rolling hills, wooden utility poles, and overcast sky are highly characteristic of the rural English countryside, likely in the Midlands or North."", ""country"": ""GB"", ""latitude"": 53.2128, ""longitude"": -1.8539}"
+mistralai/mistral-small-2603,no-CoT,51.8936,-0.6699,448.499,GB,True,,stop,0.0001359,786,30,0,9.97,"{""country"": ""GB"", ""latitude"": 51.8936, ""longitude"": -0.6699}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5882.737,,True,True,,,,,,12.92,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,18.91,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.28,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.66,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.27,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,15.65,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.13,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.21,

@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,58.69010179581171,-123.8003513715737,0.0,CA,True,,,,,,,,"Fort Nelson, None, British Columbia, CA"
+moonshotai/kimi-k2.6,CoT,58.9,-125.5,100.657,CA,True,,stop,0.010422,680,2773,3159,184.65,"{""reasoning"": ""North-American W-beam guardrail with orange post delineator and fresh asphalt on a remote two-lane highway cutting through dense boreal conifer forests against the northern Rocky Mountains point to northern British Columbia, Canada, most likely along the Alaska Highway corridor."", ""country"": ""CA"", ""latitude"": 58.9000, ""longitude"": -125.5000}"
+google/gemini-3.5-flash,CoT (effort=low),60.1234,-128.8123,325.224,CA,True,,stop,0.0041385,1271,248,180,9.42,"{""reasoning"": ""The dense boreal forest, mountainous terrain, and orange construction barrel on the shoulder strongly indicate a northern North American highway, likely the Alaska Highway in Yukon, Canada."", ""country"": ""CA"", ""latitude"": 60.1234, ""longitude"": -128.8123}"
+google/gemma-4-31b-it,no-CoT,62.45,-124.12,418.445,CA,True,,stop,6.598e-05,406,33,0,3.17,"```json
+{""country"": ""CA"", ""latitude"": 62.45, ""longitude"": -124.12}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,54.873958587646484,-124.25238800048828,425.226,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,53.7267,-128.5431,624.645,CA,True,,stop,0.00015825,473,32,0,19.16,"{""country"": ""CA"", ""latitude"": 53.7267, ""longitude"": -128.5431}"
+google/gemini-3.1-pro-preview,CoT,60.5,-135.0,660.676,CA,True,,stop,0.007402,1271,405,340,6.21,"{
+  ""reasoning"": ""The coniferous forest, rounded mountain, and orange construction barrels suggest a northern North American highway, likely in the Yukon or Alaska."",
+  ""country"": ""CA"",
+  ""latitude"": 60.5,
+  ""longitude"": -135.0
+}"
+openai/gpt-5.5,no-CoT,60.5246,-135.2084,672.405,CA,True,,stop,0.00344,544,24,0,1.45,"{""country"":""CA"",""latitude"":60.5246,""longitude"":-135.2084}"
+openai/gpt-5.5,CoT,60.8421,-135.2274,681.998,CA,True,,stop,0.020925,621,594,516,16.83,"{""reasoning"":""Boreal conifer forest, rounded subarctic mountains, right-side driving, and North American orange construction barrels point most strongly to a remote Yukon/Alaska-type highway; the landscape and road style fit Yukon highways near Whitehorse best."",""country"":""CA"",""latitude"":60.8421,""longitude"":-135.2274}"
+qwen/qwen3.5-9b,no-CoT,56.13,-110.47,845.889,CA,True,,stop,8.741e-05,473,28,0,0.78,"{""country"": ""CA"", ""latitude"": 56.13, ""longitude"": -110.47}"
+qwen/qwen3.5-35b-a3b,no-CoT,51.1784,-115.5708,985.358,CA,True,,stop,9.836e-05,474,32,0,1.31,"{""country"": ""CA"", ""latitude"": 51.1784, ""longitude"": -115.5708}"
+xiaomi/mimo-v2.5,CoT,51.0,-116.0,988.795,CA,True,,stop,0.0004097576,787,1164,1104,12.47,"{""reasoning"": ""Dense coniferous forest and rounded mountain terrain are typical of the Canadian Rockies, with road guardrails consistent with North American infrastructure."", ""country"": ""CA"", ""latitude"": 51.0, ""longitude"": -116.0}"
+mistralai/mistral-medium-3-5,no-CoT,49.3,-123.1,1045.12,CA,True,,stop,0.001146,634,26,0,0.88,"{""country"": ""CA"", ""latitude"": 49.3, ""longitude"": -123.1}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,61.16135025024414,-143.3089141845703,1116.624,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,61.39667510986328,-144.4364776611328,1179.139,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,61.39072036743164,-144.70556640625,1193.338,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,62.417537689208984,-146.0811309814453,1278.915,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,62.47452926635742,-146.21556091308594,1286.725,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,64.8378,-147.7164,1419.585,US,True,,stop,8.17376e-05,708,32,0,2.15,"{""country"": ""US"", ""latitude"": 64.8378, ""longitude"": -147.7164}"
+google/gemini-3.1-pro-preview,no-CoT,52.7541,-67.1234,3499.45,CA,True,,stop,0.002798,1189,35,0,2.89,"```json
+{""country"": ""CA"", ""latitude"": 52.7541, ""longitude"": -67.1234}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),51.5432,-68.0421,3523.881,CA,True,,stop,0.0021,1190,35,0,1.45,"```json
+{""country"": ""CA"", ""latitude"": 51.5432, ""longitude"": -68.0421}
+```"
+qwen/qwen3.6-27b,no-CoT,48.4284,-70.4356,3595.41,CA,True,,stop,0.0001943,473,31,0,17.73,"{""country"": ""CA"", ""latitude"": 48.4284, ""longitude"": -70.4356}"
+qwen/qwen3.5-27b,no-CoT,48.0756,-70.0234,3643.817,CA,True,,stop,0.0001905,474,36,0,2.75,"```json
+{""country"": ""CA"", ""latitude"": 48.0756, ""longitude"": -70.0234}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),48.9452,-66.1854,3802.982,CA,True,,stop,0.0082785,1271,708,634,6.62,"{""reasoning"": ""The coniferous boreal forest, rounded mountain terrain, and distinctive orange construction barrels on the roadside strongly indicate a highway in eastern Canada, likely in the mountainous regions of Quebec such as the Gaspé Peninsula."", ""country"": ""CA"", ""latitude"": 48.9452, ""longitude"": -66.1854}"
+google/gemini-3.5-flash,CoT (effort=high),48.9521,-66.1452,3804.795,CA,True,,stop,0.0094035,1271,833,762,7.22,"{""reasoning"": ""The dense boreal forest, rounded Appalachian mountains, and orange construction barrels on the roadside strongly point to the Gaspésie Peninsula in Quebec, Canada, likely along Route 299."", ""country"": ""CA"", ""latitude"": 48.9521, ""longitude"": -66.1452}"
+minimax/minimax-m3,CoT,68.42,17.55,5539.567,NO,True,,stop,0.00117306,843,818,721,29.96,"{""reasoning"": ""Boreal/subarctic landscape with rounded glacially-carved mountains, sparse birch/conifer vegetation, and a high-quality two-lane highway with metal guardrails and orange snow poles (brøytestikker) characteristic of Norwegian road infrastructure. Right-hand traffic and the overall terrain profile strongly indicate northern Norway along the E6 corridor."", ""country"": ""NO"", ""latitude"": 68.42, ""longitude"": 17.55}"
+mistralai/mistral-small-2603,no-CoT,62.4739,7.5378,5915.557,NO,True,,stop,0.0001131,634,30,0,3.76,"{""country"": ""NO"", ""latitude"": 62.4739, ""longitude"": 7.5378}"
+qwen/qwen3.5-397b-a17b,no-CoT,62.85,9.45,5925.711,NO,True,,stop,0.0003147,473,26,0,2.05,"{""country"": ""NO"", ""latitude"": 62.85, ""longitude"": 9.45}"
+anthropic/claude-opus-4.8,CoT,62.5,9.5,5961.244,NO,True,,stop,0.006435,797,98,0,3.83,"{""reasoning"": ""Boreal coniferous forest with rounded subarctic mountains, sparse birch, and Scandinavian-style road with guardrail suggests interior Norway/Sweden mountains."", ""country"": ""NO"", ""latitude"": 62.5, ""longitude"": 9.5}"
+anthropic/claude-opus-4.8,no-CoT,62.5,9.8,5968.46,NO,True,,stop,0.00408,666,30,0,2.53,"{""country"": ""NO"", ""latitude"": 62.5, ""longitude"": 9.8}"
+x-ai/grok-4.3,CoT,62.35,9.65,5979.597,NO,True,,stop,0.0019315,676,569,497,10.88,"{
+  ""reasoning"": ""Boreal coniferous forest, rounded granite mountains, asphalt road with metal guardrail and red/white marker posts match Fennoscandia; right-hand traffic and vehicle types narrow to Norway/Sweden."",
+  ""country"": ""NO"",
+  ""latitude"": 62.35,
+  ""longitude"": 9.65
+}"
+x-ai/grok-4.3,no-CoT,62.35,9.65,5979.597,NO,True,,stop,0.0005934,592,22,0,7.09,"{""country"": ""NO"", ""latitude"": 62.35, ""longitude"": 9.65}"
+minimax/minimax-m3,no-CoT,62.5,11.0,5996.903,NO,True,,stop,0.00019452,754,22,0,1.85,"{""country"": ""NO"", ""latitude"": 62.5, ""longitude"": 11.0}{""country"": ""NO"", ""latitude"": 62.5, ""longitude"": 11.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,60.5678,8.4512,6124.858,NO,True,,stop,0.0002331,473,38,0,1.96,"{
+  ""country"": ""NO"",
+  ""latitude"": 60.5678,
+  ""longitude"": 8.4512
+}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11876.012,,True,True,,,,,,20.27,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.38,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.08,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.27,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.14,

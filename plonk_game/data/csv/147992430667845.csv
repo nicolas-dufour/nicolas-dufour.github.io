@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,41.920848496869,59.900749165393,0.0,TM,True,,,,,,,,"Dasoguz, None, Dasoguz, TM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.81209182739258,59.96488571166992,13.208,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,42.0708122253418,59.57500457763672,31.666,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,42.06781005859375,59.549835205078125,33.287,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,43.65,51.15,739.144,KZ,True,,stop,0.0005934,592,22,0,1.79,"{""country"": ""KZ"", ""latitude"": 43.65, ""longitude"": 51.15}"
+x-ai/grok-4.3,CoT,48.25,62.85,740.729,KZ,True,,stop,0.0019315,676,569,508,5.31,"{""reasoning"": ""Flat arid steppe with dry grass, distinctive lattice + wooden powerline towers, and unpaved road match post-Soviet Central Asia; no other region fits all visual markers simultaneously."", ""country"": ""KZ"", ""latitude"": 48.25, ""longitude"": 62.85}"
+anthropic/claude-opus-4.8,no-CoT,47.1,51.9,856.014,KZ,True,,stop,0.004105,666,31,0,19.11,"{""country"": ""KZ"", ""latitude"": 47.1, ""longitude"": 51.9}"
+minimax/minimax-m3,CoT,47.15,51.88,860.716,KZ,True,,stop,0.00069786,843,422,349,14.54,"{""reasoning"": ""Flat steppe landscape with dry grass, Soviet-style wooden power poles, and what appear to be oil pump jacks in the distance indicate a remote oil-producing steppe region, characteristic of western Kazakhstan near Atyrau."", ""country"": ""KZ"", ""latitude"": 47.15, ""longitude"": 51.88}"
+anthropic/claude-opus-4.8,CoT,48.5,67.0,918.099,KZ,True,,stop,0.00616,797,87,0,9.29,"{""reasoning"": ""Flat arid steppe with dry grasses, dirt road, concrete utility poles and railway crossing signals typical of rural Kazakhstan."", ""country"": ""KZ"", ""latitude"": 48.5, ""longitude"": 67.0}"
+google/gemma-4-31b-it,no-CoT,51.1694,66.9237,1158.945,KZ,True,,stop,5.248e-05,272,36,0,3.37,"```json
+{""country"": ""KZ"", ""latitude"": 51.1694, ""longitude"": 66.9237}
+```"
+openai/gpt-5.5,no-CoT,51.2456,51.4672,1219.063,KZ,True,,stop,0.00344,544,24,0,7.67,"{""country"":""KZ"",""latitude"":51.2456,""longitude"":51.4672}"
+moonshotai/kimi-k2.6,CoT,50.5,70.0,1228.136,KZ,True,,stop,0.007690428,682,2180,2122,44.81,"{""reasoning"": ""Soviet-era wooden power poles with multiple cross-arms and flat, dry steppe with sparse scrub are classic indicators of rural Kazakhstan."", ""country"": ""KZ"", ""latitude"": 50.5, ""longitude"": 70.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),42.843125,75.312458,1268.222,KG,True,,stop,0.002136,1190,39,0,1.51,"```json
+{""country"": ""KG"", ""latitude"": 42.843125, ""longitude"": 75.312458}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),51.8125,68.3342,1271.194,KZ,True,,stop,0.0115815,1271,1075,1005,15.71,"```json
+{""reasoning"": ""The flat steppe landscape, Soviet-style A-frame lattice utility poles, and dirt road leading to a railway crossing are highly characteristic of rural Kazakhstan."", ""country"": ""KZ"", ""latitude"": 51.8125, ""longitude"": 68.3342}
+```"
+google/gemini-3.1-pro-preview,CoT,51.1693,71.449,1352.343,KZ,True,,stop,0.006046,1271,292,206,4.93,"{
+  ""reasoning"": ""The A-frame utility poles and flat, arid steppe landscape are highly characteristic of Russia and Kazakhstan. The unpaved road and railway crossing style further suggest a rural area in the Central Asian steppes."",
+  ""country"": ""KZ"",
+  ""latitude"": 51.1693,
+  ""longitude"": 71.4490
+}"
+openai/gpt-5.5,CoT,51.3086,71.3564,1358.836,KZ,True,,stop,0.011445,621,278,191,6.85,"{""reasoning"":""Flat, treeless steppe, unpaved rural road, Soviet-style utility poles and railway crossing signals strongly suggest a remote post-Soviet area in Kazakhstan. The dry vegetation and expansive plains fit central/northern Kazakhstan near Astana/Aqmola more than Russia or Kyrgyzstan."",""country"":""KZ"",""latitude"":51.3086,""longitude"":71.3564}"
+google/gemini-3.5-flash,CoT (effort=high),51.85,70.95,1383.874,KZ,True,,stop,0.0108525,1271,994,921,15.37,"```json
+{""reasoning"": ""The flat steppe landscape, post-Soviet A-frame utility poles, and late autumn climate strongly point to Kazakhstan, with the white car hood matching the Google Street View vehicle used there."", ""country"": ""KZ"", ""latitude"": 51.85, ""longitude"": 70.95}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,43.2389,76.9456,1400.789,KZ,True,,stop,0.00018954,473,32,0,1.9,"{""country"": ""KZ"", ""latitude"": 43.2389, ""longitude"": 76.9456}"
+qwen/qwen3.6-27b,no-CoT,43.25,76.95,1401.15,KZ,True,,stop,0.0001883,473,28,0,9.32,"{""country"": ""KZ"", ""latitude"": 43.25, ""longitude"": 76.95}"
+xiaomi/mimo-v2.5,no-CoT,43.25,76.95,1401.15,KZ,True,,stop,8.06176e-05,708,28,0,4.02,"{""country"": ""KZ"", ""latitude"": 43.25, ""longitude"": 76.95}"
+qwen/qwen3.5-9b,no-CoT,43.2456,77.0123,1406.194,KZ,True,,stop,5.22e-05,474,32,0,4.38,"{""country"": ""KZ"", ""latitude"": 43.2456, ""longitude"": 77.0123}"
+xiaomi/mimo-v2.5,CoT,53.21,50.18,1448.822,RU,True,,stop,0.0009635976,787,3142,3058,35.96,"{""reasoning"": ""The combination of a flat, arid steppe landscape, wooden power poles with distinctive angled struts, and a distant vehicle resembling a Lada Niva strongly suggests a rural setting in Russia, specifically within the Volga or Southern Ural region."", ""country"": ""RU"", ""latitude"": 53.21, ""longitude"": 50.18}"
+mistralai/mistral-medium-3-5,no-CoT,51.5,46.0,1497.816,RU,True,,stop,0.001146,634,26,0,0.86,"{""country"": ""RU"", ""latitude"": 51.5, ""longitude"": 46.0}"
+google/gemini-3.1-pro-preview,no-CoT,51.5333,46.0167,1499.308,RU,True,,stop,0.002798,1189,35,0,2.54,"```json
+{""country"": ""RU"", ""latitude"": 51.5333, ""longitude"": 46.0167}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,50.59223175048828,44.08740997314453,1546.242,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,52.60791015625,76.25043487548828,1705.496,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,55.7558,49.0087,1727.922,RU,True,,stop,0.0002065,474,44,0,10.32,"```json
+{
+  ""country"": ""RU"",
+  ""latitude"": 55.7558,
+  ""longitude"": 49.0087
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,55.7558,37.6173,2223.397,RU,True,,stop,0.000157,473,31,0,1.82,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.6-35b-a3b,no-CoT,55.7558,37.6173,2223.397,RU,True,,stop,0.00010195,473,31,0,9.03,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+google/gemini-3.5-flash,CoT (effort=low),46.3512,108.3456,3836.413,MN,True,,stop,0.0049125,1271,334,265,3.82,"{""reasoning"": ""The flat steppe landscape, dirt road, distinctive lattice and wooden utility poles, and railway crossing are highly characteristic of rural Mongolia along the Trans-Mongolian Railway corridor."", ""country"": ""MN"", ""latitude"": 46.3512, ""longitude"": 108.3456}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7571.261,,True,True,,,,,,16.01,
+qwen/qwen3.5-397b-a17b,no-CoT,46.8772,-96.7898,9876.697,US,True,,stop,0.0003322,473,31,0,8.58,"{""country"": ""US"", ""latitude"": 46.8772, ""longitude"": -96.7898}"
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4196,11152.858,US,True,,stop,0.0001143,634,32,0,2.72,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4196}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-51.14563751220703,-67.92611694335938,15985.41,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,12.95,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,9.27,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.65,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.16,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.43,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.69,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.07,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,2.27,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.2,

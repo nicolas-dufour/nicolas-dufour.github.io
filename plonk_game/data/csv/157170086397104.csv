@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,15.422419851902744,-15.728914585455035,0.0,SN,True,,,,,,,,"Dara, None, Louga, SN"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,15.38194751739502,-15.595502853393555,14.993,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,15.36745548248291,-15.60023307800293,15.089,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,15.208277702331543,-15.784193992614746,24.538,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),15.5321,-15.4823,29.106,SN,True,,stop,0.003942,1272,226,157,2.99,"{""reasoning"": ""The flat, sandy Sahelian landscape with sparse acacia trees, degraded asphalt, and characteristic utility poles is highly indicative of northern Senegal, captured by the Google Street View car."", ""country"": ""SN"", ""latitude"": 15.5321, ""longitude"": -15.4823}"
+google/gemini-3.1-pro-preview,CoT,16.3125,-15.5432,100.946,SN,True,,stop,0.00582,1272,273,190,4.31,"{
+  ""reasoning"": ""The arid, sandy landscape with sparse acacia trees and hazy atmosphere is characteristic of the Sahel region. The French-style utility pole on the right is commonly found in West African countries like Senegal."",
+  ""country"": ""SN"",
+  ""latitude"": 16.3125,
+  ""longitude"": -15.5432
+}"
+google/gemini-3.5-flash,CoT (effort=medium),15.3124,-14.6215,119.365,SN,True,,stop,0.0070545,1271,572,495,6.08,"{""reasoning"": ""The dusty Sahelian landscape with sparse acacia trees, sandy red-brown soil, and a narrow paved road without markings is highly characteristic of Senegal, specifically along the N3 highway in the semi-arid interior."", ""country"": ""SN"", ""latitude"": 15.3124, ""longitude"": -14.6215}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),15.541234,-14.521456,130.064,SN,True,,stop,0.002136,1190,39,0,1.17,"```json
+{""country"": ""SN"", ""latitude"": 15.541234, ""longitude"": -14.521456}
+```"
+google/gemini-3.5-flash,CoT (effort=high),16.5124,-15.0231,142.768,SN,True,,stop,0.0164235,1271,1613,1527,16.32,"```json
+{""reasoning"": ""The arid Sahelian landscape with sparse acacia trees, reddish sandy soil, and degraded asphalt road is highly characteristic of northern Senegal. The concrete utility poles and flat terrain suggest a location along the N2 highway near the Senegal River valley."", ""country"": ""SN"", ""latitude"": 16.5124, ""longitude"": -15.0231}
+```"
+google/gemini-3.1-pro-preview,no-CoT,15.65827,-13.32583,258.773,SN,True,,stop,0.002824,1190,37,0,9.03,"```json
+{""country"": ""SN"", ""latitude"": 15.65827, ""longitude"": -13.32583}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,18.0735,-15.9582,295.796,MR,True,,stop,0.00010195,473,31,0,3.24,"{""country"": ""MR"", ""latitude"": 18.0735, ""longitude"": -15.9582}"
+qwen/qwen3.5-122b-a10b,no-CoT,14.7167,-5.5471,1095.939,ML,True,,stop,0.00018538,473,30,0,1.07,"{""country"": ""ML"", ""latitude"": 14.7167, ""longitude"": -5.5471}"
+qwen/qwen3.5-397b-a17b,no-CoT,14.5,-4.5,1210.48,ML,True,,stop,0.00033948,473,24,0,10.3,"{""country"": ""ML"", ""latitude"": 14.5, ""longitude"": -4.5}"
+anthropic/claude-opus-4.8,CoT,14.5,-4.2,1242.584,ML,True,,stop,0.00671,797,109,0,4.11,"{""reasoning"": ""Sahelian dry landscape with reddish sandy soil, sparse acacia trees, hazy dusty sky and a worn tarmac road typical of West Africa's Sahel zone, likely Mali or Niger."", ""country"": ""ML"", ""latitude"": 14.5, ""longitude"": -4.2}"
+anthropic/claude-opus-4.8,no-CoT,14.4843,-4.1986,1242.924,ML,True,,stop,0.00413,666,32,0,2.43,"{""country"": ""ML"", ""latitude"": 14.4843, ""longitude"": -4.1986}"
+moonshotai/kimi-k2.6,CoT,15.2,-2.5,1418.77,ML,True,,stop,0.02863314,682,7027,6958,2353.9,"{""reasoning"": ""Flat Sahelian scrubland with scattered acacia trees, degraded paved road, and Harmattan haze is characteristic of rural Mali; left-mounted dashcam indicates right-hand traffic consistent with former French West Africa."", ""country"": ""ML"", ""latitude"": 15.2, ""longitude"": -2.5}"
+minimax/minimax-m3,no-CoT,13.5,2.1,1930.947,NE,True,,stop,0.00032442,767,127,128,7.93,"{""country"": ""NE"", ""latitude"": 13.5, ""longitude"": 2.1}"
+xiaomi/mimo-v2.5,no-CoT,13.5,2.1,1930.947,NE,True,,stop,7.94976e-05,708,24,0,9.0,"{""country"": ""NE"", ""latitude"": 13.5, ""longitude"": 2.1}"
+minimax/minimax-m3,CoT,13.51,2.11,1931.851,NE,True,,stop,0.00072906,843,448,376,37.25,"{""reasoning"": ""Arid Sahel landscape with scattered acacia trees, sandy reddish soil, flat terrain, and low sun near horizon indicate the Sahel region of West Africa, most likely Niger based on vegetation density and power pole style."", ""country"": ""NE"", ""latitude"": 13.51, ""longitude"": 2.11}"
+moonshotai/kimi-k2.6,no-CoT,13.5116,2.1254,1933.471,NE,True,,stop,0.0005832,600,27,0,4.0,"{""country"": ""NE"", ""latitude"": 13.5116, ""longitude"": 2.1254}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,2434.168,,True,True,,,,,,13.12,
+x-ai/grok-4.3,CoT,13.82,8.47,2608.394,NE,True,,stop,0.002204,676,678,604,29.44,"{""reasoning"": ""Arid Sahel savanna with scattered acacia-type trees, lateritic red soil, cracked unpaved road, and hazy low sun match West African Sahel; right-hand driving implied by vehicle interior layout and no left-side cues."", ""country"": ""NE"", ""latitude"": 13.82, ""longitude"": 8.47}"
+xiaomi/mimo-v2.5,CoT,12.4,8.5,2635.125,NG,True,,stop,0.0001739976,787,322,248,20.63,"{""reasoning"": ""The arid, reddish-soil Sahelian landscape with sparse acacia-like vegetation and worn rural paved road matches northern Nigeria's rural regions, a core West African Sahel zone with this environmental and infrastructure profile."", ""country"": ""NG"", ""latitude"": 12.4, ""longitude"": 8.5}"
+google/gemma-4-31b-it,no-CoT,26.5,12.0,3122.323,DZ,True,,stop,6.884e-05,406,30,0,1.48,"```json
+{""country"": ""DZ"", ""latitude"": 26.5, ""longitude"": 12.0}
+```"
+x-ai/grok-4.3,no-CoT,14.85,32.55,5171.31,SD,True,,stop,0.0005934,592,22,0,0.74,"{""country"": ""SD"", ""latitude"": 14.85, ""longitude"": 32.55}"
+openai/gpt-5.5,CoT,29.9412,40.1568,5898.043,SA,True,,stop,0.019365,621,542,457,44.18,"{""reasoning"":""Arid flat desert farmland with sparse olive-like groves, unmarked cracked rural asphalt, and Middle Eastern utility-pole style point most strongly to the olive-growing Al Jouf region of northern Saudi Arabia. The lack of lane markings and dusty haze fit rural farm roads outside Sakaka."",""country"":""SA"",""latitude"":29.9412,""longitude"":40.1568}"
+qwen/qwen3.5-35b-a3b,no-CoT,-29.1234,21.2345,6347.21,ZA,True,,stop,0.0001236625,473,36,0,0.75,"{
+""country"": ""ZA"",
+""latitude"": -29.1234,
+""longitude"": 21.2345
+}"
+qwen/qwen3.5-9b,no-CoT,24.7136,46.6753,6547.154,SA,True,,stop,5.205e-05,474,31,0,4.55,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+openai/gpt-5.5,no-CoT,24.7312,55.8476,7469.15,AE,True,,stop,0.00341,544,23,0,1.4,"{""country"":""AE"",""latitude"":24.7312,""longitude"":55.8476}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,27.82694435119629,70.31123352050781,8834.972,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,27.94119644165039,70.41595458984375,8842.399,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,27.598154067993164,70.35717010498047,8844.69,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,26.85,71.05,8929.294,IN,True,,stop,0.0138234,553,3761,3662,30.17,"{""reasoning"": ""The image displays a flat, arid landscape with reddish-brown soil and scattered Acacia-like trees, characteristic of the Thar Desert region in Rajasthan, India. The concrete utility poles, worn paved road, and left-side camera position (indicating Left-Hand Traffic) strongly point to rural India."", ""country"": ""IN"", ""latitude"": 26.85, ""longitude"": 71.05}"
+qwen/qwen3.6-27b,no-CoT,26.9124,72.3314,9051.728,IN,True,,stop,0.0002548,474,31,0,19.25,"{""country"": ""IN"", ""latitude"": 26.9124, ""longitude"": 72.3314}"
+mistralai/mistral-medium-3-5,no-CoT,28.0836,73.3091,9116.077,IN,True,,stop,0.0011835,634,31,0,13.47,"{""country"": ""IN"", ""latitude"": 28.0836, ""longitude"": 73.3091}"
+qwen/qwen3.5-27b,no-CoT,26.8467,75.7836,9386.058,IN,True,,stop,0.00019467,473,31,0,1.39,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 75.7836}"
+mistralai/mistral-small-2603,no-CoT,36.1699,-115.1398,9818.281,US,True,,stop,0.0001143,634,32,0,2.74,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.11,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.43,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.06,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.11,

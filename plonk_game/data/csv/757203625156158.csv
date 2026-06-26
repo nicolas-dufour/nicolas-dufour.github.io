@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,46.139650116126,18.728698732562,0.0,HU,True,,,,,,,,"Bata, None, Tolna, HU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,46.951351165771484,18.217920303344727,98.347,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,47.07398223876953,18.281780242919922,109.358,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,47.17900085449219,18.66921043395996,115.66,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,47.34172058105469,18.855546951293945,134.013,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,47.51659393310547,18.854331970214844,153.407,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,47.5512,18.8234,157.122,HU,True,,stop,0.002872,1226,35,0,8.54,"```json
+{""country"": ""HU"", ""latitude"": 47.5512, ""longitude"": 18.8234}
+```"
+anthropic/claude-opus-4.8,CoT,47.6,18.9,162.905,HU,True,,stop,0.007045,949,92,0,10.84,"{""reasoning"": ""Green directional sign, white roadside marker posts, deciduous winter forest and hilly terrain suggest central/eastern Europe; road style and signage match Hungary."", ""country"": ""HU"", ""latitude"": 47.6, ""longitude"": 18.9}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,47.55577850341797,19.32502555847168,163.865,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,47.8,18.5,185.436,HU,True,,stop,0.00484,818,30,0,2.84,"{""country"": ""HU"", ""latitude"": 47.8, ""longitude"": 18.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),47.812456,19.143212,188.646,HU,True,,stop,0.00219,1226,39,0,1.66,"```json
+{""country"": ""HU"", ""latitude"": 47.812456, ""longitude"": 19.143212}
+```"
+google/gemini-3.5-flash,CoT (effort=high),47.855,19.145,193.333,HU,True,,stop,0.0229305,1307,2330,2269,17.02,"{""reasoning"": ""The green town entrance sign, concrete-lined drainage ditch, and deciduous hilly landscape are highly characteristic of Hungary, particularly the northern hilly regions."", ""country"": ""HU"", ""latitude"": 47.855, ""longitude"": 19.145}"
+qwen/qwen3.6-27b,no-CoT,45.815,16.015,212.772,HR,True,,stop,0.0002279,585,31,0,8.45,"{""country"": ""HR"", ""latitude"": 45.8150, ""longitude"": 16.0150}"
+google/gemini-3.5-flash,CoT (effort=low),47.9835,19.9542,225.055,HU,True,,stop,0.004374,1308,268,206,2.84,"{""reasoning"": ""The green town sign, concrete drainage ditch, and bare deciduous forest are highly characteristic of northern Hungary during the winter/early spring season."", ""country"": ""HU"", ""latitude"": 47.9835, ""longitude"": 19.9542}"
+openai/gpt-5.5,CoT,45.8337,15.7426,233.19,HR,True,,stop,0.017965,755,473,391,30.89,"{""reasoning"":""Right-hand traffic, EU-style white plates, Croatian/Balkan black-topped roadside bollards, green directional signage, and concrete drainage channels point to rural northern Croatia. The leafless hilly deciduous landscape fits the Zagreb/Zagorje/Samobor region."",""country"":""HR"",""latitude"":45.8337,""longitude"":15.7426}"
+google/gemini-3.1-pro-preview,CoT,48.0833,20.3167,247.275,HU,True,,stop,0.008316,1308,475,397,12.67,"{
+  ""reasoning"": ""The white delineator posts with black bands are characteristic of Hungary. The hilly, deciduous landscape and road markings suggest a location in the northern hilly regions of the country."",
+  ""country"": ""HU"",
+  ""latitude"": 48.0833,
+  ""longitude"": 20.3167
+}"
+openai/gpt-5.5,no-CoT,45.1487,15.7124,259.057,HR,True,,stop,0.00408,678,23,0,3.16,"{""country"":""HR"",""latitude"":45.1487,""longitude"":15.7124}"
+mistralai/mistral-medium-3-5,no-CoT,49.8136,15.5811,470.843,CZ,True,,stop,0.001419,786,32,0,1.43,"{""country"": ""CZ"", ""latitude"": 49.8136, ""longitude"": 15.5811}"
+minimax/minimax-m3,no-CoT,49.8,14.5,514.378,CZ,True,,stop,0.00062202,919,337,403,11.17,"{""country"": ""CZ"", ""latitude"": 49.8, ""longitude"": 14.5}"
+x-ai/grok-4.3,no-CoT,45.15,25.35,526.182,RO,True,,stop,0.0007334,704,22,0,1.84,"{""country"": ""RO"", ""latitude"": 45.15, ""longitude"": 25.35}"
+moonshotai/kimi-k2.6,CoT,50.87,20.63,544.272,PL,True,,stop,0.018610236,834,5355,5294,260.32,"{""reasoning"": ""Right-hand traffic with EU-format white license plate and distinctive black-and-white striped Polish roadside posts; green directional sign and rolling deciduous hills match rural southern Poland."", ""country"": ""PL"", ""latitude"": 50.87, ""longitude"": 20.63}"
+google/gemma-4-31b-it,no-CoT,45.4333,26.1,576.727,RO,True,,stop,6.692e-05,404,36,0,2.34,"```json
+{""country"": ""RO"", ""latitude"": 45.4333, ""longitude"": 26.1000}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),46.25,26.65,609.573,RO,True,,stop,0.0337845,1307,3536,3461,32.42,"```json
+{""reasoning"": ""The concrete-tiled drainage ditch along the slope, the deciduous forest, and the white Dacia Logan MCV van strongly point to Romania, specifically a national road in the hilly Carpathian foothills."", ""country"": ""RO"", ""latitude"": 46.25, ""longitude"": 26.65}
+```"
+moonshotai/kimi-k2.6,no-CoT,52.0,19.0,651.94,PL,True,,stop,0.00034236,755,23,0,7.73,"{""country"": ""PL"", ""latitude"": 52.0, ""longitude"": 19.0}"
+minimax/minimax-m3,CoT,50.55,9.45,842.057,DE,True,,stop,0.00084426,995,506,427,14.86,"{""reasoning"": ""Green directional Autobahn-style sign, red/white delineator posts, European right-hand-drive van, and forested rolling hills with bare deciduous trees are characteristic of a German countryside road in the low mountain ranges (Mittelgebirge)."", ""country"": ""DE"", ""latitude"": 50.55, ""longitude"": 9.45}"
+qwen/qwen3.5-122b-a10b,no-CoT,50.8242,6.9531,1010.511,DE,True,,stop,0.0002667,585,38,0,3.0,"{
+  ""country"": ""DE"",
+  ""latitude"": 50.8242,
+  ""longitude"": 6.9531
+}"
+qwen/qwen3.5-27b,no-CoT,50.9234,6.8712,1020.592,DE,True,,stop,0.0002475,585,30,0,5.22,"{""country"": ""DE"", ""latitude"": 50.9234, ""longitude"": 6.8712}"
+qwen/qwen3.6-35b-a3b,no-CoT,47.322,5.041,1050.084,FR,True,,stop,0.00011575,585,28,0,1.93,"{""country"": ""FR"", ""latitude"": 47.322, ""longitude"": 5.041}"
+qwen/qwen3.5-397b-a17b,no-CoT,50.7753,6.0835,1063.462,DE,True,,stop,0.000443,585,30,0,2.96,"{""country"": ""DE"", ""latitude"": 50.7753, ""longitude"": 6.0835}"
+x-ai/grok-4.3,CoT,47.85,2.35,1254.223,FR,True,,stop,0.0024865,788,735,654,12.92,"{
+  ""reasoning"": ""Right-hand traffic with oncoming white European panel van (likely Renault/Citroën), green rectangular directional sign, and bare temperate deciduous forest indicate continental Europe in winter; concrete retaining wall and road furniture match rural secondary roads in Central/Western Europe."",
+  ""country"": ""FR"",
+  ""latitude"": 47.85,
+  ""longitude"": 2.35
+}"
+xiaomi/mimo-v2.5,no-CoT,48.8566,2.3522,1264.103,FR,True,,stop,9.68576e-05,820,30,0,2.36,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+xiaomi/mimo-v2.5,CoT,46.65,2.1,1274.137,FR,True,,stop,0.0004565176,899,1275,1190,323.71,"{""reasoning"": ""The presence of French-style road bollards (white with a black reflector band), a common French vehicle model (Citroën Berlingo), and right-hand driving in a rural setting with central European architecture and vegetation strongly suggests a location in rural France."", ""country"": ""FR"", ""latitude"": 46.65, ""longitude"": 2.1}"
+mistralai/mistral-small-2603,no-CoT,60.3926,5.3231,1810.535,NO,True,,stop,0.0001359,786,30,0,4.61,"{""country"": ""NO"", ""latitude"": 60.3926, ""longitude"": 5.3231}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5447.247,,True,True,,,,,,12.53,
+qwen/qwen3.5-35b-a3b,no-CoT,42.3601,-71.0589,6761.671,US,True,,stop,0.0001353625,585,31,0,0.72,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.5-9b,no-CoT,40.4406,-74.408,7113.099,US,True,,stop,6.31e-05,586,30,0,3.35,"{""country"": ""US"", ""latitude"": 40.4406, ""longitude"": -74.408}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,10.75,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.11,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.23,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.98,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.48,

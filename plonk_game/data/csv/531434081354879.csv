@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-8.6692109624063,160.79175334744,0.0,SB,True,,,,,,,,"Auki, None, Malaita, SB"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-8.79338264465332,160.60768127441406,24.493,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-8.850932121276855,160.6392059326172,26.256,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-15.1234,166.9123,978.776,VU,True,,stop,0.002109,1190,36,0,7.88,"```json
+{""country"": ""VU"", ""latitude"": -15.1234, ""longitude"": 166.9123}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-7.7425150871276855,151.90353393554688,983.587,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-15.5,167.17,1028.204,VU,True,,stop,0.00408,666,30,0,2.81,"{""country"": ""VU"", ""latitude"": -15.5, ""longitude"": 167.17}"
+anthropic/claude-opus-4.8,CoT,-15.5,167.2,1030.404,VU,True,,stop,0.00641,797,97,0,9.68,"{""reasoning"": ""Tropical lush vegetation with banana plants and ferns, dirt road, heavy whip antenna on a 4WD typical of Pacific island travel, stormy tropical sky."", ""country"": ""VU"", ""latitude"": -15.5, ""longitude"": 167.2}"
+google/gemini-3.1-pro-preview,no-CoT,-17.68,168.35,1293.019,VU,True,,stop,0.005654,1189,273,241,11.82,"```json
+{""country"": ""VU"", ""latitude"": -17.68, ""longitude"": 168.35}
+```"
+google/gemini-3.1-pro-preview,CoT,-17.7333,168.3166,1295.282,VU,True,,stop,0.005818,1271,273,190,10.82,"{
+  ""reasoning"": ""The prominent antenna on the white vehicle hood is a distinct Google Street View car meta clue for Vanuatu. The lush tropical vegetation and dirt road are consistent with the rural landscapes of the islands."",
+  ""country"": ""VU"",
+  ""latitude"": -17.7333,
+  ""longitude"": 168.3166
+}"
+minimax/minimax-m3,CoT,-6.65,147.0,1536.237,PG,True,,stop,0.00070386,843,427,343,19.97,"{""reasoning"": ""Cream-colored lateritic soil, tropical vegetation with banana plants, heavy monsoonal cloud cover, and the Toyota Land Cruiser 70-series troop carrier with hood-mounted CB antenna are highly characteristic of Papua New Guinea's rural roads, likely in the Morobe or Madang region."", ""country"": ""PG"", ""latitude"": -6.65, ""longitude"": 147.0}"
+moonshotai/kimi-k2.6,no-CoT,-6.5,147.0,1539.015,PG,True,,stop,0.00051219,602,23,0,9.35,"{""country"": ""PG"", ""latitude"": -6.5, ""longitude"": 147.0}"
+moonshotai/kimi-k2.6,CoT,-6.2,145.8,1675.429,PG,True,,stop,0.024329655,681,6636,7456,57.77,"{""reasoning"": ""Dense tropical vegetation with banana plants, an unpaved beige road, and a white vehicle sporting a spring-mounted hood whip antenna are classic indicators of a remote road in Papua New Guinea."", ""country"": ""PG"", ""latitude"": -6.2000, ""longitude"": 145.8000}"
+minimax/minimax-m3,no-CoT,-6.0,145.0,1766.452,PG,True,,stop,0.00041682,767,204,224,10.87,"{""country"": ""PG"", ""latitude"": -6.0, ""longitude"": 145.0}"
+google/gemini-3.5-flash,CoT (effort=low),-10.4875,105.6361,6043.527,CX,True,,stop,0.004788,1272,320,249,3.55,"{""reasoning"": ""The lush tropical vegetation, wet dirt road, and Australian-style bullbar-mounted antenna on the vehicle suggest Christmas Island, an Australian territory with dense rainforest and similar tracks."", ""country"": ""CX"", ""latitude"": -10.4875, ""longitude"": 105.6361}"
+google/gemini-3.5-flash,CoT (effort=medium),-10.4872,105.6312,6044.064,CX,True,,stop,0.0104745,1271,952,872,8.35,"```json
+{""reasoning"": ""The white vehicle with a bullbar and front-mounted spring antenna driving on a light-colored limestone dirt road through lush tropical rainforest is highly characteristic of the Google Street View coverage on Christmas Island."", ""country"": ""CX"", ""latitude"": -10.4872, ""longitude"": 105.6312}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-10.4912,105.5984,6047.62,CX,True,,stop,0.0126255,1271,1191,1106,13.35,"```json
+{""reasoning"": ""The vehicle features a bullbar-mounted spring-base antenna typical of the Google Street View car used on Christmas Island. The lush tropical rainforest and white limestone dirt road are highly characteristic of the island's interior tracks."", ""country"": ""CX"", ""latitude"": -10.4912, ""longitude"": 105.5984}
+```"
+openai/gpt-5.5,no-CoT,16.9685,-88.6742,12461.005,BZ,True,,stop,0.00344,544,24,0,2.01,"{""country"":""BZ"",""latitude"":16.9685,""longitude"":-88.6742}"
+qwen/qwen3.6-35b-a3b,CoT,20.42,-87.92,12552.688,MX,True,,stop,0.12670195135,553,131171,131072,819.12,"{""reasoning"": ""The image shows a white limestone dirt road winding through dense tropical jungle, which is characteristic of the Yucatan Peninsula in Mexico. The presence of a tall radio antenna on a white 4x4 (likely a rental Toyota Hilux) and banana plants further supports this location, specifically near the Coba ruins."", ""country"": ""MX"", ""latitude"": 20.42, ""longitude"": -87.92}"
+qwen/qwen3.5-397b-a17b,CoT,10.3142,-84.8215,12829.307,CR,True,,stop,0.00853065,553,2775,1,49.16,"{
+""reasoning"": ""The lush tropical vegetation, specifically the banana plants on the left, combined with the unpaved gravel road and overcast mountainous terrain, is highly characteristic of rural Costa Rica, particularly the transition zones to cloud forests like Monteverde."",
+""country"": ""CR"",
+""latitude"": 10.3142,
+""longitude"": -84.8215
+}"
+google/gemma-4-31b-it,no-CoT,9.5421,-83.9124,12921.184,CR,True,,stop,7.084e-05,406,35,0,15.5,"```json
+{""country"": ""CR"", ""latitude"": 9.5421, ""longitude"": -83.9124}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,9.7489,-83.7567,12940.179,CR,True,,stop,0.0001223625,473,35,0,6.86,"{
+""country"": ""CR"",
+""latitude"": 9.7489,
+""longitude"": -83.7567
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,9.7489,-83.7534,12940.54,CR,True,,stop,0.00028845,473,30,0,2.75,"{""country"": ""CR"", ""latitude"": 9.7489, ""longitude"": -83.7534}"
+x-ai/grok-4.3,CoT,9.85,-83.75,12941.867,CR,True,,stop,0.002369,676,744,686,6.44,"{""reasoning"": ""Lush tropical vegetation including banana plants, winding unpaved road through steep green hills under heavy overcast, and vehicle-mounted long antenna indicate rural Central America."", ""country"": ""CR"", ""latitude"": 9.85, ""longitude"": -83.75}"
+x-ai/grok-4.3,no-CoT,10.05,-83.75,12943.73,CR,True,,stop,0.0005934,592,22,0,1.22,"{""country"": ""CR"", ""latitude"": 10.05, ""longitude"": -83.75}"
+qwen/qwen3.6-35b-a3b,no-CoT,8.53,-83.48,12958.168,CR,True,,stop,0.0026512122,471,2668,2638,12.7,"{""country"": ""CR"", ""latitude"": 8.53, ""longitude"": -83.48}"
+qwen/qwen3.5-27b,no-CoT,8.9833,-79.5167,13396.494,PA,True,,stop,0.00023504,474,43,0,13.48,"```json
+{
+  ""country"": ""PA"",
+  ""latitude"": 8.9833,
+  ""longitude"": -79.5167
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,1.5,-76.5,13626.296,CO,True,,stop,7.94976e-05,708,24,0,2.68,"{""country"": ""CO"", ""latitude"": 1.5, ""longitude"": -76.5}"
+qwen/qwen3.6-27b,no-CoT,2.154,-75.8619,13707.872,CO,True,,stop,0.0001923,473,30,0,11.9,"{""country"": ""CO"", ""latitude"": 2.1540, ""longitude"": -75.8619}"
+mistralai/mistral-medium-3-5,no-CoT,-3.4653,-62.2159,15059.872,BR,True,,stop,0.001176,634,30,0,7.19,"{""country"": ""BR"", ""latitude"": -3.4653, ""longitude"": -62.2159}"
+mistralai/mistral-small-2603,no-CoT,48.8584,2.2945,15116.183,FR,True,,stop,0.0001131,634,30,0,4.45,"{""country"": ""FR"", ""latitude"": 48.8584, ""longitude"": 2.2945}"
+qwen/qwen3.5-122b-a10b,no-CoT,-3.0733,-60.025,15305.573,BR,True,,stop,0.00018356,474,29,0,9.98,"{""country"": ""BR"", ""latitude"": -3.0733, ""longitude"": -60.025}"
+openai/gpt-5.5,CoT,15.3605,-61.3308,15381.459,DM,True,,stop,0.020505,621,580,516,40.91,"{""reasoning"":""Lush tropical volcanic hills with banana vegetation and a narrow pale dirt road suggest a humid Caribbean island interior; the terrain and rainforest road style fit Dominica best among covered locations."",""country"":""DM"",""latitude"":15.3605,""longitude"":-61.3308}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-0.14456290006637573,11.473349571228027,16478.059,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-0.11424412578344345,11.478601455688477,16478.476,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,3.85,11.55,16574.868,CM,True,,stop,0.0001311576,787,169,81,15.51,"{""reasoning"": ""The image shows a red-dirt unpaved road winding through lush, hilly tropical vegetation with banana plants and misty mountains, consistent with the humid tropics of Central or West Africa. The specific vegetation and soil color strongly suggest the interior regions of Cameroon or Gabon."", ""country"": ""CM"", ""latitude"": 3.85, ""longitude"": 11.55}"
+qwen/qwen3.5-9b,no-CoT,-1.2345,-48.5678,16580.284,BR,True,,stop,5.19e-05,474,30,0,4.07,"{""country"": ""BR"", ""latitude"": -1.2345, ""longitude"": -48.5678}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,4.402318000793457,3.138721466064453,17501.974,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,17679.276,,True,True,,,,,,6.47,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.08,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.27,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.13,

@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,54.919993225777,68.744712406103,0.0,KZ,True,,,,,,,,"Bishkul, None, Soltustik Qazaqstan, KZ"
+anthropic/claude-opus-4.8,CoT,56.0,68.0,128.941,RU,True,,stop,0.006135,797,86,0,9.51,"{""reasoning"": ""Birch forest, flat terrain, worn asphalt road with sandy shoulders typical of rural Russian highways in Siberia/Urals region."", ""country"": ""RU"", ""latitude"": 56.0, ""longitude"": 68.0}"
+anthropic/claude-opus-4.8,no-CoT,55.5,65.3,227.838,RU,True,,stop,0.00408,666,30,0,14.87,"{""country"": ""RU"", ""latitude"": 55.5, ""longitude"": 65.3}"
+google/gemini-3.5-flash,CoT (effort=high),57.5234,67.5432,298.851,RU,True,,stop,0.0089355,1271,781,718,7.45,"{""reasoning"": ""The dense birch forest, sandy shoulders, and wide asphalt road without markings are highly characteristic of regional highways in Russia, particularly in Western Siberia."", ""country"": ""RU"", ""latitude"": 57.5234, ""longitude"": 67.5432}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,56.56023406982422,74.3319320678711,394.279,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,58.11590576171875,73.54271697998047,461.198,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,56.8521,60.6884,545.994,RU,True,,stop,5.205e-05,474,31,0,3.31,"{""country"": ""RU"", ""latitude"": 56.8521, ""longitude"": 60.6884}"
+qwen/qwen3.5-27b,no-CoT,56.8523,60.6145,550.233,RU,True,,stop,0.00023764,474,44,0,10.86,"```json
+{
+  ""country"": ""RU"",
+  ""latitude"": 56.8523,
+  ""longitude"": 60.6145
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,56.8523,60.6122,550.365,RU,True,,stop,0.00036468,473,31,0,2.08,"{""country"": ""RU"", ""latitude"": 56.8523, ""longitude"": 60.6122}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,50.84123611450195,63.9949836730957,554.055,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,50.9135627746582,63.16721725463867,581.278,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,50.98080825805664,62.456993103027344,607.255,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,55.5,80.0,716.199,RU,True,,stop,0.00944,680,2238,2453,42.44,"{""reasoning"": ""Dense white-barked birch forest mixed with dark conifers is characteristic of southern Siberia, and the wide asphalt road with unpaved sandy shoulders and minimal markings matches rural Russian federal highways crossing the flat West Siberian Plain."", ""country"": ""RU"", ""latitude"": 55.5, ""longitude"": 80.0}"
+minimax/minimax-m3,CoT,55.3,82.9,899.768,RU,True,,stop,0.00068022,845,404,397,7.85,"{""reasoning"": ""Wide unmarked asphalt road with sandy shoulders, dense birch/conifer taiga forest, and a yellow Russian-style warning sign visible in the distance strongly indicate a federal highway in West Siberia, Russia."", ""country"": ""RU"", ""latitude"": 55.3, ""longitude"": 82.9}"
+openai/gpt-5.5,CoT,55.115,83.145,916.661,RU,True,,stop,0.012435,621,311,224,8.07,"{""reasoning"":""Flat boreal birch/pine forest with sandy shoulders and a wide unmarked asphalt carriageway is characteristic of rural Russia/Western Siberia; the distant road signage style and right-side traffic fit Russia. The landscape strongly suggests the Novosibirsk/Tomsk forest-steppe belt rather than Europe."",""country"":""RU"",""latitude"":55.115,""longitude"":83.145}"
+x-ai/grok-4.3,CoT,56.15,43.85,1563.87,RU,True,,stop,0.002269,676,704,640,11.74,"{""reasoning"": ""Boreal birch forest lining a long straight two-lane asphalt road with sandy verges and minimal markings is characteristic of rural Russia; distant yellow sign and right-hand traffic orientation further support this."", ""country"": ""RU"", ""latitude"": 56.15, ""longitude"": 43.85}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),56.1235,94.3124,1605.654,RU,True,,stop,0.0021,1190,35,0,1.22,"```json
+{""country"": ""RU"", ""latitude"": 56.1235, ""longitude"": 94.3124}
+```"
+google/gemini-3.1-pro-preview,no-CoT,56.1324,40.4165,1775.435,RU,True,,stop,0.002798,1189,35,0,2.75,"```json
+{""country"": ""RU"", ""latitude"": 56.1324, ""longitude"": 40.4165}
+```"
+x-ai/grok-4.3,no-CoT,55.75,37.62,1954.054,RU,True,,stop,0.0005934,592,22,0,0.72,"{""country"": ""RU"", ""latitude"": 55.75, ""longitude"": 37.62}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,1954.105,RU,True,,stop,6.718e-05,406,36,0,2.14,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,1954.105,RU,True,,stop,0.001191,634,32,0,7.47,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-122b-a10b,no-CoT,55.7558,37.6173,1954.105,RU,True,,stop,0.0002041,473,39,0,3.7,"{
+  ""country"": ""RU"",
+  ""latitude"": 55.7558,
+  ""longitude"": 37.6173
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,55.7558,37.6173,1954.105,RU,True,,stop,0.00016956,474,31,0,8.11,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.6-27b,no-CoT,55.7558,37.6173,1954.105,RU,True,,stop,0.000211097,473,31,0,8.05,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+openai/gpt-5.5,no-CoT,55.845,37.137,1981.879,RU,True,,stop,0.00335,544,21,0,1.11,"{""country"":""RU"",""latitude"":55.845,""longitude"":37.137}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,56.70480728149414,36.0772705078125,2031.135,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,52.2876,104.2807,2337.094,RU,True,,stop,0.00264059445,471,2657,2625,11.04,"{""country"": ""RU"", ""latitude"": 52.2876, ""longitude"": 104.2807}"
+google/gemini-3.5-flash,CoT (effort=low),53.6123,119.8245,3246.043,RU,True,,stop,0.0036,1272,188,123,2.4,"{""reasoning"": ""The endless birch forest, sandy road shoulders, and wide, unmarked asphalt road are highly characteristic of the trans-Siberian highways in Russia."", ""country"": ""RU"", ""latitude"": 53.6123, ""longitude"": 119.8245}"
+google/gemini-3.1-pro-preview,CoT,53.5,122.0,3382.357,RU,True,,stop,0.005338,1271,233,159,19.54,"{
+  ""reasoning"": ""The dense birch and pine forests, flat terrain, and sandy road shoulders without painted lines are highly characteristic of rural highways in Russia, particularly in Siberia or the Far East."",
+  ""country"": ""RU"",
+  ""latitude"": 53.5,
+  ""longitude"": 122.0
+}"
+google/gemini-3.5-flash,CoT (effort=medium),51.3524,128.1235,3860.554,RU,True,,stop,0.0060015,1271,455,384,12.57,"{""reasoning"": ""The dense birch forest, sandy road shoulders, and wide, unlined asphalt road are highly characteristic of the federal highways in Russia, particularly in Siberia or the Russian Far East."", ""country"": ""RU"", ""latitude"": 51.3524, ""longitude"": 128.1235}"
+mistralai/mistral-small-2603,no-CoT,43.6532,-79.3832,8648.08,US,True,,stop,0.0001137,634,31,0,3.72,"{""country"": ""US"", ""latitude"": 43.6532, ""longitude"": -79.3832}"
+xiaomi/mimo-v2.5,CoT,-19.833,34.833,8912.602,MZ,True,,stop,0.0002927176,787,746,649,9.35,"{
+  ""reasoning"": ""The rural two-lane road with sandy shoulders and stands of what appear to be eucalyptus trees is characteristic of roadside vegetation and infrastructure in southern Africa. The absence of clear road markings and the hazy, subtropical climate further support a location in Mozambique."",
+  ""country"": ""MZ"",
+  ""latitude"": -19.833,
+  ""longitude"": 34.833
+}"
+xiaomi/mimo-v2.5,no-CoT,-33.8,150.8,12554.671,AU,True,,stop,8.00576e-05,708,26,0,6.92,"{""country"": ""AU"", ""latitude"": -33.8, ""longitude"": 150.8}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,13.0,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.2,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.52,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.24,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.25,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.15,

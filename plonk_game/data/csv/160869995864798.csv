@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,51.64091873193,16.019570549414,0.0,PL,True,,,,,,,,"Glogow, Powiat glogowski, Lower Silesian Voivodeship, PL"
+anthropic/claude-opus-4.8,no-CoT,52.2,16.5,70.358,PL,True,,stop,0.00408,666,30,0,9.15,"{""country"": ""PL"", ""latitude"": 52.2, ""longitude"": 16.5}"
+google/gemini-3.5-flash,CoT (effort=medium),52.1543,16.8542,80.859,PL,True,,stop,0.0096645,1271,862,789,8.64,"```json
+{""reasoning"": ""The flat agricultural landscape, deciduous tree-lined road, and the specific style of the white road edge bollard with a red reflector are highly characteristic of rural Poland."", ""country"": ""PL"", ""latitude"": 52.1543, ""longitude"": 16.8542}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,51.33915710449219,14.858626365661621,87.1,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),52.1452,17.0341,89.391,PL,True,,stop,0.0043455,1271,271,208,3.29,"{""reasoning"": ""The white road bollard with a red reflective stripe, flat agricultural landscape with deciduous trees, and road markings are highly characteristic of rural Poland."", ""country"": ""PL"", ""latitude"": 52.1452, ""longitude"": 17.0341}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),51.1242,17.0345,90.896,PL,True,,stop,0.0020985,1189,35,0,1.35,"```json
+{""country"": ""PL"", ""latitude"": 51.1242, ""longitude"": 17.0345}
+```"
+anthropic/claude-opus-4.8,CoT,52.2,17.0,91.572,PL,True,,stop,0.00626,797,91,0,18.05,"{""reasoning"": ""Tree-lined rural road with white-topped concrete delineator post and orange reflector typical of Poland/eastern Germany; flat farmland and right-side driving."", ""country"": ""PL"", ""latitude"": 52.2, ""longitude"": 17.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,51.171356201171875,14.453924179077148,120.494,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),52.25,17.5,121.993,PL,True,,stop,0.0103935,1271,943,873,8.1,"```json
+{""reasoning"": ""The white bollard with a red reflective band on the right side of the road, combined with the flat agricultural landscape and double white center lines, is highly characteristic of Poland."", ""country"": ""PL"", ""latitude"": 52.25, ""longitude"": 17.5}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,51.19307327270508,13.702576637268066,168.207,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,52.2,18.5,181.1,PL,True,,stop,0.011155068,682,3191,3126,139.12,"{""reasoning"": ""Slender white roadside poles with red horizontal bands are standard Polish delineators, and the flat, tree-lined rural road cutting through golden wheat fields matches central Poland's agricultural lowlands."", ""country"": ""PL"", ""latitude"": 52.2, ""longitude"": 18.5}"
+google/gemma-4-31b-it,no-CoT,52.52,13.405,203.641,DE,True,,stop,6.718e-05,406,36,0,3.55,"```json
+{""country"": ""DE"", ""latitude"": 52.5200, ""longitude"": 13.4050}
+```"
+qwen/qwen3.6-27b,no-CoT,52.52,13.405,203.641,DE,True,,stop,0.0001943,473,31,0,13.78,"{""country"": ""DE"", ""latitude"": 52.5200, ""longitude"": 13.4050}"
+qwen/qwen3.6-35b-a3b,no-CoT,52.52,13.405,203.641,DE,True,,stop,0.0001396,474,28,0,9.11,"{""country"": ""DE"", ""latitude"": 52.52, ""longitude"": 13.405}"
+openai/gpt-5.5,no-CoT,49.8312,15.5748,203.65,CZ,True,,stop,0.00341,544,23,0,8.16,"{""country"":""CZ"",""latitude"":49.8312,""longitude"":15.5748}"
+google/gemini-3.1-pro-preview,CoT,52.0,19.0,208.692,PL,True,,stop,0.005494,1271,246,168,11.2,"{
+  ""reasoning"": ""The white delineator post with a red band at the top and the specific style of road markings are characteristic of Poland. The flat agricultural landscape with deciduous trees is typical of the central European plain."",
+  ""country"": ""PL"",
+  ""latitude"": 52.0,
+  ""longitude"": 19.0
+}"
+google/gemini-3.1-pro-preview,no-CoT,52.0,19.0,208.692,PL,True,,stop,0.003806,1189,119,90,3.56,"```json
+{""country"": ""PL"", ""latitude"": 52.0, ""longitude"": 19.0}
+```"
+mistralai/mistral-medium-3-5,no-CoT,52.2,19.1,220.193,PL,True,,stop,0.0011385,634,25,0,7.35,"{""country"": ""PL"", ""latitude"": 52.2, ""longitude"": 19.1}"
+qwen/qwen3.5-122b-a10b,no-CoT,52.4297,13.0644,220.333,DE,True,,stop,0.00018746,473,31,0,1.32,"{""country"": ""DE"", ""latitude"": 52.4297, ""longitude"": 13.0644}"
+x-ai/grok-4.3,no-CoT,52.3,12.9,225.897,DE,True,,stop,0.0005934,592,22,0,1.03,"{""country"": ""DE"", ""latitude"": 52.3, ""longitude"": 12.9}"
+openai/gpt-5.5,CoT,49.2056,16.1834,271.043,CZ,True,,stop,0.014925,621,394,309,13.78,"{""reasoning"":""Right-hand driving with European white edge/center markings and Czech/Slovak-style white roadside delineators with dark caps/red reflectors point strongly to rural Czechia. The rolling agricultural landscape and tree-lined secondary road fit the Czech countryside, likely in Moravia/Bohemia."",""country"":""CZ"",""latitude"":49.2056,""longitude"":16.1834}"
+minimax/minimax-m3,CoT,53.72,12.45,333.617,DE,True,,stop,0.00100146,843,675,586,27.78,"{""reasoning"": ""Red-and-white striped Leitpfosten (German roadside delineators), right-hand traffic, and flat agricultural landscape with golden grain fields are highly characteristic of rural northern Germany (Mecklenburg-Vorpommern/Brandenburg). The deciduous tree-lined Landstraße with standard German asphalt road markings confirms this."", ""country"": ""DE"", ""latitude"": 53.72, ""longitude"": 12.45}"
+qwen/qwen3.5-35b-a3b,no-CoT,52.4567,10.8923,362.079,DE,True,,stop,0.000157,473,31,0,2.05,"{""country"": ""DE"", ""latitude"": 52.4567, ""longitude"": 10.8923}"
+x-ai/grok-4.3,CoT,51.85,10.55,377.191,DE,True,,stop,0.002439,676,772,699,6.08,"{
+  ""reasoning"": ""Right-hand traffic with European-style dashed center line, solid edge lines, and red/white reflector posts; flat agricultural landscape with pollarded deciduous trees and wheat fields indicates temperate western/central Europe in summer."",
+  ""country"": ""DE"",
+  ""latitude"": 51.85,
+  ""longitude"": 10.55
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,52.3456,10.1234,411.114,DE,True,,stop,0.00036468,473,31,0,3.37,"{""country"": ""DE"", ""latitude"": 52.3456, ""longitude"": 10.1234}"
+qwen/qwen3.5-27b,no-CoT,53.5511,9.9937,458.889,DE,True,,stop,0.000139035,473,30,0,7.28,"{""country"": ""DE"", ""latitude"": 53.5511, ""longitude"": 9.9937}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,51.94778823852539,8.625184059143066,509.453,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,50.844886779785156,8.343779563903809,541.332,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,50.1167,8.6833,541.617,DE,True,,stop,5.19e-05,474,30,0,8.91,"{""country"": ""DE"", ""latitude"": 50.1167, ""longitude"": 8.6833}"
+xiaomi/mimo-v2.5,no-CoT,51.2,6.8,640.744,DE,True,,stop,7.94976e-05,708,24,0,7.53,"{""country"": ""DE"", ""latitude"": 51.2, ""longitude"": 6.8}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,50.59779357910156,5.806204319000244,721.618,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,48.65,2.35,1027.434,FR,True,,stop,0.0004699576,787,1379,1315,22.12,"{""reasoning"": ""The white bollard with a red top is typical of French road markers, and right-hand traffic with temperate vegetation and rural fields strongly suggests France."", ""country"": ""FR"", ""latitude"": 48.65, ""longitude"": 2.35}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5935.713,,True,True,,,,,,8.54,
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,8349.392,US,True,,stop,0.0001137,634,31,0,1.77,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.67,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,13.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,9.44,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,12.95,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.79,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.93,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.2,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.2,

@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,43.877601008477,-95.112271444049,0.0,US,True,,,,,,,,"Windom, Cottonwood County, Minnesota, US"
+google/gemini-3.5-flash,CoT (effort=high),45.05,-93.38,189.447,US,True,,stop,0.0144345,1271,1392,1326,13.32,"{""reasoning"": ""The orange construction barrels, horizontal orange 'END ROAD WORK' sign, and lush green vegetation with conifers point to the northern United States, likely the Upper Midwest such as Minnesota."", ""country"": ""US"", ""latitude"": 45.05, ""longitude"": -93.38}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,45.46611404418945,-92.87879943847656,249.764,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,45.5240592956543,-92.9337387084961,251.306,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,44.8113,-91.4985,305.517,US,True,,stop,0.0028,1190,35,0,1.86,"```json
+{""country"": ""US"", ""latitude"": 44.8113, ""longitude"": -91.4985}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,44.512847900390625,-91.02243041992188,333.58,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,43.0731,-89.4012,469.331,US,True,,stop,0.005458,1271,243,162,16.88,"{
+  ""reasoning"": ""The orange construction barrels, 'END ROAD WORK' sign, and blue hospital sign are typical of the United States. The landscape and road conditions suggest a temperate region like the Midwest."",
+  ""country"": ""US"",
+  ""latitude"": 43.0731,
+  ""longitude"": -89.4012
+}"
+anthropic/claude-opus-4.8,no-CoT,43.0731,-89.4012,469.331,US,True,,stop,0.004105,666,31,0,2.5,"{""country"": ""US"", ""latitude"": 43.0731, ""longitude"": -89.4012}"
+moonshotai/kimi-k2.6,CoT,43.0,-89.0,502.932,US,True,,stop,0.017526888,682,5053,4981,192.52,"{""reasoning"": ""Orange-and-white construction barrels, yellow left-edge road line indicating right-hand traffic, and US-style highway signage confirm the United States; flat terrain with mixed deciduous-evergreen vegetation and summer climate point to the Midwest."", ""country"": ""US"", ""latitude"": 43.0, ""longitude"": -89.0}"
+anthropic/claude-opus-4.8,CoT,43.5,-88.5,533.173,US,True,,stop,0.006435,797,98,0,10.31,"{""reasoning"": ""Wide divided highway with orange construction barrels, blue interstate-style signage, flat terrain and Midwestern vegetation suggest rural USA; right-hand driving confirms North America."", ""country"": ""US"", ""latitude"": 43.5, ""longitude"": -88.5}"
+google/gemini-3.5-flash,CoT (effort=medium),44.2619,-88.4154,536.585,US,True,,stop,0.0103395,1271,937,868,14.95,"```json
+{""reasoning"": ""The orange construction barrels, road markings, and flat, grassy landscape with mixed deciduous and coniferous trees are characteristic of the US Midwest, specifically Wisconsin."", ""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -88.4154}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),44.4872,-88.0785,564.779,US,True,,stop,0.0021,1190,35,0,1.12,"```json
+{""country"": ""US"", ""latitude"": 44.4872, ""longitude"": -88.0785}
+```"
+minimax/minimax-m3,CoT,40.4842,-88.9937,629.436,US,True,,stop,0.00065586,843,387,299,18.01,"{""reasoning"": ""Orange-and-white MUTCD-style construction barrels, solid yellow edge line with white dashed lane markings, right-hand driving, and flat Midwestern terrain with deciduous trees indicate a US highway work zone. The blue sign shape and overall scene are consistent with an interstate in the American Midwest."", ""country"": ""US"", ""latitude"": 40.4842, ""longitude"": -88.9937}"
+mistralai/mistral-medium-3-5,no-CoT,41.8781,-87.6298,648.684,US,True,,stop,0.0011835,634,31,0,7.23,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.8781,-87.6298,648.684,US,True,,stop,0.000157,473,31,0,1.56,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.5-35b-a3b,no-CoT,42.963376,-85.668193,769.053,US,True,,stop,0.00017676,474,35,0,3.12,"{""country"": ""US"", ""latitude"": 42.963376, ""longitude"": -85.668193}"
+x-ai/grok-4.3,CoT,41.68,-85.0,860.081,US,True,,stop,0.002319,676,724,640,11.77,"{""reasoning"": ""Right-side driving, English 'ROAD CLOSED' sign, blue hospital 'H' sign, orange-white traffic barrels, single yellow centerline, and flat suburban/industrial landscape with deciduous trees/power lines indicate US Midwest. Building style, vegetation, and sky match northern Indiana/Ohio border region."", ""country"": ""US"", ""latitude"": 41.68, ""longitude"": -85.0}"
+google/gemini-3.5-flash,CoT (effort=low),42.7315,-84.4812,869.013,US,True,,stop,0.004356,1272,272,192,2.94,"```json
+{""reasoning"": ""The orange construction barrels, road markings, and flat, green landscape with mixed pine and deciduous trees are highly characteristic of the US Midwest, particularly Michigan, which is famous for its extensive road construction zones."", ""country"": ""US"", ""latitude"": 42.7315, ""longitude"": -84.4812}
+```"
+mistralai/mistral-small-2603,no-CoT,39.7684,-86.1581,870.632,US,True,,stop,0.000142125,634,31,0,3.04,"{""country"": ""US"", ""latitude"": 39.7684, ""longitude"": -86.1581}"
+qwen/qwen3.6-27b,no-CoT,42.3601,-83.0621,991.571,US,True,,stop,0.0001943,473,31,0,10.8,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -83.0621}"
+qwen/qwen3.5-27b,no-CoT,42.3314,-83.0458,993.641,US,True,,stop,0.0001805,474,31,0,2.94,"{""country"": ""US"", ""latitude"": 42.3314, ""longitude"": -83.0458}"
+qwen/qwen3.5-9b,no-CoT,42.3314,-83.0458,993.641,US,True,,stop,5.205e-05,474,31,0,3.15,"{""country"": ""US"", ""latitude"": 42.3314, ""longitude"": -83.0458}"
+x-ai/grok-4.3,no-CoT,42.314,-83.036,994.894,US,True,,stop,0.0005934,592,22,0,6.95,"{""country"": ""US"", ""latitude"": 42.314, ""longitude"": -83.036}"
+qwen/qwen3.5-122b-a10b,no-CoT,42.5803,-82.9105,998.101,US,True,,stop,0.00018746,473,31,0,1.0,"{""country"": ""US"", ""latitude"": 42.5803, ""longitude"": -82.9105}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,40.15202331542969,-83.12138366699219,1072.453,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,39.89474105834961,-83.04448699951172,1091.375,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,39.88109588623047,-83.03695678710938,1092.653,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,43.3606,-80.3129,1191.122,CA,True,,stop,0.021135,621,601,516,19.91,"{""reasoning"":""Right-side driving, Ontario-style orange construction barrels and blue hospital wayfinding signs, with suburban divided-road layout and humid Great Lakes vegetation point to southern Ontario, Canada. The flat terrain and hospital signage make the Kitchener/Waterloo-Cambridge area a plausible best fit."",""country"":""CA"",""latitude"":43.3606,""longitude"":-80.3129}"
+openai/gpt-5.5,no-CoT,43.7265,-79.6472,1239.425,CA,True,,stop,0.00344,544,24,0,8.29,"{""country"":""CA"",""latitude"":43.7265,""longitude"":-79.6472}"
+xiaomi/mimo-v2.5,CoT,43.626,-79.654,1240.126,CA,True,,stop,0.0015081976,787,5087,4978,107.94,"{""reasoning"": ""The blue shield-shaped highway sign visible in the distance is characteristic of Ontario's 400-series highways (e.g., Highway 401 or 403), and the orange construction barrels, white-on-blue service sign, 'cobra head' streetlights, and flat, lush terrain with mixed vegetation strongly indicate the Greater Toronto Area in Southern Ontario."", ""country"": ""CA"", ""latitude"": 43.626, ""longitude"": -79.654}"
+google/gemma-4-31b-it,no-CoT,43.6532,-79.3832,1261.424,CA,True,,stop,6.718e-05,406,36,0,15.33,"```json
+{""country"": ""CA"", ""latitude"": 43.6532, ""longitude"": -79.3832}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,43.6532,-79.3832,1261.424,CA,True,,stop,0.0003322,473,31,0,5.78,"{""country"": ""CA"", ""latitude"": 43.6532, ""longitude"": -79.3832}"
+xiaomi/mimo-v2.5,no-CoT,45.3485,-75.7575,1536.995,CA,True,,stop,8.14576e-05,708,31,0,8.65,"{""country"": ""CA"", ""latitude"": 45.3485, ""longitude"": -75.7575}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10417.039,,True,True,,,,,,28.72,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.28,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.4,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.27,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.24,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.22,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.24,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,16.02,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.17,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.38,

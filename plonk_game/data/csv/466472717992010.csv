@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.599702073184,30.396605971751,0.0,TR,True,,,,,,,,"Celtikci, None, Burdur, TR"
+anthropic/claude-opus-4.8,CoT,37.75,30.55,21.484,TR,True,,stop,0.006435,797,98,0,10.76,"{""reasoning"": ""Dry mountainous terrain with pine and poplar trees, Mediterranean climate, right-hand traffic, and chevron sign style suggest interior Turkey along a divided highway."", ""country"": ""TR"", ""latitude"": 37.75, ""longitude"": 30.55}"
+anthropic/claude-opus-4.8,no-CoT,37.7648,30.5566,23.136,TR,True,,stop,0.00413,666,32,0,10.19,"{""country"": ""TR"", ""latitude"": 37.7648, ""longitude"": 30.5566}"
+google/gemini-3.1-pro-preview,no-CoT,39.5,31.0,217.719,TR,True,,stop,0.004994,1189,218,189,26.87,"```json
+{""country"": ""TR"", ""latitude"": 39.5, ""longitude"": 31.0}
+```"
+google/gemini-3.1-pro-preview,CoT,39.5,31.5,232.064,TR,True,,stop,0.005302,1271,230,153,4.85,"{
+  ""reasoning"": ""The red and white chevron sign, road infrastructure, and arid mountainous landscape with pine trees are highly characteristic of Turkey. The divided highway style is typical of major routes in the Anatolian region."",
+  ""country"": ""TR"",
+  ""latitude"": 39.5,
+  ""longitude"": 31.5
+}"
+google/gemma-4-31b-it,no-CoT,39.1234,32.4567,246.904,TR,True,,stop,5.772e-05,408,36,0,8.07,"```json
+{""country"": ""TR"", ""latitude"": 39.1234, ""longitude"": 32.4567}
+```"
+moonshotai/kimi-k2.6,no-CoT,39.5,32.0,253.151,TR,True,,stop,0.000266472,603,23,0,7.89,"{""country"": ""TR"", ""latitude"": 39.5, ""longitude"": 32.0}"
+moonshotai/kimi-k2.6,CoT,39.8,32.5,305.228,TR,True,,stop,0.027861255,681,7617,7577,96.52,"{""reasoning"": ""Right-hand traffic, European-style red arrow signage, metal guardrails, and semi-arid rocky hills with scattered pines are characteristic of Turkish state highways in central Anatolia."", ""country"": ""TR"", ""latitude"": 39.8, ""longitude"": 32.5}"
+google/gemini-3.5-flash,CoT (effort=low),40.3521,30.6125,306.621,TR,True,,stop,0.0049935,1271,343,271,4.33,"{""reasoning"": ""The red-and-white chevron sign, solar-powered warning light, guardrail style, and dry mountainous landscape with mixed pine and deciduous trees are highly characteristic of highways in Turkey."", ""country"": ""TR"", ""latitude"": 40.3521, ""longitude"": 30.6125}"
+openai/gpt-5.5,no-CoT,39.8796,32.5948,317.178,TR,True,,stop,0.00341,544,23,0,1.41,"{""country"":""TR"",""latitude"":39.8796,""longitude"":32.5948}"
+google/gemini-3.5-flash,CoT (effort=medium),40.7315,31.5242,361.544,TR,True,,stop,0.0081885,1271,698,622,9.74,"```json
+{""reasoning"": ""The red-and-white chevron sign, road infrastructure, and mountainous terrain with a mix of pine and deciduous trees are highly characteristic of the Bolu mountain pass region in Turkey."", ""country"": ""TR"", ""latitude"": 40.7315, ""longitude"": 31.5242}
+```"
+google/gemini-3.5-flash,CoT (effort=high),40.735,32.252,383.546,TR,True,,stop,0.0116715,1271,1085,1014,8.8,"{""reasoning"": ""The red-and-white chevron sign, high-quality divided highway, and specific mix of pine-covered hills and dry valley vegetation are highly characteristic of Turkey's Anatolian highways."", ""country"": ""TR"", ""latitude"": 40.735, ""longitude"": 32.252}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),40.7425,32.2458,384.078,TR,True,,stop,0.0021,1190,35,0,8.0,"```json
+{""country"": ""TR"", ""latitude"": 40.7425, ""longitude"": 32.2458}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,41.05805969238281,32.43246078491211,422.508,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.067867279052734,32.44673538208008,424.004,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.09652328491211,32.507896423339844,429.085,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,37.0746,37.3847,620.416,TR,True,,stop,0.00022488,752,25,0,6.95,"{""country"": ""TR"", ""latitude"": 37.0746, ""longitude"": 37.3847}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,41.6227912902832,24.140155792236328,697.77,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,41.62412643432617,23.598041534423828,734.052,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,39.7296,39.4921,824.008,TR,True,,stop,0.018285,621,506,424,39.08,"{""reasoning"":""Right-hand divided highway with Turkish-style red/white chevron boards, guardrails, and dry Anatolian mountain-valley landscape with poplars strongly suggest eastern/central Turkey. The broad upgraded highway and terrain fit the D100/E80 corridor near Erzincan."",""country"":""TR"",""latitude"":39.7296,""longitude"":39.4921}"
+mistralai/mistral-small-2603,CoT,46.68,7.88,2102.653,CH,True,,stop,0.00045804,716,696,748,11.62,"{""reasoning"": ""Red-and-white triangular warning sign and right-hand traffic indicate Europe; rocky, hilly terrain with coniferous trees is characteristic of the Swiss Alps."", ""country"": ""CH"", ""latitude"": 46.68, ""longitude"": 7.88}"
+qwen/qwen3.6-27b,no-CoT,42.4505,2.3156,2439.189,ES,True,,stop,0.0001923,473,30,0,18.02,"{""country"": ""ES"", ""latitude"": 42.4505, ""longitude"": 2.3156}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.6512,0.8934,2553.735,ES,True,,stop,0.000160425,473,30,0,1.95,"{""country"": ""ES"", ""latitude"": 41.6512, ""longitude"": 0.8934}"
+qwen/qwen3.5-27b,no-CoT,42.6458,0.0989,2621.596,ES,True,,stop,0.0002139,473,30,0,11.8,"{""country"": ""ES"", ""latitude"": 42.6458, ""longitude"": 0.0989}"
+qwen/qwen3.6-27b,CoT,41.665,-1.015,2712.266,ES,True,,stop,0.0127931,553,6328,1,215.33,"{""reasoning"": ""The landscape features dry, yellowish-brown hills with Aleppo pines and a line of bare poplars along the right side, characteristic of the Ebro Valley in Spain. The road is the A-2 (Autovía del Nordeste) curving right near Calatayud, with the Ebro river to the south."", ""country"": ""ES"", ""latitude"": 41.665, ""longitude"": -1.015}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.40843963623047,-1.1767845153808594,2726.33,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,42.15,-1.75,2772.539,ES,True,,stop,0.0005934,592,22,0,0.97,"{""country"": ""ES"", ""latitude"": 42.15, ""longitude"": -1.75}"
+qwen/qwen3.5-122b-a10b,no-CoT,41.6526,-1.9645,2791.157,ES,True,,stop,0.00018538,473,30,0,2.85,"{""country"": ""ES"", ""latitude"": 41.6526, ""longitude"": -1.9645}"
+xiaomi/mimo-v2.5,no-CoT,42.45,-2.45,2829.987,ES,True,,stop,8.00576e-05,708,26,0,4.65,"{""country"": ""ES"", ""latitude"": 42.45, ""longitude"": -2.45}"
+qwen/qwen3.5-397b-a17b,CoT,40.53,-3.3,2909.588,ES,True,,stop,0.0152502,553,4144,4059,186.79,"{
+""reasoning"": ""The red-and-white chevron sign and solar-powered monitoring pole are standard European infrastructure, while the reddish soil, dry scrubland, and scattered pine trees are highly characteristic of the central Spanish plateau (Meseta)."",
+""country"": ""ES"",
+""latitude"": 40.53,
+""longitude"": -3.30
+}"
+x-ai/grok-4.3,CoT,40.12,-3.85,2960.122,ES,True,,stop,0.002199,676,676,602,8.66,"{""reasoning"": ""Right-hand traffic with red/white chevron alignment sign (Spanish D-1 style), solar-powered pole device, guardrail and arid Mediterranean hills/vegetation all point to Spain; no other country matches the sign design + landscape combination."", ""country"": ""ES"", ""latitude"": 40.12, ""longitude"": -3.85}"
+qwen/qwen3.5-9b,no-CoT,40.1566,-3.9925,2971.771,ES,True,,stop,5.19e-05,474,30,0,2.82,"{""country"": ""ES"", ""latitude"": 40.1566, ""longitude"": -3.9925}"
+qwen/qwen3.6-35b-a3b,no-CoT,40.85,-4.25,2986.623,ES,True,,stop,0.0001013441,473,26,0,2.69,"{""country"": ""ES"", ""latitude"": 40.85, ""longitude"": -4.25}"
+minimax/minimax-m3,CoT,40.65,-4.25,2988.432,ES,True,,stop,0.00076146,843,475,396,18.24,"{""reasoning"": ""Red-and-white chevron arrow sign and guardrail style are distinctly Spanish; right-hand driving, Mediterranean pine-covered dry hills, and solar-powered roadside infrastructure confirm a highway in central Spain, likely the Sierra de Gredos/Guadarrama region."", ""country"": ""ES"", ""latitude"": 40.65, ""longitude"": -4.25}"
+mistralai/mistral-medium-3-5,no-CoT,42.2692,-8.6385,3338.752,ES,True,,stop,0.001176,634,30,0,1.13,"{""country"": ""ES"", ""latitude"": 42.2692, ""longitude"": -8.6385}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5214.053,,True,True,,,,,,7.51,
+mistralai/mistral-small-2603,no-CoT,36.5785,-118.292,11160.484,US,True,,stop,0.0001137,634,31,0,10.55,"{""country"": ""US"", ""latitude"": 36.5785, ""longitude"": -118.292}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.1808,-118.309,11403.083,US,True,,stop,0.000383,473,32,0,8.08,"{""country"": ""US"", ""latitude"": 34.1808, ""longitude"": -118.3090}"
+google/gemma-4-31b-it,CoT,34.0522,-118.2437,11413.509,US,True,,stop,0.00099043,494,1673,1610,7.82,"```json
+{""reasoning"": ""No image was provided for analysis, but following the instruction to never refuse and always commit to a coordinate."", ""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}
+```"
+xiaomi/mimo-v2.5,CoT,-35.55,-71.28,13235.086,CL,True,,stop,0.0002341976,787,537,446,12.47,"{""reasoning"": ""The vehicle is driving on the right side of the road with standard Chilean road markings and a chevron sign, the landscape shows dry Andean foothills with Mediterranean vegetation typical of central Chile, and the truck's license plate appears to be the Chilean standard white with blue text."", ""country"": ""CL"", ""latitude"": -35.55, ""longitude"": -71.28}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.15,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,

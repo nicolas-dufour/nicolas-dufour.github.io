@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,69.316973699968,88.208032777884,0.0,RU,True,,,,,,,,"Norilsk, None, Krasnoyarskiy, RU"
+google/gemini-3.1-pro-preview,no-CoT,69.333,88.216,1.809,RU,True,,stop,0.004624,1190,187,154,10.89,"```json
+{""country"": ""RU"", ""latitude"": 69.333, ""longitude"": 88.216}
+```"
+xiaomi/mimo-v2.5,no-CoT,69.349,88.201,3.572,RU,True,,stop,8.08976e-05,708,29,0,16.66,"{""country"": ""RU"", ""latitude"": 69.349, ""longitude"": 88.201}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),69.3495,88.1985,3.636,RU,True,,stop,0.0021,1190,35,0,1.08,"```json
+{""country"": ""RU"", ""latitude"": 69.3495, ""longitude"": 88.1985}
+```"
+moonshotai/kimi-k2.6,CoT,69.35,88.2,3.686,RU,True,,stop,0.016517655,681,4466,4857,43.72,"{""reasoning"": ""Soviet-era apartment blocks and industrial buildings in a stark, vegetation-free landscape with dark rolling hills are characteristic of Russia's remote Arctic mining centers like Norilsk; the road markings and vehicle type are consistent with the Russian Federation."", ""country"": ""RU"", ""latitude"": 69.35, ""longitude"": 88.2}"
+xiaomi/mimo-v2.5,CoT,69.35,88.18,3.834,RU,True,,stop,0.0001605576,787,274,191,3.66,"{
+""reasoning"": ""The landscape features stark, treeless terrain with Soviet-style apartment blocks and Lada vehicles, strongly pointing to a remote Siberian mining city like Norilsk; the spoon sculpture is a local landmark often found in such northern industrial towns."",
+""country"": ""RU"",
+""latitude"": 69.35,
+""longitude"": 88.18
+}"
+moonshotai/kimi-k2.6,no-CoT,69.3541,88.2073,4.128,RU,True,,stop,0.00051939,602,25,0,1.79,"{""country"": ""RU"", ""latitude"": 69.3541, ""longitude"": 88.2073}"
+x-ai/grok-4.3,CoT,69.355,88.19,4.287,RU,True,,stop,0.002159,676,660,583,6.25,"{
+  ""reasoning"": ""Soviet-era panel buildings, barren rocky hills, industrial containers, and right-hand traffic with a white SUV match a remote Russian Arctic industrial city; the specific blue/white color scheme and layout are characteristic of Norilsk."",
+  ""country"": ""RU"",
+  ""latitude"": 69.355,
+  ""longitude"": 88.19
+}"
+google/gemini-3.1-pro-preview,CoT,69.3558,88.1893,4.379,RU,True,,stop,0.005782,1271,270,200,5.41,"{
+  ""reasoning"": ""The Soviet-era architecture, barren hills, and desolate industrial atmosphere strongly suggest a remote northern Russian city like Norilsk."",
+  ""country"": ""RU"",
+  ""latitude"": 69.3558,
+  ""longitude"": 88.1893
+}"
+openai/gpt-5.5,no-CoT,69.3578,88.1893,4.599,RU,True,,stop,0.00341,544,23,0,2.93,"{""country"":""RU"",""latitude"":69.3578,""longitude"":88.1893}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,66.15813446044922,75.4501953125,640.167,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,63.030704498291016,79.4355239868164,800.67,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,67.468,64.083,1002.001,RU,True,,stop,0.0005934,592,22,0,0.92,"{""country"": ""RU"", ""latitude"": 67.468, ""longitude"": 64.083}"
+minimax/minimax-m3,CoT,71.65,128.87,1502.352,RU,True,,stop,0.00073986,843,457,385,13.36,"{""reasoning"": ""Soviet-era panel apartment buildings painted in distinctive bright blue/white colors, treeless tundra hills, and barren Arctic landscape strongly indicate a far northern Russian settlement, most consistent with Tiksi in Yakutia."", ""country"": ""RU"", ""latitude"": 71.65, ""longitude"": 128.87}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,59.35478973388672,62.022518157958984,1655.085,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,69.3187,33.7125,2069.485,RU,True,,stop,8.816e-05,473,31,0,3.54,"{""country"": ""RU"", ""latitude"": 69.3187, ""longitude"": 33.7125}"
+qwen/qwen3.5-35b-a3b,no-CoT,69.3558,33.0928,2089.576,RU,True,,stop,9.736e-05,474,31,0,2.66,"{""country"": ""RU"", ""latitude"": 69.3558, ""longitude"": 33.0928}"
+qwen/qwen3.5-397b-a17b,no-CoT,69.3558,33.0545,2090.926,RU,True,,stop,0.00036468,473,31,0,2.21,"{""country"": ""RU"", ""latitude"": 69.3558, ""longitude"": 33.0545}"
+openai/gpt-5.5,CoT,68.9707,33.0746,2109.28,RU,True,,stop,0.014685,621,386,296,12.27,"{""reasoning"":""Bleak subarctic Soviet-era industrial architecture, treeless rocky hills, wide right-driving roadway, and overcast northern climate point strongly to the Russian Arctic, especially Murmansk on the Kola Peninsula. The hilly industrial urban setting fits Murmansk better than flatter Arctic cities like Norilsk."",""country"":""RU"",""latitude"":68.9707,""longitude"":33.0746}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,50.78297805786133,101.11172485351562,2171.079,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,67.55,33.38,2174.037,RU,True,,stop,0.000152,473,27,0,1.21,"{""country"": ""RU"", ""latitude"": 67.55, ""longitude"": 33.38}"
+google/gemini-3.5-flash,CoT (effort=medium),69.4112,30.2204,2187.43,RU,True,,stop,0.0095205,1271,846,767,7.66,"```json
+{""reasoning"": ""The barren, rocky hills combined with Soviet-style architecture and subarctic climate are highly characteristic of the Kola Peninsula in Murmansk Oblast, Russia, specifically around the industrial town of Nikel."", ""country"": ""RU"", ""latitude"": 69.4112, ""longitude"": 30.2204}
+```"
+google/gemini-3.5-flash,CoT (effort=low),69.4112,30.2155,2187.6,RU,True,,stop,0.003933,1272,225,158,9.04,"{""reasoning"": ""The barren, dark hills combined with Soviet-era industrial and administrative architecture are highly characteristic of the mining town of Nikel in Murmansk Oblast, Russia."", ""country"": ""RU"", ""latitude"": 69.4112, ""longitude"": 30.2155}"
+google/gemini-3.5-flash,CoT (effort=high),69.4065,30.2212,2187.641,RU,True,,stop,0.037152,1272,3916,3836,20.37,"{""reasoning"": ""The barren, rocky hills and Soviet-style architecture are highly characteristic of the Kola Peninsula in Murmansk Oblast, Russia, specifically the industrial town of Nikel, which is surrounded by such deforested, polluted hills."", ""country"": ""RU"", ""latitude"": 69.4065, ""longitude"": 30.2212}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,51.03647994995117,104.4284896850586,2205.218,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,66.9333,143.2167,2216.158,RU,True,,stop,0.0002187,473,32,0,2.55,"{""country"": ""RU"", ""latitude"": 66.9333, ""longitude"": 143.2167}"
+qwen/qwen3.5-397b-a17b,CoT,67.1312,32.431,2232.885,RU,True,,stop,0.0198238,553,5450,5319,83.97,"{""reasoning"": ""The image displays a Soviet-style townscape featuring a blue building (likely a kindergarten or administrative block) adjacent to a larger white building (likely a school), set against barren, rocky hills characteristic of the Kola Peninsula. This specific arrangement of buildings matches Zheleznodorzhnaya Street in Kandalaksha, Murmansk Oblast, Russia, where the blue Kindergarten No. 1 sits next to the white School No. 1."", ""country"": ""RU"", ""latitude"": 67.1312, ""longitude"": 32.4310}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,50.6967658996582,104.40042877197266,2240.82,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,69.6492,18.9553,2554.872,NO,True,,stop,0.000142125,634,31,0,2.72,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+minimax/minimax-m3,no-CoT,62.5,148.0,2694.361,RU,True,,stop,0.00047322,767,251,269,15.13,"{""country"": ""RU"", ""latitude"": 62.5, ""longitude"": 148.0}"
+qwen/qwen3.6-35b-a3b,CoT,43.238,76.886,2971.596,KZ,True,,stop,0.0059597941,553,6082,5968,84.74,"```json
+{
+  ""reasoning"": ""The image features left-hand traffic, Soviet-era architecture, and a landscape with arid hills typical of the Zhetysu Alatau range in the background. The long white license plate on the Toyota Land Cruiser and the Cyrillic-style signage on the white building strongly point to Kazakhstan, specifically the Almaty region."",
+  ""country"": ""KZ"",
+  ""latitude"": 43.238,
+  ""longitude"": 76.886
+}
+```"
+google/gemma-4-31b-it,no-CoT,68.285,168.951,3013.844,RU,True,,stop,6.678e-05,406,35,0,9.62,"```json
+{""country"": ""RU"", ""latitude"": 68.285, ""longitude"": 168.951}
+```"
+mistralai/mistral-medium-3-5,no-CoT,59.5606,150.8038,3030.893,RU,True,,stop,0.0011985,634,33,0,1.12,"{""country"": ""RU"", ""latitude"": 59.5606, ""longitude"": 150.8038}"
+qwen/qwen3.6-27b,no-CoT,53.2444,158.6561,3879.171,RU,True,,stop,0.0001963,473,32,0,26.08,"{""country"": ""RU"", ""latitude"": 53.2444, ""longitude"": 158.6561}"
+anthropic/claude-opus-4.8,no-CoT,53.0241,158.6432,3898.616,RU,True,,stop,0.00413,666,32,0,2.44,"{""country"": ""RU"", ""latitude"": 53.0241, ""longitude"": 158.6432}"
+anthropic/claude-opus-4.8,CoT,53.024,158.65,3898.888,RU,True,,stop,0.006735,797,110,0,9.51,"{""reasoning"": ""Treeless rolling hills, Soviet-style industrial buildings, rusty metal cargo containers, and overcast cold climate suggest a Russian Far East port town like Petropavlovsk-Kamchatsky."", ""country"": ""RU"", ""latitude"": 53.024, ""longitude"": 158.65}"
+qwen/qwen3.6-27b,CoT,53.0225,158.653,3899.14,RU,True,,stop,0.0093131,553,4588,1,200.69,"{""reasoning"": ""The image shows the distinctive blue facade of School No. 15 (Shkola No. 15) in Petropavlovsk-Kamchatsky, Russia, flanked by a white building to the south and a building with red accents to the north. The barren, rolling hills in the background are characteristic of the volcanic landscape surrounding the city (likely Avachinsky volcano), and the Soviet-era architecture confirms the location."", ""country"": ""RU"", ""latitude"": 53.0225, ""longitude"": 158.653}"
+qwen/qwen3.5-27b,no-CoT,64.1355,-21.8954,4216.474,IS,True,,stop,0.000140595,473,31,0,1.85,"{""country"": ""IS"", ""latitude"": 64.1355, ""longitude"": -21.8954}"
+mistralai/mistral-small-2603,CoT,26.9124,75.7873,4784.405,IN,True,,stop,0.00044964,716,682,780,12.41,"{""reasoning"": ""Left-hand traffic and Indian-style license plates indicate India. Semi-arid terrain and modern/traditional architecture align with western/northern Indian urban outskirts."", ""country"": ""IN"", ""latitude"": 26.9124, ""longitude"": 75.7873}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9937.176,,True,,stop,5.334e-05,406,27,0,8.25,"{""country---"": ""unknown"", ""latitude"": 0.-0, ""longitude"": 0.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.33,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.23,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,

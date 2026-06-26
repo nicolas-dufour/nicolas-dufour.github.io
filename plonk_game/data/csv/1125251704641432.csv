@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-0.042509645862919,109.48045541292,0.0,ID,True,,,,,,,,"Pontianak, None, West Kalimantan, ID"
+mistralai/mistral-medium-3-5,no-CoT,-0.0263,109.3258,17.291,ID,True,,stop,0.0014115,786,31,0,1.11,"{""country"": ""ID"", ""latitude"": -0.0263, ""longitude"": 109.3258}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-2.604682445526123,111.60863494873047,370.309,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,-2.5,105.5,520.043,ID,True,,stop,9.54576e-05,820,25,0,2.24,"{""country"": ""ID"", ""latitude"": -2.5, ""longitude"": 105.5}"
+google/gemini-3.1-pro-preview,no-CoT,-2.9833,104.7667,617.581,ID,True,,stop,0.002872,1226,35,0,12.5,"```json
+{""country"": ""ID"", ""latitude"": -2.9833, ""longitude"": 104.7667}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-1.6012,103.6014,676.222,ID,True,,stop,0.0120765,1307,1124,1053,12.92,"{""reasoning"": ""The left-hand driving, tropical vegetation, concrete utility poles, and 'CAKRA' signage indicate Indonesia, likely in Sumatra where such rural two-lane roads are common."", ""country"": ""ID"", ""latitude"": -1.6012, ""longitude"": 103.6014}"
+google/gemini-3.5-flash,CoT (effort=medium),-1.6154,103.5921,677.626,ID,True,,stop,0.0097095,1307,861,773,8.44,"{""reasoning"": ""The left-hand traffic, tropical vegetation, concrete utility poles, and a local 'angkot' minivan on the left strongly indicate Indonesia. The sign 'CAKRA' and the specific style of the vehicles and road markings point to a rural highway in Sumatra."", ""country"": ""ID"", ""latitude"": -1.6154, ""longitude"": 103.5921}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-3.4398,114.8304,704.388,ID,True,,stop,0.0021525,1225,35,0,2.95,"```json
+{""country"": ""ID"", ""latitude"": -3.4398, ""longitude"": 114.8304}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,1.1934577226638794,103.08670043945312,724.066,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,-6.1751,106.865,741.117,ID,True,,stop,0.0007359,704,23,0,0.91,"{""country"": ""ID"", ""latitude"": -6.1751, ""longitude"": 106.865}"
+google/gemma-4-26b-a4b-it,no-CoT,-6.2088,106.8456,745.406,ID own,True,,stop,5.508e-05,404,32,0,2.06,"{""country"": ""ID own"", ""latitude"": -6.2088, ""longitude"": 106.8456}"
+qwen/qwen3.6-35b-a3b,no-CoT,-6.2088,106.8456,745.406,ID,True,,stop,0.00011875,585,31,0,3.37,"{""country"": ""ID"", ""latitude"": -6.2088, ""longitude"": 106.8456}"
+qwen/qwen3.5-397b-a17b,CoT,-5.366,105.188,759.962,ID,True,,stop,0.0116946,665,3151,3020,101.88,"{
+""reasoning"": ""The image shows left-hand traffic, tropical vegetation (coconut palms, bananas), and vehicle types specific to Indonesia: a Toyota Avanza/Daihatsu Xenia (black SUV) and a modified Mitsubishi Colt T120SS pickup (blue vehicle on left) often used as rural public transport. The sign 'CAKRA' is a common Indonesian name, and the license plate style on the black car resembles the newer Indonesian black plates."",
+""country"": ""ID"",
+""latitude"": -5.366,
+""longitude"": 105.188
+}"
+google/gemini-3.1-pro-preview,CoT,-5.4254,105.2588,760.236,ID,True,,stop,0.006094,1307,290,201,11.47,"{
+  ""reasoning"": ""Left-hand driving, tropical vegetation, and the blue 'angkot' minibus strongly indicate Indonesia. The sign 'CAKRA' and general road infrastructure are typical of Indonesian provincial roads, likely in Sumatra or Java."",
+  ""country"": ""ID"",
+  ""latitude"": -5.4254,
+  ""longitude"": 105.2588
+}"
+moonshotai/kimi-k2.6,CoT,-6.8923,109.6745,761.966,ID,True,,stop,0.015843456,834,4546,4476,226.55,"{""reasoning"": ""The blue angkot minivan, left-hand traffic, and Latin-script 'CAKRA' sign are unmistakably Indonesian; the flat tropical rural road and vegetation point to rural Central Java."", ""country"": ""ID"", ""latitude"": -6.8923, ""longitude"": 109.6745}"
+qwen/qwen3.5-9b,no-CoT,-5.0833,104.5,787.436,ID,True,,stop,6.28e-05,586,28,0,1.16,"{""country"": ""ID"", ""latitude"": -5.0833, ""longitude"": 104.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-1.3980746269226074,102.49040985107422,791.66,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,-6.9175,107.6191,791.855,ID,True,,stop,0.00043188,585,31,0,4.02,"{""country"": ""ID"", ""latitude"": -6.9175, ""longitude"": 107.6191}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-1.4206140041351318,102.40531921386719,801.423,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,-7.0065,107.5264,804.119,ID,True,,stop,0.00411,678,24,0,2.95,"{""country"":""ID"",""latitude"":-7.0065,""longitude"":107.5264}"
+anthropic/claude-opus-4.8,CoT,-0.5,117.0,837.67,ID,True,,stop,0.00772,949,119,0,9.68,"{""reasoning"": ""Indonesian signage ('CAKRA'), left-hand traffic, tropical banana/palm vegetation, and an angkot minivan plus Toyota Avanza indicate rural Indonesia, likely Sumatra/Kalimantan."", ""country"": ""ID"", ""latitude"": -0.5, ""longitude"": 117.0}"
+anthropic/claude-opus-4.8,no-CoT,-0.5,117.0,837.67,ID,True,,stop,0.00484,818,30,0,2.35,"{""country"": ""ID"", ""latitude"": -0.5, ""longitude"": 117.0}"
+xiaomi/mimo-v2.5,CoT,-7.53,110.45,839.482,ID,True,,stop,0.0010848376,899,3519,3408,42.2,"{""reasoning"": ""The image displays characteristic Indonesian elements: left-hand traffic, a Toyota Avanza/Daihatsu Xenia (ubiquitous in Indonesia), and a 'Pertamina' logo next to a 'Cakra' sign, indicating a local business. The tropical vegetation, narrow asphalt road, and architectural style are typical of rural or semi-rural Java, particularly Central or East Java."", ""country"": ""ID"", ""latitude"": -7.53, ""longitude"": 110.45}"
+minimax/minimax-m3,CoT,-7.55,111.45,862.882,ID,True,,stop,0.00069306,995,380,305,17.15,"{""reasoning"": ""The 'CAKRA' cigarette advertisement is a well-known Indonesian brand, vehicles drive on the left, tropical vegetation (palm and banana trees) and rural concrete/tin-roof architecture are characteristic of Java, Indonesia."", ""country"": ""ID"", ""latitude"": -7.55, ""longitude"": 111.45}"
+mistralai/mistral-small-2603,no-CoT,-7.7956,110.3695,867.719,ID,True,,stop,0.0001365,786,31,0,4.2,"{""country"": ""ID"", ""latitude"": -7.7956, ""longitude"": 110.3695}"
+qwen/qwen3.5-122b-a10b,no-CoT,-7.7956,110.3695,867.719,ID,True,,stop,0.0003588,585,39,0,1.88,"{
+  ""country"": ""ID"",
+  ""latitude"": -7.7956,
+  ""longitude"": 110.3695
+}"
+minimax/minimax-m3,no-CoT,-7.2456,112.7378,878.636,ID,True,,stop,0.00025578,855,25,0,1.76,"{""country"": ""ID"", ""latitude"": -7.2456, ""longitude"": 112.7378}"
+qwen/qwen3.5-27b,no-CoT,-7.2575,112.7521,880.493,ID,True,,stop,0.00022491,585,31,0,1.88,"{""country"": ""ID"", ""latitude"": -7.2575, ""longitude"": 112.7521}"
+qwen/qwen3.6-27b,no-CoT,-7.2575,112.7521,880.493,ID,True,,stop,0.0002279,585,31,0,10.64,"{""country"": ""ID"", ""latitude"": -7.2575, ""longitude"": 112.7521}"
+qwen/qwen3.5-35b-a3b,no-CoT,-7.2575,112.753,880.534,ID,True,,stop,0.00011204,586,30,0,1.72,"{""country"": ""ID"", ""latitude"": -7.2575, ""longitude"": 112.753}"
+moonshotai/kimi-k2.6,no-CoT,-0.7893,100.6509,985.274,ID,True,,stop,0.0003249,755,25,0,25.81,"{""country"": ""ID"", ""latitude"": -0.7893, ""longitude"": 100.6509}"
+google/gemini-3.5-flash,CoT (effort=low),-0.9154,100.4605,1007.614,ID,True,,stop,0.004977,1308,335,252,3.08,"```json
+{""reasoning"": ""The presence of a blue 'angkot' minivan, left-hand traffic, tropical vegetation, and a sign reading 'CAKRA' strongly indicates Indonesia, specifically Sumatra where these blue passenger vans are highly common."", ""country"": ""ID"", ""latitude"": -0.9154, ""longitude"": 100.4605}
+```"
+x-ai/grok-4.3,CoT,-8.4095,115.1889,1124.978,ID,True,,stop,0.0027065,788,823,757,18.86,"{""reasoning"": ""Left-hand traffic, three-wheeler bajaj, banana/palm vegetation, overhead lines and rural architecture match Indonesia; 'CAKRA' signage is consistent with local Indonesian business names."", ""country"": ""ID"", ""latitude"": -8.4095, ""longitude"": 115.1889}"
+google/gemma-4-31b-it,no-CoT,-8.4095,115.1889,1124.978,ID,True,,stop,6.692e-05,404,36,0,9.58,"```json
+{""country"": ""ID"", ""latitude"": -8.4095, ""longitude"": 115.1889}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-8.596308708190918,115.26235961914062,1146.685,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-8.598053932189941,115.26194763183594,1146.82,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-8.5835,116.1307,1201.939,ID,True,,stop,0.015625,755,395,309,10.0,"{""reasoning"":""Left-side driving, black Indonesian-style license plates, tropical vegetation, and the Indonesian word/name “CAKRA” strongly point to Indonesia. The rural roadside, palms/banana plants and Cakra/Cakranegara association make Lombok near Mataram the best fit."",""country"":""ID"",""latitude"":-8.5835,""longitude"":116.1307}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,21.66,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.76,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.57,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.31,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,

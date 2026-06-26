@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-11.141179909548176,29.59315186679337,0.0,ZM,True,,,,,,,,"Samfya, None, Luapula, ZM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-11.368863105773926,29.359310150146484,35.935,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-10.518126487731934,29.755390167236328,71.51,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-10.444523811340332,29.786989212036133,80.306,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,-13.1367,27.8546,291.464,ZM,True,,stop,0.0002523,585,32,0,8.14,"{""country"": ""ZM"", ""latitude"": -13.1367, ""longitude"": 27.8546}"
+openai/gpt-5.5,no-CoT,-14.4369,28.4512,386.817,ZM,True,,stop,0.00411,678,24,0,1.43,"{""country"":""ZM"",""latitude"":-14.4369,""longitude"":28.4512}"
+qwen/qwen3.5-9b,no-CoT,-15.8269,28.5286,533.584,ZW,True,,stop,6.325e-05,586,31,0,8.9,"{""country"": ""ZW"", ""latitude"": -15.8269, ""longitude"": 28.5286}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-16.16063690185547,30.461162567138672,565.958,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,-18.5,32.5,875.803,MZ,True,,stop,0.0002159,585,25,0,17.61,"{""country"": ""MZ"", ""latitude"": -18.5, ""longitude"": 32.5}"
+minimax/minimax-m3,no-CoT,-6.8,37.6,1002.989,TZ,True,,stop,0.00041082,919,161,178,12.67,"{""country"": ""TZ"", ""latitude"": -6.8, ""longitude"": 37.6}"
+qwen/qwen3.5-27b,no-CoT,-18.85,35.25,1050.348,MZ,True,,stop,0.000156195,585,27,0,2.78,"{""country"": ""MZ"", ""latitude"": -18.85, ""longitude"": 35.25}"
+google/gemma-4-31b-it,no-CoT,-2.3333,34.8333,1137.259,TZ,True,,stop,6.308e-05,404,35,0,5.97,"```json
+{""country"": ""TZ"", ""latitude"": -2.3333, ""longitude"": 34.8333}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,-6.7924,39.2083,1161.257,TZ,True,,stop,0.0001652,586,30,0,2.25,"{""country"": ""TZ"", ""latitude"": -6.7924, ""longitude"": 39.2083}"
+x-ai/grok-4.3,no-CoT,0.35,32.55,1318.882,UG,True,,stop,0.0007334,704,22,0,0.82,"{""country"": ""UG"", ""latitude"": 0.35, ""longitude"": 32.55}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-23.05992889404297,31.82198715209961,1346.21,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,-1.2921,36.8219,1355.091,KE,True,,stop,9.68576e-05,820,30,0,1.97,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-23.214378356933594,31.75204849243164,1361.836,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,1.8,32.3,1469.797,UG,True,,stop,0.007145,949,96,0,3.43,"{""reasoning"": ""Red laterite dirt road, savanna vegetation, tropical sky typical of sub-Saharan Africa; left-hand traffic suggests Uganda or similar East African country."", ""country"": ""UG"", ""latitude"": 1.8, ""longitude"": 32.3}"
+google/gemini-3.5-flash,CoT (effort=high),1.9523,31.5481,1471.893,UG,True,,stop,0.018432,1308,1830,1741,11.79,"```json
+{""reasoning"": ""The wide red dirt road, flat green savanna vegetation, and the distinctive blue circular registration/insurance stickers on the bottom-left of the windshield identify this as Uganda, captured by the Google Street View car in or near Murchison Falls National Park."", ""country"": ""UG"", ""latitude"": 1.9523, ""longitude"": 31.5481}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),2.2512,31.4825,1503.755,UG,True,,stop,0.0104385,1307,942,845,7.72,"```json
+{""reasoning"": ""The red dirt road, flat savanna vegetation, and safari-style vehicle ahead are characteristic of East Africa. The circular blue and yellow windshield stickers on the bottom-left are typical of Ugandan vehicle licensing and insurance decals, suggesting a location within a Ugandan national park such as Murchison Falls."", ""country"": ""UG"", ""latitude"": 2.2512, ""longitude"": 31.4825}
+```"
+openai/gpt-5.5,CoT,2.2447,31.5769,1504.526,UG,True,,stop,0.017515,755,458,376,12.94,"{""reasoning"":""The red laterite dirt road, lush savanna vegetation, and safari-vehicle windshield permit stickers point strongly to an East African national-park setting. Left-side road positioning and the landscape are most consistent with Uganda, especially the Murchison Falls/Paraa area."",""country"":""UG"",""latitude"":2.2447,""longitude"":31.5769}"
+google/gemini-3.5-flash,CoT (effort=low),2.3154,31.5422,1511.753,UG,True,,stop,0.0039585,1307,222,158,3.79,"{""reasoning"": ""The red dirt road, flat green savanna vegetation, left-hand traffic, and characteristic circular blue/yellow registration stickers on the windshield point to Uganda."", ""country"": ""UG"", ""latitude"": 2.3154, ""longitude"": 31.5422}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),2.3145,31.5682,1512.067,UG,True,,stop,0.0021435,1225,34,0,25.02,"```json
+{""country"": ""UG"", ""latitude"": 2.3145, ""longitude"": 31.5682}
+```"
+anthropic/claude-opus-4.8,no-CoT,2.2,32.5,1517.91,UG,True,,stop,0.00484,818,30,0,9.02,"{""country"": ""UG"", ""latitude"": 2.2, ""longitude"": 32.5}"
+google/gemini-3.1-pro-preview,no-CoT,2.2345,32.5678,1523.262,UG,True,,stop,0.00533,1225,240,206,5.12,"```json
+{""country"": ""UG"", ""latitude"": 2.2345, ""longitude"": 32.5678}
+```"
+x-ai/grok-4.3,CoT,-0.0236,37.9062,1540.084,KE,True,,stop,0.002714,788,826,753,13.06,"{""reasoning"": ""Red laterite dirt road + savanna scrub/trees under equatorial blue sky with scattered cumulus, typical of East African rift highlands; left-side driving position and distant vehicle silhouette consistent with Kenya/Uganda rural roads."", ""country"": ""KE"", ""latitude"": -0.0236, ""longitude"": 37.9062}"
+google/gemini-3.1-pro-preview,CoT,2.7745,32.299,1576.038,UG,True,,stop,0.006274,1307,305,233,5.74,"{
+  ""reasoning"": ""The reddish dirt road and tropical savanna vegetation are typical of East Africa. The round vehicle tax/insurance stickers on the windshield are characteristic of Uganda."",
+  ""country"": ""UG"",
+  ""latitude"": 2.7745,
+  ""longitude"": 32.299
+}"
+moonshotai/kimi-k2.6,CoT,2.85,32.35,1585.358,UG,True,,stop,0.013519836,834,3868,3811,86.44,"{""reasoning"": ""The bright red laterite gravel road and flat tropical savannah with scattered acacia trees are characteristic of rural northern Uganda's district road network."", ""country"": ""UG"", ""latitude"": 2.85, ""longitude"": 32.35}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.7461,28.2293,1630.307,ZA,True,,stop,0.00011875,585,31,0,1.95,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.2293}"
+moonshotai/kimi-k2.6,no-CoT,7.5,30.0,2073.293,SS,True,,stop,0.00031428,755,23,0,1.55,"{""country"": ""SS"", ""latitude"": 7.5, ""longitude"": 30.0}"
+xiaomi/mimo-v2.5,CoT,9.0579,7.4951,3319.274,NG,True,,stop,0.0001622376,899,224,142,3.83,"{""reasoning"": ""The distinct red soil (laterite) and the mix of grassland with scattered trees are highly characteristic of savanna regions in West Africa. The combination of these landscape features with the visible vegetation types strongly suggests a location in Nigeria."", ""country"": ""NG"", ""latitude"": 9.0579, ""longitude"": 7.4951}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3496.219,,True,True,,,,,,13.03,
+minimax/minimax-m3,CoT,12.4,-1.5,4316.802,BF,True,,stop,0.00079182,997,459,459,15.51,"{""reasoning"": ""Red lateritic soil on an unpaved road, tropical savanna vegetation with scattered trees, and a typical West African minibus ahead strongly indicate the Sudano-Sahelian zone of West Africa, most likely Burkina Faso."", ""country"": ""BF"", ""latitude"": 12.4, ""longitude"": -1.5}"
+mistralai/mistral-small-2603,no-CoT,-22.9035,-47.0558,8173.573,BR,True,,stop,0.0001365,786,31,0,4.63,"{""country"": ""BR"", ""latitude"": -22.9035, ""longitude"": -47.0558}"
+mistralai/mistral-medium-3-5,no-CoT,-15.7801,-47.8822,8349.629,BR,True,,stop,0.0014115,786,31,0,1.13,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.8822}"
+qwen/qwen3.5-397b-a17b,no-CoT,-10.5,-54.0,9094.23,BR,True,,stop,0.000425,585,25,0,1.16,"{""country"": ""BR"", ""latitude"": -10.5, ""longitude"": -54.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.78,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.11,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.44,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.26,

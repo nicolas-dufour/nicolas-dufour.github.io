@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-11.427922748910213,25.2396606850738,0.0,CD,True,,,,,,,,"Kolwezi, None, Katanga, CD"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-11.826461791992188,25.889516830444336,83.507,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-11.827091217041016,25.897815704345703,84.311,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-12.148735046386719,26.067874908447266,120.628,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-11.6125,27.4122,237.596,CD,True,,stop,0.002121,1204,35,0,1.19,"```json
+{""country"": ""CD"", ""latitude"": -11.6125, ""longitude"": 27.4122}
+```"
+anthropic/claude-opus-4.8,no-CoT,-13.5,26.5,267.972,ZM,True,,stop,0.005625,970,31,0,8.19,"{""country"": ""ZM"", ""latitude"": -13.5, ""longitude"": 26.5}"
+anthropic/claude-opus-4.8,CoT,-13.5,27.5,336.611,ZM,True,,stop,0.008205,1101,108,0,10.48,"{""reasoning"": ""Sandy track through miombo woodland with sparse undergrowth, typical of Zambian/southern African dry forest in dry season; pale sandy soil and tree canopy structure suggest central African savanna woodland."", ""country"": ""ZM"", ""latitude"": -13.5, ""longitude"": 27.5}"
+google/gemini-3.1-pro-preview,CoT,-14.0,28.0,414.035,ZM,True,,stop,0.005128,1286,213,138,10.1,"{
+  ""reasoning"": ""The sandy dirt road, miombo-style woodland vegetation, and dark tree trunks suggest a savanna environment in southern or eastern Africa. The overall landscape is highly characteristic of rural Zambia."",
+  ""country"": ""ZM"",
+  ""latitude"": -14.0,
+  ""longitude"": 28.0
+}"
+google/gemini-3.5-flash,CoT (effort=high),-15.1234,26.0123,419.336,ZM,True,,stop,0.0129165,1285,1221,1152,26.31,"{""reasoning"": ""The sandy track and distinctive miombo woodland vegetation (broad-leafed deciduous trees with dark trunks) are highly characteristic of the savanna regions of Southern Africa, particularly Zambia."", ""country"": ""ZM"", ""latitude"": -15.1234, ""longitude"": 26.0123}"
+google/gemini-3.5-flash,CoT (effort=low),-15.1234,24.1234,428.301,ZM,True,,stop,0.004251,1286,258,187,2.84,"{""reasoning"": ""The sandy, light-colored dirt track and Miombo woodland vegetation are highly characteristic of western Zambia, particularly the sandy soils of the Barotse Floodplain region and surrounding woodlands."", ""country"": ""ZM"", ""latitude"": -15.1234, ""longitude"": 24.1234}"
+google/gemini-3.5-flash,CoT (effort=medium),-15.2743,23.1524,483.629,ZM,True,,stop,0.0118725,1285,1105,1034,11.77,"{""reasoning"": ""The white sandy road and dense Miombo woodland vegetation are highly characteristic of the Western Province of Zambia, particularly the sandy terrain around Mongu and the Barotse Floodplain margins."", ""country"": ""ZM"", ""latitude"": -15.2743, ""longitude"": 23.1524}"
+x-ai/grok-4.3,CoT,-15.42,28.35,556.919,ZM,True,,stop,0.0021315,900,537,459,5.51,"{""reasoning"": ""Unpaved laterite dirt track through open miombo/savanna woodland with broadleaf deciduous trees and lush green understory indicates southern/central Africa during wet season; no infrastructure or vehicles visible but vegetation and road style match rural Zambia/Zimbabwe bush."", ""country"": ""ZM"", ""latitude"": -15.42, ""longitude"": 28.35}"
+openai/gpt-5.5,CoT,-17.8679,25.1396,716.174,BW,True,,stop,0.01405,890,320,234,9.14,"{""reasoning"":""The sandy unpaved track through dense dry tropical savanna/miombo-like woodland suggests southern African safari terrain, with vegetation and pale Kalahari-type sand most consistent with northern Botswana. Lacking signage or vehicles, Chobe/Okavango-edge Botswana is the strongest fit."",""country"":""BW"",""latitude"":-17.8679,""longitude"":25.1396}"
+openai/gpt-5.5,no-CoT,-20.2098,23.3685,996.759,BW,True,,stop,0.004785,813,24,0,1.85,"{""country"":""BW"",""latitude"":-20.2098,""longitude"":23.3685}"
+moonshotai/kimi-k2.6,CoT,-6.2,36.0,1317.111,TZ,True,,stop,0.008694504,986,2454,2387,61.03,"{""reasoning"": ""Miombo woodland with red lateritic soils and flat terrain matches the East African plateau; the scattered tall trees with rounded crowns and lack of undergrowth indicate Tanzania's central miombo belt."", ""country"": ""TZ"", ""latitude"": -6.2, ""longitude"": 36.0}"
+moonshotai/kimi-k2.6,no-CoT,-6.5,37.0,1402.693,TZ,True,,stop,0.00077211,906,23,0,3.2,"{""country"": ""TZ"", ""latitude"": -6.5, ""longitude"": 37.0}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3063.531,,True,True,,,,,,13.31,
+google/gemini-3.1-pro-preview,no-CoT,12.8521,-15.5432,5247.775,SN,True,,stop,0.005912,1204,292,257,4.8,"```json
+{""country"": ""SN"", ""latitude"": 12.8521, ""longitude"": -15.5432}
+```"
+mistralai/mistral-small-2603,no-CoT,43.6109,3.8772,6491.718,FR,True,,stop,0.0001587,938,30,0,11.19,"{""country"": ""FR"", ""latitude"": 43.6109, ""longitude"": 3.8772}"
+mistralai/mistral-medium-3-5,no-CoT,21.1458,79.0882,6906.024,IN,True,,stop,0.0016395,938,31,0,1.73,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+xiaomi/mimo-v2.5,CoT,21.5,79.5,6961.742,IN,True,,stop,0.0002465176,1011,469,382,12.92,"{""reasoning"": ""The light-colored sandy road and deciduous forest vegetation are characteristic of the dry teak and sal forests found in Central India. The absence of distinctive signage and the specific ecological 'vibe' of the terrain strongly point toward the tribal forest belts of Maharashtra or Madhya Pradesh."", ""country"": ""IN"", ""latitude"": 21.5, ""longitude"": 79.5}"
+x-ai/grok-4.3,no-CoT,21.85,79.95,7020.673,IN,True,,stop,0.0008734,816,22,0,1.93,"{""country"": ""IN"", ""latitude"": 21.85, ""longitude"": 79.95}"
+minimax/minimax-m3,CoT,22.7,80.5,7113.271,IN,True,,stop,0.00074382,1149,381,352,21.36,"{""reasoning"": ""Sandy reddish soil, teak/sal deciduous tropical dry forest, flat terrain with a dirt forest road strongly suggests central India's tribal forest belt (MP/Chhattisgarh). The vegetation type and soil are characteristic of the Mandla-Bastar region during dry season."", ""country"": ""IN"", ""latitude"": 22.7, ""longitude"": 80.5}{""reasoning"": ""Sandy reddish soil, teak/sal deciduous tropical dry forest, flat terrain with a dirt forest road strongly suggests central India's tribal forest belt (MP/Chhattisgarh). The vegetation type and soil are characteristic of the Mandla-Bastar region during dry season."", ""country"": ""IN"", ""latitude"": 22.7, ""longitude"": 80.5}"
+minimax/minimax-m3,no-CoT,20.27,81.75,7114.073,IN,True,,stop,0.00044922,1071,155,167,6.16,"{""country"": ""IN"", ""latitude"": 20.27, ""longitude"": 81.75}"
+xiaomi/mimo-v2.5,no-CoT,22.5,81.5,7195.81,IN,True,,stop,0.0001111376,932,25,0,3.13,"{""country"": ""IN"", ""latitude"": 22.5, ""longitude"": 81.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,26.4467,80.3318,7288.326,IN,True,,stop,0.0004036,697,39,0,8.95,"{
+  ""country"": ""IN"",
+  ""latitude"": 26.4467,
+  ""longitude"": 80.3318
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,26.8467,80.9462,7363.098,IN,True,,stop,0.0005298,697,31,0,8.12,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.6333,7670.029,BR,True,,stop,0.0002615,697,31,0,13.43,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-20.63648796081543,-47.97842788696289,7833.362,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,22.5726,88.3639,7844.042,IN,True,,stop,0.00028323,697,44,0,3.36,"```json
+{
+  ""country"": ""IN"",
+  ""latitude"": 22.5726,
+  ""longitude"": 88.3639
+}
+```"
+qwen/qwen3.5-9b,no-CoT,22.5726,88.3639,7844.042,IN,True,,stop,7.445e-05,698,31,0,1.68,"{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 88.3639}"
+qwen/qwen3.5-35b-a3b,no-CoT,-15.7801,-47.9292,7885.206,BR,True,,stop,0.000213,697,31,0,0.92,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-16.40020751953125,-48.05817413330078,7890.717,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-18.844215393066406,-48.432071685791016,7900.061,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,-14.235,-51.9253,8333.304,BR,True,,stop,0.00013455,697,30,0,4.56,"{""country"": ""BR"", ""latitude"": -14.235, ""longitude"": -51.9253}"
+qwen/qwen3.5-397b-a17b,CoT,-31.3845,-58.0215,8715.756,AR,True,,stop,0.0063459,777,1746,1664,202.35,"{""reasoning"": ""The image features a dirt road flanked by lush vegetation, notably with green agricultural netting visible on the trees to the right, which is characteristic of citrus orchards protected from hail or birds. This specific combination of red/brown soil, Eucalyptus-like windbreaks, and netted orchards is highly indicative of the citrus-growing region in the Entre Ríos province of Argentina."", ""country"": ""AR"", ""latitude"": -31.3845, ""longitude"": -58.0215}"
+google/gemma-4-31b-it,no-CoT,14.2145,101.3212,8855.121,TH,True,,stop,6.388e-05,404,37,0,11.97,"```json
+{""country"": ""TH"", ""latitude"": 14.2145, ""longitude"": 101.3212}
+```"
+qwen/qwen3.6-35b-a3b,CoT,-27.65,153.05,12912.465,AU,True,,stop,0.00315903315,777,3143,3066,50.43,"{""reasoning"": ""The sandy dirt road, lush subtropical vegetation featuring Eucalypts and broadleaf trees (likely Ficus), and the bright, harsh sunlight are characteristic of the Gold Coast hinterland in Queensland, Australia."", ""country"": ""AU"", ""latitude"": -27.65, ""longitude"": 153.05}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.59,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.49,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.11,

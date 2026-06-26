@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,42.236541609165,-71.504373878086,0.0,US,True,,,,,,,,"Hopkinton, Middlesex County, Massachusetts, US"
+minimax/minimax-m3,CoT,42.15,-71.55,10.331,US,True,,stop,0.00073626,843,454,373,21.68,"{""reasoning"": ""Right-hand driving with double yellow center lines, galvanized W-beam guardrails, wooden utility poles with overhead lines, and the classic New England mix of pines with brilliant autumn maple/oak foliage strongly indicate a rural road in southern New England during peak fall season."", ""country"": ""US"", ""latitude"": 42.15, ""longitude"": -71.55}"
+anthropic/claude-opus-4.8,CoT,42.3,-71.4,11.115,US,True,,stop,0.006235,797,90,0,4.22,"{""reasoning"": ""Double yellow center line, right-hand traffic, fall foliage with pines and deciduous trees, wooden utility poles and metal guardrail typical of New England US."", ""country"": ""US"", ""latitude"": 42.3, ""longitude"": -71.4}"
+anthropic/claude-opus-4.8,no-CoT,42.3,-71.4,11.115,US,True,,stop,0.004055,666,29,0,14.82,"{""country"": ""US"", ""latitude"": 42.3, ""longitude"": -71.4}"
+x-ai/grok-4.3,CoT,42.35,-71.55,13.162,US,True,,stop,0.001829,676,528,453,26.6,"{""reasoning"": ""Double yellow center lines + right-side driving + US-style metal guardrail and chain-link fence indicate USA; fall foliage on white pines + mixed hardwoods points to New England. Road geometry, utility poles and signage match rural/suburban Massachusetts."", ""country"": ""US"", ""latitude"": 42.35, ""longitude"": -71.55}"
+google/gemini-3.5-flash,CoT (effort=high),42.3584,-71.4162,15.369,US,True,,stop,0.0081255,1271,691,617,19.02,"{""reasoning"": ""The double yellow center lines, wooden utility poles, and standard W-beam guardrail indicate North America, while the mix of white pines and vibrant autumn foliage strongly points to New England, USA."", ""country"": ""US"", ""latitude"": 42.3584, ""longitude"": -71.4162}"
+google/gemini-3.5-flash,CoT (effort=low),42.3584,-71.3489,18.631,US,True,,stop,0.003852,1272,216,143,15.26,"{""reasoning"": ""The double yellow center lines, white edge lines, wooden utility poles, and autumn foliage with a mix of pines and deciduous trees are highly characteristic of the northeastern United States, particularly New England."", ""country"": ""US"", ""latitude"": 42.3584, ""longitude"": -71.3489}"
+x-ai/grok-4.3,no-CoT,42.35,-71.25,24.432,US,True,,stop,0.0005934,592,22,0,0.86,"{""country"": ""US"", ""latitude"": 42.35, ""longitude"": -71.25}"
+google/gemini-3.5-flash,CoT (effort=medium),42.4432,-71.3958,24.651,US,True,,stop,0.0050565,1271,350,285,16.01,"{""reasoning"": ""The double yellow center lines, wooden utility poles, and autumn foliage with Eastern White Pines are highly characteristic of the northeastern United States, particularly New England."", ""country"": ""US"", ""latitude"": 42.4432, ""longitude"": -71.3958}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),42.4836,-71.4418,27.949,US,True,,stop,0.0021,1190,35,0,7.58,"```json
+{""country"": ""US"", ""latitude"": 42.4836, ""longitude"": -71.4418}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,42.4578971862793,-71.32807159423828,28.561,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,42.4756,-71.3749,28.632,US,True,,stop,0.009945,621,228,133,317.7,"{""reasoning"":""Right-side driving with US-style double yellow centerlines, white edge lines, metal guardrail, overhead utilities, and broad paved suburban road point to the northeastern United States. The mixed pine/deciduous forest with strong autumn color and residential roadside character is most consistent with New England, especially eastern Massachusetts/southern New Hampshire."",""country"":""US"",""latitude"":42.4756,""longitude"":-71.3749}"
+google/gemini-3.1-pro-preview,CoT,42.3601,-71.0589,39.129,US,True,,stop,0.004716,1272,181,102,9.94,"{
+  ""reasoning"": ""Double yellow center lines and wooden utility poles indicate North America. The mix of deciduous trees with autumn colors and conifers strongly suggests the northeastern United States, such as New England."",
+  ""country"": ""US"",
+  ""latitude"": 42.3601,
+  ""longitude"": -71.0589
+}"
+google/gemini-3.1-pro-preview,no-CoT,42.3601,-71.0589,39.129,US,True,,stop,0.0028,1190,35,0,7.91,"```json
+{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,42.3601,-71.0589,39.129,US,True,,stop,5.494e-05,406,31,0,14.05,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+mistralai/mistral-medium-3-5,no-CoT,42.3601,-71.0589,39.129,US,True,,stop,0.0011835,634,31,0,7.65,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+moonshotai/kimi-k2.6,no-CoT,42.3601,-71.0589,39.129,US,True,,stop,0.00051939,602,25,0,2.97,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.5-122b-a10b,no-CoT,42.3601,-71.0589,39.129,US,True,,stop,0.0002163,473,31,0,3.43,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.5-27b,no-CoT,42.3601,-71.0589,39.129,US,True,,stop,0.0002067,473,31,0,17.72,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.5-35b-a3b,no-CoT,42.3601,-71.0589,39.129,US,True,,stop,0.000162225,473,31,0,1.83,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.5-397b-a17b,no-CoT,42.3601,-71.0589,39.129,US,True,,stop,0.0003794,473,31,0,0.88,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.5-9b,no-CoT,42.3601,-71.0589,39.129,US,True,,stop,5.205e-05,474,31,0,9.68,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.6-27b,no-CoT,42.3601,-71.0589,39.129,US,True,,stop,0.0001943,473,31,0,10.29,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+qwen/qwen3.6-35b-a3b,no-CoT,42.3601,-71.0589,39.129,US,True,,stop,0.00010617035,473,31,0,2.95,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+xiaomi/mimo-v2.5,no-CoT,42.3601,-71.0589,39.129,US,True,,stop,8.14576e-05,708,31,0,2.96,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+google/gemma-4-31b-it,no-CoT,42.35,-71.05,39.445,US,True,,stop,6.218e-05,406,32,0,4.31,"```json
+{""country"": ""US"", ""latitude"": 42.35, ""longitude"": -71.05}
+```"
+openai/gpt-5.5,no-CoT,42.4812,-71.1526,39.693,US,True,,stop,0.00344,544,24,0,7.9,"{""country"":""US"",""latitude"":42.4812,""longitude"":-71.1526}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,42.65194320678711,-71.15318298339844,54.442,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,42.35,-72.15,54.582,US,True,,stop,0.007938108,682,2260,2179,58.19,"{""reasoning"": ""The double-yellow centerline, galvanized W-beam guardrail on the right shoulder, wooden utility poles with transformers, and dense red-orange autumn maple foliage mixed with evergreens are all classic indicators of a rural road in the northeastern United States during fall."", ""country"": ""US"", ""latitude"": 42.3500, ""longitude"": -72.1500}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,42.66891098022461,-71.14395141601562,56.443,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,42.688438415527344,-73.05039978027344,136.411,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,42.2953,-73.1856,138.496,US,True,,stop,0.0059746,553,1639,1524,62.64,"{""reasoning"": ""The double yellow center line and driving on the right side of the road confirm this is in the United States. The specific combination of white pine trees mixed with deciduous trees showing vibrant red and orange autumn foliage, along with wooden utility poles and rolling terrain, is highly characteristic of rural New England, particularly the Berkshires in Massachusetts or Litchfield County in Connecticut."", ""country"": ""US"", ""latitude"": 42.2953, ""longitude"": -73.1856}"
+minimax/minimax-m3,no-CoT,43.5,-71.5,140.491,US,True,,stop,0.00029682,767,104,95,2.58,"{""country"": ""US"", ""latitude"": 43.5, ""longitude"": -71.5}"
+xiaomi/mimo-v2.5,CoT,42.0,-74.0,207.506,US,True,,stop,0.0003915576,787,1099,1044,11.2,"{""reasoning"": ""Double yellow lines and right-hand traffic indicate the United States; vibrant autumn foliage suggests the northeastern region during fall season."", ""country"": ""US"", ""latitude"": 42.0, ""longitude"": -74.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.23991394042969,-73.35779571533203,268.62,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,44.231868743896484,-73.48351287841797,273.72,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,44.0521,-123.09,4120.83,US,True,,stop,0.0001143,634,32,0,10.92,"{""country"": ""US"", ""latitude"": 44.0521, ""longitude"": -123.0900}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.88,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.28,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.34,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.19,

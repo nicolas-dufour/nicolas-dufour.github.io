@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,63.68979348244,29.319848136973,0.0,FI,True,,,,,,,,"Nurmes, Pielisen Karjala, North Karelia, FI"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,63.497314453125,28.930179595947266,28.799,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,63.85371398925781,28.853097915649414,29.297,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,63.87476348876953,28.870378494262695,30.175,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,63.19547653198242,30.893449783325195,95.606,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,64.5,28.5,98.5,FI,True,,stop,0.00071946,995,402,322,15.06,"{""reasoning"": ""Dense birch-spruce boreal forest with white dashed road markings and gravel shoulders is highly characteristic of Finnish highways; the flat terrain, summer-green vegetation, and clear high-latitude sky support a location in central/eastern Finland's taiga zone."", ""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 28.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,63.11732482910156,31.01006507873535,105.503,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),62.8924,27.6782,120.795,FI,True,,stop,0.002154,1226,35,0,1.23,"```json
+{""country"": ""FI"", ""latitude"": 62.8924, ""longitude"": 27.6782}
+```"
+qwen/qwen3.6-27b,no-CoT,63.5678,26.7234,128.948,FI,True,,stop,0.00028672,586,31,0,1.99,"{""country"": ""FI"", ""latitude"": 63.5678, ""longitude"": 26.7234}"
+moonshotai/kimi-k2.6,CoT,63.0,27.0,138.822,FI,True,,stop,0.007694676,834,2166,2108,52.87,"{""reasoning"": ""Dense boreal forest mixing spruce with abundant white-barked birch, flat terrain, and a simply-marked rural asphalt road is characteristic of interior Finland."", ""country"": ""FI"", ""latitude"": 63.0, ""longitude"": 27.0}"
+openai/gpt-5.5,no-CoT,63.3578,26.2054,158.729,FI,True,,stop,0.00408,678,23,0,7.61,"{""country"":""FI"",""latitude"":63.3578,""longitude"":26.2054}"
+qwen/qwen3.6-35b-a3b,no-CoT,64.2135,26.1892,163.561,FI,True,,stop,0.00011875,585,31,0,3.34,"{""country"": ""FI"", ""latitude"": 64.2135, ""longitude"": 26.1892}"
+anthropic/claude-opus-4.8,no-CoT,64.5,26.5,163.933,FI,True,,stop,0.00484,818,30,0,8.8,"{""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 26.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,64.5,26.5,163.933,FI,True,,stop,0.00032385,585,25,0,12.03,"{""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 26.5}"
+qwen/qwen3.5-27b,no-CoT,63.9333,25.75,177.239,FI,True,,stop,0.000159315,585,29,0,10.68,"{""country"": ""FI"", ""latitude"": 63.9333, ""longitude"": 25.75}"
+anthropic/claude-opus-4.8,CoT,64.5,26.0,184.7,FI,True,,stop,0.006795,949,82,0,3.02,"{""reasoning"": ""Boreal forest with birch and spruce, narrow paved road with worn center markings typical of northern Finland/Sweden rural roads."", ""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 26.0}"
+google/gemini-3.5-flash,CoT (effort=medium),62.6012,26.5251,185.332,FI,True,,stop,0.0059205,1307,440,373,11.09,"{""reasoning"": ""The combination of dense birch and coniferous forest, flat terrain, and road markings with solid white edge lines and a dashed white center line is highly characteristic of Finland."", ""country"": ""FI"", ""latitude"": 62.6012, ""longitude"": 26.5251}"
+qwen/qwen3.5-9b,no-CoT,62.9167,25.75,197.938,FI,True,,stop,6.295e-05,586,29,0,5.67,"{""country"": ""FI"", ""latitude"": 62.9167, ""longitude"": 25.75}"
+google/gemini-3.1-pro-preview,CoT,62.5,26.0,213.046,FI,True,,stop,0.00528,1308,222,145,14.87,"{
+  ""reasoning"": ""The combination of boreal forest with prominent birch and spruce trees, along with the dashed white center line and solid white edge lines on a well-maintained paved road, is highly characteristic of Finland."",
+  ""country"": ""FI"",
+  ""latitude"": 62.5,
+  ""longitude"": 26.0
+}"
+google/gemini-3.1-pro-preview,no-CoT,62.5,26.0,213.046,FI,True,,stop,0.004046,1225,133,104,10.14,"```json
+{""country"": ""FI"", ""latitude"": 62.5, ""longitude"": 26.0}
+```"
+google/gemini-3.5-flash,CoT (effort=high),62.6,25.7,218.459,FI,True,,stop,0.007443,1308,609,551,11.34,"{""reasoning"": ""The dense boreal forest dominated by silver birch and spruce trees, combined with the flat terrain and white road markings, is highly characteristic of central Finland."", ""country"": ""FI"", ""latitude"": 62.6, ""longitude"": 25.7}"
+google/gemini-3.5-flash,CoT (effort=low),62.6012,25.6948,218.599,FI,True,,stop,0.00369,1308,192,121,2.3,"```json
+{""reasoning"": ""The combination of dense birch and spruce forests, flat terrain, and the specific style of road markings with long white dashed lines is highly characteristic of rural Finland."", ""country"": ""FI"", ""latitude"": 62.6012, ""longitude"": 25.6948}
+```"
+google/gemma-4-31b-it,no-CoT,64.5,25.0,228.316,FI,True,,stop,6.856e-05,404,30,0,2.13,"```json
+{""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 25.0}
+```"
+x-ai/grok-4.3,CoT,62.4,25.7,232.017,FI,True,,stop,0.002034,788,554,483,9.91,"{""reasoning"": ""Boreal forest mix of white-barked birch + spruce/pine, empty paved two-lane road with standard Nordic white dashed center + edge markings, right-hand traffic, clear northern summer light all point to Fennoscandia."", ""country"": ""FI"", ""latitude"": 62.4, ""longitude"": 25.7}"
+mistralai/mistral-medium-3-5,no-CoT,64.8388,25.2817,233.041,FI,True,,stop,0.0014115,786,31,0,1.11,"{""country"": ""FI"", ""latitude"": 64.8388, ""longitude"": 25.2817}"
+qwen/qwen3.5-397b-a17b,CoT,62.3451,25.7482,234.094,FI,True,,stop,0.0103216,665,2865,2759,89.33,"{""reasoning"": ""The landscape features a mix of silver birch and spruce trees typical of the Fennoscandian boreal forest, and the road has white center markings (Sweden typically uses yellow), pointing to Finland. The flat terrain and well-maintained road verge suggest a rural regional road in Central Finland."", ""country"": ""FI"", ""latitude"": 62.3451, ""longitude"": 25.7482}"
+x-ai/grok-4.3,no-CoT,62.3,25.7,239.283,FI,True,,stop,0.0007334,704,22,0,1.82,"{""country"": ""FI"", ""latitude"": 62.3, ""longitude"": 25.7}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,62.041343688964844,26.19275665283203,242.326,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,62.5,25.0,254.382,FI,True,,stop,0.00031428,755,23,0,1.8,"{""country"": ""FI"", ""latitude"": 62.5, ""longitude"": 25.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,66.5039,25.7294,355.085,FI,True,,stop,0.00021684,586,31,0,12.15,"{""country"": ""FI"", ""latitude"": 66.5039, ""longitude"": 25.7294}"
+qwen/qwen3.5-35b-a3b,no-CoT,61.4983,23.7619,374.344,FI,True,,stop,0.0001353625,585,31,0,0.76,"{""country"": ""FI"", ""latitude"": 61.4983, ""longitude"": 23.7619}"
+xiaomi/mimo-v2.5,no-CoT,59.9,30.3,424.529,RU,True,,stop,9.54576e-05,820,25,0,1.53,"{""country"": ""RU"", ""latitude"": 59.9, ""longitude"": 30.3}"
+openai/gpt-5.5,CoT,64.62,19.15,503.124,SE,True,,stop,0.020035,755,542,458,12.9,"{""reasoning"":""The white center/edge road markings, right-side driving layout, and boreal birch-spruce forest point strongly to rural Sweden rather than Norway/Finland where opposing-direction markings are often yellow. The flat, sparsely populated taiga landscape is most consistent with inland northern Sweden."",""country"":""SE"",""latitude"":64.62,""longitude"":19.15}"
+qwen/qwen3.6-35b-a3b,CoT,62.0,16.0,700.149,SE,True,,stop,0.00338375,665,3284,3050,96.49,"```json
+{
+  ""reasoning"": ""The image displays a classic boreal forest landscape dominated by silver birch and Scots pine/spruce, which is highly characteristic of Sweden. The road markings (white center and edge lines) and the right-hand traffic perspective align with Swedish rural roads (länsväg)."",
+  ""country"": ""SE"",
+  ""latitude"": 62.0,
+  ""longitude"": 16.0
+}
+```"
+mistralai/mistral-small-2603,CoT,60.5234,15.4567,800.321,SE,True,,stop,0.0009996,868,1449,1621,16.88,"{""reasoning"": ""Right-hand traffic, dense coniferous forest typical of Northern Europe, and generic rural road style"", ""country"": ""SE"", ""latitude"": 60.5234, ""longitude"": 15.4567}"
+xiaomi/mimo-v2.5,CoT,55.5,40.0,1088.031,RU,True,,stop,0.0004741576,899,1338,1268,19.63,"{""reasoning"": ""The mix of birch and coniferous trees indicates a taiga biome common in northern Eurasia, and the rural road style with simple markings aligns with forested regions of Russia."", ""country"": ""RU"", ""latitude"": 55.5, ""longitude"": 40.0}"
+minimax/minimax-m3,no-CoT,61.0,68.0,1986.889,RU,True,,stop,0.00026808,904,23,0,7.35,"{""country"": ""RU"", ""latitude"": 61.0, ""longitude"": 68.0}"
+mistralai/mistral-small-2603,no-CoT,47.6062,-122.3321,7392.562,US,True,,stop,0.000171375,786,32,0,2.07,"{""country"": ""US"", ""latitude"": 47.6062, ""longitude"": -122.3321}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7479.642,,True,True,,,,,,7.2,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.2,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.33,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.46,

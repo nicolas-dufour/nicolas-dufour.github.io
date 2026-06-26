@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,19.322056671859,-81.379944616502,0.0,KY,True,,,,,,,,"George Town, None, None, KY"
+openai/gpt-5.5,no-CoT,19.3225,-81.3799,0.05,KY,True,,stop,0.00344,544,24,0,1.16,"{""country"":""KY"",""latitude"":19.3225,""longitude"":-81.3799}"
+openai/gpt-5.5,CoT,19.3226,-81.3806,0.092,KY,True,,stop,0.021105,621,600,516,39.61,"{""reasoning"":""Flat Caribbean setting with sandy soil, sea-grape hedges, coconut palms, US-style green road signage and modern low-rise resort/office architecture points most strongly to Grand Cayman. The road layout and tropical landscaping are consistent with the developed Seven Mile Beach/Camana Bay area."",""country"":""KY"",""latitude"":19.3226,""longitude"":-81.3806}"
+google/gemini-3.5-flash,CoT (effort=medium),19.3215,-81.3772,0.295,KY,True,,stop,0.009486,1272,842,772,6.21,"{""reasoning"": ""The modern architecture, white sand construction site, sea grape vegetation, and US-style green road signs on the right are characteristic of the Camana Bay development in Grand Cayman."", ""country"": ""KY"", ""latitude"": 19.3215, ""longitude"": -81.3772}"
+google/gemini-3.5-flash,CoT (effort=low),24.7261,-81.0439,601.899,US,True,,stop,0.004869,1272,329,256,9.9,"{""reasoning"": ""The presence of sea grape bushes, palm trees, sandy soil, and modern tropical architecture alongside a US-style green highway sign indicates a coastal location in South Florida, likely the Florida Keys."", ""country"": ""US"", ""latitude"": 24.7261, ""longitude"": -81.0439}"
+google/gemini-3.1-pro-preview,CoT,25.8,-80.2,730.417,US,True,,stop,0.006226,1271,307,213,4.97,"{
+  ""reasoning"": ""The presence of sea grapes in the foreground, palm trees, sandy soil, and a US-style green highway sign strongly suggest a coastal location in Florida. The modern architecture and landscaping work indicate a recent development in a tropical or subtropical US environment."",
+  ""country"": ""US"",
+  ""latitude"": 25.8000,
+  ""longitude"": -80.2000
+}"
+qwen/qwen3.5-9b,no-CoT,25.9564,-80.1389,748.601,US,True,,stop,5.205e-05,474,31,0,5.17,"{""country"": ""US"", ""latitude"": 25.9564, ""longitude"": -80.1389}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,26.03676414489746,-80.14148712158203,757.357,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,26.0394,-80.1439,757.604,US,True,,stop,0.00021684,474,36,0,8.04,"```json
+{""country"": ""US"", ""latitude"": 26.0394, ""longitude"": -80.1439}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,26.039081573486328,-80.13877868652344,757.658,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),26.0512,-80.1208,759.296,US,True,,stop,0.0122025,1271,1144,1075,17.14,"```json
+{""reasoning"": ""The presence of sea grape bushes and coconut palms combined with US-style green guide signs and modern coastal architecture strongly indicates a location in South Florida."", ""country"": ""US"", ""latitude"": 26.0512, ""longitude"": -80.1208}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,26.0742,-80.1198,761.832,US,True,,stop,0.00036468,473,31,0,2.32,"{""country"": ""US"", ""latitude"": 26.0742, ""longitude"": -80.1198}"
+qwen/qwen3.5-122b-a10b,no-CoT,26.0766,-80.1199,762.093,US,True,,stop,0.0002163,473,31,0,3.59,"{""country"": ""US"", ""latitude"": 26.0766, ""longitude"": -80.1199}"
+google/gemini-3.1-pro-preview,no-CoT,26.1224,-80.1373,766.81,US,True,,stop,0.002798,1189,35,0,16.78,"```json
+{""country"": ""US"", ""latitude"": 26.1224, ""longitude"": -80.1373}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),26.1224,-80.1373,766.81,US,True,,stop,0.0021,1190,35,0,13.81,"```json
+{""country"": ""US"", ""latitude"": 26.1224, ""longitude"": -80.1373}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,26.17127799987793,-80.22759246826172,770.695,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,26.3465633392334,-80.4037094116211,787.458,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,26.34246826171875,-80.2265396118164,789.516,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,26.363693237304688,-80.2199935913086,791.948,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,26.705,-80.036,832.364,US,True,,stop,0.002549,676,816,759,7.16,"{""reasoning"": ""Sea grape bushes + coconut palms + modern coastal development + sandy lot indicate subtropical Florida coast; right-side road alignment and US-style infrastructure confirm North America."", ""country"": ""US"", ""latitude"": 26.705, ""longitude"": -80.036}"
+anthropic/claude-opus-4.8,no-CoT,26.7153,-80.0534,833.202,US,True,,stop,0.004105,666,31,0,15.55,"{""country"": ""US"", ""latitude"": 26.7153, ""longitude"": -80.0534}"
+mistralai/mistral-medium-3-5,no-CoT,26.7153,-80.0534,833.202,US,True,,stop,0.0011835,634,31,0,2.28,"{""country"": ""US"", ""latitude"": 26.7153, ""longitude"": -80.0534}"
+moonshotai/kimi-k2.6,CoT,28.38,-81.65,1007.57,US,True,,stop,0.005542308,682,1553,1492,44.0,"{""reasoning"": ""Tropical palms and sandy soil alongside a US-style green highway sign and modern suburban hotel architecture point to central Florida, likely the Orlando-Kissimmee area."", ""country"": ""US"", ""latitude"": 28.38, ""longitude"": -81.65}"
+moonshotai/kimi-k2.6,no-CoT,28.3852,-81.5639,1007.949,US,True,,stop,0.00051939,602,25,0,9.63,"{""country"": ""US"", ""latitude"": 28.3852, ""longitude"": -81.5639}"
+anthropic/claude-opus-4.8,CoT,18.41,-66.06,1614.643,PR,True,,stop,0.006535,797,102,0,9.99,"{""reasoning"": ""Tropical sea grape hedges, palms, green highway signage style, and flat coastal development suggest South Florida or Puerto Rico; the green sign design and architecture point to Puerto Rico."", ""country"": ""PR"", ""latitude"": 18.41, ""longitude"": -66.06}"
+minimax/minimax-m3,no-CoT,32.867,-117.209,3857.879,US,True,,stop,0.00022524,754,22,0,2.14,"{""country"": ""US"", ""latitude"": 32.867, ""longitude"": -117.209}"
+xiaomi/mimo-v2.5,CoT,33.42,-117.62,3910.034,US,True,,stop,0.0001389976,787,197,96,51.49,"{""reasoning"": ""The image shows a coastal construction site with tropical vegetation like palm trees and sandy soil, indicating a warm, beachside location. In the background, green highway signs with white text in a US style are visible, along with US-style road infrastructure, suggesting a location in Southern California, likely near San Clemente or Oceanside."", ""country"": ""US"", ""latitude"": 33.42, ""longitude"": -117.62}"
+mistralai/mistral-small-2603,no-CoT,28.4557,-16.2544,6622.744,ES,True,,stop,0.0001137,634,31,0,7.56,"{""country"": ""ES"", ""latitude"": 28.4557, ""longitude"": -16.2544}"
+minimax/minimax-m3,CoT,20.7844,-156.4536,7765.717,US,True,,stop,0.00084426,843,544,453,12.86,"{""reasoning"": ""Tropical vegetation (naupaka/beach morning glory shrubs, queen palms), modern Hawaiian-style condo architecture, sandy vacant development lots, and hazy tropical sky strongly indicate Hawaii. The building style and coastal development pattern match Kihei, Maui where similar condo projects with sandy lots under construction are common."", ""country"": ""US"", ""latitude"": 20.7844, ""longitude"": -156.4536}"
+qwen/qwen3.6-35b-a3b,CoT,20.9236,-156.6933,7786.229,US,True,,stop,0.013172,553,10427,9754,197.63,"```json
+{
+  ""reasoning"": ""The distinctive orange-red volcanic sand, the presence of *Hibiscus tiliaceus* (Sea Hibiscus) bushes, and coconut palms strongly indicate a tropical location in Hawaii, specifically Maui. The US-style green directional sign and right-hand traffic confirm the US location, while the resort architecture and beachfront setting point to the Kaanapali area."",
+  ""country"": ""US"",
+  ""latitude"": 20.9236,
+  ""longitude"": -156.6933
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,21.3099,-157.8581,7893.243,US,True,,stop,0.00010295,473,32,0,8.32,"{""country"": ""US"", ""latitude"": 21.3099, ""longitude"": -157.8581}"
+qwen/qwen3.6-35b-a3b,no-CoT,21.3099,-157.8581,7893.243,US,True,,stop,0.000146,474,32,0,10.31,"{""country"": ""US"", ""latitude"": 21.3099, ""longitude"": -157.8581}"
+qwen/qwen3.6-27b,no-CoT,21.3069,-157.8583,7893.343,US,True,,stop,0.0001963,473,32,0,19.85,"{""country"": ""US"", ""latitude"": 21.3069, ""longitude"": -157.8583}"
+xiaomi/mimo-v2.5,no-CoT,21.3069,-157.8583,7893.343,US,True,,stop,8.17376e-05,708,32,0,1.84,"{""country"": ""US"", ""latitude"": 21.3069, ""longitude"": -157.8583}"
+google/gemma-4-31b-it,no-CoT,21.3068,-157.8583,7893.346,US,True,,stop,6.758e-05,406,37,0,9.02,"```json
+{""country"": ""US"", ""latitude"": 21.3068, ""longitude"": -157.8583}
+```"
+x-ai/grok-4.3,no-CoT,21.309,-157.86,7893.458,US,True,,stop,0.0005934,592,22,0,0.86,"{""country"": ""US"", ""latitude"": 21.309, ""longitude"": -157.86}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9103.403,,True,True,,,,,,20.35,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.26,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.91,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.25,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.29,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,2.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.18,

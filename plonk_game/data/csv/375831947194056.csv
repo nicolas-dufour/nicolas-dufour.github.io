@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-14.890988601100666,37.73229555640793,0.0,MZ,True,,,,,,,,"Mutuali, None, Nampula, MZ"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-15.1234,37.3125,51.968,MZ,True,,stop,0.002109,1226,30,0,8.08,"{""country"": ""MZ"", ""latitude"": -15.1234, ""longitude"": 37.3125}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-14.48727798461914,37.05036544799805,85.995,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-14.532469749450684,37.01634216308594,86.708,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-14.945351600646973,36.694435119628906,111.679,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-15.3833,35.3333,263.253,MW,True,,stop,0.00489,818,32,0,9.11,"{""country"": ""MW"", ""latitude"": -15.3833, ""longitude"": 35.3333}"
+anthropic/claude-opus-4.8,CoT,-15.4,35.3,267.127,MW,True,,stop,0.007345,949,104,0,3.55,"{""reasoning"": ""Lush green wet-season vegetation, red lateritic soil, dramatic granite inselbergs, and left-side driving with yellow-edged road suggest southern Malawi/Mozambique terrain."", ""country"": ""MW"", ""latitude"": -15.4, ""longitude"": 35.3}"
+minimax/minimax-m3,CoT,-22.08,46.83,1248.076,MG,True,,stop,0.00091866,995,568,480,28.84,"{""reasoning"": ""The dramatic granite inselberg peaks, lush tropical vegetation with sugarcane-like fields, red lateritic soil, and yellow-edged road markings with left-side driving lane strongly suggest the southern highlands of Madagascar along the RN7 highway, likely near the Tsaranoro massif in the Ambalavao region."", ""country"": ""MG"", ""latitude"": -22.08, ""longitude"": 46.83}"
+moonshotai/kimi-k2.6,CoT,-24.42,30.86,1280.18,ZA,True,,stop,0.0108084,832,2544,2614,107.11,"{""reasoning"": ""Standard South African road markings with yellow edge lines and white double center lines indicate left-hand traffic, while the flat-topped Drakensberg escarpment peak, red Lowveld soil, and dense summer bushveld are characteristic of the Hoedspruit area in Mpumalanga."", ""country"": ""ZA"", ""latitude"": -24.42, ""longitude"": 30.86}"
+google/gemini-3.1-pro-preview,CoT,-24.45,30.85,1283.486,ZA,True,,stop,0.006994,1307,365,281,5.46,"{
+  ""reasoning"": ""The yellow left edge line and white center line are characteristic of South African roads. The lush vegetation and distinctive escarpment mountains in the background strongly resemble the Drakensberg range in Mpumalanga/Limpopo."",
+  ""country"": ""ZA"",
+  ""latitude"": -24.45,
+  ""longitude"": 30.85
+}"
+google/gemini-3.5-flash,CoT (effort=medium),-24.4512,30.7845,1287.444,ZA,True,,stop,0.0131475,1307,1243,1160,16.44,"{""reasoning"": ""The road features yellow outer edge lines and a dashed white center line, characteristic of South African road markings. The lush green vegetation and dramatic rocky escarpment in the background match the Drakensberg region in Mpumalanga/Limpopo."", ""country"": ""ZA"", ""latitude"": -24.4512, ""longitude"": 30.7845}"
+google/gemini-3.1-pro-preview,no-CoT,-24.5321,30.8214,1292.609,ZA,True,,stop,0.005786,1225,278,243,4.67,"```json
+{""country"": ""ZA"", ""latitude"": -24.5321, ""longitude"": 30.8214}
+```"
+openai/gpt-5.5,no-CoT,-24.5963,30.7768,1301.042,ZA,True,,stop,0.00411,678,24,0,2.87,"{""country"":""ZA"",""latitude"":-24.5963,""longitude"":30.7768}"
+google/gemini-3.5-flash,CoT (effort=low),-24.8156,30.8425,1317.273,ZA,True,,stop,0.0052725,1307,368,285,16.88,"{""reasoning"": ""The road markings with a yellow left edge line and white dashed center line indicate Southern Africa, while the lush green vegetation, reddish soil, and dramatic mountainous peaks strongly suggest the Drakensberg escarpment in Mpumalanga, South Africa."", ""country"": ""ZA"", ""latitude"": -24.8156, ""longitude"": 30.8425}"
+openai/gpt-5.5,CoT,-26.5547,31.1698,1464.757,SZ,True,,stop,0.017395,755,454,353,17.97,"{""reasoning"":""Left-side driving with South African-style yellow edge lines and double white center markings points to southern Africa, and the lush green valley with dramatic granite/escarpment mountains is very characteristic of Eswatini’s Ezulwini/Malkerns area. The road drainage, vegetation, and red soil further fit rural Eswatini rather than drier inland South Africa."",""country"":""SZ"",""latitude"":-26.5547,""longitude"":31.1698}"
+qwen/qwen3.5-9b,no-CoT,-20.4445,57.4336,2174.84,MU,True,,stop,6.325e-05,586,31,0,2.76,"{""country"": ""MU"", ""latitude"": -20.4445, ""longitude"": 57.4336}"
+qwen/qwen3.5-35b-a3b,no-CoT,-20.3289,57.5567,2184.428,MU,True,,stop,0.0002215625,585,31,0,1.6,"{""country"": ""MU"", ""latitude"": -20.3289, ""longitude"": 57.5567}"
+qwen/qwen3.6-35b-a3b,no-CoT,-20.3456,57.5678,2185.97,MU,True,,stop,0.00011875,585,31,0,1.82,"{""country"": ""MU"", ""latitude"": -20.3456, ""longitude"": 57.5678}"
+qwen/qwen3.5-122b-a10b,no-CoT,-20.4394,57.6133,2192.939,MU,True,,stop,0.00021658,585,31,0,1.16,"{""country"": ""MU"", ""latitude"": -20.4394, ""longitude"": 57.6133}"
+qwen/qwen3.5-27b,no-CoT,-32.2945,18.3612,2754.618,ZA,True,,stop,0.00022491,585,31,0,7.37,"{""country"": ""ZA"", ""latitude"": -32.2945, ""longitude"": 18.3612}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,9.097283363342285,77.18026733398438,5100.855,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,11.440094947814941,76.18875885009766,5149.257,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,10.088184356689453,77.16500091552734,5157.169,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,12.4244,75.9656,5190.776,IN,True,,stop,9.71376e-05,820,31,0,7.25,"{""country"": ""IN"", ""latitude"": 12.4244, ""longitude"": 75.9656}"
+qwen/qwen3.6-27b,no-CoT,11.4159,76.69,5193.279,IN,True,,stop,0.0002279,585,31,0,13.55,"{""country"": ""IN"", ""latitude"": 11.4159, ""longitude"": 76.6900}"
+x-ai/grok-4.3,CoT,11.32,76.92,5208.388,IN,True,,stop,0.0025215,788,749,664,12.07,"{
+  ""reasoning"": ""Left-side driving (inferred from road layout), red laterite soil, white/yellow road markings typical of India, and distinctive flat-topped rocky hills in lush green Western Ghats landscape point to southern India; no other country matches all visual elements simultaneously."",
+  ""country"": ""IN"",
+  ""latitude"": 11.32,
+  ""longitude"": 76.92
+}"
+xiaomi/mimo-v2.5,CoT,12.2833,76.35,5216.291,IN,True,,stop,0.0004229176,899,1155,1087,11.19,"{""reasoning"": ""Left-hand traffic and road markings with yellow edge lines are typical of India, and the tropical mountainous terrain with reddish soil suggests the Western Ghats region."", ""country"": ""IN"", ""latitude"": 12.2833, ""longitude"": 76.35}"
+google/gemma-4-31b-it,no-CoT,12.9716,77.5946,5371.018,IN,True,,stop,6.692e-05,404,36,0,5.03,"```json
+{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}
+```"
+mistralai/mistral-medium-3-5,no-CoT,12.9716,77.5946,5371.018,IN,True,,stop,0.0014115,786,31,0,1.14,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+x-ai/grok-4.3,no-CoT,12.85,79.1,5499.831,IN,True,,stop,0.0007334,704,22,0,7.02,"{""country"": ""IN"", ""latitude"": 12.85, ""longitude"": 79.1}"
+qwen/qwen3.5-397b-a17b,no-CoT,-12.3456,-41.789,8550.948,BR,True,,stop,0.00043188,585,31,0,4.86,"{""country"": ""BR"", ""latitude"": -12.3456, ""longitude"": -41.7890}"
+mistralai/mistral-small-2603,no-CoT,60.3931,5.3246,8856.643,NO,True,,stop,0.0001359,786,30,0,1.36,"{""country"": ""NO"", ""latitude"": 60.3931, ""longitude"": 5.3246}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.53,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,47.3,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.57,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,24.37,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,12.66,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.27,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.19,
+google/gemini-3.5-flash,CoT (effort=high),,,,,False,,length,0.0379245,1307,3996,3836,26.53,"Let's check the R36 just north of the junction: it goes north towards Tzaneen.
+                            *   Let's check the R36 just south of the junction: it goes up the Abel Erasmus Pass.
+                            *   The Abel Erasmus Pass has very dramatic views and concrete drainage ditches.
+                            *   Let's check the R36 south of the junction, around -24.43, 30.61.
+                            *   As you go up the pass, the road curves a lot.
+                            *   But the road in the image is relatively flat, with mountains in the distance, not immediately towering over the road like in the pass itself.
+                            *   So it's likely on the flat approach,"

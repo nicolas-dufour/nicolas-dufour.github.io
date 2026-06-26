@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-8.099998611111113,156.8217836111111,0.0,SB,True,,,,,,,,"Gizo, None, Western Province, SB"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-9.234102249145508,159.3641815185547,306.603,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-9.32114028930664,159.35195922851562,309.471,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-9.362152099609375,159.4402313232422,320.176,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-6.2,147.0,1103.971,PG,True,,stop,0.00722,949,99,0,9.56,"{""reasoning"": ""Tropical lowland vegetation with palms and banana plants along a pale dirt/gravel road, suggesting a rural Pacific island; mirror on right indicates left-hand traffic."", ""country"": ""PG"", ""latitude"": -6.2, ""longitude"": 147.0}"
+anthropic/claude-opus-4.8,no-CoT,-6.2,147.0,1103.971,PG,True,,stop,0.00484,818,30,0,2.2,"{""country"": ""PG"", ""latitude"": -6.2, ""longitude"": 147.0}"
+google/gemini-3.1-pro-preview,CoT,-17.7333,168.3166,1641.642,VU,True,,stop,0.006156,1308,295,206,4.59,"{
+  ""reasoning"": ""The visible white car hood and the black object (snorkel/mirror) in the top right corner are characteristic of Google Street View coverage in Vanuatu. The lush tropical vegetation and unpaved road further support this location."",
+  ""country"": ""VU"",
+  ""latitude"": -17.7333,
+  ""longitude"": 168.3166
+}"
+google/gemini-3.1-pro-preview,no-CoT,-17.7333,168.3333,1643.012,VU,True,,stop,0.00514,1226,224,188,9.95,"```json
+{""country"": ""VU"", ""latitude"": -17.7333, ""longitude"": 168.3333}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,-17.7134,178.065,2535.05,FJ,True,,stop,0.00018625,585,32,0,0.82,"{""country"": ""FJ"", ""latitude"": -17.7134, ""longitude"": 178.065}"
+qwen/qwen3.6-27b,CoT,-17.75,178.05,2535.122,FJ,True,,stop,0.0127607,665,6295,1,430.62,"{""reasoning"": ""The unpaved, light-colored coral sand road combined with dense tropical vegetation (coconut palms, banana plants) and a simple wooden fence strongly suggests a Pacific Island nation. The presence of a side mirror on the right side of the frame implies a Right-Hand Drive vehicle, consistent with left-hand traffic countries like Fiji, Vanuatu, or the Solomon Islands. The specific road surface and vegetation density are most characteristic of rural Fiji."", ""country"": ""FJ"", ""latitude"": -17.75, ""longitude"": 178.05}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),13.4443,144.7937,2739.096,GU,True,,stop,0.0021615,1225,36,0,1.69,"```json
+{""country"": ""GU"", ""latitude"": 13.4443, ""longitude"": 144.7937}
+```"
+mistralai/mistral-medium-3-5,no-CoT,10.3157,123.8854,4181.45,PH,True,,stop,0.001419,786,32,0,1.13,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+xiaomi/mimo-v2.5,no-CoT,10.3157,123.8854,4181.45,PH,True,,stop,9.74176e-05,820,32,0,8.91,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+qwen/qwen3.6-27b,no-CoT,12.5963,123.6956,4323.583,PH,True,,stop,0.0002299,585,32,0,21.87,"{""country"": ""PH"", ""latitude"": 12.5963, ""longitude"": 123.6956}"
+google/gemma-4-26b-a4b-it,no-CoT,14.5995,120.9842,4689.035,PH,True,,stop,5.868e-05,404,41,0,2.42,"{"" than-thought
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842} than own}"
+google/gemini-3.5-flash,CoT (effort=low),-10.4822,105.6311,5617.993,CX,True,,stop,0.0057315,1307,419,356,5.14,"{""reasoning"": ""The tropical vegetation, limestone-rich white dirt road, and the specific white vehicle hood with a black side mirror element suggest Christmas Island."", ""country"": ""CX"", ""latitude"": -10.4822, ""longitude"": 105.6311}"
+google/gemini-3.5-flash,CoT (effort=high),-10.485,105.625,5618.649,CX,True,,stop,0.0207255,1307,2085,2003,22.61,"```json
+{""reasoning"": ""The lush tropical vegetation, rolling hills, and distinctive white limestone/phosphate dirt road are highly characteristic of Christmas Island. The white vehicle hood with a black side mirror matches the Google Street View car used on the island."", ""country"": ""CX"", ""latitude"": -10.485, ""longitude"": 105.625}
+```"
+mistralai/mistral-small-2603,CoT,10.1234,76.5678,9111.268,IN,True,,stop,0.00033864,868,495,516,4.29,"{""reasoning"": ""Driving on the left side indicates countries like India; tropical vegetation with palm trees and hilly terrain suggests the Western Ghats region in Kerala or Tamil Nadu."", ""country"": ""IN"", ""latitude"": 10.1234, ""longitude"": 76.5678}"
+moonshotai/kimi-k2.6,no-CoT,17.1899,-88.4976,12885.849,BZ,True,,stop,0.00064935,754,25,0,26.9,"{""country"": ""BZ"", ""latitude"": 17.1899, ""longitude"": -88.4976}"
+openai/gpt-5.5,CoT,16.8612,-88.2854,12907.871,BZ,True,,stop,0.017665,755,463,379,32.45,"{""reasoning"":""The flat tropical coastal vegetation with coconut palms and a pale white limestone/sandy unpaved road is characteristic of rural Caribbean Belize, especially coastal villages like Hopkins/Sittee River. The informal narrow road and lush lowland setting fit Belize better than more developed paved Caribbean islands."",""country"":""BZ"",""latitude"":16.8612,""longitude"":-88.2854}"
+minimax/minimax-m3,CoT,17.75,-88.25,12912.782,BZ,True,,stop,0.00091866,995,568,490,17.91,"{""reasoning"": ""Crushed coral/limestone light-colored unpaved road surface combined with tropical vegetation featuring coconut palms, banana plants, and dense broadleaf foliage is highly characteristic of rural Caribbean/Central American coastal areas, most consistent with Belize's northern coastal region."", ""country"": ""BZ"", ""latitude"": 17.75, ""longitude"": -88.25}"
+google/gemini-3.5-flash,CoT (effort=medium),20.2152,-87.4294,12997.636,MX,True,,stop,0.0168825,1307,1658,1586,20.91,"```json
+{""reasoning"": ""The bright white limestone gravel road (sascab) and dense tropical jungle with coconut palms are highly characteristic of the Yucatan Peninsula in Mexico, particularly Quintana Roo."", ""country"": ""MX"", ""latitude"": 20.2152, ""longitude"": -87.4294}
+```"
+google/gemma-4-31b-it,no-CoT,9.9283,-83.8958,13352.79,CR,True,,stop,0.00111302,4968,34,0,10.56,"```json
+{""country"": ""CR"", ""latitude"": 9.9283, ""longitude"": -83.8958}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,22.3667,-79.9333,13760.101,CU,True,,stop,0.00021684,586,31,0,5.13,"{""country"": ""CU"", ""latitude"": 22.3667, ""longitude"": -79.9333}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,8.402471542358398,-79.9249267578125,13776.19,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,21.4567,-77.8901,13979.459,CU,True,,stop,0.0001353625,585,31,0,0.76,"{""country"": ""CU"", ""latitude"": 21.4567, ""longitude"": -77.8901}"
+qwen/qwen3.5-27b,no-CoT,25.0343,-77.3963,13981.668,BS,True,,stop,0.00022491,585,31,0,21.84,"{""country"": ""BS"", ""latitude"": 25.0343, ""longitude"": -77.3963}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,10.019152641296387,-78.1444320678711,13982.205,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,8.701066017150879,-77.78327178955078,14013.408,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,18.2,-77.65,14032.23,JM,True,,stop,0.029431215,833,8017,8996,75.57,"{""reasoning"": ""The bright white marl road surface is characteristic of Jamaica's limestone geology, and the dense tropical vegetation with narrow rural road infrastructure aligns with rural Jamaican parish roads."", ""country"": ""JM"", ""latitude"": 18.2, ""longitude"": -77.65}"
+qwen/qwen3.5-397b-a17b,CoT,18.043,-77.502,14048.828,JM,True,,stop,0.0063421,665,1728,1665,184.79,"{
+""reasoning"": ""The white limestone/marl road surface is highly characteristic of rural Jamaica, combined with dense tropical vegetation (coconut palms, bananas) and left-hand traffic positioning (indicated by the right-side mirror and vehicle placement)."",
+""country"": ""JM"",
+""latitude"": 18.043,
+""longitude"": -77.502
+}"
+x-ai/grok-4.3,CoT,18.1096,-77.3093,14068.745,JM,True,,stop,0.002479,788,732,658,7.81,"{""reasoning"": ""Tropical vegetation (palms, bananas, dense broadleaf) + unpaved laterite road + LHD vehicle (right-side mirror visible) point to rural Caribbean lowlands; no text or markings narrow it to Jamaica."", ""country"": ""JM"", ""latitude"": 18.1096, ""longitude"": -77.3093}"
+qwen/qwen3.5-397b-a17b,no-CoT,18.1096,-77.2975,14069.99,JM,True,,stop,0.00043188,585,31,0,7.75,"{""country"": ""JM"", ""latitude"": 18.1096, ""longitude"": -77.2975}"
+xiaomi/mimo-v2.5,CoT,10.9,-75.8,14242.307,CO,True,,stop,0.0001443176,899,160,75,15.62,"{""reasoning"": ""The unpaved road, light sandy soil, and lush tropical vegetation (including coconut palms and banana plants) indicate a Caribbean coastal region. The specific combination of the road surface, dense greenery, and lack of distinct signage strongly suggests the rural Caribbean coast of Colombia."", ""country"": ""CO"", ""latitude"": 10.9, ""longitude"": -75.8}"
+qwen/qwen3.5-9b,no-CoT,-10.5747,-61.2051,15322.243,BR,True,,stop,0.0001072,585,31,0,3.59,"{""country"": ""BR"", ""latitude"": -10.5747, ""longitude"": -61.2051}"
+mistralai/mistral-small-2603,no-CoT,-22.9035,-47.0616,15697.746,BR,True,,stop,0.0001365,786,31,0,3.78,"{""country"": ""BR"", ""latitude"": -22.9035, ""longitude"": -47.0616}"
+x-ai/grok-4.3,no-CoT,10.662,-61.383,15816.584,TT,True,,stop,0.0007334,704,22,0,1.21,"{""country"": ""TT"", ""latitude"": 10.662, ""longitude"": -61.383}"
+openai/gpt-5.5,no-CoT,13.1745,-59.4498,16014.973,BB,True,,stop,0.00411,678,24,0,7.9,"{""country"":""BB"",""latitude"":13.1745,""longitude"":-59.4498}"
+minimax/minimax-m3,no-CoT,-16.7,-39.1,16748.363,BR,True,,stop,0.00023736,904,23,0,5.64,"{""country"": ""BR"", ""latitude"": -16.7, ""longitude"": -39.1}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.59,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.12,

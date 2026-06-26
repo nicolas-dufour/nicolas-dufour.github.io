@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,40.912624880657,38.110514036506,0.0,TR,True,,,,,,,,"Nefsipiraziz, None, Giresun, TR"
+google/gemini-3.5-flash,no-CoT (effort=minimal),40.9125,38.3875,23.275,TR,True,,stop,0.0021,1190,35,0,1.62,"```json
+{""country"": ""TR"", ""latitude"": 40.9125, ""longitude"": 38.3875}
+```"
+google/gemini-3.1-pro-preview,no-CoT,41.0205,39.5214,119.066,TR,True,,stop,0.002798,1189,35,0,3.22,"```json
+{""country"": ""TR"", ""latitude"": 41.0205, ""longitude"": 39.5214}
+```"
+google/gemini-3.5-flash,CoT (effort=high),40.7685,39.6124,127.353,TR,True,,stop,0.010152,1272,916,844,6.27,"```json
+{""reasoning"": ""The lush green vegetation, dense fog, and concrete utility pole with a metal crossarm are highly characteristic of the wet, mountainous Black Sea region of northern Turkey."", ""country"": ""TR"", ""latitude"": 40.7685, ""longitude"": 39.6124}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),40.7682,39.6124,127.358,TR,True,,stop,0.0061725,1271,474,400,8.73,"{""reasoning"": ""The dense fog, lush green vegetation, and concrete utility pole with a metal crossarm are highly characteristic of the wet, mountainous Black Sea region of Turkey, where such narrow village roads are common."", ""country"": ""TR"", ""latitude"": 40.7682, ""longitude"": 39.6124}"
+google/gemini-3.1-pro-preview,CoT,40.9,39.8,141.988,TR,True,,stop,0.004714,1271,181,112,6.57,"{
+  ""reasoning"": ""The lush green vegetation, hilly terrain, and heavy fog are characteristic of the Black Sea region. The utility pole design and road style strongly suggest Turkey."",
+  ""country"": ""TR"",
+  ""latitude"": 40.9,
+  ""longitude"": 39.8
+}"
+google/gemini-3.5-flash,CoT (effort=low),40.9125,39.8542,146.521,TR,True,,stop,0.0036615,1271,195,128,2.87,"{""reasoning"": ""The dense fog, lush green mountainous vegetation, narrow asphalt road, and utility pole style are highly characteristic of the wet, mountainous Black Sea region of northern Turkey."", ""country"": ""TR"", ""latitude"": 40.9125, ""longitude"": 39.8542}"
+qwen/qwen3.5-122b-a10b,no-CoT,40.7654,30.3721,650.984,TR,True,,stop,0.0002163,473,31,0,1.81,"{""country"": ""TR"", ""latitude"": 40.7654, ""longitude"": 30.3721}"
+x-ai/grok-4.3,no-CoT,40.85,29.3,740.427,TR,True,,stop,0.0005934,592,22,0,1.11,"{""country"": ""TR"", ""latitude"": 40.85, ""longitude"": 29.3}"
+openai/gpt-5.5,no-CoT,39.3732,21.8345,1391.982,GR,True,,stop,0.00341,544,23,0,7.93,"{""country"":""GR"",""latitude"":39.3732,""longitude"":21.8345}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.67741394042969,21.091283798217773,1430.44,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.633033752441406,21.01494598388672,1435.992,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,44.095298767089844,20.43221092224121,1488.588,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,39.5847,19.8469,1554.186,GR,True,,stop,0.014505,621,380,294,10.04,"{""reasoning"":""Narrow right-hand-driving rural road with EU-style plates, concrete drainage gutters, overhead utility poles, lush Mediterranean vegetation, and what appears to be an Orthodox roadside shrine point most strongly to rural Greece. The foggy hilly setting is consistent with the greener Ionian/Corfu interior."",""country"":""GR"",""latitude"":39.5847,""longitude"":19.8469}"
+moonshotai/kimi-k2.6,CoT,30.9,77.1,3649.914,IN,True,,stop,0.01099725,682,3093,3029,180.39,"{""reasoning"": ""The vehicle parked on the left shoulder indicates left-hand traffic, while the multi-crossarm utility pole and foggy, green Himalayan foothill scenery are characteristic of rural northern India."", ""country"": ""IN"", ""latitude"": 30.9, ""longitude"": 77.1}"
+qwen/qwen3.5-397b-a17b,no-CoT,30.4235,76.8168,3651.953,IN,True,,stop,0.0003794,473,31,0,1.77,"{""country"": ""IN"", ""latitude"": 30.4235, ""longitude"": 76.8168}"
+qwen/qwen3.6-35b-a3b,no-CoT,26.8467,80.9462,4202.735,IN,True,,stop,0.00010617035,473,31,0,2.33,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+xiaomi/mimo-v2.5,CoT,27.33,88.61,4815.264,IN,True,,stop,0.0001426376,787,210,110,3.09,"{""reasoning"": ""The image shows a left-hand traffic pattern with a rural, hilly landscape, fog, and specific road infrastructure styles typical of the Indian subcontinent, specifically the Eastern Himalayas. The combination of dense green vegetation, the white vehicle's appearance, and the road markers points towards the Sikkim or West Bengal region of India."", ""country"": ""IN"", ""latitude"": 27.33, ""longitude"": 88.61}"
+qwen/qwen3.5-397b-a17b,CoT,11.4105,76.6942,4990.075,IN,True,,stop,0.0102678,553,2760,2646,72.53,"{
+""reasoning"": ""The image features a Maruti Suzuki Eeco van (ubiquitous in India) driving on the left side of the road, alongside concrete utility poles typical of Indian infrastructure. The dense fog, lush broadleaf vegetation, and winding narrow road are characteristic of the hill stations in the Western Ghats, likely the Nilgiris district."",
+""country"": ""IN"",
+""latitude"": 11.4105,
+""longitude"": 76.6942
+}"
+xiaomi/mimo-v2.5,no-CoT,27.5,100.5,5803.068,CN,True,,stop,8.00576e-05,708,26,0,3.03,"{""country"": ""CN"", ""latitude"": 27.5, ""longitude"": 100.5}"
+anthropic/claude-opus-4.8,no-CoT,30.7,104.2,5925.875,CN,True,,stop,0.00408,666,30,0,3.03,"{""country"": ""CN"", ""latitude"": 30.7, ""longitude"": 104.2}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5950.627,,True,True,,,,,,0.62,
+qwen/qwen3.6-27b,no-CoT,29.563,106.5516,6184.824,CN,True,,stop,0.0001963,473,32,0,13.38,"{""country"": ""CN"", ""latitude"": 29.5630, ""longitude"": 106.5516}"
+x-ai/grok-4.3,CoT,29.45,106.55,6191.285,CN,True,,stop,0.003884,676,1350,1274,12.95,"{""reasoning"": ""Right-hand traffic (oncoming white car on left of road), rural hilly terrain with dense green vegetation and heavy fog, overhead power lines on metal poles, and road edge markings point to southern China; Chongqing's frequent fog and landscape match exactly."", ""country"": ""CN"", ""latitude"": 29.45, ""longitude"": 106.55}"
+minimax/minimax-m3,CoT,29.05,107.75,6313.625,CN,True,,stop,0.00074826,843,464,388,20.53,"{""reasoning"": ""Foggy mountainous terrain with subtropical vegetation, right-hand traffic, concrete utility poles with multiple wires characteristic of rural Chinese infrastructure, and the dense mist at altitude strongly indicate southwestern China, likely the Chongqing-Guizhou mountainous border region."", ""country"": ""CN"", ""latitude"": 29.05, ""longitude"": 107.75}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,37.11551284790039,114.17979431152344,6371.274,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,CoT,26.6,106.7,6373.963,CN,True,,stop,0.00100474,492,838,791,17.82,"{""reasoning"": ""The utility pole design and lush, foggy mountainous landscape are highly characteristic of rural Southern China."", ""country"": ""CN"", ""latitude"": 26.6, ""longitude"": 106.7}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,37.90333557128906,115.51141357421875,6430.669,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,21.0285,105.8542,6655.756,VN,True,,stop,0.00019416,752,25,0,5.96,"{""country"": ""VN"", ""latitude"": 21.0285, ""longitude"": 105.8542}"
+anthropic/claude-opus-4.8,CoT,36.5,117.5,6661.314,CN,True,,stop,0.00671,797,109,0,6.51,"{""reasoning"": ""Foggy mountainous rural road with right-hand traffic, lush green vegetation, and a small white van typical of Chinese countryside; the small three-wheeled cargo vehicle and pole styles suggest rural China."", ""country"": ""CN"", ""latitude"": 36.5, ""longitude"": 117.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,35.58527374267578,117.0268325805664,6677.224,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,30.5738,114.2983,6756.322,CN,True,,stop,8.841e-05,473,32,0,7.77,"{""country"": ""CN"", ""latitude"": 30.5738, ""longitude"": 114.2983}"
+google/gemma-4-31b-it,no-CoT,24.15,114.3,7157.687,CN,True,,stop,7.004e-05,406,33,0,8.55,"```json
+{""country"": ""CN"", ""latitude"": 24.15, ""longitude"": 114.30}
+```"
+qwen/qwen3.5-27b,no-CoT,31.2304,121.4737,7286.43,CN,True,,stop,0.00021944,474,37,0,4.77,"```json
+{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,31.2304,121.4737,7286.43,CN,True,,stop,0.000164025,473,32,0,1.92,"{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}"
+mistralai/mistral-small-2603,CoT,39.7,141.1,8148.718,JP,True,,stop,0.00058944,716,915,1005,13.4,"{""reasoning"": ""Left-hand traffic system and pine tree vegetation strongly indicate Japan; road style and markings match Japanese rural roads."", ""country"": ""JP"", ""latitude"": 39.7, ""longitude"": 141.1}"
+mistralai/mistral-medium-3-5,no-CoT,-7.7825,110.3645,9115.661,ID,True,,stop,0.0011835,634,31,0,1.0,"{""country"": ""ID"", ""latitude"": -7.7825, ""longitude"": 110.3645}"
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4196,11046.799,US,True,,stop,0.0001143,634,32,0,4.18,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4196}"
+moonshotai/kimi-k2.6,no-CoT,19.4326,-99.1332,11984.719,MX,True,,stop,0.000283572,603,25,0,2.16,"{""country"": ""MX"", ""latitude"": 19.4326, ""longitude"": -99.1332}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.27,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.25,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.19,

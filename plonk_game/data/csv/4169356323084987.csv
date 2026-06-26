@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-8.3814721398297,160.79615569778,0.0,SB,True,,,,,,,,"Auki, None, Malaita, SB"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-9.746133804321289,162.40130615234375,232.574,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-9.85887336730957,162.48133850097656,247.419,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-11.05817985534668,163.93930053710938,455.228,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-15.1234,167.1567,1020.206,VU,True,,stop,0.0021075,1189,36,0,1.94,"```json
+{""country"": ""VU"", ""latitude"": -15.1234, ""longitude"": 167.1567}
+```"
+moonshotai/kimi-k2.6,CoT,-4.35,152.27,1043.232,PG,True,,stop,0.015117048,682,4358,4287,183.18,"{""reasoning"": ""Unpaved coral road through dense tropical rainforest with coconut palms and pedestrians under an equatorial sun matches rural Melanesia; the utilitarian vehicle with a prominent whip antenna is characteristic of remote Papua New Guinea."", ""country"": ""PG"", ""latitude"": -4.35, ""longitude"": 152.27}"
+google/gemini-3.5-flash,CoT (effort=high),-15.5251,167.1742,1054.342,VU,True,,stop,0.0372315,1271,3925,3837,22.74,"```json
+{""reasoning"": ""The silver vehicle hood with a bullbar-mounted antenna is characteristic of the Google Street View car used in Vanuatu. The tropical vegetation, flat terrain, and Melanesian pedestrians further confirm this location on the island of Espiritu Santo."", ""country"": ""VU"", ""latitude"": -15.5251, ""longitude"": 167.1742}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-15.5333,167.1667,1054.486,VU,True,,stop,0.00281,1189,36,0,9.52,"```json
+{""country"": ""VU"", ""latitude"": -15.5333, ""longitude"": 167.1667}
+```"
+minimax/minimax-m3,CoT,-17.7333,168.3273,1321.007,VU,True,,stop,0.00063906,843,373,298,10.72,"{""reasoning"": ""Right-hand drive vehicle on a laterite (red-orange) dirt road with tropical coconut palm vegetation and lush rainforest is highly characteristic of rural Melanesia, most likely Vanuatu (Efate or outer island)."", ""country"": ""VU"", ""latitude"": -17.7333, ""longitude"": 168.3273}"
+google/gemini-3.1-pro-preview,CoT,-17.65,168.45,1322.1,VU,True,,stop,0.006298,1271,313,230,12.39,"{
+  ""reasoning"": ""The prominent antenna on the hood of the vehicle is a classic Google Street View meta for Vanuatu. The tropical vegetation, white dirt road, and pedestrians are characteristic of rural roads on the island of Efate."",
+  ""country"": ""VU"",
+  ""latitude"": -17.65,
+  ""longitude"": 168.45
+}"
+anthropic/claude-opus-4.8,CoT,-6.2,147.0,1540.718,PG,True,,stop,0.00691,797,117,0,3.1,"{""reasoning"": ""Tropical dirt road with coconut palms, dense green vegetation, and pedestrians in a rural Pacific island setting; the look strongly suggests a Melanesian/Pacific island like Papua New Guinea or a nearby island nation."", ""country"": ""PG"", ""latitude"": -6.2, ""longitude"": 147.0}"
+anthropic/claude-opus-4.8,no-CoT,-6.2,147.0,1540.718,PG,True,,stop,0.00408,666,30,0,2.17,"{""country"": ""PG"", ""latitude"": -6.2, ""longitude"": 147.0}"
+qwen/qwen3.6-35b-a3b,no-CoT,-17.7134,178.065,2136.739,FJ,True,,stop,0.00010810085,473,33,0,1.28,"{""country"": ""FJ"", ""latitude"": -17.7134, ""longitude"": 178.0650}"
+google/gemini-3.5-flash,CoT (effort=low),-21.1789,-175.1982,2940.465,TO,True,,stop,0.003789,1272,209,144,9.27,"{""reasoning"": ""The white vehicle hood with a central antenna, light-colored coral dirt road, and tropical vegetation are characteristic of Google Street View coverage in Tonga."", ""country"": ""TO"", ""latitude"": -21.1789, ""longitude"": -175.1982}"
+google/gemini-3.5-flash,CoT (effort=medium),-21.1812,-175.1485,2945.233,TO,True,,stop,0.0120405,1271,1126,1050,15.37,"{""reasoning"": ""The silver vehicle with a front-mounted whip antenna, driving on the left on a white coral-gravel road surrounded by tropical coconut palms, is highly characteristic of Google Street View coverage in Tonga."", ""country"": ""TO"", ""latitude"": -21.1812, ""longitude"": -175.1485}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,10.246515274047852,125.6969223022461,4402.64,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,10.16254711151123,125.1517333984375,4451.827,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,10.3157,123.8854,4583.852,PH,True,,stop,0.001191,634,32,0,2.07,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,8.480517387390137,122.37393951416016,4651.407,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,12.5963,123.6956,4716.326,PH,True,,stop,0.0001963,473,32,0,18.93,"{""country"": ""PH"", ""latitude"": 12.5963, ""longitude"": 123.6956}"
+x-ai/grok-4.3,no-CoT,11.002,122.516,4751.773,PH,True,,stop,0.0007278,592,22,0,0.81,"{""country"": ""PH"", ""latitude"": 11.002, ""longitude"": 122.516}"
+x-ai/grok-4.3,CoT,-8.65,115.22,5008.961,ID,True,,stop,0.002334,676,730,656,5.45,"{""reasoning"": ""Tropical palm trees + lush roadside vegetation, unpaved laterite dirt road, and pedestrians in casual tropical attire indicate a rural coastal area in insular Southeast Asia; left-side walking and right-hand-drive vehicle antenna placement are consistent with Indonesia."", ""country"": ""ID"", ""latitude"": -8.65, ""longitude"": 115.22}"
+google/gemma-4-31b-it,no-CoT,13.5123,121.0123,5021.341,PH,True,,stop,0.00011056,406,36,0,15.45,"```json
+{""country"": ""PH"", ""latitude"": 13.5123, ""longitude"": 121.0123}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,14.5995,120.9842,5079.368,PH,True,,stop,5.734e-05,406,37,0,1.32,"```json
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}
+```"
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4778,9431.035,US,True,,stop,0.000142875,634,32,0,8.77,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4778}"
+openai/gpt-5.5,CoT,-6.2675,39.5293,13302.998,TZ,True,,stop,0.010065,621,232,146,7.56,"{""reasoning"":""Tropical coastal vegetation with coconut palms, pale coral-sand unpaved road, and left-side-road context strongly fit rural Zanzibar/Tanzania rather than mainland Africa. The road surface and landscape resemble the villages/plantation tracks on Zanzibar’s east coast near Paje/Jambiani."",""country"":""TZ"",""latitude"":-6.2675,""longitude"":39.5293}"
+openai/gpt-5.5,no-CoT,-6.1357,39.3621,13324.365,TZ,True,,stop,0.00344,544,24,0,2.65,"{""country"":""TZ"",""latitude"":-6.1357,""longitude"":39.3621}"
+qwen/qwen3.5-122b-a10b,no-CoT,22.0253,-78.5243,13511.014,CU,True,,stop,0.00018746,473,31,0,0.89,"{""country"": ""CU"", ""latitude"": 22.0253, ""longitude"": -78.5243}"
+qwen/qwen3.5-35b-a3b,no-CoT,21.4567,-77.8901,13580.355,CU,True,,stop,0.00010195,473,31,0,8.49,"{""country"": ""CU"", ""latitude"": 21.4567, ""longitude"": -77.8901}"
+qwen/qwen3.5-27b,no-CoT,25.0343,-77.3963,13597.485,BS,True,,stop,0.000140595,473,31,0,2.54,"{""country"": ""BS"", ""latitude"": 25.0343, ""longitude"": -77.3963}"
+xiaomi/mimo-v2.5,no-CoT,2.5,-76.5,13644.641,CO,True,,stop,7.94976e-05,708,24,0,0.72,"{""country"": ""CO"", ""latitude"": 2.5, ""longitude"": -76.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,18.5392,-72.3349,14180.245,HT,True,,stop,0.0003322,473,31,0,3.27,"{""country"": ""HT"", ""latitude"": 18.5392, ""longitude"": -72.3349}"
+qwen/qwen3.5-9b,no-CoT,-10.7954,-49.1246,16077.187,BR,True,,stop,5.205e-05,474,31,0,3.37,"{""country"": ""BR"", ""latitude"": -10.7954, ""longitude"": -49.1246}"
+xiaomi/mimo-v2.5,CoT,6.3004,-10.7969,19059.563,LR,True,,stop,0.0001319976,787,172,89,9.2,"{""reasoning"": ""The image shows a dirt road in a tropical setting with palm trees and dense vegetation, suggesting a location near the equator. The bright sunlight, cloud formations, and general landscape are consistent with West African coastal regions, specifically Liberia."", ""country"": ""LR"", ""latitude"": 6.3004, ""longitude"": -10.7969}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.45,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.94,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.68,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.38,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.29,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,10.15,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.79,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.23,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.21,

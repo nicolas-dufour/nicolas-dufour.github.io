@@ -1,0 +1,72 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,47.00057314314,81.750624986455,0.0,KZ,True,,,,,,,,"Urzhar, None, East Kazakhstan, KZ"
+openai/gpt-5.5,CoT,43.0346,78.4228,512.621,KZ,True,,stop,0.020715,621,587,497,35.89,"{""reasoning"":""Right-hand driving, Soviet-style concrete utility poles with painted bases, and low rural houses with bright blue metal roofs point strongly to Kazakhstan/Central Asia. The dry gravel shoulders, poplar-lined village road, and semi-arid steppe setting fit Almaty Region villages near the Tian Shan foothills."",""country"":""KZ"",""latitude"":43.0346,""longitude"":78.4228}"
+google/gemini-3.5-flash,CoT (effort=medium),51.1833,85.6012,542.899,RU,True,,stop,0.0101235,1271,913,822,16.41,"```json
+{""reasoning"": ""The concrete utility poles painted with the Russian flag colors (white, blue, red), the bright blue metal roofs on the houses, and the distant mountains suggest the Altai Republic region of Russia, likely along the well-maintained R256 highway."", ""country"": ""RU"", ""latitude"": 51.1833, ""longitude"": 85.6012}
+```"
+google/gemini-3.1-pro-preview,CoT,51.5,85.0,552.979,RU,True,,stop,0.005832,1272,274,201,4.33,"{
+  ""reasoning"": ""The brightly colored corrugated metal roofs and concrete utility poles are characteristic of rural Russia. The landscape and infrastructure suggest a region in southern Siberia, such as the Altai area."",
+  ""country"": ""RU"",
+  ""latitude"": 51.5,
+  ""longitude"": 85.0
+}"
+google/gemini-3.5-flash,CoT (effort=high),42.7234,78.1156,555.078,KG,True,,stop,0.0134085,1271,1278,1199,16.75,"{""reasoning"": ""The concrete utility poles with red and blue painted bands, combined with the Cyrillic signage, bright blue tin roofs, and distant mountains, are highly characteristic of rural Kyrgyzstan, particularly around the Issyk-Kul region."", ""country"": ""KG"", ""latitude"": 42.7234, ""longitude"": 78.1156}"
+openai/gpt-5.5,no-CoT,43.2549,76.9196,562.907,KZ,True,,stop,0.00344,544,24,0,2.18,"{""country"":""KZ"",""latitude"":43.2549,""longitude"":76.9196}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.13878631591797,77.05126953125,565.988,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.1552619934082,76.96781158447266,568.862,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,51.5,85.5,569.357,RU,True,,stop,0.006785,797,112,0,9.87,"{""reasoning"": ""Rural village with single-story houses, blue painted roofs, concrete utility poles painted with red-white bands typical of Russian/Kazakh rural roads; vegetation and terrain suggest southern Siberia/Altai region."", ""country"": ""RU"", ""latitude"": 51.5, ""longitude"": 85.5}"
+anthropic/claude-opus-4.8,no-CoT,51.5,85.5,569.357,RU,True,,stop,0.00408,666,30,0,2.92,"{""country"": ""RU"", ""latitude"": 51.5, ""longitude"": 85.5}"
+google/gemini-3.1-pro-preview,no-CoT,52.5341,82.5123,617.717,RU,True,,stop,0.005968,1190,299,264,4.61,"```json
+{""country"": ""RU"", ""latitude"": 52.5341, ""longitude"": 82.5123}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,43.70621109008789,75.25749206542969,625.451,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),52.3125,85.1234,638.432,RU,True,,stop,0.004734,1272,314,234,3.12,"{""reasoning"": ""The concrete utility poles painted with the Russian flag colors (white, blue, red) and the characteristic bright blue metal roofs on rural houses indicate a village in Russia, likely in the Altai region given the terrain and vegetation."", ""country"": ""RU"", ""latitude"": 52.3125, ""longitude"": 85.1234}"
+x-ai/grok-4.3,CoT,49.85,73.15,708.744,KZ,True,,stop,0.0024215,676,765,672,13.31,"{
+  ""reasoning"": ""Right-hand traffic with solid edge line on right, wooden utility poles, single-story houses with brightly painted corrugated metal roofs (blue/green), and rural asphalt road with gravel shoulder are characteristic of post-Soviet Central Asia/Russia; no visible Cyrillic but overall visual style points to KZ/RU border region."",
+  ""country"": ""KZ"",
+  ""latitude"": 49.85,
+  ""longitude"": 73.15
+}"
+minimax/minimax-m3,CoT,53.4,82.1,712.016,RU,True,,stop,0.00081306,843,518,431,14.99,"{""reasoning"": ""Painted wooden houses with bright metal roofs and ornate window frames (наличники), birch forest, flat taiga-steppe terrain, above-ground power lines on concrete poles, and Russian-style pedestrian crossing markings all indicate a rural village in western Siberia or the Altai region of Russia."", ""country"": ""RU"", ""latitude"": 53.4, ""longitude"": 82.1}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),42.634812,72.531245,873.435,KG,True,,stop,0.002136,1190,39,0,7.36,"```json
+{""country"": ""KG"", ""latitude"": 42.634812, ""longitude"": 72.531245}
+```"
+qwen/qwen3.5-9b,no-CoT,54.7456,79.5394,874.956,RU,True,,stop,8.816e-05,473,31,0,1.32,"{""country"": ""RU"", ""latitude"": 54.7456, ""longitude"": 79.5394}"
+xiaomi/mimo-v2.5,CoT,55.0,82.0,889.665,RU,True,,stop,0.0005262376,787,1580,1516,17.85,"{""reasoning"": ""The colorful wooden architecture and rural setting with right-hand traffic are typical of Siberian villages in Russia. Road markings and utility pole styles further support a Russian location."", ""country"": ""RU"", ""latitude"": 55.0, ""longitude"": 82.0}"
+qwen/qwen3.5-27b,no-CoT,56.0153,82.9417,1005.735,RU,True,,stop,0.0002065,474,44,0,2.73,"```json
+{
+  ""country"": ""RU"",
+  ""latitude"": 56.0153,
+  ""longitude"": 82.9417
+}
+```"
+google/gemma-4-31b-it,no-CoT,48.379,68.321,1015.472,KZ,True,,stop,7.044e-05,406,34,0,4.24,"```json
+{""country"": ""KZ"", ""latitude"": 48.379, ""longitude"": 68.321}
+```"
+moonshotai/kimi-k2.6,CoT,52.0,69.0,1073.363,KZ,True,,stop,0.013888008,682,3989,3925,190.52,"{""reasoning"": ""Cyrillic lettering on a shop sign, bright blue metal roofs on single-story rural houses, and steppe terrain with wooden utility poles are classic markers of the Kazakh countryside."", ""country"": ""KZ"", ""latitude"": 52.0, ""longitude"": 69.0}"
+xiaomi/mimo-v2.5,no-CoT,61.0,73.0,1654.984,RU,True,,stop,7.97776e-05,708,25,0,1.43,"{""country"": ""RU"", ""latitude"": 61.0, ""longitude"": 73.0}"
+minimax/minimax-m3,no-CoT,56.0,60.0,1795.751,RU,True,,stop,0.00043482,767,219,268,7.65,"{""country"": ""RU"", ""latitude"": 56.0, ""longitude"": 60.0}{""country"": ""RU"", ""latitude"": 56.0, ""longitude"": 60.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,56.85,60.62,1803.84,RU,True,,stop,0.0001794,474,27,0,6.04,"{""country"": ""RU"", ""latitude"": 56.85, ""longitude"": 60.62}"
+qwen/qwen3.5-397b-a17b,no-CoT,56.8472,60.6122,1804.11,RU,True,,stop,0.00029145,473,31,0,3.81,"{""country"": ""RU"", ""latitude"": 56.8472, ""longitude"": 60.6122}"
+qwen/qwen3.6-27b,no-CoT,56.838,60.597,1804.439,RU,True,,stop,0.0001903,473,29,0,21.06,"{""country"": ""RU"", ""latitude"": 56.838, ""longitude"": 60.597}"
+mistralai/mistral-medium-3-5,no-CoT,51.8014,107.5056,1927.186,RU,True,,stop,0.0011985,634,33,0,2.23,"{""country"": ""RU"", ""latitude"": 51.8014, ""longitude"": 107.5056}"
+x-ai/grok-4.3,no-CoT,51.766,107.65,1936.676,RU,True,,stop,0.0005934,592,22,0,1.77,"{""country"": ""RU"", ""latitude"": 51.766, ""longitude"": 107.65}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,49.03901290893555,42.71484375,2879.934,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,55.7558,37.6173,3152.993,RU,True,,stop,0.00010536,474,39,0,2.87,"{
+  ""country"": ""RU"",
+  ""latitude"": 55.7558,
+  ""longitude"": 37.6173
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,55.7558,37.6173,3152.993,RU,True,,stop,0.00010195,473,31,0,2.69,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,47.359458923339844,38.81043243408203,3203.821,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,49.62982940673828,34.155487060546875,3472.521,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,48.6333,-2.0167,5925.183,FR,True,,stop,0.000141375,634,30,0,8.13,"{""country"": ""FR"", ""latitude"": 48.6333, ""longitude"": -2.0167}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9383.121,unknown,True,,stop,5.174e-05,406,23,0,7.7,"{""country"": ""unknown"", ""latitude"": 0.0, ""longitude"": 0.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,313.33,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.81,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.25,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,15.85,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.17,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.19,

@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,57.516878536126,38.329061602173,0.0,RU,True,,,,,,,,"Uglich, None, Jaroslavl, RU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,57.37861251831055,39.05473327636719,46.059,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,57.432037353515625,39.345306396484375,61.485,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,56.8,38.5,80.377,RU,True,,stop,0.00408,666,30,0,2.71,"{""country"": ""RU"", ""latitude"": 56.8, ""longitude"": 38.5}"
+google/gemini-3.5-flash,CoT (effort=low),56.15,38.55,152.583,RU,True,,stop,0.003501,1272,177,121,8.61,"{""reasoning"": ""The distinctive portal-style steel lattice transmission tower and sandy roadside vegetation are highly characteristic of rural landscapes in Western Russia and Belarus."", ""country"": ""RU"", ""latitude"": 56.15, ""longitude"": 38.55}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,56.13754653930664,38.13003921508789,153.852,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,56.0,38.5,168.991,RU,True,,stop,0.00621,797,89,0,3.11,"{""reasoning"": ""Flat overgrown field with power transmission lines, temperate vegetation, sandy roadside shoulder typical of rural Russia/Eastern Europe."", ""country"": ""RU"", ""latitude"": 56.0, ""longitude"": 38.5}"
+xiaomi/mimo-v2.5,CoT,55.85,37.55,191.355,RU,True,,stop,0.0001241576,787,144,75,2.37,"{""reasoning"": ""The high-voltage lattice pylons and the flat terrain with birch trees and mixed vegetation are characteristic of the Russian landscape, likely near Moscow or in the Central Federal District."", ""country"": ""RU"", ""latitude"": 55.85, ""longitude"": 37.55}"
+x-ai/grok-4.3,no-CoT,55.85,37.45,192.963,RU,True,,stop,0.0005934,592,22,0,0.92,"{""country"": ""RU"", ""latitude"": 55.85, ""longitude"": 37.45}"
+x-ai/grok-4.3,CoT,55.82,37.65,193.19,RU,True,,stop,0.002299,676,716,636,12.12,"{
+  ""reasoning"": ""Unpaved roadside shoulder, dense temperate scrub/vegetation with scattered deciduous trees, and distinctive lattice high-voltage transmission towers are characteristic of the rural outskirts of post-Soviet states; no other signage, vehicles or architectural cues narrow it further."",
+  ""country"": ""RU"",
+  ""latitude"": 55.82,
+  ""longitude"": 37.65
+}"
+qwen/qwen3.5-9b,no-CoT,55.7897,37.6191,196.892,RU,True,,stop,5.205e-05,474,31,0,3.18,"{""country"": ""RU"", ""latitude"": 55.7897, ""longitude"": 37.6191}"
+google/gemini-3.1-pro-preview,CoT,56.0,40.0,197.021,RU,True,,stop,0.004918,1271,198,128,10.66,"{
+  ""reasoning"": ""The lattice transmission towers and lush temperate vegetation are characteristic of rural areas in Russia. The overall landscape and infrastructure strongly suggest a location in western or central Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 56.0,
+  ""longitude"": 40.0
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),56.1425,40.4011,198.087,RU,True,,stop,0.0021,1190,35,0,7.59,"```json
+{""country"": ""RU"", ""latitude"": 56.1425, ""longitude"": 40.4011}
+```"
+google/gemini-3.5-flash,CoT (effort=high),55.75,38.8,198.566,RU,True,,stop,0.0078285,1271,658,605,5.99,"{""reasoning"": ""The distinctive portal-type lattice electricity pylon and sandy roadside soil are highly characteristic of the landscape in European Russia."", ""country"": ""RU"", ""latitude"": 55.75, ""longitude"": 38.8}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,200.599,RU,True,,stop,7.124e-05,406,36,0,9.38,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,200.599,RU,True,,stop,0.001191,634,32,0,0.75,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+mistralai/mistral-small-2603,no-CoT,55.7558,37.6173,200.599,RU,True,,stop,0.0001143,634,32,0,2.85,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-122b-a10b,no-CoT,55.7558,37.6173,200.599,RU,True,,stop,0.0002041,473,39,0,1.92,"{
+  ""country"": ""RU"",
+  ""latitude"": 55.7558,
+  ""longitude"": 37.6173
+}"
+qwen/qwen3.5-27b,no-CoT,55.7558,37.6173,200.599,RU,True,,stop,0.0002163,473,31,0,2.1,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-397b-a17b,no-CoT,55.7558,37.6173,200.599,RU,True,,stop,0.0003794,473,31,0,1.63,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.6-27b,no-CoT,55.7558,37.6173,200.599,RU,True,,stop,0.0001943,473,31,0,8.23,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.6-35b-a3b,no-CoT,55.7558,37.6173,200.599,RU,True,,stop,0.000157,473,31,0,6.93,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+xiaomi/mimo-v2.5,no-CoT,55.75,37.62,201.194,RU,True,,stop,8.03376e-05,708,27,0,1.55,"{""country"": ""RU"", ""latitude"": 55.75, ""longitude"": 37.62}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,56.927467346191406,34.75029754638672,225.155,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),56.2514,41.4352,235.349,RU,True,,stop,0.0052455,1271,371,315,10.28,"{""reasoning"": ""The portal-style lattice transmission tower and sandy roadside vegetation are highly characteristic of Western Russia and Eastern Europe."", ""country"": ""RU"", ""latitude"": 56.2514, ""longitude"": 41.4352}"
+google/gemini-3.1-pro-preview,no-CoT,56.3269,44.0059,368.914,RU,True,,stop,0.002798,1189,35,0,8.65,"```json
+{""country"": ""RU"", ""latitude"": 56.3269, ""longitude"": 44.0059}
+```"
+openai/gpt-5.5,CoT,56.1012,44.1956,390.095,RU,True,,stop,0.016965,621,462,380,11.49,"{""reasoning"":""Flat temperate ex-Soviet roadside with sandy shoulder, birch/brush vegetation, village-edge power infrastructure and lattice transmission pylons strongly suggest rural western Russia. Lack of distinctive signs forces a central Russia estimate near the Volga/Nizhny Novgorod region."",""country"":""RU"",""latitude"":56.1012,""longitude"":44.1956}"
+minimax/minimax-m3,CoT,59.5,30.5,504.982,RU,True,,stop,0.00055182,845,297,297,12.34,"{""reasoning"": ""Flat terrain with sandy soil, birch-dominated vegetation, lattice steel power pylons of Soviet/Russian design, and distant industrial power infrastructure strongly suggest the Leningrad Oblast region of northwestern Russia."", ""country"": ""RU"", ""latitude"": 59.5, ""longitude"": 30.5}"
+moonshotai/kimi-k2.6,CoT,59.6,30.2,524.861,RU,True,,stop,0.009062388,682,2578,2501,59.56,"{""reasoning"": ""The prominent Soviet-era lattice steel transmission towers, wide unpaved sandy shoulder beside asphalt, and flat temperate scrubland with scattered low rural buildings are classic markers of the Russian countryside, particularly in the densely covered European part near Moscow or Saint Petersburg."", ""country"": ""RU"", ""latitude"": 59.6, ""longitude"": 30.2}"
+qwen/qwen3.5-35b-a3b,no-CoT,52.1847,21.0453,1250.324,PL,True,,stop,9.736e-05,474,31,0,2.33,"{""country"": ""PL"", ""latitude"": 52.1847, ""longitude"": 21.0453}"
+openai/gpt-5.5,no-CoT,56.8467,60.6067,1338.582,RU,True,,stop,0.00341,544,23,0,1.7,"{""country"":""RU"",""latitude"":56.8467,""longitude"":60.6067}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,55.33324432373047,76.51348876953125,2329.234,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,55.405216217041016,76.64778137207031,2334.159,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.96,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,19.05,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.77,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.47,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.2,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.29,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.32,

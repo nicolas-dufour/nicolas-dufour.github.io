@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,4.4137183809353,-75.142266190671,0.0,CO,True,,,,,,,,"Ibague, None, Tolima, CO"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,4.2867560386657715,-75.01895141601562,19.653,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,4.282278537750244,-75.01957702636719,19.966,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,4.3,-74.8,40.0,CO,True,,stop,0.01104772,682,3125,3061,72.92,"{""reasoning"": ""Straight highway through a wide tropical valley between massive sedimentary mountain ridges with right-hand traffic and white dashed center markings strongly matches Colombia's Magdalena or Cauca Valley corridor."", ""country"": ""CO"", ""latitude"": 4.3, ""longitude"": -74.8}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,4.806848049163818,-75.67646026611328,73.596,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,4.85,-75.72,80.333,CO,True,,stop,0.002669,676,864,794,8.34,"{""reasoning"": ""Right-side driving (yellow left edge line, white right edge), tropical plantains/bananas, Andean-style cordillera, and asphalt markings match rural Colombia. Image perspective aligns with the Armenia-Manizales corridor."", ""country"": ""CO"", ""latitude"": 4.85, ""longitude"": -75.72}"
+x-ai/grok-4.3,no-CoT,4.85,-75.75,83.008,CO,True,,stop,0.0005934,592,22,0,1.13,"{""country"": ""CO"", ""latitude"": 4.85, ""longitude"": -75.75}"
+anthropic/claude-opus-4.8,no-CoT,4.0,-75.8,86.235,CO,True,,stop,0.00408,666,30,0,2.77,"{""country"": ""CO"", ""latitude"": 4.0, ""longitude"": -75.8}"
+anthropic/claude-opus-4.8,CoT,4.0,-76.0,105.659,CO,True,,stop,0.006285,797,92,0,3.45,"{""reasoning"": ""Tropical valley with mountain ranges, right-side driving, lush green agriculture suggests a Colombian Andes valley highway, likely the Cauca valley region."", ""country"": ""CO"", ""latitude"": 4.0, ""longitude"": -76.0}"
+google/gemini-3.5-flash,CoT (effort=low),4.2156,-76.1842,117.611,CO,True,,stop,0.0040845,1271,242,180,4.6,"{""reasoning"": ""The flat agricultural valley flanked by high, lush mountain ranges and the specific road markings are highly characteristic of the Cauca River Valley in Colombia."", ""country"": ""CO"", ""latitude"": 4.2156, ""longitude"": -76.1842}"
+google/gemini-3.5-flash,CoT (effort=medium),4.1254,-76.1832,119.795,CO,True,,stop,0.0096375,1271,859,760,8.37,"```json
+{""reasoning"": ""The flat valley floor with high, lush green mountains in the background is characteristic of the Cauca Valley in Colombia. The road markings, featuring a yellow left edge line and dashed white center line, indicate a one-way carriageway of a divided highway, typical of Ruta Nacional 25."", ""country"": ""CO"", ""latitude"": 4.1254, ""longitude"": -76.1832}
+```"
+google/gemini-3.5-flash,CoT (effort=high),3.7452,-76.3184,150.142,CO,True,,stop,0.017163,1272,1695,1605,10.8,"```json
+{""reasoning"": ""The flat valley terrain adjacent to a massive mountain range, combined with the double-carriageway road markings (yellow left line, white dashed center, white right line), is highly characteristic of the Cauca Valley in Colombia along Route 25."", ""country"": ""CO"", ""latitude"": 3.7452, ""longitude"": -76.3184}
+```"
+google/gemini-3.1-pro-preview,CoT,3.5333,-76.3167,162.96,CO,True,,stop,0.006552,1272,334,251,5.53,"{
+  ""reasoning"": ""The flat valley landscape with a prominent mountain range in the background and tropical vegetation strongly suggests the Cauca Valley in Colombia. The road markings and overall environment are consistent with major highways in this region."",
+  ""country"": ""CO"",
+  ""latitude"": 3.5333,
+  ""longitude"": -76.3167
+}"
+google/gemini-3.1-pro-preview,no-CoT,4.15,-73.6,173.509,CO,True,,stop,0.002728,1190,29,0,1.79,"```json
+{""country"": ""CO"", ""latitude"": 4.15, ""longitude"": -73.6}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),3.2456,-76.2184,176.424,CO,True,,stop,0.002091,1190,34,0,1.1,"```json
+{""country"": ""CO"", ""latitude"": 3.2456, ""longitude"": -76.2184}
+```"
+moonshotai/kimi-k2.6,no-CoT,6.5,-73.0,331.724,CO,True,,stop,0.00051219,602,23,0,2.55,"{""country"": ""CO"", ""latitude"": 6.5, ""longitude"": -73.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,13.49777889251709,-88.85897064208984,1812.421,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-12.0,-77.0,1836.644,PE,True,,stop,0.0011385,634,25,0,0.96,"{""country"": ""PE"", ""latitude"": -12.0, ""longitude"": -77.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,15.002318382263184,-91.84671020507812,2174.212,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,15.184691429138184,-92.02772521972656,2201.336,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,19.4326,-99.1332,3090.778,MX,True,,stop,6.378e-05,406,36,0,7.67,"```json
+{""country"": ""MX"", ""latitude"": 19.4326, ""longitude"": -99.1332}
+```"
+openai/gpt-5.5,no-CoT,-26.3901,-65.7654,3570.917,AR,True,,stop,0.00347,544,25,0,1.51,"{""country"":""AR"",""latitude"":-26.3901,""longitude"":-65.7654}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5505,-46.6333,4384.302,BR,True,,stop,0.0003322,473,31,0,4.06,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+google/gemma-4-26b-a4b-it,no-CoT,36.169,-115.1,5395.015,,True,,stop,7.454e-05,406,80,0,9.31,"{""country"": ""US"", ""latitude"": 36.169 own, ""longitude"": -115.1 own}
+
+*(Note: own is a placeholder for the specific coordinates based on the visual context of a typical US highway landscape, but since no image was provided, I cannot provide a real own estimate. Please provide an image to receive a own estimate.)*"
+mistralai/mistral-small-2603,CoT,47.712,-121.103,6499.049,US,True,,stop,0.00052944,716,815,884,8.42,"{""reasoning"": ""Lush coniferous and deciduous vegetation with rolling hills suggests a temperate maritime climate; US-style dashed white centerline and guardrail indicate a location in the United States, most consistent with the Pacific Northwest."", ""country"": ""US"", ""latitude"": 47.712, ""longitude"": -121.103}"
+mistralai/mistral-small-2603,no-CoT,48.4567,-122.3078,6618.964,US,True,,stop,0.000142875,634,32,0,1.44,"{""country"": ""US"", ""latitude"": 48.4567, ""longitude"": -122.3078}"
+qwen/qwen3.6-35b-a3b,CoT,20.8,-156.3,8915.317,US,True,,stop,0.0153343021,553,15794,15682,224.79,"```json
+{
+  ""reasoning"": ""The image shows a divided highway with a white center line and a yellow left edge line, which is standard for one-way or divided roads in the USA. The distinct red soil, tropical-looking vegetation (possibly palm or acacia trees), and hazy mountains in the background are characteristic of Hawaii, likely Maui or the Big Island."",
+  ""country"": ""US"",
+  ""latitude"": 20.8,
+  ""longitude"": -156.3
+}
+```"
+openai/gpt-5.5,CoT,41.6768,20.3826,10138.323,AL,True,,stop,0.020535,621,581,516,45.88,"{""reasoning"":""Right-side driving with European-style white center/edge markings and no yellow centerline points away from the Americas; the mountainous, humid Balkan agricultural valley landscape is most consistent with rural Albania."",""country"":""AL"",""latitude"":41.6768,""longitude"":20.3826}"
+minimax/minimax-m3,no-CoT,37.0742,29.0835,10960.965,TR,True,,stop,0.00019416,752,25,0,6.83,"{""country"": ""TR"", ""latitude"": 37.0742, ""longitude"": 29.0835}"
+qwen/qwen3.5-397b-a17b,CoT,-28.55,29.78,11698.469,ZA,True,,stop,0.0472981,553,13464,12390,903.2,"{""reasoning"": ""The white dashed center line and solid white shoulder line indicate a Left-Hand Traffic country that uses white markings (ruling out Thailand/Vietnam which use yellow center lines), pointing to South Africa, Australia, or UK. The red soil embankments, tropical highland vegetation (likely Eucalyptus plantations), and the distant Drakensberg-like mountain range strongly suggest the KwaZulu-Natal province of South Africa, likely along the N3 highway."", ""country"": ""ZA"", ""latitude"": -28.55, ""longitude"": 29.78}"
+qwen/qwen3.5-27b,no-CoT,35.3606,138.7274,14354.578,JP,True,,stop,0.00019683,473,32,0,7.81,"{""country"": ""JP"", ""latitude"": 35.3606, ""longitude"": 138.7274}"
+qwen/qwen3.6-27b,no-CoT,36.5614,137.0864,14362.91,JP,True,,stop,0.00025805,474,32,0,0.92,"{""country"": ""JP"", ""latitude"": 36.5614, ""longitude"": 137.0864}"
+qwen/qwen3.5-9b,no-CoT,32.8031,130.7081,15060.042,JP,True,,stop,5.22e-05,474,32,0,9.81,"{""country"": ""JP"", ""latitude"": 32.8031, ""longitude"": 130.7081}"
+minimax/minimax-m3,CoT,23.85,120.92,16422.497,TW,True,,stop,0.00071466,843,436,350,14.36,"{""reasoning"": ""Right-hand traffic, well-maintained divided highway with characteristic Taiwanese guardrail style, lush subtropical vegetation, and dramatic Central Mountain Range scenery with sun rays breaking through clouds over forested peaks strongly suggest a mountain highway in Taiwan, likely along Highway 8 (Central Cross-Island Highway)."", ""country"": ""TW"", ""latitude"": 23.85, ""longitude"": 120.92}"
+qwen/qwen3.5-35b-a3b,no-CoT,23.5823,121.2345,16431.192,TW,True,,stop,9.836e-05,474,32,0,1.42,"{""country"": ""TW"", ""latitude"": 23.5823, ""longitude"": 121.2345}"
+qwen/qwen3.6-35b-a3b,no-CoT,25.0389,102.7103,16731.895,CN,True,,stop,0.000146,474,32,0,8.46,"{""country"": ""CN"", ""latitude"": 25.0389, ""longitude"": 102.7103}"
+xiaomi/mimo-v2.5,CoT,23.8,102.5,16867.473,CN,True,,stop,0.0012903576,787,4309,4218,99.93,"{""reasoning"": ""The image displays a well-maintained two-lane highway with right-hand traffic, flanked by distinctive red laterite soil and tropical mountains; these features, combined with the manicured roadside vegetation and road markings, are characteristic of the Yunnan or Guangxi provinces in southern China."", ""country"": ""CN"", ""latitude"": 23.8, ""longitude"": 102.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,16.805,100.286,17602.782,TH,True,,stop,0.00018564,474,30,0,5.62,"{""country"": ""TH"", ""latitude"": 16.805, ""longitude"": 100.286}"
+xiaomi/mimo-v2.5,no-CoT,-8.5,115.5,18754.753,ID,True,,stop,7.97776e-05,708,25,0,3.59,"{""country"": ""ID"", ""latitude"": -8.5, ""longitude"": 115.5}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.2,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.09,

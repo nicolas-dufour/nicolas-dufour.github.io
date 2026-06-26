@@ -1,0 +1,76 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,64.0368078,-139.3927888999722,0.0,CA,True,,,,,,,,"Dawson City, None, Yukon, CA"
+google/gemini-3.5-flash,CoT (effort=low),63.5821,-137.4852,106.393,CA,True,,stop,0.003726,1272,202,129,2.54,"{""reasoning"": ""The double yellow center line, northern boreal forest vegetation (birch and conifers), and rolling hills are highly characteristic of northern Canada, specifically the Yukon Territory along the Klondike Highway."", ""country"": ""CA"", ""latitude"": 63.5821, ""longitude"": -137.4852}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),63.8542,-137.2154,108.258,CA,True,,stop,0.0021075,1189,36,0,8.27,"```json
+{""country"": ""CA"", ""latitude"": 63.8542, ""longitude"": -137.2154}
+```"
+google/gemini-3.5-flash,CoT (effort=high),63.1234,-136.5432,173.735,CA,True,,stop,0.0086295,1271,747,676,7.24,"{""reasoning"": ""The double yellow center line on a narrow paved road combined with dense boreal forest of conifers and birch/aspen points to northern North America, specifically the Yukon Territory in Canada."", ""country"": ""CA"", ""latitude"": 63.1234, ""longitude"": -136.5432}"
+google/gemini-3.5-flash,CoT (effort=medium),63.0542,-136.4825,180.862,CA,True,,stop,0.0050115,1271,345,268,3.64,"{""reasoning"": ""The double yellow center line on a paved road without shoulder lines, combined with the boreal forest of birch, aspen, and spruce on rolling hills, is highly characteristic of northern Canada, particularly the Yukon Territory."", ""country"": ""CA"", ""latitude"": 63.0542, ""longitude"": -136.4825}"
+openai/gpt-5.5,CoT,60.8421,-135.3716,410.909,CA,True,,stop,0.020865,621,592,508,17.84,"{""reasoning"":""Boreal spruce/aspen forest with low rounded hills and a narrow paved right-driving road marked by North American yellow center lines points to remote northwestern Canada. The lack of edge lines and Yukon-like wilderness roadscape make the Whitehorse/Yukon area the best fit."",""country"":""CA"",""latitude"":60.8421,""longitude"":-135.3716}"
+qwen/qwen3.6-35b-a3b,CoT,60.75,-135.6,414.283,CA,True,,stop,0.0034076731,553,3438,3325,28.31,"```json
+{
+    ""reasoning"": ""The double yellow center line indicates right-hand traffic, strongly suggesting North America. The landscape features a mix of deciduous trees (likely birch or aspen) and coniferous forest on rolling hills, which is characteristic of the boreal forest found in the Yukon Territory or Northern British Columbia, Canada."",
+    ""country"": ""CA"",
+    ""latitude"": 60.75,
+    ""longitude"": -135.6
+}
+```"
+minimax/minimax-m3,CoT,64.5,-148.5,442.276,US,True,,stop,0.00062586,843,362,289,16.22,"{""reasoning"": ""Double yellow center line indicates North American road; remote boreal forest with birch and spruce, rounded glacially-shaped hills, and complete absence of infrastructure are characteristic of interior Alaska along highways like the Parks or Richardson Highway."", ""country"": ""US"", ""latitude"": 64.5, ""longitude"": -148.5}"
+openai/gpt-5.5,no-CoT,60.0215,-135.0542,500.281,CA,True,,stop,0.00344,544,24,0,7.86,"{""country"":""CA"",""latitude"":60.0215,""longitude"":-135.0542}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,59.457401275634766,-128.47315979003906,766.073,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,59.23225784301758,-125.79597473144531,892.232,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,58.5234,-126.0234,938.11,CA,True,,stop,8.294e-05,406,101,0,4.92,"Please own:
+{""country"": ""CA"", ""latitude"": 58.5234, ""longitude"": -1 own: ownmuch own:
+{""country"": ""CA"", ""latitude own"": -126.0234, ""longitude"": -126.02 own- own:
+{""country"": ""CA"", ""latitude"": 58.5234, ""longitude"": -126.0234}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,57.98796844482422,-126.139404296875,977.559,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,58.5,-125.0,981.563,CA,True,,stop,0.006235,797,90,0,3.58,"{""reasoning"": ""Yellow center line, boreal forest with poplar/willow scrub and conifer hills suggest northern Canada; rural highway in BC/Yukon interior."", ""country"": ""CA"", ""latitude"": 58.5, ""longitude"": -125.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,57.28575897216797,-127.3644027709961,993.267,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,58.5123,-124.5432,999.542,CA,True,,stop,0.00552,1272,248,171,10.48,"{
+  ""reasoning"": ""The double solid yellow center lines indicate North America. The boreal forest vegetation and rolling hills strongly suggest a northern latitude such as British Columbia or Yukon in Canada."",
+  ""country"": ""CA"",
+  ""latitude"": 58.5123,
+  ""longitude"": -124.5432
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,57.956809997558594,-125.31859588623047,1012.331,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,58.4167,-122.5,1093.767,CA,True,,stop,0.00028545,473,29,0,9.44,"{""country"": ""CA"", ""latitude"": 58.4167, ""longitude"": -122.5}"
+moonshotai/kimi-k2.6,no-CoT,53.7267,-127.6476,1325.646,CA,True,,stop,0.000279792,603,25,0,2.74,"{""country"": ""CA"", ""latitude"": 53.7267, ""longitude"": -127.6476}"
+anthropic/claude-opus-4.8,no-CoT,56.244,-120.846,1334.854,CA,True,,stop,0.00408,666,30,0,8.77,"{""country"": ""CA"", ""latitude"": 56.244, ""longitude"": -120.846}"
+google/gemini-3.1-pro-preview,no-CoT,55.0,-122.0,1395.505,CA,True,,stop,0.004756,1190,198,168,4.32,"```json
+{""country"": ""CA"", ""latitude"": 55.0, ""longitude"": -122.0}
+```"
+minimax/minimax-m3,no-CoT,54.5,-123.2,1395.875,CA,True,,stop,0.00019176,752,23,0,4.32,"{""country"": ""CA"", ""latitude"": 54.5, ""longitude"": -123.2}"
+moonshotai/kimi-k2.6,CoT,54.5,-122.5,1421.565,CA,True,,stop,0.008476,680,1997,2292,81.25,"{""reasoning"": ""Double solid yellow center lines with no edge markings on a wide paved road through rolling boreal-mixed forest hills are characteristic of a remote Canadian provincial highway, most likely in interior British Columbia."", ""country"": ""CA"", ""latitude"": 54.5, ""longitude"": -122.5}"
+x-ai/grok-4.3,CoT,54.2,-122.5,1448.985,CA,True,,stop,0.0021565,676,659,598,9.49,"{""reasoning"": ""Double solid yellow center line indicates North American right-hand traffic (US/Canada); boreal mixed forest, rolling green hills and road style match rural British Columbia or Alberta."", ""country"": ""CA"", ""latitude"": 54.2, ""longitude"": -122.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,53.9172,-119.6234,1584.126,CA,True,,stop,0.0002187,473,32,0,24.14,"{""country"": ""CA"", ""latitude"": 53.9172, ""longitude"": -119.6234}"
+qwen/qwen3.6-35b-a3b,no-CoT,53.7443,-116.5765,1723.062,CA,True,,stop,0.0001071356,473,32,0,3.46,"{""country"": ""CA"", ""latitude"": 53.7443, ""longitude"": -116.5765}"
+google/gemma-4-31b-it,no-CoT,55.1234,-113.4567,1745.319,CA,True,,stop,6.758e-05,406,37,0,13.28,"```json
+{""country"": ""CA"", ""latitude"": 55.1234, ""longitude"": -113.4567}
+```"
+qwen/qwen3.5-9b,no-CoT,52.8666,-117.4833,1762.721,CA,True,,stop,5.22e-05,474,32,0,2.73,"{""country"": ""CA"", ""latitude"": 52.8666, ""longitude"": -117.4833}"
+mistralai/mistral-medium-3-5,no-CoT,53.5444,-113.4909,1871.883,CA,True,,stop,0.001191,634,32,0,7.46,"{""country"": ""CA"", ""latitude"": 53.5444, ""longitude"": -113.4909}"
+xiaomi/mimo-v2.5,no-CoT,53.5,-113.5,1875.196,CA,True,,stop,8.00576e-05,708,26,0,8.97,"{""country"": ""CA"", ""latitude"": 53.5, ""longitude"": -113.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,51.1784,-115.5708,1991.496,CA,True,,stop,0.0001184625,473,32,0,1.15,"{""country"": ""CA"", ""latitude"": 51.1784, ""longitude"": -115.5708}"
+qwen/qwen3.5-27b,no-CoT,51.0514,-114.0675,2064.031,CA,True,,stop,0.0002085,474,45,0,10.22,"```json
+{
+  ""country"": ""CA"",
+  ""latitude"": 51.0514,
+  ""longitude"": -114.0675
+}
+```"
+qwen/qwen3.6-27b,no-CoT,51.0447,-114.0719,2064.452,CA,True,,stop,0.0002446,474,32,0,2.88,"{""country"": ""CA"", ""latitude"": 51.0447, ""longitude"": -114.0719}"
+qwen/qwen3.5-397b-a17b,CoT,49.45,-117.35,2084.254,CA,True,,stop,0.0116376,553,3257,2949,113.36,"{
+""reasoning"": ""The double solid yellow line indicates a right-hand traffic country, most likely North America. The specific mix of deciduous trees (likely aspen or birch) in the foreground and dense coniferous forest on the rolling hills is highly characteristic of the Kootenay region in British Columbia, Canada."",
+""country"": ""CA"",
+""latitude"": 49.45,
+""longitude"": -117.35
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,52.53213119506836,-103.7278823852539,2398.663,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,44.428,-110.5885,2824.535,US,True,,stop,0.0001137,634,31,0,4.75,"{""country"": ""US"", ""latitude"": 44.428, ""longitude"": -110.5885}"
+xiaomi/mimo-v2.5,CoT,47.55,-70.52,4409.413,CA,True,,stop,0.0006667976,787,2082,1970,24.83,"{""reasoning"": ""The image shows a rural two-lane paved road with double yellow lines (right-hand traffic) and a wide, unpaved gravel shoulder, which is typical of Canadian rural highways. The vegetation consists of a dense mix of paper birch and coniferous trees covering rolling hills, a landscape signature strongly associated with the boreal transition zone in Quebec, specifically the Charlevoix region."", ""country"": ""CA"", ""latitude"": 47.55, ""longitude"": -70.52}"
+x-ai/grok-4.3,no-CoT,48.85,-64.48,4585.445,CA,True,,stop,0.0005934,592,22,0,1.66,"{""country"": ""CA"", ""latitude"": 48.85, ""longitude"": -64.48}"
+qwen/qwen3.6-27b,CoT,48.95,-54.55,5032.873,CA,True,,stop,0.0137291,553,6820,1,253.99,"{""reasoning"": ""The double yellow center line indicates driving on the right, typical of North America. The landscape features a rounded hill covered in dark coniferous forest (likely spruce) and roadside vegetation consisting of deciduous trees/shrubs (likely birch or willow), which is highly characteristic of the Newfoundland region in Canada."", ""country"": ""CA"", ""latitude"": 48.95, ""longitude"": -54.55}"
+mistralai/mistral-small-2603,CoT,36.05,137.85,6114.583,JP,True,,stop,0.00095424,716,1523,1699,13.41,"{""reasoning"": ""Driving on the left and mountainous coniferous forest strongly indicate Japan; rural road style and vegetation match the Japanese Alps region."", ""country"": ""JP"", ""latitude"": 36.05, ""longitude"": 137.85}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.32,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,

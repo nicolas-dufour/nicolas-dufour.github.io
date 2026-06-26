@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,41.000413906579,9.2396313494772,0.0,IT,True,,,,,,,,"Luogosanto, Provincia di Olbia-Tempio, Sardinia, IT"
+google/gemini-3.1-pro-preview,CoT,40.55,9.15,50.649,IT,True,,stop,0.005794,1307,265,180,6.85,"{
+  ""reasoning"": ""The dry, rocky landscape with scrubby vegetation and scattered olive/oak trees is highly characteristic of the Mediterranean region. The unmarked rural road and specific hill profile strongly suggest a location in southern Europe, such as Sardinia, Italy."",
+  ""country"": ""IT"",
+  ""latitude"": 40.55,
+  ""longitude"": 9.15
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,40.553550720214844,9.721779823303223,64.165,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),40.2754,9.4012,81.762,IT,True,,stop,0.0040035,1307,227,164,9.36,"{""reasoning"": ""The dry, hilly landscape with scattered olive trees and Mediterranean maquis vegetation is highly characteristic of Southern Europe, particularly the island of Sardinia, Italy."", ""country"": ""IT"", ""latitude"": 40.2754, ""longitude"": 9.4012}"
+google/gemini-3.5-flash,CoT (effort=high),40.2512,9.3214,83.594,IT,True,,stop,0.0091965,1307,804,738,12.94,"{""reasoning"": ""The dry, golden grass combined with dense Mediterranean macchia vegetation and olive-like trees on rocky hills strongly suggests a Mediterranean island, most likely Sardinia, Italy."", ""country"": ""IT"", ""latitude"": 40.2512, ""longitude"": 9.3214}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.79340362548828,8.90831470489502,92.406,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,41.802791595458984,8.901658058166504,93.567,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),40.1235,9.3542,97.987,IT,True,,stop,0.002145,1226,34,0,1.5,"```json
+{""country"": ""IT"", ""latitude"": 40.1235, ""longitude"": 9.3542}
+```"
+minimax/minimax-m3,CoT,39.85,9.15,128.145,IT,True,,stop,0.00060222,997,301,318,12.93,"{""reasoning"": ""Mediterranean maquis vegetation with scattered olive trees on rocky limestone hillsides, reddish soil patches, and narrow rural paved road typical of inland Sardinia or southern Italy."", ""country"": ""IT"", ""latitude"": 39.85, ""longitude"": 9.15}"
+google/gemini-3.1-pro-preview,no-CoT,39.55,9.25,161.281,IT,True,,stop,0.004274,1225,152,122,3.82,"```json
+{""country"": ""IT"", ""latitude"": 39.55, ""longitude"": 9.25}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,40.22450256347656,15.075966835021973,500.05,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,39.8721,-0.3763,823.006,ES,True,,stop,0.00018375,585,30,0,0.69,"{""country"": ""ES"", ""latitude"": 39.8721, ""longitude"": -0.3763}"
+qwen/qwen3.6-27b,no-CoT,39.4699,-0.3763,833.346,ES,True,,stop,0.0002259,585,30,0,11.13,"{""country"": ""ES"", ""latitude"": 39.4699, ""longitude"": -0.3763}"
+qwen/qwen3.5-27b,no-CoT,38.7285,-0.8542,897.168,ES,True,,stop,0.000181155,585,43,0,1.29,"```json
+{
+  ""country"": ""ES"",
+  ""latitude"": 38.7285,
+  ""longitude"": -0.8542
+}
+```"
+qwen/qwen3.5-9b,no-CoT,38.0156,-3.0232,1102.028,ES,True,,stop,6.31e-05,586,30,0,5.68,"{""country"": ""ES"", ""latitude"": 38.0156, ""longitude"": -3.0232}"
+anthropic/claude-opus-4.8,CoT,38.3,21.8,1115.352,GR,True,,stop,0.00677,949,81,0,4.17,"{""reasoning"": ""Dry Mediterranean scrubland with olive trees, limestone hills, and a narrow rural road typical of Greece in summer."", ""country"": ""GR"", ""latitude"": 38.3, ""longitude"": 21.8}"
+anthropic/claude-opus-4.8,no-CoT,38.3,21.8,1115.352,GR,True,,stop,0.00484,818,30,0,4.74,"{""country"": ""GR"", ""latitude"": 38.3, ""longitude"": 21.8}"
+qwen/qwen3.5-397b-a17b,no-CoT,37.85,22.45,1186.138,GR,True,,stop,0.0003742,585,27,0,14.56,"{""country"": ""GR"", ""latitude"": 37.85, ""longitude"": 22.45}"
+minimax/minimax-m3,no-CoT,37.45,22.35,1194.886,GR,True,,stop,0.00041562,919,165,183,4.72,"{""country"": ""GR"", ""latitude"": 37.45, ""longitude"": 22.35}"
+xiaomi/mimo-v2.5,no-CoT,37.45,22.38,1197.317,GR,True,,stop,9.60176e-05,820,27,0,2.09,"{""country"": ""GR"", ""latitude"": 37.45, ""longitude"": 22.38}"
+xiaomi/mimo-v2.5,CoT,37.43,22.38,1198.199,GR,True,,stop,0.0008039976,899,2516,2415,28.55,"```json
+{""reasoning"": ""The landscape features extensive olive groves on rocky, reddish hillsides (typical Terra Rossa soil) and low maquis scrubland, which are iconic characteristics of rural Greece. The rustic, unmarked paved road and limestone outcrops strongly suggest the Peloponnese or a similar region in the Mediterranean."", ""country"": ""GR"", ""latitude"": 37.43, ""longitude"": 22.38}
+```"
+x-ai/grok-4.3,CoT,37.85,22.65,1202.51,GR,True,,stop,0.001874,788,490,418,10.9,"{""reasoning"": ""Mediterranean maquis/garrigue vegetation with scattered Quercus/olive-type shrubs, dry grass, rocky slopes and clear blue sky indicate southern Europe; narrow unmarked asphalt road with no infrastructure matches rural Greek/Italian countryside."", ""country"": ""GR"", ""latitude"": 37.85, ""longitude"": 22.65}"
+moonshotai/kimi-k2.6,CoT,36.95,22.35,1217.976,GR,True,,stop,0.004436316,834,1212,1148,35.0,"{""reasoning"": ""The Mediterranean maquis vegetation with low evergreen shrubs, dry summer grasses, and exposed limestone hills alongside an unmarked rural asphalt road is diagnostic of the Greek Peloponnese."", ""country"": ""GR"", ""latitude"": 36.95, ""longitude"": 22.35}"
+google/gemini-3.5-flash,CoT (effort=medium),37.0542,22.4294,1219.368,GR,True,,stop,0.0047505,1307,310,247,3.6,"{""reasoning"": ""The dry, yellowish grass, olive trees, and rocky Mediterranean hills are highly characteristic of southern Greece, particularly the Peloponnese region."", ""country"": ""GR"", ""latitude"": 37.0542, ""longitude"": 22.4294}"
+google/gemma-4-31b-it,no-CoT,37.95,23.65,1280.824,GR,True,,stop,6.188e-05,404,32,0,4.16,"```json
+{""country"": ""GR"", ""latitude"": 37.95, ""longitude"": 23.65}
+```"
+mistralai/mistral-medium-3-5,no-CoT,37.5,-5.0,1284.691,ES,True,,stop,0.001359,786,24,0,1.2,"{""country"": ""ES"", ""latitude"": 37.5, ""longitude"": -5.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,37.9838,23.7275,1285.948,GR,True,,stop,0.00023322,585,39,0,7.75,"{
+  ""country"": ""GR"",
+  ""latitude"": 37.9838,
+  ""longitude"": 23.7275
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,37.9838,23.7275,1285.948,GR,True,,stop,0.00011875,585,31,0,2.81,"{""country"": ""GR"", ""latitude"": 37.9838, ""longitude"": 23.7275}"
+moonshotai/kimi-k2.6,no-CoT,37.8,23.9,1307.164,GR,True,,stop,0.00064215,754,23,0,2.9,"{""country"": ""GR"", ""latitude"": 37.8, ""longitude"": 23.9}"
+x-ai/grok-4.3,no-CoT,38.85,-6.95,1398.981,ES,True,,stop,0.0007334,704,22,0,0.78,"{""country"": ""ES"", ""latitude"": 38.85, ""longitude"": -6.95}"
+openai/gpt-5.5,CoT,35.2726,24.7468,1495.456,GR,True,,stop,0.011605,755,261,182,13.47,"{""reasoning"":""Dry Mediterranean hills with dense olive groves, pale unmarked rural asphalt, and scrubby terraced terrain are highly characteristic of rural Greece, especially Crete. The landscape and road style fit inland Cretan olive-growing areas better than most other Mediterranean regions."",""country"":""GR"",""latitude"":35.2726,""longitude"":24.7468}"
+openai/gpt-5.5,no-CoT,35.2486,25.1968,1532.294,GR,True,,stop,0.00408,678,23,0,1.77,"{""country"":""GR"",""latitude"":35.2486,""longitude"":25.1968}"
+mistralai/mistral-small-2603,no-CoT,37.0194,-8.5739,1598.27,PT,True,,stop,0.0001359,786,30,0,2.18,"{""country"": ""PT"", ""latitude"": 37.0194, ""longitude"": -8.5739}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,36.4532585144043,29.10971450805664,1791.764,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,36.42194747924805,29.18734359741211,1799.512,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4653.328,,True,True,,,,,,16.72,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,19.47,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.24,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.44,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.35,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,15.48,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.16,

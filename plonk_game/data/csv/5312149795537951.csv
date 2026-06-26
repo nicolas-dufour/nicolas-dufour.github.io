@@ -1,0 +1,72 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-10.234969700002225,38.663885000000015,0.0,TZ,True,,,,,,,,"Nachingwea, None, Lindi, TZ"
+xiaomi/mimo-v2.5,CoT,-6.0,35.0,619.955,TZ,True,,stop,0.0004660376,899,1309,1248,16.37,"{""reasoning"": ""The vehicle is positioned for left-hand driving, and the reddish laterite soil with savanna-like vegetation is characteristic of tropical African regions like Tanzania."", ""country"": ""TZ"", ""latitude"": -6.0, ""longitude"": 35.0}"
+google/gemini-3.1-pro-preview,CoT,-1.5,37.5,979.762,KE,True,,stop,0.006348,1308,311,238,12.39,"{
+  ""reasoning"": ""The visible dark car hood and windshield trim are characteristic of the Google Street View vehicle used in Kenya. The reddish dirt road and dry scrub vegetation further support a rural Kenyan landscape."",
+  ""country"": ""KE"",
+  ""latitude"": -1.5,
+  ""longitude"": 37.5
+}"
+moonshotai/kimi-k2.6,CoT,-1.5,36.8,992.882,KE,True,,stop,0.018499356,834,5324,5273,331.39,"{""reasoning"": ""Red lateritic dirt road through savanna grassland with no roadside fencing is characteristic of rural East African rangelands."",""country"": ""KE"",""latitude"": -1.5,""longitude"": 36.8}"
+x-ai/grok-4.3,CoT,-1.4,36.7,1006.09,KE,True,,stop,0.0019515,788,521,452,5.04,"{
+  ""reasoning"": ""Red laterite dirt road + dry savanna scrub with scattered trees is characteristic of East African highlands; no signage/vehicles but landscape and road type match rural Kenya/Tanzania."",
+  ""country"": ""KE"",
+  ""latitude"": -1.4,
+  ""longitude"": 36.7
+}"
+moonshotai/kimi-k2.6,no-CoT,-1.2921,36.8219,1015.025,KE,True,,stop,0.0006166,752,27,0,3.95,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+xiaomi/mimo-v2.5,no-CoT,-1.2921,36.8219,1015.025,KE,True,,stop,9.68576e-05,820,30,0,2.75,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+qwen/qwen3.5-27b,no-CoT,-0.0236,37.9062,1138.541,KE,True,,stop,0.0002475,585,30,0,2.13,"{""country"": ""KE"", ""latitude"": -0.0236, ""longitude"": 37.9062}"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.0236,37.9062,1138.541,KE,True,,stop,0.0001652,586,30,0,8.92,"{""country"": ""KE"", ""latitude"": -0.0236, ""longitude"": 37.9062}"
+qwen/qwen3.6-35b-a3b,CoT,-17.8252,31.0335,1178.417,ZW,True,,stop,0.00408375,665,3984,3552,45.79,"```json
+{
+    ""reasoning"": ""The distinctive red lateritic soil of the unpaved road and the dry, yellowish savanna grass (likely Themeda triandra) strongly indicate a Southern African setting, specifically the highveld regions of Zimbabwe or Zambia. The vehicle appears to be a right-hand drive Toyota Corolla (E140/E150 generation), which is ubiquitous in Zimbabwe."",
+    ""country"": ""ZW"",
+    ""latitude"": -17.8252,
+    ""longitude"": 31.0335
+}
+```"
+qwen/qwen3.5-397b-a17b,CoT,1.176,36.956,1282.84,KE,True,,stop,0.011187,665,3010,2921,27.11,"{
+""reasoning"": ""The distinct red laterite soil combined with dry savanna grass and scrub vegetation is characteristic of the East African highlands, while the vehicle's positioning on the left side of the unpaved track suggests a left-hand traffic country like Kenya."",
+""country"": ""KE"",
+""latitude"": 1.176,
+""longitude"": 36.956
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-19.97122573852539,30.44320297241211,1395.902,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,1.3733,32.2903,1470.933,UG,True,,stop,0.007495,949,110,0,3.91,"{""reasoning"": ""Red-orange laterite dirt road with dry savanna grass and tropical vegetation, typical of sub-Saharan Africa; left-hand drive vehicle suggests a country like Uganda or Tanzania."", ""country"": ""UG"", ""latitude"": 1.3733, ""longitude"": 32.2903}"
+anthropic/claude-opus-4.8,no-CoT,1.3733,32.2903,1470.933,UG,True,,stop,0.00489,818,32,0,9.59,"{""country"": ""UG"", ""latitude"": 1.3733, ""longitude"": 32.2903}"
+google/gemini-3.1-pro-preview,no-CoT,1.3733,32.2903,1470.933,UG,True,,stop,0.005906,1225,288,254,5.72,"```json
+{""country"": ""UG"", ""latitude"": 1.3733, ""longitude"": 32.2903}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-25.93670654296875,31.561975479125977,1899.246,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-26.30881690979004,31.713308334350586,1930.905,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,-29.8567,30.9821,2322.788,ZA,True,,stop,0.000187425,585,31,0,1.62,"{""country"": ""ZA"", ""latitude"": -29.8567, ""longitude"": 30.9821}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4424.405,,True,True,,,,,,13.1,
+google/gemini-3.5-flash,no-CoT (effort=minimal),6.1254,0.0412,4647.796,GH,True,,stop,0.002136,1226,33,0,1.15,"```json
+{""country"": ""GH"", ""latitude"": 6.1254, ""longitude"": 0.0412}
+```"
+x-ai/grok-4.3,no-CoT,6.85,-1.35,4820.721,GH,True,,stop,0.0007334,704,22,0,1.57,"{""country"": ""GH"", ""latitude"": 6.85, ""longitude"": -1.35}"
+openai/gpt-5.5,no-CoT,6.6745,-1.5716,4835.773,GH,True,,stop,0.00411,678,24,0,2.95,"{""country"":""GH"",""latitude"":6.6745,""longitude"":-1.5716}"
+google/gemini-3.5-flash,CoT (effort=high),6.8125,-1.6244,4847.051,GH,True,,stop,0.0139935,1307,1337,1276,15.96,"{""reasoning"": ""The reddish-sandy dirt road, tropical savanna transition vegetation, and the characteristic dark grey hood of the camera vehicle point strongly to Ghana."", ""country"": ""GH"", ""latitude"": 6.8125, ""longitude"": -1.6244}"
+google/gemini-3.5-flash,CoT (effort=medium),9.4052,-1.0123,4903.028,GH,True,,stop,0.0141555,1307,1355,1291,17.62,"{""reasoning"": ""The sandy-red dirt road, dry savanna vegetation, and the characteristic dark hood of the Google camera vehicle point to rural West Africa, most likely Ghana."", ""country"": ""GH"", ""latitude"": 9.4052, ""longitude"": -1.0123}"
+openai/gpt-5.5,CoT,9.2368,-1.8224,4975.545,GH,True,,stop,0.018475,755,490,405,13.96,"{""reasoning"":""The unpaved laterite road, dry tropical savanna vegetation, and rural West African landscape most strongly suggest northern Ghana, especially the Mole/Damongo area. Lack of road markings or signage makes this uncertain, but the climate and terrain fit Ghana’s savanna belt best."",""country"":""GH"",""latitude"":9.2368,""longitude"":-1.8224}"
+minimax/minimax-m3,CoT,7.25,-5.3,5241.487,CI,True,,stop,0.00087702,997,530,558,15.6,"{""reasoning"": ""Red laterite dirt road, cassava plants and tall savanna grasses on the sides, and tropical climate vegetation are highly characteristic of rural West Africa, most likely Côte d'Ivoire or Ghana. The laterite road surface combined with cassava cultivation strongly suggests central Côte d'Ivoire."", ""country"": ""CI"", ""latitude"": 7.25, ""longitude"": -5.30}"
+qwen/qwen3.6-27b,no-CoT,21.1458,79.0882,5627.48,IN,True,,stop,0.00028672,586,31,0,13.27,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,8.263072967529297,-11.758540153503418,5948.012,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,13.325111389160156,-16.05628776550293,6582.128,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,13.346854209899902,-16.050676345825195,6582.416,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),14.8543,-16.9124,6729.152,SN,True,,stop,0.004824,1308,318,254,3.14,"{""reasoning"": ""The reddish-sandy dirt road, dry grassy vegetation, and the dark vehicle hood are highly characteristic of the Google Street View coverage in Senegal."", ""country"": ""SN"", ""latitude"": 14.8543, ""longitude"": -16.9124}"
+qwen/qwen3.5-122b-a10b,no-CoT,16.8211,104.2685,7813.262,TH,True,,stop,0.00021892,586,32,0,6.22,"{""country"": ""TH"", ""latitude"": 16.8211, ""longitude"": 104.2685}"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7942,-47.8822,9334.716,BR,True,,stop,0.00043188,585,31,0,2.39,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}"
+mistralai/mistral-medium-3-5,no-CoT,-15.7801,-47.882,9334.939,BR,True,,stop,0.001404,786,30,0,7.51,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.882}"
+google/gemma-4-31b-it,no-CoT,-15.7801,-47.9292,9339.928,BR,True,,stop,6.692e-05,404,36,0,9.38,"```json
+{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}
+```"
+minimax/minimax-m3,no-CoT,-14.5,-49.0,9476.069,BR,True,,stop,0.00025338,855,23,0,2.22,"{""country"": ""BR"", ""latitude"": -14.5, ""longitude"": -49.0}"
+qwen/qwen3.5-9b,no-CoT,-14.235,-51.925,9791.595,BR,True,,stop,6.295e-05,586,29,0,3.27,"{""country"": ""BR"", ""latitude"": -14.235, ""longitude"": -51.925}"
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,15157.11,US,True,,stop,0.000171375,786,32,0,2.24,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.24,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.25,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,2.79,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.74,

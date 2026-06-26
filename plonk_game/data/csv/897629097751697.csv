@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,5.4095756867838,-0.59701007848866,0.0,GH,True,,,,,,,,"Winneba, None, Central, GH"
+anthropic/claude-opus-4.8,no-CoT,5.6037,-0.187,50.253,GH,True,,stop,0.004105,666,31,0,8.98,"{""country"": ""GH"", ""latitude"": 5.6037, ""longitude"": -0.187}"
+google/gemini-3.1-pro-preview,no-CoT,5.6037,-0.187,50.253,GH,True,,stop,0.002762,1189,32,0,18.87,"```json
+{""country"": ""GH"", ""latitude"": 5.6037, ""longitude"": -0.187}
+```"
+google/gemma-4-31b-it,no-CoT,6.5244,3.3792,456.87,NG,True,,stop,0.00010879,406,33,0,9.75,"```json
+{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,605.159,unknown,True,,stop,5.174e-05,406,23,0,8.26,"{""country"": ""unknown"", ""latitude"": 0.0, ""longitude"": 0.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,14.17653751373291,-15.67878246307373,1917.045,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,14.760246276855469,-16.17572021484375,1995.544,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,14.757094383239746,-16.20816421508789,1998.399,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,-15.5,-55.0,6424.489,BR,True,,stop,0.00051219,602,23,0,22.76,"{""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -55.0}"
+qwen/qwen3.5-35b-a3b,no-CoT,26.9124,75.7873,8386.859,IN,True,,stop,0.0001865625,473,31,0,8.27,"{""country"": ""IN"", ""latitude"": 26.9124, ""longitude"": 75.7873}"
+mistralai/mistral-small-2603,no-CoT,28.6358,77.2245,8532.185,IN,True,,stop,0.0001137,634,31,0,7.29,"{""country"": ""IN"", ""latitude"": 28.6358, ""longitude"": 77.2245}"
+xiaomi/mimo-v2.5,no-CoT,20.5,78.5,8663.541,IN,True,,stop,7.97776e-05,708,25,0,1.72,"{""country"": ""IN"", ""latitude"": 20.5, ""longitude"": 78.5}"
+mistralai/mistral-medium-3-5,no-CoT,17.385,78.4867,8672.061,IN,True,,stop,0.0011835,634,31,0,7.46,"{""country"": ""IN"", ""latitude"": 17.3850, ""longitude"": 78.4867}"
+qwen/qwen3.5-9b,no-CoT,22.5726,78.6639,8675.991,IN,True,,stop,8.816e-05,473,31,0,2.14,"{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 78.6639}"
+x-ai/grok-4.3,CoT,21.15,79.08,8722.11,IN,True,,stop,0.0019565,676,579,506,13.62,"{""reasoning"": ""Unpaved laterite-dirt road, overhead concrete power poles, thorny green scrub and open-canopy deciduous trees under hazy subtropical sky point to rural South Asia (India/SE Asia); no other region matches all cues simultaneously."", ""country"": ""IN"", ""latitude"": 21.15, ""longitude"": 79.08}"
+x-ai/grok-4.3,no-CoT,21.1458,79.0882,8722.971,IN,True,,stop,0.0005984,592,24,0,0.92,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+qwen/qwen3.6-27b,CoT,17.5,79.6,8789.607,IN,True,,stop,0.0182338,554,5555,4633,140.11,"{""reasoning"": ""The reddish-brown lateritic soil, standard Indian concrete utility pole, and scrub vegetation (likely including invasive Lantana) are characteristic of the rural Deccan Plateau region in India, specifically the Telangana or Andhra Pradesh area."", ""country"": ""IN"", ""latitude"": 17.5, ""longitude"": 79.6}"
+qwen/qwen3.6-27b,no-CoT,26.8467,80.9462,8898.473,IN,True,,stop,0.0001943,473,31,0,10.76,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+qwen/qwen3.6-35b-a3b,no-CoT,26.8467,80.9462,8898.473,IN,True,,stop,0.00010617035,473,31,0,2.81,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+qwen/qwen3.5-27b,no-CoT,22.5726,88.3639,9670.625,IN,True,,stop,0.00019467,473,31,0,14.63,"{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 88.3639}"
+minimax/minimax-m3,no-CoT,21.0,96.0,10472.989,MM,True,,stop,0.00022248,752,23,0,4.19,"{""country"": ""MM"", ""latitude"": 21.0, ""longitude"": 96.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,17.845277786254883,100.05875396728516,10943.219,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,17.91613006591797,100.32682800292969,10970.102,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,14.911430358886719,101.42808532714844,11135.799,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,14.9234,102.0987,11206.86,TH,True,,stop,0.00693165,553,2242,1,92.52,"{
+""reasoning"": ""The distinctive red laterite soil combined with the specific style of tapered concrete utility poles and tropical scrub vegetation strongly points to rural Northeast Thailand (Isan). The flat terrain and hazy sky are also characteristic of the Khorat Plateau region during the dry season."",
+""country"": ""TH"",
+""latitude"": 14.9234,
+""longitude"": 102.0987
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,16.4419,102.8359,11258.75,TH,True,,stop,0.0003357,473,32,0,8.42,"{""country"": ""TH"", ""latitude"": 16.4419, ""longitude"": 102.8359}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),15.2345,103.1234,11310.281,TH,True,,stop,0.0021075,1189,36,0,7.85,"```json
+{""country"": ""TH"", ""latitude"": 15.2345, ""longitude"": 103.1234}
+```"
+qwen/qwen3.6-35b-a3b,CoT,14.95,103.15,11318.032,TH,True,,stop,0.00288075,553,2194,2084,11.47,"```json
+{
+    ""reasoning"": ""The distinctive red laterite soil on the road banks, combined with the specific style of tapered concrete utility poles and the tropical scrub vegetation, strongly points to rural Northeast Thailand (the Isan region)."",
+    ""country"": ""TH"",
+    ""latitude"": 14.95,
+    ""longitude"": 103.15
+}
+```"
+minimax/minimax-m3,CoT,13.05,103.15,11350.141,KH,True,,stop,0.00055146,843,300,228,9.49,"{""reasoning"": ""Red lateritic soil, tropical dry-season vegetation, simple wooden utility poles, and unpaved rural road with shallow drainage ditches are highly characteristic of rural Cambodia, likely in the northwest provinces like Battambang."", ""country"": ""KH"", ""latitude"": 13.05, ""longitude"": 103.15}"
+openai/gpt-5.5,no-CoT,13.1042,103.2015,11354.761,KH,True,,stop,0.00341,544,23,0,1.37,"{""country"":""KH"",""latitude"":13.1042,""longitude"":103.2015}"
+google/gemini-3.5-flash,CoT (effort=low),15.1234,103.5432,11356.714,TH,True,,stop,0.004194,1272,254,194,2.84,"{""reasoning"": ""The wide sandy dirt road, tropical vegetation, and concrete utility pole are highly characteristic of rural Southeast Asia, particularly Thailand."", ""country"": ""TH"", ""latitude"": 15.1234, ""longitude"": 103.5432}"
+qwen/qwen3.5-122b-a10b,no-CoT,16.8211,104.2681,11402.391,TH,True,,stop,0.0002916,473,32,0,8.96,"{""country"": ""TH"", ""latitude"": 16.8211, ""longitude"": 104.2681}"
+openai/gpt-5.5,CoT,13.525,103.906,11423.032,KH,True,,stop,0.008865,621,192,107,6.23,"{""reasoning"":""Flat tropical countryside with pale sandy unpaved road, drainage ditches, scrubby vegetation and simple concrete utility poles is characteristic of rural mainland Southeast Asia. With no signage or traffic clues, the strongest fit is rural Cambodia, especially the dry lowlands around Siem Reap/central Cambodia."",""country"":""KH"",""latitude"":13.525,""longitude"":103.906}"
+google/gemini-3.5-flash,CoT (effort=high),13.45,103.9,11423.672,KH,True,,stop,0.008577,1272,741,684,18.05,"{""reasoning"": ""The light sandy-colored dirt road, lush tropical shrub vegetation, and distinctive round concrete utility pole are highly characteristic of rural Cambodia."", ""country"": ""KH"", ""latitude"": 13.45, ""longitude"": 103.9}"
+google/gemini-3.5-flash,CoT (effort=medium),13.3622,103.9614,11431.732,KH,True,,stop,0.0074595,1271,617,560,16.25,"{""reasoning"": ""The sandy dirt road, tropical deciduous vegetation, and round concrete utility pole are highly characteristic of rural Cambodia."", ""country"": ""KH"", ""latitude"": 13.3622, ""longitude"": 103.9614}"
+anthropic/claude-opus-4.8,CoT,11.95,104.85,11550.961,KH,True,,stop,0.00636,797,95,0,2.98,"{""reasoning"": ""Sandy laterite dirt road with tropical scrub vegetation, dry season haze, and rural power lines typical of Southeast Asian countryside, likely Cambodia."", ""country"": ""KH"", ""latitude"": 11.95, ""longitude"": 104.85}"
+moonshotai/kimi-k2.6,CoT,12.5,105.0,11557.71,KH,True,,stop,0.008484,680,1999,2318,59.55,"{""reasoning"": ""Red laterite dirt road with tropical dry-scrub vegetation and a concrete utility pole is characteristic of rural Cambodia."", ""country"": ""KH"", ""latitude"": 12.5, ""longitude"": 105.0}"
+google/gemini-3.1-pro-preview,CoT,12.051,105.234,11590.524,KH,True,,stop,0.005472,1272,244,167,4.49,"{
+  ""reasoning"": ""The sandy dirt road, tropical vegetation, and style of the concrete utility pole are highly characteristic of rural Southeast Asia. The overall landscape and soil color strongly suggest Cambodia."",
+  ""country"": ""KH"",
+  ""latitude"": 12.051,
+  ""longitude"": 105.234
+}"
+xiaomi/mimo-v2.5,CoT,10.42,105.81,11680.042,VN,True,,stop,0.0005956776,787,1828,1747,28.4,"```json
+{
+  ""reasoning"": ""The reddish sandy soil and lush tropical vegetation are characteristic of Southeast Asia, but the specific style of the concrete-lined drainage ditch is a distinctive infrastructure feature commonly found in rural Vietnam."",
+  ""country"": ""VN"",
+  ""latitude"": 10.42,
+  ""longitude"": 105.81
+}
+```"
+mistralai/mistral-small-2603,CoT,-23.35,119.7167,13333.821,AU,True,,stop,0.00038784,716,579,609,8.55,"{""reasoning"": ""Arid/semi-arid vegetation with spinifex-like grasses and acacia trees, combined with the road style and utility pole setup, is characteristic of the Australian outback."", ""country"": ""AU"", ""latitude"": -23.3500, ""longitude"": 119.7167}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.18,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.21,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.23,

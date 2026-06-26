@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-33.072722222222,134.56947222222,0.0,AU,True,,,,,,,,"Streaky Bay, Streaky Bay, South Australia, AU"
+anthropic/claude-opus-4.8,CoT,-33.0732,134.57,0.072,AU,True,,stop,0.00702,949,91,0,3.42,"{""reasoning"": ""Timestamp shows -33.0732S 134.5700E, matching Eyre Peninsula South Australia mallee scrub vegetation and rural highway."", ""country"": ""AU"", ""latitude"": -33.0732, ""longitude"": 134.5700}"
+google/gemini-3.1-pro-preview,CoT,-33.0732,134.57,0.072,AU,True,,stop,0.006108,1308,291,207,3.65,"{
+  ""reasoning"": ""The image includes a dashcam text overlay at the bottom left providing exact GPS coordinates: -33.0732S, 134.5700E."",
+  ""country"": ""AU"",
+  ""latitude"": -33.0732,
+  ""longitude"": 134.5700
+}"
+google/gemini-3.5-flash,CoT (effort=low),-33.0732,134.57,0.072,AU,True,,stop,0.003987,1308,225,148,8.4,"{""reasoning"": ""The telemetry bar at the bottom of the image explicitly provides the coordinates -33.0732S, 134.5700E, which corresponds to a road in South Australia."", ""country"": ""AU"", ""latitude"": -33.0732, ""longitude"": 134.57}"
+moonshotai/kimi-k2.6,CoT,-33.0732,134.57,0.072,AU,True,,stop,0.005310936,834,1469,1392,34.04,"{""reasoning"": ""The bottom text overlay explicitly displays the coordinates -33.0732S 134.5700E. The flat, scrubby mallee vegetation, limestone-colored soil, and left-side driving are consistent with South Australia's Eyre Peninsula."", ""country"": ""AU"", ""latitude"": -33.0732, ""longitude"": 134.57}"
+openai/gpt-5.5,CoT,-33.0732,134.57,0.072,AU,True,,stop,0.009265,755,183,118,11.29,"{""reasoning"":""The dashcam overlay gives coordinates near -33.0732, 134.5700, and the left-side driving plus Australian-style rural road markings and scrub vegetation fit South Australia."",""country"":""AU"",""latitude"":-33.0732,""longitude"":134.57}"
+x-ai/grok-4.3,CoT,-33.0732,134.57,0.072,AU,True,,stop,0.0016865,788,415,347,3.67,"{""reasoning"": ""GPS coordinates and timestamp are directly overlaid on the photo; Australian native vegetation, left-side driving, and road design match the given -33.07 S 134.57 E location in South Australia."", ""country"": ""AU"", ""latitude"": -33.0732, ""longitude"": 134.57}"
+xiaomi/mimo-v2.5,CoT,-33.0732,134.57,0.072,AU,True,,stop,0.0002686376,899,604,524,7.38,"{""reasoning"": ""The metadata overlay explicitly provides the exact coordinates and shows a rural highway landscape with vegetation and road markings consistent with South Australia. The longitude and latitude in the image match the location on the Eyre Highway near Ceduna."", ""country"": ""AU"", ""latitude"": -33.0732, ""longitude"": 134.57}"
+anthropic/claude-opus-4.8,no-CoT,-33.0732,134.57,0.072,AU,True,,stop,0.00489,818,32,0,2.54,"{""country"": ""AU"", ""latitude"": -33.0732, ""longitude"": 134.5700}"
+google/gemini-3.1-pro-preview,no-CoT,-33.0732,134.57,0.072,AU,True,,stop,0.004432,1226,165,129,2.76,"```json
+{""country"": ""AU"", ""latitude"": -33.0732, ""longitude"": 134.5700}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-33.0732,134.57,0.072,AU,True,,stop,0.002163,1226,36,0,1.19,"```json
+{""country"": ""AU"", ""latitude"": -33.0732, ""longitude"": 134.5700}
+```"
+google/gemma-4-31b-it,no-CoT,-33.0732,134.57,0.072,AU,True,,stop,6.388e-05,404,37,0,7.46,"```json
+{""country"": ""AU"", ""latitude"": -33.0732, ""longitude"": 134.5700}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-33.0732,134.57,0.072,AU,True,,stop,0.0058755,1307,435,355,11.17,"{""reasoning"": ""The telemetry data at the bottom of the image explicitly provides the coordinates -33.0732S, 134.5700E, which corresponds to the Flinders Highway in South Australia."", ""country"": ""AU"", ""latitude"": -33.0732, ""longitude"": 134.5700}"
+google/gemini-3.5-flash,CoT (effort=high),-33.0732,134.57,0.072,AU,True,,stop,0.0062805,1307,480,401,12.75,"{""reasoning"": ""The telemetry overlay at the bottom of the image explicitly provides the coordinates -33.0732S, 134.5700E, which corresponds to a road in South Australia."", ""country"": ""AU"", ""latitude"": -33.0732, ""longitude"": 134.5700}"
+openai/gpt-5.5,no-CoT,-33.07325,134.57,0.077,AU,True,,stop,0.00411,678,24,0,1.48,"{""country"":""AU"",""latitude"":-33.07325,""longitude"":134.5700}"
+qwen/qwen3.5-27b,no-CoT,-33.07325,134.57001,0.077,AU,True,,stop,0.0002405,586,47,0,21.31,"```json
+{
+  ""country"": ""AU"",
+  ""latitude"": -33.07325,
+  ""longitude"": 134.57001
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,-33.07325,134.57,0.077,AU,True,,stop,9.71376e-05,820,31,0,1.52,"{""country"": ""AU"", ""latitude"": -33.07325, ""longitude"": 134.57}"
+qwen/qwen3.6-27b,no-CoT,-33.07325,134.57002,0.078,AU,True,,stop,0.0002339,585,34,0,5.79,"{""country"": ""AU"", ""latitude"": -33.07325, ""longitude"": 134.57002}"
+qwen/qwen3.5-122b-a10b,no-CoT,-33.07325,134.57006,0.08,AU,True,,stop,0.00022308,586,34,0,10.84,"{""country"": ""AU"", ""latitude"": -33.07325, ""longitude"": 134.57006}"
+qwen/qwen3.5-397b-a17b,no-CoT,-33.07325,134.57005,0.08,AU,True,,stop,0.00044268,585,34,0,2.92,"{""country"": ""AU"", ""latitude"": -33.07325, ""longitude"": 134.57005}"
+x-ai/grok-4.3,no-CoT,-33.07325,134.57006,0.08,AU,True,,stop,0.0007384,704,24,0,1.18,"{""country"": ""AU"", ""latitude"": -33.07325, ""longitude"": 134.57006}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-33.0865592956543,134.5752410888672,1.63,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-33.037,134.57,3.972,AU,True,,stop,0.00073506,995,415,340,13.37,"{""reasoning"": ""Left-side driving, mallee scrub/eucalyptus vegetation, flat arid terrain, and the embedded EXIF watermark coordinates (-33.037, 134.570) all confirm a rural highway in South Australia's Eyre Peninsula region."", ""country"": ""AU"", ""latitude"": -33.037, ""longitude"": 134.570}"
+qwen/qwen3.5-35b-a3b,no-CoT,-33.07325,134.87002,28.005,AU,True,,stop,0.00011604,586,34,0,3.33,"{""country"": ""AU"", ""latitude"": -33.07325, ""longitude"": 134.87002}"
+qwen/qwen3.5-9b,no-CoT,-33.07328,134.97006,37.326,AU,True,,stop,6.37e-05,586,34,0,3.18,"{""country"": ""AU"", ""latitude"": -33.07328, ""longitude"": 134.97006}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.0532,134.97,37.388,AU,True,,stop,0.0001684,586,32,0,2.41,"{""country"": ""AU"", ""latitude"": -33.0532, ""longitude"": 134.9700}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-32.789093017578125,133.87669372558594,71.938,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-32.779422760009766,133.8358917236328,75.838,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-34.369022369384766,138.34080505371094,377.374,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-32.52373504638672,128.65423583984375,556.172,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-32.69803237915039,127.92445373535156,621.783,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-33.7705,151.2305,1546.536,AU,True,,stop,0.001419,786,32,0,1.52,"{""country"": ""AU"", ""latitude"": -33.7705, ""longitude"": 151.2305}"
+mistralai/mistral-small-2603,no-CoT,35.6895,139.6917,7664.578,JP,True,,stop,0.0001371,786,32,0,3.19,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,14012.813,,True,True,,,,,,12.75,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.27,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,16.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.39,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,17.51,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,22.4,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,22.55,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,12.79,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.21,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.28,

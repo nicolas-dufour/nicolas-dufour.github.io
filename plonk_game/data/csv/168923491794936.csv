@@ -1,0 +1,70 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,39.000780507807,-9.1146527819713,0.0,PT,True,,,,,,,,"Sobral de Monte Agraco, Sobral de Monte Agraco, Lisbon, PT"
+google/gemini-3.5-flash,CoT (effort=medium),39.025,-9.152,4.203,PT,True,,stop,0.00666,1296,524,458,5.6,"{""reasoning"": ""The white-washed building with yellow trim, terracotta tiled roof, concrete utility poles, and the black-and-yellow striped signpost are highly characteristic of rural Portugal."", ""country"": ""PT"", ""latitude"": 39.025, ""longitude"": -9.152}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,39.03241729736328,-9.05018424987793,6.588,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,39.05,-9.05,7.82,PT,True,,stop,0.00589,683,99,0,3.43,"{""reasoning"": ""Whitewashed houses with yellow trim and terracotta tile roofs, Portuguese-style road signs and bollards, Mediterranean vegetation typical of rural central Portugal."", ""country"": ""PT"", ""latitude"": 39.05, ""longitude"": -9.05}"
+openai/gpt-5.5,CoT,39.0786,-9.1098,8.663,PT,True,,stop,0.01432,506,393,319,10.88,"{""reasoning"":""Whitewashed houses with ochre trim, red clay roof tiles, Portuguese-style road signage and right-side driving strongly indicate rural Portugal. The hilly Mediterranean village setting fits the Lisbon/Ribatejo–western central Portugal area."",""country"":""PT"",""latitude"":39.0786,""longitude"":-9.1098}"
+google/gemini-3.5-flash,CoT (effort=low),39.0512,-9.2584,13.624,PT,True,,stop,0.003492,1296,172,113,14.86,"{""reasoning"": ""The white building with ochre-yellow trim, concrete utility poles, and European road signs are highly characteristic of rural Portugal."", ""country"": ""PT"", ""latitude"": 39.0512, ""longitude"": -9.2584}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),39.124512,-9.183421,14.985,PT,True,,stop,0.0021645,1215,38,0,1.2,"```json
+{""country"": ""PT"", ""latitude"": 39.124512, ""longitude"": -9.183421}
+```"
+moonshotai/kimi-k2.6,no-CoT,39.2,-9.2,23.344,PT,True,,stop,0.00041472,488,23,0,8.9,"{""country"": ""PT"", ""latitude"": 39.2, ""longitude"": -9.2}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,39.11309814453125,-9.369340896606445,25.29,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,39.170562744140625,-9.385735511779785,30.064,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,38.7223,-9.1397,31.041,PT,True,,stop,8.516e-05,394,30,0,2.08,"{""country"": ""PT"", ""latitude"": 38.7223, ""longitude"": -9.1397}"
+x-ai/grok-4.3,CoT,38.722,-9.139,31.071,PT,True,,stop,0.0024465,580,823,746,14.46,"{
+  ""reasoning"": ""Whitewashed buildings with yellow base trim and red clay tile roofs, European-style triangular warning sign plus blue rectangular sign on right-hand side of road, right-side driving, and Mediterranean scrubby hills are definitive for rural Portugal."",
+  ""country"": ""PT"",
+  ""latitude"": 38.722,
+  ""longitude"": -9.139
+}"
+x-ai/grok-4.3,no-CoT,38.7023,-9.3124,37.347,PT,True,,stop,0.0004784,496,24,0,1.97,"{""country"": ""PT"", ""latitude"": 38.7023, ""longitude"": -9.3124}"
+openai/gpt-5.5,no-CoT,39.3648,-9.1576,40.646,PT,True,,stop,0.002865,429,24,0,9.16,"{""country"":""PT"",""latitude"":39.3648,""longitude"":-9.1576}"
+anthropic/claude-opus-4.8,no-CoT,39.3997,-9.1356,44.395,PT,True,,stop,0.00356,552,32,0,3.89,"{""country"": ""PT"", ""latitude"": 39.3997, ""longitude"": -9.1356}"
+qwen/qwen3.5-9b,no-CoT,39.5033,-8.5963,71.515,PT,True,,stop,4.39e-05,394,30,0,6.54,"{""country"": ""PT"", ""latitude"": 39.5033, ""longitude"": -8.5963}"
+google/gemini-3.1-pro-preview,CoT,39.7,-8.8,82.322,PT,True,,stop,0.005126,1297,211,140,27.63,"{
+  ""reasoning"": ""The white building with a yellow base stripe and stone window frames is characteristic of Portuguese architecture. The concrete utility pole with holes is also a very common sight in Portugal."",
+  ""country"": ""PT"",
+  ""latitude"": 39.7,
+  ""longitude"": -8.8
+}"
+qwen/qwen3.6-27b,no-CoT,39.758,-9.149,84.251,PT,True,,stop,0.0001683,393,30,0,15.04,"{""country"": ""PT"", ""latitude"": 39.7580, ""longitude"": -9.1490}"
+xiaomi/mimo-v2.5,no-CoT,39.7477,-8.805,87.214,PT,True,,stop,6.99776e-05,628,30,0,2.47,"{""country"": ""PT"", ""latitude"": 39.7477, ""longitude"": -8.8050}"
+google/gemini-3.1-pro-preview,no-CoT,39.75,-8.8,87.589,PT,True,,stop,0.004206,1215,148,119,3.24,"```json
+{""country"": ""PT"", ""latitude"": 39.75, ""longitude"": -8.8}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,39.7523,-8.7842,88.26,PT,True,,stop,0.00018122,393,38,0,1.02,"{
+  ""country"": ""PT"",
+  ""latitude"": 39.7523,
+  ""longitude"": -8.7842
+}"
+google/gemini-3.5-flash,CoT (effort=high),39.6012,-8.4092,90.233,PT,True,,stop,0.008316,1296,708,645,9.61,"{""reasoning"": ""The white-washed building with yellow trim, stone window frames, and the specific concrete utility pole with climbing rungs are highly characteristic of Portugal."", ""country"": ""PT"", ""latitude"": 39.6012, ""longitude"": -8.4092}"
+google/gemma-4-31b-it,no-CoT,39.4562,-8.2341,91.197,PT,True,,stop,6.188e-05,396,35,0,4.89,"```json
+{""country"": ""PT"", ""latitude"": 39.4562, ""longitude"": -8.2341}
+```"
+mistralai/mistral-medium-3-5,no-CoT,39.0,-8.0,96.321,PT,True,,stop,0.00096,520,24,0,0.79,"{""country"": ""PT"", ""latitude"": 39.0, ""longitude"": -8.0}"
+qwen/qwen3.6-35b-a3b,no-CoT,39.4872,-8.1234,101.055,PT,True,,stop,0.0001268,394,30,0,3.7,"{""country"": ""PT"", ""latitude"": 39.4872, ""longitude"": -8.1234}"
+qwen/qwen3.5-27b,no-CoT,39.4108,-8.0636,101.39,PT,True,,stop,0.0001845,394,43,0,16.18,"```json
+{
+  ""country"": ""PT"",
+  ""latitude"": 39.4108,
+  ""longitude"": -8.0636
+}
+```"
+minimax/minimax-m3,no-CoT,39.5,-8.0,110.876,PT,True,,stop,0.00041742,653,233,293,5.55,"{""country"": ""PT"", ""latitude"": 39.5, ""longitude"": -8.0}"
+moonshotai/kimi-k2.6,CoT,38.2,-8.1,125.311,PT,True,,stop,0.017331192,568,5014,4934,241.87,"{""reasoning"": ""The whitewashed buildings with terracotta roofs, ochre base trim, and grey granite window frames are hallmarks of Portuguese rural architecture, matched with a black-and-yellow warning post, wooden utility pole with street lamp, and European Portuguese road signage."", ""country"": ""PT"", ""latitude"": 38.2, ""longitude"": -8.1}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,40.29085159301758,-8.221981048583984,162.538,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,40.377227783203125,-8.194514274597168,172.115,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,40.41089630126953,-8.156346321105957,176.932,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,37.65,-7.85,186.356,PT,True,,stop,0.00064602,731,404,385,8.62,"{""reasoning"": ""Whitewashed house with yellow ochre-painted base, terracotta roof tiles, and the distinctive blue T-junction warning sign are hallmark features of rural Portugal, specifically the Alentejo region. The inverted yield triangle sign style and Portuguese-style utility pole confirm this is in Portugal's interior south."", ""country"": ""PT"", ""latitude"": 37.65, ""longitude"": -7.85}"
+qwen/qwen3.5-397b-a17b,CoT,40.482,-7.351,223.298,PT,True,,stop,0.006453,473,1727,1633,13.97,"{""reasoning"": ""The white stucco house with grey granite window frames, terracotta roof, and distinctive yellow ochre base is characteristic of rural architecture in the Beira Interior region of Portugal. The concrete utility poles, blue mandatory direction sign, and yellow/black striped curb markings further confirm a Portuguese setting."", ""country"": ""PT"", ""latitude"": 40.482, ""longitude"": -7.351}"
+xiaomi/mimo-v2.5,CoT,41.15,-8.61,242.808,PT,True,,stop,0.0001163176,707,156,90,2.42,"{""reasoning"": ""The prominent blue 'A' sign and yield sign style are distinctly Portuguese, and the granite-trimmed white architecture with yellow base trim is characteristic of northern Portugal."", ""country"": ""PT"", ""latitude"": 41.15, ""longitude"": -8.61}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.2345,-7.8901,269.314,PT,True,,stop,0.00031308,393,30,0,4.22,"{""country"": ""PT"", ""latitude"": 41.2345, ""longitude"": -7.8901}"
+mistralai/mistral-small-2603,no-CoT,37.9754,23.7291,2845.334,GR,True,,stop,9.66e-05,520,31,0,0.93,"{""country"": ""GR"", ""latitude"": 37.9754, ""longitude"": 23.7291}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4435.092,,True,True,,,,,,6.55,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.28,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.2,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.9,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.29,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.14,

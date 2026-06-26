@@ -1,0 +1,76 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,23.414632205272,80.075962263314,0.0,IN,True,,,,,,,,"Sihora, Jabalpur, Madhya Pradesh, IN"
+minimax/minimax-m3,CoT,23.5,80.0,12.253,IN,True,,stop,0.00067986,943,382,308,14.71,"{""reasoning"": ""Flat terrain with reddish-brown soil, hazy tropical atmosphere, rural highway with white edge markings, and roadside utility poles suggest rural central India. The vegetation and landscape are consistent with the Indo-Gangetic or central Indian plains region."", ""country"": ""IN"", ""latitude"": 23.5, ""longitude"": 80.0}"
+x-ai/grok-4.3,no-CoT,21.15,79.08,271.865,IN,True,,stop,0.0008678,704,22,0,1.28,"{""country"": ""IN"", ""latitude"": 21.15, ""longitude"": 79.08}"
+anthropic/claude-opus-4.8,no-CoT,21.1458,79.0882,271.981,IN,True,,stop,0.00489,818,32,0,8.48,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+google/gemini-3.1-pro-preview,no-CoT,21.1458,79.0882,271.981,IN,True,,stop,0.002872,1226,35,0,8.36,"```json
+{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}
+```"
+qwen/qwen3.6-27b,no-CoT,21.1458,79.0882,271.981,IN,True,,stop,0.0002912,586,31,0,2.29,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),21.2504,81.6296,288.867,IN,True,,stop,0.0021525,1225,35,0,7.53,"```json
+{""country"": ""IN"", ""latitude"": 21.2504, ""longitude"": 81.6296}
+```"
+moonshotai/kimi-k2.6,no-CoT,21.25,81.63,288.927,IN,True,,stop,0.00033048,755,23,0,20.02,"{""country"": ""IN"", ""latitude"": 21.25, ""longitude"": 81.63}"
+anthropic/claude-opus-4.8,CoT,21.15,78.05,326.887,IN,True,,stop,0.00737,949,105,0,13.06,"{""reasoning"": ""Flat agricultural landscape with reddish soil, parked motorcycles by a roadside structure, and hazy dusk lighting typical of rural India; vegetation and infrastructure match central Indian plains."", ""country"": ""IN"", ""latitude"": 21.15, ""longitude"": 78.05}"
+google/gemma-4-31b-it,no-CoT,20.5937,78.9629,333.998,IN,True,,stop,6.348e-05,404,36,0,6.6,"```json
+{""country"": ""IN"", ""latitude"": 20.5937, ""longitude"": 78.9629}
+```"
+qwen/qwen3.5-9b,no-CoT,20.5937,78.9629,333.998,IN,True,,stop,6.325e-05,586,31,0,5.29,"{""country"": ""IN"", ""latitude"": 20.5937, ""longitude"": 78.9629}"
+xiaomi/mimo-v2.5,CoT,26.8,80.9,385.467,IN,True,,stop,0.0003943576,899,1053,994,28.75,"{""reasoning"": ""Left-hand traffic and reddish soil suggest a rural Indian setting, consistent with the flat agricultural landscape and utility poles typical of Uttar Pradesh."", ""country"": ""IN"", ""latitude"": 26.8, ""longitude"": 80.9}"
+openai/gpt-5.5,no-CoT,26.8467,80.9462,391.55,IN,True,,stop,0.00408,678,23,0,1.25,"{""country"":""IN"",""latitude"":26.8467,""longitude"":80.9462}"
+qwen/qwen3.5-35b-a3b,no-CoT,26.8467,80.9462,391.55,IN,True,,stop,0.0001353625,585,31,0,0.93,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+qwen/qwen3.6-35b-a3b,no-CoT,26.8467,80.9462,391.55,IN,True,,stop,0.0001668,586,31,0,3.38,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,22.889326095581055,75.75199127197266,445.906,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),21.45,84.02,460.452,IN,True,,stop,0.0236235,1307,2407,2332,24.84,"{""reasoning"": ""The image shows left-hand traffic on a flat road with red laterite soil and concrete utility poles characteristic of rural India. The roadside shack resembles a typical Indian puncture shop, suggesting a location in a state like Odisha."", ""country"": ""IN"", ""latitude"": 21.45, ""longitude"": 84.02}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,25.574668884277344,75.88050842285156,487.713,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,20.5,76.0,530.72,IN,True,,stop,0.00023736,904,23,0,6.48,"{""country"": ""IN"", ""latitude"": 20.5, ""longitude"": 76.0}"
+google/gemma-4-31b-it,CoT,19.7604,75.7126,607.066,IN,True,,stop,0.00026287,489,517,457,29.94,"{""reasoning"": ""Left-hand traffic, characteristic Indian truck style, and reddish-brown soil are strong indicators of rural India."", ""country"": ""IN"", ""latitude"": 19.7604, ""longitude"": 75.7126}"
+mistralai/mistral-medium-3-5,no-CoT,28.7041,77.1025,658.821,IN,True,,stop,0.0014115,786,31,0,1.85,"{""country"": ""IN"", ""latitude"": 28.7041, ""longitude"": 77.1025}"
+google/gemini-3.5-flash,CoT (effort=low),20.25,85.5,661.156,IN,True,,stop,0.0047415,1307,309,244,3.48,"{""reasoning"": ""The flat landscape with distinct reddish soil, sparse tropical vegetation, and left-hand traffic suggests a rural highway in India, likely in the eastern or southern plains such as Odisha."", ""country"": ""IN"", ""latitude"": 20.25, ""longitude"": 85.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,22.403873443603516,73.68353271484375,664.252,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,21.1702,72.8311,785.917,IN,True,,stop,0.00021684,586,31,0,7.48,"{""country"": ""IN"", ""latitude"": 21.1702, ""longitude"": 72.8311}"
+x-ai/grok-4.3,CoT,19.12,73.85,802.45,IN,True,,stop,0.001874,788,490,416,11.2,"{""reasoning"": ""Left-hand traffic (oncoming headlights centered-right), red laterite soil, flooded paddy-style fields, acacia/neem-like tree, thatched shed and parked bikes all indicate rural South Asia at dusk; hazy tropical sky confirms India."", ""country"": ""IN"", ""latitude"": 19.12, ""longitude"": 73.85}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,16.959014892578125,76.30553436279297,818.466,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,22.7196,88.4353,858.559,IN,True,,stop,0.0002345,586,44,0,9.18,"```json
+{
+  ""country"": ""IN"",
+  ""latitude"": 22.7196,
+  ""longitude"": 88.4353
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,19.076,72.8777,888.141,IN,True,,stop,9.68576e-05,820,30,0,8.47,"{""country"": ""IN"", ""latitude"": 19.076, ""longitude"": 72.8777}"
+qwen/qwen3.6-35b-a3b,CoT,17.65,74.05,896.72,IN,True,,stop,0.00352675,665,3427,3215,34.2,"```json
+{
+    ""reasoning"": ""The image shows left-hand traffic (the oncoming car is in the right lane from the camera's perspective) and distinctive red soil on the roadside, which is characteristic of the Deccan Plateau in India. The rural setting with green fields, concrete utility poles, and a vehicle resembling a common Indian hatchback (likely a Maruti) further points to this region."",
+    ""country"": ""IN"",
+    ""latitude"": 17.65,
+    ""longitude"": 74.05
+}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,15.747392654418945,74.0726089477539,1059.038,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,15.699949264526367,74.11331939697266,1060.828,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,14.53,76.12,1071.711,IN,True,,stop,0.00859725,665,2766,1,84.78,"{
+""reasoning"": ""The reddish-brown laterite soil on the road shoulder and the flat, agricultural landscape are characteristic of the Deccan Plateau in southern India. Combined with left-hand traffic (indicated by oncoming headlights) and standard concrete utility poles, this points to a rural highway in Karnataka or Andhra Pradesh."",
+""country"": ""IN"",
+""latitude"": 14.53,
+""longitude"": 76.12
+}"
+openai/gpt-5.5,CoT,31.4167,73.0833,1125.435,PK,True,,stop,0.013555,755,326,251,8.64,"{""reasoning"":""Flat irrigated farmland, left-side driving, hazy subtropical climate, and tractor/trailer traffic strongly suggest rural Punjab in Pakistan or northwest India. The sparse road markings and landscape fit Pakistani Punjab best, likely near Faisalabad."",""country"":""PK"",""latitude"":31.4167,""longitude"":73.0833}"
+qwen/qwen3.6-27b,CoT,12.5,76.9,1259.11,IN,True,,stop,0.01918305,665,6994,6909,63.05,"{""reasoning"": ""The reddish-brown laterite soil on the roadside embankment and the flat agricultural landscape are characteristic of the Mysore region in Karnataka, India. The left-hand traffic, concrete utility poles, and roadside tea stall structure further confirm the location as rural India."", ""country"": ""IN"", ""latitude"": 12.5, ""longitude"": 76.9}"
+qwen/qwen3.5-397b-a17b,no-CoT,16.5833,103.5,2558.858,TH,True,,stop,0.0003974,586,29,0,2.17,"{""country"": ""TH"", ""latitude"": 16.5833, ""longitude"": 103.5}"
+google/gemini-3.1-pro-preview,CoT,12.5657,104.991,2891.422,KH,True,,stop,0.008254,1307,470,393,16.09,"{
+  ""reasoning"": ""The flat landscape, reddish soil, and tropical vegetation are characteristic of Southeast Asia. The roadside stall and driving on the right side of the road strongly suggest Cambodia."",
+  ""country"": ""KH"",
+  ""latitude"": 12.5657,
+  ""longitude"": 104.991
+}"
+google/gemini-3.5-flash,CoT (effort=medium),12.35,105.15,2917.988,KH,True,,stop,0.0084765,1307,724,654,9.37,"```json
+{""reasoning"": ""The flat landscape, distinct reddish-orange soil on the shoulder, and tropical vegetation are highly characteristic of rural Cambodia, particularly along the national highways in the central plains."", ""country"": ""KH"", ""latitude"": 12.35, ""longitude"": 105.15}
+```"
+mistralai/mistral-small-2603,CoT,42.4167,12.1,6507.971,IT,True,,stop,0.00062244,868,968,1089,7.22,"{""reasoning"": ""EU-style license plate suggests Europe, road infrastructure and vegetation align with central Italy."", ""country"": ""IT"", ""latitude"": 42.4167, ""longitude"": 12.1}"
+moonshotai/kimi-k2.6,CoT,7.4,3.9,8274.888,NG,True,,stop,0.0103404,832,2427,2636,92.91,"{""reasoning"": ""The vivid red lateritic soil shoulders, flat tropical savanna vegetation, and right-hand traffic on a rural paved highway with simple utility poles are classic hallmarks of West Africa, most consistent with rural Nigeria."", ""country"": ""NG"", ""latitude"": 7.4, ""longitude"": 3.9}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8995.718,,True,True,,,,,,19.49,
+mistralai/mistral-small-2603,no-CoT,38.9072,-77.0369,12687.036,US,True,,stop,0.000170625,786,31,0,2.72,"{""country"": ""US"", ""latitude"": 38.9072, ""longitude"": -77.0369}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,2.17,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.25,
+qwen/qwen3.5-122b-a10b,CoT,,,,,False,,stop,0.00551226,665,2567,2567,15.21,

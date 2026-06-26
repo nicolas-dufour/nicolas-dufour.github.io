@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,69.371667922014,88.054465216526,0.0,RU,True,,,,,,,,"Norilsk, None, Krasnoyarskiy, RU"
+google/gemini-3.5-flash,CoT (effort=medium),69.355,87.965,3.966,RU,True,,stop,0.0104115,1271,945,872,10.74,"{""reasoning"": ""The bright orange lampposts, flat-topped Putorana mountains in the background, and barren tundra landscape are characteristic of the road between Alykel Airport and Norilsk in northern Russia."", ""country"": ""RU"", ""latitude"": 69.355, ""longitude"": 87.965}"
+google/gemini-3.5-flash,CoT (effort=high),69.3188,88.0785,5.954,RU,True,,stop,0.0207435,1271,2093,2007,26.47,"{""reasoning"": ""The distinctive blue and red checkpoint building with a white watchtower, along with the barren tundra landscape and black-and-white striped barriers, identifies the 'Kupets' checkpoint on the A-382 highway entering Norilsk, Russia."", ""country"": ""RU"", ""latitude"": 69.3188, ""longitude"": 88.0785}"
+openai/gpt-5.5,no-CoT,69.3506,88.2001,6.17,RU,True,,stop,0.00341,544,23,0,1.58,"{""country"":""RU"",""latitude"":69.3506,""longitude"":88.2001}"
+google/gemini-3.1-pro-preview,CoT,69.355,88.205,6.184,RU,True,,stop,0.006526,1271,332,248,17.36,"{
+  ""reasoning"": ""The black and white painted curbs, barren tundra landscape, and Soviet-style industrial architecture strongly indicate a northern Russian city. The specific orange streetlights and checkpoint structure are characteristic of the Norilsk area."",
+  ""country"": ""RU"",
+  ""latitude"": 69.355,
+  ""longitude"": 88.205
+}"
+openai/gpt-5.5,CoT,69.3465,88.1987,6.308,RU,True,,stop,0.014295,621,373,287,30.22,"{""reasoning"":""Right-hand driving with Russian-style black/white concrete barriers and roadside poles, plus barren subarctic industrial landscape and Soviet apartment blocks strongly suggest the Norilsk area. The treeless tundra, low hills, and heavy industrial outskirts fit northern Krasnoyarsk Krai best."",""country"":""RU"",""latitude"":69.3465,""longitude"":88.1987}"
+xiaomi/mimo-v2.5,CoT,69.344,88.205,6.655,RU,True,,stop,0.0004895576,787,1449,1347,15.97,"{""reasoning"": ""The presence of black-and-white striped concrete curbs and a specialized guard tower at a road checkpoint, combined with a tundra landscape and Soviet-style architecture, strongly indicates the entrance to a closed industrial city in the Russian Arctic. These specific visual markers and the high-latitude vegetation are characteristic of the road leading into Norilsk."", ""country"": ""RU"", ""latitude"": 69.344, ""longitude"": 88.205}"
+google/gemini-3.1-pro-preview,no-CoT,69.3415,88.2112,7.0,RU,True,,stop,0.002798,1189,35,0,3.99,"```json
+{""country"": ""RU"", ""latitude"": 69.3415, ""longitude"": 88.2112}
+```"
+xiaomi/mimo-v2.5,no-CoT,69.349,88.225,7.144,RU,True,,stop,8.08976e-05,708,29,0,1.0,"{""country"": ""RU"", ""latitude"": 69.349, ""longitude"": 88.225}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),69.318333,88.198611,8.194,RU,True,,stop,0.002091,1190,34,0,8.09,"{""country"": ""RU"", ""latitude"": 69.318333, ""longitude"": 88.198611}"
+google/gemini-3.5-flash,CoT (effort=low),69.3685,87.4251,24.659,RU,True,,stop,0.004041,1272,237,162,8.84,"{""reasoning"": ""The black-and-white painted concrete barriers, orange utility poles, and barren tundra landscape with distant industrial settlements are highly characteristic of the road network around Norilsk and Alykel in northern Russia."", ""country"": ""RU"", ""latitude"": 69.3685, ""longitude"": 87.4251}"
+qwen/qwen3.5-397b-a17b,CoT,71.2815,72.0532,633.268,RU,True,,stop,0.0075378,553,2015,1919,27.61,"{""reasoning"": ""The black-and-white painted concrete curb barriers and orange street light poles are characteristic of Russian infrastructure, particularly in northern industrial regions. The flat, treeless tundra landscape and modular buildings suggest a remote location like the Yamal Peninsula, likely near the Sabetta LNG project or airport."", ""country"": ""RU"", ""latitude"": 71.2815, ""longitude"": 72.0532}"
+minimax/minimax-m3,CoT,67.55,64.03,994.563,RU,True,,stop,0.00085662,845,551,575,9.92,"{""reasoning"": ""The flat tundra landscape with no trees, Soviet-era apartment blocks in the distance, distinctive black-and-white concrete road barriers, orange lamp posts, and checkpoint-style guard building are all hallmarks of a remote Arctic Russian town, most likely Vorkuta or a similar mining town in the Komi Republic above the treeline."", ""country"": ""RU"", ""latitude"": 67.55, ""longitude"": 64.03}"
+qwen/qwen3.5-35b-a3b,no-CoT,55.9583,82.7156,1514.817,RU,True,,stop,0.00010195,473,31,0,2.64,"{""country"": ""RU"", ""latitude"": 55.9583, ""longitude"": 82.7156}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,56.431888580322266,61.302024841308594,1945.113,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,69.0,33.0,2102.424,RU,True,,stop,0.0005752,600,25,0,9.34,"{""country"": ""RU"", ""latitude"": 69.0, ""longitude"": 33.0}"
+qwen/qwen3.5-9b,no-CoT,51.6966,105.3353,2162.661,RU,True,,stop,5.22e-05,474,32,0,4.67,"{""country"": ""RU"", ""latitude"": 51.6966, ""longitude"": 105.3353}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,54.65091323852539,59.59994125366211,2170.0,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,54.81184387207031,53.538761138916016,2360.424,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,48.75,106.35,2496.81,MN,True,,stop,0.0027165,676,883,802,10.67,"{""reasoning"": ""Right-hand traffic, black/white striped Jersey barriers with orange reflectors, sparse steppe terrain with reddish hills, industrial control-tower buildings and overhead wiring match Russian/Mongolian mining regions; no legible text but overall visual style and vehicle types point to post-Soviet Central Asia."", ""country"": ""MN"", ""latitude"": 48.75, ""longitude"": 106.35}"
+google/gemma-4-31b-it,no-CoT,64.5033,147.32,2528.988,RU,True,,stop,6.418e-05,406,37,0,5.08,"```json
+{""country"": ""RU"", ""latitude"": 64.5033, ""longitude"": 147.3200}
+```"
+moonshotai/kimi-k2.6,CoT,51.15,58.65,2543.105,RU,True,,stop,0.011366028,682,3259,3188,189.73,"{""reasoning"": ""The black-and-white striped road barriers, prefabricated blue-red control tower with observation deck, and flat semi-arid steppe are characteristic of a Russian highway checkpoint in the Southern Ural region near Kazakhstan."", ""country"": ""RU"", ""latitude"": 51.15, ""longitude"": 58.65}"
+x-ai/grok-4.3,no-CoT,47.85,106.75,2601.167,MN,True,,stop,0.0005934,592,22,0,0.86,"{""country"": ""MN"", ""latitude"": 47.85, ""longitude"": 106.75}"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,2874.715,RU,True,,stop,0.001191,634,32,0,2.53,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.6-35b-a3b,no-CoT,55.7558,37.6173,2874.715,RU,True,,stop,0.00010195,473,31,0,8.32,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+anthropic/claude-opus-4.8,CoT,59.5614,150.808,3035.757,RU,True,,stop,0.00676,797,111,0,3.6,"{""reasoning"": ""Treeless steppe terrain, industrial buildings, and concrete barriers suggest a remote subarctic Russian town; the bleak landscape and architecture match Magadan/Chukotka region in far eastern Russia."", ""country"": ""RU"", ""latitude"": 59.5614, ""longitude"": 150.808}"
+anthropic/claude-opus-4.8,no-CoT,64.7314,177.505,3561.472,RU,True,,stop,0.00413,666,32,0,3.52,"{""country"": ""RU"", ""latitude"": 64.7314, ""longitude"": 177.5050}"
+minimax/minimax-m3,no-CoT,64.73,177.51,3561.746,RU,True,,stop,0.00044682,767,229,271,6.57,"{""country"": ""RU"", ""latitude"": 64.73, ""longitude"": 177.51}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,47.770050048828125,36.84563446044922,3638.295,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,40.09652328491211,43.917022705078125,4139.988,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,40.02971267700195,43.890647888183594,4147.689,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,63.9129,-20.0158,4178.84,IS,True,,stop,0.00018772,474,31,0,10.58,"{""country"": ""IS"", ""latitude"": 63.9129, ""longitude"": -20.0158}"
+qwen/qwen3.5-397b-a17b,no-CoT,64.1355,-21.8954,4207.925,IS,True,,stop,0.00036468,473,31,0,9.22,"{""country"": ""IS"", ""latitude"": 64.1355, ""longitude"": -21.8954}"
+qwen/qwen3.5-27b,no-CoT,64.1354,-21.8953,4207.932,IS,True,,stop,0.0002065,474,44,0,9.31,"```json
+{
+  ""country"": ""IS"",
+  ""latitude"": 64.1354,
+  ""longitude"": -21.8953
+}
+```"
+qwen/qwen3.6-27b,no-CoT,64.1466,-21.9426,4208.121,IS,True,,stop,0.0001943,473,31,0,18.18,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.9426}"
+mistralai/mistral-small-2603,no-CoT,39.7652,-86.1595,7870.314,US,True,,stop,0.000142125,634,31,0,3.18,"{""country"": ""US"", ""latitude"": 39.7652, ""longitude"": -86.1595}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9931.341,,True,True,,,,,,0.39,
+qwen/qwen3.6-35b-a3b,CoT,-26.315,19.825,11933.773,ZA,True,,stop,0.00407079985,553,4125,3999,51.43,"{""reasoning"": ""The image shows driving on the left, black-and-white curb blocks typical of South Africa/Namibia, arid red-soil terrain, and container-style security buildings often found at border posts or mines. The specific layout with a container guard tower on the left and a booth on the right, combined with the flat, arid landscape and distant mountains, strongly suggests a border crossing or checkpoint in the Northern Cape/Karoo region."", ""country"": ""ZA"", ""latitude"": -26.315, ""longitude"": 19.825}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.2,

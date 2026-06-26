@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,28.778397508212,-17.946761685745,0.0,ES,True,,,,,,,,"Puntagorda, Provincia de Santa Cruz de Tenerife, Canary Islands, ES"
+google/gemini-3.5-flash,no-CoT (effort=minimal),28.635412,-17.868124,17.652,ES,True,,stop,0.002136,1190,39,0,1.26,"```json
+{""country"": ""ES"", ""latitude"": 28.635412, ""longitude"": -17.868124}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,28.23476219177246,-17.28451919555664,88.552,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,28.22246551513672,-17.263479232788086,90.992,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,28.23445701599121,-16.704086303710938,135.655,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,28.333,-16.635,137.356,ES,True,,stop,0.008625,553,2317,2225,18.04,"{""reasoning"": ""The tall, straight pine trees are characteristic of the Canary Island Pine (Pinus canariensis), and the reddish volcanic rock/soil on the right suggests a volcanic island like Tenerife. The blue square sign and white road posts are standard European (Spanish) infrastructure."", ""country"": ""ES"", ""latitude"": 28.333, ""longitude"": -16.635}"
+anthropic/claude-opus-4.8,no-CoT,28.2716,-16.6291,140.524,ES,True,,stop,0.00413,666,32,0,2.05,"{""country"": ""ES"", ""latitude"": 28.2716, ""longitude"": -16.6291}"
+anthropic/claude-opus-4.8,CoT,28.27,-16.62,141.411,ES,True,,stop,0.00616,797,87,0,9.13,"{""reasoning"": ""Canary Island pine forest with red volcanic soil and rock cuts, blue 40 speed sign style typical of Spain, mountainous winding road."", ""country"": ""ES"", ""latitude"": 28.27, ""longitude"": -16.62}"
+google/gemini-3.5-flash,CoT (effort=high),28.201,-16.635,143.375,ES,True,,stop,0.008118,1272,690,621,4.84,"{""reasoning"": ""The blue square recommended speed sign (40) is characteristic of Spain, and the combination of volcanic rock and Canary Island pine trees strongly points to the Canary Islands, specifically Tenerife."", ""country"": ""ES"", ""latitude"": 28.201, ""longitude"": -16.635}"
+qwen/qwen3.6-35b-a3b,CoT,28.156,-16.656,143.905,ES,True,,stop,0.1266951946,553,131164,131070,1011.39,"{""reasoning"": ""The image features tall, straight pine trees characteristic of the Canary Island Pine (*Pinus canariensis*) and distinctive red volcanic soil, which strongly points to Tenerife, Canary Islands. The road markings, guardrails, and blue parking sign are consistent with Spanish infrastructure."", ""country"": ""ES"", ""latitude"": 28.156, ""longitude"": -16.656}"
+google/gemma-4-31b-it,no-CoT,28.1234,-16.6543,145.844,ES,True,,stop,6.718e-05,406,36,0,2.47,"```json
+{""country"": ""ES"", ""latitude"": 28.1234, ""longitude"": -16.6543}
+```"
+openai/gpt-5.5,CoT,28.2876,-16.5418,147.701,ES,True,,stop,0.021105,621,600,516,36.56,"{""reasoning"":""Right-hand traffic, Spanish-style road markings/guardrails and a blue recommended-speed sign point to Spain. The volcanic rock cut and dense Canary pine forest strongly suggest a mountain road in the Canary Islands, likely Tenerife/Gran Canaria; best estimate is Tenerife’s forested interior."",""country"":""ES"",""latitude"":28.2876,""longitude"":-16.5418}"
+google/gemini-3.5-flash,CoT (effort=medium),28.3351,-16.5124,148.508,ES,True,,stop,0.0058575,1271,439,359,4.94,"{""reasoning"": ""The presence of Canary Island pines (Pinus canariensis), volcanic soil, and a Spanish recommended speed limit sign (blue square '40') indicates the Canary Islands, Spain, specifically the forested mountain roads of Tenerife."", ""country"": ""ES"", ""latitude"": 28.3351, ""longitude"": -16.5124}"
+google/gemini-3.5-flash,CoT (effort=low),28.3311,-16.5125,148.65,ES,True,,stop,0.0036525,1271,194,120,2.79,"{""reasoning"": ""The presence of Canary Island pine trees, volcanic soil, and Spanish road infrastructure (blue speed limit sign, white dashed lines) points directly to the mountainous regions of the Canary Islands, specifically Tenerife."", ""country"": ""ES"", ""latitude"": 28.3311, ""longitude"": -16.5125}"
+google/gemini-3.1-pro-preview,no-CoT,28.35,-16.5,149.104,ES,True,,stop,0.005728,1190,279,249,4.64,"```json
+{""country"": ""ES"", ""latitude"": 28.35, ""longitude"": -16.5}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,28.05,-16.65,150.477,ES,True,,stop,0.00035028,473,27,0,2.09,"{""country"": ""ES"", ""latitude"": 28.05, ""longitude"": -16.65}"
+google/gemini-3.1-pro-preview,CoT,28.385,-16.452,152.368,ES,True,,stop,0.00612,1272,298,217,4.72,"{
+  ""reasoning"": ""The blue square advisory speed limit sign is typical of Spain. The volcanic rock and specific pine trees (Canary Island pine) strongly indicate the mountainous regions of the Canary Islands, likely Tenerife."",
+  ""country"": ""ES"",
+  ""latitude"": 28.385,
+  ""longitude"": -16.452
+}"
+moonshotai/kimi-k2.6,CoT,28.324,-16.438,155.784,ES,True,,stop,0.008784,680,2318,2465,72.17,"{""reasoning"": ""The tall Pinus canariensis pines, reddish-brown volcanic rock and soil, and blue square advisory speed sign are characteristic of Tenerife's mountain roads in the Canary Islands under Spanish traffic standards."", ""country"": ""ES"", ""latitude"": 28.324, ""longitude"": -16.438}"
+mistralai/mistral-medium-3-5,no-CoT,28.4636,-16.3156,163.015,ES,True,,stop,0.0011835,634,31,0,1.17,"{""country"": ""ES"", ""latitude"": 28.4636, ""longitude"": -16.3156}"
+qwen/qwen3.5-35b-a3b,no-CoT,28.5734,-16.2513,166.965,ES,True,,stop,0.000162225,473,31,0,15.09,"{""country"": ""ES"", ""latitude"": 28.5734, ""longitude"": -16.2513}"
+qwen/qwen3.5-122b-a10b,no-CoT,28.1234,-15.6789,233.369,ES,True,,stop,0.0002041,473,39,0,1.23,"{
+  ""country"": ""ES"",
+  ""latitude"": 28.1234,
+  ""longitude"": -15.6789
+}"
+openai/gpt-5.5,no-CoT,28.0606,-15.6044,242.571,ES,True,,stop,0.00344,544,24,0,1.19,"{""country"":""ES"",""latitude"":28.0606,""longitude"":-15.6044}"
+minimax/minimax-m3,CoT,27.97,-15.62,244.74,ES,True,,stop,0.00078222,845,489,478,10.66,"{""reasoning"": ""The dominant clues are the tall Pinus canariensis (Canary Island pines) which are endemic to the Canary Islands, the reddish volcanic rock cut into the hillside, and the volcanic reddish-brown soil—together pointing to the pine-forested highlands of Gran Canaria, Spain, likely on a mountain road such as the GC-210."", ""country"": ""ES"", ""latitude"": 27.97, ""longitude"": -15.62}{""reasoning"": ""The dominant clues are the tall Pinus canariensis (Canary Island pines) which are endemic to the Canary Islands, the reddish volcanic rock cut into the hillside, and the volcanic reddish-brown soil—together pointing to the pine-forested highlands of Gran Canaria, Spain, likely on a mountain road such as the GC-210."", ""country"": ""ES"", ""latitude"": 27.97, ""longitude"": -15.62}"
+minimax/minimax-m3,no-CoT,27.95,-15.6,247.4,ES,True,,stop,0.00033882,767,139,150,20.58,"{""country"": ""ES"", ""latitude"": 27.95, ""longitude"": -15.60}"
+x-ai/grok-4.3,no-CoT,28.015,-15.55,249.328,ES,True,,stop,0.0005934,592,22,0,0.8,"{""country"": ""ES"", ""latitude"": 28.015, ""longitude"": -15.55}"
+moonshotai/kimi-k2.6,no-CoT,32.7604,-16.9068,453.781,PT,True,,stop,0.000279792,603,25,0,2.69,"{""country"": ""PT"", ""latitude"": 32.7604, ""longitude"": -16.9068}"
+qwen/qwen3.5-9b,no-CoT,38.15,-5.45,1556.01,ES,True,,stop,8.691e-05,473,26,0,4.32,"{""country"": ""ES"", ""latitude"": 38.15, ""longitude"": -5.45}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.55,-8.15,1673.627,PT,True,,stop,0.00396684795,471,4031,3999,16.38,"{""country"": ""PT"", ""latitude"": 41.55, ""longitude"": -8.15}"
+xiaomi/mimo-v2.5,CoT,43.1,-4.5,1994.861,ES,True,,stop,0.0001319976,787,172,100,3.31,"{""reasoning"": ""The dense pine forest and reddish soil are characteristic of the mountainous regions in Northern Spain. The blue kilometer post (Hito Kilométrico) and road marking style are distinctively Spanish."", ""country"": ""ES"", ""latitude"": 43.1, ""longitude"": -4.5}"
+xiaomi/mimo-v2.5,no-CoT,42.85,-3.85,2010.044,ES,True,,stop,8.00576e-05,708,26,0,1.39,"{""country"": ""ES"", ""latitude"": 42.85, ""longitude"": -3.85}"
+qwen/qwen3.5-27b,no-CoT,42.6523,-0.0892,2222.489,ES,True,,stop,0.000139035,473,30,0,1.26,"{""country"": ""ES"", ""latitude"": 42.6523, ""longitude"": -0.0892}"
+qwen/qwen3.6-27b,no-CoT,42.7936,0.2735,2255.514,ES,True,,stop,0.0001923,473,30,0,11.35,"{""country"": ""ES"", ""latitude"": 42.7936, ""longitude"": 0.2735}"
+x-ai/grok-4.3,CoT,-31.85,26.82,8235.654,ZA,True,,stop,0.003519,676,1204,1140,15.35,"{""reasoning"": ""Blue rectangular N6 route marker indicates South African national road; right-hand traffic, pine forest on volcanic/rocky hillside, and asphalt markings match Eastern Cape terrain along the N6."", ""country"": ""ZA"", ""latitude"": -31.85, ""longitude"": 26.82}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,33.91224670410156,73.3556137084961,8384.132,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,31.954748153686523,77.04084777832031,8788.754,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,29.548803329467773,78.06591796875,8999.584,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,9235.987,US,True,,stop,0.000142875,634,32,0,1.47,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+google/gemma-4-26b-a4b-it,no-CoT,17.1234,78.0,9657.197,,True,,stop,5.574e-05,406,33,0,8.58,"{""country"": ""IN"", own"", ""latitude"": 17.1234, ""longitude"": 78 own} than  own}"
+mistralai/mistral-small-2603,CoT,38.29,141.0,12242.901,JP,True,,stop,0.0006606,716,922,967,14.22,"{""reasoning"": ""Driving on the left, blue road signs with white symbols, and pine-dominated vegetation indicate Japan; rural road style and soil color match Tohoku region."", ""country"": ""JP"", ""latitude"": 38.29, ""longitude"": 141.00}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.23,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.16,

@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,1.9275362466476,-76.250543153029,0.0,CO,True,,,,,,,,"Isnos, None, Huila, CO"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,3.543069362640381,-76.57343292236328,183.184,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,4.712,-75.912,311.89,CO,True,,stop,0.0005934,592,22,0,1.8,"{""country"": ""CO"", ""latitude"": 4.712, ""longitude"": -75.912}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),4.6835,-75.6211,314.313,CO,True,,stop,0.002091,1190,34,0,1.18,"```json
+{""country"": ""CO"", ""latitude"": 4.6835, ""longitude"": -75.6211}
+```"
+qwen/qwen3.5-9b,no-CoT,4.711,-75.59,318.073,CO,True,,stop,5.19e-05,474,30,0,8.92,"{""country"": ""CO"", ""latitude"": 4.7110, ""longitude"": -75.5900}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,4.770434856414795,-75.51951599121094,326.363,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,4.7781548500061035,-75.52359771728516,327.082,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,4.825328826904297,-75.35584259033203,337.175,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,5.07,-75.52,358.707,CO,True,,stop,0.00053502,845,283,293,13.09,"{""reasoning"": ""Narrow dirt mountain road with red-brown tropical soil, lush green vegetation including tall grasses typical of Andean cloud forest, and right-hand drive vehicle suggest a Colombian coffee/highland region road."", ""country"": ""CO"", ""latitude"": 5.07, ""longitude"": -75.52}"
+google/gemma-4-31b-it,no-CoT,4.5709,-74.2973,365.248,CO,True,,stop,6.678e-05,406,35,0,2.57,"```json
+{""country"": ""CO"", ""latitude"": 4.5709, ""longitude"": -74.2973}
+```"
+qwen/qwen3.5-27b,no-CoT,4.6097,-74.0817,383.288,CO,True,,stop,0.000139035,473,30,0,304.27,"{""country"": ""CO"", ""latitude"": 4.6097, ""longitude"": -74.0817}"
+openai/gpt-5.5,no-CoT,4.7112,-74.0721,392.78,CO,True,,stop,0.00344,544,24,0,2.25,"{""country"":""CO"",""latitude"":4.7112,""longitude"":-74.0721}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-1.3240400552749634,-78.14079284667969,418.198,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),6.1524,-75.6012,475.27,CO,True,,stop,0.004275,1272,263,202,9.36,"{""reasoning"": ""The lush, tropical highland vegetation, steep grassy banks, and wet unpaved road are highly characteristic of the Andean region of Colombia."", ""country"": ""CO"", ""latitude"": 6.1524, ""longitude"": -75.6012}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-3.4233381748199463,-77.9858627319336,625.47,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,-21.75,-50.32,3855.991,BR,True,,stop,0.0001434776,787,213,113,9.58,"{""reasoning"": ""The image shows a dirt road with tall, grassy vegetation resembling sugarcane or similar tropical crops, and a vehicle's side mirror visible on the right side, suggesting right-hand traffic or a left-hand drive vehicle. The vegetation and terrain are consistent with tropical South America, particularly sugarcane-growing regions like parts of Brazil."", ""country"": ""BR"", ""latitude"": -21.75, ""longitude"": -50.32}"
+mistralai/mistral-small-2603,no-CoT,-22.9035,-47.0614,4198.102,BR,True,,stop,0.0001137,634,31,0,4.41,"{""country"": ""BR"", ""latitude"": -22.9035, ""longitude"": -47.0614}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5505,-46.6333,4276.515,BR,True,,stop,0.0003794,473,31,0,7.66,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+openai/gpt-5.5,CoT,-1.4936,29.5978,11773.968,RW,True,,stop,0.018795,621,523,436,29.67,"{""reasoning"":""Lush tropical highland vegetation and a narrow unpaved road cut into a steep grassy bank strongly suggest the Great Lakes/African highlands rather than lowland tropics. The rural dirt-track setting and terrain are most consistent with northern Rwanda near the Volcanoes/Musanze area."",""country"":""RW"",""latitude"":-1.4936,""longitude"":29.5978}"
+google/gemini-3.5-flash,CoT (effort=high),-0.25,30.15,11831.096,UG,True,,stop,0.0349095,1271,3667,3599,27.22,"{""reasoning"": ""The lush tropical vegetation dominated by elephant grass on a steep, muddy hillside, combined with the black snorkel of the Toyota Land Cruiser camera vehicle, points directly to the highland regions of western Uganda."", ""country"": ""UG"", ""latitude"": -0.25, ""longitude"": 30.15}"
+google/gemini-3.1-pro-preview,CoT,0.65,30.25,11838.596,UG,True,,stop,0.00619,1271,304,226,5.54,"{
+  ""reasoning"": ""Lush tropical vegetation, muddy dirt road, and a vehicle with a snorkel suggest a rugged, wet tropical environment. The overall landscape is highly characteristic of rural East Africa, such as Uganda."",
+  ""country"": ""UG"",
+  ""latitude"": 0.65,
+  ""longitude"": 30.25
+}"
+google/gemini-3.1-pro-preview,no-CoT,0.3476,32.5825,12099.039,UG,True,,stop,0.002786,1189,34,0,5.79,"```json
+{""country"": ""UG"", ""latitude"": 0.3476, ""longitude"": 32.5825}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.0234,36.8121,12570.552,KE,True,,stop,0.00015575,473,30,0,0.65,"{""country"": ""KE"", ""latitude"": -0.0234, ""longitude"": 36.8121}"
+google/gemini-3.5-flash,CoT (effort=medium),-16.3542,49.8125,13902.724,MG,True,,stop,0.0092955,1271,821,746,13.37,"```json
+{""reasoning"": ""The vehicle's distinctive black ribbed snorkel on the right side indicates Google Street View coverage in Madagascar, specifically along the notoriously muddy and tropical RN5 highway on the east coast."", ""country"": ""MG"", ""latitude"": -16.3542, ""longitude"": 49.8125}
+```"
+anthropic/claude-opus-4.8,no-CoT,-6.1,145.0,15417.562,PG,True,,stop,0.00408,666,30,0,15.79,"{""country"": ""PG"", ""latitude"": -6.1, ""longitude"": 145.0}"
+anthropic/claude-opus-4.8,CoT,-6.05,144.2,15506.19,PG,True,,stop,0.006385,797,96,0,10.03,"{""reasoning"": ""Muddy tropical mountain track with dense sugarcane and lush highland vegetation, suggestive of Papua New Guinea highlands where such rugged dirt roads are common."", ""country"": ""PG"", ""latitude"": -6.05, ""longitude"": 144.2}"
+qwen/qwen3.5-35b-a3b,no-CoT,16.4027,120.5961,17262.561,PH,True,,stop,0.0001249625,473,37,0,0.81,"{
+""country"": ""PH"",
+""latitude"": 16.4027,
+""longitude"": 120.5961
+}"
+qwen/qwen3.6-27b,no-CoT,14.5995,120.9842,17373.375,PH,True,,stop,0.0001963,473,32,0,13.92,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+mistralai/mistral-medium-3-5,no-CoT,10.3157,123.8854,17403.549,PH,True,,stop,0.001191,634,32,0,2.64,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+xiaomi/mimo-v2.5,no-CoT,10.3157,123.8854,17403.549,PH,True,,stop,8.17376e-05,708,32,0,1.13,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+qwen/qwen3.5-122b-a10b,no-CoT,-8.3405,115.092,18571.225,ID,True,,stop,0.00018564,474,30,0,6.18,"{""country"": ""ID"", ""latitude"": -8.3405, ""longitude"": 115.092}"
+moonshotai/kimi-k2.6,CoT,-7.5,110.0,19085.918,ID,True,,stop,0.04122022,682,10181,11656,401.04,"{""reasoning"": ""The steep vegetated embankment immediately left of the vehicle and road on the right indicates left-hand traffic, while the dense tropical grasses, reddish-brown dirt, and narrow mountain road cut through lush hillside are classic of rural Indonesia."", ""country"": ""ID"", ""latitude"": -7.5, ""longitude"": 110.0}"
+x-ai/grok-4.3,CoT,-0.3,100.3,19591.052,ID,True,,stop,0.002444,676,774,710,6.32,"{""reasoning"": ""Lush tropical grasses/ferns on steep earthen embankment beside narrow dirt road, right-side mirror visible implying left-hand traffic, no signage or buildings but consistent with rural SE Asia highlands."", ""country"": ""ID"", ""latitude"": -0.3, ""longitude"": 100.3}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,12.55,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.66,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,20.79,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.48,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.29,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.54,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.33,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.14,

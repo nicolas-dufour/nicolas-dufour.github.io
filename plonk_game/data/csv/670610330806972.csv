@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-20.595843810980035,164.31437094999202,0.0,NC,True,,,,,,,,"Koumac, Koumac, North Province, NC"
+qwen/qwen3.5-27b,no-CoT,11.4067,76.9558,10181.387,IN,True,,stop,0.0002499,585,31,0,4.47,"{""country"": ""IN"", ""latitude"": 11.4067, ""longitude"": 76.9558}"
+qwen/qwen3.6-27b,no-CoT,11.9034,76.9061,10205.963,IN,True,,stop,0.0002279,585,31,0,11.83,"{""country"": ""IN"", ""latitude"": 11.9034, ""longitude"": 76.9061}"
+openai/gpt-5.5,no-CoT,-20.3256,57.5202,10847.352,MU,True,,stop,0.00411,678,24,0,1.64,"{""country"":""MU"",""latitude"":-20.3256,""longitude"":57.5202}"
+openai/gpt-5.5,CoT,-20.4306,57.4289,10850.957,MU,True,,stop,0.016615,755,428,358,19.16,"{""reasoning"":""Tropical sugarcane fields, red volcanic soil, lush vegetation and basaltic hills point strongly to Mauritius; the narrow road with a yellow centerline and left-side driving convention fits rural Mauritian roads."",""country"":""MU"",""latitude"":-20.4306,""longitude"":57.4289}"
+minimax/minimax-m3,no-CoT,-19.5,46.8,11883.496,MG,True,,stop,0.00046848,868,199,174,15.57,"{""country"": ""MG"", ""latitude"": -19.5, ""longitude"": 46.8}"
+minimax/minimax-m3,CoT,-13.25,49.05,12003.947,MG,True,,stop,0.00079746,995,467,394,22.27,"{""reasoning"": ""Red laterite soil shoulders, left-hand driving, yellow centerline, tropical vegetation, and distinctive rounded mountains are highly characteristic of rural northern Madagascar, likely along a route like RN6 heading toward Antsiranana."", ""country"": ""MG"", ""latitude"": -13.25, ""longitude"": 49.05}"
+qwen/qwen3.5-35b-a3b,no-CoT,-30.2543,30.8921,12481.033,ZA,True,,stop,0.0002215625,585,31,0,2.69,"{""country"": ""ZA"", ""latitude"": -30.2543, ""longitude"": 30.8921}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-14.744444847106934,37.36863708496094,13014.058,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-15.07190990447998,36.14556121826172,13103.977,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-14.909647941589355,36.022525787353516,13124.977,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-15.7861,35.0058,13160.539,MW,True,,stop,0.00489,818,32,0,2.67,"{""country"": ""MW"", ""latitude"": -15.7861, ""longitude"": 35.0058}"
+anthropic/claude-opus-4.8,CoT,-15.79,35.0,13160.804,MW,True,,stop,0.00752,949,111,0,14.95,"{""reasoning"": ""Lush green sugarcane fields, tropical vegetation, red-brown soil, and hills suggest a tropical African or Indian Ocean island setting; roadside cane and palm match Malawi/Mozambique countryside."", ""country"": ""MW"", ""latitude"": -15.79, ""longitude"": 35.0}"
+moonshotai/kimi-k2.6,CoT,-3.4,36.7,13713.711,TZ,True,,stop,0.013324896,834,3811,3742,162.17,"{""reasoning"": ""Red lateritic soil on the road shoulders combined with lush tropical savanna vegetation are characteristic of the East African highlands, and the paved road with a simple yellow center line is typical of rural Tanzania."", ""country"": ""TZ"", ""latitude"": -3.4, ""longitude"": 36.7}"
+x-ai/grok-4.3,no-CoT,-1.85,36.8,13781.967,KE,True,,stop,0.0007334,704,22,0,7.43,"{""country"": ""KE"", ""latitude"": -1.85, ""longitude"": 36.8}"
+x-ai/grok-4.3,CoT,-1.2921,36.8219,13807.285,KE,True,,stop,0.002464,788,726,650,5.45,"{
+  ""reasoning"": ""Red lateritic soil, lush savanna vegetation with palms and acacia-like trees, distant hills, and right-side triangular warning sign point to East Africa; road markings and power infrastructure match Kenyan rural highways."",
+  ""country"": ""KE"",
+  ""latitude"": -1.2921,
+  ""longitude"": 36.8219
+}"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,14070.729,BR,True,,stop,0.0014115,786,31,0,1.59,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-35b-a3b,no-CoT,-22.9519,-47.0736,14096.615,BR,True,,stop,0.0001668,586,31,0,2.6,"{""country"": ""BR"", ""latitude"": -22.9519, ""longitude"": -47.0736}"
+mistralai/mistral-small-2603,no-CoT,-22.901,-47.067,14101.517,BR,True,,stop,0.0001353,786,29,0,10.43,"{""country"": ""BR"", ""latitude"": -22.901, ""longitude"": -47.067}"
+xiaomi/mimo-v2.5,CoT,-21.5,-48.5,14131.594,BR,True,,stop,0.0002722776,899,617,514,12.54,"```json
+{""reasoning"": ""The lush tropical vegetation, specifically the tall grass and what appears to be sugarcane plantations, combined with the reddish-brown soil and rolling hills in the background, strongly suggests a rural agricultural region in Brazil. The road infrastructure and environment are consistent with the state of São Paulo or similar sugarcane-growing areas in Brazil."", ""country"": ""BR"", ""latitude"": -21.5, ""longitude"": -48.5}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-21.5012,-46.5123,14259.702,BR,True,,stop,0.0105015,1307,949,872,15.35,"```json
+{""reasoning"": ""The lush tropical vegetation, red soil shoulders, concrete utility poles, and distant rounded green mountains are highly characteristic of southeastern Brazil, particularly the hilly rural areas of São Paulo or Minas Gerais."", ""country"": ""BR"", ""latitude"": -21.5012, ""longitude"": -46.5123}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,-22.9064,-43.1822,14332.873,BR,True,,stop,0.00021658,585,31,0,7.08,"{""country"": ""BR"", ""latitude"": -22.9064, ""longitude"": -43.1822}"
+google/gemini-3.1-pro-preview,no-CoT,-19.916667,-43.933333,14561.422,BR,True,,stop,0.00292,1226,39,0,8.17,"```json
+{""country"": ""BR"", ""latitude"": -19.916667, ""longitude"": -43.933333}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,-15.7938,-47.882,14655.134,,True,,stop,5.908e-05,404,42,0,8.02,"{""country"": ""BR"", ""latitude"": -15.7938, "" own_longitude"": -47.882 own_longitude"": -47.88}"
+google/gemma-4-31b-it,no-CoT,-15.7833,-47.8917,14655.307,BR,True,,stop,6.348e-05,404,36,0,4.94,"```json
+{""country"": ""BR"", ""latitude"": -15.7833, ""longitude"": -47.8917}
+```"
+google/gemini-3.1-pro-preview,CoT,-19.5,-42.5,14685.933,BR,True,,stop,0.005182,1307,214,151,10.71,"{
+  ""reasoning"": ""The single solid yellow center line, reddish soil, and lush tropical vegetation with rolling hills are highly characteristic of rural Brazil."",
+  ""country"": ""BR"",
+  ""latitude"": -19.5,
+  ""longitude"": -42.5
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,2.9595634937286377,-57.154788970947266,15116.159,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-15.8542,-40.2851,15152.925,BR,True,,stop,0.0021525,1225,35,0,1.72,"```json
+{""country"": ""BR"", ""latitude"": -15.8542, ""longitude"": -40.2851}
+```"
+qwen/qwen3.5-9b,no-CoT,-14.8333,-40.4833,15234.112,BR,True,,stop,6.325e-05,586,31,0,4.67,"{""country"": ""BR"", ""latitude"": -14.8333, ""longitude"": -40.4833}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,2.7842330932617188,-55.45356750488281,15274.935,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,3.0313525199890137,-55.30287170410156,15302.545,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-14.7945,-39.2814,15310.831,BR,True,,stop,0.0172605,1307,1700,1622,13.59,"```json
+{""reasoning"": ""The lush tropical vegetation with coconut palms, reddish-brown soil, and concrete utility poles alongside a single yellow center line strongly point to Brazil, particularly the hilly and humid eastern region of Bahia."", ""country"": ""BR"", ""latitude"": -14.7945, ""longitude"": -39.2814}
+```"
+xiaomi/mimo-v2.5,no-CoT,-14.7937,-39.0476,15324.849,BR,True,,stop,9.71376e-05,820,31,0,1.52,"{""country"": ""BR"", ""latitude"": -14.7937, ""longitude"": -39.0476}"
+google/gemini-3.5-flash,CoT (effort=low),-13.2542,-41.2514,15327.248,BR,True,,stop,0.004518,1308,284,212,9.98,"{""reasoning"": ""The lush tropical vegetation, reddish soil on the road shoulders, concrete utility poles, and rolling green hills in the background are highly characteristic of rural Brazil, particularly in the state of Bahia."", ""country"": ""BR"", ""latitude"": -13.2542, ""longitude"": -41.2514}"
+qwen/qwen3.5-397b-a17b,no-CoT,-12.3456,-41.789,15371.724,BR,True,,stop,0.00034185,585,31,0,16.03,"{""country"": ""BR"", ""latitude"": -12.3456, ""longitude"": -41.7890}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.62,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,9.77,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.25,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,15.96,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.15,

@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-7.55830495779,109.13797597129,0.0,ID,True,,,,,,,,"Karanglewas, None, Central Java, ID"
+minimax/minimax-m3,no-CoT,-7.5,110.0,95.247,ID,True,,stop,0.00032754,767,104,103,9.36,"{""country"": ""ID"", ""latitude"": -7.5, ""longitude"": 110.0}"
+xiaomi/mimo-v2.5,CoT,-7.798,110.369,138.25,ID,True,,stop,0.0003195976,787,842,758,21.91,"{""reasoning"": ""The dense tropical vegetation with banana trees and the unpaved rural road are typical of equatorial regions, particularly Southeast Asia such as Indonesia. The absence of urban features and the natural setting strongly point to a rural area in a country like Indonesia."", ""country"": ""ID"", ""latitude"": -7.798, ""longitude"": 110.369}"
+google/gemini-3.1-pro-preview,no-CoT,-7.0,107.5,191.034,ID,True,,stop,0.004336,1190,163,134,10.7,"```json
+{""country"": ""ID"", ""latitude"": -7.0, ""longitude"": 107.5}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-8.084665298461914,111.9342041015625,313.543,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-8.979601860046387,114.68163299560547,630.137,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-9.068727493286133,114.82563781738281,647.915,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,-8.4095,115.1889,672.987,ID,True,,stop,0.0005984,592,24,0,2.0,"{""country"": ""ID"", ""latitude"": -8.4095, ""longitude"": 115.1889}"
+x-ai/grok-4.3,CoT,-8.42,115.28,683.074,ID,True,,stop,0.001714,676,482,429,4.75,"{""reasoning"": ""Tropical banana/palm vegetation, dirt road, and lush undergrowth indicate rural equatorial Southeast Asia; no contradictory infrastructure or signage."", ""country"": ""ID"", ""latitude"": -8.42, ""longitude"": 115.28}"
+mistralai/mistral-small-2603,CoT,5.0,117.0,1646.45,MY,True,,stop,0.00049584,716,759,858,5.92,"{""reasoning"": ""Left-hand traffic and dense tropical rainforest vegetation indicate Southeast Asia; Malaysia is a strong match for these features."", ""country"": ""MY"", ""latitude"": 5.0, ""longitude"": 117.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,11.654541969299316,108.73572540283203,2136.834,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,9.492610931396484,100.03353118896484,2147.495,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,9.498369216918945,100.033935546875,2148.038,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,10.6969,122.0851,2484.729,PH,True,,stop,8.841e-05,473,32,0,2.02,"{""country"": ""PH"", ""latitude"": 10.6969, ""longitude"": 122.0851}"
+moonshotai/kimi-k2.6,CoT,7.5,125.75,2489.176,PH,True,,stop,0.0114759,682,2707,3182,24.04," {""reasoning"": ""Dense tropical banana vegetation and narrow unpaved rural road are characteristic of Philippine provincial barangay roads in the southern island tropics."", ""country"": ""PH"", ""latitude"": 7.5, ""longitude"": 125.75}"
+qwen/qwen3.5-122b-a10b,no-CoT,10.7202,122.5621,2517.622,PH,True,,stop,0.0002187,473,32,0,3.45,"{""country"": ""PH"", ""latitude"": 10.7202, ""longitude"": 122.5621}"
+xiaomi/mimo-v2.5,no-CoT,9.8,124.2,2551.062,PH,True,,stop,7.97776e-05,708,25,0,1.55,"{""country"": ""PH"", ""latitude"": 9.8, ""longitude"": 124.2}"
+google/gemini-3.5-flash,CoT (effort=low),9.8512,124.1435,2551.257,PH,True,,stop,0.004941,1272,337,253,9.85,"```json
+{""reasoning"": ""The lush tropical vegetation with banana and palm trees, combined with the narrow paved road and the specific GoPro camera rig with a pink tether visible at the bottom, is highly characteristic of rural Google Street View coverage in the Philippines."", ""country"": ""PH"", ""latitude"": 9.8512, ""longitude"": 124.1435}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),9.8512,124.1435,2551.257,PH,True,,stop,0.0074595,1271,617,534,6.16,"{""reasoning"": ""The lush tropical vegetation, including banana and coconut trees, alongside a narrow, worn asphalt road, is highly characteristic of the rural Philippines. The camera rig visible at the bottom suggests user-contributed or trekker coverage common in the region."", ""country"": ""PH"", ""latitude"": 9.8512, ""longitude"": 124.1435}"
+google/gemini-3.5-flash,CoT (effort=high),9.85,124.15,2551.626,PH,True,,stop,0.010773,1272,985,909,9.46,"```json
+{""reasoning"": ""The lush tropical vegetation featuring banana and coconut palms, along with the narrow, worn asphalt road and the distinctive GoPro camera rig visible at the bottom, is highly characteristic of rural island regions in the Philippines."", ""country"": ""PH"", ""latitude"": 9.85, ""longitude"": 124.15}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),9.781245,124.284123,2555.602,PH,True,,stop,0.002136,1190,39,0,1.16,"```json
+{""country"": ""PH"", ""latitude"": 9.781245, ""longitude"": 124.284123}
+```"
+anthropic/claude-opus-4.8,CoT,10.3157,123.8854,2572.113,PH,True,,stop,0.00631,797,93,0,3.14,"{""reasoning"": ""Tropical lush vegetation with banana and palm trees, narrow concrete rural road, motorbike POV typical of Southeast Asian Philippines countryside."", ""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+anthropic/claude-opus-4.8,no-CoT,10.3157,123.8854,2572.113,PH,True,,stop,0.00413,666,32,0,2.34,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+moonshotai/kimi-k2.6,no-CoT,10.3157,123.8854,2572.113,PH,True,,stop,0.000290052,603,25,0,1.68,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+qwen/qwen3.5-397b-a17b,no-CoT,10.3157,123.8854,2572.113,PH,True,,stop,0.0003357,473,32,0,4.25,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+qwen/qwen3.5-397b-a17b,CoT,16.2451,102.8376,2736.14,TH,True,,stop,0.006413855,553,2531,2441,226.54,"{
+""reasoning"": ""The dense tropical vegetation, specifically the abundance of banana trees and the lush undergrowth, combined with the dry, unpaved dirt road, strongly suggests a rural area in a tropical monsoon climate like Southeast Asia. The specific texture of the road and the density of the foliage are highly characteristic of rural Thailand (Isaan region) during the dry season."",
+""country"": ""TH"",
+""latitude"": 16.2451,
+""longitude"": 102.8376
+}"
+google/gemma-4-31b-it,no-CoT,14.5995,120.9842,2788.759,PH,True,,stop,6.418e-05,406,37,0,5.15,"```json
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}
+```"
+qwen/qwen3.5-27b,no-CoT,14.5995,120.9842,2788.759,PH,True,,stop,0.00019683,473,32,0,2.12,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+qwen/qwen3.6-27b,no-CoT,14.5995,120.9842,2788.759,PH,True,,stop,0.0001963,473,32,0,20.17,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+qwen/qwen3.5-35b-a3b,no-CoT,14.5995,121.0801,2793.729,PH,True,,stop,9.836e-05,474,32,0,9.83,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 121.0801}"
+google/gemini-3.1-pro-preview,CoT,7.25,80.35,3591.767,LK,True,,stop,0.006192,1272,304,221,20.45,"{
+  ""reasoning"": ""The lush tropical vegetation and narrow paved road are typical of South Asia. The clear plastic box with a pink wire visible at the bottom of the frame is a known camera artifact specific to Street View coverage in Sri Lanka."",
+  ""country"": ""LK"",
+  ""latitude"": 7.25,
+  ""longitude"": 80.35
+}"
+google/gemma-4-26b-a4b-it,no-CoT,14.5995,12.0,10982.006,,True,,stop,5.534e-05,406,32,0,8.5,"```json
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 12 own}
+```"
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,11864.857,FR,True,,stop,0.000141375,634,30,0,1.91,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+qwen/qwen3.6-35b-a3b,no-CoT,18.4655,-66.1057,18697.689,US,True,,stop,0.0001444,474,31,0,2.69,"{""country"": ""US"", ""latitude"": 18.4655, ""longitude"": -66.1057}"
+openai/gpt-5.5,CoT,13.8547,-61.0324,18733.595,LC,True,,stop,0.016665,621,452,367,18.64,"{""reasoning"":""Lush tropical Caribbean vegetation with abundant banana plants and a very narrow rural concrete/gravel lane fits the small-island Windward Caribbean, especially Saint Lucia’s banana-growing interior. The humid hilly roadside setting is most consistent with rural areas around Soufrière/Fond St Jacques."",""country"":""LC"",""latitude"":13.8547,""longitude"":-61.0324}"
+minimax/minimax-m3,CoT,18.22,-66.55,18741.04,PR,True,,stop,0.00056706,843,313,245,11.18,"{""reasoning"": ""Tropical vegetation dominated by banana plants and palm trees, narrow unpaved road with dappled sunlight, and lush green undergrowth indicate a Caribbean island setting, most consistent with rural Puerto Rico."", ""country"": ""PR"", ""latitude"": 18.22, ""longitude"": -66.55}"
+mistralai/mistral-medium-3-5,no-CoT,18.2208,-66.5901,18742.54,PR,True,,stop,0.0011835,634,31,0,1.36,"{""country"": ""PR"", ""latitude"": 18.2208, ""longitude"": -66.5901}"
+openai/gpt-5.5,no-CoT,18.2635,-70.1872,18822.486,DO,True,,stop,0.00344,544,24,0,1.47,"{""country"":""DO"",""latitude"":18.2635,""longitude"":-70.1872}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.2,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.24,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.11,

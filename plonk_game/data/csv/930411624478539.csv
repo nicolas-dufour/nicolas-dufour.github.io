@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.283801597694,-95.127547918688,0.0,US,True,,,,,,,,"Springfield, Brown County, Minnesota, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,44.13117599487305,-95.31825256347656,22.783,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,44.1231689453125,-95.33411407470703,24.293,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,44.12299728393555,-95.33463287353516,24.335,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.6521,-95.1254,70.242,US,True,,stop,0.002154,1226,35,0,1.16,"```json
+{""country"": ""US"", ""latitude"": 43.6521, ""longitude"": -95.1254}
+```"
+google/gemini-3.5-flash,CoT (effort=low),43.6521,-94.1254,106.611,US,True,,stop,0.003402,1308,160,89,8.3,"{""reasoning"": ""The flat agricultural landscape with cornfields, wide asphalt road, and center-line rumble strips with dashed yellow markings is highly characteristic of the US Midwest, particularly Iowa or southern Minnesota."", ""country"": ""US"", ""latitude"": 43.6521, ""longitude"": -94.1254}"
+google/gemini-3.5-flash,CoT (effort=high),43.145,-95.152,126.644,US,True,,stop,0.006651,1308,521,458,3.61,"{""reasoning"": ""The flat agricultural landscape with cornfields, combined with the yellow dashed center line featuring rumble strips, is highly characteristic of the US Midwest, particularly Iowa."", ""country"": ""US"", ""latitude"": 43.145, ""longitude"": -95.152}"
+minimax/minimax-m3,CoT,45.62,-95.78,157.198,US,True,,stop,0.00081102,997,475,477,8.55,"{""reasoning"": ""Flat prairie terrain with corn fields on the right and a divided highway with wide rumble-stripped median and right-side driving indicates a rural US Midwestern state, most likely western Minnesota given the extreme flatness and agricultural landscape."", ""country"": ""US"", ""latitude"": 45.62, ""longitude"": -95.78}"
+minimax/minimax-m3,no-CoT,43.5,-93.0,191.463,US,True,,stop,0.00035802,919,117,120,3.92,"{""country"": ""US"", ""latitude"": 43.5, ""longitude"": -93.0}"
+google/gemma-4-31b-it,no-CoT,42.5,-95.5,200.619,US,True,,stop,0.00018744,406,30,0,0.72,"```json
+{""country"": ""US"", ""latitude"": 42.5, ""longitude"": -95.5}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),42.4582,-94.1235,218.615,US,True,,stop,0.0051285,1307,352,279,4.82,"{""reasoning"": ""The milled center-line rumble strips on a two-lane highway with dashed yellow markings, combined with the flat, expansive cornfields, are highly characteristic of the US Midwest, particularly Iowa."", ""country"": ""US"", ""latitude"": 42.4582, ""longitude"": -94.1235}"
+qwen/qwen3.5-9b,no-CoT,42.5062,-93.6091,232.631,US,True,,stop,6.325e-05,586,31,0,11.35,"{""country"": ""US"", ""latitude"": 42.5062, ""longitude"": -93.6091}"
+anthropic/claude-opus-4.8,CoT,42.5,-93.5,237.974,US,True,,stop,0.00702,949,91,0,3.15,"{""reasoning"": ""Flat farmland with corn fields, two-lane US-style highway with yellow center line and rumble strips, driving on the right—classic US Midwest Corn Belt."", ""country"": ""US"", ""latitude"": 42.5, ""longitude"": -93.5}"
+anthropic/claude-opus-4.8,no-CoT,42.5,-93.5,237.974,US,True,,stop,0.004815,818,29,0,2.2,"{""country"": ""US"", ""latitude"": 42.5, ""longitude"": -93.5}"
+qwen/qwen3.5-397b-a17b,CoT,42.035,-93.62,278.339,US,True,,stop,0.005413275,665,2105,1937,157.36,"{
+""reasoning"": ""The image features a two-lane road with a double yellow center line and right-hand traffic, flanked by vast, flat cornfields and wooden utility poles, which is characteristic of the American Midwest, particularly Iowa."",
+""country"": ""US"",
+""latitude"": 42.035,
+""longitude"": -93.62
+}"
+moonshotai/kimi-k2.6,CoT,42.03,-93.63,278.486,US,True,,stop,0.0090724,832,2110,2253,77.24,"{""reasoning"": ""Flat rural highway with right-side driving, US-standard pavement markings and rumble strips, and extensive cornfields are characteristic of the US Midwest, closely matching Iowa."", ""country"": ""US"", ""latitude"": 42.03, ""longitude"": -93.63}"
+google/gemini-3.1-pro-preview,CoT,42.0333,-93.5833,279.829,US,True,,stop,0.005434,1307,235,149,10.69,"{
+  ""reasoning"": ""The yellow left edge line, white right edge line, and rumble strips indicate a North American highway. The flat, agricultural landscape with corn/soybean fields strongly suggests the US Midwest, such as Iowa."",
+  ""country"": ""US"",
+  ""latitude"": 42.0333,
+  ""longitude"": -93.5833
+}"
+x-ai/grok-4.3,CoT,41.85,-93.65,296.035,US,True,,stop,0.0019715,788,529,448,7.07,"{""reasoning"": ""Right-hand traffic with yellow left edge line + milled rumble strip, vast flat corn/soy fields, scattered deciduous tree lines, and rural 2-lane asphalt highway all point to US Corn Belt. No other region matches this combination of crops, road design, and terrain."", ""country"": ""US"", ""latitude"": 41.85, ""longitude"": -93.65}"
+x-ai/grok-4.3,no-CoT,41.85,-93.65,296.035,US,True,,stop,0.0007334,704,22,0,0.99,"{""country"": ""US"", ""latitude"": 41.85, ""longitude"": -93.65}"
+openai/gpt-5.5,CoT,41.8427,-93.6154,297.928,US,True,,stop,0.017035,755,442,353,10.77,"{""reasoning"":""Right-side driving with US-style yellow centerline, white edge lines, rumble strips, and broad rural shoulders points to the United States. The very flat corn/soy farmland, shelterbelts, and humid temperate landscape are most consistent with the Midwest Corn Belt, likely rural Iowa/Illinois."",""country"":""US"",""latitude"":41.8427,""longitude"":-93.6154}"
+mistralai/mistral-medium-3-5,no-CoT,42.0,-93.0,307.035,US,True,,stop,0.0013665,786,25,0,0.93,"{""country"": ""US"", ""latitude"": 42.0, ""longitude"": -93.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.8781,-93.0977,314.195,US,True,,stop,0.0003882,585,31,0,1.72,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -93.0977}"
+qwen/qwen3.6-27b,no-CoT,41.8781,-93.0977,314.195,US,True,,stop,0.0002279,585,31,0,7.68,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -93.0977}"
+qwen/qwen3.6-35b-a3b,CoT,41.878,-93.0977,314.205,US,True,,stop,0.00331475,665,3215,2920,30.9,"```json
+{
+    ""reasoning"": ""The double yellow center lines and right-hand traffic confirm a North American location, likely the USA. The flat agricultural landscape dominated by tall cornfields and soybeans, combined with wooden utility poles and a lack of streetlights, is characteristic of the US Midwest, specifically Iowa."",
+    ""country"": ""US"",
+    ""latitude"": 41.878,
+    ""longitude"": -93.0977
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,41.878,-93.0977,314.205,US,True,,stop,0.00018375,585,30,0,0.63,"{""country"": ""US"", ""latitude"": 41.878, ""longitude"": -93.0977}"
+xiaomi/mimo-v2.5,no-CoT,41.5,-96.0,317.594,US,True,,stop,9.54576e-05,820,25,0,1.46,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -96.0}"
+google/gemini-3.1-pro-preview,no-CoT,41.6819,-93.3812,322.292,US,True,,stop,0.005354,1225,242,207,11.21,"```json
+{""country"": ""US"", ""latitude"": 41.6819, ""longitude"": -93.3812}
+```"
+xiaomi/mimo-v2.5,CoT,41.5,-93.5,336.727,US,True,,stop,0.0003344376,899,839,778,8.5,"{""reasoning"": ""Double yellow center lines indicate right-hand traffic typical of the United States, and the flat agricultural landscape with corn fields is characteristic of the Midwest region."", ""country"": ""US"", ""latitude"": 41.5, ""longitude"": -93.5}"
+moonshotai/kimi-k2.6,no-CoT,41.5,-93.5,336.727,US,True,,stop,0.00080925,755,23,0,2.1," {""country"": ""US"", ""latitude"": 41.5, ""longitude"": -93.5}"
+openai/gpt-5.5,no-CoT,41.4203,-93.7512,337.582,US,True,,stop,0.00411,678,24,0,1.67,"{""country"":""US"",""latitude"":41.4203,""longitude"":-93.7512}"
+qwen/qwen3.5-27b,no-CoT,41.2565,-95.8732,342.074,US,True,,stop,0.0002345,586,44,0,9.73,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 41.2565,
+  ""longitude"": -95.8732
+}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,41.5236,-90.5782,481.015,US,True,,stop,0.00021684,586,31,0,6.21,"{""country"": ""US"", ""latitude"": 41.5236, ""longitude"": -90.5782}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,40.79914474487305,-90.75255584716797,527.676,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,40.374507904052734,-89.35003662109375,643.534,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,41.8781,-87.6298,664.766,US,True,,stop,0.00011875,585,31,0,8.84,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.4969482421875,-85.26460266113281,860.502,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,69.6492,18.9553,6274.083,NO,True,,stop,0.0001365,786,31,0,2.99,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+mistralai/mistral-small-2603,CoT,46.5,2.5,7097.425,FR,True,,stop,0.0004572,868,545,614,5.57,"{""reasoning"": ""Road style and markings resemble European highways, with lush green vegetation suggesting a temperate climate in Western or Central Europe."", ""country"": ""FR"", ""latitude"": 46.5, ""longitude"": 2.5}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10415.447,,True,True,,,,,,16.29,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.2,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.16,

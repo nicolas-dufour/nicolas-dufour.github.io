@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,41.526874284301,-106.80658460684,0.0,US,True,,,,,,,,"Saratoga, Carbon County, Wyoming, US"
+xiaomi/mimo-v2.5,no-CoT,41.5,-107.5,57.813,US,True,,stop,8.00576e-05,708,26,0,2.21,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -107.5}"
+google/gemini-3.1-pro-preview,CoT,41.7,-107.5,60.776,US,True,,stop,0.006084,1272,295,217,11.24,"{
+  ""reasoning"": ""The wide road with a solid white edge line and rumble strips is characteristic of US highways. The vast, arid landscape with low scrub vegetation strongly suggests a western US state like Wyoming or Nevada."",
+  ""country"": ""US"",
+  ""latitude"": 41.7,
+  ""longitude"": -107.5
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.7178840637207,-106.1065902709961,61.94,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,41.8,-107.5,65.117,US,True,,stop,0.004055,666,29,0,8.54,"{""country"": ""US"", ""latitude"": 41.8, ""longitude"": -107.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,41.68883514404297,-106.04727935791016,65.648,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.69371795654297,-106.03958129882812,66.411,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,42.0,-106.0,85.106,US,True,,stop,0.000132795,473,26,0,7.31,"{""country"": ""US"", ""latitude"": 42.0, ""longitude"": -106.0}"
+anthropic/claude-opus-4.8,CoT,41.8,-107.8,87.933,US,True,,stop,0.006085,797,84,0,2.98,"{""reasoning"": ""High desert sagebrush plain with distant mountains and a straight empty highway, typical of Wyoming's Great Divide Basin in the western US."", ""country"": ""US"", ""latitude"": 41.8, ""longitude"": -107.8}"
+moonshotai/kimi-k2.6,CoT,42.5,-107.0,109.38,US,True,,stop,0.011741508,682,3371,3302,87.63,"{""reasoning"": ""Massively wide gravel shoulders flanking a narrow paved strip through flat sagebrush steppe with distant mountain ranges is a signature WYDOT rural highway style in Wyoming's Red Desert/Great Divide Basin."", ""country"": ""US"", ""latitude"": 42.5, ""longitude"": -107.0}"
+moonshotai/kimi-k2.6,no-CoT,42.5,-107.5,122.435,US,True,,stop,0.00051219,602,23,0,8.86,"{""country"": ""US"", ""latitude"": 42.5, ""longitude"": -107.5}"
+google/gemini-3.1-pro-preview,no-CoT,41.5,-108.5,141.028,US,True,,stop,0.004,1190,135,105,9.61,"```json
+{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -108.5}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,41.2033,-104.802,171.11,US,True,,stop,0.00036828,473,32,0,2.19,"{""country"": ""US"", ""latitude"": 41.2033, ""longitude"": -104.8020}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.7834,-108.8542,172.487,US,True,,stop,0.002109,1190,36,0,1.26,"```json
+{""country"": ""US"", ""latitude"": 41.7834, ""longitude"": -108.8542}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),42.1542,-108.7512,175.542,US,True,,stop,0.0060105,1271,456,380,7.31,"{""reasoning"": ""The wide paved shoulder with rumble strips on the white line, combined with the vast sagebrush steppe landscape and flat-to-rolling terrain, is highly characteristic of the western United States, particularly Wyoming."", ""country"": ""US"", ""latitude"": 42.1542, ""longitude"": -108.7512}"
+qwen/qwen3.5-122b-a10b,no-CoT,41.5906,-104.4217,198.553,US,True,,stop,0.0003172,473,40,0,1.42,"{
+  ""country"": ""US"",
+  ""latitude"": 41.5906,
+  ""longitude"": -104.4217
+}"
+openai/gpt-5.5,no-CoT,42.6132,-108.7896,203.42,US,True,,stop,0.00344,544,24,0,8.14,"{""country"":""US"",""latitude"":42.6132,""longitude"":-108.7896}"
+google/gemini-3.5-flash,CoT (effort=low),42.0512,-109.4358,225.633,US,True,,stop,0.003645,1272,193,125,8.52,"{""reasoning"": ""The vast sagebrush steppe, wide paved shoulder with rumble strips, and flat-to-rolling arid terrain are highly characteristic of southwestern Wyoming in the United States."", ""country"": ""US"", ""latitude"": 42.0512, ""longitude"": -109.4358}"
+google/gemini-3.5-flash,CoT (effort=high),42.15,-109.45,229.678,US,True,,stop,0.0094035,1271,833,771,6.45,"{""reasoning"": ""The vast sagebrush steppe, wide paved shoulder with milled rumble strips, and expansive blue sky are highly characteristic of the high plains of Wyoming, USA."", ""country"": ""US"", ""latitude"": 42.15, ""longitude"": -109.45}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.2033,-109.5501,231.755,US,True,,stop,0.00010295,473,32,0,4.25,"{""country"": ""US"", ""latitude"": 41.2033, ""longitude"": -109.5501}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.8789,-104.0007,236.195,US,True,,stop,9.836e-05,474,32,0,1.48,"{""country"": ""US"", ""latitude"": 41.8789, ""longitude"": -104.0007}"
+qwen/qwen3.6-27b,no-CoT,41.8,-111.0,349.631,US,True,,stop,0.0001963,473,32,0,9.45,"{""country"": ""US"", ""latitude"": 41.8000, ""longitude"": -111.0000}"
+qwen/qwen3.5-9b,no-CoT,41.8781,-111.754,412.524,US,True,,stop,5.205e-05,474,31,0,11.62,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -111.754}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,37.947044372558594,-109.33263397216797,452.831,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,37.31722640991211,-105.64285278320312,478.631,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,37.299251556396484,-105.63178253173828,480.787,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,40.8,-112.9,516.338,US,True,,stop,0.0005934,592,22,0,6.95,"{""country"": ""US"", ""latitude"": 40.8, ""longitude"": -112.9}"
+google/gemma-4-26b-a4b-it,no-CoT,41.0,-115.0,687.075,US,True,,stop,5.294e-05,406,26,0,1.15,"{""country"": ""US"", ""latitude"": 41.0, ""longitude"": -115.0}"
+minimax/minimax-m3,no-CoT,39.5,-114.5,688.02,US,True,,stop,0.00034722,767,146,157,11.84,"{""country"": ""US"", ""latitude"": 39.5, ""longitude"": -114.5}"
+mistralai/mistral-medium-3-5,no-CoT,35.0844,-106.6504,716.5,US,True,,stop,0.001191,634,32,0,0.99,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -106.6504}"
+minimax/minimax-m3,CoT,39.5,-115.5,768.29,US,True,,stop,0.00083946,843,540,453,16.27,"{""reasoning"": ""Straight two-lane asphalt highway through flat high desert with sparse sagebrush scrub, sandy tan soil, distant mountain ranges on horizon, and US-style white edge line markings all point to the Great Basin in central Nevada, likely along a remote US highway such as US-93 or US-6."", ""country"": ""US"", ""latitude"": 39.5, ""longitude"": -115.5}"
+openai/gpt-5.5,CoT,39.5162,-116.1448,819.897,US,True,,stop,0.010425,621,244,164,30.65,"{""reasoning"":""The wide paved shoulder with white edge rumble strips and right-side driving road design, plus sagebrush desert basin and distant low mountains, strongly suggest the rural western United States. The scenery is especially characteristic of Nevada’s US-50/Great Basin highways."",""country"":""US"",""latitude"":39.5162,""longitude"":-116.1448}"
+qwen/qwen3.5-397b-a17b,CoT,40.812,-117.456,894.36,US,True,,stop,0.00660165,553,2132,1,37.94,"{
+""reasoning"": ""The presence of transverse milled rumble strips on the shoulder and the solid white edge line are standard features of US highways, while the flat, arid landscape with sagebrush and distant mountains is characteristic of the Great Basin region in the American West."",
+""country"": ""US"",
+""latitude"": 40.812,
+""longitude"": -117.456
+}"
+google/gemma-4-31b-it,no-CoT,40.7,-117.5,899.964,US,True,,stop,6.518e-05,406,31,0,3.55,"```json
+{""country"": ""US"", ""latitude"": 40.7, ""longitude"": -117.5}
+```"
+x-ai/grok-4.3,CoT,39.85,-117.55,924.171,US,True,,stop,0.0018815,676,549,474,11.3,"{""reasoning"": ""Arid high-desert sagebrush steppe, distant basin-and-range mountains, right-hand traffic with US-style solid white shoulder line + raised markers, empty two-lane asphalt highway under classic cumulus sky all point to the Great Basin, USA."", ""country"": ""US"", ""latitude"": 39.85, ""longitude"": -117.55}"
+mistralai/mistral-small-2603,no-CoT,36.5,-118.25,1134.371,US,True,,stop,0.0001113,634,27,0,3.3,"{""country"": ""US"", ""latitude"": 36.5, ""longitude"": -118.25}"
+xiaomi/mimo-v2.5,CoT,62.0355,129.6755,7443.295,RU,True,,stop,0.0001471176,787,226,104,11.45,"```json
+{""reasoning"": ""The landscape features a flat, dry steppe with low shrubs and a distinctive parallel bike/pedestrian path alongside a paved road, typical of the Russian steppe regions like the Republic of Sakha (Yakutia) or nearby areas. The road markings and infrastructure, combined with the specific vegetation and terrain, point to a location in the Sakha Republic along a federal highway."", ""country"": ""RU"", ""latitude"": 62.0355, ""longitude"": 129.6755}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,25.06,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.59,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.37,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.14,

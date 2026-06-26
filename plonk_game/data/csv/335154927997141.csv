@@ -1,0 +1,80 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,24.69002153623822,68.46486514899476,0.0,PK,True,,,,,,,,"Kario, None, Sindh, PK"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,24.524444580078125,68.38566589355469,20.077,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,24.515676498413086,68.3561782836914,22.284,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,25.038192749023438,68.60328674316406,41.157,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,25.4,69.5,130.791,PK,True,,stop,0.00080334,997,443,417,8.32,"{""reasoning"": ""Unpaved rural track with characteristic Prosopis/Acacia trees, dusty hazy atmosphere, stone field boundary remnants, and semi-arid agricultural land strongly indicate the Thar Desert region. These features are typical of rural Sindh, Pakistan or Rajasthan, India."", ""country"": ""PK"", ""latitude"": 25.4, ""longitude"": 69.5}"
+openai/gpt-5.5,CoT,27.565,68.215,320.654,PK,True,,stop,0.010555,755,226,133,8.07,"{""reasoning"":""Flat irrigated farmland with arid thorn/acacia vegetation, dusty unpaved rural road and field embankments strongly suggest the Indus plains of Pakistan, especially Sindh/Punjab rather than greener India. With no signage or road furniture, the best fit is a rural Sindh agricultural area near the Indus canal network."",""country"":""PK"",""latitude"":27.565,""longitude"":68.215}"
+openai/gpt-5.5,no-CoT,27.7051,68.8574,337.54,PK,True,,stop,0.00408,678,23,0,1.38,"{""country"":""PK"",""latitude"":27.7051,""longitude"":68.8574}"
+xiaomi/mimo-v2.5,CoT,27.8,70.5,400.955,IN,True,,stop,0.0002154376,899,414,334,335.42,"{""reasoning"": ""The landscape features flat terrain, dry soil, and dense Acacia bushes characteristic of semi-arid regions in northwestern India, specifically Rajasthan or Gujarat. The wide, straight dirt road through agricultural fields aligns with rural infrastructure in these areas."", ""country"": ""IN"", ""latitude"": 27.8, ""longitude"": 70.5}"
+google/gemma-4-31b-it,no-CoT,28.35,72.1,544.38,PK,True,,stop,6.188e-05,404,32,0,4.57,"```json
+{""country"": ""PK"", ""latitude"": 28.35, ""longitude"": 72.10}
+```"
+google/gemini-3.1-pro-preview,no-CoT,29.3957,71.6833,612.601,PK,True,,stop,0.002872,1226,35,0,8.59,"```json
+{""country"": ""PK"", ""latitude"": 29.3957, ""longitude"": 71.6833}
+```"
+anthropic/claude-opus-4.8,CoT,29.5,71.5,613.378,PK,True,,stop,0.00712,949,95,0,3.92,"{""reasoning"": ""Flat agricultural plains with dirt road, irrigation canal, acacia/kikar trees and dry climate typical of rural Punjab/Sindh in Pakistan."", ""country"": ""PK"", ""latitude"": 29.5, ""longitude"": 71.5}"
+anthropic/claude-opus-4.8,no-CoT,30.1,71.5,671.966,PK,True,,stop,0.00484,818,30,0,2.39,"{""country"": ""PK"", ""latitude"": 30.1, ""longitude"": 71.5}"
+qwen/qwen3.5-397b-a17b,CoT,30.189,71.482,680.005,PK,True,,stop,0.00308373,665,1207,1106,29.86,"{""reasoning"": ""The flat, alluvial terrain with a raised, unpaved dirt road (kacha road) lined by Acacia nilotica (Kikar) trees is highly characteristic of the rural Punjab province. The hazy sky and soil color further suggest a semi-arid South Asian agricultural region, most likely in Pakistan."", ""country"": ""PK"", ""latitude"": 30.189, ""longitude"": 71.482}"
+google/gemma-4-31b-it,CoT,30.1234,72.5678,727.199,PK,True,,stop,0.00027286,489,511,450,25.17,"{""reasoning"": ""The flat terrain, sandy soil, and specific scrubby vegetation are highly characteristic of the rural Indus Valley plains in Pakistan."", ""country"": ""PK"", ""latitude"": 30.1234, ""longitude"": 72.5678}"
+moonshotai/kimi-k2.6,CoT,30.4,72.1,728.948,PK,True,,stop,0.01012994,834,2737,2975,99.36," {""reasoning"": ""Unpaved rural road through flat irrigated farmland with thorny scrub and acacia trees characteristic of Pakistan's Punjab province. The semi-arid alluvial plain and lack of road markings align with village link roads in central Punjab."", ""country"": ""PK"", ""latitude"": 30.4, ""longitude"": 72.1}"
+qwen/qwen3.5-27b,no-CoT,30.1553,72.8261,744.534,PK,True,,stop,0.0002345,586,44,0,21.8,"```json
+{
+  ""country"": ""PK"",
+  ""latitude"": 30.1553,
+  ""longitude"": 72.8261
+}
+```"
+google/gemini-3.1-pro-preview,CoT,30.5,72.5,758.439,PK,True,,stop,0.005722,1307,259,180,5.52,"{
+  ""reasoning"": ""The flat, dusty landscape with a dirt road running alongside an irrigation canal is highly characteristic of the agricultural plains in the Indus River basin. The vegetation and soil type strongly suggest the Punjab region of Pakistan."",
+  ""country"": ""PK"",
+  ""latitude"": 30.5,
+  ""longitude"": 72.5
+}"
+qwen/qwen3.5-122b-a10b,no-CoT,26.8467,75.8012,772.633,IN,True,,stop,0.00021684,586,31,0,7.65,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 75.8012}"
+qwen/qwen3.5-35b-a3b,no-CoT,26.8467,75.8042,772.919,IN,True,,stop,0.00011875,585,31,0,2.26,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 75.8042}"
+google/gemma-4-26b-a4b-it,CoT,26.9124,75.7873,773.416,IN,True,,stop,0.00071805,489,1665,1529,24.33,"{""reasoning"": ""The flat terrain, dusty unpaved road, and scrubby green vegetation are highly characteristic of the semi-arid plains found in northern or western India."", ""country"": ""IN"", ""latitude"": 26.9124, ""longitude"": 75.7873}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,27.645729064941406,76.12626647949219,832.002,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,29.1234,75.6789,868.4,IN,True,,stop,0.00035625,585,31,0,9.75,"{""country"": ""IN"", ""latitude"": 29.1234, ""longitude"": 75.6789}"
+google/gemini-3.5-flash,CoT (effort=medium),31.418,73.079,874.204,PK,True,,stop,0.0070635,1307,567,492,7.96,"```json
+{""reasoning"": ""The flat terrain, sandy dirt road running alongside an irrigation canal, and dense kikar/mesquite vegetation are highly characteristic of the canal-irrigated plains of Punjab, Pakistan."", ""country"": ""PK"", ""latitude"": 31.418, ""longitude"": 73.079}
+```"
+google/gemini-3.5-flash,CoT (effort=high),31.415,73.085,874.226,PK,True,,stop,0.0112125,1307,1028,945,10.26,"```json
+{""reasoning"": ""The flat terrain, silty alluvial soil, irrigation canal running parallel to the dirt road, and semi-arid vegetation (such as Prosopis juliflora) are highly characteristic of the Indus Basin irrigation plains in Punjab, Pakistan."", ""country"": ""PK"", ""latitude"": 31.415, ""longitude"": 73.085}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),31.415,73.105,875.243,PK,True,,stop,0.0021345,1225,33,0,8.82,"```json
+{""country"": ""PK"", ""latitude"": 31.415, ""longitude"": 73.105}
+```"
+google/gemini-3.5-flash,CoT (effort=low),31.3521,73.4152,885.645,PK,True,,stop,0.0036165,1307,184,113,3.08,"{""reasoning"": ""The flat terrain, dirt road alongside an irrigation canal, and semi-arid vegetation (acacia-like trees) are highly characteristic of the irrigated agricultural plains of Punjab, Pakistan."", ""country"": ""PK"", ""latitude"": 31.3521, ""longitude"": 73.4152}"
+mistralai/mistral-medium-3-5,no-CoT,28.7041,77.1025,966.797,IN,True,,stop,0.0014115,786,31,0,1.04,"{""country"": ""IN"", ""latitude"": 28.7041, ""longitude"": 77.1025}"
+minimax/minimax-m3,no-CoT,28.6,77.2,970.518,IN,True,,stop,0.00023736,904,23,0,6.07,"{""country"": ""IN"", ""latitude"": 28.6, ""longitude"": 77.2}"
+mistralai/mistral-small-2603,no-CoT,28.6139,77.209,971.961,IN,True,,stop,0.000169875,786,30,0,2.72,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+qwen/qwen3.5-9b,no-CoT,26.0431,78.0433,973.834,IN,True,,stop,6.325e-05,586,31,0,5.54,"{""country"": ""IN"", ""latitude"": 26.0431, ""longitude"": 78.0433}"
+qwen/qwen3.5-35b-a3b,CoT,19.076,76.02,998.279,IN,True,,stop,0.0049154625,665,3698,3617,26.14,"{""reasoning"": ""The image features a red laterite soil road, typical of the Deccan Plateau in India, with acacia-like trees and flat agricultural fields. The vegetation and unpaved road style are characteristic of rural Maharashtra or Telangana."", ""country"": ""IN"", ""latitude"": 19.076, ""longitude"": 76.02}"
+mistralai/mistral-medium-3-5,CoT,28.0,78.0,1018.518,IN,True,,stop,0.0178095,868,2201,2110,55.6,"{""reasoning"": ""Rural unpaved road, flat terrain with scattered green trees and light brown soil typical of the Gangetic plains in northern India, suggesting Uttar Pradesh region."", ""country"": ""IN"", ""latitude"": 28.0, ""longitude"": 78.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,25.312496185302734,78.83162689208984,1046.746,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,21.15,78.65,1114.486,IN,True,,stop,0.002204,788,622,545,9.63,"{""reasoning"": ""Rural unpaved road with irrigation canal/ditch on left, acacia-like trees, dry reddish soil and open fields point to semi-arid agricultural plains of central India; no other region matches this exact combination of vegetation, canal style and road texture."", ""country"": ""IN"", ""latitude"": 21.15, ""longitude"": 78.65}"
+x-ai/grok-4.3,no-CoT,21.15,79.08,1155.756,IN,True,,stop,0.0008678,704,22,0,1.08,"{""country"": ""IN"", ""latitude"": 21.15, ""longitude"": 79.08}"
+moonshotai/kimi-k2.6,no-CoT,26.5,80.3,1203.339,IN,True,,stop,0.00032616,755,23,0,5.3,"{""country"": ""IN"", ""latitude"": 26.5, ""longitude"": 80.3}"
+qwen/qwen3.5-122b-a10b,CoT,26.5226,80.3319,1206.798,IN,True,,stop,0.0148577,665,7060,6953,48.01,"{
+""reasoning"": ""The reddish-brown soil, flat alluvial terrain, and dense tropical scrub vegetation (likely Acacia or Prosopis) are characteristic of rural Northern India, specifically the Gangetic Plain. The unpaved road and agricultural fields on the right further support a location in a state like Uttar Pradesh."",
+""country"": ""IN"",
+""latitude"": 26.5226,
+""longitude"": 80.3319
+}"
+qwen/qwen3.6-27b,no-CoT,26.8467,80.9462,1272.066,IN,True,,stop,0.0002279,585,31,0,17.86,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+qwen/qwen3.6-35b-a3b,no-CoT,26.8467,80.9462,1272.066,IN,True,,stop,0.0001668,586,31,0,9.13,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+xiaomi/mimo-v2.5,no-CoT,26.85,80.95,1272.491,IN,True,,stop,9.60176e-05,820,27,0,2.05,"{""country"": ""IN"", ""latitude"": 26.85, ""longitude"": 80.95}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,22.28098487854004,92.04564666748047,2416.733,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,CoT,-0.4197,36.9497,4393.584,KE,True,,stop,0.001807385,665,673,629,16.53,"```json
+{
+    ""reasoning"": ""The distinctive flat-topped acacia trees and reddish-brown volcanic soil are characteristic of the Kenyan highlands and Rift Valley region. The unpaved rural road and specific vegetation density strongly suggest a location in central Kenya."",
+    ""country"": ""KE"",
+    ""latitude"": -0.4197,
+    ""longitude"": 36.9497
+}
+```"
+qwen/qwen3.5-27b,CoT,-0.3031,36.08,4457.66,KE,True,,stop,0.004558515,665,2839,2752,32.84,"{""reasoning"": ""The reddish-brown lateritic soil and the specific type of acacia-like scrub vegetation are highly characteristic of the East African Rift Valley, particularly in Kenya. The unpaved rural road infrastructure matches the landscape found in the Nakuru or Naivasha regions."", ""country"": ""KE"", ""latitude"": -0.3031, ""longitude"": 36.08}"
+mistralai/mistral-small-2603,CoT,-2.3333,34.8333,4710.783,TZ,True,,stop,0.000414,868,473,444,4.93,"{""reasoning"": ""The sparse vegetation with acacia-like trees and dry soil is characteristic of the African savanna, specifically the Serengeti ecosystem in northern Tanzania."", ""country"": ""TZ"", ""latitude"": -2.3333, ""longitude"": 34.8333}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7841.219,,True,True,,,,,,10.53,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,

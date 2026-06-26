@@ -1,0 +1,79 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-4.0058970891773,122.509141712,0.0,ID,True,,,,,,,,"Kendari, None, Sulawesi Tenggara, ID"
+anthropic/claude-opus-4.8,no-CoT,-0.502106,117.153709,711.16,ID,True,,stop,0.00413,666,32,0,3.05,"{""country"": ""ID"", ""latitude"": -0.502106, ""longitude"": 117.153709}"
+moonshotai/kimi-k2.6,no-CoT,-2.208,113.916,974.788,ID,True,,stop,0.000289692,603,23,0,3.01,"{""country"": ""ID"", ""latitude"": -2.208, ""longitude"": 113.916}"
+qwen/qwen3.6-35b-a3b,CoT,-6.28,107.09,1726.094,ID,True,,stop,0.01325611885,553,13641,13516,228.13,"```json
+{
+""reasoning"": ""The image shows left-hand traffic, black and white curbs, and a yellow center line, which are common in Southeast Asia, particularly Indonesia and Malaysia. The white rear license plates on the vehicles strongly indicate Indonesia (where private cars have white plates front and rear), whereas Malaysia uses yellow rear plates. The vegetation (palm trees) and industrial buildings are consistent with an industrial area in West Java, Indonesia."",
+""country"": ""ID"",
+""latitude"": -6.28,
+""longitude"": 107.09
+}
+```"
+x-ai/grok-4.3,CoT,-6.175,106.827,1753.416,ID,True,,stop,0.002834,676,930,833,10.86,"{
+  ""reasoning"": ""Tropical vegetation (tall palms + broadleaf trees), black-and-white painted curb barrier, right-hand traffic (oncoming vehicles left of center line), industrial warehouse architecture and metal-roofed buildings indicate an equatorial Southeast Asian industrial corridor; yellow center line + style of concrete pole streetlights narrow it to western Indonesia."",
+  ""country"": ""ID"",
+  ""latitude"": -6.175,
+  ""longitude"": 106.827
+}"
+x-ai/grok-4.3,no-CoT,-6.175,106.827,1753.416,ID,True,,stop,0.0005934,592,22,0,1.96,"{""country"": ""ID"", ""latitude"": -6.175, ""longitude"": 106.827}"
+mistralai/mistral-medium-3-5,no-CoT,-6.2,106.816666,1754.897,ID,True,,stop,0.0012135,634,35,0,0.93,"{""country"": ""ID"", ""latitude"": -6.200000, ""longitude"": 106.816666}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,0.9958271384239197,104.10016632080078,2119.878,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,1.007992148399353,104.08439636230469,2121.926,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,1.2447384595870972,103.87559509277344,2151.359,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,0.5,101.45,2392.995,ID,True,,stop,0.006535,797,102,0,10.1,"{""reasoning"": ""Tropical climate with palm trees, industrial roadside buildings, right-hand traffic, and yellow center line with black-white painted curbs suggest Southeast Asia, likely Indonesia."", ""country"": ""ID"", ""latitude"": 0.5, ""longitude"": 101.45}"
+qwen/qwen3.6-35b-a3b,no-CoT,2.9794,101.5436,2455.789,MY,True,,stop,0.0001444,474,31,0,5.55,"{""country"": ""MY"", ""latitude"": 2.9794, ""longitude"": 101.5436}"
+xiaomi/mimo-v2.5,no-CoT,3.0733,101.5185,2461.733,MY,True,,stop,8.14576e-05,708,31,0,1.41,"{""country"": ""MY"", ""latitude"": 3.0733, ""longitude"": 101.5185}"
+google/gemini-3.5-flash,CoT (effort=medium),3.0357,101.4432,2468.341,MY,True,,stop,0.016065,1272,1573,1480,27.18,"```json
+{""reasoning"": ""The image shows a dual carriageway with left-hand traffic, indicated by the median on the right. The black-and-white painted curbs, royal palm trees, square concrete utility poles, and industrial architecture are highly characteristic of Malaysia, particularly Selangor state."", ""country"": ""MY"", ""latitude"": 3.0357, ""longitude"": 101.4432}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,3.0194,101.4238,2469.816,MY,True,,stop,0.00010195,473,31,0,1.24,"{""country"": ""MY"", ""latitude"": 3.0194, ""longitude"": 101.4238}"
+google/gemini-3.1-pro-preview,CoT,11.5333,104.8833,2605.052,KH,True,,stop,0.0075,1272,413,323,18.8,"{
+  ""reasoning"": ""Right-hand driving, black and white painted curbs, and tropical vegetation strongly suggest Cambodia. The road markings with a yellow left edge line and the specific streetlight design are typical for newly developed or industrial areas near Phnom Penh."",
+  ""country"": ""KH"",
+  ""latitude"": 11.5333,
+  ""longitude"": 104.8833
+}"
+google/gemini-3.5-flash,CoT (effort=low),11.5352,104.8241,2610.092,KH,True,,stop,0.005292,1272,376,288,3.85,"```json
+{""reasoning"": ""The green artifact in the top-right corner is characteristic of Google Street View coverage in Cambodia. The flat tropical landscape, right-hand driving, and black-and-white painted curbs further confirm this location, likely near Phnom Penh."", ""country"": ""KH"", ""latitude"": 11.5352, ""longitude"": 104.8241}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),11.5124,104.7852,2611.676,KH,True,,stop,0.0021075,1189,36,0,8.25,"```json
+{""country"": ""KH"", ""latitude"": 11.5124, ""longitude"": 104.7852}
+```"
+google/gemini-3.5-flash,CoT (effort=high),11.5245,104.7512,2615.37,KH,True,,stop,0.0185295,1271,1847,1759,15.74,"```json
+{""reasoning"": ""The presence of a Gen 2 Toyota Prius (highly popular in Cambodia), right-hand traffic, tropical Royal Palms, black-and-white curbs, and industrial warehouses in the background strongly points to Cambodia, likely near Phnom Penh."", ""country"": ""KH"", ""latitude"": 11.5245, ""longitude"": 104.7512}
+```"
+xiaomi/mimo-v2.5,CoT,5.32,100.35,2670.64,MY,True,,stop,0.0005167176,787,1546,1447,16.73,"{
+""reasoning"": ""The image shows left-hand traffic combined with tropical vegetation (Royal Palms) and distinctive black-and-white painted curbs, which are standard infrastructure markers in Malaysia. The setting strongly resembles the landscaped roads of an industrial park in Penang (e.g., Batu Kawan or Bayan Lepas)."",
+""country"": ""MY"",
+""latitude"": 5.32,
+""longitude"": 100.35
+}"
+mistralai/mistral-small-2603,CoT,-16.9203,145.7711,2915.261,AU,True,,stop,0.00038664,716,577,625,7.54,"{""reasoning"": ""Driving on the left side of the road, green-white striped bollards, and tropical vegetation indicate Queensland, Australia."", ""country"": ""AU"", ""latitude"": -16.9203, ""longitude"": 145.7711}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,12.840120315551758,101.8226318359375,2954.57,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,12.742,101.145,3006.254,TH,True,,stop,0.0258546,553,7319,7004,556.04,"{""reasoning"": ""The black-and-white painted curbs are a distinctive feature of Thai roads, and the tropical vegetation (Royal Palms) combined with left-hand traffic positioning confirms Thailand. The industrial warehouse setting suggests an industrial estate in the Eastern Seaboard region like Rayong."", ""country"": ""TH"", ""latitude"": 12.742, ""longitude"": 101.145}"
+minimax/minimax-m3,CoT,13.55,101.05,3069.085,TH,True,,stop,0.00070626,843,429,348,18.99,"{""reasoning"": ""Left-hand traffic, yellow center line, royal palm trees, tropical cumulus clouds, industrial buildings with corrugated metal roofs, and distinctive black-and-white painted curbs typical of Thai industrial estate roads indicate this is likely in Thailand's Eastern Seaboard industrial region."", ""country"": ""TH"", ""latitude"": 13.55, ""longitude"": 101.05}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,13.585331916809082,100.79627990722656,3093.143,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,13.674755096435547,100.76506042480469,3101.901,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,13.7214,100.7556,3105.891,TH,True,,stop,0.0001898,474,32,0,6.69,"{""country"": ""TH"", ""latitude"": 13.7214, ""longitude"": 100.7556}"
+qwen/qwen3.5-397b-a17b,no-CoT,13.7563,100.5018,3129.946,TH,True,,stop,0.0003357,473,32,0,16.54,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-9b,no-CoT,13.7563,100.5018,3129.946,TH,True,,stop,5.22e-05,474,32,0,9.41,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+google/gemma-4-26b-a4b-it,no-CoT,13.7563,100.5,3130.1,,True,,stop,5.854e-05,406,40,0,8.25,"{"" than own-thought
+{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5 own-thought}"
+minimax/minimax-m3,no-CoT,14.0473,100.7258,3130.785,TH,True,,stop,0.00022488,752,25,0,5.59,"{""country"": ""TH"", ""latitude"": 14.0473, ""longitude"": 100.7258}"
+moonshotai/kimi-k2.6,CoT,9.058,7.389,12833.747,NG,True,,stop,0.015881688,682,4574,4500,113.83,"{""reasoning"": ""Black-and-white striped curbs, tropical palm-lined boulevards, and red laterite soil are hallmark features of Abuja, Nigeria’s planned capital, and the right-hand traffic flow confirms a right-driving West African nation."", ""country"": ""NG"", ""latitude"": 9.058, ""longitude"": 7.389}"
+openai/gpt-5.5,no-CoT,6.4667,3.6333,13244.781,NG,True,,stop,0.00341,544,23,0,3.19,"{""country"":""NG"",""latitude"":6.4667,""longitude"":3.6333}"
+openai/gpt-5.5,CoT,6.4458,3.4762,13262.096,NG,True,,stop,0.014955,621,395,313,16.26,"{""reasoning"":""Tropical West African urban road with right-hand traffic, yellow center line, black-and-white kerbs, and palm-lined verges strongly suggests southern Nigeria, especially Lagos. The flat terrain and developed but semi-industrial roadside fit the Lekki/Victoria Island area."",""country"":""NG"",""latitude"":6.4458,""longitude"":3.4762}"
+google/gemini-3.1-pro-preview,no-CoT,6.4545,3.4321,13266.984,NG,True,,stop,0.007588,1190,434,401,5.91,"```json
+{""country"": ""NG"", ""latitude"": 6.4545, ""longitude"": 3.4321}
+```"
+google/gemma-4-31b-it,no-CoT,6.45,3.35,13276.046,NG,True,,stop,6.638e-05,406,34,0,3.48,"```json
+{""country"": ""NG"", ""latitude"": 6.4500, ""longitude"": 3.3500}
+```"
+qwen/qwen3.5-27b,no-CoT,20.6738,-103.3489,14725.323,MX,True,,stop,0.0002091,473,32,0,6.92,"{""country"": ""MX"", ""latitude"": 20.6738, ""longitude"": -103.3489}"
+qwen/qwen3.6-27b,no-CoT,20.6738,-103.3489,14725.323,MX,True,,stop,0.0001963,473,32,0,13.05,"{""country"": ""MX"", ""latitude"": 20.6738, ""longitude"": -103.3489}"
+mistralai/mistral-small-2603,no-CoT,-22.9068,-43.1729,16642.844,BR,True,,stop,0.000142125,634,31,0,2.35,"{""country"": ""BR"", ""latitude"": -22.9068, ""longitude"": -43.1729}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.2,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.26,

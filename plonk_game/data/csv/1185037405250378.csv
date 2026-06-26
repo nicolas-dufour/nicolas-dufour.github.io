@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-32.886561047517,17.968650775339,0.0,ZA,True,,,,,,,,"Vredenburg, West Coast District Municipality, Western Cape, ZA"
+google/gemini-3.1-pro-preview,CoT,-33.1523,18.5431,61.169,ZA,True,,stop,0.006874,1271,361,282,6.57,"{
+  ""reasoning"": ""The yellow edge lines on the road and left-hand driving are characteristic of South Africa. The dry, flat landscape with sparse vegetation suggests the Western or Northern Cape provinces."",
+  ""country"": ""ZA"",
+  ""latitude"": -33.1523,
+  ""longitude"": 18.5431
+}"
+google/gemini-3.1-pro-preview,no-CoT,-33.1234,18.5678,61.767,ZA,True,,stop,0.005438,1189,255,220,4.98,"```json
+{""country"": ""ZA"", ""latitude"": -33.1234, ""longitude"": 18.5678}
+```"
+moonshotai/kimi-k2.6,CoT,-32.9,18.75,72.969,ZA,True,,stop,0.026764308,682,7754,7687,311.2,"{""reasoning"": ""Yellow left-edge road line with white lane markings matches South African road standards, and the flat, dry brown wheat fields with low scrub are characteristic of the Western Cape Swartland wheat belt."", ""country"": ""ZA"", ""latitude"": -32.9, ""longitude"": 18.75}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-32.924163818359375,18.816160202026367,79.23,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-32.93999481201172,18.84912109375,82.404,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-33.184593200683594,19.176013946533203,117.325,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,-33.5,19.0,117.739,ZA,True,,stop,0.00061429,603,23,0,1.97,"{""country"": ""ZA"", ""latitude"": -33.5, ""longitude"": 19.0}"
+google/gemini-3.5-flash,CoT (effort=medium),-34.2154,19.7543,221.836,ZA,True,,stop,0.0075225,1271,624,549,6.21,"{""reasoning"": ""The road features yellow shoulder lines and a dashed white center line, characteristic of South Africa, while the rolling, dry, harvested fields suggest the Swartland or Overberg region of the Western Cape."", ""country"": ""ZA"", ""latitude"": -34.2154, ""longitude"": 19.7543}"
+google/gemini-3.5-flash,CoT (effort=high),-34.285,19.852,233.691,ZA,True,,stop,0.0113745,1271,1052,990,8.63,"{""reasoning"": ""The yellow outer road lines combined with left-hand traffic and the distinctive rolling, dry agricultural hills point to the Western Cape region of South Africa."", ""country"": ""ZA"", ""latitude"": -34.285, ""longitude"": 19.852}"
+anthropic/claude-opus-4.8,no-CoT,-34.45,19.85,246.029,ZA,True,,stop,0.004105,666,31,0,8.43,"{""country"": ""ZA"", ""latitude"": -34.45, ""longitude"": 19.85}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-34.2154,20.1245,248.475,ZA,True,,stop,0.0020985,1189,35,0,1.45,"```json
+{""country"": ""ZA"", ""latitude"": -34.2154, ""longitude"": 20.1245}
+```"
+anthropic/claude-opus-4.8,CoT,-34.45,19.9,249.324,ZA,True,,stop,0.00641,797,97,0,3.52,"{""reasoning"": ""Dry golden wheat fields, left-side driving with yellow edge lines, and Cape-style rural road suggest South Africa's Western Cape Overberg/Swartland region."", ""country"": ""ZA"", ""latitude"": -34.45, ""longitude"": 19.9}"
+google/gemini-3.5-flash,CoT (effort=low),-34.2512,20.1234,250.748,ZA,True,,stop,0.004158,1272,250,167,9.16,"{""reasoning"": ""The road features a yellow outer line on the left and a white outer line on the right, indicating left-hand drive, typical of South Africa. The dry, rolling agricultural landscape is characteristic of the Overberg region in the Western Cape."", ""country"": ""ZA"", ""latitude"": -34.2512, ""longitude"": 20.1234}"
+openai/gpt-5.5,no-CoT,-31.8412,21.7427,373.013,ZA,True,,stop,0.00344,544,24,0,2.23,"{""country"":""ZA"",""latitude"":-31.8412,""longitude"":21.7427}"
+minimax/minimax-m3,no-CoT,-32.5,22.0,379.665,ZA,True,,stop,0.00041082,767,199,211,4.91,"{""country"": ""ZA"", ""latitude"": -32.5, ""longitude"": 22.0}"
+openai/gpt-5.5,CoT,-31.7846,22.6548,456.957,ZA,True,,stop,0.016965,621,462,379,18.6,"{""reasoning"":""The vehicle is traveling on the left with a white centerline to the right, and the yellow edge lines on both sides are characteristic of South African rural roads. The flat, dry Karoo-like scrubland and utility poles point to the interior Northern/Western Cape region."",""country"":""ZA"",""latitude"":-31.7846,""longitude"":22.6548}"
+google/gemma-4-31b-it,no-CoT,-30.5,23.0,544.901,ZA,True,,stop,6.138e-05,406,30,0,13.9,"```json
+{""country"": ""ZA"", ""latitude"": -30.5, ""longitude"": 23.0}
+```"
+minimax/minimax-m3,CoT,-29.5,25.0,767.263,ZA,True,,stop,0.00057666,843,321,247,11.06,"{""reasoning"": ""Yellow edge lines with white dashed center markings, left-hand traffic, vast flat arid grassland with concrete drainage channels, and wooden power poles are highly characteristic of South Africa's Karoo or Free State interior highways like the N1."", ""country"": ""ZA"", ""latitude"": -29.5, ""longitude"": 25.0}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4112.588,,True,True,,,,,,7.7,
+qwen/qwen3.6-27b,no-CoT,-33.5,140.5,10497.827,AU,True,,stop,0.0001843,473,26,0,16.7,"{""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 140.5}"
+xiaomi/mimo-v2.5,CoT,50.5,70.5,10607.558,KZ,True,,stop,0.0004609976,787,1347,1271,20.03,"{""reasoning"": ""The flat, arid steppe landscape with golden fields and road markings showing right-hand traffic with a yellow edge line is characteristic of the Kazakh steppe. These visual cues strongly suggest a location in central Kazakhstan."", ""country"": ""KZ"", ""latitude"": 50.5, ""longitude"": 70.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,34.5678,-101.2345,14477.603,US,True,,stop,0.0002916,473,32,0,1.81,"{""country"": ""US"", ""latitude"": 34.5678, ""longitude"": -101.2345}"
+x-ai/grok-4.3,CoT,37.85,-101.35,14581.733,US,True,,stop,0.0030415,676,1013,942,9.43,"{""reasoning"": ""Right-hand traffic (yellow line marking left road edge), extreme flat arid steppe with sparse dry scrub, metal power poles, and concrete overpass structure match US Great Plains highways. No other region fits all visual markers simultaneously."", ""country"": ""US"", ""latitude"": 37.85, ""longitude"": -101.35}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.2567,-100.5432,14594.779,US,True,,stop,0.00015825,473,32,0,6.74,"{""country"": ""US"", ""latitude"": 41.2567, ""longitude"": -100.5432}"
+x-ai/grok-4.3,no-CoT,36.8,-102.5,14652.771,US,True,,stop,0.0005934,592,22,0,1.93,"{""country"": ""US"", ""latitude"": 36.8, ""longitude"": -102.5}"
+xiaomi/mimo-v2.5,no-CoT,41.5,-102.5,14760.245,US,True,,stop,8.00576e-05,708,26,0,9.43,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -102.5}"
+qwen/qwen3.5-397b-a17b,CoT,39.26,-103.69,14814.085,US,True,,stop,0.006699,553,1782,1698,12.28,"{""reasoning"": ""The image displays a two-lane road with right-hand traffic (yellow line on the left), standard US yellow edge lines, and wooden utility poles, situated in a vast, flat, arid grassland typical of the American High Plains."", ""country"": ""US"", ""latitude"": 39.26, ""longitude"": -103.69}"
+qwen/qwen3.5-35b-a3b,no-CoT,43.0731,-103.2342,14846.774,US,True,,stop,0.00015825,473,32,0,0.58,"{""country"": ""US"", ""latitude"": 43.0731, ""longitude"": -103.2342}"
+qwen/qwen3.5-9b,no-CoT,36.7333,-104.9833,14866.185,US,True,,stop,5.22e-05,474,32,0,6.64,"{""country"": ""US"", ""latitude"": 36.7333, ""longitude"": -104.9833}"
+mistralai/mistral-small-2603,no-CoT,38.8339,-104.8214,14900.818,US,True,,stop,0.0001143,634,32,0,3.08,"{""country"": ""US"", ""latitude"": 38.8339, ""longitude"": -104.8214}"
+qwen/qwen3.5-27b,no-CoT,41.2236,-104.8217,14946.539,US,True,,stop,0.00024024,474,45,0,10.04,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 41.2236,
+  ""longitude"": -104.8217
+}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,41.2345,-104.8765,14951.253,US,True,,stop,0.00036828,473,32,0,2.24,"{""country"": ""US"", ""latitude"": 41.2345, ""longitude"": -104.8765}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,43.02219772338867,-114.78703308105469,15781.758,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,42.984580993652344,-114.8056411743164,15783.216,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.077781677246094,-115.30582427978516,15817.696,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,36.7783,-118.2439,16029.818,US,True,,stop,0.001191,634,32,0,0.85,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -118.2439}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.3,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.2,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.4,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.36,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.32,

@@ -109,6 +109,7 @@
   pdf:  https://arxiv.org/abs/2412.06781
   github: https://github.com/nicolas-dufour/plonk
   website: plonk.html
+  game: /plonk_game/
   abstract: "Global visual geolocation predicts where an image was captured on Earth. Since images vary in how precisely they can be localized, this task inherently involves a significant degree of ambiguity. However, existing approaches are deterministic and overlook this aspect. In this paper, we aim to close the gap between traditional geolocalization and modern generative methods. We propose the first generative geolocation approach based on diffusion and Riemannian flow matching, where the denoising process operates directly on the Earth's surface. Our model achieves state-of-the-art performance on three visual geolocation benchmarks: OpenStreetView-5M, YFCC-100M, and iNat21. In addition, we introduce the task of probabilistic visual geolocation, where the model predicts a probability distribution over all possible locations instead of a single point. We introduce new metrics and baselines for this task, demonstrating the advantages of our diffusion-based approach."
   bibtex: "@article{dufour2024world80timestepsgenerative, \n
       &nbsp;&nbsp;  title           ={Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation}, \n

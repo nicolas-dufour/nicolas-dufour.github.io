@@ -1,0 +1,119 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-37.201210755329,175.59384052878,0.0,NZ,True,,,,,,,,"Thames, Thames-Coromandel District, Waikato, NZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-37.59489440917969,176.0785675048828,61.235,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-37.6568489074707,176.00469970703125,62.314,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-37.61943435668945,176.1097412109375,65.107,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,-37.7085,175.2218,65.271,NZ,True,,stop,0.00392,640,24,0,1.34,"{""country"":""NZ"",""latitude"":-37.7085,""longitude"":175.2218}"
+anthropic/claude-opus-4.8,CoT,-37.78,175.28,70.062,NZ,True,,stop,0.006905,911,94,0,9.14,"{""reasoning"": ""Left-hand traffic, English 'keep left' sign, lush green pastoral farmland with wooden power poles and distant hills typical of rural New Zealand North Island."", ""country"": ""NZ"", ""latitude"": -37.78, ""longitude"": 175.28}"
+anthropic/claude-opus-4.8,no-CoT,-37.7833,175.2833,70.285,NZ,True,,stop,0.004725,780,33,0,9.7,"{""country"": ""NZ"", ""latitude"": -37.7833, ""longitude"": 175.2833}"
+openai/gpt-5.5,CoT,-37.8206,175.7718,70.639,NZ,True,,stop,0.018615,717,501,421,22.38,"{""reasoning"":""Left-side driving with NZ-style yellow centerline/white edge markings and rural reflector posts point strongly to New Zealand. The lush dairy pasture, hedgerows, and low volcanic/rolling hills fit the Waikato/Matamata area of the North Island."",""country"":""NZ"",""latitude"":-37.8206,""longitude"":175.7718}"
+google/gemini-3.1-pro-preview,CoT,-37.8,175.3,71.45,NZ,True,,stop,0.005398,1283,236,155,10.7,"{
+  ""reasoning"": ""The 'keep left' sign in English, dashed yellow center line, and solid white edge lines strongly indicate New Zealand. The wooden utility poles and lush green landscape further support a location in the North Island."",
+  ""country"": ""NZ"",
+  ""latitude"": -37.8,
+  ""longitude"": 175.3
+}"
+google/gemini-3.1-pro-preview,no-CoT,-37.8,175.3,71.45,NZ,True,,stop,0.00443,1201,169,139,3.0,"```json
+{""country"": ""NZ"", ""latitude"": -37.8, ""longitude"": 175.3}
+```"
+minimax/minimax-m3,no-CoT,-37.8,175.3,71.45,NZ,True,,stop,0.00025668,866,23,0,8.29,"{""country"": ""NZ"", ""latitude"": -37.8, ""longitude"": 175.3}"
+moonshotai/kimi-k2.6,no-CoT,-37.8,175.3,71.45,NZ,True,,stop,0.00072259,717,23,0,1.98,"{""country"": ""NZ"", ""latitude"": -37.8, ""longitude"": 175.3}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-37.8125,175.3125,72.361,NZ,True,,stop,0.002124,1200,36,0,7.77,"```json
+{""country"": ""NZ"", ""latitude"": -37.8125, ""longitude"": 175.3125}
+```"
+qwen/qwen3.5-27b,no-CoT,-37.884,175.4744,76.65,NZ,True,,stop,0.0002325,570,45,0,2.94,"```json
+{
+  ""country"": ""NZ"",
+  ""latitude"": -37.8840,
+  ""longitude"": 175.4744
+}
+```"
+qwen/qwen3.5-397b-a17b,CoT,-37.8542,175.2891,77.422,NZ,True,,stop,0.0146515,649,4130,3725,260.47,"{""reasoning"": ""The yellow center line combined with left-hand traffic is a definitive marker for New Zealand (Australia uses white center lines). The 'keep left' text on the red sign (likely a rental car dashboard sticker) and the specific style of wooden power poles and rural fencing confirm the location as a rural New Zealand highway."", ""country"": ""NZ"", ""latitude"": -37.8542, ""longitude"": 175.2891}"
+google/gemini-3.5-flash,CoT (effort=medium),-37.8812,175.7945,77.653,NZ,True,,stop,0.007098,1282,575,486,11.51,"{""reasoning"": ""The 'keep left' sticker on the dashboard is a classic indicator of a rental vehicle in New Zealand, which is further supported by the left-hand traffic, distinct yellow no-passing road markings, wooden utility poles, and lush green Waikato-like landscape."", ""country"": ""NZ"", ""latitude"": -37.8812, ""longitude"": 175.7945}"
+qwen/qwen3.6-27b,no-CoT,-37.7833,176.1667,82.12,NZ,True,,stop,0.0002734,570,32,0,5.74,"{""country"": ""NZ"", ""latitude"": -37.7833, ""longitude"": 176.1667}"
+minimax/minimax-m3,CoT,-37.95,175.65,83.409,NZ,True,,stop,0.00079446,957,474,394,13.37,"{""reasoning"": ""Red 'Keep Left' sign style, left-hand traffic, yellow centerline road markings, rural pastoral landscape with rolling hills, wooden power poles, and lush green vegetation are highly characteristic of rural New Zealand, likely the North Island Waikato region."", ""country"": ""NZ"", ""latitude"": -37.95, ""longitude"": 175.65}"
+google/gemini-3.5-flash,CoT (effort=low),-37.9542,175.4681,84.459,NZ,True,,stop,0.003984,1282,229,151,3.37,"{""reasoning"": ""The 'keep left' sticker on the dashboard, left-hand driving, wooden utility poles, and yellow center lines strongly indicate New Zealand, with the lush green pastures and distant volcanic hills suggesting the North Island."", ""country"": ""NZ"", ""latitude"": -37.9542, ""longitude"": 175.4681}"
+google/gemini-3.5-flash,CoT (effort=high),-38.015,175.312,93.833,NZ,True,,stop,0.0103665,1283,938,864,6.49,"{""reasoning"": ""The 'keep left' sticker on the dashboard, left-hand traffic, wooden utility poles, and lush green landscape with a distant volcanic hill strongly indicate rural New Zealand, likely the Waikato region."", ""country"": ""NZ"", ""latitude"": -38.015, ""longitude"": 175.312}"
+moonshotai/kimi-k2.6,CoT,-39.35,174.25,266.169,NZ,True,,stop,0.016301664,796,4689,4615,305.51,"{""reasoning"": ""Red 'keep left' signage and a yellow centerline indicate left-hand traffic consistent with New Zealand; wooden power poles, lush pastoral farmland, and a distant conical peak strongly suggest rural Taranaki on the North Island."", ""country"": ""NZ"", ""latitude"": -39.35, ""longitude"": 174.25}"
+qwen/qwen3.6-35b-a3b,no-CoT,-43.52,172.63,746.006,NZ,True,,stop,0.0001187498,569,28,0,8.83,"{""country"": ""NZ"", ""latitude"": -43.52, ""longitude"": 172.63}"
+qwen/qwen3.6-35b-a3b,CoT,-43.532,172.636,747.085,NZ,True,,stop,0.00387005905,649,3901,3786,19.26,"```json
+{
+  ""reasoning"": ""The decisive clues are the left-hand traffic combined with the double yellow center lines, which are a specific road marking standard in New Zealand (indicating no overtaking). The rural landscape with lush green vegetation (likely gorse), wooden utility poles, and wire fencing is highly characteristic of the South Island of New Zealand."",
+  ""country"": ""NZ"",
+  ""latitude"": -43.532,
+  ""longitude"": 172.636
+}
+```"
+qwen/qwen3.5-9b,no-CoT,-33.8688,151.2094,2230.96,AU,True,,stop,6.18e-05,570,32,0,5.42,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2094}"
+mistralai/mistral-medium-3-5,no-CoT,-33.7705,151.0844,2245.158,AU,True,,stop,0.001362,748,32,0,7.25,"{""country"": ""AU"", ""latitude"": -33.7705, ""longitude"": 151.0844}"
+qwen/qwen3.5-35b-a3b,no-CoT,-33.7892,150.9845,2253.399,AU,True,,stop,0.0001118,570,32,0,1.47,"{""country"": ""AU"", ""latitude"": -33.7892, ""longitude"": 150.9845}"
+xiaomi/mimo-v2.5,no-CoT,-33.75,150.75,2275.41,AU,True,,stop,9.40576e-05,804,28,0,8.62,"{""country"": ""AU"", ""latitude"": -33.75, ""longitude"": 150.75}"
+qwen/qwen3.5-122b-a10b,no-CoT,-28.1667,153.5167,2289.733,AU,True,,stop,0.0002475,569,32,0,2.76,"{""country"": ""AU"", ""latitude"": -28.1667, ""longitude"": 153.5167}"
+x-ai/grok-4.3,CoT,-33.72,150.35,2311.779,AU,True,,stop,0.002649,756,816,756,9.05,"{""reasoning"": ""Keep-left sign + left-hand traffic, yellow center line, rural wire-fence landscape and utility poles match Australia; distant hills and vegetation consistent with NSW hinterland."", ""country"": ""AU"", ""latitude"": -33.72, ""longitude"": 150.35}"
+xiaomi/mimo-v2.5,CoT,-34.5,149.5,2363.345,AU,True,,stop,0.0006295576,883,1901,1822,60.73,"{""reasoning"": ""The 'keep left' sign in English and left-hand traffic point to an English-speaking country with left-side driving. The yellow center line, rural fencing, and vegetation resembling eucalyptus trees are characteristic of Australian roads."", ""country"": ""AU"", ""latitude"": -34.5, ""longitude"": 149.5}"
+google/gemma-4-31b-it,no-CoT,-27.4698,153.0251,2371.967,AU,True,,stop,6.576e-05,392,37,0,9.03,"```json
+{""country"": ""AU"", ""latitude"": -27.4698, ""longitude"": 153.0251}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-27.5833,152.9167,2374.156,AU,True,,stop,0.00042588,569,32,0,8.8,"{""country"": ""AU"", ""latitude"": -27.5833, ""longitude"": 152.9167}"
+qwen/qwen3.6-27b,CoT,-36.45,145.98,2626.421,AU,True,,stop,0.023334865,650,7302,6663,334.19,"```json
+{
+    ""reasoning"": ""The image shows a two-lane road with double yellow center lines, which is standard for Australia (unlike New Zealand or the UK which use white center lines). The 'Keep left' sign (partially visible at the bottom) and the red/white reflective bollards confirm left-hand traffic and Australian road infrastructure. The vegetation (eucalyptus trees) and flat, rural terrain with wire fencing are characteristic of the Goulburn Valley region in Victoria, Australia."",
+    ""country"": ""AU"",
+    ""latitude"": -36.45,
+    ""longitude"": 145.98
+}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,-12.4634,130.8412,5219.134,AU,True,,stop,0.00058152,392,1352,0,44.06,"```json
+{""country"": ""AU"", own"", ""latitude"": - own, own-12.4634, ""longitude"": 130.8412}
+```
+
+*(Note: Due to the presence of non-standard characters in your prompt, I have provided a best-effort estimation based on the visual cues of the road own road markings and landscape typical of Northern Australia.)*
+
+```json
+{""country"": own-12.4634, ""latitude"": -12.4634, ""longitude"": 130.84-12.4634, ""longitude"": 130.8412}
+```
+
+**Correction/Refinement:** Based on the visual evidence of own the own road markings (yellow center line, white edge lines, ""Keep Left"" sign own sign own sign own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own-12.4634, ""latitude"": -12.46 own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own own-1-1-12.4634, ""latitude"": -12.4634, ""longitude"": 130.8412}
+```json
+{""--1-12.4634, ""latitude"": -12.4634, ""longitude"": 130.8412}
+```
+
+*(Note: Based on the visual cues of the road markings and vegetation, this appears to be a rural road in Australia.)*
+
+```json
+{""country"": ""AU"", ""latitude"": --12.4634, ""longitude"": 130.8-1---12.4634, ""longitude"": 130.8412}
+```
+
+**Wait, I cannot-12.4634, ""latitude"": -12.4634, ""longitude"": 130.84-12.4634, ""latitude"":-12.4634, ""longitude"": -130.8-12.4634, ""longitude"": 130.84-1-12.4634, ""latitude"": -12.4634, ""longitude"": 130.8412}
+```json
+{""country"":--12.4634, ""latitude"": -1--12.46-12.4634,-12.4634, ""latitude"": -12.4634, ""longitude"": 130.8412}
+```
+
+*(Note: Due to the presence of non-standard characters in your prompt, I have provided a best-effort estimation based on the visual cues of the road markings and vegetation, which suggest a rural-12.4634, ""latitude"": -12-12.4634, ""longitude"": 130-12.4-12.4634, ""longitude"": 130.8412}
+```
+
+*(Note: Due to the presence of non-standard characters in your prompt, I have provided a best-effort estimation based on the visual cues of the road markings and vegetation, which suggest a-12.-12.4634, ""latitude"": -12.4634, ""-12.46-1--1-12.4634, ""latitude"": -12.4634, ""longitude"": 130.8412}
+```
+
+*(Note: Due to the presence of non-standard-12.4634, ""latitude"": -12.4634, ""longitude"": 1-12.-1-12.4634, ""latitude"": -12-12.4634, ""longitude"": 130.8412}
+```-12.4634, ""latitude"": -12.4634, ""longitude"": 130--12.4634, ""latitude"": -12.4634, ""longitude"": 130.84-12.4634, ""longitude"": 130.8412}
+```
+
+*(Note: Due to the presence of non-standard characters in your prompt, I have provided a best-effort estimation based on the visual cues of the road markings and vegetation, which suggest--12.4634, ""latitude-12.4634, ""latitude"": -12.4634, ""longitude"": 130.8-12.4634, ""longitude"": 130.8412}
+```json
+{""country"":-12.4634, ""--12.4634, ""latitude"": -12.4634-12.4634, ""latitude"": -12.4634, ""longitude"": 130.8412}
+```
+
+*(Note: Due to the presence of non-standard characters in your prompt, I have provided a best-effort estimation based on the visual cues of the-12.4634, ""latitude"": -12.4634, ""longitude"": 130.84-12.4634,-12.4634-12.4634, ""latitude"": -12.4634, ""longitude"": 130.8412}
+```json
+{""country"": ""AU"", ""latitude"": -12.4634, ""longitude"": 130.8412}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,37.725372314453125,-122.17533111572266,10494.914,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.12390899658203,-122.66446685791016,10496.073,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.11328125,-122.64087677001953,10496.686,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,-29.85,30.3,11729.457,ZA,True,,stop,0.0008278,672,22,0,1.87,"{""country"": ""ZA"", ""latitude"": -29.85, ""longitude"": 30.3}"
+mistralai/mistral-small-2603,CoT,-0.42,36.8,14066.032,KE,True,,stop,0.00041766,830,629,653,11.65,"{""reasoning"": ""The license plate format (white with black characters reading 'KXX 1234') is definitive for Kenya, matching the standard Kenyan registration pattern. The rolling green hills and vegetation are characteristic of Kenya's central highlands."", ""country"": ""KE"", ""latitude"": -0.42, ""longitude"": 36.8}"
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,18608.844,FR,True,,stop,0.00016275,748,30,0,7.99,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.2,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.11,

@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,12.528327538661,-8.0415615992527,0.0,ML,True,,,,,,,,"Bamako, None, Bamako, ML"
+google/gemini-3.5-flash,CoT (effort=medium),12.6254,-7.9882,12.249,ML,True,,stop,0.0049845,1271,342,271,4.27,"{""reasoning"": ""The green Mercedes-Benz minibus (Sotrama) with its distinctive paint scheme, combined with the red soil, architecture, and clothing, is highly characteristic of Bamako, Mali."", ""country"": ""ML"", ""latitude"": 12.6254, ""longitude"": -7.9882}"
+google/gemini-3.1-pro-preview,CoT,12.6392,-8.0029,13.023,ML,True,,stop,0.005602,1271,255,170,11.12,"{
+  ""reasoning"": ""The distinctive green Mercedes minibus with a blue bullbar is a 'Sotrama', the primary form of public transport in Bamako, Mali. The red soil and Sahelian architecture further confirm this location."",
+  ""country"": ""ML"",
+  ""latitude"": 12.6392,
+  ""longitude"": -8.0029
+}"
+openai/gpt-5.5,CoT,12.6392,-8.0029,13.023,ML,True,,stop,0.011385,621,276,190,15.54,"{""reasoning"":""The distinctive bright green shared minibus is characteristic of Bamako’s SOTRAMA transport, and the dusty Sahelian urban street with French-West-African architecture fits Mali. The dry climate, right-side traffic, motorcycles, and sandy roadside conditions point most strongly to Bamako."",""country"":""ML"",""latitude"":12.6392,""longitude"":-8.0029}"
+anthropic/claude-opus-4.8,no-CoT,12.6392,-8.0029,13.023,ML,True,,stop,0.00413,666,32,0,2.66,"{""country"": ""ML"", ""latitude"": 12.6392, ""longitude"": -8.0029}"
+minimax/minimax-m3,no-CoT,12.6392,-8.0029,13.023,ML,True,,stop,0.00032442,767,127,129,4.04,"{""country"": ""ML"", ""latitude"": 12.6392, ""longitude"": -8.0029}"
+moonshotai/kimi-k2.6,no-CoT,12.6392,-8.0029,13.023,ML,True,,stop,0.00062229,603,25,0,0.68,"{""country"": ""ML"", ""latitude"": 12.6392, ""longitude"": -8.0029}"
+openai/gpt-5.5,no-CoT,12.6392,-8.0029,13.023,ML,True,,stop,0.00344,544,24,0,1.4,"{""country"":""ML"",""latitude"":12.6392,""longitude"":-8.0029}"
+google/gemini-3.1-pro-preview,no-CoT,12.6392,-8.0028,13.026,ML,True,,stop,0.004538,1189,180,146,10.27,"```json
+{""country"": ""ML"", ""latitude"": 12.6392, ""longitude"": -8.0028}
+```"
+google/gemma-4-31b-it,no-CoT,12.6392,-8.002,13.055,ML,True,,stop,6.638e-05,406,34,0,8.78,"```json
+{""country"": ""ML"", ""latitude"": 12.6392, ""longitude"": -8.002}
+```"
+google/gemini-3.5-flash,CoT (effort=low),12.6392,-7.9982,13.196,ML,True,,stop,0.0034635,1271,173,105,9.16,"{""reasoning"": ""The green Mercedes-Benz van (Sotrama) with a blue bumper, the red soil, and the local clothing styles are highly characteristic of Bamako, Mali."", ""country"": ""ML"", ""latitude"": 12.6392, ""longitude"": -7.9982}"
+google/gemini-3.5-flash,CoT (effort=high),12.644,-7.998,13.703,ML,True,,stop,0.0072165,1271,590,516,6.16,"{""reasoning"": ""The green and blue Mercedes van is a 'Sotrama', a public transit minibus highly characteristic of Bamako, Mali, which is further supported by the red soil, arid climate, and West African attire."", ""country"": ""ML"", ""latitude"": 12.644, ""longitude"": -7.998}"
+anthropic/claude-opus-4.8,CoT,12.65,-8.0,14.261,ML,True,,stop,0.006485,797,100,0,9.34,"{""reasoning"": ""Sahelian dusty laterite street, green Mercedes minibus, motorcycles, people in West African dress, dry climate suggesting Mali; setting resembles Bamako outskirts."", ""country"": ""ML"", ""latitude"": 12.65, ""longitude"": -8.0}"
+minimax/minimax-m3,CoT,12.65,-8.0,14.261,ML,True,,stop,0.00067866,843,406,324,20.25,"{""reasoning"": ""Reddish laterite soil, Sahelian flat-roofed concrete architecture, green decorated minibus (taxi-brousse style), women in boubous, dry dusty vegetation, and overhead power infrastructure all point to a town in southern Mali or Burkina Faso."", ""country"": ""ML"", ""latitude"": 12.65, ""longitude"": -8.0}"
+xiaomi/mimo-v2.5,CoT,12.65,-8.0,14.261,ML,True,,stop,0.0003265976,787,867,807,8.95,"{""reasoning"": ""The reddish unpaved soil, green and yellow Mercedes-Benz public transport van, and traditional boubou clothing are indicative of urban Mali."", ""country"": ""ML"", ""latitude"": 12.65, ""longitude"": -8.0}"
+x-ai/grok-4.3,no-CoT,12.65,-8.0,14.261,ML,True,,stop,0.0005934,592,22,0,8.16,"{""country"": ""ML"", ""latitude"": 12.65, ""longitude"": -8.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,12.710179328918457,-7.962276458740234,21.975,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,12.71113395690918,-7.964211940765381,21.992,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,12.715664863586426,-7.963119029998779,22.503,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,13.155,-2.95,556.364,NE,True,,stop,0.0001883,473,28,0,7.99,"{""country"": ""NE"", ""latitude"": 13.155, ""longitude"": -2.950}"
+qwen/qwen3.5-122b-a10b,no-CoT,14.6928,-15.5223,843.44,ML,True,,stop,0.0002884,473,31,0,2.15,"{""country"": ""ML"", ""latitude"": 14.6928, ""longitude"": -15.5223}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),14.7912,-16.9278,992.456,SN,True,,stop,0.0021,1190,35,0,8.1,"```json
+{""country"": ""SN"", ""latitude"": 14.7912, ""longitude"": -16.9278}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,14.7167,-17.4677,1047.181,SN,True,,stop,0.00036468,473,31,0,2.31,"{""country"": ""SN"", ""latitude"": 14.7167, ""longitude"": -17.4677}"
+mistralai/mistral-medium-3-5,no-CoT,13.515,2.112,1105.361,NE,True,,stop,0.001161,634,28,0,0.89,"{""country"": ""NE"", ""latitude"": 13.515, ""longitude"": 2.112}"
+qwen/qwen3.6-35b-a3b,no-CoT,13.5127,2.1127,1105.416,NE,True,,stop,0.0001428,474,30,0,2.11,"{""country"": ""NE"", ""latitude"": 13.5127, ""longitude"": 2.1127}"
+xiaomi/mimo-v2.5,no-CoT,13.5126,2.1128,1105.426,NE,True,,stop,8.11776e-05,708,30,0,2.17,"{""country"": ""NE"", ""latitude"": 13.5126, ""longitude"": 2.1128}"
+x-ai/grok-4.3,CoT,13.525,2.112,1105.449,NE,True,,stop,0.002744,676,894,822,6.51,"{""reasoning"": ""Sahel/West African townscape with red laterite dirt road, head-carrying pedestrians, unfinished concrete-block buildings with tin roofs, Mitsubishi minibus with regional plate styling, and sparse acacia-like trees under clear subtropical sky."", ""country"": ""NE"", ""latitude"": 13.525, ""longitude"": 2.112}"
+moonshotai/kimi-k2.6,CoT,13.5117,2.1251,1106.744,NE,True,,stop,0.007171128,682,2025,1935,76.75,"{""reasoning"": ""The reddish Sahelian soil, flat-roofed concrete architecture, and distinctive green-and-blue minibus van are characteristic of Niamey, Niger. The women's traditional dress, head-loading carrying style, and overall dusty urban Sahel environment strongly point to Niger over neighboring Sahelian countries."", ""country"": ""NE"", ""latitude"": 13.5117, ""longitude"": 2.1251}"
+qwen/qwen3.5-27b,no-CoT,13.5116,2.1254,1106.775,NE,True,,stop,0.0002139,473,30,0,14.62,"{""country"": ""NE"", ""latitude"": 13.5116, ""longitude"": 2.1254}"
+qwen/qwen3.5-35b-a3b,no-CoT,9.0765,7.3986,1729.118,NG,True,,stop,0.0001145625,473,29,0,0.74,"{""country"": ""NG"", ""latitude"": 9.0765, ""longitude"": 7.3986}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,15.998642921447754,36.850589752197266,4844.427,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,14.73261833190918,38.53721618652344,5030.85,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,14.610699653625488,38.634178161621094,5042.028,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,9.0054,38.7636,5121.669,ET,True,,stop,5.19e-05,474,30,0,4.53,"{""country"": ""ET"", ""latitude"": 9.0054, ""longitude"": 38.7636}"
+mistralai/mistral-small-2603,no-CoT,28.6357,77.2245,8889.002,IN,True,,stop,0.0001137,634,31,0,3.91,"{""country"": ""IN"", ""latitude"": 28.6357, ""longitude"": 77.2245}"
+google/gemma-4-26b-a4b-it,no-CoT,22.5726,88.36,10117.365,,True,,stop,5.494e-05,406,31,0,7.57,"{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 88.36-1}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,20.8,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.47,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.12,

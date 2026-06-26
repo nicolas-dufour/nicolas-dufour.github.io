@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,56.455938039128,9.6233202056503,0.0,DK,True,,,,,,,,"Bjerringbro, Viborg Kommune, Central Jutland, DK"
+google/gemma-4-31b-it,no-CoT,53.5511,9.9937,323.864,DE,True,,stop,5.208e-05,272,35,0,10.56,"```json
+{""country"": ""DE"", ""latitude"": 53.5511, ""longitude"": 9.9937}
+```"
+minimax/minimax-m3,CoT,52.13,5.88,538.697,NL,True,,stop,0.00076986,843,482,390,19.25,"{""reasoning"": ""The narrow sandy road winding through managed pine forest with purple heather understory on the right is highly characteristic of the Veluwe heathland region in the Netherlands. Right-hand driving, European car interior, and the specific combination of conifer plantation on sandy soil with erica heath are typical of this area."", ""country"": ""NL"", ""latitude"": 52.13, ""longitude"": 5.88}"
+x-ai/grok-4.3,no-CoT,50.25,8.65,693.067,DE,True,,stop,0.0005934,592,22,0,0.77,"{""country"": ""DE"", ""latitude"": 50.25, ""longitude"": 8.65}"
+anthropic/claude-opus-4.8,no-CoT,50.2,9.5,695.676,DE,True,,stop,0.00408,666,30,0,15.4,"{""country"": ""DE"", ""latitude"": 50.2, ""longitude"": 9.5}"
+qwen/qwen3.5-9b,no-CoT,50.1167,8.6833,707.637,DE,True,,stop,5.19e-05,474,30,0,5.14,"{""country"": ""DE"", ""latitude"": 50.1167, ""longitude"": 8.6833}"
+x-ai/grok-4.3,CoT,50.35,6.55,708.676,DE,True,,stop,0.0025865,676,831,761,8.6,"{""reasoning"": ""LHD vehicle (wiper visible left of frame) + right-side driving on dashed-center road; red/white windshield vignette sticker + temperate mixed conifer/deciduous forest on narrow winding asphalt typical of rural central Europe."", ""country"": ""DE"", ""latitude"": 50.35, ""longitude"": 6.55}"
+anthropic/claude-opus-4.8,CoT,49.8,9.5,740.152,DE,True,,stop,0.006285,797,92,0,13.5,"{""reasoning"": ""Coniferous and deciduous mixed forest, narrow rural paved road, temperate European vegetation, right-hand traffic suggest central Europe such as Germany."", ""country"": ""DE"", ""latitude"": 49.8, ""longitude"": 9.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,49.15397644042969,12.440382957458496,833.547,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,51.5074,-0.1278,840.824,GB,True,,stop,0.000139035,473,30,0,1.16,"{""country"": ""GB"", ""latitude"": 51.5074, ""longitude"": -0.1278}"
+qwen/qwen3.5-35b-a3b,no-CoT,51.4523,-0.2341,850.366,GB,True,,stop,0.000169425,473,35,0,1.98,"{
+""country"": ""GB"",
+""latitude"": 51.4523,
+""longitude"": -0.2341
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,59.98441696166992,22.758153915405273,861.442,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,48.71397018432617,7.557238578796387,872.006,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,48.679351806640625,7.537720203399658,876.023,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),48.5832,7.2145,890.307,FR,True,,stop,0.002046,1190,29,0,7.68,"{""country"": ""FR"", ""latitude"": 48.5832, ""longitude"": 7.2145}"
+google/gemini-3.1-pro-preview,CoT,48.2,14.0,964.503,AT,True,,stop,0.00565,1271,259,187,4.94,"{
+  ""reasoning"": ""The landscape features mixed coniferous and deciduous forests typical of Central Europe. The road markings and the possible vignette sticker on the windshield suggest a country like Austria or Czechia."",
+  ""country"": ""AT"",
+  ""latitude"": 48.2,
+  ""longitude"": 14.0
+}"
+qwen/qwen3.6-27b,no-CoT,48.8566,2.3522,975.804,FR,True,,stop,0.0001923,473,30,0,14.24,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+google/gemini-3.5-flash,CoT (effort=low),47.2845,6.8542,1037.167,FR,True,,stop,0.0050565,1271,350,264,10.08,"{""reasoning"": ""The narrow asphalt road with a dashed center line, mixed coniferous and deciduous forest, and hilly terrain suggest Central Europe, likely eastern France or Switzerland. The red sticker on the windshield resembles a Swiss motorway vignette, pointing to a location near the Swiss-French border."", ""country"": ""FR"", ""latitude"": 47.2845, ""longitude"": 6.8542}"
+google/gemini-3.5-flash,CoT (effort=medium),47.1825,6.7431,1049.75,FR,True,,stop,0.0084405,1271,726,640,12.96,"```json
+{""reasoning"": ""The narrow asphalt road with a dashed white center line, temperate mixed forest (conifers and deciduous trees), and hilly terrain are characteristic of eastern France near the Swiss border, supported by what appears to be a Swiss vignette on the windshield."", ""country"": ""FR"", ""latitude"": 47.1825, ""longitude"": 6.7431}
+```"
+moonshotai/kimi-k2.6,CoT,47.45,15.32,1073.922,AT,True,,stop,0.012538008,682,3605,3550,168.57,"{""reasoning"": ""Left-hand drive vehicle with circular red vignette sticker on windshield and narrow paved road through dense coniferous forest matches rural Austria."", ""country"": ""AT"", ""latitude"": 47.45, ""longitude"": 15.32}"
+mistralai/mistral-medium-3-5,no-CoT,50.7167,-3.5333,1074.79,GB,True,,stop,0.001176,634,30,0,0.9,"{""country"": ""GB"", ""latitude"": 50.7167, ""longitude"": -3.5333}"
+google/gemini-3.5-flash,CoT (effort=high),47.1523,4.1254,1100.555,FR,True,,stop,0.0158835,1271,1553,1465,12.64,"```json
+{""reasoning"": ""The narrow paved road with a dashed white center line and no outer edge lines, winding through a mix of dense pine and deciduous forest, is highly characteristic of departmental roads in rural France, particularly in hilly regions like the Morvan or Vosges."", ""country"": ""FR"", ""latitude"": 47.1523, ""longitude"": 4.1254}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,61.742706298828125,26.188621520996094,1108.999,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,61.7559928894043,26.199050903320312,1110.112,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,48.1234,-1.5678,1196.048,FR,True,,stop,0.000255605,473,30,0,15.44,"{""country"": ""FR"", ""latitude"": 48.1234, ""longitude"": -1.5678}"
+google/gemini-3.1-pro-preview,no-CoT,45.8321,3.1245,1263.958,FR,True,,stop,0.002786,1189,34,0,2.34,"```json
+{""country"": ""FR"", ""latitude"": 45.8321, ""longitude"": 3.1245}
+```"
+openai/gpt-5.5,CoT,48.3247,-3.6842,1273.733,FR,True,,stop,0.018495,621,513,428,37.15,"{""reasoning"":""The narrow right-driving rural road with French-style dashed center markings and the windshield inspection/insurance stickers point most strongly to France. The hedgerows, conifers, rolling terrain, and damp temperate look fit rural Brittany/Normandy, so I place it in western France."",""country"":""FR"",""latitude"":48.3247,""longitude"":-3.6842}"
+openai/gpt-5.5,no-CoT,48.3127,-3.6864,1274.862,FR,True,,stop,0.00344,544,24,0,1.27,"{""country"":""FR"",""latitude"":48.3127,""longitude"":-3.6864}"
+xiaomi/mimo-v2.5,CoT,32.7004,-16.9403,3333.794,PT,True,,stop,0.0004080776,787,1158,1085,19.77,"{
+  ""reasoning"": ""Left-hand traffic combined with lush, subtropical vegetation and narrow, unmarked rural roads is highly characteristic of the island of Madeira, Portugal."",
+  ""country"": ""PT"",
+  ""latitude"": 32.7004,
+  ""longitude"": -16.9403
+}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6336.871,,True,True,,,,,,23.63,
+qwen/qwen3.5-122b-a10b,no-CoT,47.6205,-122.3493,7616.288,US,True,,stop,0.0002916,473,32,0,1.5,"{""country"": ""US"", ""latitude"": 47.6205, ""longitude"": -122.3493}"
+qwen/qwen3.6-35b-a3b,no-CoT,47.6062,-122.3321,7617.145,US,True,,stop,0.00015825,473,32,0,0.73,"{""country"": ""US"", ""latitude"": 47.6062, ""longitude"": -122.3321}"
+mistralai/mistral-small-2603,no-CoT,36.5785,-118.2916,8568.206,US,True,,stop,0.0001143,634,32,0,1.0,"{""country"": ""US"", ""latitude"": 36.5785, ""longitude"": -118.2916}"
+xiaomi/mimo-v2.5,no-CoT,37.7749,-122.4194,8607.115,US,True,,stop,8.17376e-05,708,32,0,2.8,"{""country"": ""US"", ""latitude"": 37.7749, ""longitude"": -122.4194}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.79,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,9.37,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.14,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,10.47,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.27,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,28.08,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.27,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.15,

@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,25.468088290019,91.819036280125,0.0,IN,True,,,,,,,,"Shillong, East Khasi Hills, Meghalaya, IN"
+google/gemini-3.5-flash,CoT (effort=high),25.45,91.8,2.775,IN,True,,stop,0.0258195,1271,2657,2585,25.28,"{""reasoning"": ""The lush, misty green hills with pine trees, terraced slopes, and simple tin-roofed houses, combined with left-hand driving, strongly point to the highlands of Northeast India, specifically Meghalaya."", ""country"": ""IN"", ""latitude"": 25.45, ""longitude"": 91.8}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),25.5124,91.8512,5.891,IN,True,,stop,0.0020985,1189,35,0,1.52,"```json
+{""country"": ""IN"", ""latitude"": 25.5124, ""longitude"": 91.8512}
+```"
+google/gemini-3.5-flash,CoT (effort=low),25.3484,91.8172,13.31,IN,True,,stop,0.0044535,1271,283,217,10.27,"{""reasoning"": ""The lush, wet, mountainous landscape with pine trees and simple concrete houses with corrugated metal roofs is highly characteristic of the state of Meghalaya in Northeast India."", ""country"": ""IN"", ""latitude"": 25.3484, ""longitude"": 91.8172}"
+moonshotai/kimi-k2.6,CoT,25.3,91.7,22.189,IN,True,,stop,0.012714408,682,3649,3578,67.81,"{""reasoning"": ""Misty pine-covered hills and scattered tin-roofed stone houses match the Eastern Himalayan foothills of India; the visible right-side vehicle mirror confirms right-hand drive/left-side traffic consistent with Meghalaya."", ""country"": ""IN"", ""latitude"": 25.3, ""longitude"": 91.7}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,25.656993865966797,91.42733764648438,44.554,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,25.613800048828125,91.4048080444336,44.606,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,26.86136817932129,91.01322937011719,174.553,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,27.1004,93.6167,255.07,IN,True,,stop,0.0011835,634,31,0,7.09,"{""country"": ""IN"", ""latitude"": 27.1004, ""longitude"": 93.6167}"
+google/gemini-3.1-pro-preview,CoT,27.4512,90.1534,275.886,BT,True,,stop,0.006814,1271,356,270,12.33,"{
+  ""reasoning"": ""The black circular mirror visible in the top right corner of the image is a distinct characteristic of the Google Street View car used in Bhutan. The lush, mountainous terrain and local architecture further confirm this Himalayan location."",
+  ""country"": ""BT"",
+  ""latitude"": 27.4512,
+  ""longitude"": 90.1534
+}"
+google/gemini-3.5-flash,CoT (effort=medium),27.4851,89.9012,294.504,BT,True,,stop,0.0080895,1271,687,619,13.08,"{""reasoning"": ""The lush green mountainous terrain with pine trees, winding asphalt road, and simple tin-roofed houses are highly characteristic of rural Bhutan, specifically along the lateral highway."", ""country"": ""BT"", ""latitude"": 27.4851, ""longitude"": 89.9012}"
+openai/gpt-5.5,CoT,27.5268,89.7884,305.337,BT,True,,stop,0.017445,621,478,398,12.15,"{""reasoning"":""Mountainous Himalayan terrain with lush terraced slopes, simple stone/metal-roof houses, and left-side road positioning strongly suggest rural Bhutan. The paved but unmarked winding road and vegetation fit the Thimphu–Punakha/Dochula region."",""country"":""BT"",""latitude"":27.5268,""longitude"":89.7884}"
+openai/gpt-5.5,no-CoT,27.4728,89.6394,311.048,BT,True,,stop,0.00341,544,23,0,7.65,"{""country"":""BT"",""latitude"":27.4728,""longitude"":89.6394}"
+google/gemini-3.1-pro-preview,no-CoT,27.4712,89.6339,311.304,BT,True,,stop,0.002798,1189,35,0,8.92,"```json
+{""country"": ""BT"", ""latitude"": 27.4712, ""longitude"": 89.6339}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,27.1345,88.5234,377.15,IN,True,,stop,0.0003794,473,31,0,1.39,"{""country"": ""IN"", ""latitude"": 27.1345, ""longitude"": 88.5234}"
+xiaomi/mimo-v2.5,no-CoT,27.3,88.6,379.859,IN,True,,stop,7.97776e-05,708,25,0,2.88,"{""country"": ""IN"", ""latitude"": 27.3, ""longitude"": 88.6}"
+anthropic/claude-opus-4.8,CoT,27.05,88.26,396.078,IN,True,,stop,0.006435,797,98,0,3.24,"{""reasoning"": ""Hilly pine-forested terrain with corrugated-roof rural houses and a winding paved road suggests Northeast India/Himalayan foothills; left-side driving consistent with India."", ""country"": ""IN"", ""latitude"": 27.05, ""longitude"": 88.26}"
+anthropic/claude-opus-4.8,no-CoT,27.0844,88.2658,397.229,IN,True,,stop,0.00413,666,32,0,8.65,"{""country"": ""IN"", ""latitude"": 27.0844, ""longitude"": 88.2658}"
+google/gemma-4-26b-a4b-it,no-CoT,27.3667,88.3333,406.248,IN,True,,stop,5.494e-05,406,31,0,1.16,"{""country"": ""IN"", ""latitude"": 27.3667, ""longitude"": 88.3333}"
+qwen/qwen3.5-27b,no-CoT,27.9881,86.925,560.949,NP,True,,stop,0.00023764,474,44,0,14.96,"```json
+{
+  ""country"": ""NP"",
+  ""latitude"": 27.9881,
+  ""longitude"": 86.9250
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,27.9881,86.925,560.949,NP,True,,stop,0.0001171625,473,31,0,0.69,"{""country"": ""NP"", ""latitude"": 27.9881, ""longitude"": 86.9250}"
+x-ai/grok-4.3,no-CoT,27.35,85.35,677.277,NP,True,,stop,0.0005934,592,22,0,1.85,"{""country"": ""NP"", ""latitude"": 27.35, ""longitude"": 85.35}"
+x-ai/grok-4.3,CoT,27.72,85.38,687.332,NP,True,,stop,0.0023315,676,729,667,7.86,"{""reasoning"": ""Right-side mirror visible + empty left-side road implies RHD vehicle driving on left; scattered metal-roof houses on steep misty hillsides match Himalayan foothills architecture/vegetation."", ""country"": ""NP"", ""latitude"": 27.72, ""longitude"": 85.38}"
+google/gemma-4-31b-it,no-CoT,27.7172,85.324,692.413,NP,True,,stop,6.718e-05,406,36,0,2.17,"```json
+{""country"": ""NP"", ""latitude"": 27.7172, ""longitude"": 85.3240}
+```"
+qwen/qwen3.6-27b,no-CoT,27.7172,85.324,692.413,NP,True,,stop,0.0001943,473,31,0,14.08,"{""country"": ""NP"", ""latitude"": 27.7172, ""longitude"": 85.3240}"
+qwen/qwen3.6-35b-a3b,no-CoT,27.7172,85.324,692.413,NP,True,,stop,0.00010617035,473,31,0,7.8,"{""country"": ""NP"", ""latitude"": 27.7172, ""longitude"": 85.3240}"
+qwen/qwen3.5-9b,no-CoT,28.0333,84.0167,825.346,NP,True,,stop,5.205e-05,474,31,0,5.26,"{""country"": ""NP"", ""latitude"": 28.0333, ""longitude"": 84.0167}"
+xiaomi/mimo-v2.5,CoT,19.92,99.81,1025.492,TH,True,,stop,0.0001574776,787,263,204,14.23,"{""reasoning"": ""The lush subtropical hilly terrain, simple rural village architecture, and road infrastructure match northern Thailand's mountainous countryside regions."", ""country"": ""TH"", ""latitude"": 19.92, ""longitude"": 99.81}"
+qwen/qwen3.5-122b-a10b,no-CoT,27.2046,78.0,1389.842,IN,True,,stop,0.0002884,473,31,0,1.44,"{""country"": ""IN"", ""latitude"": 27.2046, ""longitude"": 78.0000}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,11.347329139709473,76.67234802246094,2236.159,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,11.27074909210205,76.71012115478516,2239.545,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,10.656886100769043,77.09618377685547,2261.792,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,35.6895,139.6917,4674.192,JP,True,,stop,0.0001143,634,32,0,8.71,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+minimax/minimax-m3,CoT,5.58,-75.82,16313.428,CO,True,,stop,0.00080826,843,514,448,17.24,"{""reasoning"": ""Steep green eroded Andean hillsides with lush vegetation, modest corrugated-roof houses, right-hand driving, and the terrain style strongly suggest rural Colombian coffee region or Antioquia highlands."", ""country"": ""CO"", ""latitude"": 5.58, ""longitude"": -75.82}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.37,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.63,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,13.31,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.18,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.07,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.28,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.23,

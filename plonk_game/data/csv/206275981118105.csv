@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,63.569644762861,-19.864771859836,0.0,IS,True,,,,,,,,"Vestmannaeyjar, None, South, IS"
+google/gemini-3.1-pro-preview,no-CoT,63.5321,-19.6845,9.856,IS,True,,stop,0.004418,1225,164,129,9.83,"```json
+{""country"": ""IS"", ""latitude"": 63.5321, ""longitude"": -19.6845}
+```"
+google/gemini-3.1-pro-preview,CoT,63.5333,-19.6667,10.609,IS,True,,stop,0.005664,1308,254,169,10.92,"{
+  ""reasoning"": ""The steep, dark rocky mountains rising abruptly from a flat, treeless grassy plain are highly characteristic of southern Iceland. The road markings with solid white edge lines and dashed center lines also match Icelandic highways."",
+  ""country"": ""IS"",
+  ""latitude"": 63.5333,
+  ""longitude"": -19.6667
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),63.5312,-19.6125,13.205,IS,True,,stop,0.0021525,1225,35,0,7.92,"```json
+{""country"": ""IS"", ""latitude"": 63.5312, ""longitude"": -19.6125}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),63.5283,-19.6125,13.314,IS,True,,stop,0.0055695,1307,401,339,4.02,"{""reasoning"": ""The dramatic basalt cliffs shrouded in low clouds, flat coastal plains, and road markings are highly characteristic of Route 1 in southern Iceland."", ""country"": ""IS"", ""latitude"": 63.5283, ""longitude"": -19.6125}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,63.59087371826172,-19.510177612304688,17.702,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,63.5321,-19.5116,17.983,IS,True,,stop,9.71376e-05,820,31,0,1.28,"{""country"": ""IS"", ""latitude"": 63.5321, ""longitude"": -19.5116}"
+openai/gpt-5.5,no-CoT,63.5288,-19.3702,24.913,IS,True,,stop,0.00411,678,24,0,1.18,"{""country"":""IS"",""latitude"":63.5288,""longitude"":-19.3702}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,63.5526237487793,-19.320188522338867,27.028,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,63.8214,-20.3567,37.03,IS,True,,stop,0.0002215625,585,31,0,2.59,"{""country"": ""IS"", ""latitude"": 63.8214, ""longitude"": -20.3567}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,63.399452209472656,-19.18352508544922,38.753,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,63.378456115722656,-19.167339324951172,40.638,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,63.4972,-19.0208,42.593,IS,True,,stop,0.000185,585,31,0,0.64,"{""country"": ""IS"", ""latitude"": 63.4972, ""longitude"": -19.0208}"
+xiaomi/mimo-v2.5,CoT,63.5,-19.0,43.547,IS,True,,stop,0.0003663576,899,953,886,64.81,"{
+  ""reasoning"": ""The terrain features steep grassy mountains with an overcast sky typical of Iceland, and right-hand traffic with simple road markings align with European standards."",
+  ""country"": ""IS"",
+  ""latitude"": 63.5,
+  ""longitude"": -19.0
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,63.31367874145508,-19.035663604736328,50.091,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,63.935,-19.25,50.64,IS,True,,stop,5.643e-05,406,33,0,7.4,"```json
+{""country"": ""IS"", ""latitude"": 63.935, ""longitude"": -19.25}
+```"
+anthropic/claude-opus-4.8,CoT,63.52,-18.7,57.962,IS,True,,stop,0.007245,949,100,0,4.46,"{""reasoning"": ""Treeless green coastal lowland beside steep dark basalt cliffs under heavy overcast, typical of Iceland's Ring Road along the south coast near the cliffs east of Vík."", ""country"": ""IS"", ""latitude"": 63.52, ""longitude"": -18.7}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,63.26709747314453,-18.804052352905273,62.587,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,64.1466,-19.6325,65.156,IS,True,,stop,0.0002279,585,31,0,14.5,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -19.6325}"
+anthropic/claude-opus-4.8,no-CoT,63.5,-18.5,68.071,IS,True,,stop,0.00484,818,30,0,8.84,"{""country"": ""IS"", ""latitude"": 63.5, ""longitude"": -18.5}"
+minimax/minimax-m3,CoT,63.52,-18.45,70.299,IS,True,,stop,0.00102906,995,660,566,17.89,"{""reasoning"": ""Flat coastal grassland meeting a dramatic steep cliff under heavy North Atlantic overcast, with right-hand driving and treeless terrain, is highly characteristic of southern Iceland's Ring Road (Route 1). The cliff shape resembles those near Vík í Mýrdal or the promontories east toward Skaftafell."", ""country"": ""IS"", ""latitude"": 63.52, ""longitude"": -18.45}"
+mistralai/mistral-medium-3-5,no-CoT,64.25,-21.5,110.074,IS,True,,stop,0.001374,786,26,0,1.04,"{""country"": ""IS"", ""latitude"": 64.25, ""longitude"": -21.5}"
+qwen/qwen3.5-27b,no-CoT,64.0022,-21.9421,112.795,IS,True,,stop,0.00022491,585,31,0,4.17,"{""country"": ""IS"", ""latitude"": 64.0022, ""longitude"": -21.9421}"
+qwen/qwen3.5-122b-a10b,no-CoT,64.1466,-21.9426,120.318,IS,True,,stop,0.00021684,586,31,0,24.14,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.9426}"
+google/gemini-3.5-flash,CoT (effort=low),63.9833,-17.5166,124.197,IS,True,,stop,0.0041925,1307,248,178,3.06,"{""reasoning"": ""The volcanic, flat-topped mountains shrouded in low clouds, combined with the yellow roadside bollards and flat coastal plains, are characteristic of Route 1 in southern Iceland."", ""country"": ""IS"", ""latitude"": 63.9833, ""longitude"": -17.5166}"
+google/gemini-3.5-flash,CoT (effort=high),63.9712,-17.4215,128.097,IS,True,,stop,0.0116715,1307,1079,995,9.25,"```json
+{""reasoning"": ""The dramatic basalt cliffs, flat coastal plains, overcast subarctic climate, and yellow roadside delineators are highly characteristic of Route 1 (the Ring Road) in southern Iceland, specifically near the Lomagnupur cliff."", ""country"": ""IS"", ""latitude"": 63.9712, ""longitude"": -17.4215}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,64.1466,-16.9754,155.397,IS,True,,stop,0.0003882,585,31,0,1.87,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -16.9754}"
+x-ai/grok-4.3,CoT,63.95,-16.8,156.48,IS,True,,stop,0.0025065,788,743,664,12.5,"{""reasoning"": ""Overcast volcanic landscape with dark rocky hills shrouded in low clouds, green-brown tundra, and right-hand driving on a paved rural road match Iceland's Ring Road (Route 1). No other country produces this exact combination of terrain, weather, and road features."", ""country"": ""IS"", ""latitude"": 63.95, ""longitude"": -16.8}"
+qwen/qwen3.5-9b,no-CoT,64.9631,-19.0208,160.21,IS,True,,stop,6.325e-05,586,31,0,8.27,"{""country"": ""IS"", ""latitude"": 64.9631, ""longitude"": -19.0208}"
+x-ai/grok-4.3,no-CoT,64.85,-23.25,216.952,IS,True,,stop,0.0007334,704,22,0,0.82,"{""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -23.25}"
+openai/gpt-5.5,CoT,62.0765,-7.1978,663.176,FO,True,,stop,0.021865,755,603,516,14.94,"{""reasoning"":""Treeless basalt cliffs, wet subpolar climate, right-hand driving and white road markings strongly indicate the Faroe Islands rather than Iceland or the UK. The coastal road with steep dark cliffs close on one side fits a Faroese island road, likely on Streymoy/Vágar area."",""country"":""FO"",""latitude"":62.0765,""longitude"":-7.1978}"
+mistralai/mistral-small-2603,no-CoT,48.2518,-122.4784,5880.892,US,True,,stop,0.0001371,786,32,0,2.05,"{""country"": ""US"", ""latitude"": 48.2518, ""longitude"": -122.4784}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7255.717,,True,True,,,,,,0.21,
+moonshotai/kimi-k2.6,CoT,-15.75,-47.85,9143.303,BR,True,,stop,0.01321177,834,3713,3644,219.59,"{""reasoning"": ""Uniform single-story homes with red ceramic roofs and satellite dishes are characteristic of Brazilian social housing programs, while the flat grasslands and rocky escarpment match the cerrado biome of the Central Plateau."", ""country"": ""BR"", ""latitude"": -15.75, ""longitude"": -47.85}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.94,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.69,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.86,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.21,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.21,

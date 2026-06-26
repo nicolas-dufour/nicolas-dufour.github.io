@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.683345088423,102.87055691951,0.0,CN,True,,,,,,,,"Gulang, None, Gansu Sheng, CN"
+xiaomi/mimo-v2.5,no-CoT,34.26,108.94,665.51,CN,True,,stop,8.06176e-05,708,28,0,2.45,"{""country"": ""CN"", ""latitude"": 34.26, ""longitude"": 108.94}"
+qwen/qwen3.6-35b-a3b,no-CoT,40.7826,111.6543,830.811,CN,True,,stop,0.000146,474,32,0,2.59,"{""country"": ""CN"", ""latitude"": 40.7826, ""longitude"": 111.6543}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.0522,113.0,997.34,CN,True,,stop,0.00036828,473,32,0,12.14,"{""country"": ""CN"", ""latitude"": 34.0522, ""longitude"": 113.0000}"
+qwen/qwen3.5-27b,no-CoT,34.7466,113.6253,1017.87,CN,True,,stop,0.0002187,473,32,0,2.56,"{""country"": ""CN"", ""latitude"": 34.7466, ""longitude"": 113.6253}"
+anthropic/claude-opus-4.8,no-CoT,38.5,114.8,1047.183,CN,True,,stop,0.00408,666,30,0,8.86,"{""country"": ""CN"", ""latitude"": 38.5, ""longitude"": 114.8}"
+anthropic/claude-opus-4.8,CoT,37.8,114.9,1057.105,CN,True,,stop,0.00621,797,89,0,3.5,"{""reasoning"": ""Rural road lined with poplars and willows, flat agricultural plain, hazy overcast sky, and right-side driving typical of northern China's North China Plain."", ""country"": ""CN"", ""latitude"": 37.8, ""longitude"": 114.9}"
+moonshotai/kimi-k2.6,CoT,38.8421,115.9634,1149.342,CN,True,,stop,0.012383028,682,3551,3492,72.15,"{""reasoning"": ""Tall poplar shelterbelt trees lining a straight rural road through flat green farmland match the afforestation patterns and agricultural plains of northern China."", ""country"": ""CN"", ""latitude"": 38.8421, ""longitude"": 115.9634}"
+google/gemma-4-31b-it,no-CoT,39.9042,116.4074,1197.63,CN,True,,stop,6.758e-05,406,37,0,8.55,"```json
+{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,39.9042,116.4074,1197.63,CN,True,,stop,0.0002916,473,32,0,8.09,"{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}"
+qwen/qwen3.5-35b-a3b,no-CoT,39.823456,116.456789,1200.664,CN,True,,stop,0.00010236,474,36,0,2.26,"{""country"": ""CN"", ""latitude"": 39.823456, ""longitude"": 116.456789}"
+xiaomi/mimo-v2.5,CoT,32.5,119.5,1616.217,CN,True,,stop,0.0001403976,787,202,128,2.89,"{""reasoning"": ""The image features tall, straight deciduous trees (likely poplar) lining a rural road, a vehicle with a blue license plate typical of Chinese passenger cars, and agricultural surroundings consistent with rural eastern China."", ""country"": ""CN"", ""latitude"": 32.5, ""longitude"": 119.5}"
+openai/gpt-5.5,no-CoT,42.8196,74.8572,2432.828,KG,True,,stop,0.00341,544,23,0,7.66,"{""country"":""KG"",""latitude"":42.8196,""longitude"":74.8572}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),42.8432,74.6211,2452.217,KG,True,,stop,0.0020985,1189,35,0,1.42,"```json
+{""country"": ""KG"", ""latitude"": 42.8432, ""longitude"": 74.6211}
+```"
+google/gemini-3.1-pro-preview,no-CoT,42.8746,74.5698,2456.63,KG,True,,stop,0.002798,1189,35,0,5.84,"```json
+{""country"": ""KG"", ""latitude"": 42.8746, ""longitude"": 74.5698}
+```"
+google/gemini-3.1-pro-preview,CoT,42.8532,74.4815,2463.647,KG,True,,stop,0.006252,1272,309,227,5.26,"{
+  ""reasoning"": ""The flat agricultural landscape with distant mountains, tree-lined worn paved road, and utility pole style strongly suggest a post-Soviet Central Asian country, likely the Chuy Valley in Kyrgyzstan."",
+  ""country"": ""KG"",
+  ""latitude"": 42.8532,
+  ""longitude"": 74.4815
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.35684585571289,73.57108306884766,2556.883,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.93096923828125,73.2275619506836,2578.818,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,39.156734466552734,72.33901977539062,2652.366,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),40.7639,72.1245,2656.795,UZ,True,,stop,0.0044175,1271,279,206,3.48,"{""reasoning"": ""The presence of a Daewoo Matiz on a narrow, tree-lined rural road with concrete utility poles is highly characteristic of Uzbekistan, particularly the fertile and flat Fergana Valley region."", ""country"": ""UZ"", ""latitude"": 40.7639, ""longitude"": 72.1245}"
+google/gemini-3.5-flash,CoT (effort=medium),40.4512,71.7458,2690.615,UZ,True,,stop,0.0053625,1271,384,310,10.63,"{""reasoning"": ""The presence of a Daewoo Matiz, a Chevrolet dashboard, concrete utility poles, and rows of poplar trees along a flat agricultural road is highly characteristic of the Fergana Valley in Uzbekistan."", ""country"": ""UZ"", ""latitude"": 40.4512, ""longitude"": 71.7458}"
+openai/gpt-5.5,CoT,40.4978,71.7346,2691.241,UZ,True,,stop,0.013155,621,335,264,14.74,"{""reasoning"":""Flat irrigated farmland with long poplar windbreaks, rough narrow asphalt, and Soviet-style concrete utility poles strongly suggest rural Central Asia. The lush Fergana Valley landscape and right-hand traffic fit Uzbekistan best."",""country"":""UZ"",""latitude"":40.4978,""longitude"":71.7346}"
+minimax/minimax-m3,CoT,40.55,71.05,2748.624,UZ,True,,stop,0.00054066,843,291,221,16.59,"{""reasoning"": ""Tree-lined rural road with poplar windbreaks, flat agricultural steppe, and worn Soviet-era asphalt are highly characteristic of Central Asia, specifically Uzbekistan's rural agricultural regions like the Fergana Valley."", ""country"": ""UZ"", ""latitude"": 40.55, ""longitude"": 71.05}"
+google/gemini-3.5-flash,CoT (effort=high),41.0425,69.3512,2887.809,UZ,True,,stop,0.0085035,1271,733,660,6.77,"{""reasoning"": ""The presence of a Daewoo Matiz on a narrow road lined with poplar trees and concrete utility poles is highly characteristic of rural Uzbekistan, particularly in the Tashkent or Fergana regions."", ""country"": ""UZ"", ""latitude"": 41.0425, ""longitude"": 69.3512}"
+mistralai/mistral-medium-3-5,no-CoT,35.6892,51.389,4537.488,IR,True,,stop,0.0011835,634,31,0,1.77,"{""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.3890}"
+qwen/qwen3.5-9b,no-CoT,34.5558,51.4215,4576.272,IR,True,,stop,5.205e-05,474,31,0,4.63,"{""country"": ""IR"", ""latitude"": 34.5558, ""longitude"": 51.4215}"
+x-ai/grok-4.3,no-CoT,44.85,26.05,6228.063,RO,True,,stop,0.0005934,592,22,0,0.8,"{""country"": ""RO"", ""latitude"": 44.85, ""longitude"": 26.05}"
+qwen/qwen3.6-27b,no-CoT,45.7489,21.2171,6538.249,RO,True,,stop,0.0001943,473,31,0,14.03,"{""country"": ""RO"", ""latitude"": 45.7489, ""longitude"": 21.2171}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.707889556884766,11.966222763061523,7237.877,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,44.7084846496582,11.95985221862793,7238.284,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,45.48,9.52,7361.925,IT,True,,stop,0.0024265,676,767,702,5.84,"{""reasoning"": ""Poplar-lined rural asphalt road with gravel shoulder, European-style hatchback, right-hand traffic (oncoming vehicle offset left), overcast temperate farmland, and utility poles match Po Valley countryside."", ""country"": ""IT"", ""latitude"": 45.48, ""longitude"": 9.52}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,45.47117614746094,9.421991348266602,7369.017,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,10911.491,US,True,,stop,0.0001137,634,31,0,2.02,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11136.548,,True,True,,,,,,19.47,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.36,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.42,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,3.14,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.51,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,8.44,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.28,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.26,

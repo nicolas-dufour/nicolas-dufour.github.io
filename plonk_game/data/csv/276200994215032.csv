@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,1.6276370390561,99.20358275048,0.0,ID,True,,,,,,,,"Sipirok, None, North Sumatra, ID"
+moonshotai/kimi-k2.6,CoT,2.0,98.5,88.481,ID,True,,stop,0.0278639,682,6804,7382,242.23," {""reasoning"": ""The right-hand-drive Isuzu Elf minibus with a yellow public-transport license plate drives on the left side of an unpaved mountain road amid dense tropical forest and wooden PLN-style utility poles, a combination characteristic of rural Indonesia, most likely Sumatra."", ""country"": ""ID"", ""latitude"": 2.0, ""longitude"": 98.5}"
+anthropic/claude-opus-4.8,CoT,2.6,98.9,113.262,ID,True,,stop,0.006635,797,106,0,313.09,"{""reasoning"": ""Tropical mountainous jungle with rough dirt road and an Isuzu minibus typical of rural Indonesia/Sumatra public transport; lush highland vegetation suggests Sumatran highlands."", ""country"": ""ID"", ""latitude"": 2.6, ""longitude"": 98.9}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,3.043804883956909,100.95150756835938,250.017,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-0.35,100.45,259.926,ID,True,,stop,0.00089826,843,589,489,9.49,"{""reasoning"": ""The blue minibus (mikrolet) with roof cargo and 'PUTRA'-style lettering is highly characteristic of Indonesian public transport, specifically common in Sumatra. The unpaved mountain road, tropical hill vegetation, concrete utility poles, and steep terrain all point to the Sumatran highlands, most likely West Sumatra (Minangkabau region)."", ""country"": ""ID"", ""latitude"": -0.35, ""longitude"": 100.45}"
+google/gemini-3.1-pro-preview,no-CoT,-0.5,100.5,277.033,ID,True,,stop,0.005608,1190,269,240,19.62,"```json
+{""country"": ""ID"", ""latitude"": -0.5, ""longitude"": 100.5}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-0.5382,100.6128,287.312,ID,True,,stop,0.009558,1272,850,771,12.15,"{""reasoning"": ""The blue Isuzu Elf minibus with a yellow license plate and roof cargo is highly characteristic of public transport in rural Indonesia. The lush tropical vegetation, left-hand traffic, and unpaved mountainous road point towards Sumatra."", ""country"": ""ID"", ""latitude"": -0.5382, ""longitude"": 100.6128}"
+google/gemini-3.5-flash,CoT (effort=low),-0.7893,100.6324,312.192,ID,True,,stop,0.003735,1272,203,131,2.59,"{""reasoning"": ""The blue Isuzu Elf minibus with a yellow license plate, driving on the left side of a rough road surrounded by lush tropical vegetation, is highly characteristic of rural Indonesia, particularly Sumatra."", ""country"": ""ID"", ""latitude"": -0.7893, ""longitude"": 100.6324}"
+google/gemini-3.5-flash,CoT (effort=medium),-0.7893,100.6543,313.438,ID,True,,stop,0.0063885,1271,498,415,4.71,"{""reasoning"": ""The blue Isuzu Elf minibus with a yellow license plate, driving on the left, and the concrete utility pole are characteristic of Indonesia. The lush, mountainous tropical terrain and unpaved road suggest a rural highland area, likely in Sumatra."", ""country"": ""ID"", ""latitude"": -0.7893, ""longitude"": 100.6543}"
+google/gemini-3.1-pro-preview,CoT,-0.9385,100.3758,313.697,ID,True,,stop,0.005398,1271,238,152,10.6,"{
+  ""reasoning"": ""Left-hand driving, tropical vegetation, and a blue Isuzu minibus with a yellow public transport license plate strongly indicate Indonesia. The hilly, unpaved road suggests a rural or mountainous region like Sumatra."",
+  ""country"": ""ID"",
+  ""latitude"": -0.9385,
+  ""longitude"": 100.3758
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-1.0466606616973877,102.6329116821289,483.535,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-1.0468883514404297,102.67151641845703,486.942,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-6.2,106.8167,1213.241,ID,True,,stop,0.001161,634,28,0,1.16,"{""country"": ""ID"", ""latitude"": -6.2, ""longitude"": 106.8167}"
+x-ai/grok-4.3,CoT,-6.75,107.35,1298.162,ID,True,,stop,0.0030515,676,1017,946,9.97,"{""reasoning"": ""Left-hand traffic (oncoming bus positioned right), Isuzu minibus with roof cargo, lush tropical montane vegetation, dirt road and wooden utility pole all point to rural SE Asia; most consistent with Indonesia or Thailand."", ""country"": ""ID"", ""latitude"": -6.75, ""longitude"": 107.35}"
+xiaomi/mimo-v2.5,CoT,-7.257,112.752,1798.753,ID,True,,stop,0.0005841976,787,1787,1729,17.6,"{""reasoning"": ""Left-hand traffic and tropical vegetation with a blue minibus typical of Indonesian angkots indicate Java, Indonesia."", ""country"": ""ID"", ""latitude"": -7.257, ""longitude"": 112.752}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-8.2845,112.3412,1826.541,ID,True,,stop,0.0021,1190,35,0,1.41,"```json
+{""country"": ""ID"", ""latitude"": -8.2845, ""longitude"": 112.3412}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,18.7883,98.9853,1908.327,TH,True,,stop,0.0002884,473,31,0,1.87,"{""country"": ""TH"", ""latitude"": 18.7883, ""longitude"": 98.9853}"
+qwen/qwen3.6-35b-a3b,CoT,18.795,98.98,1909.079,TH,True,,stop,0.0034564,554,2091,1956,21.08,"```json
+{
+  ""reasoning"": ""The blue songthaew (shared taxi) with a yellow commercial license plate and Thai script on the front is a definitive indicator of Thailand. The vehicle is positioned on the right side of the image while facing the camera, indicating left-hand traffic, which is standard in Thailand. The unpaved road and lush tropical vegetation suggest a rural, mountainous area in Northern Thailand."",
+  ""country"": ""TH"",
+  ""latitude"": 18.795,
+  ""longitude"": 98.98
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,16.89427375793457,89.42872619628906,2006.265,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-0.5,119.7,2291.102,ID,True,,stop,0.00408,666,30,0,2.13,"{""country"": ""ID"", ""latitude"": -0.5, ""longitude"": 119.7}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,11.41422176361084,76.66883850097656,2713.902,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,11.448993682861328,76.65631103515625,2716.618,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,10.9531,122.1424,2736.296,PH,True,,stop,5.22e-05,474,32,0,3.09,"{""country"": ""PH"", ""latitude"": 10.9531, ""longitude"": 122.1424}"
+google/gemma-4-31b-it,no-CoT,14.5995,120.9842,2793.156,PH,True,,stop,5.807e-05,408,37,0,1.43,"```json
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,16.45,120.65,2868.452,PH,True,,stop,0.00035388,473,28,0,3.25,"{""country"": ""PH"", ""latitude"": 16.45, ""longitude"": 120.65}"
+qwen/qwen3.5-27b,no-CoT,10.3157,123.8854,2892.738,PH,True,,stop,0.000142155,473,32,0,1.2,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+xiaomi/mimo-v2.5,no-CoT,10.3157,123.8854,2892.738,PH,True,,stop,8.17376e-05,708,32,0,2.99,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+openai/gpt-5.5,CoT,27.7169,85.5208,3245.916,NP,True,,stop,0.011115,621,267,188,13.18,"{""reasoning"":""Left-side traffic with a yellow commercial plate and Devanagari-style writing on a blue minibus strongly indicates Nepal. The lush subtropical mountain road and rough hillside terrain fit the Kathmandu Valley hill roads, especially around Nagarkot/Shivapuri."",""country"":""NP"",""latitude"":27.7169,""longitude"":85.5208}"
+qwen/qwen3.6-27b,no-CoT,27.7172,85.324,3255.391,NP,True,,stop,0.0002548,474,31,0,1.21,"{""country"": ""NP"", ""latitude"": 27.7172, ""longitude"": 85.3240}"
+openai/gpt-5.5,no-CoT,27.7206,85.3188,3255.971,NP,True,,stop,0.00341,544,23,0,2.03,"{""country"":""NP"",""latitude"":27.7206,""longitude"":85.3188}"
+qwen/qwen3.6-35b-a3b,no-CoT,27.9881,85.3206,3281.836,NP,True,,stop,0.00010617035,473,31,0,7.56,"{""country"": ""NP"", ""latitude"": 27.9881, ""longitude"": 85.3206}"
+qwen/qwen3.5-397b-a17b,CoT,-6.3542,145.3521,5198.966,PG,True,,stop,0.00451365,553,1436,1,213.0,"{
+ ""reasoning"": ""The blue Isuzu truck converted into a passenger bus with luggage on the roof is a distinctive 'PMV' (Public Motor Vehicle) unique to Papua New Guinea, confirmed by the yellow commercial license plate and left-hand traffic. The lush, mountainous tropical vegetation and unpaved road shoulders are characteristic of the Highlands Highway region."",
+ ""country"": ""PG"",
+ ""latitude"": -6.3542,
+ ""longitude"": 145.3521
+}"
+mistralai/mistral-small-2603,CoT,36.1,137.9,5523.859,JP,True,,stop,0.0008262,716,1198,1222,9.23,"{""reasoning"": ""Left-hand traffic, Japanese road markings/bollards, and mountainous rural landscape typical of central Japan's Nagano/Yamanashi prefectures."", ""country"": ""JP"", ""latitude"": 36.1, ""longitude"": 137.9}"
+mistralai/mistral-small-2603,no-CoT,43.35,5.4,10190.548,FR,True,,stop,0.0001101,634,25,0,9.85,"{""country"": ""FR"", ""latitude"": 43.35, ""longitude"": 5.4}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11030.519,,True,True,,,,,,12.82,
+minimax/minimax-m3,no-CoT,14.8,-90.5,17899.103,GT,True,,stop,0.00031482,767,119,117,4.47,"{""country"": ""GT"", ""latitude"": 14.8, ""longitude"": -90.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,14.6345,-90.5123,17914.149,GT,True,,stop,0.00010195,473,31,0,8.1,"{""country"": ""GT"", ""latitude"": 14.6345, ""longitude"": -90.5123}"
+x-ai/grok-4.3,no-CoT,14.6335,-90.513,17914.205,GT,True,,stop,0.0005959,592,23,0,1.8,"{""country"": ""GT"", ""latitude"": 14.6335, ""longitude"": -90.513}"
+moonshotai/kimi-k2.6,no-CoT,6.2442,-75.5812,18965.621,CO,True,,stop,0.00051939,602,25,0,3.08,"{""country"": ""CO"", ""latitude"": 6.2442, ""longitude"": -75.5812}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.25,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.29,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.13,

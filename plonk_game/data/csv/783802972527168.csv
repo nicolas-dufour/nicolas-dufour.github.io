@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,32.285742737787,-64.873996088007,0.0,BM,True,,,,,,,,"Hamilton, None, Hamilton city, BM"
+openai/gpt-5.5,CoT,32.2789,-64.7956,7.409,BM,True,,stop,0.012685,755,297,215,38.94,"{""reasoning"":""Narrow left-driving subtropical road with Bermuda-style limestone/stone boundary walls, dense cedar-like vegetation, and overhead utility wires strongly suggests Bermuda. The lack of lane markings and the low coral-stone wall fit residential roads in the central/south shore parishes."",""country"":""BM"",""latitude"":32.2789,""longitude"":-64.7956}"
+google/gemini-3.5-flash,CoT (effort=low),32.2948,-64.7831,8.603,BM,True,,stop,0.0041655,1307,245,188,4.19,"{""reasoning"": ""The narrow asphalt road, characteristic limestone walls, subtropical vegetation, and tilted camera angle are highly indicative of Bermuda."", ""country"": ""BM"", ""latitude"": 32.2948, ""longitude"": -64.7831}"
+anthropic/claude-opus-4.8,CoT,32.305,-64.78,9.091,BM,True,,stop,0.007045,949,92,0,9.97,"{""reasoning"": ""Limestone walls, casuarina/cedar vegetation, narrow road, and concrete utility poles suggest a subtropical Atlantic island like Bermuda."", ""country"": ""BM"", ""latitude"": 32.305, ""longitude"": -64.78}"
+google/gemini-3.5-flash,CoT (effort=high),32.3012,-64.7653,10.361,BM,True,,stop,0.0098625,1307,878,818,13.85,"{""reasoning"": ""The weathered limestone roadside cutting, lush subtropical vegetation including Casuarina pines, and narrow asphalt road are highly characteristic of Bermuda."", ""country"": ""BM"", ""latitude"": 32.3012, ""longitude"": -64.7653}"
+google/gemini-3.1-pro-preview,no-CoT,32.3018,-64.7603,10.835,BM,True,,stop,0.00287,1225,35,0,2.69,"```json
+{""country"": ""BM"", ""latitude"": 32.3018, ""longitude"": -64.7603}
+```"
+google/gemini-3.1-pro-preview,CoT,32.3078,-64.7505,11.864,BM,True,,stop,0.004908,1308,191,118,4.1,"{
+  ""reasoning"": ""The limestone rock walls and lush subtropical vegetation are highly characteristic of Bermuda. The style of the utility pole and road also align with this location."",
+  ""country"": ""BM"",
+  ""latitude"": 32.3078,
+  ""longitude"": -64.7505
+}"
+anthropic/claude-opus-4.8,no-CoT,32.3078,-64.7505,11.864,BM,True,,stop,0.00489,818,32,0,8.31,"{""country"": ""BM"", ""latitude"": 32.3078, ""longitude"": -64.7505}"
+google/gemini-3.5-flash,CoT (effort=medium),32.3075,-64.7501,11.894,BM,True,,stop,0.0105195,1307,951,860,15.02,"```json
+{""reasoning"": ""The image features lush subtropical vegetation including Casuarina trees, weathered dark limestone rock walls, and a wooden utility pole, which are highly characteristic of Bermuda. The narrow asphalt road and the specific camera tilt also strongly point to Bermuda's Street View coverage."", ""country"": ""BM"", ""latitude"": 32.3075, ""longitude"": -64.7501}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),32.3186,-64.7415,12.978,BM,True,,stop,0.002154,1226,35,0,7.5,"```json
+{""country"": ""BM"", ""latitude"": 32.3186, ""longitude"": -64.7415}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,41.30423355102539,-72.0460433959961,1187.862,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,18.2208,-66.5901,1573.364,PR,True,,stop,6.692e-05,404,36,0,12.69,"```json
+{""country"": ""PR"", ""latitude"": 18.2208, ""longitude"": -66.5901}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,18.083425521850586,-64.80065155029297,1579.243,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,15.604310989379883,-62.04778289794922,1876.746,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,15.204264640808105,-61.75189208984375,1925.464,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,39.249271392822266,-86.59169006347656,2100.24,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,32.75,-16.95,4454.02,PT,True,,stop,0.0007334,704,22,0,0.99,"{""country"": ""PT"", ""latitude"": 32.75, ""longitude"": -16.95}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,37.84903335571289,-122.2271957397461,5174.944,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,-20.2778,-40.325,6402.019,BR,True,,stop,6.31e-05,586,30,0,3.22,"{""country"": ""BR"", ""latitude"": -20.2778, ""longitude"": -40.325}"
+mistralai/mistral-medium-3-5,no-CoT,-22.9068,-43.1729,6556.111,BR,True,,stop,0.0014115,786,31,0,1.04,"{""country"": ""BR"", ""latitude"": -22.9068, ""longitude"": -43.1729}"
+moonshotai/kimi-k2.6,CoT,20.908,-156.235,8907.154,US,True,,stop,0.010868616,834,3098,3028,147.11,"{""reasoning"": ""Dark, mossy volcanic stone walls and extremely lush tropical vegetation are hallmarks of Hawaii’s windward mountain roads; the wooden utility pole and multiple unbundled overhead wires match typical U.S. infrastructure."", ""country"": ""US"", ""latitude"": 20.908, ""longitude"": -156.235}"
+x-ai/grok-4.3,CoT,21.32,-157.85,9026.911,US,True,,stop,0.0023565,788,683,616,15.09,"{""reasoning"": ""Lush subtropical/tropical vegetation mix, reddish soil, rocky cut embankment and plain concrete utility pole with overhead lines are characteristic of volcanic islands; right-hand road curvature and shadow angles consistent with Hawaii roads."", ""country"": ""US"", ""latitude"": 21.32, ""longitude"": -157.85}"
+qwen/qwen3.6-35b-a3b,no-CoT,21.3069,-157.8583,9028.403,US,True,,stop,0.0001684,586,32,0,2.59,"{""country"": ""US"", ""latitude"": 21.3069, ""longitude"": -157.8583}"
+xiaomi/mimo-v2.5,no-CoT,21.4389,-158.0001,9033.314,US,True,,stop,9.74176e-05,820,32,0,7.83,"{""country"": ""US"", ""latitude"": 21.4389, ""longitude"": -158.0001}"
+qwen/qwen3.5-27b,no-CoT,35.4437,139.638,12061.988,JP,True,,stop,0.0002427,585,32,0,13.12,"{""country"": ""JP"", ""latitude"": 35.4437, ""longitude"": 139.6380}"
+mistralai/mistral-small-2603,no-CoT,34.6851,135.5203,12269.48,JP,True,,stop,0.0001371,786,32,0,4.1,"{""country"": ""JP"", ""latitude"": 34.6851, ""longitude"": 135.5203}"
+qwen/qwen3.6-27b,no-CoT,32.75,130.85,12597.692,JP,True,,stop,0.0002219,585,28,0,13.99,"{""country"": ""JP"", ""latitude"": 32.75, ""longitude"": 130.85}"
+qwen/qwen3.5-397b-a17b,no-CoT,26.212,127.681,13375.776,JP,True,,stop,0.000443,585,30,0,3.56,"{""country"": ""JP"", ""latitude"": 26.212, ""longitude"": 127.681}"
+xiaomi/mimo-v2.5,CoT,24.83,121.76,13625.209,TW,True,,stop,0.0004425176,899,1225,1147,14.64,"{""reasoning"": ""The concrete utility pole with its specific wiring hardware and the dark, basalt-like stone wall are highly characteristic of mountainous or rural roads in Northeast Taiwan. The lush, subtropical vegetation further supports this regional location."", ""country"": ""TW"", ""latitude"": 24.83, ""longitude"": 121.76}"
+openai/gpt-5.5,no-CoT,-20.2457,57.5442,14187.701,MU,True,,stop,0.00411,678,24,0,1.59,"{""country"":""MU"",""latitude"":-20.2457,""longitude"":57.5442}"
+google/gemma-4-26b-a4b-it,no-CoT,14.5833,120.9667,14766.509,,True,,stop,6.588e-05,404,59,0,9.0,"{""-thought
+```json
+{""country"": ""PH"", ""latitude own"": 14.59-12.5, ""latitude"": 14.5833, ""longitude"": 120.9667}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,-27.4698,153.0251,16341.006,AU,True,,stop,0.00021866,585,32,0,0.97,"{""country"": ""AU"", ""latitude"": -27.4698, ""longitude"": 153.0251}"
+qwen/qwen3.5-35b-a3b,no-CoT,-33.8567,151.2153,16664.95,AU,True,,stop,0.0001431625,585,37,0,0.81,"{
+""country"": ""AU"",
+""latitude"": -33.8567,
+""longitude"": 151.2153
+}"
+minimax/minimax-m3,CoT,-6.9175,107.6191,17089.128,ID,True,,stop,0.00065826,995,351,263,10.01,"{""reasoning"": ""Volcanic andesite stone wall construction, lush tropical highland vegetation with bamboo, reddish volcanic soil, wooden utility pole style, and curved mountain road are all highly characteristic of West Java, Indonesia. The vegetation density and elevation suggest a highland area like the Bandung region."", ""country"": ""ID"", ""latitude"": -6.9175, ""longitude"": 107.6191}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.43,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.77,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.34,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.78,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,7.49,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,21.55,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.36,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.27,

@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,36.577589418669,22.403056113059,0.0,GR,True,,,,,,,,"Gytheio, Nomos Lakonias, Peloponnese, GR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,36.68528366088867,22.671348571777344,26.768,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,36.7802,22.5749,27.247,GR,True,,stop,0.004945,851,23,0,1.32,"{""country"":""GR"",""latitude"":36.7802,""longitude"":22.5749}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,36.674278259277344,22.691776275634766,27.918,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,36.789310455322266,22.660005569458008,32.852,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,36.8846,22.2521,36.693,GR,True,,stop,0.01601,928,379,299,9.22,"{""reasoning"":""Mediterranean olive groves, dry-stone walls, right-side driving with Greek-style rural road markings and utility poles point strongly to rural Greece. The stone architecture and landscape are especially consistent with the Mani/Messinia area of the Peloponnese."",""country"":""GR"",""latitude"":36.8846,""longitude"":22.2521}"
+moonshotai/kimi-k2.6,no-CoT,36.95,22.15,47.148,GR,True,,stop,0.007990272,963,2241,2217,64.66,"{""country"": ""GR"", ""latitude"": 36.95, ""longitude"": 22.15}"
+moonshotai/kimi-k2.6,CoT,37.035,22.11,57.163,GR,True,,stop,0.009237132,1043,2591,2522,59.29,"{""reasoning"": ""Extensive olive groves and dry-stone walls lining a rural asphalt road are classic features of the Greek Peloponnese. The Mediterranean vegetation, architecture, and right-hand traffic confirm southern Greece."", ""country"": ""GR"", ""latitude"": 37.035, ""longitude"": 22.11}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.012543,21.618432,84.972,GR,True,,stop,0.002145,1196,39,0,2.53,"```json
+{""country"": ""GR"", ""latitude"": 37.012543, ""longitude"": 21.618432}
+```"
+qwen/qwen3.5-9b,no-CoT,37.8542,23.6289,178.696,GR,True,,stop,7.925e-05,746,31,0,6.13,"{""country"": ""GR"", ""latitude"": 37.8542, ""longitude"": 23.6289}"
+google/gemini-3.5-flash,CoT (effort=medium),35.4125,24.0153,194.472,GR,True,,stop,0.005841,1278,436,356,10.64,"{""reasoning"": ""The presence of extensive olive groves, red soil, dry stone walls, and flat-roofed houses with solar water heaters indicates a Mediterranean climate, specifically Greece. The landscape and vegetation are highly characteristic of the island of Crete."", ""country"": ""GR"", ""latitude"": 35.4125, ""longitude"": 24.0153}"
+google/gemini-3.5-flash,CoT (effort=high),35.4183,24.1254,201.549,GR,True,,stop,0.0078315,1279,657,585,11.26,"{""reasoning"": ""The abundance of olive trees, reddish terra rossa soil, limestone stone walls, and flat-roofed concrete architecture are highly characteristic of the Mediterranean, specifically the island of Crete in Greece."", ""country"": ""GR"", ""latitude"": 35.4183, ""longitude"": 24.1254}"
+google/gemini-3.5-flash,CoT (effort=low),35.3152,24.0124,201.716,GR,True,,stop,0.0034575,1279,171,105,8.9,"{""reasoning"": ""The landscape features extensive olive groves, reddish soil, dry stone walls, and Mediterranean architecture, which are highly characteristic of Greece, particularly the island of Crete."", ""country"": ""GR"", ""latitude"": 35.3152, ""longitude"": 24.0124}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.2417,24.8093,262.718,GR,True,,stop,0.00025844,746,31,0,12.86,"{""country"": ""GR"", ""latitude"": 35.2417, ""longitude"": 24.8093}"
+qwen/qwen3.6-27b,no-CoT,35.2401,24.8198,263.601,GR,True,,stop,0.0002759,745,31,0,11.1,"{""country"": ""GR"", ""latitude"": 35.2401, ""longitude"": 24.8198}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.3214,24.9387,267.582,GR,True,,stop,0.0001988,746,31,0,2.92,"{""country"": ""GR"", ""latitude"": 35.3214, ""longitude"": 24.9387}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.2456,24.8912,268.589,GR,True,,stop,0.00013544,746,31,0,2.67,"{""country"": ""GR"", ""latitude"": 35.2456, ""longitude"": 24.8912}"
+qwen/qwen3.5-27b,no-CoT,35.1347,24.8219,270.653,GR,True,,stop,0.0002745,746,44,0,6.56,"```json
+{
+  ""country"": ""GR"",
+  ""latitude"": 35.1347,
+  ""longitude"": 24.8219
+}
+```"
+google/gemma-4-31b-it,no-CoT,35.243,24.938,272.275,GR,True,,stop,6.43e-05,390,34,0,3.33,"```json
+{""country"": ""GR"", ""latitude"": 35.243, ""longitude"": 24.938}
+```"
+google/gemini-3.1-pro-preview,no-CoT,35.1567,24.8954,274.575,GR,True,,stop,0.002814,1197,35,0,12.38,"```json
+{""country"": ""GR"", ""latitude"": 35.1567, ""longitude"": 24.8954}
+```"
+x-ai/grok-4.3,CoT,35.312,25.082,279.202,GR,True,,stop,0.002639,932,724,653,5.55,"{
+  ""reasoning"": ""Mediterranean maquis/olive vegetation, irregular-stone field walls, concrete buildings with tiled elements, right-side driving (right edge line), and EU-style poles/date format indicate rural Greece."",
+  ""country"": ""GR"",
+  ""latitude"": 35.312,
+  ""longitude"": 25.082
+}"
+x-ai/grok-4.3,no-CoT,35.338,25.148,282.894,GR,True,,stop,0.0009134,848,22,0,0.93,"{""country"": ""GR"", ""latitude"": 35.338, ""longitude"": 25.148}"
+anthropic/claude-opus-4.8,CoT,35.27,25.55,318.468,GR,True,,stop,0.00789,1158,84,0,10.98,"{""reasoning"": ""Olive groves, dry stone walls, Mediterranean buildings and reddish soil suggest Greece, likely Crete; driving on right."", ""country"": ""GR"", ""latitude"": 35.27, ""longitude"": 25.55}"
+anthropic/claude-opus-4.8,no-CoT,35.2401,25.6512,328.143,GR,True,,stop,0.005935,1027,32,0,3.42,"{""country"": ""GR"", ""latitude"": 35.2401, ""longitude"": 25.6512}"
+minimax/minimax-m3,no-CoT,40.85,17.35,646.215,IT,True,,stop,0.00050472,1128,187,206,6.56,"{""country"": ""IT"", ""latitude"": 40.85, ""longitude"": 17.35}"
+minimax/minimax-m3,CoT,36.04,14.25,732.774,MT,True,,stop,0.00099456,1204,579,504,14.78,"{""reasoning"": ""Olive groves, dry stone walls (xorok style), limestone farmhouse architecture, and Mediterranean vegetation strongly indicate the Maltese islands (likely Gozo). Right-side driving and DD/MM/YYYY date format confirm a European Mediterranean location."", ""country"": ""MT"", ""latitude"": 36.04, ""longitude"": 14.25}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.7215,32.4189,927.753,CY,True,,stop,0.00052788,745,31,0,8.64,"{""country"": ""CY"", ""latitude"": 34.7215, ""longitude"": 32.4189}"
+xiaomi/mimo-v2.5,no-CoT,34.91,33.02,975.411,CY,True,,stop,0.0001184176,980,27,0,2.09,"{""country"": ""CY"", ""latitude"": 34.91, ""longitude"": 33.02}"
+google/gemini-3.1-pro-preview,CoT,35.035,33.952,1054.827,CY,True,,stop,0.00726,1278,392,295,6.05,"{
+  ""reasoning"": ""The combination of red soil, olive trees, and flat-roofed houses with solar water heaters indicates a Mediterranean location. The apparent left-hand driving and specific landscape strongly point to the 'red soil villages' (Kokkinochoria) region in southeastern Cyprus."",
+  ""country"": ""CY"",
+  ""latitude"": 35.035,
+  ""longitude"": 33.952
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.95808029174805,8.649992942810059,1236.222,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.97041702270508,8.557984352111816,1244.29,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,31.54,35.11,1296.209,IL,True,,stop,0.0001807176,1059,210,129,9.34,"{""reasoning"": ""The image features prominent olive groves and distinctive reddish-brown soil (terra rossa), typical of the Levant region. The road infrastructure and distant architecture suggest a rural Palestinian or Israeli setting, specifically around the Hebron Hills."", ""country"": ""IL"", ""latitude"": 31.54, ""longitude"": 35.11}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,40.4527587890625,6.399710178375244,1455.082,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,37.7798,-1.2488,2094.116,ES,True,,stop,0.0017175,995,30,0,1.19,"{""country"": ""ES"", ""latitude"": 37.7798, ""longitude"": -1.2488}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4676.885,,True,True,,,,,,6.56,
+mistralai/mistral-small-2603,no-CoT,-23.5505,-46.6333,9846.463,BR,True,,stop,0.00016785,995,31,0,5.13,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.74,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,15.58,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,2.37,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.37,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.41,

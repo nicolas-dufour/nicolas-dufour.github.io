@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-12.803074293008471,27.487198081729314,0.0,ZM,True,,,,,,,,"Chingola, None, Copperbelt, ZM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-12.991674423217773,27.722736358642578,33.039,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-12.98934555053711,27.76097869873047,36.189,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-13.161734580993652,27.585460662841797,41.278,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,-17.8333,31.05,677.297,ZW,True,,stop,7.415e-05,698,29,0,7.73,"{""country"": ""ZW"", ""latitude"": -17.8333, ""longitude"": 31.05}"
+x-ai/grok-4.3,CoT,-19.15,23.78,809.275,BW,True,,stop,0.001834,900,418,346,3.67,"{""reasoning"": ""Red laterite dirt track, open savanna with acacia-type trees and dry-season grasses, cloudless subtropical sky match southern African bushveld; no other region shows this exact combination of soil color, flora and road style."", ""country"": ""BW"", ""latitude"": -19.15, ""longitude"": 23.78}"
+x-ai/grok-4.3,no-CoT,-19.45,23.55,850.235,BW,True,,stop,0.0008734,816,22,0,1.08,"{""country"": ""BW"", ""latitude"": -19.45, ""longitude"": 23.55}"
+qwen/qwen3.5-397b-a17b,no-CoT,-21.1234,27.5678,925.218,BW,True,,stop,0.0004442,697,31,0,2.09,"{""country"": ""BW"", ""latitude"": -21.1234, ""longitude"": 27.5678}"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.6416,25.8491,1327.586,ZA,True,,stop,0.000213,697,31,0,7.99,"{""country"": ""ZA"", ""latitude"": -24.6416, ""longitude"": 25.8491}"
+qwen/qwen3.6-35b-a3b,no-CoT,-24.5,30.5,1338.634,ZA,True,,stop,0.0001796,698,25,0,2.68,"{""country"": ""ZA"", ""latitude"": -24.5, ""longitude"": 30.5}"
+moonshotai/kimi-k2.6,CoT,-2.35,34.82,1415.046,TZ,True,,stop,0.010882944,986,3086,3006,65.74,"{""reasoning"": ""The red laterite soil, dry acacia savanna scrub, and scattered smooth-barked trees are characteristic of East African miombo woodland; the remote unpaved two-track road with no signage or development strongly suggests a rural Tanzanian district or game reserve."", ""country"": ""TZ"", ""latitude"": -2.35, ""longitude"": 34.82}"
+qwen/qwen3.5-27b,no-CoT,-1.2921,36.8219,1641.857,KE,True,,stop,0.00025299,697,30,0,21.62,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+minimax/minimax-m3,CoT,-0.35,12.45,2159.868,GA,True,,stop,0.00092706,1147,537,451,13.1,"{""reasoning"": ""Red lateritic soil, tropical dry-season savanna vegetation with thorny shrubs, large pale-barked tropical hardwood (likely Ceiba/fromager), and what appears to be a termite mound are highly characteristic of interior Gabon or Republic of Congo in the equatorial African forest-savanna mosaic."", ""country"": ""GA"", ""latitude"": -0.35, ""longitude"": 12.45}"
+anthropic/claude-opus-4.8,no-CoT,5.5,20.5,2176.712,CF,True,,stop,0.0056,970,30,0,2.26,"{""country"": ""CF"", ""latitude"": 5.5, ""longitude"": 20.5}"
+anthropic/claude-opus-4.8,CoT,5.5,18.5,2264.53,CF,True,,stop,0.00783,1101,93,0,10.57,"{""reasoning"": ""Dry savanna woodland with reddish lateritic soil, dirt track, and scattered trees typical of West/Central African Sudano-Guinean zone in dry season."", ""country"": ""CF"", ""latitude"": 5.5, ""longitude"": 18.5}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3348.153,,True,True,,,,,,12.82,
+openai/gpt-5.5,CoT,9.2635,-1.8407,4063.555,GH,True,,stop,0.01564,890,373,297,16.79,"{""reasoning"":""Dry tropical savanna woodland with lateritic dirt tracks and burned fields strongly suggests West African Guinea savanna; the vegetation and terrain fit northern Ghana, especially around Mole/Northern Region, better than more arid Sahel or southern Africa."",""country"":""GH"",""latitude"":9.2635,""longitude"":-1.8407}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,12.260625839233398,-13.431050300598145,5304.172,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,13.7654,-13.6632,5411.432,SN,True,,stop,0.006794,1285,352,267,13.01,"{
+  ""reasoning"": ""The reddish dirt road, dry savanna vegetation, and flat terrain are highly characteristic of the Sahel region during the dry season. Senegal is a strong candidate for this specific mix of scattered trees and dry grass."",
+  ""country"": ""SN"",
+  ""latitude"": 13.7654,
+  ""longitude"": -13.6632
+}"
+openai/gpt-5.5,no-CoT,13.0345,-15.2698,5519.972,SN,True,,stop,0.004785,813,24,0,3.3,"{""country"":""SN"",""latitude"":13.0345,""longitude"":-15.2698}"
+xiaomi/mimo-v2.5,CoT,14.7167,-17.4677,5818.652,SN,True,,stop,0.0001608376,1011,163,76,2.38,"{""reasoning"": ""The dry savanna landscape, red soil, and vegetation including drought-resistant trees and dry grass strongly suggest a West African environment, likely within the Sahel region. The specific combination of the dirt road track and the flora is characteristic of Senegal."", ""country"": ""SN"", ""latitude"": 14.7167, ""longitude"": -17.4677}"
+xiaomi/mimo-v2.5,no-CoT,20.5,78.5,6693.403,IN,True,,stop,0.0001111376,932,25,0,3.6,"{""country"": ""IN"", ""latitude"": 20.5, ""longitude"": 78.5}"
+mistralai/mistral-small-2603,no-CoT,20.5937,78.9629,6740.605,IN,True,,stop,0.0001593,938,31,0,5.63,"{""country"": ""IN"", ""latitude"": 20.5937, ""longitude"": 78.9629}"
+qwen/qwen3.6-27b,no-CoT,21.1458,79.0882,6781.749,IN,True,,stop,0.0002615,697,31,0,8.16,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+qwen/qwen3.5-122b-a10b,no-CoT,21.2514,79.2354,6800.792,IN,True,,stop,0.0003027,697,39,0,9.36,"{
+  ""country"": ""IN"",
+  ""latitude"": 21.2514,
+  ""longitude"": 79.2354
+}"
+google/gemma-4-31b-it,no-CoT,24.5854,77.2435,6813.016,IN,True,,stop,6.692e-05,404,36,0,14.87,"```json
+{""country"": ""IN"", ""latitude"": 24.5854, ""longitude"": 77.2435}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-12.109625816345215,-40.86119079589844,7397.786,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-11.8542,-45.5431,7904.99,BR,True,,stop,0.0143925,1285,1385,1286,18.15,"```json
+{""reasoning"": ""The landscape features a reddish-brown dirt track, dry savanna vegetation, and characteristic Cerrado-like trees with light bark, highly indicative of the Brazilian interior. The flat terrain and vegetation density suggest the transition zone between the Cerrado and Caatinga biomes in Bahia or Tocantins."", ""country"": ""BR"", ""latitude"": -11.8542, ""longitude"": -45.5431}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-15.25451946258545,-46.94194793701172,7993.831,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-15.7801,-47.9292,8089.427,BR,True,,stop,0.0016395,938,31,0,1.02,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),13.4852,103.8674,8908.734,KH,True,,stop,0.0021285,1203,36,0,1.74,"```json
+{""country"": ""KH"", ""latitude"": 13.4852, ""longitude"": 103.8674}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),13.5243,104.2184,8946.434,KH,True,,stop,0.0078315,1285,656,589,15.5,"{""reasoning"": ""The reddish-brown dirt road, dry deciduous dipterocarp vegetation, and light-colored tree trunks are highly characteristic of rural Cambodia during the dry season."", ""country"": ""KH"", ""latitude"": 13.5243, ""longitude"": 104.2184}"
+google/gemini-3.1-pro-preview,no-CoT,-15.5989,-56.0949,8954.249,BR,True,,stop,0.002828,1204,35,0,1.98,"```json
+{""country"": ""BR"", ""latitude"": -15.5989, ""longitude"": -56.0949}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-16.2543,-61.3214,9487.786,BO,True,,stop,0.004242,1286,257,192,9.41,"{""reasoning"": ""The reddish-brown dirt road, dry savanna vegetation, and specific tree types are highly characteristic of the Chiquitania dry forest region in eastern Bolivia."", ""country"": ""BO"", ""latitude"": -16.2543, ""longitude"": -61.3214}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,2.34,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.16,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.44,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.21,

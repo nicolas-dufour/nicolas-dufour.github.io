@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-22.864074383264,-68.213945701576,0.0,CL,True,,,,,,,,"San Pedro de Atacama, Provincia de El Loa, Antofagasta, CL"
+google/gemini-3.5-flash,CoT (effort=high),-22.8895,-68.2135,2.828,CL,True,,stop,0.0074505,1271,616,532,15.31,"{""reasoning"": ""The distinctive red clay hills and green oasis valley of the San Pedro River point to the Atacama Desert in Chile. The specific vantage point matches the trail overlooking the Pukará de Quitor archaeological site near San Pedro de Atacama."", ""country"": ""CL"", ""latitude"": -22.8895, ""longitude"": -68.2135}"
+google/gemini-3.5-flash,CoT (effort=medium),-22.8902,-68.2145,2.906,CL,True,,stop,0.0064605,1271,506,428,14.55,"{""reasoning"": ""The reddish clay hills, arid climate, and green river valley match the landscape of the Atacama Desert near San Pedro de Atacama, specifically looking down from the Mirador Pukará de Quitor."", ""country"": ""CL"", ""latitude"": -22.8902, ""longitude"": -68.2145}"
+google/gemini-3.1-pro-preview,CoT,-22.891,-68.213,2.996,CL,True,,stop,0.005974,1271,286,193,6.78,"{
+  ""reasoning"": ""The arid, reddish landscape with a green river valley and distant volcanoes strongly indicates the Atacama Desert in Chile. The specific vantage point overlooking the valley matches the view from the Pukará de Quitor ruins near San Pedro de Atacama."",
+  ""country"": ""CL"",
+  ""latitude"": -22.891,
+  ""longitude"": -68.213
+}"
+google/gemini-3.1-pro-preview,no-CoT,-22.8915,-68.2138,3.05,CL,True,,stop,0.004202,1189,152,117,3.77,"```json
+{""country"": ""CL"", ""latitude"": -22.8915, ""longitude"": -68.2138}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-22.8905,-68.1931,3.632,CL,True,,stop,0.0041745,1271,252,180,3.26,"{""reasoning"": ""The arid, reddish clay mountains and green river valley are characteristic of the San Pedro de Atacama region in northern Chile, specifically near the Pukará de Quitor archaeological site."", ""country"": ""CL"", ""latitude"": -22.8905, ""longitude"": -68.1931}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-22.8916,-68.1911,3.853,CL,True,,stop,0.0020985,1189,35,0,13.27,"```json
+{""country"": ""CL"", ""latitude"": -22.8916, ""longitude"": -68.1911}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-22.900806427001953,-68.22258758544922,4.179,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-22.9,-68.2,4.243,CL,True,,stop,0.0011385,634,25,0,1.0,"{""country"": ""CL"", ""latitude"": -22.9, ""longitude"": -68.2}"
+anthropic/claude-opus-4.8,CoT,-22.905,-68.235,5.036,CL,True,,stop,0.006285,797,92,0,8.99,"{""reasoning"": ""Arid red desert terrain with green oasis vegetation and distant volcanic mountains matches the Atacama Desert near San Pedro de Atacama, Chile."", ""country"": ""CL"", ""latitude"": -22.905, ""longitude"": -68.235}"
+x-ai/grok-4.3,no-CoT,-22.9085,-68.2001,5.139,CL,True,,stop,0.0005984,592,24,0,1.94,"{""country"": ""CL"", ""latitude"": -22.9085, ""longitude"": -68.2001}"
+x-ai/grok-4.3,CoT,-22.91,-68.2,5.303,CL,True,,stop,0.002739,676,892,819,7.47,"{""reasoning"": ""Red-orange badlands, arid valley with sparse green patches, distant volcanic mountains, and small white shelter match the high-altitude Atacama Desert near San Pedro de Atacama; no contradictory signage/vehicles/vegetation."", ""country"": ""CL"", ""latitude"": -22.91, ""longitude"": -68.2}"
+moonshotai/kimi-k2.6,no-CoT,-22.9113,-68.2006,5.426,CL,True,,stop,0.00067285,603,25,0,8.9," {""country"": ""CL"", ""latitude"": -22.9113, ""longitude"": -68.2006}"
+anthropic/claude-opus-4.8,no-CoT,-22.896,-68.255,5.504,CL,True,,stop,0.00408,666,30,0,8.44,"{""country"": ""CL"", ""latitude"": -22.896, ""longitude"": -68.255}"
+qwen/qwen3.5-397b-a17b,CoT,-22.923,-68.228,6.709,CL,True,,stop,0.0065046,553,1728,1627,9.3,"{""reasoning"": ""The image displays the distinctive reddish, eroded clay and salt formations of the Atacama Desert, specifically the Valle de la Luna (Moon Valley) near San Pedro de Atacama. The arid landscape with sparse vegetation in the valley floor and the specific geological strata are characteristic of this Chilean region."", ""country"": ""CL"", ""latitude"": -22.923, ""longitude"": -68.228}"
+qwen/qwen3.5-122b-a10b,no-CoT,-22.9249,-68.2376,7.184,CL,True,,stop,0.00018772,474,31,0,6.76,"{""country"": ""CL"", ""latitude"": -22.9249, ""longitude"": -68.2376}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-22.92849349975586,-68.18528747558594,7.741,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-22.933008193969727,-68.18840026855469,8.099,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-22.9206,-68.2853,9.64,CL,True,,stop,0.014205,621,370,269,22.05,"{""reasoning"":""The arid red badlands, salt-flat basin, sparse green oasis, and distant Andean volcanoes are characteristic of the Atacama Desert around San Pedro de Atacama, especially the Valle de la Luna/Cordillera de la Sal viewpoints. The landscape closely matches the Piedra del Coyote/Mirador de Kari area west of San Pedro."",""country"":""CL"",""latitude"":-22.9206,""longitude"":-68.2853}"
+openai/gpt-5.5,no-CoT,-22.9285,-68.287,10.359,CL,True,,stop,0.00347,544,25,0,1.7,"{""country"":""CL"",""latitude"":-22.9285,""longitude"":-68.2870}"
+minimax/minimax-m3,CoT,-22.95,-68.3,12.999,CL,True,,stop,0.00055386,843,302,217,18.13,"{""reasoning"": ""Reddish-orange eroded badlands with sparse high-altitude desert vegetation, a distant salt flat, and a possible stratovolcano silhouette on the horizon strongly match the Valle de la Luna / Mirador de Kari area near San Pedro de Atacama in Chile's Atacama Desert."", ""country"": ""CL"", ""latitude"": -22.9500, ""longitude"": -68.3000}"
+minimax/minimax-m3,no-CoT,-22.95,-68.3,12.999,CL,True,,stop,0.00029442,767,102,105,6.77,"{""country"": ""CL"", ""latitude"": -22.95, ""longitude"": -68.30}"
+moonshotai/kimi-k2.6,CoT,-23.05,-68.3,22.473,CL,True,,stop,0.007361208,682,2088,2025,58.64,"{""reasoning"": ""The reddish eroded badlands, dry riverbed, and valley-bottom oasis vegetation are characteristic of the Atacama Desert near San Pedro de Atacama, Chile."", ""country"": ""CL"", ""latitude"": -23.05, ""longitude"": -68.3}"
+google/gemma-4-26b-a4b-it,no-CoT,-22.9125,-68.0,22.568,,True,,stop,5.374e-05,406,28,0,8.04,"{""country"": ""CL"", ""latitude"": -22.9125, ""longitude"": -68. own}"
+google/gemma-4-31b-it,no-CoT,-23.8333,-68.1667,107.881,CL,True,,stop,7.124e-05,406,36,0,15.47,"```json
+{""country"": ""CL"", ""latitude"": -23.8333, ""longitude"": -68.1667}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-24.4583,-68.1917,177.284,CL,True,,stop,0.00036468,473,31,0,8.39,"{""country"": ""CL"", ""latitude"": -24.4583, ""longitude"": -68.1917}"
+qwen/qwen3.6-35b-a3b,no-CoT,-24.5489,-69.2831,216.669,CL,True,,stop,0.00010195,473,31,0,3.99,"{""country"": ""CL"", ""latitude"": -24.5489, ""longitude"": -69.2831}"
+qwen/qwen3.5-9b,no-CoT,-24.8597,-68.1456,222.012,AR,True,,stop,5.205e-05,474,31,0,7.75,"{""country"": ""AR"", ""latitude"": -24.8597, ""longitude"": -68.1456}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.6083,-66.9583,330.631,AR,True,,stop,0.00010236,474,36,0,2.34,"```json
+{""country"": ""AR"", ""latitude"": -25.6083, ""longitude"": -66.9583}
+```"
+xiaomi/mimo-v2.5,no-CoT,-27.0973,-66.8106,491.491,AR,True,,stop,8.14576e-05,708,31,0,1.58,"{""country"": ""AR"", ""latitude"": -27.0973, ""longitude"": -66.8106}"
+qwen/qwen3.5-27b,no-CoT,-27.15,-69.85,504.264,CL,True,,stop,0.000134355,473,27,0,2.03,"{""country"": ""CL"", ""latitude"": -27.15, ""longitude"": -69.85}"
+qwen/qwen3.6-27b,no-CoT,-27.2789,-70.1503,528.197,CL,True,,stop,0.0001943,473,31,0,14.96,"{""country"": ""CL"", ""latitude"": -27.2789, ""longitude"": -70.1503}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-17.792724609375,-67.28875732421875,572.093,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-17.77177619934082,-67.31828308105469,573.881,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-17.530357360839844,-67.29780578613281,600.731,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,36.1069,-112.1129,8016.538,US,True,,stop,0.000142875,634,32,0,7.87,"{""country"": ""US"", ""latitude"": 36.1069, ""longitude"": -112.1129}"
+xiaomi/mimo-v2.5,CoT,30.6,35.6,12540.314,JO,True,,stop,0.0004741576,787,1394,1325,15.22,"{""reasoning"": ""The landscape shows red arid hills with a green valley indicating an oasis, typical of desert nature reserves in Jordan. The geological features and vegetation match areas like the Dana Biosphere Reserve."", ""country"": ""JO"", ""latitude"": 30.6, ""longitude"": 35.6}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,15.91,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.63,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.41,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,15.5,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.61,

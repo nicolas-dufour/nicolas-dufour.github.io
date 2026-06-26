@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.692613795504,112.51040080423,0.0,CN,True,,,,,,,,"Jinyuan, None, Shanxi Sheng, CN"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.65620803833008,115.23047637939453,239.421,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,35.60170364379883,111.21057891845703,259.805,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,35.34931945800781,110.84477996826172,300.063,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,34.7466,113.6253,342.501,CN,True,,stop,0.00489,818,32,0,3.21,"{""country"": ""CN"", ""latitude"": 34.7466, ""longitude"": 113.6253}"
+anthropic/claude-opus-4.8,CoT,34.75,113.65,342.793,CN,True,,stop,0.00707,949,93,0,3.99,"{""reasoning"": ""Blue license plate and Chinese characters on dashboard sticker, hazy winter sky with bare poplars and concrete highway overpass typical of northern/central China plains."", ""country"": ""CN"", ""latitude"": 34.75, ""longitude"": 113.65}"
+qwen/qwen3.5-397b-a17b,no-CoT,34.7466,113.7354,345.512,CN,True,,stop,0.0004502,585,32,0,0.96,"{""country"": ""CN"", ""latitude"": 34.7466, ""longitude"": 113.7354}"
+x-ai/grok-4.3,CoT,39.85,116.45,417.296,CN,True,,stop,0.002134,788,594,533,11.51,"{""reasoning"": ""Dashboard text in simplified Chinese ('一路平安'), right-hand traffic on divided highway with typical PRC concrete overpass/guardrail/road markings, leafless temperate vegetation."", ""country"": ""CN"", ""latitude"": 39.85, ""longitude"": 116.45}"
+google/gemini-3.1-pro-preview,CoT,39.9042,116.4074,417.694,CN,True,,stop,0.005172,1308,213,130,10.02,"{
+  ""reasoning"": ""The blue license plate on the vehicle ahead and the Chinese characters reflected on the dashboard strongly indicate China. The bare trees and modern highway infrastructure suggest a northern or central Chinese city during winter."",
+  ""country"": ""CN"",
+  ""latitude"": 39.9042,
+  ""longitude"": 116.4074
+}"
+xiaomi/mimo-v2.5,CoT,39.9042,116.4074,417.694,CN,True,,stop,0.0004058376,899,1094,1023,13.16,"{""reasoning"": ""The Chinese text on the dashboard and right-hand traffic confirm China, with bare trees and modern infrastructure suggesting a northern city. This points to Beijing or its vicinity."", ""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}"
+google/gemini-3.1-pro-preview,no-CoT,39.9042,116.4074,417.694,CN,True,,stop,0.00461,1225,180,144,3.72,"```json
+{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}
+```"
+google/gemma-4-31b-it,no-CoT,39.9042,116.4074,417.694,CN,True,,stop,6.388e-05,404,37,0,10.94,"```json
+{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}
+```"
+mistralai/mistral-medium-3-5,no-CoT,39.9042,116.4074,417.694,CN,True,,stop,0.001419,786,32,0,1.14,"{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}"
+qwen/qwen3.5-35b-a3b,no-CoT,39.9042,116.4074,417.694,CN,True,,stop,0.00011975,585,32,0,1.67,"{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}"
+qwen/qwen3.6-35b-a3b,no-CoT,39.9042,116.4074,417.694,CN,True,,stop,0.00018625,585,32,0,0.75,"{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}"
+moonshotai/kimi-k2.6,CoT,39.93,116.42,420.218,CN,True,,stop,0.020564415,833,5554,5872,67.03,"{""reasoning"": ""Blue license plate on the van and probable '京A' prefix on the dashboard sticker confirm Beijing, China. The multi-lane road with massive concrete overpass, leafless winter trees, and modern streetlights matches Beijing's suburban expressway environment."", ""country"": ""CN"", ""latitude"": 39.93, ""longitude"": 116.42}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),39.1115,117.2015,438.105,CN,True,,stop,0.0021615,1225,36,0,8.21,"```json
+{""country"": ""CN"", ""latitude"": 39.1115, ""longitude"": 117.2015}
+```"
+qwen/qwen3.5-9b,no-CoT,34.3416,108.9398,491.817,CN,True,,stop,6.34e-05,586,32,0,3.57,"{""country"": ""CN"", ""latitude"": 34.3416, ""longitude"": 108.9398}"
+qwen/qwen3.5-122b-a10b,no-CoT,34.341577,108.93977,491.82,CN,True,,stop,0.00022516,586,35,0,5.8,"{""country"": ""CN"", ""latitude"": 34.341577, ""longitude"": 108.93977}"
+google/gemini-3.5-flash,CoT (effort=high),37.539,121.399,782.799,CN,True,,stop,0.0117525,1307,1088,1014,10.26,"```json
+{""reasoning"": ""The blue license plate, tree support structures, and infrastructure style are characteristic of China, while the mirrored text on the dashboard points to the city of Yantai in Shandong province."", ""country"": ""CN"", ""latitude"": 37.539, ""longitude"": 121.399}
+```"
+minimax/minimax-m3,CoT,30.5928,114.3055,806.511,CN,True,,stop,0.00076506,995,440,343,21.26,"{""reasoning"": ""Blue Chinese-style license plate, minivan model consistent with Chinese brands (likely Wuling), modern elevated expressway infrastructure typical of China's intercity highways, hazy air quality common in Chinese cities, and what appears to be Chinese characters on the dashboard sticker at the bottom. The bare deciduous trees suggest winter in a temperate Chinese city."", ""country"": ""CN"", ""latitude"": 30.5928, ""longitude"": 114.3055}"
+google/gemini-3.5-flash,CoT (effort=medium),31.811,119.974,944.179,CN,True,,stop,0.0081525,1307,688,619,5.8,"{""reasoning"": ""The blue license plate on the vehicle, modern concrete overpass, distinctive streetlights, and Chinese characters reflected on the dashboard indicate a location in eastern China, likely Jiangsu province."", ""country"": ""CN"", ""latitude"": 31.811, ""longitude"": 119.974}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,31.240385055541992,121.15093994140625,1067.811,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,31.091882705688477,121.20231628417969,1082.913,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,31.061233520507812,121.19477081298828,1084.819,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,31.230416,121.473701,1090.623,CN,True,,stop,0.0002445,586,49,0,12.75,"```json
+{
+  ""country"": ""CN"",
+  ""latitude"": 31.230416,
+  ""longitude"": 121.473701
+}
+```"
+google/gemini-3.5-flash,CoT (effort=low),31.2304,121.4737,1090.624,CN,True,,stop,0.0037425,1307,198,126,3.69,"{""reasoning"": ""The blue license plate on the Volkswagen van, the style of the concrete overpass, the streetlights, and the wooden tree supports are highly characteristic of modern road infrastructure in China."", ""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}"
+openai/gpt-5.5,no-CoT,31.2304,121.4737,1090.624,CN,True,,stop,0.00408,678,23,0,1.14,"{""country"":""CN"",""latitude"":31.2304,""longitude"":121.4737}"
+qwen/qwen3.6-27b,no-CoT,31.2304,121.4737,1090.624,CN,True,,stop,0.0002299,585,32,0,7.17,"{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}"
+x-ai/grok-4.3,no-CoT,31.2304,121.4737,1090.624,CN,True,,stop,0.0007384,704,24,0,1.79,"{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}"
+xiaomi/mimo-v2.5,no-CoT,31.2304,121.4737,1090.624,CN,True,,stop,9.74176e-05,820,32,0,1.91,"{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}"
+openai/gpt-5.5,CoT,31.2105,121.4823,1092.744,CN,True,,stop,0.014755,755,366,281,15.99,"{""reasoning"":""The blue Chinese license plate, right-hand traffic, road markings, modern overpass design, and Chinese-looking windshield sticker point strongly to mainland China. The flat terrain, winter leafless roadside trees, dense landscaping, and urban expressway style fit the Shanghai/Yangtze Delta area best."",""country"":""CN"",""latitude"":31.2105,""longitude"":121.4823}"
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,10593.585,US,True,,stop,0.0001371,786,32,0,7.94,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11968.459,,True,,stop,5.188e-05,404,24,0,1.37,"{""country own"": ""unknown"", ""latitude"": 0.0, ""longitude"": 0.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.72,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.33,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.81,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.27,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,6.25,

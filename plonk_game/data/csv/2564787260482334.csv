@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,45.961533375124,-72.426131162637,0.0,CA,True,,,,,,,,"Saint-Cyrille-de-Wendover, Mauricie, Quebec, CA"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,45.99811553955078,-72.97382354736328,42.516,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,45.990203857421875,-72.98102569580078,42.998,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,46.0661735534668,-73.0145263671875,46.904,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.601314544677734,-73.38250732421875,84.288,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,45.5017,-73.5673,102.271,CA,True,,stop,7.124e-05,406,36,0,15.3,"```json
+{""country"": ""CA"", ""latitude"": 45.5017, ""longitude"": -73.5673}
+```"
+google/gemini-3.5-flash,CoT (effort=low),45.3125,-75.125,221.881,CA,True,,stop,0.004311,1272,267,197,9.08,"{""reasoning"": ""The flat terrain, lush green fields, mixed deciduous and birch forest, and wide asphalt road with a solid white shoulder line are highly characteristic of eastern Canada, particularly Ontario or Quebec."", ""country"": ""CA"", ""latitude"": 45.3125, ""longitude"": -75.125}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),45.3125,-75.125,221.881,CA,True,,stop,0.0020895,1189,34,0,1.74,"```json
+{""country"": ""CA"", ""latitude"": 45.3125, ""longitude"": -75.125}
+```"
+google/gemini-3.1-pro-preview,CoT,44.5123,-75.0345,260.132,US,True,,stop,0.006214,1271,306,218,11.7,"{
+  ""reasoning"": ""The wide grassy median between divided highway lanes and the temperate mixed forest vegetation are highly characteristic of major highways in northeastern North America. The solid white edge line and flat terrain suggest a location like upstate New York or Ontario."",
+  ""country"": ""US"",
+  ""latitude"": 44.5123,
+  ""longitude"": -75.0345
+}"
+google/gemini-3.5-flash,CoT (effort=high),45.8432,-77.2451,373.061,CA,True,,stop,0.0080265,1271,680,603,6.59,"{""reasoning"": ""The flat terrain, mixed deciduous and coniferous forest (including birch/aspen), and wide asphalt road with a solid white line are highly characteristic of the Great Lakes region in North America, particularly Ontario, Canada."", ""country"": ""CA"", ""latitude"": 45.8432, ""longitude"": -77.2451}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,48.461238861083984,-69.06526947021484,376.361,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,597.42,US,True,,stop,0.0001137,634,31,0,3.3,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.0060}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,46.53750991821289,-64.56353759765625,607.707,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,45.8,-89.5,1319.258,US,True,,stop,0.006485,797,100,0,9.71,"{""reasoning"": ""Flat rural landscape with mixed birch/conifer forest, grassy fields, and broad cloudy sky suggests a northern temperate region like the upper Midwest US or eastern Canada."", ""country"": ""US"", ""latitude"": 45.8, ""longitude"": -89.5}"
+anthropic/claude-opus-4.8,no-CoT,45.2,-89.5,1328.928,US,True,,stop,0.004055,666,29,0,2.16,"{""country"": ""US"", ""latitude"": 45.2, ""longitude"": -89.5}"
+google/gemini-3.1-pro-preview,no-CoT,44.853,-89.634,1346.345,US,True,,stop,0.002774,1189,33,0,3.27,"```json
+{""country"": ""US"", ""latitude"": 44.853, ""longitude"": -89.634}
+```"
+xiaomi/mimo-v2.5,CoT,40.0,-89.0,1498.464,US,True,,stop,0.0004089176,787,1161,1080,11.97,"{""reasoning"": ""Flat agricultural terrain with deciduous trees and cumulus clouds indicates a temperate Northern Hemisphere region, typical of the North American Midwest. No man-made signs or license plates limit further precision, but the vegetation and road style align with rural United States."", ""country"": ""US"", ""latitude"": 40.0, ""longitude"": -89.0}"
+moonshotai/kimi-k2.6,CoT,46.5,-92.5,1541.076,US,True,,stop,0.011081088,682,3179,3122,82.49,"{""reasoning"": ""Wide grassy highway median with mixed deciduous forest including prominent white-barked birch trees indicates a rural Interstate corridor in the northern US Upper Midwest during summer."",""country"": ""US"",""latitude"": 46.5,""longitude"": -92.5}"
+qwen/qwen3.5-9b,no-CoT,44.923,-93.065,1609.804,US,True,,stop,8.766e-05,473,29,0,1.35,"{""country"": ""US"", ""latitude"": 44.923, ""longitude"": -93.065}"
+x-ai/grok-4.3,no-CoT,44.85,-93.15,1617.995,US,True,,stop,0.0005934,592,22,0,7.49,"{""country"": ""US"", ""latitude"": 44.85, ""longitude"": -93.15}"
+qwen/qwen3.5-35b-a3b,no-CoT,44.9778,-93.265,1624.034,US,True,,stop,0.00010095,473,30,0,2.64,"{""country"": ""US"", ""latitude"": 44.9778, ""longitude"": -93.265}"
+google/gemini-3.5-flash,CoT (effort=medium),49.712,-96.123,1808.992,CA,True,,stop,0.0084855,1271,731,661,19.37,"{""reasoning"": ""The flat terrain, wide grassy median of a divided highway, and mixed birch/conifer forest are characteristic of the Canadian Shield transition zone in southeastern Manitoba along the Trans-Canada Highway."", ""country"": ""CA"", ""latitude"": 49.712, ""longitude"": -96.123}"
+x-ai/grok-4.3,CoT,49.85,-97.15,1883.621,CA,True,,stop,0.0025465,676,815,741,8.6,"{
+  ""reasoning"": ""Flat rural landscape with birch/aspen stands, wide cloudy sky, asphalt road with solid white edge line, and temperate green fields point to northern temperate agricultural zone; right-side driving implied by road marking placement."",
+  ""country"": ""CA"",
+  ""latitude"": 49.85,
+  ""longitude"": -97.15
+}"
+moonshotai/kimi-k2.6,no-CoT,30.45,-84.28,2006.848,US,True,,stop,0.00051219,602,23,0,8.75,"{""country"": ""US"", ""latitude"": 30.45, ""longitude"": -84.28}"
+qwen/qwen3.5-122b-a10b,no-CoT,30.4383,-84.2807,2008.034,US,True,,stop,0.00018772,474,31,0,12.7,"{""country"": ""US"", ""latitude"": 30.4383, ""longitude"": -84.2807}"
+mistralai/mistral-medium-3-5,no-CoT,30.4518,-87.2169,2147.456,US,True,,stop,0.0011835,634,31,0,1.0,"{""country"": ""US"", ""latitude"": 30.4518, ""longitude"": -87.2169}"
+xiaomi/mimo-v2.5,no-CoT,30.3935,-87.1504,2149.52,US,True,,stop,8.14576e-05,708,31,0,9.28,"{""country"": ""US"", ""latitude"": 30.3935, ""longitude"": -87.1504}"
+qwen/qwen3.6-35b-a3b,no-CoT,53.7443,-113.4909,3021.317,CA,True,,stop,0.00015825,473,32,0,7.38,"{""country"": ""CA"", ""latitude"": 53.7443, ""longitude"": -113.4909}"
+qwen/qwen3.5-397b-a17b,no-CoT,53.5461,-113.4938,3021.703,CA,True,,stop,0.0003357,473,32,0,7.9,"{""country"": ""CA"", ""latitude"": 53.5461, ""longitude"": -113.4938}"
+google/gemma-4-26b-a4b-it,no-CoT,45.523062,-122.6,3827.924,,True,,stop,5.534e-05,406,32,0,23.33,"{""country"": ""US"", ""latitude"": 45.523062, ""longitude"": -122.6 own}"
+qwen/qwen3.6-27b,no-CoT,45.4215,-122.6765,3837.285,US,True,,stop,0.0001963,473,32,0,19.04,"{""country"": ""US"", ""latitude"": 45.4215, ""longitude"": -122.6765}"
+qwen/qwen3.5-27b,no-CoT,62.8954,25.9078,5955.303,FI,True,,stop,0.00023764,474,44,0,1.65,"```json
+{
+  ""country"": ""FI"",
+  ""latitude"": 62.8954,
+  ""longitude"": 25.9078
+}
+```"
+minimax/minimax-m3,CoT,52.4,16.9,6108.192,PL,True,,stop,0.00065622,845,384,389,7.03,"{""reasoning"": ""Flat agricultural landscape with lush green pastures, deciduous tree line (likely birch/oak), cumulus cloud formations typical of the North European Plain, and a rural two-lane road with solid white edge marking suggest northern continental Europe, most likely western Poland."", ""country"": ""PL"", ""latitude"": 52.4, ""longitude"": 16.9}"
+openai/gpt-5.5,CoT,58.7906,25.6224,6186.775,EE,True,,stop,0.016425,621,444,375,10.89,"{""reasoning"":""Flat northern European farmland with birch/aspen forest, drainage ditches, and white edge-lined right-driving rural asphalt strongly suggests the Baltic region. With no signage, the landscape most closely fits rural Estonia."",""country"":""EE"",""latitude"":58.7906,""longitude"":25.6224}"
+qwen/qwen3.5-397b-a17b,CoT,57.1523,24.5987,6237.434,LV,True,,stop,0.0103426,553,2887,2696,99.16,"{
+""reasoning"": ""The flat landscape with lush green fields and a tree line of birch and mixed forest is highly characteristic of the Baltic states in summer. The view from a bus window (indicated by the dot matrix frit) along a paved road with a wide grassy median suggests a major divided highway like the Via Baltica (E67) in Latvia."",
+""country"": ""LV"",
+""latitude"": 57.1523,
+""longitude"": 24.5987
+}"
+openai/gpt-5.5,no-CoT,56.8732,24.7216,6260.914,LV,True,,stop,0.00341,544,23,0,1.27,"{""country"":""LV"",""latitude"":56.8732,""longitude"":24.7216}"
+minimax/minimax-m3,no-CoT,53.1333,23.15,6414.093,PL,True,,stop,0.00019692,754,24,0,2.31,"{""country"": ""PL"", ""latitude"": 53.1333, ""longitude"": 23.1500}{""country"": ""PL"", ""latitude"": 53.1333, ""longitude"": 23.1500}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.61,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.56,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.15,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.22,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.15,

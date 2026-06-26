@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-5.1748010662259,120.26920541409,0.0,ID,True,,,,,,,,"Sinjai, None, South Sulawesi, ID"
+google/gemini-3.5-flash,CoT (effort=high),-8.4825,115.2841,661.899,ID,True,,stop,0.0111135,1307,1017,948,9.1,"{""reasoning"": ""The extremely lush tropical vegetation with dense coconut palms, combined with a narrow, well-paved asphalt road lacking lane markings, is highly characteristic of rural Bali, Indonesia."", ""country"": ""ID"", ""latitude"": -8.4825, ""longitude"": 115.2841}"
+google/gemini-3.5-flash,CoT (effort=medium),-8.4512,115.2534,662.817,ID,True,,stop,0.0061455,1307,465,399,4.99,"{""reasoning"": ""The lush tropical vegetation, dense canopy, and slender coconut palms alongside a narrow, well-paved asphalt road are highly characteristic of rural Bali, Indonesia."", ""country"": ""ID"", ""latitude"": -8.4512, ""longitude"": 115.2534}"
+google/gemini-3.5-flash,CoT (effort=low),-8.4154,115.2182,663.916,ID,True,,stop,0.0037065,1307,194,131,25.22,"{""reasoning"": ""The lush tropical vegetation, dense canopy, tall coconut palms, and narrow paved road without markings are highly characteristic of rural Indonesia, particularly Bali."", ""country"": ""ID"", ""latitude"": -8.4154, ""longitude"": 115.2182}"
+openai/gpt-5.5,no-CoT,-8.5203,115.2637,666.091,ID,True,,stop,0.00411,678,24,0,1.92,"{""country"":""ID"",""latitude"":-8.5203,""longitude"":115.2637}"
+minimax/minimax-m3,CoT,-8.4095,115.1889,666.284,ID,True,,stop,0.00056946,995,277,197,16.96,"{""reasoning"": ""Tropical vegetation dominated by coconut palms and dense jungle canopy over a narrow unmarked rural asphalt road strongly indicates rural Bali or similar Indonesian island. The road style, absence of road markings, and lush equatorial vegetation are characteristic of inland Balinese countryside."", ""country"": ""ID"", ""latitude"": -8.4095, ""longitude"": 115.1889}"
+x-ai/grok-4.3,CoT,-8.4095,115.1889,666.284,ID,True,,stop,0.001664,788,406,337,3.6,"{
+  ""reasoning"": ""Dense tropical rainforest with palms, banana plants, and lush undergrowth indicates equatorial climate; narrow paved road with no visible markings or traffic infrastructure is typical of rural Southeast Asia."",
+  ""country"": ""ID"",
+  ""latitude"": -8.4095,
+  ""longitude"": 115.1889
+}"
+qwen/qwen3.5-122b-a10b,no-CoT,-8.4215,115.1892,666.971,ID,True,,stop,0.00021658,585,31,0,0.99,"{""country"": ""ID"", ""latitude"": -8.4215, ""longitude"": 115.1892}"
+x-ai/grok-4.3,no-CoT,-8.35,115.09,672.033,ID,True,,stop,0.0007334,704,22,0,1.07,"{""country"": ""ID"", ""latitude"": -8.35, ""longitude"": 115.09}"
+moonshotai/kimi-k2.6,CoT,-7.8,110.4,1128.664,ID,True,,stop,0.009503676,834,2691,2621,58.1,"{""reasoning"": ""Dense tropical jungle with coconut palms overhanging a narrow, paved rural road lacking shoulders is typical of equatorial Southeast Asia, and the specific road surface and secondary forest density are most consistent with rural Indonesia."", ""country"": ""ID"", ""latitude"": -7.8, ""longitude"": 110.4}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),9.643812,124.251345,1705.804,PH,True,,stop,0.00219,1226,39,0,1.64,"```json
+{""country"": ""PH"", ""latitude"": 9.643812, ""longitude"": 124.251345}
+```"
+xiaomi/mimo-v2.5,no-CoT,9.8,124.2,1721.125,PH,True,,stop,9.54576e-05,820,25,0,7.64,"{""country"": ""PH"", ""latitude"": 9.8, ""longitude"": 124.2}"
+anthropic/claude-opus-4.8,CoT,10.7202,122.5621,1785.578,PH,True,,stop,0.00697,949,89,0,3.45,"{""reasoning"": ""Lush tropical vegetation with coconut palms and banana plants, narrow rural paved road typical of Southeast Asian/Philippine countryside."", ""country"": ""PH"", ""latitude"": 10.7202, ""longitude"": 122.5621}"
+anthropic/claude-opus-4.8,no-CoT,11.0,124.6,1861.332,PH,True,,stop,0.00484,818,30,0,3.77,"{""country"": ""PH"", ""latitude"": 11.0, ""longitude"": 124.6}"
+google/gemma-4-31b-it,no-CoT,14.5995,120.9842,2200.215,PH,True,,stop,6.388e-05,404,37,0,10.33,"```json
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,14.5995,121.0801,2200.619,PH,True,,stop,0.00018625,585,32,0,7.91,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 121.0801}"
+xiaomi/mimo-v2.5,CoT,8.0,99.0,2776.923,TH,True,,stop,0.0004646376,899,1304,1248,16.54,"{""reasoning"": ""Dense tropical vegetation including palm trees and the style of the narrow rural paved road are indicative of Southeast Asia, specifically Thailand."", ""country"": ""TH"", ""latitude"": 8.0, ""longitude"": 99.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,12.9236,99.3624,3063.307,TH,True,,stop,0.0004466,585,31,0,2.44,"{""country"": ""TH"", ""latitude"": 12.9236, ""longitude"": 99.3624}"
+openai/gpt-5.5,CoT,6.1214,80.2467,4617.008,LK,True,,stop,0.011005,755,241,156,13.59,"{""reasoning"":""Narrow unmarked paved road through dense humid tropical vegetation with coconut palms and South Asian roadside style strongly suggests rural Sri Lanka, especially the wet southwestern lowlands. The lush greenery and small winding lane fit inland areas near Galle/Matara rather than drier northern or eastern regions."",""country"":""LK"",""latitude"":6.1214,""longitude"":80.2467}"
+google/gemini-3.1-pro-preview,CoT,6.85,80.2,4643.411,LK,True,,stop,0.006514,1307,325,245,12.62,"{
+  ""reasoning"": ""Lush tropical vegetation with coconut palms and narrow paved roads are typical of South and Southeast Asia. The visible black car part at the bottom right is a common artifact of Google Street View coverage in Sri Lanka."",
+  ""country"": ""LK"",
+  ""latitude"": 6.85,
+  ""longitude"": 80.2
+}"
+google/gemini-3.1-pro-preview,no-CoT,6.9271,79.8612,4681.737,LK,True,,stop,0.00286,1226,34,0,2.16,"```json
+{""country"": ""LK"", ""latitude"": 6.9271, ""longitude"": 79.8612}
+```"
+qwen/qwen3.6-27b,no-CoT,8.5241,76.9366,5040.252,IN,True,,stop,0.0002259,585,30,0,15.72,"{""country"": ""IN"", ""latitude"": 8.5241, ""longitude"": 76.9366}"
+qwen/qwen3.5-27b,no-CoT,10.0563,76.9558,5087.401,IN,True,,stop,0.000162435,585,31,0,8.04,"{""country"": ""IN"", ""latitude"": 10.0563, ""longitude"": 76.9558}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,9.447653770446777,76.68248748779297,5096.064,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,9.448311805725098,76.66410064697266,5098.016,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,9.797750473022461,76.62937927246094,5112.987,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,12.9716,77.5946,5127.097,IN,True,,stop,5.468e-05,404,31,0,1.01,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+mistralai/mistral-medium-3-5,no-CoT,12.9716,77.5946,5127.097,IN,True,,stop,0.0014115,786,31,0,1.26,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.6-35b-a3b,no-CoT,11.2588,75.7804,5250.521,IN,True,,stop,0.0001668,586,31,0,8.4,"{""country"": ""IN"", ""latitude"": 11.2588, ""longitude"": 75.7804}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4781,12739.759,US,True,,stop,0.0001371,786,32,0,4.21,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4781}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-3.667008876800537,-32.2203483581543,16805.115,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-6.768336772918701,-34.870418548583984,16953.068,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-9.669451713562012,-40.48136520385742,17318.222,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,-14.235,-49.2683,17567.645,BR,True,,stop,6.31e-05,586,30,0,3.09,"{""country"": ""BR"", ""latitude"": -14.235, ""longitude"": -49.2683}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.45,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.74,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,12.69,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.43,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.17,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.48,

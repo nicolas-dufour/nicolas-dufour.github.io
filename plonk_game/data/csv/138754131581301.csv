@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.51828223902,-68.785598744942,0.0,US,True,,,,,,,,"Bucksport, Hancock County, Maine, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,44.43720626831055,-68.59963989257812,17.29,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,44.346527099609375,-68.64985656738281,21.93,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,44.34123992919922,-68.65391540527344,22.291,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,44.5,-68.5,22.738,US,True,,stop,0.005316,1308,225,145,4.27,"{
+  ""reasoning"": ""The single solid yellow center line and lack of edge lines are typical of rural roads in North America. The dense mixed forest with prominent pines strongly suggests the northeastern United States or eastern Canada, such as Maine."",
+  ""country"": ""US"",
+  ""latitude"": 44.5,
+  ""longitude"": -68.5
+}"
+xiaomi/mimo-v2.5,no-CoT,44.5,-68.5,22.738,US,True,,stop,9.54576e-05,820,25,0,1.67,"{""country"": ""US"", ""latitude"": 44.5, ""longitude"": -68.5}"
+google/gemini-3.1-pro-preview,no-CoT,44.3836,-68.2053,48.435,US,True,,stop,0.00287,1225,35,0,2.85,"```json
+{""country"": ""US"", ""latitude"": 44.3836, ""longitude"": -68.2053}
+```"
+anthropic/claude-opus-4.8,CoT,44.5,-69.5,56.686,US,True,,stop,0.00682,949,83,0,9.33,"{""reasoning"": ""Yellow center line and right-hand driving with mixed northern hardwood/conifer forest suggest rural northeastern North America, likely New England."", ""country"": ""US"", ""latitude"": 44.5, ""longitude"": -69.5}"
+moonshotai/kimi-k2.6,CoT,44.5,-69.5,56.686,US,True,,stop,0.012946815,833,3438,3945,45.45,"{""reasoning"": ""The solid yellow center line and wooden utility poles are characteristic of North America, while the dense mixed temperate forest and rural road style point to the northeastern U.S. or southeastern Canada."", ""country"": ""US"", ""latitude"": 44.5, ""longitude"": -69.5}"
+qwen/qwen3.5-9b,no-CoT,44.4256,-69.8256,83.162,US,True,,stop,0.0001072,585,31,0,1.2,"{""country"": ""US"", ""latitude"": 44.4256, ""longitude"": -69.8256}"
+google/gemini-3.5-flash,CoT (effort=low),44.5823,-70.2148,113.474,US,True,,stop,0.0038865,1307,214,146,10.74,"{""reasoning"": ""The single solid yellow center line on a narrow paved road, combined with dense mixed coniferous and deciduous forest, is highly characteristic of rural northeastern North America, particularly Maine."", ""country"": ""US"", ""latitude"": 44.5823, ""longitude"": -70.2148}"
+google/gemini-3.5-flash,CoT (effort=high),44.5832,-70.2148,113.479,US,True,,stop,0.0091965,1307,804,738,13.05,"{""reasoning"": ""The dense mixed forest featuring white pines and ferns alongside a narrow paved road with a yellow center line is highly characteristic of the northeastern United States, particularly Maine."", ""country"": ""US"", ""latitude"": 44.5832, ""longitude"": -70.2148}"
+google/gemma-4-31b-it,no-CoT,44.3148,-71.2873,199.969,US,True,,stop,6.692e-05,404,36,0,2.69,"```json
+{""country"": ""US"", ""latitude"": 44.3148, ""longitude"": -71.2873}
+```"
+qwen/qwen3.5-27b,no-CoT,44.2619,-71.3063,202.303,US,True,,stop,0.00026676,586,44,0,16.81,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 44.2619,
+  ""longitude"": -71.3063
+}
+```"
+minimax/minimax-m3,CoT,46.2,-71.5,282.719,CA,True,,stop,0.00075426,995,431,367,13.86,"{""reasoning"": ""Yellow center line with right-hand traffic indicates North America; dense mixed deciduous-coniferous forest with prominent birches and wooden utility poles is characteristic of rural Quebec or eastern Canada."", ""country"": ""CA"", ""latitude"": 46.2, ""longitude"": -71.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,44.2619,-72.5753,302.445,US,True,,stop,0.000185,585,31,0,0.61,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -72.5753}"
+qwen/qwen3.5-122b-a10b,no-CoT,44.2619,-72.5805,302.857,US,True,,stop,0.00021658,585,31,0,7.53,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -72.5805}"
+x-ai/grok-4.3,no-CoT,46.85,-71.35,326.927,CA,True,,stop,0.0007334,704,22,0,1.11,"{""country"": ""CA"", ""latitude"": 46.85, ""longitude"": -71.35}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,44.26799392700195,-73.1197280883789,345.45,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.28569030761719,-73.14297485351562,347.086,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.74771499633789,-73.16968536376953,360.171,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,45.4215,-73.8242,408.825,CA,True,,stop,0.0002279,585,31,0,5.67,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -73.8242}"
+xiaomi/mimo-v2.5,CoT,43.9,-74.7,476.282,US,True,,stop,0.0003890376,899,1034,974,14.33,"{""reasoning"": ""The double yellow line indicates right-hand traffic, and the dense deciduous forest with birch-like trees is characteristic of the northeastern United States."", ""country"": ""US"", ""latitude"": 43.9, ""longitude"": -74.7}"
+qwen/qwen3.5-397b-a17b,no-CoT,45.3821,-75.6972,552.142,CA,True,,stop,0.00043188,585,31,0,8.4,"{""country"": ""CA"", ""latitude"": 45.3821, ""longitude"": -75.6972}"
+qwen/qwen3.6-35b-a3b,no-CoT,45.4215,-75.6972,552.736,CA,True,,stop,0.000185,585,31,0,0.7,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -75.6972}"
+openai/gpt-5.5,no-CoT,45.3326,-75.9478,570.897,CA,True,,stop,0.00411,678,24,0,7.47,"{""country"":""CA"",""latitude"":45.3326,""longitude"":-75.9478}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),45.0352,-78.2831,751.426,CA,True,,stop,0.002154,1226,35,0,1.27,"```json
+{""country"": ""CA"", ""latitude"": 45.0352, ""longitude"": -78.2831}
+```"
+openai/gpt-5.5,CoT,45.1432,-78.5158,769.978,CA,True,,stop,0.014305,755,351,267,8.94,"{""reasoning"":""Right-hand traffic with North American yellow centerline and no edge lines, plus dense mixed boreal/deciduous forest and wooden utility poles strongly suggest rural eastern Canada. The narrow cottage-country road and vegetation are most consistent with Ontario’s Muskoka/Haliburton region."",""country"":""CA"",""latitude"":45.1432,""longitude"":-78.5158}"
+google/gemini-3.5-flash,CoT (effort=medium),45.55,-78.5,771.434,CA,True,,stop,0.0072255,1307,585,518,5.0,"{""reasoning"": ""The single solid yellow center line, wooden utility poles, and dense mixed forest of white pines and birches are highly characteristic of rural roads in northeastern North America, particularly Ontario, Canada."", ""country"": ""CA"", ""latitude"": 45.55, ""longitude"": -78.5}"
+x-ai/grok-4.3,CoT,45.35,-78.75,789.284,CA,True,,stop,0.0021615,788,605,528,5.03,"{""reasoning"": ""Right-hand traffic with double yellow center line, North American asphalt road standards, and dense mixed coniferous/deciduous northern temperate forest point to rural eastern Canada or New England; power poles and lack of signage further support remote Ontario/Maine-type setting."", ""country"": ""CA"", ""latitude"": 45.35, ""longitude"": -78.75}"
+anthropic/claude-opus-4.8,no-CoT,45.0,-85.6,1326.302,US,True,,stop,0.004815,818,29,0,3.11,"{""country"": ""US"", ""latitude"": 45.0, ""longitude"": -85.6}"
+mistralai/mistral-medium-3-5,no-CoT,44.9778,-93.265,1926.491,US,True,,stop,0.001404,786,30,0,1.92,"{""country"": ""US"", ""latitude"": 44.9778, ""longitude"": -93.265}"
+google/gemma-4-26b-a4b-it,no-CoT,44.3521,-121.5534,4114.304,US,True,,stop,5.708e-05,404,37,0,1.34,"```json
+{""country"": ""US"", ""latitude"": 44.3521, ""longitude"": -121.5534}
+```"
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,5246.421,FR,True,,stop,0.0001359,786,30,0,7.29,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,28.67,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.25,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.21,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.4,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.09,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.23,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.21,

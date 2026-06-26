@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,38.196423674482,34.200936427109,0.0,TR,True,,,,,,,,"Taspinar, None, Aksaray, TR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.18864059448242,34.16976547241211,2.858,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.167640686035156,34.17343521118164,4.003,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.00503158569336,34.204689025878906,21.284,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),38.3683,34.0256,24.484,TR,True,,stop,0.0021525,1225,35,0,8.22,"```json
+{""country"": ""TR"", ""latitude"": 38.3683, ""longitude"": 34.0256}
+```"
+google/gemini-3.5-flash,CoT (effort=high),38.6244,34.714,65.292,TR,True,,stop,0.0093225,1307,818,746,13.09,"{""reasoning"": ""The yellow-and-white painted curbs, distinctive lattice utility poles, and blue circular 'keep right' sign are characteristic of Turkey, while the arid, hilly terrain suggests Central Anatolia."", ""country"": ""TR"", ""latitude"": 38.6244, ""longitude"": 34.714}"
+google/gemini-3.5-flash,CoT (effort=medium),38.6244,34.7141,65.298,TR,True,,stop,0.0061275,1307,463,395,4.73,"{""reasoning"": ""The lattice utility poles, yellow-and-white painted curbs, blue circular keep-right sign, and dry, hilly Anatolian landscape are highly characteristic of Turkey."", ""country"": ""TR"", ""latitude"": 38.6244, ""longitude"": 34.7141}"
+google/gemini-3.5-flash,CoT (effort=low),38.6244,34.7142,65.304,TR,True,,stop,0.003654,1308,188,110,8.64,"```json
+{""reasoning"": ""The blue circular directional sign, yellow-and-white painted curbs, and distinctive metal lattice utility poles are characteristic of Turkey. The arid, hilly landscape suggests a location in central Anatolia."", ""country"": ""TR"", ""latitude"": 38.6244, ""longitude"": 34.7142}
+```"
+mistralai/mistral-medium-3-5,no-CoT,38.0,35.0,73.254,TR,True,,stop,0.0013665,786,25,0,2.36,"{""country"": ""TR"", ""latitude"": 38.0, ""longitude"": 35.0}"
+moonshotai/kimi-k2.6,CoT,38.6431,34.8289,73.89,TR,True,,stop,0.009084096,834,2571,2507,74.11,"{""reasoning"": ""Distinctive Turkish utility poles with multiple wooden cross-arms and blue/yellow signage, combined with right-hand traffic and semi-arid Central Anatolian rocky terrain."", ""country"": ""TR"", ""latitude"": 38.6431, ""longitude"": 34.8289}"
+moonshotai/kimi-k2.6,no-CoT,38.6431,34.8289,73.89,TR,True,,stop,0.00064935,754,25,0,8.84,"{""country"": ""TR"", ""latitude"": 38.6431, ""longitude"": 34.8289}"
+x-ai/grok-4.3,no-CoT,38.72,35.48,125.668,TR,True,,stop,0.0007334,704,22,0,0.86,"{""country"": ""TR"", ""latitude"": 38.72, ""longitude"": 35.48}"
+google/gemini-3.1-pro-preview,CoT,38.7312,35.4787,126.143,TR,True,,stop,0.005386,1307,231,136,5.52,"{
+  ""reasoning"": ""The yellow and white painted curbs, lattice metal utility poles, and the specific style of the keep right sign with a yellow/black chevron are highly characteristic of Turkey. The arid, rocky landscape with planted trees suggests a central or eastern Anatolian region."",
+  ""country"": ""TR"",
+  ""latitude"": 38.7312,
+  ""longitude"": 35.4787
+}"
+google/gemini-3.1-pro-preview,no-CoT,38.7312,35.4787,126.143,TR,True,,stop,0.005174,1225,227,192,4.47,"```json
+{""country"": ""TR"", ""latitude"": 38.7312, ""longitude"": 35.4787}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,38.7225,35.4875,126.374,TR,True,,stop,0.00043188,585,31,0,2.98,"{""country"": ""TR"", ""latitude"": 38.7225, ""longitude"": 35.4875}"
+anthropic/claude-opus-4.8,CoT,38.75,35.48,127.228,TR,True,,stop,0.00697,949,89,0,4.22,"{""reasoning"": ""Arid rocky hills, Turkish-style road signage and pole infrastructure, furniture/wood workshop along roadside typical of central Anatolian town."", ""country"": ""TR"", ""latitude"": 38.75, ""longitude"": 35.48}"
+qwen/qwen3.5-35b-a3b,no-CoT,38.7369,35.4892,127.244,TR,True,,stop,0.00011304,586,31,0,7.19,"{""country"": ""TR"", ""latitude"": 38.7369, ""longitude"": 35.4892}"
+x-ai/grok-4.3,CoT,38.72,35.55,131.1,TR,True,,stop,0.0031515,788,1001,912,18.79,"{
+  ""reasoning"": ""Right-hand traffic with EU-style blue/yellow road signs, yellow-black curbs, arid rocky hills, poplar/cypress trees, and informal roadside construction yards point to inland Turkey. The distant white car, overhead power lines, and street-lamp design match typical Turkish provincial roads."",
+  ""country"": ""TR"",
+  ""latitude"": 38.72,
+  ""longitude"": 35.55
+}"
+google/gemma-4-31b-it,no-CoT,39.9333,32.8567,225.312,TR,True,,stop,6.348e-05,404,36,0,10.67,"```json
+{""country"": ""TR"", ""latitude"": 39.9333, ""longitude"": 32.8567}
+```"
+minimax/minimax-m3,no-CoT,39.75,37.02,298.692,TR,True,,stop,0.00043842,919,184,202,4.18,"{""country"": ""TR"", ""latitude"": 39.75, ""longitude"": 37.02}"
+openai/gpt-5.5,no-CoT,38.3553,38.3095,359.051,TR,True,,stop,0.00408,678,23,0,2.33,"{""country"":""TR"",""latitude"":38.3553,""longitude"":38.3095}"
+anthropic/claude-opus-4.8,no-CoT,38.35,38.32,359.95,TR,True,,stop,0.00484,818,30,0,2.25,"{""country"": ""TR"", ""latitude"": 38.35, ""longitude"": 38.32}"
+qwen/qwen3.5-27b,no-CoT,38.4237,27.1428,616.197,TR,True,,stop,0.00022491,585,31,0,8.97,"{""country"": ""TR"", ""latitude"": 38.4237, ""longitude"": 27.1428}"
+qwen/qwen3.5-9b,no-CoT,38.4235,27.1412,616.337,TR,True,,stop,6.325e-05,586,31,0,13.67,"{""country"": ""TR"", ""latitude"": 38.4235, ""longitude"": 27.1412}"
+qwen/qwen3.6-27b,no-CoT,38.4192,27.1287,617.425,TR,True,,stop,0.0002279,585,31,0,23.66,"{""country"": ""TR"", ""latitude"": 38.4192, ""longitude"": 27.1287}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,32.142154693603516,35.3967170715332,681.902,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,32.099159240722656,35.41770935058594,686.931,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,32.051597595214844,35.375370025634766,691.552,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,38.68,43.38,800.935,TR,True,,stop,9.60176e-05,820,27,0,2.99,"{""country"": ""TR"", ""latitude"": 38.68, ""longitude"": 43.38}"
+qwen/qwen3.5-397b-a17b,CoT,38.3512,44.3589,886.456,AM,True,,stop,0.0129762,665,3507,3421,20.08,"{""reasoning"": ""The yellow and black painted curbs, combined with the volcanic tuff cliffs and stone architecture, are highly characteristic of Armenia. The landscape and infrastructure (concrete power poles, Soviet-style truck) strongly suggest the Ashtarak region."", ""country"": ""AM"", ""latitude"": 38.3512, ""longitude"": 44.3589}"
+xiaomi/mimo-v2.5,CoT,40.297,44.356,904.549,AM,True,,stop,0.0010912776,899,3542,3438,46.23,"{""reasoning"": ""The blue road sign featuring a yellow diamond is a distinctive school zone warning unique to Armenia, and the yellow-and-black painted curbs are a standard traffic marking found throughout the country; the semi-arid mountains and mixed vegetation (conifers and poplars) further confirm the location as likely being in the Aragatsotn province."", ""country"": ""AM"", ""latitude"": 40.297, ""longitude"": 44.356}"
+openai/gpt-5.5,CoT,35.3147,46.9988,1183.191,IR,True,,stop,0.021655,755,596,516,21.6,"{""reasoning"":""Dry mountainous urban setting with right-side driving, black-yellow painted curbs, Iranian-style roadside poles/signage and long white plates point most strongly to western Iran. The rocky hillside and tree-lined avenue fit Kurdish/Iranian plateau towns such as Sanandaj."",""country"":""IR"",""latitude"":35.3147,""longitude"":46.9988}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.6892,51.389,1550.382,IR,True,,stop,0.0002475,585,30,0,1.62,"{""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.389}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.6892,51.389,1550.382,IR,True,,stop,0.00011875,585,31,0,1.93,"{""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.3890}"
+minimax/minimax-m3,CoT,33.5,51.5,1641.317,IR,True,,stop,0.00087066,995,528,451,14.82,"{""reasoning"": ""Right-hand driving, poplar-lined road, arid rocky mountains typical of the Iranian Plateau, blue directional signage, yellow-and-black painted curbs, and Middle Eastern vernacular architecture with stone/concrete construction strongly indicate a small town in central Iran."", ""country"": ""IR"", ""latitude"": 33.5, ""longitude"": 51.5}"
+mistralai/mistral-small-2603,no-CoT,45.4642,9.19,2212.951,IT,True,,stop,0.0001359,786,30,0,4.54,"{""country"": ""IT"", ""latitude"": 45.4642, ""longitude"": 9.1900}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5499.593,,True,True,,,,,,8.55,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,12.81,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.65,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.77,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.14,

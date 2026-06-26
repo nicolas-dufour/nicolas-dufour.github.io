@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-33.06659512915,-68.471172986511,0.0,AR,True,,,,,,,,"San Martin, None, Mendoza, AR"
+anthropic/claude-opus-4.8,CoT,-35.42,-71.65,392.204,CL,True,,stop,0.00702,949,91,0,2.76,"{""reasoning"": ""Highway with yellow diamond warning signs, flat agricultural terrain, overpass and power lines suggest central Chile's Ruta 5 highway corridor."", ""country"": ""CL"", ""latitude"": -35.42, ""longitude"": -71.65}"
+anthropic/claude-opus-4.8,no-CoT,-35.4264,-71.6553,393.033,CL,True,,stop,0.00489,818,32,0,2.35,"{""country"": ""CL"", ""latitude"": -35.4264, ""longitude"": -71.6553}"
+google/gemini-3.1-pro-preview,CoT,-33.5,-60.0,788.694,AR,True,,stop,0.005916,1308,275,213,4.15,"{
+  ""reasoning"": ""The yellow diamond warning signs, flat grassy terrain, and highway infrastructure are characteristic of the Pampas region in Argentina."",
+  ""country"": ""AR"",
+  ""latitude"": -33.5,
+  ""longitude"": -60.0
+}"
+google/gemini-3.5-flash,CoT (effort=low),-33.8154,-59.7432,813.862,AR,True,,stop,0.004707,1308,305,233,9.58,"{""reasoning"": ""The flat landscape, style of the concrete overpass, and yellow diamond warning signs are characteristic of major national highways in the Pampas region of Argentina, such as Ruta Nacional 9."", ""country"": ""AR"", ""latitude"": -33.8154, ""longitude"": -59.7432}"
+google/gemini-3.5-flash,CoT (effort=high),-33.8085,-59.5234,834.09,AR,True,,stop,0.0083955,1307,715,650,11.45,"{""reasoning"": ""The flat landscape, yellow diamond warning signs, and highway infrastructure are characteristic of the Argentine Pampas, specifically along major routes like Ruta Nacional 9."", ""country"": ""AR"", ""latitude"": -33.8085, ""longitude"": -59.5234}"
+google/gemini-3.5-flash,CoT (effort=medium),-33.8125,-59.5236,834.096,AR,True,,stop,0.0093405,1307,820,742,19.51,"{""reasoning"": ""The flat landscape, dual-carriageway highway design, yellow diamond warning signs, and concrete overpass are highly characteristic of the Argentine Pampas, specifically along Ruta Nacional 9 between Buenos Aires and Rosario."", ""country"": ""AR"", ""latitude"": -33.8125, ""longitude"": -59.5236}"
+openai/gpt-5.5,CoT,-34.1635,-59.0398,881.495,AR,True,,stop,0.019885,755,537,445,19.67,"{""reasoning"":""Right-hand divided highway with yellow diamond warning signs and black/yellow hazard posts fits Argentina/Uruguay-style signage, and the flat open pampas landscape points most strongly to the Buenos Aires–Rosario corridor in Argentina. The rural dual carriageway and overpass resemble Ruta Nacional 9 north of Buenos Aires."",""country"":""AR"",""latitude"":-34.1635,""longitude"":-59.0398}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-34.3581,-58.7912,906.432,AR,True,,stop,0.002154,1226,35,0,7.4,"```json
+{""country"": ""AR"", ""latitude"": -34.3581, ""longitude"": -58.7912}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-34.6037,-58.3816,947.018,AR,True,,stop,0.002872,1226,35,0,8.69,"```json
+{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}
+```"
+xiaomi/mimo-v2.5,no-CoT,33.75,-84.4,7613.979,US,True,,stop,9.57376e-05,820,26,0,2.39,"{""country"": ""US"", ""latitude"": 33.75, ""longitude"": -84.4}"
+qwen/qwen3.5-122b-a10b,no-CoT,30.2672,-97.7431,7686.084,US,True,,stop,0.0003588,585,39,0,1.24,"{
+  ""country"": ""US"",
+  ""latitude"": 30.2672,
+  ""longitude"": -97.7431
+}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8015.968,,True,True,,,,,,13.63,
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,8223.536,US,True,,stop,0.000169875,786,30,0,1.65,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+qwen/qwen3.5-9b,no-CoT,42.3601,-71.0589,8391.222,US,True,,stop,6.325e-05,586,31,0,9.77,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+xiaomi/mimo-v2.5,CoT,40.0,-89.0,8394.48,US,True,,stop,0.0004296376,899,1179,1121,12.05,"{""reasoning"": ""Yellow diamond warning signs and right-hand driving are standard in the United States, and the flat temperate terrain suggests a Midwest location."", ""country"": ""US"", ""latitude"": 40.0, ""longitude"": -89.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,32.74580001831055,-108.34185028076172,8425.06,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,32.24726486206055,-110.98920440673828,8520.557,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,32.34783935546875,-111.04048156738281,8532.455,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,41.85,-87.65,8557.912,US,True,,stop,0.0007334,704,22,0,7.39,"{""country"": ""US"", ""latitude"": 41.85, ""longitude"": -87.65}"
+moonshotai/kimi-k2.6,CoT,40.0,-98.0,8673.459,US,True,,stop,0.015342696,834,4401,4344,235.12,"{""reasoning"": ""Yellow diamond MUTCD-style warning signs and right-hand traffic confirm the Americas; flat rural interstate infrastructure is characteristic of the US Great Plains."", ""country"": ""US"", ""latitude"": 40.0, ""longitude"": -98.0}"
+qwen/qwen3.6-27b,no-CoT,33.4484,-112.074,8688.165,US,True,,stop,0.0002299,585,32,0,12.72,"{""country"": ""US"", ""latitude"": 33.4484, ""longitude"": -112.0740}"
+qwen/qwen3.5-397b-a17b,CoT,41.5868,-93.625,8690.75,US,True,,stop,0.0082782,665,2202,2105,43.56,"{""reasoning"": ""The yellow diamond-shaped warning signs (specifically the 'Merge' sign on the right) and right-hand traffic with white lane markings definitively place this in the United States. The flat, open terrain and utilitarian concrete overpass are highly characteristic of rural Interstate highways in the Midwest."", ""country"": ""US"", ""latitude"": 41.5868, ""longitude"": -93.6250}"
+x-ai/grok-4.3,CoT,42.35,-94.45,8794.789,US,True,,stop,0.0026065,788,783,714,6.85,"{""reasoning"": ""Yellow diamond warning signs, right-side driving, US-style guardrail and overpass design, flat rural terrain with transmission towers point to a US Interstate or state highway. Clear midday sun and vegetation suggest Midwest plains."", ""country"": ""US"", ""latitude"": 42.35, ""longitude"": -94.45}"
+qwen/qwen3.5-27b,no-CoT,39.7392,-104.9903,8925.102,US,True,,stop,0.00022707,585,32,0,3.94,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+qwen/qwen3.5-35b-a3b,no-CoT,39.7392,-104.9903,8925.102,US,True,,stop,0.0001366625,585,32,0,1.01,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+qwen/qwen3.5-397b-a17b,no-CoT,39.7392,-104.9903,8925.102,US,True,,stop,0.0004662,585,32,0,7.94,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+qwen/qwen3.6-35b-a3b,no-CoT,39.7392,-104.9903,8925.102,US,True,,stop,0.00018625,585,32,0,0.7,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+moonshotai/kimi-k2.6,no-CoT,45.764,4.8357,11440.227,FR,True,,stop,0.00081725,755,25,0,8.3," {""country"": ""FR"", ""latitude"": 45.7640, ""longitude"": 4.8357}"
+minimax/minimax-m3,no-CoT,52.5,9.4,12120.956,DE,True,,stop,0.00048522,919,223,255,12.38,"{""country"": ""DE"", ""latitude"": 52.5, ""longitude"": 9.4}"
+mistralai/mistral-medium-3-5,no-CoT,52.52,13.405,12360.063,DE,True,,stop,0.0014115,786,31,0,7.07,"{""country"": ""DE"", ""latitude"": 52.5200, ""longitude"": 13.4050}"
+minimax/minimax-m3,CoT,52.05,19.15,12690.975,PL,True,,stop,0.00076266,995,438,358,20.89,"{""reasoning"": ""Yellow diamond warning signs, flat agricultural terrain, modern motorway infrastructure with concrete overpass, and high-voltage pylons are characteristic of Polish autostrady. The driving on the right and road markings confirm a continental European motorway, most likely in central Poland."", ""country"": ""PL"", ""latitude"": 52.05, ""longitude"": 19.15}"
+openai/gpt-5.5,no-CoT,55.4372,37.5458,13953.343,RU,True,,stop,0.00408,678,23,0,2.46,"{""country"":""RU"",""latitude"":55.4372,""longitude"":37.5458}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,13962.885,RU,True,,stop,0.00019326,406,36,0,0.85,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,34.65351104736328,48.601192474365234,14300.545,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,34.99441146850586,52.84245300292969,14682.704,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,34.973609924316406,52.89196014404297,14686.439,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.11,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.42,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.66,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.71,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.23,

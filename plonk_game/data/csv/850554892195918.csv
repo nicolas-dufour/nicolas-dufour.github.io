@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-15.072688184556,-47.08614731081,0.0,BR,True,,,,,,,,"Formosa, Formosa, Goias, BR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-15.063040733337402,-47.10165786743164,1.981,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-14.998119354248047,-46.8411979675293,27.581,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,-15.7801,-47.9292,119.805,BR,True,,stop,0.00028722,767,96,88,4.24,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+x-ai/grok-4.3,CoT,-15.78,-47.93,119.863,BR,True,,stop,0.003054,676,1018,948,14.36,"{""reasoning"": ""Right-hand traffic (yellow center line positioned left of driver POV), tropical/subtropical broadleaf trees and wet-road vegetation, mammatus-like clouds, no visible signage or plates but typical developing-country highway guardrail."", ""country"": ""BR"", ""latitude"": -15.78, ""longitude"": -47.93}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-15.881932258605957,-48.49127197265625,175.414,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-15.78,-49.31,251.009,BR,True,,stop,0.00065706,843,388,311,11.45,"{""reasoning"": ""Right-hand traffic with yellow center line markings, tropical savanna/cerrado-type vegetation with dry deciduous trees, flat terrain, and the road style are all highly characteristic of central Brazil's interior highways, likely in Goiás or Minas Gerais."", ""country"": ""BR"", ""latitude"": -15.78, ""longitude"": -49.31}"
+moonshotai/kimi-k2.6,CoT,-15.0,-50.0,313.014,BR,True,,stop,0.008716428,682,2480,2405,69.6,"{""reasoning"": ""The tropical savanna vegetation, flat terrain, and tree types match Brazil's Cerrado biome, while the yellow double center lines, paved shoulders, and right-hand traffic are characteristic of Brazilian federal highways in the central-west region."", ""country"": ""BR"", ""latitude"": -15.0, ""longitude"": -50.0}"
+google/gemini-3.1-pro-preview,CoT,-15.0,-55.0,849.844,BR,True,,stop,0.007716,1272,431,361,12.18,"{
+  ""reasoning"": ""The yellow dashed center line and white edge lines, combined with driving on the right and tropical vegetation, strongly suggest a location in South America, likely Brazil."",
+  ""country"": ""BR"",
+  ""latitude"": -15.0,
+  ""longitude"": -55.0
+}"
+moonshotai/kimi-k2.6,no-CoT,-15.5,-55.0,850.126,BR,True,,stop,0.00061429,603,23,0,0.92,"{""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -55.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,-12.9777,-38.5016,954.842,BR,True,,stop,0.00018746,473,31,0,1.15,"{""country"": ""BR"", ""latitude"": -12.9777, ""longitude"": -38.5016}"
+anthropic/claude-opus-4.8,no-CoT,-15.5,-56.0,957.218,BR,True,,stop,0.00408,666,30,0,6.61,"{""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -56.0}"
+anthropic/claude-opus-4.8,CoT,-15.6,-56.1,968.306,BR,True,,stop,0.00641,797,97,0,12.13,"{""reasoning"": ""Two-lane highway with yellow center line, right-hand driving, tropical savanna vegetation and dry-season tree cover suggest interior Brazil or similar Latin American highway."", ""country"": ""BR"", ""latitude"": -15.6, ""longitude"": -56.1}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-24.781375885009766,-52.56644821166992,1221.691,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-32.70063781738281,-54.41135025024414,2095.163,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-34.928714752197266,-54.96152877807617,2343.93,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,10.5123,-85.3847,5088.6,CR,True,,stop,0.020565,621,582,516,15.21,"{""reasoning"":""Right-hand traffic with yellow centerline/white edge markings and tropical dry-forest vegetation point to Central America; the flat dry landscape is especially consistent with Guanacaste, Costa Rica."",""country"":""CR"",""latitude"":10.5123,""longitude"":-85.3847}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5436.607,,True,True,,,,,,7.66,
+qwen/qwen3.5-35b-a3b,no-CoT,35.7214,-78.8956,6565.489,US,True,,stop,0.000162225,473,31,0,1.6,"{""country"": ""US"", ""latitude"": 35.7214, ""longitude"": -78.8956}"
+xiaomi/mimo-v2.5,CoT,32.3,-84.1,6577.435,US,True,,stop,0.0011433576,787,3784,3708,48.39,"{""reasoning"": ""Visual clues include right-hand traffic and a yellow center line, which are standard in the United States. The vegetation consisting of pine and deciduous trees under a cloudy sky strongly suggests a location in the Southeastern United States."", ""country"": ""US"", ""latitude"": 32.3, ""longitude"": -84.1}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.2271,-80.8431,6629.048,US,True,,stop,0.00010617035,473,31,0,1.52,"{""country"": ""US"", ""latitude"": 35.2271, ""longitude"": -80.8431}"
+qwen/qwen3.5-27b,no-CoT,33.749,-84.388,6714.429,US,True,,stop,0.000140595,473,31,0,7.42,"{""country"": ""US"", ""latitude"": 33.7490, ""longitude"": -84.3880}"
+mistralai/mistral-medium-3-5,no-CoT,29.9511,-90.0715,6801.899,US,True,,stop,0.0011835,634,31,0,1.85,"{""country"": ""US"", ""latitude"": 29.9511, ""longitude"": -90.0715}"
+xiaomi/mimo-v2.5,no-CoT,30.5,-90.5,6873.085,US,True,,stop,7.97776e-05,708,25,0,2.9,"{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -90.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,30.2672,-97.7431,7402.202,US,True,,stop,0.00036468,473,31,0,3.03,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+qwen/qwen3.5-9b,no-CoT,30.2672,-97.7431,7402.202,US,True,,stop,5.205e-05,474,31,0,8.58,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+qwen/qwen3.6-27b,no-CoT,30.2672,-97.7431,7402.202,US,True,,stop,0.0001943,473,31,0,11.36,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+x-ai/grok-4.3,no-CoT,30.15,-97.85,7403.007,US,True,,stop,0.0005934,592,22,0,0.9,"{""country"": ""US"", ""latitude"": 30.15, ""longitude"": -97.85}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4194,9790.032,US,True,,stop,0.0001143,634,32,0,1.4,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4194}"
+google/gemma-4-31b-it,no-CoT,14.5,101.0,16586.345,TH,True,,stop,5.048e-05,272,31,0,2.91,"```json
+{""country"": ""TH"", ""latitude"": 14.5, ""longitude"": 101.0}
+```"
+openai/gpt-5.5,no-CoT,14.7862,100.9978,16588.867,TH,True,,stop,0.00341,544,23,0,1.48,"{""country"":""TH"",""latitude"":14.7862,""longitude"":100.9978}"
+google/gemini-3.1-pro-preview,no-CoT,16.432,102.823,16794.141,TH,True,,stop,0.004912,1190,211,177,3.77,"```json
+{""country"": ""TH"", ""latitude"": 16.432, ""longitude"": 102.823}
+```"
+google/gemini-3.5-flash,CoT (effort=high),16.4396,103.5254,16869.05,TH,True,,stop,0.0073155,1271,601,536,5.83,"{""reasoning"": ""The left-hand traffic, yellow dashed center line, and tropical deciduous vegetation are highly characteristic of rural Thailand, particularly in the Isan region."", ""country"": ""TH"", ""latitude"": 16.4396, ""longitude"": 103.5254}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),16.2541,103.9812,16917.132,TH,True,,stop,0.0021075,1189,36,0,2.15,"```json
+{""country"": ""TH"", ""latitude"": 16.2541, ""longitude"": 103.9812}
+```"
+google/gemini-3.5-flash,CoT (effort=low),12.1524,105.8912,17078.606,KH,True,,stop,0.006156,1272,472,404,10.12,"```json
+{""reasoning"": ""The flat landscape, tropical deciduous vegetation, right-hand traffic, and single dashed yellow center line are characteristic of national highways in Cambodia."", ""country"": ""KH"", ""latitude"": 12.1524, ""longitude"": 105.8912}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),13.1154,106.0125,17107.464,KH,True,,stop,0.0156855,1271,1531,1446,13.47,"{""reasoning"": ""The road has a yellow dashed center line and white edge lines with right-hand traffic, characteristic of Cambodia. The flat terrain and dry dipterocarp forest vegetation are highly typical of northern and eastern Cambodia, such as along National Highway 7."", ""country"": ""KH"", ""latitude"": 13.1154, ""longitude"": 106.0125}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.43,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.18,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.37,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,9.79,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.21,

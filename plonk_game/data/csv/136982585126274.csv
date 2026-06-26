@@ -1,0 +1,89 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,32.209218827333,-7.9873337513541,0.0,MA,True,,,,,,,,"Sidi Bou Othmane, Kelaa-Des-Sraghna, Marrakech-Tensift-Al Haouz, MA"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,32.28403091430664,-7.745688438415527,24.2,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,31.72991180419922,-8.232877731323242,58.112,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,31.5584774017334,-8.348861694335938,80.006,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,37.0,-4.0,645.563,ES,True,,stop,0.001131,634,24,0,1.02,"{""country"": ""ES"", ""latitude"": 37.0, ""longitude"": -4.0}"
+google/gemini-3.5-flash,CoT (effort=high),28.675,-13.875,687.559,ES,True,,stop,0.013671,1272,1307,1224,14.89,"{""reasoning"": ""The modern dual-carriageway highway with European-style concrete barriers and guardrails, combined with the extremely flat, sandy desert landscape and a European hatchback, points to the Canary Islands, specifically the FV-1 highway on Fuerteventura."", ""country"": ""ES"", ""latitude"": 28.675, ""longitude"": -13.875}"
+google/gemini-3.5-flash,CoT (effort=medium),27.5231,-13.0422,713.302,EH,True,,stop,0.0076575,1271,639,569,12.75,"{""reasoning"": ""The brand new dual carriageway with concrete central barriers running through a flat, sandy desert landscape is characteristic of the recently constructed N1 expressway in southern Morocco and Western Sahara."", ""country"": ""EH"", ""latitude"": 27.5231, ""longitude"": -13.0422}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),27.1251,-13.4125,770.68,MA,True,,stop,0.0020985,1189,35,0,1.57,"```json
+{""country"": ""MA"", ""latitude"": 27.1251, ""longitude"": -13.4125}
+```"
+google/gemini-3.5-flash,CoT (effort=low),26.1552,-14.4853,922.115,EH,True,,stop,0.005292,1272,376,307,3.24,"{""reasoning"": ""The flat, arid desert landscape combined with the high-quality asphalt highway, concrete median barrier, and characteristic hazy sky strongly points to the N1 highway in Western Sahara."", ""country"": ""EH"", ""latitude"": 26.1552, ""longitude"": -14.4853}"
+moonshotai/kimi-k2.6,CoT,34.0,3.0,1042.056,DZ,True,,stop,0.0288199,682,7043,7261,208.43,"{""reasoning"": ""The flat arid landscape, modern divided highway with concrete median barrier, and dark blue sedan typical of Algerian taxis indicate the A1 autoroute crossing Algeria's high plateau desert."", ""country"": ""DZ"", ""latitude"": 34.0, ""longitude"": 3.0}"
+google/gemini-3.1-pro-preview,CoT,24.5,-14.5,1067.581,EH,True,,stop,0.008172,1272,469,378,6.62,"{
+  ""reasoning"": ""The extremely flat, barren desert landscape and modern highway infrastructure with European-style road markings suggest North Africa or the Middle East. The presence of what appears to be a Dacia vehicle points strongly towards Morocco or Western Sahara, likely along the N1 coastal highway."",
+  ""country"": ""EH"",
+  ""latitude"": 24.5,
+  ""longitude"": -14.5
+}"
+minimax/minimax-m3,CoT,30.1,30.3,3631.757,EG,True,,stop,0.00090786,843,597,521,23.93,"{""reasoning"": ""Extremely flat arid desert with light sandy soil, hazy/dusty sky, modern divided highway with concrete median barrier and W-beam guardrails, right-hand driving. These features are highly characteristic of Egypt's Western Desert highway network."", ""country"": ""EG"", ""latitude"": 30.1, ""longitude"": 30.3}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3678.446,,True,True,,,,,,1.28,
+moonshotai/kimi-k2.6,no-CoT,29.9773,31.2859,3727.156,EG,True,,stop,0.00051939,602,25,0,22.05,"{""country"": ""EG"", ""latitude"": 29.9773, ""longitude"": 31.2859}"
+anthropic/claude-opus-4.8,CoT,30.0,31.5,3746.541,EG,True,,stop,0.00661,797,105,0,10.75,"{""reasoning"": ""Flat barren desert plain with hazy sky, right-hand traffic on a modern divided highway with metal guardrails, consistent with arid North Africa/Middle East—likely Egyptian desert highway."", ""country"": ""EG"", ""latitude"": 30.0, ""longitude"": 31.5}"
+anthropic/claude-opus-4.8,no-CoT,30.0,31.5,3746.541,EG,True,,stop,0.00408,666,30,0,10.04,"{""country"": ""EG"", ""latitude"": 30.0, ""longitude"": 31.5}"
+minimax/minimax-m3,no-CoT,30.5,32.3,3807.889,EG,True,,stop,0.00019176,752,23,0,4.52,"{""country"": ""EG"", ""latitude"": 30.5, ""longitude"": 32.3}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,30.24481773376465,47.757137298583984,5244.339,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,24.7136,46.6753,5352.175,SA,True,,stop,0.002064,676,622,541,13.09,"{
+  ""reasoning"": ""Arid flat desert landscape, hazy dusty sky, right-hand traffic with standard metal guardrails and white lane markings on a multi-lane asphalt highway point to the Arabian Peninsula; no vegetation or signage but the overall setting matches Saudi highways."",
+  ""country"": ""SA"",
+  ""latitude"": 24.7136,
+  ""longitude"": 46.6753
+}"
+qwen/qwen3.5-122b-a10b,no-CoT,24.7136,46.6753,5352.175,SA,True,,stop,0.0002041,473,39,0,2.23,"{
+  ""country"": ""SA"",
+  ""latitude"": 24.7136,
+  ""longitude"": 46.6753
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,24.7136,46.6753,5352.175,SA,True,,stop,0.000162225,473,31,0,2.16,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+qwen/qwen3.5-397b-a17b,no-CoT,24.7136,46.6753,5352.175,SA,True,,stop,0.0003794,473,31,0,1.42,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+qwen/qwen3.6-35b-a3b,no-CoT,24.7136,46.6753,5352.175,SA,True,,stop,0.00010195,473,31,0,1.44,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+x-ai/grok-4.3,no-CoT,24.7136,46.6753,5352.175,SA,True,,stop,0.0005984,592,24,0,1.98,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+xiaomi/mimo-v2.5,no-CoT,24.7136,46.6753,5352.175,SA,True,,stop,8.14576e-05,708,31,0,2.4,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+xiaomi/mimo-v2.5,CoT,24.492,46.678,5361.715,SA,True,,stop,0.0006919976,787,2172,2074,24.46,"```json
+{
+  ""reasoning"": ""The image shows a flat, arid desert landscape with right-hand traffic, a concrete median barrier, and highway infrastructure typical of the Arabian Peninsula. The specific combination of the washed-out sky, desert scrub, and road style strongly suggests a location in Saudi Arabia."",
+  ""country"": ""SA"",
+  ""latitude"": 24.492,
+  ""longitude"": 46.678
+}
+```"
+google/gemma-4-31b-it,no-CoT,24.1234,46.5678,5366.996,SA,True,,stop,6.718e-05,406,36,0,2.08,"```json
+{""country"": ""SA"", ""latitude"": 24.1234, ""longitude"": 46.5678}
+```"
+qwen/qwen3.5-397b-a17b,CoT,25.4521,48.1532,5459.783,SA,True,,stop,0.00787365,553,2556,1,205.41,"{
+""reasoning"": ""The image shows a right-hand traffic highway (concrete median on the left) traversing an extremely flat, arid desert landscape with pale soil, characteristic of the Eastern Province of Saudi Arabia. The road infrastructure, including the specific style of the concrete Jersey barrier and the metal guardrail on a concrete curb, along with the hazy sky, strongly points to a major inter-city highway in the Gulf region, most likely Saudi Arabia."",
+""country"": ""SA"",
+""latitude"": 25.4521,
+""longitude"": 48.1532
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,25.618579864501953,50.44956970214844,5666.942,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,25.554061889648438,50.52693176269531,5676.815,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,25.2697,51.1924,5750.636,QA,True,,stop,0.00341,544,23,0,2.52,"{""country"":""QA"",""latitude"":25.2697,""longitude"":51.1924}"
+openai/gpt-5.5,CoT,24.9587,51.1694,5761.638,QA,True,,stop,0.013545,621,348,264,21.84,"{""reasoning"":""A modern divided highway with right-hand traffic, Gulf-style plates, concrete median barriers, and completely flat sandy desert strongly points to the Arabian Peninsula. The sparse, low-relief landscape and road style are most consistent with Qatar, likely on a highway west/southwest of Doha."",""country"":""QA"",""latitude"":24.9587,""longitude"":51.1694}"
+qwen/qwen3.6-27b,no-CoT,24.4539,54.6053,6103.214,AE,True,,stop,0.00022418,473,31,0,17.7,"{""country"": ""AE"", ""latitude"": 24.4539, ""longitude"": 54.6053}"
+google/gemini-3.1-pro-preview,no-CoT,24.1234,55.1234,6166.019,AE,True,,stop,0.002798,1189,35,0,20.27,"```json
+{""country"": ""AE"", ""latitude"": 24.1234, ""longitude"": 55.1234}
+```"
+mistralai/mistral-small-2603,CoT,50.5,70.0,6498.928,KZ,True,,stop,0.0011868,716,1799,1990,14.36,"{""reasoning"": ""Blue license plates with white text and Cyrillic script on road signs indicate Kazakhstan, with right-hand traffic and flat steppe terrain confirming the location."", ""country"": ""KZ"", ""latitude"": 50.5, ""longitude"": 70.0}"
+qwen/qwen3.5-27b,no-CoT,40.1833,100.3,9105.68,CN,True,,stop,0.0002085,474,45,0,2.64,"```json
+{
+  ""country"": ""CN"",
+  ""latitude"": 40.1833,
+  ""longitude"": 100.3000
+}
+```"
+mistralai/mistral-small-2603,no-CoT,36.7783,-119.4179,9551.545,US,True,,stop,0.0001143,634,32,0,0.75,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+qwen/qwen3.5-9b,no-CoT,39.9042,116.4074,10165.051,CN,True,,stop,5.22e-05,474,32,0,5.32,"{""country"": ""CN"", ""latitude"": 39.9042, ""longitude"": 116.4074}"
+qwen/qwen3.6-35b-a3b,CoT,-34.61,147.53,17732.617,AU,True,,stop,0.0098574736,553,10120,10002,105.87,"```json
+{
+  ""reasoning"": ""The image shows a divided highway with a concrete median barrier (a 'kangaroo barrier' common in Australia) and right-hand traffic flow (camera in right lane, car overtaking in left lane). The flat, arid landscape with dry grass and hazy sky is characteristic of the Australian Riverina region, likely along the Hume Highway."",
+  ""country"": ""AU"",
+  ""latitude"": -34.61,
+  ""longitude"": 147.53
+}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,

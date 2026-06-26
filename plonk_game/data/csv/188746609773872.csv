@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-21.597531667507,23.669683327045,0.0,BW,True,,,,,,,,"Rakops, None, Central, BW"
+minimax/minimax-m3,no-CoT,-22.0,23.5,48.059,BW,True,,stop,0.00019176,752,23,0,5.72,"{""country"": ""BW"", ""latitude"": -22.0, ""longitude"": 23.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-20.516389,24.5025,148.056,BW,True,,stop,0.002118,1190,37,0,8.06,"```json
+{""country"": ""BW"", ""latitude"": -20.516389, ""longitude"": 24.5025}
+```"
+anthropic/claude-opus-4.8,no-CoT,-20.5,24.5,149.392,BW,True,,stop,0.00408,666,30,0,3.68,"{""country"": ""BW"", ""latitude"": -20.5, ""longitude"": 24.5}"
+openai/gpt-5.5,no-CoT,-20.2487,22.9109,169.427,BW,True,,stop,0.00344,544,24,0,2.21,"{""country"":""BW"",""latitude"":-20.2487,""longitude"":22.9109}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-20.066574096679688,23.186603546142578,177.483,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-20.00238800048828,23.250415802001953,182.647,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-20.5,25.2,200.282,BW,True,,stop,0.00621,797,89,0,4.14,"{""reasoning"": ""Flat semi-arid grassland with whitish saline/calcrete soil and a sandy track suggests the Makgadikgadi pans region of Botswana."", ""country"": ""BW"", ""latitude"": -20.5, ""longitude"": 25.2}"
+google/gemini-3.5-flash,CoT (effort=medium),-20.5512,25.2485,200.924,BW,True,,stop,0.0068205,1271,546,474,11.74,"{""reasoning"": ""The extremely flat terrain, light-colored cracked clay road, and sparse dry grassland are characteristic of the salt pan margins in Botswana, such as the Makgadikgadi Pans region."", ""country"": ""BW"", ""latitude"": -20.5512, ""longitude"": 25.2485}"
+openai/gpt-5.5,CoT,-20.4647,25.2143,203.877,BW,True,,stop,0.0124,812,278,278,321.51,"{""reasoning"":""The extremely flat semi-arid grassland with white calcrete/salt-pan track and sparse scrub is characteristic of Botswana’s Makgadikgadi/Nxai Pan region rather than a marked public road. The lack of road furniture and the pale cracked surface strongly suggest an interior pan access track near Gweta/Nata."",""country"":""BW"",""latitude"":-20.4647,""longitude"":25.2143}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-19.708736419677734,23.719093322753906,210.087,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,-20.5,25.5,225.765,BW,True,,stop,0.000272952,603,23,0,1.68,"{""country"": ""BW"", ""latitude"": -20.5, ""longitude"": 25.5}"
+google/gemini-3.5-flash,CoT (effort=low),-20.1854,25.2483,227.041,BW,True,,stop,0.0034995,1271,177,105,9.4,"{""reasoning"": ""The flat, grassy savanna landscape with a light-colored, cracked clay track is highly characteristic of the salt pan margins in Botswana, such as the Makgadikgadi Pans region."", ""country"": ""BW"", ""latitude"": -20.1854, ""longitude"": 25.2483}"
+google/gemini-3.5-flash,CoT (effort=high),-20.15,25.25,229.921,BW,True,,stop,0.009045,1272,793,718,12.68,"```json
+{""reasoning"": ""The extremely flat terrain, dry grassy savanna, and cracked white clay road are highly characteristic of the salt pan margins in Botswana, such as the Makgadikgadi or Nxai Pan region."", ""country"": ""BW"", ""latitude"": -20.15, ""longitude"": 25.25}
+```"
+minimax/minimax-m3,CoT,-20.45,25.55,233.17,BW,True,,stop,0.00059466,843,336,251,21.18,"{""reasoning"": ""Vast flat terrain with cracked white/grey earth and sparse grass is characteristic of the Makgadikgadi salt pans in Botswana, where grassland meets pan edges. The semi-arid vegetation, clear dry-season sky, and absence of any infrastructure match this region perfectly."", ""country"": ""BW"", ""latitude"": -20.45, ""longitude"": 25.55}"
+moonshotai/kimi-k2.6,CoT,-20.6,25.9,256.583,BW,True,,stop,0.01118,680,2673,2785,71.34,"{""reasoning"": ""The straight, white, cracked salt-crusted road cutting through vast, flat savanna grassland under a cloudless sky is characteristic of the Makgadikgadi Pan region in Botswana."", ""country"": ""BW"", ""latitude"": -20.6, ""longitude"": 25.9}"
+google/gemini-3.1-pro-preview,no-CoT,-18.9833,24.0333,293.152,BW,True,,stop,0.0028,1190,35,0,8.2,"```json
+{""country"": ""BW"", ""latitude"": -18.9833, ""longitude"": 24.0333}
+```"
+google/gemini-3.1-pro-preview,CoT,-18.855,16.322,824.915,NA,True,,stop,0.005206,1271,222,129,4.18,"{
+  ""reasoning"": ""The extremely flat landscape, white chalky/salty soil, and dry grassy plains are highly characteristic of the Etosha Pan region in Namibia. The specific camera artifact (halo in the sky) is also common in Street View coverage of this area."",
+  ""country"": ""NA"",
+  ""latitude"": -18.855,
+  ""longitude"": 16.322
+}"
+mistralai/mistral-medium-3-5,no-CoT,-23.5,15.0,914.933,NA,True,,stop,0.0011385,634,25,0,2.27,"{""country"": ""NA"", ""latitude"": -23.5, ""longitude"": 15.0}"
+mistralai/mistral-small-2603,CoT,-2.3333,34.8333,2459.104,TZ,True,,stop,0.0003648,716,429,430,17.25,"{""reasoning"": ""The open grassland with acacia-like vegetation and clear blue sky is characteristic of the Serengeti ecosystem in Tanzania."", ""country"": ""TZ"", ""latitude"": -2.3333, ""longitude"": 34.8333}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3515.622,,True,True,,,,,,8.4,
+x-ai/grok-4.3,no-CoT,-36.85,-62.95,8301.334,AR,True,,stop,0.0005934,592,22,0,0.91,"{""country"": ""AR"", ""latitude"": -36.85, ""longitude"": -62.95}"
+qwen/qwen3.5-397b-a17b,CoT,46.4521,61.8532,8484.822,KZ,True,,stop,0.0055038,553,1450,1337,17.82,"{""reasoning"": ""The image displays a vast, flat steppe landscape with dry, low grass and a worn, light-colored asphalt road stretching to a perfectly flat horizon, which is highly characteristic of the semi-arid regions in Western Kazakhstan (e.g., Kyzylorda or Atyrau regions). The intense blue sky and lack of trees or significant infrastructure further support this location."", ""country"": ""KZ"", ""latitude"": 46.4521, ""longitude"": 61.8532}"
+xiaomi/mimo-v2.5,CoT,48.5,67.0,8903.167,KZ,True,,stop,0.0001462776,787,223,119,9.48,"{""reasoning"": ""The image shows a straight dirt road traversing a flat, grassy steppe landscape with sparse vegetation and pale, possibly salty soil, which is highly characteristic of the vast plains found in Central Asia, particularly Kazakhstan. The lack of distinctive vegetation, signage, or infrastructure, combined with the specific terrain and sky, strongly points to the Kazakh Steppe."", ""country"": ""KZ"", ""latitude"": 48.5, ""longitude"": 67.0}"
+qwen/qwen3.6-35b-a3b,CoT,49.5,72.5,9256.469,KZ,True,,stop,0.00674261185,553,6893,6795,66.13,"```json
+{
+  ""reasoning"": ""The vast, flat steppe landscape with sparse, yellowish-green grass and a straight, unpaved road stretching to the horizon is characteristic of the Kazakh Steppe. The bright blue sky and lack of trees or infrastructure further support this location in Central Asia."",
+  ""country"": ""KZ"",
+  ""latitude"": 49.5,
+  ""longitude"": 72.5
+}
+```"
+google/gemma-4-31b-it,no-CoT,-24.5,128.0,10369.428,AU,True,,stop,6.924e-05,406,31,0,8.2,"```json
+{""country"": ""AU"", ""latitude"": -24.5, ""longitude"": 128.0}
+```"
+qwen/qwen3.6-27b,no-CoT,-28.0,138.0,11066.344,AU,True,,stop,0.0001843,473,26,0,6.46,"{""country"": ""AU"", ""latitude"": -28.0, ""longitude"": 138.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,-25.7631,139.4821,11320.479,AU,True,,stop,0.00018954,473,32,0,7.36,"{""country"": ""AU"", ""latitude"": -25.7631, ""longitude"": 139.4821}"
+x-ai/grok-4.3,CoT,38.5,-98.5,14240.271,US,True,,stop,0.0019265,676,567,503,8.55,"{""reasoning"": ""Featureless flat prairie/steppe with cracked unpaved road, sparse short grass, and clear arid sky matches US Great Plains; no other signage/vegetation/road clues contradict this."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -98.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.2565,-100.4832,14391.991,US,True,,stop,0.00010295,473,32,0,1.29,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -100.4832}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.62637710571289,-101.7190170288086,14519.228,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.471004486083984,-101.77861785888672,14525.492,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,38.5025,-101.8319,14529.9,US,True,,stop,9.836e-05,474,32,0,1.95,"{""country"": ""US"", ""latitude"": 38.5025, ""longitude"": -101.8319}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,37.7906608581543,-101.99324035644531,14548.654,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,35.5,-102.0,14558.772,US,True,,stop,8.00576e-05,708,26,0,2.84,"{""country"": ""US"", ""latitude"": 35.5, ""longitude"": -102.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,41.2345,-102.6789,14574.869,US,True,,stop,0.00036828,473,32,0,3.7,"{""country"": ""US"", ""latitude"": 41.2345, ""longitude"": -102.6789}"
+qwen/qwen3.5-27b,no-CoT,41.1533,-104.8203,14753.725,US,True,,stop,0.00021944,474,37,0,6.27,"```json
+{""country"": ""US"", ""latitude"": 41.1533, ""longitude"": -104.8203}
+```"
+qwen/qwen3.5-9b,no-CoT,41.8781,-112.0856,15330.676,US,True,,stop,5.22e-05,474,32,0,4.04,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -112.0856}"
+mistralai/mistral-small-2603,no-CoT,36.5323,-116.9325,15877.745,US,True,,stop,0.000142875,634,32,0,1.37,"{""country"": ""US"", ""latitude"": 36.5323, ""longitude"": -116.9325}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.49,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.13,

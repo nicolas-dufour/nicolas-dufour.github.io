@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,42.293312295583,75.952715792686,0.0,KG,True,,,,,,,,"Kochkor, None, Naryn, KG"
+google/gemini-3.1-pro-preview,CoT,42.325,76.052,8.892,KG,True,,stop,0.006264,1272,310,226,11.55,"{
+  ""reasoning"": ""The arid mountainous landscape, unpaved road next to a lake, and the distinct camera smudge in the sky are characteristic of Street View coverage in Kyrgyzstan, likely near the Orto-Tokoy Reservoir."",
+  ""country"": ""KG"",
+  ""latitude"": 42.325,
+  ""longitude"": 76.052
+}"
+google/gemini-3.5-flash,CoT (effort=low),42.3581,75.8742,9.673,KG,True,,stop,0.0044445,1271,282,214,4.53,"{""reasoning"": ""The arid, mountainous landscape next to a turquoise body of water under an overcast sky is highly characteristic of the region around the Orto-Tokoy Reservoir in Kyrgyzstan."", ""country"": ""KG"", ""latitude"": 42.3581, ""longitude"": 75.8742}"
+google/gemini-3.5-flash,CoT (effort=medium),42.3531,75.8412,11.325,KG,True,,stop,0.0165765,1271,1630,1555,19.53,"{""reasoning"": ""The extremely arid, barren landscape with rounded dark mountains and a turquoise lake matches the environment around the Orto-Tokoy Reservoir in Kyrgyzstan, specifically looking west along the dirt tracks on its southern shore."", ""country"": ""KG"", ""latitude"": 42.3531, ""longitude"": 75.8412}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),42.2145,75.7521,18.693,KG,True,,stop,0.0020985,1189,35,0,8.08,"```json
+{""country"": ""KG"", ""latitude"": 42.2145, ""longitude"": 75.7521}
+```"
+google/gemini-3.1-pro-preview,no-CoT,42.3583,76.1833,20.287,KG,True,,stop,0.0028,1190,35,0,1.88,"```json
+{""country"": ""KG"", ""latitude"": 42.3583, ""longitude"": 76.1833}
+```"
+google/gemini-3.5-flash,CoT (effort=high),42.4612,76.0754,21.215,KG,True,,stop,0.0373485,1271,3938,3838,35.59,"```json
+{""reasoning"": ""The image shows a dirt road running along the south shore of a large lake with barren mountains in the background, characteristic of the western end of Lake Issyk-Kul in Kyrgyzstan. The sun position on the left (south) and the water on the right (north) indicate a westward travel direction."", ""country"": ""KG"", ""latitude"": 42.4612, ""longitude"": 76.0754}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.495548248291016,75.22787475585938,107.09,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.01243591308594,75.0082015991211,162.612,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,40.96160125732422,74.89764404296875,172.094,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,43.5,78.0,214.035,KZ,True,,stop,0.006935,797,118,0,3.48,"{""reasoning"": ""Arid steppe with sparse vegetation, dirt road, distant mountains and a reservoir/lake suggest Central Asian highlands, consistent with Kazakhstan's Kapchagai or similar arid mountain-lake terrain."", ""country"": ""KZ"", ""latitude"": 43.5, ""longitude"": 78.0}"
+anthropic/claude-opus-4.8,no-CoT,43.6,78.3,240.01,KZ,True,,stop,0.004105,666,31,0,2.06,"{""country"": ""KZ"", ""latitude"": 43.6, ""longitude"": 78.3}"
+moonshotai/kimi-k2.6,no-CoT,48.0,89.5,1234.927,MN,True,,stop,0.000289692,603,23,0,2.53,"{""country"": ""MN"", ""latitude"": 48.0, ""longitude"": 89.5}"
+moonshotai/kimi-k2.6,CoT,49.25,93.3,1546.697,MN,True,,stop,0.018411255,681,4992,5424,50.17,"{""reasoning"": ""The arid high-altitude basin containing a large lake with barren mountains behind, an unpaved road through sparse cold-desert shrubbery, and a complete absence of fencing or infrastructure is characteristic of the Mongolian Great Lakes Depression near the Uvs–Khyargas lake system. The gray overcast sky and diffuse sun match the harsh continental climate of western Mongolia."", ""country"": ""MN"", ""latitude"": 49.25, ""longitude"": 93.3}"
+qwen/qwen3.6-35b-a3b,no-CoT,31.5,88.5,1635.112,CN,True,,stop,0.0001348,474,25,0,2.1,"{""country"": ""CN"", ""latitude"": 31.5, ""longitude"": 88.5}"
+xiaomi/mimo-v2.5,CoT,33.0,57.0,1955.943,IR,True,,stop,0.0005480776,787,1658,1585,23.72,"{""reasoning"": ""The arid landscape with sparse shrubs, unpaved dirt road, and adjacent water body suggests a semi-desert region typical of the Middle East, likely Iran due to the terrain and overcast climate."", ""country"": ""IR"", ""latitude"": 33.0, ""longitude"": 57.0}"
+minimax/minimax-m3,CoT,38.7,41.5,2920.3,TR,True,,stop,0.00083826,843,539,459,15.48,"{""reasoning"": ""Arid semi-desert terrain with sparse steppe vegetation, brownish mountains with snow/fog on peaks, and a reservoir/lake in the valley along a dirt road are characteristic of the highland plateaus of eastern Anatolia, Turkey."", ""country"": ""TR"", ""latitude"": 38.7, ""longitude"": 41.5}"
+mistralai/mistral-small-2603,CoT,40.75,-4.0,6395.796,ES,True,,stop,0.00045264,716,687,746,5.42,"{""reasoning"": ""Right-hand traffic, European vehicle style, dry grassland vegetation, and mountainous terrain indicate Southern Europe. The combination strongly suggests central Spain's Meseta region."", ""country"": ""ES"", ""latitude"": 40.75, ""longitude"": -4.0}"
+minimax/minimax-m3,no-CoT,40.0,-119.5,10732.969,US,True,,stop,0.00048474,767,235,272,11.48,"{""country"": ""US"", ""latitude"": 40.0, ""longitude"": -119.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,39.58225631713867,-118.59598541259766,10793.44,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,39.47684860229492,-118.56664276123047,10805.425,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,39.147132873535156,-118.7964096069336,10837.706,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,37.8651,-118.7675,10978.142,US,True,,stop,0.00010295,473,32,0,7.68,"{""country"": ""US"", ""latitude"": 37.8651, ""longitude"": -118.7675}"
+qwen/qwen3.5-27b,no-CoT,37.7272,-118.5892,10996.161,US,True,,stop,0.000142155,473,32,0,1.21,"{""country"": ""US"", ""latitude"": 37.7272, ""longitude"": -118.5892}"
+google/gemma-4-26b-a4b-it,no-CoT,37.55,-117.5,11032.915,,True,,stop,6.134e-05,406,47,0,2.47,"Please own own-image-analysis-placeholder
+{""country"": ""US"", ""latitude"": 37.5500, ""longitude"": -117.500 own than-image-placeholder}"
+qwen/qwen3.5-397b-a17b,no-CoT,37.285,-118.456,11046.662,US,True,,stop,0.0003287,473,30,0,1.89,"{""country"": ""US"", ""latitude"": 37.285, ""longitude"": -118.456}"
+qwen/qwen3.5-9b,no-CoT,36.5765,-118.9943,11114.91,US,True,,stop,5.22e-05,474,32,0,9.37,"{""country"": ""US"", ""latitude"": 36.5765, ""longitude"": -118.9943}"
+google/gemma-4-31b-it,no-CoT,36.25,-117.5,11175.246,US,True,,stop,6.558e-05,406,32,0,14.64,"```json
+{""country"": ""US"", ""latitude"": 36.25, ""longitude"": -117.5}
+```"
+x-ai/grok-4.3,CoT,36.25,-114.65,11215.33,US,True,,stop,0.002174,676,666,592,7.14,"{""reasoning"": ""Arid desert scrub, unpaved road, distant mountains and reservoir match the US Southwest (Basin and Range province); overcast high-desert light and lack of any non-US signage/vehicles point to Nevada/California border region."", ""country"": ""US"", ""latitude"": 36.25, ""longitude"": -114.65}"
+qwen/qwen3.5-122b-a10b,no-CoT,36.1069,-114.7403,11229.959,US,True,,stop,0.0001898,474,32,0,12.52,"{""country"": ""US"", ""latitude"": 36.1069, ""longitude"": -114.7403}"
+xiaomi/mimo-v2.5,no-CoT,36.05,-114.75,11236.102,US,True,,stop,8.06176e-05,708,28,0,8.9,"{""country"": ""US"", ""latitude"": 36.05, ""longitude"": -114.75}"
+x-ai/grok-4.3,no-CoT,35.198,-116.072,11312.019,US,True,,stop,0.0007278,592,22,0,2.42,"{""country"": ""US"", ""latitude"": 35.198, ""longitude"": -116.072}"
+mistralai/mistral-medium-3-5,no-CoT,-23.0,-68.0,16060.563,CL,True,,stop,0.0011385,634,25,0,1.97,"{""country"": ""CL"", ""latitude"": -23.0, ""longitude"": -68.0}"
+qwen/qwen3.6-27b,no-CoT,-33.05,-70.67,16926.213,CL,True,,stop,0.0002548,474,31,0,7.43,"{""country"": ""CL"", ""latitude"": -33.0500, ""longitude"": -70.6700}"
+qwen/qwen3.6-35b-a3b,CoT,-47.056,-68.456,17176.928,AR,True,,stop,0.00309203635,553,3111,2971,75.41,"```json
+{
+    ""reasoning"": ""The image displays a classic Patagonian steppe landscape with sparse, low-lying scrub vegetation (likely saltbush or sagebrush) and a large, milky-turquoise lake on the right, which is characteristic of glacial lakes in the Andes. The unpaved road and overcast sky with a pale sun suggest a high-latitude, remote location in Southern Argentina, specifically the area surrounding Lago Cardiel."",
+    ""country"": ""AR"",
+    ""latitude"": -47.056,
+    ""longitude"": -68.456
+}
+```"
+openai/gpt-5.5,CoT,-47.5462,-71.7518,17426.083,AR,True,,stop,0.015015,621,397,300,18.76,"{""reasoning"":""The treeless arid steppe, gravel road, low scrub, cold overcast climate, and Andean lake-and-mountain scenery are characteristic of remote Argentine Patagonia, especially Santa Cruz. The lack of road markings or signage fits minor gravel roads around Patagonian lakes such as Lago Posadas/nearby Andean foothills."",""country"":""AR"",""latitude"":-47.5462,""longitude"":-71.7518}"
+mistralai/mistral-small-2603,no-CoT,-41.3333,-72.9667,17451.38,CL,True,,stop,0.0001137,634,31,0,8.63,"{""country"": ""CL"", ""latitude"": -41.3333, ""longitude"": -72.9667}"
+qwen/qwen3.5-397b-a17b,CoT,-48.524,-72.582,17482.987,AR,True,,stop,0.0075882,553,2029,1929,382.67,"{""reasoning"": ""The landscape features the reddish soil, low scrub vegetation, and distant mountains characteristic of the Patagonian steppe in Argentina's Santa Cruz province. The unpaved road running alongside a large lake (likely Lago Posadas or Lago Belgrano) with the Andes in the background confirms this specific remote region."", ""country"": ""AR"", ""latitude"": -48.524, ""longitude"": -72.582}"
+openai/gpt-5.5,no-CoT,-49.9123,-72.8746,17488.568,AR,True,,stop,0.00347,544,25,0,8.75,"{""country"":""AR"",""latitude"":-49.9123,""longitude"":-72.8746}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.3,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.15,

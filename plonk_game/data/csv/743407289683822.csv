@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,48.693680378738,55.905023670471,0.0,KZ,True,,,,,,,,"Bayganin, None, Aqtoebe, KZ"
+openai/gpt-5.5,CoT,46.1593,53.3978,339.06,KZ,True,,stop,0.013075,755,310,225,21.93,"{""reasoning"":""Flat treeless Eurasian steppe with dusty unpaved industrial access roads, Soviet-style utility poles, and distant oil/gas infrastructure strongly suggests western Kazakhstan. The arid Caspian lowland environment points most likely to the Tengiz oil field area near Atyrau."",""country"":""KZ"",""latitude"":46.1593,""longitude"":53.3978}"
+openai/gpt-5.5,no-CoT,47.106,51.91,346.148,KZ,True,,stop,0.00405,678,22,0,1.26,"{""country"":""KZ"",""latitude"":47.106,""longitude"":51.91}"
+minimax/minimax-m3,CoT,48.5,51.0,361.291,KZ,True,,stop,0.00075186,995,429,349,21.26,"{""reasoning"": ""Flat steppe landscape with sandy soil, concrete utility poles typical of Central Asian infrastructure, and active road construction in a remote arid region strongly indicate Kazakhstan's steppe region, likely along a highway being upgraded in the western/central part of the country."", ""country"": ""KZ"", ""latitude"": 48.5, ""longitude"": 51.0}"
+moonshotai/kimi-k2.6,no-CoT,47.5,65.0,687.906,KZ,True,,stop,0.00064575,754,24,0,2.5,"{""country"": ""KZ"", ""latitude"": 47.5, ""longitude"": 65.0}"
+anthropic/claude-opus-4.8,CoT,49.5,67.0,812.018,KZ,True,,stop,0.00677,949,81,0,3.12,"{""reasoning"": ""Flat treeless steppe with dirt road under construction and sparse power poles strongly suggests the vast Kazakh steppe."", ""country"": ""KZ"", ""latitude"": 49.5, ""longitude"": 67.0}"
+anthropic/claude-opus-4.8,no-CoT,48.5,67.0,815.479,KZ,True,,stop,0.004865,818,31,0,8.94,"{""country"": ""KZ"", ""latitude"": 48.5, ""longitude"": 67.0}"
+mistralai/mistral-medium-3-5,no-CoT,48.0196,66.9237,816.871,KZ,True,,stop,0.001419,786,32,0,17.03,"{""country"": ""KZ"", ""latitude"": 48.0196, ""longitude"": 66.9237}"
+x-ai/grok-4.3,no-CoT,47.85,67.35,851.417,KZ,True,,stop,0.0007334,704,22,0,1.05,"{""country"": ""KZ"", ""latitude"": 47.85, ""longitude"": 67.35}"
+google/gemma-4-31b-it,no-CoT,48.5,68.0,888.782,KZ,True,,stop,6.452e-05,404,30,0,9.67,"```json
+{""country"": ""KZ"", ""latitude"": 48.5, ""longitude"": 68.0}
+```"
+qwen/qwen3.5-397b-a17b,CoT,49.4521,68.1234,893.025,KZ,True,,stop,0.00589005,665,1878,1,48.23,"{
+ ""reasoning"": ""The vast, flat, treeless grassy steppe landscape is highly characteristic of Central Asia, specifically Kazakhstan. The simple wooden utility poles with cross-arms are a common infrastructure style in rural Kazakhstan, distinguishing it from Mongolia (which typically uses concrete poles) and other steppe regions."",
+ ""country"": ""KZ"",
+ ""latitude"": 49.4521,
+ ""longitude"": 68.1234
+}"
+xiaomi/mimo-v2.5,CoT,51.02,71.04,1113.22,KZ,True,,stop,0.0006026776,899,1797,1701,26.95,"{""reasoning"": ""The image depicts a vast, flat steppe landscape with an unpaved dirt road under construction, flanked by simple utility poles on the left and taller infrastructure lighting poles on the right; this combination of terrain, infrastructure style, and the vehicle hood suggests the Kazakh Steppe, likely near Astana."", ""country"": ""KZ"", ""latitude"": 51.02, ""longitude"": 71.04}"
+x-ai/grok-4.3,CoT,49.85,72.35,1197.568,KZ,True,,stop,0.0021615,788,605,536,12.18,"{""reasoning"": ""Vast flat steppe/grassland with unpaved dirt road, tire tracks, sparse power lines, distant earthworks and white structures under bright cumulus sky; classic Central Asian (Kazakh) rural landscape."", ""country"": ""KZ"", ""latitude"": 49.85, ""longitude"": 72.35}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,47.65880584716797,74.8827896118164,1408.222,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,49.028053283691406,79.2112808227539,1698.634,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,48.8992919921875,79.26726531982422,1704.637,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,47.5,106.0,3654.807,MN,True,,stop,0.00047082,919,211,249,6.64,"{""country"": ""MN"", ""latitude"": 47.5, ""longitude"": 106.0}"
+moonshotai/kimi-k2.6,CoT,47.2042,105.8764,3658.069,MN,True,,stop,0.008343756,834,2361,2294,107.42,"{""reasoning"": ""Vast unfenced grassy steppe with a wide unpaved road under construction, wooden utility poles, and distant white circular structures resembling traditional Mongolian gers indicate rural central Mongolia."", ""country"": ""MN"", ""latitude"": 47.2042, ""longitude"": 105.8764}"
+qwen/qwen3.6-35b-a3b,no-CoT,47.85,106.5,3675.87,MN,True,,stop,0.0001604,586,27,0,8.61,"{""country"": ""MN"", ""latitude"": 47.85, ""longitude"": 106.5}"
+xiaomi/mimo-v2.5,no-CoT,47.9,106.9,3701.782,MN,True,,stop,9.57376e-05,820,26,0,7.52,"{""country"": ""MN"", ""latitude"": 47.9, ""longitude"": 106.9}"
+qwen/qwen3.6-27b,no-CoT,47.9189,106.9176,3702.26,MN,True,,stop,0.0002299,585,32,0,9.79,"{""country"": ""MN"", ""latitude"": 47.9189, ""longitude"": 106.9176}"
+google/gemini-3.1-pro-preview,no-CoT,47.9167,106.9167,3702.285,MN,True,,stop,0.002882,1225,36,0,9.86,"```json
+{""country"": ""MN"", ""latitude"": 47.9167, ""longitude"": 106.9167}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,47.9167,106.9167,3702.285,MN,True,,stop,0.000189225,585,32,0,7.87,"{""country"": ""MN"", ""latitude"": 47.9167, ""longitude"": 106.9167}"
+google/gemini-3.5-flash,CoT (effort=high),46.3512,106.2734,3721.826,MN,True,,stop,0.0088005,1307,760,697,7.32,"{""reasoning"": ""The vast, flat steppe landscape, unpaved dirt road under construction, and distinctive wooden utility poles are highly characteristic of rural Mongolia."", ""country"": ""MN"", ""latitude"": 46.3512, ""longitude"": 106.2734}"
+google/gemini-3.1-pro-preview,CoT,47.5,107.0,3724.811,MN,True,,stop,0.00553,1307,243,156,4.64,"{
+  ""reasoning"": ""The vast, flat grassy steppe, wooden utility poles, and the visible white car hood at the bottom are classic indicators of Google Street View coverage in Mongolia. The presence of a ger (yurt) in the distance further confirms this."",
+  ""country"": ""MN"",
+  ""latitude"": 47.5,
+  ""longitude"": 107.0
+}"
+google/gemini-3.5-flash,CoT (effort=medium),46.4231,107.8912,3832.899,MN,True,,stop,0.0066405,1307,520,448,5.97,"{""reasoning"": ""The vast, flat steppe landscape, unpaved wide dirt road under construction, and characteristic wooden utility poles are highly indicative of rural Mongolia, captured from a Google Street View vehicle."", ""country"": ""MN"", ""latitude"": 46.4231, ""longitude"": 107.8912}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),47.3156,108.9678,3869.831,MN,True,,stop,0.0021615,1225,36,0,1.81,"```json
+{""country"": ""MN"", ""latitude"": 47.3156, ""longitude"": 108.9678}
+```"
+google/gemini-3.5-flash,CoT (effort=low),47.3125,110.6543,3987.231,MN,True,,stop,0.0039855,1307,225,163,314.31,"{""reasoning"": ""The vast, flat steppe landscape with a wide dirt road under construction and characteristic wooden utility poles is highly indicative of the Mongolian steppe."", ""country"": ""MN"", ""latitude"": 47.3125, ""longitude"": 110.6543}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,41.322078704833984,-1.0737240314483643,4446.721,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.2779426574707,-1.7156543731689453,4495.361,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,41.1234,113.5678,4507.188,CN,True,,stop,0.00021892,586,32,0,12.32,"{""country"": ""CN"", ""latitude"": 41.1234, ""longitude"": 113.5678}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,39.81683349609375,-1.6679916381835938,4576.688,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,49.2167,126.05,4930.124,CN,True,,stop,6.31e-05,586,30,0,7.36,"{""country"": ""CN"", ""latitude"": 49.2167, ""longitude"": 126.05}"
+google/gemma-4-26b-a4b-it,no-CoT,4.0,106.91,6913.716,,True,,stop,5.868e-05,404,41,0,2.85,"{""country"": ""MN"", ""latitude"": 4 own 47.921, ""longitude"": 106.91 own 106.921}"
+qwen/qwen3.5-397b-a17b,no-CoT,46.8721,-102.7891,9190.905,US,True,,stop,0.00034485,585,32,0,11.44,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -102.7891}"
+qwen/qwen3.5-27b,no-CoT,44.5,-104.5,9478.287,US,True,,stop,0.00021411,585,26,0,2.15,"{""country"": ""US"", ""latitude"": 44.5, ""longitude"": -104.5}"
+mistralai/mistral-small-2603,no-CoT,40.0582,-105.2276,9973.371,US,True,,stop,0.0001371,786,32,0,3.64,"{""country"": ""US"", ""latitude"": 40.0582, ""longitude"": -105.2276}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,13.01,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.67,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.15,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.29,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.51,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.12,

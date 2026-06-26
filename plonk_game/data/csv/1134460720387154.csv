@@ -1,0 +1,70 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.826379132186,-96.894419889673,0.0,US,True,,,,,,,,"El Dorado, Butler County, Kansas, US"
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.7512,-97.3301,39.187,US,True,,stop,0.0021,1190,35,0,1.26,"```json
+{""country"": ""US"", ""latitude"": 37.7512, ""longitude"": -97.3301}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.07889175415039,-97.31769561767578,46.537,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.082054138183594,-97.39656066894531,52.408,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.083213806152344,-97.4046630859375,53.075,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),36.154,-97.312,189.622,US,True,,stop,0.0077655,1271,651,580,6.59,"{""reasoning"": ""The highway features a yellow left shoulder line, white dashed lane markings, and a concrete median barrier typical of US Interstates, set in a flat, grassy landscape characteristic of the Great Plains."", ""country"": ""US"", ""latitude"": 36.154, ""longitude"": -97.312}"
+google/gemini-3.1-pro-preview,CoT,36.1234,-97.3456,193.557,US,True,,stop,0.005964,1272,285,199,4.47,"{
+  ""reasoning"": ""Yellow left edge line, dashed white lane dividers, and right shoulder rumble strips indicate a North American highway. The flat, dry landscape with sparse trees is characteristic of the Great Plains region in the United States."",
+  ""country"": ""US"",
+  ""latitude"": 36.1234,
+  ""longitude"": -97.3456
+}"
+x-ai/grok-4.3,no-CoT,36.1699,-95.9405,202.736,US,True,,stop,0.0005984,592,24,0,0.87,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -95.9405}"
+google/gemini-3.5-flash,CoT (effort=low),35.9521,-97.3912,213.041,US,True,,stop,0.0040305,1271,236,160,9.31,"{""reasoning"": ""The divided highway with a concrete median barrier, yellow left shoulder line, and flat, dry grassy landscape with sparse trees is highly characteristic of the central United States, likely along an interstate in Oklahoma or Kansas."", ""country"": ""US"", ""latitude"": 35.9521, ""longitude"": -97.3912}"
+google/gemini-3.5-flash,CoT (effort=medium),35.6528,-97.4392,246.516,US,True,,stop,0.0054435,1271,393,308,10.6,"{""reasoning"": ""The divided highway with a concrete median barrier, yellow left shoulder line, and rumble strips on the right shoulder is characteristic of a US Interstate. The flat terrain, dry vegetation, and sparse deciduous trees suggest the Great Plains region, likely Oklahoma or Kansas."", ""country"": ""US"", ""latitude"": 35.6528, ""longitude"": -97.4392}"
+anthropic/claude-opus-4.8,CoT,35.5,-97.5,264.259,US,True,,stop,0.006385,797,96,0,10.04,"{""reasoning"": ""Wide US-style interstate with concrete median barrier, metal guardrails, flat dry terrain with brown grass and scattered trees suggests US Great Plains; right-side driving."", ""country"": ""US"", ""latitude"": 35.5, ""longitude"": -97.5}"
+google/gemma-4-31b-it,no-CoT,39.8283,-98.5795,266.182,US,True,,stop,6.718e-05,406,36,0,11.14,"```json
+{""country"": ""US"", ""latitude"": 39.8283, ""longitude"": -98.5795}
+```"
+anthropic/claude-opus-4.8,no-CoT,35.4676,-97.5164,268.088,US,True,,stop,0.004105,666,31,0,8.31,"{""country"": ""US"", ""latitude"": 35.4676, ""longitude"": -97.5164}"
+google/gemini-3.1-pro-preview,no-CoT,35.4676,-97.5164,268.088,US,True,,stop,0.0028,1190,35,0,2.31,"```json
+{""country"": ""US"", ""latitude"": 35.4676, ""longitude"": -97.5164}
+```"
+x-ai/grok-4.3,CoT,35.467,-97.514,268.109,US,True,,stop,0.001819,676,524,455,11.28,"{""reasoning"": ""Right-hand traffic with US-style metal guardrail, dashed white lane lines + solid yellow edge line, red vehicle hood, flat open plains with sparse autumn foliage and clear blue sky all point to central US interstate."", ""country"": ""US"", ""latitude"": 35.467, ""longitude"": -97.514}"
+qwen/qwen3.5-9b,no-CoT,35.2221,-97.4477,293.771,US,True,,stop,5.205e-05,474,31,0,14.95,"{""country"": ""US"", ""latitude"": 35.2221, ""longitude"": -97.4477}"
+moonshotai/kimi-k2.6,no-CoT,35.0,-97.0,314.421,US,True,,stop,0.00061429,603,23,0,1.97,"{""country"": ""US"", ""latitude"": 35.0, ""longitude"": -97.0}"
+moonshotai/kimi-k2.6,CoT,34.5,-97.5,373.847,US,True,,stop,0.010194408,682,2909,2841,84.69,"{""reasoning"": ""Right-hand traffic with US-standard interstate infrastructure including W-beam guardrails, concrete median barriers, shoulder rumble strips, and dry plains scrub vegetation indicates the southern Great Plains of the United States."", ""country"": ""US"", ""latitude"": 34.5, ""longitude"": -97.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.4676,-101.7065,502.982,US,True,,stop,0.00010295,473,32,0,1.71,"{""country"": ""US"", ""latitude"": 35.4676, ""longitude"": -101.7065}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.2271,-101.8313,527.258,US,True,,stop,0.0002379,473,40,0,1.67,"{
+  ""country"": ""US"",
+  ""latitude"": 35.2271,
+  ""longitude"": -101.8313
+}"
+openai/gpt-5.5,no-CoT,32.6933,-96.9441,570.79,US,True,,stop,0.00344,544,24,0,1.22,"{""country"":""US"",""latitude"":32.6933,""longitude"":-96.9441}"
+minimax/minimax-m3,CoT,32.45,-100.05,663.004,US,True,,stop,0.00069066,843,416,342,16.54,"{""reasoning"": ""Flat semi-arid terrain with sparse low brush, US-style highway with yellow center line, concrete median barrier, and W-beam guardrail, plus utility poles suggest the American Southwest, likely West Texas along a major interstate."", ""country"": ""US"", ""latitude"": 32.45, ""longitude"": -100.05}"
+xiaomi/mimo-v2.5,no-CoT,32.35,-100.4,687.277,US,True,,stop,8.06176e-05,708,28,0,0.88,"{""country"": ""US"", ""latitude"": 32.35, ""longitude"": -100.40}"
+qwen/qwen3.6-27b,no-CoT,39.7392,-104.9903,732.96,US,True,,stop,0.0001963,473,32,0,16.71,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+qwen/qwen3.6-35b-a3b,no-CoT,39.7392,-104.9903,732.96,US,True,,stop,0.0001071356,473,32,0,3.41,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+minimax/minimax-m3,no-CoT,30.3,-97.8,841.028,US,True,,stop,0.00030882,767,114,118,5.44,"{""country"": ""US"", ""latitude"": 30.3, ""longitude"": -97.8}"
+qwen/qwen3.5-397b-a17b,CoT,30.4886,-99.7739,857.728,US,True,,stop,0.0107941,553,3016,2855,231.7,"{
+""reasoning"": ""The image shows a right-hand traffic highway with a yellow left-edge line and white right-shoulder line, standard for US divided highways, flanked by a W-beam guardrail and concrete median barrier. The vegetation consists of dry grasses and scrubby trees (likely juniper or oak) typical of the Edwards Plateau region in Central/West Texas, under a clear, high-intensity sun."",
+""country"": ""US"",
+""latitude"": 30.4886,
+""longitude"": -99.7739
+}"
+xiaomi/mimo-v2.5,CoT,30.35,-99.2,857.93,US,True,,stop,0.0005536776,787,1678,1584,19.18,"{""reasoning"": ""The image displays driving on the right side of the road with US-standard yellow center lines and white shoulder lines, including distinct rumble strips. The vegetation, consisting of scrubby oaks, junipers, and dry brown grass on reddish soil, is highly characteristic of the Texas Hill Country region."", ""country"": ""US"", ""latitude"": 30.35, ""longitude"": -99.20}"
+openai/gpt-5.5,CoT,30.5487,-100.2746,866.728,US,True,,stop,0.013935,621,361,273,9.66,"{""reasoning"":""Right-side driving with US-style interstate lane markings, rumble strips, metal guardrail, and concrete median barrier indicates the United States. The dry scrubland, flat-to-gently rolling terrain, and winter-brown vegetation are most consistent with a rural Texas interstate, likely west/central Texas."",""country"":""US"",""latitude"":30.5487,""longitude"":-100.2746}"
+mistralai/mistral-medium-3-5,no-CoT,35.0844,-106.6504,923.715,US,True,,stop,0.001191,634,32,0,1.86,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -106.6504}"
+qwen/qwen3.5-397b-a17b,no-CoT,35.0844,-106.6504,923.715,US,True,,stop,0.0003357,473,32,0,7.4,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -106.6504}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.00993347167969,-81.23717498779297,1442.467,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,43.780181884765625,-79.69861602783203,1587.551,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,43.78630447387695,-79.66889190673828,1590.029,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,36.1699,-115.1398,1628.112,US,True,,stop,0.000142875,634,32,0,1.58,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.5-27b,no-CoT,39.0438,-76.6412,1765.591,US,True,,stop,0.00023764,474,44,0,8.54,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 39.0438,
+  ""longitude"": -76.6412
+}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10612.528,,True,True,,,,,,6.47,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.36,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,22.19,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.51,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.08,

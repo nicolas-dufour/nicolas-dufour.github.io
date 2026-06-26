@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,15.256694679460791,-14.006452423637686,0.0,SN,True,,,,,,,,"Ranerou, None, Matam, SN"
+google/gemini-3.5-flash,CoT (effort=high),15.2833,-13.9667,5.19,SN,True,,stop,0.0123375,1271,1159,1069,10.2,"```json
+{""reasoning"": ""The Sahelian landscape with flat terrain and French-style dashed white outer road markings points to Senegal, while the reversed 'TOU' sticker on the windshield likely refers to 'TOUBA', a major holy city and transport hub in the country."", ""country"": ""SN"", ""latitude"": 15.2833, ""longitude"": -13.9667}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),15.6325,-13.3184,84.762,SN,True,,stop,0.0020985,1189,35,0,3.91,"```json
+{""country"": ""SN"", ""latitude"": 15.6325, ""longitude"": -13.3184}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,15.816603660583496,-15.318246841430664,153.707,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),15.3421,-15.4832,158.672,SN,True,,stop,0.004734,1272,314,231,9.7,"```json
+{""reasoning"": ""The dry Sahelian landscape, flat terrain, and French-style road markings suggest West Africa, while the 'TOU' sticker on the windshield strongly points to Senegal (referencing the holy city of Touba)."", ""country"": ""SN"", ""latitude"": 15.3421, ""longitude"": -15.4832}
+```"
+google/gemini-3.1-pro-preview,no-CoT,14.86,-15.87,204.905,SN,True,,stop,0.004588,1190,184,153,9.45,"```json
+{""country"": ""SN"", ""latitude"": 14.86, ""longitude"": -15.87}
+```"
+google/gemini-3.1-pro-preview,CoT,14.805,-15.921,211.649,SN,True,,stop,0.006312,1272,314,224,4.47,"{
+  ""reasoning"": ""The arid Sahel landscape, reddish soil, and dashed white edge lines on the road are characteristic of Senegal. The reversed letters 'TOU' on the windshield likely refer to the city of Touba, a common destination for local transport."",
+  ""country"": ""SN"",
+  ""latitude"": 14.805,
+  ""longitude"": -15.921
+}"
+google/gemini-3.5-flash,CoT (effort=medium),15.8125,-16.1842,241.353,SN,True,,stop,0.0068835,1271,553,487,5.66,"{""reasoning"": ""The flat, dry Sahelian landscape with sparse acacia trees and reddish soil, combined with the specific white dashed shoulder markings, is highly characteristic of northern Senegal."", ""country"": ""SN"", ""latitude"": 15.8125, ""longitude"": -16.1842}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,13.315947532653809,-6.858814239501953,799.792,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,13.648797988891602,-6.576427459716797,819.705,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,13.5,-6.5,831.724,ML,True,,stop,0.006435,797,98,0,9.76,"{""reasoning"": ""Dry savanna with scattered trees, reddish soil, and a flat two-lane road suggests Sahelian West Africa; right-hand traffic and dusty haze point to Mali."", ""country"": ""ML"", ""latitude"": 13.5, ""longitude"": -6.5}"
+anthropic/claude-opus-4.8,no-CoT,13.5,-6.5,831.724,ML,True,,stop,0.00408,666,30,0,2.86,"{""country"": ""ML"", ""latitude"": 13.5, ""longitude"": -6.5}"
+moonshotai/kimi-k2.6,no-CoT,14.5,-5.5,917.963,ML,True,,stop,0.000283212,603,23,0,1.71,"{""country"": ""ML"", ""latitude"": 14.5, ""longitude"": -5.5}"
+openai/gpt-5.5,CoT,12.2665,-2.1548,1322.201,BF,True,,stop,0.016365,621,442,355,17.69,"{""reasoning"":""Flat Sahelian savanna with dry grass/acacia scrub and right-hand traffic on a French-style two-lane paved road points to inland francophone West Africa. The arid roadside and road markings are most consistent with Burkina Faso, likely on a highway west of Ouagadougou."",""country"":""BF"",""latitude"":12.2665,""longitude"":-2.1548}"
+openai/gpt-5.5,no-CoT,12.3667,-1.5333,1384.342,BF,True,,stop,0.00344,544,24,0,2.33,"{""country"":""BF"",""latitude"":12.3667,""longitude"":-1.5333}"
+xiaomi/mimo-v2.5,CoT,12.3714,-1.5197,1385.636,BF,True,,stop,0.0001471176,787,226,131,9.21,"{
+  ""reasoning"": ""The image shows a flat, arid landscape with reddish soil and scattered acacia-like vegetation typical of the Sahel region. The vehicle appears to be driving on the right side of the road, and the general infrastructure and environment strongly resemble rural West Africa."",
+  ""country"": ""BF"",
+  ""latitude"": 12.3714,
+  ""longitude"": -1.5197
+}"
+moonshotai/kimi-k2.6,CoT,13.65,5.6,2117.956,NE,True,,stop,0.046291248,682,13469,13398,584.21,"{""reasoning"": ""Flat Sahelian acacia savanna, straight paved highway with dashed edge markings, and dry-season vegetation match Niger's RN1 corridor, while the bold windshield lettering style is typical of West African bus operators."", ""country"": ""NE"", ""latitude"": 13.65, ""longitude"": 5.6}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,2290.373,,True,True,,,,,,6.83,
+mistralai/mistral-small-2603,no-CoT,48.8584,2.2945,4020.632,FR,True,,stop,0.0001131,634,30,0,0.98,"{""country"": ""FR"", ""latitude"": 48.8584, ""longitude"": 2.2945}"
+x-ai/grok-4.3,CoT,-20.12,23.85,5708.555,BW,True,,stop,0.004034,676,1410,1341,10.38,"{""reasoning"": ""Arid savanna with scattered acacia-type trees, red-brown soil, right-hand roadside pole and dashed center line indicate left-side driving; Toyota windshield decal and empty two-lane asphalt road match southern African highways."", ""country"": ""BW"", ""latitude"": -20.12, ""longitude"": 23.85}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,0.4212641417980194,39.72382736206055,6122.87,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,-24.8563,26.1569,6233.262,ZA,True,,stop,5.205e-05,474,31,0,2.63,"{""country"": ""ZA"", ""latitude"": -24.8563, ""longitude"": 26.1569}"
+minimax/minimax-m3,CoT,46.3,44.2,6362.578,RU,True,,stop,0.00060426,843,344,260,16.64,"{""reasoning"": ""Reversed Cyrillic letters 'ТОТ' visible on windshield (likely Russian/Bulgarian), flat dry steppe landscape with sparse trees and arid grassland typical of southern Russia/Kalmykia region, two-lane asphalt road with standard white dashed center markings."", ""country"": ""RU"", ""latitude"": 46.3, ""longitude"": 44.2}"
+qwen/qwen3.6-35b-a3b,no-CoT,-25.7479,28.1804,6452.02,ZA,True,,stop,0.0001444,474,31,0,2.99,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 28.1804}"
+qwen/qwen3.5-122b-a10b,no-CoT,-25.7461,28.1881,6452.48,ZA,True,,stop,0.00018746,473,31,0,1.85,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.1881}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.7461,28.2293,6455.633,ZA,True,,stop,0.00010195,473,31,0,1.75,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.2293}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,8.0530366897583,46.20524215698242,6587.318,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,-24.5,-65.0,7080.584,AR,True,,stop,0.00019452,754,22,0,8.47,"{""country"": ""AR"", ""latitude"": -24.5, ""longitude"": -65.0}{""country"": ""AR"", ""latitude"": -24.5, ""longitude"": -65.0}"
+google/gemma-4-31b-it,no-CoT,24.5854,73.7125,9084.355,IN,True,,stop,6.718e-05,406,36,0,2.38,"```json
+{""country"": ""IN"", ""latitude"": 24.5854, ""longitude"": 73.7125}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,20.951061248779297,78.93836975097656,9702.857,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,21.15,79.09,9712.191,IN,True,,stop,0.0005934,592,22,0,6.87,"{""country"": ""IN"", ""latitude"": 21.15, ""longitude"": 79.09}"
+mistralai/mistral-medium-3-5,no-CoT,17.385,78.4867,9761.72,IN,True,,stop,0.0011835,634,31,0,1.09,"{""country"": ""IN"", ""latitude"": 17.3850, ""longitude"": 78.4867}"
+xiaomi/mimo-v2.5,no-CoT,-23.7,133.8,16521.026,AU,True,,stop,8.00576e-05,708,26,0,3.65,"{""country"": ""AU"", ""latitude"": -23.7, ""longitude"": 133.8}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.7,133.88,16529.056,AU,True,,stop,0.00036828,473,32,0,2.8,"{""country"": ""AU"", ""latitude"": -23.7000, ""longitude"": 133.8800}"
+qwen/qwen3.5-27b,no-CoT,-33.8688,151.2093,17468.651,AU,True,,stop,0.0002091,473,32,0,20.25,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+qwen/qwen3.6-27b,no-CoT,-33.8688,151.2093,17468.651,AU,True,,stop,0.0001963,473,32,0,5.62,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.94,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,22.25,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,9.4,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.24,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.7,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.07,

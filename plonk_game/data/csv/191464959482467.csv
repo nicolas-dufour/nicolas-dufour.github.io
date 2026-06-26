@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-30.11830040812,-51.021732311358,0.0,BR,True,,,,,,,,"Viamao, Viamao, Rio Grande do Sul, BR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-29.80219078063965,-51.29258346557617,43.776,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-29.775665283203125,-51.276397705078125,45.317,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-29.6,-51.1,58.124,BR,True,,stop,0.00408,666,30,0,2.37,"{""country"": ""BR"", ""latitude"": -29.6, ""longitude"": -51.1}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-29.397512435913086,-51.074039459228516,80.307,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-29.7,-52.4,140.751,BR,True,,stop,0.006185,797,88,0,9.94,"{""reasoning"": ""Double yellow center line, reddish soil, eucalyptus-like vegetation, and painted concrete utility pole base suggest rural southern Brazil."", ""country"": ""BR"", ""latitude"": -29.7, ""longitude"": -52.4}"
+google/gemini-3.5-flash,CoT (effort=low),-27.0542,-48.9581,395.809,BR,True,,stop,0.0034905,1271,176,113,9.06,"{""reasoning"": ""The concrete utility pole with painted yellow and green bands at the base, double yellow center lines, and lush vegetation are characteristic of southern Brazil."", ""country"": ""BR"", ""latitude"": -27.0542, ""longitude"": -48.9581}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-32.825435638427734,-54.33442687988281,435.05,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-26.2831,-49.0552,467.948,BR,True,,stop,0.0021,1190,35,0,1.25,"```json
+{""country"": ""BR"", ""latitude"": -26.2831, ""longitude"": -49.0552}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-25.4284,-49.5321,541.675,BR,True,,stop,0.0096915,1271,865,793,7.39,"{""reasoning"": ""The concrete utility pole with a painted base in the colors of the Brazilian flag, combined with the double yellow center lines and lush subtropical vegetation, indicates Brazil, likely in the southern region."", ""country"": ""BR"", ""latitude"": -25.4284, ""longitude"": -49.5321}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-34.75835418701172,-54.951045989990234,634.034,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-34.831809997558594,-54.98646926879883,642.523,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,-23.5,-48.5,777.231,BR,True,,stop,0.0004035976,787,1142,1075,67.24,"{
+  ""reasoning"": ""The utility pole painted with green and yellow stripes is characteristic of Brazil, and the double yellow road lines indicate right-hand traffic consistent with Brazilian roads."",
+  ""country"": ""BR"",
+  ""latitude"": -23.5,
+  ""longitude"": -48.5
+}"
+openai/gpt-5.5,CoT,-23.6594,-47.0308,819.849,BR,True,,stop,0.016875,621,459,374,10.26,"{""reasoning"":""Right-hand traffic with Brazilian-style double yellow centerlines, white edge lines, concrete utility poles with green/yellow painted bases, red soil and subtropical vegetation point strongly to rural southeastern Brazil. The landscape and road infrastructure fit the São Paulo interior/Greater São Paulo rural fringe."",""country"":""BR"",""latitude"":-23.6594,""longitude"":-47.0308}"
+openai/gpt-5.5,no-CoT,-23.4127,-46.9789,846.598,BR,True,,stop,0.00347,544,25,0,8.24,"{""country"":""BR"",""latitude"":-23.4127,""longitude"":-46.9789}"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,850.032,BR,True,,stop,0.0011835,634,31,0,7.26,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+mistralai/mistral-small-2603,no-CoT,-23.5505,-46.6333,850.032,BR,True,,stop,0.0001137,634,31,0,10.68,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+moonshotai/kimi-k2.6,no-CoT,-23.5505,-46.6333,850.032,BR,True,,stop,0.00062229,603,25,0,7.88,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,850.032,BR,True,,stop,0.00018772,474,31,0,13.22,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-27b,no-CoT,-23.5505,-46.6333,850.032,BR,True,,stop,0.0002067,473,31,0,19.05,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5505,-46.6333,850.032,BR,True,,stop,0.0003322,473,31,0,2.28,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.6333,850.032,BR,True,,stop,0.0003954,473,31,0,12.51,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-35b-a3b,no-CoT,-23.5505,-46.6333,850.032,BR,True,,stop,0.000157,473,31,0,1.51,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+google/gemini-3.5-flash,CoT (effort=medium),-22.9835,-46.8452,895.314,BR,True,,stop,0.0082785,1271,708,631,6.5,"{""reasoning"": ""The double yellow center lines, concrete utility pole with painted green, yellow, and blue bands at the base, and lush rolling green terrain with reddish soil are highly characteristic of southeastern Brazil, particularly São Paulo state."", ""country"": ""BR"", ""latitude"": -22.9835, ""longitude"": -46.8452}"
+qwen/qwen3.5-9b,no-CoT,-22.6226,-47.3433,910.3,BR,True,,stop,5.205e-05,474,31,0,4.4,"{""country"": ""BR"", ""latitude"": -22.6226, ""longitude"": -47.3433}"
+minimax/minimax-m3,no-CoT,-22.5,-47.0,936.954,BR,True,,stop,0.00030882,767,114,133,10.21,"{""country"": ""BR"", ""latitude"": -22.5, ""longitude"": -47.0}"
+minimax/minimax-m3,CoT,-21.85,-47.45,986.08,BR,True,,stop,0.00064266,843,376,296,18.47,"{""reasoning"": ""Yellow/green painted utility pole base (standard Brazilian electric company marking), red-orange lateritic soil on roadside, tropical/subtropical vegetation, and double yellow center line on rural highway are all highly characteristic of rural Brazil, likely interior São Paulo state."", ""country"": ""BR"", ""latitude"": -21.85, ""longitude"": -47.45}"
+moonshotai/kimi-k2.6,CoT,-21.75,-45.25,1094.485,BR,True,,stop,0.007108668,682,2011,1938,48.57,"{""reasoning"": ""The red lateritic soil on the roadside shoulder, tropical vegetation, and concrete utility poles with distinctive yellow and blue/green painted bands are classic hallmarks of rural highways in southeastern Brazil, particularly Minas Gerais."", ""country"": ""BR"", ""latitude"": -21.75, ""longitude"": -45.25}"
+google/gemini-3.1-pro-preview,no-CoT,-22.5,-43.5,1130.542,BR,True,,stop,0.004814,1189,203,174,4.17,"```json
+{""country"": ""BR"", ""latitude"": -22.5, ""longitude"": -43.5}
+```"
+google/gemini-3.1-pro-preview,CoT,-20.5,-44.5,1253.734,BR,True,,stop,0.007332,1272,399,319,16.52,"{
+  ""reasoning"": ""The utility pole painted with green, yellow, and blue bands strongly suggests Brazil. The double yellow road lines, red soil, and vegetation are consistent with southeastern Brazil, such as Minas Gerais or São Paulo."",
+  ""country"": ""BR"",
+  ""latitude"": -20.5,
+  ""longitude"": -44.5
+}"
+x-ai/grok-4.3,no-CoT,-15.7942,-47.8825,1624.619,BR,True,,stop,0.0005984,592,24,0,2.03,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8825}"
+xiaomi/mimo-v2.5,no-CoT,-15.78,-47.93,1625.223,BR,True,,stop,8.03376e-05,708,27,0,2.08,"{""country"": ""BR"", ""latitude"": -15.78, ""longitude"": -47.93}"
+google/gemma-4-31b-it,no-CoT,-15.7801,-47.9292,1625.228,BR,True,,stop,7.124e-05,406,36,0,9.8,"```json
+{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6342.193,,True,True,,,,,,6.46,
+qwen/qwen3.5-35b-a3b,no-CoT,30.2672,-97.7431,8336.84,US,True,,stop,0.00010195,473,31,0,7.84,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+x-ai/grok-4.3,CoT,14.872,100.613,16658.961,TH,True,,stop,0.0023515,676,737,666,5.61,"{""reasoning"": ""Double yellow center lines + white edge lines, left-side driving implied by camera position, tropical broadleaf trees and red dirt shoulder, plus utility poles with distinctive blue/green bands point to Thailand (common on provincial highways)."", ""country"": ""TH"", ""latitude"": 14.872, ""longitude"": 100.613}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,13.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.58,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.32,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,

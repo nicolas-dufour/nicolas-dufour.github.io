@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,55.725049221002,49.439543167327,0.0,RU,True,,,,,,,,"Pestretsy, None, Tatarstan, RU"
+moonshotai/kimi-k2.6,CoT,56.32,44.0,344.346,RU,True,,stop,0.013562208,682,3898,3820,194.11,"{""reasoning"": ""Dense stands of European white birch alongside a divided highway with right-hand traffic and a yellow shoulder line are classic markers of the Russian federal highway network in the Central Federal District or Volga region; the vehicle profile and road maintenance style further match Russia."", ""country"": ""RU"", ""latitude"": 56.32, ""longitude"": 44.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,56.38344192504883,43.394676208496094,382.279,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,57.89860153198242,56.66691589355469,501.565,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,57.890235900878906,56.70292282104492,503.082,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,56.3,37.8,725.449,RU,True,,stop,0.002454,676,778,710,6.59,"{""reasoning"": ""Dense white-barked birch forest lining a right-hand traffic asphalt highway with yellow edge line and white lane markings is iconic of central/northern Russia; modern white sedan and summer foliage further support this region."", ""country"": ""RU"", ""latitude"": 56.3, ""longitude"": 37.8}"
+x-ai/grok-4.3,no-CoT,55.75,37.62,739.024,RU,True,,stop,0.0005934,592,22,0,0.87,"{""country"": ""RU"", ""latitude"": 55.75, ""longitude"": 37.62}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,739.14,RU,True,,stop,6.378e-05,406,36,0,6.6,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+anthropic/claude-opus-4.8,CoT,55.0,73.4,1508.911,RU,True,,stop,0.00591,797,77,0,9.38,"{""reasoning"": ""Birch forest, right-hand traffic, and road style suggest Russian Siberian highway through taiga/birch belt."", ""country"": ""RU"", ""latitude"": 55.0, ""longitude"": 73.4}"
+anthropic/claude-opus-4.8,no-CoT,55.0,73.4,1508.911,RU,True,,stop,0.00408,666,30,0,2.39,"{""country"": ""RU"", ""latitude"": 55.0, ""longitude"": 73.4}"
+qwen/qwen3.6-27b,no-CoT,61.52401,23.80454,1604.551,FI,True,,stop,0.00022958,473,33,0,15.64,"{""country"": ""FI"", ""latitude"": 61.52401, ""longitude"": 23.80454}"
+qwen/qwen3.5-9b,no-CoT,54.7167,77.4167,1765.949,RU,True,,stop,5.205e-05,474,31,0,10.67,"{""country"": ""RU"", ""latitude"": 54.7167, ""longitude"": 77.4167}"
+google/gemini-3.1-pro-preview,no-CoT,55.0415,82.9346,2096.534,RU,True,,stop,0.008618,1189,520,485,13.77,"```json
+{""country"": ""RU"", ""latitude"": 55.0415, ""longitude"": 82.9346}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),55.0142,82.9461,2098.073,RU,True,,stop,0.0021,1190,35,0,7.72,"```json
+{""country"": ""RU"", ""latitude"": 55.0142, ""longitude"": 82.9461}
+```"
+openai/gpt-5.5,no-CoT,55.4208,83.9452,2146.948,RU,True,,stop,0.00341,544,23,0,2.64,"{""country"":""RU"",""latitude"":55.4208,""longitude"":83.9452}"
+qwen/qwen3.5-122b-a10b,no-CoT,56.1234,92.8765,2661.466,RU,True,,stop,0.0002163,473,31,0,1.62,"{""country"": ""RU"", ""latitude"": 56.1234, ""longitude"": 92.8765}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,64.83543395996094,-148.13037109375,6526.397,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,64.81571960449219,-148.04953002929688,6529.305,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,64.7958,-147.5164,6536.399,US,True,,stop,0.029085,621,866,786,19.33,"{""reasoning"":""Right-hand traffic with North American-style yellow left-edge/median markings on a divided highway points to the US/Canada rather than Europe/Russia. The dense boreal birch forest and flat taiga roadside are highly characteristic of interior Alaska around Fairbanks."",""country"":""US"",""latitude"":64.7958,""longitude"":-147.5164}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,59.72052764892578,-127.46910858154297,7175.209,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,56.732,-111.381,7391.76,CA,True,,stop,5.21304e-05,787,169,75,47.17,"{""reasoning"": ""The presence of extensive birch and aspen forests combined with the style of road markings (yellow line on shoulder, dashed white center) is characteristic of northern North America, specifically Western Canada or Alaska. The vegetation and flat terrain strongly suggest the boreal forest region of Alberta or Saskatchewan."", ""country"": ""CA"", ""latitude"": 56.732, ""longitude"": -111.381}"
+xiaomi/mimo-v2.5,no-CoT,56.7,-111.4,7395.479,CA,True,,stop,8.00576e-05,708,26,0,1.28,"{""country"": ""CA"", ""latitude"": 56.7, ""longitude"": -111.4}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7618.929,,True,True,,,,,,13.03,
+minimax/minimax-m3,CoT,53.2,-105.8,7693.069,CA,True,,stop,0.00072906,843,448,364,22.9,"{""reasoning"": ""Yellow edge line markings, right-hand driving, and the white sedan style indicate North America. The dense aspen/birch and conifer mixed forest on flat terrain is characteristic of the Canadian boreal/parkland transition, likely along a Saskatchewan or Manitoba provincial highway."", ""country"": ""CA"", ""latitude"": 53.2, ""longitude"": -105.8}"
+qwen/qwen3.6-35b-a3b,no-CoT,53.7443,-113.4909,7743.234,CA,True,,stop,0.00015825,473,32,0,7.11,"{""country"": ""CA"", ""latitude"": 53.7443, ""longitude"": -113.4909}"
+qwen/qwen3.5-35b-a3b,no-CoT,53.7267,-113.4625,7744.83,CA,True,,stop,9.836e-05,474,32,0,1.85,"{""country"": ""CA"", ""latitude"": 53.7267, ""longitude"": -113.4625}"
+google/gemini-3.5-flash,CoT (effort=low),53.545,-112.245,7750.033,CA,True,,stop,0.0042825,1271,264,185,9.8,"{""reasoning"": ""The divided highway with a yellow left-shoulder line, wide grassy median, and dense birch/aspen forest is highly characteristic of the Canadian Prairies/Boreal transition zone, likely along Highway 16 in Alberta."", ""country"": ""CA"", ""latitude"": 53.545, ""longitude"": -112.245}"
+google/gemini-3.5-flash,CoT (effort=high),53.5812,-112.8543,7753.548,CA,True,,stop,0.0280695,1271,2907,2802,28.36,"```json
+{""reasoning"": ""The solid yellow line on the left edge of the carriageway next to a grassy median indicates a divided highway in North America. The dense, uniform stand of trembling aspen (Populus tremuloides) is highly characteristic of the Aspen Parkland region in Alberta, Canada, particularly along Highway 16 near Elk Island."", ""country"": ""CA"", ""latitude"": 53.5812, ""longitude"": -112.8543}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),53.5123,-112.2456,7753.611,CA,True,,stop,0.0072435,1271,593,513,5.34,"{""reasoning"": ""The divided highway with a yellow left-edge line and a dense forest of paper birch and trembling aspen is highly characteristic of the boreal transition zone in Western Canada, specifically along major routes like Highway 16 in Alberta."", ""country"": ""CA"", ""latitude"": 53.5123, ""longitude"": -112.2456}"
+google/gemini-3.1-pro-preview,CoT,53.5444,-113.3239,7763.161,CA,True,,stop,0.006718,1271,348,262,6.28,"{
+  ""reasoning"": ""The solid yellow line on the left edge of the carriageway indicates North America. The dense birch forest and wide grassy median are characteristic of the boreal transition zones in western Canada, such as Alberta."",
+  ""country"": ""CA"",
+  ""latitude"": 53.5444,
+  ""longitude"": -113.3239
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,53.5461,-113.4938,7764.961,CA,True,,stop,0.0003357,473,32,0,15.04,"{""country"": ""CA"", ""latitude"": 53.5461, ""longitude"": -113.4938}"
+minimax/minimax-m3,no-CoT,46.5,-82.0,7778.043,CA,True,,stop,0.00030162,767,108,110,3.39,"{""country"": ""CA"", ""latitude"": 46.5, ""longitude"": -82.0}"
+qwen/qwen3.5-27b,no-CoT,47.5615,-116.7842,8458.486,US,True,,stop,0.0002085,474,45,0,2.91,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 47.5615,
+  ""longitude"": -116.7842
+}
+```"
+mistralai/mistral-medium-3-5,no-CoT,44.5,-110.5,8712.437,US,True,,stop,0.001146,634,26,0,1.09,"{""country"": ""US"", ""latitude"": 44.5, ""longitude"": -110.5}"
+mistralai/mistral-small-2603,no-CoT,45.5152,-122.6784,8733.459,US,True,,stop,0.0001143,634,32,0,5.17,"{""country"": ""US"", ""latitude"": 45.5152, ""longitude"": -122.6784}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.39,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.28,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.16,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.33,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.65,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.27,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.28,

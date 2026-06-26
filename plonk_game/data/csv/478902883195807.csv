@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,23.408718659223,85.343760179526,0.0,IN,True,,,,,,,,"Kanke, Ranchi, Jharkhand, IN"
+anthropic/claude-opus-4.8,CoT,23.35,85.3,7.911,IN,True,,stop,0.006485,797,100,0,3.25,"{""reasoning"": ""Granite tor outcrops, dry deciduous landscape, brick buildings and Indian-style construction suggest the Jharkhand/Chhotanagpur plateau region of eastern India."", ""country"": ""IN"", ""latitude"": 23.35, ""longitude"": 85.30}"
+anthropic/claude-opus-4.8,no-CoT,23.3441,85.3096,7.987,IN,True,,stop,0.00413,666,32,0,11.94,"{""country"": ""IN"", ""latitude"": 23.3441, ""longitude"": 85.3096}"
+moonshotai/kimi-k2.6,no-CoT,23.3441,85.3096,7.987,IN,True,,stop,0.000303012,603,25,0,7.9,"{""country"": ""IN"", ""latitude"": 23.3441, ""longitude"": 85.3096}"
+google/gemini-3.1-pro-preview,CoT,23.3441,85.3095,7.991,IN,True,,stop,0.005736,1272,266,177,4.64,"{
+  ""reasoning"": ""The rocky, boulder-strewn hills and dry scrub vegetation are characteristic of the Deccan or Chota Nagpur plateaus in India. The exposed brick and concrete frame construction of the buildings is also typical of Indian urban expansion."",
+  ""country"": ""IN"",
+  ""latitude"": 23.3441,
+  ""longitude"": 85.3095
+}"
+google/gemini-3.5-flash,CoT (effort=medium),23.344,85.309,8.023,IN,True,,stop,0.0070905,1271,576,503,13.27,"{""reasoning"": ""The distinctive rounded granite hills (inselbergs) combined with the red-brick and concrete frame architecture of the buildings in the background are highly characteristic of the Chota Nagpur Plateau region in Jharkhand, India."", ""country"": ""IN"", ""latitude"": 23.344, ""longitude"": 85.309}"
+google/gemini-3.1-pro-preview,no-CoT,23.4123,85.4321,9.023,IN,True,,stop,0.004708,1190,194,159,3.6,"```json
+{""country"": ""IN"", ""latitude"": 23.4123, ""longitude"": 85.4321}
+```"
+google/gemma-4-31b-it,no-CoT,23.5821,85.3412,19.281,IN,True,,stop,5.772e-05,408,36,0,1.32,"```json
+{""country"": ""IN"", ""latitude"": 23.5821, ""longitude"": 85.3412}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),24.7785,85.0012,156.231,IN,True,,stop,0.0020985,1189,35,0,1.65,"```json
+{""country"": ""IN"", ""latitude"": 24.7785, ""longitude"": 85.0012}
+```"
+google/gemini-3.5-flash,CoT (effort=high),24.8015,85.0032,158.681,IN,True,,stop,0.0121125,1271,1134,1065,16.05,"{""reasoning"": ""The granitic inselbergs, red-brick semi-constructed buildings, and North Indian style temple spire strongly point to the rocky terrain of Bihar or Jharkhand in India."", ""country"": ""IN"", ""latitude"": 24.8015, ""longitude"": 85.0032}"
+google/gemini-3.5-flash,CoT (effort=low),24.2635,86.6482,163.206,IN,True,,stop,0.003465,1272,173,103,2.55,"{""reasoning"": ""The distinctive rocky inselbergs, dry landscape, and unplastered red-brick building construction are highly characteristic of the Chota Nagpur Plateau region in Jharkhand, India."", ""country"": ""IN"", ""latitude"": 24.2635, ""longitude"": 86.6482}"
+google/gemma-4-26b-a4b-it,no-CoT,23.5432,88.5432,326.65,IN,True,,stop,8.334e-05,406,102,0,5.43,"Please own- own- own {""country"": ""IN"", ""latitude"": 23.5432, ""longitude"": 88. own} own same own {""country"": ""IN"", ""latitude"":  own {""country"": ""IN"", ""latitude"": 23.5432, ""longitude"": own own own {""country"": ""IN"", ""latitude"": 23.5432, ""longitude"": 88.5432}"
+x-ai/grok-4.3,CoT,16.23,80.31,956.001,IN,True,,stop,0.002464,676,782,700,8.23,"{
+  ""reasoning"": ""Left-hand traffic, concrete/brick multi-story construction, granite inselbergs, dry deciduous scrub and red soil are diagnostic of the Deccan plateau in southern/central India; power-line hardware and road markings further match Indian NH/SH standards."",
+  ""country"": ""IN"",
+  ""latitude"": 16.23,
+  ""longitude"": 80.31
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,17.720741271972656,78.38816833496094,961.099,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,15.9129,80.7679,961.163,IN,True,,stop,0.0005984,592,24,0,8.46,"{""country"": ""IN"", ""latitude"": 15.9129, ""longitude"": 80.7679}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,17.725961685180664,78.37675476074219,961.603,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,17.4235,78.4742,977.072,IN,True,,stop,0.00010195,473,31,0,2.21,"{""country"": ""IN"", ""latitude"": 17.4235, ""longitude"": 78.4742}"
+mistralai/mistral-medium-3-5,no-CoT,17.385,78.4867,979.105,IN,True,,stop,0.0011835,634,31,0,1.87,"{""country"": ""IN"", ""latitude"": 17.3850, ""longitude"": 78.4867}"
+qwen/qwen3.5-397b-a17b,CoT,17.413,78.325,989.306,IN,True,,stop,0.01124265,553,3679,1,97.72,"{
+""reasoning"": ""The distinctive granite rock formations (inselbergs) and dry, scrubby vegetation on red soil are characteristic of the Deccan Plateau, specifically the outskirts of Hyderabad, India. The unfinished concrete multi-story buildings and left-hand traffic further confirm this location, likely in the Gandipet or Narsingi area."",
+""country"": ""IN"",
+""latitude"": 17.413,
+""longitude"": 78.325
+}"
+minimax/minimax-m3,no-CoT,17.68,77.92,1001.233,IN,True,,stop,0.00019416,752,25,0,5.5,"{""country"": ""IN"", ""latitude"": 17.6800, ""longitude"": 77.9200}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,17.372833251953125,77.81160736083984,1032.402,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,26.4869,74.5612,1139.226,IN,True,,stop,0.017025,621,464,388,10.91,"{""reasoning"":""Dry scrubland with Aravalli-style rocky hills, left-side road context, and Indian-style unfinished concrete/whitewashed buildings point strongly to Rajasthan. The scene most closely matches the outskirts of Pushkar/Ajmer among the rocky hills."",""country"":""IN"",""latitude"":26.4869,""longitude"":74.5612}"
+openai/gpt-5.5,no-CoT,24.5806,73.6841,1191.233,IN,True,,stop,0.00341,544,23,0,1.45,"{""country"":""IN"",""latitude"":24.5806,""longitude"":73.6841}"
+minimax/minimax-m3,CoT,15.0,77.5,1245.335,IN,True,,stop,0.00096186,843,642,563,16.83,"{""reasoning"": ""Left-hand traffic, distinctive large rounded granite boulder formations characteristic of the Deccan Plateau (similar to Hampi/Anantapur region), Indian-style concrete-frame building construction, dry tropical vegetation, and agricultural fields strongly indicate rural South India, likely Andhra Pradesh."", ""country"": ""IN"", ""latitude"": 15.0, ""longitude"": 77.5}"
+qwen/qwen3.5-9b,no-CoT,15.4111,76.9732,1248.847,IN,True,,stop,5.205e-05,474,31,0,3.69,"{""country"": ""IN"", ""latitude"": 15.4111, ""longitude"": 76.9732}"
+qwen/qwen3.5-397b-a17b,no-CoT,13.6288,79.4192,1253.601,IN,True,,stop,0.0003322,473,31,0,4.18,"{""country"": ""IN"", ""latitude"": 13.6288, ""longitude"": 79.4192}"
+qwen/qwen3.5-122b-a10b,no-CoT,13.3379,79.6693,1269.376,IN,True,,stop,0.00018772,474,31,0,5.37,"{""country"": ""IN"", ""latitude"": 13.3379, ""longitude"": 79.6693}"
+qwen/qwen3.5-35b-a3b,no-CoT,13.0358,80.2372,1272.867,IN,True,,stop,0.000157,473,31,0,2.64,"{""country"": ""IN"", ""latitude"": 13.0358, ""longitude"": 80.2372}"
+qwen/qwen3.6-27b,no-CoT,15.3173,76.5997,1284.073,IN,True,,stop,0.0001943,473,31,0,12.78,"{""country"": ""IN"", ""latitude"": 15.3173, ""longitude"": 76.5997}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,15.33552074432373,76.52654266357422,1288.105,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,14.5,77.5,1288.323,IN,True,,stop,0.010108,680,2405,2648,95.21,"{""reasoning"": ""The semi-arid scrubland, distinctive granite inselbergs, and unfinished concrete-frame buildings with exposed brick are hallmarks of rural South-Central India on the Deccan Plateau."", ""country"": ""IN"", ""latitude"": 14.5, ""longitude"": 77.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,15.331215858459473,76.5201187133789,1288.929,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,15.33,76.46,1293.549,IN,True,,stop,0.0003363976,787,902,815,9.5,"{""reasoning"": ""The landscape featuring prominent rounded granite boulders and dry, hilly terrain is highly characteristic of the Deccan Plateau in Karnataka, India, particularly the region around Hampi and Bellary. The architectural style and vegetation further support this location in South India."", ""country"": ""IN"", ""latitude"": 15.33, ""longitude"": 76.46}"
+xiaomi/mimo-v2.5,no-CoT,13.6288,78.4692,1306.224,IN,True,,stop,8.14576e-05,708,31,0,3.0,"{""country"": ""IN"", ""latitude"": 13.6288, ""longitude"": 78.4692}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,14.056549072265625,77.29973602294922,1340.405,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,13.1234,77.6543,1401.713,IN,True,,stop,0.0002283,473,36,0,9.5,"```json
+{""country"": ""IN"", ""latitude"": 13.1234, ""longitude"": 77.6543}
+```"
+qwen/qwen3.6-35b-a3b,CoT,13.3525,77.1531,1412.337,IN,True,,stop,0.12670002085,553,131169,131072,956.52,"{""reasoning"": ""The image features a white auto-rickshaw, a common vehicle in India, and dry, rocky terrain with granite hills typical of the Deccan Plateau. The road markings and surrounding vegetation point to a rural area in Karnataka, specifically near the town of Kunigal."", ""country"": ""IN"", ""latitude"": 13.3525, ""longitude"": 77.1531}"
+mistralai/mistral-small-2603,CoT,37.05,-2.45,8281.855,ES,True,,stop,0.00055044,716,850,976,8.12,"{""reasoning"": ""Right-hand traffic, Mediterranean/Middle Eastern architecture, and semi-arid landscape with distinctive rocky hills strongly suggest Southeast Spain."", ""country"": ""ES"", ""latitude"": 37.05, ""longitude"": -2.45}"
+mistralai/mistral-small-2603,no-CoT,36.721,-4.4203,8459.658,ES,True,,stop,0.000140625,634,29,0,2.57,"{""country"": ""ES"", ""latitude"": 36.721, ""longitude"": -4.4203}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.88,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.45,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.58,

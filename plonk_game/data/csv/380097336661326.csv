@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,41.034709133357,-117.72281379541,0.0,US,True,,,,,,,,"Winnemucca, Humboldt County, Nevada, US"
+qwen/qwen3.5-397b-a17b,no-CoT,40.7589,-117.4219,39.752,US,True,,stop,0.000303625,585,32,0,3.66,"{""country"": ""US"", ""latitude"": 40.7589, ""longitude"": -117.4219}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,42.085330963134766,-117.19642639160156,124.763,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),40.0512,-118.4521,125.527,US,True,,stop,0.014373,1308,1379,1283,14.99,"```json
+{""reasoning"": ""The arid landscape with sparse desert scrub, distant rugged mountains, and a flat basin/playa to the right, combined with the yellow dashed center line and wide asphalt shoulders, is highly characteristic of the Great Basin Desert in Nevada, USA, specifically along US-95."", ""country"": ""US"", ""latitude"": 40.0512, ""longitude"": -118.4521}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,42.10954666137695,-117.22117614746094,126.591,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,40.6445,-119.395,147.207,US,True,,stop,6.732e-05,404,37,0,11.2,"```json
+{""country"": ""US"", ""latitude"": 40.6445, ""longitude"": -119.3950}
+```"
+qwen/qwen3.6-27b,CoT,39.58,-117.55,162.419,US,True,,stop,0.01760625,665,6410,6314,360.76,"{""reasoning"": ""The road markings (yellow dashed center line, solid white shoulder lines) and right-hand traffic indicate a US highway. The arid landscape with sagebrush and the mountain range to the left (north) while driving east is characteristic of US-50 in Nevada, specifically west of Alamo."", ""country"": ""US"", ""latitude"": 39.58, ""longitude"": -117.55}"
+google/gemma-4-26b-a4b-it,CoT,39.5,-117.5,171.696,US,True,,stop,0.00038285,489,827,726,12.58,"{""reasoning"": ""The arid desert landscape, sparse vegetation, and distant mountains are characteristic of the Great Basin region, while the road markings (yellow dashed center line and white shoulder lines) are standard for US highways."", ""country"": ""US"", ""latitude"": 39.5, ""longitude"": -117.5}"
+google/gemma-4-31b-it,CoT,39.5,-117.5,171.696,US,True,,stop,0.00024726,489,447,403,23.22,"{""reasoning"": ""The yellow dashed center line and white edge lines, combined with the arid, scrubland landscape and distant mountains, are highly characteristic of the Western United States, specifically Nevada."", ""country"": ""US"", ""latitude"": 39.5, ""longitude"": -117.5}"
+moonshotai/kimi-k2.6,CoT,39.5,-117.0,181.335,US,True,,stop,0.0141204,832,3372,3839,127.31,"{""reasoning"": ""Right-hand traffic with a yellow center line and white edge markings is standard in the USA; the arid, flat desert valley with sparse brown scrub and distant mountain ranges matches Nevada's Basin and Range geography."", ""country"": ""US"", ""latitude"": 39.5, ""longitude"": -117.0}"
+qwen/qwen3.5-397b-a17b,CoT,39.48,-118.55,186.58,US,True,,stop,0.02482375,665,6988,6849,195.56,"{
+""reasoning"": ""The yellow center line (solid with a faded dashed line) and white shoulder markings are standard for two-lane highways in the United States, indicating right-hand traffic. The arid, sagebrush-covered landscape with a distinct mountain range on the left and flat, open terrain on the right is characteristic of US Highway 50 in Nevada, specifically the stretch east of Fallon where the Stillwater Range is to the north (left) and the Carson Sink is to the south (right)."",
+""country"": ""US"",
+""latitude"": 39.48,
+""longitude"": -118.55
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,42.73912048339844,-117.11597442626953,196.065,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,39.5,-116.5,199.71,US,True,,stop,0.00709,1307,373,293,6.26,"{
+  ""reasoning"": ""The dashed yellow center line and solid white edge lines indicate North America. The arid, flat landscape with distant barren mountains and a possible salt flat strongly suggests the Great Basin region, likely Nevada or Utah."",
+  ""country"": ""US"",
+  ""latitude"": 39.5,
+  ""longitude"": -116.5
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,39.35,-114.75,314.379,US,True,,stop,0.00398683285,583,4033,3998,24.81,"{""country"": ""US"", ""latitude"": 39.35, ""longitude"": -114.75}"
+google/gemini-3.1-pro-preview,no-CoT,40.7306,-113.9688,317.378,US,True,,stop,0.002882,1225,36,0,29.53,"```json
+{""country"": ""US"", ""latitude"": 40.7306, ""longitude"": -113.9688}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),40.7512,-113.8194,329.588,US,True,,stop,0.002163,1226,36,0,7.71,"```json
+{""country"": ""US"", ""latitude"": 40.7512, ""longitude"": -113.8194}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),41.3341,-113.7124,337.226,US,True,,stop,0.0115095,1307,1061,973,14.36,"```json
+{""reasoning"": ""The two-lane highway with a dashed yellow center line and arid, desert basin landscape with salt flats on the right is highly characteristic of the Great Basin region in the western United States, specifically along UT-30 in northern Utah."", ""country"": ""US"", ""latitude"": 41.3341, ""longitude"": -113.7124}
+```"
+anthropic/claude-opus-4.8,CoT,40.2,-113.3,384.625,US,True,,stop,0.007295,949,102,0,3.04,"{""reasoning"": ""Arid high-desert basin with distant ranges, dry golden grass, and a wide two-lane US highway with yellow center line; driving on right suggests western US Great Basin (Utah/Nevada)."", ""country"": ""US"", ""latitude"": 40.2, ""longitude"": -113.3}"
+anthropic/claude-opus-4.8,no-CoT,40.7608,-112.85,410.637,US,True,,stop,0.004865,818,31,0,8.42,"{""country"": ""US"", ""latitude"": 40.7608, ""longitude"": -112.8500}"
+google/gemini-3.5-flash,CoT (effort=low),40.7412,-112.7124,422.391,US,True,,stop,0.0046875,1307,303,222,9.99,"{""reasoning"": ""The yellow dashed center line and white shoulder lines indicate North America, while the arid basin landscape with distant mountains and a flat salt-lake-like plain to the right is highly characteristic of western Utah near the Great Salt Lake."", ""country"": ""US"", ""latitude"": 40.7412, ""longitude"": -112.7124}"
+minimax/minimax-m3,CoT,37.75,-114.5,458.291,US,True,,stop,0.00063786,995,334,252,10.19,"{""reasoning"": ""Desert basin-and-range topography with sagebrush, four-lane divided highway with yellow center stripes and wide paved shoulders, and arid mountain backdrop are characteristic of the Great Basin/Mojave region of the American Southwest, most likely US-93 in eastern Nevada."", ""country"": ""US"", ""latitude"": 37.75, ""longitude"": -114.50}"
+moonshotai/kimi-k2.6,no-CoT,41.0,-112.0,480.061,US,True,,stop,0.00033426,755,23,0,14.46,"{""country"": ""US"", ""latitude"": 41.0, ""longitude"": -112.0}"
+mistralai/mistral-small-2603,no-CoT,36.7783,-119.4179,495.467,US,True,,stop,0.0001371,786,32,0,2.52,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+minimax/minimax-m3,no-CoT,40.35,-111.85,500.858,US,True,,stop,0.00023736,904,23,0,5.12,"{""country"": ""US"", ""latitude"": 40.35, ""longitude"": -111.85}"
+mistralai/mistral-medium-3-5,CoT,36.65,-115.73,517.161,US,True,,stop,0.023592,868,2972,3064,30.3,"{""reasoning"": ""Right-hand traffic with yellow center line and white edges, desert terrain with creosote bush vegetation and distant mountains indicate a US desert highway; likely Nevada's Extraterrestrial Highway (NV-375) near Rachel."", ""country"": ""US"", ""latitude"": 36.65, ""longitude"": -115.73}"
+qwen/qwen3.5-35b-a3b,no-CoT,36.1699,-115.1398,585.584,US,True,,stop,0.00011975,585,32,0,3.31,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.6-27b,no-CoT,36.1699,-115.1398,585.584,US,True,,stop,0.0002299,585,32,0,7.95,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+xiaomi/mimo-v2.5,CoT,36.0,-115.0,607.8,US,True,,stop,0.0004047176,899,1090,1011,18.73,"{""reasoning"": ""The image shows an arid, desert landscape with sparse vegetation, distant mountains, and right-hand traffic, typical of the southwestern United States, likely Nevada or Arizona. Road markings and terrain suggest a remote highway in a dry climate."", ""country"": ""US"", ""latitude"": 36.0, ""longitude"": -115.0}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.6217,-116.3559,613.571,US,True,,stop,0.00021892,586,32,0,12.34,"{""country"": ""US"", ""latitude"": 35.6217, ""longitude"": -116.3559}"
+x-ai/grok-4.3,no-CoT,35.15,-116.85,658.782,US,True,,stop,0.0007334,704,22,0,7.08,"{""country"": ""US"", ""latitude"": 35.15, ""longitude"": -116.85}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,40.564666748046875,-109.61705780029297,684.048,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,35.0844,-115.3094,694.481,US,True,,stop,0.0002523,585,32,0,4.68,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -115.3094}"
+qwen/qwen3.5-9b,no-CoT,35.0142,-115.1372,706.626,US,True,,stop,6.34e-05,586,32,0,11.85,"{""country"": ""US"", ""latitude"": 35.0142, ""longitude"": -115.1372}"
+xiaomi/mimo-v2.5,no-CoT,35.15,-114.57,710.002,US,True,,stop,9.62976e-05,820,28,0,4.27,"{""country"": ""US"", ""latitude"": 35.15, ""longitude"": -114.57}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,41.487056732177734,-108.651123046875,759.59,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,41.52033233642578,-108.57302856445312,766.15,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,33.65,-114.2,877.998,US,True,,stop,0.002629,788,792,727,8.78,"{""reasoning"": ""US-style pavement markings (solid white edge lines + yellow center line), right-hand traffic, arid scrub desert with distant rocky ranges and distant white salt-flat horizon all point to southwestern US interstate."", ""country"": ""US"", ""latitude"": 33.65, ""longitude"": -114.2}"
+mistralai/mistral-small-2603,CoT,33.5,-113.0,935.885,US,True,,stop,0.00077304,868,1219,1295,17.17,"{""reasoning"": ""Road markings (dashed white line on right) indicate driving on the right; desert terrain with sparse vegetation and mountains matches the Sonoran Desert in Arizona, USA."", ""country"": ""US"", ""latitude"": 33.5, ""longitude"": -113.0}"
+mistralai/mistral-medium-3-5,no-CoT,35.0844,-106.6504,1172.182,US,True,,stop,0.001419,786,32,0,0.84,"{""country"": ""US"", ""latitude"": 35.0844, ""longitude"": -106.6504}"
+openai/gpt-5.5,CoT,32.2306,-109.8374,1204.411,US,True,,stop,0.018055,755,476,380,13.83,"{""reasoning"":""The right-hand traffic layout with yellow centerline and white edge lines matches rural US highways, and the arid basin-and-range scenery with scrub grassland and distant mountains is characteristic of southeastern Arizona/New Mexico. The broad straight two-lane road through desert farmland most closely fits the Willcox/Sulphur Springs Valley area of Arizona."",""country"":""US"",""latitude"":32.2306,""longitude"":-109.8374}"
+openai/gpt-5.5,no-CoT,32.1456,-107.7532,1328.274,US,True,,stop,0.00411,678,24,0,1.39,"{""country"":""US"",""latitude"":32.1456,""longitude"":-107.7532}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12291.764,,True,True,,,,,,19.99,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.16,

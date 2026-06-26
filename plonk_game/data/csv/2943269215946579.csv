@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,46.372241258584,-80.833073244008,0.0,CA,True,,,,,,,,"Greater Sudbury, None, Ontario, CA"
+moonshotai/kimi-k2.6,no-CoT,46.5,-80.9,15.104,CA,True,,stop,0.00032238,755,23,0,2.06,"{""country"": ""CA"", ""latitude"": 46.5, ""longitude"": -80.9}"
+google/gemini-3.1-pro-preview,no-CoT,46.4983,-80.9931,18.624,CA,True,,stop,0.002872,1226,35,0,8.28,"```json
+{""country"": ""CA"", ""latitude"": 46.4983, ""longitude"": -80.9931}
+```"
+google/gemini-3.1-pro-preview,CoT,46.1523,-80.8145,24.498,CA,True,,stop,0.005482,1307,239,158,17.19,"{
+  ""reasoning"": ""The exposed bedrock cuts, coniferous trees, and highway with rumble strips are highly characteristic of the Canadian Shield region in Ontario, such as along Highway 69 or 17."",
+  ""country"": ""CA"",
+  ""latitude"": 46.1523,
+  ""longitude"": -80.8145
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,47.01800537109375,-79.67215728759766,113.994,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,47.59645462036133,-78.88941955566406,200.659,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,47.684913635253906,-78.92041778564453,205.708,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,46.75,-84.25,264.576,CA,True,,stop,0.008201736,834,2313,2235,56.42,"{""reasoning"": ""Exposed Precambrian bedrock, boreal coniferous forest, and North American highway rumble-strip/shoulder design are diagnostic of the Canadian Shield in Ontario; right-hand traffic confirms North America over Scandinavia's similar boreal shield terrain."", ""country"": ""CA"", ""latitude"": 46.75, ""longitude"": -84.25}"
+google/gemma-4-26b-a4b-it,no-CoT,45.4215,-75.6972,411.181,CA,True,,stop,5.468e-05,404,31,0,1.02,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -75.6972}"
+minimax/minimax-m3,CoT,48.72,-85.66,446.408,CA,True,,stop,0.00099546,995,632,556,24.57,"{""reasoning"": ""Canadian-style highway with raised rumble strips, wide paved shoulder, boreal spruce forest, limestone/granite outcrops, and open parkland terrain characteristic of the Canadian Shield transition zone along the Trans-Canada Highway in northern Ontario."", ""country"": ""CA"", ""latitude"": 48.72, ""longitude"": -85.66}"
+anthropic/claude-opus-4.8,no-CoT,48.7,-86.3,485.028,CA,True,,stop,0.00484,818,30,0,2.94,"{""country"": ""CA"", ""latitude"": 48.7, ""longitude"": -86.3}"
+x-ai/grok-4.3,CoT,48.75,-86.85,522.973,CA,True,,stop,0.002139,788,596,527,5.12,"{""reasoning"": ""Right-hand traffic (solid white line on right edge), boreal conifers + Canadian Shield-style rocky outcrops and low vegetation indicate northern Ontario or similar Canadian Shield terrain; no European signage or left-side driving clues."", ""country"": ""CA"", ""latitude"": 48.75, ""longitude"": -86.85}"
+qwen/qwen3.5-122b-a10b,no-CoT,46.8139,-71.2082,736.615,CA,True,,stop,0.0002691,585,39,0,3.51,"{
+  ""country"": ""CA"",
+  ""latitude"": 46.8139,
+  ""longitude"": -71.2082
+}"
+xiaomi/mimo-v2.5,CoT,49.75,-89.8,764.216,CA,True,,stop,0.0001664376,899,239,143,18.61,"```json
+{
+  ""reasoning"": ""The landscape features rolling hills, granite bedrock outcrops, and a mix of coniferous and deciduous trees typical of the Canadian Shield or northern US regions. The road markings (solid white shoulder line, rumble strips) are standard for North America."",
+  ""country"": ""CA"",
+  ""latitude"": 49.75,
+  ""longitude"": -89.8
+}
+```"
+x-ai/grok-4.3,no-CoT,48.427,-71.065,769.253,CA,True,,stop,0.0007334,704,22,0,0.75,"{""country"": ""CA"", ""latitude"": 48.427, ""longitude"": -71.065}"
+anthropic/claude-opus-4.8,CoT,49.8,-92.5,945.41,CA,True,,stop,0.00717,949,97,0,3.89,"{""reasoning"": ""Boreal conifer forest, exposed granite bedrock cuts, and rumble strips on a divided highway suggest the Canadian Shield region of Ontario/Manitoba."", ""country"": ""CA"", ""latitude"": 49.8, ""longitude"": -92.5}"
+google/gemma-4-31b-it,no-CoT,47.5,-68.2,966.235,CA,True,,stop,6.856e-05,404,30,0,8.6,"```json
+{""country"": ""CA"", ""latitude"": 47.5, ""longitude"": -68.2}
+```"
+google/gemini-3.5-flash,CoT (effort=high),49.7833,-92.8333,967.444,CA,True,,stop,0.0062625,1307,478,410,5.07,"{""reasoning"": ""The rocky granite outcrops of the Canadian Shield, coniferous boreal forest, and highway design with shoulder rumble strips are highly characteristic of Northern Ontario along the Trans-Canada Highway."", ""country"": ""CA"", ""latitude"": 49.7833, ""longitude"": -92.8333}"
+google/gemini-3.5-flash,CoT (effort=medium),49.7825,-93.5012,1013.071,CA,True,,stop,0.0057045,1307,416,337,4.51,"```json
+{""reasoning"": ""The exposed granite bedrock of the Canadian Shield, coniferous boreal forest, and wide highway with shoulder rumble strips are highly characteristic of the Trans-Canada Highway (Highway 17) in Northern Ontario."", ""country"": ""CA"", ""latitude"": 49.7825, ""longitude"": -93.5012}
+```"
+google/gemini-3.5-flash,CoT (effort=low),49.8352,-93.6125,1022.433,CA,True,,stop,0.003987,1308,225,157,2.59,"{""reasoning"": ""The exposed granite rock cuts of the Canadian Shield, coniferous vegetation, and wide highway with shoulder rumble strips are highly characteristic of Northern Ontario along the Trans-Canada Highway."", ""country"": ""CA"", ""latitude"": 49.8352, ""longitude"": -93.6125}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),49.7834,-94.4894,1081.225,CA,True,,stop,0.0021525,1225,35,0,4.21,"```json
+{""country"": ""CA"", ""latitude"": 49.7834, ""longitude"": -94.4894}
+```"
+xiaomi/mimo-v2.5,no-CoT,48.85,-64.55,1248.717,CA,True,,stop,9.60176e-05,820,27,0,1.3,"{""country"": ""CA"", ""latitude"": 48.85, ""longitude"": -64.55}"
+qwen/qwen3.5-35b-a3b,no-CoT,46.5234,-63.4567,1328.705,CA,True,,stop,0.00011304,586,31,0,1.67,"{""country"": ""CA"", ""latitude"": 46.5234, ""longitude"": -63.4567}"
+qwen/qwen3.6-35b-a3b,no-CoT,46.5234,-63.4567,1328.705,CA,True,,stop,0.00011875,585,31,0,2.26,"{""country"": ""CA"", ""latitude"": 46.5234, ""longitude"": -63.4567}"
+mistralai/mistral-medium-3-5,no-CoT,44.6582,-63.5911,1354.118,CA,True,,stop,0.0014115,786,31,0,0.9,"{""country"": ""CA"", ""latitude"": 44.6582, ""longitude"": -63.5911}"
+qwen/qwen3.5-397b-a17b,no-CoT,46.85,-60.75,1530.78,CA,True,,stop,0.00032985,585,27,0,6.94,"{""country"": ""CA"", ""latitude"": 46.85, ""longitude"": -60.75}"
+qwen/qwen3.5-9b,no-CoT,52.8667,-100.0,1551.507,CA,True,,stop,6.295e-05,586,29,0,2.2,"{""country"": ""CA"", ""latitude"": 52.8667, ""longitude"": -100.0}"
+openai/gpt-5.5,no-CoT,49.6102,-57.9478,1733.492,CA,True,,stop,0.00411,678,24,0,7.85,"{""country"":""CA"",""latitude"":49.6102,""longitude"":-57.9478}"
+openai/gpt-5.5,CoT,48.5532,-53.9728,2023.14,CA,True,,stop,0.015295,755,384,306,12.08,"{""reasoning"":""Right-side driving with North American-style wide asphalt shoulder and continuous shoulder rumble strip points to Canada rather than Nordic Europe. The boreal spruce, exposed granite/bedrock and rolling open terrain are characteristic of Newfoundland’s Trans-Canada Highway area."",""country"":""CA"",""latitude"":48.5532,""longitude"":-53.9728}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,55.612850189208984,-109.89220428466797,2255.786,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,51.0447,-114.0719,2471.319,CA,True,,stop,0.0002782,586,32,0,20.98,"{""country"": ""CA"", ""latitude"": 51.0447, ""longitude"": -114.0719}"
+minimax/minimax-m3,no-CoT,49.6,-115.7,2595.835,CA,True,,stop,0.00024012,906,22,0,2.61,"{""country"": ""CA"", ""latitude"": 49.6, ""longitude"": -115.7}{""country"": ""CA"", ""latitude"": 49.6, ""longitude"": -115.7}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,61.474342346191406,-113.8030014038086,2686.569,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,62.499725341796875,-114.09793853759766,2747.521,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,49.2827,-122.9905,3122.582,CA,True,,stop,0.0001371,786,32,0,3.96,"{""country"": ""CA"", ""latitude"": 49.2827, ""longitude"": -122.9905}"
+qwen/qwen3.5-27b,no-CoT,64.1466,21.9423,6027.545,SE,True,,stop,0.0002345,586,44,0,10.67,"```json
+{
+  ""country"": ""SE"",
+  ""latitude"": 64.1466,
+  ""longitude"": 21.9423
+}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.15,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.4,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.22,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.07,

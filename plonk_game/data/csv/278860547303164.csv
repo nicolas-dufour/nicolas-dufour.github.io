@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,17.363617935234,78.158562401383,0.0,IN,True,,,,,,,,"Singapur, Rangareddi, Telangana, IN"
+anthropic/claude-opus-4.8,CoT,17.3,78.0,18.257,IN,True,,stop,0.00707,949,93,0,5.43,"{""reasoning"": ""Left-hand traffic, dry scrubland with sparse trees, reddish soil and concrete utility poles typical of rural Indian highways in the Deccan plateau."", ""country"": ""IN"", ""latitude"": 17.3, ""longitude"": 78.0}"
+anthropic/claude-opus-4.8,no-CoT,17.385,78.486,34.829,IN,True,,stop,0.00484,818,30,0,8.39,"{""country"": ""IN"", ""latitude"": 17.385, ""longitude"": 78.486}"
+x-ai/grok-4.3,no-CoT,17.385,78.486,34.829,IN,True,,stop,0.0007334,704,22,0,7.03,"{""country"": ""IN"", ""latitude"": 17.385, ""longitude"": 78.486}"
+qwen/qwen3.6-35b-a3b,no-CoT,17.385044,78.486671,34.901,IN,True,,stop,0.00012275,585,35,0,8.47,"{""country"": ""IN"", ""latitude"": 17.385044, ""longitude"": 78.486671}"
+qwen/qwen3.5-35b-a3b,no-CoT,17.385044,78.486688,34.903,IN,True,,stop,0.00012275,585,35,0,1.6,"{""country"": ""IN"", ""latitude"": 17.385044, ""longitude"": 78.486688}"
+minimax/minimax-m3,no-CoT,17.385,78.4867,34.904,IN,True,,stop,0.00024252,906,24,0,8.77,"{""country"": ""IN"", ""latitude"": 17.3850, ""longitude"": 78.4867}{""country"": ""IN"", ""latitude"": 17.3850, ""longitude"": 78.4867}"
+mistralai/mistral-medium-3-5,no-CoT,17.385,78.4867,34.904,IN,True,,stop,0.0014115,786,31,0,1.9,"{""country"": ""IN"", ""latitude"": 17.3850, ""longitude"": 78.4867}"
+moonshotai/kimi-k2.6,no-CoT,17.5,78.5,39.269,IN,True,,stop,0.00030996,755,23,0,8.24,"{""country"": ""IN"", ""latitude"": 17.5, ""longitude"": 78.5}"
+moonshotai/kimi-k2.6,CoT,17.2,78.5,40.561,IN,True,,stop,0.006240096,834,1738,1667,81.12,"{""reasoning"": ""Left-hand traffic, striped concrete median barriers, cross-arm utility poles, and dry scrub vegetation on flat reddish soil are all classic markers of a rural Indian national highway on the Deccan Plateau."", ""country"": ""IN"", ""latitude"": 17.2000, ""longitude"": 78.5000}"
+qwen/qwen3.5-122b-a10b,no-CoT,17.0126,78.6414,64.453,IN,True,,stop,0.00021684,586,31,0,7.07,"{""country"": ""IN"", ""latitude"": 17.0126, ""longitude"": 78.6414}"
+xiaomi/mimo-v2.5,no-CoT,20.5,78.5,350.593,IN,True,,stop,9.54576e-05,820,25,0,0.97,"{""country"": ""IN"", ""latitude"": 20.5, ""longitude"": 78.5}"
+qwen/qwen3.5-9b,no-CoT,20.5937,78.9629,368.989,IN,True,,stop,0.0001072,585,31,0,7.68,"{""country"": ""IN"", ""latitude"": 20.5937, ""longitude"": 78.9629}"
+x-ai/grok-4.3,CoT,20.85,78.3,387.953,IN,True,,stop,0.0021915,788,617,545,5.4,"{""reasoning"": ""Left-hand traffic road with dashed center lines, concrete edge barriers, utility poles, acacia-like trees, dry red soil and hazy sky are characteristic of Indian national highways. No other country matches this exact combination of visual cues."", ""country"": ""IN"", ""latitude"": 20.85, ""longitude"": 78.3}"
+qwen/qwen3.6-27b,no-CoT,21.1458,79.0882,431.728,IN,True,,stop,0.0002279,585,31,0,15.39,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,11.506157875061035,77.33006286621094,657.395,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,23.2599,77.4126,660.23,IN,True,,stop,6.548e-05,404,58,0,2.04,"Please own the following JSON object:
+{""```json
+{""country"": ""IN"", ""latitude own"": ""{""country"": ""IN"", ""latitude"": 23.2599, ""longitude"": 77.4126}""}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,10.021703720092773,77.78340911865234,817.387,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,9.750326156616211,77.863525390625,847.159,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,22.9,72.5,852.977,IN,True,,stop,0.00075942,997,432,445,13.18,"{""reasoning"": ""Four-lane divided highway with painted concrete jersey barriers, Indian-style concrete power poles, dry deciduous vegetation with scattered trees, and flat semi-arid terrain all point to a rural national highway in western India, likely Gujarat."", ""country"": ""IN"", ""latitude"": 22.9, ""longitude"": 72.5}"
+qwen/qwen3.5-397b-a17b,CoT,25.45,78.55,900.075,IN,True,,stop,0.00853005,665,2758,1,62.72,"{
+""reasoning"": ""The vehicle is driving on the left side of the road, and the black-and-white striped curbs along the shoulder are a distinctive feature of Indian highways. The reddish-brown soil visible on the road verges and the dry scrub vegetation are characteristic of the Bundelkhand region (spanning Uttar Pradesh and Madhya Pradesh) or parts of the Deccan Plateau."",
+""country"": ""IN"",
+""latitude"": 25.45,
+""longitude"": 78.55
+}"
+xiaomi/mimo-v2.5,CoT,25.5,78.5,905.413,IN,True,,stop,0.0003870776,899,1027,942,17.75,"{""reasoning"": ""The right-hand drive vehicle and left-hand traffic pattern, combined with concrete utility poles and yellow-and-black striped curbs, are highly characteristic of Indian infrastructure. The flat terrain and scrubby vegetation suggest a rural highway in the northern or central plains of the subcontinent."", ""country"": ""IN"", ""latitude"": 25.5, ""longitude"": 78.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),26.4496,74.6322,1073.624,IN,True,,stop,0.002154,1226,35,0,3.57,"```json
+{""country"": ""IN"", ""latitude"": 26.4496, ""longitude"": 74.6322}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,26.8467,75.8048,1081.9,IN,True,,stop,0.00043188,585,31,0,2.69,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 75.8048}"
+google/gemini-3.1-pro-preview,CoT,26.5,74.5,1083.534,IN,True,,stop,0.005604,1308,249,169,4.81,"{
+  ""reasoning"": ""The distinctive trident-shaped utility poles and black-and-white painted median curbs are highly characteristic of Indian highways. The flat, somewhat arid landscape and hazy conditions suggest a region like Rajasthan or central India."",
+  ""country"": ""IN"",
+  ""latitude"": 26.5,
+  ""longitude"": 74.5
+}"
+google/gemini-3.1-pro-preview,no-CoT,26.9124,75.7873,1089.408,IN,True,,stop,0.002872,1226,35,0,2.15,"```json
+{""country"": ""IN"", ""latitude"": 26.9124, ""longitude"": 75.7873}
+```"
+google/gemini-3.5-flash,CoT (effort=low),26.2389,73.0243,1119.849,IN,True,,stop,0.003996,1308,226,157,9.24,"{""reasoning"": ""The distinctive trident-shaped concrete utility poles, flat dry landscape, and black-and-white painted curbs are highly characteristic of rural highways in western India, particularly Rajasthan."", ""country"": ""IN"", ""latitude"": 26.2389, ""longitude"": 73.0243}"
+google/gemini-3.5-flash,CoT (effort=medium),26.2389,73.0243,1119.849,IN,True,,stop,0.0061095,1307,461,386,4.82,"{""reasoning"": ""The black-and-white striped curbs, distinct concrete utility poles, left-hand driving, and flat, semi-arid landscape with hazy skies are highly characteristic of national highways in Rajasthan, India."", ""country"": ""IN"", ""latitude"": 26.2389, ""longitude"": 73.0243}"
+openai/gpt-5.5,CoT,27.7725,76.6398,1167.83,IN,True,,stop,0.012415,755,288,201,14.02,"{""reasoning"":""Left-hand traffic on a divided highway with Indian-style lane markings, kerbed median, utility poles, and dry scrubby North Indian roadside landscape point strongly to India. The arid flat terrain and road style are most consistent with Rajasthan/Haryana region, likely along the Delhi–Jaipur corridor."",""country"":""IN"",""latitude"":27.7725,""longitude"":76.6398}"
+google/gemini-3.5-flash,CoT (effort=high),27.0238,73.0542,1195.407,IN,True,,stop,0.0100155,1307,895,813,7.3,"{""reasoning"": ""The left-hand traffic, distinctive concrete utility poles with trident-shaped metal brackets, and black-and-white striped curbs are characteristic of India. The flat, semi-arid landscape and hazy sky strongly suggest the state of Rajasthan."", ""country"": ""IN"", ""latitude"": 27.0238, ""longitude"": 73.0542}"
+openai/gpt-5.5,no-CoT,28.1552,76.9218,1206.621,IN,True,,stop,0.00408,678,23,0,1.8,"{""country"":""IN"",""latitude"":28.1552,""longitude"":76.9218}"
+google/gemma-4-31b-it,no-CoT,28.6139,77.209,1254.726,IN,True,,stop,6.348e-05,404,36,0,3.82,"```json
+{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}
+```"
+qwen/qwen3.5-27b,no-CoT,28.6139,77.209,1254.726,IN,True,,stop,0.00022275,585,30,0,7.76,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,25.240985870361328,46.05240249633789,3430.096,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,32.98934555053711,34.818031311035156,4655.151,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,46.5373420715332,6.601938724517822,7215.724,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4194,13519.809,US,True,,stop,0.0001371,786,32,0,7.77,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4194}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.2,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.15,

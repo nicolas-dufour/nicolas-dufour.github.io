@@ -1,0 +1,76 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,31.203465680651,35.261092358802,0.0,IL,True,,,,,,,,"'Arad, None, Southern District, IL"
+google/gemini-3.5-flash,CoT (effort=high),31.215,35.285,2.61,IL,True,,stop,0.009981,1272,897,827,5.64,"{""reasoning"": ""The yellow license plates, right-hand traffic with a yellow right shoulder line, and arid desert mountainous terrain are characteristic of southern Israel, likely along Route 31 near Arad."", ""country"": ""IL"", ""latitude"": 31.215, ""longitude"": 35.285}"
+google/gemini-3.5-flash,CoT (effort=medium),31.2435,35.2452,4.701,IL,True,,stop,0.0087825,1271,764,686,17.11,"{""reasoning"": ""The arid desert landscape combined with right-hand driving, a yellow right-shoulder line, and yellow license plates on the vehicles strongly indicates Israel, specifically a highway like Route 31 in the Judean Desert."", ""country"": ""IL"", ""latitude"": 31.2435, ""longitude"": 35.2452}"
+openai/gpt-5.5,CoT,31.2387,35.3536,9.63,IL,True,,stop,0.019005,621,530,447,12.96,"{""reasoning"":""The yellow edge line with white lane markings and right-side driving are characteristic of Israeli roads, and the barren rocky desert mountains strongly suggest the Negev/Dead Sea region. The scene most likely lies on a desert highway in southern Israel near the Dead Sea/Arava corridor."",""country"":""IL"",""latitude"":31.2387,""longitude"":35.3536}"
+google/gemma-4-31b-it,no-CoT,31.125,35.15,13.706,IL,True,,stop,7.124e-05,406,36,0,2.77,"```json
+{""country"": ""IL"", ""latitude"": 31.1250, ""longitude"": 35.1500}
+```"
+moonshotai/kimi-k2.6,no-CoT,30.95,35.35,29.428,IL,True,,stop,0.000263232,603,23,0,8.53,"{""country"": ""IL"", ""latitude"": 30.95, ""longitude"": 35.35}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,30.87433433532715,35.185035705566406,37.308,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,30.85,35.35,40.206,IL,True,,stop,0.00024765,473,27,0,1.35,"{""country"": ""IL"", ""latitude"": 30.85, ""longitude"": 35.35}"
+qwen/qwen3.5-35b-a3b,no-CoT,30.9823,34.8912,42.957,IL,True,,stop,0.0001171625,473,31,0,1.17,"{""country"": ""IL"", ""latitude"": 30.9823, ""longitude"": 34.8912}"
+qwen/qwen3.5-9b,no-CoT,31.5667,34.8333,57.275,IL,True,,stop,5.205e-05,474,31,0,9.81,"{""country"": ""IL"", ""latitude"": 31.5667, ""longitude"": 34.8333}"
+qwen/qwen3.6-35b-a3b,no-CoT,30.85,34.78,60.384,IL,True,,stop,0.000138,474,27,0,12.18,"{""country"": ""IL"", ""latitude"": 30.85, ""longitude"": 34.78}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,30.654659271240234,35.13014221191406,62.29,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,30.8,34.8,62.802,IL,True,,stop,0.0005514376,787,1670,1600,22.57,"{""reasoning"": ""The arid desert landscape with reddish rocky hills and right-hand traffic suggests a Middle Eastern desert region. The terrain and road style are particularly consistent with the Negev Desert in Israel."", ""country"": ""IL"", ""latitude"": 30.8, ""longitude"": 34.8}"
+google/gemini-3.1-pro-preview,no-CoT,30.8215,34.7642,63.611,IL,True,,stop,0.002798,1189,35,0,8.99,"```json
+{""country"": ""IL"", ""latitude"": 30.8215, ""longitude"": 34.7642}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,30.64194107055664,35.13349914550781,63.614,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),30.6125,34.8631,75.894,IL,True,,stop,0.0050025,1271,344,265,18.91,"```json
+{""reasoning"": ""The arid desert landscape, yellow license plate on the white vehicle, and road markings with a yellow edge line are highly characteristic of southern Israel, specifically the Negev Desert region along Route 40."", ""country"": ""IL"", ""latitude"": 30.6125, ""longitude"": 34.8631}
+```"
+google/gemini-3.1-pro-preview,CoT,30.605,34.802,79.668,IL,True,,stop,0.006156,1272,301,220,22.54,"{
+  ""reasoning"": ""The combination of a yellow edge line on the right side of the road, yellow license plates on the vehicles, and an arid, rocky desert landscape strongly points to the Negev desert in Israel."",
+  ""country"": ""IL"",
+  ""latitude"": 30.605,
+  ""longitude"": 34.802
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),30.6012,34.8015,80.047,IL,True,,stop,0.002055,1190,30,0,7.27,"{""country"": ""IL"", ""latitude"": 30.6012, ""longitude"": 34.8015}"
+xiaomi/mimo-v2.5,no-CoT,30.6,34.8,80.238,IL,True,,stop,7.97776e-05,708,25,0,3.33,"{""country"": ""IL"", ""latitude"": 30.6, ""longitude"": 34.8}"
+anthropic/claude-opus-4.8,no-CoT,30.0,35.05,135.336,IL,True,,stop,0.00408,666,30,0,2.54,"{""country"": ""IL"", ""latitude"": 30.0, ""longitude"": 35.05}"
+anthropic/claude-opus-4.8,CoT,29.85,35.0,152.562,IL,True,,stop,0.006235,797,90,0,3.09,"{""reasoning"": ""Arid desert mountains, yellow center line, right-side driving, and yellow Israeli-style license plate suggest southern Israel near Eilat/Arava."", ""country"": ""IL"", ""latitude"": 29.85, ""longitude"": 35.0}"
+moonshotai/kimi-k2.6,CoT,29.75,35.05,162.879,IL,True,,stop,0.012816198,682,3436,3365,79.47,"{""reasoning"": ""The vehicle bears the distinctive yellow Israeli license plate introduced in recent years, and the barren, reddish-brown layered mountains alongside a modern, guard-railed highway perfectly match the Negev Desert in southern Israel."", ""country"": ""IL"", ""latitude"": 29.75, ""longitude"": 35.05}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,32.0379638671875,50.953102111816406,1487.41,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,30.630172729492188,55.8775634765625,1964.913,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,25.493314743041992,56.206119537353516,2141.766,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,23.15,57.32,2353.036,OM,True,,stop,0.00125946,843,890,810,26.96,"{""reasoning"": ""Left-hand traffic with yellow rear license plate (British style) combined with extremely arid, barren rocky Hajar-style mountains indicates northern Oman. The Nissan Juke, Jeep, and modern highway guardrails match well-maintained Omani intercity routes."", ""country"": ""OM"", ""latitude"": 23.15, ""longitude"": 57.32}"
+openai/gpt-5.5,no-CoT,23.2536,57.4802,2362.403,OM,True,,stop,0.00341,544,23,0,1.32,"{""country"":""OM"",""latitude"":23.2536,""longitude"":57.4802}"
+qwen/qwen3.5-397b-a17b,CoT,34.13,77.62,3950.22,IN,True,,stop,0.01031565,553,3370,1,104.95,"{
+""reasoning"": ""The image shows left-hand traffic with a yellow center line and yellow license plates on commercial vehicles (a Mahindra Thar and Hyundai Creta), which is characteristic of India. The arid, high-altitude desert landscape with barren, reddish-brown mountains strongly suggests the Ladakh region, likely on the Leh-Manali highway."",
+""country"": ""IN"",
+""latitude"": 34.13,
+""longitude"": 77.62
+}"
+google/gemma-4-31b-it,CoT,30.92,-6.85,3986.261,MA,True,,stop,0.00032453,492,775,714,16.96,"{""reasoning"": ""The arid, reddish-brown undulating hills and right-hand traffic are highly characteristic of the High Atlas or Anti-Atlas regions of Morocco. The long white license plate and road markings further support this location."", ""country"": ""MA"", ""latitude"": 30.92, ""longitude"": -6.85}"
+google/gemma-4-26b-a4b-it,CoT,30.927,-6.855,3986.571,MA,True,,stop,0.0010254,492,1586,1479,26.55,"{""reasoning"": ""The arid, mountainous terrain and the specific use of a yellow edge line on the road are highly characteristic of the Moroccan landscape."", ""country"": ""MA"", ""latitude"": 30.927, ""longitude"": -6.855}"
+qwen/qwen3.5-122b-a10b,no-CoT,31.6295,-7.9811,4076.13,MA,True,,stop,0.0002331,473,38,0,8.34,"{
+  ""country"": ""MA"",
+  ""latitude"": 31.6295,
+  ""longitude"": -7.9811
+}"
+minimax/minimax-m3,no-CoT,31.06,-7.91,4082.036,MA,True,,stop,0.00019176,752,23,0,4.74,"{""country"": ""MA"", ""latitude"": 31.06, ""longitude"": -7.91}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5081.701,,True,True,,,,,,24.95,
+qwen/qwen3.6-35b-a3b,CoT,-31.9505,115.8605,11003.033,AU,True,,stop,0.12674249185,553,131213,131071,514.37,"```json
+{
+  ""reasoning"": ""The image shows left-hand traffic with yellow rear license plates, characteristic of Australia. The arid, red-dirt landscape with scrub vegetation and distant mountains is typical of the Australian outback, specifically Western Australia. The yellow line on the right edge of the road is a specific marking used on some Queensland highways, but the overall landscape and vehicle types (Renault Captur, Land Rover Defender) strongly point to Australia."",
+  ""country"": ""AU"",
+  ""latitude"": -31.9505,
+  ""longitude"": 115.8605
+}
+```"
+mistralai/mistral-small-2603,CoT,35.4,-111.7,11844.514,US,True,,stop,0.00041724,716,628,682,4.58,"{""reasoning"": ""Reddish arid terrain with sparse vegetation and guardrails suggests the southwestern US; driving on the right and vehicle types confirm the US; the landscape matches northern Arizona's Painted Desert region."", ""country"": ""US"", ""latitude"": 35.4, ""longitude"": -111.7}"
+mistralai/mistral-medium-3-5,no-CoT,-16.409,-71.5375,12514.944,PE,True,,stop,0.0011835,634,31,0,1.21,"{""country"": ""PE"", ""latitude"": -16.4090, ""longitude"": -71.5375}"
+mistralai/mistral-medium-3-5,CoT,-22.91,-68.2,12525.983,CL,True,,stop,0.0123315,716,1501,1571,24.39,"{""reasoning"": ""Right-hand traffic, arid Andean terrain with barren mountains and reddish soil typical of the Atacama Desert."", ""country"": ""CL"", ""latitude"": -22.91, ""longitude"": -68.2}"
+x-ai/grok-4.3,no-CoT,-22.45,-68.9,12568.548,CL,True,,stop,0.0005934,592,22,0,1.12,"{""country"": ""CL"", ""latitude"": -22.45, ""longitude"": -68.9}"
+x-ai/grok-4.3,CoT,-23.15,-69.9,12694.552,CL,True,,stop,0.0030015,676,997,915,18.5,"{
+  ""reasoning"": ""Arid barren mountains, right-hand traffic (guardrail on right shoulder relative to travel direction), yellow edge/center lines, and desert highway architecture point to northern Chile's Atacama region; small rectangular sign and vehicle types match local conditions."",
+  ""country"": ""CL"",
+  ""latitude"": -23.15,
+  ""longitude"": -69.9
+}"
+qwen/qwen3.5-27b,no-CoT,-27.15,-69.25,12819.059,CL,True,,stop,0.0002067,473,27,0,3.09,"{""country"": ""CL"", ""latitude"": -27.15, ""longitude"": -69.25}"
+qwen/qwen3.6-27b,no-CoT,-27.2583,-70.3304,12921.843,CL,True,,stop,0.0002414,474,31,0,2.63,"{""country"": ""CL"", ""latitude"": -27.2583, ""longitude"": -70.3304}"
+mistralai/mistral-small-2603,no-CoT,-27.1234,-70.5678,12937.466,CL,True,,stop,0.0001137,634,31,0,4.43,"{""country"": ""CL"", ""latitude"": -27.1234, ""longitude"": -70.5678}"
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.17,

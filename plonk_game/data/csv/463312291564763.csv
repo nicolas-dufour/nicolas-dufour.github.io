@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-37.853015798255,-67.801946495406,0.0,AR,True,,,,,,,,"Catriel, None, Rio Negro, AR"
+google/gemini-3.5-flash,CoT (effort=medium),-37.75,-67.72,13.53,AR,True,,stop,0.0079815,1307,669,600,6.21,"{""reasoning"": ""The double yellow center lines, white outer edge lines, and flat arid shrubland are highly characteristic of the Argentine Monte/Patagonian transition zone, likely along Route 151."", ""country"": ""AR"", ""latitude"": -37.75, ""longitude"": -67.72}"
+anthropic/claude-opus-4.8,CoT,-38.5,-67.8,71.942,AR,True,,stop,0.007245,949,100,0,4.23,"{""reasoning"": ""Arid scrubland flat terrain with low monte vegetation, two-lane road with yellow center line, driving on right - characteristic of Argentine Patagonia/La Pampa steppe."", ""country"": ""AR"", ""latitude"": -38.5, ""longitude"": -67.8}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-37.20402145385742,-67.74211883544922,72.357,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-37.113555908203125,-67.6920166015625,82.794,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-37.10487747192383,-67.69517517089844,83.721,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-37.9852,-65.6125,192.614,AR,True,,stop,0.0053445,1307,376,299,4.14,"{""reasoning"": ""The double yellow center lines and white edge lines combined with the flat, dry shrubland vegetation are highly characteristic of the Argentine Monte/Patagonian transition zone, likely in La Pampa or Río Negro province."", ""country"": ""AR"", ""latitude"": -37.9852, ""longitude"": -65.6125}"
+google/gemini-3.5-flash,CoT (effort=high),-38.0125,-65.5912,194.694,AR,True,,stop,0.0171525,1307,1688,1594,14.29,"```json
+{""reasoning"": ""The flat, semi-arid landscape with low jarilla scrub vegetation is characteristic of the Monte desert in Argentina. The road markings with double yellow lines (one solid, one dashed) and the oncoming vehicle driving on the right with daytime headlights align with Argentine national route standards."", ""country"": ""AR"", ""latitude"": -38.0125, ""longitude"": -65.5912}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-38.5,-65.5,213.683,AR,True,,stop,0.004084,1226,136,107,9.31,"```json
+{""country"": ""AR"", ""latitude"": -38.5, ""longitude"": -65.5}
+```"
+google/gemini-3.1-pro-preview,CoT,-38.5,-64.5,297.44,AR,True,,stop,0.005352,1308,228,158,16.61,"{
+  ""reasoning"": ""The double yellow center lines and white edge lines on a flat, arid, scrubby landscape are characteristic of the Pampas or northern Patagonia regions in Argentina."",
+  ""country"": ""AR"",
+  ""latitude"": -38.5,
+  ""longitude"": -64.5
+}"
+anthropic/claude-opus-4.8,no-CoT,-36.5,-64.5,328.934,AR,True,,stop,0.00484,818,30,0,2.13,"{""country"": ""AR"", ""latitude"": -36.5, ""longitude"": -64.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-36.548214,-64.284125,343.663,AR,True,,stop,0.00219,1226,39,0,7.37,"```json
+{""country"": ""AR"", ""latitude"": -36.548214, ""longitude"": -64.284125}
+```"
+openai/gpt-5.5,CoT,-40.1274,-64.5128,380.431,AR,True,,stop,0.017605,755,461,377,12.97,"{""reasoning"":""Right-hand traffic with Argentine-style double yellow centerlines/white edge lines and sparse Monte/Patagonian scrub on a long rural highway point to northern Patagonia/central Argentina. The flat arid landscape and cracked asphalt are most consistent with a road in Río Negro province."",""country"":""AR"",""latitude"":-40.1274,""longitude"":-64.5128}"
+moonshotai/kimi-k2.6,CoT,-37.0,-63.5,391.499,AR,True,,stop,0.011076336,834,3160,3087,152.71,"{""reasoning"": ""Flat scrubland horizon with low monte vegetation, gravel shoulders, and double-yellow centerline are hallmarks of Argentine Pampas/Patagonian routes; oncoming vehicle in the left lane confirms right-hand traffic."", ""country"": ""AR"", ""latitude"": -37.0, ""longitude"": -63.5}"
+openai/gpt-5.5,no-CoT,-33.1803,-66.1327,541.071,AR,True,,stop,0.00414,678,25,0,8.02,"{""country"":""AR"",""latitude"":-33.1803,""longitude"":-66.1327}"
+google/gemma-4-31b-it,no-CoT,-27.5,-64.5,1191.717,AR,True,,stop,6.108e-05,404,30,0,5.03,"```json
+{""country"": ""AR"", ""latitude"": -27.5, ""longitude"": -64.5}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8077.607,,True,True,,,,,,6.4,
+x-ai/grok-4.3,no-CoT,31.85,-106.45,8724.688,US,True,,stop,0.0007334,704,22,0,2.16,"{""country"": ""US"", ""latitude"": 31.85, ""longitude"": -106.45}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,31.806936264038086,-106.86036682128906,8740.151,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,31.739580154418945,-107.26648712158203,8753.273,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,32.2535,-107.724,8824.464,US,True,,stop,0.0014115,786,31,0,1.12,"{""country"": ""US"", ""latitude"": 32.2535, ""longitude"": -107.724}"
+minimax/minimax-m3,CoT,34.4,-103.2,8826.08,US,True,,stop,0.00090186,995,554,467,22.39,"{""reasoning"": ""Double yellow centerline with white edge lines, yellow delineator posts on the shoulder, and right-hand traffic indicate the United States. The extremely flat plateau landscape with sparse low scrubby vegetation is characteristic of the high plains/Llano Estacado of eastern New Mexico or west Texas."", ""country"": ""US"", ""latitude"": 34.4, ""longitude"": -103.2}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,32.73506546020508,-107.94403076171875,8880.977,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,35.687,-105.932,9070.846,US,True,,stop,0.00019464,586,30,0,2.31,"{""country"": ""US"", ""latitude"": 35.687, ""longitude"": -105.932}"
+xiaomi/mimo-v2.5,no-CoT,34.5,-112.5,9273.392,US,True,,stop,9.57376e-05,820,26,0,0.74,"{""country"": ""US"", ""latitude"": 34.5, ""longitude"": -112.5}"
+qwen/qwen3.5-27b,no-CoT,38.8339,-104.8214,9329.06,US,True,,stop,0.0002365,586,45,0,2.98,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 38.8339,
+  ""longitude"": -104.8214
+}
+```"
+qwen/qwen3.6-27b,no-CoT,36.0544,-112.084,9395.991,US,True,,stop,0.0002299,585,32,0,15.34,"{""country"": ""US"", ""latitude"": 36.0544, ""longitude"": -112.0840}"
+mistralai/mistral-small-2603,no-CoT,40.015,-105.2705,9462.786,US,True,,stop,0.0001365,786,31,0,5.37,"{""country"": ""US"", ""latitude"": 40.015, ""longitude"": -105.2705}"
+qwen/qwen3.5-122b-a10b,no-CoT,40.015,-105.2705,9462.786,US,True,,stop,0.00021892,586,32,0,6.21,"{""country"": ""US"", ""latitude"": 40.0150, ""longitude"": -105.2705}"
+qwen/qwen3.5-9b,no-CoT,36.7528,-119.631,9855.917,US,True,,stop,6.325e-05,586,31,0,11.43,"{""country"": ""US"", ""latitude"": 36.7528, ""longitude"": -119.631}"
+x-ai/grok-4.3,CoT,39.15,-116.85,9918.923,US,True,,stop,0.002464,788,726,662,5.72,"{""reasoning"": ""Right-hand traffic (oncoming vehicle to left of double yellow center line), US-style pavement markings, arid high-desert scrub typical of the Great Basin, flat horizon and cloudy sky."", ""country"": ""US"", ""latitude"": 39.15, ""longitude"": -116.85}"
+xiaomi/mimo-v2.5,CoT,40.85,-117.53,10104.948,US,True,,stop,0.0001605576,899,218,132,3.73,"{""reasoning"": ""The double yellow center line and white edge lines indicate right-hand traffic in a North American context. The vegetation is sagebrush steppe, and the terrain is high desert plateau, highly characteristic of the Great Basin region in the western United States, specifically Nevada."", ""country"": ""US"", ""latitude"": 40.85, ""longitude"": -117.53}"
+qwen/qwen3.6-35b-a3b,no-CoT,43.615,-116.205,10286.551,US,True,,stop,0.00011775,585,30,0,2.5,"{""country"": ""US"", ""latitude"": 43.615, ""longitude"": -116.205}"
+qwen/qwen3.5-397b-a17b,no-CoT,43.8165,-120.5542,10517.853,US,True,,stop,0.0003917,585,32,0,1.85,"{""country"": ""US"", ""latitude"": 43.8165, ""longitude"": -120.5542}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.4,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.96,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.43,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.15,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,9.43,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.22,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.16,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.2,

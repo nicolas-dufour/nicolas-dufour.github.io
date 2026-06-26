@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-15.61158666219,-47.646817332131,0.0,BR,True,,,,,,,,"Planaltina, Planaltina, Goias, BR"
+google/gemini-3.5-flash,CoT (effort=high),-15.6411,-47.7894,15.617,BR,True,,stop,0.0125985,1271,1188,1109,16.67,"{""reasoning"": ""The area code '61' on the sign corresponds to the Federal District (Brasília) and surrounding areas in Brazil, which is consistent with the Portuguese signage, Fiat Strada pickup truck, and typical concrete utility poles."", ""country"": ""BR"", ""latitude"": -15.6411, ""longitude"": -47.7894}"
+google/gemma-4-31b-it,no-CoT,-15.7801,-47.8822,31.401,BR,True,,stop,0.00010997,406,35,0,9.39,"```json
+{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.8822}
+```"
+qwen/qwen3.6-35b-a3b,CoT,-15.7975,-47.8919,33.401,BR,True,,stop,0.00299165035,553,3007,2889,31.24,"```json
+{
+  ""reasoning"": ""The sign on the right features Portuguese text ('PLANTA', 'DENTRO') and a phone number starting with '61', which is the area code for Brasília, Brazil. The driving on the right, vehicle types (VW Saveiro pickup), and tropical vegetation confirm the location is in Brazil, specifically the Federal District."",
+  ""country"": ""BR"",
+  ""latitude"": -15.7975,
+  ""longitude"": -47.8919
+}
+```"
+openai/gpt-5.5,CoT,-15.8426,-47.8761,35.526,BR,True,,stop,0.011415,621,277,197,24.77,"{""reasoning"":""Portuguese signage and the visible phone area code 61 point strongly to the Brasília/DF region of Brazil. Right-side driving, yellow center lines, dry tropical vegetation, and upscale walled roadside architecture fit Brasília’s Lago Sul/nearby suburbs."",""country"":""BR"",""latitude"":-15.8426,""longitude"":-47.8761}"
+google/gemini-3.5-flash,CoT (effort=low),-15.7801,-47.9292,35.565,BR,True,,stop,0.0042915,1271,265,181,4.5,"{""reasoning"": ""The phone number on the sign starts with the area code 61, which corresponds to the Federal District (Brasília) and surrounding areas in Brazil. The Fiat Strada pickup truck and the yellow speed bump sign are also highly characteristic of Brazil."", ""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-15.7801,-47.9292,35.565,BR,True,,stop,0.0020985,1189,35,0,31.18,"```json
+{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}
+```"
+moonshotai/kimi-k2.6,no-CoT,-15.7801,-47.9292,35.565,BR,True,,stop,0.00062229,603,25,0,7.78,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+x-ai/grok-4.3,CoT,-15.78,-47.93,35.632,BR,True,,stop,0.004409,676,1560,1477,22.09,"{""reasoning"": ""Spanish sign text 'VIRGEN' + 'CENTRO' with local phone '61 9943', right-side driving, yellow center lines, tropical vegetation/palms and overhead wiring point to Latin America; 61 area code + layout best match Brasília metro area in Brazil."", ""country"": ""BR"", ""latitude"": -15.78, ""longitude"": -47.93}"
+moonshotai/kimi-k2.6,CoT,-15.79,-47.93,36.228,BR,True,,stop,0.016397028,682,4728,4651,200.64,"{""reasoning"": ""The brown directional road sign displays 'DNER', the former Brazilian federal highway department, confirming Portuguese-speaking Brazil; right-hand traffic, tropical cerrado vegetation, and a compact Fiat Strada pickup further support a central Brazilian location near Brasília."", ""country"": ""BR"", ""latitude"": -15.79, ""longitude"": -47.93}"
+google/gemini-3.1-pro-preview,CoT,-15.8267,-47.9218,37.927,BR,True,,stop,0.005424,1272,240,146,30.31,"{
+  ""reasoning"": ""The phone number on the sign has the area code 61, which corresponds to the Federal District (Brasília) in Brazil. The yellow diamond speed bump sign and the vehicle models (like the Fiat Strada) are also typical of Brazil."",
+  ""country"": ""BR"",
+  ""latitude"": -15.8267,
+  ""longitude"": -47.9218
+}"
+openai/gpt-5.5,no-CoT,-15.8467,-47.9219,39.374,BR,True,,stop,0.00347,544,25,0,7.93,"{""country"":""BR"",""latitude"":-15.8467,""longitude"":-47.9219}"
+google/gemini-3.5-flash,CoT (effort=medium),-15.8754,-47.9621,44.711,BR,True,,stop,0.0070725,1271,574,483,5.14,"{""reasoning"": ""The phone number on the sign starts with the area code 61, which corresponds to the Federal District (Brasília) and surrounding areas in Brazil. The presence of a Fiat Strada pickup truck, white-painted curbs, and Cerrado-like vegetation further confirms this location."", ""country"": ""BR"", ""latitude"": -15.8754, ""longitude"": -47.9621}"
+google/gemini-3.1-pro-preview,no-CoT,-15.8267,-48.0556,49.866,BR,True,,stop,0.004444,1190,172,137,3.22,"```json
+{""country"": ""BR"", ""latitude"": -15.8267, ""longitude"": -48.0556}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-15.902796745300293,-48.032508850097656,52.461,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-15.905984878540039,-48.0390510559082,53.231,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-16.01264762878418,-48.130157470703125,68.285,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-16.6869,-49.2648,210.142,BR,True,,stop,0.006885,797,116,0,11.72,"{""reasoning"": ""Portuguese signage ('DINHEIRO') with phone format and tropical vegetation indicate interior Brazil; pickup with Mercosul-style plate and dry winter sky suggest Minas Gerais/Goiás region."", ""country"": ""BR"", ""latitude"": -16.6869, ""longitude"": -49.2648}"
+qwen/qwen3.5-397b-a17b,CoT,-19.9342,-44.0645,612.226,BR,True,,stop,0.0182526,553,4978,4869,250.61,"{
+""reasoning"": ""The area code '31' on the sign corresponds to Belo Horizonte and its metropolitan area in Minas Gerais, Brazil, confirmed by the Portuguese text 'DENTRO' and Brazilian-style license plates/road infrastructure. The industrial setting and vegetation are consistent with the outskirts of Contagem or Betim in this region."",
+""country"": ""BR"",
+""latitude"": -19.9342,
+""longitude"": -44.0645
+}"
+minimax/minimax-m3,no-CoT,-19.8577,-43.9445,613.661,BR,True,,stop,0.00033762,767,138,124,4.6,"{""country"": ""BR"", ""latitude"": -19.8577, ""longitude"": -43.9445}"
+anthropic/claude-opus-4.8,no-CoT,-19.916681,-43.934493,619.349,BR,True,,stop,0.00413,666,32,0,2.41,"{""country"": ""BR"", ""latitude"": -19.916681, ""longitude"": -43.934493}"
+x-ai/grok-4.3,no-CoT,-19.9208,-43.9378,619.478,BR,True,,stop,0.0005984,592,24,0,0.75,"{""country"": ""BR"", ""latitude"": -19.9208, ""longitude"": -43.9378}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-23.547197341918945,-46.698951721191406,887.958,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-23.55208969116211,-46.688716888427734,888.618,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,-23.5505,-46.6333,889.116,BR,True,,stop,5.494e-05,406,31,0,1.64,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,889.116,BR,True,,stop,0.0011835,634,31,0,0.94,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5505,-46.6333,889.116,BR,True,,stop,0.00036468,473,31,0,3.89,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-9b,no-CoT,-23.5505,-46.6333,889.116,BR,True,,stop,5.205e-05,474,31,0,9.73,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-35b-a3b,no-CoT,-23.5505,-46.6333,889.116,BR,True,,stop,0.00010195,473,31,0,2.72,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-23.566862106323242,-46.66645050048828,890.515,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-30.08,-51.13,1647.615,BR,True,,stop,0.00067182,845,397,348,8.19,"{""reasoning"": ""The sign reads 'MURANO OFFICES' with phone prefix '51 9943...' — the 51 area code identifies Porto Alegre, Rio Grande do Sul, Brazil. Brazilian Mercosul-style white license plate, right-hand traffic, subtropical vegetation, and distant green hills are all consistent with a suburban avenue in Porto Alegre's outer zones."", ""country"": ""BR"", ""latitude"": -30.08, ""longitude"": -51.13}{""reasoning"": ""The sign reads 'MURANO OFFICES' with phone prefix '51 9943...' — the 51 area code identifies Porto Alegre, Rio Grande do Sul, Brazil. Brazilian Mercosul-style white license plate, right-hand traffic, subtropical vegetation, and distant green hills are all consistent with a suburban avenue in Porto Alegre's outer zones."", ""country"": ""BR"", ""latitude"": -30.08, ""longitude"": -51.13}"
+xiaomi/mimo-v2.5,CoT,20.63,-87.08,5897.011,MX,True,,stop,0.0007762776,787,2473,2401,30.79,"{""reasoning"": ""The Spanish signage with 'ENTRE' and 'DENTRO DE' indicates a Spanish-speaking country, and the tropical vegetation and right-hand traffic suggest a Latin American location, likely Mexico."", ""country"": ""MX"", ""latitude"": 20.63, ""longitude"": -87.08}"
+qwen/qwen3.5-122b-a10b,no-CoT,20.9674,-89.5926,6123.263,MX,True,,stop,0.0002884,473,31,0,7.41,"{""country"": ""MX"", ""latitude"": 20.9674, ""longitude"": -89.5926}"
+xiaomi/mimo-v2.5,no-CoT,20.9674,-89.5926,6123.263,MX,True,,stop,8.14576e-05,708,31,0,2.63,"{""country"": ""MX"", ""latitude"": 20.9674, ""longitude"": -89.5926}"
+qwen/qwen3.5-27b,no-CoT,20.9753,-89.6169,6125.788,MX,True,,stop,0.00019467,473,31,0,2.84,"{""country"": ""MX"", ""latitude"": 20.9753, ""longitude"": -89.6169}"
+mistralai/mistral-small-2603,no-CoT,33.7701,-84.3944,6730.983,US,True,,stop,0.0001137,634,31,0,3.43,"{""country"": ""US"", ""latitude"": 33.7701, ""longitude"": -84.3944}"
+qwen/qwen3.5-35b-a3b,no-CoT,19.4326,-99.1332,6846.669,MX,True,,stop,0.0001171625,473,31,0,7.76,"{""country"": ""MX"", ""latitude"": 19.4326, ""longitude"": -99.1332}"
+qwen/qwen3.6-27b,no-CoT,19.4326,-99.1332,6846.669,MX,True,,stop,0.0001943,473,31,0,9.71,"{""country"": ""MX"", ""latitude"": 19.4326, ""longitude"": -99.1332}"
+mistralai/mistral-small-2603,CoT,-26.1465,28.0375,7848.996,ZA,True,,stop,0.0004422,716,558,594,11.01,"{""reasoning"": ""Driving on the left, South African license plates with 'RSA' blue strip, and 'Killarney Mall' sign indicate Johannesburg, South Africa."", ""country"": ""ZA"", ""latitude"": -26.1465, ""longitude"": 28.0375}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.24,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.25,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.62,

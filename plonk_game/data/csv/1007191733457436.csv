@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-13.027793922287934,28.740605558972536,0.0,ZM,True,,,,,,,,"Ndola, None, Copperbelt, ZM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-13.03197193145752,28.575393676757812,17.904,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-13.029923439025879,28.569555282592773,18.532,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-13.248542785644531,28.47235679626465,38.03,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,-6.369,34.888,1000.826,TZ,True,,stop,0.00077211,906,23,0,3.35,"{""country"": ""TZ"", ""latitude"": -6.369, ""longitude"": 34.888}"
+minimax/minimax-m3,no-CoT,-6.8,37.0,1138.901,TZ,True,,stop,0.00042042,1071,131,131,6.51,"{""country"": ""TZ"", ""latitude"": -6.8, ""longitude"": 37.0}"
+qwen/qwen3.6-35b-a3b,no-CoT,-6.7924,39.2083,1339.351,TZ,True,,stop,0.00013455,697,30,0,4.21,"{""country"": ""TZ"", ""latitude"": -6.7924, ""longitude"": 39.2083}"
+anthropic/claude-opus-4.8,no-CoT,8.5,8.5,3275.3,NG,True,,stop,0.0056,970,30,0,8.88,"{""country"": ""NG"", ""latitude"": 8.5, ""longitude"": 8.5}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3483.116,,True,True,,,,,,0.3,
+moonshotai/kimi-k2.6,CoT,10.9,7.7,3531.415,NG,True,,stop,0.006115464,986,1689,1619,45.27,"{""reasoning"": ""Red lateritic dirt road, dry savanna grassland, and African fan palm (Borassus aethiopum) are characteristic of the West African Sudanian savanna zone during dry season."", ""country"": ""NG"", ""latitude"": 10.9, ""longitude"": 7.7}"
+qwen/qwen3.5-397b-a17b,no-CoT,6.65,-1.35,3979.438,GH,True,,stop,0.0004922,697,25,0,1.51,"{""country"": ""GH"", ""latitude"": 6.65, ""longitude"": -1.35}"
+anthropic/claude-opus-4.8,CoT,11.5,-1.5,4309.233,BF,True,,stop,0.00773,1101,89,0,11.56,"{""reasoning"": ""Red laterite dirt road, dry savanna grass, borassus palm and scattered trees indicate West African Sudano-Sahelian zone in dry season."", ""country"": ""BF"", ""latitude"": 11.5, ""longitude"": -1.5}"
+x-ai/grok-4.3,CoT,11.85,-1.65,4346.238,BF,True,,stop,0.0022615,900,589,519,4.8,"{
+  ""reasoning"": ""Red lateritic soil, unpaved road, Borassus aethiopum palm and open savanna scrub point to the West African Sahel; no traffic infrastructure or signage visible."",
+  ""country"": ""BF"",
+  ""latitude"": 11.85,
+  ""longitude"": -1.65
+}"
+qwen/qwen3.5-27b,no-CoT,7.5399,-5.5471,4424.261,CI,True,,stop,0.0002585,698,42,0,14.95,"```json
+{
+  ""country"": ""CI"",
+  ""latitude"": 7.5399,
+  ""longitude"": -5.5471
+}
+```"
+minimax/minimax-m3,CoT,8.5,-5.8,4503.573,CI,True,,stop,0.00081426,1147,443,367,19.34,"{""reasoning"": ""Red lateritic soil, Borassus fan palm, dry savanna vegetation with hazy harmattan-like sky, and unpaved laterite road are highly characteristic of West Africa, most likely Côte d'Ivoire or Guinea savanna zone."", ""country"": ""CI"", ""latitude"": 8.5, ""longitude"": -5.8}"
+google/gemini-3.5-flash,CoT (effort=low),10.4235,-12.1542,5212.906,GN,True,,stop,0.004107,1286,242,172,15.38,"{""reasoning"": ""The presence of Borassus palms, reddish laterite soil, and dry savanna vegetation is highly characteristic of the West African Sahel/savanna transition zone, particularly in Guinea."", ""country"": ""GN"", ""latitude"": 10.4235, ""longitude"": -12.1542}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),12.5833,-12.2167,5338.675,SN,True,,stop,0.002121,1204,35,0,16.51,"```json
+{""country"": ""SN"", ""latitude"": 12.5833, ""longitude"": -12.2167}
+```"
+xiaomi/mimo-v2.5,CoT,26.9,56.2,5338.749,IR,True,,stop,0.000150605,789,242,156,48.69,"{""reasoning"": ""The prominent palm tree (resembling a Palmyra or similar stout palm) combined with the arid yet scrubby vegetation, reddish soil/fill, and the style of the unpaved landscape strongly suggest a region like Southern Iran (e.g., near Qeshm Island or Hormozgan province) or potentially parts of India/Southeast Asia, but the specific flora and dry atmosphere lean towards Iran."", ""country"": ""IR"", ""latitude"": 26.9, ""longitude"": 56.2}"
+google/gemini-3.1-pro-preview,CoT,13.7654,-13.6732,5541.394,SN,True,,stop,0.006892,1286,360,281,5.41,"{
+  ""reasoning"": ""The reddish dirt road, dry savanna vegetation, and presence of a Borassus palm strongly suggest a West African landscape. The overall appearance is highly characteristic of rural Senegal."",
+  ""country"": ""SN"",
+  ""latitude"": 13.7654,
+  ""longitude"": -13.6732
+}"
+google/gemini-3.5-flash,CoT (effort=medium),12.8542,-15.1234,5626.917,SN,True,,stop,0.0070305,1285,567,488,5.79,"{""reasoning"": ""The presence of the Borassus aethiopum palm tree, reddish laterite soil, and dry savanna vegetation under a hazy sky is highly characteristic of the West African Sahel/savanna zone, particularly southern Senegal."", ""country"": ""SN"", ""latitude"": 12.8542, ""longitude"": -15.1234}"
+google/gemini-3.1-pro-preview,no-CoT,12.6392,-16.2733,5724.834,SN,True,,stop,0.002828,1204,35,0,8.52,"```json
+{""country"": ""SN"", ""latitude"": 12.6392, ""longitude"": -16.2733}
+```"
+openai/gpt-5.5,CoT,13.7854,-15.8732,5748.269,SN,True,,stop,0.01531,890,362,294,17.1,"{""reasoning"":""Dry West African savanna with sandy laterite track and Borassus fan palms strongly suggests rural Senegal/Gambia region; Google-style coverage and landscape fit Senegal's central-southern countryside best."",""country"":""SN"",""latitude"":13.7854,""longitude"":-15.8732}"
+google/gemini-3.5-flash,CoT (effort=high),14.4521,-16.5834,5851.347,SN,True,,stop,0.0148245,1285,1433,1347,19.79,"```json
+{""reasoning"": ""The presence of the Borassus aethiopum (African palmyra palm) amidst dry savanna vegetation and reddish laterite soil is highly characteristic of the Sahelian/Sudanian savanna zone in West Africa, particularly Senegal."", ""country"": ""SN"", ""latitude"": 14.4521, ""longitude"": -16.5834}
+```"
+openai/gpt-5.5,no-CoT,14.6841,-16.4987,5856.084,SN,True,,stop,0.004785,813,24,0,1.42,"{""country"":""SN"",""latitude"":14.6841,""longitude"":-16.4987}"
+xiaomi/mimo-v2.5,no-CoT,15.3,75.7,6050.764,IN,True,,stop,0.0001111376,932,25,0,2.54,"{""country"": ""IN"", ""latitude"": 15.3, ""longitude"": 75.7}"
+qwen/qwen3.5-122b-a10b,no-CoT,11.1271,78.6569,6127.695,IN,True,,stop,0.00024596,698,31,0,6.8,"{""country"": ""IN"", ""latitude"": 11.1271, ""longitude"": 78.6569}"
+mistralai/mistral-medium-3-5,no-CoT,13.0827,80.2707,6378.334,IN,True,,stop,0.0016395,938,31,0,1.28,"{""country"": ""IN"", ""latitude"": 13.0827, ""longitude"": 80.2707}"
+qwen/qwen3.5-35b-a3b,no-CoT,13.0827,80.2707,6378.334,IN,True,,stop,0.000213,697,31,0,7.22,"{""country"": ""IN"", ""latitude"": 13.0827, ""longitude"": 80.2707}"
+qwen/qwen3.6-27b,no-CoT,21.1458,79.0882,6682.567,IN,True,,stop,0.0002615,697,31,0,23.73,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+x-ai/grok-4.3,no-CoT,21.15,79.09,6682.962,IN,True,,stop,0.0008734,816,22,0,7.06,"{""country"": ""IN"", ""latitude"": 21.15, ""longitude"": 79.09}"
+google/gemma-4-31b-it,no-CoT,17.6868,82.2441,6791.789,IN,True,,stop,6.692e-05,404,36,0,4.81,"```json
+{""country"": ""IN"", ""latitude"": 17.6868, ""longitude"": 82.2441}
+```"
+qwen/qwen3.5-9b,no-CoT,22.5726,88.3639,7603.872,IN,True,,stop,7.445e-05,698,31,0,4.08,"{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 88.3639}"
+mistralai/mistral-small-2603,no-CoT,-19.916,-43.94,7733.006,BR,True,,stop,0.0001581,938,29,0,1.34,"{""country"": ""BR"", ""latitude"": -19.916, ""longitude"": -43.940}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-15.167197227478027,-46.507423400878906,8076.905,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-12.801583290100098,-46.499019622802734,8119.721,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-10.113873481750488,-53.8328742980957,8960.823,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.34,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,7.6,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.35,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.09,

@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,62.468561426504,14.467432951298,0.0,SE,True,,,,,,,,"Hoverberg, Bergs Kommun, Jaemtland, SE"
+google/gemini-3.1-pro-preview,CoT,63.15,15.25,85.571,SE,True,,stop,0.005218,1271,223,143,10.19,"{
+  ""reasoning"": ""The dashed white edge lines on the road and the dense boreal forest (taiga) are highly characteristic of Sweden. The overall landscape and road style suggest a rural area in central or northern Sweden."",
+  ""country"": ""SE"",
+  ""latitude"": 63.15,
+  ""longitude"": 15.25
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,62.377498626708984,12.596210479736328,96.851,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,62.378456115722656,12.59007453918457,97.153,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,62.40652847290039,12.574992179870605,97.61,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,63.5,16.5,153.912,SE,True,,stop,0.00412,1190,145,116,3.04,"```json
+{""country"": ""SE"", ""latitude"": 63.5, ""longitude"": 16.5}
+```"
+google/gemini-3.5-flash,CoT (effort=low),63.85,15.55,162.935,SE,True,,stop,0.0038235,1271,213,145,3.77,"{""reasoning"": ""The dashed white edge lines on the road are highly characteristic of Swedish road markings, and the dense boreal forest of pine, spruce, and birch indicates a location in central or northern Sweden."", ""country"": ""SE"", ""latitude"": 63.85, ""longitude"": 15.55}"
+minimax/minimax-m3,no-CoT,64.0,17.5,228.117,SE,True,,stop,0.00022248,752,23,0,5.69,"{""country"": ""SE"", ""latitude"": 64.0, ""longitude"": 17.5}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),64.1235,19.5432,313.211,SE,True,,stop,0.0020985,1189,35,0,1.32,"```json
+{""country"": ""SE"", ""latitude"": 64.1235, ""longitude"": 19.5432}
+```"
+moonshotai/kimi-k2.6,no-CoT,64.5,19.0,318.688,SE,True,,stop,0.000296172,603,23,0,15.76,"{""country"": ""SE"", ""latitude"": 64.5, ""longitude"": 19.0}"
+qwen/qwen3.6-27b,CoT,65.0,18.0,330.721,SE,True,,stop,0.019167817,553,7920,7173,318.05,"{""reasoning"": ""The image shows a red Volvo (likely a V70 or 850) driving on the right side of a two-lane road with standard white dashed center lines and solid white edge lines, which is characteristic of Swedish rural roads. The surrounding boreal forest with tall spruce/pine trees and yellowing birch leaves, along with the overcast sky, strongly indicates a location in Northern Sweden (Norrland)."", ""country"": ""SE"", ""latitude"": 65.0, ""longitude"": 18.0}"
+google/gemini-3.5-flash,CoT (effort=high),64.5012,19.4512,334.928,SE,True,,stop,0.0078645,1271,662,590,7.47,"{""reasoning"": ""The short dashed white edge lines on the road are highly characteristic of Sweden, and the dense coniferous forest with birch trees indicates a location in the northern boreal region (Norrland)."", ""country"": ""SE"", ""latitude"": 64.5012, ""longitude"": 19.4512}"
+google/gemini-3.5-flash,CoT (effort=medium),65.1234,18.1234,345.374,SE,True,,stop,0.0062535,1271,483,418,8.34,"{""reasoning"": ""The short dashed white edge lines on a narrow paved road, combined with the dense boreal forest of pine and birch, are highly characteristic of northern Sweden."", ""country"": ""SE"", ""latitude"": 65.1234, ""longitude"": 18.1234}"
+qwen/qwen3.5-397b-a17b,CoT,65.4821,19.1953,406.57,SE,True,,stop,0.0071854,554,1919,1789,41.98,"{""reasoning"": ""The landscape features flat terrain with dense boreal forest (pine and birch) and wooden utility poles, characteristic of rural Fennoscandia. The red car (likely a Volvo) has headlights on and appears to have a yellow license plate, driving on the right side of the road with dashed white edge markings, which strongly points to Sweden."", ""country"": ""SE"", ""latitude"": 65.4821, ""longitude"": 19.1953}"
+xiaomi/mimo-v2.5,CoT,65.8,18.5,418.726,SE,True,,stop,0.0001224776,787,138,63,2.15,"{""reasoning"": ""The dense boreal forest (taiga) with conifers like spruce and pine, combined with the specific dashed white road edge markings and the vehicle driving on the right, strongly suggests Northern Europe, specifically Sweden."", ""country"": ""SE"", ""latitude"": 65.8, ""longitude"": 18.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,65.8201,19.4532,443.938,SE,True,,stop,0.0002355,473,39,0,8.86,"{
+  ""country"": ""SE"",
+  ""latitude"": 65.8201,
+  ""longitude"": 19.4532
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,64.0412368774414,23.537029266357422,485.847,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,66.5,18.5,487.881,SE,True,,stop,7.97776e-05,708,25,0,4.66,"{""country"": ""SE"", ""latitude"": 66.5, ""longitude"": 18.5}"
+minimax/minimax-m3,CoT,66.5,20.0,520.309,SE,True,,stop,0.00046506,791,241,158,21.52,"{""reasoning"": ""Boreal taiga forest with spruce/pine, flat terrain, two-lane highway with white edge and dashed center markings, right-hand traffic, and overcast northern climate strongly suggest northern Scandinavia, most likely Swedish Lapland along a highway like the E10 or E45."", ""country"": ""SE"", ""latitude"": 66.5, ""longitude"": 20.0}"
+google/gemma-4-31b-it,CoT,64.5,24.0,523.68,FI,True,,stop,0.00035094,492,834,793,13.45,"{""reasoning"": ""The dense coniferous and birch forest, right-hand traffic, and overcast sky are highly characteristic of the Finnish taiga."", ""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 24.0}"
+x-ai/grok-4.3,CoT,62.3,25.7,578.535,FI,True,,stop,0.0022215,676,685,615,14.2,"{""reasoning"": ""Boreal taiga forest (pine + autumn birch), right-hand traffic, daytime headlights, white edge dashes and overcast sky all point to Fennoscandia; image matches typical rural Finnish/Swedish secondary road."", ""country"": ""FI"", ""latitude"": 62.3, ""longitude"": 25.7}"
+x-ai/grok-4.3,no-CoT,62.3,25.7,578.535,FI,True,,stop,0.0007278,592,22,0,1.3,"{""country"": ""FI"", ""latitude"": 62.3, ""longitude"": 25.7}"
+qwen/qwen3.5-35b-a3b,CoT,63.45,25.75,579.897,FI,True,,stop,0.0046879625,553,3537,3445,22.38,"{""reasoning"": ""The image shows a two-lane road with right-hand traffic (oncoming car is on the left), surrounded by a boreal forest (taiga) with Scots pine and birch trees showing autumn colors. The road markings, wooden utility poles, and general landscape are highly characteristic of rural Finland."", ""country"": ""FI"", ""latitude"": 63.45, ""longitude"": 25.75}"
+qwen/qwen3.6-27b,no-CoT,63.9704,25.7941,590.639,FI,True,,stop,0.000211097,473,31,0,4.63,"{""country"": ""FI"", ""latitude"": 63.9704, ""longitude"": 25.7941}"
+qwen/qwen3.5-35b-a3b,no-CoT,64.2189,25.7342,593.85,FI,True,,stop,9.736e-05,474,31,0,2.06,"{""country"": ""FI"", ""latitude"": 64.2189, ""longitude"": 25.7342}"
+mistralai/mistral-medium-3-5,no-CoT,64.8388,25.2817,594.173,FI,True,,stop,0.0011835,634,31,0,2.95,"{""country"": ""FI"", ""latitude"": 64.8388, ""longitude"": 25.2817}"
+google/gemma-4-26b-a4b-it,CoT,64.0,26.0,601.13,FI,True,,stop,0.00037028,492,797,708,16.73,"{""reasoning"": ""The dense coniferous forest and overcast sky are characteristic of a boreal climate, while the road markings and driving side are consistent with Northern Europe, specifically Finland."", ""country"": ""FI"", ""latitude"": 64.0, ""longitude"": 26.0}"
+mistralai/mistral-small-2603,no-CoT,60.1699,24.9384,613.553,FI,True,,stop,0.000142125,634,31,0,2.81,"{""country"": ""FI"", ""latitude"": 60.1699, ""longitude"": 24.9384}"
+qwen/qwen3.6-35b-a3b,no-CoT,64.5,26.0,614.37,FI,True,,stop,0.0001348,474,25,0,3.52,"{""country"": ""FI"", ""latitude"": 64.5, ""longitude"": 26.0}"
+moonshotai/kimi-k2.6,CoT,62.5,26.5,617.243,FI,True,,stop,0.013551255,681,3642,4161,58.13,"{""reasoning"": ""Flat boreal pine forest with white road edge markings and approaching vehicle using headlights indicate a Nordic right-hand traffic country, most consistent with Finland."", ""country"": ""FI"", ""latitude"": 62.5, ""longitude"": 26.5}"
+qwen/qwen3.5-27b,no-CoT,64.0236,26.4333,622.356,FI,True,,stop,0.00019467,473,31,0,4.74,"{""country"": ""FI"", ""latitude"": 64.0236, ""longitude"": 26.4333}"
+qwen/qwen3.6-35b-a3b,CoT,62.9,27.2,650.397,FI,True,,stop,0.003458,554,2092,1943,43.08,"```json
+{
+  ""reasoning"": ""The image shows a right-hand traffic road with dashed white edge lines and a dashed center line, typical of rural Finnish roads. The vegetation consists of a mix of tall pines and birch trees with autumn foliage, characteristic of the Finnish boreal forest, and the wooden utility poles are standard in the region."",
+  ""country"": ""FI"",
+  ""latitude"": 62.9,
+  ""longitude"": 27.2
+}
+```"
+openai/gpt-5.5,no-CoT,64.2134,27.7512,689.1,FI,True,,stop,0.00341,544,23,0,1.4,"{""country"":""FI"",""latitude"":64.2134,""longitude"":27.7512}"
+anthropic/claude-opus-4.8,no-CoT,65.5,27.0,696.313,FI,True,,stop,0.00408,666,30,0,8.5,"{""country"": ""FI"", ""latitude"": 65.5, ""longitude"": 27.0}"
+google/gemma-4-31b-it,no-CoT,66.5,25.7,698.55,FI,True,,stop,6.478e-05,406,30,0,10.7,"```json
+{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 25.7}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,66.5,26.0,709.553,FI,True,,stop,0.00024297,473,25,0,1.42,"{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 26.0}"
+qwen/qwen3.5-9b,no-CoT,65.0167,28.1333,727.675,FI,True,,stop,5.205e-05,474,31,0,5.66,"{""country"": ""FI"", ""latitude"": 65.0167, ""longitude"": 28.1333}"
+anthropic/claude-opus-4.8,CoT,65.8,27.5,730.738,FI,True,,stop,0.00631,797,93,0,3.03,"{""reasoning"": ""Boreal coniferous forest with autumn birches, overcast Nordic sky, right-hand traffic and dashed road markings suggest northern Finland or Sweden."", ""country"": ""FI"", ""latitude"": 65.8, ""longitude"": 27.5}"
+openai/gpt-5.5,CoT,66.2387,27.6714,758.995,FI,True,,stop,0.015315,621,407,325,9.74,"{""reasoning"":""Right-hand traffic on a narrow Nordic rural road with Finnish-style white dashed edge markings and no visible centerline, surrounded by flat boreal pine/spruce forest under a cool overcast sky. These clues most strongly fit northern/central Finland rather than Norway or Sweden."",""country"":""FI"",""latitude"":66.2387,""longitude"":27.6714}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,65.83025360107422,29.475160598754883,815.256,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,65.80116271972656,29.526315689086914,816.33,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7051.051,,True,True,,,,,,16.96,
+mistralai/mistral-small-2603,CoT,47.8,-121.4,7146.973,US,True,,stop,0.00050184,716,769,818,5.93,"{""reasoning"": ""Right-hand traffic, dense coniferous forest, and overcast sky suggest the Pacific Northwest; road style and markings align with Washington State, USA."", ""country"": ""US"", ""latitude"": 47.8, ""longitude"": -121.4}"
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.35,

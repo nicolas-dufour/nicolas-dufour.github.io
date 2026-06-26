@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-27.71137805250824,-67.9678469463142,0.0,AR,True,,,,,,,,"Fiambala, None, Catamarca, AR"
+minimax/minimax-m3,no-CoT,-28.95,-67.9,137.888,AR,True,,stop,0.00022488,752,25,0,8.43,"{""country"": ""AR"", ""latitude"": -28.9500, ""longitude"": -67.9000}"
+google/gemini-3.1-pro-preview,CoT,-25.953,-65.812,289.791,AR,True,,stop,0.005476,1310,238,138,10.47,"{
+  ""reasoning"": ""The striking red rock formations and arid mountainous terrain are highly characteristic of the Quebrada de las Conchas in Salta, Argentina. The road markings (double yellow center lines, white edge lines) on a well-paved highway match National Route 68 in this region."",
+  ""country"": ""AR"",
+  ""latitude"": -25.953,
+  ""longitude"": -65.812
+}"
+moonshotai/kimi-k2.6,CoT,-25.85,-65.92,290.098,AR,True,,stop,0.014519655,681,3911,4312,45.61,"{""reasoning"": ""Red sandstone formations and arid mountain valley match the Quebrada de las Conchas along Argentina's Ruta Nacional 68; right-hand traffic and yellow diamond warning sign confirm the country."", ""country"": ""AR"", ""latitude"": -25.85, ""longitude"": -65.92}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-25.9412,-65.8125,290.649,AR,True,,stop,0.002157,1228,35,0,1.18,"```json
+{""country"": ""AR"", ""latitude"": -25.9412, ""longitude"": -65.8125}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-25.9333,-65.8167,290.945,AR,True,,stop,0.004364,1228,159,124,9.27,"```json
+{""country"": ""AR"", ""latitude"": -25.9333, ""longitude"": -65.8167}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-25.9231,-65.8124,292.036,AR,True,,stop,0.0056715,1309,412,335,10.61,"{""reasoning"": ""The striking red rock canyon, arid climate, and road markings with double yellow center lines are highly characteristic of Ruta Nacional 68 in the Quebrada de las Conchas, Salta Province, Argentina."", ""country"": ""AR"", ""latitude"": -25.9231, ""longitude"": -65.8124}"
+google/gemini-3.5-flash,CoT (effort=high),-25.923,-65.812,292.073,AR,True,,stop,0.012648,1310,1187,1108,8.82,"{""reasoning"": ""The vibrant red sandstone canyon contrasting with distant grey-green mountains, along with the road markings and guardrail style, points directly to Ruta Nacional 68 in the Quebrada de las Conchas, Salta, Argentina."", ""country"": ""AR"", ""latitude"": -25.923, ""longitude"": -65.812}"
+google/gemini-3.5-flash,CoT (effort=low),-25.9214,-65.8125,292.158,AR,True,,stop,0.004296,1310,259,176,8.87,"{""reasoning"": ""The dramatic red rock canyon formations, arid climate, and road markings (double yellow center lines, white outer lines) are highly characteristic of Ruta Nacional 68 in the Quebrada de las Conchas, Salta Province, Argentina."", ""country"": ""AR"", ""latitude"": -25.9214, ""longitude"": -65.8125}"
+openai/gpt-5.5,CoT,-25.7896,-65.7334,308.026,AR,True,,stop,0.016125,621,434,345,17.33,"{""reasoning"":""Arid red-rock canyon scenery with right-hand traffic, double yellow centerlines, white edge lines and Argentine-style yellow warning signage strongly suggests northwestern Argentina. The landscape and road design closely match Ruta Nacional 68 through the Quebrada de las Conchas near Cafayate, Salta."",""country"":""AR"",""latitude"":-25.7896,""longitude"":-65.7334}"
+minimax/minimax-m3,CoT,-25.35,-66.05,324.56,AR,True,,stop,0.00087186,843,567,475,16.89,"{""reasoning"": ""Red/orange Andean rock formations, Argentine-style yellow diamond curve warning sign, yellow center line markings on a winding mountain highway with metal guardrails—all characteristic of the Calchaquí Valleys / Quebrada de Cafayate region along Ruta Nacional 40 or 68 in Salta Province, northwestern Argentina."", ""country"": ""AR"", ""latitude"": -25.35, ""longitude"": -66.05}"
+openai/gpt-5.5,no-CoT,-24.7726,-65.7974,391.948,AR,True,,stop,0.00347,544,25,0,1.15,"{""country"":""AR"",""latitude"":-24.7726,""longitude"":-65.7974}"
+anthropic/claude-opus-4.8,no-CoT,-24.7,-65.6,409.763,AR,True,,stop,0.00408,666,30,0,9.27,"{""country"": ""AR"", ""latitude"": -24.7, ""longitude"": -65.6}"
+anthropic/claude-opus-4.8,CoT,-24.45,-65.85,419.799,AR,True,,stop,0.00651,797,101,0,19.26,"{""reasoning"": ""Red rock arid mountains and yellow center line on right-driving road suggest northwestern Argentina, likely Quebrada near Salta/Jujuy on a route like RN9 or RN51."", ""country"": ""AR"", ""latitude"": -24.45, ""longitude"": -65.85}"
+google/gemma-4-31b-it,no-CoT,-23.625,-65.312,526.556,AR,True,,stop,6.638e-05,406,34,0,2.29,"```json
+{""country"": ""AR"", ""latitude"": -23.625, ""longitude"": -65.312}
+```"
+moonshotai/kimi-k2.6,no-CoT,-23.5,-65.5,529.603,AR,True,,stop,0.00051219,602,23,0,3.52,"{""country"": ""AR"", ""latitude"": -23.5, ""longitude"": -65.5}"
+google/gemma-4-31b-it,CoT,-23.45,-65.35,541.672,AR,True,,stop,0.00024123,492,537,453,12.67,"{""reasoning"": ""The distinct red rocky mountains and arid landscape are characteristic of the Quebrada de Humahuaca region in Jujuy, Argentina. Right-hand traffic and road markings are consistent with Argentinian highways."", ""country"": ""AR"", ""latitude"": -23.45, ""longitude"": -65.35}"
+x-ai/grok-4.3,no-CoT,-23.205,-65.348,565.87,AR,True,,stop,0.0005934,592,22,0,9.52,"{""country"": ""AR"", ""latitude"": -23.205, ""longitude"": -65.348}"
+mistralai/mistral-small-2603,CoT,34.8697,-111.761,8342.029,US,True,,stop,0.00034824,716,513,526,3.98,"{""reasoning"": ""Red rock formations are characteristic of Sedona, Arizona, and road infrastructure style matches the US."", ""country"": ""US"", ""latitude"": 34.8697, ""longitude"": -111.761}"
+x-ai/grok-4.3,CoT,36.85,-110.15,8423.553,US,True,,stop,0.0024865,676,791,716,7.78,"{""reasoning"": ""US-style double yellow center line + right-side driving, metal guardrail, yellow curve sign, and iconic red sandstone canyon walls point to American Southwest desert; sparse scrub vegetation and clear arid climate exclude other red-rock regions like Australia or Jordan."", ""country"": ""US"", ""latitude"": 36.85, ""longitude"": -110.15}"
+qwen/qwen3.5-27b,no-CoT,36.8647,-112.1876,8537.925,US,True,,stop,0.0002187,473,32,0,7.82,"{""country"": ""US"", ""latitude"": 36.8647, ""longitude"": -112.1876}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.20060729980469,-114.28267669677734,8602.299,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,36.0544,-114.7711,8618.954,US,True,,stop,0.0002379,473,40,0,2.81,"{
+  ""country"": ""US"",
+  ""latitude"": 36.0544,
+  ""longitude"": -114.7711
+}"
+xiaomi/mimo-v2.5,CoT,36.101,-114.708,8619.097,US,True,,stop,0.0001605576,787,274,191,12.03,"{""reasoning"": ""The right-hand driving, double yellow center line, and distinct arid red rock canyon landscape match the southwestern US, specifically the Lake Mead National Recreation Area in Nevada. The desert terrain and road infrastructure are consistent with this region."", ""country"": ""US"", ""latitude"": 36.101, ""longitude"": -114.708}"
+mistralai/mistral-medium-3-5,no-CoT,37.2982,-113.0263,8622.51,US,True,,stop,0.001191,634,32,0,2.34,"{""country"": ""US"", ""latitude"": 37.2982, ""longitude"": -113.0263}"
+xiaomi/mimo-v2.5,no-CoT,36.14,-114.78,8626.625,US,True,,stop,8.06176e-05,708,28,0,2.48,"{""country"": ""US"", ""latitude"": 36.14, ""longitude"": -114.78}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,36.66612243652344,-114.22296905517578,8637.895,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,36.89573287963867,-113.91398620605469,8639.266,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,37.149818420410156,-113.5416488647461,8639.299,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,37.152565002441406,-113.53878784179688,8639.367,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.064701080322266,-113.68966674804688,8640.594,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,36.0867,-115.1372,8643.45,US,True,,stop,5.22e-05,474,32,0,11.06,"{""country"": ""US"", ""latitude"": 36.0867, ""longitude"": -115.1372}"
+google/gemma-4-26b-a4b-it,no-CoT,36.107,-115.173,8647.275,,True,,stop,5.894e-05,406,41,0,8.16,"{""country"": ""US"", ""latitude"": 36.107 own own"": 36.107, ""longitude"": -115.173}"
+qwen/qwen3.5-397b-a17b,no-CoT,36.1699,-115.1398,8650.52,US,True,,stop,0.000383,473,32,0,7.91,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+qwen/qwen3.6-27b,no-CoT,36.1358,-115.3284,8658.953,US,True,,stop,0.000238189,474,32,0,1.18,"{""country"": ""US"", ""latitude"": 36.1358, ""longitude"": -115.3284}"
+qwen/qwen3.5-397b-a17b,CoT,36.1368,-115.4288,8665.046,US,True,,stop,0.0175596,553,4949,4046,532.17,"{
+""reasoning"": ""The distinctive red Aztec sandstone formations and desert scrub vegetation are characteristic of Red Rock Canyon National Conservation Area in Nevada. The double yellow center lines, right-hand traffic, and standard US guardrail confirm the location is in the United States, specifically on NV-159 approaching the park."",
+""country"": ""US"",
+""latitude"": 36.1368,
+""longitude"": -115.4288
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,36.1445,-115.4389,8666.289,US,True,,stop,0.000146,474,32,0,2.26,"{""country"": ""US"", ""latitude"": 36.1445, ""longitude"": -115.4389}"
+qwen/qwen3.6-35b-a3b,CoT,36.1366,-115.5856,8674.433,US,True,,stop,0.00413064535,553,4187,4075,227.01,"```json
+{
+  ""reasoning"": ""The distinctive red Aztec Sandstone formations and the two-lane road with double yellow lines strongly indicate the Scenic Loop Drive in Red Rock Canyon National Conservation Area near Las Vegas, Nevada. The specific curve and guardrail placement match the section of the loop drive heading towards the Calico Tanks area."",
+  ""country"": ""US"",
+  ""latitude"": 36.1366,
+  ""longitude"": -115.5856
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,36.0825,-115.7981,8682.746,US,True,,stop,0.0001184625,473,32,0,1.69,"{""country"": ""US"", ""latitude"": 36.0825, ""longitude"": -115.7981}"
+mistralai/mistral-small-2603,no-CoT,36.5785,-118.292,8875.356,US,True,,stop,0.000142125,634,31,0,1.68,"{""country"": ""US"", ""latitude"": 36.5785, ""longitude"": -118.292}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.27,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.24,

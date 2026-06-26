@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,2.0040348018146,-157.48264841964,0.0,KI,True,,,,,,,,"Tabwakea Village, Kiritimati, Line Islands, KI"
+google/gemini-3.5-flash,CoT (effort=low),1.9872,-157.4775,1.957,KI,True,,stop,0.004725,1272,313,238,11.88,"{""reasoning"": ""The flat atoll landscape with dense coconut palms, sandy roadsides, and the view from inside a vehicle matches the Google Street View coverage of Kiritimati (Christmas Island), Kiribati."", ""country"": ""KI"", ""latitude"": 1.9872, ""longitude"": -157.4775}"
+google/gemini-3.5-flash,CoT (effort=medium),1.985,-157.475,2.281,KI,True,,stop,0.0223725,1271,2274,2179,17.95,"{""reasoning"": ""The image shows a flat coral atoll landscape with dense coconut palms and a light-colored road made of coral aggregate, characteristic of Kiritimati (Christmas Island) in Kiribati. The vehicle in front is a Japanese import driving on the left, consistent with Kiribati's traffic laws."", ""country"": ""KI"", ""latitude"": 1.985, ""longitude"": -157.475}"
+google/gemini-3.5-flash,CoT (effort=high),1.985,-157.43,6.222,KI,True,,stop,0.0176655,1271,1751,1671,13.74,"{""reasoning"": ""The flat terrain, sandy soil, and dense coconut palm plantations are characteristic of a Pacific atoll, specifically Kiritimati (Christmas Island) in Kiribati, where the worn asphalt road and Japanese import vehicle match the local infrastructure."", ""country"": ""KI"", ""latitude"": 1.985, ""longitude"": -157.43}"
+google/gemini-3.1-pro-preview,no-CoT,1.367,173.15,3264.807,KI,True,,stop,0.005174,1189,233,201,316.75,"```json
+{""country"": ""KI"", ""latitude"": 1.367, ""longitude"": 173.15}
+```"
+openai/gpt-5.5,no-CoT,1.3646,173.1394,3265.993,KI,True,,stop,0.00341,544,23,0,2.03,"{""country"":""KI"",""latitude"":1.3646,""longitude"":173.1394}"
+moonshotai/kimi-k2.6,CoT,1.352,173.126,3267.523,KI,True,,stop,0.021942108,682,6344,6273,281.8,"{""reasoning"": ""Dense coconut palms lining a narrow paved road on flat coral sand with no visible topography is characteristic of a Gilbert Islands atoll in Kiribati, specifically South Tarawa, where such street-level imagery is common."", ""country"": ""KI"", ""latitude"": 1.352, ""longitude"": 173.126}"
+google/gemini-3.1-pro-preview,CoT,1.367,173.115,3268.697,KI,True,,stop,0.005628,1272,257,179,19.73,"{
+  ""reasoning"": ""The flat, sandy terrain with dense coconut palms is characteristic of a Pacific atoll. Left-hand driving and the general appearance strongly suggest South Tarawa, Kiribati."",
+  ""country"": ""KI"",
+  ""latitude"": 1.367,
+  ""longitude"": 173.115
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),1.3512,172.9985,3281.693,KI,True,,stop,0.0020985,1189,35,0,1.48,"```json
+{""country"": ""KI"", ""latitude"": 1.3512, ""longitude"": 172.9985}
+```"
+anthropic/claude-opus-4.8,CoT,1.3382,172.9794,3283.858,KI,True,,stop,0.006635,797,106,0,10.14,"{""reasoning"": ""Flat coral-sand atoll with dense coconut palms and a single narrow paved road, typical of a Pacific atoll; vehicles drive on the left suggesting Kiribati/Tarawa."", ""country"": ""KI"", ""latitude"": 1.3382, ""longitude"": 172.9794}"
+anthropic/claude-opus-4.8,no-CoT,1.3291,172.9791,3283.921,KI,True,,stop,0.00413,666,32,0,4.37,"{""country"": ""KI"", ""latitude"": 1.3291, ""longitude"": 172.9791}"
+moonshotai/kimi-k2.6,no-CoT,1.3521,172.936,3288.635,KI,True,,stop,0.0005792,600,26,0,7.5,"{""country"": ""KI"", ""latitude"": 1.3521, ""longitude"": 172.936}"
+openai/gpt-5.5,CoT,7.1126,171.2139,3514.526,MH,True,,stop,0.017685,621,486,408,32.22,"{""reasoning"":""Flat coral-sand atoll road lined with dense coconut palms and tropical lagoon vegetation, with right-side driving cues, strongly suggests the Marshall Islands rather than left-driving Pacific islands. The scene fits the quieter western stretches of Majuro Atoll near Laura."",""country"":""MH"",""latitude"":7.1126,""longitude"":171.2139}"
+minimax/minimax-m3,CoT,7.1164,171.1857,3517.667,MH,True,,stop,0.00099186,843,667,594,25.84,"{""reasoning"": ""Flat coral atoll terrain with white sand, dense coconut palms, and a tropical Pacific setting combined with right-hand traffic and a Toyota HiAce van strongly indicate the Marshall Islands, most likely Majuro Atoll."", ""country"": ""MH"", ""latitude"": 7.1164, ""longitude"": 171.1857}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,19.696706771850586,-87.3743667602539,7851.948,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,19.651294708251953,-87.35806274414062,7853.212,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,20.6294,-87.0739,7892.36,MX,True,,stop,0.0002163,473,31,0,8.41,"{""country"": ""MX"", ""latitude"": 20.6294, ""longitude"": -87.0739}"
+qwen/qwen3.5-27b,no-CoT,20.6296,-87.0739,7892.362,MX,True,,stop,0.000140595,473,31,0,1.15,"{""country"": ""MX"", ""latitude"": 20.6296, ""longitude"": -87.0739}"
+qwen/qwen3.6-27b,no-CoT,20.6296,-87.0739,7892.362,MX,True,,stop,0.0001943,473,31,0,12.94,"{""country"": ""MX"", ""latitude"": 20.6296, ""longitude"": -87.0739}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,20.504074096679688,-86.86799621582031,7912.468,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,9.85,124.15,8695.258,PH,True,,stop,8.03376e-05,708,27,0,1.76,"{""country"": ""PH"", ""latitude"": 9.85, ""longitude"": 124.15}"
+mistralai/mistral-medium-3-5,no-CoT,10.3157,123.8854,8724.25,PH,True,,stop,0.001191,634,32,0,2.1,"{""country"": ""PH"", ""latitude"": 10.3157, ""longitude"": 123.8854}"
+qwen/qwen3.5-9b,no-CoT,26.5139,-77.3216,8929.37,BS,True,,stop,8.816e-05,473,31,0,1.32,"{""country"": ""BS"", ""latitude"": 26.5139, ""longitude"": -77.3216}"
+qwen/qwen3.5-35b-a3b,no-CoT,24.7689,-76.3289,9021.188,BS,True,,stop,0.00010195,473,31,0,1.37,"{""country"": ""BS"", ""latitude"": 24.7689, ""longitude"": -76.3289}"
+google/gemma-4-26b-a4b-it,no-CoT,14.5995,120.9842,9040.472,PH,True,,stop,5.534e-05,406,32,0,7.97,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,19.673120498657227,-71.67212677001953,9493.986,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,17.478620529174805,-65.42345428466797,10158.861,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,17.269189834594727,-64.82215118408203,10223.67,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,10.224,103.986,10900.484,VN,True,,stop,0.0002207576,787,489,404,5.99,"{""reasoning"": ""Dense coconut palms, right-hand traffic, and a coastal tropical road setting indicate this is a Southeast Asian coastal location, most likely Phu Quoc island in southern Vietnam. The vegetation and road layout match this region's coastal drive scenes."", ""country"": ""VN"", ""latitude"": 10.224, ""longitude"": 103.986}"
+mistralai/mistral-small-2603,no-CoT,-22.9519,-43.2105,12573.348,BR,True,,stop,0.0001137,634,31,0,1.46,"{""country"": ""BR"", ""latitude"": -22.9519, ""longitude"": -43.2105}"
+minimax/minimax-m3,no-CoT,4.18,73.51,14307.28,MV,True,,stop,0.00019452,754,22,0,8.73,"{""country"": ""MV"", ""latitude"": 4.18, ""longitude"": 73.51}{""country"": ""MV"", ""latitude"": 4.18, ""longitude"": 73.51}"
+qwen/qwen3.6-35b-a3b,no-CoT,4.1755,73.5093,14307.409,MV,True,,stop,0.00015575,473,30,0,6.79,"{""country"": ""MV"", ""latitude"": 4.1755, ""longitude"": 73.5093}"
+x-ai/grok-4.3,no-CoT,4.1753,73.5093,14307.411,MV,True,,stop,0.0005984,592,24,0,2.06,"{""country"": ""MV"", ""latitude"": 4.1753, ""longitude"": 73.5093}"
+google/gemma-4-31b-it,no-CoT,4.175,73.498,14308.661,MV,True,,stop,5.128e-05,272,33,0,10.43,"```json
+{""country"": ""MV"", ""latitude"": 4.175, ""longitude"": 73.498}
+```"
+x-ai/grok-4.3,CoT,3.2028,73.5093,14317.857,MV,True,,stop,0.002704,676,878,812,14.16,"{""reasoning"": ""Tropical coconut palms, basic asphalt road with sandy verges and right-edge line, right-hand-drive perspective, and remote island setting point to a small atoll in the Indian Ocean."", ""country"": ""MV"", ""latitude"": 3.2028, ""longitude"": 73.5093}"
+qwen/qwen3.5-397b-a17b,no-CoT,3.2028,73.2207,14349.767,MV,True,,stop,0.00036108,473,30,0,1.71,"{""country"": ""MV"", ""latitude"": 3.2028, ""longitude"": 73.2207}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.33,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.22,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,8.15,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.12,

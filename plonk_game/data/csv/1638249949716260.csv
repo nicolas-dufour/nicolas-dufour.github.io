@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.418032953007,54.339928831415,0.0,IR,True,,,,,,,,"Aq Qala, None, Golestan, IR"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.296810150146484,54.87016677856445,108.237,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.30120086669922,54.86885070800781,108.628,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.548091888427734,55.25978469848633,149.293,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,41.3643798828125,58.510128021240234,566.398,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,41.89265823364258,58.426910400390625,608.084,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,43.645,51.212,741.001,KZ,True,,stop,0.004906,1271,197,125,16.43,"{
+  ""reasoning"": ""The flat, arid landscape, concrete utility poles, and simple single-story houses with light roofs are characteristic of Central Asia, particularly western Kazakhstan."",
+  ""country"": ""KZ"",
+  ""latitude"": 43.645,
+  ""longitude"": 51.212
+}"
+google/gemini-3.1-pro-preview,no-CoT,43.6481,51.1562,743.01,KZ,True,,stop,0.002798,1189,35,0,14.92,"```json
+{""country"": ""KZ"", ""latitude"": 43.6481, ""longitude"": 51.1562}
+```"
+x-ai/grok-4.3,no-CoT,43.65,51.15,743.395,KZ,True,,stop,0.0005934,592,22,0,7.24,"{""country"": ""KZ"", ""latitude"": 43.65, ""longitude"": 51.15}"
+mistralai/mistral-medium-3-5,no-CoT,43.6532,51.1289,744.37,KZ,True,,stop,0.001191,634,32,0,0.83,"{""country"": ""KZ"", ""latitude"": 43.6532, ""longitude"": 51.1289}"
+openai/gpt-5.5,no-CoT,43.6725,51.1448,745.868,KZ,True,,stop,0.00344,544,24,0,1.41,"{""country"":""KZ"",""latitude"":43.6725,""longitude"":51.1448}"
+google/gemini-3.5-flash,CoT (effort=low),44.3421,51.9854,794.862,KZ,True,,stop,0.0035535,1271,183,121,3.91,"{""reasoning"": ""The flat, arid steppe landscape, simple concrete houses, and utility poles are characteristic of western Kazakhstan, particularly the Mangystau Region."", ""country"": ""KZ"", ""latitude"": 44.3421, ""longitude"": 51.9854}"
+anthropic/claude-opus-4.8,CoT,44.5,51.2,830.269,KZ,True,,stop,0.006285,797,92,0,3.13,"{""reasoning"": ""Flat arid steppe/semi-desert with sparse low buildings and utility poles, typical of western Kazakhstan near the Caspian/Mangystau region."", ""country"": ""KZ"", ""latitude"": 44.5, ""longitude"": 51.2}"
+openai/gpt-5.5,CoT,45.3197,55.1966,881.513,KZ,True,,stop,0.013365,621,342,254,8.08,"{""reasoning"":""The flat arid steppe/desert setting, very wide unmarked road, sparse low walled houses, and Soviet-style utility poles strongly fit a rural settlement in western Kazakhstan rather than greener Central Asia. The landscape and settlement pattern are especially typical of Mangystau/Beyneu-area villages."",""country"":""KZ"",""latitude"":45.3197,""longitude"":55.1966}"
+google/gemini-3.5-flash,CoT (effort=medium),45.3215,55.1852,881.637,KZ,True,,stop,0.008712,1272,756,681,6.03,"{""reasoning"": ""The flat, arid steppe landscape, houses constructed from unplastered coquina limestone blocks with high perimeter walls, and concrete utility poles are highly characteristic of the Mangystau Region in western Kazakhstan."", ""country"": ""KZ"", ""latitude"": 45.3215, ""longitude"": 55.1852}"
+google/gemini-3.5-flash,CoT (effort=high),45.3215,55.1852,881.637,KZ,True,,stop,0.0093675,1271,829,755,7.61,"```json
+{""reasoning"": ""The flat, arid steppe landscape, concrete utility poles, and style of fenced residential houses are highly characteristic of western Kazakhstan, particularly the Mangystau region near Beyneu."", ""country"": ""KZ"", ""latitude"": 45.3215, ""longitude"": 55.1852}
+```"
+xiaomi/mimo-v2.5,CoT,39.91,44.04,935.575,TR,True,,stop,0.0006267576,787,1939,1863,31.16,"{""reasoning"": ""The arid, flat landscape with sparse scrub and simple flat-roofed structures is characteristic of Eastern Turkey; the red sign with Latin script in the distance and the wooden utility poles confirm a rural Turkish setting."", ""country"": ""TR"", ""latitude"": 39.91, ""longitude"": 44.04}"
+qwen/qwen3.5-122b-a10b,no-CoT,45.5669,50.7111,954.915,KZ,True,,stop,0.0002187,473,32,0,8.43,"{""country"": ""KZ"", ""latitude"": 45.5669, ""longitude"": 50.7111}"
+moonshotai/kimi-k2.6,no-CoT,46.5,53.0,1015.885,KZ,True,,stop,0.00061829,603,24,0,0.76,"{""country"": ""KZ"", ""latitude"": 46.5, ""longitude"": 53.0}"
+anthropic/claude-opus-4.8,no-CoT,44.85,65.51,1246.122,KZ,True,,stop,0.004105,666,31,0,8.71,"{""country"": ""KZ"", ""latitude"": 44.85, ""longitude"": 65.51}"
+x-ai/grok-4.3,CoT,48.15,62.85,1378.74,KZ,True,,stop,0.0021165,676,643,573,7.5,"{
+  ""reasoning"": ""Flat arid steppe/desert with sparse single-story buildings, wooden power poles, and gravel road typical of post-Soviet Central Asia; LHD vehicle and right-side driving implied by mirror position."",
+  ""country"": ""KZ"",
+  ""latitude"": 48.15,
+  ""longitude"": 62.85
+}"
+minimax/minimax-m3,no-CoT,50.0,50.0,1441.238,KZ,True,,stop,0.00033882,767,139,158,3.32,"{""country"": ""KZ"", ""latitude"": 50.0, ""longitude"": 50.0}"
+minimax/minimax-m3,CoT,49.65,47.35,1470.644,KZ,True,,stop,0.00075066,843,466,391,22.1,"{""reasoning"": ""Flat arid steppe landscape, Russian/Cyrillic-style red signage on distant buildings, wooden utility poles with multi-crossbar construction typical of post-Soviet infrastructure, and sparse low vegetation all point to rural Kazakhstan steppe region."", ""country"": ""KZ"", ""latitude"": 49.65, ""longitude"": 47.35}"
+google/gemma-4-31b-it,no-CoT,45.4833,68.6667,1489.591,KZ,True,,stop,6.718e-05,406,36,0,4.24,"```json
+{""country"": ""KZ"", ""latitude"": 45.4833, ""longitude"": 68.6667}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.62568664550781,33.2164192199707,1866.02,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),42.241254,76.185412,1934.874,KG,True,,stop,0.002136,1190,39,0,1.7,"```json
+{""country"": ""KG"", ""latitude"": 42.241254, ""longitude"": 76.185412}
+```"
+qwen/qwen3.5-27b,no-CoT,43.2501,76.9507,2015.815,KZ,True,,stop,0.00019683,473,32,0,2.48,"{""country"": ""KZ"", ""latitude"": 43.2501, ""longitude"": 76.9507}"
+moonshotai/kimi-k2.6,CoT,51.15,71.45,2036.053,KZ,True,,stop,0.012364668,682,3551,3472,101.36,"{""reasoning"": ""Flat semi-arid steppe with scattered low-rise village buildings, Soviet-style wooden power poles, and a straight paved road without markings matches the Kazakh steppe; the vehicle’s centered hood and dash layout suggest right-hand traffic typical of the region."", ""country"": ""KZ"", ""latitude"": 51.15, ""longitude"": 71.45}"
+qwen/qwen3.5-9b,no-CoT,43.25,77.3833,2050.225,KZ,True,,stop,5.19e-05,474,30,0,13.92,"{""country"": ""KZ"", ""latitude"": 43.25, ""longitude"": 77.3833}"
+qwen/qwen3.6-27b,no-CoT,43.2537,77.4749,2057.593,KZ,True,,stop,0.00025805,474,32,0,7.73,"{""country"": ""KZ"", ""latitude"": 43.2537, ""longitude"": 77.4749}"
+qwen/qwen3.5-35b-a3b,no-CoT,55.0423,73.3912,2430.026,RU,True,,stop,0.000162225,473,31,0,1.29,"{""country"": ""RU"", ""latitude"": 55.0423, ""longitude"": 73.3912}"
+qwen/qwen3.5-397b-a17b,CoT,32.62,13.12,3761.4,LY,True,,stop,0.011865,553,3217,3120,20.52,"{""reasoning"": ""The flat, arid landscape with sandy soil and sparse scrub vegetation, combined with simple, low-rise concrete buildings and concrete utility poles, is highly characteristic of the outskirts of cities in Libya (e.g., Tripoli). The unmarked asphalt road and general infrastructure style align with North African desert regions."", ""country"": ""LY"", ""latitude"": 32.62, ""longitude"": 13.12}"
+qwen/qwen3.6-35b-a3b,no-CoT,47.85,103.9,4139.848,MN,True,,stop,9.795e-05,473,27,0,8.45,"{""country"": ""MN"", ""latitude"": 47.85, ""longitude"": 103.9}"
+qwen/qwen3.5-397b-a17b,no-CoT,47.9182,106.9053,4363.084,MN,True,,stop,0.00029445,473,32,0,10.66,"{""country"": ""MN"", ""latitude"": 47.9182, ""longitude"": 106.9053}"
+xiaomi/mimo-v2.5,no-CoT,47.9167,106.9167,4363.944,MN,True,,stop,8.17376e-05,708,32,0,7.86,"{""country"": ""MN"", ""latitude"": 47.9167, ""longitude"": 106.9167}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6940.602,,True,True,,,,,,2.4,
+mistralai/mistral-small-2603,no-CoT,33.9425,-118.4081,12044.752,US,True,,stop,0.000142875,634,32,0,1.79,"{""country"": ""US"", ""latitude"": 33.9425, ""longitude"": -118.4081}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.74,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.89,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,22.58,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.15,

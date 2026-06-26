@@ -1,0 +1,75 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-38.963156952692,177.40152852946,0.0,NZ,True,,,,,,,,"Wairoa, Wairoa District, Hawke's Bay, NZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-38.957759857177734,177.41395568847656,1.231,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-39.02265548706055,177.49134826660156,10.199,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-39.07395553588867,177.43470764160156,12.649,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,-39.2,176.7,66.031,NZ,True,,stop,0.00023736,904,23,0,4.93,"{""country"": ""NZ"", ""latitude"": -39.2, ""longitude"": 176.7}"
+moonshotai/kimi-k2.6,no-CoT,-39.0,176.5,78.033,NZ,True,,stop,0.00075869,755,23,0,2.01,"{""country"": ""NZ"", ""latitude"": -39.0, ""longitude"": 176.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-39.6177864074707,176.972412109375,81.623,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-39.65,176.6,102.901,NZ,True,,stop,0.00702,949,91,0,3.07,"{""reasoning"": ""Left-side driving, dry golden grass with green pasture, rolling hills and autumn poplars typical of New Zealand's North Island rural roads in autumn."", ""country"": ""NZ"", ""latitude"": -39.65, ""longitude"": 176.6}"
+anthropic/claude-opus-4.8,no-CoT,-40.2,176.1,177.072,NZ,True,,stop,0.004865,818,31,0,8.96,"{""country"": ""NZ"", ""latitude"": -40.2, ""longitude"": 176.1}"
+minimax/minimax-m3,CoT,-38.15,175.55,184.644,NZ,True,,stop,0.00088542,997,537,581,11.18,"{""reasoning"": ""Left-hand traffic, rolling green pastoral hills with autumn-colored deciduous trees, white delineator posts, and tarmac road with solid white edge line and dashed center are highly characteristic of rural New Zealand North Island farmland rather than UK countryside."", ""country"": ""NZ"", ""latitude"": -38.15, ""longitude"": 175.55}"
+qwen/qwen3.5-27b,no-CoT,-37.925,175.458,204.87,NZ,True,,stop,0.0002325,586,43,0,6.88,"```json
+{
+  ""country"": ""NZ"",
+  ""latitude"": -37.925,
+  ""longitude"": 175.458
+}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-41.1542,175.4651,294.119,NZ,True,,stop,0.0048675,1307,323,240,4.22,"{""reasoning"": ""The left-hand driving, white road edge lines, and distinctive white guide posts with red reflectors are characteristic of New Zealand. The rolling hills and autumn foliage suggest a location in the southern part of the North Island or northern South Island."", ""country"": ""NZ"", ""latitude"": -41.1542, ""longitude"": 175.4651}"
+x-ai/grok-4.3,no-CoT,-41.3,174.8,341.191,NZ,True,,stop,0.0007334,704,22,0,6.99,"{""country"": ""NZ"", ""latitude"": -41.3, ""longitude"": 174.8}"
+qwen/qwen3.6-35b-a3b,no-CoT,-41.2865,174.7762,341.383,NZ,True,,stop,0.00011975,585,32,0,3.31,"{""country"": ""NZ"", ""latitude"": -41.2865, ""longitude"": 174.7762}"
+qwen/qwen3.5-9b,no-CoT,-41.1234,173.4567,412.804,NZ,True,,stop,6.34e-05,586,32,0,5.18,"{""country"": ""NZ"", ""latitude"": -41.1234, ""longitude"": 173.4567}"
+google/gemini-3.5-flash,CoT (effort=medium),-41.5123,173.8456,413.994,NZ,True,,stop,0.0074145,1307,606,515,22.8,"{""reasoning"": ""The left-hand driving, coarse chipseal road surface, white edge lines, and distinctive white plastic guide posts are characteristic of New Zealand. The flat valley landscape with autumn-colored poplars and rolling hills in the background strongly suggests the Marlborough or Wairarapa region."", ""country"": ""NZ"", ""latitude"": -41.5123, ""longitude"": 173.8456}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-41.5832,173.9125,415.253,NZ,True,,stop,0.0021615,1225,36,0,7.73,"```json
+{""country"": ""NZ"", ""latitude"": -41.5832, ""longitude"": 173.9125}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-41.75,174.05,420.258,NZ,True,,stop,0.007852,1226,450,418,13.1,"```json
+{""country"": ""NZ"", ""latitude"": -41.75, ""longitude"": 174.05}
+```"
+google/gemini-3.1-pro-preview,CoT,-41.8123,173.8456,437.035,NZ,True,,stop,0.006778,1307,347,265,5.97,"{
+  ""reasoning"": ""The white marker posts with red reflectors on the left side of the road are characteristic of New Zealand. The rolling green hills and rural highway setting further support a location in New Zealand."",
+  ""country"": ""NZ"",
+  ""latitude"": -41.8123,
+  ""longitude"": 173.8456
+}"
+google/gemini-3.5-flash,CoT (effort=high),-41.6025,173.5123,441.467,NZ,True,,stop,0.0115275,1307,1063,995,14.92,"{""reasoning"": ""The left-hand traffic, white edge lines, distinctive white delineator posts, and rolling green hills with autumnal willow trees are highly characteristic of rural New Zealand."", ""country"": ""NZ"", ""latitude"": -41.6025, ""longitude"": 173.5123}"
+openai/gpt-5.5,no-CoT,-41.3269,173.1118,449.386,NZ,True,,stop,0.00411,678,24,0,1.33,"{""country"":""NZ"",""latitude"":-41.3269,""longitude"":173.1118}"
+qwen/qwen3.5-35b-a3b,no-CoT,-43.5234,172.6789,642.438,NZ,True,,stop,0.00011975,585,32,0,1.46,"{""country"": ""NZ"", ""latitude"": -43.5234, ""longitude"": 172.6789}"
+qwen/qwen3.5-122b-a10b,no-CoT,-43.5321,172.6362,645.378,NZ,True,,stop,0.0002523,585,32,0,9.13,"{""country"": ""NZ"", ""latitude"": -43.5321, ""longitude"": 172.6362}"
+google/gemma-4-31b-it,no-CoT,-43.5321,172.6345,645.465,NZ,True,,stop,6.388e-05,404,37,0,132.0,"```json
+{""country"": ""NZ"", ""latitude"": -43.5321, ""longitude"": 172.6345}
+```"
+x-ai/grok-4.3,CoT,-43.72,172.65,660.897,NZ,True,,stop,0.003524,788,1150,1074,16.82,"{""reasoning"": ""Left-hand traffic (solid edge line on left of frame, dashed center lines to right) + southern hemisphere temperate rural landscape with autumn foliage and rolling hills indicate NZ South Island. Road markings, white reflector posts and vegetation match typical NZ state highway."", ""country"": ""NZ"", ""latitude"": -43.72, ""longitude"": 172.65}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-43.64384460449219,171.78514099121094,700.361,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-43.65411376953125,171.737060546875,703.871,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,-43.93,171.83,721.211,NZ,True,,stop,0.0156416,665,4385,4063,283.51,"{
+""reasoning"": ""The image shows left-hand traffic on a rural highway with solid white edge lines and dashed center lines, flanked by simple white marker posts characteristic of New Zealand's state highways. The landscape features rolling green hills meeting dry, golden grasslands with deciduous trees (likely poplars or willows) showing autumn colors, which is typical of the Canterbury or Otago regions in New Zealand's South Island."",
+""country"": ""NZ"",
+""latitude"": -43.93,
+""longitude"": 171.83
+}"
+moonshotai/kimi-k2.6,CoT,-44.8,171.1,832.147,NZ,True,,stop,0.0171923,834,4100,4556,191.38,"{""reasoning"": ""Left-hand traffic and distinctive white roadside marker posts with red reflectors are characteristic of New Zealand, while the rolling green hills and dry grass verges match rural South Island highways."", ""country"": ""NZ"", ""latitude"": -44.8, ""longitude"": 171.1}"
+openai/gpt-5.5,CoT,-45.2176,169.4148,957.18,NZ,True,,stop,0.015955,755,406,322,10.97,"{""reasoning"":""Left-side driving with New Zealand-style rural delineator posts and road markings, plus South Island-looking dry rolling hills, pasture, and autumn poplars point to rural Otago/Central Otago. The landscape best fits the Alexandra/Clyde area rather than the North Island."",""country"":""NZ"",""latitude"":-45.2176,""longitude"":169.4148}"
+mistralai/mistral-medium-3-5,no-CoT,-45.0312,168.3427,1006.652,NZ,True,,stop,0.001419,786,32,0,1.4,"{""country"": ""NZ"", ""latitude"": -45.0312, ""longitude"": 168.3427}"
+google/gemma-4-26b-a4b-it,no-CoT,-35.2809,149.1286,2529.501,AU,True,,stop,5.508e-05,404,32,0,1.93,"{""country"": ""AU"", ""latitude"": -35.2809, ""longitude"": 149.1286}"
+xiaomi/mimo-v2.5,CoT,-33.8,149.3,2569.395,AU,True,,stop,0.0001532776,899,192,103,2.69,"```json
+{""reasoning"": ""The driving side is left, evidenced by the solid white line on the left shoulder and dashed white center lines typical of Australian rural highways. The vegetation (dry grass, eucalypts, rolling hills), red soil, and general infrastructure strongly suggest rural Australia."", ""country"": ""AU"", ""latitude"": -33.8, ""longitude"": 149.3}
+```"
+xiaomi/mimo-v2.5,no-CoT,-37.5,143.5,2948.525,AU,True,,stop,9.57376e-05,820,26,0,1.33,"{""country"": ""AU"", ""latitude"": -37.5, ""longitude"": 143.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,35.8796,-120.6594,10467.791,US,True,,stop,0.0003917,585,32,0,7.72,"{""country"": ""US"", ""latitude"": 35.8796, ""longitude"": -120.6594}"
+mistralai/mistral-small-2603,no-CoT,38.5,-121.0,10658.582,US,True,,stop,0.000166875,786,26,0,2.7,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -121.0}"
+mistralai/mistral-small-2603,CoT,-31.8,22.5,11730.004,ZA,True,,stop,0.00051984,868,797,858,13.02,"{""reasoning"": ""Left-hand traffic and Karoo-like semi-arid vegetation suggest South Africa"", ""country"": ""ZA"", ""latitude"": -31.8, ""longitude"": 22.5}"
+qwen/qwen3.6-35b-a3b,CoT,51.75,-0.75,18586.062,GB,True,,stop,0.0070859555,665,7230,7110,36.91,"```json
+{
+    ""reasoning"": ""The image shows left-hand traffic, white delineator posts, and deciduous trees with autumn foliage, which are characteristic of the United Kingdom. The rolling hills on the right and the dry, straw-colored grass suggest the Chilterns area in Southern England, with the vehicle driving north towards a town (indicated by the white rectangular sign on the left)."",
+    ""country"": ""GB"",
+    ""latitude"": 51.75,
+    ""longitude"": -0.75
+}
+```"
+qwen/qwen3.6-27b,no-CoT,45.1234,3.4567,19167.563,FR,True,,stop,0.00028352,586,30,0,0.81,"{""country"": ""FR"", ""latitude"": 45.1234, ""longitude"": 3.4567}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.28,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.33,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.22,

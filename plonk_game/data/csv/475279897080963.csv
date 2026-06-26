@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-4.0605932954435,144.07162709904,0.0,PG,True,,,,,,,,"Angoram, None, East Sepik, PG"
+anthropic/claude-opus-4.8,no-CoT,-6.733,146.996,439.417,PG,True,,stop,0.00484,818,30,0,2.38,"{""country"": ""PG"", ""latitude"": -6.733, ""longitude"": 146.996}"
+anthropic/claude-opus-4.8,CoT,-6.733,146.998,439.58,PG,True,,stop,0.00672,949,79,0,15.88,"{""reasoning"": ""Tropical dirt road with lush vegetation, palms, and simple structures suggesting a Pacific/PNG village setting."", ""country"": ""PG"", ""latitude"": -6.733, ""longitude"": 146.998}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-7.519556999206543,155.32916259765625,1303.228,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-7.556098461151123,155.6111602783203,1334.195,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-7.623351097106934,155.7532196044922,1351.324,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-9.4485,160.0251,1860.004,SB,True,,stop,0.0043725,1307,268,202,4.65,"{""reasoning"": ""The tropical vegetation, tall slender palm trees, unpaved sandy road, and simple wooden housing are characteristic of rural Melanesia, particularly the Solomon Islands."", ""country"": ""SB"", ""latitude"": -9.4485, ""longitude"": 160.0251}"
+xiaomi/mimo-v2.5,no-CoT,10.5,124.0,2749.48,PH,True,,stop,9.57376e-05,820,26,0,2.28,"{""country"": ""PH"", ""latitude"": 10.5, ""longitude"": 124.0}"
+qwen/qwen3.6-27b,no-CoT,14.5995,120.9842,3283.278,PH,True,,stop,0.00029445,586,32,0,12.66,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+xiaomi/mimo-v2.5,CoT,-7.52,110.03,3784.366,ID,True,,stop,0.0001770776,899,277,196,3.63,"{""reasoning"": ""Tropical lush vegetation, rural unpaved road, and simple low-rise rural housing indicate a Southeast Asian rural area, specifically consistent with rural Java, Indonesia, with left-hand traffic implied by the in-car perspective on the left road side."", ""country"": ""ID"", ""latitude"": -7.52, ""longitude"": 110.03}"
+qwen/qwen3.6-35b-a3b,CoT,-17.78,177.42,3936.929,FJ,True,,stop,0.0045106685,665,4562,4465,28.42,"```json
+{
+  ""reasoning"": ""The image displays a left-hand traffic system on an unpaved gravel road, surrounded by lush tropical vegetation including palm trees and dense greenery, alongside a corrugated metal house, which is a hallmark of rural architecture in Fiji."",
+  ""country"": ""FJ"",
+  ""latitude"": -17.78,
+  ""longitude"": 177.42
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,-17.7134,178.065,3999.331,FJ,True,,stop,0.00011975,585,32,0,2.99,"{""country"": ""FJ"", ""latitude"": -17.7134, ""longitude"": 178.065}"
+google/gemini-3.5-flash,CoT (effort=high),11.25,104.75,4671.401,KH,True,,stop,0.0370965,1307,3904,3836,38.39,"{""reasoning"": ""The tropical vegetation featuring tall betel palms, the elevated corrugated metal house, the sandy unpaved road, and the characteristic white hood of the Google vehicle point to rural Cambodia."", ""country"": ""KH"", ""latitude"": 11.25, ""longitude"": 104.75}"
+google/gemini-3.5-flash,CoT (effort=medium),12.5656,104.991,4696.653,KH,True,,stop,0.0211215,1307,2129,2038,18.46,"{""reasoning"": ""The image shows a flat, tropical landscape with a light-colored sandy dirt road, lush green vegetation, and a simple corrugated metal house, which is highly characteristic of rural Cambodia during the wet season. The white vehicle hood and towering cumulus clouds further support this Southeast Asian location."", ""country"": ""KH"", ""latitude"": 12.5656, ""longitude"": 104.991}"
+google/gemma-4-31b-it,no-CoT,12.5657,104.9909,4696.667,KH,True,,stop,6.732e-05,404,37,0,2.84,"```json
+{""country"": ""KH"", ""latitude"": 12.5657, ""longitude"": 104.9909}
+```"
+minimax/minimax-m3,CoT,12.55,104.55,4740.859,KH,True,,stop,0.00078066,995,453,366,12.37,"{""reasoning"": ""Tropical vegetation (palms, banana plants), unpaved lateritic road, simple yellow-painted building with corrugated metal roof, and equatorial cumulus cloud formations strongly suggest rural mainland Southeast Asia, most likely Cambodia. The architecture and road conditions match rural Cambodian villages outside major tourist areas."", ""country"": ""KH"", ""latitude"": 12.55, ""longitude"": 104.55}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,10.612692832946777,103.5271987915039,4775.458,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-0.5833,100.8167,4820.365,ID,True,,stop,0.0014115,786,31,0,7.26,"{""country"": ""ID"", ""latitude"": -0.5833, ""longitude"": 100.8167}"
+google/gemini-3.1-pro-preview,CoT,13.3612,103.8541,4843.207,KH,True,,stop,0.006492,1308,323,241,11.66,"{
+  ""reasoning"": ""The lush tropical vegetation, dirt road, and simple housing style are characteristic of rural Southeast Asia. The visible white car hood is a common feature of Google Street View coverage in Cambodia."",
+  ""country"": ""KH"",
+  ""latitude"": 13.3612,
+  ""longitude"": 103.8541
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,9.482477188110352,100.03862762451172,5106.0,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,9.487807273864746,100.03572845458984,5106.462,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,23.685,90.358,6581.833,BD,True,,stop,0.0001067,585,29,0,3.18,"{""country"": ""BD"", ""latitude"": 23.685, ""longitude"": 90.358}"
+minimax/minimax-m3,no-CoT,15.5,-89.0,14078.945,GT,True,,stop,0.00043482,919,181,203,10.82,"{""country"": ""GT"", ""latitude"": 15.5, ""longitude"": -89.0}"
+qwen/qwen3.5-397b-a17b,no-CoT,17.25,-88.75,14080.786,BZ,True,,stop,0.00033285,585,28,0,13.41,"{""country"": ""BZ"", ""latitude"": 17.25, ""longitude"": -88.75}"
+moonshotai/kimi-k2.6,no-CoT,17.1899,-88.4976,14108.262,BZ,True,,stop,0.0003573,755,25,0,2.68,"{""country"": ""BZ"", ""latitude"": 17.1899, ""longitude"": -88.4976}"
+moonshotai/kimi-k2.6,CoT,16.8,-88.5,14113.945,BZ,True,,stop,0.011206836,834,3189,3134,93.75,"{""reasoning"": ""Light-colored tropical limestone dirt road, lush broadleaf vegetation with coconut palms, and simple rural wooden housing are characteristic of rural Belize."", ""country"": ""BZ"", ""latitude"": 16.8, ""longitude"": -88.5}"
+qwen/qwen3.5-397b-a17b,CoT,11.29,-85.87,14460.375,NI,True,,stop,0.010323,665,2770,2692,25.32,"{""reasoning"": ""The unpaved sandy road, tropical scrub and palm vegetation, simple wooden building with louvered window, and bright cumulus clouds are characteristic of rural coastal Nicaragua, likely in the Rivas department near the Pacific coast."", ""country"": ""NI"", ""latitude"": 11.29, ""longitude"": -85.87}"
+qwen/qwen3.5-122b-a10b,no-CoT,22.105,-78.763,14986.599,CU,True,,stop,0.0002451,585,29,0,1.83,"{""country"": ""CU"", ""latitude"": 22.105, ""longitude"": -78.763}"
+qwen/qwen3.5-27b,no-CoT,25.0443,-77.3506,15015.978,BS,True,,stop,0.0002345,586,44,0,11.59,"```json
+{
+  ""country"": ""BS"",
+  ""latitude"": 25.0443,
+  ""longitude"": -77.3506
+}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),8.083412,-76.728451,15483.735,CO,True,,stop,0.002181,1226,38,0,7.61,"```json
+{""country"": ""CO"", ""latitude"": 8.083412, ""longitude"": -76.728451}
+```"
+google/gemini-3.1-pro-preview,no-CoT,18.85,-70.15,15951.963,DO,True,,stop,0.006328,1226,323,292,4.68,"```json
+{""country"": ""DO"", ""latitude"": 18.85, ""longitude"": -70.15}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,15998.016,,True,True,,,,,,7.46,
+x-ai/grok-4.3,no-CoT,5.6037,-0.187,16051.834,GH,True,,stop,0.0007384,704,24,0,7.18,"{""country"": ""GH"", ""latitude"": 5.6037, ""longitude"": -0.1870}"
+x-ai/grok-4.3,CoT,5.72,-0.35,16069.657,GH,True,,stop,0.0022165,788,627,551,12.26,"{""reasoning"": ""Tropical palm trees + lush broadleaf vegetation, laterite dirt road, simple yellow metal-roofed building and absence of any text/signage point to rural West/Central Africa; bright cumulus sky and sun angle consistent with equatorial latitudes."", ""country"": ""GH"", ""latitude"": 5.72, ""longitude"": -0.35}"
+mistralai/mistral-small-2603,no-CoT,-22.9035,-47.0616,16782.285,BR,True,,stop,0.0001365,786,31,0,3.37,"{""country"": ""BR"", ""latitude"": -22.9035, ""longitude"": -47.0616}"
+openai/gpt-5.5,no-CoT,6.8012,-58.1548,17536.293,GY,True,,stop,0.00411,678,24,0,1.6,"{""country"":""GY"",""latitude"":6.8012,""longitude"":-58.1548}"
+openai/gpt-5.5,CoT,6.7836,-58.0712,17545.676,GY,True,,stop,0.015625,755,395,308,17.46,"{""reasoning"":""Flat tropical coastal-plain scenery with drainage/overgrown canals, unpaved pale sand road, and simple Caribbean-style houses strongly fits rural Guyana rather than neighboring countries. The vegetation, humid climate, and settlement pattern are typical of villages on the East Coast Demerara near Georgetown."",""country"":""GY"",""latitude"":6.7836,""longitude"":-58.0712}"
+qwen/qwen3.5-35b-a3b,no-CoT,5.852,-55.167,17874.723,SR,True,,stop,0.00018375,585,30,0,1.69,"{""country"": ""SR"", ""latitude"": 5.8520, ""longitude"": -55.1670}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.37,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.1,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.24,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,19.24,

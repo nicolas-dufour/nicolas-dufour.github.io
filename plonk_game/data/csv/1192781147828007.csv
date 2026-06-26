@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-33.292935081704,19.327481370914,0.0,ZA,True,,,,,,,,"Ceres, Cape Winelands District Municipality, Western Cape, ZA"
+anthropic/claude-opus-4.8,no-CoT,-33.397,19.451,16.295,ZA,True,,stop,0.004105,666,31,0,2.61,"{""country"": ""ZA"", ""latitude"": -33.397, ""longitude"": 19.451}"
+google/gemini-3.5-flash,CoT (effort=medium),-33.4808,19.6745,38.398,ZA,True,,stop,0.0214095,1271,2167,2068,15.49,"{""reasoning"": ""The image shows left-hand traffic with a South African style bakkie (pickup truck) and an EMS vehicle. The green building with a red sign is a Shoprite USave supermarket, and the arid climate with dramatic fold mountains in the background is characteristic of the Western Cape province, specifically near De Doorns."", ""country"": ""ZA"", ""latitude"": -33.4808, ""longitude"": 19.6745}"
+google/gemini-3.1-pro-preview,CoT,-33.644,19.446,40.555,ZA,True,,stop,0.00631,1271,314,239,4.92,"{
+  ""reasoning"": ""Left-hand traffic, arid landscape with mountains, and a vehicle resembling a South African police van point to South Africa, likely in the Western or Northern Cape."",
+  ""country"": ""ZA"",
+  ""latitude"": -33.644,
+  ""longitude"": 19.446
+}"
+google/gemini-3.1-pro-preview,no-CoT,-33.6445,19.4467,40.626,ZA,True,,stop,0.004238,1189,155,120,9.92,"```json
+{""country"": ""ZA"", ""latitude"": -33.6445, ""longitude"": 19.4467}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-33.72193908691406,19.665130615234375,57.058,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-33.73239517211914,19.660625457763672,57.808,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-33.749271392822266,19.672664642333984,59.989,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-33.4114,20.1245,75.191,ZA,True,,stop,0.0020985,1189,35,0,8.24,"```json
+{""country"": ""ZA"", ""latitude"": -33.4114, ""longitude"": 20.1245}
+```"
+qwen/qwen3.5-27b,no-CoT,-33.9249,18.8606,82.507,ZA,True,,stop,0.00019467,473,31,0,1.35,"{""country"": ""ZA"", ""latitude"": -33.9249, ""longitude"": 18.8606}"
+google/gemini-3.5-flash,CoT (effort=high),-32.5905,19.0144,83.392,ZA,True,,stop,0.0232455,1271,2371,2269,15.84,"```json
+{""reasoning"": ""The image features a green Agrimark store with its characteristic red logo and boom gate on the right, a common agricultural retail chain in South Africa. The arid climate, Western Cape style mountains in the background, and left-hand traffic confirm this is Voortrekker Street in Citrusdal, South Africa."", ""country"": ""ZA"", ""latitude"": -32.5905, ""longitude"": 19.0144}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-33.5869,22.2014,268.652,ZA,True,,stop,0.0049755,1271,341,271,10.47,"{""reasoning"": ""The left-hand driving, dry climate, specific style of utility vehicles (bakkies), and distant mountains strongly indicate the Western Cape or Karoo region of South Africa."", ""country"": ""ZA"", ""latitude"": -33.5869, ""longitude"": 22.2014}"
+anthropic/claude-opus-4.8,CoT,-33.39,22.45,290.251,ZA,True,,stop,0.006135,797,86,0,13.34,"{""reasoning"": ""Left-hand traffic, arid mountainous landscape with bakkie pickups and industrial buildings typical of Karoo town in South Africa."", ""country"": ""ZA"", ""latitude"": -33.39, ""longitude"": 22.45}"
+moonshotai/kimi-k2.6,CoT,-32.3521,22.5831,321.682,ZA,True,,stop,0.010300068,682,2941,2869,68.71,"{""reasoning"": ""Left-hand traffic, white bakkie with canopy, dry Karoo vegetation and distant Cape Fold Belt mountains under a clear blue sky, plus the distinctive green/red SPAR supermarket sign all point to South Africa."", ""country"": ""ZA"", ""latitude"": -32.3521, ""longitude"": 22.5831}"
+qwen/qwen3.5-35b-a3b,no-CoT,-32.9723,27.9123,799.948,ZA,True,,stop,0.00010195,473,31,0,8.3,"{""country"": ""ZA"", ""latitude"": -32.9723, ""longitude"": 27.9123}"
+x-ai/grok-4.3,CoT,-25.75,27.9,1178.654,ZA,True,,stop,0.002639,676,852,779,13.13,"{""reasoning"": ""Left-hand traffic, white Toyota Hilux-style bakkies, green shop sign, acacia-like trees, arid scrub and distant mountains are all diagnostic of South Africa; the specific combination matches the Highveld fringe west of Pretoria."", ""country"": ""ZA"", ""latitude"": -25.75, ""longitude"": 27.9}"
+qwen/qwen3.6-27b,no-CoT,-25.7479,28.1894,1198.621,ZA,True,,stop,0.0001943,473,31,0,17.17,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 28.1894}"
+x-ai/grok-4.3,no-CoT,-22.571,17.084,1212.318,NA,True,,stop,0.0005934,592,22,0,1.06,"{""country"": ""NA"", ""latitude"": -22.571, ""longitude"": 17.084}"
+mistralai/mistral-medium-3-5,no-CoT,-22.5596,17.0832,1213.58,NA,True,,stop,0.0011835,634,31,0,3.34,"{""country"": ""NA"", ""latitude"": -22.5596, ""longitude"": 17.0832}"
+google/gemma-4-31b-it,no-CoT,-22.559,17.083,1213.65,NA,True,,stop,5.168e-05,272,34,0,10.46,"```json
+{""country"": ""NA"", ""latitude"": -22.559, ""longitude"": 17.083}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4217.575,,True,True,,,,,,19.05,
+qwen/qwen3.5-122b-a10b,no-CoT,-24.7859,-65.4232,8069.337,AR,True,,stop,0.0002884,473,31,0,7.33,"{""country"": ""AR"", ""latitude"": -24.7859, ""longitude"": -65.4232}"
+openai/gpt-5.5,CoT,-30.0315,-70.7087,8237.524,CL,True,,stop,0.015045,621,398,315,15.65,"{""reasoning"":""Right-hand traffic, white Chilean-style plates, yellow centerline/black-yellow roadside pole markings and Spanish storefronts point to Chile. The arid Andean valley setting with sparse trees and low mountains is most consistent with the Elqui Valley around Vicuña."",""country"":""CL"",""latitude"":-30.0315,""longitude"":-70.7087}"
+openai/gpt-5.5,no-CoT,-30.5985,-71.2006,8247.359,CL,True,,stop,0.00347,544,25,0,1.96,"{""country"":""CL"",""latitude"":-30.5985,""longitude"":-71.2006}"
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,9288.472,FR,True,,stop,0.0001131,634,30,0,0.85,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+xiaomi/mimo-v2.5,CoT,20.624,-103.299,14228.703,MX,True,,stop,0.0007107576,787,2239,2110,25.06,"```json
+{
+  ""reasoning"": ""The presence of a 'Farmacias Guadalajara' sign on the right and the green-and-white color scheme of the police vehicle in the distance strongly point to the state of Jalisco, Mexico. The wide road, American-style pickup trucks (Chevrolet Silverado), Spanish signage, and semi-arid vegetation with mountains in the background are consistent with the outskirts of the Guadalajara metropolitan area."",
+  ""country"": ""MX"",
+  ""latitude"": 20.624,
+  ""longitude"": -103.299
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,31.6712,-106.4352,14983.075,MX,True,,stop,0.0001071356,473,32,0,1.28,"{""country"": ""MX"", ""latitude"": 31.6712, ""longitude"": -106.4352}"
+qwen/qwen3.5-9b,no-CoT,28.7341,-109.9724,15203.603,MX,True,,stop,5.22e-05,474,32,0,3.07,"{""country"": ""MX"", ""latitude"": 28.7341, ""longitude"": -109.9724}"
+minimax/minimax-m3,CoT,29.0728,-110.9559,15306.391,MX,True,,stop,0.00078186,843,492,408,20.79,"{""reasoning"": ""Arid Sonoran Desert landscape with mesquite trees, distant mountain ranges, Spanish-language commercial signage on the right, white compact pickup trucks common in Mexico, and wide right-hand-drive road with low-rise commercial buildings all point to northwestern Mexico, most likely Sonora."", ""country"": ""MX"", ""latitude"": 29.0728, ""longitude"": -110.9559}"
+qwen/qwen3.5-397b-a17b,no-CoT,29.0729,-110.9559,15306.394,MX,True,,stop,0.0003357,473,32,0,3.56,"{""country"": ""MX"", ""latitude"": 29.0729, ""longitude"": -110.9559}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,32.22895431518555,-110.95549011230469,15409.748,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,32.23097610473633,-110.9564208984375,15409.893,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,32.28074645996094,-111.00127410888672,15415.429,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,32.5326,-116.9638,15964.533,MX,True,,stop,8.17376e-05,708,32,0,5.26,"{""country"": ""MX"", ""latitude"": 32.5326, ""longitude"": -116.9638}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,13.06,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.33,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.29,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.87,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,24.7,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.09,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,2.22,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.1,

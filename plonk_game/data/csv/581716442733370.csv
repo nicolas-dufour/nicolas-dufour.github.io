@@ -1,0 +1,71 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,2.1708645972826,21.350110362312,0.0,CD,True,,,,,,,,"Lisala, None, Equateur, CD"
+minimax/minimax-m3,CoT,0.5167,25.19,464.788,CD,True,,stop,0.00082626,995,491,413,13.44,"{""reasoning"": ""Lush equatorial rainforest vegetation with palms and banana plants, reddish lateritic soil of unpaved dirt tracks, and simple rural buildings with people in colorful clothing all strongly indicate a Central African rainforest setting, most likely the DRC Congo Basin."", ""country"": ""CD"", ""latitude"": 0.5167, ""longitude"": 25.1900}"
+minimax/minimax-m3,no-CoT,-0.5,18.0,476.355,CD,True,,stop,0.00041682,919,166,197,11.6,"{""country"": ""CD"", ""latitude"": -0.5, ""longitude"": 18.0}"
+anthropic/claude-opus-4.8,CoT,-2.5,22.0,524.377,CD,True,,stop,0.007095,949,94,0,8.38,"{""reasoning"": ""Dirt road through lush tropical vegetation with oil palms, banana plants, and a rural village with people—typical of equatorial Central Africa, likely the DRC interior."", ""country"": ""CD"", ""latitude"": -2.5, ""longitude"": 22.0}"
+anthropic/claude-opus-4.8,no-CoT,-4.5,19.5,769.723,CD,True,,stop,0.00484,818,30,0,8.59,"{""country"": ""CD"", ""latitude"": -4.5, ""longitude"": 19.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-4.762270450592041,21.395456314086914,770.946,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-4.8010077476501465,21.376089096069336,775.242,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,-0.2285,29.3127,924.539,CD,True,,stop,0.0007384,704,24,0,0.86,"{""country"": ""CD"", ""latitude"": -0.2285, ""longitude"": 29.3127}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-4.3892,15.3911,985.14,CD,True,,stop,0.002145,1226,34,0,22.84,"```json
+{""country"": ""CD"", ""latitude"": -4.3892, ""longitude"": 15.3911}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-6.330472469329834,24.405187606811523,1004.311,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,0.3476,32.5825,1264.981,UG,True,,stop,6.308e-05,404,35,0,14.81,"```json
+{""country"": ""UG"", ""latitude"": 0.3476, ""longitude"": 32.5825}
+```"
+xiaomi/mimo-v2.5,no-CoT,0.3476,32.5825,1264.981,UG,True,,stop,9.68576e-05,820,30,0,2.65,"{""country"": ""UG"", ""latitude"": 0.3476, ""longitude"": 32.5825}"
+google/gemini-3.5-flash,CoT (effort=low),0.3156,32.5811,1265.409,UG,True,,stop,0.005382,1308,380,309,3.64,"```json
+{""reasoning"": ""The lush tropical vegetation, dirt road, and local pedestrians are highly characteristic of rural Uganda, where Google Street View coverage often features rain-streaked windshields."", ""country"": ""UG"", ""latitude"": 0.3156, ""longitude"": 32.5811}
+```"
+x-ai/grok-4.3,CoT,0.615,33.465,1357.74,UG,True,,stop,0.001904,788,502,438,11.61,"{""reasoning"": ""Lush equatorial vegetation (oil palms, bananas), red dirt road, overhead wires, and rural settlement with pedestrians indicate sub-Saharan Africa; right-hand roadside and vehicle perspective consistent with Uganda."", ""country"": ""UG"", ""latitude"": 0.615, ""longitude"": 33.465}"
+google/gemini-3.1-pro-preview,CoT,6.45,7.5,1607.362,NG,True,,stop,0.00726,1308,387,322,6.63,"{
+  ""reasoning"": ""Lush tropical vegetation, dirt road, and the visible car hood suggest West Africa. The landscape is typical of southern Nigeria or Ghana."",
+  ""country"": ""NG"",
+  ""latitude"": 6.45,
+  ""longitude"": 7.5
+}"
+google/gemini-3.5-flash,CoT (effort=medium),6.3512,7.0123,1656.076,NG,True,,stop,0.0081255,1307,685,618,12.03,"{""reasoning"": ""The lush tropical vegetation, sandy dirt road, simple rural dwellings, and dark car hood with rain on the windshield are highly characteristic of Google Street View coverage in southern Nigeria."", ""country"": ""NG"", ""latitude"": 6.3512, ""longitude"": 7.0123}"
+moonshotai/kimi-k2.6,no-CoT,6.5,7.0,1661.927,NG,True,,stop,0.009796095,753,2566,2932,38.63,"{""country"": ""NG"", ""latitude"": 6.5, ""longitude"": 7.0}"
+google/gemma-4-26b-a4b-it,no-CoT,-1.286389,36.817,1761.976,KE,True,,stop,0.00011308,404,177,0,28.01,"{""country"": ""KE"", "" own_latitude"": -1.286389, ""longitude"": 36.8172 own_latitude"": 36.81 own_longitude"": 36 own_longitude"": 36.817}
+
+Wait, I apologize, I made a mistake in the formatting. Here is the correct JSON:
+
+```json
+{""country"": ""KE"", ""latitude"": -1. own_latitude"": -1.286389, ""longitude"": 36.817}
+```
+
+Actually, let me provide the correct, clean-formatted JSON as requested:
+
+```json
+{""country"": ""KE"", ""latitude"": -1.286389, ""longitude"": 36.817}
+```"
+mistralai/mistral-medium-3-5,no-CoT,5.556,5.75,1770.897,NG,True,,stop,0.0013965,786,29,0,8.04,"{""country"": ""NG"", ""latitude"": 5.5560, ""longitude"": 5.7500}"
+xiaomi/mimo-v2.5,CoT,5.335,5.695,1772.068,NG,True,,stop,0.0009747976,899,3126,3034,55.57,"{""reasoning"": ""The combination of red laterite soil, dense tropical vegetation including oil palms and banana plants, and the rural infrastructure style strongly suggests the humid forest zone of West Africa, most likely southern Nigeria. The driver's perspective on the left side of the vehicle indicates right-hand traffic, consistent with Nigeria."", ""country"": ""NG"", ""latitude"": 5.335, ""longitude"": 5.695}"
+google/gemini-3.1-pro-preview,no-CoT,6.3333,5.6667,1799.246,NG,True,,stop,0.0055,1226,254,221,4.63,"```json
+{""country"": ""NG"", ""latitude"": 6.3333, ""longitude"": 5.6667}
+```"
+google/gemini-3.5-flash,CoT (effort=high),6.315,5.625,1803.216,NG,True,,stop,0.0105645,1307,956,878,8.87,"```json
+{""reasoning"": ""The lush tropical vegetation, including oil palms and banana trees, combined with the wet dirt road and West African attire of the pedestrians, strongly points to southern Nigeria, where rainy-season Street View coverage is common."", ""country"": ""NG"", ""latitude"": 6.315, ""longitude"": 5.625}
+```"
+moonshotai/kimi-k2.6,CoT,6.335,5.603,1806.117,NG,True,,stop,0.008171316,834,2312,2239,60.69,"{""reasoning"": ""The unpaved laterite road with a grass median, lush tropical vegetation including banana plants and tall palms, and simple rural settlement are characteristic of the Guinean tropical zone in West Africa, most consistent with southern Nigeria."", ""country"": ""NG"", ""latitude"": 6.335, ""longitude"": 5.603}"
+qwen/qwen3.5-27b,no-CoT,-0.0236,37.9062,1856.62,KE,True,,stop,0.000160875,585,30,0,1.29,"{""country"": ""KE"", ""latitude"": -0.0236, ""longitude"": 37.9062}"
+openai/gpt-5.5,no-CoT,5.7392,-0.8014,2488.626,GH,True,,stop,0.00411,678,24,0,1.65,"{""country"":""GH"",""latitude"":5.7392,""longitude"":-0.8014}"
+qwen/qwen3.5-397b-a17b,no-CoT,6.6885,-1.6244,2595.32,GH,True,,stop,0.00042468,585,29,0,2.28,"{""country"": ""GH"", ""latitude"": 6.6885, ""longitude"": -1.6244}"
+openai/gpt-5.5,CoT,5.4037,-1.9234,2606.723,GH,True,,stop,0.016345,755,419,323,34.3,"{""reasoning"":""Humid equatorial West African vegetation with oil palms/banana plants, lateritic dirt track, tin-roof rural compounds, and people/settlement style point most strongly to coastal rainforest Ghana rather than drier inland Africa. With no readable signage, the best fit is a rural village track in Ghana’s Western/Central rainforest belt."",""country"":""GH"",""latitude"":5.4037,""longitude"":-1.9234}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,8.914708137512207,77.14374542236328,6214.129,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,8.639302253723145,77.1993408203125,6218.445,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,12.9716,77.5946,6300.466,IN,True,,stop,0.0001365,786,31,0,1.09,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,12.847827911376953,83.6197280883789,6949.605,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,-2.5489,104.7639,9287.248,ID,True,,stop,6.325e-05,586,31,0,2.72,"{""country"": ""ID"", ""latitude"": -2.5489, ""longitude"": 104.7639}"
+qwen/qwen3.6-35b-a3b,no-CoT,-6.2088,106.8456,9536.143,ID,True,,stop,0.00011875,585,31,0,3.2,"{""country"": ""ID"", ""latitude"": -6.2088, ""longitude"": 106.8456}"
+qwen/qwen3.5-35b-a3b,no-CoT,-0.7892,113.9234,10296.775,ID,True,,stop,0.00011304,586,31,0,1.07,"{""country"": ""ID"", ""latitude"": -0.7892, ""longitude"": 113.9234}"
+qwen/qwen3.5-122b-a10b,no-CoT,-2.5489,118.0214,10758.892,ID,True,,stop,0.0002499,585,31,0,8.56,"{""country"": ""ID"", ""latitude"": -2.5489, ""longitude"": 118.0214}"
+qwen/qwen3.6-27b,no-CoT,14.5995,120.9842,10981.557,PH,True,,stop,0.0002299,585,32,0,9.87,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.94,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.27,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,2.18,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.35,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.23,

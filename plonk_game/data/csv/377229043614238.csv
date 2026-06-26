@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,5.1166334973377,36.154428176809,0.0,ET,True,,,,,,,,"Lobuni, None, Southern Nations, Nationalities, and People's Region, ET"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,6.510156154632568,36.45403289794922,158.457,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,6.508086204528809,36.46735382080078,158.548,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,6.772884845733643,36.862571716308594,200.127,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,7.967402458190918,35.689002990722656,321.133,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),2.3251,37.9874,371.092,KE,True,,stop,0.0046695,1307,301,234,5.59,"{""reasoning"": ""The newly paved asphalt road with no markings, flat terrain, green acacia-like shrubs, and concrete utility poles are characteristic of rural East Africa, particularly northern Kenya."", ""country"": ""KE"", ""latitude"": 2.3251, ""longitude"": 37.9874}"
+x-ai/grok-4.3,CoT,-0.0236,37.0726,580.591,KE,True,,stop,0.0019065,788,503,432,4.57,"{""reasoning"": ""Left-side driving implied by empty road layout + wooden utility poles; acacia/thornbush savanna, red soil, and equatorial blue sky point to East African highlands. Typical Kenyan rural tarmac highway scene."", ""country"": ""KE"", ""latitude"": -0.0236, ""longitude"": 37.0726}"
+google/gemma-4-31b-it,no-CoT,9.1234,40.1234,624.656,ET,True,,stop,6.308e-05,404,35,0,5.82,"```json
+{""country"": ""ET"", ""latitude"": 9.1234, ""longitude"": 40.1234}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),3.9284,41.8425,644.197,KE,True,,stop,0.002145,1226,34,0,1.82,"```json
+{""country"": ""KE"", ""latitude"": 3.9284, ""longitude"": 41.8425}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,10.742045402526855,33.2801399230957,700.992,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,10.74789047241211,33.250892639160156,703.029,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-1.5,38.0,763.763,KE,True,,stop,0.007145,949,96,0,3.57,"{""reasoning"": ""New asphalt road with reddish soil, scrubby green bushland and concrete utility poles suggests semi-arid East Africa, likely a recently constructed highway in Kenya."", ""country"": ""KE"", ""latitude"": -1.5, ""longitude"": 38.0}"
+anthropic/claude-opus-4.8,no-CoT,-1.5,38.0,763.763,KE,True,,stop,0.00484,818,30,0,8.58,"{""country"": ""KE"", ""latitude"": -1.5, ""longitude"": 38.0}"
+google/gemini-3.1-pro-preview,no-CoT,-1.5,38.0,763.763,KE,True,,stop,0.002786,1225,28,0,2.75,"```json
+{""country"": ""KE"", ""latitude"": -1.5, ""longitude"": 38.0}
+```"
+x-ai/grok-4.3,no-CoT,-1.75,37.15,771.502,KE,True,,stop,0.0007334,704,22,0,0.95,"{""country"": ""KE"", ""latitude"": -1.75, ""longitude"": 37.15}"
+minimax/minimax-m3,no-CoT,-1.5,40.0,850.747,KE,True,,stop,0.00035442,919,114,117,5.23,"{""country"": ""KE"", ""latitude"": -1.5, ""longitude"": 40.0}"
+google/gemini-3.5-flash,CoT (effort=medium),-2.3852,40.4385,960.367,KE,True,,stop,0.0118335,1307,1097,1003,9.94,"```json
+{""reasoning"": ""The newly paved, unmarked asphalt road, light-colored sandy shoulders, and low green acacia-like shrub vegetation are characteristic of coastal Kenya. The concrete utility poles on the left match the style used by Kenya Power along newly upgraded routes like the Garsen-Lamu road."", ""country"": ""KE"", ""latitude"": -2.3852, ""longitude"": 40.4385}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-3.4521,38.1254,977.63,KE,True,,stop,0.0252075,1307,2583,2501,22.11,"{""reasoning"": ""The pristine asphalt road with reddish-brown soil shoulders and dense acacia scrub vegetation is highly characteristic of southern Kenya, particularly near Tsavo. The square concrete utility poles on the left side of the road are typical of Kenya Power's infrastructure."", ""country"": ""KE"", ""latitude"": -3.4521, ""longitude"": 38.1254}"
+moonshotai/kimi-k2.6,CoT,9.56,44.07,1002.874,SO,True,,stop,0.009612576,834,2732,2671,77.52,"{""reasoning"": ""Acacia scrubland, deep-blue high-altitude sky, and new asphalt road with gravel shoulders are characteristic of the Hargeisa area in Somaliland."", ""country"": ""SO"", ""latitude"": 9.56, ""longitude"": 44.07}"
+openai/gpt-5.5,no-CoT,11.5793,43.0094,1041.399,DJ,True,,stop,0.00408,678,23,0,1.93,"{""country"":""DJ"",""latitude"":11.5793,""longitude"":43.0094}"
+minimax/minimax-m3,CoT,-3.85,39.55,1065.996,KE,True,,stop,0.00075426,995,431,347,19.43,"{""reasoning"": ""Freshly paved rural highway with acacia/bushveld vegetation, reddish sandy soil, concrete utility poles with cross-arm style typical of East Africa, and flat coastal hinterland terrain suggest Kenya's coastal lowlands, likely a newly constructed road in Kilifi/Kwale area."", ""country"": ""KE"", ""latitude"": -3.85, ""longitude"": 39.55}"
+openai/gpt-5.5,CoT,10.3725,45.0538,1141.167,SO,True,,stop,0.021265,755,583,504,41.6,"{""reasoning"":""Arid East African scrubland with sandy shoulders, unmarked new asphalt, and simple utility poles fits rural Somalia/Somaliland roads more than marked Gulf or Caribbean roads. The flat coastal terrain and thorny green vegetation are consistent with the Berbera area."",""country"":""SO"",""latitude"":10.3725,""longitude"":45.0538}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4054.805,,True,True,,,,,,12.65,
+xiaomi/mimo-v2.5,CoT,9.41,-0.84,4106.239,GH,True,,stop,0.0004520376,899,1259,1199,14.92,"{""reasoning"": ""The shrubby savanna vegetation and simple utility poles are characteristic of rural West Africa, likely Ghana, with no distinct signage to contradict this."", ""country"": ""GH"", ""latitude"": 9.41, ""longitude"": -0.84}"
+xiaomi/mimo-v2.5,no-CoT,15.3,74.0,4285.411,IN,True,,stop,9.54576e-05,820,25,0,1.31,"{""country"": ""IN"", ""latitude"": 15.3, ""longitude"": 74.0}"
+qwen/qwen3.5-9b,no-CoT,15.3805,74.0945,4297.099,IN,True,,stop,6.325e-05,586,31,0,3.87,"{""country"": ""IN"", ""latitude"": 15.3805, ""longitude"": 74.0945}"
+mistralai/mistral-medium-3-5,no-CoT,23.0225,72.5714,4382.912,IN,True,,stop,0.0014115,786,31,0,2.04,"{""country"": ""IN"", ""latitude"": 23.0225, ""longitude"": 72.5714}"
+qwen/qwen3.5-122b-a10b,no-CoT,23.0225,72.5714,4382.912,IN,True,,stop,0.0002691,585,39,0,3.1,"{
+  ""country"": ""IN"",
+  ""latitude"": 23.0225,
+  ""longitude"": 72.5714
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,15.3173,75.124,4404.119,IN,True,,stop,0.0004466,585,31,0,0.91,"{""country"": ""IN"", ""latitude"": 15.3173, ""longitude"": 75.1240}"
+qwen/qwen3.5-35b-a3b,no-CoT,-33.9245,25.5678,4481.572,ZA,True,,stop,0.000187425,585,31,0,1.87,"{""country"": ""ZA"", ""latitude"": -33.9245, ""longitude"": 25.5678}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.9249,18.4241,4724.317,ZA,True,,stop,0.00011875,585,31,0,1.94,"{""country"": ""ZA"", ""latitude"": -33.9249, ""longitude"": 18.4241}"
+qwen/qwen3.5-27b,no-CoT,21.1458,79.0882,4956.858,IN,True,,stop,0.0002499,585,31,0,2.65,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+qwen/qwen3.6-27b,no-CoT,21.1458,79.0882,4956.858,IN,True,,stop,0.0002279,585,31,0,8.56,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+google/gemini-3.1-pro-preview,CoT,15.1234,-16.0567,5808.122,SN,True,,stop,0.006862,1307,354,278,7.97,"{
+  ""reasoning"": ""The landscape features semi-arid scrub vegetation typical of the Sahel region, and the sky shows a faint smudge artifact characteristic of Google Street View coverage in Senegal."",
+  ""country"": ""SN"",
+  ""latitude"": 15.1234,
+  ""longitude"": -16.0567
+}"
+mistralai/mistral-small-2603,no-CoT,53.1507,-6.1217,6573.175,IE,True,,stop,0.0001359,786,30,0,0.87,"{""country"": ""IE"", ""latitude"": 53.1507, ""longitude"": -6.1217}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.63,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.46,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,2.18,

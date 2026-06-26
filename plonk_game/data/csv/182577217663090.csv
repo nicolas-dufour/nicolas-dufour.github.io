@@ -1,0 +1,77 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,12.479024274098771,-16.253211598201393,0.0,SN,True,,,,,,,,"Ziguinchor, None, Ziguinchor, SN"
+google/gemini-3.1-pro-preview,no-CoT,12.8532,-15.5521,86.698,SN,True,,stop,0.00287,1225,35,0,8.68,"```json
+{""country"": ""SN"", ""latitude"": 12.8532, ""longitude"": -15.5521}
+```"
+google/gemini-3.1-pro-preview,CoT,12.885,-15.552,88.455,SN,True,,stop,0.00601,1307,283,206,18.12,"{
+  ""reasoning"": ""The flat, lush green savanna landscape is typical of West Africa during the wet season. The visible furry dashboard cover is a well-known Google Street View meta for Senegal."",
+  ""country"": ""SN"",
+  ""latitude"": 12.885,
+  ""longitude"": -15.552
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,13.170835494995117,-15.715144157409668,96.545,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,13.158621788024902,-15.695944786071777,96.753,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,13.251956939697266,-15.789896011352539,99.545,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,13.5532,-15.5628,140.929,SN,True,,stop,0.00411,678,24,0,2.87,"{""country"":""SN"",""latitude"":13.5532,""longitude"":-15.5628}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),12.7381,-14.2854,215.468,SN,True,,stop,0.0021525,1225,35,0,1.72,"```json
+{""country"": ""SN"", ""latitude"": 12.7381, ""longitude"": -14.2854}
+```"
+anthropic/claude-opus-4.8,CoT,11.5,-3.0,1445.488,BF,True,,stop,0.007445,949,108,0,9.58,"{""reasoning"": ""Lush green savanna with scattered trees and a worn patched asphalt road suggest wet-season tropical West/Central Africa; vegetation and overcast humid sky point to Sahelian-Sudanian zone."", ""country"": ""BF"", ""latitude"": 11.5, ""longitude"": -3.0}"
+anthropic/claude-opus-4.8,no-CoT,11.5,-2.5,1499.707,BF,True,,stop,0.00484,818,30,0,2.58,"{""country"": ""BF"", ""latitude"": 11.5, ""longitude"": -2.5}"
+openai/gpt-5.5,CoT,9.4076,-1.0172,1697.668,GH,True,,stop,0.021625,755,595,516,36.9,"{""reasoning"":""Flat tropical savanna with red lateritic shoulders and a narrow unmarked rural asphalt road fits West African countryside, especially northern Ghana during the rainy season. The landscape and road quality are most consistent with rural Ghana rather than the drier southern African alternatives."",""country"":""GH"",""latitude"":9.4076,""longitude"":-1.0172}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,2267.069,,True,True,,,,,,0.19,
+google/gemini-3.5-flash,CoT (effort=medium),9.6125,6.5241,2505.261,NG,True,,stop,0.0117345,1307,1086,1006,17.72,"```json
+{""reasoning"": ""The flat, lush green savanna landscape with scattered trees under an overcast sky, combined with the poorly maintained asphalt road and the silver vehicle hood, is highly characteristic of Nigeria's Middle Belt during the rainy season."", ""country"": ""NG"", ""latitude"": 9.6125, ""longitude"": 6.5241}
+```"
+google/gemini-3.5-flash,CoT (effort=low),9.6235,6.5432,2507.127,NG,True,,stop,0.0075855,1307,625,551,6.38,"```json
+{""reasoning"": ""The flat, green savanna landscape with scattered trees under an overcast sky, combined with the wet asphalt road and the silver vehicle hood, is highly characteristic of Nigeria during the rainy season."", ""country"": ""NG"", ""latitude"": 9.6235, ""longitude"": 6.5432}
+```"
+google/gemini-3.5-flash,CoT (effort=high),8.5432,7.7543,2659.749,NG,True,,stop,0.0331455,1307,3465,3388,31.94,"```json
+{""reasoning"": ""The lush green savanna landscape with scattered deciduous trees and reddish soil, combined with the wet asphalt road and the silver vehicle hood, is highly characteristic of the Middle Belt of Nigeria during the rainy season."", ""country"": ""NG"", ""latitude"": 8.5432, ""longitude"": 7.7543}
+```"
+moonshotai/kimi-k2.6,CoT,7.5,8.0,2711.547,NG,True,,stop,0.009143,832,2531,2939,103.55,"{""reasoning"": ""The combination of tropical savanna vegetation with tall green grasses, scattered broadleaf trees, exposed reddish lateritic soil, and a worn rural road is characteristic of the West African Guinea savanna during the rainy season."", ""country"": ""NG"", ""latitude"": 7.5, ""longitude"": 8.0}"
+xiaomi/mimo-v2.5,no-CoT,-12.5,-51.5,4778.05,BR,True,,stop,9.54576e-05,820,25,0,2.69,"{""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -51.5}"
+qwen/qwen3.5-397b-a17b,no-CoT,-10.0,-55.0,4955.872,BR,True,,stop,0.000425,585,25,0,9.64,"{""country"": ""BR"", ""latitude"": -10.0, ""longitude"": -55.0}"
+mistralai/mistral-medium-3-5,no-CoT,-3.119,-60.0217,5136.008,BR,True,,stop,0.0013965,786,29,0,0.98,"{""country"": ""BR"", ""latitude"": -3.119, ""longitude"": -60.0217}"
+qwen/qwen3.5-122b-a10b,no-CoT,-12.7379,-55.5719,5163.819,BR,True,,stop,0.00021684,586,31,0,6.36,"{""country"": ""BR"", ""latitude"": -12.7379, ""longitude"": -55.5719}"
+xiaomi/mimo-v2.5,CoT,-0.2,30.5,5345.352,UG,True,,stop,0.0003316376,899,829,749,10.77,"{""reasoning"": ""The landscape features lush green grassland with scattered trees, a narrow paved rural road, and overcast skies typical of tropical savanna climates during wet seasons. The vegetation and road style strongly suggest rural East Africa, likely Uganda near a protected area."", ""country"": ""UG"", ""latitude"": -0.2, ""longitude"": 30.5}"
+x-ai/grok-4.3,CoT,-1.35,36.85,6058.283,KE,True,,stop,0.0024665,788,727,636,13.8,"{
+  ""reasoning"": ""Savanna landscape with scattered flat-top acacia-style trees, tall grasses, reddish soil patches, and wet unpaved-edge road under overcast rainy skies is characteristic of East African highlands; right-hand drive implied by wiper placement and left-side road positioning matches Kenya/Tanzania driving conventions."",
+  ""country"": ""KE"",
+  ""latitude"": -1.35,
+  ""longitude"": 36.85
+}"
+moonshotai/kimi-k2.6,no-CoT,-6.5,37.0,6251.963,TZ,True,,stop,0.00064215,754,23,0,2.24,"{""country"": ""TZ"", ""latitude"": -6.5, ""longitude"": 37.0}"
+minimax/minimax-m3,CoT,16.4,-89.7,7879.35,GT,True,,stop,0.00083226,995,496,408,13.68,"{""reasoning"": ""Tropical savanna landscape with tall grasses, scattered broadleaf trees, flat terrain, narrow rural paved road, and wet/rainy season conditions strongly suggest the Petén lowlands of northern Guatemala. The vegetation style, road type, and overcast tropical sky are characteristic of this region."", ""country"": ""GT"", ""latitude"": 16.4, ""longitude"": -89.7}"
+qwen/qwen3.6-35b-a3b,no-CoT,19.076,72.8777,9467.805,IN,True,,stop,0.000185,585,31,0,0.75,"{""country"": ""IN"", ""latitude"": 19.0760, ""longitude"": 72.8777}"
+mistralai/mistral-small-2603,no-CoT,28.6139,77.209,9677.884,IN,True,,stop,0.000169875,786,30,0,8.31,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+qwen/qwen3.5-9b,no-CoT,22.5726,78.6639,9971.448,IN,True,,stop,0.0001072,585,31,0,10.58,"{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 78.6639}"
+qwen/qwen3.5-27b,no-CoT,21.1458,79.0882,10051.0,IN,True,,stop,0.00026676,586,44,0,7.94,"```json
+{
+  ""country"": ""IN"",
+  ""latitude"": 21.1458,
+  ""longitude"": 79.0882
+}
+```"
+x-ai/grok-4.3,no-CoT,21.15,79.09,10051.072,IN,True,,stop,0.0007334,704,22,0,0.8,"{""country"": ""IN"", ""latitude"": 21.15, ""longitude"": 79.09}"
+google/gemma-4-31b-it,no-CoT,20.5937,78.9629,10052.702,IN,True,,stop,6.348e-05,404,36,0,6.29,"```json
+{""country"": ""IN"", ""latitude"": 20.5937, ""longitude"": 78.9629}
+```"
+minimax/minimax-m3,no-CoT,21.25,81.63,10303.854,IN,True,,stop,0.00041322,919,163,173,4.16,"{""country"": ""IN"", ""latitude"": 21.25, ""longitude"": 81.63}"
+qwen/qwen3.6-27b,no-CoT,21.1458,81.788,10322.616,IN,True,,stop,0.0002279,585,31,0,12.7,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 81.7880}"
+qwen/qwen3.5-397b-a17b,CoT,27.548,84.492,10399.367,NP,True,,stop,0.0144411,665,4042,3901,168.24,"{
+""reasoning"": ""The landscape features flat terrain with lush green vegetation, including tall elephant grass and Sal-like trees, which is characteristic of the Terai region in Nepal or Northern India. The vehicle is driving on the left side of a narrow, paved rural road, consistent with traffic patterns in Nepal, and the overcast, misty weather suggests the monsoon season common in the Himalayan foothills."",
+""country"": ""NP"",
+""latitude"": 27.548,
+""longitude"": 84.492
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-12.666927337646484,131.5521240234375,16523.235,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-12.687137603759766,132.43722534179688,16619.231,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-12.670486450195312,132.4704132080078,16622.725,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,-25.2743,149.1234,17922.992,AU,True,,stop,0.00018625,585,32,0,7.13,"{""country"": ""AU"", ""latitude"": -25.2743, ""longitude"": 149.1234}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,9.37,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.55,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.71,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.38,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,15.62,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,

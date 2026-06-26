@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,41.425718335162,46.941994638839,0.0,AZ,True,,,,,,,,"Qax Ingiloy, None, Qakh Rayon, AZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.45185852050781,46.922603607177734,3.326,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,41.45298767089844,46.917423248291016,3.659,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,41.345,46.85,11.809,AZ,True,,stop,0.006385,797,96,0,10.0,"{""reasoning"": ""Caucasus mountain village with stone walls, decorative lampposts, and a church-like tower typical of Azerbaijan's Sheki-Zaqatala region foothills."", ""country"": ""AZ"", ""latitude"": 41.345, ""longitude"": 46.85}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.512428283691406,46.69379806518555,22.817,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,41.2058,47.1706,31.024,AZ,True,,stop,0.004155,666,33,0,8.41,"{""country"": ""AZ"", ""latitude"": 41.2058, ""longitude"": 47.1706}"
+moonshotai/kimi-k2.6,no-CoT,41.0938,47.7873,79.716,AZ,True,,stop,0.00062229,603,25,0,0.77,"{""country"": ""AZ"", ""latitude"": 41.0938, ""longitude"": 47.7873}"
+openai/gpt-5.5,CoT,40.9896,47.8477,89.956,AZ,True,,stop,0.017415,621,477,393,15.12,"{""reasoning"":""The lush Caucasus mountain setting, right-hand driving, new divided roadway with decorative twin streetlamps, stone boundary walls and metal-roof village houses strongly suggest a resort-town area in Azerbaijan's Greater Caucasus. This matches the outskirts of Gabala/Qabala particularly well."",""country"":""AZ"",""latitude"":40.9896,""longitude"":47.8477}"
+google/gemini-3.1-pro-preview,CoT,41.947,45.813,110.222,GE,True,,stop,0.006166,1271,302,224,4.82,"{
+  ""reasoning"": ""The mountainous landscape, stone walls, and red-roofed houses are characteristic of rural towns in Georgia. The specific style of streetlights and utility poles further supports this region."",
+  ""country"": ""GE"",
+  ""latitude"": 41.947,
+  ""longitude"": 45.813
+}"
+google/gemini-3.1-pro-preview,no-CoT,41.945,45.81,110.319,GE,True,,stop,0.005044,1190,222,190,3.88,"```json
+{""country"": ""GE"", ""latitude"": 41.945, ""longitude"": 45.81}
+```"
+google/gemini-3.5-flash,CoT (effort=low),41.9512,45.8145,110.36,GE,True,,stop,0.0041115,1271,245,186,3.36,"{""reasoning"": ""The concrete utility poles with three horizontal metal crossbars, stone walls, and mountainous backdrop are highly characteristic of rural Georgia."", ""country"": ""GE"", ""latitude"": 41.9512, ""longitude"": 45.8145}"
+google/gemini-3.5-flash,CoT (effort=medium),41.9508,45.8135,110.407,GE,True,,stop,0.0087285,1271,758,687,13.96,"```json
+{""reasoning"": ""The concrete utility pole with three horizontal crossbars and the river-stone walls are highly characteristic of Georgia, specifically the Kakheti region near the Caucasus foothills."", ""country"": ""GE"", ""latitude"": 41.9508, ""longitude"": 45.8135}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,41.7151,44.8271,178.85,GE,True,,stop,0.00010195,473,31,0,2.59,"{""country"": ""GE"", ""latitude"": 41.7151, ""longitude"": 44.8271}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,40.69575500488281,45.02833938598633,179.802,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,40.74049758911133,44.979007720947266,181.306,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,40.794,44.496,216.62,AM,True,,stop,0.002064,676,622,554,6.88,"{""reasoning"": ""Orthodox church dome + stone walls, red-tile roofs, double-lamp poles and mountainous backdrop point to the South Caucasus; right-hand traffic, Cyrillic/Georgian script absence and vegetation match northern Armenia."", ""country"": ""AM"", ""latitude"": 40.794, ""longitude"": 44.496}"
+moonshotai/kimi-k2.6,CoT,42.3847,44.4212,234.273,GE,True,,stop,0.016247655,681,4391,4788,51.3,"{""reasoning"": ""Mountainous landscape with green deciduous trees, red-roofed rural houses, wooden utility poles, and a divided road with ornate twin-lamp streetlights on the median is characteristic of the Georgian Military Highway region in the Caucasus."", ""country"": ""GE"", ""latitude"": 42.3847, ""longitude"": 44.4212}"
+x-ai/grok-4.3,no-CoT,41.984,44.109,243.226,GE,True,,stop,0.0005934,592,22,0,7.45,"{""country"": ""GE"", ""latitude"": 41.984, ""longitude"": 44.109}"
+qwen/qwen3.5-35b-a3b,no-CoT,40.1897,44.5533,243.516,AM,True,,stop,9.736e-05,474,31,0,1.66,"{""country"": ""AM"", ""latitude"": 40.1897, ""longitude"": 44.5533}"
+qwen/qwen3.5-9b,no-CoT,42.0536,43.9964,254.161,GE,True,,stop,5.205e-05,474,31,0,4.86,"{""country"": ""GE"", ""latitude"": 42.0536, ""longitude"": 43.9964}"
+qwen/qwen3.5-397b-a17b,CoT,40.2918,44.2328,260.384,AM,True,,stop,0.02187765,553,7248,1,522.1,"{
+""reasoning"": ""The image shows a road in a village featuring a distinctive concrete drainage median and utility poles typical of Armenia, leading towards a small 7th-century Armenian Apostolic church with a conical dome (St. Hovhannes Church in Byurakan) set against the backdrop of Mount Aragats."",
+""country"": ""AM"",
+""latitude"": 40.2918,
+""longitude"": 44.2328
+}"
+qwen/qwen3.5-122b-a10b,no-CoT,40.7495,43.8509,269.733,AM,True,,stop,0.00018772,474,31,0,6.45,"{""country"": ""AM"", ""latitude"": 40.7495, ""longitude"": 43.8509}"
+qwen/qwen3.6-27b,no-CoT,42.2619,43.6933,284.697,GE,True,,stop,0.0002414,474,31,0,19.85,"{""country"": ""GE"", ""latitude"": 42.2619, ""longitude"": 43.6933}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.29302978515625,43.48786544799805,288.642,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,42.315,43.352,313.244,GE,True,,stop,6.298e-05,406,34,0,5.76,"```json
+{""country"": ""GE"", ""latitude"": 42.315, ""longitude"": 43.352}
+```"
+openai/gpt-5.5,no-CoT,42.2917,43.2824,317.975,GE,True,,stop,0.00341,544,23,0,1.7,"{""country"":""GE"",""latitude"":42.2917,""longitude"":43.2824}"
+qwen/qwen3.5-397b-a17b,no-CoT,43.6666,43.5333,374.192,RU,True,,stop,0.0003794,473,31,0,2.73,"{""country"": ""RU"", ""latitude"": 43.6666, ""longitude"": 43.5333}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),42.596111,41.873889,438.402,GE,True,,stop,0.002136,1190,39,0,1.45,"```json
+{""country"": ""GE"", ""latitude"": 42.596111, ""longitude"": 41.873889}
+```"
+mistralai/mistral-medium-3-5,no-CoT,43.5853,39.7478,636.477,RU,True,,stop,0.001191,634,32,0,1.05,"{""country"": ""RU"", ""latitude"": 43.5853, ""longitude"": 39.7478}"
+minimax/minimax-m3,no-CoT,45.3167,25.55,1776.606,RO,True,,stop,0.00019416,752,25,0,4.89,"{""country"": ""RO"", ""latitude"": 45.3167, ""longitude"": 25.5500}"
+minimax/minimax-m3,CoT,45.08,24.52,1854.357,RO,True,,stop,0.00083094,845,504,523,10.89,"{""reasoning"": ""The distinctive dual-headed ornate lamppost is characteristic of Romanian street infrastructure, combined with Carpathian foothill mountain backdrop, red-tiled roof architecture, and the freshly constructed road with concrete curbs and median typical of EU-funded Romanian road modernization projects."", ""country"": ""RO"", ""latitude"": 45.08, ""longitude"": 24.52}"
+xiaomi/mimo-v2.5,no-CoT,40.075,20.15,2252.856,AL,True,,stop,8.06176e-05,708,28,0,1.86,"{""country"": ""AL"", ""latitude"": 40.075, ""longitude"": 20.15}"
+xiaomi/mimo-v2.5,CoT,41.1,19.8,2259.592,AL,True,,stop,0.0003923976,787,1102,1040,10.96,"{""reasoning"": ""Red-roofed houses with stone walls and mountainous terrain are characteristic of rural Balkan regions like Albania, while the road infrastructure suggests European standards."", ""country"": ""AL"", ""latitude"": 41.1, ""longitude"": 19.8}"
+mistralai/mistral-small-2603,CoT,48.35,12.75,2775.798,DE,True,,stop,0.00044424,716,673,773,6.56,"{""reasoning"": ""EU license plate format with blue section and stars, road infrastructure style, and rural Bavarian landscape with rolling hills and typical house architecture"", ""country"": ""DE"", ""latitude"": 48.35, ""longitude"": 12.75}"
+mistralai/mistral-small-2603,no-CoT,60.3913,5.3221,3508.041,NO,True,,stop,0.000141375,634,30,0,8.47,"{""country"": ""NO"", ""latitude"": 60.3913, ""longitude"": 5.3221}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6583.6,,True,True,,,,,,6.56,
+qwen/qwen3.5-27b,no-CoT,35.3606,138.9294,7649.674,JP,True,,stop,0.000142155,473,32,0,7.99,"{""country"": ""JP"", ""latitude"": 35.3606, ""longitude"": 138.9294}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.12,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.18,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.29,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.22,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.17,
+google/gemini-3.5-flash,CoT (effort=high),,,,,False,,error,0,0,0,0,13.27,

@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-24.96288340804,31.736724858641,0.0,ZA,True,,,,,,,,"Komatipoort, Ehlanzeni District, Mpumalanga, ZA"
+openai/gpt-5.5,CoT,-24.9947,31.7198,3.928,ZA,True,,stop,0.012255,621,305,227,14.43,"{""reasoning"":""Narrow unmarked paved road through flat lowveld savanna with safari-vehicle hood visible strongly suggests a game-drive road in Kruger National Park. Vegetation, road style, and left-driving regional context point most likely to northeastern South Africa."",""country"":""ZA"",""latitude"":-24.9947,""longitude"":31.7198}"
+google/gemini-3.5-flash,CoT (effort=high),-24.9895,31.5926,14.826,ZA,True,,stop,0.0057405,1271,426,360,10.51,"{""reasoning"": ""The paved road through dense bushveld vegetation, combined with the safari vehicle hood (Toyota Land Cruiser), is highly characteristic of Kruger National Park in South Africa."", ""country"": ""ZA"", ""latitude"": -24.9895, ""longitude"": 31.5926}"
+google/gemini-3.1-pro-preview,no-CoT,-24.9958,31.5921,15.03,ZA,True,,stop,0.002798,1189,35,0,4.94,"```json
+{""country"": ""ZA"", ""latitude"": -24.9958, ""longitude"": 31.5921}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-24.9952,31.5912,15.102,ZA,True,,stop,0.0043905,1271,276,209,3.71,"{""reasoning"": ""The paved road through dense bushveld vegetation, combined with the safari vehicle's hood and bull bar, is highly characteristic of Kruger National Park in South Africa."", ""country"": ""ZA"", ""latitude"": -24.9952, ""longitude"": 31.5912}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-24.9952,31.5912,15.102,ZA,True,,stop,0.0020985,1189,35,0,6.14,"```json
+{""country"": ""ZA"", ""latitude"": -24.9952, ""longitude"": 31.5912}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-25.0215,31.6012,15.134,ZA,True,,stop,0.0110325,1271,1014,940,16.35,"```json
+{""reasoning"": ""The paved road through dense green bushveld, combined with the beige safari vehicle hood (likely a Toyota Land Cruiser), is highly characteristic of Kruger National Park in South Africa."", ""country"": ""ZA"", ""latitude"": -25.0215, ""longitude"": 31.6012}
+```"
+x-ai/grok-4.3,no-CoT,-24.65,31.55,39.568,ZA,True,,stop,0.0005934,592,22,0,6.92,"{""country"": ""ZA"", ""latitude"": -24.65, ""longitude"": 31.55}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-25.30199432373047,31.973506927490234,44.61,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-25.29066276550293,32.02923583984375,46.857,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-25.30542755126953,32.03080368041992,48.241,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-24.5,31.7,51.604,ZA,True,,stop,0.009276408,682,2648,2589,57.17,"{""reasoning"": ""Paved road cutting through dry African bushveld with sandy shoulders and a safari-style vehicle roof rack strongly indicates Kruger National Park in South Africa."", ""country"": ""ZA"", ""latitude"": -24.5, ""longitude"": 31.7}"
+qwen/qwen3.5-122b-a10b,no-CoT,-24.9947,31.1081,63.46,ZA,True,,stop,0.00018746,473,31,0,1.07,"{""country"": ""ZA"", ""latitude"": -24.9947, ""longitude"": 31.1081}"
+x-ai/grok-4.3,CoT,-24.42,31.35,71.906,ZA,True,,stop,0.001784,676,510,441,10.57,"{""reasoning"": ""Savanna woodland vegetation, white safari-style 4x4 hood, unmarked narrow asphalt road, and clear subtropical sky indicate rural Southern/Eastern Africa; left-side driving context and vehicle type point to South Africa."", ""country"": ""ZA"", ""latitude"": -24.42, ""longitude"": 31.35}"
+xiaomi/mimo-v2.5,no-CoT,-24.5,31.0,90.473,ZA,True,,stop,7.97776e-05,708,25,0,1.71,"{""country"": ""ZA"", ""latitude"": -24.5, ""longitude"": 31.0}"
+xiaomi/mimo-v2.5,CoT,-24.05,31.55,103.251,ZA,True,,stop,0.0010425576,787,3424,3329,38.48,"{""reasoning"": ""The image displays a paved road with no lane markings, driven on the left side, surrounded by dense African bushveld vegetation and viewed from a safari vehicle. These visual elements—specifically the road infrastructure style and vegetation type—are highly characteristic of the road network within Kruger National Park in South Africa."", ""country"": ""ZA"", ""latitude"": -24.05, ""longitude"": 31.55}"
+google/gemini-3.1-pro-preview,CoT,-24.0,31.5,109.715,ZA,True,,stop,0.005064,1272,210,136,10.12,"{
+  ""reasoning"": ""The view from a safari vehicle with a bullbar on a paved road through savanna vegetation strongly suggests Kruger National Park in South Africa, known for its extensive network of paved roads."",
+  ""country"": ""ZA"",
+  ""latitude"": -24.0,
+  ""longitude"": 31.5
+}"
+qwen/qwen3.6-27b,no-CoT,-24.0735,31.1345,116.155,ZA,True,,stop,0.0001943,473,31,0,6.3,"{""country"": ""ZA"", ""latitude"": -24.0735, ""longitude"": 31.1345}"
+qwen/qwen3.6-35b-a3b,no-CoT,-24.745,29.123,264.821,ZA,True,,stop,0.00010423985,473,29,0,2.15,"{""country"": ""ZA"", ""latitude"": -24.745, ""longitude"": 29.123}"
+qwen/qwen3.5-27b,no-CoT,-25.35,29.12,266.858,ZA,True,,stop,0.000134355,473,27,0,6.51,"{""country"": ""ZA"", ""latitude"": -25.35, ""longitude"": 29.12}"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.6416,25.9732,582.813,ZA,True,,stop,0.00010195,473,31,0,8.06,"{""country"": ""ZA"", ""latitude"": -24.6416, ""longitude"": 25.9732}"
+qwen/qwen3.5-9b,no-CoT,-17.8333,31.05,795.949,ZW,True,,stop,5.175e-05,474,29,0,2.8,"{""country"": ""ZW"", ""latitude"": -17.8333, ""longitude"": 31.05}"
+google/gemma-4-31b-it,no-CoT,-22.1234,23.5678,890.349,BW,True,,stop,6.718e-05,406,36,0,10.28,"```json
+{""country"": ""BW"", ""latitude"": -22.1234, ""longitude"": 23.5678}
+```"
+openai/gpt-5.5,no-CoT,-19.1305,23.7427,1048.031,BW,True,,stop,0.00344,544,24,0,1.36,"{""country"":""BW"",""latitude"":-19.1305,""longitude"":23.7427}"
+minimax/minimax-m3,CoT,-13.05,31.55,1324.797,ZM,True,,stop,0.00080106,843,508,415,24.03,"{""reasoning"": ""Safari-style roof rack on a Toyota Land Cruiser, narrow paved road through dry bushveld/miombo woodland with characteristic reddish-orange soil, and right-hand traffic point to a southern African game reserve. The vegetation type and soil color most closely match Zambia's South Luangwa or Kafue National Park region."", ""country"": ""ZM"", ""latitude"": -13.05, ""longitude"": 31.55}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4398.212,,True,True,,,,,,19.61,
+anthropic/claude-opus-4.8,CoT,6.372,81.516,6411.4,LK,True,,stop,0.00631,797,93,0,9.45,"{""reasoning"": ""Dry scrubland with tropical vegetation and a safari jeep hood suggests a national park; the landscape resembles Yala or similar in southern Sri Lanka."", ""country"": ""LK"", ""latitude"": 6.372, ""longitude"": 81.516}"
+anthropic/claude-opus-4.8,no-CoT,6.3725,81.5185,6411.659,LK,True,,stop,0.00413,666,32,0,3.55,"{""country"": ""LK"", ""latitude"": 6.3725, ""longitude"": 81.5185}"
+mistralai/mistral-medium-3-5,no-CoT,-15.7801,-47.9292,8257.353,BR,True,,stop,0.0011835,634,31,0,2.07,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-26.447635650634766,-55.30952835083008,8530.346,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-27.09600830078125,-55.75583267211914,8545.096,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,-17.4523,133.6789,10341.449,AU,True,,stop,0.00036828,473,32,0,20.27,"{""country"": ""AU"", ""latitude"": -17.4523, ""longitude"": 133.6789}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,12.100203514099121,-69.29830932617188,11670.987,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,10.03,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.21,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.34,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.4,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.18,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.31,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,6.5,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.22,

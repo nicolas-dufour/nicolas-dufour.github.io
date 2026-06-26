@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,42.099161712252,26.543327466921,0.0,BG,True,,,,,,,,"Elkhovo, Obshtina Elkhovo, Yambol, BG"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,42.23644256591797,26.605398178100586,16.099,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,42.244789123535156,26.614276885986328,17.216,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,42.26860809326172,26.59117317199707,19.25,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,43.2,25.9,133.235,BG,True,,stop,0.007645,949,116,0,4.06,"{""reasoning"": ""Two-lane rural road with metal guardrails over a culvert, lush green deciduous vegetation, right-hand traffic, dashcam timestamp format—consistent with Eastern European countryside, likely Bulgaria/Romania region."", ""country"": ""BG"", ""latitude"": 43.2, ""longitude"": 25.9}"
+google/gemini-3.1-pro-preview,no-CoT,43.21405,27.91473,167.164,BG,True,,stop,0.002894,1225,37,0,9.66,"```json
+{""country"": ""BG"", ""latitude"": 43.21405, ""longitude"": 27.91473}
+```"
+anthropic/claude-opus-4.8,no-CoT,45.5,27.0,379.926,RO,True,,stop,0.00484,818,30,0,1.92,"{""country"": ""RO"", ""latitude"": 45.5, ""longitude"": 27.0}"
+openai/gpt-5.5,CoT,45.1237,28.7624,380.782,RO,True,,stop,0.019705,755,531,447,20.08,"{""reasoning"":""Right-hand traffic with European-style white lane markings and metal guardrails, plus lush lowland deciduous vegetation and August evening twilight point most strongly to eastern Europe. The road/guardrail style and flat green landscape fit Romania, likely in the Danube/Black Sea lowlands."",""country"":""RO"",""latitude"":45.1237,""longitude"":28.7624}"
+google/gemini-3.1-pro-preview,CoT,45.65,25.58,402.306,RO,True,,stop,0.005914,1307,275,202,11.93,"{
+  ""reasoning"": ""The road markings, guardrail style with a concrete base, and temperate vegetation suggest Eastern Europe. The overall landscape and infrastructure are consistent with rural roads in Romania."",
+  ""country"": ""RO"",
+  ""latitude"": 45.65,
+  ""longitude"": 25.58
+}"
+openai/gpt-5.5,no-CoT,39.6032,20.9678,544.754,GR,True,,stop,0.00408,678,23,0,3.07,"{""country"":""GR"",""latitude"":39.6032,""longitude"":20.9678}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),46.512432,30.612451,587.742,UA,True,,stop,0.0021885,1225,39,0,2.96,"```json
+{""country"": ""UA"", ""latitude"": 46.512432, ""longitude"": 30.612451}
+```"
+x-ai/grok-4.3,no-CoT,45.15,18.02,764.804,HR,True,,stop,0.0007334,704,22,0,1.42,"{""country"": ""HR"", ""latitude"": 45.15, ""longitude"": 18.02}"
+google/gemini-3.5-flash,CoT (effort=medium),49.5,27.5,826.251,UA,True,,stop,0.0085035,1307,727,672,12.61,"{""reasoning"": ""The dashcam timestamp, lush temperate vegetation, road markings, and guardrail style are highly characteristic of Eastern Europe, particularly Ukraine."", ""country"": ""UA"", ""latitude"": 49.5, ""longitude"": 27.5}"
+google/gemini-3.5-flash,CoT (effort=high),49.5535,25.5948,832.117,UA,True,,stop,0.0092505,1307,810,730,6.66,"{""reasoning"": ""The road design with metal guardrails on concrete bases, dense deciduous vegetation, and the late dusk light at 20:33 in August suggest a mid-to-high latitude in Eastern Europe, most likely Ukraine."", ""country"": ""UA"", ""latitude"": 49.5535, ""longitude"": 25.5948}"
+google/gemini-3.5-flash,CoT (effort=low),49.0134,31.2854,852.464,UA,True,,stop,0.004887,1308,325,263,3.19,"{""reasoning"": ""The road markings, guardrails, and dense deciduous vegetation under a late evening summer sky suggest a location in Eastern Europe, likely Ukraine."", ""country"": ""UA"", ""latitude"": 49.0134, ""longitude"": 31.2854}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,47.78460693359375,19.15884780883789,857.979,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,47.8361701965332,19.193443298339844,860.202,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,52.15,19.3,1243.255,PL,True,,stop,0.022682196,834,6551,6481,228.65,"{""reasoning"": ""Right-hand traffic with European W-beam guardrails on a flat rural road through deciduous forest; the late-evening August light at 20:33 indicates high-latitude continental Europe best matching Poland."", ""country"": ""PL"", ""latitude"": 52.15, ""longitude"": 19.3}"
+minimax/minimax-m3,CoT,40.05,9.05,1481.278,IT,True,,stop,0.00083346,995,497,416,18.24,"{""reasoning"": ""Right-hand traffic on a narrow rural road with European-style W-beam metal guardrails, surrounded by dense Mediterranean maquis/macchia scrubland vegetation typical of island interiors. Road sign shape and timestamp format suggest southern Europe, with vegetation density pointing to Sardinia's interior."", ""country"": ""IT"", ""latitude"": 40.05, ""longitude"": 9.05}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,49.99762725830078,8.196121215820312,1659.494,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,1715.799,RU,True,,stop,6.692e-05,404,36,0,2.82,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+qwen/qwen3.6-27b,no-CoT,43.6047,1.4442,2045.059,FR,True,,stop,0.0002259,585,30,0,10.25,"{""country"": ""FR"", ""latitude"": 43.6047, ""longitude"": 1.4442}"
+mistralai/mistral-medium-3-5,no-CoT,19.076,72.8777,5038.186,IN,True,,stop,0.001404,786,30,0,1.71,"{""country"": ""IN"", ""latitude"": 19.076, ""longitude"": 72.8777}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5383.098,,True,True,,,,,,0.22,
+qwen/qwen3.5-9b,no-CoT,20.5937,78.9629,5420.187,IN,True,,stop,0.0001072,585,31,0,12.28,"{""country"": ""IN"", ""latitude"": 20.5937, ""longitude"": 78.9629}"
+xiaomi/mimo-v2.5,CoT,34.26,108.94,6972.629,CN,True,,stop,0.0005413576,899,1578,1494,24.4,"{""reasoning"": ""The timestamp format YYYY/MM/DD HH:MM:SS is commonly used in East Asian countries like China, and the highway guardrails and vegetation are consistent with northern Chinese landscapes. The right-hand traffic and dashcam perspective align with Chinese road norms."", ""country"": ""CN"", ""latitude"": 34.26, ""longitude"": 108.94}"
+qwen/qwen3.5-27b,no-CoT,13.7563,100.5018,7671.04,TH,True,,stop,0.0002205,586,37,0,3.76,"```json
+{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,38.8977,-77.0365,8163.712,US,True,,stop,0.0004466,585,31,0,3.07,"{""country"": ""US"", ""latitude"": 38.8977, ""longitude"": -77.0365}"
+x-ai/grok-4.3,CoT,35.72,139.85,9028.531,JP,True,,stop,0.003049,788,960,893,7.31,"{
+  ""reasoning"": ""Left-side sign placement + right-hand guardrail indicate left-hand traffic; August 20:33 twilight, dense broadleaf vegetation and metal beam guardrails match rural Japan."",
+  ""country"": ""JP"",
+  ""latitude"": 35.72,
+  ""longitude"": 139.85
+}"
+mistralai/mistral-small-2603,no-CoT,40.0082,-105.2636,9675.147,US,True,,stop,0.0001371,786,32,0,7.48,"{""country"": ""US"", ""latitude"": 40.0082, ""longitude"": -105.2636}"
+xiaomi/mimo-v2.5,no-CoT,30.5,-90.5,9691.492,US,True,,stop,9.54576e-05,820,25,0,13.79,"{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -90.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,32.7767,-96.797,9879.702,US,True,,stop,0.00011204,586,30,0,9.47,"{""country"": ""US"", ""latitude"": 32.7767, ""longitude"": -96.797}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,10460.322,BR,True,,stop,0.00021658,585,31,0,7.14,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-35b-a3b,no-CoT,34.0522,-118.2437,10817.993,US,True,,stop,0.00011975,585,32,0,2.56,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.26,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.28,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.37,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.8,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.09,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.19,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.27,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.24,

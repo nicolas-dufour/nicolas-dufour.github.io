@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,6.3594916551964,99.694480562596,0.0,MY,True,,,,,,,,"Kuah, Langkawi, Kedah, MY"
+google/gemini-3.5-flash,CoT (effort=medium),3.3315,101.7552,406.797,MY,True,,stop,0.0090435,1271,793,717,13.78,"{""reasoning"": ""The lush tropical canopy, left-hand driving, green highway signage, and Malaysian vehicle models (like the Proton/Perodua) indicate Malaysia, likely along the scenic Karak Expressway (E8)."", ""country"": ""MY"", ""latitude"": 3.3315, ""longitude"": 101.7552}"
+google/gemini-3.5-flash,CoT (effort=high),3.325,101.755,407.384,MY,True,,stop,0.0120405,1271,1126,1057,10.51,"{""reasoning"": ""The presence of left-hand traffic, tropical rainforest vegetation, a Perodua Myvi, and a green Malaysian highway sign indicates the Karak Highway (E8) in Malaysia."", ""country"": ""MY"", ""latitude"": 3.325, ""longitude"": 101.755}"
+google/gemini-3.5-flash,CoT (effort=low),3.3186,101.7854,409.868,MY,True,,stop,0.004707,1272,311,228,3.15,"```json
+{""reasoning"": ""The presence of a Proton Saga (red car) with a black license plate, left-hand traffic, and lush tropical rainforest vegetation indicates Malaysia, likely on a major highway like the Karak Highway (E8)."", ""country"": ""MY"", ""latitude"": 3.3186, ""longitude"": 101.7854}
+```"
+google/gemini-3.1-pro-preview,CoT,3.2534,101.7345,412.76,MY,True,,stop,0.006286,1271,312,227,11.72,"{
+  ""reasoning"": ""Left-hand traffic, lush tropical vegetation, and the presence of a Perodua Myvi (a Malaysian car brand) strongly indicate Malaysia. The black license plate with white text further confirms this."",
+  ""country"": ""MY"",
+  ""latitude"": 3.2534,
+  ""longitude"": 101.7345
+}"
+xiaomi/mimo-v2.5,no-CoT,3.0733,101.4833,415.703,MY,True,,stop,8.14576e-05,708,31,0,1.49,"{""country"": ""MY"", ""latitude"": 3.0733, ""longitude"": 101.4833}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),3.1528,101.6938,419.775,MY,True,,stop,0.0021,1190,35,0,7.82,"```json
+{""country"": ""MY"", ""latitude"": 3.1528, ""longitude"": 101.6938}
+```"
+x-ai/grok-4.3,no-CoT,3.158,101.71,420.235,MY,True,,stop,0.0005934,592,22,0,1.83,"{""country"": ""MY"", ""latitude"": 3.158, ""longitude"": 101.71}"
+xiaomi/mimo-v2.5,CoT,3.1569,101.7123,420.474,MY,True,,stop,0.0001339576,787,179,82,15.66,"```json
+{
+  ""reasoning"": ""The image shows left-hand traffic and dense tropical vegetation, consistent with regions like Southeast Asia. The vehicle license plates appear to be white with black text, typical of Malaysia or Singapore, and the surrounding infrastructure aligns with a tropical Southeast Asian setting."",
+  ""country"": ""MY"",
+  ""latitude"": 3.1569,
+  ""longitude"": 101.7123
+}
+```"
+google/gemini-3.1-pro-preview,no-CoT,3.139,101.6869,420.679,MY,True,,stop,0.002786,1189,34,0,9.28,"```json
+{""country"": ""MY"", ""latitude"": 3.139, ""longitude"": 101.6869}
+```"
+google/gemma-4-31b-it,no-CoT,3.139,101.6869,420.679,MY,True,,stop,6.378e-05,406,36,0,8.79,"```json
+{""country"": ""MY"", ""latitude"": 3.1390, ""longitude"": 101.6869}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,3.139,101.6869,420.679,MY,True,,stop,0.00010095,473,30,0,8.21,"{""country"": ""MY"", ""latitude"": 3.139, ""longitude"": 101.6869}"
+qwen/qwen3.5-9b,no-CoT,3.1393,101.6891,420.778,MY,True,,stop,5.205e-05,474,31,0,9.08,"{""country"": ""MY"", ""latitude"": 3.1393, ""longitude"": 101.6891}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,1.5035526752471924,103.75860595703125,703.343,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,1.4879207611083984,103.74980163574219,704.056,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,1.4553581476211548,103.74273681640625,706.352,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,1.3554,103.7765,717.338,SG,True,,stop,0.00413,666,32,0,9.17,"{""country"": ""SG"", ""latitude"": 1.3554, ""longitude"": 103.7765}"
+anthropic/claude-opus-4.8,CoT,1.3521,103.8198,720.662,SG,True,,stop,0.006485,797,100,0,3.26,"{""reasoning"": ""Lush tropical roadside vegetation, left-hand traffic, and Asian-style green directional sign suggest Singapore/Malaysia; cars and road furniture match Singapore."", ""country"": ""SG"", ""latitude"": 1.3521, ""longitude"": 103.8198}"
+qwen/qwen3.5-27b,no-CoT,1.3521,103.8198,720.662,SG,True,,stop,0.0001905,474,36,0,9.29,"```json
+{""country"": ""SG"", ""latitude"": 1.3521, ""longitude"": 103.8198}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,1.3521,103.8198,720.662,SG,True,,stop,0.0001171625,473,31,0,1.0,"{""country"": ""SG"", ""latitude"": 1.3521, ""longitude"": 103.8198}"
+qwen/qwen3.5-397b-a17b,no-CoT,1.3521,103.8198,720.662,SG,True,,stop,0.00036468,473,31,0,9.38,"{""country"": ""SG"", ""latitude"": 1.3521, ""longitude"": 103.8198}"
+moonshotai/kimi-k2.6,CoT,1.34,103.83,722.422,SG,True,,stop,0.01486022,682,3591,4046,91.58,"{""reasoning"": ""The red car’s yellow rear license plate and left-hand traffic are definitive for Singapore; dense tropical vegetation and the green English overhead road sign match major roads through the Central Catchment Nature Reserve such as Lornie Road or Thomson Road."", ""country"": ""SG"", ""latitude"": 1.34, ""longitude"": 103.83}"
+qwen/qwen3.5-122b-a10b,no-CoT,13.7563,100.5018,827.216,TH,True,,stop,0.0001898,474,32,0,15.55,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+openai/gpt-5.5,CoT,22.2578,114.1886,2354.66,HK,True,,stop,0.021315,621,607,516,22.4,"{""reasoning"":""Left-hand traffic with yellow/white rear plates, dense subtropical roadside vegetation, guardrails, and bilingual-style road signage are most consistent with Hong Kong rather than mainland China or Singapore. The hilly wooded arterial road appearance fits Hong Kong Island/NT roads, especially around the Tai Tam/Shouson Hill area."",""country"":""HK"",""latitude"":22.2578,""longitude"":114.1886}"
+minimax/minimax-m3,CoT,9.93,76.72,2559.082,IN,True,,stop,0.00076422,845,474,484,8.47,"{""reasoning"": ""Left-hand traffic, Malayalam script on the green overhead highway sign, tropical lush vegetation, and the style of metal road barriers all point to a highway in Kerala, India."", ""country"": ""IN"", ""latitude"": 9.93, ""longitude"": 76.72}"
+x-ai/grok-4.3,CoT,22.65,120.3,2856.273,TW,True,,stop,0.002194,676,674,592,12.04,"{""reasoning"": ""Overhead gantry sign with Traditional Chinese characters, right-hand traffic (red sedan in right lane), LHD vehicle interior, dense subtropical forest/vegetation, and guardrail style all point to Taiwan; sign text and setting consistent with a highway near Kaohsiung."", ""country"": ""TW"", ""latitude"": 22.65, ""longitude"": 120.3}"
+qwen/qwen3.6-27b,no-CoT,35.6895,139.6917,5217.511,JP,True,,stop,0.0001963,473,32,0,4.21,"{""country"": ""JP"", ""latitude"": 35.6895, ""longitude"": 139.6917}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,0.06089649721980095,37.024314880371094,6988.007,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-33.75056,151.08444,7004.388,AU,True,,stop,0.001206,634,34,0,1.07,"{""country"": ""AU"", ""latitude"": -33.75056, ""longitude"": 151.08444}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-1.255080223083496,36.7938232421875,7032.378,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-1.235284447669983,36.78950500488281,7032.556,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,-23.5879,-46.6596,15942.504,BR,True,,stop,0.00347,544,25,0,7.78,"{""country"":""BR"",""latitude"":-23.5879,""longitude"":-46.6596}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.88,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.17,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.12,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,303.19,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.73,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.57,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,9.4,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.29,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,6.35,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.33,

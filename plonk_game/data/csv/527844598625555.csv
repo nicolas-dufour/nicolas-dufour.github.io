@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,54.526798875828,100.63833165919,0.0,RU,True,,,,,,,,"Tulun, None, Irkutsk, RU"
+google/gemini-3.5-flash,no-CoT (effort=minimal),52.2514,104.3211,351.561,RU,True,,stop,0.002163,1226,36,0,1.21,"```json
+{""country"": ""RU"", ""latitude"": 52.2514, ""longitude"": 104.3211}
+```"
+google/gemini-3.1-pro-preview,no-CoT,51.8333,107.5833,550.886,RU,True,,stop,0.002884,1226,36,0,2.2,"```json
+{""country"": ""RU"", ""latitude"": 51.8333, ""longitude"": 107.5833}
+```"
+anthropic/claude-opus-4.8,CoT,51.83,107.6,552.032,RU,True,,stop,0.007145,949,96,0,3.39,"{""reasoning"": ""Snowy steppe landscape with sparse vegetation, distant industrial town and power lines under clear cold sky suggests southern Siberia/Transbaikal region of Russia."", ""country"": ""RU"", ""latitude"": 51.83, ""longitude"": 107.6}"
+anthropic/claude-opus-4.8,no-CoT,52.033,113.501,897.489,RU,True,,stop,0.00484,818,30,0,2.19,"{""country"": ""RU"", ""latitude"": 52.033, ""longitude"": 113.501}"
+google/gemini-3.5-flash,CoT (effort=high),55.0084,82.9211,1134.733,RU,True,,stop,0.008739,1308,753,691,5.18,"{""reasoning"": ""The snowy winter landscape, deciduous and coniferous vegetation, and distinctive curved streetlights in the background are highly characteristic of Russia, particularly Siberia."", ""country"": ""RU"", ""latitude"": 55.0084, ""longitude"": 82.9211}"
+google/gemini-3.5-flash,CoT (effort=medium),54.9833,82.8964,1136.529,RU,True,,stop,0.0054795,1307,391,326,3.69,"{""reasoning"": ""The snowy landscape with flat terrain, bare deciduous shrubs, and distant curved metal streetlights is characteristic of suburban or rural Russia, likely in southwestern Siberia."", ""country"": ""RU"", ""latitude"": 54.9833, ""longitude"": 82.8964}"
+google/gemini-3.1-pro-preview,CoT,54.98,73.36,1740.066,RU,True,,stop,0.004896,1308,190,116,3.47,"{
+  ""reasoning"": ""The snowy, flat landscape with Soviet-style utility poles and concrete infrastructure strongly suggests Russia. The vegetation and terrain are consistent with the Siberian or Ural plains in winter."",
+  ""country"": ""RU"",
+  ""latitude"": 54.98,
+  ""longitude"": 73.36
+}"
+moonshotai/kimi-k2.6,CoT,55.03,73.29,1743.549,RU,True,,stop,0.010766736,834,3063,2997,88.08,"{""reasoning"": ""Flat snowy terrain with a small river, sparse boreal vegetation, utilitarian concrete embankment, and Soviet-style wooden power-pole lines point to the West Siberian Plain in Russia."", ""country"": ""RU"", ""latitude"": 55.03, ""longitude"": 73.29}"
+google/gemini-3.5-flash,CoT (effort=low),51.1605,71.4704,1979.369,KZ,True,,stop,0.0039405,1307,220,157,305.92,"{""reasoning"": ""The flat, snowy steppe landscape with post-Soviet style utility poles and concrete canal structures is highly characteristic of northern Kazakhstan, particularly around Astana."", ""country"": ""KZ"", ""latitude"": 51.1605, ""longitude"": 71.4704}"
+minimax/minimax-m3,CoT,53.2,69.4,2036.761,KZ,True,,stop,0.00084666,995,508,439,22.01,"{""reasoning"": ""Flat snowy steppe landscape with sparse deciduous willows and conifers, small industrial town visible in distance with utilitarian power infrastructure - characteristic of northern Kazakhstan's continental climate zone with heavy winter snow cover."", ""country"": ""KZ"", ""latitude"": 53.2, ""longitude"": 69.4}"
+xiaomi/mimo-v2.5,CoT,39.63,118.18,2110.987,CN,True,,stop,0.0010918376,899,3544,3462,37.37,"{""reasoning"": ""Flat snowy terrain with riparian willow/poplar vegetation and gabion stone-cage riverbank reinforcement, a construction style ubiquitous in rural China. The background shows utilitarian low-rise buildings and concrete infrastructure typical of the North China Plain."", ""country"": ""CN"", ""latitude"": 39.63, ""longitude"": 118.18}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,50.31071090698242,140.1630401611328,2684.158,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,37.289,126.855,2760.509,KR,True,,stop,0.0007334,704,22,0,0.81,"{""country"": ""KR"", ""latitude"": 37.289, ""longitude"": 126.855}"
+openai/gpt-5.5,CoT,36.9985,127.2308,2806.423,KR,True,,stop,0.016315,755,418,333,10.96,"{""reasoning"":""Snow-covered flat agricultural/industrial outskirts with small concrete-lined stream, utility poles, low mountains, and Korean-style rural infrastructure point most strongly to inland South Korea. The winter climate and landscape fit Gyeonggi/Chungcheong rural areas around Anseong/Cheonan."",""country"":""KR"",""latitude"":36.9985,""longitude"":127.2308}"
+openai/gpt-5.5,no-CoT,37.3685,127.9207,2811.666,KR,True,,stop,0.00408,678,23,0,1.98,"{""country"":""KR"",""latitude"":37.3685,""longitude"":127.9207}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,47.59525680541992,142.63925170898438,2985.936,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,43.0642,141.3469,3187.025,JP,True,,stop,0.00043548,585,32,0,2.88,"{""country"": ""JP"", ""latitude"": 43.0642, ""longitude"": 141.3469}"
+qwen/qwen3.6-35b-a3b,no-CoT,43.0642,141.3469,3187.025,JP,True,,stop,0.00011975,585,32,0,8.11,"{""country"": ""JP"", ""latitude"": 43.0642, ""longitude"": 141.3469}"
+qwen/qwen3.5-122b-a10b,no-CoT,43.0686,141.3544,3187.205,JP,True,,stop,0.00021892,586,32,0,6.61,"{""country"": ""JP"", ""latitude"": 43.0686, ""longitude"": 141.3544}"
+qwen/qwen3.6-27b,no-CoT,43.0621,141.3544,3187.649,JP,True,,stop,0.0002299,585,32,0,20.02,"{""country"": ""JP"", ""latitude"": 43.0621, ""longitude"": 141.3544}"
+xiaomi/mimo-v2.5,no-CoT,43.0621,141.3544,3187.649,JP,True,,stop,9.74176e-05,820,32,0,8.05,"{""country"": ""JP"", ""latitude"": 43.0621, ""longitude"": 141.3544}"
+qwen/qwen3.5-397b-a17b,CoT,43.085,141.525,3197.024,JP,True,,stop,0.0115361,665,3212,2899,101.15,"{""reasoning"": ""The landscape features a flat, snow-covered plain with a channelized river and concrete retaining walls, characteristic of the Ishikari Plain in Hokkaido, Japan. The concrete utility poles and the specific mix of riparian vegetation (willows/pines) alongside the clear, cold winter sky strongly point to rural Hokkaido."", ""country"": ""JP"", ""latitude"": 43.085, ""longitude"": 141.525}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.53213882446289,142.6351318359375,3238.095,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,42.9833,143.2,3311.512,JP,True,,stop,0.00042162,919,170,197,16.53,"{""country"": ""JP"", ""latitude"": 42.9833, ""longitude"": 143.2000}"
+qwen/qwen3.5-27b,no-CoT,36.5355,137.6685,3448.333,JP,True,,stop,0.0002265,586,40,0,4.53,"{
+  ""country"": ""JP"",
+  ""latitude"": 36.5355,
+  ""longitude"": 137.6685
+}"
+qwen/qwen3.5-9b,no-CoT,36.2048,138.1896,3506.986,JP,True,,stop,0.00010745,585,32,0,4.22,"{""country"": ""JP"", ""latitude"": 36.2048, ""longitude"": 138.1896}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,57.727237701416016,40.148895263671875,3639.611,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,35.3123,139.2145,3642.625,JP,True,,stop,0.0001366625,585,32,0,6.9,"{""country"": ""JP"", ""latitude"": 35.3123, ""longitude"": 139.2145}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,57.66569900512695,40.08429718017578,3645.646,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,56.11759567260742,39.173397064208984,3762.367,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,55.78,37.65,3864.257,RU,True,,stop,0.002584,788,774,708,6.31,"{""reasoning"": ""Snow-covered river embankment with concrete retaining wall, distant lattice transmission towers and low industrial buildings, bare deciduous + scattered pine trees, and clear winter sky point to a cold continental climate in northern Eurasia."", ""country"": ""RU"", ""latitude"": 55.78, ""longitude"": 37.65}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,3867.246,RU,True,,stop,6.692e-05,404,36,0,8.9,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+moonshotai/kimi-k2.6,no-CoT,55.7558,37.6173,3867.246,RU,True,,stop,0.00032112,755,25,0,2.09,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+mistralai/mistral-medium-3-5,no-CoT,45.4215,-75.6972,8895.956,CA,True,,stop,0.0014115,786,31,0,1.92,"{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -75.6972}"
+mistralai/mistral-small-2603,no-CoT,42.3601,-71.0589,9212.905,US,True,,stop,0.0001365,786,31,0,3.4,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -71.0589}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10691.398,,True,True,,,,,,19.32,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,8.89,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.18,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.47,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.27,

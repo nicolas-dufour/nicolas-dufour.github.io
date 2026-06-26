@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.7245370044,-109.36342402391,0.0,US,True,,,,,,,,"Cody, Park County, Wyoming, US"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,44.2047119140625,-109.40856170654297,57.913,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,45.220428466796875,-109.8682861328125,67.954,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,45.21889114379883,-109.87226104736328,67.999,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.18122863769531,-110.06920623779297,75.255,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.6940803527832,-110.38675689697266,80.939,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,44.6734733581543,-110.398193359375,81.983,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),44.7972,-110.4403,85.406,US,True,,stop,0.002109,1190,36,0,7.74,"```json
+{""country"": ""US"", ""latitude"": 44.7972, ""longitude"": -110.4403}
+```"
+google/gemma-4-31b-it,no-CoT,44.35,-110.5,99.244,US,True,,stop,6.418e-05,406,37,0,5.1,"```json
+{""country"": ""US"", ""latitude"": 44.3500, ""longitude"": -110.5000}
+```"
+xiaomi/mimo-v2.5,no-CoT,44.428,-110.588,102.444,US,True,,stop,8.11776e-05,708,30,0,7.16,"{""country"": ""US"", ""latitude"": 44.428, ""longitude"": -110.588}"
+qwen/qwen3.5-122b-a10b,no-CoT,44.427963,-110.588455,102.48,US,True,,stop,0.00019786,473,36,0,0.98,"{""country"": ""US"", ""latitude"": 44.427963, ""longitude"": -110.588455}"
+qwen/qwen3.5-397b-a17b,no-CoT,44.428,-110.5885,102.482,US,True,,stop,0.0003357,473,32,0,1.94,"{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5885}"
+qwen/qwen3.6-27b,no-CoT,44.428,-110.5885,102.482,US,True,,stop,0.0001963,473,32,0,16.32,"{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5885}"
+qwen/qwen3.6-35b-a3b,no-CoT,44.428,-110.5885,102.482,US,True,,stop,0.00010295,473,32,0,2.31,"{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5885}"
+qwen/qwen3.5-35b-a3b,no-CoT,44.4279,-110.5885,102.485,US,True,,stop,0.0001184625,473,32,0,7.13,"{""country"": ""US"", ""latitude"": 44.4279, ""longitude"": -110.5885}"
+qwen/qwen3.5-27b,no-CoT,44.4236,-110.5885,102.643,US,True,,stop,0.000142155,473,32,0,2.06,"{""country"": ""US"", ""latitude"": 44.4236, ""longitude"": -110.5885}"
+x-ai/grok-4.3,no-CoT,44.46,-110.83,119.795,US,True,,stop,0.0005934,592,22,0,2.05,"{""country"": ""US"", ""latitude"": 44.46, ""longitude"": -110.83}"
+google/gemini-3.1-pro-preview,no-CoT,44.8113,-107.755,127.34,US,True,,stop,0.002798,1189,35,0,2.53,"```json
+{""country"": ""US"", ""latitude"": 44.8113, ""longitude"": -107.755}
+```"
+qwen/qwen3.5-9b,no-CoT,40.4406,-111.624,510.987,US,True,,stop,5.205e-05,474,31,0,7.48,"{""country"": ""US"", ""latitude"": 40.4406, ""longitude"": -111.624}"
+moonshotai/kimi-k2.6,CoT,40.439,-105.753,560.628,US,True,,stop,0.012427488,682,3564,3489,73.49,"{""reasoning"": ""Left-hand drive American pickup truck, right-hand traffic, MUTCD-style yellow diamond warning sign, W-beam guardrail, and subalpine conifers with dry tundra grass indicate a high Rocky Mountain pass in Colorado."", ""country"": ""US"", ""latitude"": 40.439, ""longitude"": -105.753}"
+google/gemini-3.1-pro-preview,CoT,40.38,-105.75,566.412,US,True,,stop,0.005674,1271,261,177,11.0,"{
+  ""reasoning"": ""The yellow diamond warning sign with a speed advisory plaque and the pickup truck strongly indicate North America. The high-altitude landscape with coniferous trees and dry grass suggests the Rocky Mountains, likely in the western United States."",
+  ""country"": ""US"",
+  ""latitude"": 40.38,
+  ""longitude"": -105.75
+}"
+xiaomi/mimo-v2.5,CoT,39.74,-105.76,628.498,US,True,,stop,0.0001331176,787,176,98,60.08,"{""reasoning"": ""The image shows a right-hand drive road with a US-style yellow warning sign and coniferous trees typical of the Rocky Mountains. The specific terrain and road curve suggest a high mountain pass in the western United States."", ""country"": ""US"", ""latitude"": 39.74, ""longitude"": -105.76}"
+google/gemini-3.5-flash,CoT (effort=medium),39.6792,-105.8783,630.043,US,True,,stop,0.0074685,1271,618,530,6.18,"{""reasoning"": ""The image shows a high-altitude mountain pass with subalpine conifer vegetation, a Ford F-150 pickup truck, and US-style road signage (yellow diamond curve warning with speed advisory), characteristic of the Rocky Mountains in the western United States."", ""country"": ""US"", ""latitude"": 39.6792, ""longitude"": -105.8783}"
+anthropic/claude-opus-4.8,CoT,39.55,-106.2,631.613,US,True,,stop,0.006585,797,104,0,9.33,"{""reasoning"": ""Ford F-150 pickup, right-hand traffic, yellow curve warning sign, high-altitude coniferous mountain pass with dry grass suggests Rocky Mountain region of US Colorado."", ""country"": ""US"", ""latitude"": 39.55, ""longitude"": -106.2}"
+x-ai/grok-4.3,CoT,39.65,-105.9,632.157,US,True,,stop,0.0027415,676,893,817,8.3,"{""reasoning"": ""US-style yellow diamond curve+advisory-speed sign, right-hand traffic with oncoming F-150 in left lane, guardrail, conifers + dry grass hills all point to western USA; no other country matches the vehicle + signage combination."", ""country"": ""US"", ""latitude"": 39.65, ""longitude"": -105.9}"
+google/gemini-3.5-flash,CoT (effort=high),39.6562,-105.8783,632.344,US,True,,stop,0.0107715,1271,985,896,13.26,"```json
+{""reasoning"": ""The high-altitude subalpine landscape with coniferous trees, dry grassy slopes, MUTCD-standard curve warning sign, and a Ford F-150 pickup truck strongly indicate a mountain pass in the western United States, likely in Colorado."", ""country"": ""US"", ""latitude"": 39.6562, ""longitude"": -105.8783}
+```"
+anthropic/claude-opus-4.8,no-CoT,39.3582,-106.0698,655.625,US,True,,stop,0.004105,666,31,0,8.22,"{""country"": ""US"", ""latitude"": 39.3582, ""longitude"": -106.0698}"
+mistralai/mistral-small-2603,no-CoT,39.7392,-105.0178,659.545,US,True,,stop,0.0001143,634,32,0,2.81,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -105.0178}"
+google/gemini-3.5-flash,CoT (effort=low),38.8282,-106.4094,699.776,US,True,,stop,0.0042555,1271,261,189,3.97,"{""reasoning"": ""The high-altitude coniferous vegetation, dry grassy slopes, American-style pickup truck, and yellow diamond warning sign indicate a mountain pass in the western United States, likely in Colorado."", ""country"": ""US"", ""latitude"": 38.8282, ""longitude"": -106.4094}"
+openai/gpt-5.5,CoT,50.5956,-114.9848,776.298,CA,True,,stop,0.015015,621,397,315,10.68,"{""reasoning"":""Right-hand traffic with North American yellow diamond warning signage and an Alberta-style pickup lacking a front plate point to western Canada. The dry alpine grassland, conifers, and mountain road strongly resemble Highway 40 over Highwood Pass in Kananaskis, Alberta."",""country"":""CA"",""latitude"":50.5956,""longitude"":-114.9848}"
+minimax/minimax-m3,CoT,49.62,-117.15,800.948,CA,True,,stop,0.00100626,843,679,590,13.84,"{""reasoning"": ""Yellow diamond warning sign and right-hand traffic indicate North America. High-alpine terrain with subalpine fir/lodgepole pine forest, dry golden grass slopes, and a mountain pass highway strongly suggest the Canadian Rockies, likely along Highway 3 (Crowsnest Highway) in interior British Columbia."", ""country"": ""CA"", ""latitude"": 49.62, ""longitude"": -117.15}"
+openai/gpt-5.5,no-CoT,51.0786,-115.5239,842.006,CA,True,,stop,0.00344,544,24,0,2.78,"{""country"":""CA"",""latitude"":51.0786,""longitude"":-115.5239}"
+mistralai/mistral-medium-3-5,no-CoT,39.5501,-120.0824,1053.26,US,True,,stop,0.001191,634,32,0,0.79,"{""country"": ""US"", ""latitude"": 39.5501, ""longitude"": -120.0824}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11522.613,,True,True,,,,,,34.52,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.37,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.19,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.72,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,2.28,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.16,

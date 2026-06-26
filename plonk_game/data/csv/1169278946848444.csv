@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-25.435294019906,-49.988869700139,0.0,BR,True,,,,,,,,"Palmeira, Palmeira, Parana, BR"
+google/gemini-3.1-pro-preview,no-CoT,-25.4284,-50.0734,8.523,BR,True,,stop,0.00473,1189,196,161,16.97,"```json
+{""country"": ""BR"", ""latitude"": -25.4284, ""longitude"": -50.0734}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-25.3512,-49.8745,14.813,BR,True,,stop,0.0084315,1271,725,649,5.68,"{""reasoning"": ""The presence of Araucaria trees on the horizon, the Portuguese billboard indicating a 'RETORNO', and the rolling green hills with reddish soil strongly point to a highway in Southern Brazil, likely Paraná."", ""country"": ""BR"", ""latitude"": -25.3512, ""longitude"": -49.8745}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-25.3412,-49.8125,20.576,BR,True,,stop,0.0020985,1189,35,0,1.52,"```json
+{""country"": ""BR"", ""latitude"": -25.3412, ""longitude"": -49.8125}
+```"
+google/gemini-3.1-pro-preview,CoT,-25.2,-50.5,57.654,BR,True,,stop,0.005832,1272,274,191,4.69,"{
+  ""reasoning"": ""The presence of Araucaria trees strongly indicates southern Brazil. The billboard text 'RETORNO A 500 M' confirms Portuguese language, and the well-maintained divided highway suggests a major route in Paraná."",
+  ""country"": ""BR"",
+  ""latitude"": -25.2,
+  ""longitude"": -50.5
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-24.92205238342285,-50.56296920776367,81.206,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-24.699689865112305,-50.13641357421875,83.134,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-24.884654998779297,-50.56568145751953,84.374,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),-25.2512,-48.9543,105.963,BR,True,,stop,0.0167205,1271,1646,1558,13.2,"{""reasoning"": ""The billboard features the distinctive red logo of the Brazilian 'Graal' highway service station chain with 'RETORNO' written in Portuguese, and the presence of Araucaria trees on the horizon indicates southern Brazil, likely along the BR-116 highway."", ""country"": ""BR"", ""latitude"": -25.2512, ""longitude"": -48.9543}"
+anthropic/claude-opus-4.8,no-CoT,-23.5,-48.0,294.653,BR,True,,stop,0.00408,666,30,0,2.59,"{""country"": ""BR"", ""latitude"": -23.5, ""longitude"": -48.0}"
+google/gemini-3.5-flash,CoT (effort=low),-23.3854,-47.8452,314.739,BR,True,,stop,0.0055425,1271,404,325,4.33,"{""reasoning"": ""The billboard on the left features Portuguese text ('RETORNO A...') and a logo resembling a Brazilian highway service station (like Graal), set along a high-quality divided highway typical of São Paulo state, Brazil."", ""country"": ""BR"", ""latitude"": -23.3854, ""longitude"": -47.8452}"
+anthropic/claude-opus-4.8,CoT,-22.7,-47.6,388.99,BR,True,,stop,0.00606,797,83,0,9.07,"{""reasoning"": ""Divided highway with reddish soil, rolling hills and Portuguese-style billboard suggests interior São Paulo state, Brazil."", ""country"": ""BR"", ""latitude"": -22.7, ""longitude"": -47.6}"
+qwen/qwen3.5-122b-a10b,no-CoT,-23.5505,-46.6333,398.989,BR,True,,stop,0.0002355,473,39,0,7.58,"{
+  ""country"": ""BR"",
+  ""latitude"": -23.5505,
+  ""longitude"": -46.6333
+}"
+google/gemma-4-31b-it,no-CoT,-23.548,-46.633,399.164,BR,True,,stop,6.298e-05,406,34,0,13.05,"```json
+{""country"": ""BR"", ""latitude"": -23.548, ""longitude"": -46.633}
+```"
+qwen/qwen3.5-9b,no-CoT,-22.9089,-46.6694,438.497,BR,True,,stop,5.205e-05,474,31,0,5.8,"{""country"": ""BR"", ""latitude"": -22.9089, ""longitude"": -46.6694}"
+minimax/minimax-m3,CoT,-21.95,-47.35,471.544,BR,True,,stop,0.00057138,843,419,345,329.76,"{""reasoning"": ""Right-hand driving, Brazilian-style highway with concrete median barrier, tropical/subtropical vegetation on rolling hills typical of the Brazilian cerrado transition zone, and the billboard style suggest an interior São Paulo state highway (BR roads)."", ""country"": ""BR"", ""latitude"": -21.95, ""longitude"": -47.35}"
+xiaomi/mimo-v2.5,CoT,-19.12,-48.25,724.63,BR,True,,stop,0.0001969576,787,404,336,12.22,"{""reasoning"": ""Left-side traffic, Portuguese-language billboard signage, and central Brazilian savanna-like terrain confirm this is Brazil; the highway and landscape match roads in Minas Gerais state."", ""country"": ""BR"", ""latitude"": -19.12, ""longitude"": -48.25}"
+minimax/minimax-m3,no-CoT,-19.9,-43.9,876.718,BR,True,,stop,0.00029202,767,100,104,10.48,"{""country"": ""BR"", ""latitude"": -19.9, ""longitude"": -43.9}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6060.795,,True,True,,,,,,1.91,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-29.709197998046875,26.669893264770508,7428.477,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,37.7876,-25.5869,7477.472,PT,True,,stop,0.017265,621,472,397,37.41,"{""reasoning"":""Right-hand divided highway with Portuguese-style markings/signage and lush volcanic Atlantic hills strongly suggests Portugal’s Azores rather than mainland Europe. The landscape and expressway configuration fit São Miguel island near Ponta Delgada/Ribeira Grande."",""country"":""PT"",""latitude"":37.7876,""longitude"":-25.5869}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-29.44088363647461,29.075864791870117,7659.29,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-29.31751251220703,29.039722442626953,7660.227,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,-25.85,28.25,7709.578,ZA,True,,stop,0.0005934,592,22,0,0.74,"{""country"": ""ZA"", ""latitude"": -25.85, ""longitude"": 28.25}"
+x-ai/grok-4.3,CoT,-25.65,28.35,7726.336,ZA,True,,stop,0.002754,676,898,822,9.77,"{
+  ""reasoning"": ""Left-hand traffic (billboard placement, road markings), Chicken Licken-style billboard, eucalyptus trees and Highveld-style grassy embankments indicate South Africa; highway geometry matches N1/N4 corridors north of Pretoria."",
+  ""country"": ""ZA"",
+  ""latitude"": -25.65,
+  ""longitude"": 28.35
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,-29.8587,31.0218,7823.046,ZA,True,,stop,0.00036468,473,31,0,1.67,"{""country"": ""ZA"", ""latitude"": -29.8587, ""longitude"": 31.0218}"
+xiaomi/mimo-v2.5,no-CoT,-29.8,31.0,7823.149,ZA,True,,stop,7.97776e-05,708,25,0,7.8,"{""country"": ""ZA"", ""latitude"": -29.8, ""longitude"": 31.0}"
+mistralai/mistral-medium-3-5,no-CoT,40.4168,-3.7038,8746.215,ES,True,,stop,0.001176,634,30,0,0.78,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+moonshotai/kimi-k2.6,no-CoT,45.5,4.8,9633.796,FR,True,,stop,0.00051219,602,23,0,9.69,"{""country"": ""FR"", ""latitude"": 45.5, ""longitude"": 4.8}"
+mistralai/mistral-small-2603,no-CoT,34.75,-118.25,9816.302,US,True,,stop,0.0001143,634,32,0,3.66,"{""country"": ""US"", ""latitude"": 34.7500, ""longitude"": -118.2500}"
+openai/gpt-5.5,no-CoT,49.3336,2.9898,9825.561,FR,True,,stop,0.00341,544,23,0,1.61,"{""country"":""FR"",""latitude"":49.3336,""longitude"":2.9898}"
+moonshotai/kimi-k2.6,CoT,50.12,20.85,10899.422,PL,True,,stop,0.01777292,682,5080,5002,157.33,"{""reasoning"": ""The divided highway with concrete barriers, white dashed lane markings, rolling grass-covered hills, and a roadside billboard bearing Latin script are characteristic of Central European expressway infrastructure, most consistent with Poland's southern A4 corridor through the Lesser Poland uplands."", ""country"": ""PL"", ""latitude"": 50.12, ""longitude"": 20.85}"
+qwen/qwen3.6-27b,no-CoT,-37.7833,176.1667,11494.369,NZ,True,,stop,0.0001963,473,32,0,25.9,"{""country"": ""NZ"", ""latitude"": -37.7833, ""longitude"": 176.1667}"
+qwen/qwen3.5-27b,no-CoT,-37.8765,175.5123,11524.926,NZ,True,,stop,0.00019683,473,32,0,12.81,"{""country"": ""NZ"", ""latitude"": -37.8765, ""longitude"": 175.5123}"
+qwen/qwen3.6-35b-a3b,CoT,-33.8688,151.2093,13051.016,AU,True,,stop,0.0038053561,553,3850,3637,99.15,"The image shows a highway with right-hand traffic, indicated by the lane markings and the position of the truck. The vegetation, particularly the tall, thin trees on the right embankment, strongly resembles Eucalyptus trees, which are characteristic of Australia. The billboard features a red logo that looks like Coca-Cola, which is common globally, but the combination of the road infrastructure (concrete barriers, clean asphalt), the specific type of trees, and the general landscape points towards Australia. The terrain is rolling and green, suggesting a temperate climate.
+
+```json
+{
+""reasoning"": ""The presence of Eucalyptus trees on the embankment and the right-hand traffic on a well-maintained highway with concrete barriers strongly suggests Australia. The billboard appears to be a Coca-Cola advertisement, which is ubiquitous but fits the Australian context."",
+""country"": ""AU"",
+""latitude"": -33.8688,
+""longitude"": 151.2093
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,-33.8688,151.2093,13051.016,AU,True,,stop,0.000164025,473,32,0,8.05,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.8688,151.2093,13051.016,AU,True,,stop,0.000146,474,32,0,2.12,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+mistralai/mistral-small-2603,CoT,52.1,69.8,14223.6,KZ,True,,stop,0.0003444,716,395,436,3.86,"{""reasoning"": ""Cyrillic signage and steppe landscape indicate Kazakhstan."", ""country"": ""KZ"", ""latitude"": 52.1, ""longitude"": 69.8}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.18,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.3,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.37,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.11,

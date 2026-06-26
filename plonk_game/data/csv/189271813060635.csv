@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,58.46475916,48.23579137,0.0,RU,True,,,,,,,,"Kotel'nich, None, Kirov, RU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,58.35220718383789,52.37479782104492,241.386,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,58.38364791870117,52.468223571777344,246.556,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),56.1425,47.2481,264.943,RU,True,,stop,0.002136,1214,35,0,7.71,"```json
+{""country"": ""RU"", ""latitude"": 56.1425, ""longitude"": 47.2481}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,58.271263122558594,53.427764892578125,303.47,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,56.2768,44.3076,338.509,RU,True,,stop,0.002835,429,23,0,1.46,"{""country"":""RU"",""latitude"":56.2768,""longitude"":44.3076}"
+google/gemini-3.5-flash,CoT (effort=low),56.2584,43.4421,377.78,RU,True,,stop,0.0033765,1297,159,99,3.56,"{""reasoning"": ""The presence of birch forests, wide unpaved shoulders, and typical road markings strongly suggest a rural road in Western Russia."", ""country"": ""RU"", ""latitude"": 56.2584, ""longitude"": 43.4421}"
+anthropic/claude-opus-4.8,no-CoT,57.8,40.5,459.848,RU,True,,stop,0.00351,552,30,0,3.07,"{""country"": ""RU"", ""latitude"": 57.8, ""longitude"": 40.5}"
+xiaomi/mimo-v2.5,CoT,58.0535,39.9745,485.111,RU,True,,stop,0.0005713176,707,1781,1676,20.4,"{""reasoning"": ""The landscape features a mix of white-barked birch trees and coniferous pines, which is the signature vegetation of the boreal and mixed forest zones in Russia. The road is paved with solid white edge lines but no center line, and has wide dirt shoulders, a style typical of rural federal highways in the Russian Federation."", ""country"": ""RU"", ""latitude"": 58.0535, ""longitude"": 39.9745}"
+moonshotai/kimi-k2.6,CoT,56.85,40.55,490.852,RU,True,,stop,0.006464952,568,1835,1734,42.55,"{""reasoning"": ""Birch trees with white bark and mixed conifer forest beside a flat, paved rural road with simple white edge markings are classic of the Russian Central Federal District; the horizontal-slatted dashboard visible in the foreground strongly resembles a Soviet-era Lada/VAZ interior common in Russia, and the warm evening sun angle suits the latitudes just north of Moscow."", ""country"": ""RU"", ""latitude"": 56.85, ""longitude"": 40.55}"
+google/gemini-3.5-flash,CoT (effort=high),57.6261,39.8502,501.873,RU,True,,stop,0.007596,1296,628,565,5.13,"{""reasoning"": ""The prominent birch trees, flat terrain, and road markings with a reddish dirt shoulder strongly indicate a rural road in the European part of Russia."", ""country"": ""RU"", ""latitude"": 57.6261, ""longitude"": 39.8502}"
+google/gemini-3.5-flash,CoT (effort=medium),57.5124,39.5214,524.057,RU,True,,stop,0.00441,1296,274,208,4.0,"{""reasoning"": ""The presence of birch trees, flat terrain, and the specific style of the asphalt road with dirt shoulders are highly characteristic of the rural landscape in European Russia."", ""country"": ""RU"", ""latitude"": 57.5124, ""longitude"": 39.5214}"
+google/gemini-3.1-pro-preview,no-CoT,56.1324,40.4156,536.163,RU,True,,stop,0.002848,1214,35,0,6.72,"```json
+{""country"": ""RU"", ""latitude"": 56.1324, ""longitude"": 40.4156}
+```"
+google/gemini-3.1-pro-preview,CoT,57.5,39.0,554.477,RU,True,,stop,0.004932,1296,195,123,10.79,"{
+  ""reasoning"": ""The visible car antenna on the hood is a classic meta clue for the Google Street View car in Russia. The birch trees and road markings further support a Russian location."",
+  ""country"": ""RU"",
+  ""latitude"": 57.5,
+  ""longitude"": 39.0
+}"
+x-ai/grok-4.3,CoT,56.85,37.35,671.151,RU,True,,stop,0.0019565,580,627,551,11.51,"{""reasoning"": ""Right-hand drive vehicle (right side mirror visible), birch/aspen trees + flat rural fields, white edge lines with no center line, and low sun angle match northern European summer evening; Russian-style dirt shoulder and road texture narrow to western Russia."", ""country"": ""RU"", ""latitude"": 56.85, ""longitude"": 37.35}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,707.366,RU,True,,stop,6.588e-05,396,36,0,3.69,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,707.366,RU,True,,stop,0.00102,520,32,0,0.91,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-122b-a10b,no-CoT,55.7558,37.6173,707.366,RU,True,,stop,0.00018356,394,39,0,13.86,"{
+  ""country"": ""RU"",
+  ""latitude"": 55.7558,
+  ""longitude"": 37.6173
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,55.7558,37.6173,707.366,RU,True,,stop,0.00015036,394,31,0,1.82,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+x-ai/grok-4.3,no-CoT,55.85,37.35,716.905,RU,True,,stop,0.0004734,496,22,0,6.98,"{""country"": ""RU"", ""latitude"": 55.85, ""longitude"": 37.35}"
+anthropic/claude-opus-4.8,CoT,56.8,35.9,756.106,RU,True,,stop,0.00584,683,97,0,9.11,"{""reasoning"": ""Birch and conifer forest with flat farmland, narrow rural asphalt road, and right-hand traffic suggest a boreal region in Russia or the Baltics/Belarus."", ""country"": ""RU"", ""latitude"": 56.8, ""longitude"": 35.9}"
+xiaomi/mimo-v2.5,no-CoT,56.8389,60.6057,756.648,RU,True,,stop,7.02576e-05,628,31,0,1.23,"{""country"": ""RU"", ""latitude"": 56.8389, ""longitude"": 60.6057}"
+qwen/qwen3.6-27b,no-CoT,56.8497,60.6155,756.822,RU,True,,stop,0.000187977,393,31,0,310.65,"{""country"": ""RU"", ""latitude"": 56.8497, ""longitude"": 60.6155}"
+qwen/qwen3.5-9b,no-CoT,62.9353,27.9442,1204.246,FI,True,,stop,4.405e-05,394,31,0,4.65,"{""country"": ""FI"", ""latitude"": 62.9353, ""longitude"": 27.9442}"
+qwen/qwen3.5-397b-a17b,no-CoT,64.2,26.5,1313.896,FI,True,,stop,0.00029508,393,25,0,8.36,"{""country"": ""FI"", ""latitude"": 64.2, ""longitude"": 26.5}"
+qwen/qwen3.5-27b,no-CoT,59.437,24.7536,1344.002,EE,True,,stop,0.00019604,394,36,0,1.22,"```json
+{""country"": ""EE"", ""latitude"": 59.4370, ""longitude"": 24.7536}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,61.4982,23.7609,1393.572,FI,True,,stop,0.000137,393,31,0,1.31,"{""country"": ""FI"", ""latitude"": 61.4982, ""longitude"": 23.7609}"
+openai/gpt-5.5,CoT,55.1842,73.4106,1564.573,RU,True,,stop,0.01171,506,306,229,31.39,"{""reasoning"":""Flat rural right-hand-drive roadway with Russian-style white edge markings, birch-lined shoulders, and open agricultural fields strongly suggests the Russian forest-steppe. The landscape and road condition are most consistent with western Siberia around Omsk Oblast."",""country"":""RU"",""latitude"":55.1842,""longitude"":73.4106}"
+minimax/minimax-m3,CoT,55.5,85.2,2234.542,RU,True,,stop,0.00073446,729,481,396,19.81,"{""reasoning"": ""Decisive clues: abundant birch trees with flat agricultural steppe terrain, right-hand traffic on a worn asphalt road with simple white edge lines, and the overall atmosphere suggesting late summer in northern continental Russia, likely western Siberia (Kemerovo/Novosibirsk oblast)."", ""country"": ""RU"", ""latitude"": 55.5, ""longitude"": 85.2}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,63.37982177734375,-143.04660034179688,6432.565,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,60.36729049682617,-128.04598999023438,6797.606,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,48.55672836303711,-116.5177230834961,8033.497,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,8816.795,US,True,,stop,9.72e-05,520,32,0,8.14,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.38,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,16.56,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.3,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.11,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,137.38,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.23,

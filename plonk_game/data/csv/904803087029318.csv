@@ -1,0 +1,65 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-40.572529997416,-70.803733804136,0.0,AR,True,,,,,,,,"Pilcaniyeu, None, Rio Negro, AR"
+google/gemini-3.5-flash,CoT (effort=medium),-40.5481,-70.7512,5.203,AR,True,,stop,0.0114825,1307,1058,947,7.99,"```json
+{""reasoning"": ""The truck features Argentine regulatory markings ('C.M. 45.000' and the '80' speed limit decal) and is driving on the right. The arid, hilly landscape with pine plantations on the slopes is highly characteristic of the transition zone in Argentine Patagonia, specifically along Ruta 237 in Neuquén Province."", ""country"": ""AR"", ""latitude"": -40.5481, ""longitude"": -70.7512}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,-40.5833,-70.9167,9.615,AR,True,,stop,0.00043188,585,31,0,2.92,"{""country"": ""AR"", ""latitude"": -40.5833, ""longitude"": -70.9167}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-40.44475173950195,-70.60476684570312,22.019,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,-40.6237,-71.0689,23.1,AR,True,,stop,0.018775,755,500,411,19.27,"{""reasoning"":""Right-hand traffic with double yellow centerlines, Argentine-style truck speed sticker, and the arid Patagonian steppe/Andean foothill landscape point to Argentina’s Ruta 40 region. The terrain and sparse vegetation look most consistent with northern Patagonia near Neuquén/Bariloche."",""country"":""AR"",""latitude"":-40.6237,""longitude"":-71.0689}"
+anthropic/claude-opus-4.8,no-CoT,-40.8,-71.0,30.226,AR,True,,stop,0.00484,818,30,0,2.63,"{""country"": ""AR"", ""latitude"": -40.8, ""longitude"": -71.0}"
+google/gemini-3.5-flash,CoT (effort=low),-40.2512,-71.1234,44.823,AR,True,,stop,0.0052455,1307,365,290,10.83,"{""reasoning"": ""The truck features Argentine regulatory markings such as the '80' speed limit decal and weight specifications, while the arid mountainous landscape with pine plantations is highly characteristic of Argentine Patagonia along Route 40."", ""country"": ""AR"", ""latitude"": -40.2512, ""longitude"": -71.1234}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-40.283412,-71.185432,45.578,AR,True,,stop,0.00219,1226,39,0,1.21,"```json
+{""country"": ""AR"", ""latitude"": -40.283412, ""longitude"": -71.185432}
+```"
+anthropic/claude-opus-4.8,CoT,-41.0,-71.0,50.323,AR,True,,stop,0.00727,949,101,0,3.15,"{""reasoning"": ""Arid Patagonian steppe with scrub vegetation, double yellow center line, right-hand traffic, and Spanish text 'YACO' on truck suggests Argentine Patagonia."", ""country"": ""AR"", ""latitude"": -41.0, ""longitude"": -71.0}"
+google/gemini-3.5-flash,CoT (effort=high),-40.115,-70.985,53.144,AR,True,,stop,0.0142275,1307,1363,1274,9.66,"```json
+{""reasoning"": ""The truck features Argentine transport markings ('C.M. 45.000') and belongs to Transportes Marra, while the arid landscape with pine plantations on the hillsides is characteristic of Neuquén Province along Ruta 40."", ""country"": ""AR"", ""latitude"": -40.115, ""longitude"": -70.985}
+```"
+openai/gpt-5.5,no-CoT,-41.1025,-70.7352,59.211,AR,True,,stop,0.00414,678,25,0,3.83,"{""country"":""AR"",""latitude"":-41.1025,""longitude"":-70.7352}"
+google/gemini-3.1-pro-preview,CoT,-39.95,-71.05,72.307,AR,True,,stop,0.006084,1308,289,201,4.58,"{
+  ""reasoning"": ""The double yellow center lines, arid landscape with pine plantations, and Spanish text on the truck ('C.M. 45.000') strongly point to the Patagonia region of Argentina, likely along Ruta 40."",
+  ""country"": ""AR"",
+  ""latitude"": -39.95,
+  ""longitude"": -71.05
+}"
+google/gemini-3.1-pro-preview,no-CoT,-39.9215,-71.0123,74.524,AR,True,,stop,0.006038,1225,299,264,20.8,"```json
+{""country"": ""AR"", ""latitude"": -39.9215, ""longitude"": -71.0123}
+```"
+moonshotai/kimi-k2.6,no-CoT,-41.1335,-71.2995,75.03,AR,True,,stop,0.00032922,755,25,0,1.59,"{""country"": ""AR"", ""latitude"": -41.1335, ""longitude"": -71.2995}"
+google/gemma-4-31b-it,no-CoT,-41.1234,-71.3456,76.35,AR,True,,stop,7.096e-05,404,36,0,2.88,"```json
+{""country"": ""AR"", ""latitude"": -41.1234, ""longitude"": -71.3456}
+```"
+minimax/minimax-m3,no-CoT,-39.5,-70.8,119.26,AR,True,,stop,0.00060522,919,323,352,9.17,"{""country"": ""AR"", ""latitude"": -39.5, ""longitude"": -70.8}"
+minimax/minimax-m3,CoT,-39.5,-70.5,122.031,AR,True,,stop,0.00093666,995,583,498,17.71,"{""reasoning"": ""The truck bears 'TACC' branding and an Argentine-style license plate format (CW prefix), and the arid steppe landscape with sparse low scrub, distant rolling hills, and dry climate strongly matches the Patagonian Andean foothills region of Argentina, likely along Ruta 40."", ""country"": ""AR"", ""latitude"": -39.5, ""longitude"": -70.5}"
+xiaomi/mimo-v2.5,CoT,-38.71,-72.6,257.956,CL,True,,stop,0.0009666776,899,3097,2992,34.75,"{""reasoning"": ""The truck displays a red-on-white commercial license plate and a mandatory '80' speed limit sticker, both standard for heavy vehicles in Chile. The landscape of rolling hills with dry grass and coniferous plantations, combined with the cab-over truck style and right-hand traffic, is characteristic of the Araucanía or Biobío regions of Chile."", ""country"": ""CL"", ""latitude"": -38.71, ""longitude"": -72.6}"
+qwen/qwen3.6-27b,no-CoT,-37.475,-71.32,347.303,CL,True,,stop,0.0002279,585,31,0,16.06,"{""country"": ""CL"", ""latitude"": -37.4750, ""longitude"": -71.3200}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-44.639652252197266,-71.71080780029297,458.287,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-45.224037170410156,-71.86985778808594,524.45,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-46.5,-70.0,662.271,AR,True,,stop,0.01421902,834,3521,3537,162.74,"{""reasoning"": ""The arid Patagonian steppe landscape with sparse shrubs and rolling hills, right-hand traffic, and the 'R.N.' (Ruta Nacional) marking on the truck trailer indicate this is along Argentina's iconic Ruta Nacional 40 in southern Patagonia."", ""country"": ""AR"", ""latitude"": -46.5, ""longitude"": -70.0}"
+mistralai/mistral-small-2603,no-CoT,-33.45,-70.6667,792.082,CL,True,,stop,0.0001365,786,31,0,7.2,"{""country"": ""CL"", ""latitude"": -33.4500, ""longitude"": -70.6667}"
+google/gemma-4-26b-a4b-it,no-CoT,-34.5833,-64.1833,884.816,AR,True,,stop,5.468e-05,404,31,0,2.89,"{""country"": ""AR"", ""latitude"": -34.5833, ""longitude"": -64.1833}"
+mistralai/mistral-medium-3-5,no-CoT,-32.0,-68.0,985.632,AR,True,,stop,0.0013665,786,25,0,7.62,"{""country"": ""AR"", ""latitude"": -32.0, ""longitude"": -68.0}"
+qwen/qwen3.5-9b,no-CoT,40.6416,-111.6925,9930.47,US,True,,stop,6.34e-05,586,32,0,3.44,"{""country"": ""US"", ""latitude"": 40.6416, ""longitude"": -111.6925}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.3466682434082,-110.73094940185547,9958.969,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,42.4559211730957,-108.9021987915039,9994.927,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,42.5983772277832,-108.64568328857422,9999.108,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,41.2565,-112.0123,10003.127,US,True,,stop,0.0001684,586,32,0,10.95,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -112.0123}"
+xiaomi/mimo-v2.5,no-CoT,42.85,-112.45,10174.47,US,True,,stop,9.62976e-05,820,28,0,7.85,"{""country"": ""US"", ""latitude"": 42.85, ""longitude"": -112.45}"
+qwen/qwen3.5-122b-a10b,no-CoT,44.428,-110.5885,10252.593,US,True,,stop,0.0002691,585,39,0,2.29,"{
+  ""country"": ""US"",
+  ""latitude"": 44.428,
+  ""longitude"": -110.5885
+}"
+x-ai/grok-4.3,CoT,43.35,-113.85,10280.419,US,True,,stop,0.0022965,788,659,586,5.08,"{""reasoning"": ""US-style double yellow center line + right-side driving, arid high-desert sagebrush hills, and partial 'IDAHO' truck plate identify the Intermountain West; scene matches US-20/26 west of Carey, ID."", ""country"": ""US"", ""latitude"": 43.35, ""longitude"": -113.85}"
+x-ai/grok-4.3,no-CoT,44.5,-118.8,10603.049,US,True,,stop,0.0007334,704,22,0,0.82,"{""country"": ""US"", ""latitude"": 44.5, ""longitude"": -118.8}"
+qwen/qwen3.5-35b-a3b,no-CoT,44.2689,-120.5534,10662.13,US,True,,stop,0.00011404,586,32,0,8.01,"{""country"": ""US"", ""latitude"": 44.2689, ""longitude"": -120.5534}"
+qwen/qwen3.5-27b,no-CoT,44.4269,-121.1269,10703.071,US,True,,stop,0.0002205,586,37,0,3.88,"```json
+{""country"": ""US"", ""latitude"": 44.4269, ""longitude"": -121.1269}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.58,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.24,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,9.26,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.29,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.11,

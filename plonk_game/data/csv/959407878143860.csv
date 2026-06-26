@@ -1,0 +1,70 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,38.05946184367,-100.5252034785,0.0,US,True,,,,,,,,"Cimarron, Gray County, Kansas, US"
+anthropic/claude-opus-4.8,CoT,38.5,-100.5,49.035,US,True,,stop,0.006085,797,84,0,3.08,"{""reasoning"": ""Flat dry plains with stubble fields, two-lane highway with yellow center line and white edge line, right-side driving—classic US Great Plains."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -100.5}"
+anthropic/claude-opus-4.8,no-CoT,38.5,-100.3,52.783,US,True,,stop,0.004055,666,29,0,2.17,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -100.3}"
+minimax/minimax-m3,CoT,37.5,-100.5,62.249,US,True,,stop,0.00070746,843,430,350,19.63,"{""reasoning"": ""Extremely flat treeless prairie with golden grass, US-style highway with yellow center line and white fog line driving on right, and power poles visible suggest the Great Plains of the United States, most likely western Kansas or the Texas/Oklahoma Panhandle."", ""country"": ""US"", ""latitude"": 37.5, ""longitude"": -100.5}"
+minimax/minimax-m3,no-CoT,38.5,-101.0,64.165,US,True,,stop,0.00019452,754,22,0,2.49,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -101.0}{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -101.0}"
+xiaomi/mimo-v2.5,no-CoT,38.5,-99.5,102.017,US,True,,stop,7.97776e-05,708,25,0,3.32,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -99.5}"
+google/gemini-3.1-pro-preview,CoT,39.0,-100.5,104.606,US,True,,stop,0.00523,1271,224,147,4.53,"{
+  ""reasoning"": ""The dashed yellow center line and solid white edge lines are characteristic of North American roads. The extremely flat terrain and dry, golden vegetation strongly suggest the Great Plains region of the United States."",
+  ""country"": ""US"",
+  ""latitude"": 39.0,
+  ""longitude"": -100.5
+}"
+openai/gpt-5.5,no-CoT,39.1023,-100.3568,116.879,US,True,,stop,0.00344,544,24,0,2.39,"{""country"":""US"",""latitude"":39.1023,""longitude"":-100.3568}"
+moonshotai/kimi-k2.6,CoT,39.2,-100.8,129.049,US,True,,stop,0.006914628,682,1950,1880,51.27,"{""reasoning"": ""The yellow dashed center line and white edge lines are standard US road markings, while the absolute flatness, winter wheat stubble, and absence of trees match the High Plains of western Kansas or eastern Colorado."", ""country"": ""US"", ""latitude"": 39.2, ""longitude"": -100.8}"
+qwen/qwen3.5-397b-a17b,CoT,38.5,-99.0,141.855,US,True,,stop,0.00995265,553,3249,1,105.25,"{
+""reasoning"": ""The image displays a straight, two-lane asphalt road with a yellow center line and solid white shoulder line, indicating right-hand traffic typical of North America. The extremely flat, treeless terrain with dry, golden grass is characteristic of the Great Plains region in the United States, specifically Kansas or Nebraska."",
+""country"": ""US"",
+""latitude"": 38.5,
+""longitude"": -99.0
+}"
+google/gemini-3.5-flash,CoT (effort=low),38.5234,-102.3125,164.289,US,True,,stop,0.0037875,1271,209,140,2.92,"{""reasoning"": ""The flat, grassy plains combined with the yellow dashed center line and white shoulder line indicate the Great Plains region of the United States, likely eastern Colorado or western Kansas."", ""country"": ""US"", ""latitude"": 38.5234, ""longitude"": -102.3125}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),38.4512,-102.3515,165.305,US,True,,stop,0.0021075,1189,36,0,16.22,"```json
+{""country"": ""US"", ""latitude"": 38.4512, ""longitude"": -102.3515}
+```"
+google/gemini-3.5-flash,CoT (effort=high),38.8204,-102.3456,179.707,US,True,,stop,0.0082155,1271,701,631,5.7,"{""reasoning"": ""The flat, golden grassland terrain combined with the yellow dashed center line and white edge line indicates the High Plains of the United States, likely in eastern Colorado or western Kansas."", ""country"": ""US"", ""latitude"": 38.8204, ""longitude"": -102.3456}"
+xiaomi/mimo-v2.5,CoT,38.5,-98.5,183.432,US,True,,stop,0.0001359176,787,186,97,9.37,"```json
+{""reasoning"": ""The image shows a flat, golden-brown agricultural landscape typical of the Great Plains in the central United States, likely during the fall or winter seasons. The road markings (double yellow center lines, white edge lines) and asphalt texture are consistent with US highway standards."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -98.5}
+```"
+x-ai/grok-4.3,CoT,38.2,-98.4,186.538,US,True,,stop,0.0016465,676,455,391,4.44,"{""reasoning"": ""Flat shortgrass prairie with American-standard pavement markings (solid white edges + dashed yellow center line) and right-side driving; no signage/vehicles but unmistakable Great Plains terrain and utility poles."", ""country"": ""US"", ""latitude"": 38.2, ""longitude"": -98.4}"
+google/gemini-3.5-flash,CoT (effort=medium),39.1542,-102.2143,190.675,US,True,,stop,0.0058665,1271,440,364,5.63,"```json
+{""reasoning"": ""The flat, vast grassland terrain combined with the yellow dashed center line and white shoulder line is characteristic of the Great Plains in the United States, specifically eastern Colorado or western Kansas."", ""country"": ""US"", ""latitude"": 39.1542, ""longitude"": -102.2143}
+```"
+mistralai/mistral-medium-3-5,no-CoT,39.8283,-98.5795,258.829,US,True,,stop,0.0011835,634,31,0,7.23,"{""country"": ""US"", ""latitude"": 39.8283, ""longitude"": -98.5795}"
+moonshotai/kimi-k2.6,no-CoT,39.8283,-98.5795,258.829,US,True,,stop,0.00051939,602,25,0,29.93,"{""country"": ""US"", ""latitude"": 39.8283, ""longitude"": -98.5795}"
+x-ai/grok-4.3,no-CoT,39.8283,-98.5795,258.829,US,True,,stop,0.0005984,592,24,0,7.26,"{""country"": ""US"", ""latitude"": 39.8283, ""longitude"": -98.5795}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,39.66958999633789,-102.96464538574219,276.86,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,39.670406341552734,-102.9705581665039,277.308,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,39.689998626708984,-102.96715545654297,278.475,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,40.7128,-100.0,298.469,US,True,,stop,0.00018356,474,29,0,11.74,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -100.0}"
+google/gemma-4-31b-it,no-CoT,40.5,-103.0,344.956,US,True,,stop,6.518e-05,406,31,0,2.17,"```json
+{""country"": ""US"", ""latitude"": 40.5, ""longitude"": -103.0}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,41.2565,-100.5832,355.529,US,True,,stop,0.00015825,473,32,0,0.61,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -100.5832}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.0,-104.0,369.611,US,True,,stop,0.00034668,473,26,0,12.08,"{""country"": ""US"", ""latitude"": 40.0, ""longitude"": -104.0}"
+google/gemini-3.1-pro-preview,no-CoT,39.7392,-104.9903,429.102,US,True,,stop,0.00281,1189,36,0,10.65,"```json
+{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,42.876543,-100.54321,535.637,US,True,,stop,0.000162,473,35,0,7.87,"{""country"": ""US"", ""latitude"": 42.876543, ""longitude"": -100.54321}"
+qwen/qwen3.5-9b,no-CoT,44.9231,-100.5556,763.206,US,True,,stop,5.22e-05,474,32,0,7.7,"{""country"": ""US"", ""latitude"": 44.9231, ""longitude"": -100.5556}"
+qwen/qwen3.5-27b,no-CoT,44.5236,-103.6458,764.442,US,True,,stop,0.0002085,474,45,0,3.22,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 44.5236,
+  ""longitude"": -103.6458
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,32.55828094482422,-107.39777374267578,873.028,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,31.879053115844727,-108.16067504882812,977.214,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,46.8721,-100.4458,979.942,US,True,,stop,0.0001963,473,32,0,13.34,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -100.4458}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,31.88804054260254,-108.25108337402344,982.352,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,50.285,-107.793,1476.103,CA,True,,stop,0.012675,621,319,243,16.34,"{""reasoning"":""Right-side driving with North American yellow centerline/white edge markings and a very straight two-lane highway through flat, treeless dry prairie strongly suggest the Canadian Prairies. The expansive grassland and sparse development fit rural southwestern Saskatchewan best."",""country"":""CA"",""latitude"":50.285,""longitude"":-107.793}"
+mistralai/mistral-small-2603,no-CoT,36.7783,-119.4179,1671.64,US,True,,stop,0.0001143,634,32,0,4.22,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10927.058,,True,True,,,,,,12.75,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.24,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.89,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.56,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.51,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.2,

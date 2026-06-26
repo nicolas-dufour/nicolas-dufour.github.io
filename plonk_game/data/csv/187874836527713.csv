@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.909387462854,46.62603994385,0.0,RU,True,,,,,,,,"Kochubey, None, Dagestan, RU"
+google/gemini-3.1-pro-preview,no-CoT,47.1234,51.9876,481.522,KZ,True,,stop,0.005236,1190,238,203,10.64,"```json
+{""country"": ""KZ"", ""latitude"": 47.1234, ""longitude"": 51.9876}
+```"
+mistralai/mistral-small-2603,CoT,49.5,46.5,510.541,RU,True,,stop,0.00047964,716,732,850,18.39,"{""reasoning"": ""Flat grassland steppe terrain with chernozem soil and distinctive Soviet-era metal lattice power transmission towers indicate southern Russia or northern Kazakhstan steppe region."", ""country"": ""RU"", ""latitude"": 49.5, ""longitude"": 46.5}"
+anthropic/claude-opus-4.8,no-CoT,47.5,53.0,568.579,KZ,True,,stop,0.004105,666,31,0,2.2,"{""country"": ""KZ"", ""latitude"": 47.5, ""longitude"": 53.0}"
+google/gemini-3.1-pro-preview,CoT,47.5123,53.4876,601.794,KZ,True,,stop,0.006048,1272,292,216,11.47,"{
+  ""reasoning"": ""The flat, arid steppe landscape with sparse vegetation and simple utility poles is characteristic of Central Asia. The road markings and overall bleakness strongly suggest western Kazakhstan."",
+  ""country"": ""KZ"",
+  ""latitude"": 47.5123,
+  ""longitude"": 53.4876
+}"
+anthropic/claude-opus-4.8,CoT,47.5,53.5,602.027,KZ,True,,stop,0.006635,797,106,0,3.95,"{""reasoning"": ""Flat semi-arid steppe with sparse vegetation, wet two-lane road, wooden/concrete utility poles, and overcast sky suggest Central Asian/Kazakh steppe terrain."", ""country"": ""KZ"", ""latitude"": 47.5, ""longitude"": 53.5}"
+openai/gpt-5.5,CoT,46.9185,53.9412,608.121,KZ,True,,stop,0.019005,621,530,447,14.19,"{""reasoning"":""The long, straight right-driving road with Soviet-style utility poles, white lane markings, and vast flat semi-arid steppe strongly suggests western Kazakhstan. The barren Caspian-region landscape and wet overcast conditions fit the Atyrau/Mangystau highway corridor."",""country"":""KZ"",""latitude"":46.9185,""longitude"":53.9412}"
+google/gemini-3.5-flash,CoT (effort=high),47.1234,53.9876,619.154,KZ,True,,stop,0.0075045,1271,622,559,12.63,"{""reasoning"": ""The flat, vast steppe landscape combined with the wet asphalt road, wide gravel shoulders, and wooden utility poles is highly characteristic of western Kazakhstan."", ""country"": ""KZ"", ""latitude"": 47.1234, ""longitude"": 53.9876}"
+google/gemini-3.5-flash,CoT (effort=medium),47.1523,53.9845,620.08,KZ,True,,stop,0.0067665,1271,540,480,11.86,"{""reasoning"": ""The flat, desolate steppe landscape with sparse vegetation, wet asphalt, and characteristic wooden utility poles is highly indicative of western Kazakhstan."", ""country"": ""KZ"", ""latitude"": 47.1523, ""longitude"": 53.9845}"
+qwen/qwen3.5-9b,no-CoT,54.7167,47.0833,1091.011,RU,True,,stop,5.205e-05,474,31,0,5.54,"{""country"": ""RU"", ""latitude"": 54.7167, ""longitude"": 47.0833}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),47.8521,61.4835,1183.616,KZ,True,,stop,0.0020985,1189,35,0,8.11,"```json
+{""country"": ""KZ"", ""latitude"": 47.8521, ""longitude"": 61.4835}
+```"
+google/gemini-3.5-flash,CoT (effort=low),46.5123,61.7845,1188.498,KZ,True,,stop,0.0041745,1271,252,182,3.4,"{""reasoning"": ""The vast, flat steppe landscape, wet asphalt road with white markings, and characteristic wooden utility poles are highly indicative of the Kazakh steppe, likely along the M32 highway."", ""country"": ""KZ"", ""latitude"": 46.5123, ""longitude"": 61.7845}"
+openai/gpt-5.5,no-CoT,48.2746,68.4421,1702.254,KZ,True,,stop,0.00344,544,24,0,7.78,"{""country"":""KZ"",""latitude"":48.2746,""longitude"":68.4421}"
+xiaomi/mimo-v2.5,no-CoT,48.5,68.5,1708.659,KZ,True,,stop,8.00576e-05,708,26,0,2.71,"{""country"": ""KZ"", ""latitude"": 48.5, ""longitude"": 68.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.067630767822266,68.50706481933594,1757.059,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,42.999759674072266,68.53759765625,1761.334,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,43.01234436035156,68.67910766601562,1772.127,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,50.5,71.0,1916.561,KZ,True,,stop,0.0160719,682,3856,4173,66.64,"{""reasoning"": ""Endless straight paved road through flat semi-arid steppe with gravel shoulders and wooden power poles matches Kazakh steppe highways; white dashed center line conforms to post-Soviet road standards."", ""country"": ""KZ"", ""latitude"": 50.5, ""longitude"": 71.0}"
+moonshotai/kimi-k2.6,no-CoT,51.1605,71.4704,1962.124,KZ,True,,stop,0.00052299,602,26,0,2.25,"{""country"": ""KZ"", ""latitude"": 51.1605, ""longitude"": 71.4704}"
+xiaomi/mimo-v2.5,CoT,51.0,73.0,2064.313,KZ,True,,stop,0.0003705576,787,1024,950,10.9,"{""reasoning"": ""Driving on the right side of the road, wooden utility poles, and a flat, grassy steppe landscape under overcast skies are characteristic of the Eurasian Steppe in Central Asia, specifically Kazakhstan."", ""country"": ""KZ"", ""latitude"": 51.0, ""longitude"": 73.0}"
+google/gemma-4-31b-it,no-CoT,64.85,-18.22,4438.374,IS,True,,stop,6.558e-05,406,32,0,8.88,"```json
+{""country"": ""IS"", ""latitude"": 64.85, ""longitude"": -18.22}
+```"
+qwen/qwen3.6-27b,CoT,44.0,104.5,4494.23,MN,True,,stop,0.0269851,553,13424,1,845.55,"{""reasoning"": ""The image shows a straight, paved two-lane road with white center and edge lines, indicating right-hand traffic in a country that uses white center markings (like Mongolia or Argentina). The landscape is a vast, flat steppe with sparse, low-lying scrub vegetation and reddish-brown soil, characteristic of the Mongolian steppe. The wooden utility poles are a strong indicator of rural Mongolia, where they are standard, unlike the concrete poles common in Kazakhstan or much of Europe. The extreme straightness of the road and the gravel shoulder are typical of Mongolian highways like the M-1."", ""country"": ""MN"", ""latitude"": 44.0, ""longitude"": 104.5}"
+qwen/qwen3.6-27b,no-CoT,64.1466,-19.609,4509.498,IS,True,,stop,0.0002414,474,31,0,13.61,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -19.6090}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6771.46,,True,True,,,,,,0.7,
+mistralai/mistral-small-2603,no-CoT,38.8977,-77.0365,9126.894,US,True,,stop,0.0001137,634,31,0,3.28,"{""country"": ""US"", ""latitude"": 38.8977, ""longitude"": -77.0365}"
+qwen/qwen3.5-397b-a17b,no-CoT,46.8721,-102.7894,9379.333,US,True,,stop,0.0003357,473,32,0,4.78,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -102.7894}"
+qwen/qwen3.5-35b-a3b,no-CoT,46.8721,-113.9982,9634.568,US,True,,stop,9.836e-05,474,32,0,0.82,"{""country"": ""US"", ""latitude"": 46.8721, ""longitude"": -113.9982}"
+mistralai/mistral-medium-3-5,no-CoT,37.0902,-95.7129,10144.33,US,True,,stop,0.0011835,634,31,0,1.08,"{""country"": ""US"", ""latitude"": 37.0902, ""longitude"": -95.7129}"
+qwen/qwen3.6-35b-a3b,CoT,-26.35,118.65,10757.825,AU,True,,stop,0.12670388185,553,131173,131072,622.36,"```json
+{
+""reasoning"": ""The image shows a straight, two-lane highway with white center lines and wooden utility poles, characteristic of the Australian outback. The flat, scrubby terrain and reddish soil patches strongly suggest a location in Western Australia, likely along the Great Northern Highway."",
+""country"": ""AU"",
+""latitude"": -26.35,
+""longitude"": 118.65
+}
+```"
+qwen/qwen3.5-27b,no-CoT,34.0522,-118.2437,11103.181,US,True,,stop,0.00024024,474,45,0,24.17,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 34.0522,
+  ""longitude"": -118.2437
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,-23.698,133.8804,11635.029,AU,True,,stop,0.000157,473,31,0,7.04,"{""country"": ""AU"", ""latitude"": -23.698, ""longitude"": 133.8804}"
+x-ai/grok-4.3,CoT,-31.85,132.65,12155.763,AU,True,,stop,0.002259,676,700,627,7.14,"{""reasoning"": ""Flat arid shrubland, wooden power poles with cross-arms, white edge + dashed center lines, and gravel shoulder match Australian outback highways (Eyre Hwy style); no left-side driving cues or UK/EU bollards."", ""country"": ""AU"", ""latitude"": -31.85, ""longitude"": 132.65}"
+minimax/minimax-m3,no-CoT,-34.0,137.6,12662.468,AU,True,,stop,0.00019176,752,23,0,7.16,"{""country"": ""AU"", ""latitude"": -34.0, ""longitude"": 137.6}"
+qwen/qwen3.5-397b-a17b,CoT,-36.52,-59.85,13961.662,AR,True,,stop,0.0260811,553,7402,6292,364.59,"{
+""reasoning"": ""The image shows a straight, two-lane road with right-hand traffic (camera positioned in the right lane), white road markings, and distinctive raised gravel shoulders ('banquina de piedra') typical of Argentine national routes. The flat, grassy steppe landscape (Pampas) and wooden utility poles further confirm the location as rural Argentina."",
+""country"": ""AR"",
+""latitude"": -36.52,
+""longitude"": -59.85
+}"
+qwen/qwen3.5-122b-a10b,no-CoT,-41.1335,-64.9612,14605.514,AR,True,,stop,0.0002163,473,31,0,8.78,"{""country"": ""AR"", ""latitude"": -41.1335, ""longitude"": -64.9612}"
+x-ai/grok-4.3,no-CoT,-38.95,-68.05,14717.513,AR,True,,stop,0.0005934,592,22,0,7.27,"{""country"": ""AR"", ""latitude"": -38.95, ""longitude"": -68.05}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-41.93583297729492,-66.98672485351562,14796.251,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-44.23220443725586,-67.06478881835938,14915.303,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-45.5,-68.0,15040.995,AR,True,,stop,0.00103986,843,707,624,25.05,"{""reasoning"": ""Flat semi-arid steppe landscape with low scrubby vegetation, overcast grey sky, straight gravel-shouldered highway with solid white edge lines and dashed center, wooden power poles — all highly characteristic of Patagonian steppe in Argentine Chubut/Santa Cruz."", ""country"": ""AR"", ""latitude"": -45.5, ""longitude"": -68.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-47.25164794921875,-68.08110809326172,15122.799,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,2.86,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.21,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,

@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,6.5832451621683,3.9580611204524,0.0,NG,True,,,,,,,,"Epe, None, Lagos, NG"
+openai/gpt-5.5,CoT,6.4698,3.5859,43.006,NG,True,,stop,0.017125,755,445,361,49.97,"{""reasoning"":""Right-hand traffic with black-and-yellow painted concrete medians/curbs, hazy tropical urban edge, and unfinished block buildings are characteristic of Nigerian city roads. The divided arterial and streetlight style most strongly suggest the Lagos metropolitan outskirts, likely along the Lekki/Ajah corridor."",""country"":""NG"",""latitude"":6.4698,""longitude"":3.5859}"
+qwen/qwen3.5-27b,no-CoT,6.4474,3.5647,46.008,NG,True,,stop,0.0002145,586,34,0,3.01,"```json
+{""country"": ""NG"", ""latitude"": 6.4474, ""longitude"": 3.5647}
+```"
+moonshotai/kimi-k2.6,CoT,6.85,3.45,63.464,NG,True,,stop,0.008983476,834,2552,2481,122.54,"{""reasoning"": ""The right-hand traffic, distinctive black-and-yellow striped concrete median barriers, red laterite soil embankments, and tropical harmattan haze are hallmarks of a reconstructed Nigerian expressway in the southwestern region."", ""country"": ""NG"", ""latitude"": 6.85, ""longitude"": 3.45}"
+anthropic/claude-opus-4.8,CoT,6.4541,3.3947,63.873,NG,True,,stop,0.00717,949,97,0,5.41,"{""reasoning"": ""Hazy harmattan sky, yellow-black painted curbs, low concrete buildings and dusty divided highway with right-hand traffic strongly indicate Nigeria."", ""country"": ""NG"", ""latitude"": 6.4541, ""longitude"": 3.3947}"
+anthropic/claude-opus-4.8,no-CoT,6.4541,3.3947,63.873,NG,True,,stop,0.00489,818,32,0,11.91,"{""country"": ""NG"", ""latitude"": 6.4541, ""longitude"": 3.3947}"
+xiaomi/mimo-v2.5,no-CoT,6.4541,3.3947,63.873,NG,True,,stop,9.65776e-05,820,29,0,1.03,"{""country"": ""NG"", ""latitude"": 6.4541, ""longitude"": 3.3947}"
+x-ai/grok-4.3,CoT,6.5244,3.3792,64.28,NG,True,,stop,0.002894,788,898,826,6.99,"{""reasoning"": ""Right-hand traffic with central barrier, black-yellow striped curbs, concrete-block buildings, sparse palms, hazy tropical light, and right-side mirror all point to West Africa; closest match is a suburban arterial in greater Lagos."", ""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+google/gemma-4-31b-it,no-CoT,6.5244,3.3792,64.28,NG,True,,stop,6.268e-05,404,34,0,10.79,"```json
+{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}
+```"
+mistralai/mistral-medium-3-5,no-CoT,6.5244,3.3792,64.28,NG,True,,stop,0.0013965,786,29,0,0.97,"{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+openai/gpt-5.5,no-CoT,6.5244,3.3792,64.28,NG,True,,stop,0.00408,678,23,0,2.04,"{""country"":""NG"",""latitude"":6.5244,""longitude"":3.3792}"
+qwen/qwen3.5-122b-a10b,no-CoT,6.5244,3.3792,64.28,NG,True,,stop,0.00021268,586,29,0,5.87,"{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+qwen/qwen3.5-35b-a3b,no-CoT,6.5244,3.3792,64.28,NG,True,,stop,0.0001327625,585,29,0,1.6,"{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+qwen/qwen3.5-9b,no-CoT,6.5244,3.3792,64.28,NG,True,,stop,6.295e-05,586,29,0,1.71,"{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+qwen/qwen3.6-35b-a3b,no-CoT,6.5244,3.3792,64.28,NG,True,,stop,0.00011675,585,29,0,8.38,"{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+x-ai/grok-4.3,no-CoT,6.6018,3.3515,67.032,NG,True,,stop,0.0007384,704,24,0,0.72,"{""country"": ""NG"", ""latitude"": 6.6018, ""longitude"": 3.3515}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),6.3156,5.6074,184.651,NG,True,,stop,0.002136,1226,33,0,14.22,"```json
+{""country"": ""NG"", ""latitude"": 6.3156, ""longitude"": 5.6074}
+```"
+google/gemini-3.1-pro-preview,no-CoT,6.45,7.5,391.58,NG,True,,stop,0.005714,1225,272,244,5.52,"```json
+{""country"": ""NG"", ""latitude"": 6.45, ""longitude"": 7.5}
+```"
+google/gemini-3.1-pro-preview,CoT,6.452,7.51,392.675,NG,True,,stop,0.005712,1308,258,180,10.71,"{
+  ""reasoning"": ""The black and white painted curbs and the hazy atmosphere (harmattan) are highly characteristic of Nigeria. The red soil and vegetation suggest a location in the southern or southeastern part of the country."",
+  ""country"": ""NG"",
+  ""latitude"": 6.452,
+  ""longitude"": 7.51
+}"
+google/gemini-3.5-flash,CoT (effort=high),9.0065,7.3785,463.224,NG,True,,stop,0.0086295,1307,741,677,8.69,"{""reasoning"": ""The black-and-yellow painted curbs, wide divided highway, distinctive curved streetlights, and heavy Harmattan haze are highly characteristic of Abuja, Nigeria."", ""country"": ""NG"", ""latitude"": 9.0065, ""longitude"": 7.3785}"
+qwen/qwen3.5-397b-a17b,no-CoT,5.6037,-0.187,471.064,GH,True,,stop,0.0003777,585,28,0,1.99,"{""country"": ""GH"", ""latitude"": 5.6037, ""longitude"": -0.187}"
+google/gemini-3.5-flash,CoT (effort=medium),9.0125,7.4721,472.028,NG,True,,stop,0.0067845,1307,536,459,6.39,"{""reasoning"": ""The hazy, dusty sky indicates the Harmattan season in West Africa, while the wide dual carriageway with black-and-yellow painted curbs and modern curved streetlights is highly characteristic of Nigeria, particularly around Abuja."", ""country"": ""NG"", ""latitude"": 9.0125, ""longitude"": 7.4721}"
+minimax/minimax-m3,CoT,9.05,7.45,472.427,NG,True,,stop,0.00081666,995,483,405,13.44,"{""reasoning"": ""Wide dual carriageway with painted yellow-black median curbs, right-hand driving, curved-arm streetlights, reddish lateritic soil, hazy harmattan atmosphere, and unfinished concrete buildings are hallmarks of a major Nigerian highway, likely on the outskirts of Abuja."", ""country"": ""NG"", ""latitude"": 9.05, ""longitude"": 7.45}"
+google/gemini-3.5-flash,CoT (effort=low),9.0578,7.4951,476.978,NG,True,,stop,0.0044805,1307,280,209,9.82,"{""reasoning"": ""The hazy, dusty atmosphere is characteristic of the Harmattan season in West Africa, while the modern wide road with black-and-yellow painted curbs and specific curved streetlights points to Nigeria."", ""country"": ""NG"", ""latitude"": 9.0578, ""longitude"": 7.4951}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,3.651564836502075,9.872332572937012,731.584,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,4.343681812286377,10.202656745910645,734.659,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,4.311001300811768,10.311454772949219,747.237,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,853.644,,True,True,,,,,,34.67,
+mistralai/mistral-small-2603,no-CoT,69.6492,18.9553,7096.428,NO,True,,stop,0.0001365,786,31,0,8.49,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+qwen/qwen3.6-27b,no-CoT,19.076,72.8777,7557.498,IN,True,,stop,0.00028672,586,31,0,1.78,"{""country"": ""IN"", ""latitude"": 19.0760, ""longitude"": 72.8777}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,20.86029052734375,76.94046020507812,7982.668,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,23.357101440429688,77.44805908203125,8035.42,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,18.51139259338379,77.55941772460938,8050.672,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,13.0827,80.2707,8365.366,IN,True,,stop,0.0001457176,899,165,72,9.8,"{""reasoning"": ""Left-side driving with yellow-and-black painted concrete barriers and a prominent red soil color strongly indicate India, specifically the Tamil Nadu or Andhra Pradesh coastal plains. The presence of auto-rickshaws and the specific tropical infrastructure style point towards the outskirts of a city like Chennai."", ""country"": ""IN"", ""latitude"": 13.0827, ""longitude"": 80.2707}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.4,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,15.84,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,13.16,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.35,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.52,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.35,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.19,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.24,

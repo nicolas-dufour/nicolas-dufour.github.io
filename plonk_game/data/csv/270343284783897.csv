@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-4.4147178386639,-79.161833045656,0.0,EC,True,,,,,,,,"Cariamanga, None, Loja, EC"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-2.642775535583496,-78.99547576904297,197.894,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-2.6354727745056152,-78.99015045166016,198.758,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-1.8526095151901245,-78.89100646972656,286.476,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,4.7812,-75.6901,1092.836,CO,True,,stop,0.00344,544,24,0,9.63,"{""country"":""CO"",""latitude"":4.7812,""longitude"":-75.6901}"
+moonshotai/kimi-k2.6,CoT,5.07,-75.49,1130.754,CO,True,,stop,0.019530108,682,5643,5577,244.65,"{""reasoning"": ""The left-side mirror and double yellow centerline indicate right-hand traffic with American road markings; dense, moist mountain forest with tall conifers matches Colombia's northern Andes cordillera."", ""country"": ""CO"", ""latitude"": 5.07, ""longitude"": -75.49}"
+google/gemma-4-31b-it,no-CoT,4.6097,-74.0817,1151.254,CO,True,,stop,6.678e-05,406,35,0,9.21,"```json
+{""country"": ""CO"", ""latitude"": 4.6097, ""longitude"": -74.0817}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),4.7111,-74.0721,1161.606,CO,True,,stop,0.002091,1190,34,0,1.47,"```json
+{""country"": ""CO"", ""latitude"": 4.7111, ""longitude"": -74.0721}
+```"
+google/gemini-3.1-pro-preview,CoT,4.65,-73.95,1162.375,CO,True,,stop,0.007726,1271,432,351,6.38,"{
+  ""reasoning"": ""The double yellow center lines, black and white painted curbs, and lush mountainous vegetation strongly point to Colombia. The visible part of the vehicle on the left is also consistent with Street View coverage in this region."",
+  ""country"": ""CO"",
+  ""latitude"": 4.65,
+  ""longitude"": -73.95
+}"
+google/gemini-3.5-flash,CoT (effort=high),4.7512,-73.9524,1172.008,CO,True,,stop,0.0095115,1271,845,772,13.75,"```json
+{""reasoning"": ""The double yellow center lines, high-altitude Andean vegetation including pine trees, and concrete curbs are highly characteristic of the mountainous regions of Colombia, particularly Cundinamarca."", ""country"": ""CO"", ""latitude"": 4.7512, ""longitude"": -73.9524}
+```"
+openai/gpt-5.5,CoT,4.7486,-73.9324,1172.855,CO,True,,stop,0.013365,621,342,259,17.88,"{""reasoning"":""The double yellow centerline with right-hand traffic, concrete roadside drainage curb, and lush pine/eucalyptus Andean highland vegetation strongly suggest a rural Colombian mountain road. The cloudy cool-climate setting fits the Bogotá/Cundinamarca highlands rather than tropical lowlands."",""country"":""CO"",""latitude"":4.7486,""longitude"":-73.9324}"
+google/gemini-3.5-flash,CoT (effort=low),6.1652,-75.5011,1244.66,CO,True,,stop,0.0043815,1271,275,209,3.78,"{""reasoning"": ""The double yellow center lines, lush green vegetation mixed with pine trees, and concrete curbs are highly characteristic of the mountainous regions of Colombia, particularly in Antioquia."", ""country"": ""CO"", ""latitude"": 6.1652, ""longitude"": -75.5011}"
+google/gemini-3.1-pro-preview,no-CoT,6.2,-75.5,1248.356,CO,True,,stop,0.00659,1189,351,323,18.38,"```json
+{""country"": ""CO"", ""latitude"": 6.2, ""longitude"": -75.5}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),6.2054,-75.4952,1249.097,CO,True,,stop,0.0061095,1271,467,399,27.22,"{""reasoning"": ""The double yellow center lines, concrete curbs, and montane vegetation with a mix of pines and Andean cloud forest are highly characteristic of the highlands of Antioquia, Colombia."", ""country"": ""CO"", ""latitude"": 6.2054, ""longitude"": -75.4952}"
+anthropic/claude-opus-4.8,CoT,5.5,-73.5,1269.158,CO,True,,stop,0.00636,797,95,0,9.86,"{""reasoning"": ""Highland tropical vegetation with pines and eucalyptus, concrete road with yellow center line and right-hand traffic, suggesting an Andean rural road in Colombia."", ""country"": ""CO"", ""latitude"": 5.5, ""longitude"": -73.5}"
+anthropic/claude-opus-4.8,no-CoT,5.5353,-73.3578,1280.441,CO,True,,stop,0.00413,666,32,0,2.27,"{""country"": ""CO"", ""latitude"": 5.5353, ""longitude"": -73.3578}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,18.920631408691406,-99.38795471191406,3411.309,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,4085.269,BR,True,,stop,0.0011835,634,31,0,0.87,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+minimax/minimax-m3,no-CoT,-22.5,-45.0,4187.525,BR,True,,stop,0.00039606,765,190,165,4.27,"{""country"": ""BR"", ""latitude"": -22.5, ""longitude"": -45.0}"
+minimax/minimax-m3,CoT,-22.45,-44.95,4190.014,BR,True,,stop,0.00083058,843,507,566,13.89,"{""reasoning"": ""Right-hand traffic with double yellow center line, Brazilian-style metal guardrails, and mountainous terrain with dense Atlantic Forest vegetation strongly indicate a rural highway in southeastern Brazil's Mantiqueira or Serra do Mar region."", ""country"": ""BR"", ""latitude"": -22.45, ""longitude"": -44.95}"
+qwen/qwen3.5-9b,no-CoT,-22.9511,-43.2125,4375.831,BR,True,,stop,5.205e-05,474,31,0,4.03,"{""country"": ""BR"", ""latitude"": -22.9511, ""longitude"": -43.2125}"
+qwen/qwen3.5-27b,no-CoT,36.1658,-121.9018,6329.745,US,True,,stop,0.00024024,474,45,0,8.03,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 36.1658,
+  ""longitude"": -121.9018
+}
+```"
+qwen/qwen3.6-27b,no-CoT,36.6002,-121.8947,6357.804,US,True,,stop,0.0001963,473,32,0,10.03,"{""country"": ""US"", ""latitude"": 36.6002, ""longitude"": -121.8947}"
+mistralai/mistral-small-2603,no-CoT,38.5816,-120.8062,6415.361,US,True,,stop,0.0001143,634,32,0,5.52,"{""country"": ""US"", ""latitude"": 38.5816, ""longitude"": -120.8062}"
+qwen/qwen3.6-35b-a3b,no-CoT,37.4219,-122.0838,6425.656,US,True,,stop,0.000146,474,32,0,8.51,"{""country"": ""US"", ""latitude"": 37.4219, ""longitude"": -122.0838}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,37.418460845947266,-122.18030548095703,6432.271,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,37.2719612121582,-122.37936401367188,6436.762,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,37.8651,-122.2416,6466.231,US,True,,stop,0.000383,473,32,0,0.76,"{""country"": ""US"", ""latitude"": 37.8651, ""longitude"": -122.2416}"
+qwen/qwen3.5-35b-a3b,no-CoT,37.8651,-122.2505,6466.857,US,True,,stop,0.00010295,473,32,0,3.7,"{""country"": ""US"", ""latitude"": 37.8651, ""longitude"": -122.2505}"
+xiaomi/mimo-v2.5,no-CoT,37.7749,-122.4194,6472.787,US,True,,stop,8.17376e-05,708,32,0,1.01,"{""country"": ""US"", ""latitude"": 37.7749, ""longitude"": -122.4194}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8806.013,,True,True,,,,,,19.46,
+x-ai/grok-4.3,no-CoT,-25.75,28.15,11510.906,ZA,True,,stop,0.0005934,592,22,0,0.77,"{""country"": ""ZA"", ""latitude"": -25.75, ""longitude"": 28.15}"
+x-ai/grok-4.3,CoT,35.18,136.05,15038.889,JP,True,,stop,0.0025165,676,803,743,12.51,"{""reasoning"": ""Yellow center line on left of frame + right-side curb indicate left-hand traffic; dense subtropical montane vegetation, road profile and curb style match Japan/Taiwan."", ""country"": ""JP"", ""latitude"": 35.18, ""longitude"": 136.05}"
+xiaomi/mimo-v2.5,CoT,23.6346,121.0549,16970.756,TW,True,,stop,0.0001305976,787,167,100,3.69,"{""reasoning"": ""The double yellow center lines, white edge markings, and the lush subtropical vegetation including ferns are highly characteristic of mountain roads in Taiwan."", ""country"": ""TW"", ""latitude"": 23.6346, ""longitude"": 121.0549}"
+qwen/qwen3.5-122b-a10b,no-CoT,24.8726,102.8253,17730.379,CN,True,,stop,0.0001898,474,32,0,8.01,"{""country"": ""CN"", ""latitude"": 24.8726, ""longitude"": 102.8253}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,12.99,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.29,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.7,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,14.65,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.19,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.56,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.12,

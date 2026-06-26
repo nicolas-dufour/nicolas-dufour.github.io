@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,23.71458020764,-105.72325175613,0.0,MX,True,,,,,,,,"La Ciudad, Pueblo Nuevo, Durango, MX"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,19.78958511352539,-102.8614501953125,527.05,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,19.78107261657715,-102.84725952148438,528.661,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,20.080467224121094,-102.21871948242188,542.177,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,19.5123,-101.5432,636.347,MX,True,,stop,0.00485,1225,200,164,5.62,"```json
+{""country"": ""MX"", ""latitude"": 19.5123, ""longitude"": -101.5432}
+```"
+google/gemini-3.5-flash,CoT (effort=high),19.625,-100.795,682.612,MX,True,,stop,0.0096195,1307,851,778,15.14,"{""reasoning"": ""The double yellow center lines, yellow chevron sign, and white-painted stone curbs along a winding road through dense pine forests are highly characteristic of mountainous regions in Mexico, such as Michoacán."", ""country"": ""MX"", ""latitude"": 19.625, ""longitude"": -100.795}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),19.612543,-100.284512,723.681,MX,True,,stop,0.002199,1226,40,0,8.07,"```json
+{""country"": ""MX"", ""latitude"": 19.612543, ""longitude"": -100.284512}
+```"
+anthropic/claude-opus-4.8,no-CoT,19.5833,-100.25,728.54,MX,True,,stop,0.004865,818,31,0,2.13,"{""country"": ""MX"", ""latitude"": 19.5833, ""longitude"": -100.25}"
+moonshotai/kimi-k2.6,CoT,19.45,-100.25,738.167,MX,True,,stop,0.016757856,834,4820,4748,220.6,"{""reasoning"": ""Yellow diamond curve warning sign with black arrow and continuous white-painted roadside barriers are hallmarks of Mexican federal highways, while the dense pine forest and mountain terrain fit the Trans-Mexican Volcanic Belt highlands."", ""country"": ""MX"", ""latitude"": 19.45, ""longitude"": -100.25}"
+anthropic/claude-opus-4.8,CoT,19.55,-100.15,738.951,MX,True,,stop,0.00687,949,85,0,307.3,"{""reasoning"": ""Pine forest mountain road with yellow chevron sign and double yellow center line typical of Mexican rural highways in highland Sierra terrain."", ""country"": ""MX"", ""latitude"": 19.55, ""longitude"": -100.15}"
+google/gemini-3.1-pro-preview,CoT,19.4521,-100.1234,748.09,MX,True,,stop,0.006142,1307,294,204,12.19,"{
+  ""reasoning"": ""The double yellow center lines, yellow chevron sign, and specifically the white painted low curb/barrier are highly characteristic of mountainous roads in Mexico. The pine forest indicates a higher elevation region, likely in central or northern Mexico."",
+  ""country"": ""MX"",
+  ""latitude"": 19.4521,
+  ""longitude"": -100.1234
+}"
+x-ai/grok-4.3,no-CoT,19.52,-100.05,749.148,MX,True,,stop,0.0007334,704,22,0,0.82,"{""country"": ""MX"", ""latitude"": 19.52, ""longitude"": -100.05}"
+google/gemini-3.5-flash,CoT (effort=low),19.3125,-100.2154,750.984,MX,True,,stop,0.0040845,1307,236,161,16.48,"{""reasoning"": ""The double yellow center lines, white-painted roadside curbs, and black-on-yellow chevron sign are characteristic of Mexican mountain highways, particularly in the pine-forested regions of central Mexico."", ""country"": ""MX"", ""latitude"": 19.3125, ""longitude"": -100.2154}"
+x-ai/grok-4.3,CoT,19.48,-100.05,751.986,MX,True,,stop,0.002754,788,842,760,12.37,"{
+  ""reasoning"": ""Right-hand traffic (warning sign on right shoulder), US-style MUTCD yellow chevron + double yellow center lines, white-painted curb barrier, and dense pine forest on steep mountain road point to highland Mexico rather than US or Central America."",
+  ""country"": ""MX"",
+  ""latitude"": 19.48,
+  ""longitude"": -100.05
+}"
+openai/gpt-5.5,no-CoT,19.8447,-99.6624,759.315,MX,True,,stop,0.00411,678,24,0,1.22,"{""country"":""MX"",""latitude"":19.8447,""longitude"":-99.6624}"
+google/gemini-3.5-flash,CoT (effort=medium),19.2856,-99.7644,788.842,MX,True,,stop,0.0075045,1307,616,526,11.7,"{""reasoning"": ""The double yellow center lines, black-on-yellow chevron sign, and white-painted concrete curb on the side of the road are highly characteristic of mountainous highways in Mexico, particularly in the pine-forested high-altitude regions of the Trans-Mexican Volcanic Belt."", ""country"": ""MX"", ""latitude"": 19.2856, ""longitude"": -99.7644}"
+openai/gpt-5.5,CoT,19.2897,-99.4058,817.854,MX,True,,stop,0.014365,755,353,266,9.85,"{""reasoning"":""Right-hand traffic with double yellow center lines, yellow/black chevron signs, and the white concrete roadside drainage/curbing are characteristic of Mexican mountain roads. The dense pine forest and highland terrain strongly suggest the central Mexican uplands near La Marquesa/Nevado de Toluca."",""country"":""MX"",""latitude"":19.2897,""longitude"":-99.4058}"
+google/gemma-4-31b-it,no-CoT,19.4326,-99.1332,831.075,MX,True,,stop,7.096e-05,404,36,0,2.92,"```json
+{""country"": ""MX"", ""latitude"": 19.4326, ""longitude"": -99.1332}
+```"
+moonshotai/kimi-k2.6,no-CoT,19.4326,-99.1332,831.075,MX,True,,stop,0.000333,755,25,0,2.33,"{""country"": ""MX"", ""latitude"": 19.4326, ""longitude"": -99.1332}"
+minimax/minimax-m3,no-CoT,19.4,-99.1,836.025,MX,True,,stop,0.00034842,919,109,115,4.84,"{""country"": ""MX"", ""latitude"": 19.4, ""longitude"": -99.1}"
+qwen/qwen3.5-9b,no-CoT,19.632,-98.608,863.851,MX,True,,stop,6.295e-05,586,29,0,10.63,"{""country"": ""MX"", ""latitude"": 19.632, ""longitude"": -98.608}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.1234,-106.789,1272.768,US,True,,stop,0.00011875,585,31,0,8.11,"{""country"": ""US"", ""latitude"": 35.1234, ""longitude"": -106.789}"
+xiaomi/mimo-v2.5,no-CoT,34.25,-111.25,1288.316,US,True,,stop,9.62976e-05,820,28,0,1.49,"{""country"": ""US"", ""latitude"": 34.25, ""longitude"": -111.25}"
+qwen/qwen3.6-27b,no-CoT,34.4275,-117.3165,1637.164,US,True,,stop,0.0002299,585,32,0,21.22,"{""country"": ""US"", ""latitude"": 34.4275, ""longitude"": -117.3165}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.0527,-118.4517,1760.449,US,True,,stop,0.00021892,586,32,0,7.15,"{""country"": ""US"", ""latitude"": 35.0527, ""longitude"": -118.4517}"
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,1783.185,US,True,,stop,0.0001371,786,32,0,16.35,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.14937973022461,-104.72016906738281,1940.906,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.16973876953125,-103.7038803100586,2281.933,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,44.18808364868164,-103.74858093261719,2283.64,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,44.428,-110.5885,2345.295,US,True,,stop,0.00011975,585,32,0,5.05,"{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -110.5885}"
+mistralai/mistral-medium-3-5,no-CoT,35.5951,-83.5102,2511.078,US,True,,stop,0.0014115,786,31,0,0.97,"{""country"": ""US"", ""latitude"": 35.5951, ""longitude"": -83.5102}"
+qwen/qwen3.5-397b-a17b,no-CoT,35.6895,-83.5093,2515.714,US,True,,stop,0.00034185,585,31,0,11.58,"{""country"": ""US"", ""latitude"": 35.6895, ""longitude"": -83.5093}"
+qwen/qwen3.5-27b,no-CoT,35.5965,-82.5515,2589.708,US,True,,stop,0.00026676,586,44,0,2.2,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 35.5965,
+  ""longitude"": -82.5515
+}
+```"
+minimax/minimax-m3,CoT,38.2,-80.5,2879.186,US,True,,stop,0.00112266,995,738,668,25.3,"{""reasoning"": ""Double yellow center lines, yellow diamond MUTCD curve warning sign, white edge curbing, and dense Appalachian-style mixed forest on mountainous terrain all point to a rural US highway in the Appalachian Mountains."", ""country"": ""US"", ""latitude"": 38.20, ""longitude"": -80.50}"
+xiaomi/mimo-v2.5,CoT,47.5,-121.5,2991.661,US,True,,stop,0.0005111176,899,1470,1389,15.69,"{""reasoning"": ""The double yellow center lines and yellow diamond curve sign are hallmarks of United States road infrastructure, and the dense coniferous forest with mountainous terrain suggests a Pacific Northwest location. No other languages or vehicle plates are visible to contradict this."", ""country"": ""US"", ""latitude"": 47.5, ""longitude"": -121.5}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11604.928,,True,True,,,,,,28.69,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,12.76,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,35.05,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.83,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.15,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.2,

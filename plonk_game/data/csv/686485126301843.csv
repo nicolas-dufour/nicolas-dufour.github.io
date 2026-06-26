@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,46.86005103583766,-72.78546011264957,0.0,CA,True,,,,,,,,"Saint-Tite, Mauricie, Quebec, CA"
+google/gemini-3.5-flash,CoT (effort=low),46.8542,-72.7785,0.839,CA,True,,stop,0.0046245,1307,296,221,16.48,"{""reasoning"": ""The double yellow center lines, wooden utility poles, and mixed northern forest next to a wide river are characteristic of eastern Canada, specifically Route 155 along the Saint-Maurice River in Quebec."", ""country"": ""CA"", ""latitude"": 46.8542, ""longitude"": -72.7785}"
+google/gemini-3.5-flash,CoT (effort=medium),46.8412,-72.7784,2.164,CA,True,,stop,0.0134175,1307,1273,1168,12.09,"```json
+{""reasoning"": ""The double yellow center lines and right-hand traffic indicate North America, while the mixed forest, rounded hills of the Canadian Shield, and reddish gravel shoulder point to Quebec, Canada. The road running directly alongside a wide river with high hills on the opposite bank strongly matches Route 155 along the Saint-Maurice River."", ""country"": ""CA"", ""latitude"": 46.8412, ""longitude"": -72.7784}
+```"
+google/gemini-3.5-flash,CoT (effort=high),46.905,-72.782,5.005,CA,True,,stop,0.0106995,1307,971,890,7.86,"{""reasoning"": ""The double yellow center lines and right-hand traffic indicate North America, while the dense mixed forest, rounded hills, and wide river adjacent to the highway strongly resemble Route 155 along the Saint-Maurice River in Quebec, Canada."", ""country"": ""CA"", ""latitude"": 46.905, ""longitude"": -72.782}"
+google/gemini-3.1-pro-preview,no-CoT,46.8134,-72.7512,5.805,CA,True,,stop,0.006554,1225,342,307,12.09,"```json
+{""country"": ""CA"", ""latitude"": 46.8134, ""longitude"": -72.7512}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,46.72478103637695,-72.73908233642578,15.45,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,46.728668212890625,-72.69927978515625,16.015,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),46.312541,-72.854125,61.106,CA,True,,stop,0.00219,1226,39,0,1.53,"```json
+{""country"": ""CA"", ""latitude"": 46.312541, ""longitude"": -72.854125}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.85809326171875,-75.10405731201172,209.918,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,44.4264,-73.4306,275.215,US,True,,stop,0.0001072,585,31,0,2.17,"{""country"": ""US"", ""latitude"": 44.4264, ""longitude"": -73.4306}"
+google/gemma-4-26b-a4b-it,no-CoT,45.4215,-75.6972,275.495,CA,True,,stop,5.668e-05,404,36,0,7.55,"```json
+{""country"": ""CA"", ""latitude"": 45.4215, ""longitude"": -75.6972}
+```"
+xiaomi/mimo-v2.5,no-CoT,44.35,-73.2,280.961,US,True,,stop,9.57376e-05,820,26,0,7.27,"{""country"": ""US"", ""latitude"": 44.35, ""longitude"": -73.2}"
+x-ai/grok-4.3,CoT,44.35,-72.05,284.905,US,True,,stop,0.002339,788,676,596,11.99,"{""reasoning"": ""Right-hand traffic with double yellow center lines + white edge lines, North American motorcycle ergonomics, temperate deciduous forest, and calm river/lake on left with rolling hills indicate eastern North America. Decisive clues are the road markings, vegetation, and right-side driving."", ""country"": ""US"", ""latitude"": 44.35, ""longitude"": -72.05}"
+qwen/qwen3.5-35b-a3b,no-CoT,44.3125,-73.189,285.009,US,True,,stop,0.00018375,585,30,0,7.55,"{""country"": ""US"", ""latitude"": 44.3125, ""longitude"": -73.189}"
+qwen/qwen3.5-122b-a10b,no-CoT,44.2619,-72.5805,289.341,US,True,,stop,0.0003332,585,31,0,2.78,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -72.5805}"
+qwen/qwen3.6-35b-a3b,no-CoT,44.2619,-72.5754,289.363,US,True,,stop,0.00011875,585,31,0,6.75,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -72.5754}"
+qwen/qwen3.5-397b-a17b,no-CoT,44.2619,-73.9875,303.67,US,True,,stop,0.0004626,585,31,0,8.17,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -73.9875}"
+qwen/qwen3.5-27b,no-CoT,44.2619,-71.3036,311.069,US,True,,stop,0.00022491,585,31,0,8.93,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -71.3036}"
+qwen/qwen3.6-27b,no-CoT,44.2619,-71.1211,316.609,US,True,,stop,0.0002279,585,31,0,11.28,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -71.1211}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,43.89175796508789,-73.86832427978516,340.715,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,43.78,-74.26,361.351,US,True,,stop,0.007745796,834,2177,2099,56.53,"{""reasoning"": ""Double yellow center lines, W-beam guardrail with wooden posts, and right-hand traffic are characteristic of rural U.S. highways; the rolling forested mountains beside a large lake strongly match the Adirondack region of upstate New York."", ""country"": ""US"", ""latitude"": 43.78, ""longitude"": -74.26}"
+mistralai/mistral-medium-3-5,no-CoT,44.1118,-70.1234,369.345,US,True,,stop,0.0014115,786,31,0,8.55,"{""country"": ""US"", ""latitude"": 44.1118, ""longitude"": -70.1234}"
+x-ai/grok-4.3,no-CoT,44.8012,-68.7722,386.046,US,True,,stop,0.0007384,704,24,0,7.55,"{""country"": ""US"", ""latitude"": 44.8012, ""longitude"": -68.7722}"
+moonshotai/kimi-k2.6,no-CoT,45.8,-78.4,446.799,CA,True,,stop,0.00035046,755,23,0,1.92,"{""country"": ""CA"", ""latitude"": 45.8, ""longitude"": -78.4}"
+openai/gpt-5.5,CoT,45.5796,-78.4653,459.464,CA,True,,stop,0.019585,755,527,437,14.01,"{""reasoning"":""Right-hand driving with North American double yellow centerlines/white edge lines and Canadian-style boreal forest, gravel shoulders, guardrail and lake-hugging highway strongly suggest rural Ontario/Quebec. The Canadian Shield lakeside scenery is most consistent with Ontario’s Highway 60 through Algonquin Park."",""country"":""CA"",""latitude"":45.5796,""longitude"":-78.4653}"
+google/gemini-3.1-pro-preview,CoT,45.55,-78.55,466.788,CA,True,,stop,0.006226,1307,301,224,6.0,"{
+  ""reasoning"": ""Double solid yellow center lines and solid white edge lines indicate North America. The mixed forest, rolling hills, and adjacent water body strongly suggest a region like Ontario or Quebec in Canada."",
+  ""country"": ""CA"",
+  ""latitude"": 45.55,
+  ""longitude"": -78.55
+}"
+openai/gpt-5.5,no-CoT,46.2652,-79.0706,484.916,CA,True,,stop,0.00411,678,24,0,3.76,"{""country"":""CA"",""latitude"":46.2652,""longitude"":-79.0706}"
+xiaomi/mimo-v2.5,CoT,41.9,-74.9,576.505,US,True,,stop,0.0004397176,899,1215,1142,63.53,"{
+  ""reasoning"": ""Right-hand traffic with double yellow lines and lush green hilly terrain with a river indicate the northeastern United States. The road style and vegetation are consistent with New York or Pennsylvania."",
+  ""country"": ""US"",
+  ""latitude"": 41.9,
+  ""longitude"": -74.9
+}"
+minimax/minimax-m3,no-CoT,42.0,-75.5,581.717,US,True,,stop,0.00024012,906,22,0,2.66,"{""country"": ""US"", ""latitude"": 42.0, ""longitude"": -75.5}{""country"": ""US"", ""latitude"": 42.0, ""longitude"": -75.5}"
+google/gemma-4-31b-it,no-CoT,46.5,-63.5,709.082,CA,True,,stop,6.108e-05,404,30,0,9.25,"```json
+{""country"": ""CA"", ""latitude"": 46.5, ""longitude"": -63.5}
+```"
+anthropic/claude-opus-4.8,no-CoT,46.65,-60.85,908.689,CA,True,,stop,0.00484,818,30,0,8.75,"{""country"": ""CA"", ""latitude"": 46.65, ""longitude"": -60.85}"
+anthropic/claude-opus-4.8,CoT,46.2,-60.7,926.514,CA,True,,stop,0.007345,949,104,0,3.52,"{""reasoning"": ""Right-hand driving with double-yellow centerline, forested hills, lake crossing, and North American highway style suggest rural eastern Canada, likely Nova Scotia/Cape Breton terrain."", ""country"": ""CA"", ""latitude"": 46.2, ""longitude"": -60.7}"
+minimax/minimax-m3,CoT,38.22,-80.75,1160.013,US,True,,stop,0.00135426,995,931,837,33.34,"{""reasoning"": ""MPH speedometer confirms US location, right-hand driving, galvanized W-beam guardrails, double yellow center line, deciduous Appalachian forest with a large reservoir/lake on the left and forested ridgeline ahead — characteristic of West Virginia mountain highways like those near Summersville Lake or along US 19/Route 39."", ""country"": ""US"", ""latitude"": 38.22, ""longitude"": -80.75}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,47.840576171875,-96.45758819580078,1779.703,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,48.70632553100586,-122.79566192626953,3674.578,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,5373.558,FR,True,,stop,0.0001359,786,30,0,4.98,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.91,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.67,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.47,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.16,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,15.56,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.36,

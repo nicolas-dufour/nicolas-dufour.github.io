@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,22.355577005135,103.81244519824,0.0,VN,True,,,,,,,,"Sa Pa, None, Lao Cai, VN"
+anthropic/claude-opus-4.8,CoT,22.34,103.84,3.321,VN,True,,stop,0.006585,797,104,0,3.59,"{""reasoning"": ""Mountainous tropical highland terrain with terraced hillsides and a multi-story house with steep roof, right-hand traffic, vegetation typical of northern Vietnam highlands near Sapa region."", ""country"": ""VN"", ""latitude"": 22.34, ""longitude"": 103.84}"
+qwen/qwen3.6-27b,no-CoT,22.3364,103.8404,3.579,VN,True,,stop,0.0001963,473,32,0,18.09,"{""country"": ""VN"", ""latitude"": 22.3364, ""longitude"": 103.8404}"
+qwen/qwen3.6-35b-a3b,no-CoT,22.3357,103.8428,3.825,VN,True,,stop,0.00015825,473,32,0,0.5,"{""country"": ""VN"", ""latitude"": 22.3357, ""longitude"": 103.8428}"
+qwen/qwen3.5-27b,no-CoT,22.3364,103.8438,3.866,VN,True,,stop,0.00019683,473,32,0,8.96,"{""country"": ""VN"", ""latitude"": 22.3364, ""longitude"": 103.8438}"
+qwen/qwen3.5-397b-a17b,no-CoT,22.3364,103.8438,3.866,VN,True,,stop,0.0003357,473,32,0,8.18,"{""country"": ""VN"", ""latitude"": 22.3364, ""longitude"": 103.8438}"
+anthropic/claude-opus-4.8,no-CoT,22.336,103.844,3.908,VN,True,,stop,0.00408,666,30,0,2.32,"{""country"": ""VN"", ""latitude"": 22.336, ""longitude"": 103.844}"
+x-ai/grok-4.3,CoT,22.35,103.85,3.912,VN,True,,stop,0.002274,676,706,632,9.05,"{""reasoning"": ""Lush tropical/subtropical vegetation, winding paved mountain road with metal guardrail on right, white/red-roofed stilt-style house, and distant white vehicle match rural northern Vietnam highlands; no contradictory signage or driving-side clues."", ""country"": ""VN"", ""latitude"": 22.35, ""longitude"": 103.85}"
+minimax/minimax-m3,no-CoT,22.3361,103.8444,3.936,VN,True,,stop,0.00039762,767,188,224,5.67,"{""country"": ""VN"", ""latitude"": 22.3361, ""longitude"": 103.8444}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),22.356412,103.871245,6.048,VN,True,,stop,0.002145,1190,40,0,1.25,"```json
+{""country"": ""VN"", ""latitude"": 22.356412, ""longitude"": 103.871245}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,22.396,103.902,10.247,VN,True,,stop,9.636e-05,474,30,0,8.3,"{""country"": ""VN"", ""latitude"": 22.396, ""longitude"": 103.902}"
+qwen/qwen3.5-122b-a10b,no-CoT,22.3719,103.4653,35.744,VN,True,,stop,0.00018954,473,32,0,1.35,"{""country"": ""VN"", ""latitude"": 22.3719, ""longitude"": 103.4653}"
+qwen/qwen3.6-35b-a3b,CoT,22.82,104.98,130.518,VN,True,,stop,0.0071492,554,4399,4131,100.37,"```json
+{
+""reasoning"": ""The image shows left-hand traffic, lush green mountainous terrain, and a white house with a red roof typical of rural Northern Vietnam. The green road sign and guardrail style are consistent with Vietnamese infrastructure."",
+""country"": ""VN"",
+""latitude"": 22.82,
+""longitude"": 104.98
+}
+```"
+google/gemini-3.5-flash,CoT (effort=low),22.8154,104.9852,130.809,VN,True,,stop,0.0056145,1271,412,347,11.17,"{""reasoning"": ""The concrete mountain road, lush green tropical hillside, and distinctive concrete house architecture are highly characteristic of northern Vietnam, particularly the mountainous Ha Giang province."", ""country"": ""VN"", ""latitude"": 22.8154, ""longitude"": 104.9852}"
+minimax/minimax-m3,CoT,23.05,105.15,157.44,VN,True,,stop,0.00106986,843,732,642,20.34,"{""reasoning"": ""Narrow winding mountain road without center line markings, metal W-beam guardrail, lush tropical/subtropical vegetation on steep hillsides, and multi-story building with characteristic Southeast Asian highland architecture strongly suggest the mountainous northern region of Vietnam, likely along the Ha Giang or Cao Bang loop roads."", ""country"": ""VN"", ""latitude"": 23.05, ""longitude"": 105.15}"
+x-ai/grok-4.3,no-CoT,21.023,105.852,257.605,VN,True,,stop,0.0005934,592,22,0,1.8,"{""country"": ""VN"", ""latitude"": 21.023, ""longitude"": 105.852}"
+qwen/qwen3.5-9b,no-CoT,18.7892,100.7681,507.599,TH,True,,stop,5.22e-05,474,32,0,2.24,"{""country"": ""TH"", ""latitude"": 18.7892, ""longitude"": 100.7681}"
+google/gemini-3.5-flash,CoT (effort=medium),26.9215,89.4521,1536.436,BT,True,,stop,0.0096915,1271,865,770,7.71,"```json
+{""reasoning"": ""The lush, subtropical mountainous terrain combined with the distinctive camera artifact (finger/shadow in the top right corner) is highly characteristic of Google Street View coverage in Bhutan. The road style, metal guardrails, and distant building architecture further confirm this location in the southern foothills of Bhutan."", ""country"": ""BT"", ""latitude"": 26.9215, ""longitude"": 89.4521}
+```"
+xiaomi/mimo-v2.5,no-CoT,16.4023,120.596,1879.183,PH,True,,stop,8.17376e-05,708,32,0,3.84,"{""country"": ""PH"", ""latitude"": 16.4023, ""longitude"": 120.5960}"
+google/gemini-3.5-flash,CoT (effort=high),16.6542,120.7215,1880.646,PH,True,,stop,0.02079,1272,2098,1994,16.05,"```json
+{""reasoning"": ""The concrete road with a central joint, metal guardrails, and lush green slopes mixed with pine trees on the ridges is highly characteristic of the Cordillera Central mountains in the Philippines. The multi-story concrete house on the hillside and the white utility van further support this region, specifically along the Halsema Highway."", ""country"": ""PH"", ""latitude"": 16.6542, ""longitude"": 120.7215}
+```"
+qwen/qwen3.5-397b-a17b,CoT,27.7135,85.5285,1933.625,NP,True,,stop,0.0162716,553,4581,4251,194.46,"{""reasoning"": ""The image displays a left-hand traffic road winding through hilly terrain with reddish soil and a mix of pine and broadleaf vegetation, characteristic of the Himalayan mid-hills. The architecture of the white building with a red roof and the unmarked road surface are highly typical of the roads surrounding the Kathmandu Valley in Nepal, specifically the route towards Nagarkot."", ""country"": ""NP"", ""latitude"": 27.7135, ""longitude"": 85.5285}"
+google/gemini-3.1-pro-preview,no-CoT,27.7172,85.324,1953.276,NP,True,,stop,0.002788,1190,34,0,2.15,"```json
+{""country"": ""NP"", ""latitude"": 27.7172, ""longitude"": 85.324}
+```"
+google/gemma-4-31b-it,no-CoT,27.7172,85.324,1953.276,NP,True,,stop,7.124e-05,406,36,0,3.29,"```json
+{""country"": ""NP"", ""latitude"": 27.7172, ""longitude"": 85.3240}
+```"
+google/gemini-3.1-pro-preview,CoT,27.815,84.725,2013.124,NP,True,,stop,0.00696,1272,368,270,5.51,"{
+  ""reasoning"": ""The lush, hilly terrain, tropical/subtropical vegetation, and the style of the multi-story house on the hillside strongly suggest the Middle Hills region of the Indian subcontinent. The presence of the white microbus and the road infrastructure are characteristic of major hill highways in Nepal."",
+  ""country"": ""NP"",
+  ""latitude"": 27.815,
+  ""longitude"": 84.725
+}"
+mistralai/mistral-medium-3-5,no-CoT,27.175,78.0422,2651.525,IN,True,,stop,0.0011835,634,31,0,0.89,"{""country"": ""IN"", ""latitude"": 27.1750, ""longitude"": 78.0422}"
+moonshotai/kimi-k2.6,CoT,43.65,18.25,7970.504,BA,True,,stop,0.01296,680,3478,4102,206.17,"{""reasoning"": ""The white multi-story house with a red pitched roof built into a steep green hillside, combined with the unmarked asphalt mountain road, metal W-beam guardrail, and lush temperate vegetation, is highly characteristic of rural Bosnia and Herzegovina in the Western Balkans."", ""country"": ""BA"", ""latitude"": 43.65, ""longitude"": 18.25}"
+moonshotai/kimi-k2.6,no-CoT,44.2,17.9,7983.156,BA,True,,stop,0.000269712,603,23,0,2.42,"{""country"": ""BA"", ""latitude"": 44.2, ""longitude"": 17.9}"
+mistralai/mistral-small-2603,no-CoT,43.6119,3.8772,9068.728,FR,True,,stop,0.0001131,634,30,0,4.51,"{""country"": ""FR"", ""latitude"": 43.6119, ""longitude"": 3.8772}"
+mistralai/mistral-small-2603,CoT,48.1487,-2.7523,9322.001,FR,True,,stop,0.000681,716,956,1073,9.21,"{""reasoning"": ""French street sign 'RUE DE LA GARE' and architecture indicate France; lush vegetation and temperate climate suggest Brittany region."", ""country"": ""FR"", ""latitude"": 48.1487, ""longitude"": -2.7523}"
+openai/gpt-5.5,no-CoT,41.1428,-8.2946,10083.106,PT,True,,stop,0.00344,544,24,0,8.11,"{""country"":""PT"",""latitude"":41.1428,""longitude"":-8.2946}"
+openai/gpt-5.5,CoT,32.7856,-17.0342,11242.996,PT,True,,stop,0.013725,621,354,274,9.45,"{""reasoning"":""Lush steep Atlantic-island terrain, right-side driving, European guardrail/utility poles, and white houses with red tile roofs strongly suggest rural Madeira, Portugal. The narrow unmarked mountain road and subtropical vegetation fit the interior valleys around São Vicente."",""country"":""PT"",""latitude"":32.7856,""longitude"":-17.0342}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,11425.953,,True,True,,,,,,9.09,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-23.585044860839844,-45.339542388916016,16860.013,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-23.884429931640625,-45.448951721191406,16873.123,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,5.631217956542969,-72.95881652832031,16883.32,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,5.166507720947266,-74.71446228027344,16950.576,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-23.77073860168457,-46.34431838989258,16963.378,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,5.0,-74.0,16963.989,CO,True,,stop,0.0001314376,787,170,89,2.93,"{""reasoning"": ""The lush green vegetation on steep Andean slopes and the specific style of the rural two-story house with a red roof are highly characteristic of Colombia. Additionally, the yellow rear license plate on the distant vehicle and right-side driving align with Colombian road standards."", ""country"": ""CO"", ""latitude"": 5.0, ""longitude"": -74.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,4.0614237785339355,-74.47538757324219,17071.758,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.19,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.18,

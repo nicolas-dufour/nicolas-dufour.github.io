@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,55.921287945482,60.423115273058,0.0,RU,True,,,,,,,,"Verkhniy Ufaley, None, Chelyabinsk, RU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,55.566131591796875,60.68449401855469,42.746,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,55.567100524902344,60.69126892089844,42.811,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,55.52971649169922,60.769813537597656,48.653,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,56.85,60.6,103.84,RU,True,,stop,8.00576e-05,708,26,0,7.72,"{""country"": ""RU"", ""latitude"": 56.85, ""longitude"": 60.6}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),56.8524,60.6033,104.127,RU,True,,stop,0.0020985,1189,35,0,1.51,"```json
+{""country"": ""RU"", ""latitude"": 56.8524, ""longitude"": 60.6033}
+```"
+minimax/minimax-m3,CoT,57.4,60.2,164.989,RU,True,,stop,0.00076506,843,478,391,16.01,"{""reasoning"": ""Wooden utility poles with crossarms, right-hand driving, asphalt road with white edge/dashed center lines, and dense mixed boreal forest (birch, aspen, spruce) in fall colors are highly characteristic of rural Russia, likely the Ural/Sverdlovsk region."", ""country"": ""RU"", ""latitude"": 57.4, ""longitude"": 60.2}"
+openai/gpt-5.5,CoT,57.4687,60.0214,173.803,RU,True,,stop,0.014535,621,381,288,8.57,"{""reasoning"":""Wet two-lane road with white lane markings, right-hand traffic, Soviet-style utility poles, and birch-dominated boreal forest point strongly to rural Russia. The flat terrain and mixed birch forest are typical of the Urals/West Siberian edge, so I place it near Sverdlovsk Oblast."",""country"":""RU"",""latitude"":57.4687,""longitude"":60.0214}"
+openai/gpt-5.5,no-CoT,57.1324,65.5381,341.274,RU,True,,stop,0.00341,544,23,0,1.23,"{""country"":""RU"",""latitude"":57.1324,""longitude"":65.5381}"
+anthropic/claude-opus-4.8,no-CoT,58.0,56.2,344.815,RU,True,,stop,0.00408,666,30,0,9.4,"{""country"": ""RU"", ""latitude"": 58.0, ""longitude"": 56.2}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,59.673309326171875,52.73185348510742,617.19,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,58.261375427246094,50.97147750854492,626.779,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),58.6012,49.6245,713.424,RU,True,,stop,0.0050925,1271,354,293,5.26,"{""reasoning"": ""The wet asphalt road, autumn birch and coniferous forest, and distinctive concrete utility poles are highly characteristic of rural Russia during autumn coverage."", ""country"": ""RU"", ""latitude"": 58.6012, ""longitude"": 49.6245}"
+anthropic/claude-opus-4.8,CoT,57.5,43.0,1074.654,RU,True,,stop,0.00626,797,91,0,9.17,"{""reasoning"": ""Birch and mixed boreal forest with autumn colors, worn patchy asphalt, overcast rainy sky, and dashcam view typical of rural Russia."", ""country"": ""RU"", ""latitude"": 57.5, ""longitude"": 43.0}"
+google/gemini-3.1-pro-preview,no-CoT,58.0,40.0,1254.465,RU,True,,stop,0.002728,1190,29,0,8.34,"```json
+{""country"": ""RU"", ""latitude"": 58.0, ""longitude"": 40.0}
+```"
+google/gemini-3.5-flash,CoT (effort=low),59.2205,39.8915,1272.214,RU,True,,stop,0.0038235,1271,213,152,3.07,"{""reasoning"": ""The wet asphalt road, autumn birch and coniferous forest, and distinctive concrete utility poles are highly characteristic of rural western or central Russia."", ""country"": ""RU"", ""latitude"": 59.2205, ""longitude"": 39.8915}"
+google/gemini-3.5-flash,CoT (effort=high),59.22,39.89,1272.291,RU,True,,stop,0.0076935,1271,643,579,5.16,"{""reasoning"": ""The wet asphalt road with white markings, autumn-colored birch and pine forest, and Soviet-style lattice power line tower strongly indicate a rural highway in European Russia."", ""country"": ""RU"", ""latitude"": 59.22, ""longitude"": 39.89}"
+google/gemini-3.1-pro-preview,CoT,59.22,39.88,1272.855,RU,True,,stop,0.005388,1272,237,162,10.85,"{
+  ""reasoning"": ""The road markings, autumn vegetation, and distinctive power line pole strongly suggest Russia. The overall landscape and weather are typical of the central or northern European part of the country."",
+  ""country"": ""RU"",
+  ""latitude"": 59.22,
+  ""longitude"": 39.88
+}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,1417.627,RU,True,,stop,6.378e-05,406,36,0,4.39,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,55.7558,37.6173,1417.627,RU,True,,stop,0.00010195,473,31,0,8.74,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+xiaomi/mimo-v2.5,CoT,54.858,83.082,1429.495,RU,True,,stop,0.0006396376,787,1985,1880,29.12,"{""reasoning"": ""The deciduous and mixed forest showing vibrant yellow autumn colors is highly characteristic of the temperate continental climate found in the Russian Federation's taiga zone. The road infrastructure, including the specific design of the overhead power lines, the road markings, and the wide paved shoulders transitioning to unpaved verges, confirms this as a federal highway in Russia."", ""country"": ""RU"", ""latitude"": 54.858, ""longitude"": 83.082}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,56.861572265625,34.81243133544922,1570.496,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,57.0,34.0,1617.563,RU,True,,stop,0.008675568,682,2466,2395,55.88,"{""reasoning"": ""Soviet-era wooden utility poles with extended cross-arms, solid white road-edge markings, and dense mixed autumn boreal forest alongside a flat rural highway are characteristic of a federal trunk road in central European Russia."", ""country"": ""RU"", ""latitude"": 57.0, ""longitude"": 34.0}"
+qwen/qwen3.5-35b-a3b,no-CoT,59.8765,30.3456,1813.671,RU,True,,stop,9.736e-05,474,31,0,2.53,"{""country"": ""RU"", ""latitude"": 59.8765, ""longitude"": 30.3456}"
+qwen/qwen3.5-122b-a10b,no-CoT,59.9343,30.3351,1814.352,RU,True,,stop,0.000314,473,39,0,2.33,"{
+  ""country"": ""RU"",
+  ""latitude"": 59.9343,
+  ""longitude"": 30.3351
+}"
+qwen/qwen3.5-9b,no-CoT,62.9167,27.7667,1977.205,FI,True,,stop,5.205e-05,474,31,0,3.76,"{""country"": ""FI"", ""latitude"": 62.9167, ""longitude"": 27.7667}"
+qwen/qwen3.5-397b-a17b,no-CoT,62.5,26.5,2035.873,FI,True,,stop,0.00034308,473,25,0,5.61,"{""country"": ""FI"", ""latitude"": 62.5, ""longitude"": 26.5}"
+x-ai/grok-4.3,no-CoT,61.85,25.75,2069.495,FI,True,,stop,0.0005934,592,22,0,2.17,"{""country"": ""FI"", ""latitude"": 61.85, ""longitude"": 25.75}"
+qwen/qwen3.5-27b,no-CoT,63.9318,25.7481,2093.221,FI,True,,stop,0.000140595,473,31,0,2.28,"{""country"": ""FI"", ""latitude"": 63.9318, ""longitude"": 25.7481}"
+x-ai/grok-4.3,CoT,59.85,17.65,2519.764,SE,True,,stop,0.0019815,676,589,516,5.34,"{
+  ""reasoning"": ""Autumnal boreal/mixed forest, wet asphalt road with European-style edge markings, right-hand traffic, overhead power lines on wooden poles, and misty northern light point to rural Fennoscandia in fall."",
+  ""country"": ""SE"",
+  ""latitude"": 59.85,
+  ""longitude"": 17.65
+}"
+qwen/qwen3.6-27b,no-CoT,44.2663,-72.5813,8036.613,US,True,,stop,0.0001943,473,31,0,14.26,"{""country"": ""US"", ""latitude"": 44.2663, ""longitude"": -72.5813}"
+mistralai/mistral-medium-3-5,no-CoT,47.6062,-122.3321,8500.493,US,True,,stop,0.001191,634,32,0,7.3,"{""country"": ""US"", ""latitude"": 47.6062, ""longitude"": -122.3321}"
+mistralai/mistral-small-2603,no-CoT,44.9778,-93.265,8528.023,US,True,,stop,0.0001137,634,31,0,7.62,"{""country"": ""US"", ""latitude"": 44.9778, ""longitude"": -93.2650}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.1,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.32,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.38,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.57,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.45,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.71,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.11,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.41,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.18,

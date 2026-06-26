@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-13.146716365868729,28.594364622986408,0.0,ZM,True,,,,,,,,"Luanshya, None, Copperbelt, ZM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-12.996147155761719,27.97023582458496,69.644,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-12.73521614074707,27.909814834594727,87.161,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-12.727107048034668,27.91058921813965,87.568,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-5.8,22.4,1062.179,CD,True,,stop,0.0056,970,30,0,3.84,"{""country"": ""CD"", ""latitude"": -5.8, ""longitude"": 22.4}"
+anthropic/claude-opus-4.8,CoT,-4.5,21.5,1237.265,CD,True,,stop,0.00818,1101,107,0,10.1,"{""reasoning"": ""Reddish lateritic dirt road, tropical savanna/woodland vegetation, and a pedestrian suggest sub-Saharan Africa; the lush green growth and hazy sky fit central DRC region."", ""country"": ""CD"", ""latitude"": -4.5, ""longitude"": 21.5}"
+x-ai/grok-4.3,no-CoT,0.35,32.55,1562.832,UG,True,,stop,0.0008734,816,22,0,7.29,"{""country"": ""UG"", ""latitude"": 0.35, ""longitude"": 32.55}"
+moonshotai/kimi-k2.6,no-CoT,-4.4419,15.2663,1754.212,CD,True,,stop,0.00077931,906,25,0,9.64,"{""country"": ""CD"", ""latitude"": -4.4419, ""longitude"": 15.2663}"
+minimax/minimax-m3,CoT,-0.5,12.7,2245.819,GA,True,,stop,0.00088266,1147,500,417,16.7,"{""reasoning"": ""Reddish lateritic soil typical of equatorial West/Central Africa combined with dense tropical rainforest vegetation and an unpaved road cutting through cleared jungle strongly suggests Gabon or Republic of Congo. The hazy equatorial sky and style of forest clearance indicate an interior location in the Congo Basin."", ""country"": ""GA"", ""latitude"": -0.5, ""longitude"": 12.7}"
+minimax/minimax-m3,no-CoT,0.5,12.7,2317.963,GA,True,,stop,0.00043602,1071,144,156,4.78,"{""country"": ""GA"", ""latitude"": 0.5, ""longitude"": 12.7}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),6.8154,7.3821,3227.448,NG,True,,stop,0.0021015,1203,33,0,7.85,"```json
+{""country"": ""NG"", ""latitude"": 6.8154, ""longitude"": 7.3821}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,9.082,8.6753,3308.622,NG,True,,stop,0.0002955,697,36,0,1.52,"{
+  ""country"": ""NG"",
+  ""latitude"": 9.082,
+  ""longitude"": 8.6753
+}"
+moonshotai/kimi-k2.6,CoT,6.5,6.0,3316.707,NG,True,,stop,0.010423584,986,2958,2881,91.8,"{""reasoning"": ""The vivid red laterite dirt road, tropical Guinea-savanna vegetation, and extremely hazy Harmattan-season sky are classic signatures of rural southern Nigeria; roadside power lines and road-crown wear patterns also fit right-hand traffic common there."", ""country"": ""NG"", ""latitude"": 6.5, ""longitude"": 6.0}"
+google/gemini-3.1-pro-preview,CoT,6.335,5.621,3336.366,NG,True,,stop,0.005692,1286,260,184,10.66,"{
+  ""reasoning"": ""The reddish dirt road, lush tropical vegetation, and the appearance of the pedestrian strongly suggest a location in West Africa. The overall landscape is typical of southern Nigeria or neighboring countries."",
+  ""country"": ""NG"",
+  ""latitude"": 6.335,
+  ""longitude"": 5.621
+}"
+google/gemini-3.5-flash,CoT (effort=high),6.3542,5.6014,3339.4,NG,True,,stop,0.0117105,1285,1087,1002,16.17,"```json
+{""reasoning"": ""The reddish-brown dirt road, lush tropical vegetation, and the appearance of the pedestrian are highly characteristic of the humid forest zones of West Africa. The wide, graded but unpaved road is typical of rural areas in southern Nigeria."", ""country"": ""NG"", ""latitude"": 6.3542, ""longitude"": 5.6014}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),6.4521,5.6324,3343.886,NG,True,,stop,0.0066795,1285,528,450,11.57,"```json
+{""reasoning"": ""The reddish-brown dirt road, lush tropical vegetation, and the appearance of the local pedestrian are highly characteristic of rural southern Nigeria, which has extensive street-level coverage on similar unpaved roads."", ""country"": ""NG"", ""latitude"": 6.4521, ""longitude"": 5.6324}
+```"
+google/gemini-3.5-flash,CoT (effort=low),6.4553,5.6258,3344.671,NG,True,,stop,0.003711,1286,198,144,2.43,"{""reasoning"": ""The reddish-brown dirt road, lush tropical vegetation, and overcast sky are highly characteristic of southern Nigeria."", ""country"": ""NG"", ""latitude"": 6.4553, ""longitude"": 5.6258}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3473.542,,True,True,,,,,,13.12,
+qwen/qwen3.5-9b,no-CoT,6.4541,3.3947,3535.137,NG,True,,stop,7.415e-05,698,29,0,5.14,"{""country"": ""NG"", ""latitude"": 6.4541, ""longitude"": 3.3947}"
+mistralai/mistral-medium-3-5,no-CoT,6.5244,3.3792,3541.311,NG,True,,stop,0.0016245,938,29,0,1.22,"{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+xiaomi/mimo-v2.5,no-CoT,7.38,3.94,3553.113,NG,True,,stop,0.0001111376,932,25,0,1.72,"{""country"": ""NG"", ""latitude"": 7.38, ""longitude"": 3.94}"
+qwen/qwen3.6-27b,no-CoT,7.7377,4.0087,3572.955,NG,True,,stop,0.0002575,697,29,0,16.01,"{""country"": ""NG"", ""latitude"": 7.7377, ""longitude"": 4.0087}"
+openai/gpt-5.5,CoT,6.7421,-1.3368,3977.401,GH,True,,stop,0.0139,890,315,230,7.95,"{""reasoning"":""Humid tropical West African vegetation, laterite dirt road, and rural roadside clearing strongly suggest southern Ghana rather than drier Sahelian areas. With no signage or plates visible, the best fit is a rural road in Ghana’s forest belt near the Ashanti/Eastern regions."",""country"":""GH"",""latitude"":6.7421,""longitude"":-1.3368}"
+openai/gpt-5.5,no-CoT,6.2754,-1.7876,3990.527,GH,True,,stop,0.004785,813,24,0,2.2,"{""country"":""GH"",""latitude"":6.2754,""longitude"":-1.7876}"
+google/gemini-3.1-pro-preview,no-CoT,6.68848,-1.56081,3994.692,GH,True,,stop,0.002828,1204,35,0,8.39,"```json
+{""country"": ""GH"", ""latitude"": 6.68848, ""longitude"": -1.56081}
+```"
+x-ai/grok-4.3,CoT,6.72,-1.65,4004.84,GH,True,,stop,0.0022715,900,593,516,5.0,"{""reasoning"": ""Red laterite dirt road, dense tropical broadleaf vegetation, power lines, and person of sub-Saharan African appearance point to rural West/Central Africa; right-hand road edge and driving-side convention narrow it to a right-side-driving country such as Ghana."", ""country"": ""GH"", ""latitude"": 6.72, ""longitude"": -1.65}"
+qwen/qwen3.6-35b-a3b,no-CoT,7.9465,-1.0231,4024.973,GH,True,,stop,0.0002105,697,29,0,1.04,"{""country"": ""GH"", ""latitude"": 7.9465, ""longitude"": -1.0231}"
+xiaomi/mimo-v2.5,CoT,7.9465,-1.0232,4024.982,GH,True,,stop,0.0001647576,1011,177,91,9.01,"{""reasoning"": ""The reddish soil, lush green vegetation, tropical climate, and rural setting are characteristic of West Africa, likely Ghana or Nigeria. The single paved lane amidst dirt shoulders and the person's attire suggest a developing tropical region consistent with Ghanaian rural infrastructure."", ""country"": ""GH"", ""latitude"": 7.9465, ""longitude"": -1.0232}"
+qwen/qwen3.5-35b-a3b,no-CoT,7.9465,-1.0232,4024.982,GH,True,,stop,0.000209025,697,29,0,7.54,"{""country"": ""GH"", ""latitude"": 7.9465, ""longitude"": -1.0232}"
+google/gemma-4-31b-it,no-CoT,7.5,-5.2,4381.945,CI,True,,stop,6.372e-05,404,28,0,3.26,"```json
+{""country"": ""CI"", ""latitude"": 7.5, ""longitude"": -5.2}
+```"
+qwen/qwen3.5-27b,no-CoT,7.539989,-5.54708,4416.939,CI,True,,stop,0.00025731,697,32,0,1.58,"{""country"": ""CI"", ""latitude"": 7.539989, ""longitude"": -5.54708}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,9.056063652038574,77.2002944946289,5907.182,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,15.4989,73.8278,5907.418,IN,True,,stop,0.0001593,938,31,0,1.06,"{""country"": ""IN"", ""latitude"": 15.4989, ""longitude"": 73.8278}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,9.326638221740723,77.11766052246094,5911.219,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,11.285384178161621,78.2531967163086,6114.971,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,-10.5,-50.0,8523.773,BR,True,,stop,0.00047748,697,25,0,7.69,"{""country"": ""BR"", ""latitude"": -10.5, ""longitude"": -50.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.77,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.23,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.18,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.28,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.09,

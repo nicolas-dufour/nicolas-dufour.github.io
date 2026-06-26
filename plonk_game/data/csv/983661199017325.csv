@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-15.964803120599566,-44.8126846071057,0.0,BR,True,,,,,,,,"Sao Francisco, Sao Francisco, Minas Gerais, BR"
+moonshotai/kimi-k2.6,CoT,-15.0,-47.0,257.773,BR,True,,stop,0.01468476,632,3929,4143,108.41,"{""reasoning"": ""Red oxisol soil and scrubby Cerrado vegetation are diagnostic of central Brazil, and the yellow double centerline with white edge markings match Brazilian rural highway standards."", ""country"": ""BR"", ""latitude"": -15.0, ""longitude"": -47.0}"
+minimax/minimax-m3,no-CoT,-15.0,-47.0,257.773,BR,True,,stop,0.00037242,919,129,135,3.65,"{""country"": ""BR"", ""latitude"": -15.0, ""longitude"": -47.0}"
+moonshotai/kimi-k2.6,no-CoT,-15.5,-47.5,292.226,BR,True,,stop,0.00064215,754,23,0,2.03,"{""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -47.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,-15.7939,-47.8828,328.901,BR,True,,stop,0.0001668,586,31,0,3.41,"{""country"": ""BR"", ""latitude"": -15.7939, ""longitude"": -47.8828}"
+google/gemma-4-31b-it,no-CoT,-15.7801,-47.9292,333.957,BR,True,,stop,7.096e-05,404,36,0,16.68,"```json
+{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.9292}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-13.02884578704834,-41.90888595581055,451.968,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-15.5,-49.2,472.398,BR,True,,stop,0.00075222,997,426,425,9.63,"{""reasoning"": ""Double yellow center line with white edge lines is characteristic of Brazilian highway markings, and the low, scrubby trees with dry-adapted vegetation are typical of the Cerrado biome in central Brazil, likely in Goiás or northern Minas Gerais state."", ""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -49.2}{""reasoning"": ""Double yellow center line with white edge lines is characteristic of Brazilian highway markings, and the low, scrubby trees with dry-adapted vegetation are typical of the Cerrado biome in central Brazil, likely in Goiás or northern Minas Gerais state."", ""country"": ""BR"", ""latitude"": -15.5, ""longitude"": -49.2}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-13.355040550231934,-48.39692306518555,482.54,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-13.338875770568848,-48.653564453125,505.915,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,864.698,BR,True,,stop,0.0014115,786,31,0,1.53,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+anthropic/claude-opus-4.8,no-CoT,-7.5,-41.5,1007.841,BR,True,,stop,0.00484,818,30,0,2.62,"{""country"": ""BR"", ""latitude"": -7.5, ""longitude"": -41.5}"
+anthropic/claude-opus-4.8,CoT,-7.5,-40.0,1076.99,BR,True,,stop,0.006845,949,84,0,3.02,"{""reasoning"": ""Double yellow center lines with yellow edge lines and dry caatinga-like scrub vegetation suggest interior northeastern Brazil."", ""country"": ""BR"", ""latitude"": -7.5, ""longitude"": -40.0}"
+openai/gpt-5.5,no-CoT,-5.3361,-39.2917,1326.51,BR,True,,stop,0.00414,678,25,0,1.69,"{""country"":""BR"",""latitude"":-5.3361,""longitude"":-39.2917}"
+google/gemini-3.5-flash,CoT (effort=medium),11.2154,-73.4212,4363.959,CO,True,,stop,0.0088725,1307,768,686,6.28,"{""reasoning"": ""The double yellow center lines and yellow outer edge lines, combined with the concrete drainage curb (cuneta), are characteristic of Colombian highway design. The dry, scrubby vegetation and flat terrain strongly suggest the Caribbean coastal region of northern Colombia."", ""country"": ""CO"", ""latitude"": 11.2154, ""longitude"": -73.4212}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,18.13620948791504,-68.02005767822266,4564.707,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5225.684,,True,True,,,,,,8.23,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,19.50055694580078,-76.51506805419922,5250.152,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,25.0865,-80.6431,5992.294,US,True,,stop,0.0004626,585,31,0,15.01,"{""country"": ""US"", ""latitude"": 25.0865, ""longitude"": -80.6431}"
+qwen/qwen3.5-35b-a3b,no-CoT,25.7617,-80.1918,6015.136,US,True,,stop,0.000187425,585,31,0,1.86,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+qwen/qwen3.5-122b-a10b,no-CoT,26.0536,-80.1428,6035.389,US,True,,stop,0.0003588,585,39,0,1.8,"{
+  ""country"": ""US"",
+  ""latitude"": 26.0536,
+  ""longitude"": -80.1428
+}"
+x-ai/grok-4.3,CoT,25.76,-80.82,6058.459,US,True,,stop,0.003054,788,962,903,22.42,"{""reasoning"": ""Double solid yellow centerlines + white edge lines are standard North American markings; dense broadleaf trees with dry undergrowth and clear tropical sky match southern Florida landscape."", ""country"": ""US"", ""latitude"": 25.76, ""longitude"": -80.82}"
+openai/gpt-5.5,CoT,20.7286,-88.2574,6255.257,MX,True,,stop,0.012085,755,277,184,13.48,"{""reasoning"":""Right-hand traffic with American-style yellow centerlines and white edge lines, plus the flat tropical dry scrub and concrete roadside drainage are characteristic of rural roads on Mexico’s Yucatán Peninsula. The landscape is very flat limestone lowland, suggesting an inland Yucatán/Quintana Roo road rather than mountainous central Mexico."",""country"":""MX"",""latitude"":20.7286,""longitude"":-88.2574}"
+google/gemini-3.5-flash,CoT (effort=high),20.8235,-88.2012,6257.021,MX,True,,stop,0.0319935,1307,3337,3267,30.57,"```json
+{""reasoning"": ""The flat terrain, dense tropical dry forest (selva baja), concrete drainage curb, and road markings are highly characteristic of the Yucatan Peninsula in Mexico."", ""country"": ""MX"", ""latitude"": 20.8235, ""longitude"": -88.2012}
+```"
+google/gemini-3.5-flash,CoT (effort=low),20.6542,-88.5321,6273.01,MX,True,,stop,0.004455,1308,277,202,3.23,"{""reasoning"": ""The double yellow center lines, yellow shoulder lines, and concrete drainage curb on the right are characteristic of Mexican federal highways, while the flat terrain and dry, dense scrub forest point to the Yucatan Peninsula."", ""country"": ""MX"", ""latitude"": 20.6542, ""longitude"": -88.5321}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),20.6843,-88.5678,6277.991,MX,True,,stop,0.0021525,1225,35,0,7.77,"```json
+{""country"": ""MX"", ""latitude"": 20.6843, ""longitude"": -88.5678}
+```"
+xiaomi/mimo-v2.5,CoT,20.45,-89.2,6315.091,MX,True,,stop,0.0005253976,899,1521,1433,20.06,"{""reasoning"": ""The visual evidence strongly points to the Yucatan Peninsula in Mexico, indicated by the specific 'selva baja' (low deciduous jungle) vegetation, flat terrain, and the characteristic double yellow center line markings with a concrete shoulder ditch typical of Mexican federal or state highways."", ""country"": ""MX"", ""latitude"": 20.45, ""longitude"": -89.2}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,27.524747848510742,-82.5374526977539,6318.104,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,20.8451,-89.5213,6368.096,MX,True,,stop,0.004478,1225,169,134,15.85,"```json
+{""country"": ""MX"", ""latitude"": 20.8451, ""longitude"": -89.5213}
+```"
+qwen/qwen3.5-397b-a17b,CoT,20.96,-89.62,6383.936,MX,True,,stop,0.007029,665,1855,1777,64.97,"{""reasoning"": ""The road features yellow double center lines and a white painted concrete curb, which are standard markings for Mexican highways. The vegetation consists of dry tropical scrub forest (selva baja), characteristic of the Yucatán Peninsula region."", ""country"": ""MX"", ""latitude"": 20.96, ""longitude"": -89.62}"
+google/gemini-3.1-pro-preview,CoT,19.8301,-90.5349,6387.619,MX,True,,stop,0.005086,1307,206,124,10.83,"{
+  ""reasoning"": ""The double yellow center lines and white edge lines are typical of the Americas. The flat terrain, scrubby tropical vegetation, and concrete curb suggest a highway in the Yucatan Peninsula of Mexico."",
+  ""country"": ""MX"",
+  ""latitude"": 19.8301,
+  ""longitude"": -90.5349
+}"
+qwen/qwen3.5-27b,no-CoT,32.5259,-84.8915,6873.131,US,True,,stop,0.00026676,586,44,0,3.79,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 32.5259,
+  ""longitude"": -84.8915
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,20.5,-99.5,7216.361,MX,True,,stop,9.54576e-05,820,25,0,1.58,"{""country"": ""MX"", ""latitude"": 20.5, ""longitude"": -99.5}"
+qwen/qwen3.6-35b-a3b,CoT,20.36,-103.86,7607.232,MX,True,,stop,0.00352514825,665,3541,3438,97.82,"```json
+{
+  ""reasoning"": ""The double yellow center lines and concrete curb on a rural paved road are characteristic of Mexican federal highways (Carreteras Federales). The dry, scrubby vegetation with acacia-like trees suggests a tropical dry forest biome, common in the state of Jalisco, Mexico."",
+  ""country"": ""MX"",
+  ""latitude"": 20.36,
+  ""longitude"": -103.86
+}
+```"
+qwen/qwen3.6-27b,no-CoT,34.0522,-118.2437,9541.112,US,True,,stop,0.0002299,585,32,0,10.54,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,10045.603,US,True,,stop,0.000171375,786,32,0,1.54,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+qwen/qwen3.5-9b,no-CoT,20.5937,78.9629,14084.133,IN,True,,stop,6.325e-05,586,31,0,3.05,"{""country"": ""IN"", ""latitude"": 20.5937, ""longitude"": 78.9629}"
+x-ai/grok-4.3,no-CoT,21.1458,79.0882,14102.185,IN,True,,stop,0.0007384,704,24,0,0.9,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.13,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.28,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.32,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.23,

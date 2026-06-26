@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-38.699199706424,146.46498871631,0.0,AU,True,,,,,,,,"Morwell, Latrobe, Victoria, AU"
+google/gemini-3.5-flash,CoT (effort=medium),-38.5192,145.3715,97.098,AU,True,,stop,0.0085755,1271,741,678,12.92,"{""reasoning"": ""The wooden utility poles, coastal vegetation, red-roofed brick building, and flat terrain are highly characteristic of coastal Victoria, Australia."", ""country"": ""AU"", ""latitude"": -38.5192, ""longitude"": 145.3715}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-37.92473602294922,145.20541381835938,139.616,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-38.155242919921875,144.7643280029297,160.013,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-38.28075408935547,144.50677490234375,176.665,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,-38.33,144.32,191.081,AU,True,,stop,0.0052,1190,235,203,10.22,"```json
+{""country"": ""AU"", ""latitude"": -38.33, ""longitude"": 144.32}
+```"
+google/gemini-3.1-pro-preview,CoT,-38.3333,144.3166,191.287,AU,True,,stop,0.005374,1271,236,163,48.18,"{
+  ""reasoning"": ""The utility pole design, road style, and architecture strongly suggest Australia. The coastal vegetation and climate point towards southern Australia, likely Victoria."",
+  ""country"": ""AU"",
+  ""latitude"": -38.3333,
+  ""longitude"": 144.3166
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-38.343812,143.584125,253.709,AU,True,,stop,0.002145,1190,40,0,1.47,"```json
+{""country"": ""AU"", ""latitude"": -38.343812, ""longitude"": 143.584125}
+```"
+xiaomi/mimo-v2.5,no-CoT,-36.35,145.4,277.584,AU,True,,stop,8.06176e-05,708,28,0,7.03,"{""country"": ""AU"", ""latitude"": -36.35, ""longitude"": 145.40}"
+qwen/qwen3.5-27b,no-CoT,-36.0833,146.9167,293.598,AU,True,,stop,0.0002091,473,32,0,19.21,"{""country"": ""AU"", ""latitude"": -36.0833, ""longitude"": 146.9167}"
+qwen/qwen3.5-9b,no-CoT,-35.9667,147.15,309.814,AU,True,,stop,5.19e-05,474,30,0,3.03,"{""country"": ""AU"", ""latitude"": -35.9667, ""longitude"": 147.15}"
+anthropic/claude-opus-4.8,CoT,-38.35,142.5,347.074,AU,True,,stop,0.006335,797,94,0,3.9,"{""reasoning"": ""Flat coastal rural town with overcast sky, palms and wooden power poles typical of southern Australia; brick building and layout suggest a small Victorian coastal settlement."", ""country"": ""AU"", ""latitude"": -38.35, ""longitude"": 142.5}"
+minimax/minimax-m3,CoT,-38.38,142.49,347.511,AU,True,,stop,0.00121302,845,848,965,16.59,"{""reasoning"": ""Left-hand driving, Australian/NZ-style wooden power poles with distinctive crossbar configuration, very green pastoral landscape under overcast sky, modest rural commercial buildings, and palm-temperate vegetation mix point to a small coastal town in southeastern Australia, likely western Victoria."", ""country"": ""AU"", ""latitude"": -38.38, ""longitude"": 142.49}"
+anthropic/claude-opus-4.8,no-CoT,-38.3,142.4,356.489,AU,True,,stop,0.00408,666,30,0,2.04,"{""country"": ""AU"", ""latitude"": -38.3, ""longitude"": 142.4}"
+moonshotai/kimi-k2.6,CoT,-38.15,142.35,363.601,AU,True,,stop,0.01222422,682,2932,3426,48.18,"{""reasoning"": ""Rural flat landscape with distinctive Australian wooden power poles and cross-arms, green pastures, and terracotta-roof building with ornamental palms match southwestern Victoria."", ""country"": ""AU"", ""latitude"": -38.15, ""longitude"": 142.35}"
+google/gemini-3.5-flash,CoT (effort=high),-38.3836,142.2435,368.791,AU,True,,stop,0.0372855,1271,3931,3840,25.66,"```json
+{""reasoning"": ""The coastal vegetation, flat terrain, and distinctive wooden utility poles are characteristic of southern Australia. The park layout with a rotunda, public facilities, and landscaped palm trees strongly matches the foreshore reserve at Martin's Point in Port Fairy, Victoria."", ""country"": ""AU"", ""latitude"": -38.3836, ""longitude"": 142.2435}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-38.3742,142.2351,369.643,AU,True,,stop,0.0043725,1271,274,210,3.57,"{""reasoning"": ""The wooden utility poles, flat coastal terrain, architecture of the building on the left, and vegetation are highly characteristic of coastal Victoria, Australia."", ""country"": ""AU"", ""latitude"": -38.3742, ""longitude"": 142.2351}"
+qwen/qwen3.6-27b,no-CoT,-35.1333,149.1333,461.996,AU,True,,stop,0.0001963,473,32,0,9.76,"{""country"": ""AU"", ""latitude"": -35.1333, ""longitude"": 149.1333}"
+xiaomi/mimo-v2.5,CoT,-33.5,150.5,682.202,AU,True,,stop,0.0002061976,787,437,370,5.43,"{""reasoning"": ""The road layout, wooden utility poles with cross arms, and architectural style suggest a rural Australian setting. The vegetation and overcast sky align with coastal New South Wales conditions."", ""country"": ""AU"", ""latitude"": -33.5, ""longitude"": 150.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,-33.8688,151.2093,684.846,AU,True,,stop,0.0003172,473,40,0,2.35,"{
+  ""country"": ""AU"",
+  ""latitude"": -33.8688,
+  ""longitude"": 151.2093
+}"
+x-ai/grok-4.3,no-CoT,-34.2833,140.6167,716.932,AU,True,,stop,0.0005984,592,24,0,1.09,"{""country"": ""AU"", ""latitude"": -34.2833, ""longitude"": 140.6167}"
+mistralai/mistral-medium-3-5,no-CoT,-32.9282,151.7664,799.843,AU,True,,stop,0.001191,634,32,0,1.0,"{""country"": ""AU"", ""latitude"": -32.9282, ""longitude"": 151.7664}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-32.82175064086914,151.64657592773438,803.225,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,-34.8215,138.6231,820.464,AU,True,,stop,6.418e-05,406,37,0,6.43,"```json
+{""country"": ""AU"", ""latitude"": -34.8215, ""longitude"": 138.6231}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-32.69827651977539,151.8431854248047,824.928,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,-34.2589,138.7821,845.436,AU,True,,stop,0.00010295,473,32,0,7.61,"{""country"": ""AU"", ""latitude"": -34.2589, ""longitude"": 138.7821}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-31.79523277282715,152.6734619140625,951.911,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,-27.3845,152.9123,1393.3,AU,True,,stop,0.00036828,473,32,0,7.7,"{""country"": ""AU"", ""latitude"": -27.3845, ""longitude"": 152.9123}"
+x-ai/grok-4.3,CoT,-26.65,153.05,1473.674,AU,True,,stop,0.002124,676,646,589,4.8,"{""reasoning"": ""Palm trees, wooden power poles, left-side building layout implying LHT, rural Australian architecture with tiled roof and open paddocks indicate Queensland, Australia."", ""country"": ""AU"", ""latitude"": -26.65, ""longitude"": 153.05}"
+qwen/qwen3.6-35b-a3b,no-CoT,-43.5321,172.6365,2247.178,NZ,True,,stop,0.00010295,473,32,0,9.61,"{""country"": ""NZ"", ""latitude"": -43.5321, ""longitude"": 172.6365}"
+openai/gpt-5.5,CoT,-39.1185,173.9567,2370.07,NZ,True,,stop,0.018915,621,527,436,25.47,"{""reasoning"":""Lush dairy pasture, wet overcast climate, left-side road environment, wooden utility poles, and NZ/Australasian rural architecture point strongly to coastal Taranaki on New Zealand’s North Island. The flat coastal setting with palms and volcanic-region greenery is most consistent with the New Plymouth/Oakura area."",""country"":""NZ"",""latitude"":-39.1185,""longitude"":173.9567}"
+openai/gpt-5.5,no-CoT,-39.9337,174.9872,2447.076,NZ,True,,stop,0.00344,544,24,0,1.55,"{""country"":""NZ"",""latitude"":-39.9337,""longitude"":174.9872}"
+mistralai/mistral-small-2603,no-CoT,40.0755,-74.2587,16542.69,US,True,,stop,0.0001137,634,31,0,3.29,"{""country"": ""US"", ""latitude"": 40.0755, ""longitude"": -74.2587}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.68,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.94,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.83,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.34,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.43,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.2,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.13,

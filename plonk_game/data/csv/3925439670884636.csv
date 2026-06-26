@@ -1,0 +1,60 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,7.5972930843521,-74.810232312465,0.0,CO,True,,,,,,,,"El Bagre, None, Antioquia, CO"
+google/gemini-3.5-flash,CoT (effort=low),8.7521,-75.8814,174.322,CO,True,,stop,0.004167,1308,245,187,2.93,"{""reasoning"": ""The concrete slab road with a central seam, lush tropical vegetation, and wooden utility poles are highly characteristic of rural Colombia."", ""country"": ""CO"", ""latitude"": 8.7521, ""longitude"": -75.8814}"
+google/gemini-3.1-pro-preview,no-CoT,10.4532,-73.2541,360.615,CO,True,,stop,0.00287,1225,35,0,2.94,"```json
+{""country"": ""CO"", ""latitude"": 10.4532, ""longitude"": -73.2541}
+```"
+google/gemini-3.1-pro-preview,CoT,10.9638,-74.7963,374.342,CO,True,,stop,0.005686,1307,256,177,11.08,"{
+  ""reasoning"": ""The concrete road with a central seam and the utility pole with a yellow band near the base are strong indicators of Colombia. The lush, tropical vegetation suggests a lowland region."",
+  ""country"": ""CO"",
+  ""latitude"": 10.9638,
+  ""longitude"": -74.7963
+}"
+google/gemini-3.5-flash,CoT (effort=high),4.15,-73.6,406.017,CO,True,,stop,0.0096465,1307,854,802,8.33,"{""reasoning"": ""The concrete slab road, lush tropical vegetation with palm trees, and barbed wire fencing are highly characteristic of rural Colombia."", ""country"": ""CO"", ""latitude"": 4.15, ""longitude"": -73.6}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),4.1245,-73.6123,408.252,CO,True,,stop,0.0021435,1225,34,0,18.56,"```json
+{""country"": ""CO"", ""latitude"": 4.1245, ""longitude"": -73.6123}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),4.1125,-73.5432,412.051,CO,True,,stop,0.0084405,1307,720,658,7.94,"{""reasoning"": ""The concrete slab road without painted lines, tropical vegetation, and flat terrain are highly characteristic of rural Colombia, particularly in the Llanos region."", ""country"": ""CO"", ""latitude"": 4.1125, ""longitude"": -73.5432}"
+mistralai/mistral-small-2603,no-CoT,37.7459,-122.4783,5837.758,US,True,,stop,0.0001371,786,32,0,4.31,"{""country"": ""US"", ""latitude"": 37.7459, ""longitude"": -122.4783}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8333.697,unknown,True,,stop,5.148e-05,404,23,0,7.62,"{""country"": ""unknown"", ""latitude"": 0.0, ""longitude"": 0.0}"
+qwen/qwen3.5-35b-a3b,no-CoT,26.4499,80.3319,15375.557,IN,True,,stop,0.00011304,586,31,0,3.55,"{""country"": ""IN"", ""latitude"": 26.4499, ""longitude"": 80.3319}"
+qwen/qwen3.6-35b-a3b,no-CoT,26.8467,80.9462,15378.695,IN,True,,stop,0.0001668,586,31,0,2.54,"{""country"": ""IN"", ""latitude"": 26.8467, ""longitude"": 80.9462}"
+xiaomi/mimo-v2.5,no-CoT,19.076,72.8777,15396.292,IN,True,,stop,9.68576e-05,820,30,0,1.51,"{""country"": ""IN"", ""latitude"": 19.076, ""longitude"": 72.8777}"
+x-ai/grok-4.3,no-CoT,21.1458,79.0882,15732.999,IN,True,,stop,0.0007384,704,24,0,1.97,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+minimax/minimax-m3,CoT,23.58,89.82,16167.097,BD,True,,stop,0.00077742,997,447,462,15.32,"{""reasoning"": ""Narrow concrete-slab rural road with lush tropical vegetation, overcast monsoon sky, blue-painted rural structure, and electric pole style are highly characteristic of rural Bangladesh or West Bengal. The concrete slab pavement, informal fencing, and tree types point to Bangladesh."", ""country"": ""BD"", ""latitude"": 23.58, ""longitude"": 89.82}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,23.423019409179688,89.95842742919922,16189.098,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,23.405168533325195,89.92224884033203,16189.156,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,12.9716,77.5946,16204.163,IN,True,,stop,0.0002345,586,44,0,3.45,"```json
+{
+  ""country"": ""IN"",
+  ""latitude"": 12.9716,
+  ""longitude"": 77.5946
+}
+```"
+x-ai/grok-4.3,CoT,10.8505,76.2711,16213.843,IN,True,,stop,0.002379,788,692,618,6.58,"{""reasoning"": ""Left-hand traffic (oncoming vehicle position), tropical broadleaf vegetation, concrete rural road with expansion joints and no markings, and distant white sign are characteristic of India. Blue building and lush greenery further support South Asian monsoon climate."", ""country"": ""IN"", ""latitude"": 10.8505, ""longitude"": 76.2711}"
+qwen/qwen3.6-27b,no-CoT,11.0168,76.9558,16267.55,IN,True,,stop,0.0002279,585,31,0,6.66,"{""country"": ""IN"", ""latitude"": 11.0168, ""longitude"": 76.9558}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,23.046823501586914,91.54720306396484,16298.49,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,15.25,120.85,16943.91,PH,True,,stop,0.0002714376,899,614,527,11.38,"{""reasoning"": ""The concrete road construction and lush tropical vegetation with acacia-like trees are highly characteristic of rural provincial roads in the Philippines. The overcast sky and general infrastructure style, including utility poles and simple roadside fencing, further support a Southeast Asian, specifically Philippine, location."", ""country"": ""PH"", ""latitude"": 15.25, ""longitude"": 120.85}"
+openai/gpt-5.5,CoT,15.3021,120.7034,16948.21,PH,True,,stop,0.014065,755,343,263,16.13,"{""reasoning"":""The narrow unmarked concrete rural road, tropical vegetation, simple wire fencing, and utility-pole/roadside style are characteristic of barangay roads in the Philippines. With no readable signage, the flat lush landscape points most plausibly to rural Central Luzon."",""country"":""PH"",""latitude"":15.3021,""longitude"":120.7034}"
+google/gemma-4-31b-it,no-CoT,14.5995,120.9842,16994.205,PH,True,,stop,5.148e-05,262,37,0,9.82,"```json
+{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}
+```"
+mistralai/mistral-medium-3-5,no-CoT,14.5995,120.9842,16994.205,PH,True,,stop,0.001419,786,32,0,2.23,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+qwen/qwen3.5-9b,no-CoT,14.5995,120.9842,16994.205,PH,True,,stop,0.00010745,585,32,0,7.23,"{""country"": ""PH"", ""latitude"": 14.5995, ""longitude"": 120.9842}"
+openai/gpt-5.5,no-CoT,14.2691,121.4113,16996.083,PH,True,,stop,0.00408,678,23,0,1.5,"{""country"":""PH"",""latitude"":14.2691,""longitude"":121.4113}"
+moonshotai/kimi-k2.6,CoT,14.15,121.25,17017.153,PH,True,,stop,0.0092924,832,2165,2542,36.51,"{""reasoning"": ""Tropical vegetation and rural concrete road with expansion joints are characteristic of Southeast Asia, particularly the Philippines. The wire fence with wooden posts and absence of road markings match rural Philippine barangay roads."", ""country"": ""PH"", ""latitude"": 14.15, ""longitude"": 121.25}"
+qwen/qwen3.5-397b-a17b,no-CoT,14.5234,101.3876,17519.888,TH,True,,stop,0.00043548,585,32,0,3.44,"{""country"": ""TH"", ""latitude"": 14.5234, ""longitude"": 101.3876}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,14.081025123596191,99.49012756347656,17523.873,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,14.172329902648926,100.04702758789062,17528.802,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,14.15855884552002,100.19447326660156,17533.955,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,13.7563,100.5018,17584.942,TH,True,,stop,0.0002523,585,32,0,3.21,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+anthropic/claude-opus-4.8,no-CoT,-7.5,111.5,19319.424,ID,True,,stop,0.00484,818,30,0,9.03,"{""country"": ""ID"", ""latitude"": -7.5, ""longitude"": 111.5}"
+anthropic/claude-opus-4.8,CoT,-6.8,106.9,19806.627,ID,True,,stop,0.00722,949,99,0,10.87,"{""reasoning"": ""Concrete rural road with tropical vegetation, teak-like trees, and a motorcycle suggests Southeast Asia; lush green and concrete paving typical of rural Indonesia."", ""country"": ""ID"", ""latitude"": -6.8, ""longitude"": 106.9}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.69,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,9.38,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.3,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,15.62,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.21,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.28,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.19,

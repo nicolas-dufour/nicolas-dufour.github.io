@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-43.94525283583,-176.53417474305,0.0,NZ,True,,,,,,,,"Waitangi, None, Chatham Islands, NZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-45.85515594482422,-170.45872497558594,523.35,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-39.76333999633789,176.59800720214844,734.246,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-45.90034103393555,-167.39846801757812,750.916,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,-41.286,174.886,761.33,NZ,True,,stop,6.128e-05,392,35,0,4.94,"```json
+{""country"": ""NZ"", ""latitude"": -41.286, ""longitude"": 174.886}
+```"
+qwen/qwen3.5-9b,no-CoT,-41.1234,174.8765,770.054,NZ,True,,stop,6.18e-05,570,32,0,4.02,"{""country"": ""NZ"", ""latitude"": -41.1234, ""longitude"": 174.8765}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-43.19139099121094,172.84559631347656,859.129,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-39.008544921875,175.1446533203125,883.482,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,-39.2833,174.7833,887.872,NZ,True,,stop,0.0002475,569,32,0,5.26,"{""country"": ""NZ"", ""latitude"": -39.2833, ""longitude"": 174.7833}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-39.73322296142578,173.80564880371094,926.356,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,-45.85,170.3,1057.138,NZ,True,,stop,0.0032015,756,1037,966,10.51,"{""reasoning"": ""Yellow diamond warning sign + left-side driving position + narrow unmarked asphalt + tussocky green hills + wooden utility poles match NZ rural roads (not UK/EU triangular signs). Landscape and vegetation consistent with South Island pasture."", ""country"": ""NZ"", ""latitude"": -45.85, ""longitude"": 170.3}"
+moonshotai/kimi-k2.6,no-CoT,-46.3667,169.9667,1090.703,NZ,True,,stop,0.000305388,717,25,0,2.99,"{""country"": ""NZ"", ""latitude"": -46.3667, ""longitude"": 169.9667}"
+openai/gpt-5.5,no-CoT,-46.2502,169.7478,1105.302,NZ,True,,stop,0.00392,640,24,0,1.94,"{""country"":""NZ"",""latitude"":-46.2502,""longitude"":169.7478}"
+openai/gpt-5.5,CoT,-46.3927,169.5784,1120.568,NZ,True,,stop,0.017205,717,454,381,14.69,"{""reasoning"":""Left-side driving with yellow diamond warning signs and narrow unmarked rural sealed roads point strongly to New Zealand; the cool, lush rolling pasture with plantation-covered hills fits Southland/Otago, especially the Catlins area."",""country"":""NZ"",""latitude"":-46.3927,""longitude"":169.5784}"
+x-ai/grok-4.3,no-CoT,-46.45,169.55,1123.732,NZ,True,,stop,0.0006934,672,22,0,7.27,"{""country"": ""NZ"", ""latitude"": -46.45, ""longitude"": 169.55}"
+google/gemini-3.1-pro-preview,no-CoT,-46.55,169.0,1167.068,NZ,True,,stop,0.005066,1201,222,191,3.8,"```json
+{""country"": ""NZ"", ""latitude"": -46.55, ""longitude"": 169.0}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-46.5625,168.8432,1179.126,NZ,True,,stop,0.0099075,1283,887,816,11.94,"```json
+{""reasoning"": ""The rolling green landscape, wooden utility poles, left-hand traffic, and yellow diamond warning sign are highly characteristic of rural South Island, New Zealand."", ""country"": ""NZ"", ""latitude"": -46.5625, ""longitude"": 168.8432}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),-46.5832,168.8245,1180.899,NZ,True,,stop,0.006576,1282,517,448,4.4,"{""reasoning"": ""The rolling green hills, overcast sky, left-hand driving, wooden utility poles, and yellow diamond warning sign are highly characteristic of rural Southland in New Zealand."", ""country"": ""NZ"", ""latitude"": -46.5832, ""longitude"": 168.8245}"
+google/gemini-3.1-pro-preview,CoT,-46.2154,168.5213,1198.298,NZ,True,,stop,0.005948,1282,282,197,17.42,"{
+  ""reasoning"": ""Left-hand driving, yellow diamond warning sign, and specific utility pole design with a metal band strongly indicate New Zealand. The rolling green landscape and overcast weather are characteristic of the southern South Island."",
+  ""country"": ""NZ"",
+  ""latitude"": -46.2154,
+  ""longitude"": 168.5213
+}"
+mistralai/mistral-medium-3-5,no-CoT,-45.0312,168.3415,1204.034,NZ,True,,stop,0.001362,748,32,0,0.91,"{""country"": ""NZ"", ""latitude"": -45.0312, ""longitude"": 168.3415}"
+anthropic/claude-opus-4.8,CoT,-46.2,168.4,1207.371,NZ,True,,stop,0.00718,911,105,0,9.35,"{""reasoning"": ""Left-hand traffic on a narrow rural road, rolling tussocky hills, overcast sky, and yellow diamond warning sign suggest New Zealand's South Island farmland, likely Southland."", ""country"": ""NZ"", ""latitude"": -46.2, ""longitude"": 168.4}"
+anthropic/claude-opus-4.8,no-CoT,-46.2,168.4,1207.371,NZ,True,,stop,0.004675,780,31,0,15.51,"{""country"": ""NZ"", ""latitude"": -46.2, ""longitude"": 168.4}"
+google/gemini-3.5-flash,CoT (effort=low),-46.5625,168.3751,1214.504,NZ,True,,stop,0.0047325,1283,312,237,9.65,"{""reasoning"": ""The rolling green landscape, overcast sky, wooden utility poles, and left-hand driving configuration with a yellow diamond warning sign are highly characteristic of rural southern New Zealand, particularly the Southland region."", ""country"": ""NZ"", ""latitude"": -46.5625, ""longitude"": 168.3751}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-46.5832,168.3514,1216.633,NZ,True,,stop,0.002124,1200,36,0,1.56,"```json
+{""country"": ""NZ"", ""latitude"": -46.5832, ""longitude"": 168.3514}
+```"
+qwen/qwen3.6-35b-a3b,CoT,-42.65,147.15,2918.705,AU,True,,stop,0.12672128755,649,131175,131070,1052.36,"{""reasoning"": ""The yellow diamond-shaped warning sign is a definitive indicator of Australian road signage, distinguishing it from the red-bordered triangles used in Europe and New Zealand. The left-hand traffic, concrete utility poles, and reddish soil in the ditch further confirm an Australian location, likely in the temperate, hilly regions of Tasmania or Victoria."", ""country"": ""AU"", ""latitude"": -42.65, ""longitude"": 147.15}"
+xiaomi/mimo-v2.5,no-CoT,-38.2,145.0,3256.54,AU,True,,stop,9.34976e-05,804,26,0,2.38,"{""country"": ""AU"", ""latitude"": -38.2, ""longitude"": 145.0}"
+mistralai/mistral-small-2603,CoT,-36.8,145.5,3281.907,AU,True,,stop,0.0004563,830,553,612,12.93,"{""reasoning"": ""Australian license plate on the vehicle is the strongest clue, combined with the temperate grassland vegetation and rolling hills typical of southeastern Australia."", ""country"": ""AU"", ""latitude"": -36.8, ""longitude"": 145.5}"
+qwen/qwen3.5-35b-a3b,no-CoT,-34.2456,138.7892,3951.436,AU,True,,stop,0.0001118,570,32,0,4.66,"{""country"": ""AU"", ""latitude"": -34.2456, ""longitude"": 138.7892}"
+minimax/minimax-m3,no-CoT,-54.8,-68.3,7124.702,AR,True,,stop,0.00025668,866,23,0,5.88,"{""country"": ""AR"", ""latitude"": -54.8, ""longitude"": -68.3}"
+qwen/qwen3.5-397b-a17b,no-CoT,-23.5505,-46.6333,10941.72,BR,True,,stop,0.0003802,569,31,0,8.34,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.5-397b-a17b,CoT,-22.05,-47.9,11006.29,BR,True,,stop,0.0123438,649,3334,3245,164.27,"{
+""reasoning"": ""The reddish-brown soil (laterite) combined with right-hand traffic (truck position), wooden utility poles, and a yellow diamond warning sign strongly indicates rural Brazil, specifically the agricultural interior of São Paulo state known for sugar cane production."",
+""country"": ""BR"",
+""latitude"": -22.05,
+""longitude"": -47.90
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,-33.9249,18.4241,11224.679,ZA,True,,stop,0.000181,569,31,0,0.56,"{""country"": ""ZA"", ""latitude"": -33.9249, ""longitude"": 18.4241}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,15116.52,,True,True,,,,,,6.39,
+moonshotai/kimi-k2.6,CoT,53.3,-9.5,18608.591,IE,True,,stop,0.0159562,796,3800,4226,28.09," {""reasoning"": ""The yellow diamond-shaped warning sign on the left is characteristic of Irish road signage, and the left-hand traffic position of the vehicle confirms a left-driving country; the lush green pastures, wooden utility poles, and narrow unmarked rural road are typical of the Irish countryside."", ""country"": ""IE"", ""latitude"": 53.3, ""longitude"": -9.5}"
+minimax/minimax-m3,CoT,53.75,-8.25,18631.882,IE,True,,stop,0.00085446,957,524,448,27.86,"{""reasoning"": ""Left-hand traffic on a narrow rural road, yellow diamond warning sign (Irish style, not UK triangular), wooden utility poles, and rolling green moorland/bog landscape with overcast maritime sky are all characteristic of rural western Ireland."", ""country"": ""IE"", ""latitude"": 53.75, ""longitude"": -8.25}"
+qwen/qwen3.5-122b-a10b,no-CoT,52.1383,-9.3274,18701.618,IE,True,,stop,0.0002106,570,30,0,6.79,"{""country"": ""IE"", ""latitude"": 52.1383, ""longitude"": -9.3274}"
+qwen/qwen3.6-27b,no-CoT,52.65,-8.55,18704.341,IE,True,,stop,0.0002131,569,26,0,15.66,"{""country"": ""IE"", ""latitude"": 52.65, ""longitude"": -8.55}"
+mistralai/mistral-small-2603,no-CoT,53.5213,-6.3919,18730.64,IE,True,,stop,0.0001302,748,30,0,4.36,"{""country"": ""IE"", ""latitude"": 53.5213, ""longitude"": -6.3919}"
+xiaomi/mimo-v2.5,CoT,52.3,-3.5,18953.029,GB,True,,stop,0.0004083576,883,1111,1049,12.56,"{""reasoning"": ""Driving on the left and yellow rear license plate on the truck indicate the United Kingdom; rural green landscape with overcast sky and wooden utility poles supports this."", ""country"": ""GB"", ""latitude"": 52.3, ""longitude"": -3.5}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.19,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.27,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.35,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.12,

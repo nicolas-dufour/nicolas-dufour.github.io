@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-23.699398228533,22.815122058818,0.0,BW,True,,,,,,,,"Kang, None, Kgalagadi, BW"
+google/gemma-4-31b-it,no-CoT,-22.345,24.658,241.344,BW,True,,stop,7.044e-05,406,34,0,1.31,"```json
+{""country"": ""BW"", ""latitude"": -22.345, ""longitude"": 24.658}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-24.9951171875,25.079090118408203,270.843,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-25.016403198242188,25.105710983276367,274.37,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-25.02663803100586,25.12325096130371,276.472,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),-21.2543,25.1234,360.771,BW,True,,stop,0.0036705,1271,196,119,9.12,"{""reasoning"": ""The flat, dry landscape with sparse green shrubs, wooden T-shaped utility poles, and a white car hood indicates Botswana. The dark, narrow asphalt road without markings is typical of rural roads in the country."", ""country"": ""BW"", ""latitude"": -21.2543, ""longitude"": 25.1234}"
+anthropic/claude-opus-4.8,CoT,-21.5,25.5,368.457,BW,True,,stop,0.006285,797,92,0,2.89,"{""reasoning"": ""Flat semi-arid savanna with scattered acacia bush, fresh narrow tarmac road, and power lines typical of rural Botswana/Namibia interior."", ""country"": ""BW"", ""latitude"": -21.5, ""longitude"": 25.5}"
+anthropic/claude-opus-4.8,no-CoT,-21.17,25.55,397.611,BW,True,,stop,0.00408,666,30,0,9.36,"{""country"": ""BW"", ""latitude"": -21.17, ""longitude"": 25.55}"
+google/gemini-3.1-pro-preview,CoT,-22.3,26.5,407.984,BW,True,,stop,0.00534,1272,233,154,4.43,"{
+  ""reasoning"": ""The flat, semi-arid landscape with scattered acacia-like trees and dry grass is characteristic of Southern Africa. The lack of road markings and specific utility pole style point towards a rural road in Botswana."",
+  ""country"": ""BW"",
+  ""latitude"": -22.3,
+  ""longitude"": 26.5
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-22.3981,26.6894,421.97,BW,True,,stop,0.0020985,1189,35,0,7.5,"```json
+{""country"": ""BW"", ""latitude"": -22.3981, ""longitude"": 26.6894}
+```"
+google/gemini-3.5-flash,CoT (effort=high),-22.382,26.685,422.187,BW,True,,stop,0.0088815,1271,775,697,6.92,"{""reasoning"": ""The flat, arid landscape with acacia shrubs, sandy soil, and wooden utility poles is highly characteristic of rural Botswana. The white car hood and lack of road markings on this paved road point to a secondary route in the country."", ""country"": ""BW"", ""latitude"": -22.382, ""longitude"": 26.685}"
+google/gemini-3.5-flash,CoT (effort=medium),-22.4012,26.7154,424.348,BW,True,,stop,0.0066585,1271,528,454,4.77,"{""reasoning"": ""The flat savannah landscape with acacia shrubs, sandy soil, and wooden utility poles is characteristic of Botswana. The white vehicle hood visible at the bottom matches the Google Street View car used in the country."", ""country"": ""BW"", ""latitude"": -22.4012, ""longitude"": 26.7154}"
+openai/gpt-5.5,CoT,-22.3572,26.7104,425.618,BW,True,,stop,0.013275,621,339,262,8.46,"{""reasoning"":""Flat semi-arid savanna with acacia scrub, unmarked narrow black asphalt, and simple utility poles strongly suggests rural Botswana rather than neighboring countries. The road/landscape fits the eastern Botswana corridor around Serowe/Mahalapye."",""country"":""BW"",""latitude"":-22.3572,""longitude"":26.7104}"
+openai/gpt-5.5,no-CoT,-22.3285,26.7082,426.577,BW,True,,stop,0.00344,544,24,0,7.54,"{""country"":""BW"",""latitude"":-22.3285,""longitude"":26.7082}"
+google/gemini-3.1-pro-preview,no-CoT,-22.2345,26.789,438.217,BW,True,,stop,0.0028,1190,35,0,8.47,"```json
+{""country"": ""BW"", ""latitude"": -22.2345, ""longitude"": 26.7890}
+```"
+moonshotai/kimi-k2.6,CoT,-21.5,26.5,450.411,BW,True,,stop,0.014301468,682,4111,4049,187.4,"{""reasoning"": ""Left-hand traffic on a straight sealed road through flat acacia savanna with scattered cumulus clouds and simple wooden power poles is characteristic of Botswana's rural highway network."", ""country"": ""BW"", ""latitude"": -21.5, ""longitude"": 26.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,-28.1234,24.7891,530.035,ZA,True,,stop,0.00018772,474,31,0,5.3,"{""country"": ""ZA"", ""latitude"": -28.1234, ""longitude"": 24.7891}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-22.778324127197266,28.0539493560791,544.942,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-20.983402252197266,27.29235076904297,550.607,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-22.5,28.2,566.636,BW,True,,stop,0.00068466,843,411,336,21.35,"{""reasoning"": ""Flat bushveld terrain with dry grasses, scattered acacia-like trees, freshly paved rural road with no markings yet, and wooden utility poles are characteristic of southern African savanna regions, likely Botswana or South Africa's Limpopo province."", ""country"": ""BW"", ""latitude"": -22.5, ""longitude"": 28.2}"
+x-ai/grok-4.3,CoT,-28.12,25.67,568.402,ZA,True,,stop,0.002224,676,686,612,5.13,"{""reasoning"": ""Flat savanna landscape with scattered acacia-like trees/bushes, open sky, and rural two-lane asphalt road with overhead power lines match South African veldt; right-hand driving implied by typical GeoGuessr-style rural imagery from ZA."", ""country"": ""ZA"", ""latitude"": -28.12, ""longitude"": 25.67}"
+qwen/qwen3.6-35b-a3b,no-CoT,-25.7479,28.1804,587.757,ZA,True,,stop,0.00010617035,473,31,0,23.33,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 28.1804}"
+x-ai/grok-4.3,no-CoT,-25.746,28.188,588.386,ZA,True,,stop,0.0005934,592,22,0,0.85,"{""country"": ""ZA"", ""latitude"": -25.746, ""longitude"": 28.188}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.7461,28.2293,592.238,ZA,True,,stop,9.736e-05,474,31,0,2.72,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.2293}"
+qwen/qwen3.5-9b,no-CoT,-29.4526,25.1833,681.638,ZA,True,,stop,5.205e-05,474,31,0,9.84,"{""country"": ""ZA"", ""latitude"": -29.4526, ""longitude"": 25.1833}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-23.116233825683594,30.686010360717773,805.683,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,-18.9237,47.5346,2611.53,MG,True,,stop,0.0001303176,787,166,87,2.51,"{""reasoning"": ""The image shows a left-hand traffic drive with red soil characteristic of the lateritic terrain found in Madagascar, and the vegetation and flat landscape are consistent with the central highlands or coastal plains of the region."", ""country"": ""MG"", ""latitude"": -18.9237, ""longitude"": 47.5346}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3606.306,,True,True,,,,,,6.58,
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,6996.137,BR,True,,stop,0.0011835,634,31,0,0.93,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+xiaomi/mimo-v2.5,no-CoT,-15.78,-47.93,7386.568,BR,True,,stop,8.03376e-05,708,27,0,2.47,"{""country"": ""BR"", ""latitude"": -15.78, ""longitude"": -47.93}"
+qwen/qwen3.5-27b,no-CoT,39.8283,-98.5795,14298.658,US,True,,stop,0.0002067,473,31,0,40.25,"{""country"": ""US"", ""latitude"": 39.8283, ""longitude"": -98.5795}"
+qwen/qwen3.6-27b,no-CoT,31.9686,-99.9018,14371.548,US,True,,stop,0.0002414,474,31,0,316.35,"{""country"": ""US"", ""latitude"": 31.9686, ""longitude"": -99.9018}"
+qwen/qwen3.5-397b-a17b,no-CoT,33.4484,-101.8552,14567.355,US,True,,stop,0.00029445,473,32,0,11.45,"{""country"": ""US"", ""latitude"": 33.4484, ""longitude"": -101.8552}"
+mistralai/mistral-small-2603,no-CoT,40.7589,-111.8883,15413.527,US,True,,stop,0.0001143,634,32,0,1.81,"{""country"": ""US"", ""latitude"": 40.7589, ""longitude"": -111.8883}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.26,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.41,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.7,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,13.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.24,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.26,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.25,

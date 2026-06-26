@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-24.841750400754,-53.615936046171,0.0,BR,True,,,,,,,,"Toledo, Toledo, Parana, BR"
+google/gemini-3.1-pro-preview,CoT,-24.95,-53.45,20.616,BR,True,,stop,0.006118,1271,298,227,17.79,"{
+  ""reasoning"": ""The wide grassy median, agricultural landscape, and vehicle styles strongly suggest Brazil. The flat terrain and vegetation are characteristic of the southern agricultural states like Paraná."",
+  ""country"": ""BR"",
+  ""latitude"": -24.95,
+  ""longitude"": -53.45
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-24.990623474121094,-53.82337188720703,26.676,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-24.99957275390625,-53.82296371459961,27.273,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-25.13871192932129,-53.71415328979492,34.472,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-23.3542,-51.1425,300.642,BR,True,,stop,0.0021,1190,35,0,8.25,"```json
+{""country"": ""BR"", ""latitude"": -23.3542, ""longitude"": -51.1425}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-22.5,-49.0,537.323,BR,True,,stop,0.004538,1189,180,151,4.33,"```json
+{""country"": ""BR"", ""latitude"": -22.5, ""longitude"": -49.0}
+```"
+mistralai/mistral-medium-3-5,no-CoT,-30.0346,-51.2177,623.983,BR,True,,stop,0.0011835,634,31,0,0.97,"{""country"": ""BR"", ""latitude"": -30.0346, ""longitude"": -51.2177}"
+google/gemini-3.5-flash,CoT (effort=high),-21.7833,-48.1167,656.398,BR,True,,stop,0.0108795,1271,997,931,21.8,"{""reasoning"": ""The divided highway with a wide grassy median, flat agricultural landscape with reddish soil, and common Brazilian vehicle models indicate a state highway in São Paulo, Brazil."", ""country"": ""BR"", ""latitude"": -21.7833, ""longitude"": -48.1167}"
+google/gemini-3.5-flash,CoT (effort=medium),-21.7833,-47.9167,673.943,BR,True,,stop,0.0073605,1271,606,539,8.74,"{""reasoning"": ""The divided highway with a wide grassy median, red soil in the agricultural fields, and flat terrain are highly characteristic of the interior of São Paulo state, Brazil."", ""country"": ""BR"", ""latitude"": -21.7833, ""longitude"": -47.9167}"
+moonshotai/kimi-k2.6,no-CoT,-22.5,-47.5,674.978,BR,True,,stop,0.000263232,603,23,0,1.57,"{""country"": ""BR"", ""latitude"": -22.5, ""longitude"": -47.5}"
+google/gemini-3.5-flash,CoT (effort=low),-21.5234,-47.8145,698.285,BR,True,,stop,0.0041295,1271,247,178,9.21,"{""reasoning"": ""The flat agricultural landscape with sugarcane fields, high-quality asphalt with white lane markings, and right-hand traffic are highly characteristic of the state of São Paulo in Brazil."", ""country"": ""BR"", ""latitude"": -21.5234, ""longitude"": -47.8145}"
+moonshotai/kimi-k2.6,CoT,-21.18,-47.81,720.176,BR,True,,stop,0.010310148,682,2946,2875,80.52,"{""reasoning"": ""Right-hand traffic on a divided highway with grass medians, surrounded by flat tropical agricultural land—most likely sugarcane—and wooden utility poles is characteristic of rural Brazil, especially the interior of São Paulo state."", ""country"": ""BR"", ""latitude"": -21.18, ""longitude"": -47.81}"
+google/gemma-4-31b-it,no-CoT,-23.5505,-46.6333,722.534,BR,True,,stop,6.378e-05,406,36,0,4.82,"```json
+{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}
+```"
+openai/gpt-5.5,no-CoT,-34.8746,-55.2749,1126.957,UY,True,,stop,0.00347,544,25,0,2.0,"{""country"":""UY"",""latitude"":-34.8746,""longitude"":-55.2749}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6386.091,,True,True,,,,,,7.27,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-19.66240119934082,15.44086742401123,7056.491,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-34.2667121887207,22.060422897338867,7231.44,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-34.2573127746582,22.289012908935547,7252.066,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,38.3,-75.6,7385.756,US,True,,stop,7.97776e-05,708,25,0,2.05,"{""country"": ""US"", ""latitude"": 38.3, ""longitude"": -75.6}"
+mistralai/mistral-small-2603,no-CoT,38.958,-77.151,7504.782,US,True,,stop,0.0001125,634,29,0,2.04,"{""country"": ""US"", ""latitude"": 38.958, ""longitude"": -77.151}"
+anthropic/claude-opus-4.8,no-CoT,-29.5,31.2,8211.177,ZA,True,,stop,0.004105,666,31,0,2.28,"{""country"": ""ZA"", ""latitude"": -29.5, ""longitude"": 31.2}"
+anthropic/claude-opus-4.8,CoT,-29.45,31.25,8217.615,ZA,True,,stop,0.006285,797,92,0,4.55,"{""reasoning"": ""Driving on left side, sugarcane fields, rural two-lane road with low vegetation suggest KwaZulu-Natal coastal cane country in South Africa."", ""country"": ""ZA"", ""latitude"": -29.45, ""longitude"": 31.25}"
+openai/gpt-5.5,CoT,52.2185,-6.9352,9692.761,IE,True,,stop,0.020775,621,589,511,16.28,"{""reasoning"":""Left-side driving with long white European-style plates and Irish/UK-style narrow rural road markings, plus lush hedgerows and coastal farmland, point most strongly to rural Ireland. The flat open fields and apparent sea horizon fit the southeast Irish coast."",""country"":""IE"",""latitude"":52.2185,""longitude"":-6.9352}"
+qwen/qwen3.6-35b-a3b,no-CoT,-43.5321,172.6362,11067.306,NZ,True,,stop,0.00010295,473,32,0,1.68,"{""country"": ""NZ"", ""latitude"": -43.5321, ""longitude"": 172.6362}"
+qwen/qwen3.5-9b,no-CoT,-41.1234,174.7821,11144.885,NZ,True,,stop,5.22e-05,474,32,0,5.16,"{""country"": ""NZ"", ""latitude"": -41.1234, ""longitude"": 174.7821}"
+qwen/qwen3.6-27b,no-CoT,-37.7833,176.1667,11327.467,NZ,True,,stop,0.000213497,473,32,0,2.24,"{""country"": ""NZ"", ""latitude"": -37.7833, ""longitude"": 176.1667}"
+qwen/qwen3.5-27b,no-CoT,-37.884,175.4653,11362.939,NZ,True,,stop,0.0002085,474,45,0,2.8,"```json
+{
+  ""country"": ""NZ"",
+  ""latitude"": -37.8840,
+  ""longitude"": 175.4653
+}
+```"
+x-ai/grok-4.3,no-CoT,-37.85,175.35,11372.731,NZ,True,,stop,0.0005934,592,22,0,1.2,"{""country"": ""NZ"", ""latitude"": -37.85, ""longitude"": 175.35}"
+x-ai/grok-4.3,CoT,-37.72,175.28,11387.357,NZ,True,,stop,0.002694,676,874,809,13.47,"{""reasoning"": ""Left-hand traffic (oncoming/parked vehicle on left verge), rural asphalt road with NZ-style markings/power poles, cabbage-tree-like vegetation and flat agricultural fields typical of North Island NZ."", ""country"": ""NZ"", ""latitude"": -37.72, ""longitude"": 175.28}"
+xiaomi/mimo-v2.5,CoT,-38.6658,143.1048,12741.819,AU,True,,stop,0.0005830776,787,1783,1688,25.52,"{""reasoning"": ""Left-hand traffic, Australian coastal vegetation such as eucalyptus trees, and the open expanse to the right indicating the Southern Ocean point to the Great Ocean Road in Victoria. The road layout and surrounding terrain are consistent with a westward direction along this iconic coastal route."", ""country"": ""AU"", ""latitude"": -38.6658, ""longitude"": 143.1048}"
+qwen/qwen3.5-122b-a10b,no-CoT,-38.1234,144.5678,12761.171,AU,True,,stop,0.00018954,473,32,0,2.14,"{""country"": ""AU"", ""latitude"": -38.1234, ""longitude"": 144.5678}"
+qwen/qwen3.5-35b-a3b,no-CoT,-37.8045,144.9632,12783.888,AU,True,,stop,9.836e-05,474,32,0,3.04,"{""country"": ""AU"", ""latitude"": -37.8045, ""longitude"": 144.9632}"
+minimax/minimax-m3,no-CoT,-37.8,144.9,12786.13,AU,True,,stop,0.00038322,767,176,216,6.23,"{""country"": ""AU"", ""latitude"": -37.8, ""longitude"": 144.9}"
+minimax/minimax-m3,CoT,-37.85,141.65,12864.08,AU,True,,stop,0.00078906,843,498,424,24.53,"{""reasoning"": ""Left-hand traffic with white dashed center line markings, flat grassland terrain, dry summer vegetation, timber power poles on the right verge, and rural road styling are characteristic of southeastern Australia, most likely the Western District of Victoria."", ""country"": ""AU"", ""latitude"": -37.85, ""longitude"": 141.65}"
+qwen/qwen3.5-397b-a17b,no-CoT,-35.2809,149.13,12913.938,AU,True,,stop,0.0003287,473,30,0,3.03,"{""country"": ""AU"", ""latitude"": -35.2809, ""longitude"": 149.13}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.58,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.2,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.69,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.19,

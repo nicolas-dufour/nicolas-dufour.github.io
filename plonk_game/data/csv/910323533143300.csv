@@ -1,0 +1,72 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,36.704612797695,67.083497460109,0.0,AF,True,,,,,,,,"Mazar-e Sharif, None, Balkh, AF"
+google/gemini-3.5-flash,CoT (effort=medium),34.5333,69.1667,306.168,AF,True,,stop,0.0108075,1271,989,892,9.84,"```json
+{""reasoning"": ""The vehicle's hood markings and heavy-duty HF antenna indicate an international organization or security vehicle, common in conflict/aid zones. The Toyota Corolla, concrete utility poles, arid climate, and Dari/Arabic script on the billboard ('الماس') strongly point to Kabul, Afghanistan."", ""country"": ""AF"", ""latitude"": 34.5333, ""longitude"": 69.1667}
+```"
+anthropic/claude-opus-4.8,CoT,34.5553,69.2075,306.522,AF,True,,stop,0.006735,797,110,0,3.45,"{""reasoning"": ""Arid roadside with dusty terrain, older Toyota Corolla, Dari/Arabic-style signage, and concrete utility poles typical of Afghan cities; antenna suggests a police/official vehicle."", ""country"": ""AF"", ""latitude"": 34.5553, ""longitude"": 69.2075}"
+anthropic/claude-opus-4.8,no-CoT,34.5553,69.2075,306.522,AF,True,,stop,0.00413,666,32,0,8.28,"{""country"": ""AF"", ""latitude"": 34.5553, ""longitude"": 69.2075}"
+google/gemini-3.1-pro-preview,no-CoT,34.5553,69.2075,306.522,AF,True,,stop,0.005006,1189,219,184,10.72,"```json
+{""country"": ""AF"", ""latitude"": 34.5553, ""longitude"": 69.2075}
+```"
+moonshotai/kimi-k2.6,no-CoT,34.5553,69.2075,306.522,AF,True,,stop,0.00051939,602,25,0,3.38,"{""country"": ""AF"", ""latitude"": 34.5553, ""longitude"": 69.2075}"
+openai/gpt-5.5,no-CoT,34.5553,69.2075,306.522,AF,True,,stop,0.00341,544,23,0,1.82,"{""country"":""AF"",""latitude"":34.5553,""longitude"":69.2075}"
+qwen/qwen3.5-9b,no-CoT,34.5553,69.2075,306.522,AF,True,,stop,8.816e-05,473,31,0,3.64,"{""country"": ""AF"", ""latitude"": 34.5553, ""longitude"": 69.2075}"
+google/gemini-3.1-pro-preview,CoT,34.52813,69.17233,306.938,AF,True,,stop,0.006826,1271,357,260,13.8,"{
+  ""reasoning"": ""The blue stripe on the white vehicle hood and the large antenna are characteristic of Afghan National Police vehicles. The arid urban environment, concrete utility poles, and Arabic/Persian script on the billboard strongly point to a major city in Afghanistan, likely Kabul."",
+  ""country"": ""AF"",
+  ""latitude"": 34.52813,
+  ""longitude"": 69.17233
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),34.5355,69.1908,307.318,AF,True,,stop,0.0021,1190,35,0,1.83,"```json
+{""country"": ""AF"", ""latitude"": 34.5355, ""longitude"": 69.1908}
+```"
+moonshotai/kimi-k2.6,CoT,34.52,69.18,308.083,AF,True,,stop,0.013058928,682,3754,3693,269.18,"{""reasoning"": ""The Arabic-script billboard, Soviet-style concrete utility poles and road signage, prominent military whip antenna, and dry temperate urban vegetation are decisive for Kabul, Afghanistan."", ""country"": ""AF"", ""latitude"": 34.52, ""longitude"": 69.18}"
+minimax/minimax-m3,no-CoT,41.2856,69.2034,541.276,UZ,True,,stop,0.00041082,767,199,224,4.82,"{""country"": ""UZ"", ""latitude"": 41.2856, ""longitude"": 69.2034}"
+qwen/qwen3.6-27b,no-CoT,41.2995,69.2401,543.801,UZ,True,,stop,0.0001943,473,31,0,10.33,"{""country"": ""UZ"", ""latitude"": 41.2995, ""longitude"": 69.2401}"
+xiaomi/mimo-v2.5,no-CoT,41.2995,69.2401,543.801,UZ,True,,stop,8.17376e-05,708,32,0,2.23,"{""country"": ""UZ"", ""latitude"": 41.2995, ""longitude"": 69.2401}"
+google/gemma-4-31b-it,no-CoT,41.3111,69.2401,545.008,UZ,True,,stop,7.124e-05,406,36,0,2.55,"```json
+{""country"": ""UZ"", ""latitude"": 41.3111, ""longitude"": 69.2401}
+```"
+minimax/minimax-m3,CoT,41.3111,69.2797,546.185,UZ,True,,stop,0.00100866,843,681,588,18.28,"{""reasoning"": ""Distinctive black metal bollards with golden spear-like tops are characteristic of Tashkent, Uzbekistan main avenues. Combined with left-hand traffic (Uzbekistan pre-2017), Soviet-style concrete utility poles, arid vegetation, and police dashcam vehicle with blue/white livery typical of Uzbek police."", ""country"": ""UZ"", ""latitude"": 41.3111, ""longitude"": 69.2797}"
+xiaomi/mimo-v2.5,CoT,42.8746,74.5698,937.221,KG,True,,stop,0.0002347576,787,539,446,14.01,"{""reasoning"": ""The vehicle in the foreground displays a license plate with a distinctive blue vertical stripe on the left side, characteristic of Kyrgyzstan's standard format. The mix of Soviet-era infrastructure and numerous Japanese used cars on right-hand traffic is typical of Central Asian cities like Bishkek."", ""country"": ""KG"", ""latitude"": 42.8746, ""longitude"": 74.5698}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,37.6732063293457,56.43818283081055,948.602,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,38.151248931884766,56.234466552734375,970.81,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,38.190032958984375,56.03281784057617,988.801,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,35.721,51.392,1410.425,IR,True,,stop,0.002379,676,748,651,13.69,"{
+  ""reasoning"": ""Persian/Farsi script on multiple billboards (e.g. بیمه), right-hand traffic, typical Iranian sedan (Peugeot 405/pars style), utility poles, arid urban vegetation and building styles all confirm Iran. Foreground vehicle, road layout and distant multi-story buildings match a typical arterial road in greater Tehran."",
+  ""country"": ""IR"",
+  ""latitude"": 35.721,
+  ""longitude"": 51.392
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,35.52991485595703,51.42852783203125,1410.671,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,35.7001,51.3916,1410.829,IR,True,,stop,0.020565,621,582,500,41.94,"{""reasoning"":""Right-side driving, Persian/Arabic-script roadside signage, Iranian-style long white license plates, and arid urban landscaping with concrete utility poles point strongly to Iran. The broad boulevard, dry climate, and mixed low-rise urban fabric are most consistent with Tehran or its suburbs."",""country"":""IR"",""latitude"":35.7001,""longitude"":51.3916}"
+qwen/qwen3.5-122b-a10b,no-CoT,35.6892,51.389,1411.254,IR,True,,stop,0.00018564,474,30,0,7.73,"{""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.389}"
+qwen/qwen3.6-35b-a3b,no-CoT,35.6892,51.389,1411.254,IR,True,,stop,0.00010195,473,31,0,4.96,"{""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.3890}"
+x-ai/grok-4.3,no-CoT,35.6892,51.389,1411.254,IR,True,,stop,0.0005984,592,24,0,7.36,"{""country"": ""IR"", ""latitude"": 35.6892, ""longitude"": 51.3890}"
+qwen/qwen3.5-397b-a17b,CoT,35.7161,51.3538,1413.917,IR,True,,stop,0.0096042,553,2589,2475,23.01,"{""reasoning"": ""The green sedan is an IKCO Samand, a car manufactured and widely used in Iran, and the white vehicle roof with blue stripes in the immediate foreground is characteristic of Iranian police vehicles. The license plate on the green car matches the Iranian format (white background with a blue section on the right), and the utility poles and arid vegetation are consistent with Tehran's urban landscape."", ""country"": ""IR"", ""latitude"": 35.7161, ""longitude"": 51.3538}"
+qwen/qwen3.5-35b-a3b,no-CoT,35.7089,51.3377,1415.479,IR,True,,stop,0.00010195,473,31,0,1.85,"{""country"": ""IR"", ""latitude"": 35.7089, ""longitude"": 51.3377}"
+qwen/qwen3.5-397b-a17b,no-CoT,35.7219,51.3347,1415.518,IR,True,,stop,0.0003322,473,31,0,7.65,"{""country"": ""IR"", ""latitude"": 35.7219, ""longitude"": 51.3347}"
+qwen/qwen3.5-27b,no-CoT,35.6944,51.3381,1415.7,IR,True,,stop,0.00023764,474,44,0,11.34,"```json
+{
+  ""country"": ""IR"",
+  ""latitude"": 35.6944,
+  ""longitude"": 51.3381
+}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,34.98025894165039,50.5666618347168,1499.185,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,34.61630630493164,48.49196243286133,1692.883,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),36.1912,44.0091,2059.689,IQ,True,,stop,0.0043365,1271,270,186,4.98,"```json
+{""reasoning"": ""The distinctive thick black antenna on the vehicle hood is characteristic of the Google Street View coverage in Iraq. The architecture, concrete utility poles, and Arabic/Kurdish signage confirm the location is in Erbil, Iraq."", ""country"": ""IQ"", ""latitude"": 36.1912, ""longitude"": 44.0091}
+```"
+google/gemini-3.5-flash,CoT (effort=high),36.1912,44.0091,2059.689,IQ,True,,stop,0.0373305,1271,3936,3837,18.09,"```json
+{""reasoning"": ""The image features a vehicle with a prominent front-mounted antenna and blue stripes on the hood, characteristic of UN or international mission vehicles in Iraq. The Arabic script on the billboard ('الماس') and the concrete utility poles are typical of urban areas in Iraq, specifically around Erbil or Baghdad."", ""country"": ""IQ"", ""latitude"": 36.1912, ""longitude"": 44.0091}
+```"
+mistralai/mistral-medium-3-5,no-CoT,38.0,35.0,2825.509,TR,True,,stop,0.0011385,634,25,0,1.94,"{""country"": ""TR"", ""latitude"": 38.0, ""longitude"": 35.0}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7984.807,,True,True,,,,,,14.08,
+mistralai/mistral-small-2603,no-CoT,33.749,-84.388,11641.258,US,True,,stop,0.000142125,634,31,0,3.26,"{""country"": ""US"", ""latitude"": 33.7490, ""longitude"": -84.3880}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.29,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,2.76,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,7.71,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.16,

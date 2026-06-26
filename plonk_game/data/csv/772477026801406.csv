@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,46.906480898257,-98.149937797553,0.0,US,True,,,,,,,,"Valley City, Barnes County, North Dakota, US"
+anthropic/claude-opus-4.8,CoT,47.0,-99.0,65.353,US,True,,stop,0.00762,949,115,0,16.43,"{""reasoning"": ""Flat prairie with wetlands/sloughs on both sides of a divided highway, yellow center line and right-hand driving suggest North American Great Plains, likely the prairie pothole region of the Dakotas or southern Canadian prairies."", ""country"": ""US"", ""latitude"": 47.0, ""longitude"": -99.0}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,46.218963623046875,-98.1143798828125,76.497,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,46.20804214477539,-97.89028930664062,80.16,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),46.8125,-99.2458,83.975,US,True,,stop,0.002154,1226,35,0,1.29,"```json
+{""country"": ""US"", ""latitude"": 46.8125, ""longitude"": -99.2458}
+```"
+mistralai/mistral-medium-3-5,no-CoT,46.7207,-96.8846,98.481,US,True,,stop,0.0014115,786,31,0,1.95,"{""country"": ""US"", ""latitude"": 46.7207, ""longitude"": -96.8846}"
+google/gemini-3.1-pro-preview,CoT,46.895,-99.85,129.167,US,True,,stop,0.007428,1308,401,314,6.74,"{
+  ""reasoning"": ""The yellow left edge line and white right edge line on a divided highway indicate North America. The flat, grassy landscape with water on both sides suggests a causeway in the Great Plains, likely North Dakota or a similar region."",
+  ""country"": ""US"",
+  ""latitude"": 46.895,
+  ""longitude"": -99.85
+}"
+google/gemini-3.5-flash,CoT (effort=low),47.9875,-98.8812,132.183,US,True,,stop,0.004203,1308,249,175,17.94,"{""reasoning"": ""The flat prairie landscape, wide causeway crossing a large lake, and North American road markings (yellow left line, white right line) strongly suggest the Devils Lake region in North Dakota, USA."", ""country"": ""US"", ""latitude"": 47.9875, ""longitude"": -98.8812}"
+openai/gpt-5.5,CoT,48.0716,-98.9047,141.422,US,True,,stop,0.021595,755,594,516,50.76,"{""reasoning"":""Flat prairie terrain with North American right-side driving, divided highway markings (yellow left edge, white lane lines), and broad shallow water/flooded wetlands on both sides strongly suggest the US-2 causeway area around Devils Lake, North Dakota."",""country"":""US"",""latitude"":48.0716,""longitude"":-98.9047}"
+google/gemini-3.5-flash,CoT (effort=high),48.0745,-98.9315,142.535,US,True,,stop,0.0166755,1307,1635,1564,18.27,"{""reasoning"": ""The divided highway crossing a large body of water in an extremely flat landscape with concrete road surfaces and North American vehicles indicates the US-2 causeway crossing Devils Lake in North Dakota."", ""country"": ""US"", ""latitude"": 48.0745, ""longitude"": -98.9315}"
+google/gemini-3.1-pro-preview,no-CoT,48.1125,-98.8652,144.462,US,True,,stop,0.002872,1226,35,0,8.11,"```json
+{""country"": ""US"", ""latitude"": 48.1125, ""longitude"": -98.8652}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),48.1605,-99.1002,156.627,US,True,,stop,0.0130845,1307,1236,1155,10.3,"{""reasoning"": ""The divided highway with concrete pavement, yellow left line, and white right line crossing a large body of water on a causeway in a flat prairie landscape is characteristic of US Route 2 crossing Devil's Lake in North Dakota."", ""country"": ""US"", ""latitude"": 48.1605, ""longitude"": -99.1002}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,48.33917236328125,-98.47386169433594,161.147,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,48.63376235961914,-98.6960678100586,196.352,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,45.57991409301758,-95.88607025146484,228.167,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,47.459,-101.226,240.436,US,True,,stop,0.013150836,834,3768,3696,78.36,"{""reasoning"": ""The flat prairie landscape with water on both sides of a two-lane highway, standard US road markings, and right-hand traffic strongly match the US-2 causeway crossing Lake Audubon in central North Dakota."", ""country"": ""US"", ""latitude"": 47.459, ""longitude"": -101.226}"
+x-ai/grok-4.3,no-CoT,49.85,-97.15,335.524,CA,True,,stop,0.0007334,704,22,0,0.88,"{""country"": ""CA"", ""latitude"": 49.85, ""longitude"": -97.15}"
+qwen/qwen3.5-9b,no-CoT,43.6598,-93.6624,503.42,US,True,,stop,6.325e-05,586,31,0,10.03,"{""country"": ""US"", ""latitude"": 43.6598, ""longitude"": -93.6624}"
+minimax/minimax-m3,CoT,42.5,-93.5,612.237,US,True,,stop,0.00079866,995,468,384,20.87,"{""reasoning"": ""Very flat agricultural landscape with vast open fields on both sides of a divided highway suggests US Midwest prairie. Right-hand driving, American highway design with wide median, transmission tower in distance, and lush green crops indicate late spring/summer in the Iowa/Midwest Corn Belt."", ""country"": ""US"", ""latitude"": 42.5, ""longitude"": -93.5}"
+anthropic/claude-opus-4.8,no-CoT,50.45,-104.6,615.659,CA,True,,stop,0.00484,818,30,0,8.15,"{""country"": ""CA"", ""latitude"": 50.45, ""longitude"": -104.6}"
+google/gemma-4-31b-it,no-CoT,41.25,-96.12,649.474,US,True,,stop,6.532e-05,404,32,0,2.29,"```json
+{""country"": ""US"", ""latitude"": 41.25, ""longitude"": -96.12}
+```"
+qwen/qwen3.5-27b,no-CoT,41.2536,-95.9382,652.853,US,True,,stop,0.000182715,585,44,0,1.48,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 41.2536,
+  ""longitude"": -95.9382
+}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,41.8781,-93.625,664.483,US,True,,stop,5.468e-05,404,31,0,1.38,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -93.6250}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.85,-96.75,682.701,US,True,,stop,0.00041748,585,27,0,1.34,"{""country"": ""US"", ""latitude"": 40.85, ""longitude"": -96.75}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.78480529785156,-90.33529663085938,842.144,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,29.7604,-95.3698,1921.585,US,True,,stop,9.71376e-05,820,31,0,7.55,"{""country"": ""US"", ""latitude"": 29.7604, ""longitude"": -95.3698}"
+qwen/qwen3.5-122b-a10b,no-CoT,29.1872,-95.8244,1980.551,US,True,,stop,0.00021658,585,31,0,2.58,"{""country"": ""US"", ""latitude"": 29.1872, ""longitude"": -95.8244}"
+x-ai/grok-4.3,CoT,30.15,-90.2,1984.854,US,True,,stop,0.0036165,788,1187,1106,8.95,"{""reasoning"": ""Right-hand traffic (oncoming cars to left of yellow center line), US-style pavement markings/shoulders, flat agricultural prairie with large water bodies on both sides and distant lattice transmission towers point to a US causeway; visual match to Lake Pontchartrain Causeway."", ""country"": ""US"", ""latitude"": 30.15, ""longitude"": -90.2}"
+qwen/qwen3.6-27b,no-CoT,41.5868,-73.9545,2006.718,US,True,,stop,0.0002279,585,31,0,8.6,"{""country"": ""US"", ""latitude"": 41.5868, ""longitude"": -73.9545}"
+qwen/qwen3.5-35b-a3b,no-CoT,29.9511,-90.0715,2009.709,US,True,,stop,0.00019644,586,31,0,3.1,"{""country"": ""US"", ""latitude"": 29.9511, ""longitude"": -90.0715}"
+openai/gpt-5.5,no-CoT,29.8704,-90.1326,2016.434,US,True,,stop,0.00411,678,24,0,8.18,"{""country"":""US"",""latitude"":29.8704,""longitude"":-90.1326}"
+xiaomi/mimo-v2.5,CoT,29.9,-89.8,2023.31,US,True,,stop,0.0005959576,899,1773,1693,18.18,"{""reasoning"": ""Right-hand traffic with U.S. highway markings (yellow line on left) and flat coastal terrain with water bodies on both sides suggest a southern U.S. highway, likely in Louisiana. The vegetation and climate align with the Gulf Coast region."", ""country"": ""US"", ""latitude"": 29.9, ""longitude"": -89.8}"
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,2046.276,US,True,,stop,0.0001359,786,30,0,9.78,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+qwen/qwen3.6-35b-a3b,no-CoT,26.1224,-80.1373,2801.616,US,True,,stop,0.0001668,586,31,0,2.07,"{""country"": ""US"", ""latitude"": 26.1224, ""longitude"": -80.1373}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,13.45,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,7.23,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.63,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,12.4,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.86,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.2,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.22,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.29,

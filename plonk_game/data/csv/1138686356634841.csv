@@ -1,0 +1,74 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,24.637312244113,-76.170953355442,0.0,BS,True,,,,,,,,"Arthur's Town, None, Cat Island, BS"
+google/gemini-3.1-pro-preview,CoT,24.8035,-76.1458,18.653,BS,True,,stop,0.00564,1308,252,180,10.96,"{
+  ""reasoning"": ""The white sandy dirt road, tropical scrub vegetation, and the visible black car hood are characteristic of Google Street View coverage in the Bahamas."",
+  ""country"": ""BS"",
+  ""latitude"": 24.8035,
+  ""longitude"": -76.1458
+}"
+anthropic/claude-opus-4.8,no-CoT,24.2833,-76.0667,40.754,BS,True,,stop,0.00489,818,32,0,9.19,"{""country"": ""BS"", ""latitude"": 24.2833, ""longitude"": -76.0667}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),25.018241,-76.134812,42.514,BS,True,,stop,0.00219,1226,39,0,7.35,"```json
+{""country"": ""BS"", ""latitude"": 25.018241, ""longitude"": -76.134812}
+```"
+openai/gpt-5.5,no-CoT,24.6365,-75.677,49.925,BS,True,,stop,0.00411,678,24,0,2.09,"{""country"":""BS"",""latitude"":24.6365,""longitude"":-75.6770}"
+google/gemini-3.5-flash,CoT (effort=medium),25.1742,-76.2443,60.156,BS,True,,stop,0.0105915,1307,959,885,8.14,"```json
+{""reasoning"": ""The flat terrain, white limestone/sandy dirt road, and dense tropical coppice vegetation are highly characteristic of the Bahamian out islands, such as Eleuthera."", ""country"": ""BS"", ""latitude"": 25.1742, ""longitude"": -76.2443}
+```"
+google/gemini-3.5-flash,CoT (effort=low),25.1752,-76.2381,60.193,BS,True,,stop,0.0044175,1307,273,205,3.25,"{""reasoning"": ""The light-colored sandy dirt road, scrubby tropical vegetation, and utility poles are highly characteristic of the Bahamas, specifically rural areas of islands like Eleuthera."", ""country"": ""BS"", ""latitude"": 25.1752, ""longitude"": -76.2381}"
+google/gemini-3.5-flash,CoT (effort=high),25.1835,-76.1628,60.739,BS,True,,stop,0.0094395,1307,831,762,14.02,"```json
+{""reasoning"": ""The flat terrain, white limestone sandy road, and subtropical scrub vegetation are highly characteristic of the Bahamas, particularly the outer islands like Eleuthera."", ""country"": ""BS"", ""latitude"": 25.1835, ""longitude"": -76.1628}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,24.765485763549805,-76.89116668701172,74.139,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,25.139833450317383,-77.0757064819336,107.008,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,25.310279846191406,-77.33214569091797,138.921,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,24.0,-77.4,143.287,BS,True,,stop,0.00712,949,95,0,9.99,"{""reasoning"": ""Flat limestone terrain with low scrubby tropical vegetation, sandy/white dirt road, and overcast sky typical of a Caribbean island like the Bahamas."", ""country"": ""BS"", ""latitude"": 24.0, ""longitude"": -77.4}"
+google/gemini-3.1-pro-preview,no-CoT,24.16181,-77.59903,153.974,BS,True,,stop,0.002894,1225,37,0,2.98,"```json
+{""country"": ""BS"", ""latitude"": 24.16181, ""longitude"": -77.59903}
+```"
+moonshotai/kimi-k2.6,CoT,24.5,-77.9,175.519,BS,True,,stop,0.013007196,834,3726,3662,77.77,"{""reasoning"": ""Dense tropical dry scrub, flat terrain, narrow unmarked road with light-colored edges and wooden utility poles are characteristic of rural roads on the limestone islands of the Bahamas."", ""country"": ""BS"", ""latitude"": 24.5000, ""longitude"": -77.9000}"
+qwen/qwen3.5-122b-a10b,no-CoT,22.1234,-78.5678,371.441,CU,True,,stop,0.0002691,585,39,0,2.02,"{
+  ""country"": ""CU"",
+  ""latitude"": 22.1234,
+  ""longitude"": -78.5678
+}"
+mistralai/mistral-medium-3-5,no-CoT,25.7617,-80.1918,423.402,US,True,,stop,0.0014115,786,31,0,0.99,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+qwen/qwen3.6-35b-a3b,no-CoT,25.7617,-80.1918,423.402,US,True,,stop,0.0001668,586,31,0,2.28,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+xiaomi/mimo-v2.5,no-CoT,25.7617,-80.1918,423.402,US,True,,stop,9.71376e-05,820,31,0,2.98,"{""country"": ""US"", ""latitude"": 25.7617, ""longitude"": -80.1918}"
+qwen/qwen3.5-397b-a17b,no-CoT,25.8576,-80.6012,465.733,US,True,,stop,0.0003882,585,31,0,2.07,"{""country"": ""US"", ""latitude"": 25.8576, ""longitude"": -80.6012}"
+google/gemma-4-26b-a4b-it,no-CoT,25.3445,-80.8567,478.724,US,True,,stop,5.468e-05,404,31,0,7.72,"{""country"": ""US"", ""latitude"": 25.3445, ""longitude"": -80.8567}"
+openai/gpt-5.5,CoT,21.8065,-72.3072,504.884,TC,True,,stop,0.018145,755,479,394,41.85,"{""reasoning"":""Flat dry tropical scrubland with a pale crushed-coral/limestone unpaved road and sparse utility poles strongly suggests a low Caribbean limestone island. The arid vegetation and road surface are especially typical of Turks and Caicos, likely on Providenciales away from the main settlements."",""country"":""TC"",""latitude"":21.8065,""longitude"":-72.3072}"
+qwen/qwen3.5-27b,no-CoT,21.7948,-80.5347,546.518,CU,True,,stop,0.00026676,586,44,0,2.19,"```json
+{
+  ""country"": ""CU"",
+  ""latitude"": 21.7948,
+  ""longitude"": -80.5347
+}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,22.8956,-82.6347,685.609,CU,True,,stop,0.00019644,586,31,0,1.93,"{""country"": ""CU"", ""latitude"": 22.8956, ""longitude"": -82.6347}"
+qwen/qwen3.5-9b,no-CoT,20.7347,-87.0944,1201.2,MX,True,,stop,6.325e-05,586,31,0,9.02,"{""country"": ""MX"", ""latitude"": 20.7347, ""longitude"": -87.0944}"
+google/gemma-4-31b-it,no-CoT,20.5887,-87.125,1210.603,MX,True,,stop,6.692e-05,404,36,0,9.42,"```json
+{""country"": ""MX"", ""latitude"": 20.5887, ""longitude"": -87.1250}
+```"
+x-ai/grok-4.3,CoT,20.85,-87.45,1230.368,MX,True,,stop,0.002089,788,576,498,10.56,"{
+  ""reasoning"": ""Tropical/subtropical scrub vegetation with broadleaf trees and palms, combined with an unpaved dirt road and overhead utility lines, points to rural Yucatán/Mexico; overcast tropical sky and road style match that region."",
+  ""country"": ""MX"",
+  ""latitude"": 20.85,
+  ""longitude"": -87.45
+}"
+x-ai/grok-4.3,no-CoT,20.8523,-87.4531,1230.57,MX,True,,stop,0.0007384,704,24,0,0.76,"{""country"": ""MX"", ""latitude"": 20.8523, ""longitude"": -87.4531}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,42.18989562988281,-79.60359954833984,1977.124,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,43.775001525878906,-79.31068420410156,2147.077,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,43.72372817993164,-79.91442108154297,2149.453,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,-2.87,-40.51,4916.58,BR,True,,stop,0.00077826,995,451,350,17.97,"{""reasoning"": ""The vegetation is characteristic of coastal caatinga/xerophytic scrubland with thorny bushes and cacti typical of northeastern Brazil (Ceará). The narrow rural road with simple utility poles and the hint of brighter sky/coastline in the distance strongly suggest the Jijoca de Jericoacoara / Camocim coastal area in Ceará."", ""country"": ""BR"", ""latitude"": -2.87, ""longitude"": -40.51}"
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.9253,5060.064,BR,True,,stop,0.0002279,585,31,0,12.84,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9253}"
+mistralai/mistral-small-2603,no-CoT,38.7223,-9.1393,6392.161,PT,True,,stop,0.0001359,786,30,0,3.67,"{""country"": ""PT"", ""latitude"": 38.7223, ""longitude"": -9.1393}"
+xiaomi/mimo-v2.5,CoT,-7.5,110.0,17999.666,ID,True,,stop,0.0005245576,899,1518,1463,17.35,"{""reasoning"": ""The dense tropical broadleaf vegetation and unpaved dirt road are characteristic of rural areas in Southeast Asia, particularly Indonesia."", ""country"": ""ID"", ""latitude"": -7.5, ""longitude"": 110.0}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.33,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.19,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.47,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,19.3,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.23,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.03,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.14,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.18,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.26,

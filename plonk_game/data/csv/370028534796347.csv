@@ -1,0 +1,58 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.472740611354,-121.98826930961,0.0,US,True,,,,,,,,"Sisters, Deschutes County, Oregon, US"
+openai/gpt-5.5,no-CoT,44.4022,-122.0877,11.129,US,True,,stop,0.00411,678,24,0,2.51,"{""country"":""US"",""latitude"":44.4022,""longitude"":-122.0877}"
+google/gemini-3.1-pro-preview,no-CoT,43.815,-122.15,74.267,US,True,,stop,0.002848,1226,33,0,3.15,"```json
+{""country"": ""US"", ""latitude"": 43.815, ""longitude"": -122.15}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,45.3728,-121.6956,102.7,US,True,,stop,0.0004662,585,32,0,2.03,"{""country"": ""US"", ""latitude"": 45.3728, ""longitude"": -121.6956}"
+qwen/qwen3.5-9b,no-CoT,45.5231,-121.8153,117.584,US,True,,stop,6.34e-05,586,32,0,2.18,"{""country"": ""US"", ""latitude"": 45.5231, ""longitude"": -121.8153}"
+mistralai/mistral-medium-3-5,no-CoT,45.5152,-122.6784,127.989,US,True,,stop,0.001419,786,32,0,1.6,"{""country"": ""US"", ""latitude"": 45.5152, ""longitude"": -122.6784}"
+moonshotai/kimi-k2.6,no-CoT,43.2,-122.0,141.525,US,True,,stop,0.0121523,754,2859,3085,43.05," {""country"": ""US"", ""latitude"": 43.2, ""longitude"": -122.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.08855056762695,-122.02580261230469,153.944,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),43.0125,-122.1153,162.692,US,True,,stop,0.002163,1226,36,0,7.68,"```json
+{""country"": ""US"", ""latitude"": 43.0125, ""longitude"": -122.1153}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,42.95242691040039,-122.42031860351562,172.58,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,42.79412078857422,-122.35830688476562,189.014,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,42.3314,-121.9167,238.176,US,True,,stop,6.388e-05,404,37,0,11.3,"```json
+{""country"": ""US"", ""latitude"": 42.3314, ""longitude"": -121.9167}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,46.657081604003906,-121.543701171875,245.34,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,46.704673767089844,-121.58744049072266,250.131,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,46.72957992553711,-121.59186553955078,252.836,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,46.7867,-121.7456,257.991,US,True,,stop,0.004865,818,31,0,8.58,"{""country"": ""US"", ""latitude"": 46.7867, ""longitude"": -121.7456}"
+google/gemini-3.5-flash,CoT (effort=low),46.8125,-121.5342,262.552,US,True,,stop,0.0042375,1307,253,177,9.76,"{""reasoning"": ""The dense coniferous forest of Douglas firs and hemlocks, combined with the double yellow center lines and specific guardrail style, indicates the Pacific Northwest region of the United States, likely in Washington State."", ""country"": ""US"", ""latitude"": 46.8125, ""longitude"": -121.5342}"
+moonshotai/kimi-k2.6,CoT,46.85,-121.76,264.933,US,True,,stop,0.013283856,834,3799,3738,194.95,"{""reasoning"": ""Dense old-growth Pacific Northwest conifer forest with US-standard double-yellow centerlines and metal W-beam guardrail points to a Cascade Range highway in Washington."", ""country"": ""US"", ""latitude"": 46.85, ""longitude"": -121.76}"
+anthropic/claude-opus-4.8,CoT,46.85,-121.75,264.987,US,True,,stop,0.007295,949,102,0,3.47,"{""reasoning"": ""Dense coniferous forest (Douglas fir, hemlock), yellow center line, right-hand driving, and mountain highway character suggest Pacific Northwest US, likely Washington Cascades."", ""country"": ""US"", ""latitude"": 46.85, ""longitude"": -121.75}"
+google/gemini-3.1-pro-preview,CoT,46.852,-121.543,266.814,US,True,,stop,0.005578,1307,247,172,4.86,"{
+  ""reasoning"": ""Double yellow center lines and solid white edge lines indicate North America. The dense, tall coniferous forest strongly points to the Pacific Northwest, likely Washington or Oregon."",
+  ""country"": ""US"",
+  ""latitude"": 46.852,
+  ""longitude"": -121.543
+}"
+minimax/minimax-m3,CoT,46.87,-121.53,268.929,US,True,,stop,0.00066666,995,358,275,19.04,"{""reasoning"": ""Dense tall conifer forest (Douglas fir/hemlock/cedar) typical of the Pacific Northwest, US-style road with double yellow center line, white fog line, and metal W-beam guardrails indicate a US highway, likely in the Cascade Range of Washington state."", ""country"": ""US"", ""latitude"": 46.87, ""longitude"": -121.53}"
+qwen/qwen3.6-35b-a3b,no-CoT,47.3912,-121.4944,326.756,US,True,,stop,0.0001684,586,32,0,9.79,"{""country"": ""US"", ""latitude"": 47.3912, ""longitude"": -121.4944}"
+qwen/qwen3.5-35b-a3b,no-CoT,47.4215,-121.5432,329.686,US,True,,stop,0.0001366625,585,32,0,7.94,"{""country"": ""US"", ""latitude"": 47.4215, ""longitude"": -121.5432}"
+x-ai/grok-4.3,no-CoT,47.45,-121.45,333.658,US,True,,stop,0.0007334,704,22,0,0.82,"{""country"": ""US"", ""latitude"": 47.45, ""longitude"": -121.45}"
+qwen/qwen3.5-122b-a10b,no-CoT,47.5001,-121.8189,336.881,US,True,,stop,0.0002523,585,32,0,2.3,"{""country"": ""US"", ""latitude"": 47.5001, ""longitude"": -121.8189}"
+minimax/minimax-m3,no-CoT,47.5,-121.7,337.351,US,True,,stop,0.00024012,906,22,0,2.86,"{""country"": ""US"", ""latitude"": 47.5, ""longitude"": -121.7}{""country"": ""US"", ""latitude"": 47.5, ""longitude"": -121.7}"
+google/gemma-4-26b-a4b-it,no-CoT,47.6062,-122.3321,349.433,US,True,,stop,5.988e-05,404,44,0,1.66,"``` own-thought
+```json
+{""country"": ""US"", ""latitude"": 47.6062, ""longitude"": -122.3321}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),47.5642,-123.8125,371.467,US,True,,stop,0.0060735,1307,457,380,5.23,"{""reasoning"": ""The dense coniferous forest with tall Douglas firs and hemlocks, combined with the double yellow center lines and standard North American guardrails, indicates the Pacific Northwest region of the United States, likely western Washington."", ""country"": ""US"", ""latitude"": 47.5642, ""longitude"": -123.8125}"
+google/gemini-3.5-flash,CoT (effort=high),47.5482,-124.2365,383.485,US,True,,stop,0.0074685,1307,612,530,5.34,"{""reasoning"": ""The dense coniferous forest with tall Douglas firs and hemlocks, combined with the double yellow center lines and wooden-post guardrails, strongly indicates the Pacific Northwest region of the United States, likely on the Olympic Peninsula in Washington."", ""country"": ""US"", ""latitude"": 47.5482, ""longitude"": -124.2365}"
+x-ai/grok-4.3,CoT,47.85,-123.15,386.033,US,True,,stop,0.0019715,788,529,454,4.74,"{""reasoning"": ""Right-hand traffic with US-standard double yellow center lines, white edge lines, and metal guardrail on wooden posts; dense old-growth coniferous forest (Douglas fir/western redcedar) with lush understory matches Pacific Northwest temperate rainforest."", ""country"": ""US"", ""latitude"": 47.85, ""longitude"": -123.15}"
+xiaomi/mimo-v2.5,CoT,40.8,-123.5,426.68,US,True,,stop,0.0001448776,899,162,93,8.68,"{""reasoning"": ""The dense coniferous forest, double yellow center lines, and metal guardrails are characteristic of rural highways in the United States, specifically in the Pacific Northwest or Northern California region."", ""country"": ""US"", ""latitude"": 40.8, ""longitude"": -123.5}"
+qwen/qwen3.5-27b,no-CoT,48.7519,-121.8153,476.004,US,True,,stop,0.0002523,585,32,0,4.04,"{""country"": ""US"", ""latitude"": 48.7519, ""longitude"": -121.8153}"
+qwen/qwen3.6-27b,no-CoT,48.7519,-121.8153,476.004,US,True,,stop,0.0002299,585,32,0,21.34,"{""country"": ""US"", ""latitude"": 48.7519, ""longitude"": -121.8153}"
+openai/gpt-5.5,CoT,49.2936,-125.3184,592.65,CA,True,,stop,0.019645,755,529,443,40.21,"{""reasoning"":""Right-hand traffic with North American double-yellow centerlines and white edge lines, plus dense Pacific Northwest conifer forest and BC-style highway guardrails/delineators point to coastal British Columbia. The setting best matches the forested stretch of Highway 4 on Vancouver Island toward Tofino."",""country"":""CA"",""latitude"":49.2936,""longitude"":-125.3184}"
+xiaomi/mimo-v2.5,no-CoT,37.75,-119.58,774.183,US,True,,stop,9.62976e-05,820,28,0,3.25,"{""country"": ""US"", ""latitude"": 37.75, ""longitude"": -119.58}"
+mistralai/mistral-small-2603,no-CoT,36.7783,-119.4179,882.524,US,True,,stop,0.0001371,786,32,0,10.92,"{""country"": ""US"", ""latitude"": 36.7783, ""longitude"": -119.4179}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.52,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.78,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.25,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.11,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,10.34,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.14,

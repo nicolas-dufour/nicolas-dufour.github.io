@@ -1,0 +1,73 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,35.686245808295,-0.5306230412106,0.0,DZ,True,,,,,,,,"Sidi ech Chahmi, None, Oran, DZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,35.63068771362305,-0.18951937556266785,31.431,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,35.62459182739258,-0.16640031337738037,33.614,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,35.62691116333008,-0.15744860470294952,34.355,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,36.5486,2.8574,319.055,DZ,True,,stop,0.012795,621,323,239,10.37,"{""reasoning"":""The vehicle has a yellow rear license plate and traffic keeps right, which strongly suggests Algeria rather than neighboring Morocco/Tunisia. The flat agricultural landscape with eucalyptus/cypress windbreaks and semi-arid Mediterranean vegetation fits the Mitidja plain near Blida/Algiers."",""country"":""DZ"",""latitude"":36.5486,""longitude"":2.8574}"
+google/gemini-3.5-flash,CoT (effort=high),36.58,2.95,327.977,DZ,True,,stop,0.0196005,1271,1966,1890,17.89,"{""reasoning"": ""The flat landscape with eucalyptus-lined roads, red soil, and a French-style electricity pylon, combined with a white Renault Kangoo displaying a yellow rear license plate, points to the Mitidja plain in northern Algeria."", ""country"": ""DZ"", ""latitude"": 36.58, ""longitude"": 2.95}"
+moonshotai/kimi-k2.6,CoT,36.45,3.05,332.822,DZ,True,,stop,0.015512,680,3756,4439,136.9,"{""reasoning"": ""Yellow license plate with black text is characteristic of Algeria, and the Mediterranean rural landscape with right-hand traffic matches northern Algeria."", ""country"": ""DZ"", ""latitude"": 36.45, ""longitude"": 3.05}"
+google/gemini-3.1-pro-preview,no-CoT,36.7525,3.04197,341.688,DZ,True,,stop,0.002798,1189,35,0,2.59,"```json
+{""country"": ""DZ"", ""latitude"": 36.7525, ""longitude"": 3.04197}
+```"
+moonshotai/kimi-k2.6,no-CoT,36.7538,3.0588,343.152,DZ,True,,stop,0.000299952,603,26,0,2.4,"{""country"": ""DZ"", ""latitude"": 36.7538, ""longitude"": 3.0588}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),36.684215,3.125482,346.352,DZ,True,,stop,0.0021255,1189,38,0,1.83,"```json
+{""country"": ""DZ"", ""latitude"": 36.684215, ""longitude"": 3.125482}
+```"
+x-ai/grok-4.3,no-CoT,39.462,-0.376,420.066,ES,True,,stop,0.0005934,592,22,0,1.8,"{""country"": ""ES"", ""latitude"": 39.462, ""longitude"": -0.376}"
+qwen/qwen3.5-27b,no-CoT,39.4699,-0.3763,420.943,ES,True,,stop,0.0002045,474,43,0,3.66,"```json
+{
+  ""country"": ""ES"",
+  ""latitude"": 39.4699,
+  ""longitude"": -0.3763
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,39.4699,-0.3763,420.943,ES,True,,stop,8.11776e-05,708,30,0,3.97,"{""country"": ""ES"", ""latitude"": 39.4699, ""longitude"": -0.3763}"
+minimax/minimax-m3,CoT,37.45,-5.65,497.387,ES,True,,stop,0.00065262,845,381,375,13.63,"{""reasoning"": ""Yellow rear license plate on the van (Spanish plate convention: yellow rear, white front), right-hand traffic, eucalyptus and olive trees, flat agricultural landscape, and Spanish-style road markings/bollards all point to rural Andalusia in southern Spain."", ""country"": ""ES"", ""latitude"": 37.45, ""longitude"": -5.65}{""reasoning"": ""Yellow rear license plate on the van (Spanish plate convention: yellow rear, white front), right-hand traffic, eucalyptus and olive trees, flat agricultural landscape, and Spanish-style road markings/bollards all point to rural Andalusia in southern Spain."", ""country"": ""ES"", ""latitude"": 37.45, ""longitude"": -5.65}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,37.41178512573242,-5.770744323730469,505.792,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,39.4699,-3.8062,510.137,ES,True,,stop,5.19e-05,474,30,0,2.8,"{""country"": ""ES"", ""latitude"": 39.4699, ""longitude"": -3.8062}"
+minimax/minimax-m3,no-CoT,37.4,-5.9,516.038,ES,True,,stop,0.00032202,767,125,139,6.38,"{""country"": ""ES"", ""latitude"": 37.4, ""longitude"": -5.9}"
+qwen/qwen3.6-35b-a3b,no-CoT,37.3891,-5.9845,522.649,ES,True,,stop,0.00010095,473,30,0,2.04,"{""country"": ""ES"", ""latitude"": 37.3891, ""longitude"": -5.9845}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,33.72307586669922,-6.420281887054443,580.833,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,40.4168,-3.7038,594.775,ES,True,,stop,0.00018564,474,30,0,7.79,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+qwen/qwen3.5-397b-a17b,no-CoT,40.4168,-3.7038,594.775,ES,True,,stop,0.00036108,473,30,0,2.69,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.13410568237305,-2.5727250576019287,631.309,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,33.7825,-7.2276,647.378,MA,True,,stop,0.00344,544,24,0,2.15,"{""country"":""MA"",""latitude"":33.7825,""longitude"":-7.2276}"
+anthropic/claude-opus-4.8,CoT,33.55,-7.35,667.52,MA,True,,stop,0.006585,797,104,0,3.38,"{""reasoning"": ""Eucalyptus and cypress trees, dry rural landscape, right-hand traffic, and a white Renault Kangoo-type van suggest North Africa, likely Morocco's agricultural plains."", ""country"": ""MA"", ""latitude"": 33.55, ""longitude"": -7.35}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.6547,-1.8932,674.094,ES,True,,stop,9.636e-05,474,30,0,2.25,"{""country"": ""ES"", ""latitude"": 41.6547, ""longitude"": -1.8932}"
+qwen/qwen3.6-27b,no-CoT,41.3874,2.1686,675.915,ES,True,,stop,0.0001923,473,30,0,25.59,"{""country"": ""ES"", ""latitude"": 41.3874, ""longitude"": 2.1686}"
+anthropic/claude-opus-4.8,no-CoT,33.5731,-7.5898,687.091,MA,True,,stop,0.00413,666,32,0,8.46,"{""country"": ""MA"", ""latitude"": 33.5731, ""longitude"": -7.5898}"
+x-ai/grok-4.3,CoT,43.58,1.35,892.327,FR,True,,stop,0.002459,676,780,709,14.55,"{""reasoning"": ""Right-hand traffic on undivided asphalt road, yellow rear plate on white van, Mediterranean cypress/poplar vegetation, lattice transmission tower and clear autumn sky point to rural southern France; image matches typical D-road scenery near Toulouse."", ""country"": ""FR"", ""latitude"": 43.58, ""longitude"": 1.35}"
+xiaomi/mimo-v2.5,CoT,48.85,2.45,1483.835,FR,True,,stop,0.0001541176,787,251,178,3.63,"{""reasoning"": ""The yellow license plate on the white van is a key indicator of a French commercial vehicle, and the road layout with right-hand traffic, autumnal vegetation, and terrain are consistent with rural northern France."", ""country"": ""FR"", ""latitude"": 48.85, ""longitude"": 2.45}"
+google/gemma-4-31b-it,no-CoT,39.9334,32.8597,2953.516,TR,True,,stop,6.718e-05,406,36,0,9.23,"```json
+{""country"": ""TR"", ""latitude"": 39.9334, ""longitude"": 32.8597}
+```"
+google/gemini-3.5-flash,CoT (effort=low),32.2854,34.8912,3270.03,IL,True,,stop,0.003879,1272,219,143,9.27,"{""reasoning"": ""The white van has a yellow rear license plate and is driving on the right side of the road. The Mediterranean climate, flat terrain, and prominent eucalyptus trees are highly characteristic of the Sharon region in Israel."", ""country"": ""IL"", ""latitude"": 32.2854, ""longitude"": 34.8912}"
+google/gemini-3.5-flash,CoT (effort=medium),32.2215,34.8852,3271.516,IL,True,,stop,0.0082605,1271,706,635,6.72,"{""reasoning"": ""The vehicle is driving on the right with a yellow rear license plate, characteristic of Israel. The flat landscape with prominent eucalyptus trees and Mediterranean climate strongly points to the Israeli coastal plain."", ""country"": ""IL"", ""latitude"": 32.2215, ""longitude"": 34.8852}"
+qwen/qwen3.5-397b-a17b,CoT,31.918,34.792,3272.912,IL,True,,stop,0.0124111,553,3478,3026,115.45,"{
+""reasoning"": ""The vehicle has a yellow rear license plate and drives on the right side of the road, which strongly points to Israel (as the UK drives on the left and the Netherlands has a greener landscape). The vegetation, specifically the large Eucalyptus trees and dry, scrubby terrain under a clear blue sky, is characteristic of the Israeli coastal plain."",
+""country"": ""IL"",
+""latitude"": 31.918,
+""longitude"": 34.792
+}"
+google/gemini-3.1-pro-preview,CoT,32.0,34.9,3279.976,IL,True,,stop,0.005062,1271,210,150,10.75,"{
+  ""reasoning"": ""The combination of driving on the right, a yellow rear license plate, and Mediterranean vegetation strongly suggests Israel."",
+  ""country"": ""IL"",
+  ""latitude"": 32.0,
+  ""longitude"": 34.9
+}"
+mistralai/mistral-medium-3-5,no-CoT,31.7683,35.2137,3315.892,IL,True,,stop,0.0011835,634,31,0,0.83,"{""country"": ""IL"", ""latitude"": 31.7683, ""longitude"": 35.2137}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3968.51,,True,True,,,,,,7.53,
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,8614.108,US,True,,stop,0.0001143,634,32,0,3.21,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+qwen/qwen3.6-35b-a3b,CoT,-34.5,146.5,17026.663,AU,True,,stop,0.0075987886,553,7780,7664,147.79,"```json
+{
+""reasoning"": ""The vehicle is driving on the left with a yellow rear license plate, narrowing it down to LHT countries like Australia, the UK, or South Africa. The reddish soil on the roadside, the specific combination of a tall Poplar and Radiata Pine trees (common agricultural windbreaks in Australia), and the flat terrain strongly indicate rural Australia."",
+""country"": ""AU"",
+""latitude"": -34.5,
+""longitude"": 146.5
+}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.2,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.2,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.21,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.26,

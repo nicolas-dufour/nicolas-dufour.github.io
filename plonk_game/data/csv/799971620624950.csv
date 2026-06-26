@@ -1,0 +1,55 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,42.163391362599,-121.79860801415,0.0,US,True,,,,,,,,"Klamath Falls, Klamath County, Oregon, US"
+x-ai/grok-4.3,CoT,42.78,-121.52,72.271,US,True,,stop,0.002249,676,696,635,5.77,"{""reasoning"": ""Right-hand traffic, US-standard double yellow center lines + edge lines, ranch fencing, dry golden grass, distant hills and clear high-sun sky indicate rural western US highway."", ""country"": ""US"", ""latitude"": 42.78, ""longitude"": -121.52}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,41.425819396972656,-121.95933532714844,83.09,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,41.366825103759766,-122.0166244506836,90.401,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,42.3601,-122.8756,91.288,US,True,,stop,0.00036828,473,32,0,8.95,"{""country"": ""US"", ""latitude"": 42.3601, ""longitude"": -122.8756}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,41.33747100830078,-122.04054260253906,94.006,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,42.1947,-120.3534,119.136,US,True,,stop,0.014745,621,388,296,16.52,"{""reasoning"":""Right-hand driving with US-style double yellow centerlines and white edge lines, plus the dry ranchland, irrigated fields, cottonwoods, and low volcanic hills point to the rural interior Pacific Northwest/Great Basin. The scenery is most consistent with eastern Oregon high-desert valleys near Lakeview/Klamath country."",""country"":""US"",""latitude"":42.1947,""longitude"":-120.3534}"
+google/gemini-3.1-pro-preview,no-CoT,42.1833,-120.35,119.397,US,True,,stop,0.00281,1189,36,0,4.18,"```json
+{""country"": ""US"", ""latitude"": 42.1833, ""longitude"": -120.3500}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.4892,-120.5421,128.292,US,True,,stop,0.0021075,1189,36,0,22.27,"```json
+{""country"": ""US"", ""latitude"": 41.4892, ""longitude"": -120.5421}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,44.0582,-121.3153,214.314,US,True,,stop,0.0001898,474,32,0,5.38,"{""country"": ""US"", ""latitude"": 44.0582, ""longitude"": -121.3153}"
+qwen/qwen3.6-35b-a3b,no-CoT,44.2619,-121.3153,236.607,US,True,,stop,0.00010295,473,32,0,3.2,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -121.3153}"
+qwen/qwen3.5-35b-a3b,no-CoT,44.2619,-120.5919,252.999,US,True,,stop,0.00017136,474,32,0,8.46,"{""country"": ""US"", ""latitude"": 44.2619, ""longitude"": -120.5919}"
+qwen/qwen3.5-27b,no-CoT,44.428,-121.0429,259.13,US,True,,stop,0.0002091,473,32,0,23.93,"{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -121.0429}"
+qwen/qwen3.6-27b,no-CoT,44.428,-121.0429,259.13,US,True,,stop,0.0001963,473,32,0,17.98,"{""country"": ""US"", ""latitude"": 44.4280, ""longitude"": -121.0429}"
+moonshotai/kimi-k2.6,CoT,44.58,-121.1,274.58,US,True,,stop,0.010968228,682,3146,3056,88.45,"{""reasoning"": ""Double yellow center lines with white fog lines on a rural highway, right-hand traffic, semi-arid golden rangeland with scattered deciduous trees, wooden ranch fencing, and distant buttes under a deep blue sky are classic indicators of the high desert region of central Oregon along a US route."", ""country"": ""US"", ""latitude"": 44.5800, ""longitude"": -121.1000}"
+moonshotai/kimi-k2.6,no-CoT,44.5,-119.6,314.819,US,True,,stop,0.000263232,603,23,0,1.82,"{""country"": ""US"", ""latitude"": 44.5, ""longitude"": -119.6}"
+anthropic/claude-opus-4.8,no-CoT,44.55,-119.65,317.15,US,True,,stop,0.004055,666,29,0,9.97,"{""country"": ""US"", ""latitude"": 44.55, ""longitude"": -119.65}"
+anthropic/claude-opus-4.8,CoT,44.42,-118.96,340.169,US,True,,stop,0.00616,797,87,0,9.59,"{""reasoning"": ""Double yellow center line and white fog lines, RHD driving, dry grassland with sagebrush and low mountains typical of eastern Oregon high desert."", ""country"": ""US"", ""latitude"": 44.42, ""longitude"": -118.96}"
+openai/gpt-5.5,no-CoT,44.5992,-118.9541,355.206,US,True,,stop,0.00344,544,24,0,1.28,"{""country"":""US"",""latitude"":44.5992,""longitude"":-118.9541}"
+google/gemini-3.5-flash,CoT (effort=medium),44.4621,-118.7115,357.325,US,True,,stop,0.0056235,1271,413,346,10.32,"{""reasoning"": ""The double yellow center lines and white shoulder lines indicate North America, while the arid, grassy valley with rolling hills in the background is characteristic of eastern Oregon."", ""country"": ""US"", ""latitude"": 44.4621, ""longitude"": -118.7115}"
+google/gemini-3.5-flash,CoT (effort=high),44.4625,-118.7112,357.374,US,True,,stop,0.0098625,1271,884,811,15.53,"{""reasoning"": ""The double yellow center lines and white shoulder lines indicate North America, while the arid valley landscape with rolling hills and a brown historical marker sign points to the Pacific Northwest, likely eastern Oregon."", ""country"": ""US"", ""latitude"": 44.4625, ""longitude"": -118.7112}"
+google/gemini-3.5-flash,CoT (effort=low),44.2652,-118.1254,378.389,US,True,,stop,0.0038235,1271,213,142,9.56,"{""reasoning"": ""The double yellow center lines and white shoulder lines indicate North America, while the dry, grassy landscape with rolling hills and scattered green trees is characteristic of eastern Oregon or southern Idaho."", ""country"": ""US"", ""latitude"": 44.2652, ""longitude"": -118.1254}"
+x-ai/grok-4.3,no-CoT,38.85,-119.95,400.183,US,True,,stop,0.0005934,592,22,0,0.99,"{""country"": ""US"", ""latitude"": 38.85, ""longitude"": -119.95}"
+xiaomi/mimo-v2.5,CoT,38.5,-121.0,412.931,US,True,,stop,0.0003431176,787,926,862,16.65,"{""reasoning"": ""Double yellow road lines and right-hand traffic are characteristic of the United States; the dry, grassy terrain with distant mountains suggests a rural area in California."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -121.0}"
+google/gemini-3.1-pro-preview,CoT,44.8,-117.8,435.829,US,True,,stop,0.00583,1271,274,197,4.81,"{
+  ""reasoning"": ""Double yellow center lines and solid white edge lines indicate North America. The semi-arid landscape with rolling hills and dry grass suggests the interior Pacific Northwest, likely eastern Oregon or southern Idaho."",
+  ""country"": ""US"",
+  ""latitude"": 44.8,
+  ""longitude"": -117.8
+}"
+xiaomi/mimo-v2.5,no-CoT,38.25,-120.75,444.156,US,True,,stop,8.06176e-05,708,28,0,1.29,"{""country"": ""US"", ""latitude"": 38.25, ""longitude"": -120.75}"
+minimax/minimax-m3,CoT,45.22,-112.63,811.111,US,True,,stop,0.00093786,843,622,536,30.7,"{""reasoning"": ""Right-hand traffic with double yellow center line and white shoulder stripes indicates US roads; wooden ranch fencing, high-altitude deep blue sky, golden semi-arid grassland, and distant Rocky Mountain front range all point to southwestern Montana, likely the Beaverhead/Madison valley near Dillon."", ""country"": ""US"", ""latitude"": 45.22, ""longitude"": -112.63}"
+google/gemma-4-31b-it,no-CoT,40.7648,-111.8984,838.968,US,True,,stop,6.758e-05,406,37,0,14.95,"```json
+{""country"": ""US"", ""latitude"": 40.7648, ""longitude"": -111.8984}
+```"
+minimax/minimax-m3,no-CoT,45.7833,-111.8833,888.837,US,True,,stop,0.00030282,767,109,104,3.99,"{""country"": ""US"", ""latitude"": 45.7833, ""longitude"": -111.8833}"
+mistralai/mistral-medium-3-5,no-CoT,44.5,-110.5,949.18,US,True,,stop,0.001146,634,26,0,1.06,"{""country"": ""US"", ""latitude"": 44.5, ""longitude"": -110.5}"
+qwen/qwen3.5-9b,no-CoT,39.7392,-105.5314,1390.222,US,True,,stop,5.22e-05,474,32,0,8.74,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -105.5314}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,33.543025970458984,-110.27684783935547,1391.176,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,32.921993255615234,-109.21943664550781,1508.882,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,32.92882537841797,-109.1915054321289,1510.126,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,51.47,-0.4543,8166.81,GB,True,,stop,0.0001131,634,30,0,0.97,"{""country"": ""GB"", ""latitude"": 51.4700, ""longitude"": -0.4543}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,12563.995,,True,True,,,,,,7.3,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.49,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.41,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.22,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.34,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.13,

@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,45.606660952893,-94.423433757621,0.0,US,True,,,,,,,,"Avon, Stearns County, Minnesota, US"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,44.83310317993164,-93.2320785522461,126.906,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,44.7147102355957,-93.35714721679688,129.713,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,44.69371795654297,-93.34107208251953,132.321,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),44.1254,-93.2758,187.903,US,True,,stop,0.0037335,1271,203,128,2.99,"{""reasoning"": ""The wide divided highway with rumble strips, flat terrain, bare deciduous trees, and light snow cover is highly characteristic of the Midwestern United States, specifically along an Interstate like I-35 in Minnesota."", ""country"": ""US"", ""latitude"": 44.1254, ""longitude"": -93.2758}"
+google/gemini-3.5-flash,CoT (effort=high),44.35,-90.85,313.851,US,True,,stop,0.0086205,1271,746,673,13.98,"{""reasoning"": ""The divided highway with a yellow left shoulder line, rumble strips, and wooden utility poles is characteristic of a US Interstate, while the leafless deciduous trees and patchy snow suggest a northern Midwestern state like Wisconsin."", ""country"": ""US"", ""latitude"": 44.35, ""longitude"": -90.85}"
+google/gemini-3.1-pro-preview,CoT,43.95,-90.25,377.348,US,True,,stop,0.00541,1271,239,150,4.45,"{
+  ""reasoning"": ""The wide divided highway with rumble strips and the specific style of wooden utility poles are characteristic of the US Interstate system. The bare deciduous trees, patchy snow, and flat-to-rolling terrain strongly suggest the upper Midwest, such as Wisconsin."",
+  ""country"": ""US"",
+  ""latitude"": 43.95,
+  ""longitude"": -90.25
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.5801,-93.6204,452.372,US,True,,stop,0.0021,1190,35,0,1.46,"```json
+{""country"": ""US"", ""latitude"": 41.5801, ""longitude"": -93.6204}
+```"
+x-ai/grok-4.3,CoT,43.15,-89.35,486.88,US,True,,stop,0.0023515,676,737,659,6.02,"{""reasoning"": ""Right-hand traffic, US-style dashed white lane markings + solid yellow edge line, green overhead highway sign, wooden snow fence, and bare deciduous trees on rolling terrain point to northern US interstate in winter. Clear blue sky and snow patches narrow to Upper Midwest."", ""country"": ""US"", ""latitude"": 43.15, ""longitude"": -89.35}"
+qwen/qwen3.5-27b,no-CoT,41.5236,-90.5776,549.524,US,True,,stop,0.00019467,473,31,0,2.09,"{""country"": ""US"", ""latitude"": 41.5236, ""longitude"": -90.5776}"
+google/gemini-3.1-pro-preview,no-CoT,42.5,-89.0,554.019,US,True,,stop,0.002726,1189,29,0,2.96,"```json
+{""country"": ""US"", ""latitude"": 42.5, ""longitude"": -89.0}
+```"
+mistralai/mistral-medium-3-5,no-CoT,41.8819,-87.6278,684.826,US,True,,stop,0.0011835,634,31,0,0.82,"{""country"": ""US"", ""latitude"": 41.8819, ""longitude"": -87.6278}"
+google/gemma-4-31b-it,no-CoT,41.8781,-87.6298,684.967,US,True,,stop,5.772e-05,408,36,0,1.63,"```json
+{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,41.8781,-87.6298,684.967,US,True,,stop,0.0003322,473,31,0,1.38,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+qwen/qwen3.6-27b,no-CoT,41.8781,-87.6298,684.967,US,True,,stop,0.0001943,473,31,0,7.27,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+xiaomi/mimo-v2.5,CoT,40.1,-89.5,731.787,US,True,,stop,0.0003963176,787,1116,1058,12.99,"{""reasoning"": ""Right-hand traffic and wooden utility poles in a snowy rural landscape with bare deciduous trees are characteristic of the Midwestern United States."", ""country"": ""US"", ""latitude"": 40.1, ""longitude"": -89.5}"
+qwen/qwen3.5-9b,no-CoT,42.9633,-85.6681,755.861,US,True,,stop,5.205e-05,474,31,0,4.25,"{""country"": ""US"", ""latitude"": 42.9633, ""longitude"": -85.6681}"
+anthropic/claude-opus-4.8,CoT,40.5,-88.0,770.746,US,True,,stop,0.006235,797,90,0,26.55,"{""reasoning"": ""Wide divided highway with right-hand driving, snow patches in winter fields, bare deciduous trees, and green overhead sign typical of US Midwest interstate."", ""country"": ""US"", ""latitude"": 40.5, ""longitude"": -88.0}"
+minimax/minimax-m3,CoT,42.45,-85.35,805.224,US,True,,stop,0.00076146,843,475,390,19.39,"{""reasoning"": ""Right-hand traffic, green North American freeway sign visible in distance, wooden snow fence along median (typical of US Midwest/Canadian highways in winter), flat agricultural terrain with bare deciduous trees and brown winter grass suggest a US Midwestern interstate, likely in southern Michigan or northern Indiana."", ""country"": ""US"", ""latitude"": 42.45, ""longitude"": -85.35}"
+google/gemini-3.5-flash,CoT (effort=medium),42.2625,-84.8512,851.178,US,True,,stop,0.0060015,1271,455,372,5.8,"```json
+{""reasoning"": ""The divided highway with standard US road markings, wooden utility poles, and a snowy, flat-to-gently-rolling landscape with bare deciduous trees strongly indicates the US Midwest, likely along an Interstate in Michigan."", ""country"": ""US"", ""latitude"": 42.2625, ""longitude"": -84.8512}
+```"
+anthropic/claude-opus-4.8,no-CoT,40.7128,-85.9982,872.757,US,True,,stop,0.004105,666,31,0,8.58,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -85.9982}"
+qwen/qwen3.5-122b-a10b,no-CoT,42.5672,-83.3845,943.248,US,True,,stop,0.00018772,474,31,0,6.23,"{""country"": ""US"", ""latitude"": 42.5672, ""longitude"": -83.3845}"
+moonshotai/kimi-k2.6,CoT,41.5,-84.0,955.016,US,True,,stop,0.009403848,682,2681,2609,61.35,"{""reasoning"": ""Green highway guide signage and rumble-striped road shoulder are characteristic of a US Interstate; bare deciduous woodlands, snow-covered fields, and leaning wooden utility poles indicate the northern Midwest/Great Lakes region in winter."", ""country"": ""US"", ""latitude"": 41.5, ""longitude"": -84.0}"
+x-ai/grok-4.3,no-CoT,42.35,-83.05,978.356,US,True,,stop,0.0005934,592,22,0,0.8,"{""country"": ""US"", ""latitude"": 42.35, ""longitude"": -83.05}"
+qwen/qwen3.6-35b-a3b,no-CoT,42.3314,-83.0458,979.562,US,True,,stop,0.00010195,473,31,0,3.75,"{""country"": ""US"", ""latitude"": 42.3314, ""longitude"": -83.0458}"
+xiaomi/mimo-v2.5,no-CoT,41.5,-81.5,1135.447,US,True,,stop,7.97776e-05,708,25,0,1.0,"{""country"": ""US"", ""latitude"": 41.5, ""longitude"": -81.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,43.83576583862305,-79.86100769042969,1165.588,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,43.82631301879883,-79.80512237548828,1170.191,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,43.4967,-79.9012,1172.67,CA,True,,stop,0.00344,544,24,0,4.78,"{""country"":""CA"",""latitude"":43.4967,""longitude"":-79.9012}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.72133255004883,-79.55530548095703,1192.593,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,42.8567,-73.9234,1656.911,US,True,,stop,0.000157,473,31,0,0.64,"{""country"": ""US"", ""latitude"": 42.8567, ""longitude"": -73.9234}"
+mistralai/mistral-small-2603,no-CoT,40.7128,-74.006,1737.532,US,True,,stop,0.0001131,634,30,0,2.37,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+openai/gpt-5.5,CoT,42.9176,143.2147,8644.331,JP,True,,stop,0.021255,621,605,516,59.41,"{""reasoning"":""Snowy flat rural divided highway with left-side driving layout, Japanese-style shoulder rumble strips, utility poles, and deciduous Hokkaido-like landscape point to a Hokkaido expressway. The open agricultural/wooded terrain is most consistent with eastern Hokkaido near the Doto Expressway."",""country"":""JP"",""latitude"":42.9176,""longitude"":143.2147}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,10351.467,,True,True,,,,,,15.74,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,15.45,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.51,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.41,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.36,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,13.37,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.38,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.17,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.54,

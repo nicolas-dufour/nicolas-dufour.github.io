@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,9.8589116386809,6.5445618309266,0.0,NG,True,,,,,,,,"Kuta, None, Niger, NG"
+google/gemini-3.5-flash,CoT (effort=low),9.8542,7.6124,116.987,NG,True,,stop,0.0042645,1307,256,184,9.34,"{""reasoning"": ""The reddish-orange dirt road, dry savannah vegetation, and herd of white Zebu cattle are highly characteristic of rural Nigeria, particularly in the central or northern regions where Google Street View coverage exists."", ""country"": ""NG"", ""latitude"": 9.8542, ""longitude"": 7.6124}"
+google/gemini-3.1-pro-preview,CoT,10.521,7.438,122.395,NG,True,,stop,0.00559,1307,248,170,4.93,"{
+  ""reasoning"": ""The reddish laterite soil, savanna vegetation, and presence of white humped cattle strongly indicate a West African landscape. The overall environment is typical of the Sahel or Sudan savanna regions."",
+  ""country"": ""NG"",
+  ""latitude"": 10.521,
+  ""longitude"": 7.438
+}"
+google/gemini-3.1-pro-preview,no-CoT,9.05,7.45,133.99,NG,True,,stop,0.004466,1225,168,139,3.84,"```json
+{""country"": ""NG"", ""latitude"": 9.05, ""longitude"": 7.45}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),9.6543,7.8212,141.74,NG,True,,stop,0.0079815,1307,669,595,12.83,"{""reasoning"": ""The reddish-orange dirt road, dry savanna vegetation, and herd of white Fulani Zebu cattle are highly characteristic of the Middle Belt or northern region of Nigeria, captured from a Google Street View vehicle."", ""country"": ""NG"", ""latitude"": 9.6543, ""longitude"": 7.8212}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),9.8542,8.8921,257.181,NG,True,,stop,0.002136,1226,33,0,1.44,"```json
+{""country"": ""NG"", ""latitude"": 9.8542, ""longitude"": 8.8921}
+```"
+x-ai/grok-4.3,CoT,11.85,-1.65,921.797,BF,True,,stop,0.0025886,788,741,674,314.84,"{""reasoning"": ""Red dirt road, acacia/terminalia savanna vegetation, and large herd of white cattle match West African Sahel; clear blue sky and dry-season foliage point to Burkina Faso or southern Mali."", ""country"": ""BF"", ""latitude"": 11.85, ""longitude"": -1.65}"
+moonshotai/kimi-k2.6,CoT,12.3,-2.0,971.003,BF,True,,stop,0.009745956,834,2771,2702,142.15,"{""reasoning"": ""Red laterite dirt road and dry Sahelian savanna with scattered trees are characteristic of Burkina Faso; white cattle grazing and flat terrain confirm a rural location in the West African Sahel."", ""country"": ""BF"", ""latitude"": 12.3, ""longitude"": -2.0}"
+xiaomi/mimo-v2.5,CoT,14.5,-4.0,1256.546,ML,True,,stop,0.0004763976,899,1346,1255,17.86,"{""reasoning"": ""The image features a characteristic red laterite dirt road through a Sudanian savanna landscape with scattered trees and a large herd of white Zebu cattle, typical of West African pastoral regions. The combination of the soil color, vegetation, and livestock is highly indicative of Mali or Burkina Faso."", ""country"": ""ML"", ""latitude"": 14.5, ""longitude"": -4.0}"
+x-ai/grok-4.3,no-CoT,14.35,-4.15,1265.067,ML,True,,stop,0.0007334,704,22,0,1.83,"{""country"": ""ML"", ""latitude"": 14.35, ""longitude"": -4.15}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,1313.821,,True,True,,,,,,6.42,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,12.223282814025879,-5.260828971862793,1314.77,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,12.479089736938477,-6.163724422454834,1416.38,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,12.517304420471191,-6.222942352294922,1423.483,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,12.5,-7.5,1559.652,ML,True,,stop,0.00692,949,87,0,3.16,"{""reasoning"": ""Red laterite dirt road through dry savanna with white zebu cattle herd and scattered trees typical of West African Sahel/Sudanian zone."", ""country"": ""ML"", ""latitude"": 12.5, ""longitude"": -7.5}"
+anthropic/claude-opus-4.8,no-CoT,12.65,-7.5,1562.47,ML,True,,stop,0.00484,818,30,0,8.61,"{""country"": ""ML"", ""latitude"": 12.65, ""longitude"": -7.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,12.406085014343262,-10.217290878295898,1850.156,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,14.145293235778809,-12.140349388122559,2086.484,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,13.056654930114746,-14.00419807434082,2266.639,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),15.25,-14.1,2318.006,SN,True,,stop,0.0147045,1307,1416,1350,19.24,"{""reasoning"": ""The presence of white Zebu cattle grazing in an open savanna alongside a reddish-dirt road is highly characteristic of the Sahelian pastoral zones of Senegal, particularly the Ferlo region."", ""country"": ""SN"", ""latitude"": 15.25, ""longitude"": -14.1}"
+google/gemma-4-31b-it,no-CoT,14.496,-14.458,2339.08,SN,True,,stop,6.612e-05,404,34,0,2.76,"```json
+{""country"": ""SN"", ""latitude"": 14.496, ""longitude"": -14.458}
+```"
+xiaomi/mimo-v2.5,no-CoT,-1.2921,36.8219,3573.641,KE,True,,stop,9.68576e-05,820,30,0,8.79,"{""country"": ""KE"", ""latitude"": -1.2921, ""longitude"": 36.8219}"
+qwen/qwen3.5-27b,no-CoT,-6.163,35.7516,3693.352,TZ,True,,stop,0.00026416,586,43,0,2.29,"```json
+{
+  ""country"": ""TZ"",
+  ""latitude"": -6.1630,
+  ""longitude"": 35.7516
+}
+```"
+openai/gpt-5.5,no-CoT,-21.9971,24.4639,4045.675,BW,True,,stop,0.00411,678,24,0,3.15,"{""country"":""BW"",""latitude"":-21.9971,""longitude"":24.4639}"
+openai/gpt-5.5,CoT,-22.4321,26.9124,4221.3,BW,True,,stop,0.013705,755,331,245,43.18,"{""reasoning"":""Flat semi-arid savanna with red sandy dirt road, sparse acacia/mopane-like trees, and white cattle is highly characteristic of rural Botswana cattle country. The open dry bushveld and lack of road infrastructure point to an interior track rather than a denser southern African settlement."",""country"":""BW"",""latitude"":-22.4321,""longitude"":26.9124}"
+qwen/qwen3.6-35b-a3b,no-CoT,-25.7479,28.1916,4600.244,ZA,True,,stop,0.000185,585,31,0,0.62,"{""country"": ""ZA"", ""latitude"": -25.7479, ""longitude"": 28.1916}"
+qwen/qwen3.5-35b-a3b,no-CoT,-25.7461,28.2293,4602.154,ZA,True,,stop,0.00011304,586,31,0,8.35,"{""country"": ""ZA"", ""latitude"": -25.7461, ""longitude"": 28.2293}"
+minimax/minimax-m3,CoT,-12.5,-49.0,6619.059,BR,True,,stop,0.00067866,995,368,289,10.26,"{""reasoning"": ""Red lateritic dirt road, cerrado vegetation with scattered trees, and a herd of white Nelore cattle are highly characteristic of the Brazilian cerrado region in central Brazil. The orange-red soil and dry savanna landscape point to states like Goiás or Tocantins."", ""country"": ""BR"", ""latitude"": -12.5, ""longitude"": -49.0}"
+mistralai/mistral-medium-3-5,no-CoT,-15.7801,-47.8825,6634.968,BR,True,,stop,0.0014115,786,31,0,1.46,"{""country"": ""BR"", ""latitude"": -15.7801, ""longitude"": -47.8825}"
+qwen/qwen3.5-397b-a17b,no-CoT,-15.7942,-47.8822,6635.521,BR,True,,stop,0.00043188,585,31,0,7.84,"{""country"": ""BR"", ""latitude"": -15.7942, ""longitude"": -47.8822}"
+qwen/qwen3.5-122b-a10b,no-CoT,-12.2345,-55.6789,7299.104,BR,True,,stop,0.00021658,585,31,0,7.27,"{""country"": ""BR"", ""latitude"": -12.2345, ""longitude"": -55.6789}"
+qwen/qwen3.6-27b,no-CoT,21.1458,79.0882,7814.833,IN,True,,stop,0.0002279,585,31,0,12.86,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+qwen/qwen3.5-9b,no-CoT,23.685,90.356,8944.753,BD,True,,stop,0.0001067,585,29,0,4.49,"{""country"": ""BD"", ""latitude"": 23.685, ""longitude"": 90.356}"
+mistralai/mistral-small-2603,no-CoT,-33.8688,151.2093,15534.98,AU,True,,stop,0.000171375,786,32,0,1.57,"{""country"": ""AU"", ""latitude"": -33.8688, ""longitude"": 151.2093}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.52,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,12.46,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,9.78,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.12,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,12.83,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.22,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.24,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.31,

@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,0.74260647936044,24.225287968044,0.0,CD,True,,,,,,,,"Yangambi, Sous-Region de la Tshopo, Eastern Province, CD"
+qwen/qwen3.6-35b-a3b,no-CoT,-0.5134,25.8211,225.812,CD,True,,stop,0.0001428,474,30,0,2.15,"{""country"": ""CD"", ""latitude"": -0.5134, ""longitude"": 25.8211}"
+google/gemma-4-31b-it,no-CoT,-1.5,22.0,351.283,CD,True,,stop,5.527e-05,408,29,0,1.49,"```json
+{""country"": ""CD"", ""latitude"": -1.5, ""longitude"": 22.0}
+```"
+anthropic/claude-opus-4.8,CoT,-2.0,22.0,392.697,CD,True,,stop,0.00646,797,99,0,9.54,"{""reasoning"": ""Tropical equatorial village with palm trees, thatched mud-brick huts, sandy dirt road and a person in wrap clothing suggests rural Central Africa, most likely DRC."", ""country"": ""CD"", ""latitude"": -2.0, ""longitude"": 22.0}"
+google/gemini-3.1-pro-preview,CoT,2.5123,20.0456,504.513,CD,True,,stop,0.007822,1271,440,343,12.97,"{
+  ""reasoning"": ""The tropical vegetation with oil palms and Borassus palms, sandy soil, and simple village huts strongly suggest Central or West Africa. The presence of a white vehicle with a bullbar is typical of NGO/UN vehicles in regions like the Democratic Republic of the Congo."",
+  ""country"": ""CD"",
+  ""latitude"": 2.5123,
+  ""longitude"": 20.0456
+}"
+anthropic/claude-opus-4.8,no-CoT,-3.5,22.5,509.234,CD,True,,stop,0.00408,666,30,0,15.05,"{""country"": ""CD"", ""latitude"": -3.5, ""longitude"": 22.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-5.0377197265625,23.95381736755371,643.45,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,-1.85,18.2,729.29,CG,True,,stop,0.0001560776,787,258,160,3.75,"{""reasoning"": ""The presence of oil palms, sandy soil, thatched-roof huts, and the specific style of the Raphia palms suggests a rural village in the humid tropical zone of West or Central Africa, likely near the equator. The general architecture and vegetation are consistent with regions in the Republic of the Congo or Gabon."", ""country"": ""CG"", ""latitude"": -1.85, ""longitude"": 18.2}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-5.416157245635986,21.39899444580078,753.318,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-5.400815963745117,21.31509780883789,755.706,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),-4.3812,19.6245,765.431,CD,True,,stop,0.0020895,1189,34,0,1.42,"```json
+{""country"": ""CD"", ""latitude"": -4.3812, ""longitude"": 19.6245}
+```"
+moonshotai/kimi-k2.6,CoT,-4.85,18.12,920.128,CD,True,,stop,0.010155528,682,2903,2835,57.48,"{""reasoning"": ""Thatch-roofed mud huts, tropical oil palms, and an unpaved sandy road through a flat rural village are classic of the Congo Basin; right-hand traffic matches the DRC."", ""country"": ""CD"", ""latitude"": -4.85, ""longitude"": 18.12}"
+minimax/minimax-m3,CoT,1.45,15.85,934.429,CG,True,,stop,0.00076266,843,476,376,13.2,"{""reasoning"": ""Tropical rainforest village with distinctive raffia palms (typical of Congo Basin swampy areas), thatched-roof rectangular huts characteristic of Central African Bantu communities, red-brown lateritic soil, and dirt road traversed by an NGO-style Land Cruiser point to the Congo Basin region, most likely Republic of Congo (Sangha/Cuvette area)."", ""country"": ""CG"", ""latitude"": 1.45, ""longitude"": 15.85}"
+google/gemini-3.1-pro-preview,no-CoT,-4.3224,15.307,1139.737,CD,True,,stop,0.002786,1189,34,0,2.32,"```json
+{""country"": ""CD"", ""latitude"": -4.3224, ""longitude"": 15.3070}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,-4.3426,15.3136,1140.205,CD,True,,stop,0.00018564,474,30,0,5.08,"{""country"": ""CD"", ""latitude"": -4.3426, ""longitude"": 15.3136}"
+google/gemma-4-26b-a4b-it,no-CoT,-0.3532,34.7612,1177.835,KE,True,,stop,5.454e-05,406,30,0,0.98,"{""country"": ""KE"", ""latitude"": -0.3532, ""longitude"": 34.7612}"
+mistralai/mistral-medium-3-5,no-CoT,4.8156,7.0498,1960.196,NG,True,,stop,0.0011685,634,29,0,0.84,"{""country"": ""NG"", ""latitude"": 4.8156, ""longitude"": 7.0498}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,4.983090400695801,6.397330284118652,2034.814,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,5.32,6.45,2037.792,NG,True,,stop,7.97776e-05,708,25,0,3.79,"{""country"": ""NG"", ""latitude"": 5.32, ""longitude"": 6.45}"
+qwen/qwen3.5-9b,no-CoT,6.4541,4.3959,2289.461,NG,True,,stop,5.175e-05,474,29,0,5.05,"{""country"": ""NG"", ""latitude"": 6.4541, ""longitude"": 4.3959}"
+x-ai/grok-4.3,no-CoT,6.45,3.4,2395.675,NG,True,,stop,0.0005934,592,22,0,1.76,"{""country"": ""NG"", ""latitude"": 6.45, ""longitude"": 3.4}"
+qwen/qwen3.5-35b-a3b,no-CoT,6.5244,3.3792,2399.985,NG,True,,stop,9.995e-05,473,29,0,3.37,"{""country"": ""NG"", ""latitude"": 6.5244, ""longitude"": 3.3792}"
+x-ai/grok-4.3,CoT,6.45,3.35,2401.023,NG,True,,stop,0.001949,676,576,513,5.33,"{""reasoning"": ""Tropical palm trees (incl. oil palms), thatched-roof mud huts, dirt track and clothing style indicate rural West Africa; no other region matches all visual markers simultaneously."", ""country"": ""NG"", ""latitude"": 6.45, ""longitude"": 3.35}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,6.696267127990723,1.5480740070343018,2600.729,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,6.8277,-5.2893,3342.193,CI,True,,stop,0.0002019,473,29,0,16.35,"{""country"": ""CI"", ""latitude"": 6.8277, ""longitude"": -5.2893}"
+qwen/qwen3.6-27b,no-CoT,6.8277,-5.2893,3342.193,CI,True,,stop,0.0001903,473,29,0,15.62,"{""country"": ""CI"", ""latitude"": 6.8277, ""longitude"": -5.2893}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,6.261440277099609,-7.535318851470947,3576.505,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,8.4657,-11.7794,4078.511,SL,True,,stop,0.000345,474,30,0,8.07,"{""country"": ""SL"", ""latitude"": 8.4657, ""longitude"": -11.7794}"
+openai/gpt-5.5,no-CoT,11.8634,-15.5978,4563.723,GW,True,,stop,0.00344,544,24,0,1.22,"{""country"":""GW"",""latitude"":11.8634,""longitude"":-15.5978}"
+google/gemini-3.5-flash,CoT (effort=low),12.5654,-16.5432,4681.344,SN,True,,stop,0.0059115,1271,445,373,4.88,"{""reasoning"": ""The presence of Borassus palms, sandy soil, tropical vegetation, and rural dwellings matches the Casamance region of Senegal, where Google Street View coverage features this white vehicle hood."", ""country"": ""SN"", ""latitude"": 12.5654, ""longitude"": -16.5432}"
+google/gemini-3.5-flash,CoT (effort=high),12.5642,-16.5815,4685.362,SN,True,,stop,0.0136155,1271,1301,1217,18.46,"```json
+{""reasoning"": ""The presence of both Borassus and oil palms, sandy light-colored soil, traditional thatched huts, and the distinctive white Google car hood with a black bull bar points directly to the Casamance region of Senegal."", ""country"": ""SN"", ""latitude"": 12.5642, ""longitude"": -16.5815}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),12.5642,-16.5825,4685.467,SN,True,,stop,0.0097185,1271,868,785,10.77,"```json
+{""reasoning"": ""The presence of Borassus (rônier) and oil palms, sandy soil, and traditional West African rural dwellings, combined with the white vehicle hood, strongly points to the Casamance region of Senegal."", ""country"": ""SN"", ""latitude"": 12.5642, ""longitude"": -16.5825}
+```"
+openai/gpt-5.5,CoT,13.2418,-16.6794,4713.187,GM,True,,stop,0.016515,621,447,375,11.22,"{""reasoning"":""Flat sandy village track with thatched compounds, Borassus fan palms and oil palms strongly suggests the Senegambia coastal belt. The rural tropical architecture and vegetation fit The Gambia best among commonly imaged areas."",""country"":""GM"",""latitude"":13.2418,""longitude"":-16.6794}"
+mistralai/mistral-small-2603,no-CoT,-22.9068,-47.0626,8130.067,BR,True,,stop,0.000142125,634,31,0,1.46,"{""country"": ""BR"", ""latitude"": -22.9068, ""longitude"": -47.0626}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.72,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.25,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.33,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.58,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,13.22,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.55,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.44,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.24,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.38,

@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,18.951208991081,-155.68417700545,0.0,US,True,,,,,,,,"Hawaiian Ocean View, Hawaii County, Hawaii, US"
+google/gemini-3.5-flash,CoT (effort=medium),19.0148,-155.6881,7.083,US,True,,stop,0.0065505,1271,516,443,13.79,"{""reasoning"": ""The extremely wind-swept trees leaning to the west, grassy pastures with wire fences, and the ocean in the distance are characteristic of South Point Road on the Big Island of Hawaii."", ""country"": ""US"", ""latitude"": 19.0148, ""longitude"": -155.6881}"
+google/gemini-3.5-flash,CoT (effort=low),19.0152,-155.6881,7.127,US,True,,stop,0.004437,1272,281,206,2.82,"```json
+{""reasoning"": ""The extremely wind-bent trees, narrow paved road without markings, and grassy pastures overlooking the Pacific Ocean are highly characteristic of South Point Road on the Big Island of Hawaii."", ""country"": ""US"", ""latitude"": 19.0152, ""longitude"": -155.6881}
+```"
+google/gemini-3.1-pro-preview,no-CoT,19.015,-155.665,7.374,US,True,,stop,0.005618,1189,270,236,27.65,"```json
+{""country"": ""US"", ""latitude"": 19.015, ""longitude"": -155.665}
+```"
+google/gemini-3.5-flash,CoT (effort=high),19.015,-155.665,7.374,US,True,,stop,0.0084675,1271,729,656,6.69,"{""reasoning"": ""The wind-swept ironwood trees leaning heavily to one side, the narrow unmarked asphalt road, and the grassy coastal slopes are highly characteristic of South Point Road on the Big Island of Hawaii."", ""country"": ""US"", ""latitude"": 19.015, ""longitude"": -155.665}"
+google/gemini-3.1-pro-preview,CoT,19.015,-155.662,7.467,US,True,,stop,0.006898,1271,363,284,18.04,"{
+  ""reasoning"": ""The wind-swept ironwood trees, rolling green pasture, and narrow paved road descending towards the ocean are highly characteristic of South Point Road on the Big Island of Hawaii."",
+  ""country"": ""US"",
+  ""latitude"": 19.015,
+  ""longitude"": -155.662
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),19.0182,-155.6781,7.476,US,True,,stop,0.0021075,1189,36,0,1.39,"```json
+{""country"": ""US"", ""latitude"": 19.0182, ""longitude"": -155.6781}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,18.858858108520508,-155.6905517578125,10.291,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,18.841760635375977,-155.6967010498047,12.241,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,18.82305145263672,-155.7010955810547,14.361,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,20.01,-155.68,117.733,US,True,,stop,8.06176e-05,708,28,0,7.41,"{""country"": ""US"", ""latitude"": 20.01, ""longitude"": -155.68}"
+minimax/minimax-m3,CoT,20.0,-155.3,123.378,US,True,,stop,0.00077946,843,490,399,21.63,"{""reasoning"": ""Tropical grassland ranchland with wind-swept palm/acacia trees, volcanic dark soil, narrow paved road with wire fencing, and ocean visible at lower elevation are characteristic of the ranching slopes on the Big Island of Hawaii (likely Hamakua Coast or Kohala/Hawaii Belt Road area)."", ""country"": ""US"", ""latitude"": 20.0, ""longitude"": -155.3}"
+xiaomi/mimo-v2.5,CoT,20.05,-155.85,123.41,US,True,,stop,0.0003459176,787,936,857,16.83,"{""reasoning"": ""The vegetation includes ironwood trees (Casuarina) and a coastal landscape with an ocean view, typical of Hawaii's rural roads. The fence style and narrow paved road are consistent with island infrastructure in the United States."", ""country"": ""US"", ""latitude"": 20.05, ""longitude"": -155.85}"
+openai/gpt-5.5,no-CoT,20.0945,-155.5156,128.35,US,True,,stop,0.00344,544,24,0,7.91,"{""country"":""US"",""latitude"":20.0945,""longitude"":-155.5156}"
+moonshotai/kimi-k2.6,CoT,20.12,-155.82,130.741,US,True,,stop,0.007566228,682,2147,2078,46.68,"{""reasoning"": ""Wind-swept trees, open green ranchland, red volcanic shoulders, and a subtropical ocean horizon with a low marine cloud bank are classic signatures of Kohala on the Big Island of Hawaii."", ""country"": ""US"", ""latitude"": 20.12, ""longitude"": -155.82}"
+anthropic/claude-opus-4.8,CoT,20.2,-155.85,139.942,US,True,,stop,0.006485,797,100,0,9.56,"{""reasoning"": ""Windswept ironwood trees, coastal grassland sloping to the ocean, and narrow rural road suggest a tropical Pacific island like Hawaii's Big Island coastal pasture."", ""country"": ""US"", ""latitude"": 20.2, ""longitude"": -155.85}"
+anthropic/claude-opus-4.8,no-CoT,20.2356,-155.8861,144.376,US,True,,stop,0.004105,666,31,0,2.74,"{""country"": ""US"", ""latitude"": 20.2356, ""longitude"": -155.8861}"
+openai/gpt-5.5,CoT,20.2506,-155.8604,145.66,US,True,,stop,0.018225,621,504,416,13.1,"{""reasoning"":""Lush ocean-facing pastureland, narrow unmarked rural asphalt, wire fences, and strong trade-wind-bent trees are characteristic of Hawaii’s windward North Kohala coast. The scene most closely matches small roads descending toward the Pacific near Hawi/Upolu Point on the Big Island."",""country"":""US"",""latitude"":20.2506,""longitude"":-155.8604}"
+mistralai/mistral-medium-3-5,no-CoT,20.7585,-156.2145,208.474,US,True,,stop,0.001191,634,32,0,0.88,"{""country"": ""US"", ""latitude"": 20.7585, ""longitude"": -156.2145}"
+qwen/qwen3.5-35b-a3b,no-CoT,20.7343,-156.3122,208.867,US,True,,stop,0.00017136,474,32,0,2.8,"{""country"": ""US"", ""latitude"": 20.7343, ""longitude"": -156.3122}"
+qwen/qwen3.5-9b,no-CoT,20.7948,-156.3319,215.897,US,True,,stop,8.841e-05,473,32,0,1.87,"{""country"": ""US"", ""latitude"": 20.7948, ""longitude"": -156.3319}"
+qwen/qwen3.5-122b-a10b,no-CoT,20.798363,-156.331924,216.274,US,True,,stop,0.00019812,474,36,0,6.81,"{""country"": ""US"", ""latitude"": 20.798363, ""longitude"": -156.331924}"
+qwen/qwen3.6-27b,no-CoT,20.7984,-156.3319,216.277,US,True,,stop,0.0002446,474,32,0,13.69,"{""country"": ""US"", ""latitude"": 20.7984, ""longitude"": -156.3319}"
+qwen/qwen3.6-35b-a3b,no-CoT,20.7984,-156.3319,216.277,US,True,,stop,0.00015825,473,32,0,7.01,"{""country"": ""US"", ""latitude"": 20.7984, ""longitude"": -156.3319}"
+qwen/qwen3.5-397b-a17b,no-CoT,20.85,-156.35,222.315,US,True,,stop,0.00035388,473,28,0,1.4,"{""country"": ""US"", ""latitude"": 20.85, ""longitude"": -156.35}"
+google/gemma-4-31b-it,no-CoT,20.889,-156.351,226.467,US,True,,stop,0.00019307,408,35,0,9.1,"```json
+{""country"": ""US"", ""latitude"": 20.889, ""longitude"": -156.351}
+```"
+x-ai/grok-4.3,CoT,20.904,-156.685,241.028,US,True,,stop,0.0023915,676,753,683,20.13,"{""reasoning"": ""Windswept coastal pasture with dirt road descending to blue ocean, bent trees and fence style match Hawaii's windward slopes; no other signage/vehicles but vegetation, sky and terrain are diagnostic of Pacific islands."", ""country"": ""US"", ""latitude"": 20.904, ""longitude"": -156.685}"
+x-ai/grok-4.3,no-CoT,20.904,-156.685,241.028,US,True,,stop,0.0005934,592,22,0,1.41,"{""country"": ""US"", ""latitude"": 20.904, ""longitude"": -156.685}"
+qwen/qwen3.5-27b,no-CoT,-39.2833,174.7833,7166.288,NZ,True,,stop,0.000142155,473,32,0,7.71,"{""country"": ""NZ"", ""latitude"": -39.2833, ""longitude"": 174.7833}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,32.10532760620117,-16.885025024414062,12840.753,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,29.430831909179688,-17.634140014648438,13003.153,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,29.045032501220703,-17.522615432739258,13041.061,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,16626.962,,True,True,,,,,,13.09,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.31,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.72,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,6.38,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.38,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.76,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.23,
+mistralai/mistral-small-2603,no-CoT,,,,,False,,,,,,,17.49,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.26,

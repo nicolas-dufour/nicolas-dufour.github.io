@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,68.678580768009,23.325837956408,0.0,FI,True,,,,,,,,"Enontekioe, Tunturi-Lappi, Lapland, FI"
+google/gemini-3.1-pro-preview,CoT,69.0123,23.0456,38.774,NO,True,,stop,0.00571,1271,264,184,17.68,"{
+  ""reasoning"": ""The yellow dashed center line and solid white edge line are characteristic of Norwegian roads. The sparse birch vegetation and flat, barren landscape strongly suggest the far north, likely Finnmark."",
+  ""country"": ""NO"",
+  ""latitude"": 69.0123,
+  ""longitude"": 23.0456
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,69.15855407714844,23.138288497924805,53.895,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,69.24028778076172,23.248741149902344,62.535,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,69.27308654785156,23.495040893554688,66.45,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=low),69.4125,24.4531,93.106,NO,True,,stop,0.005175,1272,363,299,3.58,"{""reasoning"": ""The yellow center lines combined with the low, sparse birch vegetation and flat subarctic landscape are highly characteristic of the Finnmark plateau in northern Norway."", ""country"": ""NO"", ""latitude"": 69.4125, ""longitude"": 24.4531}"
+google/gemini-3.1-pro-preview,no-CoT,69.5,24.0,95.174,NO,True,,stop,0.003868,1190,124,95,9.42,"```json
+{""country"": ""NO"", ""latitude"": 69.5, ""longitude"": 24.0}
+```"
+minimax/minimax-m3,CoT,69.65,23.5,108.236,NO,True,,stop,0.00044946,843,215,132,13.72,"{""reasoning"": ""Double yellow center lines indicate Scandinavia (Norway/Sweden), and the barren birch-scrub tundra landscape, low vegetation, and overcast sky strongly suggest northern Norway (Finnmark). The road appears to be a main highway through sub-arctic terrain."", ""country"": ""NO"", ""latitude"": 69.65, ""longitude"": 23.5}"
+openai/gpt-5.5,CoT,69.4012,25.1847,109.185,NO,True,,stop,0.016515,621,447,357,16.22,"{""reasoning"":""The yellow centerline with white edge lines and right-hand traffic fit Norway, while the sparse birch scrub, open tundra-like terrain, and overcast subarctic landscape point to Finnmark in far northern Norway. The scene most closely resembles a rural highway near Karasjok/Kautokeino."",""country"":""NO"",""latitude"":69.4012,""longitude"":25.1847}"
+google/gemini-3.5-flash,CoT (effort=medium),69.4521,25.1234,111.787,NO,True,,stop,0.0094485,1271,838,760,14.21,"```json
+{""reasoning"": ""The stunted birch vegetation, flat-to-rolling terrain, and yellow center lines are characteristic of the far north of Fennoscandia, specifically northern Norway (Finnmark) or northern Finland."", ""country"": ""NO"", ""latitude"": 69.4521, ""longitude"": 25.1234}
+```"
+anthropic/claude-opus-4.8,no-CoT,69.45,25.5,121.725,NO,True,,stop,0.00408,666,30,0,8.74,"{""country"": ""NO"", ""latitude"": 69.45, ""longitude"": 25.5}"
+google/gemini-3.5-flash,CoT (effort=high),69.15,26.5,137.353,FI,True,,stop,0.0137235,1271,1313,1252,9.75,"{""reasoning"": ""The yellow center lines combined with the low, scrubby birch vegetation and flat terrain are highly characteristic of the subarctic landscape in northern Lapland, Finland."", ""country"": ""FI"", ""latitude"": 69.15, ""longitude"": 26.5}"
+openai/gpt-5.5,no-CoT,69.5097,25.9508,139.223,NO,True,,stop,0.00341,544,23,0,8.42,"{""country"":""NO"",""latitude"":69.5097,""longitude"":25.9508}"
+anthropic/claude-opus-4.8,CoT,69.0,27.0,151.723,FI,True,,stop,0.006235,797,90,0,9.29,"{""reasoning"": ""Yellow center line with subarctic birch scrub and tundra vegetation under gray skies suggests northern Scandinavia, likely Finnish Lapland."", ""country"": ""FI"", ""latitude"": 69.0, ""longitude"": 27.0}"
+moonshotai/kimi-k2.6,CoT,68.75,27.25,158.574,FI,True,,stop,0.024457068,682,7089,7023,217.46,"{""reasoning"": ""Flat subarctic tundra with scattered mountain birch scrub, yellow double center-line road markings, and distant vehicles using mandatory daytime headlights are diagnostic of a major highway through Finnish Lapland."", ""country"": ""FI"", ""latitude"": 68.75, ""longitude"": 27.25}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),68.4812,27.4156,167.492,FI,True,,stop,0.0021,1190,35,0,1.32,"```json
+{""country"": ""FI"", ""latitude"": 68.4812, ""longitude"": 27.4156}
+```"
+qwen/qwen3.5-9b,no-CoT,64.05,18.75,553.269,SE,True,,stop,8.716e-05,473,27,0,7.74,"{""country"": ""SE"", ""latitude"": 64.05, ""longitude"": 18.75}"
+qwen/qwen3.5-122b-a10b,no-CoT,68.4125,-133.4567,4668.988,CA,True,,stop,0.0001898,474,32,0,12.54,"{""country"": ""CA"", ""latitude"": 68.4125, ""longitude"": -133.4567}"
+xiaomi/mimo-v2.5,CoT,65.3,-127.8,4947.926,CA,True,,stop,0.0001709176,787,311,226,4.23,"{""reasoning"": ""Right-hand traffic with double yellow center lines (standard for North America) and the subarctic boreal-tundra transitional landscape confirm this is northern Canada. The overcast sky, low shrubby vegetation, and remote paved road match the northern territories of Canada."", ""country"": ""CA"", ""latitude"": 65.3, ""longitude"": -127.8}"
+google/gemma-4-31b-it,no-CoT,62.1234,-114.5678,5091.302,CA,True,,stop,6.758e-05,406,37,0,2.4,"```json
+{""country"": ""CA"", ""latitude"": 62.1234, ""longitude"": -114.5678}
+```"
+xiaomi/mimo-v2.5,no-CoT,64.8378,-147.7164,5152.157,US,True,,stop,8.17376e-05,708,32,0,1.52,"{""country"": ""US"", ""latitude"": 64.8378, ""longitude"": -147.7164}"
+x-ai/grok-4.3,no-CoT,55.75,-97.85,5380.514,CA,True,,stop,0.0005934,592,22,0,0.87,"{""country"": ""CA"", ""latitude"": 55.75, ""longitude"": -97.85}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,61.174503326416016,-143.21922302246094,5536.046,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,61.50804138183594,-155.50502014160156,5538.694,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,61.32020568847656,-156.9613494873047,5559.863,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,54.5632,-104.6165,5670.572,CA,True,,stop,0.00019683,473,32,0,1.75,"{""country"": ""CA"", ""latitude"": 54.5632, ""longitude"": -104.6165}"
+qwen/qwen3.6-27b,no-CoT,54.5,-110.0,5799.444,CA,True,,stop,0.0001843,473,26,0,15.01,"{""country"": ""CA"", ""latitude"": 54.5, ""longitude"": -110.0}"
+x-ai/grok-4.3,CoT,54.75,-111.5,5805.138,CA,True,,stop,0.0023965,676,755,669,6.06,"{
+  ""reasoning"": ""Double solid yellow center line + white edge line, right-hand traffic, and North American-style asphalt markings rule out Europe/UK/Australia; boreal mixed forest (spruce/aspen), flat terrain, and overcast northern light point to subarctic Canada or Alaska."",
+  ""country"": ""CA"",
+  ""latitude"": 54.75,
+  ""longitude"": -111.5
+}"
+qwen/qwen3.5-35b-a3b,no-CoT,56.1234,-119.5678,5813.46,CA,True,,stop,0.00015825,473,32,0,7.24,"{""country"": ""CA"", ""latitude"": 56.1234, ""longitude"": -119.5678}"
+qwen/qwen3.6-35b-a3b,no-CoT,53.7443,-113.4909,5952.274,CA,True,,stop,0.000146,474,32,0,2.77,"{""country"": ""CA"", ""latitude"": 53.7443, ""longitude"": -113.4909}"
+qwen/qwen3.5-397b-a17b,no-CoT,53.5461,-113.4938,5973.293,CA,True,,stop,0.000383,473,32,0,2.25,"{""country"": ""CA"", ""latitude"": 53.5461, ""longitude"": -113.4938}"
+mistralai/mistral-medium-3-5,no-CoT,44.9778,-93.265,6348.084,US,True,,stop,0.0011835,634,31,0,0.91,"{""country"": ""US"", ""latitude"": 44.9778, ""longitude"": -93.2650}"
+mistralai/mistral-small-2603,no-CoT,40.0,-83.0,6519.851,US,True,,stop,0.0001101,634,25,0,8.68,"{""country"": ""US"", ""latitude"": 40.0, ""longitude"": -83.0}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7838.736,,True,True,,,,,,24.82,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.83,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.11,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.71,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.52,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.64,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.16,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.28,

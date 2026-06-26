@@ -1,0 +1,75 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,21.626081388917,75.074991387543,0.0,IN,True,,,,,,,,"Sendhwa, Barwani, Madhya Pradesh, IN"
+minimax/minimax-m3,no-CoT,20.5,76.0,157.769,IN,True,,stop,0.00023736,904,23,0,5.72,"{""country"": ""IN"", ""latitude"": 20.5, ""longitude"": 76.0}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),22.8154,75.9625,160.732,IN,True,,stop,0.0021525,1225,35,0,1.35,"```json
+{""country"": ""IN"", ""latitude"": 22.8154, ""longitude"": 75.9625}
+```"
+google/gemini-3.5-flash,CoT (effort=low),19.8563,74.4795,206.303,IN,True,,stop,0.0039135,1307,217,148,2.7,"{""reasoning"": ""The left-hand traffic, motorcycle rider's attire, lush green tropical vegetation, and highway infrastructure are highly characteristic of a national highway in India, likely in Maharashtra."", ""country"": ""IN"", ""latitude"": 19.8563, ""longitude"": 74.4795}"
+openai/gpt-5.5,CoT,22.3475,73.1498,214.095,IN,True,,stop,0.012925,755,305,229,14.74,"{""reasoning"":""Left-hand traffic on a divided highway with Indian-style white lane markings, tropical monsoon vegetation, and roadside telecom infrastructure points to India. The flat, green landscape and highway design are consistent with western India, likely Gujarat near Vadodara."",""country"":""IN"",""latitude"":22.3475,""longitude"":73.1498}"
+moonshotai/kimi-k2.6,CoT,19.5,74.0,261.559,IN,True,,stop,0.021932415,833,5934,6607,56.37,"{""reasoning"": ""Left-hand traffic with a motorcycle on the left shoulder, NH-style chevron markings and a lattice telecom tower indicate an Indian National Highway; tropical vegetation and monsoon cumulus clouds confirm the South Asian subcontinent."", ""country"": ""IN"", ""latitude"": 19.5, ""longitude"": 74.0}"
+x-ai/grok-4.3,CoT,19.12,74.75,280.715,IN,True,,stop,0.0022415,788,637,557,12.55,"{
+  ""reasoning"": ""Left-hand traffic with motorcyclist on left verge, Indian-style clothing, tropical vegetation/monsoon clouds, and typical Indian highway tower/markings indicate India; wide paved road with reflector posts matches NH-style highways in central/western India."",
+  ""country"": ""IN"",
+  ""latitude"": 19.12,
+  ""longitude"": 74.75
+}"
+google/gemma-4-26b-a4b-it,no-CoT,23.2333,77.4333,301.142,,True,,stop,6.188e-05,404,49,0,8.74,"Please own the coordinates for the location in the image:
+{""country"": ""IN"", ""latitude own-latitude own-latitude"": 23.2333, ""longitude"": 77.4333}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,18.800249099731445,74.15545654296875,328.538,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,18.853601455688477,73.93453979492188,330.443,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,18.77848243713379,74.15635681152344,330.828,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,18.6298,73.7997,358.783,IN,True,,stop,0.0108311255,665,11110,11011,79.28,"```json
+{
+  ""reasoning"": ""The image shows left-hand traffic, lush tropical vegetation, and a lattice telecom tower typical of Indian highways. The road markings and solar street light pole style strongly suggest a major highway in Maharashtra, India, likely the Mumbai-Pune Expressway."",
+  ""country"": ""IN"",
+  ""latitude"": 18.6298,
+  ""longitude"": 73.7997
+}
+```"
+mistralai/mistral-medium-3-5,no-CoT,19.076,72.8777,364.509,IN,True,,stop,0.001404,786,30,0,7.04,"{""country"": ""IN"", ""latitude"": 19.076, ""longitude"": 72.8777}"
+moonshotai/kimi-k2.6,no-CoT,19.076,72.8777,364.509,IN,True,,stop,0.00076269,755,24,0,10.78,"{""country"": ""IN"", ""latitude"": 19.076, ""longitude"": 72.8777}"
+qwen/qwen3.5-35b-a3b,no-CoT,19.076,72.8777,364.509,IN,True,,stop,0.00011875,585,31,0,2.46,"{""country"": ""IN"", ""latitude"": 19.0760, ""longitude"": 72.8777}"
+mistralai/mistral-medium-3-5,CoT,18.5204,73.8567,368.023,IN,True,,stop,0.0225045,868,2827,2718,29.89,"{""reasoning"": ""Left-hand traffic, tropical vegetation, Indian road markings, and transmission towers indicate India; common motorcycle usage and rural highway context"", ""country"": ""IN"", ""latitude"": 18.5204, ""longitude"": 73.8567}"
+anthropic/claude-opus-4.8,CoT,21.1,79.0,410.629,IN,True,,stop,0.00677,949,81,0,3.51,"{""reasoning"": ""Motorcyclist riding on left side, divided highway, monsoon-season clouds and lush green vegetation typical of central India highways."", ""country"": ""IN"", ""latitude"": 21.1, ""longitude"": 79.0}"
+openai/gpt-5.5,no-CoT,21.1667,79.0833,418.104,IN,True,,stop,0.00408,678,23,0,1.6,"{""country"":""IN"",""latitude"":21.1667,""longitude"":79.0833}"
+google/gemini-3.1-pro-preview,no-CoT,21.1458,79.0882,418.927,IN,True,,stop,0.00287,1225,35,0,30.87,"```json
+{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}
+```"
+x-ai/grok-4.3,no-CoT,21.1458,79.0882,418.927,IN,True,,stop,0.0007384,704,24,0,7.03,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+anthropic/claude-opus-4.8,no-CoT,20.5937,78.9629,419.306,IN,True,,stop,0.00489,818,32,0,14.87,"{""country"": ""IN"", ""latitude"": 20.5937, ""longitude"": 78.9629}"
+google/gemini-3.5-flash,CoT (effort=medium),17.6842,74.0015,452.495,IN,True,,stop,0.0065775,1307,513,443,8.41,"{""reasoning"": ""The left-hand traffic, small commuter motorcycle, lush green monsoon vegetation, and characteristic highway design with a wide median strongly indicate a National Highway in India, likely in Maharashtra."", ""country"": ""IN"", ""latitude"": 17.6842, ""longitude"": 74.0015}"
+google/gemini-3.1-pro-preview,CoT,17.5,74.0,472.415,IN,True,,stop,0.005818,1307,267,185,11.62,"{
+  ""reasoning"": ""Left-hand driving, lush tropical vegetation, and the style of the highway and road markings strongly suggest India. The flat terrain and highway infrastructure point towards a major national highway, likely in a central or southern state."",
+  ""country"": ""IN"",
+  ""latitude"": 17.5,
+  ""longitude"": 74.0
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,17.45,78.35,577.354,IN,True,,stop,0.0004482,585,27,0,3.96,"{""country"": ""IN"", ""latitude"": 17.45, ""longitude"": 78.35}"
+qwen/qwen3.6-35b-a3b,no-CoT,17.385,78.4867,591.762,IN,True,,stop,0.0001652,586,30,0,9.29,"{""country"": ""IN"", ""latitude"": 17.385, ""longitude"": 78.4867}"
+google/gemini-3.5-flash,CoT (effort=high),16.1524,74.7821,609.424,IN,True,,stop,0.0102135,1307,917,840,9.8,"```json
+{""reasoning"": ""The left-hand traffic, motorcycle rider's attire, and distinctive lattice telecommunication tower indicate India, with the flat, green landscape suggesting a national highway in the Deccan Plateau region."", ""country"": ""IN"", ""latitude"": 16.1524, ""longitude"": 74.7821}
+```"
+google/gemma-4-31b-it,no-CoT,28.6139,77.209,806.107,IN,True,,stop,6.692e-05,404,36,0,3.0,"```json
+{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}
+```"
+qwen/qwen3.5-27b,no-CoT,28.6139,77.209,806.107,IN,True,,stop,0.000160875,585,30,0,7.58,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+qwen/qwen3.6-27b,no-CoT,28.6139,77.209,806.107,IN,True,,stop,0.0004626,585,31,0,9.22,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.2090}"
+qwen/qwen3.5-397b-a17b,CoT,13.736,76.925,898.918,IN,True,,stop,0.009659125,665,3838,3448,264.74,"{
+""reasoning"": ""The image shows left-hand traffic on a paved highway with white lane markings, characteristic of a divided national highway in India. The distinct red soil on the embankments and the tropical scrub vegetation strongly point to the Deccan Plateau region, specifically Karnataka."",
+""country"": ""IN"",
+""latitude"": 13.736,
+""longitude"": 76.925
+}"
+minimax/minimax-m3,CoT,13.35,74.78,920.789,IN,True,,stop,0.00076062,997,433,451,9.41,"{""reasoning"": ""Left-hand traffic with divided highway, tropical monsoon sky, lush coastal vegetation, and a lattice cell tower characteristic of Indian telecom infrastructure point to a national highway in coastal Karnataka or Goa, India."", ""country"": ""IN"", ""latitude"": 13.35, ""longitude"": 74.78}{""reasoning"": ""Left-hand traffic with divided highway, tropical monsoon sky, lush coastal vegetation, and a lattice cell tower characteristic of Indian telecom infrastructure point to a national highway in coastal Karnataka or Goa, India."", ""country"": ""IN"", ""latitude"": 13.35, ""longitude"": 74.78}"
+qwen/qwen3.5-9b,no-CoT,12.9716,77.5946,998.731,IN,True,,stop,6.325e-05,586,31,0,5.03,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+qwen/qwen3.5-122b-a10b,no-CoT,22.5726,88.3639,1372.681,IN,True,,stop,0.00021658,585,31,0,3.66,"{""country"": ""IN"", ""latitude"": 22.5726, ""longitude"": 88.3639}"
+xiaomi/mimo-v2.5,no-CoT,13.7563,100.5018,2827.581,TH,True,,stop,9.74176e-05,820,32,0,5.18,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,13.734419822692871,100.79328918457031,2857.752,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,13.71013355255127,100.79706573486328,2859.124,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,14.97,101.82,2914.383,TH,True,,stop,0.0009899176,899,3180,3095,33.37,"{""reasoning"": ""The image shows left-hand traffic with lush tropical vegetation, characteristic concrete utility poles, and a brown rectangular tourist sign in the distance, all of which strongly indicate Thailand. The road infrastructure and style of the telecommunications tower are also typical of Thai provincial highways."", ""country"": ""TH"", ""latitude"": 14.97, ""longitude"": 101.82}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,17.822315216064453,106.53795623779297,3314.668,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,48.8566,2.3522,6968.03,FR,True,,stop,0.0001359,786,30,0,9.34,"{""country"": ""FR"", ""latitude"": 48.8566, ""longitude"": 2.3522}"
+mistralai/mistral-small-2603,CoT,39.6407,-106.3747,13200.867,US,True,,stop,0.00083124,868,1316,1417,10.23,"{""reasoning"": ""Double yellow center lines and white pickup truck indicate North America; tall ski-lift-style tower and coniferous vegetation point to a Rocky Mountain ski resort, most consistent with Colorado."", ""country"": ""US"", ""latitude"": 39.6407, ""longitude"": -106.3747}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.14,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.25,

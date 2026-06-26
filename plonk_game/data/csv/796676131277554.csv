@@ -1,0 +1,63 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,65.615264372713,-37.645447698499,0.0,GL,True,,,,,,,,"Tasiilaq, None, Sermersooq, GL"
+google/gemini-3.5-flash,CoT (effort=high),64.185,-51.695,679.944,GL,True,,stop,0.0101415,1271,915,845,14.55,"```json
+{""reasoning"": ""The colorful wooden buildings on concrete foundations, snowy landscape, and distinct Nordic-style apartment architecture are highly characteristic of Greenland, specifically the capital city of Nuuk."", ""country"": ""GL"", ""latitude"": 64.185, ""longitude"": -51.695}
+```"
+moonshotai/kimi-k2.6,no-CoT,64.1814,-51.6941,680.039,GL,True,,stop,0.00067127,603,25,0,2.86,"{""country"": ""GL"", ""latitude"": 64.1814, ""longitude"": -51.6941}"
+qwen/qwen3.5-35b-a3b,no-CoT,64.1814,-51.6941,680.039,GL,True,,stop,0.00016956,474,31,0,2.29,"{""country"": ""GL"", ""latitude"": 64.1814, ""longitude"": -51.6941}"
+google/gemini-3.1-pro-preview,CoT,64.1814,-51.7052,680.545,GL,True,,stop,0.005676,1272,261,183,4.61,"{
+  ""reasoning"": ""The brightly colored wooden buildings on concrete foundations in a snowy, treeless landscape are highly characteristic of Greenland. The large apartment blocks suggest a larger settlement like Nuuk."",
+  ""country"": ""GL"",
+  ""latitude"": 64.1814,
+  ""longitude"": -51.7052
+}"
+openai/gpt-5.5,CoT,64.1816,-51.7104,680.774,GL,True,,stop,0.016005,621,430,356,24.64,"{""reasoning"":""The treeless Arctic setting with deep snow, colorful wooden houses on high concrete foundations, and Scandinavian-style streetlights is characteristic of Greenlandic towns. The relatively urban residential layout and multi-story colored apartment blocks most closely fit Nuuk."",""country"":""GL"",""latitude"":64.1816,""longitude"":-51.7104}"
+minimax/minimax-m3,no-CoT,64.1836,-51.7214,681.2,GL,True,,stop,0.00031842,767,122,129,11.38,"{""country"": ""GL"", ""latitude"": 64.1836, ""longitude"": -51.7214}"
+anthropic/claude-opus-4.8,CoT,64.1835,-51.7216,681.213,GL,True,,stop,0.006235,797,90,0,3.21,"{""reasoning"": ""Colorful wooden Scandinavian-style buildings on snow-covered terrain with no trees, typical of an Arctic Greenlandic settlement."", ""country"": ""GL"", ""latitude"": 64.1835, ""longitude"": -51.7216}"
+anthropic/claude-opus-4.8,no-CoT,64.1835,-51.7216,681.213,GL,True,,stop,0.00413,666,32,0,2.54,"{""country"": ""GL"", ""latitude"": 64.1835, ""longitude"": -51.7216}"
+google/gemma-4-31b-it,no-CoT,64.1835,-51.7216,681.213,GL,True,,stop,6.378e-05,406,36,0,2.94,"```json
+{""country"": ""GL"", ""latitude"": 64.1835, ""longitude"": -51.7216}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),64.1814,-51.7211,681.269,GL,True,,stop,0.0021,1190,35,0,1.1,"```json
+{""country"": ""GL"", ""latitude"": 64.1814, ""longitude"": -51.7211}
+```"
+google/gemini-3.5-flash,CoT (effort=low),64.1814,-51.7212,681.274,GL,True,,stop,0.003393,1272,165,97,8.82,"{""reasoning"": ""The colorful wooden buildings on concrete foundations, snowy landscape, and specific architectural style of the apartment blocks are highly characteristic of Greenland, specifically the capital city of Nuuk."", ""country"": ""GL"", ""latitude"": 64.1814, ""longitude"": -51.7212}"
+google/gemini-3.1-pro-preview,no-CoT,64.1814,-51.7231,681.36,GL,True,,stop,0.004528,1190,179,144,3.21,"```json
+{""country"": ""GL"", ""latitude"": 64.1814, ""longitude"": -51.7231}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),64.1805,-51.7252,681.49,GL,True,,stop,0.0062265,1271,480,415,5.38,"{""reasoning"": ""The colorful wooden buildings on concrete foundations, snowy landscape, and distinct Nordic-style architecture are characteristic of Greenland, specifically the capital city of Nuuk."", ""country"": ""GL"", ""latitude"": 64.1805, ""longitude"": -51.7252}"
+x-ai/grok-4.3,no-CoT,64.175,-51.733,682.053,GL,True,,stop,0.0005934,592,22,0,0.71,"{""country"": ""GL"", ""latitude"": 64.175, ""longitude"": -51.733}"
+x-ai/grok-4.3,CoT,64.175,-51.735,682.144,GL,True,,stop,0.0016715,676,465,396,4.82,"{""reasoning"": ""Colorful (yellow/red) wooden houses on concrete bases amid deep snow, overcast Arctic sky, and plowed street match Greenlandic towns; right-hand driving and modular architecture rule out Iceland/Svalbard."", ""country"": ""GL"", ""latitude"": 64.175, ""longitude"": -51.735}"
+qwen/qwen3.6-35b-a3b,no-CoT,69.2195,-51.0661,696.97,GL,True,,stop,0.0001444,474,31,0,8.0,"{""country"": ""GL"", ""latitude"": 69.2195, ""longitude"": -51.0661}"
+moonshotai/kimi-k2.6,CoT,69.2167,-51.1,697.996,GL,True,,stop,0.012242808,682,3510,3435,138.0,"{""reasoning"": ""Colorful stilted houses on concrete foundations, flat treeless snow-covered terrain, and functional Arctic architecture are unmistakably characteristic of Greenlandic west-coast towns, most consistent with residential Ilulissat."", ""country"": ""GL"", ""latitude"": 69.2167, ""longitude"": -51.1}"
+openai/gpt-5.5,no-CoT,69.2198,-51.0995,698.143,GL,True,,stop,0.00344,544,24,0,1.94,"{""country"":""GL"",""latitude"":69.2198,""longitude"":-51.0995}"
+xiaomi/mimo-v2.5,CoT,69.2198,-51.1123,698.587,GL,True,,stop,0.0001448776,787,218,142,9.44,"{""reasoning"": ""The brightly colored wooden buildings typical of Greenlandic settlements, heavy snow cover, and arctic overcast sky indicate a location in Greenland, specifically a northern coastal town like Ilulissat."", ""country"": ""GL"", ""latitude"": 69.2198, ""longitude"": -51.1123}"
+qwen/qwen3.5-397b-a17b,no-CoT,66.9497,-53.6744,729.919,GL,True,,stop,0.00029145,473,31,0,12.35,"{""country"": ""GL"", ""latitude"": 66.9497, ""longitude"": -53.6744}"
+qwen/qwen3.5-122b-a10b,no-CoT,66.5633,-53.7219,730.074,GL,True,,stop,0.0002163,473,31,0,2.14,"{""country"": ""GL"", ""latitude"": 66.5633, ""longitude"": -53.7219}"
+minimax/minimax-m3,CoT,68.71,-52.87,738.98,GL,True,,stop,0.00114066,843,791,700,21.67,"{""reasoning"": ""Colorful wooden houses (yellow, red, blue) with concrete foundations, no trees, heavy snow, and multi-story red apartment building are highly characteristic of Greenlandic settlements. The flat snow-covered terrain and architectural style (likely 1970s-80s housing developments) match towns in West Greenland."", ""country"": ""GL"", ""latitude"": 68.71, ""longitude"": -52.87}"
+xiaomi/mimo-v2.5,no-CoT,60.7167,-48.0833,753.96,GL,True,,stop,8.14576e-05,708,31,0,1.2,"{""country"": ""GL"", ""latitude"": 60.7167, ""longitude"": -48.0833}"
+qwen/qwen3.6-27b,no-CoT,64.1466,-21.9426,756.84,IS,True,,stop,0.0001943,473,31,0,14.56,"{""country"": ""IS"", ""latitude"": 64.1466, ""longitude"": -21.9426}"
+qwen/qwen3.5-9b,no-CoT,60.5467,-10.3528,1470.256,DK,True,,stop,5.205e-05,474,31,0,5.66,"{""country"": ""DK"", ""latitude"": 60.5467, ""longitude"": -10.3528}"
+mistralai/mistral-medium-3-5,no-CoT,76.5333,-68.7167,1613.423,GL,True,,stop,0.0011835,634,31,0,0.9,"{""country"": ""GL"", ""latitude"": 76.5333, ""longitude"": -68.7167}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,71.89772033691406,14.921052932739258,2148.249,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,77.47705841064453,16.020782470703125,2177.37,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,77.56184387207031,16.019685745239258,2178.525,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,78.2232,15.6267,2180.259,NO,True,,stop,0.0002065,474,44,0,8.05,"```json
+{
+  ""country"": ""NO"",
+  ""latitude"": 78.2232,
+  ""longitude"": 15.6267
+}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,74.86103057861328,19.49680519104004,2261.0,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,74.43608856201172,19.643932342529297,2268.787,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,69.6492,18.9553,2345.76,NO,True,,stop,0.000142125,634,31,0,2.02,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,69.2380142211914,20.253250122070312,2407.923,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7885.822,,True,True,,,,,,1.23,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.3,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.08,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.74,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.2,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.16,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.17,

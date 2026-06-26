@@ -1,0 +1,61 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,37.172007672502,34.721314669007,0.0,TR,True,,,,,,,,"Camliyayla, None, Mersin, TR"
+google/gemini-3.5-flash,no-CoT (effort=minimal),37.3852,32.2184,222.711,TR,True,,stop,0.002154,1226,35,0,2.32,"```json
+{""country"": ""TR"", ""latitude"": 37.3852, ""longitude"": 32.2184}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,35.460845947265625,32.97911834716797,246.097,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,35.43084716796875,33.00132751464844,247.459,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,36.85,31.45,292.648,TR,True,,stop,0.005458,1307,237,166,4.65,"{
+  ""reasoning"": ""The narrow, unmarked paved road, pine vegetation, and rugged limestone mountains are highly characteristic of the Mediterranean region, particularly the Taurus Mountains in southern Turkey."",
+  ""country"": ""TR"",
+  ""latitude"": 36.85,
+  ""longitude"": 31.45
+}"
+xiaomi/mimo-v2.5,no-CoT,36.85,30.75,354.405,TR,True,,stop,9.60176e-05,820,27,0,10.15,"{""country"": ""TR"", ""latitude"": 36.85, ""longitude"": 30.75}"
+qwen/qwen3.5-397b-a17b,no-CoT,36.8926,30.7133,357.104,TR,True,,stop,0.0004626,585,31,0,14.51,"{""country"": ""TR"", ""latitude"": 36.8926, ""longitude"": 30.7133}"
+google/gemini-3.1-pro-preview,no-CoT,36.8521,30.5612,371.055,TR,True,,stop,0.002872,1226,35,0,18.17,"```json
+{""country"": ""TR"", ""latitude"": 36.8521, ""longitude"": 30.5612}
+```"
+anthropic/claude-opus-4.8,CoT,36.85,30.5,376.491,TR,True,,stop,0.00717,949,97,0,3.12,"{""reasoning"": ""Mediterranean dry mountainous terrain with limestone cliffs, pine and maquis vegetation typical of southern Turkey's Taurus mountains near the Antalya region."", ""country"": ""TR"", ""latitude"": 36.85, ""longitude"": 30.5}"
+google/gemini-3.5-flash,CoT (effort=medium),36.9852,30.4621,378.383,TR,True,,stop,0.0053805,1307,380,314,10.82,"{""reasoning"": ""The mountainous terrain with Mediterranean pine vegetation, dry grass, and distinctive rounded rock formations is highly characteristic of southwestern Turkey, particularly the Taurus Mountains region near Antalya."", ""country"": ""TR"", ""latitude"": 36.9852, ""longitude"": 30.4621}"
+google/gemini-3.5-flash,CoT (effort=high),36.8875,30.4722,378.484,TR,True,,stop,0.0094575,1307,833,768,7.21,"{""reasoning"": ""The Mediterranean pine vegetation, dry grass, and massive limestone rock formations are highly characteristic of the Taurus Mountains in southern Turkey, particularly around the Antalya region."", ""country"": ""TR"", ""latitude"": 36.8875, ""longitude"": 30.4722}"
+anthropic/claude-opus-4.8,no-CoT,36.7,30.5,378.806,TR,True,,stop,0.00484,818,30,0,8.54,"{""country"": ""TR"", ""latitude"": 36.7, ""longitude"": 30.5}"
+google/gemma-4-31b-it,no-CoT,36.5,30.5,383.001,TR,True,,stop,6.856e-05,404,30,0,10.78,"```json
+{""country"": ""TR"", ""latitude"": 36.5, ""longitude"": 30.5}
+```"
+xiaomi/mimo-v2.5,CoT,44.35,39.08,878.192,RU,True,,stop,0.0001675576,899,243,155,3.05,"{""reasoning"": ""The landscape features a winding dirt road through green, forested mountains with no visible signage, vehicles, or distinct infrastructure. The lighting suggests late afternoon or early morning, and the vegetation appears temperate, consistent with rural mountainous regions in Southern Russia or the Caucasus."", ""country"": ""RU"", ""latitude"": 44.35, ""longitude"": 39.08}"
+qwen/qwen3.6-35b-a3b,no-CoT,37.9755,23.7348,971.779,GR,True,,stop,0.000185,585,31,0,0.93,"{""country"": ""GR"", ""latitude"": 37.9755, ""longitude"": 23.7348}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,38.635562896728516,22.91096305847168,1048.15,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,38.05,22.65,1067.021,GR,True,,stop,0.0007334,704,22,0,0.99,"{""country"": ""GR"", ""latitude"": 38.05, ""longitude"": 22.65}"
+openai/gpt-5.5,CoT,38.4532,22.4018,1090.718,GR,True,,stop,0.013375,755,320,236,9.37,"{""reasoning"":""A narrow unmarked mountain road with limestone cliffs, dry grasses, and Mediterranean scrub/olive-like vegetation points strongly to rural southern Greece rather than central Europe. The terrain and climate fit the Peloponnese/central Greek mountains, with right-side driving implied by the road layout."",""country"":""GR"",""latitude"":38.4532,""longitude"":22.4018}"
+x-ai/grok-4.3,CoT,37.48,22.35,1093.646,GR,True,,stop,0.001974,788,530,466,4.22,"{""reasoning"": ""Mediterranean maquis vegetation, limestone karst boulders, narrow unpaved mountain road and cloud-filtered sunlight match southern Greece; no left-side driving, Cyrillic or other scripts visible."", ""country"": ""GR"", ""latitude"": 37.48, ""longitude"": 22.35}"
+moonshotai/kimi-k2.6,CoT,37.05,22.35,1096.324,GR,True,,stop,0.008885916,834,2517,2431,56.02,"{""reasoning"": ""The dry Mediterranean maquis scrub on rocky limestone hillsides and a narrow, unmarked paved mountain road are classic signatures of rural Greece, particularly the Peloponnese. The lack of signage, road markings, and the specific phrygana vegetation point strongly to Greek mountain infrastructure."", ""country"": ""GR"", ""latitude"": 37.05, ""longitude"": 22.35}"
+qwen/qwen3.5-122b-a10b,no-CoT,39.6847,21.6306,1172.853,GR,True,,stop,0.0002691,585,39,0,2.19,"{
+  ""country"": ""GR"",
+  ""latitude"": 39.6847,
+  ""longitude"": 21.6306
+}"
+google/gemini-3.5-flash,CoT (effort=low),39.7125,21.6261,1173.754,GR,True,,stop,0.0041925,1307,248,186,3.7,"{""reasoning"": ""The massive, rounded conglomerate rock formation on the right and the Mediterranean pine vegetation strongly resemble the landscape of Meteora in Thessaly, Greece."", ""country"": ""GR"", ""latitude"": 39.7125, ""longitude"": 21.6261}"
+openai/gpt-5.5,no-CoT,39.9275,20.6921,1256.41,GR,True,,stop,0.00408,678,23,0,7.85,"{""country"":""GR"",""latitude"":39.9275,""longitude"":20.6921}"
+qwen/qwen3.5-9b,no-CoT,40.7589,14.2616,1808.802,IT,True,,stop,6.325e-05,586,31,0,8.47,"{""country"": ""IT"", ""latitude"": 40.7589, ""longitude"": 14.2616}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,41.75624465942383,1.2825114727020264,2896.651,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,41.27177810668945,0.9029576778411865,2929.786,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,41.272216796875,0.9022619724273682,2929.842,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,42.5667,0.75,2939.94,ES,True,,stop,0.00024336,586,35,0,1.19,"```json
+{""country"": ""ES"", ""latitude"": 42.5667, ""longitude"": 0.7500}
+```"
+qwen/qwen3.6-27b,no-CoT,44.0976,0.1935,2989.653,FR,True,,stop,0.0002259,585,30,0,313.06,"{""country"": ""FR"", ""latitude"": 44.0976, ""longitude"": 0.1935}"
+mistralai/mistral-medium-3-5,no-CoT,36.7199,-4.42,3453.597,ES,True,,stop,0.001389,786,28,0,1.19,"{""country"": ""ES"", ""latitude"": 36.7199, ""longitude"": -4.42}"
+minimax/minimax-m3,no-CoT,27.65,84.35,4722.868,NP,True,,stop,0.00061602,919,332,367,14.95,"{""country"": ""NP"", ""latitude"": 27.65, ""longitude"": 84.35}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5458.023,,True,True,,,,,,9.26,
+qwen/qwen3.5-35b-a3b,no-CoT,14.3522,101.3644,6992.187,TH,True,,stop,0.00019824,586,32,0,8.4,"{""country"": ""TH"", ""latitude"": 14.3522, ""longitude"": 101.3644}"
+minimax/minimax-m3,CoT,20.25,105.5,6996.326,VN,True,,stop,0.00073386,995,414,327,15.83,"{""reasoning"": ""Dramatic overhanging limestone karst cliff with dry tropical grassland vegetation alongside a narrow rural road strongly indicates Southeast Asia karst terrain, most likely northern Vietnam (Phong Nha–Ke Bang or Mai Chau region) given the steep overhanging limestone and dry-season grass."", ""country"": ""VN"", ""latitude"": 20.25, ""longitude"": 105.5}"
+mistralai/mistral-small-2603,no-CoT,36.5785,-118.292,11356.432,US,True,,stop,0.0001365,786,31,0,4.0,"{""country"": ""US"", ""latitude"": 36.5785, ""longitude"": -118.292}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.64,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.62,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,1.1,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.2,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.16,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.09,

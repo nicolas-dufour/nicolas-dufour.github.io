@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-12.016980594013631,24.331544955962663,0.0,ZM,True,,,,,,,,"Mwinilunga, None, North-Western, ZM"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-12.654499053955078,23.918893814086914,83.872,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-13.075471878051758,23.724281311035156,134.897,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-13.086276054382324,23.661849975585938,139.357,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,-12.5,28.5,456.11,ZM,True,,stop,0.004865,818,31,0,2.67,"{""country"": ""ZM"", ""latitude"": -12.5, ""longitude"": 28.5}"
+anthropic/claude-opus-4.8,CoT,-12.8,28.5,460.972,ZM,True,,stop,0.006845,949,84,0,3.13,"{""reasoning"": ""Reddish dirt road, miombo woodland, thatched huts and lush green vegetation typical of rural Zambia in the rainy season."", ""country"": ""ZM"", ""latitude"": -12.8, ""longitude"": 28.5}"
+openai/gpt-5.5,no-CoT,-15.4253,28.2938,571.626,ZM,True,,stop,0.00411,678,24,0,2.15,"{""country"":""ZM"",""latitude"":-15.4253,""longitude"":28.2938}"
+qwen/qwen3.5-9b,no-CoT,-15.8242,28.4739,615.637,ZW,True,,stop,6.325e-05,586,31,0,4.3,"{""country"": ""ZW"", ""latitude"": -15.8242, ""longitude"": 28.4739}"
+qwen/qwen3.6-35b-a3b,no-CoT,-6.36902,34.83201,1312.116,TZ,True,,stop,0.0001684,586,32,0,2.46,"{""country"": ""TZ"", ""latitude"": -6.36902, ""longitude"": 34.83201}"
+mistralai/mistral-medium-3-5,no-CoT,0.3166,32.5833,1646.403,UG,True,,stop,0.001404,786,30,0,1.14,"{""country"": ""UG"", ""latitude"": 0.3166, ""longitude"": 32.5833}"
+x-ai/grok-4.3,no-CoT,0.35,32.55,1647.481,UG,True,,stop,0.0007334,704,22,0,7.33,"{""country"": ""UG"", ""latitude"": 0.35, ""longitude"": 32.55}"
+qwen/qwen3.5-35b-a3b,no-CoT,0.3476,32.5825,1649.236,UG,True,,stop,0.00019464,586,30,0,8.94,"{""country"": ""UG"", ""latitude"": 0.3476, ""longitude"": 32.5825}"
+moonshotai/kimi-k2.6,CoT,0.65,32.15,1652.006,UG,True,,stop,0.005298156,834,1464,1387,29.99,"{""reasoning"": ""Red laterite dirt road, tropical savanna woodland vegetation, and traditional thatched-roof mud huts are characteristic of rural East Africa; the lush green understory and scattered tall broadleaf trees match the Lake Victoria basin region of Uganda."", ""country"": ""UG"", ""latitude"": 0.65, ""longitude"": 32.15}"
+openai/gpt-5.5,CoT,0.5217,33.2154,1704.682,UG,True,,stop,0.016165,755,413,330,16.93,"{""reasoning"":""The red laterite dirt road, lush equatorial woodland, grassy verges and small thatched rural homesteads strongly suggest rural East Africa, most consistent with Uganda's countryside. Lack of road markings or urban infrastructure points to a minor village road rather than a major highway."",""country"":""UG"",""latitude"":0.5217,""longitude"":33.2154}"
+x-ai/grok-4.3,CoT,-0.85,36.3,1812.426,KE,True,,stop,0.0020665,788,567,492,4.81,"{""reasoning"": ""Red dirt road, thatched-roof huts, miombo/savanna woodland with broadleaf trees and lush grass under bright tropical sky point to rural East Africa; no left/right traffic or signage visible but overall landscape excludes Asia or Americas."", ""country"": ""KE"", ""latitude"": -0.85, ""longitude"": 36.3}"
+google/gemini-3.5-flash,CoT (effort=high),2.3051,32.2984,1819.665,UG,True,,stop,0.0203475,1307,2043,1955,15.42,"```json
+{""reasoning"": ""The lush green vegetation, distinct reddish-brown dirt road, and traditional thatched and mud-brick huts are highly characteristic of rural Uganda. The flat to gently rolling terrain and tree species suggest a location in the northern or central region of the country."", ""country"": ""UG"", ""latitude"": 2.3051, ""longitude"": 32.2984}
+```"
+google/gemma-4-26b-a4b-it,no-CoT,-1.286389,36.817222,1821.932,KE,True,,stop,5.588e-05,404,34,0,7.62,"{""country"": ""KE"", ""latitude"": -1.286389, ""longitude"": 36.817222}"
+google/gemini-3.5-flash,CoT (effort=low),2.7631,32.3012,1864.613,UG,True,,stop,0.004788,1308,314,249,3.23,"{""reasoning"": ""The lush green savanna vegetation, reddish-brown dirt road, and traditional thatched-roof huts are highly characteristic of northern Uganda, captured during the wet season."", ""country"": ""UG"", ""latitude"": 2.7631, ""longitude"": 32.3012}"
+google/gemini-3.5-flash,CoT (effort=medium),2.765,32.302,1864.841,UG,True,,stop,0.0123915,1307,1159,1069,10.24,"```json
+{""reasoning"": ""The red clay dirt road, lush green savanna vegetation, and traditional thatched-roof huts are highly characteristic of East Africa, particularly Uganda. The blue dot-matrix pattern at the top of the image is a windshield reflection typical of Google Street View captures in this region."", ""country"": ""UG"", ""latitude"": 2.765, ""longitude"": 32.302}
+```"
+google/gemini-3.1-pro-preview,no-CoT,2.7724,32.2981,1865.364,UG,True,,stop,0.005428,1226,248,214,12.52,"```json
+{""country"": ""UG"", ""latitude"": 2.7724, ""longitude"": 32.2981}
+```"
+minimax/minimax-m3,CoT,2.7746,32.299,1865.627,UG,True,,stop,0.00070506,995,390,306,16.19,"{""reasoning"": ""Red lateritic dirt road, lush tropical vegetation with broadleaf trees, and traditional round thatched-roof huts (tukuls) visible on the right are characteristic of rural East/Central Africa, most consistent with northern Uganda's clay-rich soil and vernacular architecture."", ""country"": ""UG"", ""latitude"": 2.7746, ""longitude"": 32.2990}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),2.7835,32.2951,1866.297,UG,True,,stop,0.002145,1226,34,0,1.56,"```json
+{""country"": ""UG"", ""latitude"": 2.7835, ""longitude"": 32.2951}
+```"
+qwen/qwen3.5-27b,no-CoT,-0.0236,37.9062,2005.789,KE,True,,stop,0.00022275,585,30,0,2.56,"{""country"": ""KE"", ""latitude"": -0.0236, ""longitude"": 37.9062}"
+google/gemma-4-31b-it,no-CoT,6.6667,-1.6167,3542.348,GH,True,,stop,7.016e-05,404,34,0,2.59,"```json
+{""country"": ""GH"", ""latitude"": 6.6667, ""longitude"": -1.6167}
+```"
+google/gemini-3.1-pro-preview,CoT,12.8543,-15.5432,5195.596,SN,True,,stop,0.00624,1308,302,213,4.69,"{
+  ""reasoning"": ""The faint mesh pattern visible in the sky is a known camera artifact specific to Google Street View coverage in Senegal. The lush green vegetation, red dirt road, and traditional thatched huts strongly suggest the southern Casamance region."",
+  ""country"": ""SN"",
+  ""latitude"": 12.8543,
+  ""longitude"": -15.5432
+}"
+mistralai/mistral-small-2603,no-CoT,12.9716,77.5946,6498.386,IN,True,,stop,0.0001365,786,31,0,4.17,"{""country"": ""IN"", ""latitude"": 12.9716, ""longitude"": 77.5946}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,8.264512062072754,80.82550048828125,6639.33,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,8.306815147399902,80.90998077392578,6649.655,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,13.627259254455566,89.52350616455078,7730.962,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-27b,no-CoT,-14.235,-51.9253,8223.199,BR,True,,stop,0.0002279,585,31,0,12.13,"{""country"": ""BR"", ""latitude"": -14.2350, ""longitude"": -51.9253}"
+xiaomi/mimo-v2.5,no-CoT,14.39,100.65,8904.046,TH,True,,stop,9.62976e-05,820,28,0,1.18,"{""country"": ""TH"", ""latitude"": 14.39, ""longitude"": 100.65}"
+qwen/qwen3.5-122b-a10b,no-CoT,14.3692,100.9653,8936.212,TH,True,,stop,0.00021866,585,32,0,1.17,"{""country"": ""TH"", ""latitude"": 14.3692, ""longitude"": 100.9653}"
+qwen/qwen3.5-397b-a17b,no-CoT,14.3582,101.9215,9035.377,TH,True,,stop,0.0004662,585,32,0,16.55,"{""country"": ""TH"", ""latitude"": 14.3582, ""longitude"": 101.9215}"
+xiaomi/mimo-v2.5,CoT,17.97,102.62,9211.537,LA,True,,stop,0.0001913576,899,328,257,10.85,"{""reasoning"": ""The reddish rural dirt road, lush tropical broadleaf vegetation, and small thatched-roof structure are characteristic of rural Laos, with the landscape matching the country's countryside terrain."", ""country"": ""LA"", ""latitude"": 17.97, ""longitude"": 102.62}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.67,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.28,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.17,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.92,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,7.07,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.17,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.22,

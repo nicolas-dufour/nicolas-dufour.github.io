@@ -1,0 +1,78 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,35.667706214129,-0.94260242135143,0.0,DZ,True,,,,,,,,"Bou Tlelis, None, Oran, DZ"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,34.73993682861328,-0.3370494246482849,116.917,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,34.73569869995117,-0.31164324283599854,118.434,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,CoT,37.3842,-5.4195,443.165,ES,True,,stop,0.00808284,665,2160,2071,39.82,"{
+""reasoning"": ""The reddish-brown soil combined with rolling green agricultural fields and a clear blue sky is highly characteristic of the Andalusia region in southern Spain. The concrete utility pole style and right-hand traffic further support a Southern European location."",
+""country"": ""ES"",
+""latitude"": 37.3842,
+""longitude"": -5.4195
+}"
+google/gemini-3.5-flash,CoT (effort=medium),37.3254,-5.5842,453.937,ES,True,,stop,0.0052905,1307,370,310,4.42,"{""reasoning"": ""The rolling green hills, reddish soil, and specific concrete utility pole style are highly characteristic of the Andalusian countryside in southern Spain."", ""country"": ""ES"", ""latitude"": 37.3254, ""longitude"": -5.5842}"
+google/gemini-3.1-pro-preview,no-CoT,39.4699,-2.8812,455.97,ES,True,,stop,0.00286,1226,34,0,8.47,"```json
+{""country"": ""ES"", ""latitude"": 39.4699, ""longitude"": -2.8812}
+```"
+google/gemini-3.5-flash,CoT (effort=low),37.4215,-5.5832,458.062,ES,True,,stop,0.0037965,1307,204,131,2.89,"{""reasoning"": ""The rolling green hills, reddish soil on the shoulder, clear blue sky, and concrete utility pole on the left are highly characteristic of the Andalusian countryside in Spain during the winter or early spring."", ""country"": ""ES"", ""latitude"": 37.4215, ""longitude"": -5.5832}"
+xiaomi/mimo-v2.5,CoT,38.9,-5.2,520.503,ES,True,,stop,0.0001496376,899,179,116,8.77,"```json
+{
+  ""reasoning"": ""The road markings and general landscape resemble rural Spain, and the distant orange road sign is typical of Spanish infrastructure."",
+  ""country"": ""ES"",
+  ""latitude"": 38.9,
+  ""longitude"": -5.2
+}
+```"
+openai/gpt-5.5,no-CoT,33.4295,-6.1842,540.618,MA,True,,stop,0.00411,678,24,0,3.3,"{""country"":""MA"",""latitude"":33.4295,""longitude"":-6.1842}"
+google/gemini-3.1-pro-preview,CoT,38.5,-6.0,547.986,ES,True,,stop,0.006132,1308,293,226,5.26,"{
+  ""reasoning"": ""The rolling green hills, solid white edge line, and the specific style of the utility pole on the left are characteristic of rural roads in Spain."",
+  ""country"": ""ES"",
+  ""latitude"": 38.5,
+  ""longitude"": -6.0
+}"
+x-ai/grok-4.3,no-CoT,39.85,-4.35,553.061,ES,True,,stop,0.0007334,704,22,0,0.84,"{""country"": ""ES"", ""latitude"": 39.85, ""longitude"": -4.35}"
+anthropic/claude-opus-4.8,CoT,33.5,-6.5,562.846,MA,True,,stop,0.007045,949,92,0,9.78,"{""reasoning"": ""Open rolling green farmland with no shoulders, narrow two-lane road, right-hand traffic, and arid Mediterranean terrain typical of North African highlands."", ""country"": ""MA"", ""latitude"": 33.5, ""longitude"": -6.5}"
+anthropic/claude-opus-4.8,no-CoT,33.5,-6.5,562.846,MA,True,,stop,0.00484,818,30,0,2.36,"{""country"": ""MA"", ""latitude"": 33.5, ""longitude"": -6.5}"
+qwen/qwen3.6-35b-a3b,no-CoT,40.2345,-3.7891,565.738,ES,True,,stop,0.0001652,586,30,0,2.78,"{""country"": ""ES"", ""latitude"": 40.2345, ""longitude"": -3.7891}"
+google/gemma-4-31b-it,no-CoT,40.4167,-3.7033,580.69,ES,True,,stop,6.652e-05,404,35,0,2.29,"```json
+{""country"": ""ES"", ""latitude"": 40.4167, ""longitude"": -3.7033}
+```"
+mistralai/mistral-medium-3-5,no-CoT,40.4168,-3.7038,580.718,ES,True,,stop,0.001404,786,30,0,9.65,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+qwen/qwen3.5-27b,no-CoT,40.4168,-3.7038,580.718,ES,True,,stop,0.000160875,585,30,0,1.99,"{""country"": ""ES"", ""latitude"": 40.4168, ""longitude"": -3.7038}"
+qwen/qwen3.5-9b,no-CoT,40.4167,-3.7167,581.178,ES,True,,stop,6.31e-05,586,30,0,2.63,"{""country"": ""ES"", ""latitude"": 40.4167, ""longitude"": -3.7167}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,40.086055755615234,-4.895266532897949,601.285,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,41.2,-2.5,629.909,ES,True,,stop,0.00032322,919,88,87,2.94,"{""country"": ""ES"", ""latitude"": 41.2, ""longitude"": -2.5}"
+moonshotai/kimi-k2.6,no-CoT,33.5,-7.5,646.711,MA,True,,stop,0.00030996,755,23,0,2.27,"{""country"": ""MA"", ""latitude"": 33.5, ""longitude"": -7.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,41.6526,-0.8773,665.514,ES,True,,stop,0.0002667,585,38,0,9.05,"{
+  ""country"": ""ES"",
+  ""latitude"": 41.6526,
+  ""longitude"": -0.8773
+}"
+moonshotai/kimi-k2.6,CoT,38.5,-8.0,700.505,PT,True,,stop,0.01488272,834,3523,3974,20.27,"{""reasoning"": ""Rolling green hills with reddish Mediterranean soil and a rural two-lane road with white center markings suggest the Alentejo region of Portugal, where right-hand traffic and this open agricultural landscape are common."", ""country"": ""PT"", ""latitude"": 38.5, ""longitude"": -8.0}"
+qwen/qwen3.5-35b-a3b,no-CoT,41.6523,-3.7891,709.755,ES,True,,stop,0.00011775,585,30,0,1.37,"{""country"": ""ES"", ""latitude"": 41.6523, ""longitude"": -3.7891}"
+minimax/minimax-m3,CoT,41.5,-4.7,725.921,ES,True,,stop,0.00074022,997,416,421,7.71,"{""reasoning"": ""Rolling green agricultural fields with sparse vegetation, clear blue sky, simple white road edge markings, wooden utility pole style, and right-hand driving on a rural two-lane road are characteristic of central Spain's Castilian plateau (Castilla y León region) in early spring."", ""country"": ""ES"", ""latitude"": 41.5, ""longitude"": -4.7}{""reasoning"": ""Rolling green agricultural fields with sparse vegetation, clear blue sky, simple white road edge markings, wooden utility pole style, and right-hand driving on a rural two-lane road are characteristic of central Spain's Castilian plateau (Castilla y León region) in early spring."", ""country"": ""ES"", ""latitude"": 41.5, ""longitude"": -4.7}"
+x-ai/grok-4.3,CoT,41.65,-4.72,741.464,ES,True,,stop,0.0024215,788,709,634,7.25,"{""reasoning"": ""Right-hand traffic (solid edge line on left of forward view), European-style utility pole, open rolling agricultural fields with sparse scrub, and clear Mediterranean sky point to rural Spain; no other signage/vehicles but landscape matches Castilian meseta."", ""country"": ""ES"", ""latitude"": 41.65, ""longitude"": -4.72}"
+qwen/qwen3.6-27b,no-CoT,43.112,11.759,1367.333,IT,True,,stop,0.00026002,585,31,0,29.1,"{""country"": ""IT"", ""latitude"": 43.1120, ""longitude"": 11.7590}"
+openai/gpt-5.5,CoT,41.135,27.463,2536.579,TR,True,,stop,0.018235,755,482,396,12.31,"{""reasoning"":""Right-hand traffic on a narrow rural asphalt road with European-style white lane markings, open rolling cereal fields, sparse utility poles, and dry Mediterranean/Anatolian shoulders suggest rural Thrace in Turkey. The landscape is especially consistent with the agricultural roads around Tekirdağ/Kırklareli."",""country"":""TR"",""latitude"":41.135,""longitude"":27.463}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.124512,27.654321,2552.463,TR,True,,stop,0.00219,1226,39,0,7.32,"```json
+{""country"": ""TR"", ""latitude"": 41.124512, ""longitude"": 27.654321}
+```"
+google/gemini-3.5-flash,CoT (effort=high),41.15,27.85,2569.018,TR,True,,stop,0.010539,1308,953,887,6.72,"{""reasoning"": ""The rolling green agricultural hills, clear blue sky, and distinctive concrete utility pole on the horizon are highly characteristic of the Turkish countryside, particularly in the Marmara or Aegean regions."", ""country"": ""TR"", ""latitude"": 41.15, ""longitude"": 27.85}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,3967.269,,True,True,,,,,,8.22,
+mistralai/mistral-small-2603,no-CoT,70.9143,25.9825,4226.762,NO,True,,stop,0.0001365,786,31,0,3.83,"{""country"": ""NO"", ""latitude"": 70.9143, ""longitude"": 25.9825}"
+xiaomi/mimo-v2.5,no-CoT,38.5,-96.5,8056.959,US,True,,stop,9.54576e-05,820,25,0,2.69,"{""country"": ""US"", ""latitude"": 38.5, ""longitude"": -96.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,36.41328048706055,-119.10784912109375,9768.446,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,37.5,-120.5,9771.666,US,True,,stop,0.00041388,585,26,0,1.52,"{""country"": ""US"", ""latitude"": 37.5, ""longitude"": -120.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,36.22816467285156,-120.4431381225586,9868.076,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,35.74081802368164,-120.2198715209961,9892.123,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,CoT,-33.1234,-64.2345,10089.245,AR,True,,stop,0.0040666535,665,4102,4000,35.72,"```json
+{
+  ""reasoning"": ""The landscape features rolling green hills with reddish soil, characteristic of the Pampas or Sierras region in Argentina. The right-hand traffic, solid white center line, and concrete utility pole style are consistent with Argentine rural roads."",
+  ""country"": ""AR"",
+  ""latitude"": -33.1234,
+  ""longitude"": -64.2345
+}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.18,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.16,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.14,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.27,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.22,

@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,17.08358666666666,96.10275416666668,0.0,MM,True,,,,,,,,"Thanatpin, None, Bago, MM"
+google/gemini-3.5-flash,no-CoT (effort=minimal),16.9345,96.1582,17.595,MM,True,,stop,0.0021525,1225,35,0,1.42,"```json
+{""country"": ""MM"", ""latitude"": 16.9345, ""longitude"": 96.1582}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,16.8654,96.1234,24.36,MM,True,,stop,0.0001353625,585,31,0,7.19,"{""country"": ""MM"", ""latitude"": 16.8654, ""longitude"": 96.1234}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,16.406633377075195,95.0967788696289,130.919,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),18.9312,96.4325,208.383,MM,True,,stop,0.0124635,1307,1167,1074,11.23,"```json
+{""reasoning"": ""The image shows right-hand traffic with a double yellow center line and tropical deciduous vegetation (teak trees) typical of Myanmar. The blue bus on the left has 'Express' written on it, a common sight on Myanmar's national highways like NH1."", ""country"": ""MM"", ""latitude"": 18.9312, ""longitude"": 96.4325}
+```"
+google/gemini-3.5-flash,CoT (effort=high),18.935,96.435,208.844,MM,True,,stop,0.0133545,1307,1266,1189,8.7,"{""reasoning"": ""The 'GI Express' bus on the left is a well-known Myanmar bus service, and the right-hand traffic combined with right-hand drive vehicles and double yellow lines is characteristic of Myanmar's national highways."", ""country"": ""MM"", ""latitude"": 18.935, ""longitude"": 96.435}"
+google/gemini-3.5-flash,CoT (effort=low),19.7452,96.2094,296.172,MM,True,,stop,0.007209,1308,583,506,11.35,"```json
+{""reasoning"": ""The double yellow center lines, right-hand traffic, tropical deciduous vegetation, and the bus with 'Express' branding suggest Myanmar, likely along a major national highway such as NH1."", ""country"": ""MM"", ""latitude"": 19.7452, ""longitude"": 96.2094}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,20.93081283569336,97.72611999511719,460.563,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,14.85,100.55,536.356,TH,True,,stop,9.62976e-05,820,28,0,2.64,"{""country"": ""TH"", ""latitude"": 14.85, ""longitude"": 100.55}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,22.158010482788086,96.7396469116211,568.176,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,22.19702911376953,96.72498321533203,572.307,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,14.0,100.5,582.582,TH,True,,stop,0.0004318776,899,1187,1125,18.49,"{""reasoning"": ""Left-hand traffic and lush tropical vegetation strongly indicate Southeast Asia; the blue 'Express' bus with English text is characteristic of Thai intercity transport."", ""country"": ""TH"", ""latitude"": 14.0, ""longitude"": 100.5}"
+x-ai/grok-4.3,CoT,14.036,100.615,590.244,TH,True,,stop,0.003309,788,1064,993,10.11,"{""reasoning"": ""Right-hand traffic with double yellow center lines, turquoise 'EXPRESS' bus, tropical deciduous trees, dirt verges and motorcycle culture match rural Thailand; no other country fits all signage/vehicle/vegetation clues simultaneously."", ""country"": ""TH"", ""latitude"": 14.036, ""longitude"": 100.615}"
+x-ai/grok-4.3,no-CoT,14.036,100.616,590.332,TH,True,,stop,0.0007334,704,22,0,13.24,"{""country"": ""TH"", ""latitude"": 14.036, ""longitude"": 100.616}"
+mistralai/mistral-medium-3-5,no-CoT,13.7563,100.5018,599.293,TH,True,,stop,0.001419,786,32,0,8.0,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-9b,no-CoT,13.7563,100.5018,599.293,TH,True,,stop,6.34e-05,586,32,0,3.2,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.6-27b,no-CoT,13.7563,100.5018,599.293,TH,True,,stop,0.0002299,585,32,0,15.1,"{""country"": ""TH"", ""latitude"": 13.7563, ""longitude"": 100.5018}"
+qwen/qwen3.5-397b-a17b,no-CoT,14.5208,101.3892,633.277,TH,True,,stop,0.0004082,586,32,0,2.36,"{""country"": ""TH"", ""latitude"": 14.5208, ""longitude"": 101.3892}"
+openai/gpt-5.5,CoT,18.0795,102.5632,693.665,LA,True,,stop,0.033445,755,989,906,56.18,"{""reasoning"":""Right-hand traffic with double yellow centerlines, tropical roadside vegetation/red dirt, and buses labeled in English with Thai/Lao-style context point most strongly to Laos rather than left-driving Thailand. The scene fits a semi-urban stretch of Route 13 around Vientiane outskirts."",""country"":""LA"",""latitude"":18.0795,""longitude"":102.5632}"
+google/gemini-3.1-pro-preview,no-CoT,18.015,102.61,697.584,LA,True,,stop,0.005272,1226,235,202,10.35,"```json
+{""country"": ""LA"", ""latitude"": 18.015, ""longitude"": 102.61}
+```"
+google/gemini-3.1-pro-preview,CoT,18.0523,102.6145,698.612,LA,True,,stop,0.007404,1308,399,312,6.2,"{
+  ""reasoning"": ""Right-hand traffic, double yellow center lines, and yellow license plates strongly indicate Laos. The tropical vegetation and red soil are typical of the region, likely along a major highway like Route 13."",
+  ""country"": ""LA"",
+  ""latitude"": 18.0523,
+  ""longitude"": 102.6145
+}"
+minimax/minimax-m3,CoT,18.45,102.65,709.697,LA,True,,stop,0.00146826,995,1026,947,33.92,"{""reasoning"": ""Left-hand traffic, tropical deciduous vegetation, red lateritic soil, blue 'Express' bus style typical of mainland SE Asia private buses, and Thai/Laos-style compact cars strongly indicate northeastern Thailand or central Laos on a main highway between cities."", ""country"": ""LA"", ""latitude"": 18.45, ""longitude"": 102.65}"
+openai/gpt-5.5,no-CoT,13.3671,103.8448,927.581,KH,True,,stop,0.00408,678,23,0,2.88,"{""country"":""KH"",""latitude"":13.3671,""longitude"":103.8448}"
+google/gemma-4-31b-it,no-CoT,12.5657,104.991,1079.132,KH,True,,stop,6.732e-05,404,37,0,2.68,"```json
+{""country"": ""KH"", ""latitude"": 12.5657, ""longitude"": 104.9910}
+```"
+moonshotai/kimi-k2.6,CoT,11.556,104.928,1131.776,KH,True,,stop,0.013034196,834,3726,3677,71.44,"{""reasoning"":""Blue intercity bus labeled 'Express' with right-hand traffic and distinctive red laterite soil roadside are hallmark Cambodian highway scenes."",""country"":""KH"",""latitude"":11.556,""longitude"":104.928}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,12.682991981506348,79.46644592285156,1852.649,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,11.882,79.088,1919.849,IN,True,,stop,0.00022906,585,37,0,7.19,"{
+  ""country"": ""IN"",
+  ""latitude"": 11.882,
+  ""longitude"": 79.088
+}"
+anthropic/claude-opus-4.8,no-CoT,7.8731,80.7718,1952.352,LK,True,,stop,0.00489,818,32,0,25.23,"{""country"": ""LK"", ""latitude"": 7.8731, ""longitude"": 80.7718}"
+anthropic/claude-opus-4.8,CoT,7.2906,80.6337,2000.99,LK,True,,stop,0.00717,949,97,0,4.94,"{""reasoning"": ""Left-hand traffic, tropical roadside vegetation, and a turquoise 'Express' bus typical of Sri Lankan intercity transport on a wide rural highway."", ""country"": ""LK"", ""latitude"": 7.2906, ""longitude"": 80.6337}"
+qwen/qwen3.6-35b-a3b,no-CoT,7.2906,80.6337,2000.99,LK,True,,stop,0.00011775,585,30,0,3.01,"{""country"": ""LK"", ""latitude"": 7.2906, ""longitude"": 80.6337}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,12.986383438110352,77.58467864990234,2039.07,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-27b,no-CoT,14.5764,120.9788,2673.913,PH,True,,stop,0.00026936,586,45,0,1.87,"```json
+{
+  ""country"": ""PH"",
+  ""latitude"": 14.5764,
+  ""longitude"": 120.9788
+}
+```"
+mistralai/mistral-small-2603,no-CoT,34.0522,-118.2437,13265.608,US,True,,stop,0.000171375,786,32,0,9.13,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,7.46,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.26,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,12.93,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,7.31,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.28,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.11,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.3,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.37,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.23,

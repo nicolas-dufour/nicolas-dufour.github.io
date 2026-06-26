@@ -1,0 +1,66 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-37.141838910247,-56.895319438651,0.0,AR,True,,,,,,,,"Carilo, None, Buenos Aires, AR"
+google/gemini-3.5-flash,CoT (effort=medium),-37.1185,-56.878,3.015,AR,True,,stop,0.0232005,1307,2360,2278,17.31,"{""reasoning"": ""The 'GUARDERIA' sign (ATV/motorcycle storage) on the right, the Shell gas station on the left, and the characteristic pine trees and sandy terrain are highly indicative of Avenida Bunge in Pinamar, Argentina."", ""country"": ""AR"", ""latitude"": -37.1185, ""longitude"": -56.878}"
+google/gemini-3.5-flash,CoT (effort=high),-37.1181,-56.8782,3.045,AR,True,,stop,0.0192855,1307,1925,1846,13.87,"{""reasoning"": ""The presence of a Shell gas station opposite a 'Guarderia' (quad/motorcycle storage) on a pine-lined avenue with sandy shoulders matches Avenida Bunge in the coastal resort town of Pinamar, Argentina."", ""country"": ""AR"", ""latitude"": -37.1181, ""longitude"": -56.8782}"
+google/gemini-3.5-flash,CoT (effort=low),-37.1235,-56.8624,3.56,AR,True,,stop,0.004806,1308,316,234,9.53,"{""reasoning"": ""The sign 'GUARDERIA' in Spanish, combined with the sandy shoulders, pine trees, and coastal-style architecture, strongly points to the Atlantic coast of Buenos Aires Province, Argentina, likely near Pinamar or Villa Gesell."", ""country"": ""AR"", ""latitude"": -37.1235, ""longitude"": -56.8624}"
+google/gemini-3.1-pro-preview,CoT,-37.115,-56.865,4.016,AR,True,,stop,0.006936,1308,360,265,5.5,"{
+  ""reasoning"": ""The Spanish word 'GUARDERIA' on the building and the presence of pine trees with sandy soil suggest a coastal resort town in South America. The overall infrastructure and vegetation strongly point to the Atlantic coast of Argentina, such as Pinamar or Villa Gesell."",
+  ""country"": ""AR"",
+  ""latitude"": -37.115,
+  ""longitude"": -56.865
+}"
+google/gemini-3.1-pro-preview,no-CoT,-37.115,-56.865,4.016,AR,True,,stop,0.002848,1226,33,0,8.32,"```json
+{""country"": ""AR"", ""latitude"": -37.115, ""longitude"": -56.865}
+```"
+openai/gpt-5.5,CoT,-37.1098,-56.8616,4.651,AR,True,,stop,0.016795,755,434,357,10.79,"{""reasoning"":""Spanish signage (“GUARDERIA”), right-hand traffic, sandy shoulders and extensive pine forest point to a coastal Argentine resort town. The divided avenue with Shell-style roadside services and low commercial buildings best matches Pinamar, Buenos Aires Province."",""country"":""AR"",""latitude"":-37.1098,""longitude"":-56.8616}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-37.49744415283203,-57.092166900634766,43.203,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-37.50478744506836,-57.10112380981445,44.271,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-38.01721954345703,-57.484249114990234,110.308,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-38.02423095703125,-57.48920822143555,111.201,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,no-CoT,-34.9205,-57.9538,264.7,AR,True,,stop,0.0007384,704,24,0,0.91,"{""country"": ""AR"", ""latitude"": -34.9205, ""longitude"": -57.9538}"
+openai/gpt-5.5,no-CoT,-34.8386,-55.9824,268.952,UY,True,,stop,0.00414,678,25,0,1.23,"{""country"":""UY"",""latitude"":-34.8386,""longitude"":-55.9824}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-35.038936614990234,-58.58817672729492,278.941,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-31b-it,no-CoT,-34.8333,-58.3833,289.5,AR,True,,stop,6.348e-05,404,36,0,5.65,"```json
+{""country"": ""AR"", ""latitude"": -34.8333, ""longitude"": -58.3833}
+```"
+qwen/qwen3.5-9b,no-CoT,-34.8222,-58.3815,290.525,AR,True,,stop,6.325e-05,586,31,0,11.63,"{""country"": ""AR"", ""latitude"": -34.8222, ""longitude"": -58.3815}"
+anthropic/claude-opus-4.8,CoT,-34.85,-55.27,293.796,UY,True,,stop,0.00727,949,101,0,3.65,"{""reasoning"": ""Spanish signage 'GUARDERIA', pine trees and sandy coastal terrain typical of Uruguayan Atlantic resort towns near Maldonado/Punta del Este area."", ""country"": ""UY"", ""latitude"": -34.85, ""longitude"": -55.27}"
+x-ai/grok-4.3,CoT,-34.705,-58.28,298.264,AR,True,,stop,0.002544,788,758,677,13.38,"{
+  ""reasoning"": ""Spanish-language signage ('GUARDERIA', 'Colegio') plus right-hand traffic, Shell station, overhead power lines, and suburban pine-tree vegetation point to Argentina; the low-rise brick buildings and road layout match Greater Buenos Aires suburbs."",
+  ""country"": ""AR"",
+  ""latitude"": -34.705,
+  ""longitude"": -58.28
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-34.901111,-54.958889,303.969,UY,True,,stop,0.00219,1226,39,0,1.3,"```json
+{""country"": ""UY"", ""latitude"": -34.901111, ""longitude"": -54.958889}
+```"
+anthropic/claude-opus-4.8,no-CoT,-34.8,-55.1,306.433,UY,True,,stop,0.00484,818,30,0,9.77,"{""country"": ""UY"", ""latitude"": -34.8, ""longitude"": -55.1}"
+moonshotai/kimi-k2.6,CoT,-34.92,-54.86,307.445,UY,True,,stop,0.0144924,832,3465,3762,198.08,"{""reasoning"": ""The Spanish word 'Guardería' on the blue sign, right-hand traffic, sandy road shoulders, and pine-tree vegetation alongside low-rise commercial strip development are all characteristic of coastal Uruguay near Punta del Este."", ""country"": ""UY"", ""latitude"": -34.92, ""longitude"": -54.86}"
+qwen/qwen3.5-35b-a3b,no-CoT,-34.6037,-58.3816,312.377,AR,True,,stop,0.000187425,585,31,0,7.64,"{""country"": ""AR"", ""latitude"": -34.6037, ""longitude"": -58.3816}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-31.847637176513672,-56.16193771362305,592.506,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,-29.6833,-51.1833,983.831,BR,True,,stop,0.0001668,586,31,0,4.61,"{""country"": ""BR"", ""latitude"": -29.6833, ""longitude"": -51.1833}"
+qwen/qwen3.5-397b-a17b,no-CoT,-29.3558,-51.1089,1018.823,BR,True,,stop,0.00043188,585,31,0,3.03,"{""country"": ""BR"", ""latitude"": -29.3558, ""longitude"": -51.1089}"
+minimax/minimax-m3,no-CoT,-27.0,-50.0,1300.514,BR,True,,stop,0.00049362,919,230,249,10.93,"{""country"": ""BR"", ""latitude"": -27.0, ""longitude"": -50.0}"
+xiaomi/mimo-v2.5,no-CoT,-36.62,-72.1,1352.149,CL,True,,stop,9.60176e-05,820,27,0,1.5,"{""country"": ""CL"", ""latitude"": -36.62, ""longitude"": -72.10}"
+qwen/qwen3.5-122b-a10b,no-CoT,-25.6789,-50.1234,1426.397,BR,True,,stop,0.00021658,585,31,0,7.98,"{""country"": ""BR"", ""latitude"": -25.6789, ""longitude"": -50.1234}"
+minimax/minimax-m3,CoT,-25.55,-49.5,1466.586,BR,True,,stop,0.00078186,995,454,366,20.97,"{""reasoning"": ""The 'CORRDERIN' signage in Portuguese, presence of Araucaria (Brazilian pine) trees, wooden utility poles with multiple wires, right-hand traffic with small-town Brazilian architecture, and overcast weather typical of southern Brazil all point to a town in Paraná or Santa Catarina state."", ""country"": ""BR"", ""latitude"": -25.55, ""longitude"": -49.5}"
+mistralai/mistral-medium-3-5,no-CoT,-23.5505,-46.6333,1801.053,BR,True,,stop,0.0014115,786,31,0,0.9,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+mistralai/mistral-small-2603,no-CoT,-23.5505,-46.6333,1801.053,BR,True,,stop,0.0001365,786,31,0,2.0,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+qwen/qwen3.6-27b,no-CoT,-23.5505,-46.6333,1801.053,BR,True,,stop,0.0002279,585,31,0,8.84,"{""country"": ""BR"", ""latitude"": -23.5505, ""longitude"": -46.6333}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7137.689,,True,True,,,,,,27.9,
+xiaomi/mimo-v2.5,CoT,19.682,-98.857,7697.035,MX,True,,stop,0.0007947576,899,2483,2361,34.66,"{""reasoning"": ""The Spanish signage 'GUARDERIA' (daycare) on the right confirms a Spanish-speaking region, while the right-hand traffic and specific infrastructure (wooden/concrete utility poles, yellow diamond warning signs) point to Latin America. The presence of pine trees combined with the overcast sky and semi-urban architecture strongly suggests the high-altitude Central Highlands of Mexico, likely in the State of Mexico or Hidalgo."", ""country"": ""MX"", ""latitude"": 19.682, ""longitude"": -98.857}"
+qwen/qwen3.5-27b,no-CoT,20.6597,-103.3496,8060.771,MX,True,,stop,0.00026936,586,45,0,4.42,"```json
+{
+  ""country"": ""MX"",
+  ""latitude"": 20.6597,
+  ""longitude"": -103.3496
+}
+```"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,307.25,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.4,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.25,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.45,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.13,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,2.2,

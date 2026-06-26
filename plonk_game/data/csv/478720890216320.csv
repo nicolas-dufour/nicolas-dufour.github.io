@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,43.188213317222,-7.9965546123871,0.0,ES,True,,,,,,,,"Aranga, Provincia da Coruna, Galicia, ES"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,42.84698486328125,-7.942146301269531,38.2,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,42.8446044921875,-7.938089847564697,38.502,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,42.73044967651367,-7.945233345031738,51.072,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,42.8782,-8.5446,56.325,ES,True,,stop,0.00413,666,32,0,2.21,"{""country"": ""ES"", ""latitude"": 42.8782, ""longitude"": -8.5446}"
+anthropic/claude-opus-4.8,CoT,42.75,-8.55,66.348,ES,True,,stop,0.00616,797,87,0,3.39,"{""reasoning"": ""Eucalyptus and pine forest, rumble strips on shoulder, and road style suggest northwest Iberia, likely Galicia, Spain."", ""country"": ""ES"", ""latitude"": 42.75, ""longitude"": -8.55}"
+qwen/qwen3.5-122b-a10b,no-CoT,42.4627,-8.1417,81.537,ES,True,,stop,0.00018538,473,30,0,7.87,"{""country"": ""ES"", ""latitude"": 42.4627, ""longitude"": -8.1417}"
+minimax/minimax-m3,CoT,41.55,-8.15,182.597,PT,True,,stop,0.00073974,845,428,430,13.78,"{""reasoning"": ""Eucalyptus plantations and dark schist stone retaining walls along the roadside are highly characteristic of rural northern Portugal (Minho/Trás-os-Montes region). The right-hand driving, European-style road markings, and hilly green terrain with mixed eucalyptus/pine vegetation further confirm this."", ""country"": ""PT"", ""latitude"": 41.55, ""longitude"": -8.15}"
+minimax/minimax-m3,no-CoT,41.15,-8.65,232.947,PT,True,,stop,0.00022248,752,23,0,5.37,"{""country"": ""PT"", ""latitude"": 41.15, ""longitude"": -8.65}"
+openai/gpt-5.5,no-CoT,40.8842,-8.4976,259.513,PT,True,,stop,0.00344,544,24,0,1.63,"{""country"":""PT"",""latitude"":40.8842,""longitude"":-8.4976}"
+google/gemini-3.5-flash,CoT (effort=medium),40.7452,-8.5741,275.813,PT,True,,stop,0.0051285,1271,358,293,6.39,"{""reasoning"": ""The abundance of eucalyptus and pine trees alongside a well-maintained national road with wide paved shoulders and specific white road markings strongly points to central or northern Portugal."", ""country"": ""PT"", ""latitude"": 40.7452, ""longitude"": -8.5741}"
+google/gemini-3.5-flash,CoT (effort=low),40.6854,-8.5642,282.231,PT,True,,stop,0.0038955,1271,221,162,3.21,"{""reasoning"": ""The abundance of eucalyptus trees alongside the road markings and flat-to-rolling terrain is highly characteristic of central and northern Portugal."", ""country"": ""PT"", ""latitude"": 40.6854, ""longitude"": -8.5642}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),40.6834,-8.5642,282.45,PT,True,,stop,0.002091,1190,34,0,7.96,"```json
+{""country"": ""PT"", ""latitude"": 40.6834, ""longitude"": -8.5642}
+```"
+moonshotai/kimi-k2.6,CoT,40.65,-8.35,283.747,PT,True,,stop,0.0155239,682,3719,4145,331.32," {""reasoning"": ""The right-hand traffic, European road markings with wide shoulders and rumble strips, dense eucalyptus monoculture forests, and granite stone walls are highly characteristic of Portuguese national roads in the central/northern interior."", ""country"": ""PT"", ""latitude"": 40.65, ""longitude"": -8.35}"
+google/gemini-3.5-flash,CoT (effort=high),40.6543,-8.4321,284.052,PT,True,,stop,0.008127,1272,691,625,4.8,"{""reasoning"": ""The abundance of eucalyptus and pine trees, combined with the road markings and European-style roadside delineator, strongly indicates the forested regions of central or northern Portugal."", ""country"": ""PT"", ""latitude"": 40.6543, ""longitude"": -8.4321}"
+qwen/qwen3.6-35b-a3b,CoT,40.63,-7.91,284.55,PT,True,,stop,0.00772075,553,6066,5629,220.42,"```json
+{
+    ""reasoning"": ""The vehicle is driving on the left side of the road, and the blue rectangular road sign is characteristic of Portuguese 'Itinerário Principal' (IP) roads or destination signs. The dense stands of Eucalyptus trees are highly typical of the Portuguese landscape, especially in the central regions like Beira Litoral."",
+    ""country"": ""PT"",
+    ""latitude"": 40.63,
+    ""longitude"": -7.91
+}
+```"
+qwen/qwen3.6-35b-a3b,no-CoT,40.6344,-8.652,289.101,PT,True,,stop,0.00297070995,471,2999,2966,14.15,"{""country"": ""PT"", ""latitude"": 40.6344, ""longitude"": -8.6520}"
+openai/gpt-5.5,CoT,40.6083,-8.4471,289.285,PT,True,,stop,0.009945,621,228,150,13.45,"{""reasoning"":""Right-hand traffic with European white center/edge markings and roadside delineators, plus extensive eucalyptus/Atlantic vegetation and dry Iberian roadside strongly suggest rural Portugal. The landscape is typical of central/northern Portugal around the Aveiro–Coimbra corridor."",""country"":""PT"",""latitude"":40.6083,""longitude"":-8.4471}"
+qwen/qwen3.6-27b,CoT,40.533,-7.633,296.776,PT,True,,stop,0.02290995,553,8393,8288,105.25,"{""reasoning"": ""The blue rectangular road sign on the left is characteristic of Portuguese national roads (EN), distinguishing it from Spanish (green) or French (green) national roads. The combination of dense Eucalyptus plantations on the left and a traditional dry-stone wall on the right is highly typical of the rural interior of Portugal, specifically the Beira region."", ""country"": ""PT"", ""latitude"": 40.533, ""longitude"": -7.633}"
+google/gemini-3.1-pro-preview,CoT,40.5,-8.5,301.809,PT,True,,stop,0.005074,1271,211,143,16.92,"{
+  ""reasoning"": ""The presence of eucalyptus trees alongside pine trees, combined with the road markings and the white delineator post with a black band, strongly points to Portugal."",
+  ""country"": ""PT"",
+  ""latitude"": 40.5,
+  ""longitude"": -8.5
+}"
+moonshotai/kimi-k2.6,no-CoT,40.5,-8.5,301.809,PT,True,,stop,0.00051219,602,23,0,2.47,"{""country"": ""PT"", ""latitude"": 40.5, ""longitude"": -8.5}"
+google/gemini-3.1-pro-preview,no-CoT,40.0,-8.5,356.975,PT,True,,stop,0.004574,1189,183,155,10.1,"```json
+{""country"": ""PT"", ""latitude"": 40.0, ""longitude"": -8.5}
+```"
+qwen/qwen3.5-27b,no-CoT,39.8283,-8.0217,373.611,PT,True,,stop,0.0002139,473,30,0,7.9,"{""country"": ""PT"", ""latitude"": 39.8283, ""longitude"": -8.0217}"
+qwen/qwen3.5-397b-a17b,CoT,39.85,-8.64,375.034,PT,True,,stop,0.0278986,553,7903,7378,283.16,"{
+""reasoning"": ""The presence of a blue road sign (indicating an Itinerário Complementar or Principal in Portugal) combined with white center road markings for two-way traffic and dense Eucalyptus plantations lining the road strongly points to central Portugal, specifically the IC2 highway."",
+""country"": ""PT"",
+""latitude"": 39.85,
+""longitude"": -8.64
+}"
+qwen/qwen3.6-27b,no-CoT,39.4699,-8.5432,415.967,PT,True,,stop,0.00025155,474,30,0,1.05,"{""country"": ""PT"", ""latitude"": 39.4699, ""longitude"": -8.5432}"
+google/gemma-4-31b-it,no-CoT,39.45,-8.23,416.127,PT,True,,stop,6.924e-05,406,31,0,8.2,"```json
+{""country"": ""PT"", ""latitude"": 39.45, ""longitude"": -8.23}
+```"
+mistralai/mistral-medium-3-5,no-CoT,38.765,-9.1,500.472,PT,True,,stop,0.001146,634,26,0,2.27,"{""country"": ""PT"", ""latitude"": 38.765, ""longitude"": -9.1}"
+xiaomi/mimo-v2.5,CoT,38.5,-7.9,521.369,PT,True,,stop,0.0001359176,787,186,84,11.0,"{""reasoning"": ""The vegetation (eucalyptus/pine plantation), road markings (dashed white center line, solid white edge line), and general landscape suggest southern Europe, specifically the Iberian Peninsula. The specific road layout and forestry style aligns with rural highways in Portugal or Spain, with the lighting and flora fitting the Alentejo or similar regions."", ""country"": ""PT"", ""latitude"": 38.5, ""longitude"": -7.9}"
+x-ai/grok-4.3,no-CoT,47.85,1.95,931.191,FR,True,,stop,0.0005934,592,22,0,1.13,"{""country"": ""FR"", ""latitude"": 47.85, ""longitude"": 1.95}"
+x-ai/grok-4.3,CoT,47.85,2.35,957.155,FR,True,,stop,0.0021965,676,675,598,8.56,"{""reasoning"": ""Right-hand traffic with dashed center line + solid edge line, blue rectangular regulatory sign, gabion retaining wall, and temperate deciduous vegetation all point to rural Western/Central Europe; speed-hump markings and overhead wires are typical of French D-roads."", ""country"": ""FR"", ""latitude"": 47.85, ""longitude"": 2.35}"
+qwen/qwen3.5-397b-a17b,no-CoT,52.3456,10.1234,1686.53,DE,True,,stop,0.00029145,473,31,0,3.48,"{""country"": ""DE"", ""latitude"": 52.3456, ""longitude"": 10.1234}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4867.947,,True,True,,,,,,18.89,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,44.00853729248047,-79.16680908203125,5543.408,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,40.000648498535156,-78.81543731689453,5719.048,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,34.29561233520508,-80.27742004394531,6151.575,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,no-CoT,30.5,-84.5,6715.919,US,True,,stop,7.97776e-05,708,25,0,2.11,"{""country"": ""US"", ""latitude"": 30.5, ""longitude"": -84.5}"
+mistralai/mistral-small-2603,CoT,47.25,-122.45,8081.74,US,True,,stop,0.00059484,716,924,969,13.32,"{""reasoning"": ""Right-hand traffic, dense evergreen forest, and road style point to the U.S. Pacific Northwest."", ""country"": ""US"", ""latitude"": 47.25, ""longitude"": -122.45}"
+mistralai/mistral-small-2603,no-CoT,37.751,-122.4196,8850.289,US,True,,stop,0.0001143,634,32,0,0.9,"{""country"": ""US"", ""latitude"": 37.7510, ""longitude"": -122.4196}"
+qwen/qwen3.5-35b-a3b,no-CoT,30.5722,104.0658,9290.529,CN,True,,stop,9.836e-05,474,32,0,1.75,"{""country"": ""CN"", ""latitude"": 30.5722, ""longitude"": 104.0658}"
+qwen/qwen3.5-9b,no-CoT,31.2304,121.4737,10271.817,CN,True,,stop,8.841e-05,473,32,0,1.94,"{""country"": ""CN"", ""latitude"": 31.2304, ""longitude"": 121.4737}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.28,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.28,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.18,

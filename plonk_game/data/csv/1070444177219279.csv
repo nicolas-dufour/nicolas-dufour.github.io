@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,31.110854868676217,27.82157162029014,0.0,EG,True,,,,,,,,"Mersa Matruh, None, Muhafazat Matruh, EG"
+google/gemini-3.5-flash,no-CoT (effort=minimal),31.1245,29.1832,129.628,EG,True,,stop,0.0021,1190,35,0,8.75,"```json
+{""country"": ""EG"", ""latitude"": 31.1245, ""longitude"": 29.1832}
+```"
+google/gemini-3.5-flash,CoT (effort=low),30.9521,29.4125,152.609,EG,True,,stop,0.0039315,1271,225,157,9.27,"{""reasoning"": ""The flat desert landscape, beige flat-roofed buildings, distinctive black-and-white painted curbs, and modern streetlights are highly characteristic of highways in Egypt."", ""country"": ""EG"", ""latitude"": 30.9521, ""longitude"": 29.4125}"
+google/gemini-3.1-pro-preview,no-CoT,30.9876,29.5432,164.578,EG,True,,stop,0.002798,1189,35,0,8.71,"```json
+{""country"": ""EG"", ""latitude"": 30.9876, ""longitude"": 29.5432}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,30.68482208251953,29.505687713623047,167.525,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,30.8521,29.5632,168.504,EG,True,,stop,0.005662,1271,260,178,4.55,"{
+  ""reasoning"": ""The black and white painted curbs and arid, flat landscape are highly characteristic of highways in Egypt. The style of the streetlights and distant flat-roofed buildings further support this location."",
+  ""country"": ""EG"",
+  ""latitude"": 30.8521,
+  ""longitude"": 29.5632
+}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,30.67888832092285,29.527189254760742,169.684,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,30.487712860107422,30.075599670410156,226.159,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),30.4125,30.4987,267.318,EG,True,,stop,0.0109695,1271,1007,940,22.03,"{""reasoning"": ""The flat desert landscape, sandy soil, low-rise concrete buildings, and distinctive black-and-white painted curbs are highly characteristic of desert highways in Egypt."", ""country"": ""EG"", ""latitude"": 30.4125, ""longitude"": 30.4987}"
+moonshotai/kimi-k2.6,CoT,30.15,30.55,282.062,EG,True,,stop,0.020950128,682,6056,5990,199.85,"{""reasoning"": ""Flat desert landscape with low-rise tan buildings, scattered palm trees, and a divided highway with right-hand traffic and concrete barriers, matching the appearance of Egypt's desert highways west of Cairo."", ""country"": ""EG"", ""latitude"": 30.15, ""longitude"": 30.55}"
+minimax/minimax-m3,CoT,30.05,31.0,326.318,EG,True,,stop,0.00090666,843,596,518,17.63,"{""reasoning"": ""Wide multi-lane highway with sandy desert terrain, flat-roofed concrete buildings in earthy tones, arid climate, and right-hand driving strongly indicate an Egyptian suburban highway, likely along one of the desert ring roads or intercity highways near Cairo."", ""country"": ""EG"", ""latitude"": 30.05, ""longitude"": 31.0}"
+mistralai/mistral-medium-3-5,no-CoT,30.0444,31.2357,347.669,EG,True,,stop,0.0011835,634,31,0,1.36,"{""country"": ""EG"", ""latitude"": 30.0444, ""longitude"": 31.2357}"
+qwen/qwen3.5-27b,no-CoT,30.0444,31.2357,347.669,EG,True,,stop,0.000140595,473,31,0,1.05,"{""country"": ""EG"", ""latitude"": 30.0444, ""longitude"": 31.2357}"
+qwen/qwen3.5-9b,no-CoT,30.0444,31.2357,347.669,EG,True,,stop,5.205e-05,474,31,0,9.62,"{""country"": ""EG"", ""latitude"": 30.0444, ""longitude"": 31.2357}"
+qwen/qwen3.6-27b,no-CoT,30.0444,31.2357,347.669,EG,True,,stop,0.0001943,473,31,0,15.4,"{""country"": ""EG"", ""latitude"": 30.0444, ""longitude"": 31.2357}"
+xiaomi/mimo-v2.5,no-CoT,30.0444,31.2357,347.669,EG,True,,stop,8.14576e-05,708,31,0,3.75,"{""country"": ""EG"", ""latitude"": 30.0444, ""longitude"": 31.2357}"
+anthropic/claude-opus-4.8,no-CoT,29.9668,31.2716,354.032,EG,True,,stop,0.00413,666,32,0,8.82,"{""country"": ""EG"", ""latitude"": 29.9668, ""longitude"": 31.2716}"
+anthropic/claude-opus-4.8,CoT,29.9,31.3,359.393,EG,True,,stop,0.006285,797,92,0,2.73,"{""reasoning"": ""Arid desert landscape with sandy soil, sparse low buildings, right-hand traffic, and power pylons typical of Egypt's desert highways near Cairo."", ""country"": ""EG"", ""latitude"": 29.9, ""longitude"": 31.3}"
+google/gemini-3.5-flash,CoT (effort=medium),29.9685,32.4412,460.25,EG,True,,stop,0.0077565,1271,650,578,7.27,"```json
+{""reasoning"": ""The arid desert landscape, flat terrain, black-and-white painted curbs, and characteristic concrete building styles strongly point to Egypt, likely along a desert highway."", ""country"": ""EG"", ""latitude"": 29.9685, ""longitude"": 32.4412}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,31.077957153320312,34.797157287597656,664.103,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,29.583484649658203,34.91812515258789,701.69,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,31.7683,35.2137,704.955,IL,True,,stop,0.0003322,473,31,0,1.88,"{""country"": ""IL"", ""latitude"": 31.7683, ""longitude"": 35.2137}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,31.779516220092773,35.22700500488281,706.298,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,21.5433,39.1728,1551.001,SA,True,,stop,0.00018772,474,31,0,11.92,"{""country"": ""SA"", ""latitude"": 21.5433, ""longitude"": 39.1728}"
+google/gemma-4-31b-it,no-CoT,33.3128,44.3639,1573.714,IQ,True,,stop,5.772e-05,408,36,0,8.12,"```json
+{""country"": ""IQ"", ""latitude"": 33.3128, ""longitude"": 44.3639}
+```"
+xiaomi/mimo-v2.5,CoT,29.284,47.927,1940.209,KW,True,,stop,0.0005455576,787,1649,1576,19.81,"{
+  ""reasoning"": ""The flat, sandy terrain, distinct beige flat-roofed 'villa' architecture, and wide infrastructure are highly characteristic of the suburban areas of Kuwait City."",
+  ""country"": ""KW"",
+  ""latitude"": 29.284,
+  ""longitude"": 47.927
+}"
+x-ai/grok-4.3,CoT,24.85,46.72,1978.706,SA,True,,stop,0.0021915,676,673,598,5.45,"{
+  ""reasoning"": ""Arid desert landscape with flat-roofed beige concrete buildings, sparse palms, right-side driving, striped curbs, and transmission towers match Arabian Peninsula highway outskirts; sun angle and clear skies further support Gulf region."",
+  ""country"": ""SA"",
+  ""latitude"": 24.85,
+  ""longitude"": 46.72
+}"
+google/gemma-4-26b-a4b-it,no-CoT,24.7136,46.6753,1981.043,SA,True,,stop,5.654e-05,406,35,0,1.72,"{"" than ownmuch {""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+qwen/qwen3.5-35b-a3b,no-CoT,24.7136,46.6753,1981.043,SA,True,,stop,0.000157,473,31,0,0.62,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+x-ai/grok-4.3,no-CoT,24.7136,46.6753,1981.043,SA,True,,stop,0.0005984,592,24,0,0.83,"{""country"": ""SA"", ""latitude"": 24.7136, ""longitude"": 46.6753}"
+openai/gpt-5.5,no-CoT,26.1719,50.5476,2280.241,BH,True,,stop,0.00341,544,23,0,8.03,"{""country"":""BH"",""latitude"":26.1719,""longitude"":50.5476}"
+openai/gpt-5.5,CoT,25.2176,51.4289,2399.809,QA,True,,stop,0.013335,621,341,259,21.04,"{""reasoning"":""Flat arid Gulf landscape, right-side driving, bilingual-style roadside signage and black/yellow curb markings point strongly to Qatar. The wide divided road with sparse beige low-rise buildings and power pylons resembles the outskirts of Doha around the Industrial Area/Salwa Road corridor."",""country"":""QA"",""latitude"":25.2176,""longitude"":51.4289}"
+qwen/qwen3.6-35b-a3b,no-CoT,25.2048,55.2708,2762.133,AE,True,,stop,0.0001444,474,31,0,8.65,"{""country"": ""AE"", ""latitude"": 25.2048, ""longitude"": 55.2708}"
+mistralai/mistral-small-2603,no-CoT,39.7684,-86.1581,9605.459,US,True,,stop,0.0001137,634,31,0,3.18,"{""country"": ""US"", ""latitude"": 39.7684, ""longitude"": -86.1581}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.07,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.58,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.3,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,5.26,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.08,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.55,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.1,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.21,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.21,

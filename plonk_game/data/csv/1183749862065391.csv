@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,52.096049468496,-123.61812460466,0.0,CA,True,,,,,,,,"Hanceville, None, British Columbia, CA"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,51.901397705078125,-123.35689544677734,28.077,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,51.704673767089844,-122.94210052490234,63.602,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,no-CoT,51.8,-121.5,148.851,CA,True,,stop,0.00484,818,30,0,2.79,"{""country"": ""CA"", ""latitude"": 51.8, ""longitude"": -121.5}"
+anthropic/claude-opus-4.8,CoT,52.5,-121.5,150.871,CA,True,,stop,0.006795,949,82,0,10.35,"{""reasoning"": ""Boreal spruce forest, double yellow centerline and right-side driving suggest interior British Columbia/Alberta region of Canada."", ""country"": ""CA"", ""latitude"": 52.5, ""longitude"": -121.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,52.23586654663086,-118.94255828857422,319.217,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,53.726667,-116.573333,505.728,CA,True,,stop,0.0001748,586,36,0,3.01,"{""country"": ""CA"", ""latitude"": 53.726667, ""longitude"": -116.573333}"
+qwen/qwen3.5-122b-a10b,no-CoT,51.1744,-115.5631,564.973,CA,True,,stop,0.0002715,585,40,0,1.85,"{
+  ""country"": ""CA"",
+  ""latitude"": 51.1744,
+  ""longitude"": -115.5631
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,57.91586685180664,-123.95309448242188,647.484,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-9b,no-CoT,56.1333,-115.25,705.578,CA,True,,stop,6.31e-05,586,30,0,2.94,"{""country"": ""CA"", ""latitude"": 56.1333, ""longitude"": -115.25}"
+qwen/qwen3.6-27b,no-CoT,58.5,-122.5,715.57,CA,True,,stop,0.0002179,585,26,0,14.4,"{""country"": ""CA"", ""latitude"": 58.5, ""longitude"": -122.5}"
+google/gemma-4-31b-it,no-CoT,53.5432,-113.0,730.689,CA,True,,stop,6.732e-05,404,37,0,9.07,"```json
+{""country"": ""CA"", ""latitude"": 53.5432, ""longitude"": -113.0000}
+```"
+qwen/qwen3.5-27b,no-CoT,54.5639,-113.0507,752.568,CA,True,,stop,0.0002205,586,37,0,9.09,"```json
+{""country"": ""CA"", ""latitude"": 54.5639, ""longitude"": -113.0507}
+```"
+mistralai/mistral-medium-3-5,no-CoT,44.333,-121.75,874.159,US,True,,stop,0.0013965,786,29,0,1.09,"{""country"": ""US"", ""latitude"": 44.333, ""longitude"": -121.75}"
+openai/gpt-5.5,no-CoT,60.7086,-135.0707,1185.443,CA,True,,stop,0.00411,678,24,0,2.36,"{""country"":""CA"",""latitude"":60.7086,""longitude"":-135.0707}"
+openai/gpt-5.5,CoT,60.7634,-135.1928,1194.401,CA,True,,stop,0.016345,755,419,337,10.94,"{""reasoning"":""Right-side driving with North American double yellow centerlines and a narrow unmarked paved road through dense boreal spruce forest points to remote northern Canada. The vegetation, terrain, and road style are most consistent with Yukon near Whitehorse rather than more built-up southern provinces."",""country"":""CA"",""latitude"":60.7634,""longitude"":-135.1928}"
+x-ai/grok-4.3,no-CoT,53.9123,-105.2847,1239.623,CA,True,,stop,0.0007384,704,24,0,1.12,"{""country"": ""CA"", ""latitude"": 53.9123, ""longitude"": -105.2847}"
+minimax/minimax-m3,CoT,61.5,-135.2,1257.23,CA,True,,stop,0.00065826,995,351,269,9.95,"{""reasoning"": ""Double yellow center lines, gravel shoulders, and remote boreal spruce forest (taiga) indicate a northern Canadian highway, most likely the Alaska Highway in Yukon. The gentle rolling terrain and forest composition match the subarctic region between Whitehorse and the BC border."", ""country"": ""CA"", ""latitude"": 61.5, ""longitude"": -135.2}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),44.7912,-110.4358,1263.618,US,True,,stop,0.002163,1226,36,0,7.47,"```json
+{""country"": ""US"", ""latitude"": 44.7912, ""longitude"": -110.4358}
+```"
+google/gemini-3.5-flash,CoT (effort=medium),44.5852,-110.6524,1267.825,US,True,,stop,0.0059565,1307,444,368,11.08,"{""reasoning"": ""The double yellow center lines and lack of shoulder markings on a winding two-lane road through lodgepole pine forest are highly characteristic of national park roads in the western United States, particularly Yellowstone National Park."", ""country"": ""US"", ""latitude"": 44.5852, ""longitude"": -110.6524}"
+google/gemini-3.5-flash,CoT (effort=high),44.5982,-110.5521,1272.34,US,True,,stop,0.0087195,1307,751,679,6.34,"{""reasoning"": ""The double solid yellow center lines on a well-maintained asphalt road combined with the dense lodgepole pine forest are highly characteristic of national parks in the western United States, particularly Yellowstone."", ""country"": ""US"", ""latitude"": 44.5982, ""longitude"": -110.5521}"
+google/gemini-3.1-pro-preview,CoT,44.5902,-110.5613,1272.466,US,True,,stop,0.005482,1307,239,160,5.0,"{
+  ""reasoning"": ""Double solid yellow center lines without white edge lines are typical of US National Park roads. The coniferous forest and terrain strongly suggest the Rocky Mountains, likely Yellowstone National Park."",
+  ""country"": ""US"",
+  ""latitude"": 44.5902,
+  ""longitude"": -110.5613
+}"
+google/gemini-3.1-pro-preview,no-CoT,44.5902,-110.5471,1273.252,US,True,,stop,0.00485,1225,200,164,10.5,"```json
+{""country"": ""US"", ""latitude"": 44.5902, ""longitude"": -110.5471}
+```"
+google/gemini-3.5-flash,CoT (effort=low),44.6152,-110.4518,1276.564,US,True,,stop,0.004032,1308,230,161,8.96,"{""reasoning"": ""The double yellow center line with no white shoulder lines on a winding road through coniferous forest is highly characteristic of national park roads in the western United States, particularly Yellowstone."", ""country"": ""US"", ""latitude"": 44.6152, ""longitude"": -110.4518}"
+xiaomi/mimo-v2.5,no-CoT,44.4,-110.5,1291.033,US,True,,stop,9.57376e-05,820,26,0,7.23,"{""country"": ""US"", ""latitude"": 44.4, ""longitude"": -110.5}"
+moonshotai/kimi-k2.6,CoT,50.65,-99.95,1643.349,CA,True,,stop,0.0065404,832,1477,1729,58.3,"{""reasoning"": ""Double yellow center lines without white edge markings on a paved rural highway, combined with boreal spruce-fir forest and rolling aspen parkland transition, are characteristic of central Canada's prairie-forest ecotone, most closely matching Manitoba's Riding Mountain region."", ""country"": ""CA"", ""latitude"": 50.65, ""longitude"": -99.95}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,63.45576095581055,-144.8984832763672,1769.18,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,63.50077819824219,-145.2408905029297,1785.945,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-35b-a3b,no-CoT,61.218056,-149.900278,1880.03,US,True,,stop,0.0001418625,585,36,0,0.7,"{""country"": ""US"", ""latitude"": 61.218056, ""longitude"": -149.900278}"
+xiaomi/mimo-v2.5,CoT,64.8,-147.7,1966.233,US,True,,stop,0.0001832376,899,299,200,5.86,"{""reasoning"": ""The double yellow center line is standard in North America (US/Canada), and the dense boreal forest with spruce trees under a high-latitude summer sky suggests a northern location like Alaska or northern Canada. The road style and vegetation are highly characteristic of the Alaska Highway or similar routes in the Yukon/Alaska region."", ""country"": ""US"", ""latitude"": 64.8, ""longitude"": -147.7}"
+qwen/qwen3.5-397b-a17b,no-CoT,49.85,-94.2,2060.483,CA,True,,stop,0.00041388,585,26,0,2.33,"{""country"": ""CA"", ""latitude"": 49.85, ""longitude"": -94.2}"
+x-ai/grok-4.3,CoT,49.25,-85.75,2656.475,CA,True,,stop,0.0019565,788,523,454,11.75,"{""reasoning"": ""Double solid yellow center line, right-hand traffic, boreal conifer forest with gravel shoulders and no visible European signage/markings indicate North America; taiga vegetation and remote two-lane asphalt road point to Canadian Shield."", ""country"": ""CA"", ""latitude"": 49.25, ""longitude"": -85.75}"
+mistralai/mistral-small-2603,no-CoT,66.5,25.7,6576.207,FI,True,,stop,0.0001329,786,25,0,3.12,"{""country"": ""FI"", ""latitude"": 66.5, ""longitude"": 25.7}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.38,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.81,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,309.78,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.36,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,0.27,

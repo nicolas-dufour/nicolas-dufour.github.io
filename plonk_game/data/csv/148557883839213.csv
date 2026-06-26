@@ -1,0 +1,97 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,50.570434743392,35.927912338216,0.0,RU,True,,,,,,,,"Borisovka, None, Belgorod, RU"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,50.56615447998047,35.98167037963867,3.826,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,50.566978454589844,36.0,5.106,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,50.559974670410156,36.025047302246094,6.959,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,no-CoT (effort=minimal),49.9808,36.2527,69.508,UA,True,,stop,0.0021525,1225,35,0,1.29,"```json
+{""country"": ""UA"", ""latitude"": 49.9808, ""longitude"": 36.2527}
+```"
+x-ai/grok-4.3,no-CoT,49.85,36.25,83.323,UA,True,,stop,0.0008678,704,22,0,0.8,"{""country"": ""UA"", ""latitude"": 49.85, ""longitude"": 36.25}"
+google/gemini-3.5-flash,CoT (effort=high),49.9805,33.6124,177.134,UA,True,,stop,0.007272,1308,590,531,10.71,"{""reasoning"": ""The flat agricultural landscape, temperate summer climate, and distinctive concrete A-frame utility poles are highly characteristic of rural Ukraine."", ""country"": ""UA"", ""latitude"": 49.9805, ""longitude"": 33.6124}"
+moonshotai/kimi-k2.6,CoT,52.0,38.0,214.54,RU,True,,stop,0.013456296,834,3848,3771,129.23,"{""reasoning"":""The wooden utility poles with multiple crossarms, solid white road-edge markings, and utilitarian Soviet-era rural architecture are characteristic of provincial Russia. Flat summer farmland with distant deciduous windbreaks places this in the Central Black Earth or Central Federal District of European Russia."",""country"":""RU"",""latitude"":52.0,""longitude"":38.0}"
+google/gemini-3.1-pro-preview,CoT,51.5,39.0,238.361,RU,True,,stop,0.004966,1307,196,130,4.11,"{
+  ""reasoning"": ""The A-frame concrete utility poles and road markings are characteristic of Russia. The temperate landscape and vegetation suggest central or southern European Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 51.5,
+  ""longitude"": 39.0
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,48.4647,35.0462,242.639,UA,True,,stop,0.00012422475,585,31,0,1.77,"{""country"": ""UA"", ""latitude"": 48.4647, ""longitude"": 35.0462}"
+qwen/qwen3.5-35b-a3b,no-CoT,48.3769,35.1406,250.452,UA,True,,stop,0.00018415,585,31,0,8.89,"{""country"": ""UA"", ""latitude"": 48.3769, ""longitude"": 35.1406}"
+anthropic/claude-opus-4.8,no-CoT,51.6,39.2,255.588,RU,True,,stop,0.00484,818,30,0,2.79,"{""country"": ""RU"", ""latitude"": 51.6, ""longitude"": 39.2}"
+openai/gpt-5.5,CoT,51.7426,39.2389,265.12,RU,True,,stop,0.013975,755,340,265,14.69,"{""reasoning"":""Flat agricultural landscape with right-side driving, white dashed/edge road markings, and Soviet-style utility poles strongly suggest rural European Russia. The temperate fields and roadside infrastructure fit the Voronezh/Lipetsk region best among likely areas."",""country"":""RU"",""latitude"":51.7426,""longitude"":39.2389}"
+google/gemini-3.5-flash,CoT (effort=medium),49.4521,32.0584,303.134,UA,True,,stop,0.0055695,1307,401,339,11.46,"```json
+{""reasoning"": ""The flat landscape, typical A-frame concrete utility poles, and road markings are highly characteristic of rural Ukraine."", ""country"": ""UA"", ""latitude"": 49.4521, ""longitude"": 32.0584}
+```"
+google/gemma-4-26b-a4b-it,CoT,52.2295,39.5033,309.057,RU,True,,stop,0.0006591,490,976,935,17.88,"{""reasoning"": ""The flat landscape, specific concrete utility pole design, and road markings are highly characteristic of the Russian plains."", ""country"": ""RU"", ""latitude"": 52.2295, ""longitude"": 39.5033}"
+google/gemini-3.5-flash,CoT (effort=low),50.3125,31.5234,313.18,UA,True,,stop,0.0039945,1307,226,162,9.8,"```json
+{""reasoning"": ""The flat landscape, characteristic concrete utility poles with tripod supports, road markings, and vegetation are highly indicative of rural Ukraine."", ""country"": ""UA"", ""latitude"": 50.3125, ""longitude"": 31.5234}
+```"
+x-ai/grok-4.3,CoT,49.85,31.45,328.514,UA,True,,stop,0.0020965,788,579,509,12.51,"{
+  ""reasoning"": ""Flat rural agricultural plain with dense overhead power lines on wooden poles, right-hand traffic road markings, and vegetation/sky match Eastern European steppe; image style and infrastructure identical to Ukrainian countryside."",
+  ""country"": ""UA"",
+  ""latitude"": 49.85,
+  ""longitude"": 31.45
+}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,53.43639373779297,37.20258712768555,330.395,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,51.5,40.5,335.926,RU,True,,stop,0.00692,949,87,0,3.52,"{""reasoning"": ""Flat rural agricultural landscape with numerous power lines, summer continental climate, and road style typical of southern Russia/Ukraine steppe region."", ""country"": ""RU"", ""latitude"": 51.5, ""longitude"": 40.5}"
+xiaomi/mimo-v2.5,CoT,50.05,30.95,358.128,UA,True,,stop,0.0001417976,899,151,80,2.17,"{""reasoning"": ""The landscape features flat terrain with deciduous trees and specific concrete power line structures typical of Eastern Europe. The road markings, bollards, and distant architecture suggest a location in Ukraine."", ""country"": ""UA"", ""latitude"": 50.05, ""longitude"": 30.95}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,53.89746856689453,34.74229049682617,378.643,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,53.787986755371094,38.19166564941406,389.6,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,no-CoT,54.5,37.0,442.909,RU,True,,stop,0.00075869,755,23,0,1.01,"{""country"": ""RU"", ""latitude"": 54.5, ""longitude"": 37.0}"
+google/gemma-4-31b-it,CoT,55.5,38.0,565.314,RU,True,,stop,0.00078571,490,613,573,11.86,"{""reasoning"": ""The concrete utility poles and the style of the industrial building are highly characteristic of rural Russia. The flat landscape and vegetation are typical for the Central Russian Upland region."", ""country"": ""RU"", ""latitude"": 55.5, ""longitude"": 38.0}"
+xiaomi/mimo-v2.5,no-CoT,55.75,37.62,586.838,RU,True,,stop,9.60176e-05,820,27,0,2.84,"{""country"": ""RU"", ""latitude"": 55.75, ""longitude"": 37.62}"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,587.435,RU,True,,stop,6.692e-05,404,36,0,10.0,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+minimax/minimax-m3,no-CoT,55.7558,37.6173,587.435,RU,True,,stop,0.00023976,904,25,0,4.99,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+mistralai/mistral-medium-3-5,no-CoT,55.7558,37.6173,587.435,RU,True,,stop,0.001419,786,32,0,2.15,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-122b-a10b,no-CoT,55.7558,37.6173,587.435,RU,True,,stop,0.0002691,585,39,0,2.13,"{
+  ""country"": ""RU"",
+  ""latitude"": 55.7558,
+  ""longitude"": 37.6173
+}"
+qwen/qwen3.5-27b,no-CoT,55.7558,37.6173,587.435,RU,True,,stop,0.0002345,586,44,0,16.02,"```json
+{
+  ""country"": ""RU"",
+  ""latitude"": 55.7558,
+  ""longitude"": 37.6173
+}
+```"
+qwen/qwen3.6-27b,no-CoT,55.7558,37.6173,587.435,RU,True,,stop,0.0002279,585,31,0,15.67,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+qwen/qwen3.5-9b,no-CoT,55.7964,37.6176,591.86,RU,True,,stop,6.325e-05,586,31,0,6.11,"{""country"": ""RU"", ""latitude"": 55.7964, ""longitude"": 37.6176}"
+qwen/qwen3.6-35b-a3b,CoT,56.1234,40.4567,686.401,RU,True,,stop,0.005331131,665,5412,5299,176.32,"```json
+{
+  ""reasoning"": ""The concrete utility poles with cross-arms, the style of the road markings, and the flat, grassy landscape with scattered trees are highly characteristic of the Russian countryside, particularly in the Central Federal District. The white industrial-style building on the left and the general infrastructure point to a region north-east of Moscow."",
+  ""country"": ""RU"",
+  ""latitude"": 56.1234,
+  ""longitude"": 40.4567
+}
+```"
+google/gemini-3.1-pro-preview,no-CoT,53.1958,45.0183,688.196,RU,True,,stop,0.00287,1225,35,0,2.47,"```json
+{""country"": ""RU"", ""latitude"": 53.1958, ""longitude"": 45.0183}
+```"
+openai/gpt-5.5,no-CoT,53.2406,45.0012,688.977,RU,True,,stop,0.00408,678,23,0,2.13,"{""country"":""RU"",""latitude"":53.2406,""longitude"":45.0012}"
+google/gemma-4-26b-a4b-it,no-CoT,52.2297,21.0122,1049.092,PL,True,,stop,8.828e-05,404,115,0,3.83,"{"" way, please provide own-location estimate based on the image provided.
+
+```json
+{""country"": ""PL"", ""latitude"": 52. own гораздо own-location estimate based on the image provided.
+```
+
+ own-location estimate based on the image provided.
+```json
+{""country"": ""PL"", "" own-location estimate based on the image provided.
+```json
+{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}
+```"
+qwen/qwen3.5-397b-a17b,no-CoT,52.1234,20.9876,1049.965,PL,True,,stop,0.0003882,585,31,0,10.82,"{""country"": ""PL"", ""latitude"": 52.1234, ""longitude"": 20.9876}"
+qwen/qwen3.5-397b-a17b,CoT,52.5341,18.4829,1222.616,PL,True,,stop,0.00977205,665,3172,1,92.53,"{
+""reasoning"": ""The tapered concrete utility poles and the specific style of white road markings (long dashes, solid edge line with small reflectors) are highly characteristic of rural Poland. The flat, agricultural landscape with distant tree lines is consistent with the Kuyavian-Pomeranian or Greater Poland regions."",
+""country"": ""PL"",
+""latitude"": 52.5341,
+""longitude"": 18.4829
+}"
+mistralai/mistral-small-2603,no-CoT,52.4082,16.9237,1327.581,PL,True,,stop,0.0001365,786,31,0,4.83,"{""country"": ""PL"", ""latitude"": 52.4082, ""longitude"": 16.9237}"
+minimax/minimax-m3,CoT,52.45,55.85,1389.884,RU,True,,stop,0.00089466,995,548,462,12.66,"{""reasoning"": ""Russian-style wooden utility poles with crossbars, flat steppe/agricultural landscape with concrete drainage ditches along a two-lane asphalt road, and small rural settlement style indicate southern Russia's forest-steppe to steppe region (Bashkortostan/Orenburg Oblast)."", ""country"": ""RU"", ""latitude"": 52.45, ""longitude"": 55.85}"
+mistralai/mistral-small-2603,CoT,38.5,-99.5,9197.865,US,True,,stop,0.00059724,868,926,1091,7.46,"{""reasoning"": ""Generic rural road markings and vegetation typical of central US Great Plains"", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -99.5}"
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.26,

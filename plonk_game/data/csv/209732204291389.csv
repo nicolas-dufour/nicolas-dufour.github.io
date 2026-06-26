@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,43.447394210434,13.54588666176,0.0,IT,True,,,,,,,,"Castelfidardo, Provincia di Ancona, The Marches, IT"
+google/gemini-3.5-flash,CoT (effort=low),43.5512,13.5108,11.885,IT,True,,stop,0.0035625,1271,184,116,3.32,"{""reasoning"": ""The presence of stone pines (Pinus pinea), Mediterranean cypress trees, and specific residential fencing styles strongly indicates a location in Italy, likely in the central region."", ""country"": ""IT"", ""latitude"": 43.5512, ""longitude"": 13.5108}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,43.212467193603516,13.754953384399414,31.118,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.264625549316406,13.849472045898438,31.866,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.259761810302734,13.859176635742188,32.817,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,no-CoT,43.8975,12.7847,79.074,IT,True,,stop,0.00341,544,23,0,7.87,"{""country"":""IT"",""latitude"":43.8975,""longitude"":12.7847}"
+google/gemini-3.5-flash,CoT (effort=high),43.1122,12.3889,100.802,IT,True,,stop,0.0076485,1271,638,570,5.63,"{""reasoning"": ""The presence of characteristic Mediterranean stone pines (Pinus pinea), terracotta-roofed houses, and typical Italian metal fencing on concrete bases strongly points to central Italy."", ""country"": ""IT"", ""latitude"": 43.1122, ""longitude"": 12.3889}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,43.42359924316406,12.14520263671875,113.127,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,no-CoT,42.5,13.0,114.324,IT,True,,stop,0.004324,1190,162,133,9.8,"```json
+{""country"": ""IT"", ""latitude"": 42.5, ""longitude"": 13.0}
+```"
+openai/gpt-5.5,CoT,43.4562,11.8597,136.114,IT,True,,stop,0.014805,621,390,300,11.8,"{""reasoning"":""Right-hand traffic, EU-style white plates, Italian-looking road markings/fences, terracotta roofs, and Mediterranean umbrella pines strongly indicate central Italy. The flat suburban/industrial roadside with cypress and stone pines fits the outskirts of a Tuscan/Umbrian town, so I estimate near Arezzo."",""country"":""IT"",""latitude"":43.4562,""longitude"":11.8597}"
+anthropic/claude-opus-4.8,no-CoT,43.2,11.7,151.829,IT,True,,stop,0.00408,666,30,0,9.78,"{""country"": ""IT"", ""latitude"": 43.2, ""longitude"": 11.7}"
+anthropic/claude-opus-4.8,CoT,43.32,11.32,180.432,IT,True,,stop,0.006335,797,94,0,9.31,"{""reasoning"": ""Mediterranean umbrella pines and cypresses with pale stucco buildings and a rural road suggest central Italy; right-side driving and architecture fit Tuscany."", ""country"": ""IT"", ""latitude"": 43.32, ""longitude"": 11.32}"
+minimax/minimax-m3,CoT,43.2,11.3,183.742,IT,True,,stop,0.00072666,843,446,370,16.0,"{""reasoning"": ""Distinctive Mediterranean umbrella pines (Pinus pinea), Italian-style architecture with terracotta roofs, right-hand traffic with Italian road markings, and metal fencing style all strongly indicate a secondary road in central Italy (likely Tuscany or Lazio)."", ""country"": ""IT"", ""latitude"": 43.2, ""longitude"": 11.3}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,42.03430938720703,12.356606483459473,184.716,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,41.92,12.58,187.289,IT,True,,stop,0.006702408,682,1890,1815,34.24,"{""reasoning"": ""The flat-topped Italian stone pines (Pinus pinea) are iconic to central Italy, and the white road markings, metal roadside fencing, and low Mediterranean buildings match a peri-urban road in the Lazio region."", ""country"": ""IT"", ""latitude"": 41.92, ""longitude"": 12.58}"
+qwen/qwen3.5-35b-a3b,no-CoT,43.7696,11.2558,187.823,IT,True,,stop,0.00016956,474,31,0,9.1,"{""country"": ""IT"", ""latitude"": 43.7696, ""longitude"": 11.2558}"
+qwen/qwen3.5-9b,no-CoT,43.7696,11.2558,187.823,IT,True,,stop,5.205e-05,474,31,0,9.63,"{""country"": ""IT"", ""latitude"": 43.7696, ""longitude"": 11.2558}"
+qwen/qwen3.6-27b,no-CoT,41.9028,12.4964,191.984,IT,True,,stop,0.0001943,473,31,0,6.69,"{""country"": ""IT"", ""latitude"": 41.9028, ""longitude"": 12.4964}"
+google/gemini-3.1-pro-preview,CoT,41.8902,12.4922,193.395,IT,True,,stop,0.005292,1272,229,139,4.38,"{
+  ""reasoning"": ""The presence of Stone Pines (Pinus pinea) strongly indicates a Mediterranean climate, most commonly seen in Italy. The road markings with solid white edge lines and the style of the fences and buildings further support an Italian location."",
+  ""country"": ""IT"",
+  ""latitude"": 41.8902,
+  ""longitude"": 12.4922
+}"
+google/gemma-4-31b-it,no-CoT,41.8902,12.4922,193.395,IT,True,,stop,6.378e-05,406,36,0,13.75,"```json
+{""country"": ""IT"", ""latitude"": 41.8902, ""longitude"": 12.4922}
+```"
+qwen/qwen3.5-27b,no-CoT,41.8902,12.4922,193.395,IT,True,,stop,0.000140595,473,31,0,7.73,"{""country"": ""IT"", ""latitude"": 41.8902, ""longitude"": 12.4922}"
+xiaomi/mimo-v2.5,no-CoT,41.8902,12.4922,193.395,IT,True,,stop,8.14576e-05,708,31,0,5.1,"{""country"": ""IT"", ""latitude"": 41.8902, ""longitude"": 12.4922}"
+google/gemini-3.5-flash,CoT (effort=medium),41.7825,12.7812,195.415,IT,True,,stop,0.008433,1272,725,656,15.31,"{""reasoning"": ""The presence of characteristic Mediterranean stone pines (Pinus pinea), typical Italian residential metal fencing on concrete bases, and terracotta-tiled roofs strongly point to central Italy."", ""country"": ""IT"", ""latitude"": 41.7825, ""longitude"": 12.7812}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,41.93113708496094,12.334179878234863,195.53,,True,,plonk,0.0,0,0,0,0.0,
+xiaomi/mimo-v2.5,CoT,41.9,12.1,208.746,IT,True,,stop,0.0011181576,787,3694,3589,39.41,"```json
+{
+""reasoning"": ""The presence of large, distinctive umbrella pines (Pinus pinea) and cypress trees lining the road is a strong indicator of a Mediterranean coastal region, specifically central Italy (e.g., Lazio or Tuscany). The road markings (white center line), right-hand traffic, and vehicle style are consistent with Italian infrastructure."",
+""country"": ""IT"",
+""latitude"": 41.9,
+""longitude"": 12.1
+}
+```"
+x-ai/grok-4.3,CoT,41.78,12.35,209.642,IT,True,,stop,0.0019065,676,559,491,26.15,"{
+  ""reasoning"": ""Stone pines (Pinus pinea) lining the road and Mediterranean architecture/vegetation indicate coastal Italy; right-hand traffic, road markings and suburban fencing match Italian secondary roads."",
+  ""country"": ""IT"",
+  ""latitude"": 41.78,
+  ""longitude"": 12.35
+}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),41.5612,14.6684,229.027,IT,True,,stop,0.0021,1190,35,0,8.63,"```json
+{""country"": ""IT"", ""latitude"": 41.5612, ""longitude"": 14.6684}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,41.5921,15.4821,260.252,IT,True,,stop,0.0002884,473,31,0,7.6,"{""country"": ""IT"", ""latitude"": 41.5921, ""longitude"": 15.4821}"
+mistralai/mistral-medium-3-5,no-CoT,41.1156,16.8639,376.42,IT,True,,stop,0.0011835,634,31,0,1.22,"{""country"": ""IT"", ""latitude"": 41.1156, ""longitude"": 16.8639}"
+x-ai/grok-4.3,no-CoT,43.431,3.752,790.296,FR,True,,stop,0.0005934,592,22,0,7.29,"{""country"": ""FR"", ""latitude"": 43.431, ""longitude"": 3.752}"
+qwen/qwen3.6-35b-a3b,no-CoT,44.65,-0.35,1117.212,FR,True,,stop,0.0001364,474,26,0,3.99,"{""country"": ""FR"", ""latitude"": 44.65, ""longitude"": -0.35}"
+qwen/qwen3.5-397b-a17b,no-CoT,44.8378,-0.5792,1136.178,FR,True,,stop,0.0003758,473,30,0,3.1,"{""country"": ""FR"", ""latitude"": 44.8378, ""longitude"": -0.5792}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,5015.44,,True,True,,,,,,25.94,
+mistralai/mistral-small-2603,no-CoT,37.7749,-122.4194,9952.129,US,True,,stop,0.0001143,634,32,0,19.45,"{""country"": ""US"", ""latitude"": 37.7749, ""longitude"": -122.4194}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.65,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.1,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.59,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.07,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.19,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,12.79,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,6.45,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.31,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.37,

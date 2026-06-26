@@ -1,0 +1,68 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-5.978170802378235,38.42853936399304,0.0,TZ,True,,,,,,,,"Mvomero, None, Pwani, TZ"
+moonshotai/kimi-k2.6,no-CoT,-6.5,37.0,168.228,TZ,True,,stop,0.00051219,602,23,0,2.68,"{""country"": ""TZ"", ""latitude"": -6.5, ""longitude"": 37.0}"
+google/gemini-3.5-flash,CoT (effort=high),-4.15,39.45,232.644,KE,True,,stop,0.0137865,1271,1320,1253,17.43,"{""reasoning"": ""The presence of a papaya tree, red sandy soil, yellow water jerrycans, and characteristic mud-walled houses with corrugated metal roofs points to rural East Africa, most likely coastal Kenya."", ""country"": ""KE"", ""latitude"": -4.15, ""longitude"": 39.45}"
+anthropic/claude-opus-4.8,CoT,-6.5,35.5,328.868,TZ,True,,stop,0.00666,797,107,0,9.34,"{""reasoning"": ""Rural African village with mud-brick whitewashed houses, dirt roads, papaya trees, and dry savanna vegetation typical of inland sub-Saharan Africa like Tanzania/Malawi."", ""country"": ""TZ"", ""latitude"": -6.5, ""longitude"": 35.5}"
+anthropic/claude-opus-4.8,no-CoT,-6.5,35.5,328.868,TZ,True,,stop,0.004105,666,31,0,8.92,"{""country"": ""TZ"", ""latitude"": -6.5, ""longitude"": 35.5}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-13.748753547668457,39.85157012939453,877.977,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-13.766395568847656,39.8424186706543,879.73,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.6-35b-a3b,no-CoT,0.3476,32.5825,957.014,UG,True,,stop,0.0001428,474,30,0,2.38,"{""country"": ""UG"", ""latitude"": 0.3476, ""longitude"": 32.5825}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-14.639324188232422,38.895530700683594,964.428,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-122b-a10b,no-CoT,-13.9783,33.7894,1024.202,MW,True,,stop,0.00018746,473,31,0,1.08,"{""country"": ""MW"", ""latitude"": -13.9783, ""longitude"": 33.7894}"
+google/gemini-3.5-flash,CoT (effort=low),2.7653,32.3024,1186.588,UG,True,,stop,0.004554,1272,294,223,9.5,"{""reasoning"": ""The reddish-orange dirt road, simple white-plastered houses with corrugated metal roofs, and tropical vegetation like the papaya tree are highly characteristic of rural East Africa, particularly Uganda."", ""country"": ""UG"", ""latitude"": 2.7653, ""longitude"": 32.3024}"
+google/gemini-3.5-flash,CoT (effort=medium),2.7725,32.3011,1187.327,UG,True,,stop,0.0095295,1271,847,761,8.05,"```json
+{""reasoning"": ""The tropical vegetation including a papaya tree, sandy dirt road, and simple white-washed houses with corrugated metal roofs are characteristic of rural East Africa. The silver vehicle hood visible at the bottom is consistent with Google Street View coverage in Uganda."", ""country"": ""UG"", ""latitude"": 2.7725, ""longitude"": 32.3011}
+```"
+moonshotai/kimi-k2.6,CoT,2.7743,32.2886,1188.286,UG,True,,stop,0.014485608,682,4168,4094,225.31,"{""reasoning"": ""The vivid red lateritic soil, tropical savanna trees including papaya, simple plastered rural buildings, and unpaved village road are characteristic of the East African plateau, closely matching rural Uganda north of Lake Victoria."", ""country"": ""UG"", ""latitude"": 2.7743, ""longitude"": 32.2886}"
+qwen/qwen3.5-397b-a17b,no-CoT,-13.5,28.0,1415.484,ZM,True,,stop,0.00034668,473,26,0,7.85,"{""country"": ""ZM"", ""latitude"": -13.5, ""longitude"": 28.0}"
+qwen/qwen3.5-27b,no-CoT,-18.95,35.25,1482.915,MZ,True,,stop,0.0002065,474,44,0,9.73,"```json
+{
+  ""country"": ""MZ"",
+  ""latitude"": -18.9500,
+  ""longitude"": 35.2500
+}
+```"
+qwen/qwen3.6-27b,no-CoT,-18.521,32.891,1518.419,MZ,True,,stop,0.0001903,473,29,0,21.78,"{""country"": ""MZ"", ""latitude"": -18.521, ""longitude"": 32.891}"
+minimax/minimax-m3,no-CoT,-15.3876,28.3228,1520.159,ZM,True,,stop,0.00035922,767,156,181,14.22,"{""country"": ""ZM"", ""latitude"": -15.3876, ""longitude"": 28.3228}"
+openai/gpt-5.5,no-CoT,-15.4208,28.2549,1528.025,ZM,True,,stop,0.00344,544,24,0,2.31,"{""country"":""ZM"",""latitude"":-15.4208,""longitude"":28.2549}"
+mistralai/mistral-medium-3-5,no-CoT,-18.9143,29.8081,1714.898,ZW,True,,stop,0.001191,634,32,0,0.9,"{""country"": ""ZW"", ""latitude"": -18.9143, ""longitude"": 29.8081}"
+openai/gpt-5.5,CoT,-19.9836,23.4212,2247.975,BW,True,,stop,0.014295,621,373,280,16.1,"{""reasoning"":""The dry sandy unpaved village road, sparse acacia/mopane vegetation, simple plaster/brick buildings with corrugated roofs, and left-side southern African road context are most consistent with rural Botswana. The vegetation and flat terrain suggest the northern Botswana/Maun area rather than the drier Kalahari interior."",""country"":""BW"",""latitude"":-19.9836,""longitude"":23.4212}"
+qwen/qwen3.5-35b-a3b,no-CoT,-24.628,28.235,2341.49,ZA,True,,stop,9.995e-05,473,29,0,7.64,"{""country"": ""ZA"", ""latitude"": -24.628, ""longitude"": 28.235}"
+minimax/minimax-m3,CoT,4.361,18.585,2485.185,CF,True,,stop,0.00067746,843,405,333,18.16,"{""reasoning"": ""Red lateritic dirt road, tropical savanna vegetation with large mango-like trees, simple corrugated-metal-roof structures, and cumulus-cloud sky are highly characteristic of Central Africa, most likely the Central African Republic."", ""country"": ""CF"", ""latitude"": 4.361, ""longitude"": 18.585}"
+mistralai/mistral-small-2603,no-CoT,-33.9249,18.4241,3728.412,ZA,True,,stop,0.0001137,634,31,0,7.48,"{""country"": ""ZA"", ""latitude"": -33.9249, ""longitude"": 18.4241}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4316.542,,True,True,,,,,,0.17,
+xiaomi/mimo-v2.5,no-CoT,13.5126,2.1128,4557.486,NE,True,,stop,8.11776e-05,708,30,0,16.58,"{""country"": ""NE"", ""latitude"": 13.5126, ""longitude"": 2.1128}"
+google/gemma-4-31b-it,no-CoT,6.6667,-1.6167,4660.76,GH,True,,stop,6.298e-05,406,34,0,5.94,"```json
+{""country"": ""GH"", ""latitude"": 6.6667, ""longitude"": -1.6167}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),9.4075,-0.8398,4675.369,GH,True,,stop,0.002082,1190,33,0,7.35,"```json
+{""country"": ""GH"", ""latitude"": 9.4075, ""longitude"": -0.8398}
+```"
+qwen/qwen3.5-397b-a17b,CoT,9.4521,-0.8563,4678.764,GH,True,,stop,0.0067926,553,1808,1721,20.27,"{""reasoning"": ""The reddish-brown laterite soil of the unpaved road, combined with the simple single-story structures featuring corrugated metal roofs and mud/concrete walls, is highly characteristic of rural West Africa, particularly the savanna regions of Northern Ghana."", ""country"": ""GH"", ""latitude"": 9.4521, ""longitude"": -0.8563}"
+google/gemini-3.1-pro-preview,no-CoT,9.55,-0.9,4686.996,GH,True,,stop,0.002714,1189,28,0,2.71,"```json
+{""country"": ""GH"", ""latitude"": 9.55, ""longitude"": -0.9}
+```"
+google/gemini-3.1-pro-preview,CoT,9.55,-1.05,4702.449,GH,True,,stop,0.008856,1272,526,440,13.51,"{
+  ""reasoning"": ""The visible dark car hood with a snorkel on the right side is characteristic of Google Street View coverage in Ghana. The red dirt, vegetation, and simple white buildings with metal roofs suggest a rural area in the northern part of the country."",
+  ""country"": ""GH"",
+  ""latitude"": 9.55,
+  ""longitude"": -1.05
+}"
+x-ai/grok-4.3,CoT,12.35,-1.52,4863.222,BF,True,,stop,0.0018015,676,517,437,5.36,"{
+  ""reasoning"": ""Red laterite dirt road, sparse savanna trees (including possible baobab/kapok), simple mud-brick houses with corrugated roofs, and overall Sahelian landscape point to rural West Africa; no contradictory signage or vehicles."",
+  ""country"": ""BF"",
+  ""latitude"": 12.35,
+  ""longitude"": -1.52
+}"
+qwen/qwen3.5-9b,no-CoT,11.75,-4.5833,5149.156,BF,True,,stop,5.16e-05,474,28,0,8.81,"{""country"": ""BF"", ""latitude"": 11.75, ""longitude"": -4.5833}"
+x-ai/grok-4.3,no-CoT,12.65,-8.03,5535.537,ML,True,,stop,0.0005934,592,22,0,1.07,"{""country"": ""ML"", ""latitude"": 12.65, ""longitude"": -8.03}"
+xiaomi/mimo-v2.5,CoT,12.5,-8.5,5578.297,ML,True,,stop,0.0003727976,787,1032,956,10.12,"{""reasoning"": ""Reddish-brown laterite soil, tropical trees including palm, and simple rural buildings with corrugated roofs are characteristic of the West African Sahel region. The overall landscape suggests a developing country in this climatic zone."", ""country"": ""ML"", ""latitude"": 12.5, ""longitude"": -8.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,12.319243431091309,-11.08489990234375,5838.639,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,13.04173755645752,-15.456976890563965,6315.802,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,13.000720977783203,-15.526515007019043,6321.765,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,6.3,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,1.1,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.13,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.13,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.38,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.2,

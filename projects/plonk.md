@@ -17,6 +17,9 @@ paper_title: "Around the World in 80 Timesteps: A Generative Approach to Global 
 paper_authors: <a href="/">Nicolas Dufour</a>, <a href="https://davidpicard.github.io/">David Picard</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
 journal:
 buttons:
+  - type: game
+    text: "Play the Game"
+    url: /plonk_game/
   - type: github
     text: Code
     url: https://github.com/nicolas-dufour/plonk

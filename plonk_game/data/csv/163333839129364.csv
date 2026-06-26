@@ -1,0 +1,76 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-27.034044117992,27.557170340685,0.0,ZA,True,,,,,,,,"Parys, Fezile Dabi District Municipality, Orange Free State, ZA"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-26.8125,27.8311,36.666,ZA,True,,stop,0.0021525,1225,35,0,1.86,"```json
+{""country"": ""ZA"", ""latitude"": -26.8125, ""longitude"": 27.8311}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,-26.725025177001953,27.81972312927246,43.114,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,-26.5,27.8,64.09,ZA,True,,stop,0.00692,949,87,0,10.28,"{""reasoning"": ""Flat dry grassland highveld with broad paved highway and yellow edge lines, driving on left under stormy skies suggests South African interior plateau."", ""country"": ""ZA"", ""latitude"": -26.5, ""longitude"": 27.8}"
+anthropic/claude-opus-4.8,no-CoT,-26.5,27.8,64.09,ZA,True,,stop,0.004865,818,31,0,3.45,"{""country"": ""ZA"", ""latitude"": -26.5, ""longitude"": 27.8}"
+google/gemini-3.5-flash,CoT (effort=medium),-27.65,27.23,75.732,ZA,True,,stop,0.0129135,1307,1217,1133,10.72,"```json
+{""reasoning"": ""The left-hand traffic with a yellow outer shoulder line and white inner median line, combined with the flat, grassy Highveld landscape under a stormy sky, points to a major highway like the N1 in the Free State, South Africa."", ""country"": ""ZA"", ""latitude"": -27.65, ""longitude"": 27.23}
+```"
+moonshotai/kimi-k2.6,no-CoT,-26.2041,28.0473,104.358,ZA,True,,stop,0.0003411,755,25,0,1.44,"{""country"": ""ZA"", ""latitude"": -26.2041, ""longitude"": 28.0473}"
+google/gemini-3.1-pro-preview,no-CoT,-26.1586,28.1245,112.507,ZA,True,,stop,0.00287,1225,35,0,9.27,"```json
+{""country"": ""ZA"", ""latitude"": -26.1586, ""longitude"": 28.1245}
+```"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,-28.271093368530273,26.745880126953125,159.078,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,-28.284881591796875,26.732452392578125,161.065,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,4208.08,,True,True,,,,,,1.86,
+openai/gpt-5.5,CoT,39.153,32.846,7380.127,TR,True,,stop,0.021835,755,602,516,17.66,"{""reasoning"":""A divided right-driving highway with a yellow median-side edge line and white lane markings runs through treeless, rolling semi-arid steppe under rainy skies, fitting central Anatolia more than most alternatives. The barren hills and road style are most consistent with a Turkish intercity highway near Ankara/Konya."",""country"":""TR"",""latitude"":39.153,""longitude"":32.846}"
+openai/gpt-5.5,no-CoT,39.9653,32.8021,7469.758,TR,True,,stop,0.00408,678,23,0,1.55,"{""country"":""TR"",""latitude"":39.9653,""longitude"":32.8021}"
+x-ai/grok-4.3,no-CoT,43.65,51.15,8220.025,KZ,True,,stop,0.0008678,704,22,0,1.01,"{""country"": ""KZ"", ""latitude"": 43.65, ""longitude"": 51.15}"
+qwen/qwen3.5-35b-a3b,no-CoT,40.7128,-74.006,12852.15,US,True,,stop,0.00019464,586,30,0,8.73,"{""country"": ""US"", ""latitude"": 40.7128, ""longitude"": -74.006}"
+qwen/qwen3.6-27b,no-CoT,41.8781,-87.6298,13993.838,US,True,,stop,0.0002279,585,31,0,10.82,"{""country"": ""US"", ""latitude"": 41.8781, ""longitude"": -87.6298}"
+mistralai/mistral-medium-3-5,no-CoT,37.0902,-95.7129,14632.981,US,True,,stop,0.0014115,786,31,0,13.74,"{""country"": ""US"", ""latitude"": 37.0902, ""longitude"": -95.7129}"
+qwen/qwen3.6-35b-a3b,no-CoT,41.2565,-95.9345,14678.616,US,True,,stop,0.00012422475,585,31,0,1.83,"{""country"": ""US"", ""latitude"": 41.2565, ""longitude"": -95.9345}"
+qwen/qwen3.5-27b,no-CoT,41.145584,-95.992979,14683.209,US,True,,stop,0.0002425,586,48,0,3.24,"```json
+{
+  ""country"": ""US"",
+  ""latitude"": 41.145584,
+  ""longitude"": -95.992979
+}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,30.2672,-97.7431,14716.588,US,True,,stop,0.00023348,586,39,0,18.49,"{
+  ""country"": ""US"",
+  ""latitude"": 30.2672,
+  ""longitude"": -97.7431
+}"
+qwen/qwen3.5-9b,no-CoT,35.2271,-97.5184,14774.197,US,True,,stop,6.325e-05,586,31,0,4.03,"{""country"": ""US"", ""latitude"": 35.2271, ""longitude"": -97.5184}"
+x-ai/grok-4.3,CoT,38.5,-98.0,14844.202,US,True,,stop,0.0024865,788,735,667,7.67,"{""reasoning"": ""Right-hand traffic (yellow line left of vehicle, white edge line right), extremely flat open prairie/steppe with dry grass and distant low buildings under heavy overcast rain, typical of US Great Plains highway."", ""country"": ""US"", ""latitude"": 38.5, ""longitude"": -98.0}"
+google/gemini-3.1-pro-preview,CoT,39.0,-98.0,14846.521,US,True,,stop,0.005748,1308,261,180,15.29,"{
+  ""reasoning"": ""The yellow line on the left and white dashed lines indicate driving on the right side of a divided highway, typical of North America. The flat, grassy landscape is characteristic of the Great Plains in the United States."",
+  ""country"": ""US"",
+  ""latitude"": 39.0,
+  ""longitude"": -98.0
+}"
+moonshotai/kimi-k2.6,CoT,38.9,-98.3,14872.037,US,True,,stop,0.0129044,832,3068,3353,113.45,"{""reasoning"": ""The flat prairie terrain, dark Great Plains storm sky, and US interstate-style overhead gantry signage indicate the central United States."", ""country"": ""US"", ""latitude"": 38.9, ""longitude"": -98.3}"
+xiaomi/mimo-v2.5,CoT,39.8,-98.5,14891.98,US,True,,stop,0.0001532776,899,192,105,9.38,"{""reasoning"": ""The image shows a multi-lane highway in a flat, steppe-like landscape with overcast skies, resembling the Great Plains of the United States. The absence of distinctive signage or markings, combined with the general vegetation and horizon, leads to a central location in that region."", ""country"": ""US"", ""latitude"": 39.8, ""longitude"": -98.5}"
+google/gemini-3.5-flash,CoT (effort=high),38.8794,-99.3268,14960.792,US,True,,stop,0.0119685,1307,1112,1026,11.9,"```json
+{""reasoning"": ""The flat, open grassland terrain combined with a divided highway featuring a yellow left-edge line and white right-edge line is highly characteristic of the US Great Plains, specifically along Interstate 70 in Kansas during an overcast storm."", ""country"": ""US"", ""latitude"": 38.8794, ""longitude"": -99.3268}
+```"
+qwen/qwen3.5-397b-a17b,CoT,38.8796,-99.3268,14960.793,US,True,,stop,0.0115991,665,3230,2968,122.13,"{""reasoning"": ""The vehicle is driving on the right side of the road indicated by the yellow line on the left (center/edge divider) and white dashed lines to the right, consistent with US highway markings. The extremely flat, treeless prairie landscape with dormant brown grass and a distant green rectangular highway sign strongly suggests the Great Plains region of the United States, likely Interstate 70 in Kansas."", ""country"": ""US"", ""latitude"": 38.8796, ""longitude"": -99.3268}"
+google/gemini-3.5-flash,CoT (effort=low),38.9638,-99.9018,15010.728,US,True,,stop,0.004167,1308,245,175,2.62,"{""reasoning"": ""The flat terrain, wide divided highway with a yellow left shoulder line, and overcast sky are highly characteristic of the US Great Plains, specifically along Interstate 70 in Kansas."", ""country"": ""US"", ""latitude"": 38.9638, ""longitude"": -99.9018}"
+qwen/qwen3.6-35b-a3b,CoT,46.8083,-100.7837,15033.544,US,True,,stop,0.0060627905,665,6170,6070,64.38,"```json
+{
+""reasoning"": ""The yellow line on the left and white line on the right indicate right-hand traffic on a divided highway, typical of the US. The flat, brown prairie landscape with distant grain silos strongly suggests the Northern Great Plains, likely North Dakota or South Dakota."",
+""country"": ""US"",
+""latitude"": 46.8083,
+""longitude"": -100.7837
+}
+```"
+minimax/minimax-m3,CoT,38.1,-101.0,15104.333,US,True,,stop,0.00073782,997,414,417,14.81,"{""reasoning"": ""Extremely flat high-plains terrain with brown dormant grasslands, wide-shoulder divided highway with American-style infrastructure, overcast stormy sky typical of spring/fall in the Great Plains, and right-hand traffic suggest the western US plains."", ""country"": ""US"", ""latitude"": 38.1, ""longitude"": -101.0}{""reasoning"": ""Extremely flat high-plains terrain with brown dormant grasslands, wide-shoulder divided highway with American-style infrastructure, overcast stormy sky typical of spring/fall in the Great Plains, and right-hand traffic suggest the western US plains."", ""country"": ""US"", ""latitude"": 38.1, ""longitude"": -101.0}"
+xiaomi/mimo-v2.5,no-CoT,33.5,-101.5,15118.331,US,True,,stop,9.57376e-05,820,26,0,2.27,"{""country"": ""US"", ""latitude"": 33.5, ""longitude"": -101.5}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,38.52086639404297,-104.30113220214844,15392.341,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,38.90178298950195,-104.55835723876953,15413.501,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,39.7392,-104.9903,15446.598,US,True,,stop,0.00043548,585,32,0,2.05,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemma-4-31b-it,no-CoT,36.1234,-105.2345,15475.722,US,True,,stop,5.148e-05,262,37,0,4.52,"```json
+{""country"": ""US"", ""latitude"": 36.1234, ""longitude"": -105.2345}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,38.8909912109375,-107.20884704589844,15642.664,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,no-CoT,39.5,-110.5,15918.983,US,True,,stop,0.00023736,904,23,0,6.66,"{""country"": ""US"", ""latitude"": 39.5, ""longitude"": -110.5}"
+mistralai/mistral-small-2603,no-CoT,36.1699,-115.1398,16363.862,US,True,,stop,0.0001371,786,32,0,1.98,"{""country"": ""US"", ""latitude"": 36.1699, ""longitude"": -115.1398}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.4,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,1.25,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.1,

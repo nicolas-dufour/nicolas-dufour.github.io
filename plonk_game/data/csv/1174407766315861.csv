@@ -1,0 +1,57 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.206833390779,40.280197255905,0.0,RU,True,,,,,,,,"Kamennomostskiy, None, Adygeya, RU"
+moonshotai/kimi-k2.6,CoT,44.3,40.1,17.7,RU,True,,stop,0.013881276,834,3971,3895,82.13,"{""reasoning"": ""Soviet-era wooden utility poles and corrugated metal sheet fencing in red and green are iconic of rural Russian villages; bare deciduous trees and rolling foothills without snow point to the Caucasus foothills in late autumn or early spring."", ""country"": ""RU"", ""latitude"": 44.3, ""longitude"": 40.1}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,44.159706115722656,39.82466125488281,36.7,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,44.19561004638672,39.77430725097656,40.346,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,44.202510833740234,39.76091766357422,41.395,,True,,plonk,0.0,0,0,0,0.0,
+qwen/qwen3.5-397b-a17b,no-CoT,43.6789,39.7234,73.711,RU,True,,stop,0.00043188,585,31,0,7.48,"{""country"": ""RU"", ""latitude"": 43.6789, ""longitude"": 39.7234}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),44.358124,38.934125,108.465,RU,True,,stop,0.00219,1226,39,0,1.51,"```json
+{""country"": ""RU"", ""latitude"": 44.358124, ""longitude"": 38.934125}
+```"
+qwen/qwen3.5-35b-a3b,no-CoT,44.6123,37.6234,215.788,RU,True,,stop,0.00019644,586,31,0,1.87,"{""country"": ""RU"", ""latitude"": 44.6123, ""longitude"": 37.6234}"
+google/gemma-4-31b-it,no-CoT,42.315,43.521,336.288,GE,True,,stop,5.678e-05,406,34,0,7.63,"```json
+{""country"": ""GE"", ""latitude"": 42.315, ""longitude"": 43.521}
+```"
+openai/gpt-5.5,no-CoT,42.1836,44.0355,378.462,GE,True,,stop,0.00408,678,23,0,1.62,"{""country"":""GE"",""latitude"":42.1836,""longitude"":44.0355}"
+openai/gpt-5.5,CoT,42.0579,45.3826,477.918,GE,True,,stop,0.017755,755,466,372,17.09,"{""reasoning"":""Rural ex-Soviet Caucasus setting with right-side driving, concrete utility poles, corrugated metal fences, and leafless forested foothills strongly suggests a Georgian village in the Greater Caucasus foothills. The terrain and vegetation fit eastern Georgia around Kakheti/Telavi rather than drier Armenia or flatter Russia."",""country"":""GE"",""latitude"":42.0579,""longitude"":45.3826}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,47.97575378417969,27.962299346923828,1036.699,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,47.99565887451172,27.75172996520996,1052.232,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-medium-3-5,no-CoT,46.5,26.5,1105.0,RO,True,,stop,0.0013665,786,25,0,1.9,"{""country"": ""RO"", ""latitude"": 46.5, ""longitude"": 26.5}"
+x-ai/grok-4.3,no-CoT,45.15,25.35,1183.43,RO,True,,stop,0.0007334,704,22,0,7.48,"{""country"": ""RO"", ""latitude"": 45.15, ""longitude"": 25.35}"
+qwen/qwen3.5-9b,no-CoT,45.9436,24.9568,1216.681,RO,True,,stop,0.0001072,585,31,0,8.12,"{""country"": ""RO"", ""latitude"": 45.9436, ""longitude"": 24.9568}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,46.110206604003906,23.860305786132812,1302.316,,True,,plonk,0.0,0,0,0,0.0,
+x-ai/grok-4.3,CoT,48.35,23.45,1369.612,UA,True,,stop,0.0023065,788,663,596,5.28,"{""reasoning"": ""Dirt road, concrete utility poles with overhead wires, red/green sheet-metal fencing and leafless temperate vegetation point to rural post-Soviet Eastern Europe; background hills match the Ukrainian Carpathian foothills."", ""country"": ""UA"", ""latitude"": 48.35, ""longitude"": 23.45}"
+qwen/qwen3.6-35b-a3b,no-CoT,42.6977,23.3218,1376.657,BG,True,,stop,0.000185,585,31,0,7.43,"{""country"": ""BG"", ""latitude"": 42.6977, ""longitude"": 23.3218}"
+qwen/qwen3.6-27b,no-CoT,48.4647,22.1531,1465.802,UA,True,,stop,0.0002279,585,31,0,17.32,"{""country"": ""UA"", ""latitude"": 48.4647, ""longitude"": 22.1531}"
+minimax/minimax-m3,CoT,43.85,20.55,1574.107,RS,True,,stop,0.00071586,995,399,330,16.2,"{""reasoning"": ""Concrete utility poles with characteristic Balkan design, green-and-red metal panel fencing, dirt village road through rolling hills with deciduous trees, and the overall rural landscape are highly typical of inland Serbia or Bosnia."", ""country"": ""RS"", ""latitude"": 43.85, ""longitude"": 20.55}"
+qwen/qwen3.5-27b,no-CoT,43.8547,19.2833,1674.489,RS,True,,stop,0.00024596,586,36,0,8.82,"```json
+{""country"": ""RS"", ""latitude"": 43.8547, ""longitude"": 19.2833}
+```"
+mistralai/mistral-small-2603,no-CoT,69.6492,18.9553,3072.467,NO,True,,stop,0.0001365,786,31,0,9.17,"{""country"": ""NO"", ""latitude"": 69.6492, ""longitude"": 18.9553}"
+xiaomi/mimo-v2.5,CoT,47.2,100.9,4599.358,MN,True,,stop,0.0002644376,899,589,530,14.26,"{""reasoning"": ""Dirt road, rural green-red fencing, concrete utility poles, sparse winter vegetation, and mountainous terrain suggest Mongolia’s countryside."", ""country"": ""MN"", ""latitude"": 47.2, ""longitude"": 100.9}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,6321.211,,True,True,,,,,,6.64,
+qwen/qwen3.5-122b-a10b,no-CoT,44.6235,132.6789,6901.62,RU,True,,stop,0.0002523,585,32,0,7.45,"{""country"": ""RU"", ""latitude"": 44.6235, ""longitude"": 132.6789}"
+anthropic/claude-opus-4.8,CoT,43.3,132.0,6944.066,RU,True,,stop,0.00717,949,97,0,3.18,"{""reasoning"": ""Dirt rural road with concrete utility poles, painted metal fences, and bare deciduous forest with low hills typical of Russian Far East/Primorsky village settings in late winter."", ""country"": ""RU"", ""latitude"": 43.3, ""longitude"": 132.0}"
+xiaomi/mimo-v2.5,no-CoT,43.1155,131.8855,6948.654,RU,True,,stop,9.74176e-05,820,32,0,1.42,"{""country"": ""RU"", ""latitude"": 43.1155, ""longitude"": 131.8855}"
+google/gemini-3.1-pro-preview,no-CoT,43.15,132.05,6957.172,RU,True,,stop,0.002836,1226,32,0,2.14,"```json
+{""country"": ""RU"", ""latitude"": 43.15, ""longitude"": 132.05}
+```"
+google/gemini-3.1-pro-preview,CoT,43.5123,132.5432,6965.56,RU,True,,stop,0.006286,1307,306,223,5.69,"{
+  ""reasoning"": ""Concrete utility poles, corrugated metal fences, and the general landscape strongly suggest rural Russia. The hilly terrain and bare trees are consistent with regions like Primorsky Krai in the Far East."",
+  ""country"": ""RU"",
+  ""latitude"": 43.5123,
+  ""longitude"": 132.5432
+}"
+anthropic/claude-opus-4.8,no-CoT,43.3,132.5,6976.717,RU,True,,stop,0.00484,818,30,0,9.97,"{""country"": ""RU"", ""latitude"": 43.3, ""longitude"": 132.5}"
+google/gemini-3.5-flash,CoT (effort=low),43.3512,132.7456,6989.34,RU,True,,stop,0.004257,1308,255,178,2.62,"{""reasoning"": ""The concrete utility poles, corrugated metal fences, dirt road, and leafless deciduous forest in a hilly landscape are highly characteristic of rural Russia, particularly the Primorsky Krai region in the Far East."", ""country"": ""RU"", ""latitude"": 43.3512, ""longitude"": 132.7456}"
+google/gemini-3.5-flash,CoT (effort=high),43.3812,132.9541,7000.915,RU,True,,stop,0.0092505,1307,810,738,7.87,"{""reasoning"": ""The concrete utility poles, corrugated metal fences, and bare deciduous forest on rolling hills are highly characteristic of rural Russia, particularly the Primorsky Krai region in the Russian Far East."", ""country"": ""RU"", ""latitude"": 43.3812, ""longitude"": 132.9541}"
+google/gemini-3.5-flash,CoT (effort=medium),43.1142,132.7895,7007.863,RU,True,,stop,0.0056865,1307,414,343,10.41,"{""reasoning"": ""The concrete utility poles, corrugated metal fences, deciduous winter vegetation, and hilly terrain are highly characteristic of rural Russia, particularly the Primorsky Krai region in the Far East."", ""country"": ""RU"", ""latitude"": 43.1142, ""longitude"": 132.7895}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.13,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.07,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,6.44,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,1.87,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,8.03,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,1.09,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,0.29,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.25,

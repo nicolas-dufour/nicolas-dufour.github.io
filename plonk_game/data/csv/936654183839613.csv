@@ -1,0 +1,59 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,5.948950943601,-73.6113203865,0.0,CO,True,,,,,,,,"Barbosa, None, Santander, CO"
+openai/gpt-5.5,CoT,5.6372,-73.5268,35.904,CO,True,,stop,0.016935,621,461,375,17.65,"{""reasoning"":""Yellow rear license plates and right-side driving point strongly to Colombia, with standard red-bordered speed signage. The dry Andean highland landscape with eucalyptus, rolling hills, and rural village road fits the Boyacá/Cundinamarca altiplano, likely near Villa de Leyva."",""country"":""CO"",""latitude"":5.6372,""longitude"":-73.5268}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,5.728524684906006,-73.20207214355469,51.48,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,5.804723739624023,-73.11993408203125,56.669,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,5.79170036315918,-73.11373138427734,57.75,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=high),5.025,-73.75,103.879,CO,True,,stop,0.0084045,1271,722,665,6.32,"{""reasoning"": ""The yellow license plate on the Renault Sandero, double yellow center lines, and lush Andean vegetation with Spanish moss strongly indicate Colombia."", ""country"": ""CO"", ""latitude"": 5.025, ""longitude"": -73.75}"
+openai/gpt-5.5,no-CoT,5.0286,-73.9987,110.957,CO,True,,stop,0.00344,544,24,0,1.47,"{""country"":""CO"",""latitude"":5.0286,""longitude"":-73.9987}"
+google/gemini-3.5-flash,CoT (effort=medium),4.9152,-74.0281,123.861,CO,True,,stop,0.0075315,1271,625,561,13.35,"{""reasoning"": ""The yellow license plate on the Renault Sandero, combined with the mountainous Andean landscape, lush vegetation, and specific road signage, strongly points to Colombia."", ""country"": ""CO"", ""latitude"": 4.9152, ""longitude"": -74.0281}"
+google/gemini-3.5-flash,CoT (effort=low),4.8512,-74.0584,131.716,CO,True,,stop,0.00414,1272,248,183,9.15,"{""reasoning"": ""The yellow license plate on the Renault Sandero, the style of the speed limit sign, and the lush, mountainous Andean landscape are highly characteristic of Colombia."", ""country"": ""CO"", ""latitude"": 4.8512, ""longitude"": -74.0584}"
+mistralai/mistral-medium-3-5,no-CoT,4.711,-74.0721,146.803,CO,True,,stop,0.0011685,634,29,0,0.78,"{""country"": ""CO"", ""latitude"": 4.711, ""longitude"": -74.0721}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),4.8352,-74.3515,148.496,CO,True,,stop,0.0020895,1189,34,0,8.76,"```json
+{""country"": ""CO"", ""latitude"": 4.8352, ""longitude"": -74.3515}
+```"
+google/gemma-4-31b-it,no-CoT,4.6233,-74.0817,156.335,CO,True,,stop,6.678e-05,406,35,0,5.59,"```json
+{""country"": ""CO"", ""latitude"": 4.6233, ""longitude"": -74.0817}
+```"
+moonshotai/kimi-k2.6,no-CoT,4.6097,-74.0817,157.762,CO,True,,stop,0.000276552,603,25,0,10.36,"{""country"": ""CO"", ""latitude"": 4.6097, ""longitude"": -74.0817}"
+qwen/qwen3.5-27b,no-CoT,4.6097,-74.0817,157.762,CO,True,,stop,0.000139035,473,30,0,1.61,"{""country"": ""CO"", ""latitude"": 4.6097, ""longitude"": -74.0817}"
+google/gemini-3.1-pro-preview,no-CoT,4.65,-74.2,158.461,CO,True,,stop,0.005246,1189,239,210,4.88,"```json
+{""country"": ""CO"", ""latitude"": 4.65, ""longitude"": -74.2}
+```"
+moonshotai/kimi-k2.6,CoT,6.1547,-75.3722,196.049,CO,True,,stop,0.012975768,682,3733,3654,98.21,"{""reasoning"": ""The all-yellow rear license plate is a hallmark of Colombia. The tropical mountain scenery, roadside corrugated-metal stalls, wooden utility poles, and circular 60 km/h speed-limit signage match rural roads in the Colombian Andes near Medellín."", ""country"": ""CO"", ""latitude"": 6.1547, ""longitude"": -75.3722}"
+xiaomi/mimo-v2.5,no-CoT,5.6,-75.5,212.518,CO,True,,stop,7.94976e-05,708,24,0,3.61,"{""country"": ""CO"", ""latitude"": 5.6, ""longitude"": -75.5}"
+qwen/qwen3.5-122b-a10b,no-CoT,6.2442,-75.5812,220.262,CO,True,,stop,0.0003108,473,38,0,1.67,"{
+  ""country"": ""CO"",
+  ""latitude"": 6.2442,
+  ""longitude"": -75.5812
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,6.2442,-75.5812,220.262,CO,True,,stop,0.00036108,473,30,0,2.06,"{""country"": ""CO"", ""latitude"": 6.2442, ""longitude"": -75.5812}"
+anthropic/claude-opus-4.8,no-CoT,4.6,-75.1,222.862,CO,True,,stop,0.00408,666,30,0,2.16,"{""country"": ""CO"", ""latitude"": 4.6, ""longitude"": -75.1}"
+qwen/qwen3.5-35b-a3b,no-CoT,5.0234,-75.4567,228.718,CO,True,,stop,0.00010095,473,30,0,7.67,"{""country"": ""CO"", ""latitude"": 5.0234, ""longitude"": -75.4567}"
+qwen/qwen3.5-9b,no-CoT,4.7325,-75.4892,248.029,CO,True,,stop,5.19e-05,474,30,0,11.13,"{""country"": ""CO"", ""latitude"": 4.7325, ""longitude"": -75.4892}"
+x-ai/grok-4.3,CoT,5.05,-75.68,249.834,CO,True,,stop,0.0025515,676,817,761,7.3,"{""reasoning"": ""Right-hand traffic, 50 km/h sign, Renault hatchback with yellow-bottom plate, Andean foothills vegetation and utility infrastructure point to rural Colombia."", ""country"": ""CO"", ""latitude"": 5.05, ""longitude"": -75.68}"
+google/gemini-3.1-pro-preview,CoT,4.8133,-75.6961,263.08,CO,True,,stop,0.006192,1272,304,221,15.59,"{
+  ""reasoning"": ""The yellow license plate on the car and the cross-shaped back of the road sign are strong indicators of Colombia. The lush, hilly landscape with Spanish moss suggests a mid-elevation Andean region."",
+  ""country"": ""CO"",
+  ""latitude"": 4.8133,
+  ""longitude"": -75.6961
+}"
+qwen/qwen3.6-35b-a3b,no-CoT,4.6097,-75.5844,264.389,CO,True,,stop,0.00015575,473,30,0,7.51,"{""country"": ""CO"", ""latitude"": 4.6097, ""longitude"": -75.5844}"
+x-ai/grok-4.3,no-CoT,4.85,-75.75,266.427,CO,True,,stop,0.0005934,592,22,0,0.87,"{""country"": ""CO"", ""latitude"": 4.85, ""longitude"": -75.75}"
+anthropic/claude-opus-4.8,CoT,4.55,-75.6,269.601,CO,True,,stop,0.006435,797,98,0,9.66,"{""reasoning"": ""Renault Sandero with Colombian-style yellow plate, Spanish '70' speed sign, tropical Andean rural landscape and roadside stalls suggest highland Colombia."", ""country"": ""CO"", ""latitude"": 4.55, ""longitude"": -75.6}"
+xiaomi/mimo-v2.5,CoT,-1.35,-78.5,976.384,EC,True,,stop,0.0006539176,787,2036,1970,21.28,"{""reasoning"": ""Spanish 'HOSPITAL' sign and yellow license plate indicating a taxi, with green hilly terrain and a domed church typical of rural Andean towns in Ecuador."", ""country"": ""EC"", ""latitude"": -1.35, ""longitude"": -78.5}"
+minimax/minimax-m3,CoT,17.05,-96.72,2799.661,MX,True,,stop,0.00059346,843,335,269,11.93,"{""reasoning"": ""Left-hand driving with yellow license plate, eucalyptus and pine vegetation on rolling hills, rural Mexican highland architecture and roadside stalls all point to southern Mexico (likely Oaxaca highlands)."", ""country"": ""MX"", ""latitude"": 17.05, ""longitude"": -96.72}"
+minimax/minimax-m3,no-CoT,19.35,-99.15,3138.685,MX,True,,stop,0.00019452,754,22,0,5.46,"{""country"": ""MX"", ""latitude"": 19.35, ""longitude"": -99.15}{""country"": ""MX"", ""latitude"": 19.35, ""longitude"": -99.15}"
+qwen/qwen3.6-27b,no-CoT,-33.0478,-71.5882,4341.5,CL,True,,stop,0.000211097,473,31,0,1.3,"{""country"": ""CL"", ""latitude"": -33.0478, ""longitude"": -71.5882}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,8195.294,,True,True,,,,,,13.27,
+mistralai/mistral-small-2603,no-CoT,-33.9815,18.4649,10567.691,ZA,True,,stop,0.0001137,634,31,0,9.43,"{""country"": ""ZA"", ""latitude"": -33.9815, ""longitude"": 18.4649}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,22.8297176361084,121.21514129638672,16431.881,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,22.818767547607422,121.21015930175781,16433.194,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,22.668657302856445,120.29612731933594,16491.666,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.09,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.41,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.91,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.44,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,6.27,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.15,

@@ -1,0 +1,62 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,44.910412609197,78.239297457374,0.0,KZ,True,,,,,,,,"Balpyk Bi, None, Almaty Oblysy, KZ"
+google/gemini-3.5-flash,CoT (effort=high),43.6925,77.0712,164.255,KZ,True,,stop,0.0118875,1271,1109,1014,9.87,"```json
+{""reasoning"": ""The large duplicated license plate number ending in '05' on the back of the truck indicates Almaty Region, Kazakhstan. The modern dual-carriageway with a yellow left-edge line and central streetlights matches the A-3 highway north of Almaty."", ""country"": ""KZ"", ""latitude"": 43.6925, ""longitude"": 77.0712}
+```"
+google/gemini-3.5-flash,CoT (effort=low),43.6854,77.0125,167.587,KZ,True,,stop,0.0045165,1271,290,193,3.96,"{""reasoning"": ""The truck's rear markings show a number ending in '05', which corresponds to the Almaty Region in Kazakhstan. The flat landscape, bare winter trees, and specific highway infrastructure (yellow shoulder line, double-arm streetlights) are highly characteristic of the A-3 highway north of Almaty."", ""country"": ""KZ"", ""latitude"": 43.6854, ""longitude"": 77.0125}"
+google/gemini-3.5-flash,CoT (effort=medium),43.4652,77.0115,188.165,KZ,True,,stop,0.0082245,1271,702,611,8.87,"{""reasoning"": ""The box truck displays a painted license plate ending in '05', which corresponds to the Almaty Region of Kazakhstan. The multi-lane divided highway with central streetlights and flat, winter-deciduous landscape is characteristic of the A-3 highway north of Almaty."", ""country"": ""KZ"", ""latitude"": 43.4652, ""longitude"": 77.0115}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,43.290164947509766,76.29371643066406,237.881,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,43.295867919921875,76.26138305664062,239.094,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,43.09358596801758,74.4555892944336,363.809,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,53.75172805786133,47.87716293334961,2386.043,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,54.25209045410156,47.950096130371094,2393.481,,True,,plonk,0.0,0,0,0,0.0,
+anthropic/claude-opus-4.8,CoT,43.05,47.0,2492.616,RU,True,,stop,0.00666,797,107,0,9.71,"{""reasoning"": ""Cyrillic-style truck plate ending in region code 05 (Dagestan, Russia), right-hand traffic, yellow center line and bare deciduous/poplar trees suggest a southern Russian highway."", ""country"": ""RU"", ""latitude"": 43.05, ""longitude"": 47.0}"
+google/gemini-3.1-pro-preview,CoT,47.2313,39.7233,2952.128,RU,True,,stop,0.008158,1271,468,379,13.71,"{
+  ""reasoning"": ""The solid yellow inner edge line and curved double-arm streetlights are characteristic of Russian highways. The number '05' on the truck suggests a connection to the Dagestan region, placing this likely in southern Russia."",
+  ""country"": ""RU"",
+  ""latitude"": 47.2313,
+  ""longitude"": 39.7233
+}"
+moonshotai/kimi-k2.6,CoT,53.85,38.2,3017.367,RU,True,,stop,0.0160143,682,3968,4292,154.15,"{""reasoning"": ""The plain white license plate without a blue country-code stripe points to Russia over Ukraine, Belarus, or Kazakhstan; combined with right-hand traffic, Soviet-era streetlights, and Cyrillic text on the truck, the scene matches a federal highway in European Russia."", ""country"": ""RU"", ""latitude"": 53.85, ""longitude"": 38.2}"
+mistralai/mistral-small-2603,CoT,55.7558,37.6173,3070.372,RU,True,,stop,0.00075324,716,1188,1274,15.35,"{""reasoning"": ""Cyrillic script on the road sign and the style of road infrastructure indicate Russia; overcast sky and sparse vegetation suggest a temperate climate."", ""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+google/gemini-3.1-pro-preview,no-CoT,55.7558,37.6173,3070.372,RU,True,,stop,0.0028,1190,35,0,3.24,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+google/gemma-4-31b-it,no-CoT,55.7558,37.6173,3070.372,RU,True,,stop,6.378e-05,406,36,0,6.51,"```json
+{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}
+```"
+moonshotai/kimi-k2.6,no-CoT,55.7558,37.6173,3070.372,RU,True,,stop,0.000279792,603,25,0,7.97,"{""country"": ""RU"", ""latitude"": 55.7558, ""longitude"": 37.6173}"
+anthropic/claude-opus-4.8,no-CoT,55.7,37.6,3070.826,RU,True,,stop,0.00408,666,30,0,9.73,"{""country"": ""RU"", ""latitude"": 55.7, ""longitude"": 37.6}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,51.280303955078125,32.5418815612793,3408.837,,True,,plonk,0.0,0,0,0,0.0,
+minimax/minimax-m3,CoT,49.85,32.05,3464.347,UA,True,,stop,0.00077502,845,483,494,9.57,"{""reasoning"": ""Yellow edge line separating opposing traffic, European-style divided highway with metal guardrails, tall poplar trees, flat steppe terrain, and the truck style all point to a major highway in central Ukraine."", ""country"": ""UA"", ""latitude"": 49.85, ""longitude"": 32.05}{""reasoning"": ""Yellow edge line separating opposing traffic, European-style divided highway with metal guardrails, tall poplar trees, flat steppe terrain, and the truck style all point to a major highway in central Ukraine."", ""country"": ""UA"", ""latitude"": 49.85, ""longitude"": 32.05}"
+openai/gpt-5.5,CoT,50.4332,30.7816,3543.672,UA,True,,stop,0.017385,621,476,402,17.59,"{""reasoning"":""Right-hand divided highway with Soviet-style yellow median edge lines, guardrails, tall poplars and flat wintery landscape point strongly to Ukraine or nearby ex-USSR; the road furniture and markings fit Ukrainian main highways around Kyiv."",""country"":""UA"",""latitude"":50.4332,""longitude"":30.7816}"
+openai/gpt-5.5,no-CoT,50.4472,30.621,3554.672,UA,True,,stop,0.00341,544,23,0,7.98,"{""country"":""UA"",""latitude"":50.4472,""longitude"":30.6210}"
+google/gemini-3.5-flash,no-CoT (effort=minimal),50.4489,30.5234,3561.471,UA,True,,stop,0.0020985,1189,35,0,1.37,"```json
+{""country"": ""UA"", ""latitude"": 50.4489, ""longitude"": 30.5234}
+```"
+minimax/minimax-m3,no-CoT,50.45,30.52,3561.69,UA,True,,stop,0.00019176,752,23,0,6.21,"{""country"": ""UA"", ""latitude"": 50.45, ""longitude"": 30.52}"
+qwen/qwen3.5-9b,no-CoT,46.0008,26.0883,3995.415,RO,True,,stop,8.816e-05,473,31,0,4.54,"{""country"": ""RO"", ""latitude"": 46.0008, ""longitude"": 26.0883}"
+qwen/qwen3.6-35b-a3b,no-CoT,44.4268,26.1025,4050.363,RO,True,,stop,0.0001444,474,31,0,3.21,"{""country"": ""RO"", ""latitude"": 44.4268, ""longitude"": 26.1025}"
+x-ai/grok-4.3,no-CoT,44.4268,26.1025,4050.363,RO,True,,stop,0.0005984,592,24,0,7.02,"{""country"": ""RO"", ""latitude"": 44.4268, ""longitude"": 26.1025}"
+x-ai/grok-4.3,CoT,44.45,26.05,4053.42,RO,True,,stop,0.0036156,676,1162,1081,18.27,"{""reasoning"": ""Right-hand traffic on divided highway with central yellow line, European metal guardrails, bare temperate trees, and rear truck plate reading 'B 449.005' (Bucharest format) identify Romania; low sun angle and overcast winter sky consistent with southern Romanian plain."", ""country"": ""RO"", ""latitude"": 44.45, ""longitude"": 26.05}"
+mistralai/mistral-medium-3-5,CoT,52.2297,21.0122,4174.736,PL,True,,stop,0.025764,716,3292,3467,30.47,"{""reasoning"": ""Right-hand traffic, European-style road markings with solid yellow edge lines, deciduous forest landscape typical of Central Europe, and commercial truck design suggest Poland"", ""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+xiaomi/mimo-v2.5,CoT,52.2297,21.0122,4174.736,PL,True,,stop,0.0001342376,787,180,116,9.19,"{""reasoning"": ""The solid yellow line on the left shoulder and white dashed lines are distinctive road markings used in Poland. The architecture and general infrastructure style are consistent with Polish highways."",""country"":""PL"",""latitude"":52.2297,""longitude"":21.0122}"
+qwen/qwen3.5-122b-a10b,no-CoT,52.2297,21.0122,4174.736,PL,True,,stop,0.00018772,474,31,0,7.67,"{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+qwen/qwen3.5-35b-a3b,no-CoT,52.2297,21.0122,4174.736,PL,True,,stop,0.0001865625,473,31,0,7.71,"{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+qwen/qwen3.6-27b,no-CoT,52.2297,21.0122,4174.736,PL,True,,stop,0.0002414,474,31,0,3.13,"{""country"": ""PL"", ""latitude"": 52.2297, ""longitude"": 21.0122}"
+mistralai/mistral-medium-3-5,no-CoT,52.2371,20.9558,4178.314,PL,True,,stop,0.0011835,634,31,0,2.08,"{""country"": ""PL"", ""latitude"": 52.2371, ""longitude"": 20.9558}"
+qwen/qwen3.5-397b-a17b,CoT,52.1845,20.9512,4179.868,PL,True,,stop,0.0496698,553,13705,13589,242.15,"{
+""reasoning"": ""The solid yellow line on the left edge combined with white dashed lane dividers indicates temporary road markings (construction) in a right-hand traffic country, a common sight in Poland. The curved 'swan-neck' street light poles, narrow shoulder, and rows of tall poplar trees are highly characteristic of Polish expressways (droga ekspresowa)."",
+""country"": ""PL"",
+""latitude"": 52.1845,
+""longitude"": 20.9512
+}"
+qwen/qwen3.5-397b-a17b,no-CoT,50.2649,19.0238,4362.061,PL,True,,stop,0.0003954,473,31,0,2.18,"{""country"": ""PL"", ""latitude"": 50.2649, ""longitude"": 19.0238}"
+xiaomi/mimo-v2.5,no-CoT,51.3,6.8,5139.063,DE,True,,stop,7.94976e-05,708,24,0,3.17,"{""country"": ""DE"", ""latitude"": 51.3, ""longitude"": 6.8}"
+qwen/qwen3.5-27b,no-CoT,52.3702,4.8952,5216.824,NL,True,,stop,0.000139035,473,30,0,2.95,"{""country"": ""NL"", ""latitude"": 52.3702, ""longitude"": 4.8952}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,9084.659,,True,True,,,,,,1.83,
+mistralai/mistral-small-2603,no-CoT,39.7392,-104.9903,10596.945,US,True,,stop,0.0001143,634,32,0,2.8,"{""country"": ""US"", ""latitude"": 39.7392, ""longitude"": -104.9903}"
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.2,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.28,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,0.21,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,2.22,

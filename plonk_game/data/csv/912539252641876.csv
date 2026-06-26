@@ -1,0 +1,64 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-6.3006910051682,176.31917767142,0.0,TV,True,,,,,,,,"Toga Village, None, Nanumanga, TV"
+minimax/minimax-m3,no-CoT,1.4518,173.0424,935.643,KI,True,,stop,0.00035922,767,156,154,7.55,"{""country"": ""KI"", ""latitude"": 1.4518, ""longitude"": 173.0424}"
+x-ai/grok-4.3,no-CoT,7.116,171.383,1589.196,MH,True,,stop,0.0005934,592,22,0,1.09,"{""country"": ""MH"", ""latitude"": 7.116, ""longitude"": 171.383}"
+google/gemma-4-31b-it,no-CoT,7.123,168.256,1740.153,MH,True,,stop,7.044e-05,406,34,0,2.31,"```json
+{""country"": ""MH"", ""latitude"": 7.123, ""longitude"": 168.256}
+```"
+minimax/minimax-m3,CoT,1.87,-157.43,3052.583,KI,True,,stop,0.00089382,845,582,567,17.37,"{""reasoning"": ""The image shows a classic coral atoll landscape: extremely flat terrain, a coral-rubble beach with no fine white sand, and a dense wall of coconut palms (Cocos nucifera) with no other vegetation types. The overcast gray sky indicates ITCZ/rainy-season conditions typical of central Pacific atolls like those in Kiribati's Line Islands."", ""country"": ""KI"", ""latitude"": 1.87, ""longitude"": -157.43}{""reasoning"": ""The image shows a classic coral atoll landscape: extremely flat terrain, a coral-rubble beach with no fine white sand, and a dense wall of coconut palms (Cocos nucifera) with no other vegetation types. The overcast gray sky indicates ITCZ/rainy-season conditions typical of central Pacific atolls like those in Kiribati's Line Islands."", ""country"": ""KI"", ""latitude"": 1.87, ""longitude"": -157.43}"
+xiaomi/mimo-v2.5,no-CoT,9.8,126.0,5854.17,PH,True,,stop,7.97776e-05,708,25,0,2.91,"{""country"": ""PH"", ""latitude"": 9.8, ""longitude"": 126.0}"
+google/gemini-3.5-flash,CoT (effort=high),-10.4915,105.7075,7767.292,CX,True,,stop,0.0153975,1271,1499,1428,16.76,"{""reasoning"": ""The wide coral-sand beach backed by a dense grove of coconut palms under an overcast sky, along with dark volcanic rocks, is highly characteristic of Dolly Beach on Christmas Island."", ""country"": ""CX"", ""latitude"": -10.4915, ""longitude"": 105.7075}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,3.9739139080047607,101.83621978759766,8347.236,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,4.124416351318359,101.73131561279297,8360.989,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,6.545610427856445,99.92656707763672,8595.594,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.5-flash,CoT (effort=medium),-12.0962,96.8915,8716.128,CC,True,,stop,0.010746,1272,982,904,13.29,"```json
+{""reasoning"": ""The image shows a tropical beach with white coral sand and a dense backdrop of coconut palms under an overcast sky, highly characteristic of the Cocos (Keeling) Islands, specifically Direction Island."", ""country"": ""CC"", ""latitude"": -12.0962, ""longitude"": 96.8915}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-12.188333,96.884167,8716.202,CC,True,,stop,0.002136,1190,39,0,7.43,"```json
+{""country"": ""CC"", ""latitude"": -12.188333, ""longitude"": 96.884167}
+```"
+google/gemini-3.5-flash,CoT (effort=low),-12.0943,96.8814,8717.238,CC,True,,stop,0.004482,1272,286,217,8.93,"{""reasoning"": ""The white coral sand beach backed by a dense grove of coconut palms under an overcast sky is highly characteristic of the Cocos (Keeling) Islands, specifically Direction Island."", ""country"": ""CC"", ""latitude"": -12.0943, ""longitude"": 96.8814}"
+qwen/qwen3.6-35b-a3b,no-CoT,7.8804,98.3923,8783.897,TH,True,,stop,0.00010095,473,30,0,1.64,"{""country"": ""TH"", ""latitude"": 7.8804, ""longitude"": 98.3923}"
+qwen/qwen3.5-122b-a10b,no-CoT,10.6583,79.9217,10832.593,IN,True,,stop,0.0002163,473,31,0,2.47,"{""country"": ""IN"", ""latitude"": 10.6583, ""longitude"": 79.9217}"
+xiaomi/mimo-v2.5,CoT,20.206,-87.443,10897.653,MX,True,,stop,0.0001919176,787,386,311,5.98,"{""reasoning"": ""The dense line of coconut palms along a coral-sand beach, typical of the Caribbean coast of the Yucatan Peninsula, is the key clue, matching the Riviera Maya region of Mexico."", ""country"": ""MX"", ""latitude"": 20.206, ""longitude"": -87.443}"
+qwen/qwen3.6-35b-a3b,CoT,11.25,75.8,11286.4,IN,True,,stop,0.0058276,554,3573,3205,104.54,"```json
+{
+  ""reasoning"": ""The image features a wide, flat sandy beach bordered by a dense, uniform wall of coconut palms, which is a hallmark of the Malabar coast in Kerala, India. The overcast sky and the specific texture of the sand (light beige/grey with some grit) are consistent with beaches in this region, such as near Kozhikode or Beypore."",
+  ""country"": ""IN"",
+  ""latitude"": 11.25,
+  ""longitude"": 75.8
+}
+```"
+qwen/qwen3.5-9b,no-CoT,11.1213,75.0802,11363.667,IN,True,,stop,5.205e-05,474,31,0,4.32,"{""country"": ""IN"", ""latitude"": 11.1213, ""longitude"": 75.0802}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,5.236752510070801,73.90821075439453,11438.684,,True,,plonk,0.0,0,0,0,0.0,
+google/gemini-3.1-pro-preview,CoT,-7.3195,72.4228,11438.943,IO,True,,stop,0.006262,1271,310,223,5.49,"{
+  ""reasoning"": ""The image shows a pristine tropical beach with light sand and a dense line of palm trees, characteristic of remote atolls. The specific visual signature matches Google Street View trekker coverage found in the British Indian Ocean Territory."",
+  ""country"": ""IO"",
+  ""latitude"": -7.3195,
+  ""longitude"": 72.4228
+}"
+google/gemini-3.1-pro-preview,no-CoT,-7.3195,72.4228,11438.943,IO,True,,stop,0.002786,1189,34,0,2.67,"```json
+{""country"": ""IO"", ""latitude"": -7.3195, ""longitude"": 72.4228}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,0.09143678843975067,73.30433654785156,11446.977,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,0.6880683302879333,73.33010864257812,11451.497,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,3.9225,73.4921,11470.788,MV,True,,stop,0.016095,621,433,358,12.84,"{""reasoning"":""Flat coral-sand terrain with dense coconut palms and a humid tropical atoll environment strongly suggests the Maldives rather than a continental beach. The lack of hills, roads, or buildings fits a small Maldivian island beach/interior edge."",""country"":""MV"",""latitude"":3.9225,""longitude"":73.4921}"
+x-ai/grok-4.3,CoT,4.1753,73.5093,11471.6,MV,True,,stop,0.0021115,676,641,585,5.54,"{""reasoning"": ""Tropical white-sand beach backed by dense coconut palms, no infrastructure or vehicles, typical of equatorial atolls under overcast skies."", ""country"": ""MV"", ""latitude"": 4.1753, ""longitude"": 73.5093}"
+qwen/qwen3.5-27b,no-CoT,4.1755,73.5093,11471.602,MV,True,,stop,0.0002139,473,30,0,1.31,"{""country"": ""MV"", ""latitude"": 4.1755, ""longitude"": 73.5093}"
+qwen/qwen3.5-35b-a3b,no-CoT,4.1755,73.5093,11471.602,MV,True,,stop,0.000160425,473,30,0,1.46,"{""country"": ""MV"", ""latitude"": 4.1755, ""longitude"": 73.5093}"
+qwen/qwen3.6-27b,no-CoT,4.1755,73.5093,11471.602,MV,True,,stop,0.0001923,473,30,0,12.5,"{""country"": ""MV"", ""latitude"": 4.1755, ""longitude"": 73.5093}"
+moonshotai/kimi-k2.6,CoT,3.9547,73.4664,11473.972,MV,True,,stop,0.013583655,681,3651,4138,37.35,"{""reasoning"": ""The pale coral-sand beach and dense, uniform coconut-palm forest are classic features of a low-lying Maldivian coral atoll, with no other vegetation or structures visible."", ""country"": ""MV"", ""latitude"": 3.9547, ""longitude"": 73.4664}"
+anthropic/claude-opus-4.8,CoT,3.2028,73.2207,11492.895,MV,True,,stop,0.006185,797,88,0,3.59,"{""reasoning"": ""White coral sand beach with dense coconut palm forest and overcast tropical sky suggests a low-lying atoll island, likely in the Maldives."", ""country"": ""MV"", ""latitude"": 3.2028, ""longitude"": 73.2207}"
+qwen/qwen3.5-397b-a17b,CoT,3.2028,73.2207,11492.895,MV,True,,stop,0.0122011,553,3418,3246,112.79,"{""reasoning"": ""The white coral sand mixed with rubble and the immediate, dense wall of coconut palms on flat terrain are characteristic of a coral atoll environment, strongly suggesting the Maldives. The lack of visible infrastructure and the specific vegetation density point to a beach on a local island or resort within the archipelago."", ""country"": ""MV"", ""latitude"": 3.2028, ""longitude"": 73.2207}"
+anthropic/claude-opus-4.8,no-CoT,3.2028,73.2207,11492.895,MV,True,,stop,0.00413,666,32,0,9.98,"{""country"": ""MV"", ""latitude"": 3.2028, ""longitude"": 73.2207}"
+mistralai/mistral-medium-3-5,no-CoT,3.2028,73.2207,11492.895,MV,True,,stop,0.001176,634,30,0,1.17,"{""country"": ""MV"", ""latitude"": 3.2028, ""longitude"": 73.2207}"
+moonshotai/kimi-k2.6,no-CoT,3.2028,73.2207,11492.895,MV,True,,stop,0.00051939,602,25,0,2.85,"{""country"": ""MV"", ""latitude"": 3.2028, ""longitude"": 73.2207}"
+openai/gpt-5.5,no-CoT,3.2028,73.2207,11492.895,MV,True,,stop,0.00341,544,23,0,8.14,"{""country"":""MV"",""latitude"":3.2028,""longitude"":73.2207}"
+qwen/qwen3.5-397b-a17b,no-CoT,3.2028,73.2207,11492.895,MV,True,,stop,0.00036108,473,30,0,1.36,"{""country"": ""MV"", ""latitude"": 3.2028, ""longitude"": 73.2207}"
+mistralai/mistral-small-2603,no-CoT,-12.9,-38.3,15634.972,BR,True,,stop,0.0001101,634,25,0,3.71,"{""country"": ""BR"", ""latitude"": -12.9, ""longitude"": -38.3}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,19204.107,,True,True,,,,,,6.69,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,1.08,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,0.22,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,0.09,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,0.1,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,1.17,

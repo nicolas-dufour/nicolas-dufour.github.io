@@ -1,0 +1,67 @@
+source,setup,lat,lon,error_km,pred_country,ok,fallback_00,finish,cost_usd,prompt_tokens,completion_tokens,reasoning_tokens,latency_s,raw_text
+GROUND_TRUTH,,-18.666698154299,-63.240143296938,0.0,BO,True,,,,,,,,"Abapo, None, Santa Cruz, BO"
+openai/gpt-5.5,no-CoT,-15.6012,-56.0974,831.872,BR,True,,stop,0.00347,544,25,0,2.1,"{""country"":""BR"",""latitude"":-15.6012,""longitude"":-56.0974}"
+qwen/qwen3.5-9b,no-CoT,-14.235,-56.0833,908.252,BR,True,,stop,5.19e-05,474,30,0,5.41,"{""country"": ""BR"", ""latitude"": -14.235, ""longitude"": -56.0833}"
+google/gemini-3.5-flash,CoT (effort=medium),-25.7833,-56.445,1055.654,PY,True,,stop,0.0091335,1271,803,741,13.09,"```json
+{""reasoning"": ""The wooden utility poles with horizontal crossarms, flat terrain, and lush green vegetation are highly characteristic of rural Paraguay."", ""country"": ""PY"", ""latitude"": -25.7833, ""longitude"": -56.445}
+```"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=0.0,-19.385047912597656,-49.01316833496094,1497.255,,True,,plonk,0.0,0,0,0,0.0,
+moonshotai/kimi-k2.6,CoT,-14.5,-49.0,1586.008,BR,True,,stop,0.007972668,682,2269,2203,56.19,"{""reasoning"": ""Rural unpaved road through tropical scrub with wooden cross-arm utility poles and reddish lateritic soil strongly matches the Brazilian Cerrado; absence of signage or vehicles prevents a tighter fix."", ""country"": ""BR"", ""latitude"": -14.5, ""longitude"": -49.0}"
+nicolas-dufour/PLONK_YFCC,PLONK cfg=2.0,-15.916498184204102,-48.05262756347656,1640.583,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_YFCC,PLONK cfg=1.5,-15.9238920211792,-48.01683044433594,1644.13,,True,,plonk,0.0,0,0,0,0.0,
+mistralai/mistral-small-2603,no-CoT,-22.9035,-47.0581,1745.764,BR,True,,stop,0.0001137,634,31,0,3.03,"{""country"": ""BR"", ""latitude"": -22.9035, ""longitude"": -47.0581}"
+google/gemini-3.1-pro-preview,CoT,-12.054,-42.123,2378.304,BR,True,,stop,0.00625,1271,309,221,11.5,"{
+  ""reasoning"": ""The wooden utility pole with a single crossarm and four top-mounted insulators is characteristic of rural electrical infrastructure in Brazil. The tropical vegetation and unpaved/poorly paved road further support a location in the Brazilian interior."",
+  ""country"": ""BR"",
+  ""latitude"": -12.054,
+  ""longitude"": -42.123
+}"
+google/gemini-3.5-flash,CoT (effort=high),-5.5234,-45.2431,2438.078,BR,True,,stop,0.0109965,1271,1010,937,8.18,"```json
+{""reasoning"": ""The wooden utility pole with a simple horizontal crossarm, combined with the lush tropical vegetation and dirt road, is highly characteristic of rural Brazil, particularly in the Northeast region."", ""country"": ""BR"", ""latitude"": -5.5234, ""longitude"": -45.2431}
+```"
+google/gemini-3.5-flash,no-CoT (effort=minimal),-4.883125,-43.354167,2647.132,BR,True,,stop,0.002127,1190,38,0,1.56,"```json
+{""country"": ""BR"", ""latitude"": -4.883125, ""longitude"": -43.354167}
+```"
+google/gemini-3.1-pro-preview,no-CoT,-5.0892,-42.8016,2682.713,BR,True,,stop,0.002786,1189,34,0,2.78,"```json
+{""country"": ""BR"", ""latitude"": -5.0892, ""longitude"": -42.8016}
+```"
+qwen/qwen3.5-122b-a10b,no-CoT,-12.9714,-38.5014,2718.521,BR,True,,stop,0.0002163,473,31,0,1.56,"{""country"": ""BR"", ""latitude"": -12.9714, ""longitude"": -38.5014}"
+google/gemini-3.5-flash,CoT (effort=low),10.45,-74.25,3455.508,CO,True,,stop,0.0050745,1271,352,289,11.08,"```json
+{""reasoning"": ""The wooden utility poles with T-shaped crossarms, lush tropical vegetation, and unpaved road are characteristic of rural northern Colombia."", ""country"": ""CO"", ""latitude"": 10.45, ""longitude"": -74.25}
+```"
+anthropic/claude-opus-4.8,CoT,12.6,-86.3,4298.628,NI,True,,stop,0.006535,797,102,0,3.85,"{""reasoning"": ""Tropical dry forest vegetation, dusty rural road, wooden utility pole, and low building suggest Central America; lighting and flora consistent with Nicaragua/Honduras lowlands."", ""country"": ""NI"", ""latitude"": 12.6, ""longitude"": -86.3}"
+anthropic/claude-opus-4.8,no-CoT,12.4357,-86.8779,4321.632,NI,True,,stop,0.00413,666,32,0,3.95,"{""country"": ""NI"", ""latitude"": 12.4357, ""longitude"": -86.8779}"
+minimax/minimax-m3,CoT,13.5,-86.5,4392.155,NI,True,,stop,0.00062826,843,364,300,18.02,"{""reasoning"": ""Dirt road with tropical vegetation, simple wooden utility pole with crossarm insulator configuration typical of Central American rural infrastructure, and low tropical sun angle suggest rural Nicaragua or Honduras."", ""country"": ""NI"", ""latitude"": 13.5, ""longitude"": -86.5}"
+google/gemma-4-31b-it,no-CoT,19.4326,-99.1332,5768.941,MX,True,,stop,7.124e-05,406,36,0,1.89,"```json
+{""country"": ""MX"", ""latitude"": 19.4326, ""longitude"": -99.1332}
+```"
+qwen/qwen3.6-27b,no-CoT,19.4326,-99.1332,5768.941,MX,True,,stop,0.0001943,473,31,0,7.34,"{""country"": ""MX"", ""latitude"": 19.4326, ""longitude"": -99.1332}"
+qwen/qwen3.5-27b,no-CoT,20.6597,-103.3496,6181.693,MX,True,,stop,0.0002085,474,45,0,4.25,"```json
+{
+  ""country"": ""MX"",
+  ""latitude"": 20.6597,
+  ""longitude"": -103.3496
+}
+```"
+xiaomi/mimo-v2.5,no-CoT,29.76,-95.37,6391.319,US,True,,stop,8.03376e-05,708,27,0,4.0,"{""country"": ""US"", ""latitude"": 29.76, ""longitude"": -95.37}"
+qwen/qwen3.5-397b-a17b,no-CoT,30.2672,-97.7431,6575.665,US,True,,stop,0.0003322,473,31,0,20.32,"{""country"": ""US"", ""latitude"": 30.2672, ""longitude"": -97.7431}"
+qwen/qwen3.5-35b-a3b,no-CoT,32.7767,-96.797,6741.137,US,True,,stop,0.00010095,473,30,0,3.67,"{""country"": ""US"", ""latitude"": 32.7767, ""longitude"": -96.797}"
+google/gemma-4-26b-a4b-it,no-CoT,0.0,0.0,7199.882,,True,True,,,,,,22.12,
+qwen/qwen3.6-35b-a3b,no-CoT,34.0522,-118.2437,8259.355,US,True,,stop,0.00015825,473,32,0,1.09,"{""country"": ""US"", ""latitude"": 34.0522, ""longitude"": -118.2437}"
+xiaomi/mimo-v2.5,CoT,11.0,77.0,15666.733,IN,True,,stop,0.0003624376,787,995,917,26.91,"{""reasoning"": ""Left - hand traffic (consistent with South Asian countries like India), tropical vegetation (lush trees), and rural power poles suggest a tropical region in India; sun position and landscape align with a late - afternoon setting in a tropical latitude."", ""country"": ""IN"", ""latitude"": 11.0, ""longitude"": 77.0}"
+mistralai/mistral-medium-3-5,no-CoT,28.6139,77.209,15857.927,IN,True,,stop,0.001176,634,30,0,1.2,"{""country"": ""IN"", ""latitude"": 28.6139, ""longitude"": 77.209}"
+x-ai/grok-4.3,CoT,20.5937,78.9629,16059.397,IN,True,,stop,0.001939,676,572,507,11.29,"{""reasoning"": ""Wooden utility poles with crossarms + dirt road + tropical broadleaf vegetation + low-angle sun match rural South Asia; no left-side driving or distinctive signage narrows to India."", ""country"": ""IN"", ""latitude"": 20.5937, ""longitude"": 78.9629}"
+x-ai/grok-4.3,no-CoT,21.1458,79.0882,16075.793,IN,True,,stop,0.0005984,592,24,0,0.87,"{""country"": ""IN"", ""latitude"": 21.1458, ""longitude"": 79.0882}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=0.0,16.742813110351562,101.56172180175781,18391.556,,True,,plonk,0.0,0,0,0,0.0,
+openai/gpt-5.5,CoT,13.3639,103.8564,18515.981,KH,True,,stop,0.012135,621,301,220,13.96,"{""reasoning"":""Tropical lowland vegetation, reddish dirt shoulders, simple concrete utility poles with sparse wiring, and rural paved-road setting are most consistent with mainland Southeast Asia, especially Cambodia. With no readable signage, I place it in the flat rural outskirts near Siem Reap."",""country"":""KH"",""latitude"":13.3639,""longitude"":103.8564}"
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=2.0,15.578265190124512,103.25067901611328,18539.508,,True,,plonk,0.0,0,0,0,0.0,
+nicolas-dufour/PLONK_OSV_5M,PLONK cfg=1.5,15.661139488220215,103.22734069824219,18539.514,,True,,plonk,0.0,0,0,0,0.0,
+google/gemma-4-26b-a4b-it,CoT,,,,,False,,,,,,,0.14,
+google/gemma-4-31b-it,CoT,,,,,False,,,,,,,6.36,
+mistralai/mistral-medium-3-5,CoT,,,,,False,,,,,,,6.9,
+mistralai/mistral-small-2603,CoT,,,,,False,,,,,,,13.24,
+qwen/qwen3.5-397b-a17b,CoT,,,,,False,,,,,,,0.09,
+qwen/qwen3.6-27b,CoT,,,,,False,,,,,,,18.48,
+qwen/qwen3.6-35b-a3b,CoT,,,,,False,,,,,,,0.07,
+minimax/minimax-m3,no-CoT,,,,,False,,,,,,,1.25,
+moonshotai/kimi-k2.6,no-CoT,,,,,False,,,,,,,1.22,
