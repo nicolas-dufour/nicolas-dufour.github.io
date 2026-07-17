@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Drifting Models — a visual tutorial</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css?v=20260717o">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- 01 — TITLE -->
+      <section class="title-section" data-background-color="#f1f4f7">
+        <div class="slide-pad title-layout">
+          <div class="title-copy">
+            <div class="badge">A visual tutorial · 2026</div>
+            <h1>Generative Modeling<br>via <span class="orange">Drifting</span></h1>
+            <p class="serif-lede">Move the journey into training.<br>Keep inference to one step.</p>
+            <div class="paper-authors">Mingyang Deng · He Li · Tianhong Li · Yilun Du · Kaiming He</div>
+          </div>
+          <div class="hero-stage">
+            <canvas id="title-drift" aria-label="Particles drifting into two target modes"></canvas>
+            <div class="hero-readout"><span class="live-dot"></span> training-time pushforward</div>
+          </div>
+        </div>
+        <aside class="notes">This is a visual tutorial on the Drifting Models paper. The core reframing is simple: instead of evolving each sample during inference, evolve the generator's whole output distribution during training.</aside>
+      </section>
+
+      <!-- 02 — GENERATOR -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow blue">Point map → distribution map</div>
+          <h2>Move every point. <span class="blue">The cloud follows.</span></h2>
+          <div class="pushforward-stage">
+            <canvas id="pushforward-demo"></canvas>
+            <div class="pf-cloud pf-noise">
+              <span>noise · p<sub>ε</sub></span>
+              <svg viewBox="0 0 420 420" data-cloud="noise"></svg>
+            </div>
+            <div class="pf-network fragment" data-fragment-index="0"><span class="symbol">f<sub>θ</sub></span><i></i></div>
+            <div class="pf-cloud pf-output fragment" data-fragment-index="1">
+              <span>target-shaped output · q<sub>θ</sub></span>
+              <svg viewBox="0 0 420 420" data-cloud="generated"></svg>
+            </div>
+            <div class="pf-step fragment" data-pf-step="travel" data-fragment-index="1"></div>
+          </div>
+          <div class="pf-duality">
+            <div class="pf-fact fragment" data-fragment-index="0"><span>one sample</span><b>ε → x</b></div>
+            <div class="pf-becomes fragment" data-fragment-index="2">therefore</div>
+            <div class="pf-fact distribution fragment" data-fragment-index="2"><span>whole distribution</span><b>(f<sub>θ</sub>)<sub>#</sub> p<sub>ε</sub> = q<sub>θ</sub></b></div>
+          </div>
+        </div>
+        <aside class="notes">Start with the ordinary pointwise view: each epsilon is mapped to one x. Then zoom out. Applying the same map to every draw from the prior moves the entire cloud; that induced distribution map is the pushforward.</aside>
+      </section>
+
+      <!-- 03 — WHERE ITERATION LIVES -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow orange">What does “drifting” mean?</div>
+          <h2>Teach the generator its <span class="orange">next move</span>.</h2>
+          <div class="drift-teaching">
+            <div class="drift-step-rail">
+              <article class="drift-step-node drift-current-node"><div><b>1</b><span>sample current</span></div><strong class="math" data-tex="x_i=f_{\theta_i}(\epsilon)"></strong></article>
+              <i class="drift-step-connector fragment" data-fragment-index="0"></i>
+              <article class="drift-step-node drift-target-node fragment" data-fragment-index="0"><div><b>2</b><span>make a target</span></div><strong class="math" data-tex="x_i^\star=x_i+V(x_i)"></strong></article>
+              <i class="drift-step-connector fragment" data-fragment-index="1"></i>
+              <article class="drift-step-node drift-fit-node fragment" data-fragment-index="1"><div><b>3</b><span>fit the generator</span></div><strong class="math" data-tex="f_{\theta_{i+1}}(\epsilon)\approx x_i^\star"></strong></article>
+            </div>
+
+            <div class="drift-teaching-stage">
+              <canvas id="drift-teaching-demo" aria-label="One generator update: current outputs receive drift targets, then the generator learns the move"></canvas>
+              <div class="drift-stage-legend"><span><i></i>generated</span><span><i></i>data</span><span><i></i>next target</span></div>
+              <div class="drift-stage-readout"><i></i><span>sample the current generator</span></div>
+              <div class="drift-teaching-step fragment" data-fragment-index="0"></div>
+              <div class="drift-teaching-step fragment" data-fragment-index="1"></div>
+              <div class="drift-teaching-step fragment" data-fragment-index="2"></div>
+            </div>
+
+            <div class="drift-loop-band fragment" data-fragment-index="2">
+              <div class="training-repeat"><span>repeat during training</span><b>q<sub>θ₀</sub> → q<sub>θ₁</sub> → ··· → p</b></div>
+              <div class="weights-remember"><span>the moves accumulate in</span><b>θ</b></div>
+              <div class="drift-inference"><span>then inference is</span><b>ε</b><i></i><strong><span class="math" data-tex="f_{\theta_T}"></span></strong><i></i><b>x</b><em>1 call</em></div>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">Drifting is a training loop. First sample the current generator. Second, the drift field turns each output into a slightly better target. Third, update theta so the same noise seeds map close to those targets. Repeat: the pushforward q_theta moves toward p, and the sequence of moves is stored in the weights. At test time we do not replay this trajectory; the final generator produces a sample in one call.</aside>
+      </section>
+
+      <!-- 04 — DIVIDER -->
+      <section class="statement-slide" data-background-color="#e7ebef">
+        <div class="slide-pad statement-wrap">
+          <div class="section-num">§ I</div>
+          <h1>Train the <span class="orange">journey</span>.<br>Run the destination.</h1>
+          <div class="statement-path"><i></i><i></i><i></i><i></i><i></i><b></b></div>
+        </div>
+      </section>
+
+      <!-- 05 — TRAINING MOVES SAMPLES -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow orange">Pushforward through training</div>
+          <h2>Change <span class="math orange" data-tex="\theta"></span> → every output moves.</h2>
+          <div class="theta-stage" data-animate="theta-stage">
+            <div class="theta-timeline">
+              <span>θ<sub>0</sub></span><span>θ<sub>1</sub></span><span>θ<sub>2</sub></span><span>…</span><span>θ<sub>T</sub></span>
+              <i></i>
+            </div>
+            <canvas id="theta-cloud"></canvas>
+            <div class="theta-label q-label">q<sub>θ</sub></div>
+            <div class="theta-label p-label">p<sub>data</sub></div>
+          </div>
+          <div class="micro-caption">same probe noises · changing generator</div>
+        </div>
+        <aside class="notes">The points are the outputs of fixed noise probes. SGD changes the map, so those outputs trace coherent paths. Drifting models explicitly choose the desired direction of that motion.</aside>
+      </section>
+
+      <!-- 06 — NAME THE MOTION -->
+      <section>
+        <div class="slide-pad center-stage">
+          <div class="eyebrow orange">Give the motion a name</div>
+          <div class="drift-equation">
+            <span class="math display" data-tex="x_{i+1}=x_i"></span>
+            <span class="drift-plus fragment" data-fragment-index="0">+</span>
+            <span class="math display orange fragment" data-fragment-index="0" data-tex="V_{p,q_i}(x_i)"></span>
+          </div>
+          <div class="drift-arrow-demo fragment" data-fragment-index="1">
+            <span class="point x0"><span class="symbol">x<sub>i</sub></span></span>
+            <i></i>
+            <span class="point x1"><span class="symbol">x<sub>i+1</sub></span></span>
+            <b>drift</b>
+          </div>
+        </div>
+        <aside class="notes">V is not a time-dependent denoising velocity. It is a field computed from the target distribution p and the generator's current distribution q.</aside>
+      </section>
+
+      <!-- 07 — ONE SAMPLE, TWO FORCES -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow orange">One sample · two forces</div>
+          <h2><span class="blue">Attract</span> from data. <span class="orange">Repel</span> from generated.</h2>
+          <div class="field-card">
+            <canvas id="force-demo"></canvas>
+            <div class="force-legend">
+              <span><i class="data-dot"></i> p · positive</span>
+              <span><i class="gen-dot"></i> q · negative</span>
+              <span><i class="probe-dot"></i> x</span>
+            </div>
+            <div class="force-step fragment" data-force-step="attract" data-fragment-index="0"></div>
+            <div class="force-step fragment" data-force-step="negative-direction" data-fragment-index="1"></div>
+            <div class="force-step fragment" data-force-step="flip-negative" data-fragment-index="2"></div>
+            <div class="force-step fragment" data-force-step="net" data-fragment-index="3"></div>
+          </div>
+          <div class="force-formula fragment" data-fragment-index="3">
+            <b>full drift kernel</b>
+            <span class="math display" data-tex="V_{p,q}(x)=\color{#2f6fe0}{\frac{\mathbb E_{y^+\sim p}[k(x,y^+)(y^+-x)]}{\mathbb E_{y^+\sim p}[k(x,y^+)]}}-\color{#df642f}{\frac{\mathbb E_{y^-\sim q}[k(x,y^-)(y^--x)]}{\mathbb E_{y^-\sim q}[k(x,y^-)]}}"></span>
+          </div>
+        </div>
+        <aside class="notes">Click one: weighted mean-shift toward real samples. Click two: first show the ordinary mean-shift toward generated neighbors. Click three: the minus sign flips that vector into repulsion. Click four: fade the construction and reveal the complete normalized drifting field. Each denominator normalizes the kernel weights within its own population.</aside>
+      </section>
+
+      <!-- 08 — ANTISYMMETRY ABLATION -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow orange">Break the balance</div>
+          <h2>The field stops having the right <span class="orange">rest point</span>.</h2>
+          <div class="bar-chart" data-chart="antisym">
+            <div class="bar-row good"><span>balanced</span><i style="--v:8.46"></i><b>8.46</b></div>
+            <div class="bar-row fragment" data-fragment-index="0"><span>1.5× attract</span><i style="--v:41.05"></i><b>41.05</b></div>
+            <div class="bar-row fragment" data-fragment-index="1"><span>1.5× repel</span><i style="--v:46.28"></i><b>46.28</b></div>
+            <div class="bar-row fragment" data-fragment-index="2"><span>attract only</span><i style="--v:177.14"></i><b>177.14</b></div>
+          </div>
+          <div class="axis-note">FID ↓ · B/2 · 100 epochs</div>
+        </div>
+        <aside class="notes">This is the paper's destructive ablation. The exact balanced field gets 8.46 FID in the ablation setting. Even a 1.5x imbalance is catastrophic; attraction-only collapses to 177.14.</aside>
+      </section>
+
+      <!-- 09 — KERNEL -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow blue">Who gets a vote?</div>
+          <h2>Nearby samples vote <span class="blue">louder</span>.</h2>
+          <div class="kernel-layout">
+            <div class="kernel-stage" data-animate="kernel">
+              <canvas id="kernel-demo"></canvas>
+              <div class="tau-readout">τ = <b>0.62</b></div>
+            </div>
+            <div class="kernel-formula">
+              <span class="math display" data-tex="k(x,y)=\exp\!\left(-\frac{\lVert x-y\rVert}{\tau}\right)"></span>
+              <div class="weight-meter">
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="kernel-words"><span>local</span><span>global</span></div>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">The kernel turns a mini-batch into a local neighborhood. The temperature controls how local the votes are. This dependence on meaningful distances is exactly why feature space matters later.</aside>
+      </section>
+
+      <!-- 10 — MULTIPLE BANDWIDTHS -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow blue">The scale dilemma</div>
+          <h2>One τ cannot both <span class="violet">reach</span> and <span class="blue">resolve</span>.</h2>
+          <div class="bandwidth-stage">
+            <canvas id="multibandwidth-demo"></canvas>
+            <div class="bandwidth-label small-bandwidth"><b>small τ</b><span>too local to see the data</span><em>no signal</em></div>
+            <div class="bandwidth-label large-bandwidth fragment" data-fragment-index="0"><b>large τ</b><span>sees both modes at once</span><em>mode blur</em></div>
+            <div class="bandwidth-label mixed-bandwidth fragment" data-fragment-index="1"><b>many τ</b><span>coarse move → fine correction</span><em>both</em></div>
+            <div class="bandwidth-step fragment" data-fragment-index="0"></div>
+            <div class="bandwidth-step fragment" data-fragment-index="1"></div>
+          </div>
+          <div class="kernel-mixture fragment" data-fragment-index="2">
+            <span class="math display" data-tex="\mathcal L_{\mathrm{multi}}=\sum_{\tau\in\{0.02,\,0.05,\,0.20\}}\mathcal L_{\tau}"></span>
+            <div class="bandwidth-roles"><span class="far-role">0.20 · reach</span><span class="mid-role">0.05 · shape</span><span class="near-role">0.02 · detail</span></div>
+          </div>
+        </div>
+        <aside class="notes">A narrow kernel preserves local geometry, but when generated and real distributions are far apart it assigns almost zero weight and supplies no useful direction. A broad kernel reaches across that gap, but averages over distinct modes and points toward their midpoint. The implementation avoids choosing: it computes one drifting loss for each temperature 0.02, 0.05, and 0.20, then sums them. The broad loss supplies reach; the narrow losses progressively recover shape and detail.</aside>
+      </section>
+
+      <!-- 11 — ANTISYMMETRY -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow violet">The design constraint</div>
+          <h2>Swap the distributions. <span class="violet">Reverse the field.</span></h2>
+          <div class="antisym-compare">
+            <div class="antisym-panel">
+              <div class="anti-panel-label"><span class="blue">p</span> attracts · <span class="orange">q</span> repels</div>
+              <canvas id="antisym-left"></canvas>
+              <div class="anti-vector-label">V<sub>p,q</sub>(x)</div>
+            </div>
+            <div class="swap-operator fragment" data-fragment-index="0"><i></i><span>swap p ↔ q</span></div>
+            <div class="antisym-panel fragment" data-fragment-index="0">
+              <div class="anti-panel-label"><span class="orange">q</span> attracts · <span class="blue">p</span> repels</div>
+              <canvas id="antisym-right"></canvas>
+              <div class="anti-vector-label reversed">−V<sub>p,q</sub>(x)</div>
+            </div>
+          </div>
+          <div class="antisym-eq fragment" data-fragment-index="1">
+            <span class="math display" data-tex="V_{p,q}(x)=-V_{q,p}(x)"></span>
+          </div>
+        </div>
+        <aside class="notes">Show the exact same local geometry twice. On the left p supplies attraction and q supplies repulsion. After swapping the distributions, those two contributions exchange roles, so the net vector reverses. This is the anti-symmetry property.</aside>
+      </section>
+
+      <!-- 12 — EQUILIBRIUM -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow green">Why the destination is a rest point</div>
+          <h2>Same expected neighborhood. <span class="green">Zero net vote.</span></h2>
+          <div class="equilibrium-stage">
+            <canvas id="equilibrium-demo"></canvas>
+            <div class="equilibrium-legend"><span><i class="data-dot"></i>p</span><span><i class="gen-dot"></i>q</span><b>paired here to show p = q</b></div>
+            <div class="equilibrium-readout">
+              <div><span class="blue">E[V<sup>+</sup><sub>p</sub>]</span><b>=</b><span class="orange">E[V<sup>−</sup><sub>q</sub>]</span></div>
+              <strong class="fragment" data-fragment-index="0">V<sub>p,q</sub>(x) = 0</strong>
+            </div>
+            <div class="eq-step fragment" data-fragment-index="0"></div>
+          </div>
+          <div class="zero-drift-note fragment" data-fragment-index="1"><span class="math display" data-tex="p=q\quad\Longrightarrow\quad V_{p,q}=0"></span><b>equilibrium</b></div>
+        </div>
+        <aside class="notes">At p equals q, attraction and repulsion are expectations over the same neighborhood distribution. They therefore have the same expected mean-shift and cancel. Mini-batch estimates can still be noisy; this is an equilibrium in expectation. The converse direction is addressed later.</aside>
+      </section>
+
+      <!-- 13 — TRAINING LOOP -->
+      <section>
+        <div class="slide-pad loss-only-slide">
+          <div class="eyebrow orange">The complete objective</div>
+          <div class="loss-equation-stage">
+            <div class="loss-definition-row">
+              <div class="loss-definition loss-prediction">
+                <span class="math display" data-tex="\color{#df642f}{x=f_\theta(\epsilon)}"></span>
+              </div>
+              <div class="loss-definition loss-target fragment" data-fragment-index="0">
+                <span class="math display" data-tex="\color{#6a48d7}{y}=\operatorname{sg}\!\left[\color{#df642f}{x}+\color{#6a48d7}{V_{X^+,X^-}(x)}\right]"></span>
+              </div>
+            </div>
+            <div class="loss-equation-arrow fragment" data-fragment-index="1"><i></i></div>
+            <div class="loss-main-equation fragment" data-fragment-index="1">
+              <span class="math display" data-tex="\mathcal L(\theta)=\mathbb E_{\substack{\epsilon\sim p_\epsilon,\;X^+\sim p\\X^-\sim q_\theta}}\!\left[\left\|\color{#df642f}{x}-\color{#6a48d7}{y}\right\|_2^2\right]"></span>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">Let the notation build itself. First x is the generator prediction. Then y is the stopped drift target, with x in orange and the drift target in violet. Finally those same colors reappear in the full squared regression objective, whose expectation samples epsilon, positives from p, and negatives from the current q theta.</aside>
+      </section>
+
+      <!-- 14 — CHASING A MOVING TARGET -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow violet">A fixed-point solver in disguise</div>
+          <h2>The target moves—<span class="violet">until it does not.</span></h2>
+          <div class="fixedpoint-stage">
+            <canvas id="fixedpoint-demo"></canvas>
+            <div class="fixedpoint-legend"><span><i class="pred-key"></i>prediction</span><span><i class="target-key"></i>frozen target</span></div>
+            <div class="drift-distance"><span>target gap</span><b>‖V‖</b><i></i></div>
+          </div>
+          <div class="fixedpoint-bottom">
+            <div class="loss-identity fragment" data-fragment-index="0"><span>value</span><b>ℒ = ‖V‖²</b></div>
+            <div class="fixedpoint-eq fragment" data-fragment-index="1"><span class="math display" data-tex="f_{\theta^*}(\epsilon)=f_{\theta^*}(\epsilon)+V_{p,q_{\theta^*}}"></span><b>fixed point</b></div>
+          </div>
+        </div>
+        <aside class="notes">Each column is a later optimizer iteration. The generator moves toward the target built at that iteration; then q changes and a new target is computed. The gap is exactly the drift magnitude. At the fixed point the target no longer moves because V is zero.</aside>
+      </section>
+
+      <!-- 15 — DIVIDER -->
+      <section class="statement-slide" data-background-color="#e7ebef">
+        <div class="slide-pad statement-wrap">
+          <div class="section-num">§ II</div>
+          <h1>Watch the <span class="orange">map</span> learn.</h1>
+          <p class="statement-note">3 tiny MLPs · real MPS training · fixed probe noises</p>
+        </div>
+      </section>
+
+      <!-- 16 — THREE RUNS -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow orange">Same target · three hard starts</div>
+          <h2>Different beginnings. <span class="blue">Same equilibrium.</span></h2>
+          <div class="trajectory-grid" data-animate="trajectories">
+            <div class="trajectory-panel" data-run="between"><canvas></canvas><span>between modes</span></div>
+            <div class="trajectory-panel" data-run="far"><canvas></canvas><span>far away</span></div>
+            <div class="trajectory-panel" data-run="collapsed"><canvas></canvas><span>collapsed</span></div>
+          </div>
+          <div class="trajectory-scrub"><i></i><span>step <b>0</b> / 1800</span></div>
+        </div>
+        <aside class="notes">These are not hand-authored particle paths. Each panel is a trained MLP evaluated on the same 180 fixed noise vectors over 37 checkpoints. Blue is the fixed target; orange is the learned pushforward.</aside>
+      </section>
+
+      <!-- 17 — COLLAPSE RECOVERY -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow orange">Zoom in · collapsed start</div>
+          <h2>An empty mode still <span class="blue">pulls</span>.</h2>
+          <div class="collapse-layout">
+            <div class="collapse-canvas-wrap"><canvas id="collapse-detail"></canvas></div>
+            <div class="coverage-gauge">
+              <div class="gauge-title">mass by side</div>
+              <div class="gauge-bar"><i></i><b></b></div>
+              <div class="gauge-labels"><span>left <b>100%</b></span><span>right <b>0%</b></span></div>
+              <div class="mode-mini"><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">At the start all probe outputs sit on the left. With a sufficiently broad early kernel, positives in the missing mode contribute attraction. Small differences between probe outputs are amplified until the generator covers both sides.</aside>
+      </section>
+
+      <!-- 18 — FEATURE SPACE WHY -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow blue">The kernel inherits its geometry</div>
+          <h2>A kernel is only as good as its <span class="blue">distance</span>.</h2>
+          <div class="feature-distance-stage">
+            <canvas id="feature-distance-demo"></canvas>
+            <div class="geometry-label pixel-geometry"><b>pixels</b><span>everything looks far</span><em>k ≈ 0</em></div>
+            <div class="geometry-portal">φ<i></i></div>
+            <div class="geometry-label semantic-geometry"><b>features</b><span>meaning forms neighborhoods</span><em>useful V</em></div>
+            <div class="feature-geometry-step fragment" data-fragment-index="0"></div>
+            <div class="photo-credit">real photographs · Wikimedia Commons</div>
+          </div>
+        </div>
+        <aside class="notes">In raw high-dimensional pixels, nearly every image is far from every other image. The exponential kernel then becomes almost flat at zero and provides little drift. A semantic encoder bends the geometry so related samples become neighbors and receive useful weights.</aside>
+      </section>
+
+      <!-- 19 — FEATURE PIPELINE -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow blue">The encoder shapes the loss—not the sampler</div>
+          <h2>A large training graph. <span class="green">A small inference graph.</span></h2>
+          <div class="graph-compare">
+            <div class="training-graph">
+              <div class="graph-tag">training</div>
+              <div class="graph-node noise-graph">ε</div><i class="graph-edge"></i>
+              <div class="graph-node gen-graph"><span class="symbol">f<sub>θ</sub></span></div><i class="graph-edge"></i>
+              <div class="graph-node latent-graph">latent x</div><i class="graph-edge fragment" data-fragment-index="0"></i>
+              <div class="graph-node decode-graph fragment" data-fragment-index="0">decoder D</div><i class="graph-edge fragment" data-fragment-index="1"></i>
+              <div class="graph-node pixels-graph fragment" data-fragment-index="1"><div class="tiny-scene"></div></div><i class="graph-edge fragment" data-fragment-index="2"></i>
+              <div class="graph-node encoder-graph fragment" data-fragment-index="2">φ<em>pretrained</em><b>frozen weights</b></div>
+              <div class="multiscale-loss fragment" data-fragment-index="3"><div><i></i><i></i><i></i></div><strong>Σ<sub>j</sub> drift(φ<sub>j</sub>)</strong></div>
+              <div class="backprop-ribbon fragment" data-fragment-index="4"><i></i><span>gradient passes through D and φ to θ</span></div>
+            </div>
+            <div class="inference-graph fragment" data-fragment-index="5">
+              <div class="graph-tag green-tag">inference</div>
+              <div class="infer-chain"><span>ε</span><i></i><b><span class="symbol">f<sub>θ</sub></span></b><i></i><strong>latent</strong><i></i><em>D</em><i></i><span class="image-output"><u></u></span></div>
+              <div class="removed-encoder"><s>φ</s><b>gone</b></div>
+              <div class="infer-chip">1 generator NFE</div>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">For latent ImageNet generation, the model output is decoded and passed through a pretrained feature encoder. Drifting losses are summed across scales and locations. The encoder weights stay fixed, but gradients pass through its operations and the decoder into theta. At inference the feature encoder and drifting loss disappear; the decoder remains to turn the latent into pixels.</aside>
+      </section>
+
+      <!-- 20 — BENCHMARK -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow green">The payoff</div>
+          <h2>One evaluation. Competitive quality.</h2>
+          <div class="nfe-plot" data-animate="nfe-plot">
+            <svg id="nfe-chart" viewBox="0 0 1500 660"></svg>
+            <div class="nfe-hero"><b>1.54</b><span>FID · 1 NFE</span></div>
+          </div>
+        </div>
+        <aside class="notes">The chart contrasts selected system-level results from the paper. Drifting L/2 is 1.54 FID at one NFE, trained from scratch. Multi-step systems may still reach lower FID, but require tens to hundreds of evaluations.</aside>
+      </section>
+
+      <!-- 21 — BATCH SIZE -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow blue">The field is a mini-batch estimate</div>
+          <h2>More votes. <span class="blue">Less vector noise.</span></h2>
+          <div class="estimator-stage">
+            <canvas id="estimator-demo"></canvas>
+            <div class="estimator-labels"><span>N<sub>pos</sub> = 1</span><span>N<sub>pos</sub> = 16</span><span>N<sub>pos</sub> = 64</span></div>
+            <div class="true-vector-key"><i></i><span>population direction</span></div>
+          </div>
+          <div class="estimator-result fragment" data-fragment-index="0">
+            <div><span>N<sub>pos</sub></span><b>1</b><i></i><b>16</b><i></i><b>64</b></div>
+            <div><span>FID ↓</span><b>20.43</b><i></i><b>10.39</b><i></i><strong>8.46</strong></div>
+          </div>
+        </div>
+        <aside class="notes">Each faint arrow is the field estimate from a different random mini-batch; the dark arrow is the population direction. With more positives and negatives, estimates concentrate. Under the paper's fixed compute budget, increasing positive samples from 1 to 16 to 64 improves FID from 20.43 to 10.39 to 8.46.</aside>
+      </section>
+
+      <!-- 22 — POSITIVE MINING -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow orange">Positive mining · portability bottleneck</div>
+          <h2>A class label quietly defines <span class="orange">attraction</span>.</h2>
+          <div class="positive-mining-story">
+            <div class="class-mining-card">
+              <div class="mining-card-tag">ImageNet · easy relation</div>
+              <div class="mining-query">
+                <b>x</b><span>c = bird</span>
+              </div>
+              <div class="mining-arrow"><i></i><span>mine inside c</span></div>
+              <div class="same-class-pool fragment" data-fragment-index="0">
+                <figure><img src="assets/images/robin.jpg" alt="Robin"><i></i></figure>
+                <figure><img src="assets/images/sparrow.jpg" alt="Sparrow"><i></i></figure>
+                <figure><img src="assets/images/robin-2.jpg" alt="Robin"><i></i></figure>
+                <figure><img src="assets/images/blue-jay.jpg" alt="Blue jay"><i></i></figure>
+                <strong>positive pool</strong>
+              </div>
+              <div class="positive-sampling fragment" data-fragment-index="1"><span class="math display" data-tex="y^+_{1:N_{\mathrm{pos}}}\sim p_{\mathrm{data}}(\cdot\mid c)"></span></div>
+            </div>
+
+            <div class="modality-mining-card fragment" data-fragment-index="2">
+              <div class="mining-card-tag">new modality · missing relation</div>
+              <div class="modality-icons">
+                <div class="audio-modality">
+                  <svg class="modality-icon-svg" viewBox="0 0 180 105" aria-hidden="true"><path class="audio-wave" d="M8 54 C18 54 18 27 28 27 S38 81 48 81 S58 15 68 15 S78 91 88 91 S98 23 108 23 S118 76 128 76 S138 37 148 37 S158 54 172 54"></path><line class="audio-baseline" x1="8" y1="54" x2="172" y2="54"></line><line class="audio-playhead" x1="24" y1="10" x2="24" y2="96"></line></svg>
+                  <span>audio</span>
+                </div>
+                <div class="molecule-modality">
+                  <svg class="modality-icon-svg" viewBox="0 0 180 105" aria-hidden="true"><g class="molecule-bonds"><line x1="34" y1="65" x2="76" y2="38"></line><line x1="76" y1="38" x2="116" y2="67"></line><line x1="116" y1="67" x2="151" y2="31"></line><line x1="76" y1="38" x2="84" y2="88"></line></g><g class="molecule-atoms"><circle cx="34" cy="65" r="15"></circle><circle cx="76" cy="38" r="18"></circle><circle cx="116" cy="67" r="16"></circle><circle cx="151" cy="31" r="13"></circle><circle cx="84" cy="88" r="11"></circle></g></svg>
+                  <span>molecule</span>
+                </div>
+                <div class="trajectory-modality">
+                  <svg class="modality-icon-svg" viewBox="0 0 180 105" aria-hidden="true"><path class="trajectory-path" d="M18 82 C40 18 72 94 101 48 C122 15 143 29 163 18"></path><circle class="trajectory-start" cx="18" cy="82" r="10"></circle><circle class="trajectory-end" cx="163" cy="18" r="12"></circle><circle class="trajectory-traveler" r="7"><animateMotion dur="3.2s" repeatCount="indefinite" path="M18 82 C40 18 72 94 101 48 C122 15 143 29 163 18"></animateMotion></circle></svg>
+                  <span>trajectory</span>
+                </div>
+              </div>
+              <div class="ambiguous-positive"><b>x</b><i></i><i></i><i></i><strong>?</strong></div>
+              <div class="modality-question">which samples should attract?</div>
+            </div>
+          </div>
+          <div class="positive-portability fragment" data-fragment-index="3">
+            <span>to transfer the conditional recipe, define the positive relation</span>
+            <b>labels</b><b>retrieval</b><b>learned metric</b>
+          </div>
+        </div>
+        <aside class="notes">For class-conditional ImageNet training, the paper draws N-pos real positives from the same class as c. The label supplies the semantic neighborhood for free, and the ablation shows that more positives materially improve FID. In another modality the condition may be continuous, compositional, or weakly labeled, so “same class” may not define a useful pool. The general drifting framework is broader than labels, but transferring this strong conditional recipe requires designing an analogous positive relation—through labels, retrieval, or a learned metric. That extra design and supervision is a real portability cost.</aside>
+      </section>
+
+      <!-- 23 — CAVEATS -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow orange">Keep the theorem honest</div>
+          <h2><span class="green">One direction</span> is guaranteed.</h2>
+          <div class="logic-stage">
+            <div class="logic-card guaranteed">
+              <span class="math display" data-tex="p=q"></span><i></i><span class="math display" data-tex="V=0"></span>
+              <b>by anti-symmetry</b>
+            </div>
+            <div class="logic-card open fragment" data-fragment-index="0">
+              <span class="math display" data-tex="V\approx0"></span><i></i><span class="math display" data-tex="p\approx q"></span>
+              <b>needs conditions</b>
+            </div>
+          </div>
+          <div class="open-chips fragment" data-fragment-index="1">
+            <span>kernel</span><span>features</span><span>batch estimate</span><span>identifiability</span>
+          </div>
+        </div>
+        <aside class="notes">The paper proves the forward implication for anti-symmetric fields. The converse is false for arbitrary fields; the kernelized construction receives an identifiability heuristic under non-degeneracy assumptions. Feature choice and kernel design remain major open variables.</aside>
+      </section>
+
+      <!-- 24 — PAPER TITLE -->
+      <section class="paper-title-section" data-background-color="#e7ebef">
+        <div class="slide-pad paper-title-layout">
+          <div class="paper-title-copy">
+            <div class="paper-title-kicker"><span>Our paper</span><b>Part II</b></div>
+            <h1>Generative Drifting is <span class="paper-title-highlight">Secretly Score Matching</span></h1>
+            <p class="serif-lede">A spectral and variational perspective.</p>
+            <div class="paper-title-meta">
+              <div class="paper-authors">Erkan Turan · Nicolas Dufour · Maks Ovsjanikov</div>
+              <a class="paper-link" href="https://arxiv.org/abs/2603.09936">arXiv:2603.09936 <span>↗</span></a>
+            </div>
+          </div>
+          <div class="paper-title-stage">
+            <div class="paper-title-stage-head"><span>The hidden field</span><b>data score − model score</b></div>
+            <canvas id="paper-title-field" aria-label="Two score fields combining into a drift field"></canvas>
+            <div class="paper-title-key">
+              <span><i class="data-dot"></i> score of data</span>
+              <span><i class="gen-dot"></i> score of model</span>
+              <span><i class="paper-violet-dot"></i> drift</span>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">The tutorial has explained how drifting works. Now pivot to what it means. Our paper starts from one identity: for a Gaussian kernel, the drift is exactly the difference between two smoothed scores. That identity answers the open questions we just encountered.</aside>
+      </section>
+
+      <!-- 25 — FOUR QUESTIONS -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow violet">What this paper resolves</div>
+          <h2>One principle <span class="violet">unlocks the paper.</span></h2>
+          <div class="paper-question-map">
+            <div class="question-principle">
+              <span>the design question</span>
+              <strong>Which mismatch does the drift decrease?</strong>
+            </div>
+            <div class="question-connector" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div class="question-cards">
+              <article class="question-card identity-question">
+                <div><b>01</b><span>identity</span></div>
+                <h3>Does zero drift mean <em>p = q</em>?</h3>
+                <div class="question-card-visual identity-visual" aria-hidden="true"><i></i><b>=</b><i></i></div>
+                <strong>identify</strong>
+              </article>
+              <article class="question-card spectrum-question">
+                <div><b>02</b><span>spectrum</span></div>
+                <h3>Which scales does the kernel learn first?</h3>
+                <div class="question-card-visual spectrum-visual" aria-hidden="true"><i></i><i></i><i></i></div>
+                <strong>schedule</strong>
+              </article>
+              <article class="question-card gradient-question">
+                <div><b>03</b><span>optimization</span></div>
+                <h3>Why must the drift target stay frozen?</h3>
+                <div class="question-card-visual gradient-visual" aria-hidden="true"><i></i><b></b><span></span></div>
+                <strong>freeze</strong>
+              </article>
+              <article class="question-card operator-question">
+                <div><b>04</b><span>operator design</span></div>
+                <h3>How do we build a correct new drift?</h3>
+                <div class="question-card-visual operator-visual" aria-hidden="true"><i></i><b>→</b><i></i><b>→</b><i></i></div>
+                <strong>design</strong>
+              </article>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">Use this visual map for the paper section. One design question connects the four parts: which distribution mismatch does the drift decrease? That principle lets us identify the fixed point, understand which scales learn first, explain why the target must stay frozen, and derive new drift operators.</aside>
+      </section>
+
+      <!-- 26 — WHY GAUSSIAN? -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow orange">Kernel choice · reopen the obvious candidate</div>
+          <h2>Why not use a <span class="blue">Gaussian kernel</span>?</h2>
+          <div class="gaussian-question-layout">
+            <div class="gaussian-kernel-intro-card">
+              <canvas id="gaussian-kernel-intro-demo"></canvas>
+              <div class="gaussian-kernel-equation">
+                <span>Gaussian kernel</span>
+                <div class="math display" data-tex="k_\sigma(x,y)=\exp\!\left(-\frac{\|x-y\|^2}{2\sigma^2}\right)"></div>
+              </div>
+              <div class="gaussian-intro-legend"><i></i><span>same probe x</span><b>weight fades smoothly with distance</b></div>
+              <div class="gaussian-intro-step fragment" data-gaussian-intro-step="weights" data-fragment-index="0"></div>
+              <div class="gaussian-intro-step fragment" data-gaussian-intro-step="theorem" data-fragment-index="1"></div>
+              <div class="gaussian-intro-step fragment" data-gaussian-intro-step="clue" data-fragment-index="2"></div>
+            </div>
+            <div class="gaussian-question-story">
+              <div class="kernel-history-card">
+                <span>original drifting paper</span>
+                <b>Laplacian kernel</b>
+                <div class="math display" data-tex="k_\tau(x,y)=e^{-\|x-y\|/\tau}"></div>
+                <p>Best empirically—but selected by experiments.</p>
+              </div>
+              <div class="gaussian-properties fragment" data-fragment-index="0">
+                <span>Gaussian gives us</span><b>smooth weights</b><b>closed form</b><b>no information erased</b>
+              </div>
+              <div class="gaussian-theorem fragment" data-fragment-index="1">
+                <span>and a theorem</span>
+                <div class="math display" data-tex="V_{p,q}^{(\sigma)}=0\quad\Longrightarrow\quad p=q"></div>
+                <small>for every fixed <span class="math" data-tex="\sigma>0"></span></small>
+              </div>
+              <div class="gaussian-clue fragment" data-fragment-index="2">
+                <span>why can we prove it?</span>
+                <strong>The Gaussian drift has a hidden <b>score-matching</b> form.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">The original model preferred a Laplacian kernel empirically. We ask the most natural alternative: what if the neighborhood were Gaussian? It is smooth, analytically convenient, and—most importantly—we can prove identifiability: if the Gaussian drift vanishes everywhere, the two distributions are equal. The reason is not merely that Gaussians are nice. The resulting drift turns out to be an exact difference of smoothed scores.</aside>
+      </section>
+
+      <!-- 27 — GAUSSIAN BLUR -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow blue">Step 1 · turn samples into a density</div>
+          <h2>One point → one Gaussian bump. <span class="blue">Add them up.</span></h2>
+          <div class="gaussian-blur-card">
+            <canvas id="gaussian-blur-demo"></canvas>
+            <div class="blur-stage-label samples-label">samples from p</div>
+            <div class="blur-stage-label bumps-label fragment" data-fragment-index="0">one bump per sample</div>
+            <div class="blur-stage-label density-label fragment" data-fragment-index="1">their sum: p<sub>σ</sub></div>
+            <div class="gaussian-blur-step fragment" data-gaussian-blur-step="bumps" data-fragment-index="0"></div>
+            <div class="gaussian-blur-step fragment" data-gaussian-blur-step="sum" data-fragment-index="1"></div>
+          </div>
+          <div class="gaussian-blur-bottom">
+            <div class="blur-definition fragment" data-fragment-index="1"><span>Gaussian-smoothed data density</span><b class="math" data-tex="p_\sigma(x)=\mathbb E_{y\sim p}\!\left[\phi_\sigma(x-y)\right]"></b></div>
+            <div class="blur-repeat fragment" data-fragment-index="2"><span>same recipe for generated samples</span><b class="math orange" data-tex="q_\sigma(x)=\mathbb E_{y\sim q}\!\left[\phi_\sigma(x-y)\right]"></b></div>
+          </div>
+        </div>
+        <aside class="notes">Start with only the data distribution. Replace every data sample by a Gaussian bump of bandwidth sigma. Adding those bumps gives p-sigma, the Gaussian-blurred data density. Nothing about scores yet. The exact same construction applied to generated samples gives q-sigma. These are simply the two kernel density estimates already hiding in the drifting denominators.</aside>
+      </section>
+
+      <!-- 28 — ONE MEAN-SHIFT TERM IS ONE SCORE -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow blue">Step 2 · read the attractive drift</div>
+          <h2>The same Gaussian gives a <span class="blue">height</span> and a <span class="violet">slope</span>.</h2>
+          <div class="single-score-layout">
+            <div class="single-score-visual">
+              <canvas id="gaussian-single-score-demo"></canvas>
+              <div class="single-score-step fragment" data-single-score-step="height" data-fragment-index="0"></div>
+              <div class="single-score-step fragment" data-single-score-step="slope" data-fragment-index="1"></div>
+              <div class="single-score-step fragment" data-single-score-step="ratio" data-fragment-index="2"></div>
+            </div>
+            <div class="single-score-story">
+              <div class="single-score-start">
+                <span>attraction toward data</span>
+                <div class="math display" data-tex="V_p^+(x)=\frac{\mathbb E_p[\phi_\sigma(x-y)(y-x)]}{\mathbb E_p[\phi_\sigma(x-y)]}"></div>
+              </div>
+              <div class="single-score-part height-part fragment" data-fragment-index="0"><b>denominator = height</b><span class="math" data-tex="\mathbb E_p[\phi_\sigma]=p_\sigma(x)"></span></div>
+              <div class="single-score-part slope-part fragment" data-fragment-index="1"><b>numerator = slope</b><span class="math" data-tex="\mathbb E_{y\sim p}\!\left[(y-x)\phi_\sigma(x-y)\right]=\sigma^2\nabla p_\sigma(x)"></span><small class="math" data-tex="\nabla_x\phi_\sigma(x-y)=\frac{y-x}{\sigma^2}\phi_\sigma(x-y)"></small></div>
+              <div class="single-score-payoff fragment" data-fragment-index="2"><b>slope ÷ height = score</b><span class="math" data-tex="V_p^+(x)=\sigma^2\frac{\nabla p_\sigma(x)}{p_\sigma(x)}=\sigma^2\nabla\log p_\sigma(x)"></span></div>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">Now inspect one half of the drift: attraction toward data. Its denominator is exactly the height of the blurred density p-sigma at x. For a Gaussian, displacement times weight is the derivative of the same Gaussian bump. After averaging, the numerator is sigma-squared times the slope of p-sigma. Divide slope by height and we obtain the log-density slope—the score. So one Gaussian mean-shift term is exactly one smoothed score.</aside>
+      </section>
+
+      <!-- 29 — SUBTRACT THE TWO SCORES -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow violet">Step 3 · repeat for q, then subtract</div>
+          <h2>One blue score. One orange score. <span class="violet">Their difference is the drift.</span></h2>
+          <div class="score-subtraction-card">
+            <canvas id="score-subtraction-demo"></canvas>
+            <div class="score-subtraction-step fragment" data-score-subtraction-step="data" data-fragment-index="0"></div>
+            <div class="score-subtraction-step fragment" data-score-subtraction-step="model" data-fragment-index="1"></div>
+            <div class="score-subtraction-step fragment" data-score-subtraction-step="drift" data-fragment-index="2"></div>
+          </div>
+          <div class="score-subtraction-equations">
+            <div class="fragment" data-fragment-index="0"><b class="blue">data attraction</b><span class="math" data-tex="V_p^+=\sigma^2\nabla\log p_\sigma"></span></div>
+            <div class="fragment" data-fragment-index="1"><b class="orange">model mean shift</b><span class="math" data-tex="V_q^-=\sigma^2\nabla\log q_\sigma"></span></div>
+            <div class="score-subtraction-result fragment" data-fragment-index="2"><b>drift = attraction − model shift</b><span class="math" data-tex="V_{p,q}^{(\sigma)}=\sigma^2\!\left(\nabla\log p_\sigma-\nabla\log q_\sigma\right)"></span></div>
+          </div>
+        </div>
+        <aside class="notes">The second half is identical: apply the same Gaussian calculation to generated samples and obtain the score of q-sigma. The drifting operator was defined as data attraction minus the model mean shift. Therefore the full drift is sigma-squared times the data score minus the model score. This is the score-matching connection in one line, after deriving each term separately.</aside>
+      </section>
+
+      <!-- 30 — THE SCORE-MATCHING LINK -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow violet">What “score matching” means here</div>
+          <h2>Same score object. <span class="violet">A different job in the pipeline.</span></h2>
+          <div class="score-link-compare">
+            <article class="score-link-column standard-score-column fragment" data-fragment-index="0">
+              <div class="score-link-heading"><span>diffusion / score models</span><b>learn a score field</b></div>
+              <div class="score-link-pipeline">
+                <div class="score-node data-node">data<br><span>x</span></div><i></i>
+                <div class="score-node noise-node">Gaussian<br><span>noise σ</span></div><i></i>
+                <div class="score-node network-node">network<br><span>s<sub>ψ</sub>(x,σ)</span></div>
+              </div>
+              <div class="score-link-equation"><span>training target</span><b class="math" data-tex="s_\psi(x,\sigma)\approx\nabla\log p_\sigma(x)"></b></div>
+              <div class="score-link-inference slow-inference"><span>sampling</span><b>evaluate the learned field repeatedly</b><em>many steps</em></div>
+            </article>
+            <article class="score-link-column drifting-score-column fragment" data-fragment-index="1">
+              <div class="score-link-heading"><span>Gaussian drifting</span><b>compute a score residual</b></div>
+              <div class="drifting-score-inputs">
+                <div><i class="data-dot"></i><b>data p</b></div><div><i class="gen-dot"></i><b>model q</b></div>
+              </div>
+              <div class="score-link-pipeline drifting-score-pipeline">
+                <div class="score-node blur-node">Gaussian<br><span>blur p and q</span></div><i></i>
+                <div class="score-node subtract-node">subtract<br><span>scores</span></div><i></i>
+                <div class="score-node generator-node">update<br><span>f<sub>θ</sub></span></div>
+              </div>
+              <div class="score-link-equation exact-equation"><span>population identity · blue data score minus orange model score</span><b class="math" data-tex="\frac{V_{p,q}^{(\sigma)}}{\sigma^2}=\color{#2f6fe0}{\nabla\log p_\sigma}-\color{#df642f}{\nabla\log q_\sigma}"></b></div>
+              <div class="score-link-inference fast-inference"><span>sampling</span><b class="math" data-tex="\varepsilon\longmapsto f_\theta(\varepsilon)\longmapsto x"></b><em>one call</em></div>
+            </article>
+          </div>
+          <div class="score-link-bottom fragment" data-fragment-index="2">
+            <div><span>shared principle</span><strong>smoothed scores tell probability mass where to move</strong></div>
+            <i></i>
+            <div><span>crucial difference</span><strong>drifting uses the score residual only during training</strong></div>
+          </div>
+          <div class="score-identifiability fragment" data-fragment-index="3">
+            <span class="math" data-tex="V=0"></span><i></i><span>equal smoothed scores</span><i></i><span class="math" data-tex="p_\sigma=q_\sigma"></span><i></i><strong class="math" data-tex="p=q"></strong>
+          </div>
+        </div>
+        <aside class="notes">Standard score models parameterize a vector field and train a network to approximate the data score. Sampling then repeatedly evaluates that learned field. Gaussian drifting uses the same mathematical object in a different place. The data batch gives a non-parametric score of p-sigma; the generated batch gives a non-parametric score of q-sigma; the kernel drift is their exact residual. That residual updates the sampler during training. At inference the scores disappear and only f-theta remains. This also explains identifiability: zero residual means equal smoothed scores, hence equal smoothed densities, and Gaussian convolution is injective, so p equals q.</aside>
+      </section>
+
+      <!-- 31 — NUMERICAL VERIFICATION -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow green">Sanity check · four-mode Gaussian mixture</div>
+          <h2>Two derivations. <span class="green">The same arrows.</span></h2>
+          <div class="paper-figure-card identity-figure-card">
+            <img src="assets/paper/figures/score_matching.png" alt="Empirical kernel drift and analytical score difference agree on a four-mode Gaussian mixture">
+            <div class="identity-figure-scan" aria-hidden="true"></div>
+          </div>
+        </div>
+        <aside class="notes">This is a numerical confirmation, not the proof. On the same p and q, the Monte Carlo kernel field and the closed-form score residual coincide. The rightmost panel magnifies the small finite-sample error.</aside>
+      </section>
+
+      <!-- 32 — IDENTIFIABILITY -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow blue">Identifiability · part 1 of 2</div>
+          <h2>Zero drift makes the <span class="violet">log-density ratio flat.</span></h2>
+          <div class="ratio-proof-layout">
+            <div class="ratio-proof-card">
+              <canvas id="ratio-flat-demo"></canvas>
+              <div class="ratio-proof-step fragment" data-ratio-proof-step="flat" data-fragment-index="0"></div>
+              <div class="ratio-proof-step fragment" data-ratio-proof-step="constant" data-fragment-index="1"></div>
+              <div class="ratio-proof-step fragment" data-ratio-proof-step="normalize" data-fragment-index="2"></div>
+            </div>
+            <div class="ratio-proof-story">
+              <div class="ratio-identity">
+                <span>the identity we just proved</span>
+                <div class="math display" data-tex="\frac{V_{p,q}^{(\sigma)}}{\sigma^2}=\nabla\log\frac{p_\sigma}{q_\sigma}"></div>
+              </div>
+              <div class="ratio-story-step fragment" data-fragment-index="0">
+                <b>① zero drift means zero slope</b>
+                <span class="math" data-tex="V=0\quad\Longrightarrow\quad\nabla\log(p_\sigma/q_\sigma)=0"></span>
+              </div>
+              <div class="ratio-story-step fragment" data-fragment-index="1">
+                <b>② a flat ratio can still be a constant</b>
+                <span class="math" data-tex="\log(p_\sigma/q_\sigma)=\log C\quad\Longrightarrow\quad p_\sigma=Cq_\sigma"></span>
+              </div>
+              <div class="ratio-story-step ratio-normalize fragment" data-fragment-index="2">
+                <b>③ but both curves contain one unit of mass</b>
+                <span class="math" data-tex="1=\int p_\sigma=C\int q_\sigma=C"></span>
+                <strong class="math" data-tex="C=1\quad\Longrightarrow\quad p_\sigma=q_\sigma"></strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">There is a small but important step hidden in the phrase “equal scores.” The drift is the gradient of the log-density ratio. If it vanishes, that ratio has no slope, so p-sigma can only be a constant multiple of q-sigma. The constant is not arbitrary: both are probability densities and integrate to one. Therefore the constant is one and the two blurred densities are identical.</aside>
+      </section>
+
+      <!-- 33 — GAUSSIAN INJECTIVITY -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow blue">Identifiability · the last step</div>
+          <h2>Gaussian blur shrinks. <span class="blue">It never erases.</span></h2>
+          <div class="injectivity-card">
+            <canvas id="gaussian-injectivity-demo"></canvas>
+          </div>
+          <div class="injectivity-punchline injectivity-proof-step fragment" data-fragment-index="0">
+            <span class="math" data-tex="p_\sigma-q_\sigma=0"></span>
+            <i>⇒</i>
+            <span class="math" data-tex="p-q=0"></span>
+            <i>⇒</i>
+            <strong class="math" data-tex="p=q"></strong>
+          </div>
+        </div>
+        <aside class="notes">Assume p and q still differ. Gaussian blur can make that difference tiny, but its multiplier is always positive, so the difference cannot disappear exactly. Yet the previous slide proved that the blurred difference is exactly zero. Therefore the original difference is zero and p equals q. Keep the Fourier statement in the paper.</aside>
+      </section>
+
+      <!-- 34 — ERROR SCALES -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow violet">Kernel choice · near the solution</div>
+          <h2>The model can be wrong at <span class="violet">several scales.</span></h2>
+          <div class="spectral-mode-card scale-error-card">
+            <canvas id="spectral-modes-demo"></canvas>
+            <div class="spectral-step fragment" data-spectral-step="decompose" data-fragment-index="0"></div>
+            <div class="spectral-step fragment" data-spectral-step="clocks" data-fragment-index="1"></div>
+          </div>
+          <div class="scale-story-row">
+            <div class="fragment" data-fragment-index="0"><b class="blue">coarse shape</b><span>mass in the wrong region</span></div>
+            <div class="fragment" data-fragment-index="0"><b class="violet">medium structure</b><span>parts or modes misplaced</span></div>
+            <div class="fragment" data-fragment-index="0"><b class="orange">fine detail</b><span>edges and texture remain</span></div>
+            <div class="scale-clock-payoff fragment" data-fragment-index="1"><b>one clock per scale</b><span class="math" data-tex="\widehat\delta_k(t)=\widehat\delta_k(0)e^{-\lambda_\kappa(k)t}"></span></div>
+          </div>
+        </div>
+        <aside class="notes">Near the solution, the remaining difference between model and data is a mixture of broad shape errors, medium structural errors, and fine detail errors. Fourier analysis is just a way to watch one such scale at a time. In the paper's local linearized analysis, every scale decays with its own clock. The kernel chooses those clock speeds.</aside>
+      </section>
+
+      <!-- 35 — FIXED GAUSSIAN WINDOW -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow orange">Identifiable does not mean fast</div>
+          <h2>A fixed Gaussian hears <span class="orange">one band clearly.</span></h2>
+          <div class="kernel-spectrum-card kernel-window-card">
+            <canvas id="kernel-spectrum-demo"></canvas>
+            <div class="spectrum-step fragment" data-spectrum-step="window" data-fragment-index="0"></div>
+            <div class="spectrum-step fragment" data-spectrum-step="fine" data-fragment-index="1"></div>
+            <div class="spectrum-step fragment" data-spectrum-step="laplacian" data-fragment-index="2"></div>
+          </div>
+          <div class="kernel-window-story">
+            <div class="fragment" data-fragment-index="0"><b>fastest band</b><span class="math" data-tex="k^\star=\sqrt{2}/\sigma"></span><small>the update rate peaks here</small></div>
+            <div class="kernel-bottleneck fragment" data-fragment-index="1"><b>fine modes</b><span>still visible, but the update is exponentially tiny</span><small>practically frozen</small></div>
+            <div class="kernel-laplacian-note fragment" data-fragment-index="2"><b>why Laplacian helped</b><span>its heavier spectral tail keeps fine modes louder</span><small>polynomial slowdown</small></div>
+          </div>
+        </div>
+        <aside class="notes">This resolves the apparent contradiction with injectivity. A Gaussian multiplier is never zero, so no information is erased. But the learning rate is not the multiplier alone: it is proportional to sigma squared k squared times the Gaussian spectrum. That creates a band-pass learning window peaking at square-root-two over sigma. Frequencies far above the window receive an exponentially weak update. The Laplacian kernel has a heavier spectral tail, which helps explain its empirical strength.</aside>
+      </section>
+
+      <!-- 36 — ANNEALING WINDOW -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow orange">The fix · move the sweet spot</div>
+          <h2>Start wide. Shrink σ. <span class="orange">Reveal finer errors.</span></h2>
+          <div class="annealing-card annealing-window-card">
+            <canvas id="annealing-demo"></canvas>
+            <div class="anneal-step fragment" data-anneal-step="medium" data-fragment-index="0"></div>
+            <div class="anneal-step fragment" data-anneal-step="fine" data-fragment-index="1"></div>
+          </div>
+          <div class="anneal-scale-row">
+            <div class="active"><b>large σ</b><span>global shape</span></div>
+            <i></i>
+            <div class="fragment" data-fragment-index="0"><b>medium σ</b><span>parts and modes</span></div>
+            <i class="fragment" data-fragment-index="1"></i>
+            <div class="fragment" data-fragment-index="1"><b>small σ</b><span>edges and texture</span></div>
+            <strong class="fragment" data-fragment-index="2"><span class="math" data-tex="\sigma(t)=\max(\sigma_{\min},\sigma_0e^{-rt})"></span><small>every scale gets a turn</small></strong>
+          </div>
+        </div>
+        <aside class="notes">Sigma is a scale knob. A large bandwidth places the fastest-learning window at coarse frequencies. Lower sigma moves the window right, toward finer frequencies. Exponentially shrinking sigma makes the best-heard frequency grow exponentially, so equal time is spent per octave. In practice the schedule stops at a positive sigma-min chosen for the finest desired resolution.</aside>
+      </section>
+
+      <!-- 37 — ANNEALING EVIDENCE -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow green">Prediction confirmed · local spectral experiment</div>
+          <h2>The sweep removes the <span class="green">high-frequency wall.</span></h2>
+          <div class="spectral-evidence-card">
+            <img src="assets/paper/figures/spectral_validation.png" alt="Convergence time, annealing schedules, and total spectral error validate exponential bandwidth annealing">
+            <div class="evidence-focus fixed-focus fragment" data-fragment-index="0"><b>fixed Gaussian</b><span>time explodes with frequency</span></div>
+            <div class="evidence-focus schedule-focus fragment" data-fragment-index="1"><b>exponential schedule</b><span>moves through scales early</span></div>
+            <div class="evidence-focus error-focus fragment" data-fragment-index="2"><b>spectral error</b><span>falls by 18 orders</span></div>
+          </div>
+          <div class="spectral-evidence-takeaway fragment" data-fragment-index="3">
+            <div><span>fixed Gaussian</span><b class="red">exp(O(K²))</b></div><i></i>
+            <div><span>annealed Gaussian</span><b class="green">O(log K)</b></div>
+            <small>for modes up to K under the paper's local linearized analysis</small>
+          </div>
+        </div>
+        <aside class="notes">The numerical spectral experiment matches the prediction. Fixed Gaussian convergence time rises sharply and eventually misses the training budget. Exponential annealing keeps convergence time almost flat over the measured modes, and its total spectral error falls many orders of magnitude earlier than linear or cosine schedules. The logarithmic headline assumes a fixed decay rate and a final bandwidth tuned to the maximum target frequency.</aside>
+      </section>
+
+      <!-- 38 — STOP-GRADIENT IN PRACTICE -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow orange">Stop-gradient · the practical evidence</div>
+          <h2>Without stop-gradient, the loss wins—<span class="orange">and the samples lose.</span></h2>
+          <div class="sg-evidence-card">
+            <img src="assets/paper/figures/loss_landscape.png" alt="Loss and sample-quality landscapes with and without stop-gradient">
+            <div class="sg-stamp false-win fragment" data-fragment-index="0"><span>lower training loss</span><b>2.7 × 10⁻⁸</b></div>
+            <div class="sg-stamp false-minimum fragment" data-fragment-index="1"><span>but poor sample quality</span><b>SW = 0.389</b></div>
+          </div>
+          <div class="sg-practical-row">
+            <div class="fragment" data-fragment-index="0"><b>with stop-grad</b><span>drift and distribution error fall together</span><strong>SW = 0.016</strong></div>
+            <div class="sg-bad fragment" data-fragment-index="1"><b>without it</b><span>the optimizer erases the drift instead of fixing q</span><strong>‖V‖ ≈ 10⁻⁸</strong></div>
+            <a class="fragment" data-fragment-index="2" href="https://arxiv.org/abs/2603.09936"><b>why?</b><span>stop-gradient freezes today's drift target</span><small>formal JKO justification → paper</small></a>
+          </div>
+        </div>
+        <aside class="notes">Keep this practical. Without stop-gradient the optimizer reaches an even smaller training loss and drives the field norm to about ten to the minus eight, but the samples remain far from the target. It learned to erase its own update, not to match the data. With stop-gradient, drift norm and sample error remain tightly coupled. The paper gives the formal frozen-field and JKO justification.</aside>
+      </section>
+
+      <!-- 39 — WHY A RECIPE -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow green">Part 4 · deriving new drift operators</div>
+          <h2>Hand-balancing attraction and repulsion <span class="green">is not a recipe.</span></h2>
+          <div class="antisymmetry-recipe-card">
+            <canvas id="antisymmetry-recipe-demo"></canvas>
+          </div>
+          <div class="balance-score-row">
+            <div><b>1.0 V⁺ − 1.0 V⁻</b><span>balanced by hand</span><strong>FID 8.46</strong></div>
+            <div class="fragment" data-fragment-index="0"><b>1.5 V⁺ − 1.0 V⁻</b><span>slightly more attraction</span><strong>FID 41.05</strong></div>
+            <div class="fragment" data-fragment-index="1"><b>1.0 V⁺ − 1.5 V⁻</b><span>slightly more repulsion</span><strong>FID 46.28</strong></div>
+            <div class="balance-question fragment" data-fragment-index="2"><b>anti-symmetry</b><span>checks cancellation at q=p</span><strong>but does not invent the next drift</strong></div>
+          </div>
+        </div>
+        <aside class="notes">The original attraction-minus-repulsion balance works, and anti-symmetry guarantees cancellation at the target. But small manual coefficient changes cause large empirical failures. More importantly, anti-symmetry only checks a proposed operator; it does not tell us what new operator to construct or what objective it decreases. We need a construction rule.</aside>
+      </section>
+
+      <!-- 40 — CHOOSE A DISCREPANCY -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow green">Recipe · step 1</div>
+          <h2>First choose a meter that reads zero <span class="green">only at the data.</span></h2>
+          <div class="recipe-energy-layout">
+            <div class="recipe-energy-card">
+              <canvas id="recipe-energy-demo"></canvas>
+              <div class="recipe-energy-step fragment" data-recipe-energy-step="closer" data-fragment-index="0"></div>
+              <div class="recipe-energy-step fragment" data-recipe-energy-step="match" data-fragment-index="1"></div>
+            </div>
+            <div class="recipe-energy-story">
+              <div><b>choose a sufficiently regular discrepancy</b><span class="math" data-tex="F_p[q]\ge 0"></span><small>a single number for how wrong q is</small></div>
+              <div class="fragment" data-fragment-index="0"><b>moving toward p lowers the meter</b><span>far → closer → matched</span><small>the destination is built into F</small></div>
+              <div class="recipe-energy-zero fragment" data-fragment-index="1"><b>one correct zero</b><span class="math" data-tex="F_p[q]=0\quad\Longleftrightarrow\quad q=p"></span><small>no false target distribution</small></div>
+              <div class="recipe-energy-examples fragment" data-fragment-index="2"><b>possible geometries</b><span>smoothed KL</span><span>MMD</span><span>Sinkhorn</span></div>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">Start by deciding what mismatch means. Choose a sufficiently regular discrepancy on distributions that is nonnegative and has its unique zero at the data law. The discrepancy is a meter: it tells us whether q is closer, and it gives the correct destination. Regularity and existence of a smooth first variation are the technical assumptions; keep them in the paper and notes rather than on the main slide.</aside>
+      </section>
+
+      <!-- 41 — DIFFERENTIATE A DRIFT -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow green">Recipe · steps 2–4</div>
+          <h2>Differentiate the meter into <span class="green">local arrows.</span></h2>
+          <div class="recipe-loop">
+            <div class="recipe-loop-step fragment" data-fragment-index="0"><b>1</b><i class="meter-icon"></i><span>choose F</span><strong>global mismatch meter</strong></div>
+            <i class="fragment" data-fragment-index="1"></i>
+            <div class="recipe-loop-step fragment" data-fragment-index="1"><b>2</b><i class="sensitivity-icon"></i><span>differentiate</span><strong>where would moving mass lower F?</strong></div>
+            <i class="fragment" data-fragment-index="2"></i>
+            <div class="recipe-loop-step drift-step fragment" data-fragment-index="2"><b>3</b><i class="arrow-icon"></i><span>make the drift</span><strong class="math" data-tex="V_F(x)=-\nabla_x\frac{\delta F}{\delta q}(x)"></strong></div>
+            <i class="fragment" data-fragment-index="3"></i>
+            <div class="recipe-loop-step fragment" data-fragment-index="3"><b>4</b><i class="lock-icon"></i><span>freeze + fit</span><strong>target x + τV<sub>F</sub>(x), then stop-grad</strong></div>
+          </div>
+        </div>
+        <aside class="notes">Now turn the global meter into local motion. The functional derivative asks how F reacts to placing probability mass at x. Its spatial gradient tells that mass which direction lowers F most quickly; the negative gradient is the drift. Evaluate those arrows at today's generated distribution, freeze the targets, and fit the generator. This is the reusable recipe: choose, differentiate, freeze, fit.</aside>
+      </section>
+
+      <!-- 42–44 — SINKHORN (VERTICAL STORY) -->
+      <section>
+        <!-- 42 — SINKHORN DRIFT -->
+        <section>
+          <div class="slide-pad">
+            <div class="eyebrow green">Sinkhorn · worked example</div>
+            <div class="sinkhorn-support-cue">↓ optional background · OT + Sinkhorn</div>
+            <h2>Differentiate it: both forces <span class="green">appear automatically.</span></h2>
+            <div class="sinkhorn-recipe-layout">
+              <div class="sinkhorn-force-card">
+                <canvas id="sinkhorn-force-demo"></canvas>
+              </div>
+              <div class="sinkhorn-recipe-story">
+                <div><b>choose the meter</b><span class="math" data-tex="F_p[q]=S_\varepsilon(q,p)"></span></div>
+                <div><b class="blue">cross-transport</b><span class="math" data-tex="T_{q\to p}(x)"></span><small>attraction toward data</small></div>
+                <div><b class="orange">subtract self-transport</b><span class="math" data-tex="-T_{q\to q}(x)"></span><small>repulsive debiasing correction</small></div>
+                <div class="sinkhorn-drift-result"><b>derived drift</b><span class="math" data-tex="V_F(x)\propto T_{q\to p}(x)-T_{q\to q}(x)"></span><small>not hand-balanced · anti-symmetry not required</small></div>
+              </div>
+            </div>
+            <div class="sinkhorn-training-strip"><img src="assets/paper/figures/sinkhorn_vs_kernel.png" alt="Sinkhorn drift learns a multimodal target over training"><span>same drifting loop · new geometry · SW 1.42 × 10⁻²</span></div>
+          </div>
+          <aside class="notes">Lead with the result. Differentiating Sinkhorn divergence gives cross-transport toward data minus self-transport, which supplies the repulsive correction. Both forces come from one objective; we did not guess their balance. If the audience needs background on optimal transport or the Sinkhorn algorithm, press down for the two optional support slides.</aside>
+        </section>
+
+        <!-- 43 — OPTIMAL TRANSPORT (OPTIONAL SUPPORT) -->
+        <section>
+          <div class="slide-pad">
+            <div class="eyebrow green">Optional background · 1/2 · optimal transport</div>
+            <h2>Move one cloud into the other—<span class="green">with the least work.</span></h2>
+            <div class="ot-intro-layout">
+              <div class="ot-transport-card">
+                <canvas id="ot-intro-demo" aria-label="A crossed transport plan untangling into a least-cost matching"></canvas>
+              </div>
+              <div class="ot-intro-story">
+                <article><b>start</b><strong>model mass</strong><span>the orange cloud</span></article>
+                <article><b>destination</b><strong>data mass</strong><span>the blue cloud</span></article>
+                <article class="ot-payoff"><b>optimal transport</b><strong>the plan with the smallest total travel</strong></article>
+              </div>
+            </div>
+            <div class="vertical-story-progress"><span>main result</span><i></i><b>optimal transport</b><i></i><span>Sinkhorn</span><em>↓</em></div>
+          </div>
+          <aside class="notes">Optimal transport starts with two distributions viewed as piles of mass. A transport plan says how much mass travels from each generated location to each data location. Every move costs distance times mass. Among all plans that deliver the correct amount everywhere, optimal transport chooses the one with the least total work. Watch the crossed, expensive plan untangle into a short matching.</aside>
+        </section>
+
+        <!-- 44 — SINKHORN (OPTIONAL SUPPORT) -->
+        <section>
+          <div class="slide-pad">
+            <div class="eyebrow green">Optional background · 2/2 · soft transport</div>
+            <h2>Sinkhorn makes that plan <span class="green">soft, fast, and differentiable.</span></h2>
+            <div class="sinkhorn-intro-layout">
+              <div class="sinkhorn-matrix-card">
+                <canvas id="sinkhorn-intro-demo" aria-label="A soft transport matrix alternating row and column normalization"></canvas>
+              </div>
+              <div class="sinkhorn-intro-story">
+                <article><b>1</b><span>soften</span><strong>nearby pairs receive larger weights</strong></article>
+                <article><b>2</b><span>balance</span><strong>normalize rows, then columns—repeat</strong></article>
+                <article class="sinkhorn-payoff"><b>3</b><span>result</span><strong>a smooth transport plan we can differentiate</strong></article>
+              </div>
+            </div>
+            <div class="vertical-story-progress"><span>main result</span><i></i><span>optimal transport</span><i></i><b>Sinkhorn</b><em class="vertical-back">↑</em></div>
+          </div>
+          <aside class="notes">Exact optimal transport can produce a hard, non-smooth assignment. Sinkhorn adds a small entropy preference, so mass can spread across several nearby destinations. Computationally, we form a soft matrix of pair weights and alternately rescale its rows and columns until the prescribed source and target masses are satisfied. These simple matrix-scaling iterations are fast, stable, and differentiable.</aside>
+        </section>
+      </section>
+
+      <!-- 45 — IMAGENET RESULTS -->
+      <section>
+        <div class="slide-pad">
+          <div class="eyebrow green">ImageNet 256² · uncurated samples · NFE = 1</div>
+          <h2>Does the theory survive scale? <span class="green">Yes.</span></h2>
+          <div class="merged-results-grid">
+            <article class="merged-result-row laplacian-row">
+              <div class="merged-method"><b>Laplacian</b><span>baseline · fixed τ</span></div>
+              <div class="merged-scores"><div><span>FID ↓</span><b>8.55</b></div><div><span>IS ↑</span><b>148.0</b></div></div>
+              <div class="merged-samples"><img src="assets/paper/samples/baseline/class_088_macaw__001.png" alt="Laplacian sample of a macaw"><img src="assets/paper/samples/baseline/class_207_golden_retriever__005.png" alt="Laplacian sample of a golden retriever"><img src="assets/paper/samples/baseline/class_292_tiger__004.png" alt="Laplacian sample of a tiger"><img src="assets/paper/samples/baseline/class_817_sports_car__009.png" alt="Laplacian sample of a sports car"></div>
+            </article>
+            <article class="merged-result-row gaussian-row">
+              <div class="merged-method"><b>Gaussian</b><span>ours · fixed σ</span></div>
+              <div class="merged-scores"><div><span>FID ↓</span><b>8.69</b></div><div class="best-is"><span>IS ↑</span><b>157.0</b></div></div>
+              <div class="merged-samples"><img src="assets/paper/samples/gaussian/class_088_macaw__001.png" alt="Gaussian sample of a macaw"><img src="assets/paper/samples/gaussian/class_207_golden_retriever__005.png" alt="Gaussian sample of a golden retriever"><img src="assets/paper/samples/gaussian/class_292_tiger__004.png" alt="Gaussian sample of a tiger"><img src="assets/paper/samples/gaussian/class_817_sports_car__009.png" alt="Gaussian sample of a sports car"></div>
+            </article>
+            <article class="merged-result-row annealed-row">
+              <div class="merged-method"><b>Gaussian + anneal</b><span>ours · <span class="math" data-tex="\sigma_0e^{-rt}"></span></span></div>
+              <div class="merged-scores"><div class="best-fid"><span>FID ↓</span><b>8.36</b></div><div><span>IS ↑</span><b>154.2</b></div></div>
+              <div class="merged-samples"><img src="assets/paper/samples/annealed/class_088_macaw__001.png" alt="Annealed Gaussian sample of a macaw"><img src="assets/paper/samples/annealed/class_207_golden_retriever__005.png" alt="Annealed Gaussian sample of a golden retriever"><img src="assets/paper/samples/annealed/class_292_tiger__004.png" alt="Annealed Gaussian sample of a tiger"><img src="assets/paper/samples/annealed/class_817_sports_car__009.png" alt="Annealed Gaussian sample of a sports car"></div>
+            </article>
+            <article class="merged-result-row sinkhorn-row">
+              <div class="merged-method"><b>Sinkhorn</b><span>ours · fixed ε</span></div>
+              <div class="merged-scores"><div><span>FID ↓</span><b>8.81</b></div><div><span>IS ↑</span><b>135.5</b></div></div>
+              <div class="merged-samples"><img src="assets/paper/samples/sinkhorn/class_088_macaw__001.png" alt="Sinkhorn sample of a macaw"><img src="assets/paper/samples/sinkhorn/class_207_golden_retriever__005.png" alt="Sinkhorn sample of a golden retriever"><img src="assets/paper/samples/sinkhorn/class_292_tiger__004.png" alt="Sinkhorn sample of a tiger"><img src="assets/paper/samples/sinkhorn/class_817_sports_car__009.png" alt="Sinkhorn sample of a sports car"></div>
+            </article>
+          </div>
+        </div>
+        <aside class="notes">All models use one forward pass at inference, and every row shows the same four classes. Fixed Gaussian is essentially tied with the Laplacian baseline, so the clean score identity does not cost performance. Annealing gives the best FID, consistent with the spectral diagnosis. Sinkhorn remains competitive, showing that the variational recipe constructs usable operators beyond the original kernel family.</aside>
+      </section>
+
+      <!-- 46 — END -->
+      <section class="end-section paper-end-section" data-background-color="#f1f4f7">
+        <div class="slide-pad paper-end-layout">
+          <div class="end-kicker">The paper in one sentence</div>
+          <h1>Drifting moves a <span class="violet">score residual</span><br>from inference time into training time.</h1>
+          <div class="paper-recap">
+            <div class="fragment" data-fragment-index="0"><b>identity</b><span>Gaussian drift = smoothed score difference</span></div>
+            <div class="fragment" data-fragment-index="1"><b>spectrum</b><span>kernel frequencies explain speed—and suggest annealing</span></div>
+            <div class="fragment" data-fragment-index="2"><b>variational</b><span>JKO explains sg and designs new drifts</span></div>
+          </div>
+          <div class="paper-end-meta">
+            <a href="https://arxiv.org/abs/2603.09936">arXiv:2603.09936</a>
+            <span>Erkan Turan · Nicolas Dufour · Maks Ovsjanikov</span>
+          </div>
+          <canvas id="end-drift" aria-hidden="true"></canvas>
+        </div>
+        <aside class="notes">Close on the shift in viewpoint. Drifting is not outside the score-matching family. It computes a score residual analytically during training, uses it to reshape the generator, and discards the field at inference. The identity unlocks identifiability, kernel design, and the variational explanation of stop-gradient.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+  <script src="js/visuals.js?v=20260717o"></script>
+  <script src="js/deck.js?v=20260717o"></script>
+</body>
+</html>
