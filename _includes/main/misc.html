@@ -12,7 +12,7 @@
     <h4>{{ current_year }}</h4>
     {% endif %}
     <ul>
-        <li>{{ talk.name }} ({{ talk.date | date: '%B %d, %Y' }})</li>
+        <li>{{ talk.name }} ({% if talk.display_date %}{{ talk.display_date }}{% else %}{{ talk.date | date: '%B %d, %Y' }}{% endif %})</li>
     </ul>
     {% endfor %}
     {% else %}

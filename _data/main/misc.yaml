@@ -32,7 +32,16 @@ talks:
     date: 2025-12-17
   - name: "Talk at MIT in <a href='https://web.mit.edu/phillipi/'>Philip Isola's group</a>: Controllable and Efficient Generative Models"
     date: 2025-12-18
+  - name: "Talk at Adobe Research"
+    date: 2026-07-01
+    display_date: July 2026
 reviewer:
+  - name: <a href="https://neurips.cc/Conferences/2026">NeurIPS 2026</a>
+    date: 2026-12-06
+
+  - name: <a href="https://eccv.ecva.net/Conferences/2026">ECCV 2026</a>
+    date: 2026-09-08
+
   - name: <a href="https://icml.cc/Conferences/2026">ICML 2026</a>
     date: 2026-07-13
 
