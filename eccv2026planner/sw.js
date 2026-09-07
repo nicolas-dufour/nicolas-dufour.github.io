@@ -1,6 +1,6 @@
 /* Build placeholders are replaced by build/pwa.ts. No cross-origin responses are cached. */
-const VERSION = "0b0582fd0c4dbafb";
-const FILES = ["assets/index-HBFG0rGn.css","assets/index-nX3g7lRM.js","index.html","manifest.webmanifest","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-512.png","icons/apple-touch-icon.png"];
+const VERSION = "d19baa24415446c0";
+const FILES = ["assets/index-B75N3JcH.css","assets/index-BNullIOl.js","index.html","manifest.webmanifest","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-512.png","icons/apple-touch-icon.png"];
 const SCOPE = self.registration.scope;
 const PREFIX = 'eccv-planner-' + new URL(SCOPE).pathname + '-';
 const CACHE = PREFIX + VERSION;
