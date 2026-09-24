@@ -43,10 +43,10 @@ reviewer:
     date: 2026-09-08
 
   - name: <a href="https://icml.cc/Conferences/2026">ICML 2026</a>
-    date: 2026-07-13
+    date: 2026-07-06
 
   - name: <a href="https://cvpr.thecvf.com/Conferences/2026">CVPR 2026</a>
-    date: 2026-06-08
+    date: 2026-06-03
 
   - name: <a href="https://iclr.cc/Conferences/2026">ICLR 2026</a>
     date: 2026-04-23
@@ -85,10 +85,10 @@ awards:
     date: 2025-12-08
 
   - name: Outstanding reviewer award at <a href="https://cvpr.thecvf.com/Conferences/2026">CVPR 2026</a>
-    date: 2026-06-08
+    date: 2026-06-03
 
   - name: Gold reviewer award at <a href="https://icml.cc/Conferences/2026">ICML 2026</a>
-    date: 2026-07-13
+    date: 2026-07-06
      
 others:
   - name: I'm co-organizing the IMAGINE reading group for 2023-2024
