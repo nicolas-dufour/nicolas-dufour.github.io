@@ -1,5 +1,5 @@
 - title: SCAM! Transferring humans between images with Semantic Cross Attention Modulation
-  authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://davidpicard.github.io/">David Picard</a>
+  authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="https://davidpicard.github.io/">David Picard</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
   date: 2022-10-10
   year: 2022
   journal: ECCV 2022
@@ -8,14 +8,15 @@
   website: scam.html
   thumbnail: /assets/publications/scam/thumbnail.png
   abstract: A large body of recent work targets semantically conditioned image generation. Most such methods focus on the narrower task of pose transfer and ignore the more challenging task of subject transfer that consists in not only transferring the pose but also the appearance and background. In this work, we introduce SCAM (Semantic Cross Attention Modulation), a system that encodes rich and diverse information in each semantic region of the image (including foreground and background), thus achieving precise generation with emphasis on fine details. This is enabled by the Semantic Attention Transformer Encoder that extracts multiple latent vectors for each semantic region, and the corresponding generator that exploits these multiple latents by using semantic cross attention modulation. It is trained only using a reconstruction setup, while subject transfer is performed at test time. Our analysis shows that our proposed architecture is successful at encoding the diversity of appearance in each semantic region. Extensive experiments on the iDesigner and CelebAMask-HD datasets show that SCAM outperforms SEAN and SPADE; moreover, it sets the new state of the art on subject transfer.
-  bibtex: "@article{dufour2022scam, \n
-   &nbsp;&nbsp; title={Scam! transferring humans between images with semantic cross attention modulation}, \n
-   &nbsp;&nbsp; author={Dufour, Nicolas and Picard, David and Kalogeiton, Vicky}, \n
-   &nbsp;&nbsp; booktitle={European Conference on Computer Vision}, \n
-   &nbsp;&nbsp; pages={713--729}, \n
-   &nbsp;&nbsp; year={2022}, \n
-   &nbsp;&nbsp; organization={Springer} \n
-   }"
+  bibtex: "@inproceedings{dufour2022scam, \n
+      &nbsp;&nbsp; title     = {SCAM! Transferring Humans Between Images with Semantic Cross Attention Modulation}, \n
+      &nbsp;&nbsp; author    = {Dufour, Nicolas and Picard, David and Kalogeiton, Vicky}, \n
+      &nbsp;&nbsp; booktitle = {European Conference on Computer Vision (ECCV)}, \n
+      &nbsp;&nbsp; pages     = {713--729}, \n
+      &nbsp;&nbsp; year      = {2022}, \n
+      &nbsp;&nbsp; publisher = {Springer}, \n
+      &nbsp;&nbsp; doi       = {10.1007/978-3-031-19781-9_41} \n
+    }"
 - title: "Machine Learning for Brain Disorders: Transformers and Visual Transformers"
   authors: <a href="https://robincourant.github.io/info">Robin Courant</a>, Maika Edberg, <u><a href="#">Nicolas Dufour</a></u>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
   date: 2023-03-21
@@ -24,16 +25,20 @@
   pdf: https://arxiv.org/abs/2303.12068
   thumbnail: /assets/publications/transformers_mlbd/thumbnail.png
   abstract: Transformers were initially introduced for natural language processing (NLP) tasks, but fast they were adopted by most deep learning fields, including computer vision. They measure the relationships between pairs of input tokens (words in the case of text strings, parts of images for visual Transformers), termed attention. The cost is exponential with the number of tokens. For image classification, the most common Transformer Architecture uses only the Transformer Encoder in order to transform the various input tokens. However, there are also numerous other applications in which the decoder part of the traditional Transformer Architecture is also used. Here, we first introduce the Attention mechanism (Section 1), and then the Basic Transformer Block including the Vision Transformer (Section 2). Next, we discuss some improvements of visual Transformers to account for small datasets or less computation(Section 3). Finally, we introduce Visual Transformers applied to tasks other than image classification, such as detection, segmentation, generation and training without labels (Section 4) and other domains, such as video or multimodality using text or audio data (Section 5).
-  bibtex: "@incollection{courant2012transformers, \n
-    &nbsp;&nbsp; title={Transformers and Visual Transformers}, \n
-    &nbsp;&nbsp; author={Courant, Robin and Edberg, Maika and Dufour, Nicolas and Kalogeiton, Vicky}, \n
-    &nbsp;&nbsp; booktitle={Machine Learning for Brain Disorders}, \n
-    &nbsp;&nbsp; pages={193--229}, \n
-    &nbsp;&nbsp; year={2012}, \n
-    &nbsp;&nbsp; publisher={Springer} \n
-  }"
+  bibtex: "@incollection{courant2023transformers, \n
+      &nbsp;&nbsp; title     = {Transformers and Visual Transformers}, \n
+      &nbsp;&nbsp; author    = {Courant, Robin and Edberg, Maika and Dufour, Nicolas and Kalogeiton, Vicky}, \n
+      &nbsp;&nbsp; booktitle = {Machine Learning for Brain Disorders}, \n
+      &nbsp;&nbsp; editor    = {Colliot, Olivier}, \n
+      &nbsp;&nbsp; series    = {Neuromethods}, \n
+      &nbsp;&nbsp; volume    = {197}, \n
+      &nbsp;&nbsp; pages     = {193--229}, \n
+      &nbsp;&nbsp; year      = {2023}, \n
+      &nbsp;&nbsp; publisher = {Springer}, \n
+      &nbsp;&nbsp; doi       = {10.1007/978-1-0716-3195-9_6} \n
+    }"
 - title: Analysis of Classifier-Free Guidance Weight Schedulers
-  authors: <a href="https://triocrossing.github.io/">Xi Wang</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://nefeliandreou.github.io/">Nefeli Andreou</a>, <a href="https://vabrevaya.github.io/">Victoria Fernandez Abrevaya</a>, <a href="https://www.lix.polytechnique.fr/vista/vista-member/marie-paule_cani/">Marie-Paule Cani</a>, <a href="https://davidpicard.github.io/">David Picard*</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton*</a>
+  authors: <a href="https://triocrossing.github.io/">Xi Wang</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://nefeliandreou.github.io/">Nefeli Andreou</a>, <a href="https://www.lix.polytechnique.fr/vista/vista-member/marie-paule_cani/">Marie-Paule Cani</a>, <a href="https://vabrevaya.github.io/">Victoria Fernandez Abrevaya</a>, <a href="https://davidpicard.github.io/">David Picard*</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton*</a>
   date: 2024-11-24
   year: 2024
   journal: TMLR
@@ -41,12 +46,12 @@
   thumbnail: /assets/publications/guidance_schedulers/thumbnail.png
   abstract: Classifier-Free Guidance (CFG) enhances the quality and condition adherence of text-to-image diffusion models. It operates by combining the conditional and unconditional predictions using a fixed weight. However, recent works vary the weights throughout the diffusion process, reporting superior results but without providing any rationale or analysis. By conducting comprehensive experiments, this paper provides insights into CFG weight schedulers. Our findings suggest that simple, monotonically increasing weight schedulers consistently lead to improved performances, requiring merely a single line of code. In addition, more complex parametrized schedulers can be optimized for further improvement, but do not generalize across different models and tasks.
   bibtex: "@article{wang2024analysis, \n
-    &nbsp;&nbsp; title={Analysis of Classifier-Free Guidance Weight Schedulers}, \n
-    &nbsp;&nbsp; author={Xi Wang and Nicolas Dufour and Nefeli Andreou and Marie-Paule Cani\n
-    &nbsp;&nbsp; and Victoria Fernandez Abrevaya and David Picard and Vicky Kalogeiton}, \n
-    &nbsp;&nbsp; journal={TMLR}, \n
-    &nbsp;&nbsp; year={2024} \n
-  }"
+      &nbsp;&nbsp; title   = {Analysis of Classifier-Free Guidance Weight Schedulers}, \n
+      &nbsp;&nbsp; author  = {Wang, Xi and Dufour, Nicolas and Andreou, Nefeli and Cani, Marie-Paule and Fernandez Abrevaya, Victoria and Picard, David and Kalogeiton, Vicky}, \n
+      &nbsp;&nbsp; journal = {Transactions on Machine Learning Research (TMLR)}, \n
+      &nbsp;&nbsp; issn    = {2835-8856}, \n
+      &nbsp;&nbsp; year    = {2024} \n
+    }"
 - title: "OpenStreetView-5M: The Many Roads to Global Visual Geolocation"
   authors: <a href="https://gastruc.github.io/">Guillaume Astruc</a>*, <u><a href="#">Nicolas Dufour</a></u>*, <a href="https://imagine.enpc.fr/~siglidii/">Ioannis Siglidis</a>*, Constantin Aronssohn, Nacim Bouia, <a href="https://stephanie-fu.github.io/">Stephanie Fu</a>, <a href="https://romainloiseau.fr/">Romain Loiseau</a>, <a href="https://nv-nguyen.github.io/">Van Nguyen Nguyen</a>, <a href="https://imagine.enpc.fr/~raudec/">Charles Raude</a>, <a href="https://imagine.enpc.fr/~vincente/">Elliot Vincent</a>, Lintao XU, Hongyu Zhou, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
   date: 2024-06-17
@@ -57,15 +62,13 @@
   website: https://imagine.enpc.fr/~ioannis.siglidis/osv5m/
   thumbnail: /assets/publications/osv5m/thumbnail.png
   abstract: Determining the location of an image anywhere on Earth is a complex visual task, which makes it particularly relevant for evaluating computer vision algorithms. Yet, the absence of standard, large-scale, open-access datasets with reliably localizable images has limited its potential. To address this issue, we introduce OpenStreetView-5M, a large-scale, open-access dataset comprising over 5.1 million geo-referenced street view images, covering 225 countries and territories. In contrast to existing benchmarks, we enforce a strict train/test separation, allowing us to evaluate the relevance of learned geographical features beyond mere memorization. To demonstrate the utility of our dataset, we conduct an extensive benchmark of various state-of-the-art image encoders, spatial representations, and training strategies. 
-  bibtex: "@article{astruc2024openstreetview5m, \n
-    &nbsp;&nbsp; title={OpenStreetView-5M: The Many Roads to Global Visual Geolocation}, \n
-    &nbsp;&nbsp; author={Guillaume Astruc and Nicolas Dufour and Ioannis Siglidis \n
-    &nbsp;&nbsp; and Constantin Aronssohn and Nacim Bouia and Stephanie Fu and Romain Loiseau \n
-    &nbsp;&nbsp; and Van Nguyen Nguyen and Charles Raude and Elliot Vincent and Lintao XU \n
-    &nbsp;&nbsp; and Hongyu Zhou and Loic Landrieu}, \n
-    &nbsp;&nbsp; journal={CVPR}, \n
-    &nbsp;&nbsp; year={2024} \n
-  }"
+  bibtex: "@inproceedings{astruc2024openstreetview5m, \n
+      &nbsp;&nbsp; title     = {OpenStreetView-5M: The Many Roads to Global Visual Geolocation}, \n
+      &nbsp;&nbsp; author    = {Astruc, Guillaume and Dufour, Nicolas and Siglidis, Ioannis and Aronssohn, Constantin and Bouia, Nacim and Fu, Stephanie and Loiseau, Romain and Nguyen, Van Nguyen and Raude, Charles and Vincent, Elliot and Xu, Lintao and Zhou, Hongyu and Landrieu, Loic}, \n
+      &nbsp;&nbsp; booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, \n
+      &nbsp;&nbsp; pages     = {21967--21977}, \n
+      &nbsp;&nbsp; year      = {2024} \n
+    }"
 - title: "Don't drop your samples! Coherence-aware training benefits Conditional diffusion"
   authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="https://scholar.google.com/citations?user=n_C2h-QAAAAJ&hl=fr">Victor Besnier</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://davidpicard.github.io/">David Picard</a>
   date: 2024-06-17
@@ -77,12 +80,13 @@
   github: https://github.com/nicolas-dufour/CAD
   website: cad.html
   abstract: Conditional diffusion models are powerful generative models that can leverage various types of conditional information, such as class labels, segmentation masks, or text captions. However, in many real-world scenarios, conditional information may be noisy or unreliable due to human annotation errors or weak alignment. In this paper, we propose the Coherence-Aware Diffusion (CAD), a novel method that integrates coherence in conditional information into diffusion models, allowing them to learn from noisy annotations without discarding data. We assume that each data point has an associated coherence score that reflects the quality of the conditional information. We then condition the diffusion model on both the conditional information and the coherence score. In this way, the model learns to ignore or discount the conditioning when the coherence is low. We show that CAD is theoretically sound and empirically effective on various conditional generation tasks. Moreover, we show that leveraging coherence generates realistic and diverse samples that respect conditional information better than models trained on cleaned datasets where samples with low coherence have been discarded.
-  bibtex: "@article{dufour2024dont, \n
-   &nbsp;&nbsp; title={Don't drop your samples! Coherence-aware training benefits Conditional diffusion}, \n
-   &nbsp;&nbsp; author={Dufour, Nicolas and Besnier, Victor and Kalogeiton, Vicky and Picard, David}, \n
-   &nbsp;&nbsp; booktitle={CVPR}, \n
-   &nbsp;&nbsp; year={2024}, \n
-   }"
+  bibtex: "@inproceedings{dufour2024dont, \n
+      &nbsp;&nbsp; title     = {Don't Drop Your Samples! Coherence-Aware Training Benefits Conditional Diffusion}, \n
+      &nbsp;&nbsp; author    = {Dufour, Nicolas and Besnier, Victor and Kalogeiton, Vicky and Picard, David}, \n
+      &nbsp;&nbsp; booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, \n
+      &nbsp;&nbsp; pages     = {6264--6273}, \n
+      &nbsp;&nbsp; year      = {2024} \n
+    }"
 - title: "E.T. the Exceptional Trajectories: Text-to-Camera-Trajectory Generation with Character Awareness."
   authors: <a href="https://robincourant.github.io/info">Robin Courant</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://triocrossing.github.io/">Xi Wang</a>,  <a href="https://people.irisa.fr/Marc.Christie/">Marc Christie</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
   date: 2024-07-01
@@ -93,11 +97,14 @@
   github: https://github.com/robincourant/DIRECTOR
   website: https://www.lix.polytechnique.fr/vista/projects/2024_et_courant/
   abstract: Stories and emotions in movies emerge through the effect of well-thought-out directing decisions, in particular camera placement and movement over time. Crafting compelling camera motion trajectories remains a complex iterative process, even for skilful artists. To tackle this, in this paper, we propose a dataset called the Exceptional Trajectories (E.T.) with camera trajectories along with character information and textual captions encompassing description of both camera and character. To our knowledge, this is the first dataset of its kind. To show the potentialities of the E.T. dataset, we propose a diffusion-based approach, named DIRECTOR, which generates complex camera trajectories from textual captions that describe the relation and synchronisation between the camera and characters. Finally, to ensure a robust and accurate evaluation, we train CLaTr on the E.T. dataset, a language-trajectory feature representation used for metric calculation. Our work represents a significant advancement in democratizing the art of cinematography for common users.
-  bibtex: "@article{courant2024et,\n
-      &nbsp;&nbsp; author    = {Robin Courant and Nicolas Dufour and Xi Wang and Marc Christie and Vicky Kalogeiton},\n
-      &nbsp;&nbsp; title     = {E.T. the Exceptional Trajectories: Text-to-camera-trajectory generation with character awareness},\n
-      &nbsp;&nbsp; journal   = {arXiv},\n
-      &nbsp;&nbsp; year      = {2024},\n
+  bibtex: "@inproceedings{courant2024et, \n
+      &nbsp;&nbsp; title     = {E.T. the Exceptional Trajectories: Text-to-Camera-Trajectory Generation with Character Awareness}, \n
+      &nbsp;&nbsp; author    = {Courant, Robin and Dufour, Nicolas and Wang, Xi and Christie, Marc and Kalogeiton, Vicky}, \n
+      &nbsp;&nbsp; booktitle = {European Conference on Computer Vision (ECCV)}, \n
+      &nbsp;&nbsp; pages     = {464--480}, \n
+      &nbsp;&nbsp; year      = {2024}, \n
+      &nbsp;&nbsp; publisher = {Springer}, \n
+      &nbsp;&nbsp; doi       = {10.1007/978-3-031-73235-5_26} \n
     }"
 
 - title: "Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation"
@@ -111,12 +118,13 @@
   website: plonk.html
   game: /plonk_game/
   abstract: "Global visual geolocation predicts where an image was captured on Earth. Since images vary in how precisely they can be localized, this task inherently involves a significant degree of ambiguity. However, existing approaches are deterministic and overlook this aspect. In this paper, we aim to close the gap between traditional geolocalization and modern generative methods. We propose the first generative geolocation approach based on diffusion and Riemannian flow matching, where the denoising process operates directly on the Earth's surface. Our model achieves state-of-the-art performance on three visual geolocation benchmarks: OpenStreetView-5M, YFCC-100M, and iNat21. In addition, we introduce the task of probabilistic visual geolocation, where the model predicts a probability distribution over all possible locations instead of a single point. We introduce new metrics and baselines for this task, demonstrating the advantages of our diffusion-based approach."
-  bibtex: "@article{dufour2024world80timestepsgenerative, \n
-      &nbsp;&nbsp;  title           ={Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation}, \n
-      &nbsp;&nbsp;  author          ={Nicolas Dufour and David Picard and Vicky Kalogeiton and Loic Landrieu}, \n
-      &nbsp;&nbsp;  year            ={2025}, \n
-      &nbsp;&nbsp;  journal         ={CVPR}, \n
-      }"
+  bibtex: "@inproceedings{dufour2025world, \n
+      &nbsp;&nbsp; title     = {Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation}, \n
+      &nbsp;&nbsp; author    = {Dufour, Nicolas and Picard, David and Kalogeiton, Vicky and Landrieu, Loic}, \n
+      &nbsp;&nbsp; booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, \n
+      &nbsp;&nbsp; pages     = {23016--23026}, \n
+      &nbsp;&nbsp; year      = {2025} \n
+    }"
 
 - title: "How far can we go with ImageNet for Text-to-Image generation?"
   authors: <a href="https://lucasdegeorge.github.io/">Lucas Degeorge</a>*, <a href="https://arijit-hub.github.io/">Arijit Ghosh </a>*, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://davidpicard.github.io/">David Picard</a><sup>†</sup>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a><sup>†</sup>
@@ -128,12 +136,12 @@
   github: https://github.com/lucasdegeorge/T2I-ImageNet
   website: https://lucasdegeorge.github.io/projects/t2i-imagenet/
   abstract: "Recent text-to-image (T2I) generation models have achieved remarkable results by training on billion-scale datasets, following a `bigger is better' paradigm that prioritizes data quantity over quality. We challenge this established paradigm by demonstrating that strategic data augmentation of small, well-curated datasets can match or outperform models trained on massive web-scraped collections. Using only ImageNet enhanced with well-designed text and image augmentations, we achieve a +2 overall score over SD-XL on GenEval and +5 on DPGBench while using just 1/10th the parameters and 1/1000th the training images. Our results suggest that strategic data augmentation, rather than massive datasets, could offer a more sustainable path forward for T2I generation."
-  bibtex: "@article{dufour2024world80timestepsgenerative, \n
-      &nbsp;&nbsp;  title           ={How far can we go with ImageNet for Text-to-Image generation?}, \n
-      &nbsp;&nbsp;  author          ={Lucas Degeorge and Arijit Ghosh and Nicolas Dufour and David Picard and Vicky Kalogeiton}, \n
-      &nbsp;&nbsp;  year            ={2025}, \n
-      &nbsp;&nbsp;  journal         ={arXiv}, \n
-      }"
+  bibtex: "@article{degeorge2025far, \n
+      &nbsp;&nbsp; title   = {How far can we go with ImageNet for Text-to-Image generation?}, \n
+      &nbsp;&nbsp; author  = {Degeorge, Lucas and Ghosh, Arijit and Dufour, Nicolas and Picard, David and Kalogeiton, Vicky}, \n
+      &nbsp;&nbsp; journal = {arXiv preprint arXiv:2502.21318}, \n
+      &nbsp;&nbsp; year    = {2025} \n
+    }"
 - title: "PoM: A Linear-Time Replacement for Attention with the Polynomial Mixer"
   authors: <a href="https://davidpicard.github.io/">David Picard</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://lucasdegeorge.github.io/">Lucas Degeorge</a>, <a href="https://arijit-hub.github.io/">Arijit Ghosh</a>, <a href="https://davidea97.github.io/">Davide Allegro</a>, Tom Ravaud, <a href="https://yohannperron.github.io/WebPage/">Yohann Perron</a>, <a href="https://csautier.github.io/">Corentin Sautier</a>, <a href="https://imagine.enpc.fr/~sonat.baltaci/">Zeynep Sonat Baltaci</a>, <a href="https://imagine-lab.enpc.fr/staff-members/fei-meng/">Fei Meng</a>, <a href="https://imagine-lab.enpc.fr/staff-members/syrine-kalleli/">Syrine Kalleli</a>, <a href="https://imagine.enpc.fr/~marta.lopez-rauhut/">Marta López-Rauhut</a>, <a href="https://thibautloiseau.github.io/">Thibaut Loiseau</a>, <a href="https://imagine-lab.enpc.fr/staff-members/segolene-albouy/">Ségolène Albouy</a>, <a href="https://raphael-baena.github.io/">Raphael Baena</a>, <a href="https://imagine.enpc.fr/~vincente/">Elliot Vincent</a>, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
   date: 2026-06-05
@@ -143,11 +151,11 @@
   pdf:  https://arxiv.org/abs/2604.06129
   github: https://github.com/davidpicard/pom
   abstract: "This paper introduces the Polynomial Mixer (PoM), a novel token mixing mechanism with linear complexity that serves as a drop-in replacement for self-attention. PoM aggregates input tokens into a compact representation through a learned polynomial function, from which each token retrieves contextual information. We prove that PoM satisfies the contextual mapping property, ensuring that transformers equipped with PoM remain universal sequence-to-sequence approximators. We replace standard self-attention with PoM across five diverse domains: text generation, handwritten text recognition, image generation, 3D modeling, and Earth observation. PoM matches the performance of attention-based models while drastically reducing computational cost when working with long sequences."
-  bibtex: "@article{picard2026pom,\n
-      &nbsp;&nbsp; author    = {David Picard and Nicolas Dufour and Lucas Degeorge and Arijit Ghosh and Davide Allegro and Tom Ravaud and Yohann Perron and Corentin Sautier and Zeynep Sonat Baltaci and Fei Meng and Syrine Kalleli and Marta López-Rauhut and Thibaut Loiseau and Ségolène Albouy and Raphael Baena and Elliot Vincent and Loic Landrieu},\n
-      &nbsp;&nbsp; title     = {PoM: A Linear-Time Replacement for Attention with the Polynomial Mixer},\n
-      &nbsp;&nbsp; journal   = {arXiv},\n
-      &nbsp;&nbsp; year      = {2026},\n
+  bibtex: "@inproceedings{picard2026pom, \n
+      &nbsp;&nbsp; title     = {PoM: A Linear-Time Replacement for Attention with the Polynomial Mixer}, \n
+      &nbsp;&nbsp; author    = {Picard, David and Dufour, Nicolas and Degeorge, Lucas and Ghosh, Arijit and Allegro, Davide and Ravaud, Tom and Perron, Yohann and Sautier, Corentin and Baltaci, Zeynep Sonat and Meng, Fei and Kalleli, Syrine and L{\\'o}pez-Rauhut, Marta and Loiseau, Thibaut and Albouy, S{\\'e}gol{\\`e}ne and Baena, Raphael and Vincent, Elliot and Landrieu, Loic}, \n
+      &nbsp;&nbsp; booktitle = {Findings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, \n
+      &nbsp;&nbsp; year      = {2026} \n
     }"
 
 - title: "DIPSY: Training-Free Synthetic Data Generation with Dual IP-Adapter Guidance"
@@ -160,15 +168,15 @@
   github: https://github.com/eleftsonis/DIPSY
   website: https://www.lix.polytechnique.fr/vista/projects/2025_bmvc_dipsy/ 
   abstract: "Few-shot image classification remains challenging due to the limited availability of labeled examples. Recent approaches have explored generating synthetic training data using text-to-image diffusion models, but often require extensive model fine-tuning or external information sources. We present a novel training-free approach, called DIPSY, that leverages IP-Adapter for image-to-image translation to generate highly discriminative synthetic images using only the available few-shot examples. \n DIPSY introduces three key innovations: (1) an extended classifier-free guidance scheme that enables independent control over positive and negative image conditioning; (2) a class similarity-based sampling strategy that identifies effective contrastive examples; and (3) a simple yet effective pipeline that requires no model fine-tuning or external captioning and filtering. Experiments across ten benchmark datasets demonstrate that our approach achieves state-of-the-art or comparable performance, while eliminating the need for generative model adaptation or reliance on external tools for caption generation and image filtering. \n Our results highlight the effectiveness of leveraging dual image prompting with positive-negative guidance for generating class-discriminative features, particularly for fine-grained classification tasks. "
-  bibtex: "@inproceedings{boudier2025dipsy,\n
-      &nbsp;&nbsp; author    = {Luc Boudier and Loris Manganelli and Eleftherios Tsonis and Nicolas Dufour and Vicky Kalogeiton},\n
-      &nbsp;&nbsp; title     = {DIPSY: Training-Free Synthetic Data Generation with Dual IP-Adapter Guidance},\n
-      &nbsp;&nbsp; booktitle = {BMVC},\n
-      &nbsp;&nbsp; year      = {2025},\n
+  bibtex: "@inproceedings{boudier2025dipsy, \n
+      &nbsp;&nbsp; title     = {DIPSY: Training-Free Synthetic Data Generation with Dual IP-Adapter Guidance}, \n
+      &nbsp;&nbsp; author    = {Boudier, Luc and Manganelli, Loris and Tsonis, Eleftherios and Dufour, Nicolas and Kalogeiton, Vicky}, \n
+      &nbsp;&nbsp; booktitle = {British Machine Vision Conference (BMVC)}, \n
+      &nbsp;&nbsp; year      = {2025} \n
     }"
 
 - title: "MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency"
-  authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="https://lucasdegeorge.github.io/">Lucas Degeorge</a>*, <a href="https://arijit-hub.github.io/">Arijit Ghosh </a>*, <a href="https://davidpicard.github.io/">David Picard</a><sup>†</sup>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a><sup>†</sup>
+  authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="https://lucasdegeorge.github.io/">Lucas Degeorge</a>*, <a href="https://arijit-hub.github.io/">Arijit Ghosh </a>*, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a><sup>†</sup>, <a href="https://davidpicard.github.io/">David Picard</a><sup>†</sup>
   date: 2026-07-13
   year: 2026
   journal: ICML 2026
@@ -178,26 +186,27 @@
   website: https://nicolas-dufour.github.io/miro/
   abstract: "Current text-to-image generative models are trained on large uncurated datasets to enable diverse generation capabilities. However, this does not align well with user preferences. Recently, reward models have been specifically designed to perform post-hoc selection of generated images and align them to a reward, typically user preference. This discarding of informative data together with the optimizing for a single reward tend to harm diversity, semantic fidelity and efficiency. Instead of this post-processing, we propose to condition the model on multiple reward models during training to let the model learn user preferences directly. We show that this not only dramatically improves the visual quality of the generated images but it also significantly speeds up the training. Our proposed method, called MIRO, achieves state-of-the-art performances on the GenEval compositional benchmark and user-preference scores (PickAScore, ImageReward, HPSv2). "
   bibtex: "@inproceedings{dufour2026miro, \n
-      &nbsp;&nbsp;  title           ={MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency}, \n
-      &nbsp;&nbsp;  author          ={Nicolas Dufour and Lucas Degeorge and Arijit Ghosh and David Picard and Vicky Kalogeiton}, \n
-      &nbsp;&nbsp;  year            ={2026}, \n
-      &nbsp;&nbsp;  booktitle       ={International Conference on Machine Learning (ICML)}, \n
-      }"
+      &nbsp;&nbsp; title     = {MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency}, \n
+      &nbsp;&nbsp; author    = {Dufour, Nicolas and Degeorge, Lucas and Ghosh, Arijit and Kalogeiton, Vicky and Picard, David}, \n
+      &nbsp;&nbsp; booktitle = {International Conference on Machine Learning (ICML)}, \n
+      &nbsp;&nbsp; year      = {2026} \n
+    }"
 - title: "One View Is Enough! Monocular Training for In-the-Wild Novel View Generation"
   authors: <a href="https://scholar.google.com/citations?user=XSTKbMYAAAAJ&hl=fr">Adrien Ramanana Rahary</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://ptrckprz.github.io/">Patrick Perez</a>, <a href="https://davidpicard.github.io/">David Picard</a>
   date: 2026-03-25
   year: 2026
-  journal: Arxiv Preprint
+  journal: NeurIPS 2026
   thumbnail: /assets/publications/one_view/thumbnail.png
   pdf:  https://arxiv.org/abs/2603.23488
   github: https://github.com/AdrienRR/ovie
+  website: https://kyutai.org/blog/2026-04-14-ovie
   abstract: "Monocular novel-view synthesis has long required multi-view image pairs for supervision, limiting training data scale and diversity. We argue it is not necessary: one view is enough. We present OVIE, trained entirely on unpaired internet images. We leverage a monocular depth estimator as a geometric scaffold at training time: we lift a source image into 3D, apply a sampled camera transformation, and project to obtain a pseudo-target view. To handle disocclusions, we introduce a masked training formulation that restricts geometric, perceptual, and textural losses to valid regions, enabling training on 30 million uncurated images. At inference, OVIE is geometry-free, requiring no depth estimator or 3D representation. Trained exclusively on in-the-wild images, OVIE outperforms prior methods in a zero-shot setting, while being 600x faster than the second-best baseline."
-  bibtex: "@article{rahary2026one_view, \n
-      &nbsp;&nbsp;  title           ={One View Is Enough! Monocular Training for In-the-Wild Novel View Generation}, \n
-      &nbsp;&nbsp;  author          ={Adrien Ramanana Rahary and Nicolas Dufour and Patrick Perez and David Picard}, \n
-      &nbsp;&nbsp;  year            ={2026}, \n
-      &nbsp;&nbsp;  journal         ={arXiv}, \n
-      }"
+  bibtex: "@inproceedings{rahary2026ovie, \n
+      &nbsp;&nbsp; title     = {One View Is Enough! Monocular Training for In-the-Wild Novel View Generation}, \n
+      &nbsp;&nbsp; author    = {Ramanana Rahary, Adrien and Dufour, Nicolas and P{\\'e}rez, Patrick and Picard, David}, \n
+      &nbsp;&nbsp; booktitle = {Advances in Neural Information Processing Systems (NeurIPS)}, \n
+      &nbsp;&nbsp; year      = {2026} \n
+    }"
 
 - title: "Generative Drifting is Secretly Score Matching: a Spectral and Variational Perspective"
   authors: <a href="https://www.lix.polytechnique.fr/~turan/index.html">Erkan Turan</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://www.lix.polytechnique.fr/~maks/">Maks Ovsjanikov</a>
@@ -208,27 +217,28 @@
   pdf:  https://arxiv.org/abs/2603.09936
   abstract: "We establish theoretical foundations for Generative Modeling via Drifting, demonstrating that under Gaussian kernels, drift operators function as score differences on smoothed distributions. We resolve three previously open questions about the method's validity, kernel selection, and training stability. Using Fourier space analysis, we identify frequency-dependent convergence issues analogous to Landau damping, proposing an exponential bandwidth annealing schedule to improve performance from exponential to logarithmic convergence time. We formalize drifting as a Wasserstein gradient flow of smoothed KL divergence, proving the stop-gradient operator derives from the JKO discretization scheme rather than being a heuristic. Our analysis introduces a template for constructing novel drift operators, demonstrated with Sinkhorn divergence, validated on toy datasets and ImageNet."
   bibtex: "@article{turan2026drifting, \n
-      &nbsp;&nbsp;  title           ={Generative Drifting is Secretly Score Matching: a Spectral and Variational Perspective}, \n
-      &nbsp;&nbsp;  author          ={Erkan Turan and Nicolas Dufour and Maks Ovsjanikov}, \n
-      &nbsp;&nbsp;  year            ={2026}, \n
-      &nbsp;&nbsp;  journal         ={arXiv}, \n
-      }"
-- title: "Surflo: Consistent 3D Surface Flow from a Global State"
+      &nbsp;&nbsp; title   = {Generative Drifting is Secretly Score Matching: a Spectral and Variational Perspective}, \n
+      &nbsp;&nbsp; author  = {Turan, Erkan and Dufour, Nicolas and Ovsjanikov, Maks}, \n
+      &nbsp;&nbsp; journal = {arXiv preprint arXiv:2603.09936}, \n
+      &nbsp;&nbsp; year    = {2026} \n
+    }"
+- title: "Surflo: Consistent 3D Surface Flow Model with Global State"
   authors: <a href="https://anttwo.github.io/">Antoine Guédon</a>*, <a href="https://scholar.google.com/citations?user=ma_HN-YAAAAJ&hl=ja">Shu Nakamura</a>*, <u><a href="#">Nicolas Dufour</a></u>*, <a href="https://jiahuilei.com/">Jiahui Lei</a>, <a href="https://scholar.google.com/citations?user=SXXEZhYAAAAJ">Ko Nishino</a>, <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa</a>
   date: 2026-06-11
   year: 2026
-  journal: Arxiv Preprint
+  journal: NeurIPS 2026
+  award: (Oral)
   thumbnail_canvas: surflo-thumbnail
   pdf: https://arxiv.org/abs/2606.13644
   github: https://github.com/Anttwo/Surflo
   website: https://anttwo.github.io/surflo/
   abstract: "Geometry is invariant to viewpoint, which makes any collection of images a redundant encoding of a single 3D state. Existing feed-forward reconstruction models fail to exploit this: per-view methods emit overlapping, unaligned pointmaps that grow linearly with input count, while global-latent methods commit to a fixed, low-resolution output. We introduce Surflo, which compresses a variable number of unposed RGB views into K latent tokens — one global state — and decodes oriented 3D surface points by independently transporting them from noise onto the surface via flow matching. This frees the output from any fixed grid or token budget: the same latent yields from a few thousand to a million points in a single forward pass. To suppress the local inconsistencies inherent to independent per-point decoding, an inference-time guidance term correlates nearby points by injecting a photometric gradient during ODE integration. Surflo matches or surpasses feed-forward baselines on surface metrics, runs an order of magnitude faster than optimization-based methods that require hundreds of views, and is the only feed-forward approach to combine a global latent with arbitrary-resolution decoding."
-  bibtex: "@article{guedon2026surflo, \n
-      &nbsp;&nbsp;  title           ={Surflo: Consistent 3D Surface Flow from a Global State}, \n
-      &nbsp;&nbsp;  author          ={Antoine Gu{\\'e}don and Shu Nakamura and Nicolas Dufour and Jiahui Lei and Ko Nishino and Angjoo Kanazawa}, \n
-      &nbsp;&nbsp;  year            ={2026}, \n
-      &nbsp;&nbsp;  journal         ={arXiv preprint}, \n
-      }"
+  bibtex: "@inproceedings{guedon2026surflo, \n
+      &nbsp;&nbsp; title     = {Surflo: Consistent 3D Surface Flow Model with Global State}, \n
+      &nbsp;&nbsp; author    = {Gu{\\'e}don, Antoine and Nakamura, Shu and Dufour, Nicolas and Lei, Jiahui and Nishino, Ko and Kanazawa, Angjoo}, \n
+      &nbsp;&nbsp; booktitle = {Advances in Neural Information Processing Systems (NeurIPS)}, \n
+      &nbsp;&nbsp; year      = {2026} \n
+    }"
 
 - title: "Controllability and Efficiency in Generative Models"
   authors: <u><a href="#">Nicolas Dufour</a></u>
@@ -242,9 +252,9 @@
   abstract: "Generative models have advanced rapidly, yet their true promise lies not in producing plausible data, but in being controllable, efficient, and reliable. This thesis advances conditional generative modeling along three axes. First, we tackle conditioning adherence: new training mechanisms and dynamic sampling strategies tighten alignment between inputs (masks, poses, text) and generated outputs without sacrificing realism or diversity. Second, we improve data efficiency through coherence-aware approaches that learn from noisy or weakly aligned conditionings, showing that strong conditional models can be trained with far less data than commonly assumed — broadening access in scientific, medical, and industrial settings where curated data is unavailable. Third, we extend conditional generation to probabilistic reasoning for downstream tasks: focusing on visual geolocation, we introduce a large-scale benchmark and generative formulations that predict calibrated spatial distributions rather than single-point estimates, capturing inherent ambiguity. Together, these contributions point toward generative models as reliable, transparent, and accessible components of future AI systems."
   bibtex: "@phdthesis{dufour2025thesis, \n
       &nbsp;&nbsp; title  = {Controllability and Efficiency in Generative Models}, \n
-      &nbsp;&nbsp; author = {Nicolas Dufour}, \n
+      &nbsp;&nbsp; author = {Dufour, Nicolas}, \n
+      &nbsp;&nbsp; school = {{\\'E}cole des Ponts ParisTech}, \n
       &nbsp;&nbsp; year   = {2025}, \n
-      &nbsp;&nbsp; school = {École des Ponts ParisTech}, \n
       &nbsp;&nbsp; type   = {PhD Thesis} \n
     }"
 - title: "The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation"
@@ -257,8 +267,8 @@
   website: https://kyutai.org/fid-lottery
   abstract: "The Frechet Inception Distance (FID) is the de facto arbiter of image generation, yet most papers report just a single number from a single trained model using a single sampling seed. How reproducible is that number if we retrain the model, or merely resample from it? In this paper, we treat FID as a random variable on a two-axis panel of training and generation seeds, and measure its variance directly on several hundred SiT networks trained on class-conditional ImageNet 256x256. We report surprising findings: (a) Retraining the model using the same recipe with a different seed moves FID 3.2x more (in Inception feature space) than redrawing samples from a fixed network. (b) That gap is driven by three factors: random initialisation, data ordering, and the per-step Gaussian noise of the flow-matching loss. (c) Increasing compute or model size barely tightens the spread, holding the FID coefficient of variation (CoV) inside a 1-2% band. (d) Per-cell classifier-free-guidance tuning halves the spread but reshuffles which seeds work best, and a lucky training seed reaches the same FID with up to 2x less compute than an unlucky one. Based on these findings, we recommend a new FID evaluation protocol: evaluate under per-cell optimal guidance, treat any FID gap below the empirically measured ~1.3% CoV as inconclusive, and report an error bar over several training seeds rather than a single FID number."
   bibtex: "@article{dufour2026fidlottery, \n
-      &nbsp;&nbsp;  title           ={The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation}, \n
-      &nbsp;&nbsp;  author          ={Nicolas Dufour and Alexei A. Efros and Patrick P{\\'e}rez}, \n
-      &nbsp;&nbsp;  year            ={2026}, \n
-      &nbsp;&nbsp;  journal         ={arXiv}, \n
-      }"
+      &nbsp;&nbsp; title   = {The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation}, \n
+      &nbsp;&nbsp; author  = {Dufour, Nicolas and Efros, Alexei A. and P{\\'e}rez, Patrick}, \n
+      &nbsp;&nbsp; journal = {arXiv preprint arXiv:2606.20536}, \n
+      &nbsp;&nbsp; year    = {2026} \n
+    }"
