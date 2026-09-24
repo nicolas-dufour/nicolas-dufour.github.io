@@ -1,6 +1,6 @@
 - title: SCAM! Transferring humans between images with Semantic Cross Attention Modulation
   authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="https://davidpicard.github.io/">David Picard</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
-  date: 2022-10-10
+  date: 2022-10-23
   year: 2022
   journal: ECCV 2022
   pdf: https://arxiv.org/abs/2210.04883
@@ -19,7 +19,7 @@
     }"
 - title: "Machine Learning for Brain Disorders: Transformers and Visual Transformers"
   authors: <a href="https://robincourant.github.io/info">Robin Courant</a>, Maika Edberg, <u><a href="#">Nicolas Dufour</a></u>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
-  date: 2023-03-21
+  date: 2023-07-23
   year: 2023
   journal: Springer, Machine Learning for Brain Disorders
   pdf: https://arxiv.org/abs/2303.12068
@@ -89,7 +89,7 @@
     }"
 - title: "E.T. the Exceptional Trajectories: Text-to-Camera-Trajectory Generation with Character Awareness."
   authors: <a href="https://robincourant.github.io/info">Robin Courant</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://triocrossing.github.io/">Xi Wang</a>,  <a href="https://people.irisa.fr/Marc.Christie/">Marc Christie</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
-  date: 2024-07-01
+  date: 2024-09-29
   year: 2024
   journal: ECCV 2024
   thumbnail: /assets/publications/et/thumbnail.png
@@ -109,7 +109,7 @@
 
 - title: "Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation"
   authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="https://davidpicard.github.io/">David Picard</a>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
-  date: 2025-06-10
+  date: 2025-06-11
   year: 2025
   journal: CVPR 2025
   thumbnail: /assets/publications/plonk/thumbnail.png
@@ -144,7 +144,7 @@
     }"
 - title: "PoM: A Linear-Time Replacement for Attention with the Polynomial Mixer"
   authors: <a href="https://davidpicard.github.io/">David Picard</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://lucasdegeorge.github.io/">Lucas Degeorge</a>, <a href="https://arijit-hub.github.io/">Arijit Ghosh</a>, <a href="https://davidea97.github.io/">Davide Allegro</a>, Tom Ravaud, <a href="https://yohannperron.github.io/WebPage/">Yohann Perron</a>, <a href="https://csautier.github.io/">Corentin Sautier</a>, <a href="https://imagine.enpc.fr/~sonat.baltaci/">Zeynep Sonat Baltaci</a>, <a href="https://imagine-lab.enpc.fr/staff-members/fei-meng/">Fei Meng</a>, <a href="https://imagine-lab.enpc.fr/staff-members/syrine-kalleli/">Syrine Kalleli</a>, <a href="https://imagine.enpc.fr/~marta.lopez-rauhut/">Marta López-Rauhut</a>, <a href="https://thibautloiseau.github.io/">Thibaut Loiseau</a>, <a href="https://imagine-lab.enpc.fr/staff-members/segolene-albouy/">Ségolène Albouy</a>, <a href="https://raphael-baena.github.io/">Raphael Baena</a>, <a href="https://imagine.enpc.fr/~vincente/">Elliot Vincent</a>, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
-  date: 2026-06-05
+  date: 2026-06-03
   year: 2026
   journal: CVPR Findings 2026
   thumbnail: /assets/publications/pom/thumbnail.png
@@ -160,7 +160,7 @@
 
 - title: "DIPSY: Training-Free Synthetic Data Generation with Dual IP-Adapter Guidance"
   authors: Luc Boudier, Loris Manganelli, <a href="https://eleftsonis.github.io/">Eleftherios Tsonis</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a>
-  date: 2025-11-28
+  date: 2025-11-24
   year: 2025
   journal: BMVC 2025
   thumbnail: /assets/publications/dipsy/thumbnail.png
@@ -177,7 +177,7 @@
 
 - title: "MIRO: MultI-Reward cOnditioned pretraining improves T2I quality and efficiency"
   authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="https://lucasdegeorge.github.io/">Lucas Degeorge</a>*, <a href="https://arijit-hub.github.io/">Arijit Ghosh </a>*, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a><sup>†</sup>, <a href="https://davidpicard.github.io/">David Picard</a><sup>†</sup>
-  date: 2026-07-13
+  date: 2026-07-06
   year: 2026
   journal: ICML 2026
   thumbnail: /assets/publications/miro/thumbnail.png
@@ -193,7 +193,7 @@
     }"
 - title: "One View Is Enough! Monocular Training for In-the-Wild Novel View Generation"
   authors: <a href="https://scholar.google.com/citations?user=XSTKbMYAAAAJ&hl=fr">Adrien Ramanana Rahary</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://ptrckprz.github.io/">Patrick Perez</a>, <a href="https://davidpicard.github.io/">David Picard</a>
-  date: 2026-03-25
+  date: 2026-12-06
   year: 2026
   journal: NeurIPS 2026
   thumbnail: /assets/publications/one_view/thumbnail.png
@@ -224,7 +224,7 @@
     }"
 - title: "Surflo: Consistent 3D Surface Flow Model with Global State"
   authors: <a href="https://anttwo.github.io/">Antoine Guédon</a>*, <a href="https://scholar.google.com/citations?user=ma_HN-YAAAAJ&hl=ja">Shu Nakamura</a>*, <u><a href="#">Nicolas Dufour</a></u>*, <a href="https://jiahuilei.com/">Jiahui Lei</a>, <a href="https://scholar.google.com/citations?user=SXXEZhYAAAAJ">Ko Nishino</a>, <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa</a>
-  date: 2026-06-11
+  date: 2026-12-06
   year: 2026
   journal: NeurIPS 2026
   award: (Oral)
@@ -242,7 +242,7 @@
 
 - title: "Controllability and Efficiency in Generative Models"
   authors: <u><a href="#">Nicolas Dufour</a></u>
-  date: 2025-11-26
+  date: 2025-11-25
   year: 2025
   journal: PhD Thesis, École des Ponts ParisTech
   pdf: https://theses.hal.science/tel-05529702/document
