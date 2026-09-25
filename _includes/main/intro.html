@@ -1,17 +1,17 @@
 <div id="intro-three-container" aria-hidden="true"></div>
 
 <img class="pp" src="{{ site.data.main.about_me.pp_path }}"
-    alt="{{site.data.main.about_me.name}} {{site.data.main.about_me.surname}} profile picture" loading="lazy"
-    decoding="async">
+    alt="{{site.data.main.about_me.name}} {{site.data.main.about_me.surname}} profile picture" width="180" height="180"
+    fetchpriority="high" decoding="async">
 <h1>{{ site.data.main.about_me.name }} {{ site.data.main.about_me.surname }}</h1>
-<h3>{{ site.data.main.about_me.short_description | markdownify }}</h3>
-<div class="contact_wrapper">
+<p class="tagline">{{ site.data.main.about_me.short_description | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+<ul class="contact_wrapper">
     {% for contact in site.data.main.contact %}
-    <a href="{{ contact.url }}" target="_blank" rel="noopener noreferrer">
-        <button>
-            <img src="{{ contact.icon }}" alt="{{ contact.name }} icon" class="contact-icon" loading="lazy"
-                decoding="async">
-        </button>
-    </a>
+    <li>
+        <a href="{{ contact.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ contact.name }}"
+            title="{{ contact.name }}">
+            <img src="{{ contact.icon }}" alt="" class="contact-icon" width="28" height="28" decoding="async">
+        </a>
+    </li>
     {% endfor %}
-</div>
+</ul>

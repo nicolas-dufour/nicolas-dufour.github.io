@@ -21,25 +21,39 @@
 
     const params = {
         planeCount: 30,
-        spawnRadius: 35,
-        areaDepth: 90,
-        baseSpeed: 0.7,
-        speedJitter: 0.5,
-        turnJitter: 0.4,
-        jitterIntervalMin: 0.6,
-        jitterIntervalMax: 1.8,
-        turbulenceAmp: 0.08,
-        windBase: 0.45,
-        windGust: 0.5,
-        windSwirl: 0.3,
-        windSwirlScale: 0.5,
-        windSwirlSpeed: 0.15,
-        windVertical: 0.08,
-        windYawAlign: 0.18,
         scaleMin: 0.6,
         scaleMax: 1.6,
         wingFlutterAmp: 0.06,
         wingFlutterFreq: 2.5,
+
+        // Glider flight model (scene units, seconds)
+        gravity: 0.6,          // sets the phugoid period (~pi*sqrt(2)*V0/g, about 8s)
+        trimSpeedMin: 0.9,     // airspeed each plane settles back to
+        trimSpeedMax: 1.35,
+        speedDamping: 0.25,    // how fast airspeed relaxes to trim (damps the phugoid)
+        minSpeed: 0.3,
+        maxBank: 0.6,          // rad
+        bankRate: 1.8,         // 1/s, how quickly the roll follows the command
+        courseGain: 0.35,      // how firmly a plane steers toward the far side
+        wanderBank: 0.3,      // lazy S-turns layered on top of the course
+        altitudeGain: 0.05,    // lift bias per unit of altitude error
+        swoopEvery: [7, 18],   // s between swoops (a pitch-up kick that plays out as climb, stall, dive)
+        loopChance: 0.035,      // share of swoops that carry enough energy for a full loop
+
+        // Where planes live, in camera terms
+        spawnDistMin: 13,      // distance from camera; keeps big planes from filling the hero
+        spawnDistMax: 68,      // beyond this the fog eats them and the backdrop (z=-88) gets close
+        spawnNdcY: [-0.7, 0.8],
+        flybyChance: 0.18,
+        downwindShare: 0.75,     // share of planes that come out of the distance and pass the camera
+        separation: 2.4,
+        warmup: 25,            // seconds of flight simulated before the first frame       // personal space between planes (world units, scaled by size)
+
+        // Wind: a prevailing breeze with gust fronts sweeping across it
+        windSpeed: 0.22,
+        gustStrength: 0.35,
+        gustWavelength: 40,
+        gustSpeed: 5.0,
     };
 
     // ── Shape templates ──────────────────────────────────────────────
@@ -425,6 +439,10 @@
         cs.width = '100%';
         cs.height = '100%';
         cs.display = 'block';
+        // Fade in over the CSS gradient once the first frame is drawn
+        cs.opacity = '0';
+        cs.transition = 'opacity 1.2s ease';
+        requestAnimationFrame(() => requestAnimationFrame(() => { cs.opacity = '1'; }));
         // The container has `pointer-events: none` so foreground links keep working;
         // the canvas opts back in so it can capture click-to-fire-gust interactions.
         cs.pointerEvents = 'auto';
@@ -472,18 +490,21 @@
 
     // ── Wind ─────────────────────────────────────────────────────────
 
-    function sampleWind(pos, time, i) {
-        const a = time * 0.12 + i * 0.123;
-        const base = new T.Vector3(Math.cos(a), 0, Math.sin(a)).multiplyScalar(params.windBase);
-        const gust = (Math.sin(time * 0.6 + i * 1.7) * Math.sin(time * 0.25 + i * 2.1) * 0.5 + 0.5) * params.windGust;
-        base.multiplyScalar(1.0 + gust);
-        const s = params.windSwirlScale, sp = params.windSwirlSpeed;
-        base.add(new T.Vector3(
-            Math.sin(pos.z * s + time * sp + i) * params.windSwirl,
-            Math.sin(pos.x * 0.12 + time * 0.3 + i * 0.7) * params.windVertical,
-            Math.cos(pos.x * s * 1.3 - time * sp * 1.2 + i * 0.5) * params.windSwirl
-        ));
-        return base;
+    const wind = {
+        dir: new T.Vector3(Math.random() < 0.5 ? 1 : -1, 0, -0.25).normalize(),
+    };
+
+    // 0..1 gust intensity: narrow bands travelling downwind, so neighbours get hit together
+    function gustAt(pos, time) {
+        const phase = (pos.x * wind.dir.x + pos.z * wind.dir.z) / params.gustWavelength
+            - time * params.gustSpeed / params.gustWavelength;
+        const w = 0.5 + 0.5 * Math.sin(phase * Math.PI * 2);
+        return w * w * w * w;
+    }
+
+    function sampleWind(pos, time, out) {
+        const drift = 0.8 + 0.2 * Math.sin(time * 0.05);
+        return out.copy(wind.dir).multiplyScalar(params.windSpeed * drift + params.gustStrength * gustAt(pos, time));
     }
 
     // ── Geometry builder ─────────────────────────────────────────────
@@ -746,44 +767,16 @@
         const scale = T.MathUtils.lerp(params.scaleMin, params.scaleMax, Math.random());
         mesh.scale.setScalar(scale);
 
-        const ang = Math.random() * Math.PI * 2;
-        const rad = params.spawnRadius * (0.3 + Math.random() * 0.7);
-        mesh.position.set(Math.cos(ang) * rad, T.MathUtils.randFloatSpread(12), -Math.random() * params.areaDepth);
-        mesh.rotation.y = T.MathUtils.randFloatSpread(Math.PI * 0.5);
-        mesh.rotation.x = T.MathUtils.randFloatSpread(Math.PI * 0.12);
-
         // Per-plane flutter, set once on the GPU
         mat.uniforms.uFlutterPhase.value = Math.random() * Math.PI * 2;
         mat.uniforms.uFlutterFreq.value  = params.wingFlutterFreq * T.MathUtils.randFloat(0.7, 1.3);
         mat.uniforms.uFlutterAmp.value   = params.wingFlutterAmp;
         mat.uniforms.uHalfSpan.value     = shape.wingSpan;
 
-        return {
-            mesh, scale,
-            speed: params.baseSpeed + Math.random() * params.speedJitter,
-            turn: (Math.random() - 0.5) * params.turnJitter,
-            bobAmp: T.MathUtils.randFloat(0.04, 0.14) * scale,
-            bobFreq: T.MathUtils.randFloat(0.4, 1.2),
-
-            // Steering target — slow yaw drift produces organic S-curves
-            baseYaw:    mesh.rotation.y,
-            steerFreq:  T.MathUtils.randFloat(0.08, 0.22),
-            steerAmp:   T.MathUtils.randFloat(0.12, 0.42),
-            steerPhase: Math.random() * Math.PI * 2,
-
-            // Altitude target — gentle climb / dive cycles
-            baseAlt:    mesh.position.y,
-            climbFreq:  T.MathUtils.randFloat(0.06, 0.18),
-            climbAmp:   T.MathUtils.randFloat(1.4, 3.6),
-            climbPhase: Math.random() * Math.PI * 2,
-
-            // Speed modulation per plane
-            speedFreq:  T.MathUtils.randFloat(0.20, 0.45),
-            speedAmp:   T.MathUtils.randFloat(0.10, 0.28),
-            speedPhase: Math.random() * Math.PI * 2,
-
-            jitter: { nextSwitch: 0, yawKick: 0, pitchKick: 0, rollKick: 0 },
-        };
+        const p = { mesh, scale, bobFreq: T.MathUtils.randFloat(0.4, 1.2), bobAmp: T.MathUtils.randFloat(0.03, 0.07) };
+        mesh.rotation.order = 'YXZ';
+        launch(p, true);
+        return p;
     }
 
     // ── Lights ───────────────────────────────────────────────────────
@@ -1059,8 +1052,9 @@
     const _camRight = { x: 1, y: 0, z: 0 };
     const _camUp    = { x: 0, y: 1, z: 0 };
 
-    function applyCurrentsToPlane(m, dt) {
+    function applyCurrentsToPlane(p, dt) {
         if (currents.length === 0 && !drawingCurrent) return 0;
+        const m = p.mesh;
 
         // Project plane to NDC once for screen-space distance lookup
         const projected = m.position.clone().project(camera);
@@ -1161,26 +1155,20 @@
         m.position.y += pushY * dt;
         m.position.z += pushZ * dt;
 
-        // ── Rotate the plane to face the flow direction so it doesn't fly sideways ──
+        // ── Turn the plane into the flow and let it pick up speed, so it swoops out of the current ──
         if (bestIntensity > 0.02) {
-            // Yaw: turn nose toward the tangent's horizontal direction
             const targetYaw = Math.atan2(bestTangentX, bestTangentZ);
-            const yd = Math.atan2(
-                Math.sin(targetYaw - m.rotation.y),
-                Math.cos(targetYaw - m.rotation.y)
-            );
-            const yawGain = 4.0 * bestIntensity;
-            m.rotation.y += yd * yawGain * dt;
+            // Rates are capped so planes curve into the flow rather than whipping around
+            const maxRate = 1.4;
+            const yd = wrapAngle(targetYaw - p.psi);
+            p.psi += T.MathUtils.clamp(yd * 4.0 * bestIntensity, -maxRate, maxRate) * dt;
 
-            // Pitch: nose up if flow rises, down if it falls
             const horizMag = Math.sqrt(bestTangentX * bestTangentX + bestTangentZ * bestTangentZ);
-            const targetPitch = Math.atan2(bestTangentY, Math.max(horizMag, 1e-4));
-            const pitchGain = 3.0 * bestIntensity;
-            m.rotation.x += (targetPitch - m.rotation.x) * pitchGain * dt;
+            const targetGamma = Math.atan2(bestTangentY, Math.max(horizMag, 1e-4));
+            p.gamma += T.MathUtils.clamp(wrapAngle(targetGamma - p.gamma) * 3.0 * bestIntensity, -maxRate, maxRate) * dt;
 
-            // Roll: bank into the turn proportional to the yaw rate we're applying
-            const targetRoll = -yd * 0.9;
-            m.rotation.z += (targetRoll - m.rotation.z) * 4.0 * bestIntensity * dt;
+            p.phi += T.MathUtils.clamp((T.MathUtils.clamp(-yd * 0.9, -1, 1) - p.phi) * 4.0 * bestIntensity, -maxRate, maxRate) * dt;
+            p.V += (p.trimSpeed * 1.8 - p.V) * bestIntensity * dt;
         }
 
         return strongest;
@@ -1237,99 +1225,174 @@
         composer = setupPostProcessing();
         setupGustInteraction();
 
-        start();
+        // Fly the flock for a while before the first frame, so the page opens mid-flight
+        // (mixed banks, swoops in progress, planes entering) rather than everyone level and in sync.
+        camera.updateMatrixWorld();
+        const warmStep = 1 / 30;
+        for (let wt = -params.warmup; wt < 0; wt += warmStep) updatePlanes(warmStep, wt);
+
+        syncRunning();
     }
 
     // ── Update ───────────────────────────────────────────────────────
 
+    // ── Flight ───────────────────────────────────────────────────────
+
+    const _ray = new T.Vector3();
+    const _vel = new T.Vector3();
+    const _wind = new T.Vector3();
+    const _ndc = new T.Vector3();
+
+    function wrapAngle(a) { return Math.atan2(Math.sin(a), Math.cos(a)); }
+
+    // World point `dist` units from the camera along the ray through NDC (x, y)
+    function pointAtNdc(x, y, dist, out) {
+        camera.updateMatrixWorld();
+        _ray.set(x, y, 0.5).unproject(camera).sub(camera.position).normalize();
+        return out.copy(camera.position).addScaledVector(_ray, dist);
+    }
+
+    // Pick a lane (entry point off one edge, exit point off the other) and put the plane on it.
+    // On first load planes start somewhere along their lane so the sky is already populated.
+    function launch(p, midway) {
+        const m = p.mesh;
+        // Most planes ride the breeze; a few beat against it
+        const downwind = Math.random() < params.downwindShare;
+        const side = (wind.dir.x > 0) === downwind ? -1 : 1;
+        const [yLo, yHi] = params.spawnNdcY;
+        const dMin = params.spawnDistMin, dMax = params.spawnDistMax;
+        const start = new T.Vector3(), target = new T.Vector3();
+
+        if (Math.random() < params.flybyChance) {
+            // Enter far away off one edge and cut diagonally across, growing as it nears the camera
+            pointAtNdc(side * 1.2, T.MathUtils.randFloat(0.0, yHi), dMax, start);
+            pointAtNdc(-side * 1.6, T.MathUtils.randFloat(yLo, 0.4), dMin, target);
+        } else {
+            // Cross the frame, drifting a little nearer or farther on the way
+            const d0 = T.MathUtils.lerp(dMin, dMax, Math.pow(Math.random(), 0.8));
+            const d1 = T.MathUtils.clamp(d0 + T.MathUtils.randFloatSpread(30), dMin, dMax);
+            pointAtNdc(side * 1.25, T.MathUtils.randFloat(yLo, yHi), d0, start);
+            pointAtNdc(-side * 1.35, T.MathUtils.randFloat(yLo, yHi), d1, target);
+        }
+
+        if (midway) start.lerp(target, T.MathUtils.randFloat(0.1, 0.85));
+        m.position.copy(start);
+        p.target = target;
+
+        p.trimSpeed = T.MathUtils.randFloat(params.trimSpeedMin, params.trimSpeedMax);
+        p.V     = p.trimSpeed;
+        p.psi   = Math.atan2(target.x - start.x, target.z - start.z);
+        p.gamma = 0;
+        p.phi   = 0;
+        p.age   = 0;
+        p.nextSwoop = T.MathUtils.randFloat(2, params.swoopEvery[1]);
+        p.wanderF = [T.MathUtils.randFloat(0.05, 0.12), T.MathUtils.randFloat(0.15, 0.3)];
+        p.wanderP = [Math.random() * 6.3, Math.random() * 6.3];
+        p.gustPrev = 0;
+        p.pitchKick = 0;
+        p.speedKick = 0;
+    }
+
+    function stepPlane(p, dt, t, ss) {
+        const m = p.mesh;
+        const g = params.gravity;
+        p.age += dt;
+
+        // Steering: bank toward the lane's far end, plus a slow wander for lazy S-turns.
+        // A coordinated turn needs psi' = -(g/V)*tan(phi), so invert that for the commanded bank.
+        const toTarget = wrapAngle(Math.atan2(p.target.x - m.position.x, p.target.z - m.position.z) - p.psi);
+        let bankCmd = -Math.atan(params.courseGain * toTarget * p.V / g);
+        bankCmd += params.wanderBank * (Math.sin(t * p.wanderF[0] + p.wanderP[0]) * 0.7 + Math.sin(t * p.wanderF[1] + p.wanderP[1]) * 0.3);
+        // Keep clear of the camera and of the backdrop
+        if (m.position.z < -80) bankCmd += -Math.sign(wrapAngle(0 - p.psi)) * 0.4;
+        bankCmd = T.MathUtils.clamp(bankCmd + (p.avoidBank || 0), -params.maxBank, params.maxBank);
+        p.phi += (bankCmd - p.phi) * Math.min(1, params.bankRate * dt);
+        p.psi += -(g / p.V) * Math.tan(p.phi) * dt;
+
+        // Longitudinal: lift grows with V^2, so speed and pitch trade energy (the phugoid).
+        // A small lift bias pulls each plane back toward the altitude of its lane.
+        const altErr = T.MathUtils.clamp(p.target.y - m.position.y, -4, 4);
+        const lift = (p.V / p.trimSpeed) ** 2 * (1 + params.altitudeGain * altErr);
+        const bankLift = 1 - (1 - Math.cos(p.phi)) * 0.3;  // soft sink in turns, not a spiral
+        p.gamma += (g / p.V) * (lift * bankLift - Math.cos(p.gamma)) * dt;
+        p.V += (-g * Math.sin(p.gamma) - params.speedDamping * (p.V - p.trimSpeed)) * dt;
+        p.V = Math.max(params.minSpeed, p.V);
+        if (Math.abs(p.gamma) > Math.PI) p.gamma -= Math.sign(p.gamma) * Math.PI * 2;
+
+        // Gust fronts give a little updraft as they arrive, so planes lift together
+        const gust = gustAt(m.position, t);
+        if (gust > p.gustPrev) p.gamma += (gust - p.gustPrev) * 0.15;
+        p.gustPrev = gust;
+
+        // Every so often: a swoop (nose up, bleed speed, stall, dive, recover), rarely a loop
+        // Kicks are fed in over about a second so the nose eases up instead of snapping.
+        if (p.age > p.nextSwoop) {
+            p.nextSwoop = p.age + T.MathUtils.randFloat(params.swoopEvery[0], params.swoopEvery[1]);
+            if (Math.random() < params.loopChance) { p.speedKick += p.trimSpeed * 1.1; p.pitchKick += 0.5; }
+            else p.pitchKick += T.MathUtils.randFloat(0.25, 0.5);
+        }
+        const ease = Math.min(1, 2.5 * dt);
+        p.gamma += p.pitchKick * ease; p.pitchKick -= p.pitchKick * ease;
+        p.V     += p.speedKick * ease; p.speedKick -= p.speedKick * ease;
+
+        // Move along the nose, then let the wind carry the plane
+        const cg = Math.cos(p.gamma);
+        _vel.set(Math.sin(p.psi) * cg, Math.sin(p.gamma), Math.cos(p.psi) * cg).multiplyScalar(p.V);
+        _vel.add(sampleWind(m.position, t, _wind));
+        m.position.addScaledVector(_vel, dt * ss);
+    }
+
     function updatePlanes(dt, t) {
         const ss = window.innerWidth < 600 ? 0.75 : 1.0;
 
+        // Personal space: bank away from anyone too close (cheap O(n^2) for 30 planes)
+        for (let i = 0; i < planes.length; i++) planes[i].avoidBank = 0;
+        for (let i = 0; i < planes.length; i++) {
+            const a = planes[i];
+            for (let j = i + 1; j < planes.length; j++) {
+                const b = planes[j];
+                const dx = b.mesh.position.x - a.mesh.position.x;
+                const dy = b.mesh.position.y - a.mesh.position.y;
+                const dz = b.mesh.position.z - a.mesh.position.z;
+                const r = params.separation * (a.scale + b.scale) * 0.5;
+                const d2 = dx * dx + dy * dy + dz * dz;
+                if (d2 > r * r || d2 < 1e-6) continue;
+                const push = (1 - Math.sqrt(d2) / r) * 0.5;
+                // side > 0: the other plane is on our left, so bank right (positive phi) to open the gap
+                const sideA = Math.cos(a.psi) * dx - Math.sin(a.psi) * dz;
+                const sideB = -(Math.cos(b.psi) * dx - Math.sin(b.psi) * dz);
+                a.avoidBank += Math.sign(sideA) * push;
+                b.avoidBank += Math.sign(sideB) * push;
+                a.gamma -= Math.sign(dy) * push * 0.2 * dt;
+                b.gamma += Math.sign(dy) * push * 0.2 * dt;
+            }
+        }
+
+        const sub = 2, h = dt / sub;
         for (let i = 0; i < planes.length; i++) {
             const p = planes[i];
             const m = p.mesh;
 
-            // ── Forward motion + wind drift, with per-plane speed modulation ──
-            const fwd = new T.Vector3(0, 0, 1).applyEuler(m.rotation).normalize();
-            const wind = sampleWind(m.position, t, i);
-            const speedMod = 1.0 + Math.sin(t * p.speedFreq + p.speedPhase) * p.speedAmp;
-            m.position.addScaledVector(fwd, p.speed * speedMod * ss * dt);
-            m.position.addScaledVector(wind, dt);
+            for (let k = 0; k < sub; k++) stepPlane(p, h, t - dt + h * (k + 1), ss);
 
-            // ── Drawn air currents: pull toward the curve and sweep along it ──
-            const currentImpact = applyCurrentsToPlane(m, dt);
-            if (currentImpact > 0.001) {
-                // Subtle bank toward the flow — adds character without throwing the plane around
-                m.rotation.z += (Math.random() - 0.5) * currentImpact * 0.2 * dt;
-            }
+            // Drawn air currents (the easter egg): pull toward the curve and sweep along it
+            applyCurrentsToPlane(p, dt);
 
-            // ── Steering target: slow sinusoidal yaw drift for organic S-curves ──
-            const yawTarget = p.baseYaw + Math.sin(t * p.steerFreq + p.steerPhase) * p.steerAmp;
-            const yawDelta  = Math.atan2(
-                Math.sin(yawTarget - m.rotation.y),
-                Math.cos(yawTarget - m.rotation.y)
-            );
-            m.rotation.y += yawDelta * 1.2 * dt;
+            // Pose: flight path plus a touch of angle of attack when slow (nose high in a stall)
+            const aoa = T.MathUtils.clamp(0.25 * (1 - (p.V / p.trimSpeed) ** 2), -0.08, 0.3);
+            const wobble = Math.sin(t * p.bobFreq * 2.2 + i * 0.7) * p.bobAmp;
+            m.rotation.set(-(p.gamma + aoa), p.psi, p.phi + wobble);
 
-            // ── Altitude target: gentle climb / dive cycles ──
-            const yTarget = p.baseAlt + Math.sin(t * p.climbFreq + p.climbPhase) * p.climbAmp;
-            const yDelta  = yTarget - m.position.y;
-            m.position.y += yDelta * 0.55 * dt;
-            // Pitch reflects the climb/dive (positive yDelta → climbing → nose up)
-            const pitchTarget = Math.atan2(yDelta, 4.0) * 0.45;
-            m.rotation.x += (pitchTarget - m.rotation.x) * 1.8 * dt;
-
-            // ── Random turbulence kicks (subtle accents) ──
-            if (t > p.jitter.nextSwitch) {
-                p.jitter.nextSwitch = t + T.MathUtils.randFloat(params.jitterIntervalMin, params.jitterIntervalMax);
-                p.jitter.yawKick   = T.MathUtils.randFloatSpread(params.turbulenceAmp);
-                p.jitter.pitchKick = T.MathUtils.randFloatSpread(params.turbulenceAmp * 0.6);
-                p.jitter.rollKick  = T.MathUtils.randFloatSpread(params.turbulenceAmp * 0.8);
-            }
-            const fade = Math.min(1, Math.max(0, (p.jitter.nextSwitch - t) / params.jitterIntervalMax));
-            m.rotation.y += p.jitter.yawKick   * fade * dt * 1.0;
-            m.rotation.x += p.jitter.pitchKick * fade * dt * 1.0;
-
-            // ── Banking: roll into the turn, scaled by steering rate ──
-            const targetRoll = -yawDelta * 1.4;
-            m.rotation.z += (targetRoll - m.rotation.z) * 3.0 * dt;
-            m.rotation.z += Math.sin(t * p.bobFreq * 1.1 + i * 0.7) * p.bobAmp * dt;
-            m.rotation.z += p.jitter.rollKick * fade * 0.3 * dt;
-
-            // ── Soft wind alignment (much weaker than before so steering can dominate) ──
-            const windYaw = Math.atan2(wind.x, wind.z);
-            const windDelta = Math.atan2(Math.sin(windYaw - m.rotation.y), Math.cos(windYaw - m.rotation.y));
-            m.rotation.y += windDelta * params.windYawAlign * dt;
-
-            // ── Update time uniforms (flutter is GPU-driven) ──
+            // Update time uniforms (flutter is GPU-driven)
             m.material.uniforms.uTime.value = t;
             m.material.uniforms.uFlutterTime.value = t;
 
-            // ── Respawn when out of bounds (passed camera, too deep, or wandered far sideways) ──
-            const px = m.position.x, py = m.position.y, pz = m.position.z;
-            if (pz > 10 ||
-                pz < -params.areaDepth * 1.2 ||
-                Math.abs(px) > params.spawnRadius * 1.8 ||
-                Math.abs(py) > 28) {
-                respawn(p);
-            }
+            // Recycle only once the plane is out of frame, so nobody pops in or out on screen
+            _ndc.copy(m.position).project(camera);
+            const offscreen = _ndc.z > 1 || Math.abs(_ndc.x) > 1.3 || Math.abs(_ndc.y) > 1.4;
+            const dist = m.position.distanceTo(camera.position);
+            if ((offscreen && p.age > 4) || dist < 2 || dist > 110 || p.age > 240) launch(p, false);
         }
-    }
-
-    function respawn(p) {
-        const m = p.mesh;
-        const a = Math.random() * Math.PI * 2;
-        const r = params.spawnRadius * (0.3 + Math.random() * 0.7);
-        m.position.set(Math.cos(a) * r, T.MathUtils.randFloatSpread(12), -params.areaDepth * (0.5 + Math.random() * 0.5));
-        m.rotation.set(0, T.MathUtils.randFloatSpread(Math.PI * 0.5), 0);
-        m.rotation.x = T.MathUtils.randFloatSpread(Math.PI * 0.12);
-
-        // Refresh trajectory params for a different flight path next pass
-        p.baseYaw    = m.rotation.y;
-        p.baseAlt    = m.position.y;
-        p.steerPhase = Math.random() * Math.PI * 2;
-        p.climbPhase = Math.random() * Math.PI * 2;
-        p.speedPhase = Math.random() * Math.PI * 2;
     }
 
     // ── Render loop ──────────────────────────────────────────────────
@@ -1360,6 +1423,19 @@
     }
 
     function start() { if (!animationId) { clock.start(); loop(); } }
+
+    function stop() {
+        if (animationId) cancelAnimationFrame(animationId);
+        animationId = null;
+    }
+
+    // Only animate while the hero is on screen and the tab is visible
+    let heroVisible = true;
+
+    function syncRunning() {
+        if (heroVisible && !document.hidden) start();
+        else stop();
+    }
 
     // ── Resize ───────────────────────────────────────────────────────
 
@@ -1397,11 +1473,17 @@
             const ln = p.mesh.children.find(c => c.isLineSegments);
             if (ln) ln.material.color.setHSL(hsl.h, Math.min(1, hsl.s * 0.7), Math.max(0.22, adjL * 0.55));
         });
+        if (!animationId) render();
     }
 
     // ── Boot ─────────────────────────────────────────────────────────
 
     init();
-    window.addEventListener('resize', onResize, { passive: true });
+    window.addEventListener('resize', () => { onResize(); if (!animationId) render(); }, { passive: true });
+    document.addEventListener('visibilitychange', syncRunning);
+    new IntersectionObserver(entries => {
+        heroVisible = entries[0].isIntersecting;
+        syncRunning();
+    }).observe(container);
     new MutationObserver(onThemeChange).observe(document.body, { attributes: true, attributeFilter: ['class'] });
 })();
