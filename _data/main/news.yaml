@@ -66,3 +66,6 @@
 
 - date: 2026-09-30
   content: Our work [Diffusable Latents from Structure-Agnostic Distillation](https://kyutai.org/blog/2026-09-28-structure-agnostic-distillation/) got accepted at the [NeurIPS 2026 Workshop on Principles of Generative Modeling](https://sites.google.com/view/prigmneurips2026/home)!
+
+- date: 2026-09-08
+  content: "[The FID Lottery](https://kyutai.org/fid-lottery) was an Oral at the [E.T. workshop](https://empiricaltheory.github.io/) at [ECCV 2026](https://eccv.ecva.net/Conferences/2026)."
