@@ -272,3 +272,19 @@
       &nbsp;&nbsp; journal = {arXiv preprint arXiv:2606.20536}, \n
       &nbsp;&nbsp; year    = {2026} \n
     }"
+- title: "Diffusable Latents from Structure-Agnostic Distillation"
+  authors: <a href="https://scholar.google.com/citations?user=XSTKbMYAAAAJ&hl=fr">Adrien Ramanana Rahary</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://ptrckprz.github.io/">Patrick Pérez</a>, <a href="https://davidpicard.github.io/">David Picard</a>
+  date: 2026-12-12
+  year: 2026
+  journal: NeurIPS 2026 Workshop on Principles of Generative Modeling
+  thumbnail_canvas: structure-agnostic-thumbnail
+  pdf: https://arxiv.org/abs/2609.39657
+  github: https://github.com/AdrienRR/structure-agnostic-distillation
+  website: https://kyutai.org/blog/2026-09-28-structure-agnostic-distillation/
+  abstract: "Distilling pretrained foundation models into an autoencoder bottleneck improves latent diffusability, enabling diffusion models to converge faster and reach higher sample quality. Standard distillation aligns the latent at each position to a co-located teacher feature, tying the latent layout to the teacher's. We show this constraint is unnecessary: aligning a single pooled image-level descriptor to the teacher's performs as well as or slightly better than dense position-wise distillation. We compare first-order and relational pooled objectives across latent shapes and teacher modalities. First-order matching extends naturally to 1D token-sequence latents and across modalities, where distilling a text encoder into an image autoencoder still improves diffusability; a relational objective based only on each image's nearest neighbours improves it as well."
+  bibtex: "@inproceedings{rahary2026structureagnostic, \n
+      &nbsp;&nbsp; title     = {Diffusable Latents from Structure-Agnostic Distillation}, \n
+      &nbsp;&nbsp; author    = {Ramanana Rahary, Adrien and Dufour, Nicolas and P{\\'e}rez, Patrick and Picard, David}, \n
+      &nbsp;&nbsp; booktitle = {NeurIPS 2026 Workshop on Principles of Generative Modeling}, \n
+      &nbsp;&nbsp; year      = {2026} \n
+    }"
