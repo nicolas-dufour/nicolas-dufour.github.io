@@ -69,3 +69,6 @@
 
 - date: 2026-09-08
   content: "[The FID Lottery](https://kyutai.org/fid-lottery) was an Oral at the [E.T. workshop](https://empiricaltheory.github.io/) at [ECCV 2026](https://eccv.ecva.net/Conferences/2026)."
+
+- date: 2026-10-22
+  content: We released [CADRE](https://kyutai.org/blog/2026-10-22-cadre/), open video autoencoders for interactive world models.
