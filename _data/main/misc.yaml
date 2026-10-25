@@ -35,6 +35,12 @@ talks:
   - name: "Talk at Adobe Research"
     date: 2026-07-01
     display_date: July 2026
+  - name: "Oral at the <a href='https://empiricaltheory.github.io/'>E.T. workshop</a> at ECCV 2026: The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation"
+    date: 2026-09-08
+  - name: "Talk at the <a href='https://gdr-iasis.cnrs.fr/reunions/modeles-generatifs-diffusion-flow-matching/'>GdR IASIS day on diffusion and flow matching</a>: The FID Lottery: Quantifying Hidden Randomness in Generative-Model Evaluation"
+    date: 2026-10-09
+  - name: "Talk at BAIR in <a href='https://people.eecs.berkeley.edu/~kanazawa/'>Angjoo Kanazawa's group</a>"
+    date: 2026-10-16
 reviewer:
   - name: <a href="https://neurips.cc/Conferences/2026">NeurIPS 2026</a>
     date: 2026-12-06
