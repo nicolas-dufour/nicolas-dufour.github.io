@@ -6,7 +6,7 @@
   pdf: https://arxiv.org/abs/2210.04883
   github: https://github.com/nicolas-dufour/SCAM
   website: scam.html
-  thumbnail: /assets/publications/scam/thumbnail.png
+  thumbnail_canvas: scam-thumbnail
   abstract: A large body of recent work targets semantically conditioned image generation. Most such methods focus on the narrower task of pose transfer and ignore the more challenging task of subject transfer that consists in not only transferring the pose but also the appearance and background. In this work, we introduce SCAM (Semantic Cross Attention Modulation), a system that encodes rich and diverse information in each semantic region of the image (including foreground and background), thus achieving precise generation with emphasis on fine details. This is enabled by the Semantic Attention Transformer Encoder that extracts multiple latent vectors for each semantic region, and the corresponding generator that exploits these multiple latents by using semantic cross attention modulation. It is trained only using a reconstruction setup, while subject transfer is performed at test time. Our analysis shows that our proposed architecture is successful at encoding the diversity of appearance in each semantic region. Extensive experiments on the iDesigner and CelebAMask-HD datasets show that SCAM outperforms SEAN and SPADE; moreover, it sets the new state of the art on subject transfer.
   bibtex: "@inproceedings{dufour2022scam, \n
       &nbsp;&nbsp; title     = {SCAM! Transferring Humans Between Images with Semantic Cross Attention Modulation}, \n
@@ -23,7 +23,7 @@
   year: 2023
   journal: Springer, Machine Learning for Brain Disorders
   pdf: https://arxiv.org/abs/2303.12068
-  thumbnail: /assets/publications/transformers_mlbd/thumbnail.png
+  thumbnail_canvas: transformers-thumbnail
   abstract: Transformers were initially introduced for natural language processing (NLP) tasks, but fast they were adopted by most deep learning fields, including computer vision. They measure the relationships between pairs of input tokens (words in the case of text strings, parts of images for visual Transformers), termed attention. The cost is exponential with the number of tokens. For image classification, the most common Transformer Architecture uses only the Transformer Encoder in order to transform the various input tokens. However, there are also numerous other applications in which the decoder part of the traditional Transformer Architecture is also used. Here, we first introduce the Attention mechanism (Section 1), and then the Basic Transformer Block including the Vision Transformer (Section 2). Next, we discuss some improvements of visual Transformers to account for small datasets or less computation(Section 3). Finally, we introduce Visual Transformers applied to tasks other than image classification, such as detection, segmentation, generation and training without labels (Section 4) and other domains, such as video or multimodality using text or audio data (Section 5).
   bibtex: "@incollection{courant2023transformers, \n
       &nbsp;&nbsp; title     = {Transformers and Visual Transformers}, \n
@@ -43,7 +43,7 @@
   year: 2024
   journal: TMLR
   pdf: https://arxiv.org/abs/2404.13040
-  thumbnail: /assets/publications/guidance_schedulers/thumbnail.png
+  thumbnail_canvas: cfg-schedulers-thumbnail
   abstract: Classifier-Free Guidance (CFG) enhances the quality and condition adherence of text-to-image diffusion models. It operates by combining the conditional and unconditional predictions using a fixed weight. However, recent works vary the weights throughout the diffusion process, reporting superior results but without providing any rationale or analysis. By conducting comprehensive experiments, this paper provides insights into CFG weight schedulers. Our findings suggest that simple, monotonically increasing weight schedulers consistently lead to improved performances, requiring merely a single line of code. In addition, more complex parametrized schedulers can be optimized for further improvement, but do not generalize across different models and tasks.
   bibtex: "@article{wang2024analysis, \n
       &nbsp;&nbsp; title   = {Analysis of Classifier-Free Guidance Weight Schedulers}, \n
@@ -60,7 +60,7 @@
   pdf: https://arxiv.org/abs/2404.18873
   github: https://github.com/gastruc/osv5m
   website: https://imagine.enpc.fr/~ioannis.siglidis/osv5m/
-  thumbnail: /assets/publications/osv5m/thumbnail.png
+  thumbnail_canvas: osv5m-thumbnail
   abstract: Determining the location of an image anywhere on Earth is a complex visual task, which makes it particularly relevant for evaluating computer vision algorithms. Yet, the absence of standard, large-scale, open-access datasets with reliably localizable images has limited its potential. To address this issue, we introduce OpenStreetView-5M, a large-scale, open-access dataset comprising over 5.1 million geo-referenced street view images, covering 225 countries and territories. In contrast to existing benchmarks, we enforce a strict train/test separation, allowing us to evaluate the relevance of learned geographical features beyond mere memorization. To demonstrate the utility of our dataset, we conduct an extensive benchmark of various state-of-the-art image encoders, spatial representations, and training strategies. 
   bibtex: "@inproceedings{astruc2024openstreetview5m, \n
       &nbsp;&nbsp; title     = {OpenStreetView-5M: The Many Roads to Global Visual Geolocation}, \n
@@ -75,7 +75,7 @@
   year: 2024
   journal: CVPR 2024
   award: (Highlight)
-  thumbnail: /assets/publications/cad_cvpr/thumbnail.png
+  thumbnail_canvas: cad-thumbnail
   pdf: https://arxiv.org/abs/2405.20324
   github: https://github.com/nicolas-dufour/CAD
   website: cad.html
@@ -92,7 +92,7 @@
   date: 2024-09-29
   year: 2024
   journal: ECCV 2024
-  thumbnail: /assets/publications/et/thumbnail.png
+  thumbnail_canvas: et-thumbnail
   pdf:  https://arxiv.org/abs/2407.01516
   github: https://github.com/robincourant/DIRECTOR
   website: https://www.lix.polytechnique.fr/vista/projects/2024_et_courant/
@@ -112,7 +112,7 @@
   date: 2025-06-11
   year: 2025
   journal: CVPR 2025
-  thumbnail: /assets/publications/plonk/thumbnail.png
+  thumbnail_canvas: plonk-thumbnail
   pdf:  https://arxiv.org/abs/2412.06781
   github: https://github.com/nicolas-dufour/plonk
   website: plonk.html
@@ -131,7 +131,7 @@
   date: 2025-02-28
   year: 2025
   journal: Arxiv Preprint
-  thumbnail: /assets/publications/t2i_imagenet/thumbnail.png
+  thumbnail_canvas: t2i-imagenet-thumbnail
   pdf:  https://arxiv.org/abs/2502.21318
   github: https://github.com/lucasdegeorge/T2I-ImageNet
   website: https://lucasdegeorge.github.io/projects/t2i-imagenet/
@@ -147,7 +147,7 @@
   date: 2026-06-03
   year: 2026
   journal: CVPR Findings 2026
-  thumbnail: /assets/publications/pom/thumbnail.png
+  thumbnail_canvas: pom-thumbnail
   pdf:  https://arxiv.org/abs/2604.06129
   github: https://github.com/davidpicard/pom
   abstract: "This paper introduces the Polynomial Mixer (PoM), a novel token mixing mechanism with linear complexity that serves as a drop-in replacement for self-attention. PoM aggregates input tokens into a compact representation through a learned polynomial function, from which each token retrieves contextual information. We prove that PoM satisfies the contextual mapping property, ensuring that transformers equipped with PoM remain universal sequence-to-sequence approximators. We replace standard self-attention with PoM across five diverse domains: text generation, handwritten text recognition, image generation, 3D modeling, and Earth observation. PoM matches the performance of attention-based models while drastically reducing computational cost when working with long sequences."
@@ -163,7 +163,7 @@
   date: 2025-11-24
   year: 2025
   journal: BMVC 2025
-  thumbnail: /assets/publications/dipsy/thumbnail.png
+  thumbnail_canvas: dipsy-thumbnail
   pdf:  https://arxiv.org/abs/2509.22635
   github: https://github.com/eleftsonis/DIPSY
   website: https://www.lix.polytechnique.fr/vista/projects/2025_bmvc_dipsy/ 
@@ -180,7 +180,7 @@
   date: 2026-07-06
   year: 2026
   journal: ICML 2026
-  thumbnail: /assets/publications/miro/thumbnail.png
+  thumbnail_canvas: miro-thumbnail
   pdf:  https://arxiv.org/abs/2510.25897
   github: https://github.com/nicolas-dufour/MIRO
   website: https://nicolas-dufour.github.io/miro/
@@ -196,7 +196,7 @@
   date: 2026-12-06
   year: 2026
   journal: NeurIPS 2026
-  thumbnail: /assets/publications/one_view/thumbnail.png
+  thumbnail_canvas: ovie-thumbnail
   pdf:  https://arxiv.org/abs/2603.23488
   github: https://github.com/AdrienRR/ovie
   website: https://kyutai.org/blog/2026-04-14-ovie

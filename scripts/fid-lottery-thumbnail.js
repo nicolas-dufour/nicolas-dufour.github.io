@@ -367,6 +367,14 @@
     // ---- dynamic foreground ----
     let animId = null;
     let visible = true;
+    let onScreen = true;
+    // Pause while the thumbnail is scrolled out of view.
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+            onScreen = entries[0].isIntersecting;
+            if (onScreen && visible) start();
+        }, { rootMargin: '100px' }).observe(canvas);
+    }
     let t0 = performance.now();
 
     function drawBulbs(t) {
@@ -598,7 +606,7 @@
         drawLever(t);
         drawSparks(dt, t);
 
-        if (visible) {
+        if (visible && onScreen) {
             animId = requestAnimationFrame(draw);
         } else {
             animId = null;

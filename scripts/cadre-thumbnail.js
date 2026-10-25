@@ -358,6 +358,14 @@
     let t0 = performance.now();
     let animId = null;
     let visible = !document.hidden;
+    let onScreen = true;
+    // Pause while the thumbnail is scrolled out of view.
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+            onScreen = entries[0].isIntersecting;
+            if (onScreen && visible) start();
+        }, { rootMargin: '100px' }).observe(canvas);
+    }
 
     function draw(now) {
         // The first rAF timestamp can precede t0, so clamp to keep idx >= 0.
@@ -365,7 +373,7 @@
         const idx = Math.floor(elapsed / CLIP);
         drawFrame(CLIPS[idx % CLIPS.length], elapsed - idx * CLIP, now);
 
-        if (visible) {
+        if (visible && onScreen) {
             animId = requestAnimationFrame(draw);
         } else {
             animId = null;
