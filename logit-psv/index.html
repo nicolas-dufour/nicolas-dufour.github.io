@@ -20,6 +20,7 @@
 <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
 <style>body{ margin:0; }</style>
 <title>Rethinking Neural Thickets</title>
+<script>try{ const t=localStorage.getItem('theme'); if(t==='light'||t==='dark') document.documentElement.setAttribute('data-theme',t); }catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Libre+Caslon+Text:ital@0;1&family=Fragment+Mono&display=swap">
@@ -261,6 +262,13 @@ body{ color:var(--text); }
 .tn-links a.cur{ color:var(--black); border-bottom-color:var(--red); }
 .tn-title:focus-visible, .tn-links a:focus-visible{ outline:2px solid var(--red); outline-offset:2px; }
 @media (max-width:900px){ .tn-links{ display:none; } }
+.topnav:focus-within{ transform:none; }
+.tn-theme{ flex:none; display:grid; place-items:center; width:32px; height:32px; padding:0; border:1px solid var(--line); border-radius:999px; background:transparent; color:var(--black); cursor:pointer; }
+.tn-theme:hover{ border-color:var(--black); }
+.tn-theme:focus-visible{ outline:2px solid var(--red); outline-offset:2px; }
+.tn-theme svg{ width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.tn-theme .i-sun{ display:none; }
+@media (max-width:900px){ .tn-theme{ margin-left:auto; } }
 @media (max-width:700px){
   .sheet{ gap:34px; padding-top:10px; }
   .sec{ padding-top:30px; }
@@ -279,19 +287,23 @@ body{ color:var(--text); }
   :root:not([data-theme="light"]){
     --paper:#181715; --paper2:#26241F; --panel:#1F1E1A; --line:#38352E; --rule:#46433A;
     --black:#ECE9DF; --text:#DAD6CB; --grey:#A39F93; --red:#E5634F; --redD:#F19584;
-    --brown:#CF9A62; --brownD:#D9AD7E; --blue:#6AA8D6; --water:#2B4D63; --waterD:#7DB4DD;
-    --green:#2C4429; --greenD:#95C783; --c-base:#6E6A5E; --c-other:#857F71; --c-patch:#3E6787;
+    --brown:#CF9A62; --brownD:#D9AD7E; --blue:#6AA8D6; --water:#253F52; --waterD:#7DB4DD;
+    --green:#2C4429; --greenD:#95C783; --c-base:#6E6A5E; --c-other:#857F71; --c-patch:#4A7BA2;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
     --paper:#181715; --paper2:#26241F; --panel:#1F1E1A; --line:#38352E; --rule:#46433A;
     --black:#ECE9DF; --text:#DAD6CB; --grey:#A39F93; --red:#E5634F; --redD:#F19584;
-    --brown:#CF9A62; --brownD:#D9AD7E; --blue:#6AA8D6; --water:#2B4D63; --waterD:#7DB4DD;
-    --green:#2C4429; --greenD:#95C783; --c-base:#6E6A5E; --c-other:#857F71; --c-patch:#3E6787;
+    --brown:#CF9A62; --brownD:#D9AD7E; --blue:#6AA8D6; --water:#253F52; --waterD:#7DB4DD;
+    --green:#2C4429; --greenD:#95C783; --c-base:#6E6A5E; --c-other:#857F71; --c-patch:#4A7BA2;
     color-scheme:dark;
 }
 .ds-grid img{ background:var(--paper2); }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .ds-grid img{ filter:brightness(.88); } }
+:root[data-theme="dark"] .ds-grid img{ filter:brightness(.88); }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .tn-theme .i-sun{ display:block; } :root:not([data-theme="light"]) .tn-theme .i-moon{ display:none; } }
+:root[data-theme="dark"] .tn-theme .i-sun{ display:block; } :root[data-theme="dark"] .tn-theme .i-moon{ display:none; }
 
 /* captions follow the text column, also under charts */
 .chart > .cap{ width:100%; max-width:740px; margin-inline:auto; }
@@ -342,11 +354,47 @@ body{ color:var(--text); }
 @media (max-width:700px){ .lw{ padding:12px 8px 10px; border-radius:10px; } }
 
 .lw-note{ margin:6px 0 0; font:italic 400 12.5px/1.4 var(--ital); color:var(--grey); }
+/* ---------- text rhythm: narrower measure, ledes, lists, number strips ---------- */
+.hero, .bn-cap, .chart > .cap, .sec > h2, .sec > h3, .sec > .prose, .sec > p.cap, .sec > .bib, .sec > .foot{ max-width:680px; }
+.prose{ gap:20px; }
+.prose p.lede{ font:500 clamp(19px,1.9vw,21.5px)/1.5 var(--body); color:var(--black); }
+.prose .sub3{ margin:14px 0 -6px; }
+.sec > .sub3{ margin-top:18px; }
+.prose ul{ margin:0; padding-left:1.15em; display:flex; flex-direction:column; gap:8px; }
+.prose li{ font:400 18px/1.65 var(--body); padding-left:.15em; }
+.prose li::marker{ color:var(--red); }
+.prose .rh{ font:700 .92em var(--disp); letter-spacing:.07em; text-transform:uppercase; color:var(--black); }
+.prose ul.find{ list-style:none; padding:0; gap:0; border-top:1px solid var(--line); }
+.prose ul.find li{ padding:12px 0; border-bottom:1px solid var(--line); }
+.steps{ list-style:none; margin:2px 0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px 24px; counter-reset:st; }
+.prose .steps li{ counter-increment:st; border-top:2px solid var(--black); padding:10px 0 0; font:400 15.5px/1.5 var(--body); }
+.prose .steps b{ display:block; margin-bottom:5px; font:800 19px/1.1 var(--disp); letter-spacing:.06em; text-transform:uppercase; color:var(--black); }
+.prose .steps b::before{ content:counter(st) " · "; color:var(--red); }
+.stats{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-block:1px solid var(--line); }
+.stats > div{ padding:12px 16px; border-left:1px solid var(--line); display:flex; flex-direction:column; gap:5px; min-width:0; }
+.stats > div:first-child{ border-left:none; padding-left:0; }
+.prose .stats b{ font:800 36px/1 var(--disp); color:var(--blue); font-variant-numeric:tabular-nums; }
+.stats span{ font:600 12px/1.35 var(--disp); letter-spacing:.08em; text-transform:uppercase; color:var(--grey); }
+.cmp{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.cmp > div{ border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:12px 14px 6px; display:flex; flex-direction:column; gap:10px; min-width:0; }
+.cmp h4{ margin:0; font:600 16.5px/1.35 var(--body); color:var(--black); }
+.cmp h4 span{ display:block; margin-bottom:3px; font:700 11.5px/1.3 var(--disp); letter-spacing:.12em; text-transform:uppercase; color:var(--grey); }
+.cmp dl{ margin:0; border-top:1px solid var(--line); }
+.cmp dl > div{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:7px 0; border-bottom:1px solid var(--line); }
+.cmp dl > div:last-child{ border-bottom:none; }
+.cmp dt{ font:400 14.5px/1.35 var(--body); }
+.cmp dt i{ display:inline-block; width:12px; height:3px; margin-right:8px; vertical-align:middle; background:var(--c); }
+.cmp dd{ margin:0; font:700 18px var(--disp); font-variant-numeric:tabular-nums; }
+@media (max-width:700px){
+  .prose li{ font-size:17px; }
+  .steps, .cmp{ grid-template-columns:minmax(0,1fr); }
+  .stats > div{ padding:10px 8px; } .prose .stats b{ font-size:28px; } .stats span{ font-size:10.5px; letter-spacing:.04em; }
+}
 </style>
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
-<nav class="topnav" id="topnav" aria-label="Sections"><a class="tn-title" href="#top">Rethinking Neural Thickets</a><div class="tn-links"><a href="#thicket">Background</a><a href="#block">One block</a><a href="#logits">Logit PSV</a><a href="#firstorder">First order</a><a href="#vision">Vision</a><a href="#meaning">Conclusion</a><a href="#bibtex">BibTeX</a></div></nav>
+<nav class="topnav" id="topnav" aria-label="Sections"><a class="tn-title" href="#top">Rethinking Neural Thickets</a><div class="tn-links"><a href="#thicket">Background</a><a href="#block">One block</a><a href="#logits">Logit PSV</a><a href="#firstorder">First order</a><a href="#vision">Vision</a><a href="#meaning">Conclusion</a><a href="#bibtex">BibTeX</a></div><button class="tn-theme" id="themeBtn" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button></nav>
 <div class="page">
 <article class="sheet">
 
@@ -387,9 +435,20 @@ body{ color:var(--text); }
   <section class="sec" id="thicket">
     <h2><small>1 · Background</small>Neural Thickets and perturb, select, vote</h2>
     <div class="prose">
-      <p><a href="https://arxiv.org/abs/2603.12228">Gan and Isola</a> add Gaussian noise to all the weights of a pretrained language model, score each noisy copy on 200 examples, keep the best ones and take a majority vote over their answers. With a few thousand copies and K = 50, this improves OLMo-3-7B-Instruct by about 20 points on Countdown and 13 on MATH-500, and Llama-3.1-8B-Instruct by 52.8 points on Countdown, at a small fraction of the cost of fine-tuning.</p>
-      <p>They explain the gain geometrically: the pretrained weights would lie in a dense region of task-specific models, a thicket, that random perturbations can reach. We keep the procedure and test whether the gain depends on perturbing the weights.</p>
-      <p>We refer to the procedure as <b>perturb, select, vote</b> (PSV). It is defined by what is perturbed, a labeled selection set and a voting rule. Neural Thickets perturbs every weight: each member is <span class="eqn">θ + σε</span> with <span class="eqn">ε ~ 𝒩(0, I)</span>. The figure below runs it on a toy question.</p>
+      <p class="lede">Neural Thickets improves a pretrained language model without training. <a href="https://arxiv.org/abs/2603.12228">Gan and Isola</a> add random noise to its weights, keep the noisy copies that score best on a small labeled set, and let them vote.</p>
+      <p>We refer to this procedure as <b>perturb, select, vote</b> (PSV). It is defined by what is perturbed, a labeled selection set and a voting rule:</p>
+      <ol class="steps">
+        <li><b>Perturb</b>Draw many copies of the model, called members. Neural Thickets adds Gaussian noise to every weight: each member is <span class="eqn">θ + σε</span> with <span class="eqn">ε ~ 𝒩(0, I)</span>.</li>
+        <li><b>Select</b>Score each member on 200 labeled examples and keep the best K, with K = 50.</li>
+        <li><b>Vote</b>The kept members answer each test question, and the majority answer is returned.</li>
+      </ol>
+      <p>With a few thousand members, they report these gains in accuracy points over greedy decoding, at a small fraction of the cost of fine-tuning:</p>
+      <div class="stats">
+        <div><b>+20.2</b><span>Countdown<br>OLMo-3-7B-Instruct</span></div>
+        <div><b>+13.1</b><span>MATH-500<br>OLMo-3-7B-Instruct</span></div>
+        <div><b>+52.8</b><span>Countdown<br>Llama-3.1-8B-Instruct</span></div>
+      </div>
+      <p>They explain the gain geometrically: the pretrained weights would lie in a dense region of task-specific models, a thicket, that random perturbations can reach. We keep the procedure and test whether the gain depends on perturbing the weights. The figure below runs it on a toy question.</p>
     </div>
     <figure class="fig" id="fig1">
       <canvas id="axis1" height="34" aria-hidden="true"></canvas>
@@ -404,8 +463,15 @@ body{ color:var(--text); }
   <section class="sec" id="block">
     <h2><small>2 · Localized perturbations</small>One block is enough</h2>
     <div class="prose">
+      <p class="lede">Noise in a single decoder block gives about the same gain as noise in every weight.</p>
       <p>If the gain required a coordinated change of all the weights, perturbing a small part of the network should lose most of it. On Countdown with OLMo-3-7B-Instruct (K = 50), the unperturbed model scores 66.6% and full-weight PSV 90.8%. Perturbing a single decoder block, with the other 31 fixed, improves on the base model for every block; the later blocks come close to 90.8%, and the last one reaches 91.8%.</p>
-      <p>The same holds for single matrices of the first block. Components that write into the residual stream recover the full gain, the value and feed-forward input projections 96 to 99% of it, and the query and key path, which acts through the attention softmax, 85 to 89%. Qwen2.5 from 0.5B to 3B shows the same pattern.</p>
+      <p>The same holds for single matrices of the first block:</p>
+      <ul>
+        <li>components that write into the residual stream recover the full gain;</li>
+        <li>the value and feed-forward input projections recover 96 to 99% of it;</li>
+        <li>the query and key path, which acts through the attention softmax, recovers 85 to 89%.</li>
+      </ul>
+      <p>Qwen2.5 from 0.5B to 3B shows the same pattern.</p>
     </div>
     <div class="pair">
       <figure class="chart">
@@ -424,10 +490,12 @@ body{ color:var(--text); }
   <section class="sec" id="logits">
     <h2><small>3 · Perturbing only the output</small>Logit PSV</h2>
     <div class="prose">
+      <p class="lede">A random bias on the output logits matches or exceeds full-weight PSV on most reasoning tasks.</p>
       <p>Section 2 shows that the perturbation can be much smaller than the full network. We therefore look for the minimal perturbation that can still explain the gains: we keep the network fixed and perturb only its output. Each member draws one Gaussian vector over the vocabulary and adds it to the logits, at every decoding step and for every input:</p>
       <p class="eqblock">ℓ<sub>i</sub> = ℓ + σ ε<sub>i</sub>,&nbsp;&nbsp; ε<sub>i</sub> ~ 𝒩(0, I)</p>
       <p>This amounts to perturbing the output-layer bias, one value per vocabulary token, with all other weights unchanged. Selection and voting are unchanged. We call this <b>logit PSV</b>.</p>
-      <p>Adding a bias to the logits multiplies the probability of each token by a fixed factor. The toy example below applies one such bias to eight validation questions. Most members do no better than the unperturbed model. A few fix several questions at once, for example by lowering a token that the model predicts too often, and selection keeps those.</p>
+      <h3 class="sub3">A toy example</h3>
+      <p>Adding a bias to the logits multiplies the probability of each token by a fixed factor. The example below applies one such bias to eight validation questions. Most members do no better than the unperturbed model. A few fix several questions at once, for example by lowering a token that the model predicts too often, and selection keeps those.</p>
     </div>
     <figure class="lw" id="lw" aria-label="Interactive toy example: one random logit bias applied to eight validation questions">
       <div class="lw-top">
@@ -450,6 +518,7 @@ body{ color:var(--text); }
     </figure>
     <p class="cap"><b>Toy example.</b> Made-up logits for one decoding step, the first digit of the answer, on eight validation questions. Bars show the member's next-token probabilities; ticks show those of the unperturbed model. Each member draws one bias and adds it to the logits of all eight questions; the numbers under the bias are the factors it applies to each token's probability before renormalization. Selection keeps the members with the highest validation accuracy, whose accuracy on test questions can be lower.</p>
     <div class="prose">
+      <h3 class="sub3">Results</h3>
       <p>The figure below runs PSV with the noise in four places, from every weight to the output bias only; the last row is logit PSV.</p>
     </div>
     <figure class="fig" id="fig">
@@ -459,7 +528,7 @@ body{ color:var(--text); }
   </figure>
     <p class="cap"><b>Schematic.</b> The same procedure in every row: members are placed at their validation accuracy, the best 8 of 24 are kept, and they answer a test question that the unperturbed model gets wrong (36 instead of 26). The paper uses 1000 to 5000 members and keeps 50.</p>
     <div class="prose">
-      <p>Logit PSV matches or exceeds full-weight PSV on most reasoning tasks. Across four models it is more accurate on 13 of 15 reasoning cells and within 0.6 points on the other two; it is usually slightly lower on MBPP and ROCStories. Most of these differences are within test-set noise.</p>
+      <p>Across four models, logit PSV is more accurate than full-weight PSV on 13 of 15 reasoning cells and within 0.6 points on the other two. It is usually slightly lower on MBPP and ROCStories. Most of these differences are within test-set noise.</p>
     </div>
     <figure class="chart">
       <div class="frame">
@@ -471,7 +540,30 @@ body{ color:var(--text); }
     </figure>
     <h3 class="sub3">Selection and voting</h3>
     <div class="prose">
-      <p>In terms of logits, PSV combines three known components: the perturbations make the members' outputs differ, selection on a validation set keeps the members whose shift helps across many examples (similar to <a href="https://arxiv.org/abs/2110.14168">verifier-guided selection</a>, but done once before test time), and voting is <a href="https://arxiv.org/abs/2203.11171">self-consistency</a> over members. To isolate selection, we compare with temperature-tuned majority voting (TT-MV), which samples the unperturbed model at T = 0.7 and votes without selection. On strong models, sampling and voting account for much of the gain: on MATH-500 with OLMo-3-7B-Instruct, TT-MV reaches 77.7%, against 74.7% for full-weight PSV with 1000 members and 80.7% with 5000. On weaker models selection matters: on Countdown with Qwen2.5-1.5B-Instruct, TT-MV reaches at most 34.3% (at T = 0.12), below full-weight PSV at 37.4%.</p>
+      <p>In terms of logits, PSV combines three known components:</p>
+      <ul>
+        <li><b class="rh">Perturbation</b> makes the members' outputs differ.</li>
+        <li><b class="rh">Selection</b> on a validation set keeps the members whose shift helps across many examples. It is similar to <a href="https://arxiv.org/abs/2110.14168">verifier-guided selection</a>, but done once before test time.</li>
+        <li><b class="rh">Voting</b> is <a href="https://arxiv.org/abs/2203.11171">self-consistency</a> over members.</li>
+      </ul>
+      <p>To isolate selection, we compare with temperature-tuned majority voting (TT-MV), which samples the unperturbed model at T = 0.7 and votes without selection.</p>
+      <div class="cmp">
+        <div>
+          <h4><span>MATH-500 · OLMo-3-7B-Instruct</span>On a strong model, sampling and voting account for much of the gain.</h4>
+          <dl>
+            <div><dt><i style="--c:var(--brown)"></i>TT-MV</dt><dd>77.7%</dd></div>
+            <div><dt><i style="--c:var(--blue)"></i>Full-weight PSV, 1000 members</dt><dd>74.7%</dd></div>
+            <div><dt><i style="--c:var(--blue)"></i>Full-weight PSV, 5000 members</dt><dd>80.7%</dd></div>
+          </dl>
+        </div>
+        <div>
+          <h4><span>Countdown · Qwen2.5-1.5B-Instruct</span>On a weaker model, selection matters.</h4>
+          <dl>
+            <div><dt><i style="--c:var(--brown)"></i>TT-MV, best temperature (T = 0.12)</dt><dd>34.3%</dd></div>
+            <div><dt><i style="--c:var(--blue)"></i>Full-weight PSV</dt><dd>37.4%</dd></div>
+          </dl>
+        </div>
+      </div>
     </div>
     <figure class="chart">
       <div class="frame">
@@ -487,7 +579,10 @@ body{ color:var(--text); }
   <section class="sec" id="firstorder">
     <h2><small>4 · First-order analysis</small>Weight noise acts through the logits</h2>
     <div class="prose">
-      <p>A perturbed model changes its answer only through its logits. For the perturbation used by Neural Thickets, noise σε on every weight, the first-order change of the logits is <span class="eqn">σJ(x)ε</span>: the change made by each block enters the residual stream, these changes add up, and the unembedding maps their sum to the logits. Adding this shift as a bias on the logits, with all weights unchanged, gives the same logits to first order. Logit PSV samples such a bias directly.</p>
+      <p class="lede">To first order, noise on every weight acts as a shift of the logits.</p>
+      <p>A perturbed model changes its answer only through its logits. For noise σε on every weight, as in Neural Thickets, the first-order change of the logits is</p>
+      <p class="eqblock">Δℓ ≈ σ J(x) ε.</p>
+      <p>The change made by each block enters the residual stream, these changes add up, and the unembedding maps their sum to the logits. Adding this shift as a bias on the logits, with all other weights unchanged, gives the same logits to first order. Logit PSV samples such a bias directly.</p>
     </div>
     <figure class="tf" id="tf">
     <div class="tf-ctl"><span class="tf-l">Noise on every weight vs. a bias on the logits</span><button class="btn" id="tfPlay">Pause</button></div>
@@ -514,7 +609,13 @@ body{ color:var(--text); }
   <section class="sec" id="vision">
     <h2><small>5 · Vision</small>Vision under domain shift</h2>
     <div class="prose">
-      <p>Vision backbones are usually adapted with a linear probe, and a classifier makes a single prediction per image. We define a <em>domain expert</em> as a perturbed backbone whose features give a better probe on a shifted domain. Full-weight PSV perturbs a <a href="https://arxiv.org/abs/2508.10104">DINOv3</a> backbone and fits a probe for each member; logit PSV fits one probe and perturbs its class logits. We use ImageNet as a control and two datasets with a strong shift between training and test, FMoW and Waterbirds.</p>
+      <p class="lede">Under domain shift, perturbing the class logits of a DINOv3 probe helps; perturbing the backbone weights adds at most one point.</p>
+      <p>Vision backbones are usually adapted with a linear probe, and a classifier makes a single prediction per image. We define a <em>domain expert</em> as a perturbed backbone whose features give a better probe on a shifted domain. The two variants differ in what a member is:</p>
+      <ul>
+        <li><b class="rh">Full-weight PSV</b> perturbs a <a href="https://arxiv.org/abs/2508.10104">DINOv3</a> backbone and fits a probe for each member.</li>
+        <li><b class="rh">Logit PSV</b> fits one probe and perturbs its class logits.</li>
+      </ul>
+      <p>We use ImageNet as a control and two datasets with a strong shift between training and test, FMoW and Waterbirds.</p>
     </div>
     <div class="ds">
       <figure class="ds-card">
@@ -550,6 +651,7 @@ body{ color:var(--text); }
     </div>
     <p class="cap">Sample images. ImageNet (<a href="https://doi.org/10.1109/CVPR.2009.5206848">Deng et al., 2009</a>; images from the <a href="https://github.com/fastai/imagenette">Imagenette</a> subset), FMoW-WILDS (<a href="https://arxiv.org/abs/1711.07846">Christie et al., 2018</a>; <a href="https://arxiv.org/abs/2012.07421">Koh et al., 2021</a>) and Waterbirds (<a href="https://arxiv.org/abs/1911.08731">Sagawa et al., 2020</a>, built from CUB and Places).</p>
     <div class="prose">
+      <h3 class="sub3">Results</h3>
       <p>Weight perturbations improve accuracy by at most one point on the three datasets, even with the 6.7B-parameter backbone. Logit PSV has no effect on ImageNet and improves worst-group accuracy by 6.2 points on FMoW and 5.0 on Waterbirds.</p>
     </div>
     <figure class="chart">
@@ -562,9 +664,9 @@ body{ color:var(--text); }
     </figure>
     <div class="prose">
       <h3 class="sub3">Closed-form recalibration</h3>
-      <p>To test whether the gain is a recalibration, we compare with a fixed correction that needs no sampling, selection or voting. On the validation group of interest, let π<sub>true</sub>(c) be the frequency of class c and π<sub>pred</sub>(c) the frequency with which the probe predicts it. We add to the logit of each class</p>
-      <p class="eqblock">b<sub>c</sub> = log π<sub>true</sub>(c) − log π<sub>pred</sub>(c).</p>
-      <p>Classes that the probe predicts too often get a negative bias and classes it predicts too rarely a positive one, so the predicted class frequencies move toward the true ones. With two classes, this is the same as moving the decision threshold. On ImageNet, where classes are balanced and there is no shift, logit PSV has no effect and the correction is not applicable. On FMoW the correction recovers 3.7 of the 6.2 points, and on Waterbirds it matches logit PSV (+5.0). The vision gains therefore look like recalibration under distribution shift rather than the discovery of domain experts.</p>
+      <p>We compare with a fixed correction that needs no sampling, selection or voting. It adds to the logit of each class c</p>
+      <p class="eqblock">b<sub>c</sub> = log π<sub>true</sub>(c) − log π<sub>pred</sub>(c),</p>
+      <p>where π<sub>true</sub>(c) and π<sub>pred</sub>(c) are the true and predicted frequencies of class c on the validation group of interest. It recovers 3.7 of the 6.2 points on FMoW and matches logit PSV on Waterbirds (+5.0). The vision gains therefore look like recalibration under distribution shift rather than the discovery of domain experts.</p>
     </div>
   </section>
 
@@ -572,9 +674,16 @@ body{ color:var(--text); }
   <section class="sec" id="meaning">
     <h2><small>6 · Conclusion</small>Conclusion</h2>
     <div class="prose">
-      <p>Neural Thickets showed that a pretrained language model can be improved on a task without training: perturb its weights at random, keep the copies that score best on 200 examples and let them vote. We kept this procedure and changed where the noise goes. Noise in a single decoder block gives about the same gain as noise in every weight: on Countdown with OLMo-3-7B-Instruct, the last block alone reaches 91.8%, against 90.8% for every weight. Noise on the output bias alone, with every other weight unchanged, is more accurate than full-weight PSV on 13 of 15 reasoning cells. The first-order analysis shows why the location matters little: wherever the noise is applied, its leading effect is a shift of the logits.</p>
-      <p>Under logit PSV, each member is a single vector over the vocabulary. It multiplies the probability of each token by a fixed factor, the same at every decoding step and on every input, and selection keeps the vectors that help on the task. In vision, this reading can be tested directly: a closed-form correction of the class frequencies gives 3.7 of the 6.2 points of logit PSV on FMoW, and the same +5.0 points on Waterbirds. Our results do not exclude useful structure near the pretrained weights; they show that it is not needed for the gains measured here.</p>
-      <p>Logit PSV is also simpler to run. It is training-free, and since members differ only in the output bias, they share the rest of the network and can be decoded in the same batch, each with its own bias.</p>    </div>
+      <p>Neural Thickets showed that a pretrained language model can be improved on a task without training: perturb its weights at random, keep the copies that score best on 200 examples and let them vote. We kept this procedure and changed where the noise goes.</p>
+      <ul class="find">
+        <li><b class="rh">One block is enough.</b> Noise in a single decoder block gives about the same gain as noise in every weight: on Countdown with OLMo-3-7B-Instruct, the last block alone reaches 91.8%, against 90.8% for every weight.</li>
+        <li><b class="rh">The output bias is enough.</b> Noise on the output bias alone, with every other weight unchanged, is more accurate than full-weight PSV on 13 of 15 reasoning cells.</li>
+        <li><b class="rh">Weight noise acts through the logits.</b> The first-order analysis shows why the location matters little: wherever the noise is applied, its leading effect is a shift of the logits.</li>
+        <li><b class="rh">Vision gains look like recalibration.</b> A closed-form correction of the class frequencies gives 3.7 of the 6.2 points of logit PSV on FMoW, and the same +5.0 points on Waterbirds.</li>
+      </ul>
+      <p>Under logit PSV, each member is a single vector over the vocabulary. It multiplies the probability of each token by a fixed factor, the same at every decoding step and on every input, and selection keeps the vectors that help on the task. Our results do not exclude useful structure near the pretrained weights; they show that it is not needed for the gains measured here.</p>
+      <p>Logit PSV is also simpler to run. It is training-free, and since members differ only in the output bias, they share the rest of the network and can be decoded in the same batch, each with its own bias.</p>
+    </div>
   </section>
 
   <!-- bibtex -->
@@ -598,7 +707,7 @@ body{ color:var(--text); }
 // colour theme for the canvas and SVG figures: light by default, dark when the system asks for it or data-theme="dark"
 window.TH=(function(){
 "use strict";
-const HEX={"#C2392B": "#E5634F", "#8E2A20": "#F19584", "#7C4A1D": "#D9AD7E", "#B87A42": "#CF9A62", "#F4F3EC": "#181715", "#1D1D1B": "#ECE9DF", "#6C6A62": "#A39F93", "#EFDDB8": "#4A3D24", "#CFE5BD": "#2D4428", "#8A6420": "#E0BB72", "#3F6E33": "#9DCD88", "#FBFAF5": "#1F1E1A", "#E2DED2": "#3A3730", "#2D6E9E": "#6AA8D6", "#1F4E73": "#A3C9E8", "#D9E9F3": "#1D3140", "#9BC2DB": "#3E6A8A", "#CFCBBE": "#46433A", "#FFFFFF": "#2A2823", "#EEEBE2": "#34312A", "#C9C3B4": "#6E6A5E", "#E4E0D4": "#2F2D27", "#ABD3EB": "#2B4D63", "#A9A293": "#857F71", "#8FB6D1": "#3E6787", "#D9D6CA": "#3A3730"}, RGB={"194,57,43": "229,99,79", "45,110,158": "106,168,214", "124,74,29": "217,173,126", "29,29,27": "236,233,223", "108,106,98": "163,159,147", "255,255,255": "58,55,48"};
+const HEX={"#C2392B": "#E5634F", "#8E2A20": "#F19584", "#7C4A1D": "#D9AD7E", "#B87A42": "#CF9A62", "#F4F3EC": "#181715", "#1D1D1B": "#ECE9DF", "#6C6A62": "#A39F93", "#EFDDB8": "#3A3122", "#CFE5BD": "#24331F", "#8A6420": "#E0BB72", "#3F6E33": "#9DCD88", "#FBFAF5": "#1F1E1A", "#E2DED2": "#3A3730", "#2D6E9E": "#6AA8D6", "#1F4E73": "#A3C9E8", "#D9E9F3": "#1D3140", "#9BC2DB": "#3E6A8A", "#CFCBBE": "#46433A", "#FFFFFF": "#2A2823", "#EEEBE2": "#34312A", "#C9C3B4": "#6E6A5E", "#E4E0D4": "#2F2D27", "#ABD3EB": "#253F52", "#A9A293": "#857F71", "#8FB6D1": "#4A7BA2", "#D9D6CA": "#3A3730"}, RGB={"194,57,43": "229,99,79", "45,110,158": "106,168,214", "124,74,29": "217,173,126", "29,29,27": "236,233,223", "108,106,98": "163,159,147", "255,255,255": "58,55,48"};
 const fns=[], mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
 const calc=()=>{ const t=document.documentElement.getAttribute('data-theme'); return t==='dark'||(t!=='light'&&!!(mq&&mq.matches)); };
 let dark=calc();
@@ -686,6 +795,14 @@ if(nav&&hero&&'IntersectionObserver' in window){
   const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) links.forEach(a=>a.classList.toggle('cur',a.getAttribute('href')==='#'+e.target.id)); }),{rootMargin:'-45% 0px -50% 0px'});
   document.querySelectorAll('.sec[id]').forEach(s=>io.observe(s));
 }
+
+// theme switch in the top bar; the choice is kept in this browser
+const tb=document.getElementById('themeBtn');
+if(tb){
+  const label=()=>{ const l=TH.dark?'Switch to light mode':'Switch to dark mode'; tb.setAttribute('aria-label',l); tb.title=l; };
+  tb.addEventListener('click',()=>{ const t=TH.dark?'light':'dark'; document.documentElement.setAttribute('data-theme',t); try{ localStorage.setItem('theme',t); }catch(e){} });
+  label(); TH.on(label);
+}
 })();
 </script>
 <script>
@@ -696,11 +813,11 @@ function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; let t=Math.im
 function gauss(r){ let u=0,v=0; while(u===0)u=r(); while(v===0)v=r(); return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v); }
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 const easeOut=t=>1-Math.pow(1-t,3);
-let RED,REDD,BROWN,PAPER,INK,GREY;
+let RED,REDD,BROWN,PAPER,INK,GREY,FRAME,BLKS;
 let T36,T26;
 
 let OCHD,GRND;
-function _cols(){ RED=TH.c('#C2392B'); REDD=TH.c('#8E2A20'); BROWN=TH.c('#7C4A1D'); PAPER=TH.c('#F4F3EC'); INK=TH.c('#1D1D1B'); GREY=TH.c('#6C6A62'); T36=TH.c('#EFDDB8'); T26=TH.c('#CFE5BD'); OCHD=TH.c('#8A6420'); GRND=TH.c('#3F6E33'); }
+function _cols(){ RED=TH.c('#C2392B'); REDD=TH.c('#8E2A20'); BROWN=TH.c('#7C4A1D'); PAPER=TH.c('#F4F3EC'); INK=TH.c('#1D1D1B'); GREY=TH.c('#6C6A62'); T36=TH.c('#EFDDB8'); T26=TH.c('#CFE5BD'); OCHD=TH.c('#8A6420'); GRND=TH.c('#3F6E33'); FRAME=TH.dark?'#6E6A5E':INK; BLKS=TH.dark?'rgba(229,99,79,.6)':REDD; }
 _cols(); TH.on(_cols);
 const ROWS=[
   {k:'all', name:'Every weight', sub:'Neural Thickets: Gaussian noise on every weight of the model', sd:1.00}
@@ -795,13 +912,13 @@ function drawBase(row){
   G.cols.forEach(col=>{
     const on=perturbed(row,col), r=col.kind==='bias'?Math.min(col.w/2,6):1.5;
     c.beginPath(); if(c.roundRect) c.roundRect(col.x,G.top,col.w,G.bot-G.top,r); else c.rect(col.x,G.top,col.w,G.bot-G.top);
-    c.fillStyle=on?TH.c('rgba(194,57,43,.16)'):TH.c('rgba(255,255,255,.35)'); c.fill(); c.strokeStyle=on?REDD:TH.c('rgba(124,74,29,.55)'); c.lineWidth=on?1.2:.8; c.stroke();
+    c.fillStyle=on?TH.c('rgba(194,57,43,.16)'):TH.c('rgba(255,255,255,.35)'); c.fill(); c.strokeStyle=on?BLKS:TH.c('rgba(124,74,29,.55)'); c.lineWidth=on?1.2:.8; c.stroke();
     if(row.k==='q'&&col.kind==='block'&&col.i===0){ c.fillStyle=TH.c('rgba(194,57,43,.55)'); c.fillRect(col.x,G.top,col.w,(G.bot-G.top)*0.22); }
   });
   c.save(); c.setLineDash([2,3]); c.strokeStyle=GREY; c.lineWidth=1; c.beginPath(); c.moveTo(0,G.y0); c.lineTo(G.netEnd,G.y0); c.stroke(); c.restore();
   const vx=G.xV, vw=W-2-vx;
   c.fillStyle=T36; c.fillRect(vx,G.ptop,vw,G.pyT-G.ptop); c.fillStyle=T26; c.fillRect(vx,G.pyT,vw,G.pbot-G.pyT);
-  c.strokeStyle=INK; c.lineWidth=1; c.strokeRect(vx+.5,G.ptop+.5,vw-1,G.pbot-G.ptop-1); c.beginPath(); c.moveTo(vx,G.pyT); c.lineTo(vx+vw,G.pyT); c.stroke();
+  c.strokeStyle=FRAME; c.lineWidth=1; c.strokeRect(vx+.5,G.ptop+.5,vw-1,G.pbot-G.ptop-1); c.beginPath(); c.moveTo(vx,G.pyT); c.lineTo(vx+vw,G.pyT); c.stroke();
   c.font='800 16px "Barlow Condensed", sans-serif'; c.fillStyle=INK; c.textAlign='left'; c.textBaseline='middle'; c.fillText('36',vx+7,G.pl36); c.fillText('26',vx+7,G.pl26);
   if(G.stacked){ c.font='700 11px "Barlow Condensed", sans-serif'; c.fillStyle=INK; c.textBaseline='alphabetic'; c.textAlign='left';
     c.fillText('2 · SELECT',G.xP,G.ptop-8); c.fillText('3 · TEST',G.xT,G.ptop-8); c.fillText('4 · VOTE',G.xV,G.ptop-8); }
@@ -817,12 +934,12 @@ function drawPanels(){
   for(let a=.55;a<=.751;a+=.1){ c.fillText(Math.round(a*100)+'%',accX(a),G.pbot-2); }
   c.save(); c.setLineDash([2,3]); c.strokeStyle=GREY; c.beginPath(); c.moveTo(accX(BASEACC),G.ptop+16); c.lineTo(accX(BASEACC),G.pbot-14); c.stroke(); c.restore();
   c.textAlign='left'; c.textBaseline='top'; c.font='700 10.5px "Barlow Condensed", sans-serif'; c.fillStyle=INK; if(!G.stacked) c.fillText('VALIDATION ACCURACY',x+6,G.ptop+4);
-  c.strokeStyle=INK; c.strokeRect(x+.5,G.ptop+.5,w-1,G.pbot-G.ptop-1);
+  c.strokeStyle=FRAME; c.strokeRect(x+.5,G.ptop+.5,w-1,G.pbot-G.ptop-1);
   c=testBg.getContext('2d'); { const x=G.xT, w=G.tR-G.xT;
   c.fillStyle=T36; c.fillRect(x,G.ptop,w,G.pyT-G.ptop); c.fillStyle=T26; c.fillRect(x,G.pyT,w,G.pbot-G.pyT);
   c.save(); c.setLineDash([5,3]); c.strokeStyle=BROWN; c.lineWidth=1.2; c.beginPath(); c.moveTo(x,G.pyT); c.lineTo(G.tR,G.pyT); c.stroke(); c.restore();
-  c.strokeStyle=INK; c.lineWidth=1; c.strokeRect(x+.5,G.ptop+.5,w-1,G.pbot-G.ptop-1);
-  c.fillStyle=PAPER; c.strokeStyle=INK; c.lineWidth=1.5; c.beginPath(); c.moveTo(x-1,G.py0); c.lineTo(x-10,G.py0-6); c.lineTo(x-10,G.py0+6); c.closePath(); c.fill(); c.stroke();
+  c.strokeStyle=FRAME; c.lineWidth=1; c.strokeRect(x+.5,G.ptop+.5,w-1,G.pbot-G.ptop-1);
+  c.fillStyle=PAPER; c.strokeStyle=FRAME; c.lineWidth=1.5; c.beginPath(); c.moveTo(x-1,G.py0); c.lineTo(x-10,G.py0-6); c.lineTo(x-10,G.py0+6); c.closePath(); c.fill(); c.stroke();
   c.textAlign='left'; c.textBaseline='top'; c.font='700 10.5px "Barlow Condensed", sans-serif'; c.fillStyle=INK; if(!G.stacked) c.fillText('TEST QUESTION',x+6,G.ptop+4);
   c.textAlign='right'; c.font='800 16px "Barlow Condensed", sans-serif'; c.fillText('36',G.tR-6,G.ptop+4); c.textBaseline='bottom'; c.fillText('26',G.tR-6,G.pbot-3);
   c.font='600 11px "Barlow Condensed", sans-serif'; c.fillStyle=GREY; c.textBaseline='top'; c.fillText('unperturbed answer',G.tR-6,G.ptop+21);
@@ -987,11 +1104,11 @@ function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; let t=Math.im
 function gauss(r){ let u=0,v=0; while(u===0)u=r(); while(v===0)v=r(); return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v); }
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 const easeOut=t=>1-Math.pow(1-t,3);
-let RED,REDD,BROWN,PAPER,INK,GREY;
+let RED,REDD,BROWN,PAPER,INK,GREY,FRAME,BLKS;
 let T36,T26;
 
 let OCHD,GRND;
-function _cols(){ RED=TH.c('#C2392B'); REDD=TH.c('#8E2A20'); BROWN=TH.c('#7C4A1D'); PAPER=TH.c('#F4F3EC'); INK=TH.c('#1D1D1B'); GREY=TH.c('#6C6A62'); T36=TH.c('#EFDDB8'); T26=TH.c('#CFE5BD'); OCHD=TH.c('#8A6420'); GRND=TH.c('#3F6E33'); }
+function _cols(){ RED=TH.c('#C2392B'); REDD=TH.c('#8E2A20'); BROWN=TH.c('#7C4A1D'); PAPER=TH.c('#F4F3EC'); INK=TH.c('#1D1D1B'); GREY=TH.c('#6C6A62'); T36=TH.c('#EFDDB8'); T26=TH.c('#CFE5BD'); OCHD=TH.c('#8A6420'); GRND=TH.c('#3F6E33'); FRAME=TH.dark?'#6E6A5E':INK; BLKS=TH.dark?'rgba(229,99,79,.6)':REDD; }
 _cols(); TH.on(_cols);
 const ROWS=[
   {k:'all',  name:'Every weight',      sub:'full-weight PSV · noise in every block',                 sd:1.00},
@@ -1089,13 +1206,13 @@ function drawBase(row){
   G.cols.forEach(col=>{
     const on=perturbed(row,col), r=col.kind==='bias'?Math.min(col.w/2,6):1.5;
     c.beginPath(); if(c.roundRect) c.roundRect(col.x,G.top,col.w,G.bot-G.top,r); else c.rect(col.x,G.top,col.w,G.bot-G.top);
-    c.fillStyle=on?TH.c('rgba(194,57,43,.16)'):TH.c('rgba(255,255,255,.35)'); c.fill(); c.strokeStyle=on?REDD:TH.c('rgba(124,74,29,.55)'); c.lineWidth=on?1.2:.8; c.stroke();
+    c.fillStyle=on?TH.c('rgba(194,57,43,.16)'):TH.c('rgba(255,255,255,.35)'); c.fill(); c.strokeStyle=on?BLKS:TH.c('rgba(124,74,29,.55)'); c.lineWidth=on?1.2:.8; c.stroke();
     if(row.k==='q'&&col.kind==='block'&&col.i===0){ c.fillStyle=TH.c('rgba(194,57,43,.55)'); c.fillRect(col.x,G.top,col.w,(G.bot-G.top)*0.22); }
   });
   c.save(); c.setLineDash([2,3]); c.strokeStyle=GREY; c.lineWidth=1; c.beginPath(); c.moveTo(0,G.y0); c.lineTo(G.netEnd,G.y0); c.stroke(); c.restore();
   const vx=G.xV, vw=W-2-vx;
   c.fillStyle=T36; c.fillRect(vx,G.ptop,vw,G.pyT-G.ptop); c.fillStyle=T26; c.fillRect(vx,G.pyT,vw,G.pbot-G.pyT);
-  c.strokeStyle=INK; c.lineWidth=1; c.strokeRect(vx+.5,G.ptop+.5,vw-1,G.pbot-G.ptop-1); c.beginPath(); c.moveTo(vx,G.pyT); c.lineTo(vx+vw,G.pyT); c.stroke();
+  c.strokeStyle=FRAME; c.lineWidth=1; c.strokeRect(vx+.5,G.ptop+.5,vw-1,G.pbot-G.ptop-1); c.beginPath(); c.moveTo(vx,G.pyT); c.lineTo(vx+vw,G.pyT); c.stroke();
   c.font='800 16px "Barlow Condensed", sans-serif'; c.fillStyle=INK; c.textAlign='left'; c.textBaseline='middle'; c.fillText('36',vx+7,G.pl36); c.fillText('26',vx+7,G.pl26);
   if(G.stacked){ c.font='700 11px "Barlow Condensed", sans-serif'; c.fillStyle=INK; c.textBaseline='alphabetic'; c.textAlign='left';
     c.fillText('2 · SELECT',G.xP,G.ptop-8); c.fillText('3 · TEST',G.xT,G.ptop-8); c.fillText('4 · VOTE',G.xV,G.ptop-8); }
@@ -1111,12 +1228,12 @@ function drawPanels(){
   for(let a=.55;a<=.751;a+=.1){ c.fillText(Math.round(a*100)+'%',accX(a),G.pbot-2); }
   c.save(); c.setLineDash([2,3]); c.strokeStyle=GREY; c.beginPath(); c.moveTo(accX(BASEACC),G.ptop+16); c.lineTo(accX(BASEACC),G.pbot-14); c.stroke(); c.restore();
   c.textAlign='left'; c.textBaseline='top'; c.font='700 10.5px "Barlow Condensed", sans-serif'; c.fillStyle=INK; if(!G.stacked) c.fillText('VALIDATION ACCURACY',x+6,G.ptop+4);
-  c.strokeStyle=INK; c.strokeRect(x+.5,G.ptop+.5,w-1,G.pbot-G.ptop-1);
+  c.strokeStyle=FRAME; c.strokeRect(x+.5,G.ptop+.5,w-1,G.pbot-G.ptop-1);
   c=testBg.getContext('2d'); { const x=G.xT, w=G.tR-G.xT;
   c.fillStyle=T36; c.fillRect(x,G.ptop,w,G.pyT-G.ptop); c.fillStyle=T26; c.fillRect(x,G.pyT,w,G.pbot-G.pyT);
   c.save(); c.setLineDash([5,3]); c.strokeStyle=BROWN; c.lineWidth=1.2; c.beginPath(); c.moveTo(x,G.pyT); c.lineTo(G.tR,G.pyT); c.stroke(); c.restore();
-  c.strokeStyle=INK; c.lineWidth=1; c.strokeRect(x+.5,G.ptop+.5,w-1,G.pbot-G.ptop-1);
-  c.fillStyle=PAPER; c.strokeStyle=INK; c.lineWidth=1.5; c.beginPath(); c.moveTo(x-1,G.py0); c.lineTo(x-10,G.py0-6); c.lineTo(x-10,G.py0+6); c.closePath(); c.fill(); c.stroke();
+  c.strokeStyle=FRAME; c.lineWidth=1; c.strokeRect(x+.5,G.ptop+.5,w-1,G.pbot-G.ptop-1);
+  c.fillStyle=PAPER; c.strokeStyle=FRAME; c.lineWidth=1.5; c.beginPath(); c.moveTo(x-1,G.py0); c.lineTo(x-10,G.py0-6); c.lineTo(x-10,G.py0+6); c.closePath(); c.fill(); c.stroke();
   c.textAlign='left'; c.textBaseline='top'; c.font='700 10.5px "Barlow Condensed", sans-serif'; c.fillStyle=INK; if(!G.stacked) c.fillText('TEST QUESTION',x+6,G.ptop+4);
   c.textAlign='right'; c.font='800 16px "Barlow Condensed", sans-serif'; c.fillText('36',G.tR-6,G.ptop+4); c.textBaseline='bottom'; c.fillText('26',G.tR-6,G.pbot-3);
   c.font='600 11px "Barlow Condensed", sans-serif'; c.fillStyle=GREY; c.textBaseline='top'; c.fillText('unperturbed answer',G.tR-6,G.ptop+21);
