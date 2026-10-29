@@ -250,8 +250,9 @@ body{ color:var(--text); }
 .bn-l b{ font:700 12.5px var(--disp); letter-spacing:.14em; text-transform:uppercase; font-style:normal; }
 .bn-1{ top:0; } .bn-1 b{ color:var(--blue); }
 .bn-2{ top:50%; } .bn-2 b{ color:var(--red); }
-.bn-eq{ position:absolute; left:91.5%; top:50%; transform:translate(-50%,-56%); font:800 44px/1 var(--disp); color:var(--black); }
-.bn-r{ position:absolute; right:0; top:0; font:600 11.5px/1.25 var(--disp); letter-spacing:.1em; text-transform:uppercase; color:var(--grey); text-align:right; }
+.bn-eq{ position:absolute; left:89%; top:55%; transform:translate(-50%,-50%); font:800 40px/1 var(--disp); color:var(--black); }
+.bn-h{ position:absolute; top:0; font:600 11.5px/1.25 var(--disp); letter-spacing:.1em; text-transform:uppercase; color:var(--grey); pointer-events:none; }
+.bn-hl{ left:79.5%; } .bn-hp{ right:0; text-align:right; }
 .bn-cap{ margin:-34px auto 0; max-width:740px; width:100%; font:italic 400 13.5px/1.5 var(--ital); color:var(--grey); }
 .topnav{ position:fixed; top:env(safe-area-inset-top,0px); left:0; right:0; z-index:15; height:48px; display:flex; align-items:center; gap:18px; padding:0 max(16px, calc(50vw - 560px)); background:color-mix(in srgb, var(--paper) 94%, transparent); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); transform:translateY(-110%); transition:transform .3s ease; }
 .topnav.on{ transform:none; }
@@ -274,8 +275,8 @@ body{ color:var(--text); }
   .sec{ padding-top:30px; }
   .banner canvas{ height:230px; }
   .bn-l{ font-size:11px; } .bn-l b{ font-size:11px; letter-spacing:.1em; }
-  .bn-eq{ left:90.5%; font-size:32px; }
-  .bn-r{ font-size:10px; }
+  .bn-eq{ font-size:30px; }
+  .bn-h{ font-size:10px; }
   .bn-cap{ margin-top:-20px; }
   .summary > div{ padding:16px 4px; }
   .fig, .tf, .chart .frame{ padding:12px 8px 10px; border-radius:10px; }
@@ -412,19 +413,20 @@ body{ color:var(--text); }
     <p class="dek">Neural Thickets perturbs every weight of a language model, keeps the copies that score best on a small labeled set, and has them vote. We show that a random bias on the output logits, with all other weights unchanged, <em>matches or exceeds these gains on a diverse set of tasks.</em> We also extend the method to non-generative models such as DINOv3.</p>
   </header>
 
-  <figure class="banner" aria-label="Animation: traces of perturbed models flowing through a 32-block network. In the top band noise acts at every block; in the bottom band only at the output bias. Both land on the same spread of logit shifts.">
+  <figure class="banner" aria-label="Animation: traces of perturbed models flowing through a 32-block network. In the top band noise acts at every block; in the bottom band only at the output bias. Both give a similar spread of logit shifts and a similar test accuracy.">
     <canvas id="heroCv"></canvas>
     <span class="bn-l bn-1"><b>Noise on every weight</b>full-weight PSV</span>
     <span class="bn-l bn-2"><b>Noise on the output bias only</b>logit PSV</span>
-    <span class="bn-eq" aria-hidden="true">=</span>
-    <span class="bn-r">where the<br>logits land</span>
+    <span class="bn-eq" aria-hidden="true">≈</span>
+    <span class="bn-h bn-hl">Logits</span>
+    <span class="bn-h bn-hp">Test<br>accuracy</span>
   </figure>
-  <p class="bn-cap">Each pair of lines is one perturbation drawn twice with the same final logit shift. Top: the shift builds up over the 32 decoder blocks. Bottom: it is added at the output bias. Schematic.</p>
+  <p class="bn-cap">Each line is one perturbed model. Top: the shift of the logits builds up over the 32 decoder blocks. Bottom: it is added at the output bias. Both give a similar spread of logit shifts and, after selection and voting, a similar test accuracy; the dashed mark on each gauge is the unperturbed model. Schematic.</p>
 
   <section class="summary" aria-label="Main findings">
-    <div><p class="tag">The logits are enough</p><p>A random bias on the output logits matches full-weight perturbation: MATH-500 goes from 63.3 to 81.3 on OLMo-3-7B-Instruct, against 74.7.</p></div>
+    <div><p class="tag">Perturbing logits is enough</p><p>A random bias on the output logits matches full-weight perturbation: MATH-500 goes from 63.3 to 81.3 on OLMo-3-7B-Instruct, against 74.7.</p></div>
     <div><p class="tag">Weight noise acts through the logits</p><p>To first order, a weight perturbation is a shift of the logits. At the noise scale used, this reproduces 89.7% of argmax changes.</p></div>
-    <div><p class="tag">It carries over to vision</p><p>Under domain shift, perturbing the logits of a DINOv3 probe adds 6.2 points of worst-region accuracy on FMoW; perturbing the weights adds 1.0.</p></div>
+    <div><p class="tag">This carries over to vision</p><p>Under domain shift, perturbing the logits of a DINOv3 probe adds 6.2 points of worst-region accuracy on FMoW; perturbing the weights adds 1.0.</p></div>
   </section>
 
   <nav class="toc" aria-label="Sections">
@@ -456,7 +458,7 @@ body{ color:var(--text); }
       <p class="tf-step" id="psvStep1"></p>
       <div class="ctl"><button class="btn" id="replay1">Replay</button><span>24 copies, 8 kept. The paper uses 1000 to 5000 copies and keeps 50.</span></div>
     </figure>
-    <p class="cap"><b>PSV with noise on every weight (schematic).</b> Left: each copy of the model traced through the 32 decoder blocks. Middle: the validation accuracy of each copy, then, for the kept copies, the shift of their logits toward the correct answer on one test question. Right: the vote of the kept copies and, for comparison, the vote of all 24. The question and the scores are illustrative.</p>
+    <p class="cap"><b>PSV with noise on every weight (schematic).</b> Left: each copy of the model traced through the 32 decoder blocks. Middle: the validation accuracy of each copy, then the answers of the 8 kept copies to one test question, 4 × 9 − 10, which the unperturbed model gets wrong (36 instead of 26). Right: the vote of the kept copies and, for comparison, the majority answer of all 24 copies without selection. The question and the scores are illustrative.</p>
   </section>
 
   <!-- 2 -->
@@ -524,9 +526,9 @@ body{ color:var(--text); }
     <figure class="fig" id="fig">
     <canvas id="axis" height="34" aria-hidden="true"></canvas>
     <div id="rows"></div>
-    <div class="ctl"><button class="btn" id="replay">Replay</button><span>24 members per run, 8 kept, a new test question each run.</span></div>
+    <div class="ctl"><button class="btn" id="replay">Replay</button><span>24 members per run, 8 kept. Each run draws new members.</span></div>
   </figure>
-    <p class="cap"><b>Schematic.</b> The same procedure in every row: members are placed at their validation accuracy, the best 8 of 24 are kept, and they answer a test question that the unperturbed model gets wrong (36 instead of 26). The paper uses 1000 to 5000 members and keeps 50.</p>
+    <p class="cap"><b>Schematic.</b> The same procedure in every row: members are placed at their validation accuracy, the best 8 of 24 are kept, and they answer the test question 4 × 9 − 10, which the unperturbed model gets wrong (36 instead of 26). The paper uses 1000 to 5000 members and keeps 50.</p>
     <div class="prose">
       <p>Across four models, logit PSV is more accurate than full-weight PSV on 13 of 15 reasoning cells and within 0.6 points on the other two. It is usually slightly lower on MBPP and ROCStories. Most of these differences are within test-set noise.</p>
     </div>
@@ -672,7 +674,7 @@ body{ color:var(--text); }
 
   <!-- 7 -->
   <section class="sec" id="meaning">
-    <h2><small>6 · Conclusion</small>Conclusion</h2>
+    <h2><small>6 · Conclusion</small>Summary</h2>
     <div class="prose">
       <p>Neural Thickets showed that a pretrained language model can be improved on a task without training: perturb its weights at random, keep the copies that score best on 200 examples and let them vote. We kept this procedure and changed where the noise goes.</p>
       <ul class="find">
@@ -732,22 +734,29 @@ const COL=['45,110,158','194,57,43'], NB=32, TRAVEL=1700, EVERY=110, BIN=5;
 const cv=document.getElementById('heroCv'), ctx=cv.getContext('2d'), acc=document.createElement('canvas'), ac=acc.getContext('2d');
 const r=mulberry32(2026);
 let W=0,H=0,dpr=1,G=null,traces=[],hist=[[],[]],clock=0,lastSpawn=-1e9,visible=false,running=false,prev=0;
-function geo(){ const nar=W<640, x0=nar?10:W*0.03, x1=W*(nar?0.70:0.74), xe=W*(nar?0.79:0.82), xh=W*(nar?0.82:0.85), bh=H/2;
-  return {nar:nar,x0:x0,x1:x1,xe:xe,xh:xh,yc:[32+(bh-32)*0.5,bh+32+(bh-32)*0.5],sp:(bh-32)*0.27,bx:k=>x0+(k+1)*(x1-x0)/(NB+1)}; }
+// right of the network: a histogram of where the logits land (from xh, width hw), then a test-accuracy gauge (xg0 to xg1)
+function geo(){ const nar=W<640, x0=nar?10:W*0.03, x1=W*(nar?0.62:0.70), xe=W*(nar?0.70:0.77), xh=W*(nar?0.725:0.795), bh=H/2;
+  const xg1=W-2, xg0=xg1-(nar?12:16), hw=xg0-(nar?16:28)-xh;
+  return {nar:nar,x0:x0,x1:x1,xe:xe,xh:xh,hw:hw,xg0:xg0,xg1:xg1,yc:[32+(bh-32)*0.5,bh+32+(bh-32)*0.5],sp:(bh-32)*0.27,bx:k=>x0+(k+1)*(x1-x0)/(NB+1)}; }
+// test accuracy as a fraction of the gauge: the unperturbed model, and the level both bands settle at
+const BASE=0.3, TOP=0.8, gauge=[{n:0,x:0},{n:0,x:0}];
+const gaugeAt=g=>clamp(BASE+(TOP-BASE)*(1-Math.exp(-g.n/22))+g.x,.03,.97);
+const labL=document.querySelector('.bn-hl'), eqEl=document.querySelector('.bn-eq');
 function resize(){
   W=cv.clientWidth; if(!W) return; H=W<640?230:290; dpr=Math.min(2,window.devicePixelRatio||1);
   [cv,acc].forEach(c=>{ c.width=Math.round(W*dpr); c.height=Math.round(H*dpr); }); cv.style.height=H+'px';
   ctx.setTransform(dpr,0,0,dpr,0,0); ac.setTransform(dpr,0,0,dpr,0,0); G=geo(); traces=[]; hist=[[],[]];
+  labL.style.left=G.xh+'px'; eqEl.style.left=(G.xh+G.xg1)/2+'px'; eqEl.style.top=(G.yc[0]+G.yc[1])/2+'px';
   for(let i=0;i<260;i++) step(48,true);   // start from a populated state
   paint();
 }
-// a pair of members that end with the same logit shift d
+// one member in each band; each draws its own final logit shift, from the same distribution
 function spawn(){
-  const d=clamp(gauss(r),-1.8,1.8)*G.sp, w=[0]; for(let k=0;k<NB;k++) w.push(w[k]+gauss(r));
+  const d=[clamp(gauss(r),-1.8,1.8)*G.sp,clamp(gauss(r),-1.8,1.8)*G.sp], w=[0]; for(let k=0;k<NB;k++) w.push(w[k]+gauss(r));
   const top=[], bot=[];
-  for(let k=0;k<=NB;k++){ const f=k/NB, b=(w[k]-f*w[NB])*G.sp*0.28+f*d; top.push([k===0?G.x0:G.bx(k-1),G.yc[0]+clamp(b,-1.65*G.sp,1.65*G.sp)]); }
-  top.push([G.xe,G.yc[0]+d]);
-  bot.push([G.x0,G.yc[1]],[G.x1,G.yc[1]],[G.x1+(G.xe-G.x1)*0.35,G.yc[1]+d],[G.xe,G.yc[1]+d]);
+  for(let k=0;k<=NB;k++){ const f=k/NB, b=(w[k]-f*w[NB])*G.sp*0.28+f*d[0]; top.push([k===0?G.x0:G.bx(k-1),G.yc[0]+clamp(b,-1.65*G.sp,1.65*G.sp)]); }
+  top.push([G.xe,G.yc[0]+d[0]]);
+  bot.push([G.x0,G.yc[1]],[G.x1,G.yc[1]],[G.x1+(G.xe-G.x1)*0.35,G.yc[1]+d[1]],[G.xe,G.yc[1]+d[1]]);
   traces.push({p:[top,bot],t0:clock,d:d,h:[0,0]});
 }
 function pointAt(pts,x){ for(let i=1;i<pts.length;i++){ if(pts[i][0]>=x){ const a=pts[i-1], b=pts[i], k=b[0]>a[0]?(x-a[0])/(b[0]-a[0]):1; return a[1]+(b[1]-a[1])*k; } } return pts[pts.length-1][1]; }
@@ -755,14 +764,16 @@ function step(dt,fast){
   clock+=dt;
   ac.save(); ac.globalCompositeOperation='destination-out'; ac.fillStyle=`rgba(0,0,0,${fast?0.035:0.022*dt/16})`; ac.fillRect(0,0,W,H); ac.restore();
   if(clock-lastSpawn>EVERY){ spawn(); lastSpawn=clock; }
-  [0,1].forEach(b=>hist[b].forEach((v,i)=>{ hist[b][i]=v*(1-0.0009*dt); }));
+  [0,1].forEach(b=>hist[b].forEach((v,i)=>{ hist[b][i]=v*(1-0.0001*dt); }));
   traces=traces.filter(tr=>{
     const k=clamp((clock-tr.t0)/TRAVEL,0,1), xn=G.x0+(G.xe-G.x0)*k;
     [0,1].forEach(b=>{ const pts=tr.p[b], xa=G.x0+(G.xe-G.x0)*tr.h[b]; if(xn<=xa) return;
       ac.strokeStyle=`rgba(${TH.c(COL[b])},.55)`; ac.lineWidth=1.2; ac.beginPath(); ac.moveTo(xa,pointAt(pts,xa));
       pts.forEach(q=>{ if(q[0]>xa&&q[0]<xn) ac.lineTo(q[0],q[1]); }); ac.lineTo(xn,pointAt(pts,xn)); ac.stroke(); tr.h[b]=k; });
-    if(k>=1){ const bi=Math.round(tr.d/BIN); [0,1].forEach(b=>{ hist[b][bi+60]=(hist[b][bi+60]||0)+1; }); return false; }
+    if(k>=1){ [0,1].forEach(b=>{ const bi=Math.round(tr.d[b]/BIN)+60; hist[b][bi]=(hist[b][bi]||0)+1; if(!fast) gauge[b].n=Math.min(gauge[b].n+1,300); }); return false; }
     return true; });
+  // test accuracy rises from the unperturbed level as members land, then keeps fluctuating, independently in each band
+  if(!fast) gauge.forEach(g=>{ const s=0.07/Math.sqrt(1+g.n/12)+0.016; g.x+=-g.x*dt/700+s*Math.sqrt(2*dt/700)*gauss(r); });
 }
 function paint(){
   ctx.clearRect(0,0,W,H);
@@ -776,11 +787,17 @@ function paint(){
   ctx.drawImage(acc,0,0,W,H);
   // heads
   traces.forEach(tr=>{ const k=clamp((clock-tr.t0)/TRAVEL,0,1), x=G.x0+(G.xe-G.x0)*k; [0,1].forEach(b=>{ ctx.fillStyle=`rgb(${TH.c(COL[b])})`; ctx.beginPath(); ctx.arc(x,pointAt(tr.p[b],x),1.8,0,6.283); ctx.fill(); }); });
-  // where the logits land: the same histogram in both bands
-  const mx=Math.max(4,...hist[0].filter(Boolean)), wmax=W-G.xh-10;
+  // where the logits land, one histogram per band
+  const mx=Math.max(1,...hist[0].filter(Boolean),...hist[1].filter(Boolean)), wmax=G.hw;
   [0,1].forEach(b=>{ const y=G.yc[b];
     ctx.strokeStyle=TH.c('rgba(29,29,27,.5)'); ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(G.xh,y-G.sp*1.75); ctx.lineTo(G.xh,y+G.sp*1.75); ctx.stroke();
-    hist[b].forEach((v,i)=>{ if(!v) return; const yy=y+(i-60)*BIN; if(Math.abs(yy-y)>G.sp*1.75) return; ctx.fillStyle=`rgba(${TH.c(COL[b])},.75)`; ctx.fillRect(G.xh+1,yy-BIN/2+0.6,wmax*v/mx,BIN-1.2); }); });
+    hist[b].forEach((v,i)=>{ if(!v) return; const yy=y+(i-60)*BIN; if(Math.abs(yy-y)>G.sp*1.75) return; ctx.fillStyle=`rgba(${TH.c(COL[b])},.75)`; ctx.fillRect(G.xh+1,yy-BIN/2+0.6,wmax*v/mx,BIN-1.2); });
+    // test accuracy gauge; the dashed mark is the unperturbed model
+    const gt=y-G.sp*1.75, gh=G.sp*3.5, gw=G.xg1-G.xg0, v=gaugeAt(gauge[b]), yb=gt+gh*(1-BASE);
+    ctx.fillStyle=TH.c('rgba(29,29,27,.05)'); ctx.fillRect(G.xg0,gt,gw,gh);
+    ctx.fillStyle=`rgba(${TH.c(COL[b])},.75)`; ctx.fillRect(G.xg0,gt+gh*(1-v),gw,gh*v);
+    ctx.strokeStyle=TH.c('rgba(29,29,27,.5)'); ctx.strokeRect(G.xg0+.5,gt+.5,gw-1,gh-1);
+    ctx.save(); ctx.setLineDash([3,2]); ctx.strokeStyle=TH.c('rgba(29,29,27,.8)'); ctx.beginPath(); ctx.moveTo(G.xg0-5,yb); ctx.lineTo(G.xg1,yb); ctx.stroke(); ctx.restore(); });
 }
 function frame(t){ if(!visible){ running=false; return; } const dt=Math.min(50,t-(prev||t)); prev=t; step(dt,false); paint(); requestAnimationFrame(frame); }
 if('ResizeObserver' in window){ let lw=0; new ResizeObserver(()=>{ if(Math.abs(cv.clientWidth-lw)>2){ lw=cv.clientWidth; resize(); } }).observe(cv); } else window.addEventListener('resize',resize);
@@ -831,6 +848,7 @@ const L2=170, T_P2=T_SW1+150, T_P2END=T_P2+(K-1)*L2+TR+HOP;
 const T_V0=T_P2END+350, VSTAG=120, VFLY=700, T_V1=T_V0+(K-1)*VSTAG+VFLY;
 const T_END=T_V1+3800, FADE=650;
 const ACC0=.52, ACC1=.76, BASEACC=.633;
+const Q='4 × 9 − 10 = ?'; // the test question: the unperturbed model answers 36, the correct answer is 26
 
 // ---------- build rows ----------
 const rowsEl=document.getElementById('rows1');
@@ -859,9 +877,12 @@ function geometry(){
   else { const Rw=W-x; xP=x+Rw*0.06; pR=xP+Rw*0.27; xT=pR+Rw*0.05; tR=xT+Rw*0.30; xV=tR+Rw*0.04; }
   const Hn=stacked?Math.round(H*0.46):H, S=Hn*0.17, y0=Hn*0.42, top=8, bot=Hn-8, yT=y0+0.22*S;
   const ptop=stacked?Hn+24:top, pbot=stacked?H-4:bot, py=v=>stacked?ptop+(v-top)/(bot-top)*(pbot-ptop):v, pyT=py(yT), py0=py(y0);
+  // test panel: the question, the two answers, then a 4 x 2 grid of slots for the kept members' answers
+  const chGap=stacked?3:5, ch0=stacked?ptop+46:ptop+54, avail=pbot-(stacked?4:6)-ch0, chH=Math.min(30,(avail-chGap)/2), chY=ch0+(avail-2*chH-chGap)/2;
   return {narrow:narrow, cols:cols, netEnd:x, xP:xP, pR:pR, xT:xT, tR:tR, xV:xV, S:S, y0:y0, yT:yT, top:top, bot:bot,
     l36:(top+yT)/2, l26:(yT+bot)/2, ax0:xP+10, ax1:pR-10, bin:5.4, vbin:7, slot:stacked?5.5:(narrow?7:9),
-    stacked:stacked, ptop:ptop, pbot:pbot, py:py, pyT:pyT, py0:py0, pl36:(ptop+pyT)/2, pl26:(pyT+pbot)/2};
+    stacked:stacked, ptop:ptop, pbot:pbot, py:py, pyT:pyT, py0:py0, pl36:(ptop+pyT)/2, pl26:(pyT+pbot)/2,
+    qY:stacked?ptop+4:ptop+17, aY:stacked?ptop+21:ptop+37, chY:chY, chH:chH, chGap:chGap};
 }
 const accX=a=>G.ax0+(a-ACC0)/(ACC1-ACC0)*(G.ax1-G.ax0);
 function sites(row){
@@ -898,8 +919,7 @@ function headAt(pts,x){ for(let i=1;i<pts.length;i++){ if(pts[i][0]>=x){ const a
 function rank(row){
   const s=row.members.slice().sort((a,b)=>b.acc-a.acc); s.forEach((m,r)=>{ m.rank=r; });
   row.cutX=(accX(s[K-1].acc)+accX(s[K].acc))/2;
-  const tb=new Map(), cnt=[0,0];
-  s.forEach(m=>{ const b=Math.round((m.yTest-G.y0)/G.bin); m.tbin=b; m.tstack=tb.get(b)||0; tb.set(b,m.tstack+1); });
+  const cnt=[0,0];
   s.slice(0,K).forEach(m=>{ m.lane=m.yTest>G.yT?1:0; m.slot=cnt[m.lane]++; });
   row.votes=cnt; row.allVote=s.filter(m=>m.yTest>G.yT).length>N/2?26:36;
   row.ranked=true;
@@ -936,14 +956,13 @@ function drawPanels(){
   c.textAlign='left'; c.textBaseline='top'; c.font='700 10.5px "Barlow Condensed", sans-serif'; c.fillStyle=INK; if(!G.stacked) c.fillText('VALIDATION ACCURACY',x+6,G.ptop+4);
   c.strokeStyle=FRAME; c.strokeRect(x+.5,G.ptop+.5,w-1,G.pbot-G.ptop-1);
   c=testBg.getContext('2d'); { const x=G.xT, w=G.tR-G.xT;
-  c.fillStyle=T36; c.fillRect(x,G.ptop,w,G.pyT-G.ptop); c.fillStyle=T26; c.fillRect(x,G.pyT,w,G.pbot-G.pyT);
-  c.save(); c.setLineDash([5,3]); c.strokeStyle=BROWN; c.lineWidth=1.2; c.beginPath(); c.moveTo(x,G.pyT); c.lineTo(G.tR,G.pyT); c.stroke(); c.restore();
+  c.fillStyle=TH.c('#FBFAF5'); c.fillRect(x,G.ptop,w,G.pbot-G.ptop);
   c.strokeStyle=FRAME; c.lineWidth=1; c.strokeRect(x+.5,G.ptop+.5,w-1,G.pbot-G.ptop-1);
-  c.fillStyle=PAPER; c.strokeStyle=FRAME; c.lineWidth=1.5; c.beginPath(); c.moveTo(x-1,G.py0); c.lineTo(x-10,G.py0-6); c.lineTo(x-10,G.py0+6); c.closePath(); c.fill(); c.stroke();
-  c.textAlign='left'; c.textBaseline='top'; c.font='700 10.5px "Barlow Condensed", sans-serif'; c.fillStyle=INK; if(!G.stacked) c.fillText('TEST QUESTION',x+6,G.ptop+4);
-  c.textAlign='right'; c.font='800 16px "Barlow Condensed", sans-serif'; c.fillText('36',G.tR-6,G.ptop+4); c.textBaseline='bottom'; c.fillText('26',G.tR-6,G.pbot-3);
-  c.font='600 11px "Barlow Condensed", sans-serif'; c.fillStyle=GREY; c.textBaseline='top'; c.fillText('unperturbed answer',G.tR-6,G.ptop+21);
-  c.fillStyle=GRND; c.textBaseline='bottom'; c.fillText('correct',G.tR-6,G.pbot-20);
+  c.textAlign='left'; c.textBaseline='top';
+  if(!G.stacked){ c.font='700 10.5px "Barlow Condensed", sans-serif'; c.fillStyle=INK; c.fillText('TEST QUESTION',x+6,G.ptop+4); }
+  c.font=`800 ${G.stacked?13:17}px "Barlow Condensed", sans-serif`; c.fillStyle=INK; c.fillText(Q,x+6,G.qY);
+  c.font='600 11px "Barlow Condensed", sans-serif'; c.fillStyle=OCHD; c.fillText(G.narrow?'unperturbed: 36':'unperturbed model: 36',x+6,G.aY);
+  c.fillStyle=GRND; if(G.stacked) c.fillText('correct: 26',x+6,G.aY+11); else { c.textAlign='right'; c.fillText('correct: 26',G.tR-6,G.aY); }
 }
 }
 function clearLayer(cv){ cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr); const c=cv.getContext('2d'); c.setTransform(dpr,0,0,dpr,0,0); c.lineJoin='round'; }
@@ -960,9 +979,9 @@ function drawAxis(mode){
   if(!n){ actx.textAlign='left'; actx.fillText('embed',c[0].x,29); actx.textAlign='center'; actx.fillText('decoder blocks 0 → 31',(c[1].x+c[32].x+c[32].w)/2,29); actx.textAlign='right'; actx.fillText('unembed · bias',c[34].x+c[34].w,29); }
   else { actx.textAlign='center'; actx.fillText('embed · blocks · output',G.netEnd/2,29); }
   actx.textAlign='left';
-  actx.fillText(n?`best ${K} of ${N}`:`200 examples · best ${K} of ${N}`,G.xP,29);
-  actx.fillText(n?'kept only':'kept members only',G.xT,29);
-  actx.fillText(n?'majority':'majority of the kept',G.xV,29);
+  actx.fillText(n?`keep the best ${K} of ${N}`:`200 examples · keep the best ${K} of ${N}`,G.xP,29);
+  actx.fillText(n?`the ${K} kept answer`:`only the ${K} kept members answer`,G.xT,29);
+  actx.fillText(n?'majority vote':`majority vote of the ${K} kept`,G.xV,29);
 }
 
 // ---------- painting ----------
@@ -970,7 +989,9 @@ const revealT=m=>T_SEL0+m.rank*(SEL/N);
 const launch2=m=>T_P2+m.rank*L2;
 const flyT=m=>T_V0+m.rank*VSTAG;
 function valPos(m){ return [accX(m.acc)+0, G.pbot-20-m.vstack*6.2]; }
-function testPos(m){ return [G.xT+6+m.tstack*G.bin, G.py(G.y0+m.tbin*G.bin)]; }
+// the slot of a kept member's answer in the test panel, by rank
+function chipBox(m){ const pad=6, w=(G.tR-G.xT-2*pad-3*G.chGap)/4, i=m.rank; return {x:G.xT+pad+(i%4)*(w+G.chGap), y:G.chY+Math.floor(i/4)*(G.chH+G.chGap), w:w, h:G.chH}; }
+function rrect(c,b,r){ c.beginPath(); if(c.roundRect) c.roundRect(b.x,b.y,b.w,b.h,r); else c.rect(b.x,b.y,b.w,b.h); }
 function lanePos(m){ return [G.xV+30+m.slot*G.slot, m.lane?G.pl26:G.pl36]; }
 function drawHead(c,pts,xh){
   c.strokeStyle=RED; c.lineWidth=1.6; c.lineJoin='round'; c.beginPath();
@@ -1018,21 +1039,26 @@ function paint(row,t,el,fade){
     c.font='700 10.5px "Barlow Condensed", sans-serif'; c.fillStyle=RED; c.textAlign='left'; c.textBaseline='top';
     const lab=`keep ${K} →`, lw=c.measureText(lab).width; c.fillText(lab,Math.min(cx+4,G.pR-lw-4),G.ptop+16); c.globalAlpha=1;
   }
-  // test pass: grey rings for members not kept, red traces and dots for the kept
+  // test pass: the kept members answer the test question; each answer fills a slot, then goes to the vote
   const votes=[0,0];
   if(row.ranked&&testA>0){
-    row.members.forEach(m=>{ if(m.rank<K) return; const p=testPos(m); if(p[0]>G.tR-4) return; c.globalAlpha=fade*testA*clamp((el-T_P2)/600,0,1)*.9; dot(c,p[0],p[1],2.2,null,TH.c('rgba(108,106,98,.6)'),1); });
+    const sa=clamp((el-T_P2)/400,0,1);
+    if(sa>0) row.members.forEach(m=>{ if(m.rank>=K) return; c.globalAlpha=fade*sa; c.save(); c.setLineDash([3,2]); c.strokeStyle=TH.c('rgba(108,106,98,.55)'); c.lineWidth=1; rrect(c,chipBox(m),4); c.stroke(); c.restore(); });
     c.globalAlpha=1;
     row.members.forEach(m=>{
       if(m.rank>=K) return; const a2=el-launch2(m); if(a2<0) return;
       c.globalAlpha=fade;
       if(a2<TR){ drawHead(c,m.pts2,a2/TR*G.netEnd); c.globalAlpha=1; return; }
       c.strokeStyle=TH.c('rgba(194,57,43,.55)'); c.lineWidth=1.3; c.beginPath(); m.pts2.forEach((p,i)=>i?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1])); c.stroke();
-      const k=easeOut(clamp((a2-TR)/HOP,0,1)), tp=testPos(m); let x=G.netEnd+(tp[0]-G.netEnd)*k, y=m.yTest+(tp[1]-m.yTest)*k-Math.sin(Math.PI*k)*20;
+      const b=chipBox(m), cx=b.x+b.w/2, cy=b.y+b.h/2, k=easeOut(clamp((a2-TR)/HOP,0,1));
+      if(k<1){ dot(c,G.netEnd+(cx-G.netEnd)*k,m.yTest+(cy-m.yTest)*k-Math.sin(Math.PI*k)*20,3.3,RED,REDD,1.2); c.globalAlpha=1; return; }
+      // the member's answer, popping in when it arrives
+      const sc=1+0.18*Math.max(0,1-(a2-TR-HOP)/260), bb={x:cx-b.w*sc/2,y:cy-b.h*sc/2,w:b.w*sc,h:b.h*sc};
+      rrect(c,bb,4); c.fillStyle=m.lane?T26:T36; c.fill(); c.strokeStyle=m.lane?GRND:OCHD; c.lineWidth=1; c.stroke();
+      c.font=`800 ${G.stacked?12:14}px "Barlow Condensed", sans-serif`; c.fillStyle=m.lane?GRND:OCHD; c.textAlign='center'; c.textBaseline='middle'; c.fillText(m.lane?'26':'36',cx,cy+.5);
       if(el>=flyT(m)){ const f=clamp((el-flyT(m))/VFLY,0,1), e=easeOut(f), lp=lanePos(m);
-        dot(c,tp[0],tp[1],2.4,null,TH.c('rgba(194,57,43,.5)'),1);
-        x=tp[0]+(lp[0]-tp[0])*e; y=tp[1]+(lp[1]-tp[1])*e-Math.sin(Math.PI*e)*22; if(f>=1) votes[m.lane]++; }
-      dot(c,x,y,3.3,RED,REDD,1.2); c.globalAlpha=1;
+        dot(c,cx+(lp[0]-cx)*e,cy+(lp[1]-cy)*e-Math.sin(Math.PI*e)*22,3.3,RED,REDD,1.2); if(f>=1) votes[m.lane]++; }
+      c.globalAlpha=1;
     });
   }
   // ballot
@@ -1045,7 +1071,7 @@ function paint(row,t,el,fade){
     if(w>=0){ const y0=w?G.pyT:G.ptop, y1=w?G.pbot:G.pyT; c.strokeStyle=w?GRND:OCHD; c.lineWidth=2.5; c.strokeRect(vx+1.5,y0+1.5,vw-3,y1-y0-3);
       c.fillStyle=w?GRND:OCHD; c.textBaseline=w?'bottom':'top'; c.fillText(G.stacked?(w?'correct':'wrong'):(w?'majority · correct':'majority · still wrong'),vx+7,w?G.pbot-4:G.ptop+3); }
     else { c.fillStyle=INK; c.textBaseline='top'; c.fillText('tie',vx+7,G.ptop+3); }
-    if(!G.stacked){ c.fillStyle=GREY; c.textBaseline=w===1?'top':'bottom'; c.fillText(`all ${N} would vote ${row.allVote}`,vx+7,w===1?G.ptop+3:G.pbot-4); }
+    if(!G.stacked){ c.fillStyle=GREY; c.textBaseline=w===1?'top':'bottom'; c.fillText(`all ${N}, no selection: ${row.allVote}`,vx+7,w===1?G.ptop+3:G.pbot-4); }
   }
 }
 
@@ -1059,8 +1085,8 @@ const stepEl1=document.getElementById('psvStep1');
 function stepText(el){
   const t=el<T_SEL0?'<b>1</b> <strong>Perturb.</strong> 24 copies of the model, each with its own Gaussian noise on every weight. Each line traces one copy through the network.'
     :el<T_SW0?'<b>2</b> <strong>Select.</strong> Each copy is placed at its accuracy on 200 validation examples. The 8 best are kept.'
-    :el<T_V0?'<b>3</b> <strong>Answer.</strong> The kept copies answer a test question that the unperturbed model gets wrong (36 instead of 26).'
-    :'<b>4</b> <strong>Vote.</strong> The majority answer of the kept copies is returned. A high validation score makes a copy only somewhat more likely to be right on a given question; voting over the kept copies makes the final answer more reliable.';
+    :el<T_V0?'<b>3</b> <strong>Answer.</strong> The 8 kept copies answer a test question, 4 × 9 − 10. The unperturbed model answers 36; the correct answer is 26.'
+    :'<b>4</b> <strong>Vote.</strong> The answer given by most kept copies is returned. A high validation score makes a copy only somewhat more likely to be right on a given question; voting over the kept copies makes the final answer more reliable.';
   if(stepEl1.innerHTML!==t) stepEl1.innerHTML=t;
 }
 function step(t){
@@ -1125,6 +1151,7 @@ const L2=170, T_P2=T_SW1+150, T_P2END=T_P2+(K-1)*L2+TR+HOP;
 const T_V0=T_P2END+350, VSTAG=120, VFLY=700, T_V1=T_V0+(K-1)*VSTAG+VFLY;
 const T_END=T_V1+3800, FADE=650;
 const ACC0=.52, ACC1=.76, BASEACC=.633;
+const Q='4 × 9 − 10 = ?'; // the test question: the unperturbed model answers 36, the correct answer is 26
 
 // ---------- build rows ----------
 const rowsEl=document.getElementById('rows');
@@ -1153,9 +1180,12 @@ function geometry(){
   else { const Rw=W-x; xP=x+Rw*0.06; pR=xP+Rw*0.27; xT=pR+Rw*0.05; tR=xT+Rw*0.30; xV=tR+Rw*0.04; }
   const Hn=stacked?Math.round(H*0.46):H, S=Hn*0.17, y0=Hn*0.42, top=8, bot=Hn-8, yT=y0+0.22*S;
   const ptop=stacked?Hn+24:top, pbot=stacked?H-4:bot, py=v=>stacked?ptop+(v-top)/(bot-top)*(pbot-ptop):v, pyT=py(yT), py0=py(y0);
+  // test panel: the question, the two answers, then a 4 x 2 grid of slots for the kept members' answers
+  const chGap=stacked?3:5, ch0=stacked?ptop+46:ptop+54, avail=pbot-(stacked?4:6)-ch0, chH=Math.min(30,(avail-chGap)/2), chY=ch0+(avail-2*chH-chGap)/2;
   return {narrow:narrow, cols:cols, netEnd:x, xP:xP, pR:pR, xT:xT, tR:tR, xV:xV, S:S, y0:y0, yT:yT, top:top, bot:bot,
     l36:(top+yT)/2, l26:(yT+bot)/2, ax0:xP+10, ax1:pR-10, bin:5.4, vbin:7, slot:stacked?5.5:(narrow?7:9),
-    stacked:stacked, ptop:ptop, pbot:pbot, py:py, pyT:pyT, py0:py0, pl36:(ptop+pyT)/2, pl26:(pyT+pbot)/2};
+    stacked:stacked, ptop:ptop, pbot:pbot, py:py, pyT:pyT, py0:py0, pl36:(ptop+pyT)/2, pl26:(pyT+pbot)/2,
+    qY:stacked?ptop+4:ptop+17, aY:stacked?ptop+21:ptop+37, chY:chY, chH:chH, chGap:chGap};
 }
 const accX=a=>G.ax0+(a-ACC0)/(ACC1-ACC0)*(G.ax1-G.ax0);
 function sites(row){
@@ -1192,8 +1222,7 @@ function headAt(pts,x){ for(let i=1;i<pts.length;i++){ if(pts[i][0]>=x){ const a
 function rank(row){
   const s=row.members.slice().sort((a,b)=>b.acc-a.acc); s.forEach((m,r)=>{ m.rank=r; });
   row.cutX=(accX(s[K-1].acc)+accX(s[K].acc))/2;
-  const tb=new Map(), cnt=[0,0];
-  s.forEach(m=>{ const b=Math.round((m.yTest-G.y0)/G.bin); m.tbin=b; m.tstack=tb.get(b)||0; tb.set(b,m.tstack+1); });
+  const cnt=[0,0];
   s.slice(0,K).forEach(m=>{ m.lane=m.yTest>G.yT?1:0; m.slot=cnt[m.lane]++; });
   row.votes=cnt; row.allVote=s.filter(m=>m.yTest>G.yT).length>N/2?26:36;
   row.ranked=true;
@@ -1230,14 +1259,13 @@ function drawPanels(){
   c.textAlign='left'; c.textBaseline='top'; c.font='700 10.5px "Barlow Condensed", sans-serif'; c.fillStyle=INK; if(!G.stacked) c.fillText('VALIDATION ACCURACY',x+6,G.ptop+4);
   c.strokeStyle=FRAME; c.strokeRect(x+.5,G.ptop+.5,w-1,G.pbot-G.ptop-1);
   c=testBg.getContext('2d'); { const x=G.xT, w=G.tR-G.xT;
-  c.fillStyle=T36; c.fillRect(x,G.ptop,w,G.pyT-G.ptop); c.fillStyle=T26; c.fillRect(x,G.pyT,w,G.pbot-G.pyT);
-  c.save(); c.setLineDash([5,3]); c.strokeStyle=BROWN; c.lineWidth=1.2; c.beginPath(); c.moveTo(x,G.pyT); c.lineTo(G.tR,G.pyT); c.stroke(); c.restore();
+  c.fillStyle=TH.c('#FBFAF5'); c.fillRect(x,G.ptop,w,G.pbot-G.ptop);
   c.strokeStyle=FRAME; c.lineWidth=1; c.strokeRect(x+.5,G.ptop+.5,w-1,G.pbot-G.ptop-1);
-  c.fillStyle=PAPER; c.strokeStyle=FRAME; c.lineWidth=1.5; c.beginPath(); c.moveTo(x-1,G.py0); c.lineTo(x-10,G.py0-6); c.lineTo(x-10,G.py0+6); c.closePath(); c.fill(); c.stroke();
-  c.textAlign='left'; c.textBaseline='top'; c.font='700 10.5px "Barlow Condensed", sans-serif'; c.fillStyle=INK; if(!G.stacked) c.fillText('TEST QUESTION',x+6,G.ptop+4);
-  c.textAlign='right'; c.font='800 16px "Barlow Condensed", sans-serif'; c.fillText('36',G.tR-6,G.ptop+4); c.textBaseline='bottom'; c.fillText('26',G.tR-6,G.pbot-3);
-  c.font='600 11px "Barlow Condensed", sans-serif'; c.fillStyle=GREY; c.textBaseline='top'; c.fillText('unperturbed answer',G.tR-6,G.ptop+21);
-  c.fillStyle=GRND; c.textBaseline='bottom'; c.fillText('correct',G.tR-6,G.pbot-20);
+  c.textAlign='left'; c.textBaseline='top';
+  if(!G.stacked){ c.font='700 10.5px "Barlow Condensed", sans-serif'; c.fillStyle=INK; c.fillText('TEST QUESTION',x+6,G.ptop+4); }
+  c.font=`800 ${G.stacked?13:17}px "Barlow Condensed", sans-serif`; c.fillStyle=INK; c.fillText(Q,x+6,G.qY);
+  c.font='600 11px "Barlow Condensed", sans-serif'; c.fillStyle=OCHD; c.fillText(G.narrow?'unperturbed: 36':'unperturbed model: 36',x+6,G.aY);
+  c.fillStyle=GRND; if(G.stacked) c.fillText('correct: 26',x+6,G.aY+11); else { c.textAlign='right'; c.fillText('correct: 26',G.tR-6,G.aY); }
 }
 }
 function clearLayer(cv){ cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr); const c=cv.getContext('2d'); c.setTransform(dpr,0,0,dpr,0,0); c.lineJoin='round'; }
@@ -1254,9 +1282,9 @@ function drawAxis(mode){
   if(!n){ actx.textAlign='left'; actx.fillText('embed',c[0].x,29); actx.textAlign='center'; actx.fillText('decoder blocks 0 → 31',(c[1].x+c[32].x+c[32].w)/2,29); actx.textAlign='right'; actx.fillText('unembed · bias',c[34].x+c[34].w,29); }
   else { actx.textAlign='center'; actx.fillText('embed · blocks · output',G.netEnd/2,29); }
   actx.textAlign='left';
-  actx.fillText(n?`best ${K} of ${N}`:`200 examples · best ${K} of ${N}`,G.xP,29);
-  actx.fillText(n?'kept only':'kept members only',G.xT,29);
-  actx.fillText(n?'majority':'majority of the kept',G.xV,29);
+  actx.fillText(n?`keep the best ${K} of ${N}`:`200 examples · keep the best ${K} of ${N}`,G.xP,29);
+  actx.fillText(n?`the ${K} kept answer`:`only the ${K} kept members answer`,G.xT,29);
+  actx.fillText(n?'majority vote':`majority vote of the ${K} kept`,G.xV,29);
 }
 
 // ---------- painting ----------
@@ -1264,7 +1292,9 @@ const revealT=m=>T_SEL0+m.rank*(SEL/N);
 const launch2=m=>T_P2+m.rank*L2;
 const flyT=m=>T_V0+m.rank*VSTAG;
 function valPos(m){ return [accX(m.acc)+0, G.pbot-20-m.vstack*6.2]; }
-function testPos(m){ return [G.xT+6+m.tstack*G.bin, G.py(G.y0+m.tbin*G.bin)]; }
+// the slot of a kept member's answer in the test panel, by rank
+function chipBox(m){ const pad=6, w=(G.tR-G.xT-2*pad-3*G.chGap)/4, i=m.rank; return {x:G.xT+pad+(i%4)*(w+G.chGap), y:G.chY+Math.floor(i/4)*(G.chH+G.chGap), w:w, h:G.chH}; }
+function rrect(c,b,r){ c.beginPath(); if(c.roundRect) c.roundRect(b.x,b.y,b.w,b.h,r); else c.rect(b.x,b.y,b.w,b.h); }
 function lanePos(m){ return [G.xV+30+m.slot*G.slot, m.lane?G.pl26:G.pl36]; }
 function drawHead(c,pts,xh){
   c.strokeStyle=RED; c.lineWidth=1.6; c.lineJoin='round'; c.beginPath();
@@ -1312,21 +1342,26 @@ function paint(row,t,el,fade){
     c.font='700 10.5px "Barlow Condensed", sans-serif'; c.fillStyle=RED; c.textAlign='left'; c.textBaseline='top';
     const lab=`keep ${K} →`, lw=c.measureText(lab).width; c.fillText(lab,Math.min(cx+4,G.pR-lw-4),G.ptop+16); c.globalAlpha=1;
   }
-  // test pass: grey rings for members not kept, red traces and dots for the kept
+  // test pass: the kept members answer the test question; each answer fills a slot, then goes to the vote
   const votes=[0,0];
   if(row.ranked&&testA>0){
-    row.members.forEach(m=>{ if(m.rank<K) return; const p=testPos(m); if(p[0]>G.tR-4) return; c.globalAlpha=fade*testA*clamp((el-T_P2)/600,0,1)*.9; dot(c,p[0],p[1],2.2,null,TH.c('rgba(108,106,98,.6)'),1); });
+    const sa=clamp((el-T_P2)/400,0,1);
+    if(sa>0) row.members.forEach(m=>{ if(m.rank>=K) return; c.globalAlpha=fade*sa; c.save(); c.setLineDash([3,2]); c.strokeStyle=TH.c('rgba(108,106,98,.55)'); c.lineWidth=1; rrect(c,chipBox(m),4); c.stroke(); c.restore(); });
     c.globalAlpha=1;
     row.members.forEach(m=>{
       if(m.rank>=K) return; const a2=el-launch2(m); if(a2<0) return;
       c.globalAlpha=fade;
       if(a2<TR){ drawHead(c,m.pts2,a2/TR*G.netEnd); c.globalAlpha=1; return; }
       c.strokeStyle=TH.c('rgba(194,57,43,.55)'); c.lineWidth=1.3; c.beginPath(); m.pts2.forEach((p,i)=>i?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1])); c.stroke();
-      const k=easeOut(clamp((a2-TR)/HOP,0,1)), tp=testPos(m); let x=G.netEnd+(tp[0]-G.netEnd)*k, y=m.yTest+(tp[1]-m.yTest)*k-Math.sin(Math.PI*k)*20;
+      const b=chipBox(m), cx=b.x+b.w/2, cy=b.y+b.h/2, k=easeOut(clamp((a2-TR)/HOP,0,1));
+      if(k<1){ dot(c,G.netEnd+(cx-G.netEnd)*k,m.yTest+(cy-m.yTest)*k-Math.sin(Math.PI*k)*20,3.3,RED,REDD,1.2); c.globalAlpha=1; return; }
+      // the member's answer, popping in when it arrives
+      const sc=1+0.18*Math.max(0,1-(a2-TR-HOP)/260), bb={x:cx-b.w*sc/2,y:cy-b.h*sc/2,w:b.w*sc,h:b.h*sc};
+      rrect(c,bb,4); c.fillStyle=m.lane?T26:T36; c.fill(); c.strokeStyle=m.lane?GRND:OCHD; c.lineWidth=1; c.stroke();
+      c.font=`800 ${G.stacked?12:14}px "Barlow Condensed", sans-serif`; c.fillStyle=m.lane?GRND:OCHD; c.textAlign='center'; c.textBaseline='middle'; c.fillText(m.lane?'26':'36',cx,cy+.5);
       if(el>=flyT(m)){ const f=clamp((el-flyT(m))/VFLY,0,1), e=easeOut(f), lp=lanePos(m);
-        dot(c,tp[0],tp[1],2.4,null,TH.c('rgba(194,57,43,.5)'),1);
-        x=tp[0]+(lp[0]-tp[0])*e; y=tp[1]+(lp[1]-tp[1])*e-Math.sin(Math.PI*e)*22; if(f>=1) votes[m.lane]++; }
-      dot(c,x,y,3.3,RED,REDD,1.2); c.globalAlpha=1;
+        dot(c,cx+(lp[0]-cx)*e,cy+(lp[1]-cy)*e-Math.sin(Math.PI*e)*22,3.3,RED,REDD,1.2); if(f>=1) votes[m.lane]++; }
+      c.globalAlpha=1;
     });
   }
   // ballot
@@ -1339,7 +1374,7 @@ function paint(row,t,el,fade){
     if(w>=0){ const y0=w?G.pyT:G.ptop, y1=w?G.pbot:G.pyT; c.strokeStyle=w?GRND:OCHD; c.lineWidth=2.5; c.strokeRect(vx+1.5,y0+1.5,vw-3,y1-y0-3);
       c.fillStyle=w?GRND:OCHD; c.textBaseline=w?'bottom':'top'; c.fillText(G.stacked?(w?'correct':'wrong'):(w?'majority · correct':'majority · still wrong'),vx+7,w?G.pbot-4:G.ptop+3); }
     else { c.fillStyle=INK; c.textBaseline='top'; c.fillText('tie',vx+7,G.ptop+3); }
-    if(!G.stacked){ c.fillStyle=GREY; c.textBaseline=w===1?'top':'bottom'; c.fillText(`all ${N} would vote ${row.allVote}`,vx+7,w===1?G.ptop+3:G.pbot-4); }
+    if(!G.stacked){ c.fillStyle=GREY; c.textBaseline=w===1?'top':'bottom'; c.fillText(`all ${N}, no selection: ${row.allVote}`,vx+7,w===1?G.ptop+3:G.pbot-4); }
   }
 }
 
