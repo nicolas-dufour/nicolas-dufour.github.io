@@ -20,7 +20,7 @@
 <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
 <style>body{ margin:0; }</style>
 <title>Rethinking Neural Thickets</title>
-<script>try{ const t=localStorage.getItem('theme'); if(t==='light'||t==='dark') document.documentElement.setAttribute('data-theme',t); }catch(e){}</script>
+<script>try{ const t=localStorage.getItem('logit-psv:theme'); if(t==='light'||t==='dark') document.documentElement.setAttribute('data-theme',t); }catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Libre+Caslon+Text:ital@0;1&family=Fragment+Mono&display=swap">
@@ -408,7 +408,7 @@ body{ color:var(--text); }
       <span>Loic Landrieu<sup>3</sup></span>
     </p>
     <p class="affils"><sup>1</sup>Kyutai &nbsp;·&nbsp; <sup>2</sup>Meta FAIR &nbsp;·&nbsp; <sup>3</sup>LIGM, CNRS, Univ Gustave Eiffel, ENPC, Institut Polytechnique de Paris &nbsp;·&nbsp; <sup>4</sup>UC Berkeley &nbsp;·&nbsp; <sup>5</sup>Google DeepMind<br><i>*Work done while at Kyutai.</i></p>
-    <nav class="links" aria-label="Links"><a href="#" id="paperLink">Paper</a><a href="#" id="codeLink">Code</a><a href="#bibtex">BibTeX</a></nav>
+    <nav class="links" aria-label="Links"><a href="#" id="paperLink">Paper</a><a href="https://github.com/kyutai-labs/logit-psv" id="codeLink">Code</a><a href="#bibtex">BibTeX</a></nav>
     <p class="dek">Neural Thickets perturbs every weight of a language model, keeps the copies that score best on a small labeled set, and has them vote. We show that a random bias on the output logits, with all other weights unchanged, <em>matches or exceeds these gains on a diverse set of tasks.</em> We also extend the method to non-generative models such as DINOv3.</p>
   </header>
 
@@ -800,7 +800,7 @@ if(nav&&hero&&'IntersectionObserver' in window){
 const tb=document.getElementById('themeBtn');
 if(tb){
   const label=()=>{ const l=TH.dark?'Switch to light mode':'Switch to dark mode'; tb.setAttribute('aria-label',l); tb.title=l; };
-  tb.addEventListener('click',()=>{ const t=TH.dark?'light':'dark'; document.documentElement.setAttribute('data-theme',t); try{ localStorage.setItem('theme',t); }catch(e){} });
+  tb.addEventListener('click',()=>{ const t=TH.dark?'light':'dark'; document.documentElement.setAttribute('data-theme',t); try{ localStorage.setItem('logit-psv:theme',t); }catch(e){} });
   label(); TH.on(label);
 }
 })();
