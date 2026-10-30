@@ -72,3 +72,6 @@
 
 - date: 2026-10-22
   content: We released [CADRE](https://kyutai.org/blog/2026-10-22-cadre/), open video autoencoders for interactive world models.
+
+- date: 2026-10-29
+  content: We released [Rethinking Neural Thickets](https://kyutai.org/logit-psv/), showing that a random bias on the output logits matches perturbing every weight.

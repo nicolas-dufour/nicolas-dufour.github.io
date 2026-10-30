@@ -305,3 +305,19 @@
       &nbsp;&nbsp; journal = {arXiv preprint arXiv:2610.30129}, \n
       &nbsp;&nbsp; year    = {2026} \n
     }"
+- title: "Rethinking Neural Thickets Without Weight Perturbations"
+  authors: <u><a href="#">Nicolas Dufour</a></u>, <a href="https://scholar.google.com/citations?user=tJD-JnkAAAAJ">Elouan Gardès</a>, <a href="https://avdravid.github.io/">Amil Dravid</a>, <a href="https://ptrckprz.github.io/">Patrick Pérez</a>, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
+  date: 2026-10-29
+  year: 2026
+  journal: Arxiv Preprint
+  thumbnail_canvas: logit-psv-thumbnail
+  pdf: https://arxiv.org/abs/2610.40649
+  github: https://github.com/kyutai-labs/logit-psv
+  website: https://kyutai.org/logit-psv/
+  abstract: "The Neural Thickets hypothesis posits that pretrained language models lie in dense neighborhoods of task-specific experts in weight space, which random Gaussian perturbations can uncover. We reproduce the reported gains, but show that they do not require this geometric explanation. Perturbing a single decoder block already recovers much of the improvement, while keeping the model entirely frozen and adding a random bias to its output logits matches or exceeds full-weight perturbations on most reasoning tasks. This suggests an alternative explanation based on output diversity, validation-based selection, and voting. We formalize this view as Perturb-Select-Vote (PSV), a general procedure that generates perturbed predictors, selects high-performing members on a small validation set, and aggregates their predictions. This interpretation connects Neural Thickets to established inference-time methods, including sampling, self-consistency, and verifier-guided selection. A first-order analysis further shows that small weight perturbations act primarily through their induced logit shifts. We extend this analysis to vision, where logit PSV substantially improves performance under domain shift, including on Earth observation, while full-weight perturbations provide little additional benefit. Together, these results suggest that the gains attributed to nearby weight-space experts can instead be obtained through output diversity, selection, and voting. Logit PSV realizes these benefits with a fully frozen model, providing a simple, training-free alternative to full-weight perturbation ensembles across language and vision."
+  bibtex: "@article{dufour2026rethinking, \n
+      &nbsp;&nbsp; title   = {Rethinking Neural Thickets Without Weight Perturbations}, \n
+      &nbsp;&nbsp; author  = {Dufour, Nicolas and Gard{\\`e}s, Elouan and Dravid, Amil and P{\\'e}rez, Patrick and Landrieu, Loic}, \n
+      &nbsp;&nbsp; journal = {arXiv preprint arXiv:2610.40649}, \n
+      &nbsp;&nbsp; year    = {2026} \n
+    }"
