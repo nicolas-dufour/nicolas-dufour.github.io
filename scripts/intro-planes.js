@@ -54,6 +54,12 @@
         gustStrength: 0.35,
         gustWavelength: 40,
         gustSpeed: 5.0,
+
+        // Diffusion entrance: every plane is sampled out of Gaussian noise in mid-air
+        revealDuration: 3.4,       // s from pure noise to clean paper
+        dissolveDuration: 1.5,     // forward process, for the rare plane that must leave while on screen
+        revealPoints: 520,         // particles per plane
+        introStagger: [0.2, 6.0],  // s, the flock's first appearance on page load
     };
 
     // ── Shape templates ──────────────────────────────────────────────
@@ -115,6 +121,7 @@
         uniform float uFlutterFreq;
         uniform float uFlutterPhase;
         uniform float uHalfSpan;
+        uniform float uReveal;
 
         attribute vec3 aFoldDir;
 
@@ -132,6 +139,17 @@
             float flap = sin(uFlutterTime * uFlutterFreq + uFlutterPhase) * uFlutterAmp;
             float yDisp = flap * spanFrac * spanFrac;
             vec3 displaced = position + vec3(0.0, yDisp, 0.0);
+
+            // While the paper is being denoised its folds are still scrambled. The offset is a
+            // hash of the rest position, so corners shared by several triangles move together.
+            if (uReveal < 1.0) {
+                vec3 h = fract(sin(vec3(
+                    dot(position, vec3(12.989, 78.233, 37.719)),
+                    dot(position, vec3(39.346, 11.135, 83.155)),
+                    dot(position, vec3(73.156, 52.235, 9.151)))) * 43758.5453) - 0.5;
+                float n = 1.0 - uReveal;
+                displaced += h * n * n * halfSpan * 0.6;
+            }
 
             // Rotate normal by the slope angle so flutter shifts lighting realistically
             float slope = sign(position.x) * flap * 2.0 * spanFrac / halfSpan;
@@ -171,6 +189,9 @@
         uniform float uIsDark;
         uniform float uIridescence;
         uniform float uTransmission;
+        uniform float uReveal;
+        uniform float uSeed;
+        uniform float uDpr;
 
         uniform vec3  uKeyDir;
         uniform vec3  uKeyColor;
@@ -192,6 +213,15 @@
         ${glslNoise}
 
         void main() {
+            // ── Diffusion reveal: each (CSS) pixel of paper draws its own noise threshold ──
+            if (uReveal < 1.0) {
+                vec3 h3 = fract(vec3(floor(gl_FragCoord.xy) + uSeed * 517.0, uSeed * 91.0).xyx * 0.1031);
+                h3 += dot(h3, h3.yzx + 33.33);
+                float grainThr = fract((h3.x + h3.y) * h3.z);
+                float blot = vnoise(vObjPos.xz * 2.5 + uSeed * 31.0);
+                if (grainThr * 0.7 + blot * 0.3 > uReveal) discard;
+            }
+
             vec3 N = normalize(vNormal);
             vec3 V = normalize(vViewPos);
 
@@ -250,6 +280,12 @@
             float fineGrain = vnoise(vObjPos.xz * 24.0);
             lit += (grain - 0.5) * 0.06 + (fineGrain - 0.5) * 0.025;
 
+            // ── Freshly condensed paper glows pale, then settles into its shading ──
+            if (uReveal < 1.0) {
+                float b = 1.0 - uReveal;
+                lit = mix(lit, mix(uColor, vec3(1.0), 0.55), b * (2.0 - b) * 0.75);
+            }
+
             // ── Atmospheric depth ──
             float depth = length(vViewPos);
             float fogT = smoothstep(8.0, 65.0, depth);
@@ -261,6 +297,97 @@
             lit = mix(lit, vec3(lum), fogT * 0.35);
 
             gl_FragColor = vec4(lit, 1.0);
+        }
+    `;
+
+    // ── GLSL: diffusion particles ────────────────────────────────────
+    //
+    // Each plane owns a cloud of points sampled on its paper (the clean sample x0).
+    // A reveal runs the variance-preserving path x_t = cos(t) x0 + sin(t) sigma eps
+    // from pure noise to x0, so the flock is literally denoised into the sky.
+
+    const dotsVert = `
+        uniform float uProgress;   // 0 = pure noise, 1 = clean sample
+        uniform float uSigma;      // noise scale in plane units
+        uniform float uScale;      // plane scale, for world-sized points
+        uniform float uPointScale; // device px per world unit at distance 1
+        uniform float uDpr;
+        uniform vec3  uColor;
+        uniform float uHue;
+        uniform float uIsDark;
+        uniform float uFlutterTime;
+        uniform float uFlutterAmp;
+        uniform float uFlutterFreq;
+        uniform float uFlutterPhase;
+        uniform float uHalfSpan;
+
+        attribute vec3 aNoiseA;
+        attribute vec3 aNoiseB;
+        attribute vec4 aSeed;      // x: noise hue, y: size, z: swirl phase, w: arrival order
+
+        varying vec3  vColor;
+        varying float vAlpha;
+
+        ${glslNoise}
+
+        void main() {
+            // Particles settle in a loose order rather than all at once, easing onto the paper
+            float u = clamp((uProgress - aSeed.w * 0.16) / 0.84, 0.0, 1.0);
+            float tau = (1.0 - u) * (1.0 - u);   // diffusion time: 1 = noise, 0 = data
+            float a = cos(1.5707963 * tau);      // signal
+            float b = sin(1.5707963 * tau);      // noise; a^2 + b^2 = 1
+
+            // Noise that turns between two independent draws: still exactly N(0, I) at
+            // every instant, but each particle swirls along a smooth orbit instead of jumping.
+            float th = aSeed.z + tau * 2.6 + uFlutterTime * (0.5 + 0.7 * aSeed.y);
+            vec3 eps = aNoiseA * cos(th) + aNoiseB * sin(th);
+
+            // The clean sample flutters with the paper it lands on
+            float halfSpan = max(uHalfSpan, 0.001);
+            float spanFrac = clamp(abs(position.x) / halfSpan, 0.0, 1.0);
+            float flap = sin(uFlutterTime * uFlutterFreq + uFlutterPhase) * uFlutterAmp;
+            vec3 x0 = position + vec3(0.0, flap * spanFrac * spanFrac, 0.0);
+
+            vec4 mv = modelViewMatrix * vec4(a * x0 + b * uSigma * eps, 1.0);
+            gl_Position = projectionMatrix * mv;
+
+            // Colour: noise in hues around the plane's own (a few white sparks), the paper once clean
+            float hue = fract(uHue + (aSeed.x - 0.5) * 0.45);
+            vec3 noiseCol = aSeed.x > 0.9 ? vec3(1.0, 0.97, 0.9) : hsl2rgb(hue, 0.7, 0.68);
+            vec3 cleanCol = mix(uColor, vec3(1.0), 0.3);
+            vColor = mix(cleanCol, noiseCol, b);
+
+            // Size: soft, wide specks in the noise, tightening to fine points on the paper
+            float depth = max(-mv.z, 0.1);
+            float world = 0.045 * uScale * (0.65 + 0.7 * aSeed.y) * (1.0 + 0.7 * b);
+            float px = world * uPointScale / depth;
+            float minPx = 1.4 * uDpr;
+            float alpha = 1.0;
+            if (px < minPx) { alpha = (px / minPx) * (px / minPx); px = minPx; }
+            gl_PointSize = min(px, 6.0 * uDpr);
+
+            // Emerge from nothing, twinkle while noisy, then hand over to the paper
+            alpha *= smoothstep(0.0, 0.2, uProgress) * (1.0 - smoothstep(0.8, 1.0, uProgress));
+            float twinkle = 0.6 + 0.4 * sin(uFlutterTime * (2.5 + 4.0 * aSeed.y) + aSeed.z * 5.0);
+            alpha *= mix(1.0, twinkle, b);
+            alpha *= mix(1.1, 1.5, uIsDark);
+            alpha *= 1.0 - 0.6 * smoothstep(8.0, 65.0, depth);
+            vAlpha = alpha;
+        }
+    `;
+
+    const dotsFrag = `
+        uniform float uIsDark;
+        varying vec3  vColor;
+        varying float vAlpha;
+
+        void main() {
+            vec2 c = gl_PointCoord * 2.0 - 1.0;
+            float r2 = dot(c, c);
+            if (r2 > 1.0) discard;
+            float a = vAlpha * exp(-r2 * 3.0) * (1.0 - r2);
+            // Premultiplied and only partly occluding: specks glow, yet keep their hue on the bright day sky
+            gl_FragColor = vec4(vColor * a, a * mix(0.7, 0.2, uIsDark));
         }
     `;
 
@@ -638,6 +765,119 @@
         return { geo, fGeo };
     }
 
+    // ── Diffusion particles ──────────────────────────────────────────
+
+    // Uniform objects shared by every plane (set on resize)
+    const shared = {
+        uDpr:        { value: 1 },
+        uPointScale: { value: 1 },
+    };
+
+    function gaussian() {
+        let u = 0;
+        while (u === 0) u = Math.random();
+        return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * Math.random());
+    }
+
+    // Area-weighted points on the paper, plus a share along the creases so the
+    // silhouette and folds read crisply once the cloud lands.
+    function sampleSurface(geo, fGeo, count) {
+        const tri = geo.attributes.position.array;
+        const triCount = tri.length / 9;
+        const triCum = new Float32Array(triCount);
+        let triTotal = 0;
+        for (let i = 0; i < triCount; i++) {
+            const o = i * 9;
+            const ux = tri[o + 3] - tri[o], uy = tri[o + 4] - tri[o + 1], uz = tri[o + 5] - tri[o + 2];
+            const vx = tri[o + 6] - tri[o], vy = tri[o + 7] - tri[o + 1], vz = tri[o + 8] - tri[o + 2];
+            triTotal += 0.5 * Math.hypot(uy * vz - uz * vy, uz * vx - ux * vz, ux * vy - uy * vx);
+            triCum[i] = triTotal;
+        }
+        const seg = fGeo.attributes.position.array;
+        const segCount = seg.length / 6;
+        const segCum = new Float32Array(segCount);
+        let segTotal = 0;
+        for (let i = 0; i < segCount; i++) {
+            const o = i * 6;
+            segTotal += Math.hypot(seg[o + 3] - seg[o], seg[o + 4] - seg[o + 1], seg[o + 5] - seg[o + 2]);
+            segCum[i] = segTotal;
+        }
+        const pick = (cum, total) => {
+            const r = Math.random() * total;
+            let lo = 0, hi = cum.length - 1;
+            while (lo < hi) { const mid = (lo + hi) >> 1; if (cum[mid] < r) lo = mid + 1; else hi = mid; }
+            return lo;
+        };
+
+        const out = new Float32Array(count * 3);
+        for (let k = 0; k < count; k++) {
+            if (k < count * 0.75) {
+                const o = pick(triCum, triTotal) * 9;
+                let s = Math.random(), t = Math.random();
+                if (s + t > 1) { s = 1 - s; t = 1 - t; }
+                for (let c = 0; c < 3; c++) {
+                    out[k * 3 + c] = tri[o + c] + s * (tri[o + 3 + c] - tri[o + c]) + t * (tri[o + 6 + c] - tri[o + c]);
+                }
+            } else {
+                const o = pick(segCum, segTotal) * 6;
+                const s = Math.random();
+                for (let c = 0; c < 3; c++) out[k * 3 + c] = seg[o + c] + s * (seg[o + 3 + c] - seg[o + c]);
+            }
+        }
+        return out;
+    }
+
+    function createDiffusionDots(geo, fGeo, shape, planeMat, scale) {
+        const n = params.revealPoints;
+        const noiseA = new Float32Array(n * 3);
+        const noiseB = new Float32Array(n * 3);
+        const seed = new Float32Array(n * 4);
+        for (let i = 0; i < n * 3; i++) { noiseA[i] = gaussian(); noiseB[i] = gaussian(); }
+        for (let i = 0; i < n; i++) {
+            seed[i * 4]     = Math.random();
+            seed[i * 4 + 1] = Math.random();
+            seed[i * 4 + 2] = Math.random() * Math.PI * 2;
+            seed[i * 4 + 3] = Math.random();
+        }
+        const g = new T.BufferGeometry();
+        g.setAttribute('position', new T.BufferAttribute(sampleSurface(geo, fGeo, n), 3));
+        g.setAttribute('aNoiseA', new T.BufferAttribute(noiseA, 3));
+        g.setAttribute('aNoiseB', new T.BufferAttribute(noiseB, 3));
+        g.setAttribute('aSeed', new T.BufferAttribute(seed, 4));
+
+        // Colour, theme and flutter uniforms are shared with the paper, so they never drift apart
+        const u = planeMat.uniforms;
+        const mat = new T.ShaderMaterial({
+            vertexShader: dotsVert,
+            fragmentShader: dotsFrag,
+            uniforms: {
+                uProgress:   { value: 0 },
+                uSigma:      { value: 0.42 * Math.max(shape.wingSpan, 0.5 * (shape.noseLen + shape.tailLen) + 0.3) },
+                uScale:      { value: scale },
+                uPointScale: shared.uPointScale,
+                uDpr:        shared.uDpr,
+                uColor:      u.uColor,
+                uHue:        u.uHue,
+                uIsDark:     u.uIsDark,
+                uFlutterTime:  u.uFlutterTime,
+                uFlutterAmp:   u.uFlutterAmp,
+                uFlutterFreq:  u.uFlutterFreq,
+                uFlutterPhase: u.uFlutterPhase,
+                uHalfSpan:     u.uHalfSpan,
+            },
+            transparent: true,
+            depthWrite: false,
+            blending: T.CustomBlending,
+            blendSrc: T.OneFactor,
+            blendDst: T.OneMinusSrcAlphaFactor,
+        });
+        const dots = new T.Points(g, mat);
+        dots.frustumCulled = false;  // the noise reaches well past the paper's bounds
+        dots.visible = false;
+        dots.renderOrder = 5;
+        return dots;
+    }
+
     // ── Plane shader material ────────────────────────────────────────
 
     function createPlaneMat(index, shape) {
@@ -681,6 +921,10 @@
                 uFlutterFreq:  { value: 0 },
                 uFlutterPhase: { value: 0 },
                 uHalfSpan:     { value: 1 },
+
+                uReveal: { value: 1 },
+                uSeed:   { value: Math.random() },
+                uDpr:    shared.uDpr,
             },
         });
 
@@ -760,12 +1004,16 @@
         const { mat, lineMat, hsl } = createPlaneMat(index, shape);
 
         const mesh = new T.Mesh(geo, mat);
-        mesh.add(new T.LineSegments(fGeo, lineMat));
+        const lines = new T.LineSegments(fGeo, lineMat);
+        mesh.add(lines);
 
         mesh.userData = { hsl, baseDihedral: shape.dihedral, shape, asymmetry };
 
         const scale = T.MathUtils.lerp(params.scaleMin, params.scaleMax, Math.random());
         mesh.scale.setScalar(scale);
+
+        const dots = createDiffusionDots(geo, fGeo, shape, mat, scale);
+        mesh.add(dots);
 
         // Per-plane flutter, set once on the GPU
         mat.uniforms.uFlutterPhase.value = Math.random() * Math.PI * 2;
@@ -773,7 +1021,7 @@
         mat.uniforms.uFlutterAmp.value   = params.wingFlutterAmp;
         mat.uniforms.uHalfSpan.value     = shape.wingSpan;
 
-        const p = { mesh, scale, bobFreq: T.MathUtils.randFloat(0.4, 1.2), bobAmp: T.MathUtils.randFloat(0.03, 0.07) };
+        const p = { mesh, lines, dots, scale, bobFreq: T.MathUtils.randFloat(0.4, 1.2), bobAmp: T.MathUtils.randFloat(0.03, 0.07) };
         mesh.rotation.order = 'YXZ';
         launch(p, true);
         return p;
@@ -1231,6 +1479,15 @@
         const warmStep = 1 / 30;
         for (let wt = -params.warmup; wt < 0; wt += warmStep) updatePlanes(warmStep, wt);
 
+        // Then open on an empty sky and let the flock emerge from noise, one plane at a time
+        const [d0, d1] = params.introStagger;
+        planes.forEach(p => {
+            p.reveal = 0;
+            p.dissolving = false;
+            p.revealDelay = d0 + (d1 - d0) * Math.pow(Math.random(), 1.4);
+            showReveal(p);
+        });
+
         syncRunning();
     }
 
@@ -1250,6 +1507,37 @@
         camera.updateMatrixWorld();
         _ray.set(x, y, 0.5).unproject(camera).sub(camera.position).normalize();
         return out.copy(camera.position).addScaledVector(_ray, dist);
+    }
+
+    // A point early on the lane where the viewer can watch the plane appear: in frame,
+    // preferably clear of the text column and of other planes on screen.
+    const _spawn = new T.Vector3();
+    const _best = new T.Vector3();
+    const _other = new T.Vector3();
+
+    function spawnScore(pos, self) {
+        _ndc.copy(pos).project(camera);
+        if (_ndc.z > 1 || Math.abs(_ndc.x) > 0.9 || _ndc.y < -0.72 || _ndc.y > 0.85) return 0;
+        let score = 1;
+        if (Math.abs(_ndc.x) < 0.3 && _ndc.y > -0.75) score *= 0.4;
+        const x = _ndc.x, y = _ndc.y;
+        for (let i = 0; i < planes.length; i++) {
+            const q = planes[i];
+            if (q === self || !q.reveal) continue;
+            _other.copy(q.mesh.position).project(camera);
+            if (Math.hypot(_other.x - x, _other.y - y) < 0.16) { score *= 0.5; break; }
+        }
+        return score;
+    }
+
+    function pickSpawnPoint(p, start, target) {
+        let bestScore = -1;
+        for (let k = 0; k < 12 && bestScore < 1; k++) {
+            _spawn.copy(start).lerp(target, T.MathUtils.randFloat(0.08, 0.55));
+            const s = spawnScore(_spawn, p);
+            if (s > bestScore) { bestScore = s; _best.copy(_spawn); }
+        }
+        return _best;
     }
 
     // Pick a lane (entry point off one edge, exit point off the other) and put the plane on it.
@@ -1276,8 +1564,14 @@
         }
 
         if (midway) start.lerp(target, T.MathUtils.randFloat(0.1, 0.85));
+        else start.copy(pickSpawnPoint(p, start, target));
         m.position.copy(start);
         p.target = target;
+
+        // Every new plane is sampled from noise where it stands
+        p.reveal = 0;
+        p.revealDelay = 0;
+        p.dissolving = false;
 
         p.trimSpeed = T.MathUtils.randFloat(params.trimSpeedMin, params.trimSpeedMax);
         p.V     = p.trimSpeed;
@@ -1387,12 +1681,41 @@
             m.material.uniforms.uTime.value = t;
             m.material.uniforms.uFlutterTime.value = t;
 
-            // Recycle only once the plane is out of frame, so nobody pops in or out on screen
+            stepReveal(p, dt);
+
+            // Recycle once the plane is out of frame. A plane that has to go while still on
+            // screen (too close, or too old) runs the forward process back into noise first.
             _ndc.copy(m.position).project(camera);
             const offscreen = _ndc.z > 1 || Math.abs(_ndc.x) > 1.3 || Math.abs(_ndc.y) > 1.4;
             const dist = m.position.distanceTo(camera.position);
-            if ((offscreen && p.age > 4) || dist < 2 || dist > 110 || p.age > 240) launch(p, false);
+            if ((offscreen && p.age > 4) || dist < 1.2 || dist > 110 || (p.dissolving && p.reveal === 0)) {
+                launch(p, false);
+                showReveal(p);
+            } else if (!p.dissolving && (dist < 4.5 || p.age > 240)) {
+                p.dissolving = true;
+            }
         }
+    }
+
+    // ── Diffusion reveal ─────────────────────────────────────────────
+
+    function stepReveal(p, dt) {
+        if (p.dissolving) p.reveal = Math.max(0, p.reveal - dt / params.dissolveDuration);
+        else if (p.revealDelay > 0) p.revealDelay -= dt;
+        else if (p.reveal < 1) p.reveal = Math.min(1, p.reveal + dt / params.revealDuration);
+        showReveal(p);
+    }
+
+    function showReveal(p) {
+        const u = p.reveal;
+        // The paper fills in once most particles have landed
+        const paper = T.MathUtils.smoothstep(u, 0.45, 0.95);
+        p.mesh.material.uniforms.uReveal.value = paper;
+        p.mesh.material.visible = paper > 0;
+        p.lines.material.visible = paper > 0.3;
+        p.lines.material.opacity = 0.5 * T.MathUtils.smoothstep(paper, 0.3, 1.0);
+        p.dots.visible = u > 0 && u < 1;
+        p.dots.material.uniforms.uProgress.value = u;
     }
 
     // ── Render loop ──────────────────────────────────────────────────
@@ -1448,6 +1771,10 @@
         camera.updateProjectionMatrix();
         renderer.setSize(w, h, false);
         if (composer) composer.setSize(w, h);
+
+        const dpr = renderer.getPixelRatio();
+        shared.uDpr.value = dpr;
+        shared.uPointScale.value = h * dpr / (2 * Math.tan(camera.fov * Math.PI / 360));
 
         const mob = w < 600;
         camera.position.set(0, mob ? 1.5 : 2.2, mob ? 7.5 : 8.5);
