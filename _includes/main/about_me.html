@@ -1,4 +1,48 @@
+{% assign about = site.data.main.about_me %}
+{% assign cv = site.data.main.contact | where: 'name', 'CV' | first %}
 <h2>About me</h2>
-<p>
-    {{ site.data.main.about_me.content | markdownify }}
-</p>
+<div class="about-bio">{{ about.content | markdownify }}</div>
+{% if cv %}
+<a class="about-cv-link" href="{{ cv.url }}" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+    Full CV (PDF)
+</a>
+{% endif %}
+
+{% if about.themes %}
+<div class="card-label about-themes-label">Research themes</div>
+<div class="theme-grid">
+    {% for theme in about.themes %}
+    <div class="theme-card">
+        {% if theme.visual %}
+        {%- comment -%} Illustration drawn by scripts/about-themes.js {%- endcomment -%}
+        <div class="theme-visual">
+            <canvas class="theme-canvas" data-visual="{{ theme.visual }}" width="300" height="300"
+                aria-hidden="true"></canvas>
+        </div>
+        {% endif %}
+        <div class="theme-body">
+            <div class="theme-title">{{ theme.title }}</div>
+            <div class="theme-text">{{ theme.text }}</div>
+            {% if theme.papers %}
+            <div class="theme-papers">
+                {% for paper in theme.papers %}
+                {% assign canvas_id = paper.key | append: '-thumbnail' %}
+                {% assign pub = site.data.main.publications | where: 'thumbnail_canvas', canvas_id | first %}
+                {% if pub %}
+                <a href="#pub-{{ paper.key }}" title="{{ pub.title | escape }}">{{ paper.name }}</a>
+                {% else %}
+                <span>{{ paper.name }}</span>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

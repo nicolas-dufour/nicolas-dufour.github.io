@@ -1,5 +1,5 @@
 {% assign publication = include.publication %}
-<div class="publication{% if publication.featured %} publication-featured{% endif %}">
+<div class="publication{% if publication.featured %} publication-featured{% endif %}"{% if publication.thumbnail_canvas %} id="pub-{{ publication.thumbnail_canvas | remove: '-thumbnail' }}"{% endif %}>
     {% if publication.featured %}
     <div class="publication-featured-ribbon" aria-label="{{ publication.featured }}">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">

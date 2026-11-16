@@ -1,63 +1,106 @@
 <h2>Miscellaneous</h2>
-<div class="talks-section">
-    <h3>Talks</h3>
-    {% assign talks = site.data.main.misc.talks %}
-    {% if talks %}
-    {% assign talks = talks | sort: 'date' | reverse %}
-    {% assign current_year = '' %}
-    {% for talk in talks %}
-    {% assign talk_year = talk.date | date: '%Y' %}
-    {% if talk_year != current_year %}
-    {% assign current_year = talk_year %}
-    <h4>{{ current_year }}</h4>
-    {% endif %}
-    <ul>
-        <li>{{ talk.name }} ({% if talk.display_date %}{{ talk.display_date }}{% else %}{{ talk.date | date: '%B %d, %Y' }}{% endif %})</li>
-    </ul>
-    {% endfor %}
-    {% else %}
-    <p>No talks found.</p>
-    {% endif %}
-</div>
-<div class="reviewer-section">
-    <h3>Reviewer</h3>
-    {% assign reviewer = site.data.main.misc.reviewer %}
-    {% if reviewer %}
-    {% assign reviewer = reviewer | sort: 'date' | reverse %}
-    <ul>
-        {% for review in reviewer %}
-        <li>{{ review.name }} ({{ review.date | date: '%B, %Y' }})</li>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <p>No reviews found.</p>
-    {% endif %}
-</div>
-<div class="awards-section">
-    <h3>Awards</h3>
-    {% assign awards = site.data.main.misc.awards %}
-    {% if awards %}
-    {% assign awards = awards | sort: 'date' | reverse%}
-    <ul>
-        {% for award in awards %}
-        <li>{{ award.name }} ({{ award.date | date: '%B %d, %Y' }})</li>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <p>No awards found.</p>
-    {% endif %}
-</div>
-<div class="others-section">
-    <h3>Others</h3>
-    {% assign others = site.data.main.misc.others %}
-    {% if others %}
-    {% assign others = others | sort: 'date'| reverse%}
-    <ul>
-        {% for other in others %}
-        <li>{{ other.name }} ({{ other.date | date: '%B %d, %Y' }})</li>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <p>No other items found.</p> {% endif %}
+{% assign misc = site.data.main.misc %}
 
+{% if misc.talks %}
+{% assign talks = misc.talks | sort: 'date' | reverse %}
+<h3 class="group-label">Talks</h3>
+<div class="group">
+    <div class="misc-card">
+        {% assign current_year = '' %}
+        {% for talk in talks %}
+        {% assign talk_year = talk.date | date: '%Y' %}
+        {% if talk_year != current_year %}
+        {% unless forloop.first %}</ul></div>{% endunless %}
+        {% assign current_year = talk_year %}
+        <div class="timeline-year">
+            <div class="timeline-year-label">{{ current_year }}</div>
+            <ul class="timeline-items">
+        {% endif %}
+        {%- comment -%} "Venue: Title" splits at the first ": " (the title may hold more colons). {%- endcomment -%}
+        {% assign talk_parts = talk.name | split: ': ' %}
+        {% assign talk_venue = talk_parts.first %}
+        {% assign talk_title = talk.name | remove_first: talk_venue | remove_first: ': ' %}
+                <li class="talk">
+                    <span class="timeline-date">{% if talk.display_date %}{{ talk.date | date: '%b' }}{% else %}{{ talk.date | date: '%b %-d' }}{% endif %}</span>
+                    <div>
+                        <div class="talk-venue">{{ talk_venue }}</div>
+                        {% if talk_title != '' %}<div class="talk-title">{{ talk_title }}</div>{% endif %}
+                    </div>
+                </li>
+        {% if forloop.last %}</ul></div>{% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if misc.reviewer %}
+{% assign reviews = misc.reviewer | sort: 'date' | reverse %}
+<h3 class="group-label">Reviewing</h3>
+<div class="group">
+    <div class="misc-card">
+        {% assign current_year = '' %}
+        {% for review in reviews %}
+        {% assign review_year = review.date | date: '%Y' %}
+        {% if review_year != current_year %}
+        {% unless forloop.first %}</ul></div>{% endunless %}
+        {% assign current_year = review_year %}
+        <div class="timeline-year">
+            <div class="timeline-year-label">{{ current_year }}</div>
+            <ul class="chip-list">
+        {% endif %}
+        {%- comment -%} The year column already says the year, so drop it from the chip text. A reviewer award with the same date marks the chip. {%- endcomment -%}
+        {% assign year_suffix = ' ' | append: review_year %}
+        {% assign award = misc.awards | where: 'date', review.date | first %}
+                <li class="chip{% if award %} chip-award{% endif %}"{% if award %} title="{{ award.name | strip_html | strip }}"{% endif %}>
+                    {{ review.name | remove: year_suffix | strip }}
+                    {% if award %}<svg viewBox="0 0 24 24" fill="currentColor" aria-label="Reviewer award"><path d="M12 2l2.39 6.95H22l-6.18 4.49L18.18 22 12 17.51 5.82 22l2.36-8.56L2 8.95h7.61z"/></svg>{% endif %}
+                </li>
+        {% if forloop.last %}</ul></div>{% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<div class="misc-split">
+    {% if misc.awards %}
+    {% assign awards = misc.awards | sort: 'date' | reverse %}
+    <div class="misc-column">
+        <h3 class="group-label">Awards</h3>
+        <div class="group">
+            <ul class="misc-card misc-list">
+                {% for award in awards %}
+                <li class="misc-item">
+                    <svg class="misc-icon misc-icon-award" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2l2.39 6.95H22l-6.18 4.49L18.18 22 12 17.51 5.82 22l2.36-8.56L2 8.95h7.61z"/>
+                    </svg>
+                    <div class="misc-text">{{ award.name }}</div>
+                    <span class="misc-date">{{ award.date | date: '%b %Y' }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if misc.others %}
+    {% assign others = misc.others | sort: 'date' | reverse %}
+    <div class="misc-column">
+        <h3 class="group-label">Others</h3>
+        <div class="group">
+            <ul class="misc-card misc-list">
+                {% for other in others %}
+                <li class="misc-item">
+                    <svg class="misc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+                    </svg>
+                    <div class="misc-text">{{ other.name }}</div>
+                    <span class="misc-date">{{ other.date | date: '%b %Y' }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
 </div>

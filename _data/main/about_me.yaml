@@ -1,16 +1,51 @@
 name: Nicolas
 surname: DUFOUR
 short_description: PostDoc at [Kyutai](https://kyutai.org/) and [UC Berkeley](https://www.berkeley.edu/)
-content: 
 
-  I'm currently working as a Post doc at [Kyutai](https://kyutai.org/) and [UC Berkeley](https://www.berkeley.edu/), working with [Patrick Perez](https://ptrckprz.github.io/) and [Alyosha Efros](https://people.eecs.berkeley.edu/~efros/).
+# Markdown. Keep the "|" so blank lines stay paragraph breaks.
+# The first paragraph is rendered larger, as a lead.
+content: |
+  I'm a postdoc at [Kyutai](https://kyutai.org/) and [UC Berkeley](https://www.berkeley.edu/), working with [Patrick Pérez](https://ptrckprz.github.io/) and [Alyosha Efros](https://people.eecs.berkeley.edu/~efros/). I'm currently exploring the representation capacities of generative models.
 
-  I've completed my PhD at [IMAGINE](https://imagine-lab.enpc.fr/) ([ENPC](https://ecoledesponts.fr/)) and [VISTA](https://www.lix.polytechnique.fr/vista/) ([Ecole Polytechnique](https://www.polytechnique.edu/en)) labs. My PhD thesis focused on efficient conditional generative models, under the supervision of [David Picard](https://davidpicard.github.io/) and [Vicky Kalogeiton](https://vicky.kalogeiton.info/).
+  I did my PhD at the [IMAGINE](https://imagine-lab.enpc.fr/) ([ENPC](https://ecoledesponts.fr/)) and [VISTA](https://www.lix.polytechnique.fr/vista/) ([École Polytechnique](https://www.polytechnique.edu/en)) labs, under the supervision of [David Picard](https://davidpicard.github.io/) and [Vicky Kalogeiton](https://vicky.kalogeiton.info/). My thesis focused on efficient conditional generative models, and I worked on GANs and diffusion models.
 
-  Before my PhD, I graduated from the [MVA master](https://www.master-mva.com/) (Mathematiques, Vision et Apprentissage) at [ENS Paris Saclay](https://ens-paris-saclay.fr/) and I got my engineering degree from [Telecom SudParis](https://www.telecom-sudparis.eu/) following the [MSA specialization](https://www.telecom-sudparis.eu/formation/modelisations-statistiques-et-applications/) (Mathematics and Statistical Modeling).
+# Research themes, shown as a 2x2 grid of cards under the bio. `text` says why the
+# topic matters to me. `visual` picks the card's illustration in
+# scripts/about-themes.js (tree, globe, views or flow). Each paper `key` is that
+# publication's thumbnail_canvas without "-thumbnail"; its pill links to the
+# paper's card in Publications.
+themes:
+  - title: Training with less
+    visual: tree
+    text: "Image generation is a great place to make progress, but other fields rarely have unlimited data. I look for methods that need less data and compute, so that this progress carries over to those fields and stays within reach of academic labs."
+    papers:
+      - { name: MIRO, key: miro }
+      - { name: T2I-ImageNet, key: t2i-imagenet }
+      - { name: PoM, key: pom }
+      - { name: CAD, key: cad }
 
-  I've also done an internship at Meta, where i worked on Model Based Reinforcement Learning.
+  - title: Generative geolocation
+    visual: globe
+    text: "I like how much one photo can reveal about where it was taken: the plants, the road markings, the light. Reading these clues takes broad knowledge of places and cultures, and since they are often ambiguous, generative models are a natural fit."
+    papers:
+      - { name: Around the World in 80 Timesteps, key: plonk }
+      - { name: OpenStreetView-5M, key: osv5m }
 
-  During my PhD, I have worked on GANs and diffusion models. I'm currently exploring the representation capacities of generative models.
+  - title: Generation beyond images
+    visual: views
+    text: I like taking generative models past still images, to 3D scenes, camera motion and video you can interact with. Each new setting tests what these models really understand about the world.
+    papers:
+      - { name: Surflo, key: surflo }
+      - { name: OVIE, key: ovie }
+      - { name: CADRE, key: cadre }
+      - { name: E.T., key: et }
+
+  - title: How generative models work
+    visual: flow
+    text: "Beyond any single application, I'm curious about generative models themselves: why they work so well, and what they really learn about the data."
+    papers:
+      - { name: FID Lottery, key: fid-lottery }
+      - { name: Neural Thickets, key: logit-psv }
+      - { name: Generative Drifting, key: drifting }
 
 pp_path: /assets/icons/profile_picture.jpg

@@ -1,14 +1,17 @@
 - repo_name: rl
   repo_owner: pytorch
   type: contribution
+  description: TorchRL, the PyTorch library for reinforcement learning
 
 - repo_name: metrics
   repo_owner: Lightning-AI
   type: contribution
+  description: TorchMetrics, machine learning metrics for PyTorch
 
 - repo_name: diffusers
   repo_owner: huggingface
   type: contribution
+  description: Hugging Face library of pretrained diffusion models
 
 - repo_name: SCAM
   repo_owner: nicolas-dufour
@@ -18,7 +21,7 @@
   repo_owner: gastruc
   type: own
 
-- repo_name: cad
+- repo_name: CAD
   repo_owner: nicolas-dufour
   type: own
 
@@ -26,6 +29,42 @@
   repo_owner: robincourant
   type: own
 
+- repo_name: T2I-ImageNet
+  repo_owner: lucasdegeorge
+  type: own
+
 - repo_name: plonk
   repo_owner: nicolas-dufour
+  type: own
+
+- repo_name: DIPSY
+  repo_owner: eleftsonis
+  type: own
+
+- repo_name: pom
+  repo_owner: davidpicard
+  type: own
+
+- repo_name: miro
+  repo_owner: nicolas-dufour
+  type: own
+
+- repo_name: cadre-autoencoders-and-world-models
+  repo_owner: kyutai-labs
+  type: own
+
+- repo_name: logit-psv
+  repo_owner: kyutai-labs
+  type: own
+
+- repo_name: ovie
+  repo_owner: kyutai-labs
+  type: own
+
+- repo_name: Surflo
+  repo_owner: Anttwo
+  type: own
+
+- repo_name: structure-agnostic-distillation
+  repo_owner: kyutai-labs
   type: own

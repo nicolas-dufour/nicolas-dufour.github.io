@@ -1,27 +1,44 @@
 <h2>Open Source</h2>
-<h3>Contributions</h3>
-<div class="repo-wrapper">
-    {% assign filtered_contributions = site.data.main.open_source | where: 'type', 'contribution' %}
-    {% for item in filtered_contributions %}
-    <div class="repo-row">
-        <div class="repo-title">{{ item.repo_owner }} / {{ item.repo_name }}</div>
-        <a href="https://github.com/{{ item.repo_owner }}/{{ item.repo_name }}">
-            <img alt="GitHub Repo stars" class="repo-star"
-                src="https://img.shields.io/github/stars/{{ item.repo_owner }}/{{ item.repo_name }}?style=social">
-        </a>
-    </div>
+{% assign contributions = site.data.main.open_source | where: 'type', 'contribution' %}
+{% assign projects = site.data.main.open_source | where: 'type', 'own' | reverse %}
+
+<h3 class="group-label">Contributions</h3>
+<div class="group repo-grid">
+    {% for item in contributions %}
+    {% include main/repo_card.html repo=item %}
     {% endfor %}
 </div>
-<h3>Projects</h3>
-<div class="repo-wrapper">
-    {% assign filtered_projects = site.data.main.open_source | where: 'type', 'own' %}
-    {% for item in filtered_projects %}
-    <div class="repo-row">
-        <div class="repo-title">{{ item.repo_owner }} / {{ item.repo_name }}</div>
-        <a href="https://github.com/{{ item.repo_owner }}/{{ item.repo_name }}">
-            <img alt="GitHub Repo stars" class="repo-star"
-                src="https://img.shields.io/github/stars/{{ item.repo_owner }}/{{ item.repo_name }}?style=social">
-        </a>
-    </div>
+
+<h3 class="group-label">Projects</h3>
+<div class="group repo-grid">
+    {% for item in projects %}
+    {% include main/repo_card.html repo=item %}
     {% endfor %}
 </div>
+
+<script>
+    // Star counts come from shields.io's JSON endpoint (cached upstream, CORS
+    // open, no GitHub rate limit). Fetched once the section nears the viewport;
+    // a card keeps its star slot hidden if the request fails.
+    (() => {
+        const cards = document.querySelectorAll('#open-source .repo-card[data-repo]');
+        const load = () => cards.forEach((card) => {
+            fetch(`https://img.shields.io/github/stars/${card.dataset.repo}.json`)
+                .then((r) => (r.ok ? r.json() : null))
+                .then((data) => {
+                    if (!data || !/^[\d.]+k?$/i.test(data.value || '')) return;
+                    const slot = card.querySelector('.repo-stars');
+                    slot.querySelector('.repo-stars-count').textContent = data.value;
+                    slot.setAttribute('aria-label', `${data.value} stars`);
+                    slot.hidden = false;
+                })
+                .catch(() => {});
+        });
+        const section = document.getElementById('open-source');
+        if (!('IntersectionObserver' in window) || !section) return load();
+        const io = new IntersectionObserver((entries) => {
+            if (entries.some((e) => e.isIntersecting)) { io.disconnect(); load(); }
+        }, { rootMargin: '600px 0px' });
+        io.observe(section);
+    })();
+</script>

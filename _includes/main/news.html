@@ -1,40 +1,51 @@
 <h2>News</h2>
-<div class="news-wrapper">
-    {% assign sorted_news = site.data.main.news | sort: 'date' | reverse %}
-    {% for item in sorted_news limit:4 %}
-    <div class="news-row">
-        <div class="date-pill">{{ item.date | date: "%b, %Y" }}</div>
-        <div class="news-content">{{ item.content | markdownify }}</div>
+{%- comment -%}
+Year-grouped timeline, same look as the Talks list in Misc. Only the
+`news_visible` latest items show until the toggle expands the list; a year
+whose first item is already past that cut is hidden as a whole.
+{%- endcomment -%}
+{% assign news_items = site.data.main.news | sort: 'date' | reverse %}
+{% assign news_visible = 4 %}
+{% assign news_hidden = news_items.size | minus: news_visible %}
+<div class="news-card">
+    <div id="news-list" class="news-list">
+        {% assign current_year = '' %}
+        {% for item in news_items %}
+        {% assign item_year = item.date | date: '%Y' %}
+        {% if item_year != current_year %}
+        {% unless forloop.first %}</ul></div>{% endunless %}
+        {% assign current_year = item_year %}
+        <div class="timeline-year{% if forloop.index0 >= news_visible %} news-extra{% endif %}">
+            <div class="timeline-year-label">{{ current_year }}</div>
+            <ul class="timeline-items">
+        {% endif %}
+                <li class="news-item{% if forloop.index0 >= news_visible %} news-extra{% endif %}">
+                    <time class="timeline-date" datetime="{{ item.date | date: '%Y-%m' }}">{{ item.date | date: '%b' }}</time>
+                    <div class="news-text">{{ item.content | markdownify | remove: '<p>' | remove: '</p>' | strip }}</div>
+                </li>
+        {% if forloop.last %}</ul></div>{% endif %}
+        {% endfor %}
     </div>
-    {% endfor %}
-    {% for item in sorted_news offset:4 %}
-    <div class="news-row extra-news" style="display:none">
-        <div class="date-pill">{{ item.date | date: "%b, %Y" }}</div>
-        <div class="news-content">{{ item.content | markdownify }}</div>
-    </div>
-    {% endfor %}
+    {% if news_hidden > 0 %}
+    <button id="news-toggle" class="news-toggle" type="button" aria-expanded="false" aria-controls="news-list"
+        data-more="Show {{ news_hidden }} older" data-less="Show less">
+        <span>Show {{ news_hidden }} older</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    {% endif %}
 </div>
-<button id="show-more-btn" type="button" aria-expanded="false" aria-controls="extra-news-list">Show More</button>
 <script>
-    const showMoreBtn = document.getElementById('show-more-btn');
-    const extraNews = document.querySelectorAll('.extra-news');
-    let isExpanded = false;
-    showMoreBtn.addEventListener('click', () => {
-        if (isExpanded) {
-            extraNews.forEach(news => {
-                news.classList.remove('show');
-                setTimeout(() => news.style.display = 'none', 0);
-            });
-            showMoreBtn.textContent = 'Show More';
-            showMoreBtn.setAttribute('aria-expanded', 'false');
-        } else {
-            extraNews.forEach(news => {
-                news.style.display = 'flex';
-                setTimeout(() => news.classList.add('show'), 0);
-            });
-            showMoreBtn.textContent = 'Show Less';
-            showMoreBtn.setAttribute('aria-expanded', 'true');
-        }
-        isExpanded = !isExpanded;
-    });
+    (() => {
+        const list = document.getElementById('news-list');
+        const toggle = document.getElementById('news-toggle');
+        if (!list || !toggle) return;
+        const label = toggle.querySelector('span');
+        toggle.addEventListener('click', () => {
+            const expanded = list.classList.toggle('news-expanded');
+            toggle.setAttribute('aria-expanded', String(expanded));
+            label.textContent = expanded ? toggle.dataset.less : toggle.dataset.more;
+            // After collapsing a long list, bring the button back into view.
+            if (!expanded) toggle.scrollIntoView({ block: 'nearest' });
+        });
+    })();
 </script>

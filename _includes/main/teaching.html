@@ -1,25 +1,41 @@
 <h2>Teaching</h2>
-<div class="teaching-wrapper">
+<div class="teaching-list">
     {% assign sorted_teaching = site.data.main.teaching | sort: 'start-date' | reverse %}
     {% for item in sorted_teaching %}
-    <div class="teaching-row">
-        {% assign start_date = item.start-date | date: "%b %Y" %}
-        {% assign end_date = item.end-date | date: "%b %Y" %}
-        {% if start_date == end_date %}
-        <p class="course-date">{{item.start-date | date: "%b %Y"}}</p>
-        {% else %}
-        <p class="course-date">{{item.start-date | date: "%b %Y"}} - {{item.end-date | date: "%b %Y"}}</p>
+    {%- comment -%}
+    course_name reads "CODE - ... - Title": the code goes in the tile, the last
+    segment is the card title. A name without " - " is used whole as the title.
+    {%- endcomment -%}
+    {% assign name_parts = item.course_name | split: ' - ' %}
+    {% assign course_title = name_parts.last | strip %}
+    {% assign start_my = item.start-date | date: "%b %Y" %}
+    {% assign end_my = item.end-date | date: "%b %Y" %}
+    {% assign start_y = item.start-date | date: "%Y" %}
+    {% assign end_y = item.end-date | date: "%Y" %}
+    <div class="teaching-card">
+        {% if name_parts.size > 1 %}
+        <div class="teaching-code">{{ name_parts.first | strip }}</div>
         {% endif %}
-
-        <p><span class="course-position">{{ item.position }}</span> for <span class="course-name">{{ item.course_name
-                }}</span> at <span class="course-school">{{ item.school }}</span></p>
-        {% if item.key-contributions %}
-        <ul>
-            {% for contribution in item.key-contributions %}
-            <li>{{ contribution }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
+        <div class="teaching-content">
+            <div class="teaching-title">{{ course_title }}</div>
+            <div class="teaching-meta">{{ item.position }} · {{ item.school }}</div>
+            <div class="teaching-date">
+                {%- if start_my == end_my -%}
+                {{ start_my }}
+                {%- elsif start_y == end_y -%}
+                {{ item.start-date | date: "%b" }} – {{ end_my }}
+                {%- else -%}
+                {{ start_my }} – {{ end_my }}
+                {%- endif -%}
+            </div>
+            {% if item.key-contributions %}
+            <ul class="teaching-points">
+                {% for contribution in item.key-contributions %}
+                <li>{{ contribution }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
     </div>
     {% endfor %}
 </div>
