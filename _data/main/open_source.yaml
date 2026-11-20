@@ -68,3 +68,7 @@
 - repo_name: structure-agnostic-distillation
   repo_owner: kyutai-labs
   type: own
+
+- repo_name: aura
+  repo_owner: kyutai-labs
+  type: own

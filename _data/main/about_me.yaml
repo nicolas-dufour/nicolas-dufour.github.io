@@ -38,6 +38,7 @@ themes:
       - { name: Surflo, key: surflo }
       - { name: OVIE, key: ovie }
       - { name: CADRE, key: cadre }
+      - { name: AURA, key: aura }
       - { name: E.T., key: et }
 
   - title: How generative models work

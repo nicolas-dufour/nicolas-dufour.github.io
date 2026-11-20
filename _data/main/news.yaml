@@ -75,3 +75,6 @@
 
 - date: 2026-10-29
   content: We released [Rethinking Neural Thickets](https://kyutai.org/logit-psv/), showing that a random bias on the output logits matches perturbing every weight.
+
+- date: 2026-11-20
+  content: We released [AURA](https://kyutai.org/blog/2026-11-20-aura/), real-time talking avatars driven by speech (BMVC 2026).
