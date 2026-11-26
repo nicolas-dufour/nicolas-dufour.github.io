@@ -128,9 +128,9 @@
 
 - title: "How far can we go with ImageNet for Text-to-Image generation?"
   authors: <a href="https://lucasdegeorge.github.io/">Lucas Degeorge</a>*, <a href="https://arijit-hub.github.io/">Arijit Ghosh </a>*, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://davidpicard.github.io/">David Picard</a><sup>†</sup>, <a href="http://vicky.kalogeiton.info/">Vicky Kalogeiton</a><sup>†</sup>
-  date: 2025-02-28
-  year: 2025
-  journal: Arxiv Preprint
+  date: 2026-11-25
+  year: 2026
+  journal: TMLR
   thumbnail_canvas: t2i-imagenet-thumbnail
   pdf:  https://arxiv.org/abs/2502.21318
   github: https://github.com/lucasdegeorge/T2I-ImageNet
@@ -139,8 +139,9 @@
   bibtex: "@article{degeorge2025far, \n
       &nbsp;&nbsp; title   = {How far can we go with ImageNet for Text-to-Image generation?}, \n
       &nbsp;&nbsp; author  = {Degeorge, Lucas and Ghosh, Arijit and Dufour, Nicolas and Picard, David and Kalogeiton, Vicky}, \n
-      &nbsp;&nbsp; journal = {arXiv preprint arXiv:2502.21318}, \n
-      &nbsp;&nbsp; year    = {2025} \n
+      &nbsp;&nbsp; journal = {Transactions on Machine Learning Research (TMLR)}, \n
+      &nbsp;&nbsp; issn    = {2835-8856}, \n
+      &nbsp;&nbsp; year    = {2026} \n
     }"
 - title: "PoM: A Linear-Time Replacement for Attention with the Polynomial Mixer"
   authors: <a href="https://davidpicard.github.io/">David Picard</a>, <u><a href="#">Nicolas Dufour</a></u>, <a href="https://lucasdegeorge.github.io/">Lucas Degeorge</a>, <a href="https://arijit-hub.github.io/">Arijit Ghosh</a>, <a href="https://davidea97.github.io/">Davide Allegro</a>, Tom Ravaud, <a href="https://yohannperron.github.io/WebPage/">Yohann Perron</a>, <a href="https://csautier.github.io/">Corentin Sautier</a>, <a href="https://imagine.enpc.fr/~sonat.baltaci/">Zeynep Sonat Baltaci</a>, <a href="https://imagine-lab.enpc.fr/staff-members/fei-meng/">Fei Meng</a>, <a href="https://imagine-lab.enpc.fr/staff-members/syrine-kalleli/">Syrine Kalleli</a>, <a href="https://imagine.enpc.fr/~marta.lopez-rauhut/">Marta López-Rauhut</a>, <a href="https://thibautloiseau.github.io/">Thibaut Loiseau</a>, <a href="https://imagine-lab.enpc.fr/staff-members/segolene-albouy/">Ségolène Albouy</a>, <a href="https://raphael-baena.github.io/">Raphael Baena</a>, <a href="https://imagine.enpc.fr/~vincente/">Elliot Vincent</a>, <a href="https://loiclandrieu.com/">Loic Landrieu</a>
