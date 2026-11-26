@@ -3,6 +3,22 @@ permalink: /404.html
 layout: default
 ---
 
+<script defer src="https://cloud.umami.is/script.js" data-website-id="UMAMI_WEBSITE_ID_PLACEHOLDER" data-domains="nicolas-dufour.github.io" data-performance="true" data-errors="true"></script>
+<script defer src="/scripts/analytics.js"></script>
+<script>
+  // Deferred scripts have run by DOMContentLoaded, so umami exists unless blocked.
+  // The referrer says where the broken link lives: a path for this site, a domain otherwise.
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!window.umami) return;
+    let from = 'direct';
+    try {
+      const ref = document.referrer ? new URL(document.referrer) : null;
+      if (ref) from = ref.hostname === location.hostname ? ref.pathname : ref.hostname;
+    } catch (_) { /* malformed referrer */ }
+    umami.track('page-not-found', { path: location.pathname.slice(0, 200), from: from.slice(0, 200) });
+  });
+</script>
+
 <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
