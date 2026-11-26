@@ -41,7 +41,15 @@ jobs:
           sed -i "s/ANALYTICS_TAG_PLACEHOLDER/${{ vars.ANALYTICS_TAG }}/g" projects/cad.md
           sed -i "s/ANALYTICS_TAG_PLACEHOLDER/${{ vars.ANALYTICS_TAG }}/g" projects/plonk.md
           sed -i "s/ANALYTICS_TAG_PLACEHOLDER/${{ vars.ANALYTICS_TAG }}/g" projects/scam.md
-          
+
+      - name: Inject Umami website ID
+        env:
+          UMAMI_WEBSITE_ID: ${{ secrets.UMAMI_WEBSITE_ID }}
+        run: |
+          grep -rl --exclude-dir=.git --exclude-dir=.github --exclude-dir=vendor --exclude-dir=node_modules \
+            UMAMI_WEBSITE_ID_PLACEHOLDER . \
+            | xargs -r sed -i "s/UMAMI_WEBSITE_ID_PLACEHOLDER/${UMAMI_WEBSITE_ID}/g"
+
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
