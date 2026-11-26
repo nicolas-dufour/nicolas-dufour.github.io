@@ -50,6 +50,24 @@
             <span class="publication-award">{{ publication.award }}</span>
             {% endif %}
         </div>
+        {%- comment -%}
+        Secondary venues (workshops where the paper was also presented). Kept
+        visually quieter than the main venue above. Each entry: name (acronym),
+        venue (host conference), full (official name, shown on hover), url, type.
+        {%- endcomment -%}
+        {% if publication.workshops %}
+        <div class="publication-workshops">
+            <span class="publication-workshops-label">Also at</span>
+            {% for workshop in publication.workshops %}
+            <a class="publication-workshop{% if workshop.type == 'Oral' %} publication-workshop-oral{% endif %}"
+                href="{{ workshop.url }}" target="_blank" rel="noopener noreferrer"
+                title="{{ workshop.full }}, {{ workshop.venue }}">
+                <span>{{ workshop.name }} workshop, {{ workshop.venue }}</span>
+                {% if workshop.type %}<span class="publication-workshop-type">{{ workshop.type }}</span>{% endif %}
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
         <div class="publication-buttons">
             {% if publication.game %}
             <a href="{{ publication.game }}" class="publication-game-link" target="_blank" rel="noopener noreferrer"

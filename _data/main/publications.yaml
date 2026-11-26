@@ -112,6 +112,12 @@
   date: 2025-06-11
   year: 2025
   journal: CVPR 2025
+  workshops:
+    - name: GMCV
+      venue: CVPR 2025
+      full: 3rd Workshop on Generative Models for Computer Vision
+      url: https://generative-vision.github.io/workshop-CVPR-25/
+      type: Poster
   thumbnail_canvas: plonk-thumbnail
   pdf:  https://arxiv.org/abs/2412.06781
   github: https://github.com/nicolas-dufour/plonk
@@ -327,6 +333,17 @@
   date: 2026-11-20
   year: 2026
   journal: BMVC 2026
+  workshops:
+    - name: Gen4AVC
+      venue: ECCV 2026
+      full: 2nd Workshop on Generative AI for Audio-Visual Content Creation
+      url: https://gen4avc.github.io/eccv2026/
+      type: Poster
+    - name: AVGenL
+      venue: ECCV 2026
+      full: 3rd Workshop on Audio-Visual Generation and Learning
+      url: https://avgen123.github.io/eccv26.html
+      type: Oral
   thumbnail_canvas: aura-thumbnail
   pdf: https://arxiv.org/abs/2611.26540
   github: https://github.com/kyutai-labs/aura

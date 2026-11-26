@@ -928,8 +928,61 @@ main {
 .publication-journal {
     color: var(--color-accent);
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 4px;
+}
+
+/* Workshops where a paper was also shown: one quiet row under the main venue. */
+.publication-workshops {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin: -4px 0 4px;
+}
+
+.publication-workshops-label {
+    color: var(--color-muted);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.publication-workshop {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 1px 9px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface-subtle);
+    color: var(--color-muted);
+    font-size: 12.5px;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: color var(--transition), border-color var(--transition);
+}
+
+.publication-workshop:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.publication-workshop:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.publication-workshop-type {
+    padding-left: 6px;
+    border-left: 1px solid var(--color-border);
+    font-weight: 500;
+}
+
+.publication-workshop-oral .publication-workshop-type {
+    color: var(--color-accent-warm);
+    font-weight: 600;
 }
 
 .publication-award {
@@ -1792,6 +1845,15 @@ footer a:hover {
 .dark-theme .publication-award {
     color: var(--color-accent-warm);
     background-color: rgba(251, 211, 141, 0.1);
+}
+
+/* Beat the global `.dark-theme a` link color so workshop chips stay quiet. */
+.dark-theme .publication-workshop {
+    color: var(--color-muted);
+}
+
+.dark-theme .publication-workshop:hover {
+    color: var(--color-accent);
 }
 
 .dark-theme .publication-featured {
